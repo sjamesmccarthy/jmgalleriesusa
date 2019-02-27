@@ -1,0 +1,93 @@
+{ 
+    "404": {
+            "layout": "page",
+            "page": "404",
+            "title": "Lost, Page Not Found23"
+        },
+    "/": {
+        "layout" : "gallery",
+        "page" : "home",
+        "title" : "Welcome To jmGalleries",
+        "component": "createThumbGallery",
+        "header": {
+            "css": "media.css, colors.css",
+            "js": "favs.js, slider.js",
+            "font": "fontawesome.otf"
+        }
+    },
+    "/about": {
+        "layout" : "page",
+        "page" : "about",
+        "title" : "About"
+    },
+    "/news": {
+       "layout" : "page",
+       "page" : "news",
+       "title" : "News"
+    },
+    "[collection]/[photo]/[name]": {
+        "layout": "page",
+        "page": "detail",
+        "title": "{name}"
+    },
+    "/oceans-lakes-waterfalls": {
+        "layout": "gallery",
+        "page": "catalog",
+        "title": "Oceans, Lakes and Waterfalls"
+    },
+    "/mountains-deserts-trees": {
+        "layout": "gallery",
+        "page": "catalog",
+        "title": "Mountains, Deserts and Trees"
+    },
+    "/abstract-architecture-people": {
+        "layout": "gallery",
+        "page": "catalog",
+        "title": "Abstract, Architecture and People"
+    },
+    "/flowers-fields-clouds": {
+        "layout": "gallery",
+        "page": "catalog",
+        "title": "Flowers, Fields and Clouds"
+    },
+    "/new-releases": {
+        "layout": "gallery",
+        "page": "new-releases",
+        "title": "New Releases"
+    },
+    "/exhibits": {
+        "layout": "page",
+        "page": "exhibits",
+        "title": "Exhibits in Nevada & California"
+    },
+    "/exhibits-reno": {
+        "layout": "page",
+        "page": "exhibits-reno",
+        "title": "Exhibits In Reno, Nevada"
+    },
+    "/exhibits-vegas": {
+        "layout": "page",
+        "page": "exhibit-vegas",
+        "title": "Exhibits In Las Vegas, Nevada"
+    },
+    "/exhibits-temecula": {
+        "layout": "page",
+        "page": "exhibit-temecula",
+        "title": "Exhibits In Temecula, California"
+    },
+    "/contact": {
+        "layout": "page",
+        "page": "contact",
+        "title": "Contact"
+    },
+    "/legal": {
+        "layout": "page",
+        "page": "legal",
+        "title": "Privacy Policy, Copyright, Terms of Sale"
+    },
+    "/styles": {
+        "layout": "page",
+        "page": "styles",
+        "title": "Styles & Editions"
+    }
+}

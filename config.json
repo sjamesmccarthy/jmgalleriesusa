@@ -1,0 +1,43 @@
+{ 
+    "package_name": "Ketchup",
+    "package_version" : "1.0.0",
+    "package_update_uri": "//ketchupapp.com/updates.php",
+    "package_git" : "//github.com/sjamesmccarthy/ketchup",
+    "package_license" : "MIT",
+    "package_timezone": "America/Los_Angeles",
+    "package_debug": "false",
+
+    "site_name": "jmGalleries",
+    "copyright" : "Copyright 2013-2019",
+    "email" : "james@jmgalleries.com",
+    "phone" : "951-708-1831",
+
+    "prefix" : {
+        "layout" : "layout_",
+        "page" : "page_",
+        "negatives" : "_collection",
+        "partial" : "partial_"
+    },
+
+    "database": {
+        "prod" : 
+            {
+            "host" : "local",
+            "port" : "3306",
+            "user" : "jmgaller_web",
+            "password" : "01jimk987",
+            "dbname" : "jmgaller_ies",
+            "engine" : "mysql",
+            "error_reporting" : "0"
+            },
+        "local": {
+            "host": "local",
+            "port": "3306",
+            "user": "root",
+            "password": "root",
+            "dbname": "jmgaller_ies",
+            "engine" : "mysql",
+            "error_reporting" : "E_ALL"
+        }
+    }
+}
