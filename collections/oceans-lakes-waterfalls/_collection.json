@@ -3,7 +3,7 @@
         "id": 1,
         "artist_id": 1,
         "title": "Oceans, Lakes & Waterfalls",
-        "desc": "<p></p>",
+        "desc": "<p>Description.</p>",
         "shop": "true",
         "status": "active"
     },

@@ -1,10 +1,10 @@
 { 
-    "404": {
+    "/404": {
             "layout": "page",
             "page": "404",
             "title": "Lost, Page Not Found23"
         },
-    "": {
+    "/": {
         "layout" : "gallery",
         "page" : "home",
         "title" : "Welcome To jmGalleries",
@@ -25,10 +25,10 @@
        "page" : "news",
        "title" : "News"
     },
-    "[collection]/[photo]/[name]": {
+    "[$1]/[$2]": {
         "layout": "page",
         "page": "detail",
-        "title": "{name}"
+        "title": "[$2]"
     },
     "/oceans-lakes-waterfalls": {
         "layout": "gallery",

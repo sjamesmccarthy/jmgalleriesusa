@@ -5,7 +5,7 @@
     "package_git" : "//github.com/sjamesmccarthy/ketchup",
     "package_license" : "MIT",
     "package_timezone": "America/Los_Angeles",
-    "package_debug": "true",
+    "package_debug": "false",
 
     "site_name": "jmGalleries",
     "copyright" : "Copyright 2013-2019",

@@ -11,19 +11,11 @@
     /* Check URI against routes json file */
     $app->getRoute();
 
-    /* Build the layout of the page */
-    $app->buildLayout();
-
-    /* Output the layout +page to screen */
-    $app->renderPage();
+    /* Build the layout of the page and render */
+    $app->render();
 
     /* Debug Info */
-    if($app->config->package_debug == "true" || $app->routes->URI->query == "debug=true") {
-        echo "<div style='padding: 40px; background-color: rgba(255, 249, 222, 1);'><p>DEBUG</p>";
-        echo "<hr /><p>Object(data)", $app->printp_r($app->data), "</p>";
-        echo "<p>Object(routes->URI)", $app->printp_r($app->routes->URI), "</p>";
-        echo "</div>";
-    }
+    $app->debugInfo();
 
     /* Exit the micro-framework */
     exit();
