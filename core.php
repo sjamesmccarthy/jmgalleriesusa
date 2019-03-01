@@ -7,15 +7,14 @@ class Core
 
     public $config; 
     public $routes;
-    public $ini_tz;
-    public $active_tz;
     public $session;
     public $session_started;
     public $URI;
     public $match;
-    public $routePathIndex;
+    public $route_path;
     public $data;
     public $layoutFile;
+    public $pageFile;
 
     public function __construct() {
 
@@ -175,12 +174,12 @@ class Core
     /* ****************************************************************************************** */
 
     public function loadNegativeFile($collection) {
-        $nFile = 'collections' . $collection . '/' . $this->config->prefix['negatives'] . '.json';
-        self::getJSON($nFile,'negatives');
+
+        /* Load the json object containing all the meta data for photos in the specific catalog */
+        $this->getJSON('collections' . $collection . '/' . $this->config->prefix['negatives'] . '.json','negatives');
 
         /* Loop through "collection_photo". If $photo = $file_name" */
         $photo_list = (array) $this->negatives->collection_photo;
-        
         for ($i = 0; $i < count($photo_list); $i++) {
             /* Get meta data of this photo */
             $this->data->page->meta[$i]['file_name'] = $photo_list[$i]['file_name'] . '.jpg';
@@ -191,12 +190,14 @@ class Core
     }
 
     public function getPhotoDetail($collection, $photo) {
-        $path = __DIR__ . '/collections/' . $collection . "/";
 
-        /* search negative collection file JSON data */
-        self::getJSON('collections/' . $collection .  '/_collection.json','cdata');
+        /* Load JSON data of the collections data source file  */
+        $this->getJSON('collections/' . $collection .  '/_collection.json','cdata');
+
+        /* Convert the JSON object to an array */
         $photo_list = (array) $this->cdata->collection_photo;
 
+         /* Search JSON data of the collections data source file for the specific photo */
         for ($i = 0; $i < count($photo_list); $i++) {
             if($photo_list[$i]['file_name'] == $photo) {
                 /* Get meta data of this photo */
