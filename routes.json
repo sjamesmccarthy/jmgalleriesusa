@@ -89,5 +89,8 @@
         "layout": "page",
         "page": "styles",
         "title": "Styles & Editions"
+    },
+    "/google": {
+        "redirect": "https://google.com",
     }
 }
