@@ -25,7 +25,7 @@
             "host" : "local",
             "port" : "3306",
             "user" : "jmgaller_web",
-            "password" : "01jimk987",
+            "password" : "5f4dcc3b5aa765d61d8327deb882cf99",
             "dbname" : "jmgaller_ies",
             "engine" : "mysql",
             "error_reporting" : "0"
@@ -34,7 +34,7 @@
             "host": "local",
             "port": "3306",
             "user": "root",
-            "password": "root",
+            "password": "fca15adde63a81c4d5a5511abf794187",
             "dbname": "jmgaller_ies",
             "engine" : "mysql",
             "error_reporting" : "E_ALL"
