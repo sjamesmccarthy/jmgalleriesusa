@@ -7,7 +7,7 @@
         "shop": "true",
         "status": "active"
     },
-    "collection_photo": [
+    "photo": [
         {
             "artist_id": 1,
             "collection_category_id": 1,
@@ -70,7 +70,7 @@
             "lens_model": "",
             "aperture": "",
             "shutter": "",
-            "focal_length": "",
+            "focal_length": "", 
             "iso": "",
             "date_taken": "09-04-2013 20:26:57",
             "orientation": "portrait",

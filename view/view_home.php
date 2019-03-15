@@ -1,4 +1,4 @@
-<div style="padding: 200px">
+<div style="width: 20%; padding: 60px; margin: auto">
     <P>WELCOME TO THE HOME PAGE</P>
 
     <ul>

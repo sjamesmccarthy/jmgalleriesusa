@@ -1,0 +1,17 @@
+// Colors
+$color-white: #FFFFFF;
+
+// Brand Color
+$color-primary:         rgba(52, 152, 219,1.0);
+$color-primary--dark:   darken($color-primary, 5%) !default;
+$color-secondary:       #CCCCCC !default;
+
+$color-info:            #5BC0EB;
+$color-success:         #2BC016;
+$color-warning:         #E67E22;
+$color-danger:          #C3423F;
+
+$color-link:            #496DDB !default;
+$color-link--visited:   #9140D4 !default;
+$color-link--hover:     darken($color-link, 10%) !default;
+$color-link--active:    #D44076 !default;

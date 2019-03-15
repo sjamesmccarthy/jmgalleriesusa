@@ -1,6 +1,6 @@
 <html>
 
-<?php $this->insert('header'); ?>
+<?php $this->partial('header'); ?>
 
 <body>
     
@@ -8,8 +8,8 @@
                 <?php $this->getPageContent(); ?>
         </div>
 
-    <?php $this->insert('footer'); ?>
-    <?php $this->insert('analytics'); ?>
+    <?php $this->partial('footer'); ?>
+    <?php $this->partial('analytics'); ?>
 
 </body>
 </html>

@@ -8,7 +8,7 @@
         "layout" : "gallery",
         "page" : "home",
         "title" : "Welcome To jmGalleries",
-        "component": "createThumbGallery",
+        "controller": "catalog",
         "header": {
             "css": "media.css, colors.css",
             "js": "favs.js, slider.js",
@@ -89,8 +89,5 @@
         "layout": "page",
         "page": "styles",
         "title": "Styles & Editions"
-    },
-    "/google": {
-        "redirect": "https://google.com",
     }
 }

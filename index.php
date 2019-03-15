@@ -1,21 +1,33 @@
 <?php
 
-    error_reporting(E_STRICT);
+    error_reporting(E_ERROR | E_WARNING | E_PARSE | E_NOTICE);
+    $sr = $_SERVER["DOCUMENT_ROOT"];
 
     /* Require the Core */
-    require_once(__DIR__ . '/core.php');
-
+    require_once( $sr . '/controller/core.php');
+    require_once( $sr . '/model/core_data.php');
+    require_once( $sr . '/controller/catalog.php');
+     
     /* Start the micro-framework */
-    $app = new Studio\Gallery\Core;
+    $core = new Catalog();
+
+    /* Import the config file */
+    $core->getJSON('config.json','config');
+
+    /* Import the routing paths */
+    $core->getJSON('routes.json','routes');
+
+    /* Initialize the Session */
+    $core->initSession();
 
     /* Check URI against routes json file */
-    $app->getRoute();
+    $core->getRoute();
 
     /* Build the layout of the page and render */
-    $app->render();
+    $core->render();
 
     /* Debug Info */
-    $app->debugInfo();
+    $core->debugInfo();
 
     /* Exit the micro-framework */
     exit();

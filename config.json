@@ -1,11 +1,11 @@
 { 
-    "package_name": "Ketchup",
+    "package_name": "Kitchup",
     "package_version" : "1.0.0",
-    "package_update_uri": "//ketchupapp.com/updates.php",
-    "package_git" : "//github.com/sjamesmccarthy/ketchup",
+    "package_update_uri": "//kitchup.app/updates.php",
+    "package_git" : "//github.com/sjamesmccarthy/kitchup",
     "package_license" : "MIT",
     "package_timezone": "America/Los_Angeles",
-    "package_debug": "false",
+    "package_debug": "true",
 
     "site_name": "jmGalleries",
     "copyright" : "Copyright 2013-2019",
@@ -13,8 +13,8 @@
     "phone" : "951-708-1831",
 
     "prefix" : {
-        "layout" : "layout_",
-        "page" : "page_",
+        "layout" : "tpl_",
+        "page" : "view_",
         "negatives" : "_collection",
         "partial" : "partial_"
     },

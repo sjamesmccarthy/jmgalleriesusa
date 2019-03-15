@@ -1,0 +1,13 @@
+// Font variables
+$font-sans-serif: "Roboto",       Helvetica, Arial,             sans-serif !default;
+$font-serif     : "Merriweather", Georgia,   "Times New Roman", Times,         serif;
+$font-monospace : Menlo,          Monaco,    Consolas,          "Courier New", monospace;
+$font-base      : $font-sans-serif;
+$font-color     : #222222 !default;
+$font-line-height: 1.6 !default;
+
+$font-size: 16px !default;
+$font-size--lg: ceil($font-size * 1.23);  // ~20px
+$font-size--md: ceil($font-size * 1.14);  // ~16px
+$font-size--sm: ceil($font-size * 0.92);  // ~13px
+$font-size--xs: ceil($font-size * 0.85);  // ~12px
