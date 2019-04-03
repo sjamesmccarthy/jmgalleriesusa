@@ -10,7 +10,6 @@ class Core
     public $session_started;
     public $URI;
     public $match;
-    // public $route_path;
     public $path;
     public $data;
     public $page;
@@ -18,10 +17,6 @@ class Core
     public $meta;
     public $template;
     public $view;
-
-    public function __construct() {
-        /* Nothing */
-    }
 
     public function initSession() {
 
@@ -103,9 +98,7 @@ class Core
     }
 
     public function render() {
-        
-        // $this->loadc('core_app');
-        
+         
         /* Assign variables to be used in page content */
         $this->content = $this->data->page;
 
@@ -132,7 +125,7 @@ class Core
         ob_end_clean();
     }
 
-    public function getPageContent() {
+    public function view($view=null) {
 
         /* include the layout page specifed in the routes config */
         if(file_exists($this->routes->URI->view)) {

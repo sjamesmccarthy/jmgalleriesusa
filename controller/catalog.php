@@ -6,9 +6,21 @@ class Catalog extends Core_Data
     public $data;
     public $meta;
 
-    /* ****************************************************************************************** */
-    /* Specific methods to jmgalleries */
-    /* ****************************************************************************************** */
+    public function hero(){ 
+
+    }
+
+    public function promoPolarized() {
+
+    }
+
+    public function catalogPreview($catalog='NewReleases') {
+
+    }
+
+    public function promoSubscribeForm() {
+
+    }
 
     public function loadNegativeFile($catalog) {
 

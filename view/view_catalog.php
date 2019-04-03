@@ -7,7 +7,7 @@
         for ($i = 0; $i < count($this->content->meta); $i++) {
             echo "<li style='display: inline; text-align: left;'>";
             echo '<a href="' . $this->content->catalog . '/' . 'once-afloat">';
-            echo '<img src="/collections' . $this->content->catalog . '/thumbnails/' . $this->content->meta[$i]['file_name'] . '" /></a>';
+            echo '<img src="/catalog' . $this->content->catalog . '/thumbnails/' . $this->content->meta[$i]['file_name'] . '" /></a>';
             echo "</li>";
         }
 
