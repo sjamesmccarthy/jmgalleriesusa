@@ -15,29 +15,7 @@
     "prefix" : {
         "layout" : "tpl_",
         "page" : "view_",
-        "negatives" : "_collection",
+        "negatives" : "_catidx",
         "partial" : "partial_"
-    },
-
-    "database": {
-        "prod" : 
-            {
-            "host" : "local",
-            "port" : "3306",
-            "user" : "jmgaller_web",
-            "password" : "5f4dcc3b5aa765d61d8327deb882cf99",
-            "dbname" : "jmgaller_ies",
-            "engine" : "mysql",
-            "error_reporting" : "0"
-            },
-        "local": {
-            "host": "local",
-            "port": "3306",
-            "user": "root",
-            "password": "fca15adde63a81c4d5a5511abf794187",
-            "dbname": "jmgaller_ies",
-            "engine" : "mysql",
-            "error_reporting" : "E_ALL"
-        }
     }
 }
