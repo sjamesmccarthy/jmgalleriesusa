@@ -25,10 +25,10 @@ class Catalog extends Core_Data
     public function loadNegativeFile($catalog) {
 
         /* Load the json object containing all the meta data for photos in the specific catalog */
-        $this->getJSON('catalog/' . $catalog . '/' . $this->config->prefix['negatives'] . '.json','negatives');
+        $this->getJSON('/catalog' . $catalog . '/' . $this->config->prefix['negatives'] . '.json','negatives');
 
         /* Loop through "collection_photo". If $photo = $file_name" */
-        $photo_list = (array) $this->negatives->photo;
+        $photo_list = (array) $this->negatives;
         for ($i = 0; $i < count($photo_list); $i++) {
             /* Get meta data of this photo */
             $this->data->page->meta[$i]['file_name'] = $photo_list[$i]['file_name'] . '.jpg';
@@ -41,10 +41,10 @@ class Catalog extends Core_Data
     public function getPhotoDetail($catalog, $photo) {
 
         /* Load JSON data of the catalog data source file  */
-        $this->getJSON('catalog/' . $catalog .  '/_collection.json','cdata');
+        $this->getJSON('/catalog' . $catalog . '/' . $this->config->prefix['negatives'] . '.json','cdata');
 
         /* Convert the JSON object to an array */
-        $photo_list = (array) $this->cdata->photo;
+        $photo_list = (array) $this->cdata;
 
          /* Search JSON data of the catalog data source file for the specific photo */
         for ($i = 0; $i < count($photo_list); $i++) {
