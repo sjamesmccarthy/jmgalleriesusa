@@ -24,6 +24,6 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-config_auth.json
+config_env.json
 /view/css/sass/*
 /collections/oceans-lakes-waterfalls/*.jpg

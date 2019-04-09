@@ -1,4 +1,4 @@
-<html>
+<!DOCTYPE html>
     <?php $this->partial('header'); ?>
 
         <div style="background-color: rgba(0,0,0,.3); padding: 100px;">

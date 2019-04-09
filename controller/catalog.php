@@ -1,6 +1,6 @@
 <?php
 
-class Catalog extends Core_Data
+class Catalog extends Core_Api
 {
 
     public $data;
@@ -26,6 +26,11 @@ class Catalog extends Core_Data
 
         /* Load the json object containing all the meta data for photos in the specific catalog */
         $this->getJSON('/catalog' . $catalog . '/' . $this->config->prefix['negatives'] . '.json','negatives');
+
+        /* Fetch records from database and return data array */
+        $this->getCatalogIndex('negatives');
+        $this->printp_r($this->negatives);
+        exit;
 
         /* Loop through "collection_photo". If $photo = $file_name" */
         $photo_list = (array) $this->negatives;

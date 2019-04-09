@@ -17,6 +17,18 @@ class Core
     public $meta;
     public $template;
     public $view;
+    public $mysqli;
+    public $env;
+
+    public function getEnv() {
+        // check for dev
+		$uri = explode('.', $_SERVER['SERVER_NAME']);
+        if($uri[1] == 'local') { $this->env = 'local'; } else { $this->env = "prod"; }
+        
+        /* Error reporting levels being outputted to screen and logged */
+        error_reporting($this->config_env->env[$this->env]['error_reporting']);
+
+    }
 
     public function initSession() {
 
@@ -27,6 +39,8 @@ class Core
             'cookie_httponly' => true,
             'cookie_secure' => true
             ]);   
+        
+        $this->startDB();
     }
 
     public function getRoute() {
@@ -161,6 +175,35 @@ class Core
         echo "<p>Object(config)", $this->printp_r($this->config), "</p>";
         echo "</div>";
         }
+    }
+    
+    public function startDB() 
+	{
+
+		$servername = "localhost";
+        $username = $this->config_env->env[$this->env]['user'];
+		$password = $this->config_env->env[$this->env]['password'];
+		$dbname = $this->config_env->env[$this->env]['dbname'];
+		
+		// Create connection
+        $this->mysqli  = new mysqli ($servername, $username, $password, $dbname);
+
+	}
+    
+    public function checkDBConnection($function='Null') {
+		if ($this->mysqli->connect_errno) {
+		    printf("Connect failed: %s\n", $this->mysqli->connect_error);
+		    exit();
+        } else {
+            print $function . ".mysqli.success(" . $this->config_env->env[$this->env]['dbname'] . ")<br />";
+        }
+    }
+
+	public function closeDB()
+	{
+		/* close connection */
+		$this->mysqli->close();
+
     }
     
     public function __getJSON($file, $outputVar) {

@@ -1,4 +1,4 @@
-<html>
+<!DOCTYPE html>
 
 <?php $this->partial('header'); ?>
 
