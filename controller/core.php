@@ -5,20 +5,10 @@ class Core
 
     public $config; 
     public $routes;
-    public $query;
-    public $session;
     public $session_started;
-    public $URI;
-    public $match;
-    public $path;
     public $data;
     public $page;
-    public $title;
-    public $meta;
-    public $template;
-    public $view;
     public $mysqli;
-    public $env;
 
     public function getEnv() {
 
@@ -41,6 +31,7 @@ class Core
             'cookie_secure' => true
             ]);   
         
+        $this->session_started = "TRUE";
         $this->startDB();
     }
 
@@ -53,7 +44,7 @@ class Core
 
         $this->routes->URI = new StdClass;
         $this->data = new StdClass;
-        $this->data->page = new StdClass;
+        $this->page = new StdClass;
         
         /* Parse the URI */
         $this->routes->URI = (object) parse_url($_SERVER['REQUEST_URI']);
@@ -68,12 +59,12 @@ class Core
             {
                 /* Direct route match URI === route path */
                 $this->routes->URI->match = 'true';
-                $this->data->page->title = $this->routes->{$this->routes->URI->path}['title'];
-                $this->data->page->catalog = $this->routes->URI->path;
+                $this->page->title = $this->routes->{$this->routes->URI->path}['title'];
+                $this->page->catalog = $this->routes->URI->path;
                 $this->routes->URI->template = $this->routes->{$this->routes->URI->path}['template'];
                 $this->routes->URI->page = $this->routes->{$this->routes->URI->path}['page'];
                 
-            } else if (preg_match("/[\/]*[^\/]+[\/]([^\/]+)/", $this->routes->URI->path) == true) {
+            } else if (preg_match_all("/^\/[^\/]+\/[^\/]+\/$/m", $this->routes->URI->path . '/') == true) {
 
                 /* splitting the URI path by forward slash */
                 $URIx = explode('/', $this->routes->URI->path);
@@ -82,19 +73,19 @@ class Core
                 $this->routes->URI->path = "[$1]/[$2]";
                 $this->routes->URI->template = $this->routes->{'[$1]/[$2]'}['template'];
                 $this->routes->URI->page = $this->routes->{'[$1]/[$2]'}['page'];
-
+            
                 /* Adding data to the page index of the data object thatis accessible in the templates and pages */
-                $this->data->page->title = ucwords(str_ireplace("-", " ", $URIx[2]));
-                $this->data->page->catalog = '/' . $URIx[1];
-                $this->data->page->photo = $URIx[2];
+                $this->page->title = ucwords(str_ireplace("-", " ", $URIx[2]));
+                $this->page->catalog = '/' . $URIx[1];
+                $this->page->photo = $URIx[2];
                  
             } else {
 
                 /* Error 404, page URI not found. Simply rewrite the URI as /404 */
-                $this->routes->URI->path = "404";
-                $this->routes->URI->template = "page";
-                $this->routes->URI->page = "404";
-                $this->routes->URI->title = "ERROR 404";
+                $this->routes->URI->path = "/404";
+                // $this->routes->URI->template = "page";
+                // $this->routes->URI->page = "404";
+                // $this->routes->URI->title = "ERROR 404";
             }
 
             /* Parse query string */
@@ -106,7 +97,7 @@ class Core
             }
 
         /* Assign other vital vars needed to load teplate and page templates */
-        if(isSet( $this->routes->{$this->routes->URI->path}['header'] )) { $this->data->page->header = $this->routes->{$this->routes->URI->path}['header']; }
+        if(isSet( $this->routes->{$this->routes->URI->path}['header'] )) { $this->page->header = $this->routes->{$this->routes->URI->path}['header']; }
         if(isSet( $this->routes->{$this->routes->URI->path}['controller'] )) { $this->routes->URI->componentFile = $this->routes->{$this->routes->URI->path}['controller']; }
         $this->routes->URI->template = $_SERVER["DOCUMENT_ROOT"] . "/view/template/" . $this->config->prefix['template'] . $this->routes->{$this->routes->URI->path}['template'] . ".php";
         $this->routes->URI->view = $_SERVER["DOCUMENT_ROOT"] . "/view/" . $this->config->prefix['page'] . $this->routes->{$this->routes->URI->path}['page'] . ".php";
@@ -115,7 +106,7 @@ class Core
     public function render() {
          
         /* Assign variables to be used in page content */
-        $this->content = $this->data->page;
+        // $this->content = $this->page;
 
         /* start buffering the page */
         ob_start();
@@ -124,7 +115,7 @@ class Core
         if(file_exists($this->routes->URI->template)) {
             include($this->routes->URI->template);
         } else { 
-            echo "<p>Template File Not Found, \Studio\Gallery\Core::render(" . __LINE__ . ", " . $this->routes->URI->template . ")</p>";
+            echo "<p>Template File Not Found, \Studio\Gallery\Core::render(" . __LINE__ . "),<br />" . $this->routes->URI->template . "</p>";
         }
 
         /* Flush the output buffer */
@@ -163,7 +154,7 @@ class Core
     public function printp_r($value) {
 
         /* Makes a print_r dump a little easier on the brain */
-        echo "<pre>"; print_r($value); echo "</pre>";
+        echo "<pre style='text-align: left'>"; print_r($value); echo "</pre>";
     }
 
     public function debugInfo() {
@@ -171,9 +162,8 @@ class Core
         /* Outputs some objects and arrays for debugging */
         if($this->config_env->env[$this->env]['debug'] == "true" || $this->routes->URI->query == "debug=true") {
         echo "<div style='padding: 40px; background-color: rgba(255, 249, 222, 1);'><p>DEBUG</p>";
-        echo "<hr /><p>Object(data)", $this->printp_r($this->data), "</p>";
-        echo "<p>Object(routes->URI)", $this->printp_r($this->routes->URI), "</p>";
-        echo "<p>Object(config)", $this->printp_r($this->config), "</p>";
+        echo "<hr />";
+        $this->printp_r($this);
         echo "</div>";
         }
     }
@@ -200,7 +190,7 @@ class Core
 		    printf("Connect failed: %s\n", $this->mysqli->connect_error);
             return false;
         } else {
-            print $function . ".mysqli.success(" . $this->config_env->env[$this->env]['dbname'] . "/" . $this->env . ")<br />";
+            // print $function . ".mysqli.success(" . $this->config_env->env[$this->env]['dbname'] . "/" . $this->env . ")<br />";
             return true;
         }
     }
@@ -212,12 +202,12 @@ class Core
 
     }
     
-    public function __getJSON($file, $outputVar) {
+    public function __getJSON($file, $output_var) {
 
         /* Loads JSON filer and then assigns object to passed var */
         $dataJSON = file_get_contents($_SERVER["DOCUMENT_ROOT"] . "/"  . $file);
         $data = json_decode($dataJSON, true);
-        $this->$outputVar = (object) $data;
+        $this->$output_var = (object) $data;
     }
 
     public function loadc($model) {

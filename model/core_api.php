@@ -2,9 +2,6 @@
 
 class Core_Api extends Core_Data
 {
-    public $output_var;
-    public $data;
-
     public function getCatalog_Category_Index($category, $output_var) {
         
         /* Executes SQL and then assigns object to passed var */
@@ -70,23 +67,28 @@ class Core_Api extends Core_Data
         /* Executes SQL and then assigns object to passed var */
         if( $this->checkDBConnection(__FUNCTION__) == true) {
 
-            $sql = "SELECT * from catalog_photo WHERE file_name='" . $file_name . "'";
+            // $sql = "SELECT * from catalog_photo WHERE file_name='" . $file_name . "'";
+            $sql = "SELECT P.*, C.title AS category_title, C.path AS catalog from catalog_photo AS P INNER JOIN catalog_category AS C ON C.catalog_category_id=(SELECT catalog_category_id FROM catalog_photo WHERE file_name='" . $file_name . "') WHERE P.file_name='" . $file_name . "'";
+
             $result = $this->mysqli->query($sql);
 
             if ($result->num_rows > 0) {
             
                 while($row = $result->fetch_assoc())
 		        {
-		            $data[] = $row;
+		            $data = $row;
 		        }
                 
             } else {
                 
+                /* This should go to a custom photo not found page */
+                header('location: /404');
                 $data[] = "No Records Found";
             }	
             
         }
 
+        // $this->printp_r($data);
         $this->$output_var = (object) $data;
     }
 
