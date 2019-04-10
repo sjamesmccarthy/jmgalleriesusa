@@ -21,7 +21,8 @@ class Core
     public $env;
 
     public function getEnv() {
-        // check for dev
+
+        /* Check for enviroment in URI based on domain extension */
 		$uri = explode('.', $_SERVER['SERVER_NAME']);
         if($uri[1] == 'local') { $this->env = 'local'; } else { $this->env = "prod"; }
         
@@ -69,7 +70,7 @@ class Core
                 $this->routes->URI->match = 'true';
                 $this->data->page->title = $this->routes->{$this->routes->URI->path}['title'];
                 $this->data->page->catalog = $this->routes->URI->path;
-                $this->routes->URI->layout = $this->routes->{$this->routes->URI->path}['layout'];
+                $this->routes->URI->template = $this->routes->{$this->routes->URI->path}['template'];
                 $this->routes->URI->page = $this->routes->{$this->routes->URI->path}['page'];
                 
             } else if (preg_match("/[\/]*[^\/]+[\/]([^\/]+)/", $this->routes->URI->path) == true) {
@@ -79,7 +80,7 @@ class Core
 
                 /* Mutating the routes URI so the regEx can be found in the routes JSON object */
                 $this->routes->URI->path = "[$1]/[$2]";
-                $this->routes->URI->layout = $this->routes->{'[$1]/[$2]'}['layout'];
+                $this->routes->URI->template = $this->routes->{'[$1]/[$2]'}['template'];
                 $this->routes->URI->page = $this->routes->{'[$1]/[$2]'}['page'];
 
                 /* Adding data to the page index of the data object thatis accessible in the templates and pages */
@@ -91,7 +92,7 @@ class Core
 
                 /* Error 404, page URI not found. Simply rewrite the URI as /404 */
                 $this->routes->URI->path = "404";
-                $this->routes->URI->layout = "page";
+                $this->routes->URI->template = "page";
                 $this->routes->URI->page = "404";
                 $this->routes->URI->title = "ERROR 404";
             }
@@ -104,10 +105,10 @@ class Core
                 $this->routes->URI->query = 'false';
             }
 
-        /* Assign other vital vars needed to load layout and page templates */
+        /* Assign other vital vars needed to load teplate and page templates */
         if(isSet( $this->routes->{$this->routes->URI->path}['header'] )) { $this->data->page->header = $this->routes->{$this->routes->URI->path}['header']; }
         if(isSet( $this->routes->{$this->routes->URI->path}['controller'] )) { $this->routes->URI->componentFile = $this->routes->{$this->routes->URI->path}['controller']; }
-        $this->routes->URI->template = $_SERVER["DOCUMENT_ROOT"] . "/view/template/" . $this->config->prefix['layout'] . $this->routes->{$this->routes->URI->path}['layout'] . ".php";
+        $this->routes->URI->template = $_SERVER["DOCUMENT_ROOT"] . "/view/template/" . $this->config->prefix['template'] . $this->routes->{$this->routes->URI->path}['template'] . ".php";
         $this->routes->URI->view = $_SERVER["DOCUMENT_ROOT"] . "/view/" . $this->config->prefix['page'] . $this->routes->{$this->routes->URI->path}['page'] . ".php";
     }
 
@@ -119,17 +120,17 @@ class Core
         /* start buffering the page */
         ob_start();
 
-        /* include the layout page specifed in the routes config if the layout file is not valid then push to Route 404 */
+        /* include the template page specifed in the routes config if the template file is not valid then push to Route 404 */
         if(file_exists($this->routes->URI->template)) {
             include($this->routes->URI->template);
         } else { 
-            echo "<p>Layout File Not Found, \Studio\Gallery\Core::render(" . __LINE__ . ", " . $this->routes->URI->template . ")</p>";
+            echo "<p>Template File Not Found, \Studio\Gallery\Core::render(" . __LINE__ . ", " . $this->routes->URI->template . ")</p>";
         }
 
         /* Flush the output buffer */
         ob_flush();
 
-        /* Get the layout and page data from the buffer */
+        /* Get the template and page data from the buffer */
         $buffer= ob_get_contents();
 
         /* Output the buffer contents to screen */
@@ -141,7 +142,7 @@ class Core
 
     public function view($view=null) {
 
-        /* include the layout page specifed in the routes config */
+        /* include the template page specifed in the routes config */
         if(file_exists($this->routes->URI->view)) {
             include($this->routes->URI->view);
         } else { 
@@ -151,7 +152,7 @@ class Core
 
     public function partial($value) {
 
-        /* Validate file and then include in layout */
+        /* Validate file and then include in template */
         if(file_exists($_SERVER["DOCUMENT_ROOT"] . "/view/partial/" . $this->config->prefix['partial'] . $value . '.php')) {
            include($_SERVER["DOCUMENT_ROOT"] . "/view/partial/" . $this->config->prefix['partial'] . $value . '.php');
         } else {
@@ -168,7 +169,7 @@ class Core
     public function debugInfo() {
 
         /* Outputs some objects and arrays for debugging */
-        if($this->config->package_debug == "true" || $this->routes->URI->query == "debug=true") {
+        if($this->config_env->env[$this->env]['debug'] == "true" || $this->routes->URI->query == "debug=true") {
         echo "<div style='padding: 40px; background-color: rgba(255, 249, 222, 1);'><p>DEBUG</p>";
         echo "<hr /><p>Object(data)", $this->printp_r($this->data), "</p>";
         echo "<p>Object(routes->URI)", $this->printp_r($this->routes->URI), "</p>";
@@ -180,22 +181,27 @@ class Core
     public function startDB() 
 	{
 
-		$servername = "localhost";
+        /* Database Authentication */
+        $hostname = $this->config_env->env[$this->env]['host'];
         $username = $this->config_env->env[$this->env]['user'];
 		$password = $this->config_env->env[$this->env]['password'];
 		$dbname = $this->config_env->env[$this->env]['dbname'];
 		
 		// Create connection
-        $this->mysqli  = new mysqli ($servername, $username, $password, $dbname);
+        $this->mysqli  = new mysqli ($hostrname, $username, $password, $dbname);
+        // $result = $this->mysqli->query("SELECT * FROM catalog_photo");
+        // $this->printp_r($result);
 
 	}
     
     public function checkDBConnection($function='Null') {
+
 		if ($this->mysqli->connect_errno) {
 		    printf("Connect failed: %s\n", $this->mysqli->connect_error);
-		    exit();
+            return false;
         } else {
-            print $function . ".mysqli.success(" . $this->config_env->env[$this->env]['dbname'] . ")<br />";
+            print $function . ".mysqli.success(" . $this->config_env->env[$this->env]['dbname'] . "/" . $this->env . ")<br />";
+            return true;
         }
     }
 

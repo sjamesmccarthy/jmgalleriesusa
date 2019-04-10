@@ -4,8 +4,6 @@
     "package_update_uri": "//kitchup.app/updates.php",
     "package_git" : "//github.com/sjamesmccarthy/kitchup",
     "package_license" : "MIT",
-    "package_timezone": "America/Los_Angeles",
-    "package_debug": "true",
 
     "site_name": "jmGalleries",
     "copyright" : "Copyright 2013-2019",
@@ -13,7 +11,7 @@
     "phone" : "951-708-1831",
 
     "prefix" : {
-        "layout" : "tpl_",
+        "template" : "tpl_",
         "page" : "view_",
         "negatives" : "_catidx",
         "partial" : "partial_"

@@ -1,11 +1,11 @@
 { 
     "/404": {
-            "layout": "page",
+            "template": "page",
             "page": "404",
             "title": "Lost, Page Not Found23"
         },
     "/": {
-        "layout" : "gallery",
+        "template" : "catalog",
         "page" : "home",
         "title" : "Welcome To jmGalleries",
         "controller": "catalog",
@@ -16,77 +16,77 @@
         }
     },
     "/about": {
-        "layout" : "page",
+        "template" : "page",
         "page" : "about",
         "title" : "About"
     },
     "/news": {
-       "layout" : "page",
+       "template" : "page",
        "page" : "news",
        "title" : "News"
     },
     "[$1]/[$2]": {
-        "layout": "page",
+        "template": "page",
         "page": "detail",
         "title": "[$2]"
     },
     "/oceans-lakes-waterfalls": {
-        "layout": "gallery",
+        "template": "catalog",
         "page": "catalog",
         "title": "Oceans, Lakes and Waterfalls"
     },
     "/mountains-deserts-trees": {
-        "layout": "gallery",
+        "template": "catalog",
         "page": "catalog",
         "title": "Mountains, Deserts and Trees"
     },
     "/abstract-architecture-people": {
-        "layout": "gallery",
+        "template": "catalog",
         "page": "catalog",
         "title": "Abstract, Architecture and People"
     },
     "/flowers-fields-clouds": {
-        "layout": "gallery",
+        "template": "catalog",
         "page": "catalog",
         "title": "Flowers, Fields and Clouds"
     },
     "/new-releases": {
-        "layout": "gallery",
+        "template": "catalog",
         "page": "new-releases",
         "title": "New Releases"
     },
     "/exhibits": {
-        "layout": "page",
+        "template": "page",
         "page": "exhibits",
         "title": "Exhibits in Nevada & California"
     },
     "/exhibits-reno": {
-        "layout": "page",
+        "template": "page",
         "page": "exhibits-reno",
         "title": "Exhibits In Reno, Nevada"
     },
     "/exhibits-vegas": {
-        "layout": "page",
+        "template": "page",
         "page": "exhibit-vegas",
         "title": "Exhibits In Las Vegas, Nevada"
     },
     "/exhibits-temecula": {
-        "layout": "page",
+        "template": "page",
         "page": "exhibit-temecula",
         "title": "Exhibits In Temecula, California"
     },
     "/contact": {
-        "layout": "page",
+        "template": "page",
         "page": "contact",
         "title": "Contact"
     },
     "/legal": {
-        "layout": "page",
+        "template": "page",
         "page": "legal",
         "title": "Privacy Policy, Copyright, Terms of Sale"
     },
     "/styles": {
-        "layout": "page",
+        "template": "page",
         "page": "styles",
         "title": "Styles & Editions"
     }
