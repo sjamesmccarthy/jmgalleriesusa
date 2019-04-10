@@ -1,7 +1,7 @@
 <p style="text-align: center; font-size: 2.0em;"><?= $this->content->title ?></p>
 
 <?php 
-    $this->getPhotoDetail($this->content->catalog, $this->content->photo);
+    $this->loadPhotoDetails($this->content->catalog, $this->content->photo);
 ?>
 
 <div style="display: block; margin: auto; text-align: center;">

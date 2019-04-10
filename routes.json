@@ -52,7 +52,7 @@
     },
     "/new-releases": {
         "template": "catalog",
-        "page": "new-releases",
+        "page": "catalog",
         "title": "New Releases"
     },
     "/exhibits": {

@@ -46,7 +46,7 @@ class Catalog extends Core_Api
 
     }
 
-    public function getPhotoDetail($catalog, $photo) {
+    public function loadPhotoDetails($catalog, $photo) {
 
         /* Load JSON data of the catalog data source file  */
         // $this->getJSON('/catalog' . $catalog . '/' . $this->config->prefix['negatives'] . '.json','cdata');
@@ -68,5 +68,26 @@ class Catalog extends Core_Api
         }
     }
 
+    public function loadCategoryNames() {
+        
+        /* Load JSON data of the catalog data source file  */
+        // $this->getJSON('/catalog' . $catalog . '/' . $this->config->prefix['negatives'] . '.json','cdata');
+
+        /* Fetch records from database and return data array */
+        $this->getCatalog_CategoryList('data');
+
+        /* Convert the JSON object to an array */
+        $catalog_category_list = (array) $this->data;
+
+         /* Search JSON data of the catalog data source file for the specific photo */
+        for ($i = 0; $i < count($photo_list); $i++) {
+            if($catalog_category_list[$i]['file_name'] == $catalogs) {
+                /* Get meta data of this photo */
+                $this->data->page->meta = $catalog_category_list[$i];
+            } else {
+                /* ERROR */
+            }
+        }
+    }
 }
 ?>
