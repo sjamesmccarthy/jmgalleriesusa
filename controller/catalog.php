@@ -21,24 +21,8 @@ class Catalog extends Core_Api
 
     public function loadNegativeFile($catalog) {
 
-        /* Load the json object containing all the meta data for photos in the specific catalog */
-        // $this->getJSON('/catalog' . $catalog . '/' . $this->config->prefix['negatives'] . '.json','negatives');
-
         /* Fetch records from database and return data array */
-        $this->getCatalog_Category_Index($catalog,'negatives');
-
-        /* Loop through "collection_photo". If $photo = $file_name" */
-        $photo_list = (array) $this->negatives;
-
-        // $this->printp_r($photo_list);
-
-        for ($i = 0; $i < count($photo_list); $i++) {
-            /* Get meta data of this photo */
-            $this->page->meta[$i]['file_name'] = $photo_list[$i]['file_name'];
-            $this->page->meta[$i]['title'] = $photo_list[$i]['title'];
-            $this->page->meta[$i]['loc_place'] = $photo_list[$i]['loc_place'];
-            $this->page->meta[$i]['loc_state'] = $photo_list[$i]['loc_state'];
-        }
+        $this->getCatalog_Category_Index($catalog,'thumbnails');
 
     }
 

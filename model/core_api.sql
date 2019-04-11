@@ -1,19 +1,22 @@
 /* SQL for Photo Iteractions */
 
--- FIND NUMBER OF VIEWS BY PHOTO & CATEGORY
+-- FIND NUMBER OF PHOTO VIEWS BY CATEGORY
 SELECT V.count AS VIEWS, PH.title from catalog_photo_views as V
 RIGHT JOIN catalog_photo AS PH ON V.catalog_photo_id = PH.catalog_photo_id
 WHERE PH.catalog_category_id = 1
 
+-- FIND NUMBER OF PHOTO VIEWS
+SELECT V.count AS VIEWS, PH.title
+from catalog_photo_views as V
+    RIGHT JOIN catalog_photo AS PH ON V.catalog_photo_id = PH.catalog_photo_id
 
-SELECT DISTINCT P.file_name, P.title, P.catalog_category_id
-FROM catalog_photo as P
-    RIGHT JOIN catalog_category AS C ON P.catalog_category_id = (SELECT catalog_category_id
-    FROM catalog_category
-    WHERE path='oceans-lakes-waterfalls')
--- WHERE P.catalog_category_id = (SELECT catalog_category_id FROM catalog_category WHERE path='oceans-lakes-waterfalls')
+-- FIND VIEWS FOR PHOTOS INCLUDING CATEGORY names
+SELECT V.count AS VIEWS, PH.title, PH.file_name, CATE.title
+from catalog_photo_views as V
+    RIGHT JOIN catalog_photo AS PH ON V.catalog_photo_id = PH.catalog_photo_id
+    RIGHT JOIN catalog_category AS CATE ON PH.catalog_category_id = CATE.catalog_category_id
 
-/* SELECT PHOTO DETAIL DATA AND TITLE OF CATALOG CATEGORY */
+-- SELECT PHOTO DETAIL DATA AND TITLE OF CATALOG CATEGORY
 SELECT P.*, C.title
 from catalog_photo AS P
     INNER JOIN catalog_category AS C ON C.catalog_category_id = (SELECT catalog_category_id

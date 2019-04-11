@@ -10,6 +10,7 @@ class Core
     public $page;
     public $mysqli;
 
+
     public function getEnv() {
 
         /* Check for enviroment in URI based on domain extension */
@@ -25,14 +26,13 @@ class Core
 
         /* Starting the session and setting the lifetime to 1 day */
         session_start([
-            'cookie_lifetime' => 86400,
-            'cookie_domain' => 'jmgalleries.com',
-            'cookie_httponly' => true,
-            'cookie_secure' => true
+            'cookie_lifetime' => 86400
             ]);   
-        
-        $this->session_started = "TRUE";
+
+        $this->session_started = array(session_id(), $_SESSION);
         $this->startDB();
+        // session_unset();
+        // session_destroy();
     }
 
     public function getRoute() {

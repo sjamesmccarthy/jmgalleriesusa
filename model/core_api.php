@@ -2,21 +2,17 @@
 
 class Core_Api extends Core_Data
 {
+
     public function getCatalog_Category_Index($category, $output_var) {
         
         /* Executes SQL and then assigns object to passed var */
         if( $this->checkDBConnection(__FUNCTION__) == true) {
 
             $category = ltrim($category, '/');
-            
-            // $sql = "SELECT P.* FROM catalog_photo as P
-            // WHERE P.catalog_category_id = (SELECT catalog_category_id FROM catalog_category WHERE path='" . $category . "')";
 
             $sql = "SELECT DISTINCT P.file_name, P.title, P.catalog_category_id FROM catalog_photo as P
             RIGHT JOIN catalog_category AS C ON P.catalog_category_id = (SELECT catalog_category_id FROM catalog_category WHERE path='" . $category . "')";
 
-
-            // print $sql;
             $result = $this->mysqli->query($sql);
 
             if ($result->num_rows > 0) {
@@ -33,8 +29,7 @@ class Core_Api extends Core_Data
             
         }
 
-        // $this->printp_r($data);
-        $this->$output_var = (object) $data;
+        $this->page->$output_var = (array) $data;
     }
 
     public function getCatalog_Category_FilmsStrip($category_id, $limit, $output_var) {
