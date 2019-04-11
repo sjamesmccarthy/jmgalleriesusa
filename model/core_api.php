@@ -3,7 +3,7 @@
 class Core_Api extends Core_Data
 {
 
-    public function getCatalog_Category_Index($category, $output_var) {
+    public function api_Catalog_Category_Index($category, $output_var) {
         
         /* Executes SQL and then assigns object to passed var */
         if( $this->checkDBConnection(__FUNCTION__) == true) {
@@ -29,10 +29,10 @@ class Core_Api extends Core_Data
             
         }
 
-        $this->page->$output_var = (array) $data;
+        return($data);
     }
 
-    public function getCatalog_Category_FilmsStrip($category_id, $limit, $output_var) {
+    public function api_Catalog_Category_FilmsStrip($category_id, $limit, $output_var) {
         
         /* Executes SQL and then assigns object to passed var */
         if( $this->checkDBConnection(__FUNCTION__) == true) {
@@ -54,10 +54,10 @@ class Core_Api extends Core_Data
             
         }
 
-        $this->$output_var = (object) $data;
+        return($data);
     }
 
-    public function getCatalog_Photo($file_name, $output_var) {
+    public function api_Catalog_Photo($file_name, $output_var) {
         
         /* Executes SQL and then assigns object to passed var */
         if( $this->checkDBConnection(__FUNCTION__) == true) {
@@ -83,11 +83,10 @@ class Core_Api extends Core_Data
             
         }
 
-        // $this->printp_r($data);
-        $this->$output_var = (object) $data;
+        return($data);
     }
 
-    public function getCatalog_CategoryList($output_var) {
+    public function api_Catalog_CategoryList($output_var) {
         
         /* Executes SQL and then assigns object to passed var */
         if( $this->checkDBConnection(__FUNCTION__) == true) {
@@ -109,7 +108,7 @@ class Core_Api extends Core_Data
             
         }
 
-        $this->$output_var = (object) $data;
+        return($data);
     }
 
 }
