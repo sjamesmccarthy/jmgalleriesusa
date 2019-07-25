@@ -14,8 +14,9 @@ class Core
     public function getEnv() {
 
         /* Check for enviroment in URI based on domain extension */
-		$uri = explode('.', $_SERVER['SERVER_NAME']);
-        if($uri[1] == 'local') { $this->env = 'local'; } else { $this->env = "prod"; }
+        $uri = explode('.', $_SERVER['SERVER_NAME']);
+
+        if($uri[1] == 'local' || is_null($uri[1])) { $this->env = 'local'; } else { $this->env = "prod"; }
         
         /* Error reporting levels being outputted to screen and logged */
         error_reporting($this->config_env->env[$this->env]['error_reporting']);

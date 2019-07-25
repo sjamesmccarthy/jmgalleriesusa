@@ -15,5 +15,9 @@
         "page" : "view_",
         "negatives" : "_catidx",
         "partial" : "partial_"
+    },
+
+    "components" : {
+        "medium_blog" : "true"
     }
 }

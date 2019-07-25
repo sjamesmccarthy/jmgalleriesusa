@@ -86,7 +86,7 @@ class Core_Api extends Core_Data
         return($data);
     }
 
-    public function api_Catalog_CategoryList($output_var) {
+    public function api_Catalog_Category_List($output_var) {
         
         /* Executes SQL and then assigns object to passed var */
         if( $this->checkDBConnection(__FUNCTION__) == true) {

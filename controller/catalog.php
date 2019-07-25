@@ -23,7 +23,7 @@ class Catalog extends Core_Api
 
         /* Fetch records from database and return data array */
        $data =  $this->api_Catalog_Category_Index($catalog,'thumbnails');
-       $this->page->thumbnails = (array) $data;
+       $this->page->thumbnails = (object) $data;
 
     }
 
@@ -38,7 +38,7 @@ class Catalog extends Core_Api
     public function loadCategoryNames() {
         
         /* Fetch records from database and return data array */
-        $data = $this->api_Catalog_CategoryList('data');
+        $data = $this->api_Catalog_Category_List('data');
         $this->data = (object) $data;
 
     }
