@@ -1,7 +1,7 @@
-    <?php 
-        $this->loadPhotoDetails($this->page->catalog, $this->page->photo);
-        $file_name = "/catalog/__image/" . $this->page->file_name . ".jpg";
-    ?>
+<?php 
+    $this->loadPhotoDetails($this->page->catalog, $this->page->photo);
+    $file_name = "/catalog/__image/" . $this->page->file_name . ".jpg";
+?>
 
 <div style="display: block; margin: auto; text-align: center;">
     
