@@ -107,9 +107,6 @@ class Core
     }
 
     public function render() {
-         
-        /* Assign variables to be used in page content */
-        // $this->content = $this->page;
 
         /* start buffering the page */
         ob_start();
@@ -145,6 +142,11 @@ class Core
                 else { print "<p>Component File Not Found" . $this->routes->URI->component . "</p>"; }
             } 
             
+            /* Assign variables to be used in page content */
+            foreach($this->page as $k => $v) {
+                $this->$k = $v;
+            }
+
             /* This file needs to load after the .inc file so inherits any data attributes */
             include($this->routes->URI->view);
         } else { 
