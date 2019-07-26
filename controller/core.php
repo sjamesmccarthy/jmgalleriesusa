@@ -84,6 +84,7 @@ class Core
 
                 /* Error 404, page URI not found. Simply rewrite the URI as /404 */
                 $this->routes->URI->path = "/404";
+                $this->routes->URI->path = "/404";
                 // $this->routes->URI->template = "page";
                 // $this->routes->URI->page = "404";
                 // $this->routes->URI->title = "ERROR 404";
@@ -99,7 +100,8 @@ class Core
 
         /* Assign other vital vars needed to load teplate and page templates */
         if(isSet( $this->routes->{$this->routes->URI->path}['header'] )) { $this->page->header = $this->routes->{$this->routes->URI->path}['header']; }
-        if(isSet( $this->routes->{$this->routes->URI->path}['controller'] )) { $this->routes->URI->componentFile = $this->routes->{$this->routes->URI->path}['controller']; }
+        if(isSet( $this->routes->{$this->routes->URI->path}['controller'] )) { $this->routes->URI->controllerFile = $this->routes->{$this->routes->URI->path}['controller']; }
+        if( $this->routes->{$this->routes->URI->path}['component'] == "true") { $this->routes->URI->component= $_SERVER["DOCUMENT_ROOT"] . "/view/" . $this->config->prefix['page'] . $this->routes->{$this->routes->URI->path}['page'] . ".inc.php"; }
         $this->routes->URI->template = $_SERVER["DOCUMENT_ROOT"] . "/view/template/" . $this->config->prefix['template'] . $this->routes->{$this->routes->URI->path}['template'] . ".php";
         $this->routes->URI->view = $_SERVER["DOCUMENT_ROOT"] . "/view/" . $this->config->prefix['page'] . $this->routes->{$this->routes->URI->path}['page'] . ".php";
     }
@@ -136,6 +138,14 @@ class Core
 
         /* include the template page specifed in the routes config */
         if(file_exists($this->routes->URI->view)) {
+            
+            /* Check to see if a component file for this view is enabled and then if exists */
+            if($this->routes->{$this->routes->URI->path}['component'] == "true") {
+                if(file_exists($this->routes->URI->component)) { include($this->routes->URI->component); }
+                else { print "<p>Component File Not Found" . $this->routes->URI->component . "</p>"; }
+            } 
+            
+            /* This file needs to load after the .inc file so inherits any data attributes */
             include($this->routes->URI->view);
         } else { 
             echo "<p>File Not Found, \Studio\Gallery\Core::getPageContent(" . __LINE__ . "," . $this->routes->URI->view . ")</p>";

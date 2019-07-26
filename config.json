@@ -1,11 +1,11 @@
 { 
-    "package_name": "Kitchup",
+    "package_name": "polarized",
     "package_version" : "1.0.0",
-    "package_update_uri": "//kitchup.app/updates.php",
-    "package_git" : "//github.com/sjamesmccarthy/kitchup",
+    "package_update_uri": "//polarized.app/updates.php",
+    "package_git" : "//github.com/sjamesmccarthy/polarized",
     "package_license" : "MIT",
 
-    "site_name": "jmGalleries",
+    "site_name": "jM Galleries",
     "copyright" : "Copyright 2013-2019",
     "email" : "james@jmgalleries.com",
     "phone" : "951-708-1831",
