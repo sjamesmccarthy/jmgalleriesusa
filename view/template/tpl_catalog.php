@@ -5,7 +5,9 @@
 <body>
     
         <div style="background-color: #CCC">
-                <?php $this->view(); ?>
+                <?php 
+                        $this->view(); 
+                ?>
         </div>
 
     <?php $this->partial('footer'); ?>

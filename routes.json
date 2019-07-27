@@ -17,18 +17,6 @@
             "font": "fontawesome.otf"
         }
     },
-    "/about": {
-        "template" : "page",
-        "page" : "about",
-        "component": "true",
-        "title" : "About"
-    },
-    "/news": {
-       "template" : "page",
-       "page" : "news",
-    "component": "true",
-       "title" : "News"
-    },
     "[$1]/[$2]": {
         "template": "page",
         "page": "detail",
@@ -65,29 +53,23 @@
         "component": "true",
         "title": "New Releases"
     },
+    "/about": {
+        "template": "page",
+        "page": "about",
+        "component": "false",
+        "title": "About"
+    },
+    "/news": {
+        "template": "page",
+        "page": "news",
+        "component": "true",
+        "title": "News"
+    },
     "/exhibits": {
         "template": "page",
         "page": "exhibits",
         "component": "true",
         "title": "Exhibits in Nevada & California"
-    },
-    "/exhibits-reno": {
-        "template": "page",
-        "page": "exhibits-reno",
-        "component": "true",
-        "title": "Exhibits In Reno, Nevada"
-    },
-    "/exhibits-vegas": {
-        "template": "page",
-        "page": "exhibit-vegas",
-        "component": "true",
-        "title": "Exhibits In Las Vegas, Nevada"
-    },
-    "/exhibits-temecula": {
-        "template": "page",
-        "page": "exhibit-temecula",
-        "component": "true",
-        "title": "Exhibits In Temecula, California"
     },
     "/contact": {
         "template": "page",
@@ -106,5 +88,11 @@
         "page": "styles",
         "component": "true",
         "title": "Styles & Editions"
+    },
+    "/shop": {
+        "template": "redirect",
+        "page": "http://shopify.com",
+        "component": "false",
+        "title": "Shop tinyViews, Wall Mounted Prints and Books"
     }
 }

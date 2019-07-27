@@ -16,7 +16,8 @@ class Core
         /* Check for enviroment in URI based on domain extension */
         $uri = explode('.', $_SERVER['SERVER_NAME']);
 
-        if($uri[1] == 'local' || is_null($uri[1])) { $this->env = 'local'; } else { $this->env = "prod"; }
+
+        if(!isSet($uri[1]) || $uri[1] == 'local') { $this->env = 'local'; } else { $this->env = "prod"; }
         
         /* Error reporting levels being outputted to screen and logged */
         error_reporting($this->config_env->env[$this->env]['error_reporting']);
@@ -32,20 +33,9 @@ class Core
 
         $this->session_started = array(session_id(), $_SESSION);
         $this->startDB();
-        // session_unset();
-        // session_destroy();
     }
 
     public function getRoute() {
-        
-        /* **************** LOCATION of ERROR
-        FIX for
-        Warning: Creating default object from empty value in /Users/james/source/jmgalleriesusa/class.core.php on line 48
-         */
-
-        $this->routes->URI = new StdClass;
-        $this->data = new StdClass;
-        $this->page = new StdClass;
         
         /* Parse the URI */
         $this->routes->URI = (object) parse_url($_SERVER['REQUEST_URI']);
@@ -64,6 +54,11 @@ class Core
                 $this->page->catalog = $this->routes->URI->path;
                 $this->routes->URI->template = $this->routes->{$this->routes->URI->path}['template'];
                 $this->routes->URI->page = $this->routes->{$this->routes->URI->path}['page'];
+
+                /* Check if Template type is redirect */
+                if( $this->routes->{$this->routes->URI->path}['template'] == "redirect" ) {
+                    header('location:' . $this->routes->{$this->routes->URI->path}['page']);
+                }
                 
             } else if (preg_match_all("/^\/[^\/]+\/[^\/]+\/$/m", $this->routes->URI->path . '/') == true) {
 
@@ -85,9 +80,6 @@ class Core
                 /* Error 404, page URI not found. Simply rewrite the URI as /404 */
                 $this->routes->URI->path = "/404";
                 $this->routes->URI->path = "/404";
-                // $this->routes->URI->template = "page";
-                // $this->routes->URI->page = "404";
-                // $this->routes->URI->title = "ERROR 404";
             }
 
             /* Parse query string */
@@ -107,6 +99,11 @@ class Core
     }
 
     public function render() {
+
+        /* Assign variables to be used in page content */
+        foreach($this->page as $k => $v) {
+            $this->$k = $v;
+        }
 
         /* start buffering the page */
         ob_start();
