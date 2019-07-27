@@ -169,12 +169,18 @@ class Core
 
     public function debugInfo() {
 
-        /* Outputs some objects and arrays for debugging */
-        if($this->config_env->env[$this->env]['debug'] == "true" || $this->routes->URI->query == "debug=true") {
-        echo "<div style='padding: 40px; background-color: rgba(255, 249, 222, 1);'><p>DEBUG</p>";
-        echo "<hr />";
-        $this->printp_r($this);
-        echo "</div>";
+        if( $this->routes->URI->query == "debug=false" ) {
+            /* Only used for override of default state if set to true */
+             echo "<div style='padding: 40px; background-color: rgba(255, 249, 222, 1);'><p>DEBUG --forced-false</p></div>";
+
+        } else {
+            /* Outputs some objects and arrays for debugging */
+            if($this->config_env->env[$this->env]['debug'] == "true" || $this->routes->URI->query == "debug=true") {
+            echo "<div style='padding: 40px; background-color: rgba(255, 249, 222, 1);'><p>DEBUG --config-true</p>";
+            echo "<hr />";
+            $this->printp_r($this);
+            echo "</div>";
+            }
         }
     }
     
