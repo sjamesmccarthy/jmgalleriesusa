@@ -4,9 +4,13 @@
     
     <body>
         <div class="container">
-            <?php $this->view() ?>
+        
+                <?php $this->getPartial('nav'); ?>
+                
+                        <?php $this->view() ?>
 
-            <?php $this->partial('footer'); ?>
+                <?php $this->partial('footer'); ?>
+        
         </div>
     </body>
     

@@ -1,28 +1,3 @@
-<div class="grid-12_grid-12-center">
-    
-        <div class="col-1_md-hidden">
-            <p class="center">B</p>
-        </div>
-        <div class="col-2_md-hidden">
-            <p class="center">NAV1</p>
-        </div>
-        <div class="col-2_md-4">
-            <p class="center">NAV2</p>
-        </div>
-        <div class="col-2_md-4">
-            <p class="center">LOGO</p>
-        </div>
-        <div class="col-2_md-4">
-            <p class="center">NAV3</p>
-        </div>
-        <div class="col-2_md-hidden">
-            <p class="center">NAV4</p>
-        </div>
-        <div class="col-1_md-hidden">
-            <p class="center">B</p>
-        </div>
-    </div>
-
     <div class="grid-4_sm-2 grid-4_md-3 filmstrip">
         
         <div class="col-12 gallery">

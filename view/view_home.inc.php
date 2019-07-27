@@ -1,5 +1,5 @@
 <?php
-    
+
     /* Load all category meta data */
     $this->loadCategoryNames();
 
