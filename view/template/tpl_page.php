@@ -1,9 +1,15 @@
 <!DOCTYPE html>
+    
     <?php $this->partial('header'); ?>
-
-        <div style="background-color: rgba(0,0,0,.3); padding: 100px;">
+    
+    <body>
+        <div class="container">
             <?php $this->view() ?>
-        </div>
 
-    <?php $this->partial('footer'); ?>
+            <?php $this->partial('footer'); ?>
+        </div>
+    </body>
+    
     <?php $this->partial('analytics'); ?>
+
+</html>

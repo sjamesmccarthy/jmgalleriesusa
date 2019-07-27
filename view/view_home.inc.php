@@ -1,4 +1,6 @@
 <?php
+    
+    /* Load all category meta data */
     $this->loadCategoryNames();
 
     foreach($this->data as $key=>$value) {

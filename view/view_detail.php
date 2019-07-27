@@ -1,12 +1,60 @@
-<div style="display: block; margin: auto; text-align: center;">
+<div class="grid-12_grid-12-center">
     
-    <img style="width: 100%" src="<?= $file_name ?>" alt="<?= $this->title ?>" />
+        <div class="col-1_md-hidden">
+            <p class="center">B</p>
+        </div>
+        <div class="col-2_md-hidden">
+            <p class="center">NAV1</p>
+        </div>
+        <div class="col-2_md-4">
+            <p class="center">NAV2</p>
+        </div>
+        <div class="col-2_md-4">
+            <p class="center">LOGO</p>
+        </div>
+        <div class="col-2_md-4">
+            <p class="center">NAV3</p>
+        </div>
+        <div class="col-2_md-hidden">
+            <p class="center">NAV4</p>
+        </div>
+        <div class="col-1_md-hidden">
+            <p class="center">B</p>
+        </div>
+    </div>
 
-    <p style="text-align: center; font-size: 2.0em;">
-        <?= $this->title ?></p>
-    <p style="margin-bottom: 80px"><?= $this->desc ?></p>
-    <hr />
-</div>
+
+    <div class="grid-2_sm-1">
+
+        <div class="col">
+            <img src="/view/image/demo-thumb.jpg" />
+        </div>
+        <div class="col">
+            <h1>TITLE</h1>
+            <h4>LOCATION, CITY, STATE</h4>
+            <p>Limited Edition</p>
+            <p>Available Sizes: S, M, L</p>
+
+            <h4>And So The Story Goes ...</h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
+            Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Lorem
+            ipsum dolor sit amet, consectetur adipiscing elit. Nulla vitae elit libero, a pharetra augue. Maecenas faucibus mollis
+            interdum.</p>
+
+            <button style="margin-top: 32px;">BUTTON</button>
+        </div>
+
+    </div>
+
+    <div class="grid-4_sm-2 grid-4_md-3 filmstrip">
+        <div class="col-12">
+            <p>YOU MAY ALSO LIKE THESE</p>
+        </div>
+        <div class="col"><img src="/view/image/demo-thumb.jpg" /></div>
+        <div class="col"><img src="/view/image/demo-thumb.jpg" /></div>
+        <div class="col sm-hidden"><img src="/view/image/demo-thumb.jpg" /></div>
+        <div class="col sm-hidden md-hidden"><img src="/view/image/demo-thumb.jpg" /></div>
+    </div>
 
 <p><a href="/<?= $this->catalog ?>">Back To <?= $this->catalog_title ?></a></p>
 <p><a href="/">Back To Home</a></p>

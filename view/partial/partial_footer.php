@@ -1,3 +1,5 @@
-<div>
-    <p>&copy; Copyright 2019</p>
-</div>
+    <div class="grid-1 mtop">
+        <div class="col">
+            <p>FOOTER</p>
+        </div>
+    </div>
