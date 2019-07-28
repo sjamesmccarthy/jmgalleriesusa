@@ -51,7 +51,7 @@ class Core
                 /* Direct route match URI === route path */
                 $this->routes->URI->match = 'true';
                 $this->page->title = $this->routes->{$this->routes->URI->path}['title'];
-                $this->page->catalog = $this->routes->URI->path;
+                $this->page->catalog_path = $this->routes->URI->path;
                 $this->routes->URI->template = $this->routes->{$this->routes->URI->path}['template'];
                 $this->routes->URI->page = $this->routes->{$this->routes->URI->path}['page'];
 
@@ -70,11 +70,12 @@ class Core
                 $this->routes->URI->template = $this->routes->{'[$1]/[$2]'}['template'];
                 $this->routes->URI->page = $this->routes->{'[$1]/[$2]'}['page'];
             
-                /* Adding data to the page index of the data object thatis accessible in the templates and pages */
+                /* Adding data to the page index of the data object that is accessible in the templates and pages */
                 $this->page->title = ucwords(str_ireplace("-", " ", $URIx[2]));
-                $this->page->catalog = '/' . $URIx[1];
-                $this->page->photo = $URIx[2];
-                 
+                $this->page->catalog_path = '/' . $URIx[1];
+                // $this->page->photo = $URIx[2];
+                $this->page->photo_path = $URIx[2];
+            
             } else {
 
                 /* Error 404, page URI not found. Simply rewrite the URI as /404 */
@@ -129,7 +130,7 @@ class Core
     }
 
     public function view($view=null) {
-
+        
         /* include the template page specifed in the routes config */
         if(file_exists($this->routes->URI->view)) {
             
@@ -211,11 +212,10 @@ class Core
         }
     }
 
-	public function closeDB()
-	{
+	public function closeDB() {
+
 		/* close connection */
 		$this->mysqli->close();
-
     }
     
     public function __getJSON($file, $output_var) {

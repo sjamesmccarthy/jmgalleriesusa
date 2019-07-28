@@ -1,8 +1,10 @@
 <?php 
 
-    $this->loadPhotoDetails($this->page->catalog, $this->page->photo);
-    $file_name = "/catalog/__image/" . $this->page->file_name . ".jpg";
+    $catalog_path_cleaned = ltrim($this->page->catalog_path, '/');
+    $this->catalog_title = ucwords( str_replace("-"," " ,$catalog_path_cleaned) );
 
-    // $this->catalog_clean = ucwords( str_replace("-"," " ,$this->catalog) );
+    /* Load all photo meta data */
+    $photo_meta = $this->api_Catalog_Photo($this->photo_path);
+    $this->printp_r($photo_meta);
 
 ?>

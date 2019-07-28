@@ -1,12 +1,23 @@
 <?php
 
     /* Load all category meta data */
-    $this->loadCategoryNames();
+    $catalog_names = $this->api_Catalog_Category_List();
 
-    foreach($this->data as $key=>$value) {
-        $c_list .= "<li><a href=\"" . $value['path'] . "\">";
-        $c_list .= "c_" . $value['title'];
-        $c_list .= "</a></li>";
+    foreach($catalog_names as $key=>$value) {
+
+        echo "<hr />";
+        echo "<p>" . $value['title'] . "</p>";
+        echo "<p>" . $value['desc'] . "</p>";
+
+        /* Get FilmStrip of photos by Category */
+        $catalog_photos = $this->api_Catalog_Category_Filmstrip($value['catalog_category_id'], 4);
+
+        echo "<ul>";
+        foreach($catalog_photos as $k => $v) {
+            echo "<li style='margin-left: 20px'>" . $v['title'] . ", " . $v['file_name'] . ".jpg </li>";
+        }
+        echo "</ul>";
     }
+
 
 ?>
