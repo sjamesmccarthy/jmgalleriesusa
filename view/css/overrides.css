@@ -13,7 +13,7 @@ margin: 0 0 0 0;
 }
 
 [class*="col"] {
-background-color: rgba(0,0,0,.2);
+/* background-color: rgba(0,0,0,.2); */
 position: relative;
 }
 

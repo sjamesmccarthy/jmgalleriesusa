@@ -1,30 +1,29 @@
 <?php
 
+    $count=0;
     $catalog = ltrim($this->page->catalog_path, '/');
 
     /* Load all category meta data */
     $catalog_meta = $this->api_Catalog_Category_List($catalog);
-    $this->printp_r($catalog_meta);
+    // $this->printp_r($catalog_meta);
+    $catalog_title = $catalog_meta[0]['title'];
+    $catalog_desc = $catalog_meta[0]['desc'];
 
-    $result = $this->api_Catalog_Category_Thumbs($catalog);
-    $this->printp_r($result);
+    /* Get Thumbnails of photos for Category */
+    $catalog_photos = $this->api_Catalog_Category_Thumbs($catalog);
+    // $this->printp_r($catalog_photos);
 
-    // $this->loadNegativeFile($this->page->catalog);
-    
-    //     foreach($this->page->thumbnails as $key=>$value) {
-    //     $file_name = '/catalog' . '/__thumbnail/' . $value['file_name'] . '.jpg';
-        
-    //     $p_thumbs .= '<li style="box-sizing: border-box; display: inline-block; height: 240px; overflow: hidden; margin-bottom: -4px;">';
-    //     if(file_exists( $_SERVER['DOCUMENT_ROOT'] . $file_name )) {
-    //         $p_thumbs .= '<a href="' . $this->page->catalog . '/' . $value['file_name'] . '">';
-    //         $p_thumbs .= '<img style="width: 100%" src="'. $file_name . '" />';
-    //         $p_thumbs .= '</a>';
-    //     } else {
-    //         $p_thumbs .= '<img src="/view/image/noimage.png" />';
-    //     }
-    //     $p_thumbs .= "</li>";
-    // }
+        foreach($catalog_photos as $k => $v) {
+            
+            if( file_exists($_SERVER['DOCUMENT_ROOT'] . "/catalog/__thumbnail/" . $v['file_name'] . '.jpg')) {
+               $img_file = $v['file_name'];
+            } else {
+                $img_file = 'image_not_found';
+            }
 
-    // $this->tNum = count((array)$this->page->thumbnails);
-
+            $thumb_html .= '<div style="overflow: hidden; height: 220px; margin-bottom: 15px;" class="col gallery"><img src="/catalog/__thumbnail/' . $img_file . '.jpg" /><p>' . $v['title'] . '</p></div>';
+            
+            
+            if($count == 3) { $count = 0; } else { $count++; }
+        }
 ?>
