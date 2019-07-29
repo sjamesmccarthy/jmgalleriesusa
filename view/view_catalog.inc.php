@@ -5,7 +5,9 @@
 
     /* Load all category meta data */
     $catalog_meta = $this->api_Catalog_Category_List($catalog);
-    // $this->printp_r($catalog_meta);
+
+    /* Need to assign it locally since none of the API calls assign to global data store */
+    /* OPTION, create a &callback prop for all API methods */
     $catalog_title = $catalog_meta[0]['title'];
     $catalog_desc = $catalog_meta[0]['desc'];
 
@@ -21,8 +23,7 @@
                 $img_file = 'image_not_found';
             }
 
-            $thumb_html .= '<div style="overflow: hidden; height: 220px; margin-bottom: 15px;" class="col gallery"><img src="/catalog/__thumbnail/' . $img_file . '.jpg" /><p>' . $v['title'] . '</p></div>';
-            
+            $thumb_html .= '<div style="overflow: hidden; margin-bottom: 15px;" class="col gallery"><a href="' . $this->page->catalog_path . '/' . $img_file . '"><img style="height: 240px" src="/catalog/__thumbnail/' . $img_file . '.jpg" /></a><p><a href="' . $this->page->catalog_path . '/' . $img_file . '">' . $v['title'] . '</a></p></div>';
             
             if($count == 3) { $count = 0; } else { $count++; }
         }

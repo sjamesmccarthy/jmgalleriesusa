@@ -22,7 +22,7 @@ position: relative;
 }
 
 [class*="col"] >img {
-width: 100%;
+/* width: 100%; */
 }
 
 h2 {

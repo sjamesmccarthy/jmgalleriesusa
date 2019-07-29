@@ -73,6 +73,45 @@ class Core_Api extends Core_Data
         return($data);
     }
 
+    public function api_Catalog_YouMayLike_Filmstrip() {
+        
+        /* Executes SQL and then assigns object to passed var */
+        if( $this->checkDBConnection(__FUNCTION__) == true) {
+
+            $sql = "
+                SELECT
+                    V.count AS VIEWS,
+                    PH.title,
+                    PH.file_name
+                FROM
+                    catalog_photo_views AS V
+                    RIGHT JOIN catalog_photo AS PH ON V.catalog_photo_id = PH.catalog_photo_id
+                WHERE
+                    V.count >= 1
+                ORDER BY
+                    RAND()
+                    DESC
+                    LIMIT 4";
+
+            $result = $this->mysqli->query($sql);
+
+            if ($result->num_rows > 0) {
+            
+                while($row = $result->fetch_assoc())
+		        {
+		            $data[] = $row;
+		        }
+                
+            } else {
+                
+                $data[] = "No Records Found @ $sql";
+            }	
+            
+        }
+
+        return($data);
+    }
+
     public function api_Catalog_Photo($file_name) {
         
         /* Executes SQL and then assigns object to passed var */
