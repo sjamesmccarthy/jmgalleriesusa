@@ -14,7 +14,7 @@
 [class*="col-"],
 [class*="col_"] {
   box-sizing: border-box;
-  padding: 0 0.5rem .5rem;
+  padding: 0 0.5rem 1rem;
   max-width: 100%; }
 
 [class~="col"],

@@ -1,0 +1,18 @@
+/*
+jM Galleries UI v0.0.1
+MIT License
+https://jmgalleriesusa.com
+
+SASS, https://sass-lang.com/
+*/
+
+// Base
+@import '../../lib/eggwhite/reset.scss';
+
+// Vendors
+@import '../../lib/gridlex-master/src/gridlex.scss';
+
+// Components
+@import '../view_catalog'
+
+// Partials

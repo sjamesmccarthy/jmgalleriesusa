@@ -13,7 +13,7 @@
             <p><?= $photo_meta['desc'] ?></p>
 
             <?php 
-                print "<div style='font-size: 9px'>";
+                print "<div>";
                 $this->printp_r($photo_meta);
                 print "</div>";
             ?>

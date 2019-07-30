@@ -1,6 +1,6 @@
 <!DOCTYPE html>
     
-    <?php $this->partial('header'); ?>
+    <?php $this->getPartial('header'); ?>
     
     <body>
         <div style="padding-top: 40px" class="container">
@@ -9,11 +9,11 @@
                 
                         <?php $this->view() ?>
 
-                <?php $this->partial('footer'); ?>
+                <?php $this->getPartial('footer'); ?>
         
         </div>
     </body>
     
-    <?php $this->partial('analytics'); ?>
+    <?php $this->getPartial('analytics'); ?>
 
 </html>

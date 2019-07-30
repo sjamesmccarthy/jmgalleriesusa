@@ -14,7 +14,7 @@ class Core_Data extends Core
     public function getPartial($partial) {
 
         /* Check to see if the partial file has an Include Component with it */
-        $file = $_SERVER['DOCUMENT_ROOT'] . '/view/partial/partial_' . $partial;
+        $file = $_SERVER['DOCUMENT_ROOT'] . '/view/partial_' . $partial;
         if( file_exists($file . ".inc.php") ) {
             include_once($file . "inc.php");
         } 

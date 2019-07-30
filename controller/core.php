@@ -95,7 +95,7 @@ class Core
         if(isSet( $this->routes->{$this->routes->URI->path}['header'] )) { $this->page->header = $this->routes->{$this->routes->URI->path}['header']; }
         if(isSet( $this->routes->{$this->routes->URI->path}['controller'] )) { $this->routes->URI->controllerFile = $this->routes->{$this->routes->URI->path}['controller']; }
         if( $this->routes->{$this->routes->URI->path}['component'] == "true") { $this->routes->URI->component= $_SERVER["DOCUMENT_ROOT"] . "/view/" . $this->config->prefix['page'] . $this->routes->{$this->routes->URI->path}['page'] . ".inc.php"; }
-        $this->routes->URI->template = $_SERVER["DOCUMENT_ROOT"] . "/view/template/" . $this->config->prefix['template'] . $this->routes->{$this->routes->URI->path}['template'] . ".php";
+        $this->routes->URI->template = $_SERVER["DOCUMENT_ROOT"] . "/view/" . $this->config->prefix['template'] . $this->routes->{$this->routes->URI->path}['template'] . ".php";
         $this->routes->URI->view = $_SERVER["DOCUMENT_ROOT"] . "/view/" . $this->config->prefix['page'] . $this->routes->{$this->routes->URI->path}['page'] . ".php";
     }
 
@@ -149,16 +149,6 @@ class Core
             include($this->routes->URI->view);
         } else { 
             echo "<p>File Not Found, \Studio\Gallery\Core::getPageContent(" . __LINE__ . "," . $this->routes->URI->view . ")</p>";
-        }
-    }
-
-    public function partial($value) {
-
-        /* Validate file and then include in template */
-        if(file_exists($_SERVER["DOCUMENT_ROOT"] . "/view/partial/" . $this->config->prefix['partial'] . $value . '.php')) {
-           include($_SERVER["DOCUMENT_ROOT"] . "/view/partial/" . $this->config->prefix['partial'] . $value . '.php');
-        } else {
-            echo "<p>File Not Found, \Studio\Gallery\Core::partial(" .  $value . ") : " . __LINE__ . "</p>";
         }
     }
 
@@ -217,16 +207,8 @@ class Core
 		/* close connection */
 		$this->mysqli->close();
     }
-    
-    public function __getJSON($file, $output_var) {
 
-        /* Loads JSON filer and then assigns object to passed var */
-        $dataJSON = file_get_contents($_SERVER["DOCUMENT_ROOT"] . "/"  . $file);
-        $data = json_decode($dataJSON, true);
-        $this->$output_var = (object) $data;
-    }
-
-    public function loadc($model) {
+    public function x_loadc($model) {
 
         /* Loads an additional Class */
         $name = $model;

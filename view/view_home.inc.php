@@ -29,6 +29,8 @@
             $thumb_html .= '<a href="' . $value['path'] . "/" . $img_file . '"><img src="/catalog/__thumbnail/' .$img_file . '.jpg" /></a></div>';
             
             /* For Mobile */
+            /* On last two thumbnails add some css */
+            
             // $thumb_html .= '<div class="col sm-hidden"><img src="/view/image/demo-thumb.jpg" /></div>';
             // $thumb_html .= '<div class="col sm-hidden md-hidden"><img src="/view/image/demo-thumb.jpg" /></div>';
             if($count == 3) { $count = 0; } else { $count++; }
