@@ -1,7 +1,7 @@
     <div class="grid-4_sm-2 grid-4_md-3 filmstrip">
         
         <div class="col-12 gallery">
-            <p><?= $catalog_title ?></p>
+            <p style='font-size: 2rem; font-weight: 700;'><?= $catalog_title ?></p>
             <p><?= $catalog_desc ?></p>
         </div>
 

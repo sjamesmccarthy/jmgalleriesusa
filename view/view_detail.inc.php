@@ -18,7 +18,7 @@
                 $img_file = 'image_not_found';
             }
 
-            $thumb_html .= '<div class="col"><img src="/catalog/__thumbnail/' . $img_file . '.jpg" /></div>';
+            $thumb_html .= '<div class="col"><a href="' . $this->page->catalog_path .'/' . $img_file . '"><img src="/catalog/__thumbnail/' . $img_file . '.jpg" /></a></div>';
             
             /* For Mobile */
             // $thumb_html .= '<div class="col sm-hidden"><img src="/view/image/demo-thumb.jpg" /></div>';

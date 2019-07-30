@@ -3,7 +3,7 @@
     <?php $this->partial('header'); ?>
     
     <body>
-        <div class="container">
+        <div style="padding-top: 40px" class="container">
         
                 <?php $this->getPartial('nav'); ?>
                 

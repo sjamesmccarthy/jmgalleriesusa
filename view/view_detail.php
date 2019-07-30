@@ -11,9 +11,14 @@
 
             <h4>And So The Story Goes ...</h4>
             <p><?= $photo_meta['desc'] ?></p>
-            <?php $this->printp_r($photo_meta) ?>
 
-            <button style="margin-top: 32px;">BUTTON</button>
+            <?php 
+                print "<div style='font-size: 9px'>";
+                $this->printp_r($photo_meta);
+                print "</div>";
+            ?>
+
+            <button style="margin-top: 32px;">REQUEST QUOTE</button>
         </div>
 
     </div>

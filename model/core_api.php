@@ -117,9 +117,6 @@ class Core_Api extends Core_Data
         /* Executes SQL and then assigns object to passed var */
         if( $this->checkDBConnection(__FUNCTION__) == true) {
 
-            // $sql = "SELECT * from catalog_photo WHERE file_name='" . $file_name . "'";
-            // $sql = "SELECT P.*, C.title AS catalog_title, C.path AS catalog from catalog_photo AS P INNER JOIN catalog_category AS C ON C.catalog_category_id=(SELECT catalog_category_id FROM catalog_photo WHERE file_name='" . $file_name . "') WHERE P.file_name='" . $file_name . "'";
-
             $sql = "SELECT
                 P.*,
                 C.title as category_title
@@ -135,9 +132,6 @@ class Core_Api extends Core_Data
                 WHERE
                     file_name = '" . $file_name . "'";
         
-            print $sql;
-            print "<hr />";
-
             $result = $this->mysqli->query($sql);
 
             if ($result->num_rows > 0) {
