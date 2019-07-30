@@ -30,4 +30,4 @@ config_env.json
 # /catalog/__image/__archived/*
 # /catalog/__thumbnail/*
 # /catalog/__thumbnail/__archived/*
-# /lib/*
+lib/gridlex-master/*
