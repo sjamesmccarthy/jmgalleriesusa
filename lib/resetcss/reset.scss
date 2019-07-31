@@ -5,6 +5,8 @@ html, body {
     padding: 0;
     font-size: $base-fs;
     box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 iframe, img, video {

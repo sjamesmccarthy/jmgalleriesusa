@@ -53,6 +53,20 @@
         "component": "true",
         "title": "New Releases"
     },
+    "/admin": {
+        "template": "page",
+        "page": "admin_auth",
+        "auth": "true",
+        "component": "false",
+        "title": "About"
+    },
+    "/admin/console": {
+        "template": "page",
+        "page": "admin_console",
+        "auth": "true",
+        "component": "false",
+        "title": "About"
+    },
     "/about": {
         "template": "page",
         "page": "about",

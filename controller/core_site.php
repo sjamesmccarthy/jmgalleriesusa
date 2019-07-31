@@ -1,6 +1,6 @@
 <?php
 
-class Core
+class Core_Site extends Core_Api
 {
 
     public $config; 
@@ -8,9 +8,29 @@ class Core
     public $session_started;
     public $data;
     public $page;
-    public $mysqli;
 
+    public function __construct() {
 
+        /* Import the config file */
+        $this->getJSON('config.json','config');
+
+        /* Import the auth_config file */
+        $this->getJSON('config_env.json','config_env');
+
+        /* Get and Set the environment: local or prod */
+        $this->getEnv();
+
+        /* Import the routing paths */
+        $this->getJSON('routes.json','routes');
+
+        /* Initialize the Session */
+        $this->initSession();
+
+        /* Check URI against routes json file */
+        $this->getRoute();
+
+    }
+    
     public function getEnv() {
 
         /* Check for enviroment in URI based on domain extension */
@@ -174,52 +194,30 @@ class Core
             }
         }
     }
-    
-    public function startDB() 
-	{
 
-        /* Database Authentication */
-        $hostname = $this->config_env->env[$this->env]['host'];
-        $username = $this->config_env->env[$this->env]['user'];
-		$password = $this->config_env->env[$this->env]['password'];
-		$dbname = $this->config_env->env[$this->env]['dbname'];
-		
-		// Create connection
-        $this->mysqli  = new mysqli ($hostrname, $username, $password, $dbname);
-        // $result = $this->mysqli->query("SELECT * FROM catalog_photo");
-        // $this->printp_r($result);
+    public function getJSON($file, $output_var) {
 
-	}
-    
-    public function checkDBConnection($function='Null') {
+        /* Loads JSON filer and then assigns object to passed var */
+        $dataJSON = file_get_contents($_SERVER["DOCUMENT_ROOT"] . "/"  . $file);
+        $data = json_decode($dataJSON, true);
+        $this->$output_var = (object) $data;
+    }
 
-		if ($this->mysqli->connect_errno) {
-		    printf("Connect failed: %s\n", $this->mysqli->connect_error);
-            return false;
+    public function getPartial($partial) {
+
+        /* Check to see if the partial file has an Include Component with it */
+        $file = $_SERVER['DOCUMENT_ROOT'] . '/view/partial_' . $partial;
+        if( file_exists($file . ".inc.php") ) {
+            include_once($file . "inc.php");
+        } 
+        
+        /* Include the partial file if exists */
+        if( file_exists($file . '.php')) {
+            include_once($file . '.php');
         } else {
-            // print $function . ".mysqli.success(" . $this->config_env->env[$this->env]['dbname'] . "/" . $this->env . ")<br />";
-            return true;
+            echo "Requested Object Not Available: " . $partial;
         }
     }
 
-	public function closeDB() {
-
-		/* close connection */
-		$this->mysqli->close();
-    }
-
-    public function x_loadc($model) {
-
-        /* Loads an additional Class */
-        $name = $model;
-        require_once($_SERVER["DOCUMENT_ROOT"] . "/" . $model . ".php");
-        $model = new $model($this);
-        $this->$name = $model;
-        
-        return $this;
-
-    }
-
 }
-
 ?>

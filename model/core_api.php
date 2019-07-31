@@ -1,7 +1,41 @@
 <?php
 
-class Core_Api extends Core_Data
+class Core_Api
 {
+    public $mysqli;
+    
+    public function startDB() 
+	{
+
+        /* Database Authentication */
+        $hostname = $this->config_env->env[$this->env]['host'];
+        $username = $this->config_env->env[$this->env]['user'];
+		$password = $this->config_env->env[$this->env]['password'];
+		$dbname = $this->config_env->env[$this->env]['dbname'];
+		
+		// Create connection
+        $this->mysqli  = new mysqli ($hostrname, $username, $password, $dbname);
+        // $result = $this->mysqli->query("SELECT * FROM catalog_photo");
+        // $this->printp_r($result);
+
+	}
+    
+    public function checkDBConnection($function='Null') {
+
+		if ($this->mysqli->connect_errno) {
+		    printf("Connect failed: %s\n", $this->mysqli->connect_error);
+            return false;
+        } else {
+            // print $function . ".mysqli.success(" . $this->config_env->env[$this->env]['dbname'] . "/" . $this->env . ")<br />";
+            return true;
+        }
+    }
+
+	public function closeDB() {
+
+		/* close connection */
+		$this->mysqli->close();
+    }
 
     public function api_Catalog_Category_Thumbs($catalog_path) {
         
