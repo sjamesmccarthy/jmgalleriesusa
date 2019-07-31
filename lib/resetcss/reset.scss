@@ -5,12 +5,14 @@ html, body {
     padding: 0;
     font-size: $base-fs;
     box-sizing: border-box;
-     -webkit-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+    font-family: 'Roboto Condensed', sans-serif;
 }
 
 iframe, img, video {
     border: 0;
     border-style: none;
+    border-radius: 4px;
 }
 
 table {
@@ -34,7 +36,7 @@ p, blockquote, caption, figure, label, fieldset, legend {
     margin: 0;
     padding: 0 0 0 0;
     font-size: 1.0em;
-    font-weight: normal;
+    font-weight: inherit;
     line-height: 1.25;
 }
 

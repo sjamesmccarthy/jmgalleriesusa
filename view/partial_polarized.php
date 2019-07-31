@@ -5,9 +5,25 @@
             <h2 >POLARIZED</h2>
             <p>a Photographic Conversation & Quarterly</p>
         </div>
-        
-        <?= $polarized_html ?>
-        
+        <div class="col-3">
+            <p style="text-align: right;">view all</p>
+        </div>
+        <div class="col content-border">
+            <h5></h5>
+            <p></p>
+        </div>
+        <div class="col content-border">
+            <h5></h5>
+            <p></p>
+        </div>
+        <div class="col sm-hidden content-border">
+            <h5></h5>
+            <p></p>
+        </div>
+        <div class="col sm-hidden md-hidden">
+            <h5></h5>
+            <p></p>
+        </div>
     </div>
 </article>
     <!-- /partial_polarized.php -->

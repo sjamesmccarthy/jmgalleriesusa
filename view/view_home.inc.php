@@ -43,7 +43,7 @@
                 $img_file = 'image_not_found';
             }
 
-            $thumb_html .= '<div style="overflow: hidden; height: 220px;" class="col">';
+            $thumb_html .= '<div style="overflow: hidden; height: 240px;" class="col">';
             $thumb_html .= '<a href="' . $value['path'] . "/" . $img_file . '"><img src="/catalog/__thumbnail/' .$img_file . '.jpg" /></a></div>';
             
             /* For Mobile */

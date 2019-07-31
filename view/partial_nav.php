@@ -1,5 +1,5 @@
    <section id="top-nav">
-        <div style="margin-bottom: 32px;" class="grid-12_grid-12-center grid-md-4-center">
+        <div class="grid-12_grid-12-center grid-md-4-center">
     
         <div class="col-2_md-hidden">
             <p class="center" style="padding-top: 45px"><a target="_shop" href="/shop">PRODUCTS</a><br />TINY VIEWS AND BOOKS</p>

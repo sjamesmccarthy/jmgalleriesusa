@@ -1,9 +1,21 @@
     <!-- partial_home_hero.php -->
     <section>
     <div class="grid-1 mtop">
-        <div style="overflow: hidden; height: 500px;" class="col">
-            <img style="position: absolute; top: -270px" src="/view/image/demo-full.jpg" />
-            <p class="hero_text">NORTHERN NEVADA</p>
+        <div 
+            style="
+                background-color: #CCC; 
+                height: 570px;
+                background-image: linear-gradient(0deg, rgba(1,1,1,1) 0%, rgba(117,117,119,0) 60%), url('/view/image/demo-full.jpg');
+                background-attachment: scroll;
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+                border-radius: 4px;" 
+            class="col">
+            <div class="hero_text_container">
+                <p class="hero_text">LAKE TAHOE</p>
+                <p class="hero_text_link">Explore This Collection &rarrtl;</p>
+            </div>
         </div>
     </div>
     </section>
