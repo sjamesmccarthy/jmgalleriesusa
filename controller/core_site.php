@@ -146,11 +146,12 @@ class Core_Site extends Core_Api
         print $buffer;
 
         /* Flush and dump the buffer */
-        ob_end_clean();
+        ob_get_clean();
     }
 
     public function view($view=null) {
-        
+
+
         /* include the template page specifed in the routes config */
         if(file_exists($this->routes->URI->view)) {
             
@@ -201,6 +202,8 @@ class Core_Site extends Core_Api
         $dataJSON = file_get_contents($_SERVER["DOCUMENT_ROOT"] . "/"  . $file);
         $data = json_decode($dataJSON, true);
         $this->$output_var = (object) $data;
+
+        return( $data );
     }
 
     public function getPartial($partial) {

@@ -11,11 +11,11 @@ html, body {
   font-size: 16px;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale; }
+  -webkit-text-size-adjust: 100%; }
 
 iframe, img, video {
-  border: 0; }
+  border: 0;
+  border-style: none; }
 
 table {
   border-collapse: collapse;
@@ -32,18 +32,47 @@ ol, ul, li, dl, dt, dd {
   -webkit-box-sizing: border-box;
   box-sizing: border-box; }
 
-p, blockquote, caption, figure, label, fieldset, textarea, button, pre, input, select, legend {
+p, blockquote, caption, figure, label, fieldset, legend {
   margin: 0;
-  padding: 0;
-  font-size: 1.0rem;
+  padding: 0 0 0 0;
+  font-size: 1.0em;
   font-weight: normal;
-  line-height: 1.0; }
+  line-height: 1.25; }
+
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+  line-height: inherit;
+  font-size: 100%;
+  margin: 0;
+  overflow: auto; }
+
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
+  -webkit-appearance: button; }
+
+pre, code {
+  font-family: monospace, monospace;
+  font-size: .9em; }
+
+a {
+  background-color: transparent;
+  text-decoration: none; }
+
+b,
+strong {
+  font-weight: bolder; }
+
+small {
+  font-size: 80%; }
 
 h1, h2, h3, h4, h5, h6 {
   margin: 0;
-  padding: 0;
-  font-weight: 700;
-  line-height: 1.0; }
+  font-weight: 700; }
 
 h1 {
   font-size: 48px; }
@@ -66,6 +95,16 @@ h6 {
 *, :before, :after {
   -webkit-box-sizing: inherit;
   box-sizing: inherit; }
+
+/* Shorthand */
+[hidden] {
+  display: none; }
+
+[bold] {
+  font-weight: 700; }
+
+[smallhalf] {
+  font-size: .5em; }
 
 /* ==========================================================================
     GRIDLEX

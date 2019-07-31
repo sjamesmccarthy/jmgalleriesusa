@@ -1,20 +1,25 @@
- .container {
+
+section, article {
+    margin-top: 32px;
+} 
+
+.container {
 width: 100%;
 max-width: 90rem;
 margin: 0 auto;
-}
-
-p {
-margin: 0 0 0 0;
 }
 
 .center {
     text-align: center;
 }
 
+[class*="col-"] {
+    padding-left: 0;
+}
+
 [class*="col"] {
-/* background-color: rgba(0,0,0,.2); */
-position: relative;
+    position: relative;
+    padding-left: 0;
 }
 
 [class*="col"] >p {
@@ -63,4 +68,23 @@ padding-right: 10px;
 
 .mtop {
 margin-top: 10px;
+}
+
+#polarized >article >div >div.col >p {
+    padding-top: 10px;
+    color: rgba(0,0,0,.54);
+}
+
+#polarized >article >div >div.col {
+    height: 200px;
+    padding: 20px;
+}
+
+#polarized >article >div >div.col:nth-child(2) {
+    height: 200px;
+    padding-left:0;
+}
+
+.medium-feed-image, .medium-feed-link {
+    display: none;
 }

@@ -217,5 +217,30 @@ class Core_Api
         return($data);
     }
 
+    public function api_Polarized_Get_Latest() {
+
+        // Read in Json file with title and description and link. 
+        return($this->getJSON('view/partial_polarized.json', 'data'));
+
+        // $this->printp_r($result);
+        
+        /* Future Pull from Medium RSS */
+        // https://medium.com/feed/jmgalleriesusa
+        // $i = 0; // counter
+        // $url = "https://medium.com/feed/jmgalleriesusa"; // url to parse
+        // $rss = simplexml_load_file($url); // XML parser
+
+        // RSS items loop
+        // print '<h2><img style="vertical-align: middle;" src="'.$rss->channel->image->url.'" /> '.$rss->channel->title.'</h2>'; // channel title + img with src
+
+        // foreach($rss->channel->item as $item) {
+        // if ($i < 10) { 
+        //     $html .= '<a href="'.$item->link.'">'.$item->title.'</a><br />' . $item->description . '<br />';
+        // }
+
+        // $i++;
+        // }
+
+    }
 }
 ?>

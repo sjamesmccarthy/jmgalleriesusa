@@ -1,4 +1,5 @@
-    <div style="background-color: #DDD; padding: 15px; margin-top: 20px;" class="grid-1 mtop">
+   <section>
+        <div style="background-color: #DDD; padding: 15px; margin-top: 20px;" class="grid-1 mtop">
         <div class="col">
             <p>FOOTER</p>
         </div>
@@ -13,3 +14,4 @@
         </div>
 
     </div>
+    </section>
