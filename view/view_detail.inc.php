@@ -7,9 +7,20 @@
     $photo_meta = $this->api_Catalog_Photo($this->photo_path);
     // $this->printp_r($photo_meta);
 
+    if($photo_meta['orientation'] == "portrait") {
+        $img_w = '62%';
+        $grid = '12';
+        $col_left = 'col-6';
+        $col_right = 'col-6';
+    } else {
+        $img_w = '100%';
+        $grid='12';
+        $col_left = 'col-8';
+        $col_right = 'col-4';
+    }
+
     /* Load filmstrip for popular */
     $you_may_like = $this->api_Catalog_YouMayLike_Filmstrip();
-    // $this->printp_r($you_may_like);
      foreach($you_may_like as $k => $v) {
             
             if( file_exists($_SERVER['DOCUMENT_ROOT'] . "/catalog/__thumbnail/" . $v['file_name'] . '.jpg')) {

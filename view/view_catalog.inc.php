@@ -13,7 +13,6 @@
 
     /* Get Thumbnails of photos for Category */
     $catalog_photos = $this->api_Catalog_Category_Thumbs($catalog);
-    // $this->printp_r($catalog_photos);
 
         foreach($catalog_photos as $k => $v) {
             

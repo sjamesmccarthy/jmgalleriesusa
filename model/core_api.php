@@ -14,10 +14,7 @@ class Core_Api
 		$dbname = $this->config_env->env[$this->env]['dbname'];
 		
 		// Create connection
-        $this->mysqli  = new mysqli ($hostrname, $username, $password, $dbname);
-        // $result = $this->mysqli->query("SELECT * FROM catalog_photo");
-        // $this->printp_r($result);
-
+        $this->mysqli  = new mysqli ($hostname, $username, $password, $dbname);
 	}
     
     public function checkDBConnection($function='Null') {

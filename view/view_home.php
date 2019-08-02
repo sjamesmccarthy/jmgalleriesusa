@@ -25,7 +25,7 @@
         <article>
             <div class="grid-4_sm-2_md-3">
                 <div class="col-12" style="margin-bottom: 16px;">
-                    <h2 >POLARIZED</h2>
+                    <h2><a target="_new" href="https://medium.com/jmgalleriesusa">POLARIZED</a></h2>
                     <p>a Photographic Conversation & Quarterly Published <a target="_blog" href="https://medium.com/jmgalleriesusa"> @Medium</a></p>
                 </div>
                 

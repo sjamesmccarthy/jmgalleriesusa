@@ -13,7 +13,7 @@
         $polarized_html .= '<div class="col ' . $content_border . '">';
         $polarized_html .= '<h5><a target="_blog" href="https://medium.com/jmgalleriesusa">' . $value['title'] . '</a></h5>';
         $polarized_html .= '<p>' . $value['description'] . '</p>';
-        $polarized_html .= '<p style="padding-top: 10px;text-align: left; position:absolute; bottom: 0;"><a target="_new" href="' . $value['link'] . '">Read More</a>';
+        // $polarized_html .= '<p style="padding-top: 10px;text-align: left; position:absolute; bottom: 0;"><a target="_new" href="' . $value['link'] . '">Read More</a>';
         $polarized_html .= '</div>';
 
         $i++;
