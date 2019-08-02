@@ -20,7 +20,7 @@
     </section>
 
     <?php if ($this->config->components['medium_blog'] == 'true') { ?>
-    <section id="polarized">
+    <section id="polarized" style="padding-bottom: 32px; border-bottom: 1px solid #CCC">
         <!-- partial_polarized.php -->
         <article>
             <div class="grid-4_sm-2_md-3">
@@ -38,7 +38,7 @@
     <?php } ?>
     
     <!-- generated html from component file: New Releases -->
-    <section id="filmstrips">
+    <section id="filmstrips" style="margin-top: 48px">
         <?= $thumb_new_releases_html ?>
     </section>
     <!-- /generated html from component file -->

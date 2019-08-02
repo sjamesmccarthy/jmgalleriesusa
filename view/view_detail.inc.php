@@ -8,7 +8,7 @@
     // $this->printp_r($photo_meta);
 
     if($photo_meta['orientation'] == "portrait") {
-        $img_w = '75%';
+        $img_w = '90%';
         $grid = '10';
         $col_left = 'col-5';
         $col_right = 'col-5';

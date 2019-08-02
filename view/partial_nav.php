@@ -1,5 +1,5 @@
-   <!-- <section id="top-nav<?= $addToClass ?>"> -->
-        <div class="grid-12_grid-12-center grid-md-4-center top-nav<?= $addToClass ?>">
+   <section id="top-nav<?= $addToClass ?>">
+        <div class="grid"><!-- grid-12_grid-12-center grid-md-4-center" -->
     
         <div class="col-2_md-4-middle">
             <p class="center" ><a target="_shop" href="/shop">PRODUCTS</a><br />TINY VIEWS AND BOOKS</p>
@@ -17,4 +17,4 @@
             <p class="center"><a href="/about">ABOUT</a><br />JAMES MCCARTHY</p>
         </div>
         </div>
-    <!-- </section> -->
+    </section>

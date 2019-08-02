@@ -49,25 +49,26 @@ main {
     margin-top: 32px;
 }
 
-.top-nav-home {
-    position: absolute;
-    top: 32px;
-    left: 7%;
-    right: 7%;
-    width: 87%;
+#top-nav-home {
+    position: relative;
+    top: 116px;
+    /* left: 7%; */
+    /* right: 7%; */
+    width: 100%;
     /* min-width: 1454px; */
     z-index: 1024;
+    margin-top: -77px;
 }
 
-.top-nav-home img {
+#top-nav-home img {
     /* filter: invert(0); */
     opacity: .6;
 }
-.top-nav-home a {
+#top-nav-home a {
     /* filter: invert(0); */
 }
 
-.top-nav-home a:hover {
+#top-nav-home a:hover {
     color: #000;
 }
 
@@ -164,10 +165,11 @@ margin-top: 10px;
 #polarized >article >div >div.col >p {
     padding-top: 10px;
     color: rgba(0,0,0,.54);
+    line-height: 1.5;
 }
 
 #polarized >article >div >div.col {
-    /* padding: 20px; */
+    padding: 20px;
 }
 
 #polarized >article >div >div.col:nth-child(2) {
