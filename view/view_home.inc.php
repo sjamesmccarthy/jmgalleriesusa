@@ -11,7 +11,7 @@
         if($i === 3) { $content_border = null; } else { $content_border = 'content-border'; }
 
         $polarized_html .= '<div class="col ' . $content_border . '">';
-        $polarized_html .= '<h5>' . $value['title'] . '</h5>';
+        $polarized_html .= '<h5><a target="_blog" href="https://medium.com/jmgalleriesusa">' . $value['title'] . '</a></h5>';
         $polarized_html .= '<p>' . $value['description'] . '</p>';
         $polarized_html .= '<p style="padding-top: 10px;text-align: left; position:absolute; bottom: 0;"><a target="_new" href="' . $value['link'] . '">Read More</a>';
         $polarized_html .= '</div>';
@@ -25,12 +25,12 @@
     foreach($catalog_names as $key=>$value) {
 
         $thumb_html .= "<article>";
-        $thumb_html .= '<div class="grid-4_sm-2 grid-4_md-3 filmstrip">';
-        $thumb_html .= '<div class="col-9">';
+        $thumb_html .= '<div class="grid-4_sm-2 grid-4_md-3">';
+        $thumb_html .= '<div class="col-12" style="margin-bottom: 16px;">';
         $thumb_html .= '    <h2><a href="/' . $value['path'] . '">' . strtoupper($value['title']) . '</a></h2>';
         $thumb_html .= '    <p>' . $value['desc'] .  '</p>';
         $thumb_html .= '</div>';
-        $thumb_html .= '<div class="col-3-bottom"><p style="text-align: right;">view all</p></div>';
+        // $thumb_html .= '<div class="col-3-bottom"><p style="text-align: right;">view all</p></div>';
 
         /* Get FilmStrip of photos by Category */
         $catalog_photos = $this->api_Catalog_Category_Filmstrip($value['catalog_category_id'], 4);
@@ -43,7 +43,7 @@
                 $img_file = 'image_not_found';
             }
 
-            $thumb_html .= '<div style="overflow: hidden; height: 240px;" class="col">';
+            $thumb_html .= '<div style="overflow: hidden; height: 203px;" class="col">';
             $thumb_html .= '<a href="' . $value['path'] . "/" . $img_file . '"><img src="/catalog/__thumbnail/' .$img_file . '.jpg" /></a></div>';
             
             /* For Mobile */

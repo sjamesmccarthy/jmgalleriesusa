@@ -8,7 +8,7 @@
             <p class="center" style="padding-top: 45px">POLARIZED<br />a PHOTOGRAPHIC QUARTERLY</p>
         </div>
         <div class="col-2_md-4">
-            <p style="text-align: center; padding-left: 30px"><a href="/"><img style="width: 175px" src="/view/image/logo_fullsize.png" /></a></p>
+            <p style="text-align: center; padding-left: 30px"><a href="/"><img style="width: 150px" src="/view/image/logo_fullsize.png" /></a></p>
         </div>
         <div class="col-3_md-hidden">
             <p class="center" style="padding-top: 45px">EXHIBITIONS<br />POP-UP GALLERIES AND EVENTS</p>

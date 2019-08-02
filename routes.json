@@ -57,15 +57,15 @@
         "template": "page",
         "page": "admin_auth",
         "auth": "true",
-        "component": "false",
-        "title": "About"
+        "component": "true",
+        "title": "Admin Console : Login"
     },
     "/admin/console": {
         "template": "page",
         "page": "admin_console",
         "auth": "true",
         "component": "false",
-        "title": "About"
+        "title": "Admin Console : Dashboard"
     },
     "/about": {
         "template": "page",

@@ -23,7 +23,7 @@
                 $img_file = 'image_not_found';
             }
 
-            $thumb_html .= '<div style="overflow: hidden; margin-bottom: 15px;" class="col gallery"><a href="' . $this->page->catalog_path . '/' . $img_file . '"><img style="height: 240px" src="/catalog/__thumbnail/' . $img_file . '.jpg" /></a><p><a href="' . $this->page->catalog_path . '/' . $img_file . '">' . $v['title'] . '</a></p></div>';
+            $thumb_html .= '<div style="overflow: hidden;" class="col gallery"><a href="' . $this->page->catalog_path . '/' . $img_file . '"><img src="/catalog/__thumbnail/' . $img_file . '.jpg" /></a><p><a href="' . $this->page->catalog_path . '/' . $img_file . '">' . $v['title'] . '</a><br />Exhibiting at Joe Maxx Coffee, Las Vegas</p></div>';
             
             if($count == 3) { $count = 0; } else { $count++; }
         }

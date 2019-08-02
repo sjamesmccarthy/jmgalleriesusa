@@ -14,7 +14,7 @@
             class="col">
             <div class="hero_text_container">
                 <p class="hero_text">LAKE TAHOE</p>
-                <p class="hero_text_link">Explore This Collection &rarrtl;</p>
+                <p class="hero_text_link"><a style="color: rgba(255,255,255,.3);" href="/oceans-lakes-waterfalls">Explore This Collection &rarrtl;</a></p>
             </div>
         </div>
     </div>
@@ -23,8 +23,8 @@
     <section id="polarized">
         <!-- partial_polarized.php -->
         <article>
-            <div class="grid-4_sm-2_md-3 filmstrip">
-                <div class="col-12">
+            <div class="grid-4_sm-2_md-3">
+                <div class="col-12" style="margin-bottom: 16px;">
                     <h2 >POLARIZED</h2>
                     <p>a Photographic Conversation & Quarterly Published <a target="_blog" href="https://medium.com/jmgalleriesusa"> @Medium</a></p>
                 </div>
