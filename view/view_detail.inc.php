@@ -8,14 +8,14 @@
     // $this->printp_r($photo_meta);
 
     if($photo_meta['orientation'] == "portrait") {
-        $img_w = '62%';
-        $grid = '12';
-        $col_left = 'col-6';
-        $col_right = 'col-6';
+        $img_w = '75%';
+        $grid = '10';
+        $col_left = 'col-5';
+        $col_right = 'col-5';
     } else {
         $img_w = '100%';
-        $grid='12';
-        $col_left = 'col-8';
+        $grid='11';
+        $col_left = 'col-7';
         $col_right = 'col-4';
     }
 
@@ -29,7 +29,17 @@
                 $img_file = 'image_not_found';
             }
 
-            $thumb_html .= '<div class="col"><a href="' . $this->page->catalog_path .'/' . $img_file . '"><img src="/catalog/__thumbnail/' . $img_file . '.jpg" /></a></div>';
+            /* For Mobile */
+            /* On last two thumbnails add some css */
+            if($count == 2) {
+                $grid_css = 'col sm-hidden';
+            } else if ($count == 3) {
+                $grid_css = 'col sm-hidden md-hidden';
+            } else {
+                $grid_css = 'col';
+            }
+
+            $thumb_html .= '<div class="' . $grid_css . '"><a href="' . $this->page->catalog_path .'/' . $img_file . '"><img src="/catalog/__thumbnail/' . $img_file . '.jpg" /></a></div>';
             
             /* For Mobile */
             // $thumb_html .= '<div class="col sm-hidden"><img src="/view/image/demo-thumb.jpg" /></div>';

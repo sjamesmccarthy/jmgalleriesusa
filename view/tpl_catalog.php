@@ -3,7 +3,7 @@
     <?php $this->getPartial('header'); ?>
     
     <body>
-        <div class="container">
+        <main>
         
                 <?php $this->getPartial('nav'); ?>
                 
@@ -11,7 +11,7 @@
 
                 <?php $this->getPartial('footer'); ?>
         
-        </div>
+        </main>
     </body>
     
     <?php $this->getPartial('analytics'); ?>

@@ -4,7 +4,6 @@
     
     <body>
         <main>
-        <div class="container">
         
                 <?php $this->getPartial('nav'); ?>
                 
@@ -12,7 +11,6 @@
 
                 <?php $this->getPartial('footer'); ?>
         
-        </div>
         </main>
     </body>
     

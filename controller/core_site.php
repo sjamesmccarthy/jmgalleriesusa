@@ -210,8 +210,9 @@ class Core_Site extends Core_Api
 
         /* Check to see if the partial file has an Include Component with it */
         $file = $_SERVER['DOCUMENT_ROOT'] . '/view/partial_' . $partial;
+        
         if( file_exists($file . ".inc.php") ) {
-            include_once($file . "inc.php");
+            include_once($file . ".inc.php");
         } 
         
         /* Include the partial file if exists */

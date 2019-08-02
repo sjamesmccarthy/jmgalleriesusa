@@ -1,10 +1,10 @@
-   <section id="top-nav">
-        <div class="grid-12_grid-12-center grid-md-4-center">
+   <!-- <section id="top-nav<?= $addToClass ?>"> -->
+        <div class="grid-12_grid-12-center grid-md-4-center top-nav<?= $addToClass ?>">
     
-        <div class="col-2_md-hidden-middle">
+        <div class="col-2_md-4-middle">
             <p class="center" ><a target="_shop" href="/shop">PRODUCTS</a><br />TINY VIEWS AND BOOKS</p>
         </div>
-        <div class="col-3_md-4-middle">
+        <div class="col-3_md-hidden-middle">
             <p class="center"><a target="_blog" href="https://medium.com/jmgalleriesusa">POLARIZED</a><br />a PHOTOGRAPHIC QUARTERLY</p>
         </div>
         <div class="col-2_md-4-middle">
@@ -17,4 +17,4 @@
             <p class="center"><a href="/about">ABOUT</a><br />JAMES MCCARTHY</p>
         </div>
         </div>
-    </section>
+    <!-- </section> -->

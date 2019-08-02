@@ -35,10 +35,40 @@ section, article {
     margin-top: 32px;
 } 
 
-.container {
-width: 100%;
-max-width: 90rem;
-margin: 0 auto;
+
+main {
+    width: 95%;
+    max-width: 1440px;
+    margin: auto;
+}
+
+#home-image {
+    margin-top:0;
+}
+.top-nav {
+    margin-top: 32px;
+}
+
+.top-nav-home {
+    position: absolute;
+    top: 32px;
+    left: 7%;
+    right: 7%;
+    width: 87%;
+    /* min-width: 1454px; */
+    z-index: 1024;
+}
+
+.top-nav-home img {
+    /* filter: invert(0); */
+    opacity: .6;
+}
+.top-nav-home a {
+    /* filter: invert(0); */
+}
+
+.top-nav-home a:hover {
+    color: #000;
 }
 
 .center {
@@ -83,23 +113,33 @@ position: relative;
 
 .hero_text_container {
 position: absolute;
-top: 50%;
+top: 75%;
 left: 50%;
 transform: translate(-50%, -50%);
-font-weight: 700;
-text-align: center;
-color: rgba(255,255,255,.6); 
-
+    text-transform: uppercase;
+    font-weight: 700;
+    text-align: center;
 }
 
 .hero_text {
+    color: rgba(0,0,0,.5);
+    /* color: rgba(255,255,255,.7);  */
+    /* color: rgba(37,116,169,.7) */
     font-size: 8em; 
+    line-height: 1;
 }
 
-.hero_text_link {
-    font-size: 2.0em;
-    text-transform: uppercase;
-    /* background-color: rgba(0,0,0,.65); */
+.hero_text_container a {
+    /* color: rgba(255,255,255,.8); */
+    color: rgba(0,0,0,.5);
+    /* color: rgba(37,116,169,.7); */
+    font-size: 2em;
+}
+
+.hero_text_container a:hover {
+    /* color: rgba(255,255,255,1); */
+    /* color: rgba(37,116,169,1) */
+    color: rgba(0,0,0,1);
 }
 
 .filmstrip {
@@ -109,6 +149,7 @@ margin-top: 10px;
 .gallery >p {
     text-align: center;
     padding-top: 10px;
+    padding-bottom: 10px;
 }
 
 .content-border {
@@ -126,14 +167,58 @@ margin-top: 10px;
 }
 
 #polarized >article >div >div.col {
-    padding: 20px;
+    /* padding: 20px; */
 }
 
 #polarized >article >div >div.col:nth-child(2) {
     /* height: 140px; */
-    padding-left:0;
+    /* padding-left:0; */
 }
 
 .medium-feed-image, .medium-feed-link {
     display: none;
+}
+
+[class~="col"], [class*="col-"], [class*="col_"] {
+    padding: 0 0.5rem 0 0.5rem;
+}
+
+#footer ul {
+    line-height: 1.6;
+}
+
+#footer h4, h5 {
+    /* font-weight: 700; */
+}
+
+#footer li a {
+    color: #000;
+}
+#footer li a:hover {
+    color: #2574A9;
+}
+
+#footer img {
+    width: 24px;
+    opacity: .6;
+}
+#footer img:hover {
+    opacity: 1;
+}
+
+button {
+    display: inline-block;
+    padding: 10px;
+    background-color: #2574A9;
+    border: 0;
+    color: #FFF;
+    border-radius: 4px;
+    min-width: 124px;
+}
+
+button:hover {
+    border-color: none;
+    background-color: #71b3e0;
+    cursor: pointer;
+    color: #000;
 }

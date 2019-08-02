@@ -1,6 +1,6 @@
     <section style="padding-top: 24px">
         <div class="grid-<?= $grid ?>_sm-1">
-        <div class="<?= $col_left ?>" style="text-align: right">
+        <div class="<?= $col_left ?>-middle" style="text-align: right;">
             <img style="width: <?= $img_w ?>" src="/catalog/__image/<?= $photo_meta['file_name'] ?>.jpg" />
         </div>
         <div class="<?= $col_right ?>-middle" style="padding-left: 64px;">
@@ -12,7 +12,7 @@
             <p class="padbot-32">Available Sizes:<br /><?= htmlentities($photo_meta['available_sizes']) ?></p>
 
             <h6 class="padbot-8">And So The Story Goes ...</h6>
-            <p style="line-height: 2;"><?= $photo_meta['story'] ?></p>
+            <p style="line-height: 1.4;"><?= $photo_meta['story'] ?></p>
 
             <button style="margin-top: 32px;">REQUEST QUOTE</button>
         </div>
