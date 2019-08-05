@@ -44,7 +44,7 @@
             <h6 class="pb-16">YOU MAY ALSO LIKE THESE POPULAR PHOTOS</h6>
         </div>
 
-        <?= $thumb_html ?>
+        <?= $thumb_new_releases_html ?>
 
     </div>
 </section> -->

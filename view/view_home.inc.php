@@ -35,8 +35,8 @@
         } else {
             $grid_css = 'col';
         }
-
-        $thumb_new_releases_html .= '<div style="overflow: hidden; height: 203px;" class="' . $grid_css . '">';
+        //  height: 203px;
+        $thumb_new_releases_html .= '<div style="overflow: hidden;" class="' . $grid_css . '">';
         $thumb_new_releases_html .= '<a href="/new-releases' . $value['path'] . "/" . $img_file . '"><img src="/catalog/__thumbnail/' .$img_file . '.jpg" /></a></div>';
         
         if($count == 3) { $count = 0; } else { $count++; }
@@ -104,8 +104,8 @@
                 } else {
                     $grid_css = 'col';
                 }
-
-                $thumb_html .= '<div style="overflow: hidden; height: 203px;" class="' . $grid_css . '">';
+                //  height: 203px;
+                $thumb_html .= '<div style="overflow: hidden;" class="' . $grid_css . '">';
                 $thumb_html .= '<a href="' . $value['path'] . "/" . $img_file . '"><img src="/catalog/__thumbnail/' .$img_file . '.jpg" /></a></div>';
                 
                 if($count == 3) { $count = 0; } else { $count++; }

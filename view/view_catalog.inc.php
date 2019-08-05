@@ -22,7 +22,18 @@
                 $img_file = 'image_not_found';
             }
 
-            $thumb_html .= '<div style="overflow: hidden;" class="col gallery pb-32"><a href="' . $this->page->catalog_path . '/' . $img_file . '"><img src="/catalog/__thumbnail/' . $img_file . '.jpg" /></a><p><a href="' . $this->page->catalog_path . '/' . $img_file . '">' . $v['title'] . '</a><!-- <br />Exhibiting at Joe Maxx Coffee, Las Vegas --></p></div>';
+            /* For Mobile */
+            /* On last two thumbnails add some css */
+            if($count == 2) {
+                $grid_css = 'col sm-hidden';
+            } else if ($count == 3) {
+                $grid_css = 'col sm-hidden md-hidden';
+            } else {
+                $grid_css = 'col';
+            }
+            
+            // <div style="overflow: hidden; height: 203px;" class="' . $grid_css . '">
+            $thumb_html .= '<div style="overflow: hidden;" class="' . $grid_css .  ' gallery pb-32"><a href="' . $this->page->catalog_path . '/' . $img_file . '"><img src="/catalog/__thumbnail/' . $img_file . '.jpg" /></a><p><a href="' . $this->page->catalog_path . '/' . $img_file . '">' . $v['title'] . '</a><!-- <br />Exhibiting at Joe Maxx Coffee, Las Vegas --></p></div>';
             
             if($count == 3) { $count = 0; } else { $count++; }
         }

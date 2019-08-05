@@ -5,6 +5,7 @@
 
     /* Load all photo meta data */
     $photo_meta = $this->api_Catalog_Photo($this->photo_path);
+    $this->page->title = $photo_meta['title'];
     // $this->printp_r($photo_meta);
 
     if($photo_meta['orientation'] == "portrait") {
@@ -22,7 +23,7 @@
     /* Load filmstrip for popular */
     $catalog_photos = $this->api_Catalog_YouMayLike_Filmstrip();
      foreach($catalog_photos as $k => $v) {
-                
+
                 if( file_exists($_SERVER['DOCUMENT_ROOT'] . "/catalog/__thumbnail/" . $v['file_name'] . '.jpg')) {
                     $img_file = $v['file_name'];
                 } else {
@@ -44,6 +45,5 @@
                 
                 if($count == 3) { $count = 0; } else { $count++; }
             }
-
 
 ?>

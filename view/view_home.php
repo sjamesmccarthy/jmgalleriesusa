@@ -12,7 +12,7 @@
                 background-size: cover;"
             class="col">
             <div class="hero_text_container">
-                <p class="hero_text">LAKE TAHOE</p>
+                <p class="hero_text">OCEANS, LAKES & WATERFALLS</p>
                 <p><a href="/oceans-lakes-waterfalls">Explore This Collection &rarrtl;</a></p>
             </div>
         </div>
@@ -38,7 +38,7 @@
     <?php } ?>
     
     <!-- generated html from component file: New Releases -->
-    <section id="filmstrips" style="margin-top: 48px">
+    <section id="new-release-film-strip" style="margin-top: 48px">
         <?= $thumb_new_releases_html ?>
     </section>
     <!-- /generated html from component file -->

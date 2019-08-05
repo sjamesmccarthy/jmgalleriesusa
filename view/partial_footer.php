@@ -27,18 +27,25 @@
    <section id="footer">
 
         <div class="thin-line<?= $addToClass ?>"></div>
-
+            
         <div class="grid-noGutter">
-        
+
             <div class="col-6">
+                
                 <?php $this->getPartial('newsletter'); ?>
-                <div class="pt-24">
-                    <a href="/"><img src="/view/image/logo_fullsize.png" style="width: 28px;" /></a>
+
+                 <div class="col-12-middle pt-32" style="font-weight: 300">
+                  <a href="/"><img src="/view/image/logo_fullsize.png" style="width: 28px; vertical-align: middle" /></a> <?= $bc_catalog ?> <img style="vertical-align: middle; opacity: .6; width: 16px; height: 16px" src="/view/image/icon_navarrow-right.svg" /> <?= $this->page->title ?>
+                </div>
+
+                <div class="pt-24" style="display: none">
+                    <!-- <a href="/"><img src="/view/image/logo_fullsize.png" style="width: 28px;" /></a> -->
                      <a href="/"><img src="/view/image/social_twitter.svg" /></a>
                     <a href="/"><img src="/view/image/social_instagram.svg" /></a>
                     <a href="/"><img src="/view/image/social_linkedin.svg" /></a>
                     <a href="/"><img src="/view/image/social_medium.svg" /></a>
                 </div>
+
             </div>
             
             <div class="col-2">
@@ -67,6 +74,7 @@
                             <li><a href="/shop">tinyViews™</a></li>
                             <li><a href="/shop">2019 Calendar</a></li>
                             <li><a href="/shop">Books</a></li>
+                            <li><a target="_blog" href="https://polarizedquarterly.com">Polarized Quarterly</a></li>
                         </ul>
             </div>
 

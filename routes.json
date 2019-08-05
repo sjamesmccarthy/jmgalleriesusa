@@ -8,7 +8,7 @@
     "/": {
         "template" : "catalog",
         "page" : "home",
-        "title" : "Welcome To jmGalleries",
+        "title" : "Welcome To jM Galleries",
         "controller": "catalog",
         "component": "true",
         "header": {
