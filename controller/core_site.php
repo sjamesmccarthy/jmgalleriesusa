@@ -8,6 +8,7 @@ class Core_Site extends Core_Api
     public $session_started;
     public $data;
     public $page;
+    public $errors;
 
     public function __construct() {
 
@@ -133,7 +134,7 @@ class Core_Site extends Core_Api
         if(file_exists($this->routes->URI->template)) {
             include($this->routes->URI->template);
         } else { 
-            echo "<p>Template File Not Found, \Studio\Gallery\Core::render(" . __LINE__ . "),<br />" . $this->routes->URI->template . "</p>";
+            $this->errors['component'] = 'Template Not Found : ' . __FILE__ . ' : ' . __FUNCTION__ . ' : ' . __LINE__ . ' : ' . $this->routes->URI->template; 
         }
 
         /* Flush the output buffer */
@@ -158,7 +159,9 @@ class Core_Site extends Core_Api
             /* Check to see if a component file for this view is enabled and then if exists */
             if($this->routes->{$this->routes->URI->path}['component'] == "true") {
                 if(file_exists($this->routes->URI->component)) { include($this->routes->URI->component); }
-                else { print "<p>Component File Not Found" . $this->routes->URI->component . "</p>"; }
+                else { 
+                    $this->errors['component'] = 'Component Not Found : ' . __FILE__ . ' : ' . __FUNCTION__ . ' : ' . __LINE__ . ' : ' . $this->routes->URI->component; 
+                }
             } 
             
             /* Assign variables to be used in page content */
@@ -169,7 +172,9 @@ class Core_Site extends Core_Api
             /* This file needs to load after the .inc file so inherits any data attributes */
             include($this->routes->URI->view);
         } else { 
-            echo "<p>File Not Found, \Studio\Gallery\Core::getPageContent(" . __LINE__ . "," . $this->routes->URI->view . ")</p>";
+            echo "<p>Roses are red, violets are blue, we are oh-so sorry we can not find your view.</p><p>This has been reported to the poet.</p>";
+            $this->errors['component'] = 'View Not Found : ' . __FILE__ . ' : ' . __FUNCTION__ . ' : ' . __LINE__ . ' : ' . $this->routes->URI->view; 
+
         }
     }
 

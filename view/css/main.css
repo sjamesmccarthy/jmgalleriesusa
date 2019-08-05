@@ -16,9 +16,7 @@ html, body {
 
 iframe, img, video {
   border: 0;
-  border-style: none;
-  border-radius: 4px;
-  width: 100%; }
+  border-style: none; }
 
 table {
   border-collapse: collapse;
@@ -39,7 +37,7 @@ p, blockquote, caption, figure, label, fieldset, legend {
   margin: 0;
   padding: 0 0 0 0;
   font-size: 1.0em;
-  font-weight: inherit;
+  font-weight: 300;
   line-height: 1.25; }
 
 button,
@@ -355,7 +353,7 @@ h6 {
   flex-basis: 8.33333%;
   max-width: 8.33333%; }
 
-@media (max-width: 80em) {
+@media (max-width: 85.375em) {
   [class*="_lg-1"] > [class~="col"],
   [class*="_lg-1"] > [class*="col-"],
   [class*="_lg-1"] > [class*="col_"] {
@@ -858,7 +856,7 @@ h6 {
 [class*="grid_"] > [data-push-right*="off-11"] {
   margin-right: 91.66667%; }
 
-@media (max-width: 80em) {
+@media (max-width: 85.375em) {
   [class~="grid"] > [class*="_lg-1"],
   [class*="grid-"] > [class*="_lg-1"],
   [class*="grid_"] > [class*="_lg-1"] {
@@ -1589,7 +1587,7 @@ h6 {
 /************************
     HIDING COLS
 *************************/
-@media (max-width: 80em) {
+@media (max-width: 85.375em) {
   [class*="lg-hidden"] {
     display: none; } }
 

@@ -122,7 +122,7 @@ class Core_Api
                 ORDER BY
                     RAND()
                     DESC
-                    LIMIT 4";
+                    LIMIT 6";
 
             $result = $this->mysqli->query($sql);
 

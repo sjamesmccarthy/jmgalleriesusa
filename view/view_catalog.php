@@ -1,3 +1,4 @@
+<section id="catalog" class="pb-32">
     <div class="grid-4_sm-2 grid-4_md-3">
         
         <div class="col-12" style="padding: 32px 0 32px 10px; text-align: center">
@@ -10,3 +11,4 @@
         <!-- /generated html from component file -->
   
     </div>
+</section>

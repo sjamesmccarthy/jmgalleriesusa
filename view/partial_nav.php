@@ -1,5 +1,26 @@
+<style>
+
+    .thin-line {
+      width: 100vw;
+      position: relative;
+      margin-left: -50vw;
+      height: 100px;
+      left: 50%;
+    
+      height: 1px;
+      background-color: #CCC;
+      margin-top: 42px;
+      margin-bottom: 42px;
+    }
+
+    .thin-lin-home {
+        display: none;
+    }
+
+</style>   
+   
    <section id="top-nav<?= $addToClass ?>">
-        <div class="grid"><!-- grid-12_grid-12-center grid-md-4-center" -->
+        <div class="grid">
     
         <div class="col-2_md-4-middle">
             <p class="center" ><a target="_shop" href="/shop">PRODUCTS</a><br />TINY VIEWS AND BOOKS</p>
@@ -17,4 +38,6 @@
             <p class="center"><a href="/about">ABOUT</a><br />JAMES MCCARTHY</p>
         </div>
         </div>
+
+        <div class="thin-line<?= $addToClass ?>"></div>
     </section>

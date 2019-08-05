@@ -14,38 +14,36 @@
         $col_right = 'col-5';
     } else {
         $img_w = '100%';
-        $grid='11';
+        $grid='11-center';
         $col_left = 'col-7';
         $col_right = 'col-4';
     }
 
     /* Load filmstrip for popular */
-    $you_may_like = $this->api_Catalog_YouMayLike_Filmstrip();
-     foreach($you_may_like as $k => $v) {
-            
-            if( file_exists($_SERVER['DOCUMENT_ROOT'] . "/catalog/__thumbnail/" . $v['file_name'] . '.jpg')) {
-               $img_file = $v['file_name'];
-            } else {
-                $img_file = 'image_not_found';
-            }
+    $catalog_photos = $this->api_Catalog_YouMayLike_Filmstrip();
+     foreach($catalog_photos as $k => $v) {
+                
+                if( file_exists($_SERVER['DOCUMENT_ROOT'] . "/catalog/__thumbnail/" . $v['file_name'] . '.jpg')) {
+                    $img_file = $v['file_name'];
+                } else {
+                    $img_file = 'image_not_found';
+                }
 
-            /* For Mobile */
-            /* On last two thumbnails add some css */
-            if($count == 2) {
-                $grid_css = 'col sm-hidden';
-            } else if ($count == 3) {
-                $grid_css = 'col sm-hidden md-hidden';
-            } else {
-                $grid_css = 'col';
-            }
+                /* For Mobile */
+                /* On last two thumbnails add some css */
+                if($count == 2) {
+                    $grid_css = 'col sm-hidden';
+                } else if ($count == 3) {
+                    $grid_css = 'col sm-hidden md-hidden';
+                } else {
+                    $grid_css = 'col';
+                }
 
-            $thumb_html .= '<div class="' . $grid_css . '"><a href="' . $this->page->catalog_path .'/' . $img_file . '"><img src="/catalog/__thumbnail/' . $img_file . '.jpg" /></a></div>';
-            
-            /* For Mobile */
-            // $thumb_html .= '<div class="col sm-hidden"><img src="/view/image/demo-thumb.jpg" /></div>';
-            // $thumb_html .= '<div class="col sm-hidden md-hidden"><img src="/view/image/demo-thumb.jpg" /></div>';
-            if($count == 3) { $count = 0; } else { $count++; }
-        }
+                $thumb_html .= '<div style="overflow: hidden; height: 130px;" class="' . $grid_css . '">';
+                $thumb_html .= '<a href="' . $this->page->catalog_path .'/' . $img_file . '"><img style="margin-top: -35%;" src="/catalog/__thumbnail/' .$img_file . '.jpg" /></a></div>';
+                
+                if($count == 3) { $count = 0; } else { $count++; }
+            }
 
 
 ?>
