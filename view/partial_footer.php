@@ -30,7 +30,7 @@
             
         <div class="grid-noGutter">
 
-            <div class="col-6">
+            <div class="col-5">
                 
                 <?php $this->getPartial('newsletter'); ?>
 
@@ -78,7 +78,18 @@
                         </ul>
             </div>
 
-        <div class="col" data-push-left="off-10">
+            <div class="col-1">
+                    <h4 style="padding-bottom: 16px;"><a href="/shop">CONNECT</a></h4>
+                        <ul>
+                            <li><a target="_social" href="//instagram.com/jmgalleriesusa"><img src="/view/image/social_instagram.svg" />Instagram</a></li>
+                            <li><a target="_social" href="//twitter.com/jmgalleriesusa"><img src="/view/image/social_twitter.svg" />Twitter</a></li>
+                            <li><a target="_social" href="//facebook.com/jmgalleriesusa"><img src="/view/image/social_facebook.svg" />FaceBook</a></li>
+                            <li><a target="_blog" href="https://medium.com/jmgalleriesusa"><img src="/view/image/social_medium.svg" />Polarized</a></li>
+                            <li><a target="_social"  href="//linkedin.com/company/jmgalleriesusa"><img src="/view/image/social_linkedin.svg" />Linked In</a></li>
+                        </ul>
+            </div>
+
+        <div class="col" data-push-left="off-11">
             <p smallhalf style="padding-top: 32px;">&copy; 2019 jM Galleries</p>
         </div>
 

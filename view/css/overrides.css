@@ -222,6 +222,8 @@ margin-top: 10px;
     display: none;
 }
 
+/* FOOTER */
+
 #footer {
     margin-bottom: 32px;
 }
@@ -242,8 +244,12 @@ margin-top: 10px;
 }
 
 #footer img {
-    width: 24px;
     opacity: .6;
+    width: 12px; 
+    margin-right: 5px; 
+    vertical-align: middle;
+    position: relative;
+    margin-top:-3px;
 }
 #footer img:hover {
     opacity: 1;

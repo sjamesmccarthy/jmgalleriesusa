@@ -1,12 +1,11 @@
 <?php 
 
     $catalog_path_cleaned = ltrim($this->page->catalog_path, '/');
-    $this->catalog_title = ucwords( str_replace("-"," " ,$catalog_path_cleaned) );
-
+    
     /* Load all photo meta data */
     $photo_meta = $this->api_Catalog_Photo($this->photo_path);
+    $this->catalog_title = ucwords( $photo_meta['category_title'] );
     $this->page->title = $photo_meta['title'];
-    // $this->printp_r($photo_meta);
 
     if($photo_meta['orientation'] == "portrait") {
         $img_w = '90%';
@@ -47,3 +46,11 @@
             }
 
 ?>
+
+<script>
+    var title = document.title;
+    var dbTitle = "<?= $photo_meta['title'] ?>";
+    if (document.title != dbTitle) {
+        document.title = dbTitle;
+    }
+</script>
