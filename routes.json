@@ -3,7 +3,7 @@
             "template": "page",
             "page": "404",
             "component": "false",
-            "title": "Lost, Page Not Found23"
+            "title": "We are programmers not poets : e_404"
         },
     "/": {
         "template" : "catalog",
@@ -114,5 +114,11 @@
         "page": "http://shopify.com",
         "component": "false",
         "title": "Shop tinyViews, Wall Mounted Prints and Books"
+    },
+    "/newsletter": {
+        "template": "page",
+        "page": "newsletter_email",
+        "component": "true",
+        "title": "One Amazing Offer. Once A Month."
     }
 }

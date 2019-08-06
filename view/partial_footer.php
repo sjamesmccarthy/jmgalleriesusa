@@ -54,7 +54,7 @@
                     <li><a href="/galleries">Galleries</a></li>
                     <li><a href="/exhibits">Exhibitions</a></li>
                     <li><a href="/styles">Frames, Styles & Editions</a></li>
-                    <!-- <li><a href="/howto">How To Hang Your Photo</a></li> -->
+                    <li><a href="/newsletter">Newsletter Amazing Offer</a></li>
                     <li><a href="/styles">Pricing</a></li>
                 </ul>
             </div>
@@ -76,12 +76,13 @@
                             <li><a href="/shop">2019 Calendar</a></li>
                             <li><a href="/shop">Books</a></li>
                             <li><a target="_blog" href="https://polarizedquarterly.com">Polarized Quarterly</a></li>
+                            <li><a href="/studio610">Portraits, Weddings & Events</a></li>
                         </ul>
             </div>
 
             <div class="col-1">
                     <h4 style="padding-bottom: 16px;"><a href="/about">CONNECT</a></h4>
-                        <ul>
+                        <ul style="margin-left: 5px;">
                             <li><a target="_social" href="//instagram.com/jmgalleriesusa"><img src="/view/image/social_instagram.svg" />Instagram</a></li>
                             <li><a target="_social" href="//twitter.com/jmgalleriesusa"><img src="/view/image/social_twitter.svg" />Twitter</a></li>
                             <li><a target="_social" href="//facebook.com/jmgalleriesusa"><img src="/view/image/social_facebook.svg" />FaceBook</a></li>

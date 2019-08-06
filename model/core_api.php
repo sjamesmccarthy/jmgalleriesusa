@@ -104,6 +104,43 @@ class Core_Api
         return($data);
     }
 
+    public function api_Catalog_Get_New_Releases($limit) {
+        
+        /* Executes SQL and then assigns object to passed var */
+        if( $this->checkDBConnection(__FUNCTION__) == true) {
+
+            $sql = "SELECT
+                P.*,
+                C.path as catalog_path
+            FROM
+                catalog_photo AS P
+            INNER JOIN catalog_category AS C ON C.catalog_category_id = P.catalog_category_id
+            WHERE
+                created < Now()
+                AND created > DATE_ADD(Now(), INTERVAL - 7 MONTH)
+            ORDER BY
+                RAND()
+            LIMIT " . $limit;
+	
+            $result = $this->mysqli->query($sql);
+
+            if ($result->num_rows > 0) {
+            
+                while($row = $result->fetch_assoc())
+		        {
+		            $data[] = $row;
+		        }
+                
+            } else {
+                
+                $data[] = "No Records Found @ $sql";
+            }	
+            
+        }
+
+        return($data);
+    }
+
     public function api_Catalog_YouMayLike_Filmstrip() {
         
         /* Executes SQL and then assigns object to passed var */
@@ -192,9 +229,9 @@ class Core_Api
         if( $this->checkDBConnection(__FUNCTION__) == true) {
 
             if(is_null($catalog_path)) {
-                $sql = "SELECT * FROM catalog_category";
+                $sql = "SELECT * FROM catalog_category WHERE type='CATALOG' AND status='ACTIVE'";
             } else {
-                $sql = "SELECT * FROM catalog_category WHERE path ='" . $catalog_path . "'";
+                $sql = "SELECT * FROM catalog_category WHERE path ='" . $catalog_path . "' AND type='CATALOG'";
             }
 
             $result = $this->mysqli->query($sql);

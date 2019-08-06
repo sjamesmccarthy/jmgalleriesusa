@@ -31,7 +31,7 @@
             <h6 class="blue padbot-8 padtop-32"><?= $photo_meta['loc_place'] ?> | <?= $photo_meta['loc_city'] ?>, <?= $photo_meta['loc_state'] ?></h6>
             <p style="line-height: 1.4; color: #4D4D4D;"><?= $photo_meta['story'] ?></p>
 
-            <button style="margin-top: 32px;">REQUEST A QUOTE</button>
+            <a href="/contact"><button style="margin-top: 32px;">REQUEST A QUOTE</button></a>
         </div>
 
     </div>

@@ -99,9 +99,16 @@ class Core_Site extends Core_Api
             
             } else {
 
+                 /* splitting the URI path by forward slash */
+                $URIx = explode('/', $this->routes->URI->path);
+
                 /* Error 404, page URI not found. Simply rewrite the URI as /404 */
                 $this->routes->URI->path = "/404";
-                $this->routes->URI->path = "/404";
+                $this->page->title = $this->routes->{$this->routes->URI->path}['title'];
+                $this->routes->URI->requested_path = $URIx;
+
+                /* Log error */
+                
             }
 
             /* Parse query string */

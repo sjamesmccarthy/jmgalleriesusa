@@ -26,7 +26,7 @@
             style="
             background-color: #FFFFFF">
                 <img class="bio-profile-pic" src="/view/image/profile_img.jpg" />
-                <img style="width: 100%" src="/view/image/upper-webber-falls.png" />
+                <img style="width: 100%; border-radius: 4px;" src="/view/image/upper-webber-falls.png" />
         </div>
     </div>
 

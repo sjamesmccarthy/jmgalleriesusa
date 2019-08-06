@@ -6,13 +6,16 @@
     $catalog_names = $this->api_Catalog_Category_List();
 
     /* Fetch Just the New Releases filmstrip */
-    $new_releases = $this->api_Catalog_Category_Filmstrip(4,4);
+    $new_releases = $this->api_Catalog_Get_New_Releases(4);
 
         $thumb_new_releases_html .= "<article>";
         $thumb_new_releases_html .= '<div class="grid-4_sm-2 grid-4_md-3">';
         $thumb_new_releases_html .= '<div class="col-11" style="margin-bottom: 16px;">';
-        $thumb_new_releases_html .= '    <h2><a href="/' . $catalog_names[3]['path'] . '">' . strtoupper($catalog_names[3]['title']) . '</a></h2>';
-        $thumb_new_releases_html .= '    <p>' . $catalog_names[3]['desc'] .  '</p>';
+        // $thumb_new_releases_html .= '    <h2><a href="/' . $catalog_names[3]['path'] . '">' . strtoupper($catalog_names[3]['title']) . '</a></h2>';
+        // $thumb_new_releases_html .= '    <p>' . $catalog_names[3]['desc'] .  '</p>';
+        $thumb_new_releases_html .= '    <h2><a href="/new-releases/">NEW RELEASES</a></h2>';
+        $thumb_new_releases_html .= '    <p>a collection of photography featuring James\' newest work in all categories.</p>';
+
         $thumb_new_releases_html .= '</div>';
         $thumb_new_releases_html .= '<div class="col-1-bottom" style="margin-bottom: 16px; text-align: right;">';
         $thumb_new_releases_html .= '<a href="/' . $catalog_names[3]['path'] . '">view all</a>';
@@ -38,7 +41,7 @@
         }
         //  height: 203px;
         $thumb_new_releases_html .= '<div style="overflow: hidden;" class="' . $grid_css . '">';
-        $thumb_new_releases_html .= '<a href="/new-releases' . $value['path'] . "/" . $img_file . '"><img src="/catalog/__thumbnail/' .$img_file . '.jpg" /></a></div>';
+        $thumb_new_releases_html .= '<a href="/' . $value['catalog_path']  . $value['path'] . "/" . $img_file . '"><img src="/catalog/__thumbnail/' .$img_file . '.jpg" /></a></div>';
         
         if($count == 3) { $count = 0; } else { $count++; }
     }

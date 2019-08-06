@@ -12,7 +12,7 @@
     $catalog_desc = $catalog_meta[0]['desc'];
 
     /* Get Thumbnails of photos for Category */
-    $catalog_photos = $this->api_Catalog_Category_Thumbs($catalog);
+    $catalog_photos = $this->api_Catalog_Get_New_Releases(100);
 
         foreach($catalog_photos as $k => $v) {
             
@@ -33,8 +33,18 @@
             }
             
             // <div style="overflow: hidden; height: 203px;" class="' . $grid_css . '">
-            $thumb_html .= '<div style="overflow: hidden;" class="' . $grid_css .  ' gallery pb-32"><a href="' . $this->page->catalog_path . '/' . $img_file . '"><img src="/catalog/__thumbnail/' . $img_file . '.jpg" /></a><p><a href="' . $this->page->catalog_path . '/' . $img_file . '">' . $v['title'] . '</a><!-- <br />Exhibiting at Joe Maxx Coffee, Las Vegas --></p></div>';
+            $thumb_html .= '<div style="overflow: hidden;" class="' . $grid_css .  ' gallery pb-32"><a href="/' . $v['catalog_path'] . '/' . $img_file . '"><img src="/catalog/__thumbnail/' . $img_file . '.jpg" /></a><p><a href="/' . $v['catalog_path'] . '/' . $img_file . '">' . $v['title'] . '</a><!-- <br />Exhibiting at Joe Maxx Coffee, Las Vegas --></p></div>';
             
             if($count == 3) { $count = 0; } else { $count++; }
         }
+
+
+    /* If this is NEW-RELEASES we need to fetch data differently because the pics are across all main catalogs(categories) 
+    
+    Use the -- api_Catalog_Get_New_Releases() API call 
+    LIMIT set to 100
+    Update to include soft catalog_path
+    */
+
+    
 ?>
