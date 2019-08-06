@@ -23,6 +23,12 @@
         "component": "true",
         "title": "[$2]"
     },
+    "/galleries": {
+        "template": "catalog",
+        "page": "galleries",
+        "component": "true",
+        "title": "Galleries"
+    },
     "/oceans-lakes-waterfalls": {
         "template": "catalog",
         "page": "catalog",

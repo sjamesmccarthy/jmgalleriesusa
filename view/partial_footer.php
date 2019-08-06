@@ -51,9 +51,10 @@
             <div class="col-2">
                 <h4 style="padding-bottom: 16px;"><a href="/">EXPLORE</a></h4>
                 <ul>
+                    <li><a href="/galleries">Galleries</a></li>
                     <li><a href="/exhibits">Exhibitions</a></li>
                     <li><a href="/styles">Frames, Styles & Editions</a></li>
-                    <li><a href="/howto">How To Hang Your Photo</a></li>
+                    <!-- <li><a href="/howto">How To Hang Your Photo</a></li> -->
                     <li><a href="/styles">Pricing</a></li>
                 </ul>
             </div>
@@ -69,7 +70,7 @@
             </div>
 
             <div class="col-2">
-                    <h4 style="padding-bottom: 16px;"><a href="/shop">SHOP</a></h4>
+                    <h4 style="padding-bottom: 16px;"><a target="_shop" href="/shop">SHOP</a></h4>
                         <ul>
                             <li><a href="/shop">tinyViews™</a></li>
                             <li><a href="/shop">2019 Calendar</a></li>
@@ -79,7 +80,7 @@
             </div>
 
             <div class="col-1">
-                    <h4 style="padding-bottom: 16px;"><a href="/shop">CONNECT</a></h4>
+                    <h4 style="padding-bottom: 16px;"><a href="/about">CONNECT</a></h4>
                         <ul>
                             <li><a target="_social" href="//instagram.com/jmgalleriesusa"><img src="/view/image/social_instagram.svg" />Instagram</a></li>
                             <li><a target="_social" href="//twitter.com/jmgalleriesusa"><img src="/view/image/social_twitter.svg" />Twitter</a></li>

@@ -1,9 +1,6 @@
 <?php
 
     $count =0;
-
-    /* Create an API call to get the Polarized listings */
-    $polarized_json = $this->api_Polarized_Get_Latest();
     
     /* Load all category meta data */
     $catalog_names = $this->api_Catalog_Category_List();
@@ -20,6 +17,7 @@
         $thumb_new_releases_html .= '<div class="col-1-bottom" style="margin-bottom: 16px; text-align: right;">';
         $thumb_new_releases_html .= '<a href="/' . $catalog_names[3]['path'] . '">view all</a>';
         $thumb_new_releases_html .= "</div>";
+
 
     foreach($new_releases as $k => $value) {
                 
@@ -47,31 +45,6 @@
         $thumb_new_releases_html .= "</div>";
         $thumb_new_releases_html .= "</article>";
 
-    /* POLARIZED */
-    $count=0;
-    foreach($polarized_json as $key=>$value) {
-        
-        if($count === 3) { $content_border = null; } else { $content_border = 'content-border'; }
-
-        /* For Mobile */
-        /* On last two thumbnails add some css */
-        if($count == 2) {
-            $grid_css = 'col sm-hidden';
-        } else if ($count == 3) {
-            $grid_css = 'col sm-hidden md-hidden';
-        } else {
-            $grid_css = 'col';
-        }
-
-        $polarized_html .= '<div class="' . $grid_css . ' ' . $content_border . '">';
-        $polarized_html .= '<h5><a target="_blog" href="https://medium.com/jmgalleriesusa">' . $value['title'] . '</a></h5>';
-        $polarized_html .= '<p>' . $value['description'] . '</p>';
-        // $polarized_html .= '<p style="padding-top: 10px;text-align: left; position:absolute; bottom: 0;"><a target="_new" href="' . $value['link'] . '">Read More</a>';
-        $polarized_html .= '</div>';
-
-        if($count === 3) { $count = 0; } else { $count++; }
-    }
-
     // /* Load all category meta data */
     // $catalog_names = $this->api_Catalog_Category_List();
 
@@ -85,10 +58,10 @@
             $thumb_html .= '    <h2><a href="/' . $value['path'] . '">' . strtoupper($value['title']) . '</a></h2>';
             $thumb_html .= '    <p>' . $value['desc'] .  '</p>';
             $thumb_html .= '</div>';
+            // $thumb_html .= '<div class="col-1-bottom"><p style="text-align: right;">view all</p></div>';
             $thumb_html .= '<div class="col-1-bottom" style="margin-bottom: 16px; text-align: right;">';
             $thumb_html .= '<a href="/' . $value['path'] . '">view all</a>';
             $thumb_html .= "</div>";
-            // $thumb_html .= '<div class="col-3-bottom"><p style="text-align: right;">view all</p></div>';
 
             /* Get FilmStrip of photos by Category */
             $catalog_photos = $this->api_Catalog_Category_Filmstrip($value['catalog_category_id'], 4);

@@ -46,6 +46,10 @@
     padding-bottom: 8px;
 }
 
+.martop20 {
+    margin-top: 20px;
+}
+
 .mt-42 {
     margin-top: 42px;
 }
@@ -356,3 +360,43 @@ input[type="text"], textarea, select {
     margin-bottom: 10px;
 }
 
+/* TIMELINES */
+.timeline {
+    margin-top: 60px;
+}
+
+.timeline-date {
+    display: inline-block;
+    width: 100px;
+    font-size: 36px;
+    border-bottom: 1px solid #CCC;
+    padding-bottom: 10px;
+}
+
+.timeline-history {
+    display: inline-block;
+    width: 85%;
+    border-left: 1px solid #CCC;
+    padding-left:  10px;
+    vertical-align: top;
+    margin-top: -25px;
+}
+
+.timeline-history > p {
+    /* line-height: 1.2em; */
+    margin-top: 10px;
+    margin-bottom: 10px;
+    /* font-size: 18px; */
+}
+
+.bio-profile-pic {
+       position: absolute;
+left: -110px;
+top: -55px;
+    border-radius: 260px;
+    padding: 10px;
+    border: 5px solid #CCC;
+    /* margin-left: -114px; */
+    background-color: #FFF;
+    width: 240px;
+}

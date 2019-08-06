@@ -24,10 +24,15 @@
         <!-- partial_polarized.php -->
         <article>
             <div class="grid-4_sm-2_md-3">
-                <div class="col-12" style="margin-bottom: 16px;">
+                <div class="col-11" style="margin-bottom: 16px;">
                     <h2><a target="_new" href="https://medium.com/jmgalleriesusa">POLARIZED</a></h2>
-                    <p>a Photographic Conversation & Quarterly &mdash; <a target="_blog" href="https://polarizedquarterly.com">Subscribe</a> or read some of free it on Medium</p>
+                    <p>a Photographic Conversation & Quarterly 
+                        <!-- &mdash; <a href="//medium.com/jmgalleriesusa">read more</a> -->
+                        <!--  <a target="_blog" href="https://polarizedquarterly.com">Subscribe</a> or read some of free it on Medium</p> -->
                 </div>
+                <!-- <div class="col-1-bottom" style="margin-bottom: 16px; text-align: right;"> -->
+                    <!-- <a href="//medium.com/jmgalleriesusa">read more</a> -->
+                <!-- </div> -->
                 
                 <?= $polarized_html ?>
 
