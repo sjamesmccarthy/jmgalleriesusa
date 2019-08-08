@@ -23,7 +23,7 @@
 }
 
 .pb-16 {
-    padding-bottom: 16px;
+    padding-bottom: 16px !important;
 }
 
 .pb-24 { 
@@ -58,9 +58,14 @@
     margin-top: 42px;
 }
 
+.mt-96 {
+    margin-top: 96px !important;
+}
+
 .mb-42 {
     margin-bottom: 42px;
 }
+
 
 a {
     color: #2574A9;
@@ -237,6 +242,7 @@ margin-top: 10px;
 }
 
 #footer ul {
+    font-weight: 300;
     line-height: 1.6;
 }
 
@@ -296,7 +302,7 @@ button:hover, button a:hover {
 }
 
 .subsection-ul li >p {
-    font-size: 1.0rem;
+    /* font-size: 1.0rem; */
     margin-bottom: 10px;
     margin-top: 10px;
 }
@@ -563,14 +569,14 @@ input[type="text"].amazing-offer-error {
 
 .amazing-offer-expires {
     font-weight: 100;
-    font-size: .6rem;
+    font-size: .5rem;
     text-align: left;
     text-transform: uppercase;
     /* font-size: 1rem; */
-    margin-top: 60px;
+    /* margin-top: 60px; */
     line-height: 1.5em;
-    border-top: 1px solid #A9A9A9;
-    padding-top: 10px;
+    /* border-top: 1px solid #A9A9A9; */
+    /* padding-top: 10px; */
 }
 
 .amazing-offer-button {
@@ -590,7 +596,7 @@ input[type="text"].amazing-offer-error {
     margin-top: 20px;
     margin-bottom: 20px;
     padding: 20px;
-    font-size: 1.2em;
+    font-size: 1.2rem;
     font-weight: 900;
     background-color: rgba(43,170,223,.5);
     color: #000;

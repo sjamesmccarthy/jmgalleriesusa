@@ -6,6 +6,8 @@
     $photo_meta = $this->api_Catalog_Photo($this->photo_path);
     $this->catalog_title = ucwords( $photo_meta['category_title'] );
     $this->page->title = $photo_meta['title'];
+    
+    $available_sizes = preg_replace("/tinyViews Edition/i", "<a href='/shop'>tinyViews&trade; Edition</a>", $photo_meta['available_sizes']);
 
     if($photo_meta['orientation'] == "portrait") {
         $img_w = '90%';
@@ -39,11 +41,15 @@
                     $grid_css = 'col';
                 }
 
-                $thumb_html .= '<div style="overflow: hidden; height: 130px;" class="' . $grid_css . '">';
-                $thumb_html .= '<a href="' . $this->page->catalog_path .'/' . $img_file . '"><img style="margin-top: -35%;" src="/catalog/__thumbnail/' .$img_file . '.jpg" /></a></div>';
-                
+                // $thumb_html .= '<div style="overflow: hidden; height: 130px;" class="' . $grid_css . '">';
+                // $thumb_html .= '<a href="' . $this->page->catalog_path .'/' . $img_file . '"><img style="margin-top: -35%;" src="/catalog                $thumb_html .= '<div style="overflow: hidden;" class="' . $grid_css . '">';/__thumbnail/' .$img_file . '.jpg" /></a></div>';
+
+                $thumb_html .= '<div style="overflow: hidden;" class="' . $grid_css . '">';
+                $thumb_html .= '<a href="' . $this->page->catalog_path . $v['path'] . "/" . $img_file . '"><img src="/catalog/__thumbnail/' .$img_file . '.jpg" /></a></div>';
+
                 if($count == 3) { $count = 0; } else { $count++; }
             }
+
 
 ?>
 

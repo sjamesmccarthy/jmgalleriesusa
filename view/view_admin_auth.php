@@ -1,7 +1,7 @@
 <section id="login" class="form">
   <div style="width: 50%; margin: auto; margin-top: 40px; margin-bottom: 40px;">
 
-  <h1 style="padding-bottom: 20px;">Portfolio. Inventory. Collector.</h1>
+  <h1 style="padding-bottom: 20px;">Portfolio. Inventory. Collector. </h1>
   <form action="/admin" class="" autocomplete="off" method="post">
     <input type="hidden" name="state" value="auth" />
 

@@ -36,9 +36,9 @@ ol, ul, li, dl, dt, dd {
 p, blockquote, caption, figure, label, fieldset, legend {
   margin: 0;
   padding: 0 0 0 0;
-  font-size: 1.0em;
+  font-size: 1.2rem;
   font-weight: 300;
-  line-height: 1.25; }
+  line-height: 1.4; }
 
 button,
 input,
@@ -105,7 +105,7 @@ h6 {
   font-weight: 700; }
 
 [smallhalf] {
-  font-size: .7em; }
+  font-size: .9rem; }
 
 /* ==========================================================================
     GRIDLEX

@@ -69,7 +69,7 @@
             </select><br />
         </div>
 
-      <span style="margin-left: 25px; font-size: .8rem;"><a href="/styles" target="_new">Learn more about our Styles, Editions and Prices.</a><br />If you prefer Acrylic, or wish to add an open-air-frame please <a target="_new" href="/contact">contact us</a> for a price.</span>
+      <span style="font-size: .8rem;"><a href="/styles">Learn more about our Styles, Editions and Prices.</a> If you prefer Acrylic, or wish to add an open-air-frame please <a href="/contact">contact us</a> for a price.</span>
 
         <!-- <p class="buyme"> -->
           <!-- <input class="" type="checkbox" id="buyme" name="buyme" value="buyMe" /> 
@@ -84,7 +84,7 @@
         </div>
 
         <p class="amazing-offer-center">
-        <button id="formButton" class="amazing-offer-button allcaps" ">SUBMIT ORDER</button>
+        <button id="formButton" class="amazing-offer-button allcaps">SUBMIT ORDER</button>
         </p>
 
         </form>
@@ -93,7 +93,7 @@
     </div>
 
             <div class="amazing-offer-expires">
-                <p>THIS OFFER EXPIRES ON <?= $amazingOfferExpiration ?>. MSRP pricing for float-mounted prints can be found on our <a href="/styles" target="_new">Styles, Editions and Pricing</a> page. This Pre-Order Pricing is only valid for Small, Medium and Large Fine-Art photographs.
+                <p smallhalf>THIS OFFER EXPIRES ON <?= $amazingOfferExpiration ?>. MSRP pricing for float-mounted prints can be found on our <a href="/styles" target="_new">Styles, Editions and Pricing</a> page. This Pre-Order Pricing is only valid for Small, Medium and Large Fine-Art photographs.
                 *Taxes apply to Nevada residents. Price listed as USD. Shipping (UPS only) varies by destination and within U.S.A only. Limit 1 per customer per shipping address. Each series is limited to 12 photos. All limited edition photos are signed, numbered and include a Certificate of Authenticity. This offer is only valid for online purchases and for this specific photo, "<?= $amazingOfferTitle ?>" and does not include a frame. </p>
                 
                   <!-- <p class="amazing-offer-center padtop40"><img src="/images/square-payment-icons.png" style="width: 200px;"/></p> -->

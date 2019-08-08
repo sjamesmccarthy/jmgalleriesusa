@@ -26,7 +26,7 @@
             <p>Other Non-Personal information and types of data will also be collected periodically, such as: Type of browser and operating system, aggregated information through Google Analytics including traffic statistics, page views, enter and exit pages, and impressions; all of which are collected automatically by thrid-party services and are bound by their separate privacy policies.
             </p>
 
-  <p>Third-party systems like PayPal, Square, Shopify, Constant Contact collect personal indentifable information for sales and marketing. This information is stored by such third-parites and not stored on jMcCarthy Galleries servers. For more information about this information please contact them directly.</p>
+  <p>Third-party systems like PayPal, Square, Shopify, MailChimp collect personal indentifable information for sales and marketing. This information is stored by such third-parites and not stored on jMcCarthy Galleries servers. For more information about this information please contact them directly.</p>
 
             <!-- <ul style="margin-left: 50px; border-left: 1px solid #CCC; padding-left: 20px; margin-top: 40px;">
               <li> PayPal, <a href="http://whatsnext.umbrellatreeco.com/privacy" target="_new">Legal Agreements</a>, 1 (888) 221-1161 </li>

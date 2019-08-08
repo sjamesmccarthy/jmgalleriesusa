@@ -1,5 +1,6 @@
-<form>
-    <h5 style="padding-bottom: 16px;">SIGN-UP FOR A MONTHLY NEW RELEASE EMAIL</h5>
+<div style="vertical-align: bottom;">
+    <form>
+    <h4 style="padding-bottom: 16px;">SIGN-UP FOR OUR ONCE A MONTH EMAIL</h4>
     
     <p>
         <input 
@@ -7,10 +8,11 @@
             padding: 10px;
             height: 42px;
             margin-right: 10px;" 
-            type="text" name="email" placeholder="Type Your Email Address Here" />
+            type="text" name="email" placeholder="Type Your Email Here" />
         <button>SUBMIT</button>
     </p>
 
 
-    <p smallhalf>We support the INBOX-ZERO movement and promise to only send you one email per month from this list.</p>
-</form>
+    <p smallhalf>All emails include an unsubscribe link. You may opt-out at any time. View our <a href="legal">privacy policy</a></p>
+    </form>
+</div>

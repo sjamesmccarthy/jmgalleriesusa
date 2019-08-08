@@ -117,7 +117,7 @@ class Core_Api
             INNER JOIN catalog_category AS C ON C.catalog_category_id = P.catalog_category_id
             WHERE
                 created < Now()
-                AND created > DATE_ADD(Now(), INTERVAL - 7 MONTH)
+                AND created > DATE_ADD(Now(), INTERVAL - 4 MONTH)
             ORDER BY
                 RAND()
             LIMIT " . $limit;
@@ -159,7 +159,7 @@ class Core_Api
                 ORDER BY
                     RAND()
                     DESC
-                    LIMIT 6";
+                    LIMIT 4";
 
             $result = $this->mysqli->query($sql);
 
