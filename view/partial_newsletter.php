@@ -4,7 +4,7 @@
     
     <p>
         <input 
-            style="width: 65%;
+            style="width: 55%;
             padding: 10px;
             height: 42px;
             margin-right: 10px;" 
@@ -13,6 +13,6 @@
     </p>
 
 
-    <p smallhalf>All emails include an unsubscribe link. You may opt-out at any time. View our <a href="legal">privacy policy</a></p>
+    <p smallhalf>All emails include an unsubscribe link. You may opt-out at any time.</p>
     </form>
 </div>

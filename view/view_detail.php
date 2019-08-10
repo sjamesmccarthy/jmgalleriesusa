@@ -42,7 +42,7 @@
             
             <p class="pt-32" style="line-height: 1.4; color: #4D4D4D;"><?= $photo_meta['desc'] ?></p>
             <div>
-            <a href="/contact"><button style="margin-top: 32px;">BUY ART</button></a>
+            <a href="/contact"><button style="margin-top: 32px;">REQUEST QUOTE</button></a>
             </div>
 
         </div>

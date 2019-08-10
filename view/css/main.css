@@ -12,7 +12,8 @@ html, body {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
-  font-family: 'Roboto Condensed', sans-serif; }
+  font-family: 'Roboto Condensed', sans-serif;
+  color: #4a4a4a; }
 
 iframe, img, video {
   border: 0;

@@ -42,7 +42,7 @@
                 ?>
 
 
-                <div class="pt-24" style="display: none">
+                <div class="pt-24">
                     <!-- <a href="/"><img src="/view/image/logo_fullsize.png" style="width: 28px;" /></a> -->
                      <a href="/"><img src="/view/image/social_twitter.svg" /></a>
                     <a href="/"><img src="/view/image/social_instagram.svg" /></a>
@@ -58,7 +58,8 @@
                     <li><a href="/galleries">Galleries</a></li>
                     <li><a href="/exhibits">Exhibitions</a></li>
                     <li><a href="/styles">Frames, Styles & Editions</a></li>
-                    <li><a href="/newsletter">Newsletter Amazing Offer</a></li>
+                    <!-- <li><a href="/newsletter">Newsletter Amazing Offer</a></li> -->
+                    <li><a href="/styles">Pricing</a></li>
                 </ul>
             </div>
 
@@ -66,7 +67,6 @@
                 <h4 style="padding-bottom: 16px;"><a href="/about">ABOUT</a></h4>
                     <ul>
                         <li><a href="/about">the Photographer</a></li>
-                    <li><a href="/styles">Pricing</a></li>
                         <li><a href="/styles">Limited Editions</a></li>
                         <li><a href="/legal">Privacy Policy</a></li>
                         <li><a href="/contact">Contact</a></li>
@@ -85,18 +85,15 @@
             </div>
 
             <div class="col-1">
-                    <h4 style="padding-bottom: 16px;"><a href="/contact">CONNECT</a></h4>
+                    <h4 style="padding-bottom: 16px;"><a href="/contact">SALES</a></h4>
                         <ul style="margin-left: 5px;">
-                            <li><a target="_social" href="//instagram.com/jmgalleriesusa"><!-- <img src="/view/image/social_instagram.svg" /> -->Instagram</a></li>
-                            <li><a target="_social" href="//twitter.com/jmgalleriesusa"><!-- <img src="/view/image/social_twitter.svg" /> -->Twitter</a></li>
-                            <li><a target="_social" href="//facebook.com/jmgalleriesusa"><!-- <img src="/view/image/social_facebook.svg" /> -->Facebook</a></li>
-                            <li><a target="_blog" href="https://medium.com/jmgalleriesusa"><!-- <img src="/view/image/social_medium.svg" /> -->Medium</a></li>
-                            <li><a target="_social"  href="//linkedin.com/company/jmgalleriesusa"><!-- <img src="/view/image/social_linkedin.svg" /> -->LinkedIn</a></li>
+                            <li><a href="/styles">Pricing</a></li>
+                            <li><a href="/contact">Contact</a></li>
                         </ul>
             </div>
 
-        <div class="col" data-push-left="off-11">
-            <p smallhalf style="padding-top: 32px;">&copy; 2019 jM Galleries</p>
+        <div class="col" data-push-left="off-9">
+            <p smallhalf style="padding-top: 32px;"><?= $this->config->copyright ?></p>
         </div>
 
     </div>

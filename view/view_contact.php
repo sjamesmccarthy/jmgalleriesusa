@@ -4,7 +4,7 @@
 
         <div class="col-9">
 
-            <h1><?= $this->title ?></h1>
+            <h1 class="pb-16"><?= $this->title ?></h1>
 
 <script>
 
@@ -59,29 +59,34 @@
         <form id="contactForm" action="#" method="post">
 
         <p>
-        <label class="" for="name">First and Last Name</label>
-        <input type="text" id="name" name="name" placeholder="First and Last Name" value="" required>
+        <!-- <label class="" for="name">YOUR NAME</label> -->
+        <input type="text" id="name" name="name" placeholder="YOUR NAME" value="" required>
         </p>
 
         <p>
-        <label class="" for="contactinfo">Email Address or Phone Number</label>
-        <input type="text" id="contactinfo" name="contactinfo" placeholder="Your Email or Phone Number" value="" required>
+        <!-- <label class="" for="contactinfo">Email Address or Phone Number</label> -->
+        <input type="text" id="contactinfo" name="contactinfo" placeholder="YOUR EMAIL" value="" required>
         </p>
 
-        <label>I am interested in ...</label>
+        <p>
+        <!-- <label class="" for="contactinfo">Email Address or Phone Number</label> -->
+        <input type="text" id="image" name="image" placeholder="PHOTOGRAPH TITLE" value="" required>
+        </p>
+
+        <!-- <label>I am interested in ...</label>
         <ul class="contact-form-interest-list pt-24">
         <li><input name="interest" type="radio" value="Buying A Print"> Buying Your Amazing Artwork <b><?= $referringPhoto ?></b></li>
         <li><input name="interest" type="radio" value="Commissioning Request"> Commissioning Your Out-of-This-World Talent</li>
         <li><input name="interest" type="radio" value="General Comments, Other"> Licensing, Customer Service, or something else</li>
-        </ul>
+        </ul> -->
 
-        <input name="refer" type="hidden" value="<?= $print_name ?>" />
+        <!-- <input name="refer" type="hidden" value="<?= $print_name ?>" />
         <input name="refer_IP" type="hidden" value="<?= $_SERVER['REMOTE_ADDR'] ?>" />
-        </p>
+        </p> -->
 
-        <p style="margin-top: 20px;">
-        <label class="" for="comments">Type Your Message Here</label>
-        <textarea id="comments" name="comments" placeholder="Tell us how we can help you here, or a good joke." rows="8" style="height: 200px; padding-top: 30px;" required><?= $referringPhotoCommentsField ?></textarea>
+        <p>
+        <!-- <label class="" for="comments">TYPE YOUR MESSAGE HERE</label> -->
+        <textarea id="comments" name="comments" placeholder="" rows="8" style="height: 200px; padding-top: 30px;" required><?= $referringPhotoCommentsField ?></textarea>
         </p>
 
         <div class="g-recaptcha"

@@ -6,6 +6,14 @@
     color: #2574A9;
 }
 
+.black {
+    color: #4a4a4a;
+}
+
+.bold {
+    font-weight: 700;
+}
+
 .hidden {
     display: none;
 }
@@ -54,6 +62,10 @@
     margin-top: 20px;
 }
 
+.mt-16 {
+    margin-top: 16px;
+}
+
 .mt-42 {
     margin-top: 42px;
 }
@@ -79,6 +91,10 @@ a:hover {
 h1, h2, h3, h4, h5, h6 {
     color: #2574A9;
     font-weight: 300;
+}
+
+h5 {
+    line-height: 1.5;
 }
 
 h1.supersize {
@@ -259,7 +275,7 @@ margin-top: 10px;
 
 #footer img {
     opacity: .6;
-    width: 12px; 
+    width: 16px; 
     margin-right: 5px; 
     vertical-align: middle;
     position: relative;
@@ -365,20 +381,22 @@ input[type="text"], input[type="password"], textarea, select {
     transition: border 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
     /* line-height: 50px; */
     box-sizing: border-box;
-    padding-top: 20px;
+    /* padding-top: 20px; */
     padding-left: 15px;
     margin-bottom: 10px;
 }
 
 /* TIMELINES */
 .timeline {
-    margin-top: 60px;
+    /* margin-top: 60px */
+width: 70%;
+margin: 60px auto;
 }
 
 .timeline-date {
     display: inline-block;
     width: 100px;
-    font-size: 36px;
+    font-size: 1.5rem;
     border-bottom: 1px solid #CCC;
     padding-bottom: 10px;
 }
@@ -630,4 +648,25 @@ input[type="text"].amazing-offer-error {
 
 .select-wrapper option {
     padding: 5px;
+}
+
+/* MOMENTS */
+
+
+#news-overflow {
+    display: block;
+    position: relative;
+    min-height: 50px;
+    /*background-color: rgba(204,187,221,.7);*/
+    padding: 20px 20px 10px 20px;
+}
+
+#news-overflow >p.year {
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+#news-overflow li {
+    margin-bottom: 10px;
+    margin-left: 20px;
 }

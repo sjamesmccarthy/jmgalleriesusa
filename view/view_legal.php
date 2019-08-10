@@ -3,20 +3,15 @@
 
         <div class="col" >
 
-         <h1>Copyright, Privacy Policy, Terms of Use and Sale</h1>
+         <h1 class="pb-32">Copyright, Privacy Policy, Terms of Sale and Use</h1>
+         
+         <h5 class="black">All Photographs and Content and/or Associated information with any photo on this site is Copyright James McCarthy/ jMcCarthy Galleries ("Copyright Owner"). All Rights Reserved and service marks on any of our Sites ("jmgalleries.com, jmccarthygalleries.com, jmccarthyfineart.com, jamesmccarthyfinaeart.com, studio610group.com, s610project.com, laketahoe-landscapes.com"), not owned by us are the property of their respective owners. No part of our Sites may be reproduced, stored, or transmitted in any form or by any means -- electronic, mechanical, photocopying, recording or otherwise -- without the permission of the Copyright Owner.
+         The trade names, trademarks and service marks owned by Copyright Owner, whether registered or unregistered, may not be used in connection with any other product or service that is not ours, in any manner that is likely to cause confusion. These marks include, but are not limited to "jm", "jmgalleries", "jMcCarthy Galleries", "STUDIO610", "tinyViews", "Large Landscapes for Tiny Places".
+</h5>
 
 	<ul class="subsection-ul">
 
         <li>
-            <p>All Photographs and Content and/or Associated information with any photo on this site is Copyright James McCarthy/ jMcCarthy Galleries ("Copyright Owner").
-            </p>
-
-            <p>All Rights Reserved and service marks on any of our Sites ("jmgalleries.com, jmccarthygalleries.com, jmccarthyfineart.com, jamesmccarthyfinaeart.com, studio610group.com, s610project.com, laketahoe-landscapes.com"), not owned by us are the property of their respective owners. No part of our Sites may be reproduced, stored, or transmitted in any form or by any means -- electronic, mechanical, photocopying, recording or otherwise -- without the permission of the Copyright Owner.
-            </p>
-
-            <p>
-            The trade names, trademarks and service marks owned by Copyright Owner, whether registered or unregistered, may not be used in connection with any other product or service that is not ours, in any manner that is likely to cause confusion. These marks include, but are not limited to "jm", "jmgalleries", "jMcCarthy Galleries", "STUDIO610", "tinyViews", "Large Landscapes for Tiny Places".
-            </p>
         </li>
 
         <li><h3>Privacy Policy</h3>
@@ -33,20 +28,6 @@
               <li> Shopify, <a href="https://www.shopify.com/legal/privacy" target="_new">Privacy Policy</a>, 1 (888) 746-7439</li>
               <li> GoDaddy, <a href="https://www.godaddy.com/agreements/showdoc.aspx" target="_new">Legal Agreements</a>, 1 (480) 505-8877</li>
             </ul> -->
-
-        </li>
-
-        <li><h3>Terms of Use</h3>
-            <p>By visiting any of our Sites, you agree to these Terms and our Privacy Policy. Any products ordered or services used through any of our Sites are also governed by these Terms, as well as our Terms of Sale. We may also occasionally offer the opportunity to participate in sweepstakes, contests, or other similar promotions, each of which will have additional terms you must accept in order to participate. We reserve the right to change or discontinue our Sites, in whole or in part, at any time in our sole discretion.
-            </p>
-
-            <p>
-            Our Sites may direct you or link to third-party sites, software or services owned or operated by third parties. We do not endorse or approve any such sites or services, and we have no responsibility for them. We encourage you to read their terms of service, privacy policy, and any other similar documents relating to any third-party site or service.
-            </p>
-
-            <p>
-            Our Sites are operated from the State of Nevada in the United States and are not subject to the laws or jurisdiction of any state, country or territory other than that of the State of Nevada in the United States.
-            </p>
 
         </li>
 
@@ -96,6 +77,22 @@
                 </ol>
 
         </li>
+
+
+        <li><h3>Terms of Use</h3>
+            <p>By visiting any of our Sites, you agree to these Terms and our Privacy Policy. Any products ordered or services used through any of our Sites are also governed by these Terms, as well as our Terms of Sale. We may also occasionally offer the opportunity to participate in sweepstakes, contests, or other similar promotions, each of which will have additional terms you must accept in order to participate. We reserve the right to change or discontinue our Sites, in whole or in part, at any time in our sole discretion.
+            </p>
+
+            <p>
+            Our Sites may direct you or link to third-party sites, software or services owned or operated by third parties. We do not endorse or approve any such sites or services, and we have no responsibility for them. We encourage you to read their terms of service, privacy policy, and any other similar documents relating to any third-party site or service.
+            </p>
+
+            <p>
+            Our Sites are operated from the State of Nevada in the United States and are not subject to the laws or jurisdiction of any state, country or territory other than that of the State of Nevada in the United States.
+            </p>
+
+        </li>
+
 
     </ul>
  
