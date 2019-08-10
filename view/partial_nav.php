@@ -1,24 +1,3 @@
-<style>
-
-    .thin-line {
-      width: 100vw;
-      position: relative;
-      margin-left: -50vw;
-      height: 100px;
-      left: 50%;
-    
-      height: 1px;
-      background-color: #CCC;
-      margin-top: 42px;
-      margin-bottom: 42px;
-    }
-
-    .thin-lin-home {
-        display: none;
-    }
-
-</style>   
-   
    <section id="top-nav<?= $addToClass ?>">
         <div class="grid">
     

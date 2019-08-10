@@ -33,7 +33,7 @@
             </p>
 
             <p class="amazing-offer-blurb">
-            Pre-Order Pricing for your Limited-Edition, Numbered, Fine-Art Print
+            Pre-Order Pricing for your Limited-Edition, Numbered, 13x19 Fine-Art Print
             </p>
             <p class="amazing-offer-blurb-desc">
             <span style="text-align: left"></span>
@@ -48,42 +48,39 @@
         <form id="amazingOfferForm" action="#" method="post">
 
         <p>
-        <label class="" for="name">Your First and Last Name</label>
-        <input class="" type="text" id="name" name="name" placeholder="First and Last Name" value="" required>
+        <!-- <label class="" for="name">Your First and Last Name</label> -->
+        <input class="" type="text" id="name" name="name" placeholder="YOUR NAME" value="" required>
         </p>
 
         <p>
-        <label class=""  for="contactinfoEmail">Your Email Address</label>
-        <input class="" type="text" id="contactinfoEmail" name="contactinfoEmail" placeholder="Your Email (example: joe@email.com)" value="" required>
+        <!-- <label class=""  for="contactinfoEmail">Your Email Address</label> -->
+        <input class="" type="text" id="contactinfoEmail" name="contactinfoEmail" placeholder="YOUR EMAIL" value="" required>
         </p>
 
         
-       <div class="select-wrapper">
-        <label class=""  for="size">Payment Method</label>
-            <select class="" id="size" name="size">
-                <option value="0">SELECT YOUR SIZE & PRE-ORDER PRICING</p>
-                <option value="0">- - - - -</option>
-                <option value="12x18">$59 (12x18) - SMALL, Print-Only, Numbered, Limited-Edition, SAVE $61</option>
-                <option value="16x24">$189 (16x24) - MEDIUM, Numbered, Limited-Edition, SAVE $351</option>
-                <option value="24x36">$369 (24x36) - LARGE, Numbered, Limited-Edition, SAVE $591</option>
+       <!-- <div class="select-wrapper">
+            <select id="sizes" name="sizes">
+                <option selected>SELECT SIZE
+                <option value="12x18">$59 (12x18) - Print-Only, Numbered, Limited-Edition, SAVE $41</option>
+                <option value="16x24">$109 (16x24) - Print-Only, Numbered, Limited-Edition, SAVE $66</option>
             </select><br />
-        </div>
+        </div> -->
+
+        <p class="pt-16">
+          <input type="checkbox" id="buyme" name="buyme" value="buyMe" /> 
+          <label for="buyme" style="font-size: 1.2rem;">Yes, I would like to buy (1) Limited-Edition, Numbered, 13x19, Fine-Art Print, "<?= $amazingOfferTitle ?>" for $89 <strike>$100</strike>.
+        <input name="amazingOfferTitle" type="hidden" value="<?= $amazingOfferTitle ?>" />
+        </p>
 
       <span style="font-size: .8rem;"><a href="/styles">Learn more about our Styles, Editions and Prices.</a> If you prefer Acrylic, or wish to add an open-air-frame please <a href="/contact">contact us</a> for a price.</span>
-
-        <!-- <p class="buyme"> -->
-          <!-- <input class="" type="checkbox" id="buyme" name="buyme" value="buyMe" /> 
-          <label for="buyme" style="font-size: 1.2rem;">Yes, I would like to buy (1) Limited-Edition, Numbered, Fine-Art Print, "<?= $amazingOfferTitle ?>". -->
-        <input name="amazingOfferTitle" type="hidden" value="<?= $amazingOfferTitle ?>" />
-        <!-- </p> -->
-
+        
         <div class="g-recaptcha"
           data-sitekey="6Lem3V0UAAAAAJQyKvI6lkyRHZJstUt44YYq0TQ4"
           data-callback="formSubmit"
           data-size="invisible">
         </div>
 
-        <p class="amazing-offer-center">
+        <p class="amazing-offer-center pt-16">
         <button id="formButton" class="amazing-offer-button allcaps">SUBMIT ORDER</button>
         </p>
 
@@ -93,8 +90,8 @@
     </div>
 
             <div class="amazing-offer-expires">
-                <p smallhalf>THIS OFFER EXPIRES ON <?= $amazingOfferExpiration ?>. MSRP pricing for float-mounted prints can be found on our <a href="/styles" target="_new">Styles, Editions and Pricing</a> page. This Pre-Order Pricing is only valid for Small, Medium and Large Fine-Art photographs.
-                *Taxes apply to Nevada residents. Price listed as USD. Shipping (UPS only) varies by destination and within U.S.A only. Limit 1 per customer per shipping address. Each series is limited to 12 photos. All limited edition photos are signed, numbered and include a Certificate of Authenticity. This offer is only valid for online purchases and for this specific photo, "<?= $amazingOfferTitle ?>" and does not include a frame. </p>
+                <p smallhalf>THIS OFFER EXPIRES ON <?= $amazingOfferExpiration ?>. MSRP pricing for float-mounted prints can be found on our <a href="/styles" target="_new">Styles, Editions and Pricing</a> page. This Pre-Order Pricing is only valid for 13x19 print (12x18 image area) Fine-Art photograph.
+                *Taxes apply to Nevada residents. Price listed as USD. Shipping (UPS only) varies by destination and within U.S.A only. Limit 1 per customer per shipping address. All limited edition photos are signed, numbered and include a Certificate of Authenticity. This offer is only valid for online purchases and for this specific photo, "<?= $amazingOfferTitle ?>" and does not include a frame, mat or other mounting options. </p>
                 
                   <!-- <p class="amazing-offer-center padtop40"><img src="/images/square-payment-icons.png" style="width: 200px;"/></p> -->
             </div>

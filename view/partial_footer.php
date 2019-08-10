@@ -1,5 +1,5 @@
-   <style>
-       .contact-form-label {
+<style>
+    .contact-form-label {
     font-size: 18px;
     font-weight: 7800;
     /* line-height: 1; */
@@ -26,7 +26,7 @@
 
    <section id="footer">
 
-        <div class="thin-line<?= $addToClass ?>"></div>
+        <div class="thin-line thicken"><?= $addToClass ?></div>
             
         <div class="grid-noGutter">
 

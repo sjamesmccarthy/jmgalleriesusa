@@ -96,7 +96,7 @@
           data-badge="bottomright">
         </div>
 
-        <button id="submit">SUBMIT YOUR FEEDBACK</button>
+        <button id="submit">SEND</button>
         </form>
 
         <script>onload();</script>

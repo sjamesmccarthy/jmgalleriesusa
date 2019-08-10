@@ -89,7 +89,7 @@
         "template": "page",
         "page": "moments",
         "component": "false",
-        "title": "News"
+        "title": "News & Other Moments"
     },
     "/exhibits": {
         "template": "page",
@@ -125,6 +125,6 @@
         "template": "page",
         "page": "newsletter_email",
         "component": "true",
-        "title": "One Amazing Offer. Once A Month."
+        "title": "Once A Month Email"
     }
 }

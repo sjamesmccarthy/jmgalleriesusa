@@ -9,10 +9,10 @@
             height: 42px;
             margin-right: 10px;" 
             type="text" name="email" placeholder="Type Your Email Here" />
-        <button>SUBMIT</button>
+        <button>SUBSCRIBE</button>
     </p>
 
 
-    <p smallhalf>All emails include an unsubscribe link. You may opt-out at any time.</p>
+    <p smallhalf>All emails include an unsubscribe link. You may opt-out at any time. <a href="/newsletter">Sample</a></p>
     </form>
 </div>
