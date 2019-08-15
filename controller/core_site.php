@@ -188,7 +188,7 @@ class Core_Site extends Core_Api
     public function printp_r($value) {
 
         /* Makes a print_r dump a little easier on the brain */
-        echo "<pre style='text-align: left'>"; print_r($value); echo "</pre>";
+        echo "<pre style='text-align: left'>"; var_dump($value); echo "</pre>";
     }
 
     public function debugInfo() {

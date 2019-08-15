@@ -122,7 +122,7 @@ main {
 }
 
 #home-image {
-    margin-top:0;
+    /* margin-top:0; */
 }
 
 
@@ -152,25 +152,18 @@ main {
 
 #top-nav-home {
     position: relative;
-    top: 116px;
+    /* top: 116px; */
     /* left: 7%; */
     /* right: 7%; */
     width: 100%;
     /* min-width: 1454px; */
-    z-index: 1024;
-    margin-top: -77px;
+    /* z-index: 1024; */
+    margin-top: 32px;
 }
 
 #top-nav-home img {
     /* filter: invert(0); */
     opacity: .6;
-}
-#top-nav-home a {
-    color: #FFF;
-}
-
-#top-nav-home a:hover {
-    color: #000;
 }
 
 .center {
@@ -206,7 +199,7 @@ position: relative;
 
 .hero_text_container {
 position: absolute;
-top: 75%;
+top:75%;
 left: 41%;
 transform: translate(-32%, -41%);
     text-transform: uppercase;
@@ -756,4 +749,10 @@ input[type="text"].amazing-offer-error {
 #news-overflow li {
     margin-bottom: 10px;
     margin-left: 20px;
+}
+
+/* DETAIL PAGE */
+
+.ssslide {
+    border: .5px solid #CCC;
 }

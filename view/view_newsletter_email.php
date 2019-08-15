@@ -7,7 +7,7 @@
             </p> -->
               
               <h1 class="amazing-offer-h1 padbot-30">
-                <!-- <?= $amazingOfferTitle ?></span> -->
+                <?= strtoupper($amazingOfferMonth) ?>
                 NEW RELEASE
               </h1>
               
@@ -57,14 +57,15 @@
         <input class="" type="text" id="contactinfoEmail" name="contactinfoEmail" placeholder="YOUR EMAIL" value="" required>
         </p>
 
-        
-       <!-- <div class="select-wrapper">
-            <select id="sizes" name="sizes">
-                <option selected>SELECT SIZE
-                <option value="12x18">$59 (12x18) - Print-Only, Numbered, Limited-Edition, SAVE $41</option>
-                <option value="16x24">$109 (16x24) - Print-Only, Numbered, Limited-Edition, SAVE $66</option>
-            </select><br />
-        </div> -->
+        <p>
+        <!-- <label class=""  for="contactinfoEmail">Your Email Address</label> -->
+        <input class="" type="text" id="contactinfoAddress" name="contactinfoAddress" placeholder="YOUR STREET ADDRESS" value="" required>
+        </p>
+
+        <p>
+        <!-- <label class=""  for="contactinfoEmail">Your Email Address</label> -->
+        <input class="" type="text" id="contactinfoCityState" name="contactinfoCityState" placeholder="YOUR CITY, STATE and POSTAL CODE" value="" required>
+        </p>
 
         <p class="pt-16">
           <input type="checkbox" id="buyme" name="buyme" value="buyMe" /> 
@@ -81,7 +82,7 @@
         </div>
 
         <p class="amazing-offer-center pt-16">
-        <button id="formButton" class="amazing-offer-button allcaps">SUBMIT ORDER</button>
+        <button id="formButton" class="amazing-offer-button allcaps">SUBMIT ORDER REQUEST</button>
         </p>
 
         </form>

@@ -36,7 +36,7 @@
                </div>
             </div>
 
-            <div class="col-5-top">
+            <div class="col-4-top">
                 <?php 
                     $this->getPartial('newsletter'); 
                 ?>
@@ -52,28 +52,37 @@
 
             </div>
             
-            <div class="col-2">
+            <div class="col-2" style="padding-left: 16px">
                 <h4 style="padding-bottom: 16px;"><a href="/">EXPLORE</a></h4>
                 <ul>
                     <li><a href="/galleries">Galleries</a></li>
                     <li><a href="/exhibits">Exhibitions</a></li>
                     <li><a href="/styles">Frames, Styles & Editions</a></li>
-                    <!-- <li><a href="/newsletter">Newsletter Amazing Offer</a></li> -->
-                    <li><a href="/styles">Pricing</a></li>
+                    <li><a href="/moments">News & Moments</a></li>
+                    <!-- <li><a href="/styles">Pricing</a></li> -->
                 </ul>
             </div>
 
-            <div class="col-2">
+            <div class="col-2" style="padding-left: 16px">
                 <h4 style="padding-bottom: 16px;"><a href="/about">ABOUT</a></h4>
                     <ul>
                         <li><a href="/about">the Photographer</a></li>
-                        <li><a href="/styles">Limited Editions</a></li>
+                        <!-- <li><a href="/styles">Limited Editions</a></li> -->
                         <li><a href="/legal">Privacy Policy</a></li>
                         <li><a href="/contact">Contact</a></li>
                     </ul>
             </div>
 
-            <div class="col-2">
+            <div class="col-2" style="padding-left: 16px">
+                    <h4 style="padding-bottom: 16px;"><a href="/contact">SALES</a></h4>
+                        <ul style="margin-left: 5px;">
+                            <li><a href="/styles">Pricing</a></li>
+                            <li><a href="/contact">Customer Service</a></li>
+                            <li><a href="/newsletter">Monthly Amazing Offer</a></li>
+                        </ul>
+            </div>
+
+            <div class="col-2" style="padding-left: 16px">
                     <h4 style="padding-bottom: 16px;"><a target="_shop" href="/shop">SHOP</a></h4>
                         <ul>
                             <li><a href="/shop">tinyViews™</a></li>
@@ -84,13 +93,6 @@
                         </ul>
             </div>
 
-            <div class="col-1">
-                    <h4 style="padding-bottom: 16px;"><a href="/contact">SALES</a></h4>
-                        <ul style="margin-left: 5px;">
-                            <li><a href="/styles">Pricing</a></li>
-                            <li><a href="/contact">Contact</a></li>
-                        </ul>
-            </div>
 
         <div class="col" data-push-left="off-9">
             <p smallhalf style="padding-top: 32px;"><?= $this->config->copyright ?></p>

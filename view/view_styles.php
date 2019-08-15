@@ -80,12 +80,14 @@
         <p>All fine-art pricing is based on using the finest quality material available and include a float mount. Framing not included, but we have hand-made selections available for purchase.</p>
 
         <ol>
-            <li> Acrylic Fine Art (Printed edge to edge)
+            <li> Acrylic Fine Art (Ready to hang with float hanger, but can be frame ready as well)
                 <p>20x30 - $675, 24x36 - $975, 30x45 - $1495, 40x60 - $2695</p>
             </li>
-            <li> Mounted Wall Art (Printed with 1/2" white border)
+            <li> Mounted Wall Decor (Standouts come ready hang with float hanger, but can be frame ready as well)
                 <p>12x18 (13x19 paper size) - $100, 16x24 (17x25 paper size) - $175 and <A href="/shop">tinyViews&trade; Editions</a></p>
             </li>
+            <li> Framing
+                <p>All of our frames are hand-made from real wood soruced from a Los Angeles, California mill. They are stained or painted and include a wire hanger for easy hanging. Since each frame is custom made to order, prices will vary anywhere from $50 to $500 or more depending on size, type of wood and finishing.</p>
         </ol>
 
     </li>

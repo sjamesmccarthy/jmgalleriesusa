@@ -4,10 +4,15 @@
     
     /* Load all photo meta data */
     $photo_meta = $this->api_Catalog_Photo($this->photo_path);
+
     $this->catalog_title = ucwords( $photo_meta['category_title'] );
     $this->page->title = $photo_meta['title'];
     
     $available_sizes = preg_replace("/tinyViews Edition/i", "<a href='/shop'>tinyViews&trade; Edition</a>", $photo_meta['available_sizes']);
+
+    if( is_null($photo_meta['desc']) ) {
+        $desc = "This art is printed on Acrylic and includes a float mount hanger. Read more about <a href=\"/styles\">our pricing and other available options.<a/>";
+    }
 
     if($photo_meta['orientation'] == "portrait") {
         $img_w = '90%';

@@ -5,15 +5,17 @@
             style="
                 background-color: #CCC; 
                 height: 570px;
-                background-image: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(117,117,119,0) 60%), url('/view/image/demo-full.jpg');
+                background-image: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(117,117,119,0) 60%), url('/view/image/demo-full-6.jpg');
                 background-attachment: scroll;
                 background-position: 100% 75%;
                 background-repeat: no-repeat;
-                background-size: cover;"
+                background-size: cover;
+                border-top-right-radius: 20px;
+                border-top-left-radius: 251px;"
             class="col">
             <div class="hero_text_container">
-                <p class="hero_text">OCEANS, LAKES & WATERFALLS</p>
-                <p><a href="/oceans-lakes-waterfalls">Explore This Collection &rarrtl;</a></p>
+                <p class="hero_text">MOUNTAINS, DESERTS & TREES</p>
+                <p><a href="/mountains-deserts-trees">Explore This Collection<!-- &rarrtl; --></a></p>
             </div>
         </div>
     </div>

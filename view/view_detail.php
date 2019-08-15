@@ -1,7 +1,7 @@
 <section id="detail">
         <div class="grid-<?= $grid ?>_sm-1">
         <div class="<?= $col_left ?>-middle" style="text-align: right;">
-            <img style="width: <?= $img_w ?>" src="/catalog/__image/<?= $photo_meta['file_name'] ?>.jpg" />
+            <img style="width: <?= $img_w ?>; border: .5px solid #CCC;" src="/catalog/__image/<?= $photo_meta['file_name'] ?>.jpg" />
         </div>
         <div class="<?= $col_right ?>-middle" style="padding-left: 64px;">
 
@@ -40,7 +40,7 @@
 
             <!-- <h6 class="blue padbot-8 padtop-32"><?= $photo_meta['loc_place'] ?> | <?= $photo_meta['loc_city'] ?>, <?= $photo_meta['loc_state'] ?></h6> -->
             
-            <p class="pt-32" style="line-height: 1.4; color: #4D4D4D;"><?= $photo_meta['desc'] ?></p>
+            <p class="pt-32" style="line-height: 1.4; color: #4D4D4D;"><?= $desc ?></p>
             <div>
             <a href="/contact"><button style="margin-top: 32px;">REQUEST QUOTE</button></a>
             </div>
@@ -64,13 +64,15 @@
     </div>
     </article>
 </section>
- 
+
 <section class="mt-96">
     <article>
-        <div class="grid">
-            <div class="col">
-                <img style="width: 100%" src="/catalog/__image/<?= $photo_meta['file_name'] ?>.jpg" />
-        </div>
+        <!-- <div class="grid"> -->
+            <div class="slider">
+                <div><img src="/catalog/__image/<?= $photo_meta['file_name'] ?>.jpg" /><!-- <div class="title">THIS HAS A TITLE</div> --></div>
+                <div><img src="/catalog/__image/<?= $photo_meta['file_name'] ?>-home.jpg" /><!-- <div class="title">THIS HAS A TITLE --></div></div>
+            </div>
+        <!-- </div> -->
     </article>
 </section>
 
