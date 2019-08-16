@@ -9,6 +9,7 @@
         </div>
         <div class="col-2_md-4-middle">
             <p style="text-align: center; padding-left: 30px"><a href="/"><img style="width: 85px" src="/view/image/logo_fullsize.png" /></a></p>
+            <p style="font-size: .8em; text-align: right; margin-right: 50px; margin-top: -5px;">beta</p>
         </div>
         <div class="col-3_md-hidden-middle">
             <p class="center"><a href="/exhibits">EXHIBITIONS</a><br />POP-UP GALLERIES AND EVENTS</p>

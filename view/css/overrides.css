@@ -176,22 +176,6 @@ main {
     margin-top: 32px;
 }
 
-#top-nav-home {
-    /* position: relative; */
-    /* top: 116px; */
-    /* left: 7%; */
-    /* right: 7%; */
-    /* width: 100%; */
-    /* min-width: 1454px; */
-    /* z-index: 1024; */
-    /* margin-top: 32px; */
-}
-
-#top-nav-home img {
-    /* filter: invert(0); */
-    /* opacity: .6; */
-}
-
 .center {
     text-align: center;
 }
@@ -226,7 +210,7 @@ position: relative;
 .hero_text_container {
 position: absolute;
 top:75%;
-left: 41%;
+left: 40%;
 transform: translate(-32%, -41%);
     text-transform: uppercase;
     font-weight: 700;

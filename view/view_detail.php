@@ -76,7 +76,7 @@
     <article>
     <div class="grid-4_sm-2 grid-4_md-3">
     <div class="col-11" style="margin-bottom: 16px;">
-        <h2><a href="/' . $value['path'] . '">YOU MAY ALSO LIKE</a></h2>
+        <h2 class="blue">YOU MAY ALSO LIKE</h2>
         <p>More popular photographs based on what others are viewing</p>
     </div>
     <div class="col-1-bottom" style="margin-bottom: 16px; text-align: right;">
