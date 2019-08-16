@@ -89,7 +89,7 @@
                             <li><a href="/shop">2019 Calendar</a></li>
                             <li><a href="/shop">Books</a></li>
                             <!-- <li><a target="_blog" href="https://polarizedquarterly.com">Polarized Quarterly</a></li> -->
-                            <li><a href="/studio610">Portraits, Weddings & Events</a></li>
+                            <li><a target="_new" href="/portraits-events-headshots">Portraits, Weddings & Events</a></li>
                         </ul>
             </div>
 

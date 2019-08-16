@@ -92,7 +92,7 @@
             </ul>
 
             <ul class="timeline">
-                <li class="timeline-date"><p style="line-height: 1.1em;">2015<br />| <span style="font-size: 14px;">thru</span><br />2017</p></li>
+                <li class="timeline-date">2015<br />| <span style="font-size: 14px;">thru</span><br />2017</li>
                 <li class="timeline-history">
                     <p>
                     After moving back to the Reno/Tahoe area in 2015, James met his better-half, Michele, who after seeing his work, inspired him to  publicly display and sell his photographs.

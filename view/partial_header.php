@@ -10,6 +10,8 @@
     <script src="/view/js/bxslider/jquery.bxslider.min.js"></script>
     <link rel="stylesheet" href="/view/js/bxslider/jquery.bxslider.css" type="text/css" media="all">
     
+    <script src="/view/js/instafeed.min.js"></script>
+
     <link rel="stylesheet" href="/view/css/overrides.css">
 
     <script>

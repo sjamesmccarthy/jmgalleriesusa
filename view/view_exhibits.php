@@ -1,5 +1,9 @@
 <style>
 
+#instafeed img {
+    width: 100%;
+}
+
 .padbot-30 {
     padding-bottom: 30px;
 }
@@ -41,6 +45,7 @@ margin-top: 5px; width: 13%
 
 .exhibit-list li {
     margin-bottom: 30px;
+    margin-left: 20px;
 }
 
 </style>
@@ -48,11 +53,11 @@ margin-top: 5px; width: 13%
 <section id="about pt-24">
     <div class="grid-noGutter-center">
 
-        <div class="col" >
+        <div class="col-8" style="padding-right: 20px;">
 
             <h1>Exhibits & Pop-Up Galleries</h1>
 
-            <p class="artists-statement padbot-30">You can find James' work in and around areas he photographs at local coffee shops, tap rooms, vintage boutiques and events.</p>
+            <p class="artists-statement padbot-30">You can find James' work in and around areas he photographs at local coffee shops, tap rooms, vintage boutiques and events in Reno/Tahoe, Nevada, Las Vegas, Nevada and Temecula, California.</p>
 
             <ul class="exhibit-list indent-list">
                 <!-- <li>
@@ -68,7 +73,7 @@ margin-top: 5px; width: 13%
             <li>
                 <p class="left padright-20"><img class="exhibit-icon" src="view/image/exhibit_icon_joemaxx.png" / ></p>
                 <div>
-                    <h3>JOE MAXX COFFFE CO. HENDERSON</h3>
+                    <h5>JOE MAXX COFFFE CO. HENDERSON</h5>
                     <p class="exhibit-desc">
                     <a href="https://goo.gl/maps/xHMqth4ztjhHS6nd8" target="_map">10445 Spencer St #110, Henderson, NV 89183</a><br />
                     James' newest pop-gallery is at Joe Maxx Coffee Company in Henderson, Nevada. You can see and buy some of James' newest work, Tiny Views: Large landscapes framed for small spaces, as well a few larger pieces such as Never Ending Story, Winemaker's Walkabout and Golden Allure.
@@ -80,7 +85,7 @@ margin-top: 5px; width: 13%
             <li>
              <p class="left padright-20"><img style="border-radius: 50px;" class="exhibit-icon" src="view/image/exhibit_icon_stoneyhead.jpg" / ></p>
                 <div>
-                <h3>STONEYHEAD BREWING CO. RENO</h3>
+                <h5>STONEYHEAD BREWING CO. RENO</h5 >
                     <p class="exhibit-desc">
                     <a target="_gallery" href="https://goo.gl/maps/mdcvgSLheyE2"><i class="far fa-compass"></i> 5301 Longley Ln #97C, Reno, NV 89511, (775) 829-2337</a></p>
                     <p>Take a fun side-trip and visit this amazing brewery in South Reno. The popcorn is to die for and the beer and artwork are pretty cool too - you can even write on their walls if you ask nicely. Currently, "The Happiest Time of Day" is showing at this cool Northern Nevada brewery.
@@ -103,14 +108,14 @@ margin-top: 5px; width: 13%
             </li>
 
             <li>
-            <h4><i class="fas fa-thumbtack exhibit-prev-tack"></i>Boulder City Beer Fest 2018</h4>
+            <h4><i class="fas fa-thumbtack exhibit-prev-tack"></i>Boulder City Beer Fest 2018 and 2019</h4>
             <p class="margin-zero">Wilbur Square Park, Boulder City, NV<br />March 2018 & March 2019</p>
              <!-- <p>Come join me out at the park in Boulder City with <a target="_new" href="http://umbrellatreeco.com"> Umbrella Tree Co</a> enjoying some craft brews, beautiful weather and photography! Previously showed: <a target="_new" href="https://www.facebook.com/jmgalleriesusa/photos/pcb.796822897178720/796820120512331/?type=3&theater">Happiest Time of Day, Never Ending Story and Once Afloat <i class="fas fa-link" style="font-size: 14px"></i> </a>.</p> -->
             </li>
 
             <li>
-            <h4><i class="fas fa-thumbtack exhibit-prev-tack"></i>Art Off The Walls @Temecula 2018</h4>
-            <p>Temecula City Hall, 41000 Main Street, Temecula, CA, 92590<br />July, September & November 2018</p>
+            <h4><i class="fas fa-thumbtack exhibit-prev-tack"></i>Art Off The Walls @Temecula 2018 & 2019</h4>
+            <p>Temecula City Hall, 41000 Main Street, Temecula, CA, 92590<br />July, September & November 2018 | June, September, November 2019</p>
             <!-- <p>On July 6, 2018 I will be at the Temecula City Hall for their monthly First Friday Art Off The Walls event between 6:00 PM and 9:00 PM. Previously shown: <a target="new" href="https://www.instagram.com/p/Bk6EOzTg-Ug/?taken-by=jmgalleriesusa">America, Sweet & Salty Dreams, Once Afloat, Verde Espada, Never Ending Dream, Bonsai Zen, Serendipity, Lost Trail, Elysium and Happiest Time of Day</a>.
             </p> -->
             </li>
@@ -157,6 +162,11 @@ margin-top: 5px; width: 13%
 
 
 
+        </div>
+
+        <div class="col-3" style="border-left: 1px solid #CCC; padding-left: 40px;">
+            <div id="instafeed"></div>
+            <p style="font-size: .8em; margin-top: 5px;"><a target="_new" href="https://instagram.com/jmgalleriesusa/">View more on Instagram</a></p>
         </div>
  
     </div>

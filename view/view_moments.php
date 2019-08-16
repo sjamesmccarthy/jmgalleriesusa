@@ -1,9 +1,8 @@
 <section id="about pt-24">
     <div class="grid-noGutter">
 
-        <div class="col" >
+        <div class="col-8">
 
-           <!--  <img class="float_profile_pic" src="images/profile_pic.png" alt="profile pic" /> -->
             <h2>Moments, and Other News & Events</h2>
 
             <ul id="news-overflow">
@@ -122,4 +121,10 @@
             <li><p><a target="_new" href="http://twitter.com/jmgalleriesusa"><i class="fab fa-twitter"></a></i></p></li>
             </ul>
 </div>
+
+    <div class="col-4" style="border-left: 1px solid #CCC; padding-left: 40px;">
+            <div class="twitter-feed">
+                <a class="twitter-timeline" data-width="300" data-height="3000" data-theme="light" href="https://twitter.com/jmgalleriesusa">Tweets by @jmgalleriesusa</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+            </div>
+    </div>
 </section>

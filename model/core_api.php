@@ -188,6 +188,7 @@ class Core_Api
             $sql = "SELECT
                 P.*,
                 C.title as category_title
+                -- AL.*
             FROM
                 catalog_photo AS P
                 INNER JOIN catalog_category AS C ON C.catalog_category_id = (
@@ -197,8 +198,46 @@ class Core_Api
                         catalog_photo
                     WHERE
                         file_name = '" . $file_name . "')
+                    -- INNER JOIN art_locations AS AL ON P.on_display = AL.art_location_id
                 WHERE
                     file_name = '" . $file_name . "'";
+        
+            $result = $this->mysqli->query($sql);
+            
+            if ($result->num_rows > 0) {
+            
+                while($row = $result->fetch_assoc())
+		        {
+		            $data = $row;
+		        }
+                
+            } else {
+            
+                /* This should go to a custom photo not found page */
+                header('location: /404');
+                $data[] = "No Records Found";
+            }	
+            
+        }
+
+            // $this->printp_r($data);
+
+        return($data);
+    }
+
+    public function api_Catalog_Photo_Meta_Location($on_display) {
+        
+        /* Executes SQL and then assigns object to passed var */
+        if( $this->checkDBConnection(__FUNCTION__) == true) {
+
+            $sql = "SELECT
+                AL.location,
+                AL.city,
+                AL.state
+            FROM
+                art_locations AS AL
+                WHERE
+                    art_location_id = '" . $on_display . "'";
         
             $result = $this->mysqli->query($sql);
 
@@ -209,16 +248,9 @@ class Core_Api
 		            $data = $row;
 		        }
                 
-            } else {
-                
-                /* This should go to a custom photo not found page */
-                header('location: /404');
-                $data[] = "No Records Found";
-            }	
+            } 
             
         }
-
-            // $this->printp_r($data);
 
         return($data);
     }

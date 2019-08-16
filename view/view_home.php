@@ -1,6 +1,5 @@
-    <!-- partial_home_hero.php -->
     <section id="home-image">
-    <div class="grid-1">
+    <div class="grid-1" style="margin: 0;">
         <div 
             style="
                 background-color: #CCC; 
@@ -15,7 +14,7 @@
             class="col">
             <div class="hero_text_container">
                 <p class="hero_text">MOUNTAINS, DESERTS & TREES</p>
-                <p><a href="/mountains-deserts-trees">Explore This Collection<!-- &rarrtl; --></a></p>
+                <p><a href="/mountains-deserts-trees">Explore This Collection</a></p>
             </div>
         </div>
     </div>

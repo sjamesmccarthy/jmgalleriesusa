@@ -117,7 +117,13 @@
     },
     "/shop": {
         "template": "redirect",
-        "page": "http://shopify.com",
+        "page": "https://etsy.com",
+        "component": "false",
+        "title": "Shop tinyViews, Wall Mounted Prints and Books"
+    },
+    "/portraits-events-headshots": {
+        "template": "redirect",
+        "page": "https://smugmug.com",
         "component": "false",
         "title": "Shop tinyViews, Wall Mounted Prints and Books"
     },

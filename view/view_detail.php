@@ -28,15 +28,15 @@
                 <span style="font-size: .8em; font-weight: 300">Messages will be returned in 24 horus.</span>
             </div>
 
-            <div style="display:block">&nbsp;</div>
+            <?= $on_display ?>
 
-             <div style="display: inline-block;">
+            <!-- <div style="display: inline-block;">
                 <a style="color: #4D4D4D;" href="/exhibits"><img src="/view/image/icon_geo.svg" style="width: 16px; opacity: .6; margin-right: 10px;" /></a>
             </div>
             <div style="display: inline-block; vertical-align: top; color: #4D4D4D; font-size: 1em; position: relative; margin-top: -2px;">
                 <a style="color: #4D4D4D; font-weight: 300" href="/contact"><b>See It</b></a><br />
                 <span style="font-size: .8em; font-weight: 300">This art is available to view in Las Vegas, Nevada</span>
-            </div>
+            </div> -->
 
             <!-- <h6 class="blue padbot-8 padtop-32"><?= $photo_meta['loc_place'] ?> | <?= $photo_meta['loc_city'] ?>, <?= $photo_meta['loc_state'] ?></h6> -->
             
@@ -67,16 +67,11 @@
 
 <section class="mt-96">
     <article>
-        <!-- <div class="grid"> -->
-            <div class="slider">
-                <div><img src="/catalog/__image/<?= $photo_meta['file_name'] ?>.jpg" /><!-- <div class="title">THIS HAS A TITLE</div> --></div>
-                <div><img src="/catalog/__image/<?= $photo_meta['file_name'] ?>-home.jpg" /><div style="margin-top: -64px; text-align: right; margin-right: 32px"><a href="/contact"><button>BUY THIS ART</button></a></div></div>
-            </div>
-        <!-- </div> -->
+       <?= $super_photo ?>
     </article>
 </section>
 
-<section class="mt-96">
+<section id="you-may-like" class="filmstrip mt-96">
 
     <article>
     <div class="grid-4_sm-2 grid-4_md-3">

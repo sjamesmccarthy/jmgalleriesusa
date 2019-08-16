@@ -4,6 +4,10 @@
     border-bottom-right-radius: 10px;
 }
 
+.filmstrip-thumb img {
+    /* width: 100%; */
+}
+
 img {
     border-radius: 4px;
 }
@@ -135,6 +139,9 @@ main {
     /* margin-top:0; */
 }
 
+.filmstrip img {
+    width: 100%;
+}
 
 .thin-line {
     width: 100vw;
@@ -170,19 +177,19 @@ main {
 }
 
 #top-nav-home {
-    position: relative;
+    /* position: relative; */
     /* top: 116px; */
     /* left: 7%; */
     /* right: 7%; */
-    width: 100%;
+    /* width: 100%; */
     /* min-width: 1454px; */
     /* z-index: 1024; */
-    margin-top: 32px;
+    /* margin-top: 32px; */
 }
 
 #top-nav-home img {
     /* filter: invert(0); */
-    opacity: .6;
+    /* opacity: .6; */
 }
 
 .center {
@@ -504,7 +511,7 @@ margin: 60px auto;
     display: inline-block;
     width: 85%;
     border-left: 1px solid #CCC;
-    padding-left:  10px;
+    padding-left:  20px;
     vertical-align: top;
     margin-top: -25px;
 }
