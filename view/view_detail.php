@@ -1,7 +1,7 @@
 <section id="detail">
         <div class="grid-<?= $grid ?>_sm-1">
         <div class="<?= $col_left ?>-middle" style="text-align: right;">
-            <img style="width: <?= $img_w ?>; border: .5px solid #CCC;" src="/catalog/__image/<?= $photo_meta['file_name'] ?>.jpg" />
+            <img style="width: <?= $img_w ?>;" src="/catalog/__image/<?= $photo_meta['file_name'] ?>.jpg" />
         </div>
         <div class="<?= $col_right ?>-middle" style="padding-left: 64px;">
 
@@ -70,7 +70,7 @@
         <!-- <div class="grid"> -->
             <div class="slider">
                 <div><img src="/catalog/__image/<?= $photo_meta['file_name'] ?>.jpg" /><!-- <div class="title">THIS HAS A TITLE</div> --></div>
-                <div><img src="/catalog/__image/<?= $photo_meta['file_name'] ?>-home.jpg" /><!-- <div class="title">THIS HAS A TITLE --></div></div>
+                <div><img src="/catalog/__image/<?= $photo_meta['file_name'] ?>-home.jpg" /><div style="margin-top: -64px; text-align: right; margin-right: 32px"><a href="/contact"><button>BUY THIS ART</button></a></div></div>
             </div>
         <!-- </div> -->
     </article>

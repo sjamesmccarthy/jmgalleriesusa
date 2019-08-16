@@ -1,4 +1,4 @@
-   <section id="top-nav<?= $addToClass ?>">
+   <section id="top-nav<?= $addToClass ?>" class="mb-96">
         <div class="grid">
     
         <div class="col-2_md-4-middle">
@@ -18,5 +18,5 @@
         </div>
         </div>
 
-        <div class="thin-line<?= $addToClass ?>"></div>
+        <!-- <div class="thin-line<?= $addToClass ?>"></div> -->
     </section>

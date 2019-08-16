@@ -11,7 +11,7 @@
                 background-repeat: no-repeat;
                 background-size: cover;
                 border-top-right-radius: 20px;
-                border-top-left-radius: 251px;"
+                border-top-left-radius: 80px;"
             class="col">
             <div class="hero_text_container">
                 <p class="hero_text">MOUNTAINS, DESERTS & TREES</p>
