@@ -48,7 +48,8 @@ class Core_Api
                     catalog_photo AS PH
                     RIGHT JOIN catalog_category AS CATE ON PH.catalog_category_id = CATE.catalog_category_id
                 WHERE
-                    CATE.path = '" . $catalog_path ."'";
+                    CATE.path = '" . $catalog_path ."'
+                AND PH.status = 'ACTIVE'";
 
             $result = $this->mysqli->query($sql);
 
@@ -104,8 +105,14 @@ class Core_Api
         return($data);
     }
 
-    public function api_Catalog_Get_New_Releases($limit) {
+    public function api_Catalog_Get_New_Releases($limit, $duration=null, $rand=null) {
         
+        if( !is_null($rand) ) {
+            $rand = " ORDER BY RAND() ";
+        }
+
+        if( is_null($duration) ) { $duration = 4; }
+
         /* Executes SQL and then assigns object to passed var */
         if( $this->checkDBConnection(__FUNCTION__) == true) {
 
@@ -117,9 +124,8 @@ class Core_Api
             INNER JOIN catalog_category AS C ON C.catalog_category_id = P.catalog_category_id
             WHERE
                 created < Now()
-                AND created > DATE_ADD(Now(), INTERVAL - 4 MONTH)
-            ORDER BY
-                RAND()
+                AND created > DATE_ADD(Now(), INTERVAL - " . $duration . " MONTH)
+           " . $rand . "
             LIMIT " . $limit;
 	
             $result = $this->mysqli->query($sql);

@@ -10,9 +10,13 @@
     /* OPTION, create a &callback prop for all API methods */
     $catalog_title = $catalog_meta[0]['title'];
     $catalog_desc = $catalog_meta[0]['desc'];
-
+    
     /* Get Thumbnails of photos for Category */
-    $catalog_photos = $this->api_Catalog_Get_New_Releases(100);
+    if( $catalog_meta[0]['path'] != 'new-releases') {
+         $catalog_photos = $this->api_Catalog_Category_Thumbs($catalog_meta[0]['path']);
+    } else {
+         $catalog_photos = $this->api_Catalog_Get_New_Releases(100, 4);
+    }
 
         foreach($catalog_photos as $k => $v) {
             
@@ -20,6 +24,10 @@
                $img_file = $v['file_name'];
             } else {
                 $img_file = 'image_not_found';
+            }
+
+            if($catalog != "new-releases") {
+                $v['catalog_path'] = $catalog;
             }
 
             /* For Mobile */
@@ -37,14 +45,6 @@
             
             if($count == 3) { $count = 0; } else { $count++; }
         }
-
-
-    /* If this is NEW-RELEASES we need to fetch data differently because the pics are across all main catalogs(categories) 
-    
-    Use the -- api_Catalog_Get_New_Releases() API call 
-    LIMIT set to 100
-    Update to include soft catalog_path
-    */
 
     
 ?>

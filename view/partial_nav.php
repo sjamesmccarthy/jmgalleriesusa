@@ -1,4 +1,4 @@
-   <section id="top-nav<?= $addToClass ?>" class="mb-96">
+   <section id="top-nav<?= $addToClass ?>" class="mb-72">
         <div class="grid">
     
         <div class="col-2_md-4-middle">

@@ -6,7 +6,7 @@
     $catalog_names = $this->api_Catalog_Category_List();
 
     /* Fetch Just the New Releases filmstrip */
-    $new_releases = $this->api_Catalog_Get_New_Releases(4);
+    $new_releases = $this->api_Catalog_Get_New_Releases(4,4);
 
         $thumb_new_releases_html .= "<article>";
         $thumb_new_releases_html .= '<div class="grid-4_sm-2 grid-4_md-3">';

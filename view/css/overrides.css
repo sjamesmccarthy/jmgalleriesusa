@@ -40,6 +40,10 @@ img {
     padding-top: 32px !important;
 }
 
+.pt-64 {
+    padding-top: 64px !important;
+}
+
 .pb-16 {
     padding-bottom: 16px !important;
 }
@@ -84,8 +88,8 @@ img {
     margin-top: 96px !important;
 }
 
-.mb-96 {
-    margin-bottom: 96px !important;
+.mb-72 {
+    margin-bottom: 72px !important;
 }
 
 .mb-42 {

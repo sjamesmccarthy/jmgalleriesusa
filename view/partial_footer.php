@@ -44,10 +44,10 @@
 
                 <div class="pt-24 pt-16">
                     <!-- <a href="/"><img src="/view/image/logo_fullsize.png" style="width: 28px;" /></a> -->
-                     <a href="/"><img src="/view/image/social_twitter.svg" /></a>
-                    <a href="/"><img src="/view/image/social_instagram.svg" /></a>
-                    <a href="/"><img src="/view/image/social_linkedin.svg" /></a>
-                    <a href="/"><img src="/view/image/social_medium.svg" /></a>
+                    <a target="_social" href="https://twitter.com/jmgalleriesusa"><img src="/view/image/social_twitter.svg" /></a>
+                    <a target="_social" href="https://instagram.com/jmgalleriesusa"><img src="/view/image/social_instagram.svg" /></a>
+                    <a target="_social" href="https://linkedin.com/company/jmgalleriesusa"><img src="/view/image/social_linkedin.svg" /></a>
+                    <a target="_social" href="https://medium.com/jmgalleriesusa"><img src="/view/image/social_medium.svg" /></a>
                 </div>
 
             </div>
@@ -86,7 +86,7 @@
                     <h4 style="padding-bottom: 16px;"><a target="_shop" href="/shop">SHOP</a></h4>
                         <ul>
                             <li><a href="/shop">tinyViews™</a></li>
-                            <li><a href="/shop">2019 Calendar</a></li>
+                            <!-- <li><a href="/shop">2019 Calendar</a></li> -->
                             <li><a href="/shop">Books</a></li>
                             <!-- <li><a target="_blog" href="https://polarizedquarterly.com">Polarized Quarterly</a></li> -->
                             <li><a target="_new" href="/portraits-events-headshots">Portraits, Weddings & Events</a></li>
