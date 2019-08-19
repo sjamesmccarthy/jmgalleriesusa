@@ -24,7 +24,7 @@
 
 </style>
 
-   <section id="footer">
+   <section id="footer" class="mt-42">
 
         <div class="thin-line thicken"><?= $addToClass ?></div>
             
@@ -85,11 +85,10 @@
             <div class="col-2 pt-16" style="padding-left: 16px">
                     <h4 style="padding-bottom: 16px;"><a target="_shop" href="/shop">SHOP</a></h4>
                         <ul>
-                            <li><a href="/shop">tinyViews™</a></li>
+                            <li><a target="_shop" href="/shop">tinyViews™</a></li>
                             <!-- <li><a href="/shop">2019 Calendar</a></li> -->
-                            <li><a href="/shop">Books</a></li>
-                            <!-- <li><a target="_blog" href="https://polarizedquarterly.com">Polarized Quarterly</a></li> -->
-                            <li><a target="_new" href="/portraits-events-headshots">Portraits, Weddings & Events</a></li>
+                            <li><a target="_shop" href="/books">Books</a></li>
+                            <li><a target="_shop" href="/portraits-events-headshots">Portraits, Weddings & Events</a></li>
                         </ul>
             </div>
 

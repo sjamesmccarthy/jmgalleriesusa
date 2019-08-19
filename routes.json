@@ -115,15 +115,21 @@
         "component": "true",
         "title": "Styles, Editions & Pricing"
     },
+    "/books": {
+        "template": "redirect",
+        "page": "https://www.blurb.com/getting-started#//sell",
+        "component": "false",
+        "title": "Books & Polarized Quarterly"
+    },
     "/shop": {
         "template": "redirect",
-        "page": "https://etsy.com",
+        "page": "https://www.etsy.com/shop/jmGalleriesUSA",
         "component": "false",
         "title": "Shop tinyViews, Wall Mounted Prints and Books"
     },
     "/portraits-events-headshots": {
         "template": "redirect",
-        "page": "https://smugmug.com",
+        "page": "https://www.smugmug.com/plans/basic",
         "component": "false",
         "title": "Shop tinyViews, Wall Mounted Prints and Books"
     },

@@ -18,33 +18,37 @@
          $catalog_photos = $this->api_Catalog_Get_New_Releases(100, 4);
     }
 
-        foreach($catalog_photos as $k => $v) {
-            
-            if( file_exists($_SERVER['DOCUMENT_ROOT'] . "/catalog/__thumbnail/" . $v['file_name'] . '.jpg')) {
-               $img_file = $v['file_name'];
-            } else {
-                $img_file = 'image_not_found';
-            }
 
-            if($catalog != "new-releases") {
-                $v['catalog_path'] = $catalog;
-            }
+        if( !$catalog_photos['error']) {
+            foreach($catalog_photos as $k => $v) {
+                
+                if( file_exists($_SERVER['DOCUMENT_ROOT'] . "/catalog/__thumbnail/" . $v['file_name'] . '.jpg')) {
+                $img_file = $v['file_name'];
+                } else {
+                    $img_file = 'image_not_found';
+                }
 
-            /* For Mobile */
-            /* On last two thumbnails add some css */
-            if($count == 2) {
-                $grid_css = 'col sm-hidden';
-            } else if ($count == 3) {
-                $grid_css = 'col sm-hidden md-hidden';
-            } else {
-                $grid_css = 'col';
+                if($catalog != "new-releases") {
+                    $v['catalog_path'] = $catalog;
+                }
+
+                /* For Mobile */
+                /* On last two thumbnails add some css */
+                if($count == 2) {
+                    $grid_css = 'col sm-hidden';
+                } else if ($count == 3) {
+                    $grid_css = 'col sm-hidden md-hidden';
+                } else {
+                    $grid_css = 'col';
+                }
+                
+                // <div style="overflow: hidden; height: 203px;" class="' . $grid_css . '">
+                $thumb_html .= '<div style="overflow: hidden;" class="' . $grid_css .  ' gallery pb-32"><a href="/' . $v['catalog_path'] . '/' . $img_file . '"><img style="width: 100%;" src="/catalog/__thumbnail/' . $img_file . '.jpg" /></a><p><a href="/' . $v['catalog_path'] . '/' . $img_file . '">' . $v['title'] . '</a><!-- <br />Exhibiting at Joe Maxx Coffee, Las Vegas --></p></div>';
+                
+                if($count == 3) { $count = 0; } else { $count++; }
             }
-            
-            // <div style="overflow: hidden; height: 203px;" class="' . $grid_css . '">
-            $thumb_html .= '<div style="overflow: hidden;" class="' . $grid_css .  ' gallery pb-32"><a href="/' . $v['catalog_path'] . '/' . $img_file . '"><img style="width: 100%;" src="/catalog/__thumbnail/' . $img_file . '.jpg" /></a><p><a href="/' . $v['catalog_path'] . '/' . $img_file . '">' . $v['title'] . '</a><!-- <br />Exhibiting at Joe Maxx Coffee, Las Vegas --></p></div>';
-            
-            if($count == 3) { $count = 0; } else { $count++; }
+        } else {
+            $thumb_html = "<p>Somebody notify Captain Marvel, our photos have disappeared.</p><p style='margin-top: 20px; padding-top: 20px; border-top: 1px solid #CCC'>" . $catalog_photos['sql'] . "</p>";
         }
-
     
 ?>

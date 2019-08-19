@@ -20,9 +20,11 @@
         // $thumb_new_releases_html .= '    <p>' . $catalog_names[3]['desc'] .  '</p>';
         $thumb_new_releases_html .= '</div>';
         $thumb_new_releases_html .= '<div class="col-1-bottom" style="margin-bottom: 16px; text-align: right;">';
-        $thumb_new_releases_html .= '<a href="/' . $catalog_names[3]['path'] . '">view all</a>';
+        $thumb_new_releases_html .= '<a href="/new-releases">view all</a>';
         $thumb_new_releases_html .= "</div>";
 
+    
+if( !$new_releases['error']) {
     foreach($new_releases as $k => $value) {
                 
         if( file_exists($_SERVER['DOCUMENT_ROOT'] . "/catalog/__thumbnail/" . $value['file_name'] . '.jpg')) {
@@ -46,6 +48,10 @@
                 
         if($count == 3) { $count = 0; } else { $count++; }
     }
+} else {
+        $thumb_new_releases_html .= "<p>Somebody notify Captain Marvel, our photos have disappeared.</p><p style='margin-top: 20px; padding-top: 20px; border-top: 1px solid #CCC'>" . $new_releases['sql'] . "</p>";
+}
+
         $thumb_new_releases_html .= "</div>";
         $thumb_new_releases_html .= "</article>";
 

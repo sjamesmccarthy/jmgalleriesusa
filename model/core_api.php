@@ -79,12 +79,13 @@ class Core_Api
                 PH.catalog_photo_id,
                 PH.title,
                 PH.file_name,
+                PH.status,
                 CATE.title AS cate_title
             FROM
                 catalog_photo AS PH
                 RIGHT JOIN catalog_category AS CATE ON PH.catalog_category_id = CATE.catalog_category_id
             WHERE
-                PH.catalog_category_id = " . $category_id . " ORDER BY RAND() LIMIT " . $limit;
+                PH.catalog_category_id = " . $category_id . " AND PH.status = 'ACTIVE' ORDER BY RAND() LIMIT " . $limit;
 
             $result = $this->mysqli->query($sql);
 
@@ -139,7 +140,8 @@ class Core_Api
                 
             } else {
                 
-                $data[] = "No Records Found @ $sql";
+                $data['error'] = "No Records Found";
+                $data['sql'] = $sql;
             }	
             
         }
@@ -162,6 +164,7 @@ class Core_Api
                     RIGHT JOIN catalog_photo AS PH ON V.catalog_photo_id = PH.catalog_photo_id
                 WHERE
                     V.count >= 1
+                AND PH.status = 'ACTIVE'
                 ORDER BY
                     RAND()
                     DESC
@@ -178,7 +181,8 @@ class Core_Api
                 
             } else {
                 
-                $data[] = "No Records Found @ $sql";
+                $data['error'] = "No Records Found";
+                $data['sql'] = $sql;
             }	
             
         }
