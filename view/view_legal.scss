@@ -1,0 +1,36 @@
+/* ********************** */
+/* view_legal */
+
+.subsection-ul {
+    margin-top: 20px;
+    list-style-type: none;
+}
+
+.subsection-ul li {
+    margin-top: 30px;
+}
+
+.subsection-ul li >p {
+    /* font-size: 1.0rem; */
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.subsection-ul li >p.intro {
+    /* font-size: 1.8rem;
+    line-height: 1.5em; */
+    font-size: 1.8rem;
+    font-weight: 400;
+    line-height: 1.3em;
+    margin-top: 25px;
+    color: rgba(0,0,0,.5);
+}
+
+.subsection-ul li >ol {
+    list-style-type: none;
+}
+
+.subsection-ul li >ol li {
+    margin-bottom: 10px;
+    margin-left: 30px;
+}

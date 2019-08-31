@@ -1,0 +1,46 @@
+/* ********************** */
+/* component_hero */
+
+.home-hero {
+    background-color: #CCC; 
+    height: 570px;
+    background-image: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(117,117,119,0) 60%), url('/view/image/demo-full-6.jpg');
+    background-attachment: scroll;
+    background-position: 100% 80%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-top-right-radius: 20px;
+}
+
+.hero {
+position: relative;
+}
+
+.hero-text-container {
+position: absolute;
+top:75%;
+left: 40%;
+transform: translate(-32%, -41%);
+    text-transform: uppercase;
+    font-weight: 700;
+    text-align: center;
+}
+
+.hero-text {
+    color: rgba(0,0,0,.5);
+    font-size: 3em; 
+    line-height: 1;
+}
+
+.hero-text-container a {
+    /* color: rgba(255,255,255,.8); */
+    color: rgba(0,0,0,.5);
+    /* color: rgba(37,116,169,.7); */
+    font-size: 2em;
+}
+
+.hero-text-container a:hover {
+    /* color: rgba(255,255,255,1); */
+    /* color: rgba(37,116,169,1) */
+    color: rgba(0,0,0,1);
+}

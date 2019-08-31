@@ -1,8 +1,8 @@
 { 
-    "package_name": "polarized",
+    "package_name": "jmGweb",
     "package_version" : "1.0.0",
-    "package_update_uri": "//polarized.app/updates.php",
-    "package_git" : "//github.com/sjamesmccarthy/polarized",
+    "package_update_uri": "//jmgalleriesusa.com/updates.php",
+    "package_git" : "//github.com/sjamesmccarthy/jmgalleriesusa",
     "package_license" : "MIT",
 
     "site_name": "jM Galleries",
@@ -14,10 +14,11 @@
         "template" : "tpl_",
         "page" : "view_",
         "negatives" : "_catidx",
-        "partial" : "partial_"
+        "partial" : "partial_",
+        "component" : "component_"
     },
 
     "components" : {
-        "medium_blog" : "true"
+        "polarized" : "true"
     }
 }

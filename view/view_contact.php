@@ -73,20 +73,13 @@
         <input type="text" id="image" name="image" placeholder="PHOTOGRAPH TITLE" value="" required>
         </p>
 
-        <!-- <label>I am interested in ...</label>
-        <ul class="contact-form-interest-list pt-24">
-        <li><input name="interest" type="radio" value="Buying A Print"> Buying Your Amazing Artwork <b><?= $referringPhoto ?></b></li>
-        <li><input name="interest" type="radio" value="Commissioning Request"> Commissioning Your Out-of-This-World Talent</li>
-        <li><input name="interest" type="radio" value="General Comments, Other"> Licensing, Customer Service, or something else</li>
-        </ul> -->
-
         <!-- <input name="refer" type="hidden" value="<?= $print_name ?>" />
         <input name="refer_IP" type="hidden" value="<?= $_SERVER['REMOTE_ADDR'] ?>" />
         </p> -->
 
         <p>
         <!-- <label class="" for="comments">TYPE YOUR MESSAGE HERE</label> -->
-        <textarea id="comments" name="comments" placeholder="" rows="8" style="height: 200px; padding-top: 30px;" required><?= $referringPhotoCommentsField ?></textarea>
+        <textarea id="comments" name="comments" placeholder="" rows="8" required><?= $referringPhotoCommentsField ?></textarea>
         </p>
 
         <div class="g-recaptcha"

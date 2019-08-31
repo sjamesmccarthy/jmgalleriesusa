@@ -12,7 +12,28 @@ SASS, https://sass-lang.com/
 // Vendors
 @import '../../lib/gridlex-master/src/gridlex.scss';
 
+// Utility (Forms, buttons, etc
+
 // Components
-@import '../view_catalog'
+@import '../component_most_popular';
+@import '../component_hero';
+@import '../component_new_releases';
+@import '../component_gallery_thumbs';
+@import '../component_polarized';
 
 // Partials
+@import '../partial_nav';
+@import '../partial_newsletter';
+@import '../partial_footer';
+
+// Pages (or Views)
+@import '../view_404';
+@import '../view_catalog';
+@import '../view_contact';
+@import '../view_about';
+@import '../view_moments';
+@import '../view_detail';
+@import '../view_exhibits';
+@import '../view_legal'; /*subsection UL*/
+@import '../view_styles'; /*subsection UL override*/
+@import '../view_newsletter_email'; /*amazing-offer*/ 

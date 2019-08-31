@@ -1,10 +1,10 @@
 <section id="about pt-24">
     <div class="grid-noGutter-center">
 
-        <div class="col-8" style="padding-right: 16px">
+        <div class="col-8 pr-16">
 
             <h1>Moments, and Other News & Events</h1>
-            <p class="artists-statement padbot-30">Donec sed odio dui. Nullam id dolor id nibh ultricies vehicula ut id elit. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
+            <p class="pb-32">Stay connected with James and discover new events, moments and news happening at jM Galleries. </p>
 
             <ul id="news-overflow">
 
@@ -123,7 +123,7 @@
             </ul>
 </div>
 
-    <div class="col-3" style="border-left: 1px solid #CCC; padding-left: 40px;">
+    <div class="col-3 twitter-feed">
             <div class="twitter-feed">
                 <a class="twitter-timeline" data-width="300" data-height="2000" data-theme="light" href="https://twitter.com/jmgalleriesusa">Tweets by @jmgalleriesusa</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
             </div>

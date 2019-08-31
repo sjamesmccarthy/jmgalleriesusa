@@ -1,83 +1,15 @@
-<style>
-
-#instafeed img {
-    width: 100%;
-}
-
-.padbot-30 {
-    padding-bottom: 30px;
-}
-
-.padright-20 {
-    padding-right: 20px;
-}
-
-#exhibit-other-locations {
-    margin-bottom: 20px;
-}
-
-.location-newsletter > p {
-    font-size: 18px;
-    /* line-height: 1.3em; */
-}
-
-.location-newsletter .mailchimp-logo {
-margin-top: 5px; width: 13%
-}
-
-.exhibit-prev-tack {
-    font-size: 12px;
-}
-
-.exhibit-icon {
-    width: 75px;
-    margin-top: 24px;
-}
-
-.exhibit-desc {
-    margin-top: 0;
-}
-
-.exhibit-divider {
-    padding-top: 10px;
-    padding-bottom: 10px;
-    margin-right: 20px;
-    border-top: 1px solid #CCC;
-}
-
-.exhibit-list {
-    padding-right: 20px;
-}
-
-.exhibit-list li {
-    margin-bottom: 30px;
-    margin-left: 20px;
-}
-
-</style>
-
-<section id="about pt-24">
+<section id="exhibits pt-24">
     <div class="grid-noGutter-center">
 
-        <div class="col-8" style="padding-right: 16px;">
+        <div class="col-8 pr-16">
 
             <h1>Exhibits & Pop-Up Galleries</h1>
 
-            <p class="artists-statement padbot-30">You can find James' work in and around areas he photographs at local coffee shops, tap rooms, vintage boutiques and events in Reno/Tahoe, Nevada, Las Vegas, Nevada and Temecula, California.</p>
+            <p class="pb-32">You can find James' work in and around areas he photographs at local coffee shops, tap rooms, vintage boutiques and events in Reno/Tahoe, Nevada, Las Vegas, Nevada and Temecula, California.</p>
 
             <ul class="exhibit-list indent-list">
-                <!-- <li>
-                     <p class="left padright-20"><img class="exhibit-icon" src="/images/icon_joemaxx.png" / ></p>
-                    <div>
-                    <h3>JOE MAXX COFFFE CO. LAS VEGAS</h3>
-                        <p class="exhibit-desc">
-                        <a href="https://goo.gl/maps/ZtVApvZeE4rpNYhN6" target="_map">500 E. Windmill Ln, #175, Las Vegas, NV 89123</a><br />
-                        If you enjoy Black and White photography, stop by the Joe Maxx Coffee Company on E Windmill in Las Vegas. James has a set of beautiful, framed black and white photos on display and ready to purchase. 
-                        </p>
-                    </div>
-                </li> -->
             <li>
-                <p style="min-height: 150px;" class="left padright-20"><img class="exhibit-icon" src="view/image/exhibit_icon_joemaxx.png" / ></p>
+                <p class="left pr-20 exhibit-icon-height"><img class="exhibit-icon" src="view/image/exhibit_icon_joemaxx.png" /></p>
                 <div>
                     <h5>JOE MAXX COFFFE CO. HENDERSON</h5>
                     <p class="exhibit-desc">
@@ -89,7 +21,7 @@ margin-top: 5px; width: 13%
 
 
             <li>
-             <p style="min-height: 150px;" class="left padright-20"><img style="border-radius: 50px;" class="exhibit-icon" src="view/image/exhibit_icon_stoneyhead.jpg" / ></p>
+             <p class="left pr-20 exhibit-icon-height"><img class="exhibit-icon" src="view/image/exhibit_icon_stoneyhead.jpg" / ></p>
                 <div>
                 <h5>STONEYHEAD BREWING CO. RENO</h5 >
                     <p class="exhibit-desc">
@@ -101,11 +33,9 @@ margin-top: 5px; width: 13%
 
             </ul>
             
-            <!-- <div class="exhibit-divider"></div> -->
-
             <ul class="exhibit-list indent-list">
             
-            <h3 class="padbot-30">Previously Exhibited</h3>
+            <h3 class="pb-32">Previously Exhibited</h3>
 
             <li>
             <h4><i class="fas fa-thumbtack exhibit-prev-tack"></i>Temecula Public Library</h4>
@@ -159,14 +89,6 @@ margin-top: 5px; width: 13%
             <span class="bolder">Memberships and Associations</span><br />
             James is a member of the Professional Photographers of America (PPA), the American Photographic Artists (APA) and founder of STUDIO610/g and Polarized.
             </p> -->
-
-            <p class="padtop40">
-                <a href="/moments">Other Moments and News</a>
-            </p>
-
-
-
-
 
         </div>
 

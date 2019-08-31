@@ -5,15 +5,16 @@
 
     foreach($catalog_names as $key=>$value) {
 
-        if(strtolower($value['title']) != 'new releases') {
-        
             $thumb_html .= "<article>";
             $thumb_html .= '<div class="grid-4_sm-2 grid-4_md-3">';
-            $thumb_html .= '<div class="col-11" style="margin-bottom: 16px;">';
+
+        if(strtolower($value['title']) != 'new releases') {
+
+            $thumb_html .= '<div class="mb-16 col-10">';
             $thumb_html .= '    <h2><a href="/' . $value['path'] . '">' . strtoupper($value['title']) . '</a></h2>';
             $thumb_html .= '    <p>' . $value['desc'] .  '</p>';
             $thumb_html .= '</div>';
-            $thumb_html .= '<div class="col-1-bottom" style="margin-bottom: 16px; text-align: right; padding-right: 8px;">';
+            $thumb_html .= '<div class="view-all col-2-bottom">';
             $thumb_html .= '<a href="/' . $value['path'] . '">view all</a>';
             $thumb_html .= "</div>";
 
@@ -37,9 +38,9 @@
                 } else {
                     $grid_css = 'col';
                 }
-                //  height: 203px;
-                $thumb_html .= '<div style="overflow: hidden;" class="' . $grid_css . '">';
-                $thumb_html .= '<a href="' . $value['path'] . "/" . $img_file . '"><img style="width: 100%" src="/catalog/__thumbnail/' .$img_file . '.jpg" /></a></div>';
+                
+                $thumb_html .= '<div class="thumb overflow-hidden ' . $grid_css . '">';
+                $thumb_html .= '<a href="' . $value['path'] . "/" . $img_file . '"><img src="/catalog/__thumbnail/' .$img_file . '.jpg" /></a></div>';
                 
                 if($count == 3) { $count = 0; } else { $count++; }
             }
@@ -49,7 +50,11 @@
         $thumb_html .= "</article>";
     }
 
-        return($thumb_html);
+
+$html = <<< END
+    $thumb_html
+END;
+        return($html);
 
 ?>
     

@@ -6,11 +6,11 @@
 
         $thumb_new_releases_html .= "<article>";
         $thumb_new_releases_html .= '<div class="grid-4_sm-2 grid-4_md-3">';
-        $thumb_new_releases_html .= '<div class="col-11" style="margin-bottom: 16px;">';
+        $thumb_new_releases_html .= '<div class="col-10" style="margin-bottom: 16px;">';
         $thumb_new_releases_html .= '    <h2><a href="/new-releases/">NEW RELEASES</a></h2>';
         $thumb_new_releases_html .= '    <p>a collection of photography featuring James\' newest work in all categories.</p>';
         $thumb_new_releases_html .= '</div>';
-        $thumb_new_releases_html .= '<div class="col-1-bottom" style="margin-bottom: 16px; text-align: right; padding-right: 8px;">';
+        $thumb_new_releases_html .= '<div class="view-all col-2-bottom">';
         $thumb_new_releases_html .= '<a href="/new-releases">view all</a>';
         $thumb_new_releases_html .= "</div>";
 
@@ -33,13 +33,13 @@ if( !$new_releases['error']) {
         } else {
             $grid_css = 'col';
         }
-        $thumb_new_releases_html .= '<div style="overflow: hidden;" class="' . $grid_css . '">';
-        $thumb_new_releases_html .= '<a href="/' . $value['catalog_path']  . $value['path'] . "/" . $img_file . '"><img style="width: 100%;" src="/catalog/__thumbnail/' .$img_file . '.jpg" /></a></div>';
+        $thumb_new_releases_html .= '<div class="thumb overflow-hidden ' . $grid_css . '">';
+        $thumb_new_releases_html .= '<a href="/' . $value['catalog_path']  . $value['path'] . "/" . $img_file . '"><img src="/catalog/__thumbnail/' .$img_file . '.jpg" /></a></div>';
                 
         if($count == 3) { $count = 0; } else { $count++; }
     }
 } else {
-        $thumb_new_releases_html .= "<p>Somebody notify Captain Marvel, our photos have disappeared.</p><p style='margin-top: 20px; padding-top: 20px; border-top: 1px solid #CCC'>" . $new_releases['sql'] . "</p>";
+        $thumb_new_releases_html .= "<p>Somebody notify Captain Marvel, our photos have disappeared.</p><p class='new-release-error'>" . $new_releases['sql'] . "</p>";
 }
 
         $thumb_new_releases_html .= "</div>";

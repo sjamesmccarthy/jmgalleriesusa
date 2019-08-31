@@ -36,19 +36,17 @@ foreach($polarized_json as $key=>$value) {
 }
 
 /* GENERATE HTML BLOCK */
-if ($this->config->components['medium_blog'] == 'true') {  
+if ($this->config->components['polarized'] == 'true') {  
 $html = <<< END
-        <article>
-            <div class="grid-4_sm-2_md-3">
-                <div class="col-11" style="margin-bottom: 16px;">
-                    <h2><a target="_new" href="https://medium.com/jmgalleriesusa">POLARIZED</a></h2>
-                    <p>a Photographic Conversation & Quarterly</p>
-                </div>
-                
-                $result
-
-            </div>
-        </article>
+<article>
+    <div class="grid-4_sm-2_md-3">
+        <div class="mb-16 col-11">
+            <h2><a target="_new" href="https://medium.com/jmgalleriesusa">POLARIZED</a></h2>
+            <p>a Photographic Conversation & Quarterly</p>
+        </div>
+            $result
+    </div>
+</article>
 END;
 }
 

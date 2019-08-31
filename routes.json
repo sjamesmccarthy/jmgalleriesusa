@@ -101,7 +101,7 @@
         "template": "page",
         "page": "contact",
         "component": "true",
-        "title": "Contact"
+        "title": "Contact Us"
     },
     "/legal": {
         "template": "page",

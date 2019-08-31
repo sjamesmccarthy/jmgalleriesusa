@@ -20,26 +20,25 @@
                     $grid_css = 'col';
                 }
 
-                $thumb_html .= '<div style="overflow: hidden;" class="' . $grid_css . '">';
+                $thumb_html .= '<div class="overflow-hidden ' . $grid_css . '">';
                 $thumb_html .= '<a href="' . $this->page->catalog_path . $v['path'] . "/" . $img_file . '"><img src="/catalog/__thumbnail/' .$img_file . '.jpg" /></a></div>';
 
                 if($count == 3) { $count = 0; } else { $count++; }
             }
 
-
-
 $html = <<<END
-  <article>
+<article>
     <div class="grid-4_sm-2 grid-4_md-3">
-    <div class="col-11" style="margin-bottom: 16px;">
+        <div class="col-11" style="margin-bottom: 16px;">
         <h2 class="blue">YOU MAY ALSO LIKE</h2>
         <p>More popular photographs based on what others are viewing</p>
-    </div>
+        </div>
     <div class="col-1-bottom" style="margin-bottom: 16px; text-align: right;padding-right: 8px;">
-    <a href="/galleries">view all galleries</a>
+        <a href="/galleries">view all galleries</a>
     </div>
-
-    $thumb_html
+        $thumb_html
+    </div>
+</article>
 END;
 
 return($html);

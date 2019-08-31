@@ -2,31 +2,17 @@
 <section id="about pt-24">
 
     <div class="grid-2-noGutter">
-        <div class="col" 
-            style="
-            padding: 70px;">
-                <p class="blue"
-                style="font-size: 2.25em;"
-                ">james McCarthy
-            </p>
-            
-            <p 
-                style="font-size: 1rem;"
-                ">FINE ART PHOTOGRAPHER
-            </p>
-                <p 
-                    style="padding-top: 40px;
-                    line-height: 1.5;
-                    font-size: 2em;">
+        <div class="col name-container">
+                <p class="name blue">james McCarthy</p>
+                <p class="name-title">FINE ART PHOTOGRAPHER</p>
+                <p class="name-statement">
                     Through purposeful paper choice, framing and composition, my work leads you on a journey into a place where your mind inspires you to wander; a moment which creates a timeless, original and natural escape. 
                 </p>
         </div>
 
-        <div class="col"
-            style="
-            background-color: #FFFFFF">
+        <div class="col">
                 <img class="bio-profile-pic" src="/view/image/profile_img.jpg" />
-                <img style="width: 100%; border-radius: 4px;" src="/view/image/upper-webber-falls.png" />
+                <img src="/view/image/upper-webber-falls.png" />
         </div>
     </div>
 
@@ -39,9 +25,7 @@
             <h4 class="martop20">
             His more popular pieces include, "Once Afloat", "Avalon", "Between The Hills", "Bonsai Zen, "Lost Trail" and "Never Ending Story". Framed editions of these pieces can be viewed at many of his <a href="/exhibits">pop-up exhibits</a> which include locally-owned businesses around the locations he photographs.
             </h4>
-        <!-- </div> -->
 
-        <!-- <div class="col"> -->
             <ul
                 class="timeline">
 
@@ -88,7 +72,7 @@
             </ul>
 
             <ul class="timeline">
-                <li class="timeline-date">2015<br />| <span style="font-size: 14px;">thru</span><br />2017</li>
+                <li class="timeline-date">2015<br />| <span class="timeline-small">thru</span><br />2017</li>
                 <li class="timeline-history">
                     <p>
                     After moving back to the Reno/Tahoe area in 2015, James met his better-half, Michele, who after seeing his work, inspired him to  publicly display and sell his photographs.
@@ -132,9 +116,7 @@
             <ul class="timeline">
                 <li class="timeline-date">2019</li>
                 <li class="timeline-history">
-                    <p style="height: 100px;">
-                       <a href="/moments">Other Moments</a>
-                    </p>
+                    <p class="timeline-height-adjust"><a href="/moments">Other Moments</a></p>
                 </li>
             </ul>
 
