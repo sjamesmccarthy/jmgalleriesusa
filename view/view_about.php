@@ -5,20 +5,20 @@
         <div class="col" 
             style="
             padding: 70px;">
-                <p 
-                    style="font-size: 1.5em;"
-                    ">FINE ART PHOTOGRAPHER
-                </p>
                 <p class="blue"
-                    style="font-size: 2.25em;"
-                    ">james McCarthy
-                </p>
-                
+                style="font-size: 2.25em;"
+                ">james McCarthy
+            </p>
+            
+            <p 
+                style="font-size: 1rem;"
+                ">FINE ART PHOTOGRAPHER
+            </p>
                 <p 
                     style="padding-top: 40px;
                     line-height: 1.5;
-                    font-size: 1.6em;">
-                    Through purposeful paper choice, framing and composition, my work inspires to be more than an amplified digital canvas, but rather a journey into a place where your mind inspires you to wander; a moment which creates a timeless, original and natural escape. 
+                    font-size: 2em;">
+                    Through purposeful paper choice, framing and composition, my work leads you on a journey into a place where your mind inspires you to wander; a moment which creates a timeless, original and natural escape. 
                 </p>
         </div>
 
@@ -30,19 +30,15 @@
         </div>
     </div>
 
-    <div class="grid-noGutter">
-        <div class="col" 
-            style="padding-top: 40px;
-                    line-height: 1.5;
-                    font-size: 1.3em;
-                    ">
-            <p>
+    <div class="grid-noGutter-center">
+        <div class="col-11-center pt-72">
+            <h4>
             Photography has always had a hidden crush on James, a self-taught explorer in the field of landscape photography. He admires mother nature from a distance, capturing her beauty and emotions through his photography as art.
-            </p>
+            </h4>
 
-            <p class="martop20">
-            His more popular pieces include, "Once Afloat", "Avalon", "Between The Hills", "Bonsai Zen, "Lost Trail" and "Never Ending Story". Framed editions of these pieces can be viewed at many of his <a href="/galleries/">pop-up exhibits</a> which include locally-owned businesses around the locations he photographs.
-            </p>
+            <h4 class="martop20">
+            His more popular pieces include, "Once Afloat", "Avalon", "Between The Hills", "Bonsai Zen, "Lost Trail" and "Never Ending Story". Framed editions of these pieces can be viewed at many of his <a href="/exhibits">pop-up exhibits</a> which include locally-owned businesses around the locations he photographs.
+            </h4>
         <!-- </div> -->
 
         <!-- <div class="col"> -->
@@ -132,6 +128,17 @@
                     <p>It certainly was a year to remember and a sigificant turning point for jM Galleries.</p>
                 </li>
             </ul>
+
+            <ul class="timeline">
+                <li class="timeline-date">2019</li>
+                <li class="timeline-history">
+                    <p style="height: 100px;">
+                       <a href="/moments">Other Moments</a>
+                    </p>
+                </li>
+            </ul>
+
+ 
         </div>
     </div>
 

@@ -11,7 +11,7 @@
             <!-- <p class="pb-32" style="font-size: .8em; color: #4D4D4D;"></p> -->
 
              <div style="display: inline-block;">
-                <a style="color: #4D4D4D;" href="/exhibits"><img src="/view/image/icon_sizes.svg" style="width: 16px; opacity: .6; margin-right: 10px;" /></a>
+                <a style="color: #4D4D4D;" href="/exhibits"><img src="/view/image/icon_sizes.svg" class="no-border" style="width: 16px; opacity: .6; margin-right: 10px;" /></a>
             </div>
             <div style="display: inline-block; vertical-align: top; color: #4D4D4D; font-size: 1em; position: relative; margin-top: -2px;">
                 <a style="color: #4D4D4D; font-weight: 300" href="/contact"><b>Available Sizes</b></a><br />
@@ -21,7 +21,7 @@
             <div style="display:block">&nbsp;</div>
 
             <div style="display: inline-block;">
-                <a style="color: #4D4D4D;" href="/contact"><img src="/view/image/icon_email.svg" style="width: 16px; opacity: .6; margin-right: 10px;" /></a>
+                <a style="color: #4D4D4D;" href="/contact"><img src="/view/image/icon_email.svg" class="no-border" style="width: 16px; opacity: .6; margin-right: 10px;" /></a>
             </div>
             <div style="display: inline-block; vertical-align: top; color: #4D4D4D; font-size: 1em; position: relative; margin-top: -2px;">
                 <a style="color: #4D4D4D; font-weight: 300" href="/contact"><b>Email An Art Consultant</b></a><br />
@@ -29,16 +29,6 @@
             </div>
 
             <?= $on_display ?>
-
-            <!-- <div style="display: inline-block;">
-                <a style="color: #4D4D4D;" href="/exhibits"><img src="/view/image/icon_geo.svg" style="width: 16px; opacity: .6; margin-right: 10px;" /></a>
-            </div>
-            <div style="display: inline-block; vertical-align: top; color: #4D4D4D; font-size: 1em; position: relative; margin-top: -2px;">
-                <a style="color: #4D4D4D; font-weight: 300" href="/contact"><b>See It</b></a><br />
-                <span style="font-size: .8em; font-weight: 300">This art is available to view in Las Vegas, Nevada</span>
-            </div> -->
-
-            <!-- <h6 class="blue padbot-8 padtop-32"><?= $photo_meta['loc_place'] ?> | <?= $photo_meta['loc_city'] ?>, <?= $photo_meta['loc_state'] ?></h6> -->
             
             <p class="pt-32" style="line-height: 1.4; color: #4D4D4D;"><?= $desc ?></p>
             <div>
@@ -48,41 +38,33 @@
         </div>
 
     </div>
-</section>
+<!-- </section> -->
 
-<section class="mt-96">
-    <article>
+<!-- <section> -->
+    <article class="mt-72">
     <div class="grid">
         <div class="col-6-middle pb-8 center">
              <h1 style="padding: 0; line-height: 1.3;"><?= $photo_meta['title'] ?></h1>
              <h6 class="blue"><?= $photo_meta['loc_place'] ?> | <?= $photo_meta['loc_city'] ?>, <?= $photo_meta['loc_state'] ?></h6>
         </div>
 
-        <div class="col-6 pb-8" >
+        <div class="col-6 pb-8 padBoxRight-15">
+            <p class="blue large">AND SO THE STORY GOES</p>
             <p style="line-height: 1.6; color: #4D4D4D; font-size: 1.5rem;"><?= $photo_meta['story'] ?></p>
         </div>
     </div>
     </article>
-</section>
+<!-- </section> -->
 
-<section class="mt-96">
-    <article>
+<!-- <section class="mt-72"> -->
+    <article class="mt-72">
        <?= $super_photo ?>
     </article>
+<!-- </section> -->
 </section>
 
-<section id="you-may-like" class="filmstrip mt-96">
-
-    <article>
-    <div class="grid-4_sm-2 grid-4_md-3">
-    <div class="col-11" style="margin-bottom: 16px;">
-        <h2 class="blue">YOU MAY ALSO LIKE</h2>
-        <p>More popular photographs based on what others are viewing</p>
-    </div>
-    <div class="col-1-bottom" style="margin-bottom: 16px; text-align: right;">
-    <a href="/galleries">view all galleries</a>
-    </div>
-
-    <?= $thumb_html ?>
-
+ <!-- generated html from component file: component_most_popular -->
+<section id="you-may-like" class="filmstrip mt-72">
+    <?= $you_may_also_like_html ?>
 </section>
+<!-- /generated html from component file -->

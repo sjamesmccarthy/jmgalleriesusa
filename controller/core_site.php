@@ -218,6 +218,17 @@ class Core_Site extends Core_Api
         return( $data );
     }
 
+    public function component($component, $props=null) {
+
+        $file = $_SERVER['DOCUMENT_ROOT'] . '/view/component_' . $component;
+
+        if( file_exists($file . ".php") ) {
+            $result = include_once($file . ".php");
+        }
+
+        return($result);
+    }
+
     public function getPartial($partial) {
 
         /* Check to see if the partial file has an Include Component with it */

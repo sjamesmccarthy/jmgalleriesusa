@@ -163,7 +163,7 @@ class Core_Api
                     catalog_photo_views AS V
                     RIGHT JOIN catalog_photo AS PH ON V.catalog_photo_id = PH.catalog_photo_id
                 WHERE
-                    V.count >= 1
+                    V.count >= 5
                 AND PH.status = 'ACTIVE'
                 ORDER BY
                     RAND()
@@ -295,29 +295,33 @@ class Core_Api
         return($data);
     }
 
+    public function api_Update_Photo_Viewed($photo_id) {
+        
+        /* Executes SQL and then assigns object to passed var */
+        if( $this->checkDBConnection(__FUNCTION__) == true) {
+
+            $sql = "
+            INSERT INTO catalog_photo_views (catalog_photo_id, count)
+                VALUES('" . $photo_id . "', '1') ON DUPLICATE KEY UPDATE count = count + 1";
+
+            $result = $this->mysqli->query($sql);
+
+            if ($result == TRUE) {
+                $data['result'] = '200';
+            } else {
+                $data['error'] = "SQL UPDATE FAILED " . $photo_id;
+                $data['sql'] = $sql;
+            }	
+            
+        }
+
+        return($data);
+    }
+
     public function api_Polarized_Get_Latest() {
 
         // Read in Json file with title and description and link. 
-        return($this->getJSON('view/partial_polarized.json', 'data'));
-
-        // $this->printp_r($result);
-        
-        /* Future Pull from Medium RSS */
-        // https://medium.com/feed/jmgalleriesusa
-        // $i = 0; // counter
-        // $url = "https://medium.com/feed/jmgalleriesusa"; // url to parse
-        // $rss = simplexml_load_file($url); // XML parser
-
-        // RSS items loop
-        // print '<h2><img style="vertical-align: middle;" src="'.$rss->channel->image->url.'" /> '.$rss->channel->title.'</h2>'; // channel title + img with src
-
-        // foreach($rss->channel->item as $item) {
-        // if ($i < 10) { 
-        //     $html .= '<a href="'.$item->link.'">'.$item->title.'</a><br />' . $item->description . '<br />';
-        // }
-
-        // $i++;
-        // }
+        return($this->getJSON('view/data_polarized.json', 'data'));
 
     }
 }

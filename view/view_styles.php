@@ -1,21 +1,18 @@
 <style>
     .subsection-ul > li {
         margin-top: 32px;
-        /* margin-left: 50px; */
+        margin-left: 50px;
 
     }
 </style>
 
 <section id="about pt-24">
-    <div class="grid-noGutter">
+    <div class="grid-center">
 
-        <div class="col" >
+        <div class="col-11" >
     
-    <h1 class="pb-32">Styles, Editions & Pricing</h1>
-
-    <!-- <div style="border-top: 1px solid #CCC;" class="mt-16 pb-32"></div> -->
-
-    <h5 class="black">James' work in the world of Fine Art Photography represents his passion for the outdoors and life around him. His style is best described as a timeless, clean and natural view of the world around him. It is rare that you will find any of James' photography enhanced by saturated color, artificial light or significantly edited in a way to alter that moment of time  <a href="/about">...</a></h5>
+    <h1>Styles, Editions & Pricing</h1>
+    <p class="artists-statement padbot-30">James' work in the world of Fine Art Photography represents his passion for the outdoors and life around him. His style is best described as a timeless, clean and natural view of the world around him. It is rare that you will find any of James' photography enhanced by saturated color, artificial light or significantly edited in a way to alter that moment of time  <a href="/about">...</a></h5>
 
 
 <ul class="subsection-ul">
@@ -53,30 +50,30 @@
                 <!-- </ul> -->
     <!-- </li> -->
     
-    <li><h3>Limited Edition Photographs</h3>
+    <li><h4>Limited Edition Photographs</h4>
         <p>All of James' Limited Edition Fine Art Photographs are part of a series which is curently limited to 12 and signed by James. There is no "premium or appreciation-level pricing", so if you purchase print #1 or print #500 the price is the same.</li>
 
-    <li><h3>Artist Proof Photographs</h3>
+    <li><h4>Artist Proof Photographs</h4>
     <p>An "Artist Proof" is, in practical theory, a single-printed version of a photograph to see the printing state, which will represent the finished work. Artist Proof's are typically not included in the count of any Limited Edition Series and have special value because of its differences from the finished, final print. Collector's often search for the Artist Proof editions because there are fewer available. All Artists Proof photographs are numbered and dated, and usually limited to no more than the first 5 printings.
             </p>
         </li>
 
-    <li><h3>Studio Proof Photographs</h3>
+    <li><h4>Studio Proof Photographs</h4>
         <p>Collectors, curators, historians and decorators often view studio proof photographs as the most desirable, and valuable, because of their rarity, uniqueness, and that they may have belonged to the artist himself. These editions of the work are typically one-of-a-kind working proofs where there are never more than five studio proofs ever made available for a photo.
         </p>
     </li>
 
-    <li><h3>Open Edition Photographs</h3>
+    <li><h4>Open Edition Photographs</h4>
         <p>Open Edition Photographs are printed on a high quality metallic professional photo paper and available only as loose copies. Prints may or may not be signed and are not numbered. They also include a 1/2 inch white border surrounding the image.
         </p>
     </li>
 
-    <li><h3>Certificate of Authenticity</h3>
+    <li><h4>Certificate of Authenticity</h4>
         <p>All editions, with exception to Open Editions and tinyViews&tm;, include a Certificate of Authenticity (COA) signed and dated by James. <!-- Additionally they will be registered in the Artwork Archive for easy providence tracking. -->
         </p>
     </li>
 
-    <li><h3>Pricing</h3>
+    <li><h4>Pricing</h4>
         <p>All fine-art pricing is based on using the finest quality material available and include a float mount. Framing not included, but we have hand-made selections available for purchase.</p>
 
         <ol>
@@ -92,7 +89,7 @@
 
     </li>
 
-    <li><h3>Terms of Sale</h3>
+    <li><h4>Terms of Sale</h4>
         <p>Ordering, changes, payment, delivery, returns & damange, and care of product can be found on the <a href="/legal">Terms of Sale page.</a></p>
     </li>
 

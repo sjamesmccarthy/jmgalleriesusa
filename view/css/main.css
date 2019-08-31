@@ -17,8 +17,7 @@ html, body {
 
 iframe, img, video {
   border: 0;
-  border-style: none;
-  border-radius: 4px; }
+  border-style: none; }
 
 table {
   border-collapse: collapse;
@@ -90,10 +89,10 @@ h4 {
   font-size: 24.5px; }
 
 h5 {
-  font-size: 21px; }
+  font-size: 17.5px; }
 
 h6 {
-  font-size: 17.5px; }
+  font-size: 16.1px; }
 
 *, :before, :after {
   -webkit-box-sizing: inherit;
@@ -355,7 +354,7 @@ h6 {
   flex-basis: 8.33333%;
   max-width: 8.33333%; }
 
-@media (max-width: 85.375em) {
+@media (max-width: 102.857) {
   [class*="_lg-1"] > [class~="col"],
   [class*="_lg-1"] > [class*="col-"],
   [class*="_lg-1"] > [class*="col_"] {
@@ -858,7 +857,7 @@ h6 {
 [class*="grid_"] > [data-push-right*="off-11"] {
   margin-right: 91.66667%; }
 
-@media (max-width: 85.375em) {
+@media (max-width: 102.857) {
   [class~="grid"] > [class*="_lg-1"],
   [class*="grid-"] > [class*="_lg-1"],
   [class*="grid_"] > [class*="_lg-1"] {
@@ -1589,7 +1588,7 @@ h6 {
 /************************
     HIDING COLS
 *************************/
-@media (max-width: 85.375em) {
+@media (max-width: 102.857) {
   [class*="lg-hidden"] {
     display: none; } }
 

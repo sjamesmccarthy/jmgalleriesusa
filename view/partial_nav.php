@@ -1,4 +1,4 @@
-   <section id="top-nav<?= $addToClass ?>" class="mb-72">
+   <section id="top-nav<?= $addToClass ?>">
         <div class="grid">
     
         <div class="col-2_md-4-middle">
@@ -9,7 +9,7 @@
         </div>
         <div class="col-2_md-4-middle">
             <p style="text-align: center; padding-left: 30px"><a href="/"><img style="width: 85px" src="/view/image/logo_fullsize.png" /></a></p>
-            <p style="font-size: .8em; text-align: right; margin-right: 52px; margin-top: -5px;">fine art</p>
+            <p style="font-size: .8em; text-align: right; margin-right: 80px; margin-top: -5px;">fine art</p>
         </div>
         <div class="col-3_md-hidden-middle">
             <p class="center"><a href="/exhibits">EXHIBITIONS</a><br />POP-UP GALLERIES AND EVENTS</p>
@@ -19,5 +19,5 @@
         </div>
         </div>
 
-        <!-- <div class="thin-line<?= $addToClass ?>"></div> -->
+        <div class="thin-line<?= $addToClass ?>"></div>
     </section>

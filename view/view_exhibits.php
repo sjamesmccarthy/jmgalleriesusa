@@ -31,6 +31,7 @@ margin-top: 5px; width: 13%
 
 .exhibit-icon {
     width: 75px;
+    margin-top: 24px;
 }
 
 .exhibit-desc {
@@ -40,7 +41,12 @@ margin-top: 5px; width: 13%
 .exhibit-divider {
     padding-top: 10px;
     padding-bottom: 10px;
+    margin-right: 20px;
     border-top: 1px solid #CCC;
+}
+
+.exhibit-list {
+    padding-right: 20px;
 }
 
 .exhibit-list li {
@@ -53,7 +59,7 @@ margin-top: 5px; width: 13%
 <section id="about pt-24">
     <div class="grid-noGutter-center">
 
-        <div class="col-8" style="padding-right: 20px;">
+        <div class="col-8" style="padding-right: 16px;">
 
             <h1>Exhibits & Pop-Up Galleries</h1>
 
@@ -71,7 +77,7 @@ margin-top: 5px; width: 13%
                     </div>
                 </li> -->
             <li>
-                <p class="left padright-20"><img class="exhibit-icon" src="view/image/exhibit_icon_joemaxx.png" / ></p>
+                <p style="min-height: 150px;" class="left padright-20"><img class="exhibit-icon" src="view/image/exhibit_icon_joemaxx.png" / ></p>
                 <div>
                     <h5>JOE MAXX COFFFE CO. HENDERSON</h5>
                     <p class="exhibit-desc">
@@ -83,7 +89,7 @@ margin-top: 5px; width: 13%
 
 
             <li>
-             <p class="left padright-20"><img style="border-radius: 50px;" class="exhibit-icon" src="view/image/exhibit_icon_stoneyhead.jpg" / ></p>
+             <p style="min-height: 150px;" class="left padright-20"><img style="border-radius: 50px;" class="exhibit-icon" src="view/image/exhibit_icon_stoneyhead.jpg" / ></p>
                 <div>
                 <h5>STONEYHEAD BREWING CO. RENO</h5 >
                     <p class="exhibit-desc">
@@ -95,7 +101,7 @@ margin-top: 5px; width: 13%
 
             </ul>
             
-            <div class="exhibit-divider"> </div>
+            <!-- <div class="exhibit-divider"></div> -->
 
             <ul class="exhibit-list indent-list">
             
