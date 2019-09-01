@@ -1,4 +1,5 @@
 <link href="https://fonts.googleapis.com/css?family=Fira+Sans:100,300,400,500,700,800,900" rel="stylesheet">
+<script src="https://www.google.com/recaptcha/api.js?render=6LetD7YUAAAAAFX5cXupV3exd1YCSuYFY_az92Wh"></script>
 
     <div class="amazing-offer-container">
 

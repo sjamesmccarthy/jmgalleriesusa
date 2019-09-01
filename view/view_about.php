@@ -2,6 +2,10 @@
 <section id="about pt-24">
 
     <div class="grid-2-noGutter">
+        <div class="col">
+                <!-- <img style="width: 100%" src="/view/image/upper-webber-falls.png" /> -->
+                <img class="bio-profile-pic" src="/view/image/profile_img.jpg" />
+        </div>
         <div class="col name-container">
                 <p class="name blue">james McCarthy</p>
                 <p class="name-title">FINE ART PHOTOGRAPHER</p>
@@ -11,10 +15,6 @@
                 <!-- <img class="bio-profile-pic" src="/view/image/profile_img.jpg" /> -->
         </div>
 
-        <div class="col">
-                <!-- <img style="width: 100%" src="/view/image/upper-webber-falls.png" /> -->
-                <img class="bio-profile-pic" src="/view/image/profile_img.jpg" />
-        </div>
     </div>
 
     <div class="grid-noGutter-center">

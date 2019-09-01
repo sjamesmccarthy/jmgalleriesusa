@@ -1933,10 +1933,10 @@ h6 {
 .home-hero {
   background-color: #CCC;
   height: 800px;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(white), color-stop(60%, rgba(117, 117, 119, 0))), url("/view/image/demo-full-6.jpg");
-  background-image: -webkit-linear-gradient(top, white 0%, rgba(117, 117, 119, 0) 60%), url("/view/image/demo-full-6.jpg");
-  background-image: -o-linear-gradient(top, white 0%, rgba(117, 117, 119, 0) 60%), url("/view/image/demo-full-6.jpg");
-  background-image: linear-gradient(180deg, white 0%, rgba(117, 117, 119, 0) 60%), url("/view/image/demo-full-6.jpg");
+  background-image: -webkit-gradient(linear, left top, left bottom, from(white), color-stop(60%, rgba(117, 117, 119, 0))), url("/view/image/demo-full-5.jpg");
+  background-image: -webkit-linear-gradient(top, white 0%, rgba(117, 117, 119, 0) 60%), url("/view/image/demo-full-5.jpg");
+  background-image: -o-linear-gradient(top, white 0%, rgba(117, 117, 119, 0) 60%), url("/view/image/demo-full-5.jpg");
+  background-image: linear-gradient(180deg, white 0%, rgba(117, 117, 119, 0) 60%), url("/view/image/demo-full-5.jpg");
   background-attachment: scroll;
   background-position: 100% 80%;
   background-repeat: no-repeat;
@@ -2007,7 +2007,6 @@ h6 {
 /* ********************** */
 /* partial_nav */
 #top-nav, #top-nav-home {
-  margin-top: 42px;
   z-index: 1001;
   position: relative;
 }
@@ -2029,6 +2028,7 @@ h6 {
   font-size: .8em;
   text-align: center;
   margin-left: 80px;
+  display: none;
 }
 
 .thin-line {
@@ -2068,10 +2068,10 @@ h6 {
 /* partial_footer */
 #footer {
   height: 450px !important;
-  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(20%, white), to(rgba(117, 117, 119, 0.8))), url(../image/demo-full-4.jpg);
-  background-image: -webkit-linear-gradient(top, white 20%, rgba(117, 117, 119, 0.8) 100%), url(../image/demo-full-4.jpg);
-  background-image: -o-linear-gradient(top, white 20%, rgba(117, 117, 119, 0.8) 100%), url(../image/demo-full-4.jpg);
-  background-image: linear-gradient(180deg, white 20%, rgba(117, 117, 119, 0.8) 100%), url(../image/demo-full-4.jpg);
+  background-image: -webkit-gradient(linear, left top, left bottom, from(white), to(rgba(117, 117, 119, 0.1))), url(../image/demo-full-1.jpg);
+  background-image: -webkit-linear-gradient(top, white 0%, rgba(117, 117, 119, 0.1) 100%), url(../image/demo-full-1.jpg);
+  background-image: -o-linear-gradient(top, white 0%, rgba(117, 117, 119, 0.1) 100%), url(../image/demo-full-1.jpg);
+  background-image: linear-gradient(180deg, white 0%, rgba(117, 117, 119, 0.1) 100%), url(../image/demo-full-1.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 50% 60%;
@@ -2085,7 +2085,7 @@ h6 {
 
 .grid-max-width {
   max-width: 1440px;
-  margin: 100px auto !important;
+  margin: 0 auto !important;
   padding: 0 30px;
 }
 
@@ -2209,11 +2209,15 @@ fieldset {
 
 .bio-profile-pic {
   border-radius: 500px;
-  margin-top: 42px;
-  margin-left: -42px;
   background-color: #FFF;
   width: 100%;
-  z-index: 1001;
+  z-index: 0;
+  opacity: .3;
+  position: absolute;
+  top: -100px;
+  left: 82px;
+  border: 1px dashed #000;
+  padding: 30px;
 }
 
 .timeline {

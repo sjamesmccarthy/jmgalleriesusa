@@ -1,7 +1,13 @@
-<section id="login" class="form">
-  <div style="width: 50%; margin: auto; margin-top: 40px; margin-bottom: 40px;">
+<style>
+  #login { 
+    padding: 40px 0;
+  }
+</style>
 
-  <h1 style="padding-bottom: 20px;">Portfolio. Inventory. Collector. </h1>
+<section id="login" class="form">
+  <div class="grid-3-center">
+  <div class="col">
+  <h1 style="padding-bottom: 20px;">Login. </h1>
   <form action="/admin" class="" autocomplete="off" method="post">
     <input type="hidden" name="state" value="auth" />
 
@@ -21,5 +27,6 @@
 
     <p style="margin-top: 10px; text-align: left"><a href="/">Forgot password</a></p>
   </form>
+</div>
   </div>
 </section>

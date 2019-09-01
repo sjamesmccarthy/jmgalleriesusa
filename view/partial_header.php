@@ -8,7 +8,6 @@
     <link rel="apple-touch-icon" sizes="180x180" href="/view/image/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/view/image/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/view/image/favicon-16x16.png">
-    <link rel="manifest" href="/view/image/site.webmanifest">
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
 
@@ -20,7 +19,6 @@
     <link rel="stylesheet" href="/view/css/overrides.css">
     
     <script src="/view/js/instafeed.min.js"></script>
-    <script src="https://www.google.com/recaptcha/api.js?render=6LetD7YUAAAAAFX5cXupV3exd1YCSuYFY_az92Wh"></script>
 
     <script>
     $(document).ready(function(){

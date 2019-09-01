@@ -2,7 +2,7 @@
 /* partial_nav */
 
 #top-nav, #top-nav-home {
-    margin-top: 42px;
+    // margin-top: 42px;
     z-index: 1001;
     position: relative;
 }
@@ -24,6 +24,7 @@
     font-size: .8em; 
     text-align: center; 
     margin-left: 80px; 
+    display: none;
 }
 
 .thin-line {

@@ -1,3 +1,4 @@
+<script src="https://www.google.com/recaptcha/api.js?render=6LetD7YUAAAAAFX5cXupV3exd1YCSuYFY_az92Wh"></script>
 
 <section id="contact">
     <div class="grid-center">
