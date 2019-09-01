@@ -1,61 +1,56 @@
 <?php
-
 /**
  * @Author: James McCarthy <sjamesmccarthy>
- * @Date:   12-23-2018 12:49:35
- * @Email:  james@jmgalleries.com
- * @Filename: ajax_amazing-offer.php
+ * @Date:   04-12-2017 7:34:05
+ * @Email:  james@jmcjmgalleries.com
+ * @Filename: ajax_email_process.php
  * @Last modified by:   sjamesmccarthy
- * @Last modified time: 12-23-2018 12:49:35
- * @Copyright: 2018
+ * @Created  date: 05-22-2017 6:21:02
+ * @Last modified time: 09-01-2019 08:07:45
+ * @Copyright: 2017, 2019
  */
 
-/* get common site data */
-include_once('config.php');
-$orderNumber = time();
+if($_POST){
+	function getCaptcha($SecretKey) {
+		$Response = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=6LetD7YUAAAAAFX5cXupV3exd1YCSuYFY_az92Wh&response={$SecretKey}");
+		$Return = json_decode($Response);
+		return($Return);
+	}
+	$Return = getCaptcha($_POST['g-recaptcha-response']);
+	var_dump($Return);
+} 
 
-$to = CONTACT_EMAIL;
+$orderNumber = time();
+$to = 'james@jmgalleries.com';
 $subject = 'AMAZING_ORDER: US-' . $orderNumber;
 
-$message = '{' . "\n";
+unset($_POST['g-recaptcha-response']);
+$message = json_encode($_POST);
+$message .= "\n\n" .  '"REMOTE_AGENT" : "' . $_SERVER['HTTP_USER_AGENT'] .'",';
 
-foreach ($_POST as $key => $value) {
-
-    if ($key != "g-recaptcha-response") {
-        $message .= "\t" . '"' . $key . '" : "' . $value . '",';
-    }
-}
-
-// Added to json HTTP_USER_AGENT, 'REMOTE_ADDR
-$message .= "\t" . '"REMOTE_ADDR" : "' . $_SERVER['REMOTE_ADDR'] . '",';
-$message .= "\t" . '"REMOTE_AGENT" : "' . $_SERVER['HTTP_USER_AGENT'] . '",';
-
-$message = rtrim($message, ',');
-$message .= "\n}";
-$message = str_replace(",", ",\n", $message);
-
-$headers = 'From: jmGalleries <' . CONTACT_EMAIL . ">\r\n" .
-    'Reply-To: jmGalleries <' . CONTACT_EMAIL . ">\r\n" .
-    'X-Mailer: PHP/' . phpversion();
+ $headers = 'From: ' . $_POST['contactinfoemail'] . "\r\n" .
+            'Reply-To: ' . $_POST['contactinfoemail'] . "\r\n" .
+            'X-Mailer: PHP/' . phpversion() . '/jmGForm';
 
 mail($to, $subject, $message, $headers);
+// print 'Success.jmGalleries.Sent';
 
 // Now Send Confirmation to Person
-$to = $_POST['contactinfoEmail'];
-$subject = "Your jmGalleies Order US-" . $orderNumber;
+$to = $_POST['contactinfoemail'];
+$subject = "Your jM Galleies Order US-" . $orderNumber;
 
-$message = 'Thank you for your Pre-Order Request #' . $orderNumber . '. An art consultant will be in contact with you at either, ' . $_POST['contactinfoEmail'] . ', or by telephone at, ' . $_POST['contactinfoPhone'] . ' within 48 hours to setup payment and shipping of your new artwork, ' . $_POST['amazingOfferTitle'] . ' (1) 17 x 25 Framed, Limited-Edition, Fine-Art Print.' . "\r\n\r\n" . "Thank you for your support!\r\nJames, jmGalleries, https://jmgalleries.com\r\n951-708-1831 PST";
+$message = 'Thank you for your Pre-Order Request #' . $orderNumber . '. An art consultant will be in contact with you at, ' . $_POST['contactinfoemail'] . ' within 48 hours to setup payment and shipping of your new artwork, ' . $_POST['amazingOfferTitle'] . ' (1) 13x19, Limited-Edition, Fine-Art Print.' . "\r\n\r\n" . "Thank you for your support!\r\nJames, jmGalleries, https://jmgalleriesusa.com\r\n951-708-1831 PST";
 
-$headers = 'From: jmGalleries <' . CONTACT_EMAIL . ">\r\n" .
-    'Reply-To: ' . CONTACT_EMAIL . "\r\n" .
-    'X-Mailer: PHP/' . phpversion();
+$headers = 'From: jM Galleries <' . $to . ">\r\n" .
+    'Reply-To: ' . $to . "\r\n" .
+    'X-Mailer: PHP/' . phpversion() . '/jmGForm';
 
 mail($to, $subject, $message, $headers);
-
-
-/* Ajax response */
-print '<h1 class="amazing-offer-title" style="margin-top: 0; font-size: 2.0rem; padding: 0 20px 20px 20px">Thank you for your Pre-Order Request #' . $orderNumber . '</h1><p style="text-align: left;">An art consultant will be in contact with you at either, ' . $_POST['contactinfoEmail'] . ', or by telephone at, ' . $_POST['contactinfoPhone'] . ' within 48 hours to setup payment and shipping of your new artwork, ' . $_POST['amazingOfferTitle'] . ' (1) 17 x 25 Framed, Limited-Edition, Fine-Art Print. <b>If you do do not receive the confirmation email please check your Spam/Junk folder or call ' . PHONE . '.';
+print 'Success.Customer.Sent / Success.jmGalleries.Sent';
 
 exit;
+
+?>
+
 
 ?>

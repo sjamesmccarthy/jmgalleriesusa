@@ -1,10 +1,10 @@
 <section id="footer" class="pt-32">
 
-    <div class="footer-background"><?= $addToClass ?>
+    <!-- <div class="footer-background"><?= $addToClass ?>
         <p class="copyright"><?= $this->config->copyright ?></p>
-    </div>
+    </div> -->
             
-        <div class="grid-noGutter">
+        <div class="grid-max-width grid-noGutter">
 
             <div class="col-12">
                 <div class="col-12-middle pb-32 breadcrumb">

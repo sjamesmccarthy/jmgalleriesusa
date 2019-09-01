@@ -39,54 +39,60 @@
             <span style="text-align: left"></span>
             </p>
 
-            <div class="amazing-offer-form">
+        <div class="amazing-offer-form">
                 
                 <div class="amazing-offer-error-explained amazing-offer-error amazing-offer-padding red allcaps hidden center thickborder">
                     Please complete all the fields below.<br />Also, if you do not include a valid phone or email we will not be able to process your order.
                 </div>
                 
         <form id="amazingOfferForm" action="#" method="post">
+        <input type="hidden" id="g-recaptcha-response" name="g-recaptcha-response" />
 
+        <fieldset class="form-main">
         <p>
         <!-- <label class="" for="name">Your First and Last Name</label> -->
-        <input class="" type="text" id="name" name="name" placeholder="YOUR NAME" value="" required>
+        <input class="" type="text" id="contactinfoname" name="contactinfoname" placeholder="YOUR NAME" value="" required>
         </p>
 
         <p>
         <!-- <label class=""  for="contactinfoEmail">Your Email Address</label> -->
-        <input class="" type="text" id="contactinfoEmail" name="contactinfoEmail" placeholder="YOUR EMAIL" value="" required>
+        <input class="" type="text" id="contactinfoemail" name="contactinfoemail" placeholder="YOUR EMAIL" value="" required>
         </p>
 
         <p>
         <!-- <label class=""  for="contactinfoEmail">Your Email Address</label> -->
-        <input class="" type="text" id="contactinfoAddress" name="contactinfoAddress" placeholder="YOUR STREET ADDRESS" value="" required>
+        <input class="" type="text" id="contactinfoaddress" name="contactinfoaddress" placeholder="YOUR STREET ADDRESS" value="" required>
         </p>
 
         <p>
         <!-- <label class=""  for="contactinfoEmail">Your Email Address</label> -->
-        <input class="" type="text" id="contactinfoCityState" name="contactinfoCityState" placeholder="YOUR CITY, STATE and POSTAL CODE" value="" required>
+        <input class="" type="text" id="contactinfoaddress" name="c" placeholder="YOUR CITY, STATE and POSTAL CODE" value="" required>
         </p>
 
         <p class="pt-16">
-          <input type="checkbox" id="buyme" name="buyme" value="buyMe" /> 
+          <input type="checkbox" id="buyme" name="buyme" value="True, Pre-Sale" required/> 
           <label for="buyme" style="font-size: 1.2rem;">Yes, I would like to buy (1) Limited-Edition, Numbered, 13x19, Fine-Art Print, "<?= $amazingOfferTitle ?>" for $89 <strike>$100</strike>.
         <input name="amazingOfferTitle" type="hidden" value="<?= $amazingOfferTitle ?>" />
         </p>
 
       <span style="font-size: .8rem;"><a href="/styles">Learn more about our Styles, Editions and Prices.</a> If you prefer Acrylic, or wish to add an open-air-frame please <a href="/contact">contact us</a> for a price.</span>
-        
-        <div class="g-recaptcha"
-          data-sitekey="6Lem3V0UAAAAAJQyKvI6lkyRHZJstUt44YYq0TQ4"
-          data-callback="formSubmit"
-          data-size="invisible">
-        </div>
 
         <p class="amazing-offer-center pt-16">
-        <button id="formButton" class="amazing-offer-button allcaps">SUBMIT ORDER REQUEST</button>
+        <button id="sendform" class="amazing-offer-button allcaps">SUBMIT ORDER REQUEST</button>
         </p>
 
+        </fieldset>
         </form>
-        <script>onload();</script>
+
+        <script>
+        grecaptcha.ready(function() {
+            grecaptcha.execute('6LetD7YUAAAAAFX5cXupV3exd1YCSuYFY_az92Wh', {action: 'homepage'}).then(function(token) {
+              document.getElementById('g-recaptcha-response').value = token;
+            });
+        });
+        </script>
+
+        <p id="form_response"> </p>
 
     </div>
 
@@ -100,3 +106,56 @@
             <p id="form_response" class="amazing-offer-form-response"> </p>
 
     </div>
+
+    <script>
+
+  jQuery(document).ready(function($){
+
+      $('#amazingOfferForm').submit(function() {
+            event.preventDefault();
+            console.log('validating...');
+            
+            var name = $("#contactinfoname").val();
+            var email = $("#contactinfoemail").val();
+            var address = $("#contactinfoaddress").val();
+            var citystate = $("#contactinfocitystate").val();
+
+            if (name == '' || email == '' || address == '' || citystate == '') {
+              alert("Please Fill Required Fields");
+              return false;
+            } else {
+              console.log('validation PASS');
+            }
+
+            console.log('Sending... ' + $('#g-recaptcha-response').val());
+
+              var url = "view/ajax_amazing_offer_email.php";
+
+              grecaptcha.ready(function() {
+
+                  grecaptcha.execute('6LetD7YUAAAAAFX5cXupV3exd1YCSuYFY_az92Wh', {action: 'homepage'}).then(function(token) {
+                    $.ajax({
+                      type: "POST",
+                      url: url,
+                      data: $("#amazingOfferForm").serialize(),
+                      async: true,
+                      success: function(data)
+                      {
+                          $('.form-main').prop('disabled', true).css('opacity','.2');
+                          $('#sendform, .amazing-offer-expires').hide();
+                          $('#form_response').html("Thank You For Your Order.<br />Please check your Spam/Junk folder for a confirmation email. An art consultant will be in touch in 48 hours.").addClass('success').show();
+
+                      },
+                      error : function(request,error) {
+                          console.log("Request: "+JSON.stringify(request));
+                      }
+                    });
+                    
+                    return false;
+                  });;
+              });
+        });
+
+  });
+
+</script>

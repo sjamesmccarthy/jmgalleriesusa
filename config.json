@@ -19,6 +19,6 @@
     },
 
     "components" : {
-        "polarized" : "true"
+        "polarized" : "false"
     }
 }

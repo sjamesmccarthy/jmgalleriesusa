@@ -1,6 +1,6 @@
 <div class="newsletter-container">
     <form id="newsletter">
-    <h4 class="pb-16">SIGN-UP FOR OUR MONTHLY EMAIL</h4>
+    <h4 class="pb-16">AMAZING OFFER EMAIL</h4>
     
     <div>
         <input type="text" name="email" placeholder="Type Your Email Here" />

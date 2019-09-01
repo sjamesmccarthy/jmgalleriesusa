@@ -2,7 +2,28 @@
 /* partial_footer */
 
 #footer {
-    margin-bottom: 32px;
+    // margin-bottom: 32px;
+    height:450px !important;
+    background-image: linear-gradient(180deg, rgb(255, 255, 255) 20%, rgba(117,117,119,.8) 100%), url(../image/demo-full-4.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50% 60%;
+    position: absolute;
+    // opacity: .6;
+    // filter: gray;
+    // filter: grayscale(100%);
+    margin-top: 54px;
+    width: 100vw;
+    // position: relative;
+    margin-left: -50vw;
+    height: 100px;
+    left: 50%;
+}
+
+.grid-max-width  {
+    max-width: 1440px;
+    margin: 100px auto !important;
+    padding: 0 30px;
 }
 
 .footer-column {
@@ -12,24 +33,6 @@
 
 #footer h4 {
     padding-bottom: 16px
-}
-
-.footer-background {
-    height: 25% !important;
-    background-image: linear-gradient(180deg, rgb(255, 255, 255) 0%, rgba(117,117,119,0) 100%), url(../image/demo-full-3.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: 50% 45%;
-    position: absolute;
-    opacity: .6;
-    filter: gray;
-    filter: grayscale(100%);
-    margin-top: 54px;
-    width: 100vw;
-    // position: relative;
-    margin-left: -50vw;
-    height: 100px;
-    left: 50%;
 }
 
 #footer ul {

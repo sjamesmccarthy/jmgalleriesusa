@@ -3,6 +3,8 @@
 
 #top-nav, #top-nav-home {
     margin-top: 42px;
+    z-index: 1001;
+    position: relative;
 }
 
 .top-nav {
@@ -15,7 +17,7 @@
 }
 
 .topnav-logo img {
-    width: 85px;
+    width: 124px;
 }
 
 .topnav-subline {

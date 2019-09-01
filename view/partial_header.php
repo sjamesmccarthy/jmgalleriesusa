@@ -16,9 +16,11 @@
     <script src="/view/js/bxslider/jquery.bxslider.min.js"></script>
     <link rel="stylesheet" href="/view/js/bxslider/jquery.bxslider.css" type="text/css" media="all">
     
-    <script src="/view/js/instafeed.min.js"></script>
-
+    
     <link rel="stylesheet" href="/view/css/overrides.css">
+    
+    <script src="/view/js/instafeed.min.js"></script>
+    <script src="https://www.google.com/recaptcha/api.js?render=6LetD7YUAAAAAFX5cXupV3exd1YCSuYFY_az92Wh"></script>
 
     <script>
     $(document).ready(function(){

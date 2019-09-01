@@ -9,7 +9,7 @@
 
             <ul class="exhibit-list indent-list">
             <li>
-                <p class="left pr-20 exhibit-icon-height"><img class="exhibit-icon" src="view/image/exhibit_icon_joemaxx.png" /></p>
+                <p class="left pr-20 exhibit-icon-height"><img class="exhibit-icon" src="/view/image/exhibit_icon_joemaxx.png" /></p>
                 <div>
                     <h5>JOE MAXX COFFFE CO. HENDERSON</h5>
                     <p class="exhibit-desc">
@@ -21,7 +21,7 @@
 
 
             <li>
-             <p class="left pr-20 exhibit-icon-height"><img class="exhibit-icon" src="view/image/exhibit_icon_stoneyhead.jpg" / ></p>
+             <p class="left pr-20 exhibit-icon-height"><img class="exhibit-icon" src="/view/image/exhibit_icon_stoneyhead.jpg" /></p>
                 <div>
                 <h5>STONEYHEAD BREWING CO. RENO</h5 >
                     <p class="exhibit-desc">

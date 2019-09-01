@@ -48,7 +48,8 @@
         </div>
 
         <div class="col-10 pb-8">
-            <p class="blue large pb-16"><b>And, so the story goes</b> at <?= $photo_meta['loc_place'] ?> in  <?= $photo_meta['loc_city'] ?>, <?= $photo_meta['loc_state'] ?></p>
+            <p class="blue large pb-16"><b>And, so the story goes</b><br />
+            at <?= $photo_meta['loc_place'] ?> in  <?= $photo_meta['loc_city'] ?>, <?= $photo_meta['loc_state'] ?></p>
             <p class="detail-story"><?= $photo_meta['story'] ?></p>
         </div>
     </div>

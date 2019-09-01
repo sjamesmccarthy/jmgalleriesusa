@@ -2,45 +2,39 @@
 /**
  * @Author: James McCarthy <sjamesmccarthy>
  * @Date:   04-12-2017 7:34:05
- * @Email:  james@jmccarthy.xyz
- * @Filename: ajax_process.php
+ * @Email:  james@jmcjmgalleries.com
+ * @Filename: ajax_email_process.php
  * @Last modified by:   sjamesmccarthy
- * @Last modified time: 05-22-2017 6:21:02
- * @Copyright: 2017
+ * @Created  date: 05-22-2017 6:21:02
+ * @Last modified time: 09-01-2019 08:07:45
+ * @Copyright: 2017, 2019
  */
 
- /* get common site data */
- include_once('config.php');
-
- $to = CONTACT_EMAIL;
-$subject = 'jMcCarthy Galleries - ' . $_POST['interest'];
-
- // $message = $_POST['name'] . "\n" . $_POST['contactinfo'] . "\n" . $_POST['interest'] . "\n" . $_POST['comments'];
-
-$message = '{' . "\n";
-
-foreach ($_POST as $key => $value) {
-
-	if($key != "g-recaptcha-response") {
-		$message .= "\t" .  '"' . $key . '" : "' . $value .'",';
+if($_POST){
+	function getCaptcha($SecretKey) {
+		$Response = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=6LetD7YUAAAAAFX5cXupV3exd1YCSuYFY_az92Wh&response={$SecretKey}");
+		$Return = json_decode($Response);
+		return($Return);
 	}
-}
+	$Return = getCaptcha($_POST['g-recaptcha-response']);
+	var_dump($Return);
+} 
 
-// Added to json HTTP_USER_AGENT, 'REMOTE_ADDR
-$message .= "\t" .  '"REMOTE_ADDR" : "' . $_SERVER['REMOTE_ADDR'] .'",';
-$message .= "\t" .  '"REMOTE_AGENT" : "' . $_SERVER['HTTP_USER_AGENT'] .'",';
+$to = 'james@jmgalleries.com';
+$subject = 'webform/jmG - ' . $_POST['contactsubject'];
 
-$message = rtrim($message, ',');
-$message .= "\n}";
-$message = str_replace(",",",\n", $message);
+unset($_POST['g-recaptcha-response']);
+$message = json_encode($_POST);
+$message .= "\n\n" .  '"REMOTE_AGENT" : "' . $_SERVER['HTTP_USER_AGENT'] .'",';
 
- $headers = 'From: james <james@jmccarthy.xyz>' . "\r\n" .
-            'Reply-To: james@blacktea.photo' . "\r\n" .
-            'X-Mailer: PHP/' . phpversion();
+ $headers = 'From: ' . $_POST['contactemail'] . "\r\n" .
+            'Reply-To: ' . $_POST['contactemail'] . "\r\n" .
+            'X-Mailer: PHP/' . phpversion() . '/jmGForm';
 
 mail($to, $subject, $message, $headers);
 
 print 'Thank you!<br /><a style="font-size:.7em; text-decoration: none;" href="/">jMcCarthyGalleries.Com</a>';
+
 exit;
 
 ?>

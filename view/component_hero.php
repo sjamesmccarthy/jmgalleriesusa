@@ -18,7 +18,7 @@ $html = <<< END
         <div class="col home-hero">
             <div class="hero-text-container">
                 <p class="hero-text"> $hero_title </p>
-                <p><a href="$hero-link">Explore This Collection</a></p>
+                <p><a href="$hero_link">Explore This Collection</a></p>
             </div>
         </div>
     </div>
