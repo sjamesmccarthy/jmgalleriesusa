@@ -67,7 +67,7 @@
 
     if($photo_meta['orientation'] == "portrait") {
         $img_w = '90%';
-        $grid = '10';
+        $grid = '10-center';
         $col_left = 'col-5';
         $col_right = 'col-5';
     } else {

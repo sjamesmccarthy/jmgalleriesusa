@@ -47,32 +47,34 @@
                 </div>
                 
         <form id="amazingOfferForm" action="#" method="post">
+        <input type="hidden" id="formType" name="formType" value="AmazingOfferForm" />
         <input type="hidden" id="g-recaptcha-response" name="g-recaptcha-response" />
+        <input name="refer_IP" type="hidden" value="<?= $_SERVER['REMOTE_ADDR'] ?>" />
 
         <fieldset class="form-main">
         <p>
         <!-- <label class="" for="name">Your First and Last Name</label> -->
-        <input class="" type="text" id="contactinfoname" name="contactinfoname" placeholder="YOUR NAME" value="" required>
+        <input class="" type="text" id="contactname" name="contactname" placeholder="YOUR NAME" value="" required>
         </p>
 
         <p>
         <!-- <label class=""  for="contactinfoEmail">Your Email Address</label> -->
-        <input class="" type="text" id="contactinfoemail" name="contactinfoemail" placeholder="YOUR EMAIL" value="" required>
+        <input class="" type="text" id="contactemail" name="contactemail" placeholder="YOUR EMAIL" value="" required>
         </p>
 
         <p>
         <!-- <label class=""  for="contactinfoEmail">Your Email Address</label> -->
-        <input class="" type="text" id="contactinfoaddress" name="contactinfoaddress" placeholder="YOUR STREET ADDRESS" value="" required>
+        <input class="" type="text" id="contactaddress" name="contactaddress" placeholder="YOUR STREET ADDRESS" value="" required>
         </p>
 
         <p>
         <!-- <label class=""  for="contactinfoEmail">Your Email Address</label> -->
-        <input class="" type="text" id="contactinfoaddress" name="c" placeholder="YOUR CITY, STATE and POSTAL CODE" value="" required>
+        <input class="" type="text" id="contactaddresscitystate" name="contactaddresscitystate" placeholder="YOUR CITY, STATE and POSTAL CODE" value="" required>
         </p>
 
         <p class="pt-16">
-          <input type="checkbox" id="buyme" name="buyme" value="True, Pre-Sale" required/> 
-          <label for="buyme" style="font-size: 1.2rem;">Yes, I would like to buy (1) Limited-Edition, Numbered, 13x19, Fine-Art Print, "<?= $amazingOfferTitle ?>" for $89 <strike>$100</strike>.
+          <input type="checkbox" id="purchase" name="purchase" value="True, Pre-Sale" required/> 
+          <label for="purchase" style="font-size: 1.2rem;">Yes, I would like to buy (1) Limited-Edition, Numbered, 13x19, Fine-Art Print, "<?= $amazingOfferTitle ?>" for $89 <strike>$100</strike>.
         <input name="amazingOfferTitle" type="hidden" value="<?= $amazingOfferTitle ?>" />
         </p>
 
@@ -113,13 +115,22 @@
   jQuery(document).ready(function($){
 
       $('#amazingOfferForm').submit(function() {
+
+        console.log('start.form.submission');
+
+        grecaptcha.execute('6LetD7YUAAAAAFX5cXupV3exd1YCSuYFY_az92Wh', {action: 'homepage'}).then(function(token) {
+              document.getElementById('g-recaptcha-response').value = token;
+              console.log('grecaptcha.ready');
+              // console.log( document.getElementById('g-recaptcha-response') );
+        });
+
             event.preventDefault();
             console.log('validating...');
             
-            var name = $("#contactinfoname").val();
-            var email = $("#contactinfoemail").val();
-            var address = $("#contactinfoaddress").val();
-            var citystate = $("#contactinfocitystate").val();
+            var name = $("#contactname").val();
+            var email = $("#contactemail").val();
+            var address = $("#contactaddress").val();
+            var citystate = $("#contactaddresscitystate").val();
 
             if (name == '' || email == '' || address == '' || citystate == '') {
               alert("Please Fill Required Fields");
@@ -130,7 +141,8 @@
 
             console.log('Sending... ' + $('#g-recaptcha-response').val());
 
-              var url = "view/ajax_amazing_offer_email.php";
+              var url = "view/ajax_email_process.php";
+              console.log(url);
 
               grecaptcha.ready(function() {
 
@@ -142,10 +154,11 @@
                       async: true,
                       success: function(data)
                       {
+                          var data_html = "Thank You For Your Message, an art consultant will be in touch in 48 hours<!-- (code: " + data + ")-->";
                           $('.form-main').prop('disabled', true).css('opacity','.2');
                           $('#sendform, .amazing-offer-expires').hide();
-                          $('#form_response').html("Thank You For Your Order.<br />Please check your Spam/Junk folder for a confirmation email. An art consultant will be in touch in 48 hours.").addClass('success').show();
-
+                          $('#form_response').html(data_html).addClass('success').show();
+                          console.log(data);
                       },
                       error : function(request,error) {
                           console.log("Request: "+JSON.stringify(request));

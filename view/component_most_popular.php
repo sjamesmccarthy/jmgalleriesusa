@@ -29,12 +29,12 @@
 $html = <<<END
 <article>
     <div class="grid-4_sm-2 grid-4_md-3">
-        <div class="col-11" style="margin-bottom: 16px;">
+        <div class="col-10" style="margin-bottom: 16px;">
         <h2 class="blue">YOU MAY ALSO LIKE</h2>
         <p>More popular photographs based on what others are viewing</p>
         </div>
-    <div class="col-1-bottom" style="margin-bottom: 16px; text-align: right;padding-right: 8px;">
-        <a href="/galleries">view all galleries</a>
+    <div class="col-2-bottom" style="margin-bottom: 16px; text-align: right;padding-right: 8px;">
+        <a href="/galleries">view all</a>
     </div>
         $thumb_html
     </div>

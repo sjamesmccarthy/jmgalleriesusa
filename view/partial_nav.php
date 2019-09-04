@@ -12,7 +12,7 @@
             <p class="topnav-subline">beta</p>
         </div>
         <div class="col-3_md-hidden-middle">
-            <p class="center"><a href="/exhibits">EXHIBITIONS</a><br />POP-UP GALLERIES AND EVENTS</p>
+            <p class="center"><a href="/moments">MOMENTS</a><br />NEWS AND EVENTS</p>
         </div>
         <div class="col-2_md-4-middle">
             <p class="center"><a href="/about">ABOUT</a><br />JAMES MCCARTHY</p>

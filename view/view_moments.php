@@ -3,7 +3,7 @@
 
         <div class="col-8 pr-16">
 
-            <h1>Moments, and Other News & Events</h1>
+            <h1>Moments, and Other News</h1>
             <p class="pb-32">Stay connected with James and discover new events, moments and news happening at jM Galleries. </p>
 
             <ul id="news-overflow">

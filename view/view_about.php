@@ -1,4 +1,3 @@
-
 <section id="about pt-24">
 
     <div class="grid-2-noGutter">
@@ -6,7 +5,7 @@
                 <!-- <img style="width: 100%" src="/view/image/upper-webber-falls.png" /> -->
                 <img class="bio-profile-pic" src="/view/image/profile_img.jpg" />
         </div>
-        <div class="col name-container">
+        <div class="col">
                 <p class="name blue">james McCarthy</p>
                 <p class="name-title">FINE ART PHOTOGRAPHER</p>
                 <p class="name-statement">
@@ -18,7 +17,7 @@
     </div>
 
     <div class="grid-noGutter-center">
-        <div class="col-11-center pt-72">
+        <div class="col-12-center pt-72">
             <h4>
             Photography has always had a hidden crush on James, a self-taught explorer in the field of landscape photography. He admires mother nature from a distance, capturing her beauty and emotions through his photography as art.
             </h4>
@@ -117,7 +116,7 @@
             <ul class="timeline">
                 <li class="timeline-date">2019</li>
                 <li class="timeline-history">
-                    <p class="timeline-height-adjust"><a href="/moments">Other Moments</a></p>
+                    <p class="timeline-height-adjust"><a href="/moments">Current Moments & Other News</a></p>
                 </li>
             </ul>
 

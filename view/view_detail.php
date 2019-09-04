@@ -1,5 +1,5 @@
 <section id="detail">
-        <div class="grid-<?= $grid ?>_sm-1">
+        <div class="grid-<?= $grid ?>">
         <div class="<?= $col_left ?>-middle top-photo">
             <img style="width: <?= $img_w ?>;" src="/catalog/__image/<?= $photo_meta['file_name'] ?>.jpg" />
         </div>
@@ -31,7 +31,7 @@
             
             <p class="detail-desc"><?= $desc ?></p>
             <div>
-            <a href="/contact"><button class="mt-32">REQUEST QUOTE</button></a>
+            <a href="/contact?photo=<?= $photo_meta['file_name'] ?>"><button class="mt-32">REQUEST QUOTE</button></a>
             </div>
 
         </div>

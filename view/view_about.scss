@@ -31,13 +31,6 @@
 }
 
 .bio-profile-pic {
-    // border-radius: 500px;
-    // margin-top: 42px;
-    // margin-left: -42px;
-    // background-color: #FFF;
-    // width: 50%;
-    // z-index: 1001;
-
     border-radius: 500px;
     background-color: #FFF;
     width: 100%;
@@ -51,13 +44,12 @@
 }
 
 .timeline {
-    width: 70%;
+    width: 85%;
     margin: 60px auto;
 }
 
 .timeline-date {
     display: inline-block;
-    // width: 100px;
     font-size: 1.5rem;
     border-bottom: 1px solid #CCC;
     padding-bottom: 10px;
@@ -75,6 +67,7 @@
 .timeline-history > p {
     margin-top: 10px;
     margin-bottom: 10px;
+    font-size: 1.4rem;
 }
 
 .timeline-small {

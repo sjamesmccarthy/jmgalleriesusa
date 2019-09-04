@@ -129,7 +129,7 @@
     },
     "/portraits-events-headshots": {
         "template": "redirect",
-        "page": "https://www.smugmug.com/plans/basic",
+        "page": "https://jmgalleries.pixieset.com",
         "component": "false",
         "title": "Shop tinyViews, Wall Mounted Prints and Books"
     },

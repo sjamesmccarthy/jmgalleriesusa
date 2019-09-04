@@ -12,7 +12,7 @@
                </div>
             </div>
 
-            <div class="col-4-top pt-16">
+            <div class="col-4-top_xs-hidden pt-16">
                 <?php 
                     $this->getPartial('newsletter'); 
                 ?>
@@ -27,27 +27,28 @@
 
             </div>
             
-            <div class="col-2 footer-column">
+            <div class="col-2_xs-3 footer-column">
                 <h4>EXPLORE</h4>
                 <ul>
                     <li><a href="/galleries">Galleries</a></li>
                     <li><a href="/exhibits">Exhibitions</a></li>
-                    <li><a href="/styles">Frames, Styles & Editions</a></li>
-                    <li><a href="/moments">News & Moments</a></li>
+                    <li><a href="/styles">Styles & Frames</a></li>
+                    <li><a href="/moments">Moments & News</a></li>
                     <li><a target="_blog" href="https://medium.com/jmgalleriesusa">Polarized</a></li>
                 </ul>
             </div>
 
-            <div class="col-2 footer-column">
+            <div class="col-2_xs-3 footer-column">
                 <h4>ABOUT</h4>
                     <ul>
                         <li><a href="/about">the Photographer</a></li>
+                        <li><a href="/styles">Limited Editions</a></li>
                         <li><a href="/legal">Privacy Policy</a></li>
                         <li><a href="/contact">Contact Us</a></li>
                     </ul>
             </div>
 
-            <div class="col-2 footer-column">
+            <div class="col-2_xs-3 footer-column">
                     <h4>SALES</h4>
                         <ul>
                             <li><a href="/styles">Pricing</a></li>
@@ -56,7 +57,7 @@
                         </ul>
             </div>
 
-            <div class="col-2 footer-column" >
+            <div class="col-2_xs-3 footer-column" >
                     <h4>SHOP</h4>
                         <ul>
                             <li><a target="_shop" href="/shop">tinyViews™</a></li>

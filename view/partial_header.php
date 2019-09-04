@@ -3,7 +3,7 @@
     <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
     <title><?= $addSiteName ?><?= $this->title ?></title>
     <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,400i,700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/view/css/main.css">
+    <link rel="stylesheet" href="/view/css/main.css?<?= time(); ?>">
 
     <link rel="apple-touch-icon" sizes="180x180" href="/view/image/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/view/image/favicon-32x32.png">
