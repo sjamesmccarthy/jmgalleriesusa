@@ -27,7 +27,7 @@
     </li>
 
     <li><h4>Open Edition Photographs</h4>
-        <p>Open Edition Photographs are printed on a high quality metallic professional photo paper and available only as loose copies. Prints may or may not be signed and are not numbered. They also include a 1/2 inch white border surrounding the image.
+        <p>Open Edition Photographs are printed on a high quality metallic professional photo paper and available only as loose copies. Prints may or may not be signed and are not numbered. They also include a 1/2 inch white border surrounding the image. <a target="_shop" href="/shop">Open editions can be purchases exclusively through our online store</a>.
         </p>
     </li>
 

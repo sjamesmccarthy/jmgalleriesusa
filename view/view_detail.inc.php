@@ -20,14 +20,14 @@
             if($photo_meta['orientation'] == "landscape") {
                  $super_photo = ' 
                 <div class="slider">
-                <div><img src="/catalog/__image/' . $photo_meta['file_name'] . '-room.jpg" /><div class="bx-buyart-btn"><a href="/contact"><button>BUY THIS ART</button></a></div></div>
+                <div><img src="/catalog/__image/' . $photo_meta['file_name'] . '-room.jpg" /><div class="bx-buyart-btn"><a href="/contact?photo=' . $photo_meta['file_name'] . '"><button>BUY THIS ART</button></a></div></div>
                 <div><img src="/catalog/__image/' . $photo_meta['file_name'] . '.jpg" /></div>
                 </div>';
             } else {
                 $super_photo = ' 
                 <div class="grid">
                     <div class="col"> 
-                    <img class="bx-img-portrait" src="/catalog/__image/' . $photo_meta['file_name'] . '-room.jpg" /><div class="bx-buyart-btn"><a href="/contact"><button>BUY THIS ART</button></a></div></div>
+                    <img class="bx-img-portrait" src="/catalog/__image/' . $photo_meta['file_name'] . '-room.jpg" /><div class="bx-buyart-btn"><a href="/contact?photo='. $photo_meta['file_name'] . '"><button>BUY THIS ART</button></a></div></div>
                     </div>
                 </div>';
             }
