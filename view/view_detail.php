@@ -13,7 +13,7 @@
                 <a href="/exhibits"><img src="/view/image/icon_sizes.svg" class="no-border" /></a>
             </div>
             <div class="edition-extra-subline">
-                <a href="/contact"><b>Available Sizes</b></a><br />
+                <a href="/contact"><b>Available Acrylic Sizes</b></a><br />
                 <span><?= $available_sizes ?></span>
             </div>
 
@@ -28,10 +28,11 @@
             </div>
 
             <?= $on_display ?>
+            <?= $in_shop ?>
             
             <p class="detail-desc"><?= $desc ?></p>
             <div>
-            <a href="/contact?photo=<?= $photo_meta['file_name'] ?>"><button class="mt-32">REQUEST QUOTE</button></a>
+            <a href="/contact?photo=<?= $photo_meta['file_name'] ?>"><button class="mt-32">BUY FINE-ART EDITION</button></a>
             </div>
 
         </div>

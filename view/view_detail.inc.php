@@ -65,6 +65,25 @@
         $on_display = null;
     }
 
+    /* If IN_SHOP is set */
+    if( $photo_meta['in_shop'] != 0) {
+
+        /* Make API query to get location */
+        $photo_meta_location = $this->api_Catalog_Photo_Meta_Location($photo_meta['on_display']);
+
+        $in_shop = '
+        <div class="flexfix">&nbsp;</div>
+        <div class="edition-extra">
+                <a target="_shop" href="/shop"><img src="/view/image/icon_cart.svg" /></a>
+            </div>
+            <div class="edition-extra-subline">
+                <a target="_shop" href="/shop"><b>Buy Open Edition Print</b></a><br />
+                <span>This art is available as an unsigned <a href="/styles">open-edition print</a>.</span>
+            </div>';
+    } else {
+        $in_shop = null;
+    }
+
     if($photo_meta['orientation'] == "portrait") {
         $img_w = '90%';
         $grid = '10-center';
