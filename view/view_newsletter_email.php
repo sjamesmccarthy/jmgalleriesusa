@@ -1,40 +1,38 @@
 <link href="https://fonts.googleapis.com/css?family=Fira+Sans:100,300,400,500,700,800,900" rel="stylesheet">
 <script src="https://www.google.com/recaptcha/api.js?render=6LetD7YUAAAAAFX5cXupV3exd1YCSuYFY_az92Wh"></script>
 
-    <div class="amazing-offer-container">
-
-            <!-- <p class="amazing-offer-title">
-              <span class="small">&mdash; jM Galleries presents &mdash;</span>
-            </p> -->
-              
-              <h1 class="amazing-offer-h1 padbot-30">
-                <?= strtoupper($amazingOfferMonth) ?>
-                NEW RELEASE
-              </h1>
-              
-              <p class="amazing-offer-caption">
-                I am excited to share my latest work titled, <b>"<?= $amazingOfferTitle ?>"</b>. Captured in the beautiful and peaceful gardens at the Carmelite Monastery in Carmel, California; founded circa 1925 in honor of Our Lady Mediatrix and St. Therese.
-              </p>
+    <div class="amazing-offer-container mt-32">
               
               <div class="amazing-offer-photo">
                 <p class="amazing-offer-center">
-                  <img class="amazing-offer-image" style="width: <?= $imageWidth ?>" src="/view/image/newsletter/amazing-offer-photo.jpg?month=<?= $amazingOfferMonth ?>" alt="Amazing Offer Email Photo" />
+                  <img class="amazing-offer-image" style="width: <?= $imageWidth ?>" src="/view/image/amazing-offer-email-photo.jpg?month=<?= $amazingOfferMonth ?>" alt="Amazing Offer Email Photo" />
                 </p>
               </div>
               
-              <p class="amazing-offer-caption">
-              Gazing down upon the gardens, the grand walls of the monastery delight in the small pink and white daisies which sway in the sweet and salty breeze of the Pacific Ocean.  These wild-spread <b>"Daises for Our Lady"</b>, and her gardens, offer tranquil moments to remind us of our journeys as we wander through her spirit.<br /><br />
+               <h1 class="amazing-offer-h1">
+                 <?= $amazingOfferTitle ?>
+              </h1>
+              <p style="text-align: center; font-size: 1.5rem;">The <?= $amazingOfferMonth ?> New Release</p>
 
-              This fine-art photograph will inspire an aurora of peace in any room displayed. It is available in small (print-only), medium and large sizes as a standard float-mounted print. All are numbered, <a href="/styles" target="_new">limited-edition</a> series.
+              <p class="amazing-offer-caption">
+                <b>And So The Story Goes ...</b>
               </p>
 
-            <p class="amazing-offer-caption" style="float: right; padding-bottom: 0; margin-top: 0;">
-            Thanks for your support,<br />
+              <p class="amazing-offer-blurb">
+                <?= $andSoTheStoryGoes ?>
+              </p>
+
+              <p class="pt-32">
+               <?= $amazingOfferTitle ?> will beautify and enhance any room that it is displayed. <br />$89 Pre-order pricing is for (1) 12x18 <a href="/styles">Mounted Wall Decor print</a>. All are numbered, limited-edition series.
+              </p>
+
+            <p class="amazing-offer-blurb" style="margin-top: 32px; float: right; padding-bottom: 32px;">
+            Thanks for reading, and journey on!<br />
               <img style="float: right; margin-right: 30px;" src="/view/image/signature_full-web.png" />
             </p>
 
             <p class="amazing-offer-blurb">
-            Pre-Order Pricing for your Limited-Edition, Numbered, 13x19 Fine-Art Print
+            CHECKOUT INFORMATION
             </p>
             <p class="amazing-offer-blurb-desc">
             <span style="text-align: left"></span>
@@ -74,14 +72,14 @@
 
         <p class="pt-16">
           <input type="checkbox" id="purchase" name="purchase" value="True, Pre-Sale" required/> 
-          <label for="purchase" style="font-size: 1.2rem;">Yes, I would like to buy (1) Limited-Edition, Numbered, 13x19, Fine-Art Print, "<?= $amazingOfferTitle ?>" for $89 <strike>$100</strike>.
+          <label for="purchase" style="font-size: 1.2rem;">Yes, I would like to buy (1) Limited-Edition, Numbered, 12x18, Mounted Wall Decor, "<?= $amazingOfferTitle ?>" for <?= $amazingOfferPrice ?> <strike>$100</strike>.
         <input name="amazingOfferTitle" type="hidden" value="<?= $amazingOfferTitle ?>" />
         </p>
 
-      <span style="font-size: .8rem;"><a href="/styles">Learn more about our Styles, Editions and Prices.</a> If you prefer Acrylic, or wish to add an open-air-frame please <a href="/contact">contact us</a> for a price.</span>
+      <span style="font-size: .8rem;"><img src="/view/image/square-payment-icons.png" style="width: 100px; vertical-align: middle" />&nbsp;&nbsp;I understand that I will be e-mailed an invoice through Square (Mastercard, Visa, Discover) for <?= $amazingOfferPrice ?> plus shipping. <a href="/legal">Terms of Sale</a></span>
 
         <p class="amazing-offer-center pt-16">
-        <button id="sendform" class="amazing-offer-button allcaps">SUBMIT ORDER REQUEST</button>
+        <button id="sendform" class="amazing-offer-button allcaps">LIMITED TIME — BUY NOW</button>
         </p>
 
         </fieldset>
@@ -100,8 +98,7 @@
     </div>
 
             <div class="amazing-offer-expires">
-                <p smallhalf>THIS OFFER EXPIRES ON <?= $amazingOfferExpiration ?>. MSRP pricing for float-mounted prints can be found on our <a href="/styles" target="_new">Styles, Editions and Pricing</a> page. This Pre-Order Pricing is only valid for 13x19 print (12x18 image area) Fine-Art photograph.
-                *Taxes apply to Nevada residents. Price listed as USD. Shipping (UPS only) varies by destination and within U.S.A only. Limit 1 per customer per shipping address. All limited edition photos are signed, numbered and include a Certificate of Authenticity. This offer is only valid for online purchases and for this specific photo, "<?= $amazingOfferTitle ?>" and does not include a frame, mat or other mounting options. </p>
+                <p smallhalf>THIS OFFER EXPIRES ON <?= $amazingOfferExpiration ?>. Standard pricing for Mounted Wall Decor can be found on our <a href="/styles" target="_new">Styles, Editions and Pricing</a> page. This offer is not available for framed or Acrylic Fine-Art. *Taxes apply to Nevada residents. Price listed as USD. Shipping (UPS only) varies by destination and within U.S.A only. Limit 1 per customer per shipping address. All limited edition photos are signed, numbered and include a Certificate of Authenticity. This offer is only valid for online purchases and for this specific photo, "<?= $amazingOfferTitle ?>" and does not include a frame, mat or other mounting options.</p>
                 
                   <!-- <p class="amazing-offer-center padtop40"><img src="/images/square-payment-icons.png" style="width: 200px;"/></p> -->
             </div>
@@ -141,7 +138,7 @@
 
             console.log('Sending... ' + $('#g-recaptcha-response').val());
 
-              var url = "view/ajax_email_process.php";
+              var url = "/view/ajax_email_process.php";
               console.log(url);
 
               grecaptcha.ready(function() {

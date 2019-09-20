@@ -10,6 +10,8 @@
 
                 <p class="year">2019</p>
 
+                <li><p><span class="news-date">Fri Sept 6</span><br />Exhibited at Art Off The Walls in Temecula, California. SOLD! Never Ending Story and First Light TinyView&trade;</p></li>
+
                 <li><p><span class="news-date">Fri July 5</span><br />Exhibited at Art Off The Walls in Temecula, California. SOLD! Happiest Time of Day #6.</p></li>
 
                 <li><p><span class="news-date">Sat Apr 20</span><br />Updated <a href="https://www.instagram.com/p/BwkEGi2Fk0_/" target="_social">photo exhibit at Joe Maxx Coffee Co.</a>, E Windmill, Las Vegas with more new photos!<br />

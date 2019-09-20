@@ -7,9 +7,10 @@
 
     <link rel="apple-touch-icon" sizes="180x180" href="/view/image/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/view/image/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/view/image/favicon-16x16.png">
+    <!-- <link rel="icon" type="image/png" sizes="16x16" href="/view/image/favicon-16x16.png"> -->
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
+    <meta name="p:domain_verify" content="b1aefccc20a0932f9e254f23dac1e4e3"/>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="/view/js/bxslider/jquery.bxslider.min.js"></script>

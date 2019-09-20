@@ -14,36 +14,43 @@
     
     $available_sizes = preg_replace("/tinyViews Edition/i", "<a href='/shop'>tinyViews&trade; Edition</a>", $photo_meta['available_sizes']);
 
+    /* Determine if the "TinyViews photo exists */
+     if( file_exists($_SERVER['DOCUMENT_ROOT'] . "/catalog/__image/" . $photo_meta['file_name'] . '-tinyviews.jpg') ) {
+
+        $tinyviewImage = '<div><img src="/catalog/__image/' . $photo_meta['file_name'] . '-tinyviews.jpg" /><div class="bx-buyart-btn"><a target="_shop" href="/shop"><button>BUY  TINYVIEWS&trade; EDITION</button></a></div></div>';
+     } else {
+         $tinyviewImage = null;
+     }
+
     /* Determine if the "VirtualRoom" photo exists */
     if( file_exists($_SERVER['DOCUMENT_ROOT'] . "/catalog/__image/" . $photo_meta['file_name'] . '-room.jpg') ) {
            
             if($photo_meta['orientation'] == "landscape") {
                  $super_photo = ' 
                 <div class="slider">
-                <div><img src="/catalog/__image/' . $photo_meta['file_name'] . '-room.jpg" /><div class="bx-buyart-btn"><a href="/contact?photo=' . $photo_meta['file_name'] . '"><button>BUY THIS ART</button></a></div></div>
-                <div><img src="/catalog/__image/' . $photo_meta['file_name'] . '.jpg" /></div>
-                </div>';
+                <div><img src="/catalog/__image/' . $photo_meta['file_name'] . '-room.jpg" /><div class="bx-buyart-btn"><a href="/contact?photo=' . $photo_meta['file_name'] . '"><button>BUY FINE-ART EDITION</button></a></div></div>
+                <div><img src="/catalog/__image/' . $photo_meta['file_name'] . '.jpg" /></div>' . $tinyviewImage . '</div>';
             } else {
                 $super_photo = ' 
-                <div class="grid">
+                <div class="slider">
                     <div class="col"> 
-                    <img class="bx-img-portrait" src="/catalog/__image/' . $photo_meta['file_name'] . '-room.jpg" /><div class="bx-buyart-btn"><a href="/contact?photo='. $photo_meta['file_name'] . '"><button>BUY THIS ART</button></a></div></div>
-                    </div>
-                </div>';
+                    <img class="bx-img-portrait" src="/catalog/__image/' . $photo_meta['file_name'] . '-room.jpg" /><div class="bx-buyart-btn"><a href="/contact?photo='. $photo_meta['file_name'] . '"><button>BUY FINE-ART EDITION</button></a></div></div>
+                ' . $tinyviewImage . '</div>';
             }
 
     } else {
         $super_photo = ' 
-            <div class="grid">
+            <div class="slider">
                 <div class="col lg-img">
                     <img src="/catalog/__image/' . $photo_meta['file_name'] . '.jpg" />
                 </div>
+            ' . $tinyviewImage . '
             </div>';
     }
 
     /* If there is no custom DESC available */
     if( is_null($photo_meta['desc']) ) {
-        $desc = "This art is printed on Acrylic and includes a float mount hanger. Read more about <a href=\"/styles\">our pricing and other available options.<a/>";
+        $desc = "This Fine-Art Edition is printed on Acrylic and includes a float mount hanger. Read more about <a href=\"/styles\">our pricing and other available options.<a/>";
     }
 
     /* If ON_DISPLAY is set */
@@ -82,6 +89,13 @@
             </div>';
     } else {
         $in_shop = null;
+    }
+
+    /* If AS_TINYVIEW is set */
+    if( $photo_meta['as_tinyview'] != 0) {
+        $as_tinyview = ' and as <a target="_shop" href="/shop">TinyViews&trade;</a>';
+    } else {
+        $as_tinyview = null;
     }
 
     if($photo_meta['orientation'] == "portrait") {

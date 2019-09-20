@@ -43,7 +43,7 @@ if ($recaptcha->score >= 0.5) {
 		case "AmazingOfferForm":
 			$to = EMAIL_TO;
 			$subject = 'AMAZING_ORDER: US-' . TIMESTAMP;
-			$header_from = "FROM: " . $_POST['contactname'] . " <'" . $_POST['contactemail'] . "'>";
+			$header_from = "FROM: " . $_POST['contactfirstname'] . " <'" . $_POST['contactemail'] . "'>";
 			$reply_to = $_POST['contactemail'];
 			$sendReply = '1';
 			$send_reply_subject = "Your jM Galleies Order US-" . TIMESTAMP;
@@ -68,6 +68,16 @@ if ($recaptcha->score >= 0.5) {
 			$send_reply_message = 'Thank you for your quote request. An art consultant will be in contact with you at, ' . $_POST['contactemail'] . ' within 48 hours to answer any of your questions you have about our limited-edition, fine-art.' . "\r\n\r\n" . "Thank you for your support!\r\nJames, jmGalleries, https://jmgalleriesusa.com\r\n951-708-1831 PST";
 			break;
 
+		case "SubscribeForm":
+			$to = EMAIL_TO;
+			$subject = 'webform/SUBSCRIBE';
+			$header_from = "FROM: " . $_POST['contactname'] . " <'" . $_POST['contactemail'] . "'>";
+			$reply_to = $_POST['contactemail'];
+			$sendReply = '0';
+			$send_reply_subject = null;
+			$send_reply_message = null;
+			break;
+
 		default:
 			$to = EMAIL_TO;
 			$subject = 'webform/jmG Default';
@@ -76,7 +86,6 @@ if ($recaptcha->score >= 0.5) {
 			$sendReply = '0';
 			break;
 	}
-	
 	
 	$message .= "\n\n" . 'REMOTE_AGENT: ' . $_SERVER['HTTP_USER_AGENT'];
 	if(isSet($recaptcha)) {

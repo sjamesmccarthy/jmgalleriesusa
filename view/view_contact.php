@@ -34,6 +34,9 @@
         <?= $message_PH ?>
         <textarea style="margin-top: 10px" id="comments" name="comments" placeholder="TYPE HERE" rows="8"></textarea>
         </p>
+
+        <?= $payment_field ?>
+        
         </fieldset>
 
         <button id="sendform" value="SEND"><?= $button_label ?></button>
@@ -51,10 +54,11 @@
 <script>
 
   jQuery(document).ready(function($){
+    jQuery.noConflict();
 
       $('#contactForm').submit(function() {
 
-        console.log('start.form.submission');
+        console.log('start.form.contactForm.submission');
 
         grecaptcha.execute('6LetD7YUAAAAAFX5cXupV3exd1YCSuYFY_az92Wh', {action: 'homepage'}).then(function(token) {
               document.getElementById('g-recaptcha-response').value = token;
@@ -71,7 +75,7 @@
             var message = $("#message").val();
 
             if (name == '' || email == '' || subject == '') {
-              alert("Please Fill Required Fields");
+              alert("Please Fill Required Fields To Send Message.");
               return false;
             } else {
               console.log('validation PASS');
@@ -79,7 +83,7 @@
 
             console.log('Sending... ' + $('#g-recaptcha-response').val());
 
-              var url = "view/ajax_email_process.php";
+              var url = "/view/ajax_email_process.php";
 
               grecaptcha.ready(function() {
 

@@ -116,18 +116,16 @@ input[type="text"].amazing-offer-error {
 .amazing-offer-caption {
     margin-top: 30px;
     text-align: left;
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     line-height: 1.6em;
     font-weight: 300;
-    padding-bottom: 40px;
+    // padding-bottom: 40px;
 }
 
 .amazing-offer-blurb {
     position: relative;
-    display: block;
-    padding-top: 20px;
-    font-size: 1.8rem;
-    line-height: normal;
+    font-size: 1.5rem;
+    line-height: 1.5;
     text-align: left;
     font-weight: 300;
     clear: both;
@@ -204,17 +202,12 @@ input[type="text"].amazing-offer-error {
 }
 
 .select-wrapper:after {
-	/* font-family: "Font Awesome 5 Free"; */
-  	/* content: '\f0dd'; */
-      /* font-size: 28px; */
-      /* font-weight: 900; */
-      content: url(../image/icon_downarrow.svg);
-    /* background-image:url('/images/icon_downarrow.svg'); */
+    content: url(../image/icon_downarrow.svg);
   	position: absolute;
   	top: 20px;
   	right: 25px;
-      color: #A9A9A9;
-      opacity: .5;
+    color: #A9A9A9;
+    opacity: .5;
   	pointer-events: none;
 }
 

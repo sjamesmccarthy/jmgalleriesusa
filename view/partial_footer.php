@@ -1,70 +1,44 @@
-<section id="footer" class="pt-32">
-
-    <!-- <div class="footer-background"><?= $addToClass ?>
-        <p class="copyright"><?= $this->config->copyright ?></p>
-    </div> -->
+<section id="footer">
             
-        <div class="grid-max-width grid-noGutter">
+        <!-- <div class="grid-max-width grid-noGutter"> -->
+            <div class="footer-maxwidth">
+            <div class="grid">
+                <div class="col pb-32">
+                    <a href="/"><img class="breadcrumb-logo" src="/view/image/logo_fullsize.png" /></a> <?= $bc_catalog ?> <img class="breadcrumb-arrow" src="/view/image/icon_navarrow-right.svg" /> <?= $this->page->title ?>
+                </div>
 
-            <div class="col-12">
-                <div class="col-12-middle pb-32 breadcrumb">
-                 <a href="/"><img class="breadcrumb-logo" src="/view/image/logo_fullsize.png" /></a> <?= $bc_catalog ?> <img class="breadcrumb-arrow" src="/view/image/icon_navarrow-right.svg" /> <?= $this->page->title ?>
-               </div>
-            </div>
-
-            <div class="col-4-top_xs-hidden pt-16">
-                <?php 
-                    $this->getPartial('newsletter'); 
-                ?>
-
-
-                <div class="pt-24 pt-16 social">
-                    <a target="_social" href="https://twitter.com/jmgalleriesusa"><img src="/view/image/social_twitter.svg" /></a>
+                <div class="col-right">
+                     <a target="_social" href="https://twitter.com/jmgalleriesusa"><img src="/view/image/social_twitter.svg" /></a>
                     <a target="_social" href="https://instagram.com/jmgalleriesusa"><img src="/view/image/social_instagram.svg" /></a>
                     <a target="_social" href="https://linkedin.com/company/jmgalleriesusa"><img src="/view/image/social_linkedin.svg" /></a>
                     <a target="_social" href="https://medium.com/jmgalleriesusa"><img src="/view/image/social_medium.svg" /></a>
                 </div>
-
-            </div>
-            
-            <div class="col-2_xs-3 footer-column">
-                <h4>EXPLORE</h4>
-                <ul>
-                    <li><a href="/galleries">Galleries</a></li>
-                    <li><a href="/exhibits">Exhibitions</a></li>
-                    <li><a href="/styles">Styles & Frames</a></li>
-                    <li><a href="/moments">Moments & News</a></li>
-                    <li><a target="_blog" href="https://medium.com/jmgalleriesusa">Polarized</a></li>
-                </ul>
             </div>
 
-            <div class="col-2_xs-3 footer-column">
-                <h4>ABOUT</h4>
-                    <ul>
-                        <li><a href="/about">the Photographer</a></li>
-                        <li><a href="/styles">Limited Editions</a></li>
-                        <li><a href="/legal">Privacy Policy</a></li>
-                        <li><a href="/contact">Contact Us</a></li>
-                    </ul>
+            <div class="grid">
+                <div class="col-9">
+                    <?php 
+                        $this->getPartial('newsletter'); 
+                    ?>
+                </div>
             </div>
 
-            <div class="col-2_xs-3 footer-column">
-                    <h4>SALES</h4>
-                        <ul>
-                            <li><a href="/styles">Pricing</a></li>
-                            <li><a href="/contact">Customer Service</a></li>
-                            <li><a href="/newsletter">Monthly Amazing Offer</a></li>
-                        </ul>
+            <div class="grid">
+                <div class="col-9_xs-3 mt-32">
+                        <a href="/galleries">Galleries</a> | 
+                        <a target="_new" href="/shop">TinyViews&trade; Store</a> | 
+                        <a target="_shop" href="/polarized">Polarized Quarterly</a> | 
+                        <a target="_new" href="/thestudio">Portraits, Events & Headshots</a> | 
+                        <a href="/moments">Moments, News & Events</a> |
+                        <a href="/about">About</a> |
+                        <a href="/contact">Contact</a>
+                </div>
+
+                <div class="col-3_xs-3 mt-32" style="text-align: right; position: absolute; bottom: 32px; right: 32px;">
+                    <p class="small"> <?= $this->config->copyright ?> | <a href="/legal">Terms of Use</a></p>
+                </div>
             </div>
 
-            <div class="col-2_xs-3 footer-column" >
-                    <h4>SHOP</h4>
-                        <ul>
-                            <li><a target="_shop" href="/shop">tinyViews™</a></li>
-                            <li><a target="_shop" href="/portraits-events-headshots">Portraits, Events & Headshots</a></li>
-                        </ul>
-            </div>
-
-            
         </div>
+        <!-- </div> -->
     </section>

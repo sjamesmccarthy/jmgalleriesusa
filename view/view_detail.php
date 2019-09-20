@@ -14,7 +14,7 @@
             </div>
             <div class="edition-extra-subline">
                 <a href="/contact"><b>Available Acrylic Sizes</b></a><br />
-                <span><?= $available_sizes ?></span>
+                <span><?= $available_sizes ?><?= $as_tinyview ?></span>
             </div>
 
             <div class="flexfix">&nbsp;</div>
