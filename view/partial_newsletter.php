@@ -9,9 +9,9 @@
 
     <h4 class="pb-16">SUBSUBSCRIBE TO OUR ONCE A MONTH AMAZING OFFER</h4>
     
-        <input type="text" style="width: 20%" name="contactfirstname" id="contactfirstname" placeholder="First Name" />
-        <input type="text" style="width: 20%"  name="contactlastname" id="contactlastname" placeholder="Last Name" />
-        <input type="text" style="width: 42%"  name="subcontactemail" id="subcontactemail" placeholder="Email" />
+        <input type="text" style="width: 25%" name="contactfirstname" id="contactfirstname" placeholder="First Name" />
+        <input type="text" style="width: 25%"  name="contactlastname" id="contactlastname" placeholder="Last Name" />
+        <input type="text" style="width: 34%; margin-right: 12px;"  name="subcontactemail" id="subcontactemail" placeholder="Email" />
         <button id="subBtn">SUBSCRIBE</button>
 
 </form>

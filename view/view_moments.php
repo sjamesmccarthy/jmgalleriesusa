@@ -10,6 +10,10 @@
 
                 <p class="year">2019</p>
 
+                <li><p><span class="news-date">Sun Sept 15</span><br />New <a target="_shop" href="/shop">online store featuring our TinyViews&trade;</a> launches with a dozen amazing and affordable fine-art prints for your home or office.</p></li>
+
+                <li><p><span class="news-date">Thu Sept 5</span><br />New website launched with a new modern, timeless and miminalistic style, including a few <a href='/new-releases'>New Releases</a> too.</p></li>
+                
                 <li><p><span class="news-date">Fri Sept 6</span><br />Exhibited at Art Off The Walls in Temecula, California. SOLD! Never Ending Story and First Light TinyView&trade;</p></li>
 
                 <li><p><span class="news-date">Fri July 5</span><br />Exhibited at Art Off The Walls in Temecula, California. SOLD! Happiest Time of Day #6.</p></li>

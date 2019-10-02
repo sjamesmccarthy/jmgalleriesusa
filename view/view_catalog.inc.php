@@ -18,7 +18,6 @@
          $catalog_photos = $this->api_Catalog_Get_New_Releases(100, 4);
     }
 
-
         if( !$catalog_photos['error']) {
             foreach($catalog_photos as $k => $v) {
                 
@@ -35,15 +34,15 @@
                 /* For Mobile */
                 /* On last two thumbnails add some css */
                 if($count == 2) {
-                    $grid_css = 'col sm-hidden';
+                    $grid_css = 'col';
                 } else if ($count == 3) {
-                    $grid_css = 'col sm-hidden md-hidden';
+                    $grid_css = 'col';
                 } else {
                     $grid_css = 'col';
                 }
                 
                 // <div style="overflow: hidden; height: 203px;" class="' . $grid_css . '">
-                $thumb_html .= '<div style="overflow: hidden;" class="' . $grid_css .  ' pb-8"><a href="/' . $v['catalog_path'] . '/' . $img_file . '"><img style="width: 100%;" src="/catalog/__thumbnail/' . $img_file . '.jpg" /></a></p></div>';
+                $thumb_html .= '<div style="overflow: hidden;" class="' . $grid_css .  ' pb-8"><a href="/' . $v['catalog_path'] . '/' . $img_file . '"><img style="width: 100%;" src="/catalog/__thumbnail/' . $img_file . '.jpg" /></a></p><p>' . $v['title'] . '</div>';
 
                 /* <!-- <p><a href="/' . $v['catalog_path'] . '/' . $img_file . '">' . $v['title'] . '</a>--><!-- <br />Exhibiting at Joe Maxx Coffee, Las Vegas --> */
                 

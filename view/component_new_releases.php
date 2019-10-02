@@ -34,7 +34,7 @@ if( !$new_releases['error']) {
             $grid_css = 'col';
         }
         $thumb_new_releases_html .= '<div class="thumb overflow-hidden ' . $grid_css . '">';
-        $thumb_new_releases_html .= '<a href="/' . $value['catalog_path']  . $value['path'] . "/" . $img_file . '"><img src="/catalog/__thumbnail/' .$img_file . '.jpg" /></a></div>';
+        $thumb_new_releases_html .= '<a href="/' . $value['catalog_path']  . $value['path'] . "/" . $img_file . '"><img src="/catalog/__thumbnail/' .$img_file . '.jpg" /></a><p>' . $value['title'] . '</p></div>';
                 
         if($count == 3) { $count = 0; } else { $count++; }
     }
