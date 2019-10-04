@@ -11,18 +11,18 @@
             </div>
 
             <div class="grid">
-                <div class="col-2 col_md-3 footer-column">
+                <div class="col-2 col_md-2 col_sm-5 footer-column">
                     <h4>GALLERIES</h4>
                     <ul>
                         <li><a href="/new-releases">New Releases</a></li>
                         <li><a href="/oceans-lakes-waterfalls">Oceans, Lakes & Waterfalls</a></li>
                         <li><a href="/mountains-deserts-trees">Mountains, Deserts & Trees</a></li>
-                        <li><a href="/abstract-architecture-people">Abstract, Architecture & People</a></li>
+                        <li><a href="/abstract-architecture-people">Abstract & Architecture</a></li>
                         <li><a href="/flowers-fields-clouds">Flowers, Fields & Clouds</a></li>
                     </ul>
                 </div>
 
-                <div class="col-2 col_md-3 footer-column">
+                <div class="col-2 col_md-2 sm-hidden footer-column">
                     <h4>EXPLORE</h4>
                     <ul>
                         <!-- <li><a href="/galleries">Galleries</a></li> -->
@@ -34,7 +34,7 @@
                     </ul>
                 </div>
 
-                <div class="col-2 col_md-3 footer-column">
+                <div class="col-2 col_md-2 col_sm-5 footer-column">
                         <h4>SHOP</h4>
                             <ul>
                                 <li><a target="_shop" href="/shop">tinyViews™</a></li>
@@ -45,7 +45,7 @@
                             </ul>
                 </div>
 
-                <div class="col-2 col_md-3 footer-column">
+                <div class="col-2 col_md-2 sm-hidden footer-column">
                     <h4>ABOUT</h4>
                         <ul>
                             <li><a href="/about">the Photographer</a></li>
@@ -56,7 +56,7 @@
                         </ul>
                 </div>
 
-                <div class="col-3 sm-hidden md-hidden social">
+                <div class="col-3_md-2 sm-hidden social">
                     <div style="text-align:right">
                     <h4>CONNECT</h4>
                         <ul>
@@ -73,7 +73,7 @@
             </div>
 
                 <div class="grid pt-32">
-                    <div class="col">
+                    <div class="col_sm-hidden">
                         <?php 
                             $this->getPartial('newsletter'); 
                         ?>

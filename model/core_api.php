@@ -324,5 +324,30 @@ class Core_Api
         return($this->getJSON('view/data_polarized.json', 'data'));
 
     }
+
+    public function api_Hero_Get_Image() {
+
+        // Read in Config var JSON with title and description and link.
+
+        if($this->config->heroimage['random'] == "false") {
+
+            $this->hero_title = $this->config->heroimage[$this->config->heroimage['always_use']]['title'];   
+            $this->hero_link  = $this->config->heroimage[$this->config->heroimage['always_use']]['link'];
+            $this->hero_image = $this->config->heroimage[$this->config->heroimage['always_use']]['image'];
+            $this->hero_text = $this->config->heroimage[$this->config->heroimage['always_use']]['text'];
+
+        } else {
+            /* Do some randoming here */
+            (int)$max= sizeOf($this->config->heroimage)-2;
+            $index = rand(1, $max);
+
+            $this->hero_title = $this->config->heroimage[$index]['title'];   
+            $this->hero_link  = $this->config->heroimage[$index]['link'];
+            $this->hero_image = $this->config->heroimage[$index]['image'];
+            $this->hero_text = $this->config->heroimage[$index]['text'];
+
+        }
+
+    }
 }
 ?>

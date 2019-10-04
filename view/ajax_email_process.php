@@ -71,8 +71,8 @@ if ($recaptcha->score >= 0.5) {
 		case "SubscribeForm":
 			$to = EMAIL_TO;
 			$subject = 'webform/SUBSCRIBE';
-			$header_from = "FROM: " . $_POST['contactname'] . " <'" . $_POST['contactemail'] . "'>";
-			$reply_to = $_POST['contactemail'];
+			$header_from = "FROM: " . $_POST['contactfirstname'] . " " . $_POST['contactlastname']. " <'" . $_POST['subcontactemail'] . "'>";
+			$reply_to = $_POST['subcontactemail'];
 			$sendReply = '0';
 			$send_reply_subject = null;
 			$send_reply_message = null;

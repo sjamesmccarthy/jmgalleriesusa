@@ -20,5 +20,34 @@
 
     "components" : {
         "polarized" : "false"
+    },
+
+    "heroimage" : {
+        "always_use" : "3",
+        "random" : "true",
+        "1" : {
+            "title" : "Flowers, Fields & Clouds",
+            "link" : "flowers-fields-clouds",
+            "image" : "daisies-for-our-lady.jpg",
+            "text" : "light"
+        },
+        "2" : {
+            "title" : "Oceans, Lakes & Waterfalls",
+            "link" : "ocean-lakes-waterfalls",
+            "image" : "stone-garden.jpg",
+            "text": "light"
+        },
+        "3" : {
+            "title" : "Architecture, Abstract & People",
+            "link" : "architecture-abstract-people",
+            "image" : "hollywoods-entsle.jpg",
+            "text": "light"
+        },
+        "4" : {
+            "title" : "Mountains, Deserts & Trees",
+            "link" : "mountains-deserts-trees",
+            "image" : "emigrants-fog.jpg",
+            "text": "light"
+        }
     }
 }
