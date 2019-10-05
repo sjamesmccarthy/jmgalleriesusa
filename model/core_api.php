@@ -335,6 +335,7 @@ class Core_Api
             $this->hero_link  = $this->config->heroimage[$this->config->heroimage['always_use']]['link'];
             $this->hero_image = $this->config->heroimage[$this->config->heroimage['always_use']]['image'];
             $this->hero_text = $this->config->heroimage[$this->config->heroimage['always_use']]['text'];
+            $this->hero_position = $this->config->heroimage[$this->config->heroimage['always_use']]['position'];
 
         } else {
             /* Do some randoming here */
@@ -345,6 +346,7 @@ class Core_Api
             $this->hero_link  = $this->config->heroimage[$index]['link'];
             $this->hero_image = $this->config->heroimage[$index]['image'];
             $this->hero_text = $this->config->heroimage[$index]['text'];
+            $this->hero_position = $this->config->heroimage[$index]['position'];
 
         }
 

@@ -29,25 +29,36 @@
             "title" : "Flowers, Fields & Clouds",
             "link" : "flowers-fields-clouds",
             "image" : "daisies-for-our-lady.jpg",
-            "text" : "light"
+            "text" : "light",
+            "position" : "center"
         },
         "2" : {
             "title" : "Oceans, Lakes & Waterfalls",
             "link" : "ocean-lakes-waterfalls",
             "image" : "stone-garden.jpg",
-            "text": "light"
+            "text": "light",
+            "position": "left"
         },
         "3" : {
             "title" : "Architecture, Abstract & People",
-            "link" : "architecture-abstract-people",
+            "link" : "abstract-architecture-people",
             "image" : "hollywoods-entsle.jpg",
-            "text": "light"
+            "text": "light",
+            "position": "center"
         },
         "4" : {
             "title" : "Mountains, Deserts & Trees",
             "link" : "mountains-deserts-trees",
             "image" : "emigrants-fog.jpg",
-            "text": "light"
+            "text": "light",
+            "position": "center"
+        },
+        "5": {
+            "title" : "Architecture, Abstract & People",
+            "link" : "abstract-architecture-people",
+            "image" : "golden-allure.jpg",
+            "text": "light",
+            "position": "center"
         }
     }
 }
