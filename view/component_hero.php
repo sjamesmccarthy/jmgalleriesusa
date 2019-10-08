@@ -19,7 +19,7 @@ $html = <<< END
             <div class="hero-text-container">
                 <p class="hero-text"> $this->hero_title </p>
                 <p class="hero-text-explore-link"><a href="$this->hero_link">Explore This Collection</a></p>
-                <p class="hero-text-arrow"><img class="hero-down-arrow" src="/view/image/icon_down.svg" /></p>
+                <p class="hero-text-arrow"><a href="$this->hero_link"><img class="hero-down-arrow" src="/view/image/icon_down.svg" /></a></p>
             </div>
     </div>
     <!-- </div> -->
@@ -28,7 +28,7 @@ $html = <<< END
 <script>
 
     $("#hero").each( function() { 
-        $(this).css("background-image", "linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(117,117,119,0) 20%), url(/catalog/__image/" + $(this).data("url") +")" ); 
+        $(this).css("background-image", "linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(117,117,119,0) 50%), url(/catalog/__image/" + $(this).data("url") +")" ); 
         $(this).css("background-postion", $this->hero_position);
     });
 
