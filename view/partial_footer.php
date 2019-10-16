@@ -26,10 +26,10 @@
                     <h4>EXPLORE</h4>
                     <ul>
                         <!-- <li><a href="/galleries">Galleries</a></li> -->
-                        <!-- <li><a href="/exhibits">Exhibitions</a></li> -->
+                        <li><a href="/exhibits">Exhibited Art</a></li>
                         <li><a href="/styles">Styles & Frames</a></li>
                         <li><a href="/moments">Moments, News & Events</a></li>
-                        <li><a target="_shop" href="/thestudio">The Studio</a></li>
+                        <!-- <li><a target="_shop" href="/thestudio">The Studio</a></li> -->
                         <li><a target="_blog" href="https://medium.com/jmgalleriesusa">Polarized Quarterly</a></li>
                     </ul>
                 </div>
@@ -52,16 +52,17 @@
                             <li><a href="/styles">Limited Editions</a></li>
                             <li><a href="/legal">Privacy Policy</a></li>
                             <li><a href="/legal">Terms of Use</a></li>
-                            <li><a href="/contact">Contact Us</a></li>
+                            <!-- <li><a href="/contact">Contact Us</a></li> -->
                         </ul>
                 </div>
 
-                <div class="col-3_md-2 sm-hidden social">
+                <div class="col-3_md-2 sm-hidden col_md-2 social">
                     <div style="text-align:right">
                     <h4>CONNECT</h4>
                         <ul>
-                        <li><a target="_social" href="https://twitter.com/jmgalleriesusa"> <img src="/view/image/social_twitter.svg" /></a> <a target="_social" href="https://instagram.com/jmgalleriesusa"> <img src="/view/image/social_instagram.svg" /></a> <a target="_social" href="https://linkedin.com/company/jmgalleriesusa"> <img src="/view/image/social_linkedin.svg" /></a> <a target="_social" href="https://medium.com/jmgalleriesusa"> <img src="/view/image/social_medium.svg" /></a></li>
+                        <!-- <li><a target="_social" href="https://twitter.com/jmgalleriesusa"> <img src="/view/image/social_twitter.svg" /></a> <a target="_social" href="https://instagram.com/jmgalleriesusa"> <img src="/view/image/social_instagram.svg" /></a> <a target="_social" href="https://linkedin.com/company/jmgalleriesusa"> <img src="/view/image/social_linkedin.svg" /></a> <a target="_social" href="https://medium.com/jmgalleriesusa"> <img src="/view/image/social_medium.svg" /></a></li> -->
                         <li style="padding-top: 10px;">(951) 708-1831<br />fineart@jmgalleries.com</li>
+                        <li><a href="/contact">Contact Us</a></li>
                         </ul>
                     </div>
                 </div>

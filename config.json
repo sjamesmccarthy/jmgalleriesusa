@@ -10,6 +10,8 @@
     "email" : "james@jmgalleries.com",
     "phone" : "951-708-1831",
 
+    "coa_contract" : "md5[(title.nospaces).(series).(edition).(timestamp)]",
+
     "prefix" : {
         "template" : "tpl_",
         "page" : "view_",

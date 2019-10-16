@@ -127,6 +127,12 @@
         "component": "false",
         "title": "Shop tinyViews, Wall Mounted Prints and Books"
     },
+    "/tinyviews": {
+        "template": "redirect",
+        "page": "https://www.etsy.com/shop/jmGalleriesUSA",
+        "component": "false",
+        "title": "Shop tinyViews, Wall Mounted Prints and Books"
+    },
     "/signup": {
         "template": "redirect",
         "page": "https://mailchi.mp/677ca5e417ef/new-release-newsletter",
