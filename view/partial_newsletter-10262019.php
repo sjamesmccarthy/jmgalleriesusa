@@ -7,16 +7,13 @@
     <input type="hidden" id="g-recaptcha-response" name="g-recaptcha-response" />
     <input name="refer_IP" type="hidden" value="<?= $_SERVER['REMOTE_ADDR'] ?>" />
 
-    <h4 class="text-l">MONTHLY NEWSLETTER</h4>
-    <p class="subheadline pb-16 text-l">Have a new release photo delivered right to your inbox!</p>
+    <h4 class="pb-16">SUBSCRIBE TO OUR ONCE A MONTH AMAZING OFFER</h4>
     
-        <!-- <input type="text" style="width: 25%" name="contactfirstname" id="contactfirstname" placeholder="First Name" /> -->
-        <!-- <input type="text" style="width: 25%"  name="contactlastname" id="contactlastname" placeholder="Last Name" /> -->
-        <div class="subscribe-form-container">
-        <i class="far fa-envelope form-icon"></i>
-        <input type="text" class="subscribe-form-input" name="subcontactemail" id="subcontactemail" placeholder="your@email.com" />
-        <button id="subBtn" class="subscribe-form-button"><i class="fas fa-arrow-right"></i></button>
-        </div>
+        <input type="text" style="width: 25%" name="contactfirstname" id="contactfirstname" placeholder="First Name" />
+        <input type="text" style="width: 25%"  name="contactlastname" id="contactlastname" placeholder="Last Name" />
+        <input type="text" style="width: 34%; margin-right: 12px;"  name="subcontactemail" id="subcontactemail" placeholder="Email" />
+        <button id="subBtn">SUBSCRIBE</button>
+
 </form>
     <p id="form_response-subscribe"></p>
 </div>

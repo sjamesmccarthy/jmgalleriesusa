@@ -5,7 +5,7 @@ https://jmgalleriesusa.com
 
 SASS, https://sass-lang.com/
 */
-html, body { margin: 0; padding: 0; font-size: 14px; box-sizing: border-box; -webkit-text-size-adjust: 100%; font-family: 'Roboto Condensed', sans-serif; color: #4a4a4a; }
+html, body { margin: 0; padding: 0; font-size: 16px; box-sizing: border-box; -webkit-text-size-adjust: 100%; font-family: 'Roboto Condensed', sans-serif; color: #4a4a4a; }
 
 iframe, img, video { border: 0; border-style: none; }
 
@@ -41,17 +41,17 @@ small { font-size: 80%; }
 
 h1, h2, h3, h4, h5, h6 { margin: 0; font-weight: 700; }
 
-h1 { font-size: 42px; }
+h1 { font-size: 48px; }
 
-h2 { font-size: 31.5px; }
+h2 { font-size: 36px; }
 
-h3 { font-size: 28px; }
+h3 { font-size: 32px; }
 
-h4 { font-size: 24.5px; }
+h4 { font-size: 28px; }
 
-h5 { font-size: 17.5px; }
+h5 { font-size: 20px; }
 
-h6 { font-size: 16.1px; }
+h6 { font-size: 18.4px; }
 
 *, :before, :after { box-sizing: inherit; }
 
@@ -491,19 +491,31 @@ h6 { font-size: 16.1px; }
 
 /* ********************** */
 /* partial_newsletter */
-.newsletter-container { vertical-align: bottom; margin-right: 32px; }
+.newsletter-container { vertical-align: bottom; }
 
 #newsletter input[type=text] { width: 56%; padding: 10px; height: 42px; margin-right: 10px; }
 
+.subscribe-form-container { position: relative; }
+
+.form-icon { position: absolute; top: 0; left: 0; line-height: 50px !important; width: 50px; height: 50px; font-size: 18px; text-align: center; color: #797676; }
+
+.subscribe-form-input { width: 100% !important; padding-left: 60px !important; height: 50px !important; }
+
+.subscribe-form-button { height: 50px; position: absolute; right: 0; }
+
 .disclaimer { font-size: .9rem; }
+
+.subheadline { margin-top: -16px; font-size: .9rem; }
+
+.text-l { text-align: left !important; }
 
 /* ********************** */
 /* partial_footer */
-#footer { height: 100vh !important; background-image: -webkit-gradient(linear, left top, left bottom, from(white), to(rgba(117, 117, 119, 0.85))), url(../image/footer-bkg.jpg); background-image: -webkit-linear-gradient(top, white 0%, rgba(117, 117, 119, 0.85) 100%), url(../image/footer-bkg.jpg); background-image: linear-gradient(180deg, white 0%, rgba(117, 117, 119, 0.85) 100%), url(../image/footer-bkg.jpg); background-repeat: no-re00at; background-size: cover; background-position: 50% 53%; position: absolute; margin-top: 54px; width: 100vw; margin-left: -50vw; height: 100px; left: 50%; }
+#footer { height: 50vh !important; background-image: -webkit-gradient(linear, left top, left bottom, from(white), to(rgba(117, 117, 119, 0.85))), url(../image/footer-bkg.jpg); background-image: linear-gradient(180deg, white 0%, rgba(117, 117, 119, 0.85) 100%), url(../image/footer-bkg.jpg); background-repeat: no-re00at; background-size: cover; background-position: 50% 53%; position: absolute; margin-top: 54px; width: 100vw; margin-left: -50vw; height: 100px; left: 50%; }
 
 #footer input[type=text] { background-color: rgba(255, 255, 255, 0.3); }
 
-.footer-maxwidth { max-width: 102.5em; margin: auto; padding: 0 32px 0 32px; }
+.footer-maxwidth { max-width: 90em; margin: auto; padding: 0 32px 0 32px; }
 
 .footer-column { margin-right: 24px; }
 
@@ -526,6 +538,8 @@ h6 { font-size: 16.1px; }
 .breadcrumb-logo { width: 28px; vertical-align: middle; }
 
 .breadcrumb-arrow { vertical-align: middle; opacity: .6; width: 6px; height: 6px; margin-left: 10px; margin-right: 10px; }
+
+.top-border { border-top: 1px solid #CCC; padding: 5px; margin-top: 5px; width: 75%; }
 
 .copyright { font-size: .9rem; position: absolute; right: 20px; bottom: 20px; }
 
@@ -618,6 +632,8 @@ fieldset { border: 0; }
 .bx-wrapper img { width: 100%; max-width: 100%; }
 
 .bx-img-portrait { width: 99.5%; }
+
+.field-notes { font-size: .9rem; color: rgba(0, 0, 0, 0.8); }
 
 /* ********************** */
 /* view_exhibits */

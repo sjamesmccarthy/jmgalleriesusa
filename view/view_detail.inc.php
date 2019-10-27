@@ -50,7 +50,7 @@
 
     /* If there is no custom DESC available */
     if( is_null($photo_meta['desc']) ) {
-        $desc = "This Fine-Art Edition is printed on Acrylic and includes a float mount hanger. Read more about <a href=\"/styles\">our pricing and other available options.<a/>";
+        $desc = "This Fine-Art Edition is printed on Acrylic and includes an inset frame. Read more about <a href=\"/styles\">our pricing, editions and other framing options.<a/>";
     }
 
     /* If ON_DISPLAY is set */
@@ -110,6 +110,18 @@
         $col_right = 'col-4';
     }
 
+    /* FORMAT EXIF DATA */
+    if($photo_meta['aperture'] != '' && $photo_meta['lens_model'] != '') {
+        $exif_data = "Field Notes: "
+            . $photo_meta['camera'] . ", "
+            . $photo_meta['lens_model'] . ", "
+            . $photo_meta['aperture'] . ", "
+            . $photo_meta['shutter'];
+    }
+
+    if($photo_meta['loc_waypoint'] != '') {
+        $exif_data .= " @ " . $photo_meta['loc_waypoint'];
+    }
 ?>
 
 <script>

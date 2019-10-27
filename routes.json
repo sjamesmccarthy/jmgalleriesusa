@@ -29,6 +29,12 @@
         "component": "true",
         "title": "Galleries"
     },
+    "/all": {
+        "template": "catalog",
+        "page": "catalog",
+        "component": "true",
+        "title": "All Photographs"
+    },
     "/oceans-lakes-waterfalls": {
         "template": "catalog",
         "page": "catalog",

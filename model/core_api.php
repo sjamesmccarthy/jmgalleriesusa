@@ -70,6 +70,44 @@ class Core_Api
         return($data);
     }
 
+    public function api_Catalog_Category_Thumbs_All() {
+        
+        /* Executes SQL and then assigns object to passed var */
+        if( $this->checkDBConnection(__FUNCTION__) == true) {
+
+            $sql = "
+            -- ALL PHOTOS WITH CATEGORY
+            SELECT
+                PH.catalog_photo_id,
+                PH.title,
+                PH.file_name,
+                CATE.title AS cate_title,
+                CATE.path
+            FROM
+                catalog_photo AS PH
+                RIGHT JOIN catalog_category AS CATE ON PH.catalog_category_id = CATE.catalog_category_id
+                WHERE PH.status = 'ACTIVE' AND CATE.type = 'CATALOG' and CATE.status = 'ACTIVE'
+            ORDER BY PH.title";
+
+            $result = $this->mysqli->query($sql);
+
+            if ($result->num_rows > 0) {
+            
+                while($row = $result->fetch_assoc())
+		        {
+		            $data[] = $row;
+		        }
+                
+            } else {
+                
+                $data[] = "No Records Found @ $sql";
+            }	
+            
+        }
+
+        return($data);
+    }
+
     public function api_Catalog_Category_Filmstrip($category_id, $limit) {
         
         /* Executes SQL and then assigns object to passed var */
@@ -126,7 +164,7 @@ class Core_Api
             WHERE
                 created < Now()
                 AND created > DATE_ADD(Now(), INTERVAL - " . $duration . " MONTH)
-           " . $rand . "
+           " . $rand . " AND P.status = 'ACTIVE'
             LIMIT " . $limit;
 	
             $result = $this->mysqli->query($sql);

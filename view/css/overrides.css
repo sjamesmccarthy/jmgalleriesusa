@@ -286,7 +286,7 @@ button {
     color: #FFF;
     border-radius: 4px;
     /* border: 1px solid #2574A9; */
-    min-width: 100px;
+    min-width: 50px;
 }
 
 button a {

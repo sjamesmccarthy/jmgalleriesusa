@@ -10,12 +10,14 @@
     /* OPTION, create a &callback prop for all API methods */
     $catalog_title = $catalog_meta[0]['title'];
     $catalog_desc = $catalog_meta[0]['desc'];
-    
+
     /* Get Thumbnails of photos for Category */
-    if( $catalog_meta[0]['path'] != 'new-releases') {
-         $catalog_photos = $this->api_Catalog_Category_Thumbs($catalog_meta[0]['path']);
+    if( $catalog_meta[0]['path'] == 'new-releases') {
+         $catalog_photos = $catalog_photos = $this->api_Catalog_Get_New_Releases(100, 4);
+    } else if( $catalog_meta[0]['path'] == 'all') {
+         $catalog_photos = $this->api_Catalog_Category_Thumbs_All();
     } else {
-         $catalog_photos = $this->api_Catalog_Get_New_Releases(100, 4);
+         $catalog_photos = $this->api_Catalog_Category_Thumbs($catalog_meta[0]['path']);
     }
 
         if( !$catalog_photos['error']) {

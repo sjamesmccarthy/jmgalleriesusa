@@ -19,6 +19,7 @@
                         <li><a href="/mountains-deserts-trees">Mountains, Deserts & Trees</a></li>
                         <li><a href="/abstract-architecture-people">Abstract & Architecture</a></li>
                         <li><a href="/flowers-fields-clouds">Flowers, Fields & Clouds</a></li>
+                        <li class="top-border"><a href="/all">View All</a></li>
                     </ul>
                 </div>
 
@@ -51,19 +52,17 @@
                             <li><a href="/about">the Photographer</a></li>
                             <li><a href="/styles">Limited Editions</a></li>
                             <li><a href="/legal">Privacy Policy</a></li>
-                            <li><a href="/legal">Terms of Use</a></li>
-                            <!-- <li><a href="/contact">Contact Us</a></li> -->
+                            <li><a href="/contact">Contact Us</a></li>
                         </ul>
                 </div>
 
                 <div class="col-3_md-2 sm-hidden col_md-2 social">
                     <div style="text-align:right">
-                    <h4>CONNECT</h4>
-                        <ul>
-                        <!-- <li><a target="_social" href="https://twitter.com/jmgalleriesusa"> <img src="/view/image/social_twitter.svg" /></a> <a target="_social" href="https://instagram.com/jmgalleriesusa"> <img src="/view/image/social_instagram.svg" /></a> <a target="_social" href="https://linkedin.com/company/jmgalleriesusa"> <img src="/view/image/social_linkedin.svg" /></a> <a target="_social" href="https://medium.com/jmgalleriesusa"> <img src="/view/image/social_medium.svg" /></a></li> -->
-                        <li style="padding-top: 10px;">(951) 708-1831<br />fineart@jmgalleries.com</li>
-                        <li><a href="/contact">Contact Us</a></li>
-                        </ul>
+                     <?php 
+                            $this->getPartial('newsletter'); 
+                    ?>
+
+                  
                     </div>
                 </div>
 
