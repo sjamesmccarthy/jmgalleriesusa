@@ -30,35 +30,28 @@
         "1" : {
             "title" : "Flowers, Fields & Clouds",
             "link" : "flowers-fields-clouds",
-            "image" : "daisies-for-our-lady.jpg",
+            "image" : "on-the-way-to-cabernet.jpg",
             "text" : "light",
             "position" : "center"
         },
         "2" : {
             "title" : "Oceans, Lakes & Waterfalls",
             "link" : "oceans-lakes-waterfalls",
-            "image" : "stone-garden.jpg",
+            "image" : "reflections.jpg",
             "text": "light",
             "position": "left"
         },
         "3" : {
             "title" : "Architecture, Abstract & People",
             "link" : "abstract-architecture-people",
-            "image" : "hollywoods-entsle.jpg",
+            "image" : "flying-fortress.jpg",
             "text": "light",
             "position": "center"
         },
         "4" : {
             "title" : "Mountains, Deserts & Trees",
             "link" : "mountains-deserts-trees",
-            "image" : "emigrants-fog.jpg",
-            "text": "light",
-            "position": "center"
-        },
-        "5": {
-            "title" : "Architecture, Abstract & People",
-            "link" : "abstract-architecture-people",
-            "image" : "golden-allure.jpg",
+            "image" : "keep-tahoe-cold.jpg",
             "text": "light",
             "position": "center"
         }

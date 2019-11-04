@@ -5,7 +5,7 @@ https://jmgalleriesusa.com
 
 SASS, https://sass-lang.com/
 */
-html, body { margin: 0; padding: 0; font-size: 16px; box-sizing: border-box; -webkit-text-size-adjust: 100%; font-family: 'Roboto Condensed', sans-serif; color: #4a4a4a; }
+html, body { margin: 0; padding: 0; font-size: 14px; font-weight: 300; line-height: 1.5; box-sizing: border-box; -webkit-text-size-adjust: 100%; font-family: 'Lato', sans-serif; color: #4a4a4a; }
 
 iframe, img, video { border: 0; border-style: none; }
 
@@ -15,7 +15,7 @@ td, th { padding: 0; text-align: left; }
 
 ol, ul, li, dl, dt, dd { margin: 0; padding: 0; list-style: none; box-sizing: border-box; }
 
-p, blockquote, caption, figure, label, fieldset, legend { margin: 0; padding: 0 0 0 0; font-size: 1.2rem; font-weight: 300; line-height: 1.4; }
+p, blockquote, caption, figure, label, fieldset, legend { margin: 0; padding: 0 0 0 0; font-size: 1.2rem; font-weight: 300; }
 
 button, input, select, textarea { font-family: inherit; line-height: inherit; font-size: 100%; margin: 0; overflow: auto; }
 
@@ -41,17 +41,17 @@ small { font-size: 80%; }
 
 h1, h2, h3, h4, h5, h6 { margin: 0; font-weight: 700; }
 
-h1 { font-size: 48px; }
+h1 { font-size: 42px; }
 
-h2 { font-size: 36px; }
+h2 { font-size: 31.5px; }
 
-h3 { font-size: 32px; }
+h3 { font-size: 28px; }
 
-h4 { font-size: 28px; }
+h4 { font-size: 24.5px; }
 
-h5 { font-size: 20px; }
+h5 { font-size: 17.5px; }
 
-h6 { font-size: 18.4px; }
+h6 { font-size: 16.1px; }
 
 *, :before, :after { box-sizing: inherit; }
 
@@ -511,11 +511,11 @@ h6 { font-size: 18.4px; }
 
 /* ********************** */
 /* partial_footer */
-#footer { height: 50vh !important; background-image: -webkit-gradient(linear, left top, left bottom, from(white), to(rgba(117, 117, 119, 0.85))), url(../image/footer-bkg.jpg); background-image: linear-gradient(180deg, white 0%, rgba(117, 117, 119, 0.85) 100%), url(../image/footer-bkg.jpg); background-repeat: no-re00at; background-size: cover; background-position: 50% 53%; position: absolute; margin-top: 54px; width: 100vw; margin-left: -50vw; height: 100px; left: 50%; }
+#footer { height: 75vh !important; background-image: -webkit-gradient(linear, left top, left bottom, from(white), to(rgba(117, 117, 119, 0.85))), url(../image/footer-bkg.jpg); background-image: linear-gradient(180deg, white 0%, rgba(117, 117, 119, 0.85) 100%), url(../image/footer-bkg.jpg); background-repeat: no-re00at; background-size: cover; background-position: 50% 53%; position: absolute; margin-top: 54px; width: 100vw; margin-left: -50vw; height: 100px; left: 50%; }
 
 #footer input[type=text] { background-color: rgba(255, 255, 255, 0.3); }
 
-.footer-maxwidth { max-width: 90em; margin: auto; padding: 0 32px 0 32px; }
+.footer-maxwidth { max-width: 102.8571em; margin: auto; padding: 0 32px 0 32px; }
 
 .footer-column { margin-right: 24px; }
 
@@ -539,7 +539,7 @@ h6 { font-size: 18.4px; }
 
 .breadcrumb-arrow { vertical-align: middle; opacity: .6; width: 6px; height: 6px; margin-left: 10px; margin-right: 10px; }
 
-.top-border { border-top: 1px solid #CCC; padding: 5px; margin-top: 5px; width: 75%; }
+.top-border { border-top: 1px solid #AAA; padding: 5px 0; margin-top: 5px; width: 75%; }
 
 .copyright { font-size: .9rem; position: absolute; right: 20px; bottom: 20px; }
 

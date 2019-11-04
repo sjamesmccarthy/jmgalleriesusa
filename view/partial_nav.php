@@ -15,7 +15,7 @@
             <p class="center"><a href="/moments">MOMENTS</a><br />NEWS AND EVENTS</p>
         </div>
         <div class="col-2_md-4-middle">
-            <p class="center"><a href="/about">ABOUT</a><br />JAMES MCCARTHY</p>
+            <p class="center"><a href="/about">ABOUT</a><br />j.MCCARTHY</p>
         </div>
         </div>
 

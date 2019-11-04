@@ -61,7 +61,7 @@
                 </div>
 
             </li>
-            <li> Print Only (Printed on high-quality, gloss, metallic paper).<br />
+            <li> Print Only (Printed on high-quality, metallic paper).<br />
             These prints are also considered collectible and are part of a limited numbered series of 12, signed and include a Certificate of Authenticity. 
 
              <div class="divTable">
@@ -72,11 +72,11 @@
                         </div>
                         <div class="divTableRow">
                             <div class="divTableCell">12 x 18 (with a 1/2" white border)</div>
-                            <div class="divTableCell">$124</div>
+                            <div class="divTableCell">$85</div>
                         </div>
                         <div class="divTableRow">
                             <div class="divTableCell">16 x 24 (with 1/2" white border)</div>
-                            <div class="divTableCell">$342</div>
+                            <div class="divTableCell">$185</div>
                         </div>
                     </div>
                 </div>
@@ -97,7 +97,11 @@
                             <div class="divTableCell">$25</div>
                         </div>
                         <div class="divTableRow">
-                            <div class="divTableCell">8 x 8 (Printed and framed)</div>
+                            <div class="divTableCell">5 x 7 TinyViews&trade; Small Space Art (Print Only)</div>
+                            <div class="divTableCell">$10</div>
+                        </div>
+                        <div class="divTableRow">
+                            <div class="divTableCell">8 x 8 (Framed Print)</div>
                             <div class="divTableCell">$60</div>
                         </div>
                         <div class="divTableRow">
@@ -114,7 +118,7 @@
             </li> -->
 
             <li> Framing
-                <p>All of our frames are hand-made from real wood soruced from a Los Angeles, California mill. They are stained or painted and include a wire hanger for easy hanging. Since each frame is custom made to order, prices will vary anywhere from $50 to $500 or more depending on size, type of wood and finishing.</p>
+                <p>All of our frames are hand-made from real wood sources from a Los Angeles, California mill. They are stained or painted and include a wire hanger for easy hanging. Since each frame is custom made to order, prices will vary depending on size, type of wood and finishing. Frames do not include glass.</p>
         </ol>
 
     </li>

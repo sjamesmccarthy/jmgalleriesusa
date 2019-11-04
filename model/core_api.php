@@ -165,7 +165,7 @@ class Core_Api
                 created < Now()
                 AND created > DATE_ADD(Now(), INTERVAL - " . $duration . " MONTH)
            " . $rand . " AND P.status = 'ACTIVE'
-            LIMIT " . $limit;
+            ORDER BY created DESC LIMIT " . $limit;
 	
             $result = $this->mysqli->query($sql);
 

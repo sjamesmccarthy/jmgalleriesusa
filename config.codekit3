@@ -168,6 +168,17 @@
 		"opt": 0,
 		"q": 100
 		},
+	"/catalog/__image/flying-fortress.jpg": {
+		"ft": 16384,
+		"iS": 1339763,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/catalog/__image/flying-fortress.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
 	"/catalog/__image/friends-forever.jpg": {
 		"ft": 16384,
 		"iS": 598725,
@@ -848,6 +859,17 @@
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 1,
+		"q": 100
+		},
+	"/catalog/__thumbnail/flying-fortress.jpg": {
+		"ft": 16384,
+		"iS": 97528,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/catalog/__thumbnail/flying-fortress.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
 		"q": 100
 		},
 	"/catalog/__thumbnail/friends-forever.jpg": {
@@ -2749,17 +2771,6 @@
 		"opt": 1,
 		"q": 100
 		},
-	"/view/image/apple-touch-icon.png": {
-		"ft": 32768,
-		"iS": 7392,
-		"oA": 0,
-		"oAP": "/view/image/apple-touch-icon.png",
-		"oF": 0,
-		"oIPL": 1,
-		"opt": 1,
-		"oT": 1,
-		"q": 100
-		},
 	"/view/image/exhibit_icon_joemaxx.png": {
 		"ft": 32768,
 		"iS": 22255,
@@ -2782,25 +2793,96 @@
 		"opt": 1,
 		"q": 100
 		},
-	"/view/image/favicon-16x16.png": {
+	"/view/image/favicon/android-icon-192x192.png": {
 		"ft": 32768,
-		"iS": 3820,
+		"iS": 9475,
 		"oA": 0,
-		"oAP": "/view/image/favicon-16x16.png",
+		"oAP": "/view/image/favicon/android-icon-192x192.png",
 		"oF": 0,
-		"oIPL": 1,
-		"opt": 1,
+		"oIPL": 0,
+		"opt": 0,
 		"oT": 1,
 		"q": 100
 		},
-	"/view/image/favicon-32x32.png": {
+	"/view/image/favicon/apple-icon-180x180.png": {
 		"ft": 32768,
-		"iS": 4024,
+		"iS": 9277,
 		"oA": 0,
-		"oAP": "/view/image/favicon-32x32.png",
+		"oAP": "/view/image/favicon/apple-icon-180x180.png",
 		"oF": 0,
-		"oIPL": 1,
-		"opt": 1,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/view/image/favicon/apple-icon-precomposed.png": {
+		"ft": 32768,
+		"iS": 10042,
+		"oA": 0,
+		"oAP": "/view/image/favicon/apple-icon-precomposed.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/view/image/favicon/apple-icon.png": {
+		"ft": 32768,
+		"iS": 10042,
+		"oA": 0,
+		"oAP": "/view/image/favicon/apple-icon.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/view/image/favicon/browserconfig.xml": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/view/image/favicon/browserconfig.xml",
+		"oF": 0
+		},
+	"/view/image/favicon/favicon-96x96.png": {
+		"ft": 32768,
+		"iS": 4070,
+		"oA": 0,
+		"oAP": "/view/image/favicon/favicon-96x96.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/view/image/favicon/favicon.ico": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/view/image/favicon/favicon.ico",
+		"oF": 0
+		},
+	"/view/image/favicon/ms-icon-310x310.png": {
+		"ft": 32768,
+		"iS": 22197,
+		"oA": 0,
+		"oAP": "/view/image/favicon/ms-icon-310x310.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/view/image/favicon/ms-icon-70x70.png": {
+		"ft": 32768,
+		"iS": 2994,
+		"oA": 0,
+		"oAP": "/view/image/favicon/ms-icon-70x70.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
 		"oT": 1,
 		"q": 100
 		},

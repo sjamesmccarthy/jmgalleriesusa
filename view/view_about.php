@@ -6,7 +6,7 @@
                 <img class="bio-profile-pic" src="/view/image/profile_img.jpg" />
         </div>
         <div class="col">
-                <p class="name blue">james McCarthy</p>
+                <p class="name blue">j.McCarthy</p>
                 <p class="name-title">FINE ART PHOTOGRAPHER</p>
                 <p class="name-statement">
                     Through purposeful paper choice, framing and composition, my work leads you on a journey into a place where your mind inspires you to wander; a moment which creates a timeless, original and natural escape. 
