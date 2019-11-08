@@ -2703,24 +2703,6 @@
 		"oS": 0,
 		"uL": 1
 		},
-	"/view/css/main.css": {
-		"aP": 1,
-		"bl": 0,
-		"ft": 16,
-		"ma": 0,
-		"oA": 0,
-		"oAP": "/view/css/main-min.css",
-		"oF": 0,
-		"oS": 3
-		},
-	"/view/css/main.css.map": {
-		"cB": 0,
-		"ft": 8192,
-		"hM": 0,
-		"oA": 0,
-		"oAP": "/view/css/main.css.map",
-		"oF": 0
-		},
 	"/view/css/main.scss": {
 		"aP": 1,
 		"bl": 0,
@@ -3508,27 +3490,6 @@
 		"oA": 0,
 		"oAP": "/view/view_catalog.inc.php",
 		"oF": 0
-		},
-	"/view/view_catalog.php": {
-		"cB": 0,
-		"ft": 8192,
-		"hM": 0,
-		"oA": 0,
-		"oAP": "/view/view_catalog.php",
-		"oF": 0
-		},
-	"/view/view_catalog.scss": {
-		"aP": 0,
-		"bl": 0,
-		"dP": 10,
-		"dS": 0,
-		"ft": 4,
-		"ma": 0,
-		"oA": 1,
-		"oAP": "/view/view_catalog.css",
-		"oF": 0,
-		"oS": 0,
-		"uL": 1
 		},
 	"/view/view_contact.inc.php": {
 		"cB": 0,

@@ -16,7 +16,7 @@
 
     <meta name="p:domain_verify" content="b1aefccc20a0932f9e254f23dac1e4e3"/>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="/view/js/bxslider/jquery.bxslider.min.js"></script>
     <link rel="stylesheet" href="/view/js/bxslider/jquery.bxslider.css" type="text/css" media="all">
     
@@ -26,7 +26,7 @@
     <script src="/view/js/instafeed.min.js"></script>
 
     <script>
-    $(document).ready(function(){
+    jQuery(document).ready(function($){
         $('.slider').bxSlider({
             startSlide: 0,
             slideWidth: 1368,
