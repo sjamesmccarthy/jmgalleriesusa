@@ -4,6 +4,13 @@
         <div class="col-12 title pb-32 pt-32">
             <h2><?= strtoupper($catalog_title) ?></h2>
             <p><?= $catalog_desc ?></p>
+            <ul class="editions-list">
+                <li class="selected">All</li>
+                <li>Gallery Edition</li>
+                <li>Studio Edition</li>
+                <li>Open Edition</li>
+                <li>as tinyViews&trade; Edition</li>
+            </ul>
         </div>
 
         <!-- generated html from component file -->

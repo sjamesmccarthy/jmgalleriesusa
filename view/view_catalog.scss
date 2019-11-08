@@ -4,3 +4,30 @@
 .title {
     text-align: center;
 }
+
+.editions-list {
+
+    margin: 2rem 0;
+
+    li {
+    display: inline-block;
+    font-size: 1.4rem;
+    padding: 1rem;
+    width: 250px;
+
+        &:first-child {
+            padding-right: 50px;
+            border-right: 1px solid #AAA;
+        }
+
+        &:hover {
+            cursor: pointer;
+            font-weight: bold;
+        }
+        
+        &.selected {
+            font-weight: 700;
+        }
+    }
+
+}

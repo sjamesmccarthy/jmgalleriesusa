@@ -551,6 +551,16 @@ h6 { font-size: 16.1px; }
 /* view_catalog */
 .title { text-align: center; }
 
+.editions-list { margin: 2rem 0; }
+
+.editions-list li { display: inline-block; font-size: 1.4rem; padding: 1rem; width: 250px; }
+
+.editions-list li:first-child { padding-right: 50px; border-right: 1px solid #AAA; }
+
+.editions-list li:hover { cursor: pointer; font-weight: bold; }
+
+.editions-list li.selected { font-weight: 700; }
+
 /* ********************** */
 /* component_contact */
 fieldset { border: 0; }
