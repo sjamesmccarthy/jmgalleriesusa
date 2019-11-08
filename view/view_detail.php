@@ -10,21 +10,29 @@
             <p class="pb-32 edition-title"><b>Limited Edition, Signed Art</b></p>
 
              <div class="edition-extra">
-                <a href="/exhibits"><img src="/view/image/icon_sizes.svg" class="no-border" /></a>
+                <a href="/exhibits"><img src="/view/image/icon_editions.svg" class="no-border" /></a>
             </div>
             <div class="edition-extra-subline">
-                <a href="/contact"><b>Available Acrylic Sizes</b></a><br />
-                <span><?= $available_sizes ?><?= $as_tinyview ?></span>
+                <p>
+                <a href="/styles">Available Editions</a><br />
+                <span><?= $as_editions ?></span>
+                </p>
             </div>
 
             <div class="flexfix">&nbsp;</div>
 
             <div class="edition-extra">
-                <a href="/contact"><img src="/view/image/icon_email.svg" class="no-border" /></a>
+                <a href="/contact">
+                    <img src="/view/image/icon_email_atsymbol.svg" class="no-border" />
+                </a>
             </div>
             <div class="edition-extra-subline">
-                <a href="/contact"><b>Email An Art Consultant</b></a><br />
+                <p>
+                <a href="/contact">
+                    Email An Art Consultant
+                </a><br />
                 <span>Messages will be returned in 24 horus.</span>
+                </p>
             </div>
 
             <?= $on_display ?>
@@ -32,7 +40,8 @@
             
             <p class="detail-desc"><?= $desc ?></p>
             <div>
-            <a href="/contact?photo=<?= $photo_meta['file_name'] ?>"><button class="mt-32">BUY FINE-ART EDITION</button></a>
+                <a href="/contact?photo=<?= $photo_meta['file_name'] ?>"><button class="mt-32">ADD TO CART</button></a><br /> 
+                <a style="display: block; margin-top: 10px" href="/styles#pricing">View Pricing, Styles and Editions Information</a>
             </div>
 
         </div>

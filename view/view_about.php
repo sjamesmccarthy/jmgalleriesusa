@@ -9,7 +9,7 @@
                 <p class="name blue">j.McCarthy</p>
                 <p class="name-title">FINE ART PHOTOGRAPHER</p>
                 <p class="name-statement">
-                    Through purposeful paper choice, framing and composition, my work leads you on a journey into a place where your mind inspires you to wander; a moment which creates a timeless, original and natural escape. 
+                    Through purposeful paper choice, framing and composition, my work accompanies you on a journey to a place where your mind inspires you to wander; a moment to quietly slip into a timeless, original and natural view of the world around you. 
                 </p>
                 <!-- <img class="bio-profile-pic" src="/view/image/profile_img.jpg" /> -->
         </div>
@@ -17,14 +17,14 @@
     </div>
 
     <div class="grid-noGutter-center">
-        <div class="col-12-center pt-72">
-            <h4>
+        <div class="col-12-center pt-48">
+            <p class="bio-copy">
             Photography has always had a hidden crush on James, a self-taught explorer in the field of landscape photography. He admires mother nature from a distance, capturing her beauty and emotions through his photography as art.
-            </h4>
+            </p>
 
-            <h4 class="martop20">
+            <p class="bio-copy mt-16">
             His more popular pieces include, "Once Afloat", "Avalon", "Between The Hills", "Bonsai Zen, "Lost Trail" and "Never Ending Story". Framed editions of these pieces can be viewed at many of his <a href="/exhibits">pop-up exhibits</a> which include locally-owned businesses around the locations he photographs.
-            </h4>
+            </p>
 
             <ul
                 class="timeline">

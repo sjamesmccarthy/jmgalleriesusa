@@ -10,7 +10,11 @@
 
                 <p class="year">2019</p>
 
-                <li><p><span class="news-date">Sun Sept 15</span><br />New <a target="_shop" href="/shop">online store featuring our TinyViews&trade;</a> launches with a dozen amazing and affordable fine-art prints for your home or office.</p></li>
+                <li><p><span class="news-date">Fri Nov 1</span><br />Exhibited a few new tinyViews&trade; at Art Off The Walls in Temecula, California, as well as "Flying Fortress"</p></li>
+
+                <li><p><span class="news-date">Fri Sept 27</span><br />Exhibited three pieces, "Flying Fortress", "Good Morning Murrieta" and "Temecula Grapes", at Wine Ranch Grill & Cellars as part of the City of Murrieta City Hall Art Project.</p></li>
+
+                <li><p><span class="news-date">Sun Sept 15</span><br />New <a target="_shop" href="/shop">online store featuring our tinyViews&trade;</a> launches with a dozen amazing and affordable fine-art prints for your home or office.</p></li>
 
                 <li><p><span class="news-date">Thu Sept 5</span><br />New website launched with a new modern, timeless and miminalistic style, including a few <a href='/new-releases'>New Releases</a> too.</p></li>
                 

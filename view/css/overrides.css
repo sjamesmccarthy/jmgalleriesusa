@@ -58,6 +58,10 @@ img {
     padding-top: 32px !important;
 }
 
+.pt-48 {
+    padding-top: 48px !important;
+}
+
 .pt-72 {
     padding-top: 72px !important;
 }
@@ -162,7 +166,7 @@ h1 {
 }
 h2, h3, h4, h5, h6 {
     color: #4a4a4a;
-    font-weight: 300;
+    /* font-weight: 300; */
     line-height: 1.3;
 }
 

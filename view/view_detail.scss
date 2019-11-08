@@ -30,16 +30,17 @@
 // }
 
 .edition-extra a img {
-    width: 16px; 
-    opacity: .6; 
+    width: 42px; 
+    opacity: .4; 
     margin-right: 10px;
+    vertical-align: middle;
 }
 
 .edition-extra-subline {
     display: inline-block; 
     vertical-align: top; 
     color: #4D4D4D; 
-    font-size: 1em; 
+    font-size: inherit; 
     position: relative; 
     margin-top: -2px;
 }
@@ -50,7 +51,7 @@
 // }
 
 .edition-extra-subline span {
-    font-size: .8em; 
+    font-size: 1rem; 
     font-weight: 300;
 }
 
