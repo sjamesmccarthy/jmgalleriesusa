@@ -20,7 +20,7 @@
     /* Determine if the "TinyViews photo exists */
      if( file_exists($_SERVER['DOCUMENT_ROOT'] . "/catalog/__image/" . $photo_meta['file_name'] . '-tinyviews.jpg') ) {
 
-        $tinyviewImage = '<div><img src="/catalog/__image/' . $photo_meta['file_name'] . '-tinyviews.jpg" /><div class="bx-buyart-btn"><a target="_shop" href="/shop"><button>BUY  TINYVIEWS&trade; EDITION</button></a></div></div>';
+        $tinyviewImage = '<div><img src="/catalog/__image/' . $photo_meta['file_name'] . '-tinyviews.jpg" /><div class="bx-buyart-btn"><a target="_shop" href="/shop"><button>Shop  tinyViews&trade;</button></a></div></div>';
      } else {
          $tinyviewImage = null;
      }
@@ -31,13 +31,13 @@
             if($photo_meta['orientation'] == "landscape") {
                  $super_photo = ' 
                 <div class="slider">
-                <div><img src="/catalog/__image/' . $photo_meta['file_name'] . '-room.jpg" /><div class="bx-buyart-btn"><a href="/contact?photo=' . $photo_meta['file_name'] . '"><button>BUY FINE-ART EDITION</button></a></div></div>
+                <div><img src="/catalog/__image/' . $photo_meta['file_name'] . '-room.jpg" /><div class="bx-buyart-btn"><a href="/contact?photo=' . $photo_meta['file_name'] . '"><button>Buy Now</button></a></div></div>
                 <div><img src="/catalog/__image/' . $photo_meta['file_name'] . '.jpg" /></div>' . $tinyviewImage . '</div>';
             } else {
                 $super_photo = ' 
                 <div class="slider">
                     <div class="col"> 
-                    <img class="bx-img-portrait" src="/catalog/__image/' . $photo_meta['file_name'] . '-room.jpg" /><div class="bx-buyart-btn"><a href="/contact?photo='. $photo_meta['file_name'] . '"><button>BUY FINE-ART EDITION</button></a></div></div>
+                    <img class="bx-img-portrait" src="/catalog/__image/' . $photo_meta['file_name'] . '-room.jpg" /><div class="bx-buyart-btn"><a href="/contact?photo='. $photo_meta['file_name'] . '"><button>Buy Now</button></a></div></div>
                 ' . $tinyviewImage . '</div>';
             }
 
@@ -56,8 +56,8 @@
         $desc = "The <a href=\"/styles\">Gallery Edition</a> is printed on Acrylic and includes an inset frame. The <a href=\"/styles\">Studio Edition</a> is a print-only. The <a href=\"/styles\">tinyViews&trade; Edition</a> are square cropped versions of select Gallery and Studio Editions. Not all photographs are available in every edition. <!-- <br /><br />Read more about <a href=\"/styles\">our styles, editions, pricing and framing options.<a/> -->";
     }
 
-    $as_editions = null;
-    $as_editions_tmp = null;
+    $as_editions =  null;
+    $as_editions_tmp = '<a href="/styles">';
 
     /* If as_GALLERY is set */
     if( $photo_meta['as_gallery'] == 1) {
@@ -86,7 +86,9 @@
         $as_editions_tmp .= " <a href='/shop'>tinyViews&trade;</a>";
     }
 
-    $as_editions = preg_replace("/,([^,]+)$/", " and $1", $as_editions_tmp);
+    $as_editions_tmp .= "</a>";
+
+    $as_editions = preg_replace("/,([^,]+)$/", "</a> and $1", $as_editions_tmp);
 
     /* If ON_DISPLAY is set */
     if( $photo_meta['on_display'] != 0) {
@@ -96,9 +98,9 @@
 
         $on_display = '
         <div class="flexfix">&nbsp;</div>
-        <div class="edition-extra">
+            <!-- <div class="edition-extra">
                 <a href="/exhibits"><img src="/view/image/icon_geo.svg" /></a>
-            </div>
+            </div> -->
             <div class="edition-extra-subline">
                 <p>
                 <!-- <a href="/contact">See It</a><br /> -->
@@ -140,28 +142,37 @@
     /* Photo orientation */
     if($photo_meta['orientation'] == "portrait") {
         $img_w = '90%';
-        $grid = '10-center';
-        $col_left = 'col-5';
+        $grid = '-11';
+        $col_left = 'col-6';
         $col_right = 'col-5';
     } else {
         $img_w = '100%';
-        $grid='11-center';
+        $grid='-11';
         $col_left = 'col-7';
         $col_right = 'col-4';
     }
 
     /* FORMAT EXIF DATA */
     if($photo_meta['aperture'] != '' && $photo_meta['lens_model'] != '') {
-        $exif_data = "Field Notes: "
+
+        $exif_data = '<div class="col-11 pb-8">';
+        $exif_data .= '<p class="pt-16 field-notes">';
+
+        $exif_data .= "Field Notes: "
             . $photo_meta['camera'] . ", "
             . $photo_meta['lens_model'] . ", "
             . $photo_meta['aperture'] . ", "
             . $photo_meta['shutter'];
+
+            if($photo_meta['loc_waypoint'] != '') {
+                $exif_data .= " @ " . $photo_meta['loc_waypoint'];
+            }
+
+        $exif_data .= '</p>';
+        $exif_data .= '</div>';
+
     }
 
-    if($photo_meta['loc_waypoint'] != '') {
-        $exif_data .= " @ " . $photo_meta['loc_waypoint'];
-    }
 ?>
 
 <script>

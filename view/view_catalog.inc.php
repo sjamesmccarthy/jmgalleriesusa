@@ -23,6 +23,12 @@
         if( !$catalog_photos['error']) {
             foreach($catalog_photos as $k => $v) {
                 
+                if($v['as_gallery'] == 1) { $data_filter_G = 'f-gallery'; } else { $data_filter_G = null; }
+                if($v['as_studio'] == 1) {$data_filter_S = 'f-studio'; } else { $data_filter_S = null; }
+                if($v['as_open'] == 1) { $data_filter_O = 'f-open'; } else { $data_filter_O = null; }
+                if($v['as_tinyview'] == 1) { $data_filter_T = 'f-tinyviews'; } else { $data_filter_T = null; }
+                $data_filters = "$data_filter_G $data_filter_S $data_filter_O $data_filter_T";
+
                 if( file_exists($_SERVER['DOCUMENT_ROOT'] . "/catalog/__thumbnail/" . $v['file_name'] . '.jpg')) {
                 $img_file = $v['file_name'];
                 } else {
@@ -44,7 +50,7 @@
                 }
                 
                 // <div style="overflow: hidden; height: 203px;" class="' . $grid_css . '">
-                $thumb_html .= '<div style="overflow: hidden;" class="' . $grid_css .  ' pb-8 filter-thumb-gallery"><a href="/' . $v['catalog_path'] . '/' . $img_file . '"><img style="width: 100%;" src="/catalog/__thumbnail/' . $img_file . '.jpg" /></a></p><p>' . $v['title'] . '</div>';
+                $thumb_html .= '<div style="overflow: hidden;" class="' . $grid_css .  ' pb-8 filter-thumb-gallery '. $data_filters . '"><a href="/' . $v['catalog_path'] . '/' . $img_file . '"><img style="width: 100%;" src="/catalog/__thumbnail/' . $img_file . '.jpg" /></a></p><p>' . $v['title'] . '</div>';
 
                 /* <!-- <p><a href="/' . $v['catalog_path'] . '/' . $img_file . '">' . $v['title'] . '</a>--><!-- <br />Exhibiting at Joe Maxx Coffee, Las Vegas --> */
                 

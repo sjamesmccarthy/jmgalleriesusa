@@ -8,8 +8,8 @@
                 <li class="filter-all selected">All</li>
                 <li class="filter-gallery">Gallery Edition</li>
                 <li class="filter-studio">Studio Edition</li>
-                <li class="filter-open">Open Edition</li>
-                <li class="filter-tinyviews">as tinyViews&trade; Edition</li>
+                <!-- <li class="filter-open">Open Edition</li> -->
+                <li class="filter-tinyviews">tinyViews&trade; Edition</li>
             </ul>
         </div>
 
@@ -23,8 +23,33 @@
 <script>
 jQuery(document).ready(function($){
     $('.filter-all').click(function() {
-        console.log('filter-all.clicked');
-        $('.filter-thumb-gallery').toggle();
+        $('[class*="filter-"]').removeClass("selected");
+        $('[class*="filter-all"]').addClass("selected");
+        $('[class*="f-"]').show();
+    });
+    $('.filter-gallery').click(function() {
+        $('[class*="filter-"]').removeClass("selected");
+        $('[class*="filter-gallery"]').addClass("selected");
+        $('[class*="f-"]').hide();
+        $('.f-gallery').show();
+    });
+    $('.filter-studio').click(function() {
+        $('[class*="filter-"]').removeClass("selected");
+        $('[class*="filter-studio"]').addClass("selected");
+        $('[class*="f-"]').hide();
+        $('.f-studio').show();
+    });
+    // $('.filter-open').click(function() {
+    //     $('[class*="filter-"]').removeClass("selected");
+    //     $('[class*="filter-open"]').addClass("selected");
+    //     $('[class*="f-"]').hide();
+    //     $('.f-open').show();
+    // });
+    $('.filter-tinyviews').click(function() {
+        $('[class*="filter-"]').removeClass("selected");
+        $('[class*="filter-tinyviews"]').addClass("selected");
+        $('[class*="f-"]').hide();
+        $('.f-tinyviews').show();
     });
 });
 </script>

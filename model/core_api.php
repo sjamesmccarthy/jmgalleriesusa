@@ -43,7 +43,11 @@ class Core_Api
                 SELECT
                     PH.catalog_photo_id,
                     PH.title,
-                    PH.file_name
+                    PH.file_name,
+                    PH.as_gallery,
+                    PH.as_studio,
+                    PH.as_open,
+                    PH.as_tinyview
                 FROM
                     catalog_photo AS PH
                     RIGHT JOIN catalog_category AS CATE ON PH.catalog_category_id = CATE.catalog_category_id
@@ -81,6 +85,10 @@ class Core_Api
                 PH.catalog_photo_id,
                 PH.title,
                 PH.file_name,
+                PH.as_gallery,
+                PH.as_studio,
+                PH.as_open,
+                PH.as_tinyview,
                 CATE.title AS cate_title,
                 CATE.path
             FROM

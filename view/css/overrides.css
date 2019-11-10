@@ -1,7 +1,15 @@
 [class~="col"], [class*="col-"], [class*="col_"] {
-    padding: 0 0.5rem 0 0.5rem;
+    /* padding: 0 0.5rem 0 0.5rem; */
     /* border-radius: 4px; */
     /* border-bottom-right-radius: 10px; */
+    margin: 0 !important;
+}
+
+.bx-wrapper {
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    border: none;
 }
 
 .grecaptcha-badge{
@@ -34,7 +42,7 @@ img {
 }
 
 .large {
-    font-size: 1.7rem;
+    font-size: 1.8rem;
 }
 
 .hidden {
@@ -45,54 +53,6 @@ img {
     color: #4D4D4D;
 }
 
-
-.pt-16 {
-    padding-top: 16px;
-}
-
-.pt-32 {
-    padding-top: 32px !important;
-}
-
-.pt-32 {
-    padding-top: 32px !important;
-}
-
-.pt-48 {
-    padding-top: 48px !important;
-}
-
-.pt-72 {
-    padding-top: 72px !important;
-}
-
-.pt-64 {
-    padding-top: 64px !important;
-}
-
-.pb-16 {
-    padding-bottom: 16px !important;
-}
-
-.pb-24 { 
-    padding-bottom: 24px;
-}
-
-.pt-24 {
-    padding-top: 24px;
-}
-
-.pb-8 {
-    padding-bottom: 8px;
-}
-.pb-32 {
-    padding-bottom: 32px !important;
-}
-
-.pb-64 {
-    padding-bottom: 64px !important;
-}
-
 .pr-16 {
     padding-right: 16px!important;
 }
@@ -100,55 +60,6 @@ img {
 .pl-64 {
     padding-left: 64px!important;
 }
-
-.padtop-32 {
-    padding-top: 32px;
-}
-
-.padbot-32 {
-    padding-bottom:32px;
-}
-
-.padbot-8 {
-    padding-bottom: 8px;
-}
-
-.martop20 {
-    margin-top: 20px;
-}
-
-.mt-16 {
-    margin-top: 16px;
-}
-
-.mt-32 {
-    margin-top: 32px!important;
-}
-
-.mt-42 {
-    margin-top: 42px !important;
-}
-
-.mt-72 {
-    margin-top: 72px !important;
-}
-
-.mt-96 {
-    margin-top: 96px !important;
-}
-
-.mb-72 {
-    margin-bottom: 72px !important;
-}
-
-.mb-16 {
-    margin-bottom: 16px!important;
-}
-
-.mb-42 {
-    margin-bottom: 42px;
-}
-
 
 a {
     color: #2574A9;
@@ -204,13 +115,9 @@ main {
     padding: 0 20px;
 }
 
-
 .filmstrip img {
     width: 100%;
 }
-
-
-
 
 .center {
     text-align: center;
@@ -285,11 +192,12 @@ button {
     display: inline-block;
     padding: 10px;
     /* background-color: #71b3e0; */
-    background-color: rgba(46, 49, 49, .5);
+    /* background-color: rgba(46, 49, 49, .5); */
+    background-color: transparent;
     border: 0;
-    color: #FFF;
+    color: #2574A9;
     border-radius: 4px;
-    /* border: 1px solid #2574A9; */
+    border: 1px solid #2574A9;
     min-width: 50px;
 }
 
@@ -331,7 +239,7 @@ button:hover, button a:hover {
 
 input[type="text"], input[type="password"], textarea, select {
     position: relative;
-    height: 40px;
+    height: 50px;
     padding: 0 24px;
     width: 100%;
     /* border: 1px solid #edecec; */

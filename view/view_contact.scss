@@ -3,6 +3,7 @@
 
 fieldset {
     border: 0;
+    @extend .mb-16;
 }
 
 #contact {

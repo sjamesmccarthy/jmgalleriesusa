@@ -23,13 +23,13 @@
     <script src="https://kit.fontawesome.com/27673c99c5.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="/view/css/overrides.css">
     
-    <script src="/view/js/instafeed.min.js"></script>
+    <!-- <script src="/view/js/instafeed.min.js"></script> -->
 
     <script>
     jQuery(document).ready(function($){
         $('.slider').bxSlider({
             startSlide: 0,
-            slideWidth: 1368,
+            slideWidth: 1440,
             shrinkItems: false,
             speed: 400,
             touchEnabled: true,

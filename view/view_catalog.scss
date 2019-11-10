@@ -3,17 +3,19 @@
 
 .title {
     text-align: center;
+
 }
 
-.filter-editions-list {
+.filter-editions-list { 
  
     margin: 2rem 0;
 
     li {
     display: inline-block;
     font-size: 1.4rem;
-    padding: 1rem;
-    width: 250px;
+    padding: .5rem;
+    width: 214px;
+    color: $color-blue;
 
         &:first-child {
             padding-right: 50px;
@@ -22,7 +24,8 @@
 
         &:hover {
             cursor: pointer;
-            font-weight: bold;
+            // font-weight: bold;
+            color: $color-black-dark;
         }
         
         &.selected {

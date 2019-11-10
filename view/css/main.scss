@@ -7,6 +7,8 @@ SASS, https://sass-lang.com/
 */
 
 // Base
+@import 'variables';
+@import 'mixins';
 @import '../../lib/resetcss/reset.scss';
 
 // Vendors

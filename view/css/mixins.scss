@@ -1,0 +1,19 @@
+/* mixin: margin and padding adjustments */
+$max: 96;
+$offset: 8;
+$unit: 'px';
+
+@mixin wiggle($className, $styleName) {
+  $i: 8;
+  @while $i <= $max {
+    #{$className + $i} { 
+      #{$styleName}: #{$i + $unit} !important;
+    }
+    $i: $i + $offset;
+  }
+}
+
+@include wiggle('.mt-', 'margin-top');
+@include wiggle('.mb-', 'margin-bottom');
+@include wiggle('.pt-', 'padding-top');
+@include wiggle('.pb-', 'padding-bottom');

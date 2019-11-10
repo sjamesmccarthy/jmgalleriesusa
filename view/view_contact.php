@@ -29,11 +29,11 @@
         <input type="text" id="contactsubject" name="contactsubject" placeholder="<?= $subject_PH ?>" value="<?= $subject_VAL ?>" required>
         </p>
 
-        <p>
+        <div class="mt-16">
         <!-- <label class="" for="comments">TYPE YOUR MESSAGE HERE</label> -->
         <?= $message_PH ?>
         <textarea style="margin-top: 10px" id="comments" name="comments" placeholder="TYPE HERE" rows="8"></textarea>
-        </p>
+        </div>
 
         <?= $payment_field ?>
         

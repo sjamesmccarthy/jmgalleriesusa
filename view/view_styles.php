@@ -14,13 +14,16 @@
     
     <a name="pricing"></a>
     <li><h4>Editions & Pricing</h4>
-        <p>James' Fine Art Photography is available in Gallery, Studio, Open or tinyViews&trade; Editions.</p>
+        <p>j.McCarthy's Fine Art Photography is available in Gallery, Studio, Open or tinyViews&trade; Editions.</p>
 
         <ol>
             <li>
             <h4>Gallery Limited Edition</h4>
             <p>
-            A Gallery Edition is a 1/8" UF4 Acrylic with Komatex or DiBond backing with an inset frame for easy hanging. Not every photograph in the collection is available as a Gallery Edition print. These photographs are considered collectible and are part of a limited numbered series of 12, signed and include a Certificate of Authenticity. 
+            Fine Art in our Gallery Edition is considered highly collectible and are part of a limited numbered series of 12, signed by j.McCarthy and includes a Certificate of Authenticity.<p>
+            <p>
+            Depending on the piece, Gallery Editions are either printed on a museum grade Acrylic with a 6mm Komatex backing with inset frame or printed using Legacy archival paper and mounted in a premium frame protected with ArtGlass&reg;. </p>
+            <p>Not every photograph in the j.McCarthy collection is available as a Gallery Edition print. 
             </p>
 
                 <div class="divTable">
@@ -51,7 +54,8 @@
             </li>
             <li>
             <h4>Studio Limited Edition</h4>
-            A Studio Edition is the photograph printed on Epson Legacy archival paper. It is a paper print only and is not matted or framed. Not every photograph in the collection is available as a Studio Edition print. These prints are also considered collectible and are part of a limited numbered series of 12, signed and include a Certificate of Authenticity. 
+            <p>Fine Art in our Studio Edition is also considered collectible, and is part of a limited numbered series of 12, signed by j.McCarthy and includes a Certificate of Authenticity. Studio Editions are printed on Legacy archival paper and mounted in a hand-made, open-air, Bass wood frame and includes a wire hanger. Not every photograph in the j.McCarthy collection is available as a Studio Edition print, and sizes larger than 16x24 as well as the final 6 editions of a series are only available as a Gallery Edition. 
+            </p>
 
              <div class="divTable">
                     <div class="divTableBody">
@@ -60,11 +64,11 @@
                             <div class="divTableCell thead">Price</div>
                         </div>
                         <div class="divTableRow">
-                            <div class="divTableCell">12 x 18 (13 x 19 paper size with a 1/2" white border)</div>
-                            <div class="divTableCell">$120</div>
+                            <div class="divTableCell">12 x 18 </div>
+                            <div class="divTableCell">$160</div>
                         </div>
                         <div class="divTableRow">
-                            <div class="divTableCell">16 x 24 (17 x 25 paper size with 1/2" white border)</div>
+                            <div class="divTableCell">16 x 24</div>
                             <div class="divTableCell">$240</div>
                         </div>
                     </div>
@@ -73,9 +77,9 @@
             </li>
 
             <li>
-            <h4>Open Editions & tinyViews&trade;</h4>
-            tinyViews&trade; (Large landscapes framed for small spaces&trade;) &mdash; <a target="_shop" href="/tinyviews">Browse & Order Now</a><br />
-            These prints are considered Open Edition and are not numbered and may not be signed, and may include a watermark. Not every photograph in the collection is available as a tinyViews&trade; or Open Edition print. 
+            <h4>tinyViews&trade;</h4>
+            <p>tinyViews&trade; (Large landscapes framed for small spaces&trade;)<br />
+            These prints are not considered collectible and are not numbered, may not be signed, and may also include a watermark. Not every photograph in the j.McCarthy collection is available as a tinyViews&trade; print &mdash; <a target="_shop" href="/tinyviews">Browse & Order Now.</a></p>
 
              <div class="divTable">
                     <div class="divTableBody">
@@ -92,13 +96,13 @@
                             <div class="divTableCell">$10</div>
                         </div>
                         <div class="divTableRow">
-                            <div class="divTableCell">8 x 8 (Framed Print)</div>
+                            <div class="divTableCell">8 x 8 (Hand-made Studio Framed Print)</div>
                             <div class="divTableCell">$60</div>
                         </div>
-                        <div class="divTableRow">
+                        <!-- <div class="divTableRow">
                             <div class="divTableCell">12 x 12 (Acrylic, ready to frame or float-hanger)</div>
                             <div class="divTableCell">$250</div>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
 
@@ -107,13 +111,20 @@
     </li>
 
      <li><h4>Styles</h4>
-        <p>James' Fine Art Photography represents his passion for the outdoors and life around him. His style is best described as a timeless, clean and natural view of the world around him. It is rare that you will find any of James' photography enhanced by saturated color, artificial light or significantly edited in a way to alter that moment of time  <a href="/about">...</a></p>
+        <p>j.McCarthy's Fine Art Photography represents his passion for the outdoors and life around him. His style is best described as a timeless, clean and natural view of the world around him &mdash; <a href="/about">Read j.McCarthy's Artist Statement.</a></p>
 
         <ol>
          
             <li><h4>Framing</h4>
-                <p>Gallery and Studio Editions can be optionally framed. All of our frames are hand-made from Bass, Ash and Dark Walnut woods that are sourced from a Los Angeles, California mill. They are stained or painted and include a wire hanger for easy hanging. Since each frame is custom made to order, prices will vary depending on size, type of wood and finishing.</p>
-                <p>Frames do not include glass. This is because James believes that standard frame glass as well as non-glare glass distorts the color and texture of the art, whether a painting or a photograph. </p>
+                <p>Gallery and Studio Editions can be optionally framed.</p>
+                
+                <p><b>Hand-made Studio Frames</b><p>
+                <p>
+                Studio Editions are mounted in a hand-made frame with quality wood that is sourced from a Los Angeles, California mill in the USA. They are stained or painted and include a wire hanger for easy hanging. Frames do not include glass. This is because j.McCarthy believes that standard frame glass as well as non-glare glass distorts the color and texture of the paper and art. 
+                </p>
+                
+                <p><b>Premium Gallery Frames</b></p>
+                <p>Gallery Editions printed on museum grade Acrylic may be optionally framed with one of our Premium Designer Mouldings from the exclusive Wescott Collection. Price will vary depending on size.</p><p>Gallery Editions printed on Legacy acrhival paper include one of our Premium Designer Mouldings from the exclusive Wescott Collection and the art will be protected with museum quality ArtGlass&reg;.</p>
             </li>
         </ol>
     </li>
