@@ -14,13 +14,13 @@
     
     <a name="pricing"></a>
     <li><h4>Editions & Pricing</h4>
-        <p>j.McCarthy's Fine Art Photography is available in Gallery, Studio, Open or tinyViews&trade; Editions.</p>
+        <p>j.McCarthy's Fine Art Photography is available in Gallery, Studio or tinyViews&trade; Editions.</p>
 
         <ol>
             <li>
             <h4>Gallery Limited Edition</h4>
             <p>
-            Fine Art in our Gallery Edition is considered highly collectible and are part of a limited numbered series of 12, signed by j.McCarthy and includes a Certificate of Authenticity.<p>
+            Fine Art in our Gallery Edition is considered highly collectible and are part of a limited numbered series of 12, signed by j.McCarthy and includes a Certificate of Authenticity that is recorded in the jM Galleries Digital Artwork Archives.<p>
             <p>
             Depending on the piece, Gallery Editions are either printed on a museum grade Acrylic with a 6mm Komatex backing with inset frame or printed using Legacy archival paper and mounted in a premium frame protected with ArtGlass&reg;. </p>
             <p>Not every photograph in the j.McCarthy collection is available as a Gallery Edition print. 
@@ -54,7 +54,8 @@
             </li>
             <li>
             <h4>Studio Limited Edition</h4>
-            <p>Fine Art in our Studio Edition is also considered collectible, and is part of a limited numbered series of 12, signed by j.McCarthy and includes a Certificate of Authenticity. Studio Editions are printed on Legacy archival paper and mounted in a hand-made, open-air, Bass wood frame and includes a wire hanger. Not every photograph in the j.McCarthy collection is available as a Studio Edition print, and sizes larger than 16x24 as well as the final 6 editions of a series are only available as a Gallery Edition. 
+            <p>Fine Art in our Studio Edition is also considered collectible, and is part of a limited numbered series of 12, signed by j.McCarthy and includes a Certificate of Authenticity that is recorded in the jM Galleries Digital Artwork Archives. Studio Editions are printed on Legacy archival paper and mounted in a hand-made, open-air, Bass wood frame and includes a wire hanger.</p>
+            <p>Not every photograph in the j.McCarthy collection is available as a Studio Edition print, and sizes larger than 16x24 as well as the final 6 editions of a series are only available as a Gallery Edition. 
             </p>
 
              <div class="divTable">
@@ -116,7 +117,7 @@
         <ol>
          
             <li><h4>Framing</h4>
-                <p>Gallery and Studio Editions can be optionally framed.</p>
+                <!-- <p>Gallery Editions on Acrylic may be optionally framed in one of our Premium Gallery Frames for an additional cost.<br />Studio Editions include a Studio Frame, but can be upgraded to a Premium Gallery frame at an additional cost.</p>-->
                 
                 <p><b>Hand-made Studio Frames</b><p>
                 <p>
@@ -124,7 +125,7 @@
                 </p>
                 
                 <p><b>Premium Gallery Frames</b></p>
-                <p>Gallery Editions printed on museum grade Acrylic may be optionally framed with one of our Premium Designer Mouldings from the exclusive Wescott Collection. Price will vary depending on size.</p><p>Gallery Editions printed on Legacy acrhival paper include one of our Premium Designer Mouldings from the exclusive Wescott Collection and the art will be protected with museum quality ArtGlass&reg;.</p>
+                <p>Gallery Editions printed on museum grade Acrylic may be optionally framed with one of our Premium Designer Mouldings from the exclusive Wescott Collection. Price will vary depending on size.</p><p>Gallery Editions printed on Legacy acrhival paper are already framed by j.McCarthy using one of our Premium Designer Mouldings from the exclusive Wescott Collection and the art will be protected with museum quality ArtGlass&reg;.</p>
             </li>
         </ol>
     </li>
