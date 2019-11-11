@@ -3,13 +3,7 @@
 
     <div class="amazing-offer-container mt-32">
               
-              <div class="amazing-offer-photo">
-                <p class="amazing-offer-center">
-                  <img class="amazing-offer-image" style="width: <?= $imageWidth ?>" src="/view/image/amazing-offer-email-photo.jpg?month=<?= $amazingOfferMonth ?>" alt="Amazing Offer Email Photo" />
-                </p>
-              </div>
-              
-               <h1 class="amazing-offer-h1">
+              <h1 class="amazing-offer-h1">
                  <?= $amazingOfferTitle ?>
               </h1>
               <p style="text-align: center; font-size: 1.5rem;">The <?= $amazingOfferMonth ?> New Release</p>
@@ -22,16 +16,23 @@
                 <?= $andSoTheStoryGoes ?>
               </p>
 
-              <p class="pt-32">
-               <?= $amazingOfferTitle ?> will beautify and enhance any room that it is displayed. <br />$89 Pre-order pricing is for (1) 12x18 <a href="/styles">Mounted Wall Decor print</a>. All are numbered, limited-edition series.
+              <div class="amazing-offer-photo mt-32">
+                <p class="amazing-offer-center">
+                  <img class="amazing-offer-image" style="width: <?= $imageWidth ?>" src="/catalog/__image/<?= $amazingOfferFileName ?>" alt="Amazing Offer Email Photo" />
+                </p>
+                <img style="position: absolute; bottom: 30px; right: 30px; <?= $amazingOfferSigInvert ?>" src="/view/image/signature_full-web.png" />
+              </div>
+              
+              <p class="amazing-offer-blurb amazing-offer-center pt-32">
+               <?= $amazingOfferTitle ?> will beautify and enhance any room that it is displayed. <br /><?= $amazingOfferPrice ?> Pre-order pricing is for (1) 12x18 <a href="/styles">Studio Edition print only*</a>. All are numbered, limited-edition series.
               </p>
 
-            <p class="amazing-offer-blurb" style="margin-top: 32px; float: right; padding-bottom: 32px;">
+            <!-- <p class="amazing-offer-blurb" style="margin-top: 32px; float: right; padding-bottom: 32px;">
             Thanks for reading, and journey on!<br />
               <img style="float: right; margin-right: 30px;" src="/view/image/signature_full-web.png" />
-            </p>
+            </p> -->
 
-            <p class="amazing-offer-blurb">
+            <p class="amazing-offer-blurb amazing-offer-center mt-32">
             CHECKOUT INFORMATION
             </p>
             <p class="amazing-offer-blurb-desc">
@@ -72,13 +73,13 @@
 
         <p class="pt-16">
           <input type="checkbox" id="purchase" name="purchase" value="True, Pre-Sale" required/> 
-          <label for="purchase" style="font-size: 1.2rem;">Yes, I would like to buy (1) Limited-Edition, Numbered, 12x18, Mounted Wall Decor, "<?= $amazingOfferTitle ?>" for <?= $amazingOfferPrice ?> <strike>$100</strike>.
+          <label for="purchase" style="font-size: 1.2rem;">Yes, I would like to buy (1) Studio Edition, Numbered, 12x18 print, "<?= $amazingOfferTitle ?>" for <?= $amazingOfferPrice ?> <strike><?= $amazingOfferRegPrice ?></strike>.
         <input name="amazingOfferTitle" type="hidden" value="<?= $amazingOfferTitle ?>" />
         </p>
 
       <span style="font-size: .8rem;"><img src="/view/image/square-payment-icons.png" style="width: 100px; vertical-align: middle" />&nbsp;&nbsp;I understand that I will be e-mailed an invoice through Square (Mastercard, Visa, Discover) for <?= $amazingOfferPrice ?> plus shipping. <a href="/legal">Terms of Sale</a></span>
 
-        <p class="amazing-offer-center pt-16">
+        <p class="pt-16">
         <button id="sendform" class="amazing-offer-button allcaps">LIMITED TIME — BUY NOW</button>
         </p>
 
@@ -98,7 +99,7 @@
     </div>
 
             <div class="amazing-offer-expires">
-                <p smallhalf>THIS OFFER EXPIRES ON <?= $amazingOfferExpiration ?>. Standard pricing for Mounted Wall Decor can be found on our <a href="/styles" target="_new">Styles, Editions and Pricing</a> page. This offer is not available for framed or Acrylic Fine-Art. *Taxes apply to Nevada residents. Price listed as USD. Shipping (UPS only) varies by destination and within U.S.A only. Limit 1 per customer per shipping address. All limited edition photos are signed, numbered and include a Certificate of Authenticity. This offer is only valid for online purchases and for this specific photo, "<?= $amazingOfferTitle ?>" and does not include a frame, mat or other mounting options.</p>
+                <p smallhalf>THIS OFFER EXPIRES END OF <?= $amazingOfferExpiration ?>. Standard pricing for Studio Editions can be found on our <a href="/styles" target="_new">Styles, Editions and Pricing</a> page. This offer is not available for Gallery Editions. *Taxes apply to Nevada residents. Price listed as USD. Shipping (UPS only) varies by destination and within U.S.A only. Limit 1 per customer per shipping address. All Studio Edition photos are signed, numbered and include a Certificate of Authenticity. This offer is only valid for online purchases and for this specific photo, "<?= $amazingOfferTitle ?>" and does not include a frame, mat or other mounting options.</p>
                 
                   <!-- <p class="amazing-offer-center padtop40"><img src="/images/square-payment-icons.png" style="width: 200px;"/></p> -->
             </div>

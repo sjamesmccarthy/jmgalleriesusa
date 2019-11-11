@@ -3,15 +3,15 @@
         <div class="footer-maxwidth">
 
             <div class="grid">
-            <div class="col-10">
-                <div class="col-10-middle pb-32 breadcrumb">
+            <div class="col-12">
+                <div class="col pb-32 breadcrumb">
                  <a href="/"><img class="breadcrumb-logo" src="/view/image/logo_fullsize.png" /></a> <?= $bc_catalog ?> <img class="breadcrumb-arrow" src="/view/image/icon_navarrow-right.svg" /> <?= $this->page->title ?>
                </div>
             </div>
             </div>
 
             <div class="grid">
-                <div class="col-2 col_md-2 col_sm-5 footer-column">
+                <div class="col-3 col_sm-6 footer-column mb-32">
                     <h4>GALLERIES</h4>
                     <ul>
                         <li><a href="/new-releases">New Releases</a></li>
@@ -23,7 +23,7 @@
                     </ul>
                 </div>
 
-                <div class="col-2 col_md-2 sm-hidden footer-column">
+                <div class="col-2 sm-hidden footer-column">
                     <h4>EXPLORE</h4>
                     <ul>
                         <!-- <li><a href="/galleries">Galleries</a></li> -->
@@ -35,7 +35,7 @@
                     </ul>
                 </div>
 
-                <div class="col-2 col_md-2 col_sm-5 footer-column">
+                <div class="col-2 sm-hidden footer-column">
                         <h4>SHOP</h4>
                             <ul>
                                 <li><a target="_shop" href="/shop">tinyViews™</a></li>
@@ -46,7 +46,7 @@
                             </ul>
                 </div>
 
-                <div class="col-2 col_md-2 sm-hidden footer-column">
+                <div class="col-2 sm-hidden footer-column">
                     <h4>ABOUT</h4>
                         <ul>
                             <li><a href="/about">the Photographer</a></li>
@@ -56,13 +56,11 @@
                         </ul>
                 </div>
 
-                <div class="col-3_md-2 sm-hidden col_md-2 social">
-                    <div style="text-align:right">
-                     <?php 
+                <div class="col-3_sm-12 social">
+                    <div>
+                        <?php 
                             $this->getPartial('newsletter'); 
-                    ?>
-
-                  
+                        ?>
                     </div>
                 </div>
 
@@ -71,15 +69,6 @@
                 </div>
 
             </div>
-
-                <div class="grid pt-32">
-                    <div class="col_sm-hidden">
-                        <?php 
-                            $this->getPartial('newsletter'); 
-                        ?>
-                    </div>
-                </div>
-
 
         </div>
     </section>

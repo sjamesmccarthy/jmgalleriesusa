@@ -1,12 +1,16 @@
 <?php
-    $amazingOfferPrice = "$89";
-    $amazingOfferMonth = "September 2019";
-    $amazingOfferTitle = "Serendipity";
-    $amazingOfferTitleLocation = "Rocklin, California";
-    $amazingOfferTitleLastMonth = "Daisies for Our Lady";
+    $amazingOfferPrice = "$129";
+    $amazingOfferRegPrice = "$160";
+    $amazingOfferMonth = "November";
+    $amazingOfferTitle = "Flying Fortress";
+    $amazingOfferFileName = 'flying-fortress.jpg';
+    $amazingOfferSigInvert = 'filter: invert(1);';
+    $amazingOfferTitleLocation = "Riverside, California";
+    $amazingOfferTitleLastMonth = "Serendipity";
     $currenOfferName =  $amazingOfferMonth . " " . YEAR . " New Release, \"" . $amazingOfferTitle ."\"";
-    $amazingOfferExpiration = $amazingOfferMonth . " 30, 2019";
+    $amazingOfferExpiration = $amazingOfferMonth . " 2019";
     $imageWidth = "100%"; /* 60% for Portrait Orientation */
 
-    $andSoTheStoryGoes = 'For a while I had been searching for that the perfect oak tree shot. You know, the shot that would define the moment, that you would love without really understanding why other than just looking at and being around it made you feel good. And like most things that are unexpected, this shot was one of them. Taking the long way one afternoon this tree caught the corner of my eye at 60mph. A quick u-turn and it was staring me in the face and I have been forever lost in the "Serendipity" of its story.';
+    $andSoTheStoryGoes = 'at March Field Air Museum in Riverside, California.<br /><br />
+This was no ordinary bird. Delivered to the USAAF on July 22, 1944, the now 75 year old "Starduster" was designed as a strategic bomber. It was more than just your typical plane with bombs, The Boeing B-17, also known as the Flying Fortress, the four engine bomber carried a 5,000 to 8,000 bomb load and was armed with 13 .50 caliber heavy machine guns. She certainly danced with her share of stars in the sky and saw many landscapes while flying numerous campaigns in Europe during Second World War. Now, restored to her 1944 greatness, she shines at the March Field Air Museum in Riverside, California.';
 ?>
