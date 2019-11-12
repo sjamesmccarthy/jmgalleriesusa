@@ -77,7 +77,7 @@
         <input name="amazingOfferTitle" type="hidden" value="<?= $amazingOfferTitle ?>" />
         </p>
 
-      <span style="font-size: .8rem;"><img src="/view/image/square-payment-icons.png" style="width: 100px; vertical-align: middle" />&nbsp;&nbsp;I understand that I will be e-mailed an invoice through Square (Mastercard, Visa, Discover) for <?= $amazingOfferPrice ?> plus shipping. <a href="/legal">Terms of Sale</a></span>
+      <span style="font-size: .9rem;"><img src="/view/image/square-payment-icons.png" style="width: 100px; vertical-align: middle" />&nbsp;&nbsp;I understand that I will be e-mailed an invoice through Square (Mastercard, Visa, Discover) for <?= $amazingOfferPrice ?> plus shipping. Bitcoin also accepted with approval. Read our <a href="/legal">Terms of Sale</a></span>
 
         <p class="pt-16">
         <button id="sendform" class="amazing-offer-button allcaps">LIMITED TIME — BUY NOW</button>
@@ -99,7 +99,7 @@
     </div>
 
             <div class="amazing-offer-expires">
-                <p smallhalf>THIS OFFER EXPIRES END OF <?= $amazingOfferExpiration ?>. Standard pricing for Studio Editions can be found on our <a href="/styles" target="_new">Styles, Editions and Pricing</a> page. This offer is not available for Gallery Editions. *Taxes apply to Nevada residents. Price listed as USD. Shipping (UPS only) varies by destination and within U.S.A only. Limit 1 per customer per shipping address. All Studio Edition photos are signed, numbered and include a Certificate of Authenticity. This offer is only valid for online purchases and for this specific photo, "<?= $amazingOfferTitle ?>" and does not include a frame, mat or other mounting options.</p>
+                <p smallhalf>This Amazing Email Offer expires at the end of <?= $amazingOfferExpiration ?>. Standard pricing for Studio Editions can be found on our <a href="/styles" target="_new">Styles, Editions and Pricing</a> page. This offer is not available for Gallery Editions. *Taxes apply to Nevada residents. Price listed as USD. Shipping (UPS only) varies by destination and within U.S.A only. Limit 1 per customer per shipping address. All Studio Edition photos are signed, numbered and include a Certificate of Authenticity. This offer is only valid for online purchases and for this specific photo, "<?= $amazingOfferTitle ?>" and does not include a frame, mat or other mounting options.</p>
                 
                   <!-- <p class="amazing-offer-center padtop40"><img src="/images/square-payment-icons.png" style="width: 200px;"/></p> -->
             </div>

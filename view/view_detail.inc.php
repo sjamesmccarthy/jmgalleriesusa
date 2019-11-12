@@ -83,7 +83,7 @@
     if( $photo_meta['as_tinyview'] == 1) {
         $ed_T = true;
         if($ed_G === true || $ed_S === true || $ed_O === true) { $as_editions_tmp .= " , "; }
-        $as_editions_tmp .= " <a href='/shop'>tinyViews&trade;</a>";
+        $as_editions_tmp .= " <a target='_shop' href='/shop'>tinyViews&trade;</a>";
     }
 
     $as_editions_tmp .= "</a>";
@@ -111,10 +111,10 @@
         $on_display = null;
     }
 
-    /* If IN_SHOP is set */
+    /* If IN_SHOP is set 
     if( $photo_meta['in_shop'] != 0) {
 
-        /* Make API query to get location */
+        /* Make API query to get location
         $photo_meta_location = $this->api_Catalog_Photo_Meta_Location($photo_meta['on_display']);
 
         $in_shop = '
@@ -131,6 +131,7 @@
     } else {
         $in_shop = null;
     }
+    */
 
     /* If AS_TINYVIEW is set */
     if( $photo_meta['as_tinyview'] != 0) {
