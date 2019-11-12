@@ -37,9 +37,9 @@
         "2" : {
             "title" : "Oceans, Lakes & Waterfalls",
             "link" : "oceans-lakes-waterfalls",
-            "image" : "reflections.jpg",
+            "image" : "bodega-trailhead.jpg",
             "text": "light",
-            "position": "left"
+            "position": "center"
         },
         "3" : {
             "title" : "Architecture, Abstract & People",
