@@ -12,6 +12,22 @@
     border: none;
 }
 
+.bx-wrapper:hover .bx-prev,
+.bx-wrapper:hover .bx-next {
+    cursor: pointer;
+    display: block;
+}
+
+.bx-wrapper .bx-prev {
+    left: 42px;
+    display: none;
+}
+
+.bx-wrapper .bx-next {
+    right: 42px;
+    display: none;
+}
+
 .grecaptcha-badge{
 	visibility: collapse !important;  
 }

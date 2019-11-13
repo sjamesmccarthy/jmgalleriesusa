@@ -83,7 +83,7 @@
     if( $photo_meta['as_tinyview'] == 1) {
         $ed_T = true;
         if($ed_G === true || $ed_S === true || $ed_O === true) { $as_editions_tmp .= " , "; }
-        $as_editions_tmp .= " <a target='_shop' href='/shop'>tinyViews&trade; Edition</a>";
+        $as_editions_tmp .= " <a target='_shop' href='/shop'>tinyViews&trade; Edition</a><!-- &mdash; <a target='_shop'  href='shop'>shop now</a>. -->";
     }
 
     // $as_editions_tmp .= "</a>";

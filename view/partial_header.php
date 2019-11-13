@@ -36,6 +36,7 @@
             keyboardEnabled: true,
             pager: true,
             controls: true,
+            hideControlOnEnd: true
         });
     });
     </script>

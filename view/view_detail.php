@@ -30,7 +30,7 @@
                 <p>
                 Email An Art Consultant
                 <br />
-                <span><a href="/contact">Contact us with your questions.</a></span>
+                <span><a href="/contact">Contact us with your questions</a></span>
                 </p>
             </div>
 
