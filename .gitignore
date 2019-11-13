@@ -27,9 +27,9 @@ yarn-debug.log*
 yarn-error.log*
 
 config_env.json
-# /view/css/sass/*
+/view/css/scss/*
 # /catalog/__image/*
-# /catalog/__image/__archived/*
+/catalog/__image/__archived/*
 # /catalog/__thumbnail/*
-# /catalog/__thumbnail/__archived/*
+/catalog/__thumbnail/__archived/*
 /lib/gridlex-master/*
