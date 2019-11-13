@@ -57,38 +57,55 @@
     }
 
     $as_editions =  null;
-    $as_editions_tmp = '<a href="/styles">';
+    $as_editions_tmp = null;
 
     /* If as_GALLERY is set */
     if( $photo_meta['as_gallery'] == 1) {
         $ed_G = true;
-        $as_editions_tmp .= "Gallery";
+        $as_editions_tmp .= "<a href='/styles'>Gallery Edition</a>{print_media}";
     }
     
     /* If as_STUDIO is set */
     if( $photo_meta['as_studio'] == 1) {
         $ed_S = true;
         if($ed_G === true) { $as_editions_tmp .= ", "; }
-        $as_editions_tmp .= "Studio";
+        $as_editions_tmp .= "<a href='/styles'>Studio Edition</a>{print_media}";
     }
 
     /* If as_OPEN is set */
     if( $photo_meta['as_open'] == 1) {
         $ed_O = true;
         if($ed_G === true || $ed_S === true) { $as_editions_tmp .= ", "; }
-        $as_editions_tmp .= "Open";
+        $as_editions_tmp .= "<a href='/styles'>Open Edition{print_media}";
     }
 
     /* If as_TINYVIEWS is set */
     if( $photo_meta['as_tinyview'] == 1) {
         $ed_T = true;
         if($ed_G === true || $ed_S === true || $ed_O === true) { $as_editions_tmp .= " , "; }
-        $as_editions_tmp .= " <a target='_shop' href='/shop'>tinyViews&trade;</a>";
+        $as_editions_tmp .= " <a target='_shop' href='/shop'>tinyViews&trade; Edition</a>";
     }
 
-    $as_editions_tmp .= "</a>";
+    // $as_editions_tmp .= "</a>";
 
-    $as_editions = preg_replace("/,([^,]+)$/", "</a> and $1", $as_editions_tmp);
+    /* String replace {print_media} with material */
+    switch ($photo_meta['print_media']) {
+        case "paper":
+            $print_media = " printed on museum grade archival paper and mounted in a premium frame protected with ArtGlass&reg; ";
+            break;
+
+        case "acrylic":
+            $print_media = " printed on museum grade Acrylic with a 6mm Komatex backing with inset frame ";
+            break;
+
+        default:
+            $print_media = null;
+            break;
+    }
+
+     $as_editions_tmp = preg_replace("/{print_media}/i", $print_media, $as_editions_tmp);
+
+    $as_editions = preg_replace("/,([^,]+)$/", " as well as available in a $1", $as_editions_tmp);
 
     /* If ON_DISPLAY is set */
     if( $photo_meta['on_display'] != 0) {

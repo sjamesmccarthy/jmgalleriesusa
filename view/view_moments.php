@@ -8,7 +8,7 @@
 
             <ul id="news-overflow">
 
-                <p class="year">2019</p>
+                <h3>2019</h3>
 
                 <li><p><span class="news-date">Fri Nov 1</span><br />Exhibited a few new tinyViews&trade; at Art Off The Walls in Temecula, California, as well as "Flying Fortress"</p></li>
 
@@ -42,7 +42,7 @@
 
             <ul id="news-overflow">
 
-                <p class="year">2018</p>
+                <h3>2018</h3>
 
                 <li><p><span class="news-date">Fri Dec 27</span> <br /> Launched first <a href="/amazing-offer">One Email. Once A Month. Amazing Offer.</a> newsletter campaign.<p>
                 </p></li>
@@ -75,7 +75,7 @@
 
             <ul id="news-overflow">
 
-            <p class="year">2017</p>
+            <h3>2017</h3>
 
                 <li><p><span class="news-date">Tue Dec 5</span> <br /> <a href="https://medium.com/jmgalleriesusa" target="_social">Medium publication, Polarized</a>, launched with profiles, tips, reviews and thoughts on photography. <a href="https://medium.com/jmgalleriesusa" target="_social">Read a few articles</a><p>
                 </p></li
@@ -105,7 +105,7 @@
 
             <ul id="news-overflow">
 
-            <p class="year">2016</p>
+            <h3>2016</h3>
 
             <li><p><span class="news-date">Wed Dec 28</span> <br /> SOLD! "<a href="/landscapes/photo/white-slumber/">White Slumber</a>" @BeerNV.<p>
             </p></li>

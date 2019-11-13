@@ -1,9 +1,9 @@
 <section id="detail">
         <div class="grid<?= $grid ?>">
-        <div class="<?= $col_left ?>-middle top-photo">
+        <div class="<?= $col_left ?>-middle_sm-12 top-photo pr-32">
             <img style="width: <?= $img_w ?>;" src="/catalog/__image/<?= $photo_meta['file_name'] ?>.jpg" />
         </div>
-        <div class="<?= $col_right ?>-middle pl-64">
+        <div class="<?= $col_right ?>-middle_sm-12">
 
             <h1 class="detail-h1"><?= $photo_meta['title'] ?></h1>
 
@@ -43,7 +43,7 @@
             <div class="edition-extra-subline">
                 <p>
                 Pricing<br />
-                <span><a href="/styles#pricing">View Pricing for this Edition</a></span>
+                <span><a href="/styles#pricing">View Pricing for our Editions</a></span>
                 </p>
             </div>
 

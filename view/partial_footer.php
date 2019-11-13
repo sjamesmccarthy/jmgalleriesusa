@@ -11,7 +11,7 @@
             </div>
 
             <div class="grid">
-                <div class="col-3 col_sm-6 footer-column mb-32">
+                <div class="col-3_sm-6_md-4 footer-column mb-32">
                     <h4>GALLERIES</h4>
                     <ul>
                         <li><a href="/new-releases">New Releases</a></li>
@@ -23,7 +23,7 @@
                     </ul>
                 </div>
 
-                <div class="col-2 sm-hidden footer-column">
+                <div class="col-2_md-3_sm-3 footer-column">
                     <h4>EXPLORE</h4>
                     <ul>
                         <!-- <li><a href="/galleries">Galleries</a></li> -->
@@ -35,7 +35,7 @@
                     </ul>
                 </div>
 
-                <div class="col-2 sm-hidden footer-column">
+                <div class="col-2_md-3 sm-hidden footer-column">
                         <h4>SHOP</h4>
                             <ul>
                                 <li><a target="_shop" href="/shop">tinyViews™</a></li>
@@ -56,7 +56,7 @@
                         </ul>
                 </div>
 
-                <div class="col-3_sm-12 social">
+                <div class="col-3_sm-12_md-12 social">
                     <div>
                         <?php 
                             $this->getPartial('newsletter'); 

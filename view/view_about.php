@@ -1,6 +1,6 @@
 <section id="about pt-24">
 
-    <div class="grid-2-noGutter">
+    <div class="grid-2_md-1">
         <div class="col">
                 <!-- <img style="width: 100%" src="/view/image/upper-webber-falls.png" /> -->
                 <img class="bio-profile-pic" src="/view/image/profile_img.jpg" />
@@ -16,7 +16,7 @@
 
     </div>
 
-    <div class="grid-noGutter-center">
+    <div class="grid-center">
         <div class="col-12-center pt-48">
             <p class="bio-copy">
             Photography has always had a hidden crush on j.McCarthy, a self-taught explorer in the field of landscape photography. He admires mother nature from a distance, capturing her beauty and emotions through his photography as art.
@@ -29,10 +29,10 @@
             <ul
                 class="timeline">
 
-            <li
-                class="timeline-date">1973</li>
+            <!-- <li class="timeline-date">1973</li> -->
             <li 
                 class="timeline-history">
+                <h3>1973</h3>
             <p>
             Born in Concord, a small, historical, suburb outside Boston, Massachusetts, j.McCarthy explored the rich history of the makings of America during his youth.  He learned to appreciate the beauty and stories that are shared by the landscape around us. From as far East as Boston where America's freedom was founded when Paul Revere gallopped over cobble-stone rock on his candle-lit "midnight ride" yelling, "The Brittish are coming!" to as far-away West into the Gold Rush of the Sierra Nevada Mountains.
             </p>
@@ -41,10 +41,10 @@
 
             <ul
                 class="timeline">
-            <li
-                class="timeline-date">1985</li>
+            <!-- <li class="timeline-date">1985</li> -->
             <li 
                 class="timeline-history">
+            <h3>1985</h3>
             <p>
             Twelve years later, his parents sold the east coast homestead and packed everyone into a white Subaru wagon -- a traveling cat named "buffy" separated him and his younger sister, Stacey, in the backseat -- and they journeyed 2,977 miles across America to began a new adventure in a small Northern California town at the crossroads of Highway 49 and Interstate 80 known as <a href="https://www.sierranevadageotourism.org/content/city-of-auburn-no-404-california-historical-landmark/sied6970ba03ce993f0d" target="_new">"North Fork Dry Diggins"</a>, or Auburn, as it was renamed in 1849.
             </p>
@@ -52,8 +52,9 @@
             </ul>
 
             <ul class="timeline">
-                <li class="timeline-date">1990</li>
+                <!-- <li class="timeline-date">1990</li> -->
                 <li class="timeline-history">
+                <h3>1990</h3>
                     <p>
                     While on a northwest college road tour with his mother he was shooting a foggy dock on a lake somewhere in the boonedocks outside of Eugene, Oregon with a hand-me-down Minolta SLR 35mm camera that was given to him by his 8th grade Journalism teacher, Mrs. Anderson. This was the moment j.McCarthy heard his calling, inspiring him to pursue a career in Journalism.
                     <!-- , but didn't fall in love for another 18 years. -->
@@ -62,8 +63,9 @@
             </ul>
 
             <ul class="timeline">
-                <li class="timeline-date">2012</li>
+                <!-- <li class="timeline-date">2012</li> -->
                 <li class="timeline-history">
+                    <h3>2012</h3>
                     <p>
                     As they say, "time flies" and "life happens". j.McCarthy graduated from the University of Nevada, Reno in 1994 with a Bachelors degree in Liberal Arts, was blessed with three beautiful daughters and in 2012 moved back to the Sacramento area where he was reunited with long time friend, and fellow fine-art photographer, <a href="http://steveroyjr.com/" target="_new">Steve Roy</a>. Steve inspired j.McCarthy to pick-up his camera, a Nikon 1 V1 at the time, and start looking through the lens again. It wasn't long before j.McCarthy upgraded to a Nikon D5200 then a few months after that a full-frame Nikon D600. He often found himself and Steve road-tripping through Napa to the Pacific Ocean, shooting up and down the Northern California Coast.</p>
                     <p>With Steve's encouragement, he launched a website showcasing his work, which at that time was primarily black and white photography.
@@ -72,8 +74,9 @@
             </ul>
 
             <ul class="timeline">
-                <li class="timeline-date">2015<br />| <span class="timeline-small">thru</span><br />2017</li>
+                <!-- <li class="timeline-date">2015<br />| <span class="timeline-small">thru</span><br />2017</li> -->
                 <li class="timeline-history">
+                    <h3>2015 - 2017</h3>
                     <p>
                     After moving back to the Reno/Tahoe area in 2015, j.McCarthy met his better-half, Michele, who after seeing his work, inspired him to  publicly display and sell his photographs.
                     </p>
@@ -91,8 +94,9 @@
             </ul>
                         
             <ul class="timeline">
-                <li class="timeline-date">2018</li>
+                <!-- <li class="timeline-date">2018</li> -->
                 <li class="timeline-history">
+                    <h3>2018</h3>
                     <p>
                         As the infamous sign says: Welcome To Fabulous Las Vegas!
                     </p>
@@ -114,8 +118,9 @@
             </ul>
 
             <ul class="timeline">
-                <li class="timeline-date">2019</li>
+                <!-- <li class="timeline-date">2019</li> -->
                 <li class="timeline-history">
+                <h3>2019</h3>
                     <p class="timeline-height-adjust"><a href="/moments">Current Moments & Other News</a></p>
                 </li>
             </ul>
