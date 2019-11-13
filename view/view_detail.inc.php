@@ -69,14 +69,14 @@
     if( $photo_meta['as_studio'] == 1) {
         $ed_S = true;
         if($ed_G === true) { $as_editions_tmp .= ", "; }
-        $as_editions_tmp .= "<a href='/styles'>Studio Edition</a>{print_media}";
+        $as_editions_tmp .= "<a href='/styles'>Studio Edition</a>";
     }
 
     /* If as_OPEN is set */
     if( $photo_meta['as_open'] == 1) {
         $ed_O = true;
         if($ed_G === true || $ed_S === true) { $as_editions_tmp .= ", "; }
-        $as_editions_tmp .= "<a href='/styles'>Open Edition{print_media}";
+        $as_editions_tmp .= "<a href='/styles'>Open Edition";
     }
 
     /* If as_TINYVIEWS is set */
@@ -159,7 +159,7 @@
 
     /* Photo orientation */
     if($photo_meta['orientation'] == "portrait") {
-        $img_w = '90%';
+        $img_w = '64%';
         $grid = '-11';
         $col_left = 'col-6';
         $col_right = 'col-5';

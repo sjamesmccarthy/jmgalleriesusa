@@ -54,7 +54,7 @@
             </li>
             <li>
             <h4>Studio Limited Edition</h4>
-            <p>Fine Art in our Studio Edition is also considered collectible, and is part of a limited numbered series of 12, signed by j.McCarthy and includes a Certificate of Authenticity that is recorded in the jM Galleries Digital Artwork Archives. Studio Editions are printed on museum grade archival paper and mounted in a hand-made, open-air, Bass wood frame and includes a wire hanger.</p>
+            <p>Fine Art in our Studio Edition is also considered collectible, and is part of a limited numbered series of 12, signed by j.McCarthy and includes a Certificate of Authenticity that is recorded in the jM Galleries Digital Artwork Archives. Studio Editions are printed on high-quality photographic paper and mounted in a hand-made, open-air, Bass wood frame and includes a wire hanger.</p>
             <p>Not every photograph in the j.McCarthy collection is available as a Studio Edition print, and sizes larger than 16x24 as well as the final 6 editions of a series are only available as a Gallery Edition. 
             </p>
 
