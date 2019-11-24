@@ -44,14 +44,14 @@
         "3" : {
             "title" : "Architecture, Abstract & People",
             "link" : "abstract-architecture-people",
-            "image" : "flying-fortress.jpg",
+            "image" : "facade-to-the-sky.jpg",
             "text": "light",
             "position": "center"
         },
         "4" : {
             "title" : "Mountains, Deserts & Trees",
             "link" : "mountains-deserts-trees",
-            "image" : "keep-tahoe-cold.jpg",
+            "image" : "layers-of-tahoe.jpg",
             "text": "light",
             "position": "center"
         }

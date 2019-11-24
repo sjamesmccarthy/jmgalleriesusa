@@ -1,7 +1,7 @@
 <section id="about pt-24">
 
     <div class="grid-2_md-1">
-        <div class="col">
+        <div class="col_sm-10">
                 <!-- <img style="width: 100%" src="/view/image/upper-webber-falls.png" /> -->
                 <img class="bio-profile-pic" src="/view/image/profile_img.jpg" />
         </div>

@@ -91,7 +91,7 @@
     /* String replace {print_media} with material */
     switch ($photo_meta['print_media']) {
         case "paper":
-            $print_media = " printed on museum grade archival paper and mounted in a premium frame protected with ArtGlass&reg; ";
+            $print_media = " printed on museum grade archival paper and mounted in a premium frame protected with TruView museum glass.";
             break;
 
         case "acrylic":
@@ -103,8 +103,7 @@
             break;
     }
 
-     $as_editions_tmp = preg_replace("/{print_media}/i", $print_media, $as_editions_tmp);
-
+    $as_editions_tmp = preg_replace("/{print_media}/i", $print_media, $as_editions_tmp);
     $as_editions = preg_replace("/,([^,]+)$/", " as well as available in a $1", $as_editions_tmp);
 
     /* If ON_DISPLAY is set */

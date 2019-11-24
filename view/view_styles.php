@@ -22,7 +22,7 @@
             <p>
             Fine Art in our Gallery Edition is considered highly collectible and are part of a limited numbered series of 12, signed by j.McCarthy and includes a Certificate of Authenticity that is recorded in the jM Galleries Digital Artwork Archives.<p>
             <p>
-            Depending on the piece, Gallery Editions are either printed on a museum grade Acrylic with a 6mm Komatex backing with inset frame or printed using museum grade archival paper and mounted in a premium frame protected with ArtGlass&reg;. </p>
+            Depending on the piece, Gallery Editions are either printed on a museum grade Acrylic with a 6mm Komatex backing with inset frame or printed using museum grade archival paper and mounted in a premium frame protected with TruView Museum Glass. </p>
             <p>Not every photograph in the j.McCarthy collection is available as a Gallery Edition print. 
             </p>
 
@@ -125,7 +125,7 @@
                 </p>
                 
                 <p><b>Premium Gallery Frames</b></p>
-                <p>Gallery Editions printed on museum grade Acrylic may be optionally framed with one of our Premium Designer Mouldings from the exclusive Wescott Collection. Price will vary depending on size.</p><p>Gallery Editions printed on museum grade acrhival paper are already framed by j.McCarthy using one of our Premium Designer Mouldings from the exclusive Wescott Collection and the art will be protected with museum quality ArtGlass&reg;.</p>
+                <p>Gallery Editions printed on museum grade Acrylic may be optionally framed with one of our Premium Designer Mouldings from the exclusive Wescott Collection. Price will vary depending on size.</p><p>Gallery Editions printed on museum grade acrhival paper are already framed by j.McCarthy using one of our Premium Designer Mouldings from the exclusive Wescott Collection and the art will be protected with museum quality TruView Museum Glass.</p>
             </li>
         </ol>
     </li>

@@ -76,9 +76,12 @@
 }
 
 .bx-buyart-btn {
-    margin-top: -64px;
-    text-align: right; 
-    margin-right: 32px;
+    // margin-top: -64px;
+    // text-align: right; 
+    // margin-right: 32px;
+    position: absolute;
+    bottom: 32px;
+    right: 32px;
 }
 
 .bx-wrapper {

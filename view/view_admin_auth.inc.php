@@ -5,7 +5,7 @@
         // echo "state.auth(" . $_REQUEST['auth'] . ")<br />";
         /* Set Cookie info */
         $_SESSION['first'] = $_REQUEST['username'];
-        header('location:/admin/console');
+        header('location:/dashboard');
     }
 
 

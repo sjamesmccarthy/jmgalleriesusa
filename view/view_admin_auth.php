@@ -8,7 +8,7 @@
   <div class="grid-3-center">
   <div class="col">
   <h1 style="padding-bottom: 20px;">Login. </h1>
-  <form action="/admin" class="" autocomplete="off" method="post">
+  <form action="/dashboard" class="" autocomplete="off" method="post">
     <input type="hidden" name="state" value="auth" />
 
     <div>

@@ -65,14 +65,14 @@
         "component": "true",
         "title": "New Releases"
     },
-    "/admin": {
+    "/signin": {
         "template": "page",
         "page": "admin_auth",
         "auth": "true",
         "component": "true",
         "title": "Admin Console : Login"
     },
-    "/admin/console": {
+    "/dashboard": {
         "template": "page",
         "page": "admin_console",
         "auth": "true",
@@ -157,5 +157,17 @@
         "page": "newsletter_email",
         "component": "true",
         "title": "Once A Month Email"
+    },
+    "/abstract-architecture-people/killer-b": {
+        "template": "redirect",
+        "page": "https://jmgalleries.com/abstract-architecture-people/blades-of-balboa",
+        "component": "false",
+        "title": "Shop tinyViews, Wall Mounted Prints and Books"
+    },
+    "/abstract-architecture-people/high-hill": {
+        "template": "redirect",
+        "page": "https://jmgalleries.com/abstract-architecture-people/facade-to-the-sky",
+        "component": "false",
+        "title": "Shop tinyViews, Wall Mounted Prints and Books"
     }
 }

@@ -35,6 +35,7 @@
         <textarea style="margin-top: 10px" id="comments" name="comments" placeholder="TYPE HERE" rows="8"></textarea>
         </div>
 
+        <?= $promo_field ?>
         <?= $payment_field ?>
         
         </fieldset>
