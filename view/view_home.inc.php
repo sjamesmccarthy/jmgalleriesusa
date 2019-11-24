@@ -1,9 +1,9 @@
 <?php
 
-   /* FILMSTRIP: NEW RELEASES */
+    /* FILMSTRIP: NEW RELEASES */
     $hero_html = $this->component('hero');
 
-   /* FILMSTRIP: NEW RELEASES */
+    /* FILMSTRIP: NEW RELEASES */
     $thumb_new_releases_html = $this->component('new_releases');
 
     /* FILMSTRIP: GALLERY THUMBS */

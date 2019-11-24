@@ -1,0 +1,31 @@
+.quickstats--container {
+
+    .title {
+        font-size: 1.3rem;
+        text-align: left;
+        margin-bottom: 10px;
+    }
+
+    .table {
+        height: 142px;
+        border: 1px solid #CCC;
+        padding: 28px 0;
+        margin: 0;
+        text-align: center;
+
+        >div:not(:last-child) {
+            border-right: 1px solid #CCC;
+        }
+
+        .table--title {
+            font-weight: 700;
+        }
+
+        .table--count {
+            font-weight: 700;
+            font-size: 3.5rem;
+        }
+
+    }
+
+}

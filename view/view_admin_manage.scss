@@ -1,0 +1,58 @@
+.admin--section {
+ 
+    .toolbox {
+        padding-top: 20px;
+        padding-bottom: 10px;
+
+        ul li {
+            margin-bottom: 10px;
+            font-weight: 300;
+            font-size: 1rem;
+        }
+
+        &:not(:last-child) {
+            border-bottom: 1px solid #CCC;
+            margin-bottom: 10px;
+            position: relative;
+        }
+
+        .profile--image {
+            margin-bottom: 10px;
+            text-align: center;
+
+            >img {
+                width: 200px;
+                border-radius: 50% !important;
+            }
+        }
+
+        .profile--name {
+           text-align: center;
+        }
+    }
+
+    .nav {
+        /* margin-right: 80px;  */
+        // background-color: rgba(0,0,0,.1); 
+        // padding: 30px !important;
+        min-height: 50vh;
+        border-radius: 4px;
+    }
+    
+}
+    
+.admin--main_container {
+        margin-top: 42px !important;
+
+        .summary {
+            margin-top: 32px;
+        }
+        
+        .stat {
+            font-size: 5rem;
+        }
+
+        .divider {
+            border-left: 1px solid #CCC;
+        }
+}

@@ -8,7 +8,7 @@
   <div class="grid-3-center">
   <div class="col">
   <h1 style="padding-bottom: 20px;">Login. </h1>
-  <form action="/script.auth.php" class="" autocomplete="off" method="post">
+  <form action="/studio/auth" class="" autocomplete="off" method="post">
     <input type="hidden" name="state" value="auth" />
 
     <div>

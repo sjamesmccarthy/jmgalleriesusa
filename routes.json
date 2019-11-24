@@ -65,19 +65,26 @@
         "component": "true",
         "title": "New Releases"
     },
-    "/signin": {
+    "/studio/signin": {
+        "template": "page",
+        "page": "admin_signin",
+        "auth": "true",
+        "component": "true",
+        "title": "Studio Console : Sign In"
+    },
+    "/studio/manage": {
+        "template": "page",
+        "page": "admin_manage",
+        "auth": "true",
+        "component": "true",
+        "title": "Studio : Manage"
+    },
+    "/studio/auth": {
         "template": "page",
         "page": "admin_auth",
         "auth": "true",
         "component": "true",
-        "title": "Admin Console : Login"
-    },
-    "/dashboard": {
-        "template": "page",
-        "page": "admin_console",
-        "auth": "true",
-        "component": "false",
-        "title": "Admin Console : Dashboard"
+        "title": "Studio : Authorizing"
     },
     "/about": {
         "template": "page",
