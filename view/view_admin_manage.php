@@ -8,9 +8,9 @@
                 </div>
                 
                 <div class="profile--name">
-                    <p>j.McCarthy</p>
-                    <p>Member since 2019</p>
-                    <p>https://jmgalleriesusa.com</p>
+                    <p><?= $first_name ?> <?=$last_name ?></p>
+                    <p>Member since <?= $year ?></p>
+                    <p><?= $website ?></p>
                 </div>
 
             </div>
@@ -54,8 +54,6 @@
         <div class="col-1"></div>
     
         <div class="col-9 admin--main_container">
-
-        <?= $_SESSION['data'] ?>
 
             <!-- quickstats -->
             <?= $quickstats_html ?>
