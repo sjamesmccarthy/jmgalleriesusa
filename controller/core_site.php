@@ -247,5 +247,9 @@ class Core_Site extends Core_Api
         }
     }
 
+    public function ghost($data) {
+        /* extract Data Array */
+        /* Insert into database table: ghost */
+    }
 }
 ?>

@@ -72,5 +72,7 @@
 
         </div>
 
+         <?= $this->printp_r($_SESSION); ?>
+         
     </div>
 </section>
