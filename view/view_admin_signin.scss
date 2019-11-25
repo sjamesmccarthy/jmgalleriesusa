@@ -1,0 +1,38 @@
+.signin--container {
+
+    .error {
+        margin-top: 42px;
+        background-color: rgba(255,0,0, .1);
+        // border: 1px solid rgba(255,0,0,.5);
+        color: rgba(255,0,0,1);
+        font-weight: 300;
+        text-align: center;
+        padding: 16px;
+        border-radius: 4px;
+        display: none;
+    }
+
+    .signout {
+        margin-top: 42px;
+        background-color: rgba(0,0,255, .1);
+        color: rgba(0,0,255,1);
+        font-weight: 300;
+        text-align: center;
+        padding: 16px;
+        border-radius: 4px;
+        display: none;
+    }
+
+    .large {
+        font-size: 3rem;
+        padding-bottom: 10px;
+    }
+}
+
+.showError {
+    display: block !important;
+}
+
+.showSignOut {
+    display: block !important;
+}

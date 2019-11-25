@@ -1,14 +1,16 @@
 <?php
 
-    /* Determine if we are logged in */
-    if($_REQUEST['state'] == 'auth') {
-        // echo "state.auth(" . $_REQUEST['auth'] . ")<br />";
-        /* Set Cookie info */
-        $_SESSION['first'] = $_REQUEST['username'];
-        header('location:/studio/manage');
+
+    if($_SESSION['error'] == 'auth_0') {
+        $showError = 'showError';
+    } 
+
+    if($this->routes->URI->queryvals[1] == 'signout') {
+        $showSignOut = ' showSignOut';
+        session_destroy();
     }
 
-
-    /* Dev Password hash a63ac3fca2cdfff0a3ef843213af33cb */
+    /* Reset session error */
+    $_SESSION['error'] = 'ready';
 
 ?>

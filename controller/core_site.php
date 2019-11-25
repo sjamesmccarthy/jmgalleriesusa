@@ -115,6 +115,7 @@ class Core_Site extends Core_Api
             if(isSet($this->routes->URI->query))
             {
                 $this->data->routePathQuery = explode('&', $this->routes->URI->query);
+                $this->routes->URI->queryvals = explode('=', $this->routes->URI->query);
             } else {
                 $this->routes->URI->query = 'false';
             }
@@ -200,7 +201,7 @@ class Core_Site extends Core_Api
         } else {
             /* Outputs some objects and arrays for debugging */
             if($this->config_env->env[$this->env]['debug'] == "true" || $this->routes->URI->query == "debug=true") {
-            echo "<div style='padding: 40px; background-color: rgba(255, 249, 222, 1);'><p>DEBUG --config-true</p>";
+            echo "<div style='position: relative; padding: 40px; background-color: rgba(255, 249, 222, 1);'><p>DEBUG --config-true</p>";
             echo "<hr />";
             $this->printp_r($this);
             echo "</div>";

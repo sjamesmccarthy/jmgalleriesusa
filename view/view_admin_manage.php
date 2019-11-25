@@ -46,7 +46,7 @@
 
             <div class="toolbox">
                 <ul>
-                <li><a href="/studio/signin">Logout</a></li>
+                <li><a href="/studio/signout">Sign Out</a></li>
                 </ul>
             </div>
 
@@ -54,6 +54,8 @@
         <div class="col-1"></div>
     
         <div class="col-9 admin--main_container">
+
+        <?= $_SESSION['data'] ?>
 
             <!-- quickstats -->
             <?= $quickstats_html ?>

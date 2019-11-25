@@ -86,6 +86,13 @@
         "component": "true",
         "title": "Studio : Authorizing"
     },
+    "/studio/signout": {
+        "template": "page",
+        "page": "admin_signedout",
+        "auth": "true",
+        "component": "true",
+        "title": "Studio : Signed Out"
+    },
     "/about": {
         "template": "page",
         "page": "about",

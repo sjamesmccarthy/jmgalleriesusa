@@ -364,6 +364,49 @@ class Core_Api
         return($data);
     }
 
+    public function api_Auth_User($username, $password) {
+        
+        /* Executes SQL and then assigns object to passed var */
+        if( $this->checkDBConnection(__FUNCTION__) == true) {
+
+            $sql = "SELECT
+                U.user_id,
+                U.artist_id, 
+                U.created,
+                A.first_name,
+                A.last_name,
+                A.email,
+                A.avatar,
+                A.website
+            FROM
+                USER as U
+                INNER JOIN artist AS A ON U.artist_id = A.artist_id
+            WHERE
+                U.PASSWORD = md5('$password') 
+                AND U.USERNAME = '$username' 
+            ";
+
+            $result = $this->mysqli->query($sql);
+            
+             if ($result->num_rows > 0) {
+            
+                while($row = $result->fetch_assoc())
+		        {
+		            $data[] = $row;
+		        }
+             
+                $data['result'] = '200';
+
+            } else {
+             
+               $data['result'] = '400';
+            }	
+            
+        }
+
+        return($data);
+    }
+
     public function api_Polarized_Get_Latest() {
 
         // Read in Json file with title and description and link. 

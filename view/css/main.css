@@ -3155,4 +3155,54 @@ input[type="text"].amazing-offer-error {
   border-left: 1px solid #CCC;
 }
 
+.signin--container .error {
+  margin-top: 42px;
+  background-color: rgba(255, 0, 0, 0.1);
+  color: red;
+  font-weight: 300;
+  text-align: center;
+  padding: 16px;
+  border-radius: 4px;
+  display: none;
+}
+
+.signin--container .signout {
+  margin-top: 42px;
+  background-color: rgba(0, 0, 255, 0.1);
+  color: blue;
+  font-weight: 300;
+  text-align: center;
+  padding: 16px;
+  border-radius: 4px;
+  display: none;
+}
+
+.signin--container .large {
+  font-size: 3rem;
+  padding-bottom: 10px;
+}
+
+.showError {
+  display: block !important;
+}
+
+.showSignOut {
+  display: block !important;
+}
+
+.signedout--container .signout {
+  margin-top: 64px;
+  background-color: rgba(0, 0, 255, 0.1);
+  color: blue;
+  font-weight: 300;
+  text-align: center;
+  padding: 16px;
+  border-radius: 4px;
+}
+
+.signedout--container .large {
+  font-size: 3rem;
+  padding-bottom: 10px;
+}
+
 /*# sourceMappingURL=main.css.map */
