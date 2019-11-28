@@ -79,6 +79,13 @@
         "component": "true",
         "title": "Mangaing Your Studio"
     },
+    "/studio/catalog": {
+        "template": "page",
+        "page": "admin_catalog",
+        "auth": "true",
+        "component": "true",
+        "title": "Mangaing Your Studio"
+    },
     "/studio/auth": {
         "template": "page",
         "page": "admin_auth",

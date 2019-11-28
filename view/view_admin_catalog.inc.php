@@ -9,6 +9,6 @@
     }
 
     /* CATALOG INDEX */
-    $catalog_html = $this->component('admin_quickstats');
+    $navigation_html = $this->component('admin_navigation');
 
 ?>
