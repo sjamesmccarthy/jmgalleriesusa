@@ -1,0 +1,38 @@
+.navigation--container {
+
+    min-height: 50vh;
+    border-radius: 4px;
+
+     .toolbox {
+        padding-top: 20px;
+        padding-bottom: 10px;
+
+        ul li {
+            margin-bottom: 10px;
+            font-weight: 300;
+            font-size: 1rem;
+        }
+
+        &:not(:last-child) {
+            border-bottom: 1px solid #CCC;
+            margin-bottom: 10px;
+            position: relative;
+        }
+
+        .profile--image {
+            margin-bottom: 10px;
+            text-align: center;
+
+            >img {
+                width: 200px;
+                border-radius: 50% !important;
+            }
+        }
+
+        .profile--name {
+           text-align: center;
+        }
+    }
+
+    
+}

@@ -2292,6 +2292,42 @@ h6 {
   margin-bottom: 16px;
 }
 
+.navigation--container {
+  min-height: 50vh;
+  border-radius: 4px;
+}
+
+.navigation--container .toolbox {
+  padding-top: 20px;
+  padding-bottom: 10px;
+}
+
+.navigation--container .toolbox ul li {
+  margin-bottom: 10px;
+  font-weight: 300;
+  font-size: 1rem;
+}
+
+.navigation--container .toolbox:not(:last-child) {
+  border-bottom: 1px solid #CCC;
+  margin-bottom: 10px;
+  position: relative;
+}
+
+.navigation--container .toolbox .profile--image {
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.navigation--container .toolbox .profile--image > img {
+  width: 200px;
+  border-radius: 50% !important;
+}
+
+.navigation--container .toolbox .profile--name {
+  text-align: center;
+}
+
 /* ********************** */
 /* partial_nav */
 #top-nav, #top-nav-home {
@@ -3130,43 +3166,6 @@ input[type="text"].amazing-offer-error {
 }
 
 /*amazing-offer*/
-.admin--section .toolbox {
-  padding-top: 20px;
-  padding-bottom: 10px;
-}
-
-.admin--section .toolbox ul li {
-  margin-bottom: 10px;
-  font-weight: 300;
-  font-size: 1rem;
-}
-
-.admin--section .toolbox:not(:last-child) {
-  border-bottom: 1px solid #CCC;
-  margin-bottom: 10px;
-  position: relative;
-}
-
-.admin--section .toolbox .profile--image {
-  margin-bottom: 10px;
-  text-align: center;
-}
-
-.admin--section .toolbox .profile--image > img {
-  width: 200px;
-  border-radius: 50% !important;
-}
-
-.admin--section .toolbox .profile--name {
-  text-align: center;
-}
-
-.admin--section .nav {
-  /* margin-right: 80px;  */
-  min-height: 50vh;
-  border-radius: 4px;
-}
-
 .admin--main_container {
   margin-top: 42px !important;
 }
