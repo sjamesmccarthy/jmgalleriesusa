@@ -13,6 +13,9 @@
     $shortdate = explode("-", $created);
     $year = $shortdate[0];
 
+    /* NAVIGATION */
+    $navigation_html = $this->component('admin_navigation');
+
     /* QUICKSTATS */
     $quickstats_html = $this->component('admin_quickstats');
 
