@@ -365,7 +365,7 @@ class Core_Api
     }
 
     public function api_Auth_User($username, $password) {
-        
+
         /* Executes SQL and then assigns object to passed var */
         if( $this->checkDBConnection(__FUNCTION__) == true) {
 
@@ -392,10 +392,13 @@ class Core_Api
             
                 while($row = $result->fetch_assoc())
 		        {
-		            $data[] = $row;
+                    $data[] = $row;
 		        }
              
                 $data['result'] = '200';
+                $_SESSION['uid'] =  $data[0]['user_id'];
+                $_SESSION['ip'] = $_SERVER['REMOTE_ADDR'];
+                $this->log(array("key" => "admin", "value" => "session " . session_id() . " created", "type" => "system"));
 
             } else {
              
@@ -404,6 +407,8 @@ class Core_Api
             
         }
 
+        $this->log(array("key" => "admin", "value" => "logged in successfully from " . $_SESSION['ip'], "type" => "system"));
+        
         return($data);
     }
 
@@ -438,6 +443,168 @@ class Core_Api
             $this->hero_position = $this->config->heroimage[$index]['position'];
 
         }
+
+    }
+
+    public function api_Admin_Component_Activity() {
+
+        /* Executes SQL and then assigns object to passed var */
+        if( $this->checkDBConnection(__FUNCTION__) == true) {
+
+            $sql = "select value, type, created from log where user_id = " . $_SESSION['uid'] . " order by created ASC LIMIT 12";
+            $result = $this->mysqli->query($sql);
+
+            if ($result->num_rows > 0) {
+            
+                while($row = $result->fetch_assoc())
+		        {
+		            $data[] = $row;
+		        }
+                
+            } 
+            
+        }
+
+        return($data);
+    }
+
+    public function api_Admin_Component_Photos_Viewed() {
+
+        /* Executes SQL and then assigns object to passed var */
+        if( $this->checkDBConnection(__FUNCTION__) == true) {
+
+            $sql = "SELECT
+                CV.count,
+                CP.title,
+                CP.file_name,
+                CV.updated
+                FROM
+                catalog_photo_views as CV
+                INNER JOIN catalog_photo as CP on CV.catalog_photo_id = CP.catalog_photo_id
+                ORDER BY CV.count DESC
+                LIMIT 12";
+        
+            $result = $this->mysqli->query($sql);
+
+            if ($result->num_rows > 0) {
+            
+                while($row = $result->fetch_assoc())
+		        {
+		            $data[] = $row;
+		        }
+                
+            } 
+            
+        }
+
+        return($data);
+
+    }
+
+    public function api_Admin_Component_QuickView_tCat() {
+
+        /* Executes SQL and then assigns object to passed var */
+        if( $this->checkDBConnection(__FUNCTION__) == true) {
+
+            $sql = "select count(catalog_photo_id) AS total from catalog_photo where status = 'ACTIVE'";
+        
+            $result = $this->mysqli->query($sql);
+
+            if ($result->num_rows > 0) {
+            
+                while($row = $result->fetch_assoc())
+		        {
+		            $data = $row;
+		        }
+                
+            } 
+            
+        }
+
+        $data = $data['total'];
+        return($data);
+
+    }
+
+    public function api_Admin_Component_QuickView_tCollectors() {
+
+        /* Executes SQL and then assigns object to passed var */
+        if( $this->checkDBConnection(__FUNCTION__) == true) {
+
+            $sql = "select count(first_name) AS total from collector where first_name != ''";
+        
+            $result = $this->mysqli->query($sql);
+
+            if ($result->num_rows > 0) {
+            
+                while($row = $result->fetch_assoc())
+		        {
+		            $data = $row;
+		        }
+                
+            } 
+            
+        }
+
+        $data = $data['total'];
+        return($data);
+
+    }
+
+    public function api_Admin_Component_QuickView_tCosts() {
+
+        /* Executes SQL and then assigns object to passed var */
+        if( $this->checkDBConnection(__FUNCTION__) == true) {
+
+            $sql = "SELECT
+                (SUM(AC.print) + SUM(AC.frame) + SUM(AC.mat) + SUM(AC.backing) + sum(AC.packaging) + SUM(AC.shipping) + SUM(AC.ink) + SUM(AC.commission)) AS total
+            FROM
+                art_costs AS AC";
+        
+            $result = $this->mysqli->query($sql);
+
+            if ($result->num_rows > 0) {
+            
+                while($row = $result->fetch_assoc())
+		        {
+		            $data = $row;
+		        }
+                
+            } 
+            
+        }
+
+        $data = $data['total'];
+        return($data);
+
+    }
+
+    public function api_Admin_Component_QuickView_tRevenue() {
+
+        /* Executes SQL and then assigns object to passed var */
+        if( $this->checkDBConnection(__FUNCTION__) == true) {
+
+            $sql = "SELECT
+                sum(A.value) as total FROM art as A
+                WHERE
+                    A.serial_num IS NOT NULL
+                    AND A.art_location_id IN(3,11)";
+        
+            $result = $this->mysqli->query($sql);
+
+            if ($result->num_rows > 0) {
+            
+                while($row = $result->fetch_assoc())
+		        {
+		            $data = $row;
+		        }
+                
+            } 
+            
+        }
+
+        $data = $data['total'];
+        return($data);
 
     }
 }

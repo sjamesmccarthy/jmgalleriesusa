@@ -68,6 +68,8 @@ button,
 pre, code {
     font-family: monospace, monospace;
     font-size: .9em;
+    overflow-x: auto;
+    white-space: pre-wrap;
 }
 
 a {

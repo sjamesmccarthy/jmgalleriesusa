@@ -9,24 +9,25 @@ date: 11/24/19
 version: 1
 */
 
-/* Create an API call to get the Polarized listings 
-$polarized_json = $this->api_Polarized_Get_Latest();
+/* Create an API call to get the Polarized listings */
+$activity_data = $this->api_Admin_Component_Activity();
 
-$count=0;
-foreach($polarized_json as $key=>$value) {
+foreach($activity_data as $key=>$val) {
     
-    if($count === 3) { $content_border = null; } else { $content_border = 'content-border'; }
+    /*
+    <li style="margin-bottom: 16px;">
+            <p><b>Sun, November 24, 2019 10:23 AM</b></p>
+            <p>Added new photo to Oceans, Lakes and Waterfalls catalog titled "Sunrise Song". 
+        </li>
+    */
+    $date = date("F j, Y h:i:s A", strtotime($val['created']));
 
-    $result .= '<div class="' . $grid_css . ' ' . $content_border . '">';
-    $result .= '<h5><a target="_blog" href="' . $value['link']  . '">' . $value['title'] . '</a></h5>';
-    $result .= '<p>' . $value['description'] . '</p>';
-    $result .= '</div>';
+    $result_html .= '<li class="item">';
+    $result_html .= '<p><b>' . $date . '</b></p>';
+    $result_html .= '<p>[' . $val['type'] . ' event] ' . $val['value'] . '</p>';
+    $result_html .= '</li>';
 
-    if($count === 3) { $count = 0; } else { $count++; }
 }
-*/
-
-$date = date("F j, Y");
 
 /* GENERATE HTML BLOCK */
 
@@ -34,49 +35,12 @@ $html = <<< END
 <article class="activity--container">
 
     <h2>Recent Activity</h2>
-    <ul style="margin-top: 32px;">  
-        <li style="margin-bottom: 16px;">
-            <p><b>Sun, November 24, 2019 10:23 AM</b></p>
-            <p>Added new photo to Oceans, Lakes and Waterfalls catalog titled "Sunrise Song". 
-        </li>
-        <li style="margin-bottom: 16px;">
-            <p><b>Sun, November 24, 2019 10:23 AM</b></p>
-            <p>Added new photo to Oceans, Lakes and Waterfalls catalog titled "Sunrise Song". 
-        </li>
-        <li style="margin-bottom: 16px;">
-            <p><b>Sun, November 24, 2019 10:23 AM</b></p>
-            <p>Added new photo to Oceans, Lakes and Waterfalls catalog titled "Sunrise Song". 
-        </li>
-        <li style="margin-bottom: 16px;">
-            <p><b>Sun, November 24, 2019 10:23 AM</b></p>
-            <p>Added new photo to Oceans, Lakes and Waterfalls catalog titled "Sunrise Song". 
-        </li>
-        <li style="margin-bottom: 16px;">
-            <p><b>Sun, November 24, 2019 10:23 AM</b></p>
-            <p>Added new photo to Oceans, Lakes and Waterfalls catalog titled "Sunrise Song". 
-        </li>
-        <li style="margin-bottom: 16px;">
-            <p><b>Sun, November 24, 2019 10:23 AM</b></p>
-            <p>Added new photo to Oceans, Lakes and Waterfalls catalog titled "Sunrise Song". 
-        </li>
-        <li style="margin-bottom: 16px;">
-            <p><b>Sun, November 24, 2019 10:23 AM</b></p>
-            <p>Added new photo to Oceans, Lakes and Waterfalls catalog titled "Sunrise Song". 
-        </li>
-        <li style="margin-bottom: 16px;">
-            <p><b>Sun, November 24, 2019 10:23 AM</b></p>
-            <p>Added new photo to Oceans, Lakes and Waterfalls catalog titled "Sunrise Song". 
-        </li>
-        <li style="margin-bottom: 16px;">
-            <p><b>Sun, November 24, 2019 10:23 AM</b></p>
-            <p>Added new photo to Oceans, Lakes and Waterfalls catalog titled "Sunrise Song". 
-        </li>
-        <li style="margin-bottom: 16px;">
-            <p><b>Sun, November 24, 2019 10:23 AM</b></p>
-            <p>Added new photo to Oceans, Lakes and Waterfalls catalog titled "Sunrise Song". 
-        </li>
-        <li><p><a href="">View More Activity</a></p></li>
-    </ul>
+
+        <ul style="margin-top: 32px;">  
+
+            $result_html
+        
+        </ul>
 
 </article>
 END;

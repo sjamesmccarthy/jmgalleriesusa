@@ -27,6 +27,9 @@ class Core_Site extends Core_Api
         /* Initialize the Session */
         $this->initSession();
 
+        /* Start the database */
+        $this->startDB();
+
         /* Check URI against routes json file */
         $this->getRoute();
 
@@ -49,11 +52,24 @@ class Core_Site extends Core_Api
 
         /* Starting the session and setting the lifetime to 1 day */
         session_start([
-            'cookie_lifetime' => 86400
+            'name' => 'jmGalleriesManager',
+            'cookie_lifetime' => 0,
+            'gc_maxlifetime' => 86400
             ]);   
 
         $this->session_started = array(session_id(), $_SESSION);
-        $this->startDB();
+    
+    }
+    
+    public function checkSession() {
+
+        if( !isset($_SESSION['uid']) ) {
+            $_SESSION['error'] = 'timeout';
+            return false;
+        } else {
+            return true;
+        }
+
     }
 
     public function getRoute() {
@@ -204,6 +220,8 @@ class Core_Site extends Core_Api
             echo "<div style='position: relative; padding: 40px; background-color: rgba(255, 249, 222, 1);'><p>DEBUG --config-true</p>";
             echo "<hr />";
             $this->printp_r($this);
+            // echo "<hr />";
+            // print phpinfo();
             echo "</div>";
             }
         }
@@ -247,9 +265,25 @@ class Core_Site extends Core_Api
         }
     }
 
-    public function ghost($data) {
+    public function log($log_data) {
+
         /* extract Data Array */
-        /* Insert into database table: ghost */
+        extract($log_data, EXTR_PREFIX_SAME, "dup");
+        
+        /* Insert into database table: log 
+        /* Executes SQL and then assigns object to passed var */
+
+            $sql = "INSERT INTO log (`user_id`, `key`, `value`, `type`) VALUES ('" . $_SESSION['uid'] . "','" . $key . "','" . $value . "','" . $type . "');";
+            $result = $this->mysqli->query($sql);
+
+            if ($result == TRUE) {
+                $data['result'] = '200';
+            } else {
+                $data['result'] = '400';
+            }	
+
+        return($data);
+
     }
 }
 ?>

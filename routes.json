@@ -70,28 +70,28 @@
         "page": "admin_signin",
         "auth": "true",
         "component": "true",
-        "title": "Studio Console : Sign In"
+        "title": "Sign In To Your Studio"
     },
     "/studio/manage": {
         "template": "page",
         "page": "admin_manage",
         "auth": "true",
         "component": "true",
-        "title": "Studio : Manage"
+        "title": "Mangaing Your Studio"
     },
     "/studio/auth": {
         "template": "page",
         "page": "admin_auth",
         "auth": "true",
         "component": "true",
-        "title": "Studio : Authorizing"
+        "title": "Authorizing"
     },
     "/studio/signout": {
         "template": "page",
         "page": "admin_signedout",
         "auth": "true",
         "component": "true",
-        "title": "Studio : Signed Out"
+        "title": "Signed Out of Your Studio"
     },
     "/about": {
         "template": "page",

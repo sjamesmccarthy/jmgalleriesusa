@@ -9,24 +9,11 @@ date: 11/24/19
 version: 1
 */
 
-/* Create an API call to get the Polarized listings 
-$polarized_json = $this->api_Polarized_Get_Latest();
-
-$count=0;
-foreach($polarized_json as $key=>$value) {
-    
-    if($count === 3) { $content_border = null; } else { $content_border = 'content-border'; }
-
-    $result .= '<div class="' . $grid_css . ' ' . $content_border . '">';
-    $result .= '<h5><a target="_blog" href="' . $value['link']  . '">' . $value['title'] . '</a></h5>';
-    $result .= '<p>' . $value['description'] . '</p>';
-    $result .= '</div>';
-
-    if($count === 3) { $count = 0; } else { $count++; }
-}
-*/
-
-$date = date("F j, Y");
+/* Create an API call to get the Polarized listings */
+$tCat = $this->api_Admin_Component_QuickView_tCat();
+$tCollectors = $this->api_Admin_Component_QuickView_tCollectors();
+$tCosts = $this->api_Admin_Component_QuickView_tCosts();
+$tRevenue = $this->api_Admin_Component_QuickView_tRevenue();
 
 /* GENERATE HTML BLOCK */
 
@@ -38,19 +25,23 @@ $html = <<< END
     <div class="grid table">
         <div class="col">
             <p class="table--title">CATALOG</p>
-            <p class="table--count">54</p>
+            <p class="table--count">$tCat</p>
+            <p class="table--subline">Active Online Photos</p>
         </div>
         <div class="col">
             <p class="table--title">COLLECTORS</p>
-            <p class="table--count">14</p>
+            <p class="table--count">$tCollectors</p>
+            <p class="table--subline">Individual Only</p>
         </div>
         <div class="col">
             <p class="table--title">ALL-TIME COSTS</p>
-            <p class="table--count">2,345.89</p>
+            <p class="table--count">$$tCosts</p>
+            <p class="table--subline">Year To Date</p>
         </div>
         <div class="col">
             <p class="table--title">REVENUE</p>
-            <p class="table--count">$4,987.12</p>
+            <p class="table--count">$$tRevenue</p>
+            <p class="table--subline">Year To Date</p>
         </div>
 
     </div>

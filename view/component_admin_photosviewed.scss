@@ -1,5 +1,23 @@
 .photosviewed--container {
 
+    .item {
+        margin-bottom: 16px; 
+        
+        padding-bottom: 10px;
 
+        .photo {
+            display: inline-block;
+
+            img {
+                width: 100px;
+            }
+        }
+
+        .detail {
+            display: inline-block; 
+            padding-left: 10px;
+        }
+        
+    }
 
 }

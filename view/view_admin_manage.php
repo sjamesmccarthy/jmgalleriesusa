@@ -4,13 +4,13 @@
             
             <div class="toolbox">
                 <div class="profile--image">
-                    <img src="/view/image/profile_img.jpg" />
+                    <img src="/view/image/avatar/<?= $avatar ?>" />
                 </div>
                 
                 <div class="profile--name">
                     <p><?= $first_name ?> <?=$last_name ?></p>
-                    <p>Member since <?= $year ?></p>
                     <p><?= $website ?></p>
+                    <!-- <p style="font-size: .9rem;">Member since <?= $year ?></p> -->
                 </div>
 
             </div>
@@ -18,8 +18,8 @@
             <div class="toolbox">
                 <ul>
                 <li><b><i class="fas fa-angle-double-right"></i> STUDIO DASHBOARD</b></li>
-                <li><a href="/studio/catalog-idx">Online Catalog Index</a></li>
-                <li><a href="/studio/catalog-add">Add a Photo To Online Catalog</a></li>
+                <li><a href="/studio/catalog">Online Catalog Index</a></li>
+                <li><a href="/studio/catalog#add">Add a Photo To Online Catalog</a></li>
                 </ul>
             </div>
 
@@ -46,6 +46,8 @@
 
             <div class="toolbox">
                 <ul>
+                <li>My Collection Certificates</li>
+                <li>Contact Support</li>
                 <li><a href="/studio/signout">Sign Out</a></li>
                 </ul>
             </div>
@@ -72,7 +74,5 @@
 
         </div>
 
-         <?= $this->printp_r($_SESSION); ?>
-         
     </div>
 </section>

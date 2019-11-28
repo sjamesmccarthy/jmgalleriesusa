@@ -1,14 +1,16 @@
  <?php
- 
-    /* PARSE SESSION JSON DATA FROM SIGNIN INTO VARS */
-    $loginInfo = json_decode( $_SESSION['data'], true );
-    extract($loginInfo, EXTR_PREFIX_SAME, "dup");
+
+
+    /* Check for Session, Parse Session into vars */
+    if($this->checkSession()) {
+        $loginInfo = json_decode( $_SESSION['data'], true );
+        extract($loginInfo, EXTR_PREFIX_SAME, "dup");
+    } else {
+        header('location:/studio/signin');
+    }
 
     /* Alot of work to just get the year */
-    $timestamp = $created;
-    $datetime = explode(" ",$timestamp);
-    $date = $datetime[0];
-    $shortdate = explode("-", $date);
+    $shortdate = explode("-", $created);
     $year = $shortdate[0];
 
     /* QUICKSTATS */
