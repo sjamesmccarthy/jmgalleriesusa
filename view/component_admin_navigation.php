@@ -13,8 +13,9 @@ version: 1
 $loginInfo = json_decode( $_SESSION['data'], true );
 extract($loginInfo, EXTR_PREFIX_SAME, "dup");
 
-/* GENERATE HTML BLOCK */
+/* Logic for determing location */
 
+/* GENERATE HTML BLOCK */
 $html = <<< END
 <div class="col-2 navigation--container">
             
@@ -33,7 +34,7 @@ $html = <<< END
 
             <div class="toolbox">
                 <ul>
-                <li><b><i class="fas fa-angle-double-right"></i> STUDIO DASHBOARD</b></li>
+                <li class="dashboard selected">STUDIO DASHBOARD</li>
                 <li><a href="/studio/catalog">Online Catalog Index</a></li>
                 <li><a href="/studio/catalog#add">Add a Photo To Online Catalog</a></li>
                 </ul>

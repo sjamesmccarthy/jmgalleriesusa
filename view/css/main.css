@@ -2308,6 +2308,14 @@ h6 {
   font-size: 1rem;
 }
 
+.navigation--container .toolbox .selected {
+  font-weight: 700;
+}
+
+.navigation--container .toolbox .selected:before {
+  content: "--";
+}
+
 .navigation--container .toolbox:not(:last-child) {
   border-bottom: 1px solid #CCC;
   margin-bottom: 10px;

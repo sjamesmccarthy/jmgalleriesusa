@@ -13,6 +13,14 @@
             font-size: 1rem;
         }
 
+        .selected {
+            font-weight: 700;
+
+            &:before {
+                content: "--";
+            }
+        }
+
         &:not(:last-child) {
             border-bottom: 1px solid #CCC;
             margin-bottom: 10px;

@@ -7,6 +7,7 @@
 
     <link rel="stylesheet" href="/view/css/main.css?<?= time(); ?>">
 
+    <!-- Fav icons -->
     <link rel="apple-touch-icon" sizes="180x180" href="/view/image/favicon/apple-icon-180x180.png">
     <link rel="icon" type="image/png" sizes="192x192"  href="/view/image/favicon/android-icon-192x192.png">
     <link rel="icon" type="image/png" sizes="96x96" href="/view/image/favicon/favicon-96x96.png">
@@ -16,14 +17,17 @@
 
     <meta name="p:domain_verify" content="b1aefccc20a0932f9e254f23dac1e4e3"/>
 
+    <!-- Third party utilities -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="/view/js/bxslider/jquery.bxslider.min.js"></script>
     <link rel="stylesheet" href="/view/js/bxslider/jquery.bxslider.css" type="text/css" media="all">
-    
     <script src="https://kit.fontawesome.com/27673c99c5.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.10.20/r-2.2.3/sl-1.3.1/datatables.min.css"/>
+    <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.20/r-2.2.3/sl-1.3.1/datatables.min.js"></script>
+
+    <!-- Overrides, need to combine this with appropriate scss files, but for now deal with it -->
     <link rel="stylesheet" href="/view/css/overrides.css">
     
-    <!-- <script src="/view/js/instafeed.min.js"></script> -->
 
     <script>
     jQuery(document).ready(function($){
