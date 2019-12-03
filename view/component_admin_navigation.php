@@ -14,9 +14,19 @@ $loginInfo = json_decode( $_SESSION['data'], true );
 extract($loginInfo, EXTR_PREFIX_SAME, "dup");
 
 /* Logic for determing location */
+// $this->routes->URI->path /studio/catalog, $path[2]
+$path = explode('/', $this->routes->URI->path);
+$path = $path[2];
 
 /* GENERATE HTML BLOCK */
 $html = <<< END
+<script>
+jQuery(document).ready(function($){
+
+    $('ul li.$path').addClass('selected');
+});
+</script>
+
 <div class="col-2 navigation--container">
             
             <div class="toolbox">
@@ -34,9 +44,9 @@ $html = <<< END
 
             <div class="toolbox">
                 <ul>
-                <li class="dashboard selected">STUDIO DASHBOARD</li>
-                <li><a href="/studio/catalog">Online Catalog Index</a></li>
-                <li><a href="/studio/catalog#add">Add a Photo To Online Catalog</a></li>
+                <li class="manage"> <a href="/studio/manage">Studio Dashboard</a></li>
+                <li class="catalog"> <a href="/studio/catalog">Online Catalog Index</a></li>
+                <li class="catalog-add"> <a href="/studio/catalog#add">Add a Photo To Online Catalog</a></li>
                 </ul>
             </div>
 

@@ -14,10 +14,20 @@
         }
 
         .selected {
-            font-weight: 700;
+            font-weight: 800;
+            background-color: #CCC;
+            padding: 10px;
+            color: #000;
+            margin-left: -10px;
+            text-transform: uppercase;
 
             &:before {
-                content: "--";
+                content: "-";
+                background-color: #000;
+            }
+
+            a {
+                color: #000;
             }
         }
 
@@ -42,5 +52,7 @@
         }
     }
 
-    
+    .select {
+        font-size: 1.2rem;
+    }
 }
