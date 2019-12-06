@@ -34,13 +34,20 @@
 
     form {
         
-        .photopreviewmain {
+        .photopreview {
             width: 100%;
             margin-top: 1rem;
-            // display: inline-block;
             display: none;
         }
 
+        .photopreviewthumb {
+            width: initial;
+        }
+
+        .photopreviewshow {
+            display: inline-block;
+        }
+        
         .select-wrapper {
             position: relative;
             color: $color-black-placeholder;
@@ -59,10 +66,11 @@
         }
 
         textarea {
-            height: 200px;
+            height: 250px;
             width: 100%;
             font-size: 1.2rem;
-            padding: 10px;
+            line-height: 1.8;
+            padding: 20px;
         }
         
         .file {

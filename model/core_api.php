@@ -614,6 +614,7 @@ class Core_Api
         if( $this->checkDBConnection(__FUNCTION__) == true) {
 
             $sql = "SELECT
+            P.catalog_photo_id,
             P.title,
             P.file_name,
             C.title as category,

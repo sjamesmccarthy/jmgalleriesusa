@@ -3302,10 +3302,18 @@ input[type="text"].amazing-offer-error {
   opacity: 1;
 }
 
-.catalog-add--container form .photopreviewmain {
+.catalog-add--container form .photopreview {
   width: 100%;
   margin-top: 1rem;
   display: none;
+}
+
+.catalog-add--container form .photopreviewthumb {
+  width: initial;
+}
+
+.catalog-add--container form .photopreviewshow {
+  display: inline-block;
 }
 
 .catalog-add--container form .select-wrapper {
@@ -3327,10 +3335,11 @@ input[type="text"].amazing-offer-error {
 }
 
 .catalog-add--container form textarea {
-  height: 200px;
+  height: 250px;
   width: 100%;
   font-size: 1.2rem;
-  padding: 10px;
+  line-height: 1.8;
+  padding: 20px;
 }
 
 .catalog-add--container form .file {
