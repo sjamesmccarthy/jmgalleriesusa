@@ -1,4 +1,4 @@
-<section class="admin--section">
+<section class="catalogidx--container">
     <div class="grid-12">
        
         <!-- insert navigation component -->
@@ -27,23 +27,23 @@
 <script>
     jQuery(document).ready(function($){
        
-        var dataTables_sample = [
-            [
-                "Never Ending Story",
-                "Oceans, Lakes & Waterfalls",
-                "230"
-            ],
-            [
-                "Happy Hour Club",
-                "Architecture, Abstract & People",
-                "400"
-            ]
-        ]
-    
         $('#dataTable').DataTable( {
             paging: false,
-            searching: false,
-            data: dataTables_sample
+            searching: true,
+            data: <?= $data_json ?>,
+            columns: [
+                { data: 'title',
+                    "render": function(data, type, row, meta){
+                        if(type === 'display'){
+                            data = '<a target="_detail" href="/' + row.path + '/' + row.file_name + '">' + data + '</a>';
+                        }  
+                        return data;
+                    } 
+                },
+                { data: 'category' },
+                { data: 'views' }
+            ],
+            "order": [[ 0, "asc" ]]
         } );
         
     });

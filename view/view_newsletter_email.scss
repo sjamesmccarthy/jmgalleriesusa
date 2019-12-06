@@ -197,20 +197,20 @@ input[type="text"].amazing-offer-error {
 }
 
 
-.select-wrapper {
-	position: relative;	
-}
+// .select-wrapper {
+// 	position: relative;	
+// }
 
-.select-wrapper:after {
-    content: url(../image/icon_downarrow.svg);
-  	position: absolute;
-  	top: 20px;
-  	right: 25px;
-    color: #A9A9A9;
-    opacity: .5;
-  	pointer-events: none;
-}
+// .select-wrapper:after {
+//     content: url(../image/icon_downarrow.svg);
+//   	position: absolute;
+//   	top: 20px;
+//   	right: 25px;
+//     color: #A9A9A9;
+//     opacity: .5;
+//   	pointer-events: none;
+// }
 
-.select-wrapper option {
-    padding: 5px;
-}
+// .select-wrapper option {
+//     padding: 5px;
+// }

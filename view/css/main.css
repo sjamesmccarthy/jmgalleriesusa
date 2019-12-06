@@ -235,7 +235,7 @@ ol, ul, li, dl, dt, dd {
   box-sizing: border-box;
 }
 
-p, blockquote, caption, figure, label, fieldset, legend {
+p, blockquote, caption, figure, legend {
   margin: 0;
   padding: 0 0 0 0;
   font-size: 1.2rem;
@@ -261,18 +261,22 @@ button,
 }
 
 ::-webkit-input-placeholder {
+  /* Chrome/Opera/Safari */
+  color: #808080;
+}
+
+::-moz-placeholder {
+  /* Firefox 19+ */
   color: #808080;
 }
 
 :-ms-input-placeholder {
+  /* IE 10+ */
   color: #808080;
 }
 
-::-ms-input-placeholder {
-  color: #808080;
-}
-
-::placeholder {
+:-moz-placeholder {
+  /* Firefox 18- */
   color: #808080;
 }
 
@@ -342,6 +346,18 @@ h6 {
 
 [smallhalf] {
   font-size: .9rem;
+}
+
+.right {
+  text-align: right;
+}
+
+.center {
+  text-align: center;
+}
+
+.vertical-middle {
+  vertical-align: middle;
 }
 
 /* ==========================================================================
@@ -2327,8 +2343,15 @@ h6 {
 }
 
 .navigation--container .toolbox .selected:before {
-  content: "-";
-  background-color: #000;
+  font-family: FontAwesome !important;
+  content: "\f061";
+  /* FontAwesome Unicode */
+  font-weight: 900;
+  top: 12px;
+  left: 20px;
+  color: #434B67;
+  pointer-events: none;
+  margin-right: 10px;
 }
 
 .navigation--container .toolbox .selected a {
@@ -2349,6 +2372,8 @@ h6 {
 .navigation--container .toolbox .profile--image > img {
   width: 200px;
   border-radius: 50% !important;
+  border: 1px solid #CCC;
+  padding: 10px;
 }
 
 .navigation--container .toolbox .profile--name {
@@ -3178,24 +3203,6 @@ input[type="text"].amazing-offer-error {
   clear: both;
 }
 
-.select-wrapper {
-  position: relative;
-}
-
-.select-wrapper:after {
-  content: url(../image/icon_downarrow.svg);
-  position: absolute;
-  top: 20px;
-  right: 25px;
-  color: #A9A9A9;
-  opacity: .5;
-  pointer-events: none;
-}
-
-.select-wrapper option {
-  padding: 5px;
-}
-
 /*amazing-offer*/
 .admin--main_container {
   margin-top: 42px !important;
@@ -3261,6 +3268,104 @@ input[type="text"].amazing-offer-error {
 .signedout--container .large {
   font-size: 3rem;
   padding-bottom: 10px;
+}
+
+.catalog-add--container h6 {
+  margin: 1rem 0;
+}
+
+.catalog-add--container .half-size {
+  width: 48.9%;
+  display: inline-block;
+  margin-left: 1rem !important;
+}
+
+.catalog-add--container .half-size:nth-of-type(1) {
+  margin-left: 0 !important;
+}
+
+.catalog-add--container .small {
+  font-size: 1rem;
+  color: #808080;
+}
+
+.catalog-add--container .btn-delete {
+  opacity: .3;
+  position: absolute;
+  right: 5px;
+}
+
+.catalog-add--container .btn-delete:hover {
+  background-color: red !important;
+  color: #FFF !important;
+  border-color: red;
+  opacity: 1;
+}
+
+.catalog-add--container form .photopreviewmain {
+  width: 100%;
+  margin-top: 1rem;
+  display: none;
+}
+
+.catalog-add--container form .select-wrapper {
+  position: relative;
+  color: #808080;
+}
+
+.catalog-add--container form .select-wrapper:after {
+  font-family: FontAwesome !important;
+  content: "\f078";
+  /* FontAwesome Unicode */
+  font-weight: 900;
+  font-size: 1rem;
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  color: rgba(0, 0, 0, 0.2);
+  pointer-events: none;
+}
+
+.catalog-add--container form textarea {
+  height: 200px;
+  width: 100%;
+  font-size: 1.2rem;
+  padding: 10px;
+}
+
+.catalog-add--container form .file {
+  position: relative;
+  height: 50px;
+}
+
+.catalog-add--container form .file-thumb {
+  vertical-align: top;
+}
+
+.catalog-add--container form .input-upload {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #CCC;
+  border-radius: 5px;
+}
+
+.catalog-add--container form .file-custom:after {
+  z-index: 6;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: #CCC;
+  height: 43px;
+  border-radius: 0 5px 5px 0;
+  padding: 10px;
+}
+
+.catalog-add--container form .file-custom-main:after {
+  content: "Main Photo";
+}
+
+.catalog-add--container form .file-custom-thumbnail:after {
+  content: "Thumbnail Photo";
 }
 
 /*# sourceMappingURL=main.css.map */

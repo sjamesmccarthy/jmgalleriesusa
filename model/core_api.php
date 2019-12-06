@@ -451,7 +451,7 @@ class Core_Api
         /* Executes SQL and then assigns object to passed var */
         if( $this->checkDBConnection(__FUNCTION__) == true) {
 
-            $sql = "select value, type, created from log where user_id = " . $_SESSION['uid'] . " order by created ASC LIMIT 12";
+            $sql = "select value, type, created from log where user_id = " . $_SESSION['uid'] . " order by created DESC LIMIT 20";
             $result = $this->mysqli->query($sql);
 
             if ($result->num_rows > 0) {
@@ -604,6 +604,87 @@ class Core_Api
         }
 
         $data = $data['total'];
+        return($data);
+
+    }
+
+    public function api_Admin_Get_Photo_Catalog() {
+
+        /* Executes SQL and then assigns object to passed var */
+        if( $this->checkDBConnection(__FUNCTION__) == true) {
+
+            $sql = "SELECT
+            P.title,
+            P.file_name,
+            C.title as category,
+            C.path,
+            PV.count as views
+        FROM
+            catalog_photo AS P
+            INNER JOIN catalog_category AS C ON P.catalog_category_id = C.catalog_category_id
+            INNER JOIN catalog_photo_views AS PV ON P.catalog_photo_id = PV.catalog_photo_id
+        WHERE P.status = 'ACTIVE'";
+        
+            $result = $this->mysqli->query($sql);
+
+            if ($result->num_rows > 0) {
+            
+                while($row = $result->fetch_assoc())
+		        {
+		            $data[] = $row;
+		        }
+                
+                $this->log(array("key" => "admin", "value" => "Displayed Catalog Index (" . $result->num_rows . ")", "type" => "system"));
+            } 
+            
+        }
+
+        return($data);
+
+    }
+
+    public function api_Admin_Get_Catalog_Categories() {
+
+        /* Executes SQL and then assigns object to passed var */
+        if( $this->checkDBConnection(__FUNCTION__) == true) {
+
+            $sql = "select catalog_category_id, title, type from catalog_category WHERE status = 'ACTIVE'";
+            $result = $this->mysqli->query($sql);
+
+            if ($result->num_rows > 0) {
+            
+                while($row = $result->fetch_assoc())
+		        {
+		            $data[] = $row;
+		        }
+                
+            } 
+            
+        }
+
+        return($data);
+
+    }
+
+    public function api_Admin_Get_Locations() {
+
+        /* Executes SQL and then assigns object to passed var */
+        if( $this->checkDBConnection(__FUNCTION__) == true) {
+
+            $sql = "select art_location_id, location, type from art_locations WHERE status = 'ACTIVE' AND type = 'PUBLIC'";
+            $result = $this->mysqli->query($sql);
+
+            if ($result->num_rows > 0) {
+            
+                while($row = $result->fetch_assoc())
+		        {
+		            $data[] = $row;
+		        }
+                
+            } 
+            
+        }
+
         return($data);
 
     }

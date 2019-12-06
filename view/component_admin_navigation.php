@@ -44,9 +44,9 @@ jQuery(document).ready(function($){
 
             <div class="toolbox">
                 <ul>
-                <li class="manage"> <a href="/studio/manage">Studio Dashboard</a></li>
-                <li class="catalog"> <a href="/studio/catalog">Online Catalog Index</a></li>
-                <li class="catalog-add"> <a href="/studio/catalog#add">Add a Photo To Online Catalog</a></li>
+                <li class="manage"><a href="/studio/manage">Studio Dashboard</a></li>
+                <li class="catalog"><a href="/studio/catalog">Online Catalog Index</a></li>
+                <li class="catalog-add"><a href="/studio/catalog-add">Add a Photo To Catalog</a></li>
                 </ul>
             </div>
 

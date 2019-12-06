@@ -11,6 +11,10 @@
             margin-bottom: 10px;
             font-weight: 300;
             font-size: 1rem;
+
+            a {
+                // margin-left: 10px;
+            }
         }
 
         .selected {
@@ -22,8 +26,14 @@
             text-transform: uppercase;
 
             &:before {
-                content: "-";
-                background-color: #000;
+                font-family: FontAwesome !important;
+                content: "\f061"; /* FontAwesome Unicode */
+                font-weight: 900;
+                top: 12px;
+                left: 20px;
+                color: #434B67;
+                pointer-events: none;
+                margin-right: 10px;
             }
 
             a {
@@ -44,6 +54,8 @@
             >img {
                 width: 200px;
                 border-radius: 50% !important;
+                border: 1px solid #CCC;
+                padding: 10px;
             }
         }
 

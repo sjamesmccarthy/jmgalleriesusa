@@ -84,7 +84,14 @@
         "page": "admin_catalog",
         "auth": "true",
         "component": "true",
-        "title": "Mangaing Your Studio"
+        "title": "Catalog of Online Photos"
+    },
+    "/studio/catalog-add": {
+        "template": "page",
+        "page": "admin_catalog-add",
+        "auth": "true",
+        "component": "true",
+        "title": "Add Photo To Online Catalog"
     },
     "/studio/auth": {
         "template": "page",

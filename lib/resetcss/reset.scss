@@ -35,7 +35,7 @@ ol, ul, li, dl, dt, dd {
     box-sizing: border-box;
 }
 
-p, blockquote, caption, figure, label, fieldset, legend {
+p, blockquote, caption, figure, legend {
     margin: 0;
     padding: 0 0 0 0;
     font-size: 1.2rem;
@@ -61,8 +61,17 @@ button,
   -webkit-appearance: button;
 }
 
-::placeholder {
-    color: #808080;
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    color: $color-black-placeholder;
+}
+::-moz-placeholder { /* Firefox 19+ */
+    color: $color-black-placeholder;
+}
+:-ms-input-placeholder { /* IE 10+ */
+    color: $color-black-placeholder;
+}
+:-moz-placeholder { /* Firefox 18- */
+    color: $color-black-placeholder;
 }
 
 pre, code {
@@ -131,4 +140,16 @@ h6 {
 
 [smallhalf] {
     font-size: .9rem;
+}
+
+.right {
+    text-align: right;
+}
+
+.center {
+    text-align: center;
+}
+
+.vertical-middle {
+    vertical-align: middle;
 }
