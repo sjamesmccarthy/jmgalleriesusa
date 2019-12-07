@@ -233,6 +233,7 @@ button:hover, button a:hover {
 }
 
 /* FORMS */
+
 #form_response, #form_response-subscribe {
     /* margin-top: 40px; */
     background-color: rgba(130,189,94,.2);
@@ -355,4 +356,8 @@ input[type="text"], input[type="password"], textarea, select {
 [type="checkbox"]:disabled:checked + label:after
 {
     background: #aaa;
+}
+
+input:focus, select:focus, textarea:focus {
+    background-color: rgba(100,134,174, .1);
 }

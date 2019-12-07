@@ -3377,4 +3377,8 @@ input[type="text"].amazing-offer-error {
   content: "Thumbnail Photo";
 }
 
+.catalog-add--container form .cancel-button {
+  margin-left: 10px;
+}
+
 /*# sourceMappingURL=main.css.map */

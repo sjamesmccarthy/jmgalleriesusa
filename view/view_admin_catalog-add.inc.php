@@ -16,8 +16,14 @@
         extract($edit_data, EXTR_PREFIX_SAME, "dup");
         $page_title = "Editing <b>" . $title . "</b>";
         $display_show = 'photopreviewshow';
+        $formType = "update";
+        $button_label="update photo " . $edit_file_name;
+        $button_archive_cancel = '<button class="btn-delete" id="deletePhoto" value="ARCHIVE">archive photo</button>';
     } else {
+        $formType = "insert";
+        $button_label = "add new photo";
         $page_title = "Adding New Catalog Photo";
+        $button_archive_cancel = '<a class="cancel-button" href="/studio/catalog">cancel</a>';
     }
 
     /* CATALOG INDEX */
@@ -51,8 +57,6 @@
     }
 
     $date = date(DATE_RFC2822);
-    $button_label = "Add Photo To Catalog";
-    $formType = "new";
 
     /* API - LIST OF PHOTOS IN CATALOG */
     $data_html = $this->api_Admin_Get_Photo_Catalog();

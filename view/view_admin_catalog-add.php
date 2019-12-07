@@ -11,19 +11,19 @@
             <h1><?= $formTitle ?></h1>
             <p class="blue pb-16 "><?= strtoupper($subTitle); ?></p>
 
-            <form id="catalog-add" action="/view/ajax_admin_catalog-add.php" method="POST">
+            <form id="catalog-add" action="/studio/api/update/catalog" method="POST">
             <input type="hidden" id="formType" name="formType" value="<?= $formType ?>" />
 
             <div>
                 <div class="select-wrapper half-size">
-                <select id="photocategory" name="photocategory">
+                <select id="catalog_category_id" name="catalog_category_id">
                     <option value="CATEGORY">CATEGORY</option>
                     <option value="---">---</option>
                     <?= $category_html ?>
                 </select> 
                 </div>
                 <div class="select-wrapper half-size">
-                <select id="photostatus" name="photostatus">
+                <select id="status" name="status">
                 <!-- $var > 2 ? true : false -->
                     <option value="1" <?= ($status == "ACTIVE" ? "SELECTED" : ""); ?>>STATUS (ACTIVE)</option>
                     <option value="0" <?= ($status != "ACTIVE" ? "SELECTED" : ""); ?>>STATUS (DISABLED)</option>
@@ -32,50 +32,50 @@
             </div>
 
             <div>
-                <input class="half-size" maxlength="255" type="text" id="phototitle" name="phototitle" placeholder="TITLE" value="<?= $title ?>" required>
-                <input class="half-size" maxlength="255" type="text" id="photofilename" name="photofilename" placeholder="file_name" value="<?= $file_name ?>" required>
+                <input class="half-size" maxlength="255" type="text" id="title" name="title" placeholder="TITLE" value="<?= $title ?>" required>
+                <input class="half-size" maxlength="255" type="text" id="file_name" name="file_name" placeholder="file_name" value="<?= $file_name ?>" required>
             </div>
 
             <div style="margin-bottom: 10px;">
                 <label class="half-size file">
-                <input class="input-upload" type="file" id="file_main" aria-label="Choose Main Photo">
+                <input class="input-upload" type="file" id="file_main" name="file_main" aria-label="Choose Main Photo">
                 <span class="file-custom file-custom-main"></span>
                 <img class="photopreview <?= $display_show ?>" src="/catalog/__image/<?= $file_name ?>.jpg" />
                 </label>
 
                 <label class="half-size file file-thumb">
-                <input class="input-upload"  type="file" id="file_thumbnail" aria-label="Choose Main Photo">
+                <input class="input-upload"  type="file" id="file_thumbnail" name="file_thumbnail" aria-label="Choose Main Photo">
                 <span class="file-custom file-custom-thumbnail"></span>
                 <img class="photopreview photopreviewthumb <?= $display_show ?>" src="/catalog/__thumbnail/<?= $file_name ?>.jpg" />
                 </label>
             </div>
 
             <div>
-                <input class="half-size"  type="text" id="photolocationplace" name="photolocationplace" placeholder="LOCATION PLACE" value="<?= $loc_place ?>" required>
-                <input class="half-size" type="text" id="photolocationwaypoint" name="photolocationwaypoint" placeholder="LOCATION WAYPOINT" value="<?= $loc_waypoint ?>">
+                <input class="half-size"  type="text" id="loc_place" name="loc_place" placeholder="LOCATION PLACE" value="<?= $loc_place ?>" required>
+                <input class="half-size" type="text" id="loc_waypoint" name="loc_waypoint" placeholder="LOCATION WAYPOINT" value="<?= $loc_waypoint ?>">
             </div>
             <div>
-                <input class="half-size" type="text" id="photolocationcity" name="photolocationcity" placeholder="LOCATION CITY" value="<?= $loc_city ?>" required>
-                <input class="half-size" type="text" id="photolocationstate" name="photolocationstate" placeholder="LOCATION STATE" value="<?= $loc_state ?>" required>
+                <input class="half-size" type="text" id="loc_city" name="loc_city" placeholder="LOCATION CITY" value="<?= $loc_city ?>" required>
+                <input class="half-size" type="text" id="loc_state" name="loc_state" placeholder="LOCATION STATE" value="<?= $loc_state ?>" required>
             </div>
             <div>
                 <h6>And, so the story goes ...</h6>
                 <textarea required><?= $story ?></textarea>
-                <input type="text" id="phototags" name="phototags" placeholder="#TAGS" value="<?= $tags ?>" required>
+                <input type="text" id="tags" name="tags" placeholder="#TAGS" value="<?= $tags ?>" required>
             </div>
 
             <div>
                 <h6>Available Editions</h6>
 
                 <div class="select-wrapper half-size">
-                <select id="photoasgallery" name="photoasgallery">
+                <select id="as_gallery" name="as_gallery">
                     <option value="1" <?= ($as_gallery == "1" ? "SELECTED" : ""); ?>>as GALLERY EDITION</option>
                     <option value="0" <?= ($as_gallery == "0" ? "SELECTED" : ""); ?>>no (GALLERY EDITION)</option>
                 </select> 
                 </div>
 
                 <div class="select-wrapper half-size">
-                <select id="photosasstudio" name="photosasstudio">
+                <select id="as_studio" name="as_studio">
                     <option value="1" <?= ($as_studio == "1" ? "SELECTED" : ""); ?>>as STUDIO EDITION</option>
                     <option value="0" <?= ($as_studio == "0" ? "SELECTED" : ""); ?>>no (STUDIO EDITION)</option>
                 </select> 
@@ -84,56 +84,47 @@
             </div>
             <div>
                 <div class="select-wrapper half-size">
-                <select id="photoastinyviews" name="photoastinyviews">
+                <select id="as_tinyviews" name="as_tinyviews">
                     <option value="1" <?= ($as_tinyview == "1" ? "SELECTED" : ""); ?>>as TINYVIEWS EDITION</option>
                     <option value="0" <?= ($as_tinyview == "0" ? "SELECTED" : ""); ?>>no (TINYVIEWS EDITION)</option>
                 </select> 
                 </div>
 
                 <div class="select-wrapper half-size">
-                <select id="photoasopen" name="photoasopen">
+                <select id="as_open" name="as_open">
                     <option value="1" <?= ($as_open == "1" ? "SELECTED" : ""); ?>>as OPEN EDITION</option>
                     <option value="0" <?= ($as_open == "0" ? "SELECTED" : ""); ?>>no (OPEN EDITION)</option>
                 </select> 
                 </div>
 
             <div>
-                <!-- <input type="text" id="photoavailablesizes" name="photoavailablesizes" placeholder="AVAILABLE SIZES DETERMINED BY EDITIONS"> -->
-                <input type="text" id="photoprintmedia" name="photoprintmedia" placeholder="PRINT MEDIA: PAPER, ACRYLIC" value="<?= print_media ?>">
-            </div>
-
-            <div>
-                <h6>On Display</h6>
-                <div class="select-wrapper half-size">
-                <select id="photoondisplay" name="photoondisplay">
-                    <option value="1" <?= ($on_display == "1" ? "SELECTED" : ""); ?>>yes (on Display)</option>
-                    <option value="0" <?= ($on_display == "0" ? "SELECTED" : ""); ?>>no (on Display)</option>
-                </select> 
+                <div class="half-size">
+                    <input  type="text" id="print_media" name="print_media" placeholder="PRINT MEDIA: PAPER, ACRYLIC" value="<?= $print_media ?>">
                 </div>
                 <div class="select-wrapper half-size">
-                <select id="photoondisplaylocation" name="photoondisplaylocation">
-                    <option value="-">SELECT LOCATION</option>
+                <select id="on_display" name="on_display">
+                    <option value="0">on Display (Select Location)</option>
                     <?= $location_html ?>
                 </select> 
                 </div>
-            <div>
+            </div>
             
             <div>
                 <h6>Photo Meta Data</h6>
                 <div class="select-wrapper half-size">
-                <select id="photometaorientation" name="photometaorientation">
+                <select id="orientation" name="orientation">
                     <option value="landscape" <?= ($orientation == "landscape" ? "SELECTED" : ""); ?>>Landscape</option>
                     <option value="portrait" <?= ($orentation == "portrait" ? "SELECTED" : ""); ?>>Portrait</option>
                 </select> 
                 </div>
                 <div class="half-size">
-                <input type="text" id="photometadatetaken" name="photometadatetaken" placeholder="DATE TAKEN" value="<?= $date_taken ?>" required>
+                <input type="text" id="date_taken" name="date_taken" placeholder="DATE TAKEN" value="<?= $date_taken ?>">
                 </div>
             <div>
 
             <div>
                 <div class="select-wrapper half-size">
-                <select id="photometacamera" name="photometacamera">
+                <select id="camera" name="camera">
                     <option value="Nikon D810" <?= ($camera == "Nikon D810" ? "SELECTED" : ""); ?>>Nikon D810</option>
                     <option value="Nikon D600" <?= ($camera == "Nikon D600" ? "SELECTED" : ""); ?>>Nikon D600</option>
                     <option value="Nikon D5200" <?= ($camera == "Nikon D5200" ? "SELECTED" : ""); ?>>Nikon D5200</option>
@@ -142,7 +133,7 @@
                 </select> 
                 </div>
                 <div class="select-wrapper half-size">
-                <select id="photometalens" name="photometalens">
+                <select id="lens_model" name="lens_model">
                     <option value="-">LENS</option>
                     <option value="Tamron SP 85mm F/1.8 Di VC USD" <?= ($lens_model == "Tamron SP 85mm F/1.8 Di VC USD" ? "SELECTED" : ""); ?>>Tamron SP 85mm F/1.8 Di VC USD</option>
                     <option value="Tamron SP 15-30mm f/2.8 Di VC USD G2" <?= ($lens_model == "Tamron SP 15-30mm f/2.8 Di VC USD G2" ? "SELECTED" : ""); ?>>Tamron SP 15-30mm f/2.8 Di VC USD G2</option>
@@ -157,16 +148,16 @@
             <div>
 
             <div>
-                <input class="half-size" type="text" id="photometaaperture" name="phototitlphotometaaperturee" placeholder="APERTURE" value="<?= $aperture ?>" required>
-                <input class="half-size" type="text" id="photometashutter" name="photometashutter" placeholder="SHUTTER" value="<?= $shutter ?>" required>
+                <input class="half-size" type="text" id="aperture" name="aperture" placeholder="APERTURE" value="<?= $aperture ?>">
+                <input class="half-size" type="text" id="shutter" name="shutter" placeholder="SHUTTER" value="<?= $shutter ?>">
             </div>
             <div>
-                <input class="half-size" type="text" id="photometafocallength" name="photometafocallength" placeholder="FOCAL LENGTH" value="<?= $focal_length ?>" required>
-                <input class="half-size" type="text" id="photometaiso" name="photometaiso" placeholder="ISO" value="<?= $iso ?>">
+                <input class="half-size" type="text" id="focal_length" name="focal_length" placeholder="FOCAL LENGTH" value="<?= $focal_length ?>">
+                <input class="half-size" type="text" id="iso" name="iso" placeholder="ISO" value="<?= $iso ?>">
             </div>
 
             <button id="sendform" value="SEND"><?= $button_label ?></button>
-            <button class="btn-delete" id="deletePhoto" value="ARCHIVE">ARCHIVE</button>
+            <?= $button_archive_cancel ?>
             </form>
 
             <p id="form_response"> </p>
@@ -175,3 +166,15 @@
 
     </div>
 </section>
+
+<script>
+jQuery(document).ready(function($){
+    $('#sendform').on("click", function() {
+        $('#catalog-add').submit();
+    });
+
+    $('#title').on('keyup', function() {
+        $('#file_name').val($('#title').val().toLowerCase().replace(/\s+/g, "-"));
+    });
+});
+</script>

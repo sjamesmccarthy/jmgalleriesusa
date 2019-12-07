@@ -9,7 +9,6 @@
         "template" : "catalog",
         "page" : "home",
         "title" : "Welcome To jM Galleries",
-        "controller": "catalog",
         "component": "true",
         "header": {
             "css": "media.css, colors.css",
@@ -106,6 +105,13 @@
         "auth": "true",
         "component": "true",
         "title": "Signed Out of Your Studio"
+    },
+    "/studio/api/update/catalog": {
+        "template": "script",
+        "page": "ajax_admin_catalog_process.php",
+        "auth": "true",
+        "component": "false",
+        "title": "Processing Catalog Script"
     },
     "/about": {
         "template": "page",

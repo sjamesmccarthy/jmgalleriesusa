@@ -96,6 +96,17 @@ class Core_Site extends Core_Api
                 if( $this->routes->{$this->routes->URI->path}['template'] == "redirect" ) {
                     header('location:' . $this->routes->{$this->routes->URI->path}['page']);
                 }
+
+                /* Check if Template type is script */
+                if( $this->routes->{$this->routes->URI->path}['template'] == "script" ) {
+                    // header('location:' . $this->routes->{$this->routes->URI->path}['page']);
+                    
+                    if(file_exists( $_SERVER["DOCUMENT_ROOT"] . "/view/" . $this->routes->{$this->routes->URI->path}['page'] )) {
+                        include_once($_SERVER["DOCUMENT_ROOT"] . "/view/" . $this->routes->{$this->routes->URI->path}['page']);
+                    } else {
+                        $this->errors['script'] = 'Script Not Found : ' . __FILE__ . ' : ' . __FUNCTION__ . ' : ' . __LINE__ . ' : ' . $this->routes->{$this->routes->URI->path}['page']; 
+                    }
+                }
                 
             } else if (preg_match_all("/^\/[^\/]+\/[^\/]+\/$/m", $this->routes->URI->path . '/') == true) {
 

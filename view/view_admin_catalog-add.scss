@@ -47,7 +47,7 @@
         .photopreviewshow {
             display: inline-block;
         }
-        
+
         .select-wrapper {
             position: relative;
             color: $color-black-placeholder;
@@ -106,6 +106,10 @@
 
         .file-custom-thumbnail:after {
             content: "Thumbnail Photo";
+        }
+
+        .cancel-button {
+            margin-left: 10px;
         }
 
     }
