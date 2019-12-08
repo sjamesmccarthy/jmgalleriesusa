@@ -40,15 +40,17 @@
 
             <div style="margin-bottom: 10px;">
                 <label class="half-size file">
-                <input class="input-upload" type="file" id="file_main" name="file_main" aria-label="Choose Main Photo">
+                <input class="input-upload" type="file" id="file_1" name="file_1" aria-label="Choose Main Photo">
+                <input type="hidden" id="file_1_path" name="file_1_path" value="/catalog/__image/">
                 <span class="file-custom file-custom-main"></span>
-                <img class="photopreview <?= $display_show ?>" src="/catalog/__image/<?= $file_name ?>.jpg" />
+                <img class="photopreview <?= $display_show ?>" src="/catalog/__image/<?= $file_name ?>.jpg?<?= date(); ?>" />
                 </label>
 
                 <label class="half-size file file-thumb">
-                <input class="input-upload"  type="file" id="file_thumbnail" name="file_thumbnail" aria-label="Choose Main Photo">
+                <input class="input-upload"  type="file" id="file_2" name="file_2" aria-label="Choose Main Photo">
+                <input type="hidden" id="file_2_path" name="file_2_path" value="/catalog/__thumbnail/">
                 <span class="file-custom file-custom-thumbnail"></span>
-                <img class="photopreview photopreviewthumb <?= $display_show ?>" src="/catalog/__thumbnail/<?= $file_name ?>.jpg" />
+                <img class="photopreview photopreviewthumb <?= $display_show ?>" src="/catalog/__thumbnail/<?= $file_name ?>.jpg?<?= date(); ?>" />
                 </label>
             </div>
 

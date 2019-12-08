@@ -21,6 +21,7 @@
 
     /* API - LIST OF PHOTOS IN CATALOG */
     $data_html = $this->api_Admin_Get_Photo_Catalog();
+    $active_photos_count = array_count_values(array_column($data_html, 'status'))['ACTIVE'];
     $data_json = json_encode($data_html);
 
 ?>

@@ -8,13 +8,14 @@
 
             <div class="notification success <?= $notification_state ?>"><?= $notification_msg ?></div>
 
-                    <h2 class="pb-32">Catalog of Online Photos</h2>
+                    <h2 class="pb-32">Catalog of <b>Active Online Photos</b> (<?= $active_photos_count ?>)</h2>
 
                     <table id="dataTable" class="display">
                         <thead>
                             <tr>
                                 <th>Title</th>
                                 <th>Catalog Category</th>
+                                <th>Status</th>
                                 <th>Views</th>
                             </tr>
                         </thead>
@@ -34,6 +35,7 @@
         $('#dataTable').DataTable( {
             paging: false,
             searching: true,
+            oSearch: {"sSearch": "ACTIVE"},
             data: <?= $data_json ?>,
             columns: [
                 { data: 'title',
@@ -45,6 +47,7 @@
                     } 
                 },
                 { data: 'category' },
+                { data: 'status' },
                 { data: 'views' }
             ],
             "order": [[ 0, "asc" ]]

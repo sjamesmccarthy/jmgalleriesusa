@@ -23,7 +23,7 @@
     } else {
         $formType = "insert";
         $button_label = "add new photo";
-        $page_title = "Adding New Catalog Photo";
+        $page_title = "Adding <b>New Catalog Photo</b>";
         $button_archive_cancel = '<a class="cancel-button" href="/studio/catalog">cancel</a>';
         $id_field = null;
         $created = date("Y-m-d H:i:s");

@@ -618,13 +618,13 @@ class Core_Api
             P.title,
             P.file_name,
             C.title as category,
+            P.status,
             C.path,
             PV.count as views
         FROM
             catalog_photo AS P
             INNER JOIN catalog_category AS C ON P.catalog_category_id = C.catalog_category_id
-            INNER JOIN catalog_photo_views AS PV ON P.catalog_photo_id = PV.catalog_photo_id
-        WHERE P.status = 'ACTIVE'";
+            INNER JOIN catalog_photo_views AS PV ON P.catalog_photo_id = PV.catalog_photo_id";
         
             $result = $this->mysqli->query($sql);
 
@@ -635,7 +635,7 @@ class Core_Api
 		            $data[] = $row;
 		        }
                 
-                $this->log(array("key" => "admin", "value" => "Displayed Catalog Index (" . $result->num_rows . ")", "type" => "system"));
+                // $this->log(array("key" => "admin", "value" => "Displayed Catalog Index (" . $result->num_rows . ")", "type" => "system"));
             } 
             
         }
@@ -745,7 +745,7 @@ class Core_Api
         }
 
         /* Check to see if files have been uploaded */
-        $this->uploadFile();
+        $this->uploadFile(array("jpg","jpeg"), "jpg");
     }
 
         public function api_Admin_Insert_Catalog() {

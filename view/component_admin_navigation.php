@@ -46,7 +46,7 @@ jQuery(document).ready(function($){
                 <ul>
                 <li class="manage"><a href="/studio/manage">Studio Dashboard</a></li>
                 <li class="catalog"><a href="/studio/catalog">Online Catalog Index</a></li>
-                <li class="catalog-add"><a href="/studio/catalog-add">Add a Photo To Catalog</a></li>
+                <li class="catalog-add"><a href="/studio/catalog-add">Add/Update Photo</a></li>
                 </ul>
             </div>
 
