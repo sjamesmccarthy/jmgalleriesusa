@@ -6,6 +6,7 @@ https://jmgalleriesusa.com
 SASS, https://sass-lang.com/
 */
 /* variables */
+/* alert colors (type, background, border, font) */
 /* mixin: margin and padding adjustments */
 .mt-8 {
   margin-top: 8px !important;
@@ -197,6 +198,98 @@ SASS, https://sass-lang.com/
 
 .pb-96 {
   padding-bottom: 96px !important;
+}
+
+.notification {
+  display: none;
+  background-color: #e2e3e5;
+  border-radius: 5px;
+  margin-bottom: 2rem;
+  padding: 2rem;
+}
+
+.notification.success {
+  background-color: #d4edda;
+  border: 1px solid #c3e6cb;
+}
+
+.notification.success > p {
+  text-align: center;
+  color: #383d41;
+}
+
+.notification.success > p.heading {
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.notification.success > p.msg {
+  font-weight: 1rem;
+  text-transform: initial;
+}
+
+.notification.error {
+  background-color: #f8d7da;
+  border: 1px solid #f5c6cb;
+}
+
+.notification.error > p {
+  text-align: center;
+  color: #721c24;
+}
+
+.notification.error > p.heading {
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.notification.error > p.msg {
+  font-weight: 1rem;
+  text-transform: initial;
+}
+
+.notification.info {
+  background-color: #d1ecf1;
+  border: 1px solid #bee5eb;
+}
+
+.notification.info > p {
+  text-align: center;
+  color: #0c5460;
+}
+
+.notification.info > p.heading {
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.notification.info > p.msg {
+  font-weight: 1rem;
+  text-transform: initial;
+}
+
+.notification.primary {
+  background-color: #cce5ff;
+  border: 1px solid #b8daff;
+}
+
+.notification.primary > p {
+  text-align: center;
+  color: #004085;
+}
+
+.notification.primary > p.heading {
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.notification.primary > p.msg {
+  font-weight: 1rem;
+  text-transform: initial;
+}
+
+.notification.show {
+  display: block;
 }
 
 html, body {

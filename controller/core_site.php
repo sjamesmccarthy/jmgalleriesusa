@@ -296,5 +296,21 @@ class Core_Site extends Core_Api
         return($data);
 
     }
+
+    public function uploadFile() {
+
+        $target_image_dir = null;
+        $target_thumbnail_dir = null;
+
+        foreach($_FILES as $key => $value) {
+
+            if($value['size'] != 0) {
+                echo $value['name'] . "<br />";
+                echo $value['type'] . "<br />";
+                echo $value['size'] . "<br />";
+            }
+        }
+
+    }
 }
 ?>

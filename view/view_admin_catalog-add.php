@@ -9,10 +9,12 @@
             <h2 class="pb-32"><?= $page_title ?></h2>
 
             <h1><?= $formTitle ?></h1>
-            <p class="blue pb-16 "><?= strtoupper($subTitle); ?></p>
 
-            <form id="catalog-add" action="/studio/api/update/catalog" method="POST">
+            <form id="catalog-add" action="/studio/api/update/catalog" method="POST" enctype="multipart/form-data">
             <input type="hidden" id="formType" name="formType" value="<?= $formType ?>" />
+            <?= $id_field ?>
+            <input type="hidden" id="in_shop" name="in_shop" value="0" />
+            <input type="hidden" id="created" name="created" value="<?= $created ?>" />
 
             <div>
                 <div class="select-wrapper half-size">
@@ -25,8 +27,8 @@
                 <div class="select-wrapper half-size">
                 <select id="status" name="status">
                 <!-- $var > 2 ? true : false -->
-                    <option value="1" <?= ($status == "ACTIVE" ? "SELECTED" : ""); ?>>STATUS (ACTIVE)</option>
-                    <option value="0" <?= ($status != "ACTIVE" ? "SELECTED" : ""); ?>>STATUS (DISABLED)</option>
+                    <option value="ACTIVE" <?= ($status == "ACTIVE" ? "SELECTED" : ""); ?>>STATUS (ACTIVE)</option>
+                    <option value="DISABLED" <?= ($status != "ACTIVE" ? "SELECTED" : ""); ?>>STATUS (DISABLED)</option>
                 </select> 
                 </div>
             </div>
@@ -60,7 +62,7 @@
             </div>
             <div>
                 <h6>And, so the story goes ...</h6>
-                <textarea required><?= $story ?></textarea>
+                <textarea id="story" name="story" required><?= $story ?></textarea>
                 <input type="text" id="tags" name="tags" placeholder="#TAGS" value="<?= $tags ?>" required>
             </div>
 
@@ -84,7 +86,7 @@
             </div>
             <div>
                 <div class="select-wrapper half-size">
-                <select id="as_tinyviews" name="as_tinyviews">
+                <select id="as_tinyviews" name="as_tinyview">
                     <option value="1" <?= ($as_tinyview == "1" ? "SELECTED" : ""); ?>>as TINYVIEWS EDITION</option>
                     <option value="0" <?= ($as_tinyview == "0" ? "SELECTED" : ""); ?>>no (TINYVIEWS EDITION)</option>
                 </select> 
@@ -134,7 +136,7 @@
                 </div>
                 <div class="select-wrapper half-size">
                 <select id="lens_model" name="lens_model">
-                    <option value="-">LENS</option>
+                    <option value="">LENS</option>
                     <option value="Tamron SP 85mm F/1.8 Di VC USD" <?= ($lens_model == "Tamron SP 85mm F/1.8 Di VC USD" ? "SELECTED" : ""); ?>>Tamron SP 85mm F/1.8 Di VC USD</option>
                     <option value="Tamron SP 15-30mm f/2.8 Di VC USD G2" <?= ($lens_model == "Tamron SP 15-30mm f/2.8 Di VC USD G2" ? "SELECTED" : ""); ?>>Tamron SP 15-30mm f/2.8 Di VC USD G2</option>
                     <option value="Tamron SP 24-70mm f/2.8 Di VC USD G2" <?= ($lens_model == "Tamron SP 24-70mm f/2.8 Di VC USD G2" ? "SELECTED" : ""); ?>>Tamron SP 24-70mm f/2.8 Di VC USD G2</option>
@@ -170,7 +172,13 @@
 <script>
 jQuery(document).ready(function($){
     $('#sendform').on("click", function() {
-        $('#catalog-add').submit();
+        $(":input[required]").each(function () {                     
+        var myForm = $('#sendform');
+        if (!$myForm[0].checkValidity()) 
+          {                
+            $('#catalog-add').submit();             
+          } 
+        });
     });
 
     $('#title').on('keyup', function() {

@@ -689,5 +689,111 @@ class Core_Api
         return($data);
 
     }
+
+        public function api_Admin_Update_Catalog() {
+
+        /* extract Data Array */
+        // $_POST = $this->mysqli->real_escape_string($_POST);
+        extract($_POST, EXTR_PREFIX_SAME, "dup");
+
+        /* Insert into database */
+        $story = $this->mysqli->real_escape_string($_POST['story']);
+
+        $sql = "UPDATE catalog_photo 
+        SET 
+        -- catalog_photo_id,
+        -- artist_id,
+        catalog_category_id = '$catalog_category_id',
+        title = '$title',
+        -- desc = $desc,
+        story = '$story',
+        file_name = '$file_name',
+        loc_city = '$loc_city',
+        loc_state = '$loc_state',
+        loc_place = '$loc_place',
+        loc_waypoint = '$loc_waypoint',
+        camera = '$camera',
+        lens_model = '$lens_model',
+        aperture = '$aperture',
+        shutter = '$shutter',
+        focal_length = '$focal_length',
+        iso = '$iso',
+        date_taken = '$date_taken',
+        orientation = '$orientation',
+        -- available_sizes = $available_sizes,
+        print_media = '$print_media',
+        tags = '$tags',
+        created = '$created',
+        status = '$status',
+        on_display = '$on_display',
+        in_shop = '$in_shop',
+        as_tinyview = '$as_tinyview',
+        as_gallery = '$as_gallery',
+        as_studio = '$as_studio',
+        as_open = '$as_open'
+        WHERE catalog_photo_id = '$catalog_photo_id' AND file_name = '$file_name'";
+
+        $result = $this->mysqli->query($sql);
+
+        if($result == 1) {
+            $_SESSION['error'] = '200';
+            $_SESSION['notify_msg'] = $_POST['title'];
+            $this->log(array("key" => "admin", "value" => "Updated Catalog Photo (" . $_POST['catalog_photo_id'] . "+" . $_POST['file_name'] . ") Successsfully", "type" => "system"));
+        } else {
+            $_SESSION['error'] = '400';
+            $this->log(array("key" => "admin", "value" => "Failed Update Catalog Photo (" . $_POST['catalog_photo_id'] . "+" . $_POST['file_name'] . ")", "type" => "system"));
+        }
+
+        /* Check to see if files have been uploaded */
+        $this->uploadFile();
+    }
+
+        public function api_Admin_Insert_Catalog() {
+
+        /* extract Data Array */
+        extract($_POST, EXTR_PREFIX_SAME, "dup");
+        
+        /* Insert into database */
+		echo "insert: $file_name";
+
+        /*
+        catalog_photo_id
+        artist_id
+        catalog_category_id
+        title
+        desc
+        story
+        file_name
+        loc_city
+        loc_state
+        loc_place
+        loc_waypoint
+        camera
+        lens_model
+        aperture
+        shutter
+        focal_length
+        iso
+        date_taken
+        orientation
+        available_sizes
+        print_media
+        tags
+        created
+        status
+        on_display
+        in_shop
+        as_tinyview
+        as_gallery
+        as_studio
+        as_open
+
+        $sql = "UPDATE catalog_photo (`user_id`, `key`, `value`, `type`) VALUES ('" . $_SESSION['uid'] . "','" . $key . "','" . $value . "','" . $type . "');";
+        $result = $this->mysqli->query($sql);
+        */
+
+
+    }
+
 }
 ?>

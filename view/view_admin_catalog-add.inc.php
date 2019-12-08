@@ -19,11 +19,14 @@
         $formType = "update";
         $button_label="update photo " . $edit_file_name;
         $button_archive_cancel = '<button class="btn-delete" id="deletePhoto" value="ARCHIVE">archive photo</button>';
+        $id_field = '<input type="hidden" name="catalog_photo_id" value="' . $catalog_photo_id . '" />';
     } else {
         $formType = "insert";
         $button_label = "add new photo";
         $page_title = "Adding New Catalog Photo";
         $button_archive_cancel = '<a class="cancel-button" href="/studio/catalog">cancel</a>';
+        $id_field = null;
+        $created = date("Y-m-d H:i:s");
     }
 
     /* CATALOG INDEX */
