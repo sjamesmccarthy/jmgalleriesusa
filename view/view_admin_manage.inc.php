@@ -10,7 +10,7 @@
     }
 
     /* Alot of work to just get the year */
-    $shortdate = explode("-", $created);
+    $shortdate = explode("-", $membersince);
     $year = $shortdate[0];
 
     /* NAVIGATION */

@@ -11,11 +11,16 @@
             margin-bottom: 10px;
             font-weight: 300;
             font-size: 1rem;
+
+            &.disabled {
+                color: rgba(0,0,0,.2);
+            }
         }
 
         .selected {
             font-weight: 800;
-            background-color: #CCC;
+            // background-color: #CCC;
+            border-right: 15px solid #000;
             padding: 10px;
             color: #000;
             margin-left: -10px;

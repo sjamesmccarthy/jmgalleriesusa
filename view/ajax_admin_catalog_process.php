@@ -25,6 +25,7 @@ switch($_POST['formType']) {
 
 	case "insert":
 		$this->api_Admin_Insert_Catalog();
+		$redirect_to = '/catalog';
 	break;
 
 	case "update":

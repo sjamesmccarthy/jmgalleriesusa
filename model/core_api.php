@@ -372,7 +372,7 @@ class Core_Api
             $sql = "SELECT
                 U.user_id,
                 U.artist_id, 
-                U.created,
+                U.created as membersince,
                 A.first_name,
                 A.last_name,
                 A.email,
@@ -624,7 +624,7 @@ class Core_Api
         FROM
             catalog_photo AS P
             INNER JOIN catalog_category AS C ON P.catalog_category_id = C.catalog_category_id
-            INNER JOIN catalog_photo_views AS PV ON P.catalog_photo_id = PV.catalog_photo_id";
+            RIGHT JOIN catalog_photo_views AS PV ON P.catalog_photo_id = PV.catalog_photo_id";
         
             $result = $this->mysqli->query($sql);
 
@@ -635,7 +635,6 @@ class Core_Api
 		            $data[] = $row;
 		        }
                 
-                // $this->log(array("key" => "admin", "value" => "Displayed Catalog Index (" . $result->num_rows . ")", "type" => "system"));
             } 
             
         }
@@ -748,50 +747,89 @@ class Core_Api
         $this->uploadFile(array("jpg","jpeg"), "jpg");
     }
 
-        public function api_Admin_Insert_Catalog() {
+    public function api_Admin_Insert_Catalog() {
 
         /* extract Data Array */
         extract($_POST, EXTR_PREFIX_SAME, "dup");
         
         /* Insert into database */
-		echo "insert: $file_name";
+        $story = $this->mysqli->real_escape_string($_POST['story']);
+        $title = $this->mysqli->real_escape_string($_POST['title']);
 
-        /*
-        catalog_photo_id
-        artist_id
-        catalog_category_id
-        title
-        desc
-        story
-        file_name
-        loc_city
-        loc_state
-        loc_place
-        loc_waypoint
-        camera
-        lens_model
-        aperture
-        shutter
-        focal_length
-        iso
-        date_taken
-        orientation
-        available_sizes
-        print_media
-        tags
-        created
-        status
-        on_display
-        in_shop
-        as_tinyview
-        as_gallery
-        as_studio
-        as_open
+        $sql = "
+        INSERT INTO `catalog_photo` (
+        `catalog_photo_id`, 
+        `artist_id`, 
+        `catalog_category_id`, 
+        `title`, 
+        `story`, 
+        `file_name`, 
+        `loc_city`, 
+        `loc_state`, 
+        `loc_place`, 
+        `loc_waypoint`, 
+        `camera`, 
+        `lens_model`, 
+        `aperture`, 
+        `shutter`, 
+        `focal_length`, 
+        `iso`, 
+        `date_taken`, 
+        `orientation`, 
+        `print_media`, 
+        `tags`, 
+        `created`, 
+        `status`, 
+        `on_display`, 
+        `in_shop`, 
+        `as_tinyview`, 
+        `as_gallery`, 
+        `as_studio`, 
+        `as_open`
+        ) VALUES ( 
+            DEFAULT, 
+            '$artist_id', 
+            '$catalog_category_id', 
+            '$title', 
+            '$story', 
+            '$file_name', 
+            '$loc_city', 
+            '$loc_state', 
+            '$loc_place', 
+            '$loc_waypoint', 
+            '$camera', 
+            '$lens_model', 
+            '$aperture', 
+            '$shutter', 
+            '$focal_length', 
+            '$iso', 
+            '$date_taken', 
+            '$orientation', 
+            '$print_media', 
+            '$tags', 
+            '$created', 
+            '$status', 
+            '$on_display', 
+            '$in_shop', 
+            '$as_tinyview', 
+            '$as_gallery', 
+            '$as_studio', 
+            '$as_open'
+            )";
 
-        $sql = "UPDATE catalog_photo (`user_id`, `key`, `value`, `type`) VALUES ('" . $_SESSION['uid'] . "','" . $key . "','" . $value . "','" . $type . "');";
         $result = $this->mysqli->query($sql);
-        */
 
+        if($result == 1) {
+            $_SESSION['error'] = '200';
+            $_SESSION['notify_msg'] = $_POST['title'];
+            $this->log(array("key" => "admin", "value" => "New Photo Added (" . $_POST['title'] . " to catalog id: " . $_POST['catalog_category_id'] . ") Successsfully", "type" => "system"));
+        } else {
+            $_SESSION['error'] = '400';
+            $this->log(array("key" => "admin", "value" => "Failed Insert of Catalog Photo (" . $_POST['title'] . ")", "type" => "failure"));
+        }
+
+        /* Check to see if files have been uploaded */
+        $this->uploadFile(array("jpg","jpeg"), "jpg");
 
     }
 

@@ -59,10 +59,4 @@
         $location_html .= '<option ' . $selected . ' value="' . $value['art_location_id'] . '">' . $value['location'] . '</option>';
     }
 
-    $date = date(DATE_RFC2822);
-
-    /* API - LIST OF PHOTOS IN CATALOG */
-    $data_html = $this->api_Admin_Get_Photo_Catalog();
-    $data_json = json_encode($data_html);
-
 ?>

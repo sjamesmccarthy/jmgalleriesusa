@@ -309,9 +309,10 @@ class Core_Site extends Core_Api
             } else { $uploadReady=0; }
 
             // Check if file already exists
+            // possible problem: if "photo-sunrise" exsits and file_name is changed to "photo-sunrise-2" then the original file will still exist but the URL to the photo will also change based on file_name. 
+            // possible solution: first remove the file_name photo from the $target_file path.
             $target_file = $_SERVER["DOCUMENT_ROOT"] . $_FILES[$key]['path'] . $_POST[file_name] . '.' . $ext;
 
-            print $target_file . "<br />"; 
             if(file_exists( $target_file )) {
                 echo "Sorry, file " . $_POST['file_name'] . " already exists. <br />";
                 $this->log(array("key" => "admin", "value" => "Overwriting Photo (" . $_POST['file_name'] . " at " . $_FILES[$key]['path'] . ")", "type" => "warning"));

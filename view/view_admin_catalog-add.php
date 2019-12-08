@@ -15,6 +15,7 @@
             <?= $id_field ?>
             <input type="hidden" id="in_shop" name="in_shop" value="0" />
             <input type="hidden" id="created" name="created" value="<?= $created ?>" />
+            <input type="hidden" id="artist_id" name="artist_id" value="1" />
 
             <div>
                 <div class="select-wrapper half-size">
@@ -35,7 +36,7 @@
 
             <div>
                 <input class="half-size" maxlength="255" type="text" id="title" name="title" placeholder="TITLE" value="<?= $title ?>" required>
-                <input class="half-size" maxlength="255" type="text" id="file_name" name="file_name" placeholder="file_name" value="<?= $file_name ?>" required>
+                <input class="half-size" maxlength="255" type="text" id="file_name" name="file_name" placeholder="file_name (also sets URL)" value="<?= $file_name ?>" required>
             </div>
 
             <div style="margin-bottom: 10px;">

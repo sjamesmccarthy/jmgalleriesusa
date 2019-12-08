@@ -54,10 +54,10 @@ jQuery(document).ready(function($){
                 <ul>
                 <li>Inventory Index</li>
                 <li>Add a Photo To Inventory</li>
-                <li>r/Art, Costs, PL (everything)</li>
-                <li>r/Lookup Number & Edition</li>
-                <li>r/Lookup By Location</li>
-                <li>r/Damaged and Donated Summary</li>
+                <li class="disabled">r/Art, Costs, PL (everything)</li>
+                <li class="disabled">r/Lookup Number & Edition</li>
+                <li class="disabled">r/Lookup By Location</li>
+                <li class="disabled">r/Damaged and Donated Summary</li>
                 </ul>
             </div>
 
@@ -65,16 +65,16 @@ jQuery(document).ready(function($){
                 <ul>
                 <li>Collector Index</li>
                 <li>Add a Collector</li>
-                <li>Create Certificate of Authenticity</li>
-                <li>r/Find Collector By Name</li>
-                <li>r/Find Collectors By Photograph</li>
+                <li class="disabled">Create Certificate of Authenticity</li>
+                <li class="disabled">r/Find Collector By Name</li>
+                <li class="disabled">r/Find Collectors By Photograph</li>
                 </ul>
             </div>
 
             <div class="toolbox">
                 <ul>
-                <li>My Collection Certificates</li>
-                <li>Contact Support</li>
+                <li class="disabled">My Collection Certificates</li>
+                <li class="disabled">Contact Support</li>
                 <li><a href="/studio/signout">Sign Out</a></li>
                 </ul>
             </div>

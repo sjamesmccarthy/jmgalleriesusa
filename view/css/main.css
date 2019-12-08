@@ -2426,9 +2426,13 @@ h6 {
   font-size: 1rem;
 }
 
+.navigation--container .toolbox ul li.disabled {
+  color: rgba(0, 0, 0, 0.2);
+}
+
 .navigation--container .toolbox .selected {
   font-weight: 800;
-  background-color: #CCC;
+  border-right: 15px solid #000;
   padding: 10px;
   color: #000;
   margin-left: -10px;
