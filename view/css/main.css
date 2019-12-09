@@ -215,7 +215,7 @@ SASS, https://sass-lang.com/
 
 .notification.success > p {
   text-align: center;
-  color: #383d41;
+  color: #155724;
 }
 
 .notification.success > p.heading {
@@ -2408,6 +2408,18 @@ h6 {
 
 .activity--container .item p {
   font-size: 1rem;
+}
+
+.activity--container .item p.system {
+  color: #4a4a4a;
+}
+
+.activity--container .item p.success {
+  color: #155724;
+}
+
+.activity--container .item p.failure {
+  color: #721c24;
 }
 
 .navigation--container {

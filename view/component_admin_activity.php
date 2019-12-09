@@ -14,17 +14,31 @@ $activity_data = $this->api_Admin_Component_Activity();
 
 foreach($activity_data as $key=>$val) {
     
-    /*
-    <li style="margin-bottom: 16px;">
-            <p><b>Sun, November 24, 2019 10:23 AM</b></p>
-            <p>Added new photo to Oceans, Lakes and Waterfalls catalog titled "Sunrise Song". 
-        </li>
-    */
+    switch($val['type']) {
+
+        case "system":
+            $typeClass = "system";
+        break;
+
+        case "success":
+            $typeClass = "success";
+        break;
+
+        case "failure":
+            $typeClass = "failure";
+        break;
+
+        default:
+            $typeClass = "system";
+        break;
+
+    }
+
     $date = date("F j, Y h:i:s A", strtotime($val['created']));
 
     $result_html .= '<li class="item">';
-    $result_html .= '<p><b>' . $date . '</b></p>';
-    $result_html .= '<p>[' . $val['type'] . ' event] ' . $val['value'] . '</p>';
+    $result_html .= '<p class="' . $typeClass . '"><b>' . $date . '</b></p>';
+    $result_html .= '<p class="' . $typeClass . '">[' . $val['type'] . ' event] ' . $val['value'] . '</p>';
     $result_html .= '</li>';
 
 }
@@ -36,7 +50,7 @@ $html = <<< END
 
     <h2>Recent Activity</h2>
 
-        <ul style="margin-top: 32px;">  
+        <ul class="mt-32">  
 
             $result_html
         

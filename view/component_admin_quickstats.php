@@ -10,13 +10,12 @@ version: 1
 */
 
 /* Create an API call to get the Polarized listings */
-$tCat = $this->api_Admin_Component_QuickView_tCat();
-$tCollectors = $this->api_Admin_Component_QuickView_tCollectors();
-$tCosts = $this->api_Admin_Component_QuickView_tCosts();
-$tRevenue = $this->api_Admin_Component_QuickView_tRevenue();
+$tCat = number_format($this->api_Admin_Component_QuickView_tCat());
+$tCollectors = number_format($this->api_Admin_Component_QuickView_tCollectors());
+$tCosts = number_format($this->api_Admin_Component_QuickView_tCosts());
+$tRevenue = number_format($this->api_Admin_Component_QuickView_tRevenue());
 
 /* GENERATE HTML BLOCK */
-
 $html = <<< END
 <article class="quickstats--container">
 
@@ -36,12 +35,12 @@ $html = <<< END
         <div class="col">
             <p class="table--title">ALL-TIME COSTS</p>
             <p class="table--count">$$tCosts</p>
-            <p class="table--subline">Year To Date</p>
+            <p class="table--subline">YoY</p>
         </div>
         <div class="col">
             <p class="table--title">REVENUE</p>
             <p class="table--count">$$tRevenue</p>
-            <p class="table--subline">Year To Date</p>
+            <p class="table--subline">YoY</p>
         </div>
 
     </div>

@@ -18,6 +18,8 @@ extract($loginInfo, EXTR_PREFIX_SAME, "dup");
 $path = explode('/', $this->routes->URI->path);
 $path = $path[2];
 
+if(is_null($this->nav_label)) { $this->nav_label = "Adding Photo"; }
+
 /* GENERATE HTML BLOCK */
 $html = <<< END
 <script>
@@ -46,7 +48,7 @@ jQuery(document).ready(function($){
                 <ul>
                 <li class="manage"><a href="/studio/manage">Studio Dashboard</a></li>
                 <li class="catalog"><a href="/studio/catalog">Online Catalog Index</a></li>
-                <li class="catalog-add"><a href="/studio/catalog-add">Add/Update Photo</a></li>
+                <li class="catalog-add"><a href="/studio/catalog-add">$this->nav_label</a></li>
                 </ul>
             </div>
 

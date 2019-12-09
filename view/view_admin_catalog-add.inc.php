@@ -20,6 +20,7 @@
         $button_label="update photo " . $edit_file_name;
         $button_archive_cancel = '<button class="btn-delete" id="deletePhoto" value="ARCHIVE">archive photo</button>';
         $id_field = '<input type="hidden" name="catalog_photo_id" value="' . $catalog_photo_id . '" />';
+        $this->nav_label = "Updating Photo";
     } else {
         $formType = "insert";
         $button_label = "add new photo";
@@ -27,6 +28,12 @@
         $button_archive_cancel = '<a class="cancel-button" href="/studio/catalog">cancel</a>';
         $id_field = null;
         $created = date("Y-m-d H:i:s");
+        $as_open = 0;
+        $as_studio = 1;
+        $as_tinyview = 0;
+        $as_gallery = 0;
+        $print_media = "paper";
+        $this->nav_label = "Adding Photo";
     }
 
     /* CATALOG INDEX */

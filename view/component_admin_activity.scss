@@ -5,7 +5,21 @@
 
         p {
             font-size: 1rem;
+
+            &.system {
+                color: $color-black;
+            }
+
+            &.success {
+                color: $color-success;
+            }
+    
+            &.failure {
+                color: $color-error;
+            }
+
         }
+        
     }
 
 }

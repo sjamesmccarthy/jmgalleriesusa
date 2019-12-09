@@ -123,7 +123,7 @@
                 </select> 
                 </div>
                 <div class="half-size">
-                <input type="text" id="date_taken" name="date_taken" placeholder="DATE TAKEN" value="<?= $date_taken ?>">
+                <input type="text" id="date_taken" name="date_taken" placeholder="DATE TAKEN (e.g. <?= $created ?>)" value="<?= $date_taken ?>">
                 </div>
             <div>
 
@@ -144,10 +144,11 @@
                     <option value="Tamron SP 15-30mm f/2.8 Di VC USD G2" <?= ($lens_model == "Tamron SP 15-30mm f/2.8 Di VC USD G2" ? "SELECTED" : ""); ?>>Tamron SP 15-30mm f/2.8 Di VC USD G2</option>
                     <option value="Tamron SP 24-70mm f/2.8 Di VC USD G2" <?= ($lens_model == "Tamron SP 24-70mm f/2.8 Di VC USD G2" ? "SELECTED" : ""); ?>>Tamron SP 24-70mm f/2.8 Di VC USD G2</option>
                     <option value="Tamron SP 70-200mm f/2.8 Di VC USD G2" <?= ($lens_model == "Tamron SP 70-200mm f/2.8 Di VC USD G2" ? "SELECTED" : ""); ?>>Tamron SP 70-200mm f/2.8 Di VC USD G2</option>
-                    <option value="Tamron SP 70-300mm f/4-5.6 Di VC USD" <?= ($lens_model == "Tamron SP 70-300mm f/4-5.6 Di VC USD" ? "SELECTED" : ""); ?>>Tamron SP 70-300mm f/4-5.6 Di VC USD</option>
-                    <option value="Nikon 24-85mm f/3.5-4.5G ED VR" <?= ($lens_model == "Nikon 24-85mm f/3.5-4.5G ED VR" ? "SELECTED" : ""); ?>>Nikon 24-85mm f/3.5-4.5G ED VR</option>
-                    <option value="Nikon 50mm ED VR" <?= ($lens_model == "Nikon 50mm ED VR" ? "SELECTED" : ""); ?>>Nikon 50mm ED VR</option>
-                    <option value="Rokinon 14mm f/2.8 MF" <?= ($lens_model == "Rokinon 14mm f/2.8 MF" ? "SELECTED" : ""); ?>>Rokinon 14mm f/2.8 MF</option>
+                    <option value="Tamron SP 70-300mm f/4-5.6 Di LD Macro" <?= ($lens_model == "Tamron SP 70-300mm f/4-5.6 Di LD Macro" ? "SELECTED" : ""); ?>>Tamron SP 70-300mm f/4-5.6 Di LD Macro</option>
+                    <option value="Nikon AF-S DX Nikkor 18-55mm f/3.5-5.6G VR" <?= ($lens_model == "Nikon AF-S DX Nikkor 18-55mm f/3.5-5.6G VR" ? "SELECTED" : ""); ?>>Nikon AF-S DX Nikkor 18-55mm f/3.5-5.6G VR</option>
+                    <option value="Nikon AF-S Nikkor 24-85mm f/3.5-4.5GG ED VR" <?= ($lens_model == "Nikon AF-S Nikkor 24-85mm f/3.5-4.5GG ED VR" ? "SELECTED" : ""); ?>>Nikon AF-S Nikkor 24-85mm f/3.5-4.5GG ED VR</option>
+                    <option value="Nikon AF-S Nikkor 50mm 1.8G" <?= ($lens_model == "Nikon AF-S Nikkor 50mm 1.8G" ? "SELECTED" : ""); ?>>Nikon AF-S Nikkor 50mm 1.8G</option>
+                    <option value="Rokinon 14mm f/2.8 ED UMC" <?= ($lens_model == "Rokinon 14mm f/2.8 ED UMC" ? "SELECTED" : ""); ?>>Rokinon 14mm f/2.8 ED UMC</option>
                 </select>
                 </div>
             <div>

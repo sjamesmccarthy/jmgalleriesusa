@@ -737,10 +737,10 @@ class Core_Api
         if($result == 1) {
             $_SESSION['error'] = '200';
             $_SESSION['notify_msg'] = $_POST['title'];
-            $this->log(array("key" => "admin", "value" => "Updated Catalog Photo (" . $_POST['catalog_photo_id'] . "+" . $_POST['file_name'] . ") Successsfully", "type" => "system"));
+            $this->log(array("key" => "admin", "value" => "Updated Catalog Photo (" . $_POST['catalog_photo_id'] . "+" . $_POST['file_name'] . ") Successsfully", "type" => "success"));
         } else {
             $_SESSION['error'] = '400';
-            $this->log(array("key" => "admin", "value" => "Failed Update Catalog Photo (" . $_POST['catalog_photo_id'] . "+" . $_POST['file_name'] . ")", "type" => "system"));
+            $this->log(array("key" => "admin", "value" => "Failed Update Catalog Photo (" . $_POST['catalog_photo_id'] . "+" . $_POST['file_name'] . ")", "type" => "success"));
         }
 
         /* Check to see if files have been uploaded */
@@ -822,7 +822,7 @@ class Core_Api
         if($result == 1) {
             $_SESSION['error'] = '200';
             $_SESSION['notify_msg'] = $_POST['title'];
-            $this->log(array("key" => "admin", "value" => "New Photo Added (" . $_POST['title'] . " to catalog id: " . $_POST['catalog_category_id'] . ") Successsfully", "type" => "system"));
+            $this->log(array("key" => "admin", "value" => "New Photo Added (" . $_POST['title'] . " to catalog id: " . $_POST['catalog_category_id'] . ") Successsfully", "type" => "success"));
         } else {
             $_SESSION['error'] = '400';
             $this->log(array("key" => "admin", "value" => "Failed Insert of Catalog Photo (" . $_POST['title'] . ")", "type" => "failure"));
