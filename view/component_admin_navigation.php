@@ -54,8 +54,8 @@ jQuery(document).ready(function($){
 
             <div class="toolbox">
                 <ul>
-                <li>Inventory Index</li>
-                <li>Add a Photo To Inventory</li>
+                <li class="inventory"><a href="/studio/inventory">Inventory Index</a></li>
+                <li class="disabled">Add a Photo To Inventory</li>
                 <li class="disabled">r/Art, Costs, PL (everything)</li>
                 <li class="disabled">r/Lookup Number & Edition</li>
                 <li class="disabled">r/Lookup By Location</li>

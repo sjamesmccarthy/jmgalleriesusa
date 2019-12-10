@@ -643,6 +643,43 @@ class Core_Api
 
     }
 
+    public function api_Admin_Get_Inventory() {
+
+        /* Executes SQL and then assigns object to passed var */
+        if( $this->checkDBConnection(__FUNCTION__) == true) {
+
+            $sql = "SELECT
+                A.art_id,
+                A.title,
+                A.series_num,
+                A.edition_num,
+                A.edition_num_max,
+                L.location,
+                A.created,
+                (AC.print) + (AC.frame) + (AC.mat) + (AC.backing) + (AC.packaging) + (AC.shipping) + (AC.ink) + (AC.commission) AS TOTAL_COST,
+                (A.value) AS TOTAL_VALUE
+            FROM
+                art_costs AS AC
+                INNER JOIN art AS A ON A.art_id = AC.art_id
+                INNER JOIN art_locations as L on A.art_location_id = L.art_location_id";
+        
+            $result = $this->mysqli->query($sql);
+
+            if ($result->num_rows > 0) {
+            
+                while($row = $result->fetch_assoc())
+		        {
+		            $data[] = $row;
+		        }
+                
+            } 
+            
+        }
+
+        return($data);
+
+    }
+
     public function api_Admin_Get_Catalog_Categories() {
 
         /* Executes SQL and then assigns object to passed var */

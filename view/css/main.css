@@ -3490,4 +3490,8 @@ input[type="text"].amazing-offer-error {
   margin-left: 10px;
 }
 
+.dataTables_length label select {
+  width: initial;
+}
+
 /*# sourceMappingURL=main.css.map */

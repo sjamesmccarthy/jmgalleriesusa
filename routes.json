@@ -113,6 +113,13 @@
         "component": "false",
         "title": "Processing Catalog Script"
     },
+    "/studio/inventory": {
+        "template": "page",
+        "page": "admin_inventory",
+        "auth": "true",
+        "component": "true",
+        "title": "Inventory of Art"
+    },
     "/about": {
         "template": "page",
         "page": "about",
