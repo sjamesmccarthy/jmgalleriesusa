@@ -120,6 +120,13 @@
         "component": "true",
         "title": "Inventory of Art"
     },
+    "/studio/inventory-add": {
+        "template": "page",
+        "page": "admin_inventory-add",
+        "auth": "true",
+        "component": "true",
+        "title": "Adding Artwork To Your Inventory"
+    },
     "/about": {
         "template": "page",
         "page": "about",

@@ -20,7 +20,7 @@
         $button_label="update photo " . $edit_file_name;
         $button_archive_cancel = '<button class="btn-delete" id="deletePhoto" value="ARCHIVE">archive photo</button>';
         $id_field = '<input type="hidden" name="catalog_photo_id" value="' . $catalog_photo_id . '" />';
-        $this->nav_label = "Updating Photo";
+        $this->nav_label_catalog = "Updating Photo";
     } else {
         $formType = "insert";
         $button_label = "add new photo";
@@ -33,7 +33,7 @@
         $as_tinyview = 0;
         $as_gallery = 0;
         $print_media = "paper";
-        $this->nav_label = "Adding Photo";
+        $this->nav_label_catalog = "Adding Photo";
     }
 
     /* CATALOG INDEX */

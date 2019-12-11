@@ -15,6 +15,11 @@
             &.disabled {
                 color: rgba(0,0,0,.2);
             }
+
+            span.add-inline {
+                position: absolute;
+                right: 0;
+            }
         }
 
         .selected {

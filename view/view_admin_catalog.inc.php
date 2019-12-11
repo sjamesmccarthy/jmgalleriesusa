@@ -9,6 +9,7 @@
     }
 
     /* CATALOG INDEX */
+    $this->nav_label_catalog = "Add Catalog Photo";
     $navigation_html = $this->component('admin_navigation');
 
     /* Get any notifications of errors */

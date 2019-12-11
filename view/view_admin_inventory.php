@@ -64,4 +64,31 @@
         } );
         
     });
+
+    /*
+SELECT
+	A.art_id,
+	A.title as art_title,
+	S.supplier_id,
+	S.company as supplier,
+	ACS.supplier_materials_id,
+	SM.material_type,
+	SM.quantity as quantity_bought,
+	ACS.usage as material_used,
+	SM.unit_type,
+	SM.material as material_desc,
+	(SM.quantity - ACS.usage) AS calcd_inventory,
+	if( SM.unit_type = 'single', SM.cost, (SM.quantity / (SM.quantity - ACS.usage)) ) as calcd_cost
+FROM
+	art AS A
+	INNER JOIN art_costs_supplier AS ACS ON A.art_id = ACS.art_id
+	INNER JOIN supplier_materials AS SM ON ACS.supplier_materials_id = SM.supplier_materials_id
+	INNER JOIN supplier AS S ON SM.supplier_id = S.supplier_id
+WHERE
+	A.art_id = 110
+	
+-- Update SM.inventory with calcd_inventory
+
+    */
+
 </script>

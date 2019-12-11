@@ -1,0 +1,117 @@
+.catalog-add--container {
+
+    h6 {
+        margin: 1rem 0;
+    }
+
+    .half-size {
+        width: 48.9%;
+        display: inline-block;
+        margin-left: 1rem !important;
+    }
+
+    .half-size:nth-of-type(1) {
+        margin-left: 0 !important;
+    }
+
+    .small {
+        font-size: 1rem;
+        color: $color-black-placeholder;
+    }
+
+    .btn-delete {
+        opacity: .3;
+        position: absolute;
+        right: 5px;
+    }
+
+    .btn-delete:hover {
+        background-color: red!important;
+        color: #FFF!important;
+        border-color: red;
+        opacity: 1;
+    }
+
+    form {
+        
+        .photopreview {
+            width: 100%;
+            margin-top: 1rem;
+            display: none;
+        }
+
+        .photopreviewthumb {
+            width: initial;
+        }
+
+        .photopreviewshow {
+            display: inline-block;
+        }
+
+        .select-wrapper {
+            position: relative;
+            color: $color-black-placeholder;
+        }
+
+        .select-wrapper:after {
+            font-family: FontAwesome !important;
+            content: "\f078"; /* FontAwesome Unicode */
+            font-weight: 900;
+            font-size: 1rem;
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            color: rgba(0,0,0,.2);
+            pointer-events: none;
+        }
+
+        textarea {
+            height: 250px;
+            width: 100%;
+            font-size: 1.2rem;
+            line-height: 1.8;
+            padding: 20px;
+        }
+        
+        .file {
+            position: relative;
+            height: 50px;
+        }
+
+        .file-thumb {
+            vertical-align: top;
+        }
+
+        .input-upload {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #CCC;
+            border-radius: 5px;
+        }
+
+        .file-custom:after {
+            z-index: 6;
+            position: absolute;
+            top:0;
+            right:0;
+            background-color: #CCC;
+            height: 43px;
+            border-radius: 0 5px 5px 0;
+            padding: 10px;
+        }
+
+        .file-custom-main:after {
+            content: "Main Photo";
+        }
+
+        .file-custom-thumbnail:after {
+            content: "Thumbnail Photo";
+        }
+
+        .cancel-button {
+            margin-left: 10px;
+        }
+
+    }
+
+}

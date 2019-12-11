@@ -48,14 +48,16 @@ jQuery(document).ready(function($){
                 <ul>
                 <li class="manage"><a href="/studio/manage">Studio Dashboard</a></li>
                 <li class="catalog"><a href="/studio/catalog">Online Catalog Index</a></li>
-                <li class="catalog-add"><a href="/studio/catalog-add">$this->nav_label</a></li>
+                <li class="catalog-add"><a href="/studio/catalog-add">$this->nav_label_catalog</a></li>
                 </ul>
             </div>
 
             <div class="toolbox">
                 <ul>
                 <li class="inventory"><a href="/studio/inventory">Inventory Index</a></li>
-                <li class="disabled">Add a Photo To Inventory</li>
+                <li class="inventory-add"><a href="/studio/inventory-add">$this->nav_label_inventory</a></li>
+                <li class="disabled">Supplier Index <span class="add-inline">+Add</span></li>
+                <li class="disabled">Materials Index  <span class="add-inline">+Add</span></li>
                 <li class="disabled">r/Art, Costs, PL (everything)</li>
                 <li class="disabled">r/Lookup Number & Edition</li>
                 <li class="disabled">r/Lookup By Location</li>

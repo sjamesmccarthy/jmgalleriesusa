@@ -9,6 +9,7 @@
     }
 
     /* CATALOG INDEX */
+    $this->nav_label_inventory = "Add Artwork";
     $navigation_html = $this->component('admin_navigation');
 
     /* Get any notifications of errors */

@@ -2442,6 +2442,11 @@ h6 {
   color: rgba(0, 0, 0, 0.2);
 }
 
+.navigation--container .toolbox ul li span.add-inline {
+  position: absolute;
+  right: 0;
+}
+
 .navigation--container .toolbox .selected {
   font-weight: 800;
   border-right: 15px solid #000;
