@@ -3389,7 +3389,7 @@ input[type="text"].amazing-offer-error {
 }
 
 .catalog-add--container .half-size {
-  width: 48.9%;
+  width: 49.1%;
   display: inline-block;
   margin-left: 1rem !important;
 }
@@ -3497,6 +3497,156 @@ input[type="text"].amazing-offer-error {
 
 .dataTables_length label select {
   width: initial;
+}
+
+.inventory-add--container h6 {
+  margin: 1rem 0;
+}
+
+.inventory-add--container .half-size {
+  width: 49.1%;
+  display: inline-block;
+  margin-left: 1rem !important;
+}
+
+.inventory-add--container .half-size:nth-of-type(1) {
+  margin-left: 0 !important;
+}
+
+.inventory-add--container .width-auto {
+  width: auto !important;
+  margin-left: 1rem;
+}
+
+.inventory-add--container .manual-entry {
+  display: none;
+  position: relative;
+}
+
+.inventory-add--container .manual-entry.show {
+  display: inline-block;
+}
+
+.inventory-add--container .manual-entry .cancel-link {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  font-size: .8rem;
+  background-color: #d6d8db;
+  padding: 5px;
+}
+
+.inventory-add--container .manual-entry .cancel-link:hover {
+  cursor: pointer;
+}
+
+.inventory-add--container .material_expense_supplier_container {
+  margin-left: 0 !important;
+}
+
+.inventory-add--container .material-add, .inventory-add--container .remove-add {
+  font-size: 1.2rem;
+  margin-left: 15px;
+  vertical-align: middle;
+}
+
+.inventory-add--container .material-add:hover, .inventory-add--container .remove-add:hover {
+  cursor: pointer;
+}
+
+.inventory-add--container .small {
+  font-size: 1rem;
+  color: #808080;
+}
+
+.inventory-add--container .btn-delete {
+  opacity: .3;
+  position: absolute;
+  right: 5px;
+}
+
+.inventory-add--container .btn-delete:hover {
+  background-color: red !important;
+  color: #FFF !important;
+  border-color: red;
+  opacity: 1;
+}
+
+.inventory-add--container form p {
+  margin: 0;
+  padding: 0;
+}
+
+.inventory-add--container form .select-wrapper {
+  position: relative;
+  color: #808080;
+}
+
+.inventory-add--container form .select-wrapper:after {
+  font-family: FontAwesome !important;
+  content: "\f078";
+  /* FontAwesome Unicode */
+  font-weight: 900;
+  font-size: 1rem;
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  color: rgba(0, 0, 0, 0.2);
+  pointer-events: none;
+}
+
+.inventory-add--container form textarea {
+  height: 250px;
+  width: 100%;
+  font-size: 1.2rem;
+  line-height: 1.8;
+  padding: 20px;
+}
+
+.inventory-add--container form .coa_list {
+  padding: 40px;
+  background-color: #fff3cd;
+  color: #856404;
+  border-radius: 5px;
+}
+
+.inventory-add--container form .file {
+  position: relative;
+  height: 50px;
+}
+
+.inventory-add--container form .file-thumb {
+  vertical-align: top;
+}
+
+.inventory-add--container form .input-upload {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #CCC;
+  border-radius: 5px;
+}
+
+.inventory-add--container form .file-custom:after {
+  z-index: 6;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: #CCC;
+  height: 43px;
+  border-radius: 0 5px 5px 0;
+  padding: 10px;
+}
+
+.inventory-add--container form .file-custom-main:after {
+  content: "Main Photo";
+}
+
+.inventory-add--container form .file-custom-thumbnail:after {
+  content: "Thumbnail Photo";
+}
+
+.inventory-add--container form .cancel-button {
+  margin-left: 10px;
 }
 
 /*# sourceMappingURL=main.css.map */

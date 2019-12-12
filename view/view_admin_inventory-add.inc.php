@@ -24,7 +24,7 @@
     } else {
         // $formType = "insert";
         $button_label = "add new artwork";
-        $page_title = "Adding <b>New Artwork</b>";
+        $page_title = "Adding <b>New Artwork</b> to Inventory";
         $button_archive_cancel = '<a class="cancel-button" href="/studio/inventory">cancel</a>';
         // $id_field = null;
         // $created = date("Y-m-d H:i:s");
@@ -38,5 +38,17 @@
 
     /* CATALOG INDEX */
     $navigation_html = $this->component('admin_navigation');
+
+     /* LOCATIONS INDEX */
+    $location_data = $this->api_Admin_Get_Locations();
+
+    foreach($location_data as $key => $value) {
+
+        if($value['art_location_id'] === $on_display) { 
+            $selected = "SELECTED"; } 
+        else { $selected = null; }
+
+        $location_html .= '<option ' . $selected . ' value="' . $value['art_location_id'] . '">' . $value['location'] . '</option>';
+    }
 
 ?>

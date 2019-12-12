@@ -1,11 +1,11 @@
-.catalog-add--container {
+.inventory-add--container {
 
     h6 {
         margin: 1rem 0;
     }
 
     .half-size {
-        width: 48.9%;
+        width: 49.1%;
         display: inline-block;
         margin-left: 1rem !important;
     }
@@ -13,6 +13,48 @@
     .half-size:nth-of-type(1) {
         margin-left: 0 !important;
     }
+
+    .width-auto {
+        width: auto!important;
+        margin-left: 1rem;
+    }
+
+    .manual-entry {
+        display: none;
+        position: relative;
+
+       &.show {
+            display: inline-block;
+        }
+
+        .cancel-link {
+            position: absolute;
+            top: 0px;
+            right: 0px;
+            font-size: .8rem;
+            background-color: $color-secondary-background;
+            padding: 5px;
+
+            &:hover {
+                cursor: pointer;
+            }
+        }
+    }
+    
+    .material_expense_supplier_container {
+        margin-left: 0 !important;
+    }
+
+    .material-add, .remove-add {
+        font-size: 1.2rem;
+        margin-left: 15px;
+        vertical-align: middle;
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+
 
     .small {
         font-size: 1rem;
@@ -34,18 +76,9 @@
 
     form {
         
-        .photopreview {
-            width: 100%;
-            margin-top: 1rem;
-            display: none;
-        }
-
-        .photopreviewthumb {
-            width: initial;
-        }
-
-        .photopreviewshow {
-            display: inline-block;
+        p {
+            margin: 0;
+            padding: 0;
         }
 
         .select-wrapper {
@@ -73,6 +106,14 @@
             padding: 20px;
         }
         
+        .coa_list {
+            padding: 40px;
+            background-color: $color-warning-background;
+            color: $color-warning;
+            // border: 1px solid $color-warning;
+            border-radius: $border-radius;
+        }
+
         .file {
             position: relative;
             height: 50px;
