@@ -361,3 +361,8 @@ input[type="text"], input[type="password"], textarea, select {
 input:focus, select:focus, textarea:focus {
     background-color: rgba(100,134,174, .1);
 }
+
+/* input:focus +label  {
+    background-color: rgba(100,134,174, 1);
+    display: none;
+} */

@@ -655,12 +655,9 @@ class Core_Api
                 A.edition_num,
                 A.edition_num_max,
                 L.location,
-                A.created,
-                (AC.print) + (AC.frame) + (AC.mat) + (AC.backing) + (AC.packaging) + (AC.shipping) + (AC.ink) + (AC.commission) AS TOTAL_COST,
-                (A.value) AS TOTAL_VALUE
+                A.value AS TOTAL_VALUE
             FROM
-                art_costs AS AC
-                INNER JOIN art AS A ON A.art_id = AC.art_id
+                art as A
                 INNER JOIN art_locations as L on A.art_location_id = L.art_location_id";
         
             $result = $this->mysqli->query($sql);
@@ -673,6 +670,211 @@ class Core_Api
 		        }
                 
             } 
+            
+        }
+
+        return($data);
+
+    }
+
+    public function api_Admin_Get_Inventory_Item($art_id) {
+
+        /* Executes SQL and then assigns object to passed var */
+        if( $this->checkDBConnection(__FUNCTION__) == true) {
+
+            $sql = "SELECT * FROM art where art_id='" . $art_id . "'";
+        
+            $result = $this->mysqli->query($sql);
+
+            if ($result->num_rows > 0) {
+            
+                while($row = $result->fetch_assoc())
+		        {
+		            $data = $row;
+		        }
+                
+            } 
+            
+        }
+
+        return($data);
+
+    }
+
+    public function api_Admin_Get_Inventory_COA($art_id) {
+
+        /* Executes SQL and then assigns object to passed var */
+        if( $this->checkDBConnection(__FUNCTION__) == true) {
+
+            $sql = "SELECT
+                A.title as coa_title,
+                C.first_name as coa_first_name,
+                C.last_name as coa_last_name,
+                C.company as coa_company,
+                A.value as coa_value,
+                CERT.serial_num as coa_serial_num,
+                CERT.purchase_date as coa_purchase_date,
+                CERT.certificate_id as coa_certificate_id
+            FROM
+                certificate AS CERT
+                INNER JOIN collector AS C ON CERT.collector_id = C.collector_id
+                INNER JOIN art AS A ON A.art_id = CERT.art_id
+                WHERE A.art_id = '" . $art_id . "'
+            ";
+        
+            $result = $this->mysqli->query($sql);
+
+            if ($result->num_rows > 0) {
+            
+                while($row = $result->fetch_assoc())
+		        {
+		            $data[] = $row;
+		        }
+                
+            } 
+            
+        }
+
+        return($data);
+
+    }
+
+    public function api_Admin_Get_Inventory_Supplier_Materials () {
+
+        /* Executes SQL and then assigns object to passed var */
+        if( $this->checkDBConnection(__FUNCTION__) == true) {
+
+            $sql = "SELECT
+                SM.supplier_materials_id,
+                -- A.art_id,
+                -- A.title as art_title,
+                S.supplier_id,
+                S.company as supplier,
+                ACS.supplier_materials_id,
+                SM.material_type,
+                SM.cost,
+                SM.quantity as quantity_bought,
+                ACS.usage as material_used,
+                SM.unit_type,
+                SM.material as material_desc,
+                (CASE 
+                    WHEN SM.unit_type = 'hourly' THEN ACS.usage
+                    ELSE (SM.quantity - ACS.usage)
+                END) AS calcd_inventory,
+                (CASE 
+                    WHEN SM.unit_type = 'each' THEN SM.cost
+                    WHEN SM.unit_type = 'hourly' THEN SM.cost * ACS.usage
+                    ELSE (SM.cost/SM.quantity)
+                END) AS calcd_cost
+            FROM
+                art AS A
+                INNER JOIN art_costs_supplier AS ACS ON A.art_id = ACS.art_id
+                INNER JOIN supplier_materials AS SM ON ACS.supplier_materials_id = SM.supplier_materials_id
+                -- INNER JOIN supplier AS S ON SM.supplier_id = S.supplier_id
+                LEFT OUTER JOIN supplier AS S ON SM.supplier_id = S.supplier_id
+                ORDER BY SM.material_type ASC
+            ";
+        
+            $result = $this->mysqli->query($sql);
+
+            if ($result->num_rows > 0) {
+            
+                while($row = $result->fetch_assoc())
+		        {
+		            $data[] = $row;
+		        }
+                
+            } 
+            
+        }
+
+        return($data);
+
+    }
+
+    public function api_Admin_Get_Inventory_Item_Costs($art_id) {
+
+        /* first check classic table */
+        /* If results found convert to manual entires */ 
+        if( $this->checkDBConnection(__FUNCTION__) == true) {
+
+            $sql = "SELECT
+                -- A.art_id,
+                AC.print,
+                AC.ink,
+                AC.frame,
+                AC.mat,
+                AC.glazing,
+                AC.backing,
+                AC.packaging,
+                AC.shipping,
+                AC.hanger, 
+                AC.misc,
+                AC.commission
+                -- AC.print + AC.frame + AC.mat + AC.backing + AC.packaging + AC.shipping + AC.ink + AC.commission AS T_COST,
+                -- A.value AS VALUE,
+                -- A.value - (AC.print + AC.frame + AC.mat + AC.backing + AC.packaging + AC.shipping + AC.ink + AC.commission) AS MARGIN
+            FROM
+                art AS A
+                INNER JOIN art_costs AS AC ON AC.art_id = A.art_id
+            WHERE A.art_id = '" . $art_id . "'
+            ";
+        
+            $result = $this->mysqli->query($sql);
+            if ($result->num_rows > 0) {
+            
+                while($row = $result->fetch_assoc())
+		        {
+		            $data[] = $row;
+                }
+
+                $this->api['table'] = "art_costs";
+            } else {
+                /* No Costs found in classic table art_costs, try new cost_supplier table */
+
+                $sql = "SELECT
+                    A.art_id,
+                    A.title as art_title,
+                    -- S.supplier_id,
+                    ACS.supplier_materials_id,
+                    S.company as supplier,
+                    SM.material_type,
+                    SM.cost,
+                    SM.quantity as quantity_bought,
+                    ACS.usage as material_used,
+                    SM.unit_type,
+                    SM.material as material_desc,
+                    (CASE 
+                        WHEN SM.unit_type = 'hourly' THEN ACS.usage
+                        ELSE (SM.quantity - ACS.usage)
+                    END) AS calcd_inventory,
+                    (CASE 
+                        WHEN SM.unit_type = 'each' THEN SM.cost
+                        WHEN SM.unit_type = 'hourly' THEN SM.cost * ACS.usage
+                        ELSE (SM.cost/SM.quantity)
+                    END) AS calcd_cost
+                FROM
+                    art AS A
+                    INNER JOIN art_costs_supplier AS ACS ON A.art_id = ACS.art_id
+                    INNER JOIN supplier_materials AS SM ON ACS.supplier_materials_id = SM.supplier_materials_id
+                    LEFT OUTER JOIN supplier AS S ON SM.supplier_id = S.supplier_id
+                WHERE
+                    A.art_id ='" . $art_id . "'";
+                
+                    $result = $this->mysqli->query($sql);
+
+                    if ($result->num_rows > 0) {
+                    
+                        while($row = $result->fetch_assoc())
+                        {
+                            $data[] = $row;
+                        }
+                        $this->api['table'] = "art_costs_supplier";
+                    } else {
+                        /* No Costs Anywhere */
+                    }
+
+            }
             
         }
 
@@ -703,12 +905,14 @@ class Core_Api
 
     }
 
-    public function api_Admin_Get_Locations() {
+    public function api_Admin_Get_Locations($all=null) {
 
         /* Executes SQL and then assigns object to passed var */
         if( $this->checkDBConnection(__FUNCTION__) == true) {
 
-            $sql = "select art_location_id, location, type from art_locations WHERE status = 'ACTIVE' AND type = 'PUBLIC'";
+            if( $all = '' ) { $addToSQL = " AND type = 'PUBLIC'"; }
+
+            $sql = "select art_location_id, location, type from art_locations WHERE status = 'ACTIVE'" . $addToSQL;
             $result = $this->mysqli->query($sql);
 
             if ($result->num_rows > 0) {

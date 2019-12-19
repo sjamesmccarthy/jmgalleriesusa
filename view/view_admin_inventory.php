@@ -19,8 +19,8 @@
                                 <th>Edition</th>
                                 <th>Max Ed.</th>
                                 <th>Location</th>
-                                <th>Created</th>
-                                <th>Cost</th>
+                                <!-- <th>Created</th> -->
+                                <!-- <th>Cost</th> -->
                                 <th>Value</th>
                             </tr>
                         </thead>
@@ -57,8 +57,8 @@
                 { data: 'edition_num' },
                 { data: 'edition_num_max' },
                 { data: 'location' },
-                { data: 'created' },
-                { data: 'TOTAL_COST' },
+                // { data: 'created' },
+                // { data: 'TOTAL_COST' },
                 { data: 'TOTAL_VALUE' }
             ]
         } );
