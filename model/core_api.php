@@ -682,7 +682,14 @@ class Core_Api
         /* Executes SQL and then assigns object to passed var */
         if( $this->checkDBConnection(__FUNCTION__) == true) {
 
-            $sql = "SELECT * FROM art where art_id='" . $art_id . "'";
+            $sql = "SELECT
+                A.*,
+                C.collector_id
+            FROM
+                art AS A
+                left outer join certificate as C on A.art_id = C.art_id
+            WHERE
+                A.art_id ='" . $art_id . "'";
         
             $result = $this->mysqli->query($sql);
 
@@ -930,7 +937,68 @@ class Core_Api
 
     }
 
-        public function api_Admin_Update_Catalog() {
+    public function api_Admin_Get_Collectors_List() {
+
+        /* Executes SQL and then assigns object to passed var */
+        if( $this->checkDBConnection(__FUNCTION__) == true) {
+
+            $sql = "select collector_id, first_name, last_name, company from collector";
+            $result = $this->mysqli->query($sql);
+
+            if ($result->num_rows > 0) {
+            
+                while($row = $result->fetch_assoc())
+		        {
+		            $data[] = $row;
+		        }
+                
+            } 
+            
+        }
+
+        return($data);
+
+    }
+
+    public function api_Admin_Get_Locations_History($art_id) {
+
+        /* Executes SQL and then assigns object to passed var */
+        if( $this->checkDBConnection(__FUNCTION__) == true) {
+
+            $sql = "SELECT
+	ALH.*,
+	AL.location,
+	A.art_id,
+	A.title,
+	CERT.collector_id,
+	COL.last_name
+FROM
+	art_locations_history AS ALH
+	INNER JOIN art AS A ON A.art_id = ALH.art_id
+	INNER JOIN art_locations AS AL ON ALH.art_location_id = AL.art_location_id
+	RIGHT JOIN certificate AS CERT ON CERT.art_id = ALH.art_id
+	RIGHT JOIN collector AS COL ON COL.collector_id = CERT.collector_id
+            WHERE
+                ALH.art_id='" . $art_id . "' ORDER BY ALH.date_started";
+    
+            $result = $this->mysqli->query($sql);
+
+            if ($result->num_rows > 0) {
+            
+                while($row = $result->fetch_assoc())
+		        {
+		            $data[] = $row;
+		        }
+                
+            } 
+            
+        }
+
+        return($data);
+
+    }
+
+    public function api_Admin_Update_Catalog() {
 
         /* extract Data Array */
         // $_POST = $this->mysqli->real_escape_string($_POST);

@@ -113,6 +113,13 @@
         "component": "false",
         "title": "Processing Catalog Script"
     },
+    "/studio/api/update/inventory": {
+        "template": "script",
+        "page": "ajax_admin_inventory_process.php",
+        "auth": "true",
+        "component": "false",
+        "title": "Processing Inventory Script"
+    },
     "/studio/inventory": {
         "template": "page",
         "page": "admin_inventory",

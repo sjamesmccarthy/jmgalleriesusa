@@ -41,8 +41,24 @@
         }
     }
     
+.vtop {
+    vertical-align: top;
+}
+
 .ml-1 {
     margin-left: 1rem;
+}
+
+.view-lh {
+    display: block;
+    margin-top: -10px;
+    margin-bottom: 1rem;
+}
+
+.lh_container {
+    display: none;
+    margin-left: 20px;
+    margin-bottom: 2rem;
 }
 
     .material_expense_supplier_container {

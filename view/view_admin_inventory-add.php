@@ -10,22 +10,31 @@
 
             <h1><?= $formTitle ?></h1>
 
-            <form id="catalog-add" action="/studio/api/update/catalog" method="POST">
-            <input type="hidden" id="formTypeAction" name="formTypeAction" value="<?= $formType ?>" />
+            <form id="catalog-add" action="/studio/api/update/inventory" method="POST">
+            <input type="hidden" id="formTypeAction" name="formTypeAction" value="<?= $formTypeAction ?>" />
             <?= $id_field ?>
+            <?= $hidden_location_id ?>
+            <?= $hidden_collector_id ?>
             <input type="hidden" id="created" name="created" value="<?= $created ?>" />
             <input type="hidden" id="artist_id" name="artist_id" value="1" />
 
             <div>
-                <div class="half-size">
-                   <!-- Current Location:  -->
-                </div>
                 <div class="select-wrapper half-size">
-                    <label for="location">LOCATION</label>
-                <select id="on_display" name="on_display">
-                    <option value="0">on Display (Select Location)</option>
+                    <label for="location">CURRENT LOCATION</label>
+                    <select id="art_location" name="art_location">
+                    <option value="0">Current Location ...</option>
                     <?= $location_html ?>
-                </select> 
+                    </select>
+                    
+                    <?= $location_history ?>
+
+                </div>
+                <div class="select-wrapper half-size vtop">
+                    <label for="collector">COLLECTOR</label>
+                    <select id="collector" name="collector">
+                    <option value="0">(no collector for this piece)</option>
+                        <?= $collector_html ?>
+                    </select>
                 </div>
             </div>
 
@@ -80,7 +89,7 @@
 
                  <div>
                 <h6>Notes</h6>
-                    <textarea id="notes" name="notes" required><?= $notes ?></textarea>
+                    <textarea id="notes" name="notes"><?= $notes ?></textarea>
                 </div>
 
             </div>
@@ -91,9 +100,9 @@
 
             <div>
                 <label for="serial_num">SERIAL NUM</label>
-                <input class="half-size" type="text" id="serial_num" name="serial_num" placeholder="SERIAL NO. (eg, 251387)" value="<?= $serial_num ?>" required>
+                <input class="half-size" type="text" id="serial_num" name="serial_num" placeholder="SERIAL NO. (eg, 251387)" value="<?= $serial_num ?>">
                 <label for="reg_num">REG NUM</label>
-                <input class="half-size" type="text" id="reg_num" name="reg_num" placeholder="Artwork Reg No. (eg, 1569069144 aka Born On Date)" value="<?= $reg_num ?>" required>
+                <input class="half-size" type="text" id="reg_num" name="reg_num" placeholder="Artwork Reg No. (eg, 1569069144 aka Born On Date)" value="<?= $reg_num ?>">
             </div>
             
             <div>
@@ -117,20 +126,20 @@
                 <div class="supplier_materials">
 
                     <label for="material-expense">MATERIAL EXPENSE</label>
-                    <div class="manual-entry material_expense_supplier-0-manual-entry half-size">
-                        <input type="text" class="" id="material_expense_supplier-0-manual-entry" name="material_expense_supplier-0-manual-entry" placeholder="MANUAL ENTRY" value="">
-                        <span class="cancel-link" data-field="material_expense_supplier-0">X</span>
+                    <div class="manual-entry material_expense_supplier-100-manual-entry half-size">
+                        <input type="text" class="" id="material_expense_supplier-100-manual-entry" name="material_expense_supplier-100-manual-entry" placeholder="MANUAL ENTRY" value="">
+                        <span class="cancel-link" data-field="material_expense_supplier-100">X</span>
                     </div>
-                    <div class="material_expense_supplier-0-container material_expense_supplier_container select-wrapper half-size">
-                        <select data-exp="0" id="material_expense_supplier-0" name="material_expense_supplier-0">
+                    <div class="material_expense_supplier-100-container material_expense_supplier_container select-wrapper half-size">
+                        <select data-exp="100" id="material_expense_supplier-100" name="material_expense_supplier-100">
                             <option value="-">SELECT A MATERIAL EXPENSE</option>
                             <?= $materials_html ?>
                         </select> 
                     </div>
                     <label for="material-quantity">QUANTITY</label>
-                    <input data-exp="0" class="width-auto material_quan" type="text" id="material_quantity-0" name="material_quantity-0" placeholder="QUANTITY" value="0" >
+                    <input data-exp="100" class="width-auto material_quan" type="text" id="material_quantity-100" name="material_quantity-100" placeholder="QUANTITY" value="0" >
                      <label for="material-cost" class="ml-1">COST</label>
-                    <input data-exp="0" class="width-auto" type="text" id="material_cost-0" name="material_cost-0" placeholder="$" value="0.00">
+                    <input data-exp="100" class="width-auto" type="text" id="material_cost-100" name="material_cost-100" placeholder="$" value="0.00">
                     <span class="remove-add"><i data-exp="0" class="fas fa-times"></i></span>
                 </div>
             
@@ -153,6 +162,11 @@
 
 <script>
 jQuery(document).ready(function($){
+
+    $('.view-lh').on("click", function(e) {
+        e.preventDefault();
+        $('.lh_container').toggle();
+    })
 
     $(document).on('change', 'select', function() {
         
@@ -224,8 +238,6 @@ jQuery(document).ready(function($){
 		if(x < max_fields){ //max input box allowed
 			x++; //text box increment
 			$(wrapper).append('<div class="supplier_materials"><label for="material-expense">MATERIAL EXPENSE</label><div class="manual-entry material_expense_supplier-' + x + '-manual-entry half-size"><input type="text" id="material_expense_supplier-' + x + '-manual-entry" name="material_expense_supplier-' + x + '-manual-entry" placeholder="MANUAL ENTRY" value=""><span class="cancel-link" data-field="material_expense_supplier-' + x + '">X</span></div><div class="material_expense_supplier-' + x + '-container material_expense_supplier_container select-wrapper half-size"><select id="material_expense_supplier-' + x + '" name="material_expense_supplier-' + x + '" data-exp="' + x + '"><option value="-">SELECT A MATERIAL EXPENSE</option><?= $materials_html ?></select></div> <label for="material-quantity">QUANTITY</label><input data-exp="' + x + '" class="width-auto material_quan" type="text" id="material_quantity-' + x + '" name="material_quantity-' + x + '" placeholder="QUANTITY" value="0"> <label for="material-cost" class="ml-1">COST</label><input data-exp="' + x + '" class="width-auto material_quan" type="text" id="material_cost-' + x + '" name="material_cost-' + x + '" placeholder="$" value="0.00" ><span class="remove-add"><i data-exp="' + x + '" class="fas fa-times"></i></span></div>'); 
-
-            /* <option value="-">SELECT A MATERIAL EXPENSE</option><option value="manual">--- manual entry</option><option value="22" data-unit="sheet" data-inv="20" data-cost="38.21">**LOW - paper - Polar Gloss Metallic 255, 13x19 by sheet (Red River) [sheet]</option><option value="322" data-unit="length" data-inv="100" data-cost="114.00">moulding - Bass 530, 3/4" (Foster Mill & Planing) [length]</option><option value="124" data-unit="each" data-inv="1" data-cost="9.99">matboard - White matboard (Hobby Lobby) [each]</option> */
 		}
     });
     

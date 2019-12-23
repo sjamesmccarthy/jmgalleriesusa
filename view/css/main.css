@@ -3539,8 +3539,24 @@ input[type="text"].amazing-offer-error {
   cursor: pointer;
 }
 
+.inventory-add--container .vtop {
+  vertical-align: top;
+}
+
 .inventory-add--container .ml-1 {
   margin-left: 1rem;
+}
+
+.inventory-add--container .view-lh {
+  display: block;
+  margin-top: -10px;
+  margin-bottom: 1rem;
+}
+
+.inventory-add--container .lh_container {
+  display: none;
+  margin-left: 20px;
+  margin-bottom: 2rem;
 }
 
 .inventory-add--container .material_expense_supplier_container {
