@@ -779,6 +779,7 @@ class Core_Api
                 INNER JOIN supplier_materials AS SM ON ACS.supplier_materials_id = SM.supplier_materials_id
                 -- INNER JOIN supplier AS S ON SM.supplier_id = S.supplier_id
                 LEFT OUTER JOIN supplier AS S ON SM.supplier_id = S.supplier_id
+                -- WHERE S.supplier_id NOT IN (18)
                 ORDER BY SM.material_type ASC
             ";
         
@@ -811,16 +812,10 @@ class Core_Api
                 AC.ink,
                 AC.frame,
                 AC.mat,
-                AC.glazing,
                 AC.backing,
                 AC.packaging,
                 AC.shipping,
-                AC.hanger, 
-                AC.misc,
-                AC.commission
-                -- AC.print + AC.frame + AC.mat + AC.backing + AC.packaging + AC.shipping + AC.ink + AC.commission AS T_COST,
-                -- A.value AS VALUE,
-                -- A.value - (AC.print + AC.frame + AC.mat + AC.backing + AC.packaging + AC.shipping + AC.ink + AC.commission) AS MARGIN
+                AC.hanger
             FROM
                 art AS A
                 INNER JOIN art_costs AS AC ON AC.art_id = A.art_id

@@ -43,28 +43,6 @@
         }
 
     }
-
-    .manual-entry {
-        // display: none;
-        position: relative;
-
-       &.show {
-            display: inline-block;
-        }
-
-        .cancel-link {
-            position: absolute;
-            top: 0px;
-            right: 0px;
-            font-size: .8rem;
-            background-color: $color-secondary-background;
-            padding: 5px;
-
-            &:hover {
-                cursor: pointer;
-            }
-        }
-    }
     
     .vtop {
         vertical-align: top;

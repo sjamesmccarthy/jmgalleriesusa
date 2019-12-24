@@ -3541,27 +3541,6 @@ input[type="text"].amazing-offer-error {
   display: none !important;
 }
 
-.inventory-add--container .manual-entry {
-  position: relative;
-}
-
-.inventory-add--container .manual-entry.show {
-  display: inline-block;
-}
-
-.inventory-add--container .manual-entry .cancel-link {
-  position: absolute;
-  top: 0px;
-  right: 0px;
-  font-size: .8rem;
-  background-color: #d6d8db;
-  padding: 5px;
-}
-
-.inventory-add--container .manual-entry .cancel-link:hover {
-  cursor: pointer;
-}
-
 .inventory-add--container .vtop {
   vertical-align: top;
 }
