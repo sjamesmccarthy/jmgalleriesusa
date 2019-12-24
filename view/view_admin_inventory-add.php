@@ -123,26 +123,6 @@
 
                 <?= $costs_html ?>
 
-                <div class="supplier_materials">
-
-                    <label for="material-expense">MATERIAL EXPENSE</label>
-                    <div class="manual-entry material_expense_supplier-100-manual-entry half-size">
-                        <input type="text" class="" id="material_expense_supplier-100-manual-entry" name="material_expense_supplier-100-manual-entry" placeholder="MANUAL ENTRY" value="">
-                        <span class="cancel-link" data-field="material_expense_supplier-100">X</span>
-                    </div>
-                    <div class="material_expense_supplier-100-container material_expense_supplier_container select-wrapper half-size">
-                        <select data-exp="100" id="material_expense_supplier-100" name="material_expense_supplier-100">
-                            <option value="-">SELECT A MATERIAL EXPENSE</option>
-                            <?= $materials_html ?>
-                        </select> 
-                    </div>
-                    <label for="material-quantity">QUANTITY</label>
-                    <input data-exp="100" class="width-auto material_quan" type="text" id="material_quantity-100" name="material_quantity-100" placeholder="QUANTITY" value="0" >
-                     <label for="material-cost" class="ml-1">COST</label>
-                    <input data-exp="100" class="width-auto" type="text" id="material_cost-100" name="material_cost-100" placeholder="$" value="0.00">
-                    <span class="remove-add"><i data-exp="0" class="fas fa-times"></i></span>
-                </div>
-            
             </div>
 
             <!-- <div class="total_exp">
@@ -171,20 +151,21 @@ jQuery(document).ready(function($){
     $(document).on('change', 'select', function() {
         
         var data_exp = $(this).attr('data-exp');
-        var container_class = '.' + $(this).prop('id') + '-container';
+        var container_class = '.material-supplier-' + data_exp + '-container';
+        var container_class_manual = '.material_supplier-' + data_exp + '-container-manual-entry';
+        // material_supplier-101-container-manual-entry hide
         var ele_id = 'select#' + $(this).prop('id');
-        var input_ele_id = '.' + $(this).prop('id') + '-manual-entry';
-        
-        console.log(data_exp);
-        // console.log('container_class: ' + $(this).prop('id') + '-container' );
-        // console.log('ele_id: ' + $(this).prop('id') );
-        // console.log('input_ele_id: ' + $(this).prop('id') + '-manual-entry');
 
-         if( $(ele_id).prop('selectedIndex') == 1) {
-             $(container_class).hide();
-             console.log('index1');
-             $(input_ele_id).addClass('show');
-         }
+        if( $(ele_id).prop('selectedIndex') == 1) {
+           
+            // console.log(container_class + '-manual-entry'); 
+
+            $(container_class_manual).show();
+            $(ele_id).prop('selectedIndex','0');
+
+            $(container_class).hide();
+
+        }
 
     });
 
@@ -200,6 +181,8 @@ jQuery(document).ready(function($){
         var data_inv = $(ele).find(':selected').attr('data-inv');
         var data_cost = $(ele).find(':selected').attr('data-cost');
         var data_cost_unit_math = (data_cost / data_inv) * data_quan;
+
+        console.log(ele.val());
 
         if(isNaN(data_cost_unit_math)) {
             var data_cost_unit_math = 0.00;
@@ -219,10 +202,6 @@ jQuery(document).ready(function($){
         var ele_id = 'select#' + $(this).attr('data-field');
         var input_ele_id = '.' + $(this).attr('data-field') + '-manual-entry';
 
-        // console.log(container_class);
-        // console.log(ele_id);
-        // console.log(input_ele_id);
-
         $(container_class).show();
         $(input_ele_id).removeClass('show');
         $(ele_id).prop('selectedIndex','0');
@@ -237,7 +216,7 @@ jQuery(document).ready(function($){
 		e.preventDefault();
 		if(x < max_fields){ //max input box allowed
 			x++; //text box increment
-			$(wrapper).append('<div class="supplier_materials"><label for="material-expense">MATERIAL EXPENSE</label><div class="manual-entry material_expense_supplier-' + x + '-manual-entry half-size"><input type="text" id="material_expense_supplier-' + x + '-manual-entry" name="material_expense_supplier-' + x + '-manual-entry" placeholder="MANUAL ENTRY" value=""><span class="cancel-link" data-field="material_expense_supplier-' + x + '">X</span></div><div class="material_expense_supplier-' + x + '-container material_expense_supplier_container select-wrapper half-size"><select id="material_expense_supplier-' + x + '" name="material_expense_supplier-' + x + '" data-exp="' + x + '"><option value="-">SELECT A MATERIAL EXPENSE</option><?= $materials_html ?></select></div> <label for="material-quantity">QUANTITY</label><input data-exp="' + x + '" class="width-auto material_quan" type="text" id="material_quantity-' + x + '" name="material_quantity-' + x + '" placeholder="QUANTITY" value="0"> <label for="material-cost" class="ml-1">COST</label><input data-exp="' + x + '" class="width-auto material_quan" type="text" id="material_cost-' + x + '" name="material_cost-' + x + '" placeholder="$" value="0.00" ><span class="remove-add"><i data-exp="' + x + '" class="fas fa-times"></i></span></div>'); 
+			$(wrapper).append('<div class="supplier_materials"><!-- manual entry container --><div class="material_supplier-' + x + '-container-manual-entry hide"><label for="material-expense">MATERIAL EXPENSE</label><div class="manual-entry material_expense_supplier-' + x + '-manual-entry half-size"><input type="text" id="material_expense_supplier-' + x + '-manual-entry" name="material_expense_supplier-manual-entry[]" placeholder="MANUAL ENTRY" value=""></div><label for="material-quantity">QUANTITY</label><input data-exp="' + x + '" class="width-auto material_quan" type="text" id="material_quantity-' + x + '-manual-entry" name="material_quantity-manual-entry[]" placeholder="QUANTITY" value="0"><label for="material-cost" class="ml-1">COST</label><input data-exp="' + x + '" class="width-auto material_quan" type="text" id="material_cost-' + x + '-manual-entry" name="material_cost-manual-entry[]" placeholder="$" value="0.00" ><span class="remove-add"><i data-exp="' + x + '" class="fas fa-times"></i></span></div><!-- /manual entry container --><!-- supplier row --><div class="material-supplier-' + x + '-container"><div class="material_expense_supplier-' + x + '-container material_expense_supplier_container select-wrapper half-size"><select id="material_expense_supplier-' + x + '" name="material_expense_supplier[]" data-exp="' + x + '"><option value="-">SELECT A MATERIAL EXPENSE</option><?= $materials_html ?></select></div> <label for="material-quantity">QUANTITY</label><input data-exp="' + x + '" class="width-auto material_quan" type="text" id="material_quantity-' + x + '" name="material_quantity[]" placeholder="QUANTITY" value=""><label for="material-cost" class="ml-1">COST</label><input data-exp="' + x + '" class="width-auto material_quan" type="text" id="material_cost-' + x + '" name="material_cost[]" placeholder="$" value="" ><span class="remove-add"><i data-exp="' + x + '" class="fas fa-times"></i></span></div><!-- /supplier row --></div>'); 
 		}
     });
     

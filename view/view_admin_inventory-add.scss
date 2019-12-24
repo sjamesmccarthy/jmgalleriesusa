@@ -1,5 +1,13 @@
 .inventory-add--container {
 
+    .hide {
+        display: none;
+    }
+
+    .show {
+        display: block;
+    }
+
     h6 {
         margin: 1rem 0;
     }
@@ -19,8 +27,25 @@
         margin-left: 1rem;
     }
 
-    .manual-entry {
+     .material_supplier-container-manual-entry {
         display: none;
+
+         &.show {
+            display: block;
+        }
+    }
+
+    .material-supplier-container {
+        display: block;
+        
+        &.no-show {
+            display: none!important;
+        }
+
+    }
+
+    .manual-entry {
+        // display: none;
         position: relative;
 
        &.show {
@@ -41,25 +66,25 @@
         }
     }
     
-.vtop {
-    vertical-align: top;
-}
+    .vtop {
+        vertical-align: top;
+    }
 
-.ml-1 {
-    margin-left: 1rem;
-}
+    .ml-1 {
+        margin-left: 1rem;
+    }
 
-.view-lh {
-    display: block;
-    margin-top: -10px;
-    margin-bottom: 1rem;
-}
+    .view-lh {
+        display: block;
+        margin-top: -10px;
+        margin-bottom: 1rem;
+    }
 
-.lh_container {
-    display: none;
-    margin-left: 20px;
-    margin-bottom: 2rem;
-}
+    .lh_container {
+        display: none;
+        margin-left: 20px;
+        margin-bottom: 2rem;
+    }
 
     .material_expense_supplier_container {
         margin-left: 0 !important;

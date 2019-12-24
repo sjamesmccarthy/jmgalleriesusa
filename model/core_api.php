@@ -858,6 +858,7 @@ class Core_Api
                     (CASE 
                         WHEN SM.unit_type = 'each' THEN SM.cost
                         WHEN SM.unit_type = 'hourly' THEN SM.cost * ACS.usage
+                        WHEN SM.unit_type = 'feet' THEN (SM.cost/SM.quantity) * ACS.usage
                         ELSE (SM.cost/SM.quantity)
                     END) AS calcd_cost
                 FROM

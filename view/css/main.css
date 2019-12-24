@@ -3499,6 +3499,14 @@ input[type="text"].amazing-offer-error {
   width: initial;
 }
 
+.inventory-add--container .hide {
+  display: none;
+}
+
+.inventory-add--container .show {
+  display: block;
+}
+
 .inventory-add--container h6 {
   margin: 1rem 0;
 }
@@ -3517,8 +3525,23 @@ input[type="text"].amazing-offer-error {
   margin-left: 1rem;
 }
 
-.inventory-add--container .manual-entry {
+.inventory-add--container .material_supplier-container-manual-entry {
   display: none;
+}
+
+.inventory-add--container .material_supplier-container-manual-entry.show {
+  display: block;
+}
+
+.inventory-add--container .material-supplier-container {
+  display: block;
+}
+
+.inventory-add--container .material-supplier-container.no-show {
+  display: none !important;
+}
+
+.inventory-add--container .manual-entry {
   position: relative;
 }
 
