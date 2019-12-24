@@ -96,7 +96,7 @@
 
             <div>
                 <h6>Certificate of Authenticity Data</h6>
-            <div>
+            </div>
 
             <div>
                 <label for="serial_num">SERIAL NUM</label>
@@ -119,10 +119,9 @@
             
             <div id="supplier_materials_wrapper" class="mt-32">
                 
-                <h6>Material Expenses <span class="material-add"><i class="fas fa-plus-circle"></i></span> </h6>
-
+                <h6>Material Expenses</h6>
                 <?= $costs_html ?>
-
+                <p class="material-add"><i class="fas fa-plus-circle"></i></p> 
             </div>
 
             <!-- <div class="total_exp">

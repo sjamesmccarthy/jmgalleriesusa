@@ -3499,6 +3499,10 @@ input[type="text"].amazing-offer-error {
   width: initial;
 }
 
+.inventory-add--container #material_expenses_list {
+  padding: 1rem 0;
+}
+
 .inventory-add--container .hide {
   display: none;
 }
@@ -3508,7 +3512,7 @@ input[type="text"].amazing-offer-error {
 }
 
 .inventory-add--container h6 {
-  margin: 1rem 0;
+  padding: 1rem 0 1.2rem 0;
 }
 
 .inventory-add--container .half-size {
@@ -3569,6 +3573,7 @@ input[type="text"].amazing-offer-error {
   font-size: 1.2rem;
   margin-left: 15px;
   vertical-align: middle;
+  padding-bottom: 1rem;
 }
 
 .inventory-add--container .material-add:hover, .inventory-add--container .remove-add:hover {

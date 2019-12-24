@@ -1,5 +1,9 @@
 .inventory-add--container {
 
+    #material_expenses_list {
+        padding: 1rem 0;
+    }
+
     .hide {
         display: none;
     }
@@ -9,7 +13,7 @@
     }
 
     h6 {
-        margin: 1rem 0;
+        padding: 1rem 0 1.2rem 0;
     }
 
     .half-size {
@@ -72,6 +76,7 @@
         font-size: 1.2rem;
         margin-left: 15px;
         vertical-align: middle;
+        padding-bottom: 1rem;
 
         &:hover {
             cursor: pointer;
