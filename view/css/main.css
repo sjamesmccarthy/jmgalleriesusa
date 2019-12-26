@@ -3652,7 +3652,6 @@ input[type="text"].amazing-offer-error {
 
 .inventory-add--container form .coa_list {
   padding: 40px;
-  background-color: #fff3cd;
   color: #856404;
   border-radius: 5px;
 }
@@ -3668,7 +3667,6 @@ input[type="text"].amazing-offer-error {
 }
 
 .inventory-add--container form .coa_list_found {
-  background-color: #d6d8db;
   color: #383d41;
 }
 

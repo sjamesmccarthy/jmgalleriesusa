@@ -64,7 +64,7 @@
             }
 
         } else {
-            $coa_html = "<p class='coa_list'>No COAs fround for this artwork, perhaps it hasn't been sold yet.</p>";
+            $coa_html = "<p class='coa_list'>No COAs were found for this artwork, perhaps it hasn't been sold yet.</p>";
         }
 
         /* Costs for Art */
