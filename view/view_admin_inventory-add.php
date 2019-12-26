@@ -6,7 +6,7 @@
     
         <div class="col-9 inventory-add--container">
 
-            <h2 class="pb-32"><?= $page_title ?></h2>
+            <h2 class="pb-32"><?= $this->page->title ?></h2>
 
             <h1><?= $formTitle ?></h1>
 
@@ -124,10 +124,6 @@
                 <p class="material-add"><i class="fas fa-plus-circle"></i></p> 
             </div>
 
-            <!-- <div class="total_exp">
-                TOTAL EXPENSES: <input style="width: 100px; background-color: #FFF;" type="text" id="total_exp_calc" value="0.00">
-            </div> -->
-
             <button class="mt-32" id="sendform" value="SEND"><?= $button_label ?></button>
             <?= $button_archive_cancel ?>
             </form>
@@ -152,19 +148,18 @@ jQuery(document).ready(function($){
         var data_exp = $(this).attr('data-exp');
         var container_class = '.material-supplier-' + data_exp + '-container';
         var container_class_manual = '.material_supplier-' + data_exp + '-container-manual-entry';
-        // material_supplier-101-container-manual-entry hide
         var ele_id = 'select#' + $(this).prop('id');
 
         if( $(ele_id).prop('selectedIndex') == 1) {
            
-            // console.log(container_class + '-manual-entry'); 
-
             $(container_class_manual).show();
             $(ele_id).prop('selectedIndex','0');
 
             $(container_class).hide();
             $(container_class + " select").attr("disabled", true);
             $(container_class + " input").attr("disabled", true);
+        } else {
+            $(container_class_manual + " input").attr("disabled", true);
         }
 
     });
@@ -222,15 +217,6 @@ jQuery(document).ready(function($){
     
     $(wrapper).on("click",'.remove-add', function(e){ 
         e.preventDefault(); 
-
-        /* create exp data-att, etc */
-        // var data_exp = $(this).attr('data-exp');
-        // var ele = $('#material_cost-' + data_exp);
-        // console.log( 'cost-value-removed: ' + $('#material_cost-' + data_exp).val() );
-        // var fetch_total = parseFloat($('#total_exp_calc').val()) - parseFloat(data_cost_unit);
-        // var total = fetch_total;
-        // $('#total_exp_calc').val(total);
-
         $(this).parent('div').remove(); 
         x--;
 	})

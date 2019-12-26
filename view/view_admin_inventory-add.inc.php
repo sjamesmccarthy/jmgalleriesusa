@@ -121,7 +121,7 @@
             $materials_html_a = null;
         }
     }
-        $page_title = "Editing <b>" . $title . "</b> finished artwork.";
+        $this->page->title = "Editing <b>" . $title . "</b> finished artwork.";
         $formTypeAction = "update";
         $button_label="update artwork: " . $title;
         $button_archive_cancel = '<a class="cancel-button" href="/studio/inventory">cancel</a>';
@@ -132,7 +132,7 @@
     } else {
         $formTypeAction = "insert";
         $button_label = "add new artwork";
-        $page_title = "Adding <b>New Artwork</b> to Inventory";
+        $this->page->title = "Adding <b>New Artwork</b> to Inventory";
         $button_archive_cancel = '<a class="cancel-button" href="/studio/inventory">cancel</a>';
         $this->nav_label_inventory = "Adding Artwork";
         $reg_num = time();

@@ -14,7 +14,7 @@
         <!-- <input type="text" style="width: 25%"  name="contactlastname" id="contactlastname" placeholder="Last Name" /> -->
         <div class="subscribe-form-container">
         <i class="far fa-envelope form-icon"></i>
-        <input type="text" class="subscribe-form-input" name="subcontactemail" id="subcontactemail" placeholder="your@email.com" />
+        <input tabindex="-1" type="text" class="subscribe-form-input" name="subcontactemail" id="subcontactemail" placeholder="your@email.com" />
         <button id="subBtn" class="subscribe-form-button"><i class="fas fa-arrow-right"></i></button>
         </div>
 </form>
