@@ -221,16 +221,17 @@ button {
     min-width: 50px;
 }
 
+button:hover {
+    background-color: #2574A9;
+    color: #FFF;
+    cursor: pointer;
+}
+
 button a {
     color: #2574A9;
 }
 
-button:hover, button a:hover {
-    /* border-color:   #FFF; */
-    background-color: #2574A9;
-    cursor: pointer;
-    color: #FFF;
-}
+
 
 /* FORMS */
 

@@ -26,7 +26,7 @@
     <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.20/r-2.2.3/sl-1.3.1/datatables.min.js"></script>
 
     <!-- Overrides, need to combine this with appropriate scss files, but for now deal with it -->
-    <link rel="stylesheet" href="/view/css/overrides.css">
+    <link rel="stylesheet" href="/view/css/overrides.css?<?= time(); ?>">
     
 
     <script>

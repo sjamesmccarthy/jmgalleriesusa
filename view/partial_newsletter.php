@@ -1,6 +1,6 @@
 <script src="https://www.google.com/recaptcha/api.js?render=6LetD7YUAAAAAFX5cXupV3exd1YCSuYFY_az92Wh"></script>
 
-<div class="newsletter-container">
+<!-- <div class="newsletter-container">
 
     <form id="subscribeForm" action="/view/ajax_email_process.php" method="POST">
     <input type="hidden" id="formType" name="formType" value="SubscribeForm" />
@@ -10,8 +10,6 @@
     <h4 class="text-l">MONTHLY NEWSLETTER</h4>
     <p class="subheadline pb-16 text-l">Have a new release photo delivered right to your inbox!</p>
     
-        <!-- <input type="text" style="width: 25%" name="contactfirstname" id="contactfirstname" placeholder="First Name" /> -->
-        <!-- <input type="text" style="width: 25%"  name="contactlastname" id="contactlastname" placeholder="Last Name" /> -->
         <div class="subscribe-form-container">
         <i class="far fa-envelope form-icon"></i>
         <input tabindex="-1" type="text" class="subscribe-form-input" name="subcontactemail" id="subcontactemail" placeholder="your@email.com" />
@@ -19,8 +17,34 @@
         </div>
 </form>
     <p id="form_response-subscribe"></p>
+</div> -->
+
+<h4 class="text-l">SUBSCRIBE<br />TO OUR NEWSLETTER</h4>
+<!-- <p class="subheadline pb-16 text-l">Have a new release photo delivered right to your inbox!</p> -->
+
+<!-- Begin Mailchimp Signup Form -->
+<!-- <link href="//cdn-images.mailchimp.com/embedcode/horizontal-slim-10_7.css" rel="stylesheet" type="text/css"> -->
+<!-- <style type="text/css"> -->
+<!-- /* Add your own Mailchimp form style overrides in your site stylesheet or in this style block. -->
+<!-- We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */ -->
+<!-- </style> -->
+<div id="mc_embed_signup">
+<form action="https://jmgalleries.us16.list-manage.com/subscribe/post?u=7fe25703399796912d1b5d6f8&amp;id=a869c7c419" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+  <div id="mc_embed_signup_scroll">
+	  <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required>
+    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+    <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_7fe25703399796912d1b5d6f8_a869c7c419" tabindex="-1" value=""></div>
+    <div class="clear mc-inline">
+      <!-- <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"> -->
+      <button type="submit" class="btn btn-success">
+        <i class="fas fa-chevron-right"></i>
+      </button>
+    </div>
+  </div>
+</form>
 </div>
 
+<!--End mc_embed_signup-->
 
 <script>
 

@@ -53,7 +53,8 @@ class Core_Api
                     RIGHT JOIN catalog_category AS CATE ON PH.catalog_category_id = CATE.catalog_category_id
                 WHERE
                     CATE.path = '" . $catalog_path ."'
-                AND PH.status = 'ACTIVE'";
+                AND PH.status = 'ACTIVE'
+                ORDER BY PH.created DESC";
 
             $result = $this->mysqli->query($sql);
 
@@ -170,11 +171,11 @@ class Core_Api
                 catalog_photo AS P
             INNER JOIN catalog_category AS C ON C.catalog_category_id = P.catalog_category_id
             WHERE
-                created < Now()
-                AND created > DATE_ADD(Now(), INTERVAL - " . $duration . " MONTH)
+                -- created < Now() AND 
+                created > DATE_ADD(Now(), INTERVAL - " . $duration . " MONTH)
            " . $rand . " AND P.status = 'ACTIVE'
             ORDER BY created DESC LIMIT " . $limit;
-	
+    
             $result = $this->mysqli->query($sql);
 
             if ($result->num_rows > 0) {
@@ -737,7 +738,7 @@ class Core_Api
 		        {
 		            $data[] = $row;
 		        }
-                
+
             } 
             
         }

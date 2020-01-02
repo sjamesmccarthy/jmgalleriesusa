@@ -4,7 +4,7 @@ if(isSet($this->data->routePathQuery[0])) {
     $photo_split = explode("=", $this->data->routePathQuery[0]);
     $photo = $photo_split[1];
     $formTitle = "CHECKOUT";
-    $subTitle = "Thank you for your interest in collecting a jM Fine-Art Limited Edition <b>" . $photo . "</b>";
+    $subTitle = "Thank you for your interest in collecting a j.McCarthy Limited Edition <b>" . $photo . "</b>";
     $subject_PH = "PURCHASING " . strtoupper($photo);
     $message_PH = "PLEASE TELL US A LITTLE BIT MORE ABOUT YOUR PURCHASE. <ul class='contact-ul mb-16'><li>Edition: Gallery or Studio</li><li>Size: 16x24, 20x30, 24x36, etc.</li><li>Frame: Yes / No</li><li>Ship (Provide Postal Code) or Pickup (Las Vegas, Nevada)</li><li>Phone Number, An art consultant will contact you within 24 hours to complete this order</li></ul>";
     $button_label = "PLACE YOUR ORDER";
