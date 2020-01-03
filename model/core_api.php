@@ -963,23 +963,23 @@ class Core_Api
         if( $this->checkDBConnection(__FUNCTION__) == true) {
 
             $sql = "SELECT
-	ALH.*,
-	AL.location,
-	A.art_id,
-	A.title,
-	CERT.collector_id,
-	COL.last_name
-FROM
-	art_locations_history AS ALH
-	INNER JOIN art AS A ON A.art_id = ALH.art_id
-	INNER JOIN art_locations AS AL ON ALH.art_location_id = AL.art_location_id
-	RIGHT JOIN certificate AS CERT ON CERT.art_id = ALH.art_id
-	RIGHT JOIN collector AS COL ON COL.collector_id = CERT.collector_id
+                ALH.*,
+                AL.location,
+                A.art_id,
+                A.title
+                -- CERT.collector_id,
+                -- COL.last_name
+            FROM
+                art_locations_history AS ALH
+                INNER JOIN art AS A ON A.art_id = ALH.art_id
+                INNER JOIN art_locations AS AL ON ALH.art_location_id = AL.art_location_id
+                -- RIGHT JOIN certificate AS CERT ON CERT.art_id = ALH.art_id
+                -- RIGHT JOIN collector AS COL ON COL.collector_id = CERT.collector_id
             WHERE
                 ALH.art_id='" . $art_id . "' ORDER BY ALH.date_started";
     
             $result = $this->mysqli->query($sql);
-
+            
             if ($result->num_rows > 0) {
             
                 while($row = $result->fetch_assoc())
@@ -1139,6 +1139,106 @@ FROM
 
     }
 
+    public function api_Admin_Update_Inventory_Location() {
+
+        /* extract Data Array */
+        extract($_POST, EXTR_PREFIX_SAME, "dup");
+        $date = date("Y-m-d H:i:s");
+
+        // $this->printp_r($_POST);
+        /* If state_ is set than update last record with end date */
+        if(isSet($state_location_id) && $state_location_id != $art_location) {
+
+            $sql_u = "
+            UPDATE `art_locations_history` 
+            SET
+                `date_ended`='$date'
+            WHERE 
+                art_id='" . $art_id . "' AND art_location_id='" . $state_location_id . "'";
+
+            $result_u = $this->mysqli->query($sql_u);
+        }
+
+        /* Insert into database */
+        if(!isSet($_POST['state_location_id']) || $state_location_id != $art_location) {
+
+            $sql = "
+            INSERT INTO `art_locations_history` 
+            (
+                `art_locations_history_id`, 
+                `art_id`, 
+                `art_location_id`, 
+                `date_started`
+            ) VALUES ( 
+                DEFAULT, 
+                '$art_id', 
+                '$art_location',
+                '$date'
+            )";
+
+            $result = $this->mysqli->query($sql);
+
+            if($result == 1) {
+                $_SESSION['error'] = '200';
+                $_SESSION['notify_msg'] = $_POST['title'];
+                $this->log(array("key" => "admin", "value" => "Location Change for Inventory Art (" . $_POST['art_id'] . "+" . $_POST['title'] . ") Successsfully", "type" => "success"));
+            } else {
+                $_SESSION['error'] = '400';
+                $this->log(array("key" => "admin", "value" => "Failed Location Change for Inventory Art (" . $_POST['art_id'] . "+" . $_POST['title'] . ")", "type" => "failure"));
+            }
+        } 
+    }
+   
+    public function api_Admin_Update_Inventory_Collector() {
+
+        /* extract Data Array */
+        extract($_POST, EXTR_PREFIX_SAME, "dup");
+        $date = date("Y-m-d H:i:s");
+
+        // $this->printp_r($_POST);
+        /* If state_ is set than update last record with end date */
+        if(isSet($state_collector_id) && $state_collector_id != $collector) {
+
+            $sql_u = "
+            UPDATE `art_locations_history` 
+            SET
+                `date_ended`='$date'
+            WHERE 
+                art_id='" . $art_id . "' AND art_location_id='" . $state_location_id . "'";
+
+            // $result_u = $this->mysqli->query($sql_u);
+        }
+
+        /* Insert into database */
+        if(!isSet($_POST['state_collector_id']) || $state_collector_id != $collector) {
+
+            $sql = "
+            INSERT INTO `art_locations_history` 
+            (
+                `art_locations_history_id`, 
+                `art_id`, 
+                `art_location_id`, 
+                `date_started`
+            ) VALUES ( 
+                DEFAULT, 
+                '$art_id', 
+                '$art_location',
+                '$date'
+            )";
+
+            // $result = $this->mysqli->query($sql);
+
+            if($result == 1) {
+                $_SESSION['error'] = '200';
+                $_SESSION['notify_msg'] = $_POST['title'];
+                $this->log(array("key" => "admin", "value" => "Location Change for Inventory Art (" . $_POST['art_id'] . "+" . $_POST['title'] . ") Successsfully", "type" => "success"));
+            } else {
+                $_SESSION['error'] = '400';
+                $this->log(array("key" => "admin", "value" => "Failed Location Change for Inventory Art (" . $_POST['art_id'] . "+" . $_POST['title'] . ")", "type" => "failure"));
+            }
+        } 
+    }
+
     public function api_Admin_Update_Inventory() {
 
         /* extract Data Array */
@@ -1146,41 +1246,43 @@ FROM
 
         /* Insert into database */
         $notes = $this->mysqli->real_escape_string($_POST['notes']);
-        
+        if(empty($_POST['value'])) { $value = '0.00'; }
+
         $sql = "UPDATE art 
         SET 
-        art_location_id='$art_location',
-        serial_num='$serial_num',
-        reg_num='$reg_num',
-        title='$title',
-        negative_file='$negative_file',
-        artist_proof='$artist_proof',
-        series_num='$series_num',
-        edition_num='$edition_num',
-        edition_num_max='$edition_num_max',
-        edition_style='$edition_style',
-        print_size='$print_size',
-        print_media='$print_media',
-        frame_size='$frame_size',
-        frame_material='$frame_material',
-        frame_desc='$frame_desc',
-        notes='$notes',
-        born_date='$born_date',
-        created='$created'
+        `art_location_id`='$art_location',
+        `serial_num`='$serial_num',
+        `reg_num`='$reg_num',
+        `title`='$title',
+        `negative_file`='$negative_file',
+        `artist_proof`='$artist_proof',
+        `series_num`='$series_num',
+        `edition_num`='$edition_num',
+        `edition_num_max`='$edition_num_max',
+        `edition_style`='$edition_style',
+        `print_size`='$print_size',
+        `print_media`='$print_media',
+        `frame_size`='$frame_size',
+        `frame_material`='$frame_material',
+        `frame_desc`='$frame_desc',
+        `notes`='$notes',
+        `born_date`='$born_date',
+        `listed`='$listed',
+        `value`='$value'
         WHERE art_id = '$art_id'";
 
         $result = $this->mysqli->query($sql);
-        
+
         if($result == 1) {
             $_SESSION['error'] = '200';
             $_SESSION['notify_msg'] = $_POST['title'];
             $this->log(array("key" => "admin", "value" => "Updated Inventory Art (" . $_POST['art_id'] . "+" . $_POST['title'] . ") Successsfully", "type" => "success"));
-            
-
         } else {
             $_SESSION['error'] = '400';
             $this->log(array("key" => "admin", "value" => "Failed Update Inventory Art (" . $_POST['art_id'] . "+" . $_POST['title'] . ")", "type" => "failure"));
         }
+
+        // $this->printp_r($_POST);
         
     }
     
@@ -1193,7 +1295,7 @@ FROM
         $title = $this->mysqli->real_escape_string($_POST['title']);
         $frame_desc = $this->mysqli->real_escape_string($_POST['frame_desc']);
         $notes = $this->mysqli->real_escape_string($_POST['notes']);
-        if($_POST['value'] == '') { $value = '0.00'; }
+        if(empty($_POST['value'])) { $value = '0.00'; }
 
         $sql = "
         INSERT INTO `art` (
@@ -1242,9 +1344,8 @@ FROM
             '$value'
             )";
 
-        print $sql;
-
         $result = $this->mysqli->query($sql);
+        $_POST['art_id'] = $this->mysqli->insert_id;
 
         if($result == 1) {
             $_SESSION['error'] = '200';

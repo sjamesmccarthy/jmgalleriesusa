@@ -39,6 +39,11 @@
             </div>
 
             <div>
+                <label for="title">Acquired From & Condition Notes</label>
+                <input maxlength="255" type="text" id="acquired_from" name="acquired_from" placeholder="Acquired From and Condition Notes" value="" disabled>
+            </div>
+
+            <div>
                 <label for="title">TITLE</label>
                 <input class="half-size" maxlength="255" type="text" id="title" name="title" placeholder="TITLE" value="<?= $title ?>" required>
                 <label for="edition-style">EDITION-STYLE</label>
