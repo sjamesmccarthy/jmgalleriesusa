@@ -1,12 +1,12 @@
 <?php
 /**
  * @Author: James McCarthy <sjamesmccarthy>
- * @Date:   12-07-2019 11:46:38 AM
+ * @Date:   01-02-2019 11:46:38 AM
  * @Email:  james@jmgalleries.com
- * @Filename: ajax_admin_catalog_process.php
+ * @Filename: ajax_admin_inventory_process.php
  * @Last modified by:   sjamesmccarthy
- * @Created  date: 12-07-2019 11:46:38 AM
- * @Last modified time: 12-07-2019 11:46:38 AM
+ * @Created  date: 01-02-2019 11:46:38 AM
+ * @Last modified time: 
  * @Copyright: 2019
  */
 
@@ -17,23 +17,20 @@
     } else {
         header('location:/studio/signin');
 	}
-
-	$this->printp_r($_POST);
-	exit;
 	
  /* CHECK THE $formType INSERT or UPDATE */
  /* PROCESS THE DATABASE BEFORE THE FILE ATTACHMENTS */
 
-switch($_POST['formType']) {
+switch($_POST['formTypeAction']) {
 
 	case "insert":
-		// $this->api_Admin_Insert_Catalog();
-		// $redirect_to = '/catalog';
+		$this->api_Admin_Insert_Inventory();
+		$redirect_to = '/inventory';
 	break;
 
 	case "update":
-		// $this->api_Admin_Update_Catalog();
-		// $redirect_to = '/catalog';
+		$this->api_Admin_Update_Inventory();
+		$redirect_to = '/inventory';
 	break;
 
 	case "delete":

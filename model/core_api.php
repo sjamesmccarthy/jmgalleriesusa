@@ -1139,5 +1139,124 @@ FROM
 
     }
 
+    public function api_Admin_Update_Inventory() {
+
+        /* extract Data Array */
+        extract($_POST, EXTR_PREFIX_SAME, "dup");
+
+        /* Insert into database */
+        $notes = $this->mysqli->real_escape_string($_POST['notes']);
+        
+        $sql = "UPDATE art 
+        SET 
+        art_location_id='$art_location',
+        serial_num='$serial_num',
+        reg_num='$reg_num',
+        title='$title',
+        negative_file='$negative_file',
+        artist_proof='$artist_proof',
+        series_num='$series_num',
+        edition_num='$edition_num',
+        edition_num_max='$edition_num_max',
+        edition_style='$edition_style',
+        print_size='$print_size',
+        print_media='$print_media',
+        frame_size='$frame_size',
+        frame_material='$frame_material',
+        frame_desc='$frame_desc',
+        notes='$notes',
+        born_date='$born_date',
+        created='$created'
+        WHERE art_id = '$art_id'";
+
+        $result = $this->mysqli->query($sql);
+        
+        if($result == 1) {
+            $_SESSION['error'] = '200';
+            $_SESSION['notify_msg'] = $_POST['title'];
+            $this->log(array("key" => "admin", "value" => "Updated Inventory Art (" . $_POST['art_id'] . "+" . $_POST['title'] . ") Successsfully", "type" => "success"));
+            
+
+        } else {
+            $_SESSION['error'] = '400';
+            $this->log(array("key" => "admin", "value" => "Failed Update Inventory Art (" . $_POST['art_id'] . "+" . $_POST['title'] . ")", "type" => "failure"));
+        }
+        
+    }
+    
+    public function api_Admin_Insert_Inventory() {
+
+        /* extract Data Array */
+        extract($_POST, EXTR_PREFIX_SAME, "dup");
+        
+        /* Insert into database */
+        $title = $this->mysqli->real_escape_string($_POST['title']);
+        $frame_desc = $this->mysqli->real_escape_string($_POST['frame_desc']);
+        $notes = $this->mysqli->real_escape_string($_POST['notes']);
+        if($_POST['value'] == '') { $value = '0.00'; }
+
+        $sql = "
+        INSERT INTO `art` (
+        `art_id`, 
+        `artist_id`, 
+        `art_location_id`, 
+        `serial_num`,
+        `reg_num`, 
+        `title`, 
+        `negative_file`, 
+        `artist_proof`, 
+        `series_num`, 
+        `edition_num`,
+        `edition_num_max`, 
+        `edition_style`, 
+        `print_size`, 
+        `print_media`, 
+        `frame_size`, 
+        `frame_material`, 
+        `frame_desc`, 
+        `notes`, 
+        `born_date`,
+        `listed`,
+        `value`
+        ) VALUES ( 
+            DEFAULT, 
+            '$artist_id', 
+            '$art_location',
+            '$serial_num', 
+            '$reg_num',
+            '$title', 
+            '$negative_file',
+            '$artist_proof',
+            '$series_num',
+            '$edition_num',
+            '$edition_num_max', 
+            '$edition_style',
+            '$print_size',
+            '$print_media',
+            '$frame_size',
+            '$frame_material',
+            '$frame_desc',
+            '$notes',
+            '$born_date',
+            '$listed',
+            '$value'
+            )";
+
+        print $sql;
+
+        $result = $this->mysqli->query($sql);
+
+        if($result == 1) {
+            $_SESSION['error'] = '200';
+            $_SESSION['notify_msg'] = $_POST['title'];
+            $this->log(array("key" => "admin", "value" => "New Inventory Added (" . $_POST['title'] . ") Successsfully", "type" => "success"));
+
+        } else {
+            $_SESSION['error'] = '400';
+            $this->log(array("key" => "admin", "value" => "Failed Insert of Inventory Art (" . $_POST['title'] . ")", "type" => "failure"));
+        }
+
+    }
+
 }
 ?>

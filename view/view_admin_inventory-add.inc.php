@@ -151,7 +151,7 @@
         /* If Editing an existing record */
         if($val_loc['art_location_id'] === $edit_data['art_location_id']) { 
             $selected = "SELECTED"; 
-            $hidden_location_id = '<input type="hidden" name="location_id_state" id="location_id_state" value="' . $edit_data['art_location_id'] . '">';
+            $hidden_location_id = '<input type="hidden" name="state_location_id" id="state_location_id" value="' . $edit_data['art_location_id'] . '">';
         } 
         else { $selected = null; }
 
@@ -167,7 +167,7 @@
         /* If Editing an existing record */
         if($val_col['collector_id'] === $edit_data['collector_id']) { 
             $selected = "SELECTED"; 
-            $hidden_collector_id = '<input type="hidden" name="collector_id_state" id="collector_id_state" value="' . $edit_data['collector_id_state'] . '">';
+            $hidden_collector_id = '<input type="hidden" name="state_collector_id" id="state_collector_id" value="' . $edit_data['collector_id'] . '">';
         } 
         else { $selected = null; }
 
@@ -182,6 +182,5 @@
 
         $collector_html .= '<option ' . $selected . ' value="' . $val_col['collector_id'] . '">' . $val_col['first_name'] . ' ' . $val_col['last_name'] .  $company . '</option>';
     }
-
 
 ?>
