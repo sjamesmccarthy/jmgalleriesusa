@@ -55,6 +55,9 @@
         } 
 
         $coa_data = $this->api_Admin_Get_Inventory_COA($edit_id);
+        // $this->printp_r($coa_data);
+        extract($coa_data[0], EXTR_PREFIX_SAME, "dup");
+        // $edit_data['collector_id'] = $coa_data[0]['collector_id'];
         $edit_data['coa'] = $coa_data;
 
         if( count($edit_data['coa']) > 0) {
@@ -89,34 +92,55 @@
             }
         } else {
 
+        // $this->printp_r($costs_data);
         $x=1;
         // outer loop for the cost_data
         foreach( $costs_data as $key_sc => $val_sc) {
 
-            $costs_html .= '<div class="supplier_materials"><div class="material_expense_supplier-' . $x . '-container material_expense_supplier_container select-wrapper half-size">';
-            $costs_html .= '<label for="material-expense">MATERIAL EXPENSE</label>';
-            $costs_html .= "<select id='material_expense_supplier-" . $x . "' name='material_expense_supplier[]' attr=" . $x . " >";
             // $costs_html .= "<option value='manual'>--- manual entry</option>";
+            
+            if($val_sc['manual_entry'] == "TRUE") {
 
-            foreach( $supplier_materials_data as $key_a => $val_a) {
+                // $manual_entries = "MANUAL ENTRY for supplier_materials_id: " . $val_sc['supplier_materials_id'];
+                // $manual_entries .= " for supply item: ". $val_sc['material_desc'];
+                // $manual_entries .= "  with a cost of  $". $val_sc['calcd_cost'];
+                // $manual_entries .= "  " . $val_sc['unit_type'];
+                // $manual_entries .= "<hr />";
+
+                $manual_entries = '<div class="supplier_materials"><div class="AUTO_GENERATED-- manual-entry material_expense_supplier-' . $x . '-manual-entry half-size show"><label for="material-expense">MATERIAL EXPENSE</label>
+                <input type="hidden" id="hidden-material_expense_supplierid_manual-entry" name="hidden-material_expense_supplierid_manual-entry[]" placeholder="MANUAL ENTRY" value="' . $val_sc['material_desc'] . '">
+                <input type="text" id="material_expense_supplier-' . $x . '_manual-entry" name="material_expense_supplier_manual-entry[]" placeholder="MANUAL ENTRY" value="' . ucwords($val_sc['material_desc']) . '"></div><label class="ml-1" for="material-quantity">QUANTITY</label> <input data-exp="' . $x . '" class="width-auto material_quan" type="text" id="material_quantity-' . $x . '" name="material_quantity_manual-entry[]" placeholder="QUANTITY" value="' . $val_sc['material_used'] . '" ><label class="ml-1" for="material-cost">COST</label><input data-exp="' . $x . '" class="width-auto material_quan" type="text" id="material_cost-' . $x . '" name="material_cost_manual-entry[]" placeholder="$" value="' . $val_sc['calcd_cost'] . '" ><span class="remove-add"><i data-exp="' . $x . '" class="fas fa-times"></i></span></div>'; 
+
+            } else { 
+
+                $costs_html .= '<div class="supplier_materials"><div class="material_expense_supplier-' . $x . '-container material_expense_supplier_container select-wrapper half-size">';
+                $costs_html .= '<label for="material-expense">MATERIAL EXPENSE</label>';
+                $costs_html .= "<select id='material_expense_supplier-" . $x . "' name='material_expense_supplier[]' attr=" . $x . " >";
+                
+                foreach( $supplier_materials_data as $key_a => $val_a) {
+                
+                    if($val_a['supplier_materials_id'] == $val_sc['supplier_materials_id']) { $SELECTED = 'SELECTED'; } else { $SELECTED = null; }
                     
-                if($val_a['supplier_materials_id'] == $val_sc['supplier_materials_id']) { $SELECTED = 'SELECTED'; } else { $SELECTED = null; }
-
-                $materials_html_a .= '<option ' . $SELECTED . ' value="' . $val_a['supplier_materials_id'] . '" ';
-                $materials_html_a .= 'data-unit="' . $val_a['unit_type'] . '" ';
-                $materials_html_a .= 'data-inv="' . $val_a['quantity_bought'] . '"';
-                $materials_html_a .= 'data-cost="' . $val_a['cost'] . '">';
-                $materials_html_a .= $val_a['material_type'] . ", " . $val_a['material_desc'] . ', (' . $val_a['supplier'] . ') [' . $val_a['unit_type'] . ']';
-                $materials_html_a .= '</option>';
+                    $materials_html_a .= '<option ' . $SELECTED . ' value="' . $val_a['supplier_materials_id'] . '" ';
+                    $materials_html_a .= 'data-unit="' . $val_a['unit_type'] . '" ';
+                    $materials_html_a .= 'data-inv="' . $val_a['quantity_bought'] . '"';
+                    $materials_html_a .= 'data-cost="' . $val_a['cost'] . '">';
+                    $materials_html_a .= $val_a['material_type'] . ", " . $val_a['material_desc'] . ', (' . $val_a['supplier'] . ') [' . $val_a['unit_type'] . ']';
+                    $materials_html_a .= '</option>';
                 }
-            $costs_html .= $materials_html_a;
-            $costs_html .= "</select>";
-            $costs_html .= "</div>";
+                
+                $costs_html .= $materials_html_a;
+                $costs_html .= "</select>";
+                $costs_html .= "</div>";
+                
+                $costs_html .= '<label class="ml-1" for="material-quantity">QUANTITY</label>';
+                $costs_html .= '<input  data-exp="' . $x . '" class="width-auto material_quan" type="text" id="material_quantity-' . $x . '" name="material_quantity[]" placeholder="QUANTITY" value="' . $val_sc['material_used'] . '">';
+                $costs_html .= '<label for="material-cost">COST</label>';
+                $costs_html .= '<input  data-exp="' . $x . '" class="width-auto material_quan" type="text" id="material_cost-' . $x . '" name="material_cost[]" placeholder="$" value="$' . $val_sc['calcd_cost'] . '" ><span class="remove-add"><i data-exp="' . $x . '" class="fas fa-times"></i></span></div>';
+            }
+                
+            $costs_html .= $manual_entries;
 
-            $costs_html .= '<label class="ml-1" for="material-quantity">QUANTITY</label>';
-            $costs_html .= '<input  data-exp="' . $x . '" class="width-auto material_quan" type="text" id="material_quantity-' . $x . '" name="material_quantity[]" placeholder="QUANTITY" value="' . $val_sc['material_used'] . '">';
-            $costs_html .= '<label for="material-cost">COST</label>';
-            $costs_html .= '<input  data-exp="' . $x . '" class="width-auto material_quan" type="text" id="material_cost-' . $x . '" name="material_cost[]" placeholder="$" value="$' . $val_sc['calcd_cost'] . '" ><span class="remove-add"><i data-exp="' . $x . '" class="fas fa-times"></i></span></div>';
             $x++;
             $materials_html_a = null;
         }
@@ -142,32 +166,35 @@
     /* CATALOG INDEX */
     $navigation_html = $this->component('admin_navigation');
 
-
     /* LOCATIONS INDEX */
     $location_data = $this->api_Admin_Get_Locations('all');
-
+    
+    // $this->printp_r($edit_data);
+    $i=1;
     foreach($location_data as $key_loc => $val_loc) {
 
         /* If Editing an existing record */
         if($val_loc['art_location_id'] === $edit_data['art_location_id']) { 
             $selected = "SELECTED"; 
+            $loc_idx = $i;
             $hidden_location_id = '<input type="hidden" name="state_location_id" id="state_location_id" value="' . $edit_data['art_location_id'] . '">';
         } 
         else { $selected = null; }
 
         $location_html .= '<option ' . $selected . ' value="' . $val_loc['art_location_id'] . '">' . $val_loc['location'] . '</option>';
+        $i++;
     }
 
     /* COLLECTORS INDEX */
     $collector_data = $this->api_Admin_Get_Collectors_List();
-    // $this->printp_r($collector_data);
 
     foreach($collector_data as $key_col => $val_col) {
 
         /* If Editing an existing record */
-        if($val_col['collector_id'] === $edit_data['collector_id']) { 
+        if($val_col['collector_id'] === $collector_id) { 
             $selected = "SELECTED"; 
-            $hidden_collector_id = '<input type="hidden" name="state_collector_id" id="state_collector_id" value="' . $edit_data['collector_id'] . '">';
+            $hidden_collector_id = '<input type="hidden" name="state_collector_id" id="state_collector_id" value="' . $collector_id . '">';
+            $show_collector_meta = "show";
         } 
         else { $selected = null; }
 

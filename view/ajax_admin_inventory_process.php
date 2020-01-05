@@ -26,12 +26,14 @@ switch($_POST['formTypeAction']) {
 	case "insert":
 		$this->api_Admin_Insert_Inventory();
 		$this->api_Admin_Update_Inventory_Location();
+		$this->api_Admin_Update_Inventory_Collector();
 		$redirect_to = '/inventory';
 	break;
 	
 	case "update":
 		$this->api_Admin_Update_Inventory();
 		$this->api_Admin_Update_Inventory_Location();
+		$this->api_Admin_Update_Inventory_Collector();
 		$redirect_to = '/inventory';
 	break;
 

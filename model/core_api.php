@@ -684,11 +684,13 @@ class Core_Api
         if( $this->checkDBConnection(__FUNCTION__) == true) {
 
             $sql = "SELECT
-                A.*,
-                C.collector_id
+                A.*
+                -- C.collector_id,
+                -- C.acquired_from,
+                -- C.purchase_date
             FROM
                 art AS A
-                left outer join certificate as C on A.art_id = C.art_id
+                -- left outer join certificate as C on A.art_id = C.art_id
             WHERE
                 A.art_id ='" . $art_id . "'";
         
@@ -716,19 +718,23 @@ class Core_Api
 
             $sql = "SELECT
                 A.title as coa_title,
+                C.collector_id,
                 C.first_name as coa_first_name,
                 C.last_name as coa_last_name,
                 C.company as coa_company,
                 A.value as coa_value,
                 CERT.serial_num as coa_serial_num,
                 CERT.purchase_date as coa_purchase_date,
-                CERT.certificate_id as coa_certificate_id
+                CERT.certificate_id as coa_certificate_id,
+                CERT.acquired_from,
+                CERT.purchase_date
             FROM
                 certificate AS CERT
                 INNER JOIN collector AS C ON CERT.collector_id = C.collector_id
                 INNER JOIN art AS A ON A.art_id = CERT.art_id
                 WHERE A.art_id = '" . $art_id . "'
-            ";
+                AND CERT.status = 'ACTIVE'
+            LIMIT 1";
         
             $result = $this->mysqli->query($sql);
 
@@ -754,8 +760,7 @@ class Core_Api
 
             $sql = "SELECT
                 SM.supplier_materials_id,
-                -- A.art_id,
-                -- A.title as art_title,
+                SM.manual_entry,
                 S.supplier_id,
                 S.company as supplier,
                 ACS.supplier_materials_id,
@@ -780,7 +785,7 @@ class Core_Api
                 INNER JOIN supplier_materials AS SM ON ACS.supplier_materials_id = SM.supplier_materials_id
                 -- INNER JOIN supplier AS S ON SM.supplier_id = S.supplier_id
                 LEFT OUTER JOIN supplier AS S ON SM.supplier_id = S.supplier_id
-                -- WHERE S.supplier_id NOT IN (18)
+                WHERE S.supplier_id NOT IN (0)
                 ORDER BY SM.material_type ASC
             ";
         
@@ -838,8 +843,9 @@ class Core_Api
                 $sql = "SELECT
                     A.art_id,
                     A.title as art_title,
-                    -- S.supplier_id,
+                    SM.manual_entry,
                     ACS.supplier_materials_id,
+                    ACS.usage,
                     S.company as supplier,
                     SM.material_type,
                     SM.cost,
@@ -860,7 +866,7 @@ class Core_Api
                 FROM
                     art AS A
                     INNER JOIN art_costs_supplier AS ACS ON A.art_id = ACS.art_id
-                    INNER JOIN supplier_materials AS SM ON ACS.supplier_materials_id = SM.supplier_materials_id
+                    LEFT OUTER JOIN supplier_materials AS SM ON ACS.supplier_materials_id = SM.supplier_materials_id
                     LEFT OUTER JOIN supplier AS S ON SM.supplier_id = S.supplier_id
                 WHERE
                     A.art_id ='" . $art_id . "'";
@@ -1145,7 +1151,30 @@ class Core_Api
         extract($_POST, EXTR_PREFIX_SAME, "dup");
         $date = date("Y-m-d H:i:s");
 
-        // $this->printp_r($_POST);
+            $sql_check = "SELECT * FROM art_locations_history WHERE art_id='" . $art_id . "'";
+            $result_check = $this->mysqli->query($sql_check);
+
+            if ($result_check->num_rows == 0) {
+            
+                $sql_new = "
+                    INSERT INTO `art_locations_history` 
+                    (
+                        `art_locations_history_id`, 
+                        `art_id`, 
+                        `art_location_id`, 
+                        `date_started`
+                    ) VALUES ( 
+                        DEFAULT, 
+                        '$art_id', 
+                        '$art_location',
+                        '$date'
+                    )";
+
+                $result_new = $this->mysqli->query($sql_new);
+                return;
+                
+            }
+
         /* If state_ is set than update last record with end date */
         if(isSet($state_location_id) && $state_location_id != $art_location) {
 
@@ -1157,7 +1186,7 @@ class Core_Api
                 art_id='" . $art_id . "' AND art_location_id='" . $state_location_id . "'";
 
             $result_u = $this->mysqli->query($sql_u);
-        }
+        } 
 
         /* Insert into database */
         if(!isSet($_POST['state_location_id']) || $state_location_id != $art_location) {
@@ -1179,61 +1208,85 @@ class Core_Api
             $result = $this->mysqli->query($sql);
 
             if($result == 1) {
-                $_SESSION['error'] = '200';
-                $_SESSION['notify_msg'] = $_POST['title'];
                 $this->log(array("key" => "admin", "value" => "Location Change for Inventory Art (" . $_POST['art_id'] . "+" . $_POST['title'] . ") Successsfully", "type" => "success"));
             } else {
-                $_SESSION['error'] = '400';
                 $this->log(array("key" => "admin", "value" => "Failed Location Change for Inventory Art (" . $_POST['art_id'] . "+" . $_POST['title'] . ")", "type" => "failure"));
             }
         } 
+
     }
    
     public function api_Admin_Update_Inventory_Collector() {
 
         /* extract Data Array */
         extract($_POST, EXTR_PREFIX_SAME, "dup");
+        $acquired_from = $this->mysqli->real_escape_string($_POST['acquired_from']);
         $date = date("Y-m-d H:i:s");
 
         // $this->printp_r($_POST);
-        /* If state_ is set than update last record with end date */
-        if(isSet($state_collector_id) && $state_collector_id != $collector) {
+        /* If state_ is set than update certificate record */
+        if(isSet($state_collector_id) && $state_collector_id == $collector) {
 
             $sql_u = "
-            UPDATE `art_locations_history` 
+            UPDATE `certificate` 
             SET
-                `date_ended`='$date'
+                `serial_num`='$serial_num',
+                `artwork_reg`='$reg_num',
+                `acquired_from`='$acquired_from',
+                `purchase_date`='$acquired_date'
             WHERE 
-                art_id='" . $art_id . "' AND art_location_id='" . $state_location_id . "'";
+                art_id='" . $art_id . "' AND collector_id='" . $collector . "'";
 
-            // $result_u = $this->mysqli->query($sql_u);
+            $result_u = $this->mysqli->query($sql_u);
+        } else {
+
+            $sql_disable = "
+            UPDATE `certificate` 
+            SET
+                `status`='DISABLED'
+            WHERE 
+                art_id='" . $art_id . "' AND collector_id='" . $state_collector_id . "'";
+
+            $result_disable = $this->mysqli->query($sql_disable);
+            
+            if($collector != 0) {
+                $collector_transfer = TRUE;
+            } else {
+                return;
+            }
+            
         }
 
         /* Insert into database */
-        if(!isSet($_POST['state_collector_id']) || $state_collector_id != $collector) {
+        if(!isSet($_POST['state_collector_id']) || $state_collector_id != $collector || $collector_transfer == TRUE) {		
 
             $sql = "
-            INSERT INTO `art_locations_history` 
+            INSERT INTO `certificate` 
             (
-                `art_locations_history_id`, 
+                `certificate_id`, 
                 `art_id`, 
-                `art_location_id`, 
-                `date_started`
+                `collector_id`, 
+                `serial_num`,
+                `artwork_reg`,
+                `acquired_from`,
+                `purchase_date`
             ) VALUES ( 
                 DEFAULT, 
                 '$art_id', 
-                '$art_location',
-                '$date'
+                '$collector',
+                '$serial_num',
+                '$reg_num',
+                '$acquired_from',
+                '$acquired_date'
             )";
 
-            // $result = $this->mysqli->query($sql);
+            // print "<hr />$sql";
+
+            $result = $this->mysqli->query($sql);
 
             if($result == 1) {
-                $_SESSION['error'] = '200';
-                $_SESSION['notify_msg'] = $_POST['title'];
                 $this->log(array("key" => "admin", "value" => "Location Change for Inventory Art (" . $_POST['art_id'] . "+" . $_POST['title'] . ") Successsfully", "type" => "success"));
             } else {
-                $_SESSION['error'] = '400';
                 $this->log(array("key" => "admin", "value" => "Failed Location Change for Inventory Art (" . $_POST['art_id'] . "+" . $_POST['title'] . ")", "type" => "failure"));
             }
         } 
@@ -1247,6 +1300,7 @@ class Core_Api
         /* Insert into database */
         $notes = $this->mysqli->real_escape_string($_POST['notes']);
         if(empty($_POST['value'])) { $value = '0.00'; }
+        if(empty($_POST['listed'])) { $listed = '0.00'; }
 
         $sql = "UPDATE art 
         SET 
@@ -1296,6 +1350,7 @@ class Core_Api
         $frame_desc = $this->mysqli->real_escape_string($_POST['frame_desc']);
         $notes = $this->mysqli->real_escape_string($_POST['notes']);
         if(empty($_POST['value'])) { $value = '0.00'; }
+        if(empty($_POST['listed'])) { $listed = '0.00'; }
 
         $sql = "
         INSERT INTO `art` (

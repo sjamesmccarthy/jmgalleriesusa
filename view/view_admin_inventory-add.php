@@ -38,9 +38,11 @@
                 </div>
             </div>
 
-            <div>
+            <div id="collector_meta" class="<?= $show_collector_meta ?> hide">
                 <label for="title">Acquired From & Condition Notes</label>
-                <input maxlength="255" type="text" id="acquired_from" name="acquired_from" placeholder="Acquired From and Condition Notes" value="" disabled>
+                <input class="half-size" maxlength="255" type="text" id="acquired_from" name="acquired_from" placeholder="Acquired From and Condition Notes" value="<?= $acquired_from ?>">
+                <label for="title">Acquired on Date</label>
+                <input class="half-size" maxlength="255" type="text" id="acquired_date" name="acquired_date" placeholder="Acquired on Date" value="<?= $purchase_date ?>">
             </div>
 
             <div>
@@ -148,6 +150,27 @@ jQuery(document).ready(function($){
         $('.lh_container').toggle();
     })
 
+    $('#collector').on('change', function() {
+        
+        var ele = "#collector_meta";
+        var ele_select = "#collector";
+        var ele_location = "#art_location";
+
+        if( $(ele_select).prop('selectedIndex') == 0) {
+            $(ele).hide();
+            if($(ele_location).prop('selectedIndex') == 3) {
+                $(ele_location).val(0).change();
+            } else {
+                $(ele_location).val(<?= $loc_idx ?>).change();
+            }
+        } else {
+            $(ele).show();
+            $(ele + " >input").attr("required", true);
+            $(ele_location).val(3).change();
+        }
+
+    });
+
     $(document).on('change', '#supplier_materials_wrapper select', function() {
         
         var data_exp = $(this).attr('data-exp');
@@ -170,7 +193,6 @@ jQuery(document).ready(function($){
     });
 
     $(document).on('blur', '.material_quan', function() { 
-
         var data_exp = $(this).attr('data-exp');
         var data_id = $(this).prop('id');
         
