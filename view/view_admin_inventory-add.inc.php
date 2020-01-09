@@ -54,14 +54,15 @@
             $location_history = '<a class="view-lh" href="#">view location history</a><div class="lh_container">' . $location_history_html . '</div>';
         } 
 
-        $coa_data = $this->api_Admin_Get_Inventory_COA($edit_id);
-        // $this->printp_r($coa_data);
+        $edit_data['coa'] = $this->api_Admin_Get_Inventory_COA($edit_id);
         extract($coa_data[0], EXTR_PREFIX_SAME, "dup");
         // $edit_data['collector_id'] = $coa_data[0]['collector_id'];
-        $edit_data['coa'] = $coa_data;
+        $collector_id =  $edit_data['coa'][0]['collector_id'];
+        // $this->printp_r($edit_data['coa']);
 
         if( count($edit_data['coa']) > 0) {
 
+                
             foreach( $edit_data['coa'] as $key => $val) {
                 $coa_html = "<div class='coa_list coa_list_found'><p class='coa-icon'><i class='fas fa-award'></i></p><p>" . $val['coa_first_name'] . " " . $val['coa_last_name'] . "<br />Certificate of Authenticity issued on " . date("F d, Y", strtotime($val['coa_purchase_date'])) . "</p></div>";
             }

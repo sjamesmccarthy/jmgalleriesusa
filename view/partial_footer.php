@@ -42,7 +42,7 @@
                                 <!-- <li><a target="_shop" href="/thestudio">The Studio</a></li> -->
                                 <li><a href="/styles">Fine-Art Pricing</a></li>
                                 <li><a href="/contact">Customer Service</a></li>
-                                <li><a href="/newsletter">Monthly Amazing Offer</a></li>
+                                <!-- <li><a href="/newsletter">Monthly Amazing Offer</a></li> -->
                             </ul>
                 </div>
 
