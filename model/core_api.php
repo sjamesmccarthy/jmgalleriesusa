@@ -763,7 +763,6 @@ class Core_Api
                 SM.manual_entry,
                 S.supplier_id,
                 S.company as supplier,
-                ACS.supplier_materials_id,
                 SM.material_type,
                 SM.cost,
                 SM.quantity as quantity_bought,
@@ -783,7 +782,6 @@ class Core_Api
                 art AS A
                 INNER JOIN art_costs_supplier AS ACS ON A.art_id = ACS.art_id
                 RIGHT OUTER JOIN supplier_materials AS SM ON ACS.supplier_materials_id = SM.supplier_materials_id
-                -- INNER JOIN supplier AS S ON SM.supplier_id = S.supplier_id
                 LEFT OUTER JOIN supplier AS S ON SM.supplier_id = S.supplier_id
                 WHERE S.supplier_id NOT IN (0)
                 ORDER BY SM.material_type ASC
@@ -829,7 +827,6 @@ class Core_Api
             WHERE A.art_id = '" . $art_id . "'
             ";
         
-
             $result = $this->mysqli->query($sql);
             if ($result->num_rows > 0) {
             
@@ -872,6 +869,8 @@ class Core_Api
                     LEFT OUTER JOIN supplier AS S ON SM.supplier_id = S.supplier_id
                 WHERE
                     A.art_id ='" . $art_id . "'";
+                
+                print $sql;
                 
                     $result = $this->mysqli->query($sql);
 
@@ -1426,17 +1425,23 @@ class Core_Api
         print "api_Admin_Update_Inventory_Expenses()<br />";
         print "formatting arrays into something useful<br />";
 
+        // $this->printp_r($_POST);
+        // print "<hr />";
+
         /* FORMAT ARRAYS INTO 1 JSON STRING */
-        foreach ($_POST['material_expense_supplierid'] as $key => $value) {
+        foreach ($_POST['material_expense_supplier_id'] as $key => $value) {
             // SUPPLIER INVENTORY COMBINED ARRAYS
             $inv_exp[$key] = '{"id":"' . $value . '", "quantity":"' . $_POST['material_quantity'][$key] . '", "cost":"' . $_POST['material_cost'][$key] . '", "manual":"FALSE" }';
         } 
-
+        
         foreach ($_POST['hidden-material_expense_supplierid_manual-entry'] as $key_manual => $value_manual) {
             // MANUAL ENTRY INVENTORY COMBINED ARRAYS
             $inv_exp_manual[$key_manual] = '{"id":"' . $value_manual . '", "quantity":"' . $_POST['material_quantity_manual-entry'][$key_manual] . '", "cost":"' . $_POST['material_cost_manual-entry'][$key_manual] . '", "name":"' . $_POST['material_expense_supplier_manual-entry'][$key_manual] . '", "manual":"TRUE" }';
         } 
         
+        // $this->printp_r($inv_exp);
+        // $this->printp_r($inv_exp_manual);
+
         // art_costs_supplier
         // INSERT INTO table (id, name, age) VALUES(1, "A", 19) ON DUPLICATE KEY UPDATE name="A", age=19
         // IF id =0 then this is new; mutate the id with actually ID so it can be entered into the linking table
@@ -1444,7 +1449,7 @@ class Core_Api
             $exp = json_decode($exp_val);
             if($exp->id == 0) { 
                 // mutate the json strong with auto_increment_id return
-                $exp->id = 10;
+                $exp->id = null;
                 $inv_exp_manual[$exp_key] = json_encode($exp);
             }
         }
@@ -1503,7 +1508,7 @@ class Core_Api
         echo "<hr />";
 
         echo "INSERT supplier-vendor expenses back into linking table<br />";
-        $this->printp_r($inv_exp);
+        // $this->printp_r($inv_exp);
 
         // Repopulate the art_costs_supplier table for art_id
         foreach ($inv_exp as $exp_key => $exp_val) {
@@ -1540,8 +1545,8 @@ class Core_Api
         if( empty($inv_exp_manual)) { $inv_exp_manual = array(); }
         $exp_combined = array_merge($inv_exp, $inv_exp_manual);
 
-        $this->printp_r($inv_exp);
-        $this->printp_r($inv_exp_manual);
+        // $this->printp_r($inv_exp);
+        // $this->printp_r($inv_exp_manual);
         $this->printp_r($exp_combined);
 
         // supplier_materials
@@ -1550,17 +1555,19 @@ class Core_Api
 
         foreach ($exp_combined as $exp_key => $exp_val) {
             $exp = json_decode($exp_val);
-            if($exp->manual == 'TRUE') { $exp->id = 0; }
+
+            if( $exp->manual == 'TRUE' && is_null($exp->id) ) { $exp->id = 0; }
+
             // echo 'INSERT INTO supplier_materials (supplier_materials_id, manual_entry, material, quantity, cost) VALUES("' . $exp->id . '","' . $exp->manual . '","' . $exp->name . '","' . $exp->quantity . '","' . $exp->cost . '") ON DUPLICATE KEY UPDATE supplier_materials_id="' . $exp->id . '", manual_entry="' . $exp->manual . '", quantity="' . $exp->quantity . '", cost="'. $exp->cost . '"<br />';
             
             /* Executes SQL and then assigns object to passed var */
             if( $this->checkDBConnection(__FUNCTION__) == true) {
     
-                $sql = 'INSERT INTO supplier_materials (supplier_id, manual_entry, material_type, material, quantity, unit_type,
+                $sql = 'INSERT INTO supplier_materials (supplier_materials_id, manual_entry, material_type, material, quantity, unit_type,
                 cost, purchased_on) VALUES("' . $exp->id . '","' . $exp->manual . '","manual_entry","' . $exp->name . '","' . $exp->quantity . '","each","' . $exp->cost . '",NOW()) ON DUPLICATE KEY UPDATE supplier_materials_id="' . $exp->id . '", manual_entry="' . $exp->manual . '", quantity="' . $exp->quantity . '", cost="'. $exp->cost . '"';
         
                 $result = $this->mysqli->query($sql);
-                print $sql;
+                print $sql . "<br />";
 
                 if ($result == TRUE) {
                     $data['result'] = '200';
@@ -1574,21 +1581,7 @@ class Core_Api
             // return($data);
         }
 
-        print "<hr />" . $data['result'];
-        
-        // 1	supplier_materials_id	bigint(20) unsigned	NULL	NULL	NO	NULL	auto_increment		
-        // 2	supplier_id	int(10)	NULL	NULL	YES	NULL			
-        // 3	manual_entry	varchar(50)	utf8	utf8_general_ci	NO	FALSE			
-        // 4	material_type	varchar(255)	utf8	utf8_general_ci	YES	NULL			
-        // 5	material	varchar(255)	utf8	utf8_general_ci	NO	NULL			
-        // 6	quantity	int(10)	NULL	NULL	NO	NULL			
-        // 7	inventory_level	int(10)	NULL	NULL	YES	NULL			
-        // 8	unit_type	varchar(100)	utf8	utf8_general_ci	YES	NULL			
-        // 9	cost	decimal(10,2)	NULL	NULL	NO	NULL			
-        // 10	purchased_on	timestamp	NULL	NULL	YES	NULL			
-        // 11	zero_inv_date	timestamp	NULL	NULL	YES	NULL			
-        // 12	shipping_cost	decimal(10,2)	NULL	NULL	YES	NULL			
-        // 13	created	timestamp	NULL	NULL	NO	CURRENT_TIMESTAMP			
+        print "<hr />" . $data['result'];		
 
     }
 

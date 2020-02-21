@@ -10,6 +10,8 @@
 
     /* Get Supplier_Materials for drop select list */
     $supplier_materials_data = $this->api_Admin_Get_Inventory_Supplier_Materials();
+    // print "fetch.api_Admin_Get_Inventory_Supplier_Materials()";
+    // $this->printp_r($supplier_materials_data);
 
         if( count($supplier_materials_data) > 0) {
             $materials_html .= "<option>--manual entry</option>";
@@ -96,26 +98,20 @@
         // outer loop for the cost_data
         foreach( $costs_data as $key_sc => $val_sc) {
 
-            // $costs_html .= "<option value='manual'>--- manual entry</option>";
-            
             if($val_sc['manual_entry'] == "TRUE") {
 
-                // $manual_entries = "MANUAL ENTRY for supplier_materials_id: " . $val_sc['supplier_materials_id'];
-                // $manual_entries .= " for supply item: ". $val_sc['material_desc'];
-                // $manual_entries .= "  with a cost of  $". $val_sc['calcd_cost'];
-                // $manual_entries .= "  " . $val_sc['unit_type'];
-                // $manual_entries .= "<hr />";
+                // REMOVED calcd_cost to cost --check sql and API(api_Admin_Get_Inventory_Item_Costs)
 
                 $manual_entries = '<div class="supplier_materials"><div class="AUTO_GENERATED-- manual-entry material_expense_supplier-' . $x . '-manual-entry half-size show"><label for="material-expense">MATERIAL EXPENSE</label>
                 <input type="hidden" id="hidden-material_expense_supplierid_manual-entry" name="hidden-material_expense_supplierid_manual-entry[]" placeholder="MANUAL ENTRY" value="' . $val_sc['supplier_materials_id'] . '">
-                <input type="text" id="material_expense_supplier-' . $x . '_manual-entry" name="material_expense_supplier_manual-entry[]" placeholder="MANUAL ENTRY" value="' . ucwords($val_sc['material_desc']) . '"></div><label class="ml-1" for="material-quantity">QUANTITY</label> <input data-exp="' . $x . '" class="width-auto material_quan" type="text" id="material_quantity-' . $x . '" name="material_quantity_manual-entry[]" placeholder="QUANTITY" value="' . $val_sc['material_used'] . '" ><label class="ml-1" for="material-cost">COST</label><input data-exp="' . $x . '" class="width-auto material_quan" type="text" id="material_cost-' . $x . '" name="material_cost_manual-entry[]" placeholder="" value="' . $val_sc['calcd_cost'] . '" ><span class="remove-add"><i data-exp="' . $x . '" class="fas fa-times"></i></span></div>'; 
+                <input type="text" id="material_expense_supplier-' . $x . '_manual-entry" name="material_expense_supplier_manual-entry[]" placeholder="MANUAL ENTRY" value="' . ucwords($val_sc['material_desc']) . '"></div><label class="ml-1" for="material-quantity">QUANTITY</label> <input data-exp="' . $x . '" class="width-auto material_quan" type="text" id="material_quantity-' . $x . '" name="material_quantity_manual-entry[]" placeholder="QUANTITY" value="' . $val_sc['material_used'] . '" ><label class="ml-1" for="material-cost">COST</label><input data-exp="' . $x . '" class="width-auto material_quan" type="text" id="material_cost-' . $x . '" name="material_cost_manual-entry[]" placeholder="" value="' . $val_sc['cost'] . '" ><span class="remove-add"><i data-exp="' . $x . '" class="fas fa-times"></i></span></div>'; 
 
             } else { 
 
                 /* MODIFIED THIS on 1/22/20 by adding "id" to the _name_ in select element */
                 $costs_html .= '<div class="supplier_materials"><div class="material_expense_supplier-' . $x . '-container material_expense_supplier_container select-wrapper half-size">';
                 $costs_html .= '<label for="material-expense">MATERIAL EXPENSE</label>';
-                $costs_html .= "<select id='material_expense_supplierid-" . $x . "' name='material_expense_supplierid[]' attr=" . $x . " >";
+                $costs_html .= "<select id='material_expense_supplierid-" . $x . "' name='material_expense_supplier_id[]' attr=" . $x . " >";
                 
                 foreach( $supplier_materials_data as $key_a => $val_a) {
                 
@@ -136,7 +132,7 @@
                 $costs_html .= '<label class="ml-1" for="material-quantity">QUANTITY</label>';
                 $costs_html .= '<input  data-exp="' . $x . '" class="width-auto material_quan" type="text" id="material_quantity-' . $x . '" name="material_quantity[]" placeholder="QUANTITY" value="' . $val_sc['material_used'] . '">';
                 $costs_html .= '<label for="material-cost">COST</label>';
-                $costs_html .= '<input  data-exp="' . $x . '" class="width-auto material_quan" type="text" id="material_cost-' . $x . '" name="material_cost[]" placeholder="" value="' . $val_sc['calcd_cost'] . '" ><span class="remove-add"><i data-exp="' . $x . '" class="fas fa-times"></i></span></div>';
+                $costs_html .= '<input  data-exp="' . $x . '" class="width-auto material_quan" type="text" id="material_cost-' . $x . '" name="material_cost[]" placeholder="" value="' . $val_sc['cost'] . '" ><span class="remove-add"><i data-exp="' . $x . '" class="fas fa-times"></i></span></div>';
             }
                 
             $costs_html .= $manual_entries;
