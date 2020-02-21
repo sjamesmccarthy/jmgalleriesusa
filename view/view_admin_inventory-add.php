@@ -195,16 +195,15 @@ jQuery(document).ready(function($){
     $(document).on('blur', '.material_quan', function() { 
         var data_exp = $(this).attr('data-exp');
         var data_id = $(this).prop('id');
+        var ele_m = $(this).prop('name');
         
         // check if it is a manual entry if no assign ele
         var ele = $('#material_expense_supplierid-' + data_exp); //material_expense_supplier-101 (101=data_exp)
-        var ele_m = $('#material_expense_supplier-' + data_exp + '_manual-entry'); //material_expense_supplier-8_manual-entry
+        // var ele_m = $('#material_expense_supplier-' + data_exp + '_manual-entry'); //material_expense_supplier-8_manual-entry
         var data_quan = parseInt($('#material_quantity-' + data_exp).val());
         var data_inv = $(ele).find(':selected').attr('data-inv');
         var data_cost = $(ele).find(':selected').attr('data-cost');
         var data_cost_unit_math = (data_cost / data_inv) * data_quan;
-
-        console.log('data_exp=' + data_exp + '::ele=' + ele + '::data-cost= ' + data_cost);
 
         if(!isNaN(data_cost_unit_math)) {
             var data_cost_unit_math = (data_cost / data_inv) * data_quan;
@@ -212,6 +211,13 @@ jQuery(document).ready(function($){
             $('#material_cost-' + data_exp).val(data_cost_unit);
         }
 
+        if(ele_m == "material_quantity_manual-entry[]") {
+            console.log('found manual-entry-doMath() - ' + data_exp);
+            var data_cost_unit_math = ( $('#material_cost-' + data_exp).val() * $('#material_quantity-' + data_exp).val() );
+            var data_cost_unit = data_cost_unit_math.toFixed(2);
+            console.log( 'material_cost-' + data_exp + ' = ' + $('#material_cost-' + data_exp).val() );
+            $('#material_cost-' + data_exp).val(data_cost_unit);
+        }
 
     });
 

@@ -870,8 +870,6 @@ class Core_Api
                 WHERE
                     A.art_id ='" . $art_id . "'";
                 
-                print $sql;
-                
                     $result = $this->mysqli->query($sql);
 
                     if ($result->num_rows > 0) {
