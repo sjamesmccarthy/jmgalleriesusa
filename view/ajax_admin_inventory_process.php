@@ -27,7 +27,7 @@ switch($_POST['formTypeAction']) {
 		$this->api_Admin_Insert_Inventory();
 		$this->api_Admin_Update_Inventory_Location();
 		$this->api_Admin_Update_Inventory_Collector();
-		// $this->api_Admin_Update_Inventory_Expenses();
+		$this->api_Admin_Update_Inventory_Expenses();
 		$redirect_to = '/inventory';
 	break;
 	
@@ -36,8 +36,7 @@ switch($_POST['formTypeAction']) {
 		$this->api_Admin_Update_Inventory_Location();
 		$this->api_Admin_Update_Inventory_Collector();
 		$this->api_Admin_Update_Inventory_Expenses();
-		// $redirect_to = '/inventory';
-		exit;
+		$redirect_to = '/inventory';
 	break;
 
 	case "delete":

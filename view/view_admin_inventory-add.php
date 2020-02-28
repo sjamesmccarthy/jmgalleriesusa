@@ -13,8 +13,11 @@
             <form id="catalog-add" action="/studio/api/update/inventory" method="POST">
             <input type="hidden" id="formTypeAction" name="formTypeAction" value="<?= $formTypeAction ?>" />
             <?= $id_field ?>
+            <?= $legacy_exp_field ?>
             <?= $hidden_location_id ?>
             <?= $hidden_collector_id ?>
+            <?= $hidden_remove_manual_suppliers ?>
+
             <input type="hidden" id="created" name="created" value="<?= $created ?>" />
             <input type="hidden" id="artist_id" name="artist_id" value="1" />
 
@@ -242,13 +245,17 @@ jQuery(document).ready(function($){
 		e.preventDefault();
 		if(x < max_fields){ //max input box allowed
 			x++; //text box increment
-			$(wrapper).append('<div class="supplier_materials"><!-- manual entry container --><div class="material_supplier-' + x + '-container-manual-entry hide"><label for="material-expense">MATERIAL EXPENSE</label><div class="manual-entry material_expense_supplier-' + x + '-manual-entry half-size"><input type="hidden" id="hidden-material_expense_supplierid-' + x + '-manual-entry" name="hidden-material_expense_supplierid_manual-entry[]" value="0"><input type="text" id="material_expense_supplier' + x + '-manual-entry" name="material_expense_supplier_manual-entry[]" placeholder="MANUAL ENTRY" value=""></div><label class="ml-1" for="material-quantity">QUANTITY</label><input data-exp="' + x + '" class="width-auto material_quan" type="text" id="material_quantity-' + x + '-manual-entry" name="material_quantity_manual-entry[]" placeholder="QUANTITY" value="0"><label class="ml-1" for="material-cost">COST</label><input data-exp="' + x + '" class="width-auto material_quan" type="text" id="material_cost-' + x + '-manual-entry" name="material_cost_manual-entry[]" placeholder="" value="0.00" ><span class="remove-add"><i data-exp="' + x + '" class="fas fa-times"></i></span></div><!-- /manual entry container --><!-- supplier row --><div class="material-supplier-' + x + '-container"><div class="material_expense_supplier-' + x + '-container material_expense_supplier_container select-wrapper half-size"><label for="material-expense">MATERIAL EXPENSE</label><select id="material_expense_supplierid-' + x + '" name="material_expense_supplier_id[]" data-exp="' + x + '"><option value="-">SELECT A MATERIAL EXPENSE</option><?= $materials_html ?></select></div> <label class="ml-1" for="material-quantity">QUANTITY</label><input data-exp="' + x + '" class="width-auto material_quan" type="text" id="material_quantity-' + x + '" name="material_quantity[]" placeholder="QUANTITY" value=""><label for="material-cost" class="ml-1">COST</label><input data-exp="' + x + '" class="width-auto material_quan" type="text" id="material_cost-' + x + '" name="material_cost[]" placeholder="" value="" ><span class="remove-add"><i data-exp="' + x + '" class="fas fa-times"></i></span></div><!-- /supplier row --></div>'); 
+			$(wrapper).append('<div class="supplier_materials"><!-- manual entry container --><div class="material_supplier-' + x + '-container-manual-entry hide"><label for="material-expense">MATERIAL EXPENSE</label><div class="manual-entry material_expense_supplier-' + x + '-manual-entry half-size"><input type="hidden" id="hidden-material_expense_supplierid-' + x + '-manual-entry" name="hidden-material_expense_supplierid_manual-entry[]" value="0"><input type="text" id="material_expense_supplier' + x + '-manual-entry" name="material_expense_supplier_manual-entry[]" placeholder="MANUAL ENTRY" value=""></div><label class="ml-1" for="material-quantity">QUANTITY</label><input data-exp="' + x + '" class="width-auto material_quan" type="text" id="material_quantity-' + x + '-manual-entry" name="material_quantity_manual-entry[]" placeholder="QUANTITY" value="0"><label class="ml-1" for="material-cost">COST</label><input data-exp="' + x + '" class="width-auto material_quan" type="text" id="material_cost-' + x + '-manual-entry" name="material_cost_manual-entry[]" placeholder="" value="0.00" ><span class="remove-add" data-supid="' + x + '"><i data-exp="' + x + '" class="fas fa-times"></i></span></div><!-- /manual entry container --><!-- supplier row --><div class="material-supplier-' + x + '-container"><div class="material_expense_supplier-' + x + '-container material_expense_supplier_container select-wrapper half-size"><label for="material-expense">MATERIAL EXPENSE</label><select id="material_expense_supplierid-' + x + '" name="material_expense_supplier_id[]" data-exp="' + x + '"><option value="-">SELECT A MATERIAL EXPENSE</option><?= $materials_html ?></select></div> <label class="ml-1" for="material-quantity">QUANTITY</label><input data-exp="' + x + '" class="width-auto material_quan" type="text" id="material_quantity-' + x + '" name="material_quantity[]" placeholder="QUANTITY" value=""><label for="material-cost" class="ml-1">COST</label><input data-exp="' + x + '" class="width-auto material_quan" type="text" id="material_cost-' + x + '" name="material_cost[]" placeholder="" value="" ><span class="remove-add"><i data-exp="' + x + '" class="fas fa-times"></i></span></div><!-- /supplier row --></div>'); 
 		}
     });
     
     $(wrapper).on("click",'.remove-add', function(e){ 
         e.preventDefault(); 
         $(this).parent('div').remove(); 
+        var data_supid = $(this).attr('data-supid');
+        var hidden_field_vals = $('#hidden_remove_manual_suppliers').val() + ',' + data_supid;
+        $('#hidden_remove_manual_suppliers').val(hidden_field_vals);
+        console.log($('#hidden_remove_manual_suppliers').val());
         x--;
 	})
 

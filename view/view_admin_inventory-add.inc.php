@@ -17,14 +17,14 @@
             $materials_html .= "<option>--manual entry</option>";
             foreach( $supplier_materials_data as $key => $val) {
 
-                if($val['supplier_id'] != '18') {
+                // if($val['supplier_id'] != '18') {
                 $materials_html .= '<option value="' . $val['supplier_materials_id'] . '" ';
                 $materials_html .= 'data-unit="' . $val['unit_type'] . '" ';
                 $materials_html .= 'data-inv="' . $val['quantity_bought'] . '"';
                 $materials_html .= 'data-cost="' . $val['cost'] . '">';
                 $materials_html .= $val['material_type'] . ", " . $val['material_desc'] . ', (' . $val['supplier'] . ') [' . $val['unit_type'] . ']';
                 $materials_html .= '</option>';
-                }
+                // }
             }
     }
 
@@ -75,7 +75,9 @@
         $costs_data = $this->api_Admin_Get_Inventory_Item_Costs($edit_id);
         
         if($this->api['table'] == 'art_costs') {
-            $art_costs_supplier_id = 18;
+            $art_costs_supplier_id = null;
+            $legacy_exp_field = '<input type="hidden" name="legacy_exp" value="' . $art_id . '" />';
+            // $art_costs_supplier_id = 18;
             if( count($costs_data > 0) ) {
 
                 $x=1;
@@ -104,7 +106,7 @@
 
                 $manual_entries = '<div class="supplier_materials"><div class="AUTO_GENERATED-- manual-entry material_expense_supplier-' . $x . '-manual-entry half-size show"><label for="material-expense">MATERIAL EXPENSE</label>
                 <input type="hidden" id="hidden-material_expense_supplierid_manual-entry" name="hidden-material_expense_supplierid_manual-entry[]" placeholder="MANUAL ENTRY" value="' . $val_sc['supplier_materials_id'] . '">
-                <input type="text" id="material_expense_supplier-' . $x . '_manual-entry" name="material_expense_supplier_manual-entry[]" placeholder="MANUAL ENTRY" value="' . ucwords($val_sc['material_desc']) . '"></div><label class="ml-1" for="material-quantity">QUANTITY</label> <input data-exp="' . $x . '" class="width-auto material_quan" type="text" id="material_quantity-' . $x . '" name="material_quantity_manual-entry[]" placeholder="QUANTITY" value="' . $val_sc['material_used'] . '" ><label class="ml-1" for="material-cost">COST</label><input data-exp="' . $x . '" class="width-auto material_quan" type="text" id="material_cost-' . $x . '" name="material_cost_manual-entry[]" placeholder="" value="' . $val_sc['cost'] . '" ><span class="remove-add"><i data-exp="' . $x . '" class="fas fa-times"></i></span></div>'; 
+                <input type="text" id="material_expense_supplier-' . $x . '_manual-entry" name="material_expense_supplier_manual-entry[]" placeholder="MANUAL ENTRY" value="' . ucwords($val_sc['material_desc']) . '"></div><label class="ml-1" for="material-quantity">QUANTITY</label> <input data-exp="' . $x . '" class="width-auto material_quan" type="text" id="material_quantity-' . $x . '" name="material_quantity_manual-entry[]" placeholder="QUANTITY" value="' . $val_sc['material_used'] . '" ><label class="ml-1" for="material-cost">COST</label><input data-exp="' . $x . '" class="width-auto material_quan" type="text" id="material_cost-' . $x . '" name="material_cost_manual-entry[]" placeholder="" value="' . $val_sc['cost'] . '" ><span class="remove-add" data-supid="' . $x . '"><i data-exp="' . $x . '" class="fas fa-times"></i></span></div>'; 
 
             } else { 
 
@@ -147,15 +149,18 @@
         $button_label="update artwork: " . $title;
         $button_archive_cancel = '<a class="cancel-button" href="/studio/inventory">cancel</a>';
         $id_field = '<input type="hidden" name="art_id" value="' . $art_id . '" />';
+        $hidden_remove_manual_suppliers = '<input type="hidden" name="hidden_remove_manual_suppliers" id="hidden_remove_manual_suppliers" />';
         $this->nav_label_inventory = "Updating Artwork";
         if($edit_data['reg_num'] == "" ) { $reg_num = strtotime($edit_data['born_date']); }
         $born_date = date("Y-m-d H:i:s", strtotime($edit_data['born_date']));
     } else {
         $formTypeAction = "insert";
         $button_label = "add new artwork";
+        $legacy_exp_field = null;
         $this->page->title = "Adding <b>New Artwork</b> to Inventory";
         $button_archive_cancel = '<a class="cancel-button" href="/studio/inventory">cancel</a>';
         $this->nav_label_inventory = "Adding Artwork";
+        $hidden_remove_manual_suppliers = null;
         $reg_num = time();
         $born_date = date("Y-m-d H:i:s", $reg_num);
     }

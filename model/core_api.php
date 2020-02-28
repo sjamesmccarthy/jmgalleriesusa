@@ -380,12 +380,13 @@ class Core_Api
                 A.avatar,
                 A.website
             FROM
-                USER as U
+                user as U
                 INNER JOIN artist AS A ON U.artist_id = A.artist_id
             WHERE
                 U.PASSWORD = md5('$password') 
                 AND U.USERNAME = '$username' 
             ";
+
 
             $result = $this->mysqli->query($sql);
             
@@ -405,7 +406,6 @@ class Core_Api
              
                $data['result'] = '400';
             }	
-            
         }
 
         $this->log(array("key" => "admin", "value" => "logged in successfully from " . $_SESSION['ip'], "type" => "system"));
@@ -824,7 +824,7 @@ class Core_Api
             FROM
                 art AS A
                 INNER JOIN art_costs AS AC ON AC.art_id = A.art_id
-            WHERE A.art_id = '" . $art_id . "'
+            WHERE A.art_id = '" . $art_id . "' AND STATUS='ACTIVE'
             ";
         
             $result = $this->mysqli->query($sql);
@@ -1420,8 +1420,8 @@ class Core_Api
         $tbl = 'art_costs_supplier';
         $artist_id = $_POST['artist_id'];
 
-        print "api_Admin_Update_Inventory_Expenses()<br />";
-        print "formatting arrays into something useful<br />";
+        // print "api_Admin_Update_Inventory_Expenses()<br />";
+        // print "formatting arrays into something useful<br />";
 
         // $this->printp_r($_POST);
         // print "<hr />";
@@ -1453,7 +1453,7 @@ class Core_Api
         }
 
         // DELETE ALL RECORDS for specific art_id
-        echo "<hr />DELETE from " . $tbl . " WHERE art_id='" . $art_id . "' AND artist_id='" . $artist_id . "'";
+        // echo "<hr />DELETE from " . $tbl . " WHERE art_id='" . $art_id . "' AND artist_id='" . $artist_id . "'";
         /* Executes SQL and then assigns object to passed var */
         
          if( $this->checkDBConnection(__FUNCTION__) == true) {
@@ -1465,53 +1465,64 @@ class Core_Api
 
             if ($result == TRUE) {
                 $data['result'] = '200';
+                // $this->log(array("key" => "admin", "value" => "Updated Catalog Photo (" . $_POST['catalog_photo_id'] . "+" . $_POST['file_name'] . ") Successsfully", "type" => "success"));
             } else {
                 $data['result'] = '501';
                 $data['error'] = "SQL DELETE" . $tbl . " FAILED " . $art_id;
                 $data['sql'] = $sql;
+                $this->log(array("key" => "admin", "value" => "Failed DELETE Expenses from art_costs_supplier (" . $sql . ")", "type" => "failure"));
             }	
             
         }
 
+        /***
+         * PROBLEM AREA
+         */
+
         // Repopulate the art_costs_supplier table for art_id
-        echo "<hr />INSERT manual expenses back into linking table<br />";
-        $this->printp_r($inv_exp_manual);
+        // echo "<hr />INSERT manual expenses back into linking table<br />";
 
-        foreach ($inv_exp_manual as $exp_key => $exp_val) {
-            $exp = json_decode($exp_val);
-            $this->printp_r($exp);
+            foreach ($inv_exp_manual as $exp_key => $exp_val) {
+                $exp = json_decode($exp_val);
+                // $this->printp_r($exp);
 
-            if( $this->checkDBConnection(__FUNCTION__) == true) {
-            
-                $sql = "
-                INSERT INTO `art_costs_supplier` (`art_id`, `artist_id`, `supplier_materials_id`, `usage`)
-                VALUES('" . $art_id . "','" . $artist_id . "','" . $exp->id . "','" . $exp->quantity . "');";
-
-                print $sql;
-
-                $result = $this->mysqli->query($sql);
-
-                if ($result == TRUE) {
-                    $data['result'] = '200';
-                } else {
-                    $data['result'] = '501';
-                    $data['error'] = "SQL UPDATE FAILED " . $sql;
-                    $data['sql'] = $sql;
-                }	
+                if( $this->checkDBConnection(__FUNCTION__) == true) {
                 
-            }
+                    if( $exp->manual == 'TRUE' && !is_null($exp->id) ) { 
+                        $sql = "
+                        INSERT INTO `art_costs_supplier` (`art_id`, `artist_id`, `supplier_materials_id`, `usage`)
+                        VALUES('" . $art_id . "','" . $artist_id . "','" . $exp->id . "','" . $exp->quantity . "');";
+
+                        $result = $this->mysqli->query($sql);
+
+                            if ($result == TRUE) {
+                                $data['result'] = '200';
+                                // $this->log(array("key" => "admin", "value" => "Updated Catalog Photo (" . $_POST['catalog_photo_id'] . "+" . $_POST['file_name'] . ") Successsfully", "type" => "success"));
+                            } else {
+                                $data['result'] = '501';
+                                $data['error'] = "SQL DELETE" . $tbl . " FAILED " . $art_id;
+                                $data['sql'] = $sql;
+                                $this->log(array("key" => "admin", "value" => "Failed Insert of Manual Expense With {$exp_id} Into Linking Table (" . $sql . ")", "type" => "failure"));
+                            }	
+                    
+                    } else {
+                        // print "something went wrong here, possible null Id: " . $exp->id . "<hr />";
+                        // $this->printp_r($inv_exp_manual);
+                    }
+                }
         }
+            
 
-        $this->printp_r($data['result']);
-        echo "<hr />";
+        // $this->printp_r($data['result']);
+        // echo "<hr />";
 
-        echo "INSERT supplier-vendor expenses back into linking table<br />";
+        // echo "INSERT supplier-vendor expenses back into linking table<br />";
         // $this->printp_r($inv_exp);
 
         // Repopulate the art_costs_supplier table for art_id
         foreach ($inv_exp as $exp_key => $exp_val) {
             $exp = json_decode($exp_val);
-            $this->printp_r($exp);
+            // $this->printp_r($exp);
 
             if( $this->checkDBConnection(__FUNCTION__) == true) {
             
@@ -1519,25 +1530,27 @@ class Core_Api
                 INSERT INTO `art_costs_supplier` (`art_id`, `artist_id`, `supplier_materials_id`, `usage`)
                 VALUES('" . $art_id . "','" . $artist_id . "','" . $exp->id . "','" . $exp->quantity . "');";
 
-                print $sql;
+                // print $sql;
 
                 $result = $this->mysqli->query($sql);
 
                 if ($result == TRUE) {
                     $data['result'] = '200';
+                    // $this->log(array("key" => "admin", "value" => "Updated Catalog Photo (" . $_POST['catalog_photo_id'] . "+" . $_POST['file_name'] . ") Successsfully", "type" => "success"));
                 } else {
                     $data['result'] = '501';
-                    $data['error'] = "SQL UPDATE FAILED " . $sql;
+                    $data['error'] = "SQL DELETE" . $tbl . " FAILED " . $art_id;
                     $data['sql'] = $sql;
+                    $this->log(array("key" => "admin", "value" => "Failed Supplier-Material Expsense Insert Into Linking Table (" . $sql . ")", "type" => "failure"));
                 }	
-                
+    
             }
         }
         
-        $this->printp_r($data['result']);
-        echo "<hr />";
+        // $this->printp_r($data['result']);
+        // echo "<hr />";
+        // echo "INSERT/UPDATE supplier_materials<br />";
 
-        echo "INSERT/UPDATE supplier_materials<br />";
         $result = FALSE;
         if( empty($inv_exp)) { $inv_exp = array(); }
         if( empty($inv_exp_manual)) { $inv_exp_manual = array(); }
@@ -1545,7 +1558,7 @@ class Core_Api
 
         // $this->printp_r($inv_exp);
         // $this->printp_r($inv_exp_manual);
-        $this->printp_r($exp_combined);
+        // $this->printp_r($exp_combined);
 
         // supplier_materials
         // Insert/Update all records in supplier_materials BUT also do quantity calculations
@@ -1554,7 +1567,9 @@ class Core_Api
         foreach ($exp_combined as $exp_key => $exp_val) {
             $exp = json_decode($exp_val);
 
-            if( $exp->manual == 'TRUE' && is_null($exp->id) ) { $exp->id = 0; }
+            if( $exp->manual == 'TRUE' && is_null($exp->id) ) { 
+                $exp->id = 0; 
+            }
 
             // echo 'INSERT INTO supplier_materials (supplier_materials_id, manual_entry, material, quantity, cost) VALUES("' . $exp->id . '","' . $exp->manual . '","' . $exp->name . '","' . $exp->quantity . '","' . $exp->cost . '") ON DUPLICATE KEY UPDATE supplier_materials_id="' . $exp->id . '", manual_entry="' . $exp->manual . '", quantity="' . $exp->quantity . '", cost="'. $exp->cost . '"<br />';
             
@@ -1565,21 +1580,102 @@ class Core_Api
                 cost, purchased_on) VALUES("' . $exp->id . '","' . $exp->manual . '","manual_entry","' . $exp->name . '","' . $exp->quantity . '","each","' . $exp->cost . '",NOW()) ON DUPLICATE KEY UPDATE supplier_materials_id="' . $exp->id . '", manual_entry="' . $exp->manual . '", quantity="' . $exp->quantity . '", cost="'. $exp->cost . '"';
         
                 $result = $this->mysqli->query($sql);
-                print $sql . "<br />";
+
+                if($exp->id == 0) {
+                    $insert_id = $this->mysqli->insert_id;
+                    // print $exp->id . "<br />";
+
+                    // Repopulate the art_costs_supplier table for art_id
+                    // echo "<hr />INSERT manual expenses back into linking table<br />";
+                    // $this->printp_r($inv_exp_manual);
+
+                    // foreach ($inv_exp_manual as $exp_key => $exp_val) {
+                        $exp = json_decode($exp_val);
+                        // $this->printp_r($exp);
+
+                        if( $this->checkDBConnection(__FUNCTION__) == true) {
+                        
+                            $sql_me = "
+                            INSERT INTO `art_costs_supplier` (`art_id`, `artist_id`, `supplier_materials_id`, `usage`)
+                            VALUES('" . $art_id . "','" . $artist_id . "','" . $insert_id . "','" . $exp->quantity . "');";
+
+                            // print "SQL---" . $sql_me;
+
+                            $result_me = $this->mysqli->query($sql_me);
+
+                            if ($result_me == TRUE) {
+                                $data['result'] = '200';
+                                // $this->log(array("key" => "admin", "value" => "Updated Catalog Photo (" . $_POST['catalog_photo_id'] . "+" . $_POST['file_name'] . ") Successsfully", "type" => "success"));
+                            } else {
+                                $data['result'] = '501';
+                                $data['error'] = "SQL DELETE" . $tbl . " FAILED " . $art_id;
+                                $data['sql'] = $sql_me;
+                                $this->log(array("key" => "admin", "value" => "Failed Manual Entry Insert Into Linking Table (" . $sql_me . ")", "type" => "failure"));
+                            }		
+                            
+                        }
+                    // }
+
+                    // $this->printp_r($data['result']);
+                    // echo "<hr />";
+                }
+
+                // print $sql . "<br />";
 
                 if ($result == TRUE) {
                     $data['result'] = '200';
+                    // $this->log(array("key" => "admin", "value" => "Updated Catalog Photo (" . $_POST['catalog_photo_id'] . "+" . $_POST['file_name'] . ") Successsfully", "type" => "success"));
                 } else {
                     $data['result'] = '501';
-                    $data['error'] = "SQL FAILED " . $sql;
+                    $data['error'] = "SQL DELETE" . $tbl . " FAILED " . $art_id;
                     $data['sql'] = $sql;
-                }	
+                    $this->log(array("key" => "admin", "value" => "Failed INSERT/UPDATE Supplier Material (" . $sql . ")", "type" => "failure"));
+                }		
                 
             }
             // return($data);
         }
 
-        print "<hr />" . $data['result'];		
+        // print "<hr />" . $data['result'];	
+        // print "<hr /> Removing Supplier Materials from manual entries<hr />";
+        // print "Archiving old art_cost data<br />";
+        // legacy_exp
+        
+        foreach ($inv_exp_manual as $exp_key => $exp_val) {
+            $exp = json_decode($exp_val);
+            // $this->printp_r($exp);
+
+            if( $this->checkDBConnection(__FUNCTION__) == true) {
+            
+                $sql = "
+                UPDATE art_costs set status='ARCHIVED' where art_id='" . $art_id . "'";
+
+                // print $sql;
+
+                $result = $this->mysqli->query($sql);
+
+                if ($result == TRUE) {
+                    $data['result'] = '200';
+                    // $this->log(array("key" => "admin", "value" => "Updated Catalog Photo (" . $_POST['catalog_photo_id'] . "+" . $_POST['file_name'] . ") Successsfully", "type" => "success"));
+                } else {
+                    $data['result'] = '501';
+                    $data['error'] = "SQL DELETE" . $tbl . " FAILED " . $art_id;
+                    $data['sql'] = $sql;
+                    $this->log(array("key" => "admin", "value" => "Failed archving Expense Item (" . $exp . ")", "type" => "failure"));
+                }	
+                
+            }
+        }
+
+        if ($result == TRUE) {
+            $data['result'] = '200';
+            $this->log(array("key" => "admin", "value" => "Updated Expenses Successsfully", "type" => "success"));
+        } else {
+            $data['result'] = '501';
+            $data['error'] = "SQL DELETE" . $tbl . " FAILED " . $art_id;
+            $data['sql'] = $sql;
+            $this->log(array("key" => "admin", "value" => "Failed Update To Expenses FATAL " . __FUNCTION__, "type" => "failure"));
+        }	
 
     }
 
