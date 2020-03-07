@@ -20,36 +20,32 @@
     /* Determine if the "TinyViews photo exists */
      if( file_exists($_SERVER['DOCUMENT_ROOT'] . "/catalog/__image/" . $photo_meta['file_name'] . '-tinyviews.jpg') ) {
 
-        $tinyviewImage = '<div><img src="/catalog/__image/' . $photo_meta['file_name'] . '-tinyviews.jpg" /><div class="bx-buyart-btn"><a target="_shop" href="/shop"><button>Shop  tinyViews&trade;</button></a></div></div>';
+        $tinyviewImage = '<div class="col"><img style="width: 100%; border-radius: 0"  src="/catalog/__image/' . $photo_meta['file_name'] . '-tinyviews.jpg" /><div class="bx-buyart-btn"><a target="_shop" href="/shop">Also available in a tinyViews&trade; Edition &mdash; Buy Now</a></div></div>';
      } else {
          $tinyviewImage = null;
      }
 
     /* Determine if the "VirtualRoom" photo exists */
     if( file_exists($_SERVER['DOCUMENT_ROOT'] . "/catalog/__image/" . $photo_meta['file_name'] . '-room.jpg') ) {
-           
-            if($photo_meta['orientation'] == "landscape") {
-                 $super_photo = ' 
-                <div class="slider">
-                <div><img src="/catalog/__image/' . $photo_meta['file_name'] . '-room.jpg" /><div class="bx-buyart-btn"><a href="/contact?photo=' . $photo_meta['file_name'] . '"><button>Buy Now</button></a></div></div>
-                <div><img src="/catalog/__image/' . $photo_meta['file_name'] . '.jpg" /></div>' . $tinyviewImage . '</div>';
-            } else {
-                $super_photo = ' 
-                <div class="slider">
-                    <div class="col"> 
-                    <img class="bx-img-portrait" src="/catalog/__image/' . $photo_meta['file_name'] . '-room.jpg" /><div class="bx-buyart-btn"><a href="/contact?photo='. $photo_meta['file_name'] . '"><button>Buy Now</button></a></div></div>
-                ' . $tinyviewImage . '</div>';
-            }
-
-    } else {
-        $super_photo = ' 
-            <div class="slider">
-                <div class="col lg-img">
-                    <img src="/catalog/__image/' . $photo_meta['file_name'] . '.jpg" />
-                </div>
-            ' . $tinyviewImage . '
-            </div>';
+        
+        $in_roomImg = '<div class="col"><img style="width: 100%; border-radius: 0" src="/catalog/__image/' . $photo_meta['file_name'] . '-room.jpg" /></div>';
+    
     }
+
+    /* Determine if the "VirtualRoom" photo exists */
+    if( file_exists($_SERVER['DOCUMENT_ROOT'] . "/catalog/__image/" . $photo_meta['file_name'] . '-room-alt.jpg') ) {
+        $in_roomImgAlt = '<div class="col"><img style="width: 100%; border-radius: 0" src="/catalog/__image/' . $photo_meta['file_name'] . '-room-alt.jpg" /></div>';
+    }
+
+    // } else {
+
+    $super_photo = ' 
+    <div class="col-12 mb-32 ' . $photo_meta['orientation'] . '">
+        <p style="text-align: center">
+        <img src="/catalog/__image/' . $photo_meta['file_name'] . '.jpg" />
+        </p>
+    </div>';
+    // }    
 
     /* If there is no custom DESC available */
     if( is_null($photo_meta['desc']) ) {
@@ -62,49 +58,51 @@
     /* If as_GALLERY is set */
     if( $photo_meta['as_gallery'] == 1) {
         $ed_G = true;
-        $as_editions_tmp .= "<a href='/styles'>Gallery Edition</a>{print_media}";
+        // $as_editions_tmp .= "Gallery{print_media}";
+        $as_editions_tmp .= "Gallery Edition Limited to 12. Handmade, signed, and authenticated.";
     }
     
     /* If as_STUDIO is set */
     if( $photo_meta['as_studio'] == 1) {
         $ed_S = true;
         if($ed_G === true) { $as_editions_tmp .= ", "; }
-        $as_editions_tmp .= "<a href='/styles'>Studio Edition</a>";
+        $as_editions_tmp .= "Studio";
     }
 
     /* If as_OPEN is set */
-    if( $photo_meta['as_open'] == 1) {
-        $ed_O = true;
-        if($ed_G === true || $ed_S === true) { $as_editions_tmp .= ", "; }
-        $as_editions_tmp .= "<a href='/styles'>Open Edition";
-    }
+    // if( $photo_meta['as_open'] == 1) {
+    //     $ed_O = true;
+    //     if($ed_G === true || $ed_S === true) { $as_editions_tmp .= ", "; }
+    //     $as_editions_tmp .= "as well as available as an Open Edition print only";
+    // }
 
     /* If as_TINYVIEWS is set */
-    if( $photo_meta['as_tinyview'] == 1) {
-        $ed_T = true;
-        if($ed_G === true || $ed_S === true || $ed_O === true) { $as_editions_tmp .= " , "; }
-        $as_editions_tmp .= " <a target='_shop' href='/shop'>tinyViews&trade; Edition</a><!-- &mdash; <a target='_shop'  href='shop'>shop now</a>. -->";
-    }
+    // if( $photo_meta['as_tinyview'] == 1) {
+    //     $ed_T = true;
+    //     if($ed_G === true || $ed_S === true || $ed_O === true) { $as_editions_tmp .= " , "; }
+    //     $as_editions_tmp .= " <a target='_shop' href='/shop'>tinyViews&trade; </a><!-- &mdash; <a target='_shop'  href='shop'>shop now</a>. -->";
+    // }
 
     // $as_editions_tmp .= "</a>";
 
     /* String replace {print_media} with material */
-    switch ($photo_meta['print_media']) {
-        case "paper":
-            $print_media = " printed on museum grade archival paper and mounted in a premium frame protected with TruView museum glass.";
-            break;
+    // switch ($photo_meta['print_media']) {
+    //     case "paper":
+    //         // $print_media = " printed on museum grade archival paper and mounted in a premium frame protected with TruView museum glass.";
+    //         break;
 
-        case "acrylic":
-            $print_media = " printed on museum grade Acrylic with a 6mm Komatex backing with inset frame ";
-            break;
+    //     case "acrylic":
+    //         // $print_media = " printed on museum grade Acrylic with a 6mm Komatex backing with inset frame ";
+    //         break;
 
-        default:
-            $print_media = null;
-            break;
-    }
+    //     default:
+    //         $print_media = null;
+    //         break;
+    // }
 
-    $as_editions_tmp = preg_replace("/{print_media}/i", $print_media, $as_editions_tmp);
-    $as_editions = preg_replace("/,([^,]+)$/", " as well as available in a $1", $as_editions_tmp);
+    // $as_editions_tmp = preg_replace("/{print_media}/i", $print_media, $as_editions_tmp);
+    // $as_editions = preg_replace("/,([^,]+)$/", "Edition as well as available in a $1", $as_editions);
+    $as_editions = $as_editions_tmp;
 
     /* If ON_DISPLAY is set */
     if( $photo_meta['on_display'] != 0) {
@@ -150,11 +148,11 @@
     */
 
     /* If AS_TINYVIEW is set */
-    if( $photo_meta['as_tinyview'] != 0) {
-        $as_tinyview = ' as well as <a target="_shop" href="/shop">tinyViews&trade;</a>';
-    } else {
-        $as_tinyview = null;
-    }
+    // if( $photo_meta['as_tinyview'] != 0) {
+    //     $as_tinyview = ' as well as <a target="_shop" href="/shop">tinyViews&trade;</a>';
+    // } else {
+    //     $as_tinyview = null;
+    // }
 
     /* Photo orientation */
     if($photo_meta['orientation'] == "portrait") {

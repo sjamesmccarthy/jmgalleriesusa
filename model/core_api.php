@@ -46,8 +46,7 @@ class Core_Api
                     PH.file_name,
                     PH.as_gallery,
                     PH.as_studio,
-                    PH.as_open,
-                    PH.as_tinyview
+                    PH.as_open
                 FROM
                     catalog_photo AS PH
                     RIGHT JOIN catalog_category AS CATE ON PH.catalog_category_id = CATE.catalog_category_id
@@ -81,7 +80,6 @@ class Core_Api
         if( $this->checkDBConnection(__FUNCTION__) == true) {
 
             $sql = "
-            -- ALL PHOTOS WITH CATEGORY
             SELECT
                 PH.catalog_photo_id,
                 PH.title,
@@ -89,7 +87,6 @@ class Core_Api
                 PH.as_gallery,
                 PH.as_studio,
                 PH.as_open,
-                PH.as_tinyview,
                 CATE.title AS cate_title,
                 CATE.path
             FROM
@@ -1012,11 +1009,8 @@ class Core_Api
 
         $sql = "UPDATE catalog_photo 
         SET 
-        -- catalog_photo_id,
-        -- artist_id,
         catalog_category_id = '$catalog_category_id',
         title = '$title',
-        -- desc = $desc,
         story = '$story',
         file_name = '$file_name',
         loc_city = '$loc_city',
@@ -1031,16 +1025,11 @@ class Core_Api
         iso = '$iso',
         date_taken = '$date_taken',
         orientation = '$orientation',
-        -- available_sizes = $available_sizes,
-        print_media = '$print_media',
         tags = '$tags',
         created = '$created',
         status = '$status',
         on_display = '$on_display',
-        in_shop = '$in_shop',
-        as_tinyview = '$as_tinyview',
         as_gallery = '$as_gallery',
-        as_studio = '$as_studio',
         as_open = '$as_open'
         WHERE catalog_photo_id = '$catalog_photo_id' AND file_name = '$file_name'";
 
@@ -1051,8 +1040,8 @@ class Core_Api
             $_SESSION['notify_msg'] = $_POST['title'];
             $this->log(array("key" => "admin", "value" => "Updated Catalog Photo (" . $_POST['catalog_photo_id'] . "+" . $_POST['file_name'] . ") Successsfully", "type" => "success"));
         } else {
-            $_SESSION['error'] = '400';
-            $this->log(array("key" => "admin", "value" => "Failed Update Catalog Photo (" . $_POST['catalog_photo_id'] . "+" . $_POST['file_name'] . ")", "type" => "success"));
+            $_SESSION['error'] = '501';
+            $this->log(array("key" => "admin", "value" => "Failed Update Catalog Photo (" . $_POST['catalog_photo_id'] . "+" . $_POST['file_name'] . ") " . $sql, "type" => "failure"));
         }
 
         /* Check to see if files have been uploaded */
@@ -1093,8 +1082,6 @@ class Core_Api
         `created`, 
         `status`, 
         `on_display`, 
-        `in_shop`, 
-        `as_tinyview`, 
         `as_gallery`, 
         `as_studio`, 
         `as_open`
@@ -1122,8 +1109,6 @@ class Core_Api
             '$created', 
             '$status', 
             '$on_display', 
-            '$in_shop', 
-            '$as_tinyview', 
             '$as_gallery', 
             '$as_studio', 
             '$as_open'

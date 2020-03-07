@@ -5,8 +5,8 @@
 
         <div class="col-9">
 
-        <h1><?= $formTitle ?></h1>
-        <p class="blue pb-16 "><?= strtoupper($subTitle); ?></p>
+        <p class="blue"><?= strtoupper($subTitle); ?></p>
+        <h1 class="pb-16"><?= $formTitle ?></h1>
 
         <form id="contactForm" action="/view/ajax_email_process.php" method="POST">
         <input type="hidden" id="formType" name="formType" value="<?= $formType ?>" />

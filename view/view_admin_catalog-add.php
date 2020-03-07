@@ -13,6 +13,8 @@
             <form id="catalog-add" action="/studio/api/update/catalog" method="POST" enctype="multipart/form-data">
             <input type="hidden" id="formType" name="formType" value="<?= $formType ?>" />
             <?= $id_field ?>
+            <?= $file_1_hidden ?>
+            <?= $file_2_hidden ?>
             <input type="hidden" id="in_shop" name="in_shop" value="0" />
             <input type="hidden" id="created" name="created" value="<?= $created ?>" />
             <input type="hidden" id="artist_id" name="artist_id" value="1" />
@@ -74,38 +76,38 @@
 
                 <div class="select-wrapper half-size">
                 <select id="as_gallery" name="as_gallery">
-                    <option value="1" <?= ($as_gallery == "1" ? "SELECTED" : ""); ?>>as GALLERY EDITION</option>
-                    <option value="0" <?= ($as_gallery == "0" ? "SELECTED" : ""); ?>>no (GALLERY EDITION)</option>
+                    <option value="1" <?= ($as_gallery == "1" ? "SELECTED" : ""); ?>>as LIMITED EDITION</option>
+                    <option value="0" <?= ($as_gallery == "0" ? "SELECTED" : ""); ?>>no (LIMITED EDITION)</option>
                 </select> 
                 </div>
 
-                <div class="select-wrapper half-size">
+                <!-- <div class="select-wrapper half-size">
                 <select id="as_studio" name="as_studio">
                     <option value="1" <?= ($as_studio == "1" ? "SELECTED" : ""); ?>>as STUDIO EDITION</option>
                     <option value="0" <?= ($as_studio == "0" ? "SELECTED" : ""); ?>>no (STUDIO EDITION)</option>
                 </select> 
-                </div>
+                </div> -->
 
             </div>
             <div>
-                <div class="select-wrapper half-size">
+                <!-- <div class="select-wrapper half-size">
                 <select id="as_tinyviews" name="as_tinyview">
                     <option value="1" <?= ($as_tinyview == "1" ? "SELECTED" : ""); ?>>as TINYVIEWS EDITION</option>
                     <option value="0" <?= ($as_tinyview == "0" ? "SELECTED" : ""); ?>>no (TINYVIEWS EDITION)</option>
                 </select> 
-                </div>
+                </div> -->
 
                 <div class="select-wrapper half-size">
                 <select id="as_open" name="as_open">
-                    <option value="1" <?= ($as_open == "1" ? "SELECTED" : ""); ?>>as OPEN EDITION</option>
-                    <option value="0" <?= ($as_open == "0" ? "SELECTED" : ""); ?>>no (OPEN EDITION)</option>
+                    <option value="1" <?= ($as_open == "1" ? "SELECTED" : ""); ?>>as OPEN/tinyViews&trade; EDITION</option>
+                    <option value="0" <?= ($as_open == "0" ? "SELECTED" : ""); ?>>no (OPEN/tinyViews&trade; EDITION)</option>
                 </select> 
                 </div>
 
             <div>
-                <div class="half-size">
+                <!-- <div class="half-size">
                     <input  type="text" id="print_media" name="print_media" placeholder="PRINT MEDIA: PAPER, ACRYLIC" value="<?= $print_media ?>">
-                </div>
+                </div> -->
                 <div class="select-wrapper half-size">
                 <select id="on_display" name="on_display">
                     <option value="0">on Display (Select Location)</option>
@@ -162,7 +164,7 @@
                 <input class="half-size" type="text" id="iso" name="iso" placeholder="ISO" value="<?= $iso ?>">
             </div>
 
-            <button id="sendform" value="SEND"><?= $button_label ?></button>
+            <button class="mt-32" id="sendform" value="SEND"><?= $button_label ?></button>
             <?= $button_archive_cancel ?>
             </form>
 

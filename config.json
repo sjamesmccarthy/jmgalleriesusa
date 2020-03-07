@@ -11,6 +11,7 @@
     "phone" : "951-708-1831",
 
     "coa_contract" : "md5[(title.nospaces).(series).(edition).(timestamp)]",
+    "limited_edition_max" : "24",
 
     "prefix" : {
         "template" : "tpl_",

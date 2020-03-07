@@ -6,10 +6,10 @@
             <p><?= $catalog_desc ?></p>
             <ul class="filter-editions-list">
                 <li class="filter-all selected">All</li>
-                <li class="filter-gallery">Gallery Edition</li>
-                <li class="filter-studio">Studio Edition</li>
-                <!-- <li class="filter-open">Open Edition</li> -->
-                <li class="filter-tinyviews">tinyViews&trade; Edition</li>
+                <li class="filter-gallery">Limited Edition</li>
+                <!-- <li class="filter-studio">Studio Edition</li> -->
+                <li class="filter-open">tinyViews&trade; Edition</li>
+                <!-- <li class="filter-tinyviews">tinyViews&trade; Edition</li> -->
             </ul>
         </div>
 
@@ -33,23 +33,23 @@ jQuery(document).ready(function($){
         $('[class*="f-"]').hide();
         $('.f-gallery').show();
     });
-    $('.filter-studio').click(function() {
-        $('[class*="filter-"]').removeClass("selected");
-        $('[class*="filter-studio"]').addClass("selected");
-        $('[class*="f-"]').hide();
-        $('.f-studio').show();
-    });
-    // $('.filter-open').click(function() {
+    // $('.filter-studio').click(function() {
     //     $('[class*="filter-"]').removeClass("selected");
-    //     $('[class*="filter-open"]').addClass("selected");
+    //     $('[class*="filter-studio"]').addClass("selected");
     //     $('[class*="f-"]').hide();
-    //     $('.f-open').show();
+    //     $('.f-studio').show();
     // });
-    $('.filter-tinyviews').click(function() {
+    $('.filter-open').click(function() {
         $('[class*="filter-"]').removeClass("selected");
-        $('[class*="filter-tinyviews"]').addClass("selected");
+        $('[class*="filter-open"]').addClass("selected");
         $('[class*="f-"]').hide();
-        $('.f-tinyviews').show();
+        $('.f-open').show();
     });
+    // $('.filter-tinyviews').click(function() {
+    //     $('[class*="filter-"]').removeClass("selected");
+    //     $('[class*="filter-tinyviews"]').addClass("selected");
+    //     $('[class*="f-"]').hide();
+    //     $('.f-tinyviews').show();
+    // });
 });
 </script>
