@@ -31,10 +31,11 @@
 
     <script>
     jQuery(document).ready(function($){
-        $('.slider').bxSlider({
+        
+        /* $('.slider').bxSlider({
             startSlide: 0,
-            slideWidth: 1440,
-            shrinkItems: false,
+            slideWidth: 100%,
+            shrinkItems: true,
             speed: 400,
             touchEnabled: true,
             keyboardEnabled: true,
@@ -42,6 +43,8 @@
             controls: true,
             hideControlOnEnd: true
         });
-    });
+        });
+        */  
+         
     </script>
 </head>

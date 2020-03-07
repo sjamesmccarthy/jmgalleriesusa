@@ -18,15 +18,19 @@
         $display_show = 'photopreviewshow';
         $formType = "update";
         $button_label="update photo " . $edit_file_name;
-        $button_archive_cancel = '<button class="btn-delete" id="deletePhoto" value="ARCHIVE">archive photo</button>';
+        $button_archive_cancel = '<button class="btn-delete mt-32" id="deletePhoto" value="ARCHIVE">archive photo</button>';
         $id_field = '<input type="hidden" name="catalog_photo_id" value="' . $catalog_photo_id . '" />';
+        $file_1_hidden = '<input type="hidden" name="file_1_hidden" value="' . $file_name . '.jpg" />';
+        $file_2_hidden = '<input type="hidden" name="file_2_hidden" value="' . $file_name . '-thumb.jpg" />';
         $this->nav_label_catalog = "Updating Photo";
     } else {
         $formType = "insert";
         $button_label = "add new photo";
         $page_title = "Adding <b>New Catalog Photo</b>";
-        $button_archive_cancel = '<a class="cancel-button" href="/studio/catalog">cancel</a>';
+        $button_archive_cancel = '<a class="cancel-button mt-32" href="/studio/catalog">cancel</a>';
         $id_field = null;
+        $file_1_hidden = null;
+        $file_2_hidden = null;
         $created = date("Y-m-d H:i:s");
         $as_open = 0;
         $as_studio = 1;

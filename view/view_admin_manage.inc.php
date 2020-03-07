@@ -9,10 +9,6 @@
         header('location:/studio/signin');
     }
 
-    /* Alot of work to just get the year */
-    $shortdate = explode("-", $membersince);
-    $year = $shortdate[0];
-
     /* NAVIGATION */
     $navigation_html = $this->component('admin_navigation');
 
