@@ -554,10 +554,35 @@ class Core_Api
         /* Executes SQL and then assigns object to passed var */
         if( $this->checkDBConnection(__FUNCTION__) == true) {
 
-            $sql = "SELECT
-                (SUM(AC.print) + SUM(AC.frame) + SUM(AC.mat) + SUM(AC.backing) + sum(AC.packaging) + SUM(AC.shipping) + SUM(AC.ink) + SUM(AC.commission)) AS total
+            $sql_SM = "SELECT
+                SUM(ACS. `usage` * SM.`cost`) as total_costs
             FROM
-                art_costs AS AC";
+                art_costs_supplier AS ACS
+                INNER JOIN supplier_materials AS SM ON ACS.supplier_materials_id = SM.supplier_materials_id
+            ";
+        
+            $result_SM = $this->mysqli->query($sql_SM);
+
+            if ($result_SM->num_rows > 0) {
+            
+                while($row_SM = $result_SM->fetch_assoc())
+		        {
+		            $data_SM = $row_SM;
+		        }
+                
+            } 
+            
+        }
+
+        /* Executes SQL and then assigns object to passed var */
+        if( $this->checkDBConnection(__FUNCTION__) == true) {
+
+            $sql = "SELECT
+                (SUM(AC.print) + SUM(AC.frame) + SUM(AC.mat) + SUM(AC.backing) + sum(AC.packaging) + SUM(AC.shipping) + SUM(AC.ink)) AS total
+            FROM
+                art_costs AS AC
+                INNER JOIN art AS A ON A.art_id = AC.art_id
+            WHERE AC.status = 'ACTIVE'";
         
             $result = $this->mysqli->query($sql);
 
@@ -572,7 +597,7 @@ class Core_Api
             
         }
 
-        $data = $data['total'];
+        $data = $data_SM['total_costs'] + $data['total'];
         return($data);
 
     }

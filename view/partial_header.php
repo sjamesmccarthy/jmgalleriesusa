@@ -1,8 +1,8 @@
 <head>
     <meta charset="utf-8">
-    <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=0.86, maximum-scale=3.0, minimum-scale=0.86"> -->
+
     <title><?= $addSiteName ?><?= $this->title ?></title>
-    <!-- <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,400i,700&display=swap" rel="stylesheet"> -->
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400,400i,700,900&display=swap" rel="stylesheet">    
 
     <link rel="stylesheet" href="/view/css/main.css?<?= time(); ?>">

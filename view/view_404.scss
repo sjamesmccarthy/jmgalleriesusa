@@ -2,8 +2,9 @@
 /* view_e404 */
 
 .page-not-found-container {
-    margin-top: 22vh;
-    min-height: 400px;
+    // margin-top: 22vh;
+    min-height: 300px;
+    // margin-bottom: 48px;
     text-align: center;
 
     .e404 {
@@ -11,5 +12,4 @@
         line-height: 1.6; 
         padding-bottom: 32px;
     }
-
 }

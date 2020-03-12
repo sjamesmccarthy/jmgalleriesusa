@@ -40,39 +40,39 @@
             <h3 class="pb-32">Previously Exhibited (Galleries)</h3>
 
             <li>
-            <h4><i class="fas fa-thumbtack exhibit-prev-tack"></i>Temecula Public Library</h4>
+            <h4><!-- <i class="fas fa-thumbtack exhibit-prev-tack"></i> -->Temecula Public Library</h4>
             <p class="margin-zero">Ronald H. Roberts Public Library, Temecula, CA<br />January 2019 until April 2019</p>
             </li>
 
             <li>
-            <h4><i class="fas fa-thumbtack exhibit-prev-tack"></i>Comma Coffee</h4>
+            <h4><!-- <i class="fas fa-thumbtack exhibit-prev-tack"></i> -->Comma Coffee</h4>
             <p class="margin-zero">312 S Carson St, Carson City, NV 89701, (775) 883-2662<br />March 2017</p>
             </li>
 
             <li>
-            <h4><i class="fas fa-thumbtack exhibit-prev-tack"></i>Brewery Arts Center</h4>
+            <h4><!-- <i class="fas fa-thumbtack exhibit-prev-tack"></i> -->Brewery Arts Center</h4>
             <p class="margin-zero">
             449 W King St, Carson City, NV 89701, (775) 883-1976<br />October 2016</p>
             </li>
 
             <h3 class="pb-32">Previously Exhibited (Pop-Up Events)</h3>
             <li>
-            <h4><i class="fas fa-thumbtack exhibit-prev-tack"></i>Joe Maxx Coffee Company (E Windmill location)</h4>
+            <h4><!-- <i class="fas fa-thumbtack exhibit-prev-tack"></i> -->Joe Maxx Coffee Company (E Windmill location)</h4>
             <p class="margin-zero">500 E Windmill Lane, Las Vegas, NV<br />November 2018 until June 2019</p>
             </li>
 
             <li>
-            <h4><i class="fas fa-thumbtack exhibit-prev-tack"></i>Boulder City Beer Fest 2018 and 2019</h4>
+            <h4><!-- <i class="fas fa-thumbtack exhibit-prev-tack"></i> -->Boulder City Beer Fest 2018 and 2019</h4>
             <p class="margin-zero">Wilbur Square Park, Boulder City, NV<br />March 2018 & March 2019</p>
             </li>
 
             <li>
-            <h4><i class="fas fa-thumbtack exhibit-prev-tack"></i>Art Off The Walls @Temecula 2018 & 2019</h4>
+            <h4><!-- <i class="fas fa-thumbtack exhibit-prev-tack"></i> -->Art Off The Walls @Temecula 2018 & 2019</h4>
             <p>Temecula City Hall, 41000 Main Street, Temecula, CA, 92590<br />July, September & November 2018 | June, September, November 2019</p>
             </li>
 
             <li>
-            <h4><i class="fas fa-thumbtack exhibit-prev-tack"></i>Beer NV</h4>
+            <h4><!-- <i class="fas fa-thumbtack exhibit-prev-tack"></i> -->Beer NV</h4>
             <p class="margin-zero">15 Foothill Rd #1, Reno, NV 89511, (775) 448-6199<br />June 2016 thru October 2017</p>
             </li>
 

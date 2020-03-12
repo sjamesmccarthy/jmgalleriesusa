@@ -1,15 +1,30 @@
-<section class="catalogidx--container">
+<section class="inventoryidx--container">
     <div class="grid-12">
        
         <!-- insert navigation component -->
         <?= $navigation_html ?>
     
-        <div class="col-9 catalog--container">
+        <div class="col-9 inventory--container">
 
             <div class="notification success <?= $notification_state ?>"><?= $notification_msg ?></div>
 
-                    <h2>Index of <b>Inventory</b> (<?= $active_inventory_count ?>)</h2>
-                    <p>Filter By: <a href="?filter=STUDIO">Studio</a>, <a href="?filter=HC">Home Collection</a>, <a href="?filter=DONATED">Donated</a>, <a href="?filter=COLLECTOR">Collector</a>, <a href="?filter=tinyviews">tinyViews</a>, <a href="?filter=DESTROYED">Destroyed</a>, <a href="/studio/inventory">reset</a></p>
+                    <div class="grid">
+                        <div class="col">
+                        <h2>Index of <b>Inventory</b> (<?= $active_inventory_count ?>)</h2>
+                        
+                            <div class="tabs"> 
+                                <div><a href="?filter=STUDIO">STUDIO</a></div>
+                                <div><a href="?filter=HC">HOME COLLECTION</a></div>
+                                <div><a href="?filter=DONATED">DONATED</a></div>
+                                <div><a href="?filter=COLLECTOR">COLLECTOR</a></div>
+                                <div><a href="?filter=tinyviews">tinyVIEWS</a></div>
+                                <div><a href="?filter=DESTROYED">DESTROYED</a></div>
+                                <div><a href="/studio/inventory"><i class="fas fa-times-circle"></i></a></div>
+                            </div>
+
+                        </div>
+                        <div class="col-1 add-icon"><a href="/studio/inventory-add"><i class="fas fa-plus-circle"></i></a></div>
+                    </div>
 
                     <table id="dataTable" class="display">
                         <thead>

@@ -3,6 +3,16 @@
     min-height: 50vh;
     border-radius: 4px;
 
+    .add-icon-nav {
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+
+    .disabled {
+        color: rgba(0,0,0,.2);
+    }
+    
      .toolbox {
         padding-top: 10px;
         padding-bottom: 10px;
@@ -16,14 +26,17 @@
             margin-bottom: 10px;
             font-weight: 300;
             font-size: 1rem;
+            position: relative;
 
             &.indent {
                 margin-left: 25px;
+                // text-align: right;
+                // margin-right: 10px;
             }
 
-            &.disabled {
-                color: rgba(0,0,0,.2);
-            }
+            // &.disabled {
+            //     color: rgba(0,0,0,.2);
+            // }
 
             span.add-inline {
                 position: absolute;
@@ -38,8 +51,8 @@
         .selected {
             font-weight: 900;
             // background-color: #CCC;
-            border-right: 1px solid #000;
-            padding: 10px 0 0 0;
+            border-left: 1px solid #000;
+            padding: 0 0 0 10px;
             color: #000;
             // margin-left: -10px;
             // text-transform: uppercase;
@@ -57,6 +70,12 @@
 
             a {
                 color: #000;
+                font-weight: 500;
+
+                &:hover {
+                    color: #2574A9;
+                    cursor: pointer;
+                }
             }
         }
 

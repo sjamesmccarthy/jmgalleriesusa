@@ -46,7 +46,7 @@ jQuery(document).ready(function($){
                 
                 <div class="profile--name">
                     <p>$first_name $last_name</p>
-                    <p>$website</p>
+                    <p><a href="$website" target="_out">$website</a></p>
                     <!-- <p style="font-size: .9rem;">Member since $membersinceyear</p> -->
                     <!-- <p class="mb-16 mt-16"><a href="/studio/manage">DASHBOARD</a></p> -->
                 </div>
@@ -61,21 +61,32 @@ jQuery(document).ready(function($){
 
             <div class="toolbox">
                 <ul class="catalog catalog-add">
-                <li class="catalog"><a href="/studio/catalog">Online Catalog Index</a></li>
-                <li class="catalog-add indent"><a href="/studio/catalog-add">$this->nav_label_catalog</a></li>
+                <li class="catalog"><a href="/studio/catalog">Web Catalog</a><p class="add-icon-nav"><a href="/studio/catalog-add"><i class="fas fa-plus-circle"></i></a></p></li>
+                <!-- <li class="catalog-add indent"><a href="/studio/catalog-add">$this->nav_label_catalog</a></li> -->
                 </ul>
             </div>
 
             <div class="toolbox">
                 <ul class="inventory inventory-add">
-                <li class="inventory"><a href="/studio/inventory">Inventory Index</a></li>
-                <li class="inventory-add indent"><a href="/studio/inventory-add">$this->nav_label_inventory</a></li>
-                <li class="supplier">Supplier Index</li>
-                <li class="supplier-add indent"><a href="/studio/inventory-add">$this->nav_label_supplier</a></li>
-                <li class="materials">Materials Index</li>
-                <li class="materials-add indent"><a href="/studio/inventory-add">$this->nav_label_materials</a></li>
+                <li class="inventory"><a href="/studio/inventory">Inventory</a><p class="add-icon-nav"><a href="/studio/inventory-add"><i class="fas fa-plus-circle"></i></a></p></li>
                 </ul>
+            </div>
+
+            <div class="toolbox">
+                <ul class="supplier supplier-add"> 
+                <li class="supplier ">Suppliers <p class="add-icon-nav"><a class="disabled" href="/studio/supplier-add"><i class="fas fa-plus-circle"></i></a></p></li>
+                </ul>
+            </div>
+
+            <div class="toolbox">
+                <ul class="materials materials-add">
+                <li class="materials ">Materials <p class="add-icon-nav"><a class="disabled" href="/studio/materials-add"><i class="fas fa-plus-circle"></i></a></p></li>
+                </ul>
+            </div>
+
+            <div class="toolbox">
                 <ul class="inventory-reports">
+                <li>Reports</li>
                 <li class="disabled">r/Art, Costs, PL (everything)</li>
                 <li class="disabled">r/Lookup Number & Edition</li>
                 <li class="disabled">r/Lookup By Location</li>

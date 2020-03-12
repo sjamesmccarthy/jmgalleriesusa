@@ -22,7 +22,7 @@
         $id_field = '<input type="hidden" name="catalog_photo_id" value="' . $catalog_photo_id . '" />';
         $file_1_hidden = '<input type="hidden" name="file_1_hidden" value="' . $file_name . '.jpg" />';
         $file_2_hidden = '<input type="hidden" name="file_2_hidden" value="' . $file_name . '-thumb.jpg" />';
-        $this->nav_label_catalog = "Updating Photo";
+        $this->nav_label_catalog = "Update";
     } else {
         $formType = "insert";
         $button_label = "add new photo";
@@ -37,7 +37,7 @@
         $as_tinyview = 0;
         $as_gallery = 0;
         $print_media = "paper";
-        $this->nav_label_catalog = "Adding Photo";
+        // $this->nav_label_catalog = "Adding Photo";
     }
 
     /* CATALOG INDEX */
