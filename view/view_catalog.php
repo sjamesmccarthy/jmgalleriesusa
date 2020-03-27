@@ -1,4 +1,4 @@
-<section id="catalog" class="pb-32">
+<section id="catalog">
     <div class="grid-4_sm-2 grid-4_md-3">
         
         <div class="col-12 title pb-32 pt-32">

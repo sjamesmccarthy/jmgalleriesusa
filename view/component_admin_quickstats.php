@@ -27,20 +27,20 @@ $html = <<< END
             <p class="table--count">$tCat</p>
             <p class="table--subline">Active Online Photos</p>
         </div>
-        <div class="col">
+        <div class="col gray">
             <p class="table--title">COLLECTORS</p>
             <p class="table--count">$tCollectors</p>
             <p class="table--subline">Individual Only</p>
         </div>
-        <div class="col">
+        <div class="col red">
             <p class="table--title">ALL-TIME COSTS</p>
             <p class="table--count">$$tCosts</p>
-            <p class="table--subline">YoY</p>
+            <p class="table--subline">YTD</p>
         </div>
-        <div class="col">
+        <div class="col green">
             <p class="table--title">REVENUE</p>
             <p class="table--count">$$tRevenue</p>
-            <p class="table--subline">YoY</p>
+            <p class="table--subline">YTD</p>
         </div>
 
     </div>
