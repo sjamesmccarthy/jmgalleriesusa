@@ -14,7 +14,7 @@
 
             <div class="grid">
                 <div class="col footer-column mb-32">
-                    <h4>GALLERIES</h4>
+                    <h4>COLLECTIONS</h4>
                     <ul>
                         <li><a href="/new-releases">New Releases</a></li>
                         <li><a href="/oceans-lakes-waterfalls">Oceans, Lakes & Waterfalls</a></li>
@@ -26,14 +26,22 @@
                 </div>
 
                 <div class="col footer-column">
+                    <!-- Change this to "EXHIBITS" -->
+                    <!-- Joe Maxx, Las Vegas, NV -->
+                    <!-- The Merc, Temecula, CA -->
+                    <!-- Lake Tahoe, Virtual -->
+
                     <h4>EXPLORE</h4>
                     <ul>
-                        <!-- <li><a href="/galleries">Galleries</a></li> -->
-                        <li><a href="/exhibits">Exhibited Art</a></li>
+                        <li><a href="/exhibits">Exhibits</a></li>
                         <li><a href="/styles">Editions & Framing</a></li>
                         <li><a href="/moments">Moments, News & Events</a></li>
-                        <li><a target="_shop" href="/thestudio">The Studio</a   ></li>
+                        <li><a target="_shop" href="/thestudio">The Studio</a></li>
                         <li><a target="_blog" href="https://medium.com/jmgalleriesusa">Polarized Quarterly</a></li>
+                        <!-- <li>Joe Maxx Coffee, Las Vegas, NV</li> -->
+                        <!-- <li>The Merc, Temecula, CA</li> -->
+                        <!-- <li>Lake Tahoe, NV</li> -->
+                        <!-- <li class="top-border"><a href="/exhibits">Previous Exhibits</a></li> -->
                     </ul>
                 </div>
 
@@ -44,6 +52,7 @@
                                 <!-- <li><a target="_shop" href="/thestudio">The Studio</a></li> -->
                                 <li><a href="/styles">Fine-Art Pricing</a></li>
                                 <li><a href="/contact">Customer Service</a></li>
+                                <!-- <li><a target="_blog" href="https://medium.com/jmgalleriesusa">Polarized Quarterly</a></li> -->
                                 <!-- <li><a href="/newsletter">Monthly Amazing Offer</a></li> -->
                             </ul>
                 </div>
@@ -52,7 +61,9 @@
                     <h4>ABOUT</h4>
                         <ul>
                             <li><a href="/about">the Photographer</a></li>
-                            <li><a href="/styles">Limited Editions</a></li>
+                            <!-- <li><a href="/moments">Moments, News & Events</a></li> -->
+                            <!-- <li><a href="/styles">Editions & Framing</a></li> -->
+                            <!-- <li><a target="_shop" href="/thestudio">The Studio</a></li> -->
                             <li><a href="/legal">Privacy Policy</a></li>
                             <li><a href="/contact">Contact Us</a></li>
                         </ul>

@@ -340,7 +340,11 @@ class Core_Api
     }
 
     public function api_Update_Photo_Viewed($photo_id) {
-        
+
+        if($photo_id == 0) {
+            $this->log(array("key" => "public", "value" => "Invalid PhotoId (" . $photo_id . "::" . $this->page->photo_path . "::".  __FUNCTION__ . ")", "type" => "warning"));
+        }
+
         /* Executes SQL and then assigns object to passed var */
         if( $this->checkDBConnection(__FUNCTION__) == true) {
 
@@ -359,6 +363,7 @@ class Core_Api
             
         }
 
+        print $sql; 
         return($data);
     }
 
@@ -413,7 +418,10 @@ class Core_Api
     public function api_Polarized_Get_Latest() {
 
         // Read in Json file with title and description and link. 
-        return($this->getJSON('view/data_polarized.json', 'data'));
+        // return($this->getJSON('view/data_polarized.json', 'data'));
+        $result = $this->getJSON('view/data_polarized.json', 'data');
+        // $this->printp_r($result);
+        return($result);
 
     }
 
@@ -643,7 +651,8 @@ class Core_Api
             C.title as category,
             P.status,
             C.path,
-            PV.count as views
+            PV.count as views,
+            PV.updated as lastview
         FROM
             catalog_photo AS P
             INNER JOIN catalog_category AS C ON P.catalog_category_id = C.catalog_category_id

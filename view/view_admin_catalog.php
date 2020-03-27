@@ -20,6 +20,7 @@
                                 <th>Catalog Category</th>
                                 <th>Status</th>
                                 <th>Views</th>
+                                <th>Last View</th>
                             </tr>
                         </thead>
                         <tbody></tbody>
@@ -51,7 +52,12 @@
                 },
                 { data: 'category' },
                 { data: 'status' },
-                { data: 'views' }
+                { data: 'views' },
+                { data: 'lastview',
+                    "render": function(data, type, row, meta){
+                        return data;
+                    } 
+                }
             ],
             "order": [[ 0, "asc" ]]
         } );

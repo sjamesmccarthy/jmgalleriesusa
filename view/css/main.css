@@ -2251,10 +2251,15 @@ h6 {
 
 /* ********************** */
 /* component_most_popular */
+#most-popular .filmstrip-thumb {
+  max-width: 360px;
+}
+
 /* ********************** */
 /* component_hero */
 #hero {
   height: 100vh !important;
+  background: white;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -2264,11 +2269,6 @@ h6 {
   margin-left: -50vw;
   height: 100px;
   left: 50%;
-  background: white;
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0)), to(white));
-  background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0) 0%, white 100%);
-  background: -o-linear-gradient(top, rgba(255, 255, 255, 0) 0%, white 100%);
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, white 100%);
 }
 
 #home-image {
@@ -3532,6 +3532,8 @@ input[type="text"].amazing-offer-error {
   opacity: .3;
   position: absolute;
   right: 5px;
+  background-color: rgba(255, 0, 0, 0.2);
+  border: none;
 }
 
 .catalog-add--container .btn-delete:hover {

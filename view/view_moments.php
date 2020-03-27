@@ -10,7 +10,7 @@
 
                 <h3>2020</h3>
 
-                <li><p><span class="news-date">Fri Jun 5</span><br />UPCOMING EXHIBIT at The Merc, Temecula, California.</p></li>
+                <li><p><span class="news-date">Nothing yet, check back again soon.</p></li>
 
             </ul>
 
