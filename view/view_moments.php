@@ -10,7 +10,7 @@
 
                 <h3>2020</h3>
 
-                <li><p><span class="news-date">Nothing yet, check back again soon.</p></li>
+                <li><p><span class="news-date">Fri Mar 27</span><br />Due to the COVID-19 pandemic there will be no additional events or exhibits for the remainder of the year. Please visit my online collections at http://jmgalleries.com for online exclusive limited editions and virtual exhibits.</p></li>
 
             </ul>
 
