@@ -340,7 +340,11 @@ class Core_Api
     }
 
     public function api_Update_Photo_Viewed($photo_id) {
-        
+
+        if($photo_id == 0) {
+            $this->log(array("key" => "public", "value" => "Invalid PhotoId (" . $photo_id . "::" . $this->page->photo_path . "::".  __FUNCTION__ . ")", "type" => "warning"));
+        }
+
         /* Executes SQL and then assigns object to passed var */
         if( $this->checkDBConnection(__FUNCTION__) == true) {
 
@@ -359,6 +363,7 @@ class Core_Api
             
         }
 
+        print $sql; 
         return($data);
     }
 
@@ -413,7 +418,10 @@ class Core_Api
     public function api_Polarized_Get_Latest() {
 
         // Read in Json file with title and description and link. 
-        return($this->getJSON('view/data_polarized.json', 'data'));
+        // return($this->getJSON('view/data_polarized.json', 'data'));
+        $result = $this->getJSON('view/data_polarized.json', 'data');
+        // $this->printp_r($result);
+        return($result);
 
     }
 
@@ -554,10 +562,35 @@ class Core_Api
         /* Executes SQL and then assigns object to passed var */
         if( $this->checkDBConnection(__FUNCTION__) == true) {
 
-            $sql = "SELECT
-                (SUM(AC.print) + SUM(AC.frame) + SUM(AC.mat) + SUM(AC.backing) + sum(AC.packaging) + SUM(AC.shipping) + SUM(AC.ink) + SUM(AC.commission)) AS total
+            $sql_SM = "SELECT
+                SUM(ACS. `usage` * SM.`cost`) as total_costs
             FROM
-                art_costs AS AC";
+                art_costs_supplier AS ACS
+                INNER JOIN supplier_materials AS SM ON ACS.supplier_materials_id = SM.supplier_materials_id
+            ";
+        
+            $result_SM = $this->mysqli->query($sql_SM);
+
+            if ($result_SM->num_rows > 0) {
+            
+                while($row_SM = $result_SM->fetch_assoc())
+		        {
+		            $data_SM = $row_SM;
+		        }
+                
+            } 
+            
+        }
+
+        /* Executes SQL and then assigns object to passed var */
+        if( $this->checkDBConnection(__FUNCTION__) == true) {
+
+            $sql = "SELECT
+                (SUM(AC.print) + SUM(AC.frame) + SUM(AC.mat) + SUM(AC.backing) + sum(AC.packaging) + SUM(AC.shipping) + SUM(AC.ink)) AS total
+            FROM
+                art_costs AS AC
+                INNER JOIN art AS A ON A.art_id = AC.art_id
+            WHERE AC.status = 'ACTIVE'";
         
             $result = $this->mysqli->query($sql);
 
@@ -572,7 +605,7 @@ class Core_Api
             
         }
 
-        $data = $data['total'];
+        $data = $data_SM['total_costs'] + $data['total'];
         return($data);
 
     }
@@ -618,7 +651,8 @@ class Core_Api
             C.title as category,
             P.status,
             C.path,
-            PV.count as views
+            PV.count as views,
+            PV.updated as lastview
         FROM
             catalog_photo AS P
             INNER JOIN catalog_category AS C ON P.catalog_category_id = C.catalog_category_id

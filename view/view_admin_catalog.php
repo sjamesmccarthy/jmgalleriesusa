@@ -8,7 +8,10 @@
 
             <div class="notification success <?= $notification_state ?>"><?= $notification_msg ?></div>
 
-                    <h2 class="pb-32">Catalog of <b>Active Online Photos</b> (<?= $active_photos_count ?>)</h2>
+                    <div class="grid">
+                        <div class="col"><h2 class="pb-32">Catalog of <b>Active Online Photos</b> (<?= $active_photos_count ?>)</h2></div>
+                        <div class="col-1 add-icon"><a href="/studio/catalog-add"><i class="fas fa-plus-circle"></i></a></div>
+                    </div>
 
                     <table id="dataTable" class="display">
                         <thead>
@@ -17,6 +20,7 @@
                                 <th>Catalog Category</th>
                                 <th>Status</th>
                                 <th>Views</th>
+                                <th>Last View</th>
                             </tr>
                         </thead>
                         <tbody></tbody>
@@ -48,7 +52,12 @@
                 },
                 { data: 'category' },
                 { data: 'status' },
-                { data: 'views' }
+                { data: 'views' },
+                { data: 'lastview',
+                    "render": function(data, type, row, meta){
+                        return data;
+                    } 
+                }
             ],
             "order": [[ 0, "asc" ]]
         } );

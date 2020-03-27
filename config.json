@@ -6,7 +6,7 @@
     "package_license" : "MIT",
 
     "site_name": "jM Galleries",
-    "copyright" : "&copy; Copyright jM Galleries",
+    "copyright" : "&copy; 2013-2020 jMcCarthy, jM Galleries is a &reg; trademark of James McCarthy",
     "email" : "james@jmgalleries.com",
     "phone" : "951-708-1831",
 
@@ -31,14 +31,14 @@
         "1" : {
             "title" : "Flowers, Fields & Clouds",
             "link" : "flowers-fields-clouds",
-            "image" : "on-the-way-to-cabernet.jpg",
+            "image" : "blades-of-balboa.jpg",
             "text" : "light",
             "position" : "center"
         },
         "2" : {
             "title" : "Oceans, Lakes & Waterfalls",
             "link" : "oceans-lakes-waterfalls",
-            "image" : "bodega-trailhead.jpg",
+            "image" : "run-aground.jpg",
             "text": "light",
             "position": "center"
         },

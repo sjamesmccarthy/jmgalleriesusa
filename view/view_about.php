@@ -9,7 +9,7 @@
                 <p class="name blue">j.McCarthy</p>
                 <p class="name-title">FINE ART PHOTOGRAPHER</p>
                 <p class="name-statement">
-                    Through purposeful paper choice, framing and composition, my work accompanies you on a journey to a place where your mind inspires you to wander; a moment to quietly slip into a timeless, original and natural view of the world around you. 
+                    Through purposeful paper choice, framing and composition, my work travels with you on a journey to a place where your mind wants you to wander; sharing a story and connecting the human experience. 
                 </p>
                 <!-- <img class="bio-profile-pic" src="/view/image/profile_img.jpg" /> -->
         </div>
@@ -96,7 +96,7 @@
             <ul class="timeline">
                 <!-- <li class="timeline-date">2018</li> -->
                 <li class="timeline-history">
-                    <h3>2018</h3>
+                    <h3>2018-2019</h3>
                     <p>
                         As the infamous sign says: Welcome To Fabulous Las Vegas!
                     </p>
@@ -106,11 +106,11 @@
                     </p>
 
                     <p>
-                        This year was also the start of an infautation with Art Off The Walls, a first-Friday event in Temecula, California where j.McCarthy had the oportunity to share his passion of landscape photography with the backwoods of San Diego. 
+                        This year was also the start of an infautation with Art Off The Walls, a first-Friday event in Temecula, California where j.McCarthy had the oportunity to share his passion of landscape photography with the backwoods of San Diego, California, but it wasn't all about exhbiting.
                     </p>
-
+                    
                     <p>
-                        2018 wasn't all about exhbiting. Lots of back of the studio changes happened too. From the addition of new Tamron G2 lenses, Macbooks, NAS backup solutions, framing equiment and suppliers to the purchase of an Epson SureColor P800, j.McCarthy overhauled his entire workflow creating his own turn-key studio, as well as migrated his digital darkroom from Adobe Lightroom to Phase One's Capture One Pro.
+                        Lots of back of the studio changes happened too, from the addition of new Tamron G2 lenses, Macbooks, NAS backup solutions, framing equiment and suppliers to the purchase of an Epson SureColor P800, j.McCarthy overhauled his entire workflow creating his own turn-key studio, as well as migrated his digital darkroom from Adobe Lightroom to Phase One's Capture One.
                     </p>
 
                     <p>It certainly was a year to remember and a sigificant turning point for jM Galleries.</p>
@@ -120,7 +120,7 @@
             <ul class="timeline">
                 <!-- <li class="timeline-date">2019</li> -->
                 <li class="timeline-history">
-                <h3>2019</h3>
+                <h3>2020</h3>
                     <p class="timeline-height-adjust"><a href="/moments">Current Moments & Other News</a></p>
                 </li>
             </ul>

@@ -8,6 +8,14 @@
 
             <ul id="news-overflow">
 
+                <h3>2020</h3>
+
+                <li><p><span class="news-date">Nothing yet, check back again soon.</p></li>
+
+            </ul>
+
+            <ul id="news-overflow">
+
                 <h3>2019</h3>
 
                 <li><p><span class="news-date">Fri Nov 1</span><br />Exhibited a few new tinyViews&trade; at Art Off The Walls in Temecula, California, as well as "Flying Fortress"</p></li>

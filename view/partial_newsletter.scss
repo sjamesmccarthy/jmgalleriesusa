@@ -16,6 +16,10 @@
     position: relative;
 }
 
+.normal {
+    font-size: 1.0rem;
+}
+
 #mc_embed_signup {
     background-color: none;
 
@@ -23,7 +27,7 @@
         position: relative;
         height: 50px;
         padding: 0 24px;
-        width: 75%;
+        width: 45%;
         border: none;
         -webkit-appearance: none;
         -moz-appearance: none;
@@ -54,24 +58,25 @@
             border-radius: 0 $border-radius $border-radius 0;
     }
 
-    button {
+    /* button {
         display: inline-block;
         padding: 10px;
-        background-color: transparent;
+        // margin-left: 10px;
+        background-color: #2574A9;
         border: 0;
-        color: #2574A9;
+        color: #FFF;
         border-radius: 4px;
         border: 1px solid #2574A9;
         min-width: 50px;
         height: 50px; 
         
         &:hover {
-            background-color: #2574A9;
+            background-color: #ffffff;
             cursor: pointer;
-            color: #FFF;
+            color: #2574A9;
         }
 
-    }
+    } */
 
 }
 

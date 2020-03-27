@@ -21,13 +21,13 @@
                 }
 
                 $thumb_html .= '<div class="overflow-hidden ' . $grid_css . '">';
-                $thumb_html .= '<a href="' . $this->page->catalog_path . $v['path'] . "/" . $img_file . '"><img src="/catalog/__thumbnail/' .$img_file . '.jpg" /></a><p>' . $v['title'] . '</p></div>';
+                $thumb_html .= '<a href="' . $this->page->catalog_path . $v['path'] . "/" . $img_file . '"><img class="filmstrip-thumb" src="/catalog/__thumbnail/' .$img_file . '.jpg" /></a><p>' . $v['title'] . '</p></div>';
 
                 if($count == 3) { $count = 0; } else { $count++; }
             }
 
 $html = <<<END
-<article>
+<article id="most-popular">
     <div class="grid-4_sm-2 grid-4_md-3">
         <div class="col-10" style="margin-bottom: 16px;">
         <h2 class="blue">YOU MAY ALSO LIKE</h2>
