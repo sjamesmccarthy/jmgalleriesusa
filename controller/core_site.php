@@ -76,7 +76,9 @@ class Core_Site extends Core_Api
         
         /* Parse the URI */
         $this->routes->URI = (object) parse_url($_SERVER['REQUEST_URI']);
-
+        $this->routes->URI->url = "//{$_SERVER['HTTP_HOST']}{$_SERVER['REQUEST_URI']}";
+        $this->routes->URI->useragent = $_SERVER['HTTP_USER_AGENT'];
+        
             /* Check for root level or trim slashes */
             if($this->routes->URI->path != '/') {
                 $this->routes->URI->path = rtrim($this->routes->URI->path, '/');

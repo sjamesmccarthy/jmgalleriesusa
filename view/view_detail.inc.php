@@ -7,9 +7,9 @@
     
     /* Load all photo meta data */
     $photo_meta = $this->api_Catalog_Photo($this->photo_path);
-    $this->api_Update_Photo_Viewed($photo_meta['catalog_photo_id']);
-
-    // $this->printp_r($photo_meta);
+    if(isSet($photo_meta['catalog_photo_id'])) {
+        $this->api_Update_Photo_Viewed($photo_meta['catalog_photo_id']);
+    }
 
     $this->catalog_title = ucwords( $photo_meta['category_title'] );
     $this->page->title = $photo_meta['title'];

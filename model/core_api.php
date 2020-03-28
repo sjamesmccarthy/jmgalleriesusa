@@ -342,7 +342,7 @@ class Core_Api
     public function api_Update_Photo_Viewed($photo_id) {
 
         if($photo_id == 0) {
-            $this->log(array("key" => "public", "value" => "Invalid PhotoId (" . $photo_id . "::" . $this->page->photo_path . "::".  __FUNCTION__ . ")", "type" => "warning"));
+            $this->log(array("key" => "public", "value" => "Invalid PhotoId (" . $photo_id . "::" . $this->page->photo_path . "::".  __FUNCTION__ . "::" . $this->routes->URI->url . "::" . $this->routes->URI->useragent . ")", "type" => "warning"));
         }
 
         /* Executes SQL and then assigns object to passed var */
@@ -363,7 +363,6 @@ class Core_Api
             
         }
 
-        print $sql; 
         return($data);
     }
 
