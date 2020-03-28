@@ -2436,6 +2436,10 @@ h6 {
   color: #4a4a4a;
 }
 
+.activity--container .item p.warning {
+  color: #856404;
+}
+
 .activity--container .item p.success {
   color: #155724;
 }

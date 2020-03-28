@@ -24,6 +24,10 @@ foreach($activity_data as $key=>$val) {
             $typeClass = "success";
         break;
 
+        case "warning":
+            $typeClass = "warning";
+        break;
+
         case "failure":
             $typeClass = "failure";
         break;

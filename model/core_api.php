@@ -400,8 +400,12 @@ class Core_Api
              
                 $data['result'] = '200';
                 $_SESSION['uid'] =  $data[0]['user_id'];
-                $_SESSION['ip'] = $_SERVER['REMOTE_ADDR'];
-                $this->log(array("key" => "admin", "value" => "session " . session_id() . " created", "type" => "system"));
+                if($_SERVER['REMOTE_ADDR'] != "::1") {
+                    $_SESSION['ip'] = $_SERVER['REMOTE_ADDR'];
+                } else {
+                    $_SESSION['ip'] = '127.0.0.1';
+                }
+                // $this->log(array("key" => "admin", "value" => "session " . session_id() . " created", "type" => "system"));
 
             } else {
              
