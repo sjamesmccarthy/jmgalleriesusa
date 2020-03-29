@@ -413,7 +413,7 @@ class Core_Api
             }	
         }
 
-        $this->log(array("key" => "admin", "value" => "logged in successfully from " . $_SESSION['ip'], "type" => "system"));
+        $this->log(array("key" => "admin", "value" => "logged in from " . $_SESSION['ip'], "type" => "system"));
         
         return($data);
     }
@@ -1075,7 +1075,7 @@ class Core_Api
         if($result == 1) {
             $_SESSION['error'] = '200';
             $_SESSION['notify_msg'] = $_POST['title'];
-            $this->log(array("key" => "admin", "value" => "Updated Catalog Photo (" . $_POST['catalog_photo_id'] . "+" . $_POST['file_name'] . ") Successsfully", "type" => "success"));
+            $this->log(array("key" => "admin", "value" => "Updated Catalog Photo (" . $_POST['catalog_photo_id'] . "+" . $_POST['file_name'] . ") ", "type" => "success"));
         } else {
             $_SESSION['error'] = '501';
             $this->log(array("key" => "admin", "value" => "Failed Update Catalog Photo (" . $_POST['catalog_photo_id'] . "+" . $_POST['file_name'] . ") " . $sql, "type" => "failure"));
@@ -1156,7 +1156,7 @@ class Core_Api
         if($result == 1) {
             $_SESSION['error'] = '200';
             $_SESSION['notify_msg'] = $_POST['title'];
-            $this->log(array("key" => "admin", "value" => "New Photo Added (" . $_POST['title'] . " to catalog id: " . $_POST['catalog_category_id'] . ") Successsfully", "type" => "success"));
+            $this->log(array("key" => "admin", "value" => "New Photo Added (" . $_POST['title'] . " to catalog id: " . $_POST['catalog_category_id'] . ") ", "type" => "success"));
         } else {
             $_SESSION['error'] = '400';
             $this->log(array("key" => "admin", "value" => "Failed Insert of Catalog Photo (" . $_POST['title'] . ")", "type" => "failure"));
@@ -1230,7 +1230,7 @@ class Core_Api
             $result = $this->mysqli->query($sql);
 
             if($result == 1) {
-                $this->log(array("key" => "admin", "value" => "Location Change for Inventory Art (" . $_POST['art_id'] . "+" . $_POST['title'] . ") Successsfully", "type" => "success"));
+                $this->log(array("key" => "admin", "value" => "Location Change for Inventory Art (" . $_POST['art_id'] . "+" . $_POST['title'] . ") ", "type" => "success"));
             } else {
                 $this->log(array("key" => "admin", "value" => "Failed Location Change for Inventory Art (" . $_POST['art_id'] . "+" . $_POST['title'] . ")", "type" => "failure"));
             }
@@ -1307,7 +1307,7 @@ class Core_Api
             $result = $this->mysqli->query($sql);
 
             if($result == 1) {
-                $this->log(array("key" => "admin", "value" => "Location Change for Inventory Art (" . $_POST['art_id'] . "+" . $_POST['title'] . ") Successsfully", "type" => "success"));
+                $this->log(array("key" => "admin", "value" => "Location Change for Inventory Art (" . $_POST['art_id'] . "+" . $_POST['title'] . ") ", "type" => "success"));
             } else {
                 $this->log(array("key" => "admin", "value" => "Failed Location Change for Inventory Art (" . $_POST['art_id'] . "+" . $_POST['title'] . ")", "type" => "failure"));
             }
@@ -1352,7 +1352,7 @@ class Core_Api
         if($result == 1) {
             $_SESSION['error'] = '200';
             $_SESSION['notify_msg'] = $_POST['title'];
-            $this->log(array("key" => "admin", "value" => "Updated Inventory Art (" . $_POST['art_id'] . "+" . $_POST['title'] . ") Successsfully", "type" => "success"));
+            $this->log(array("key" => "admin", "value" => "Updated Inventory Art (" . $_POST['art_id'] . "+" . $_POST['title'] . ") ", "type" => "success"));
         } else {
             $_SESSION['error'] = '400';
             $this->log(array("key" => "admin", "value" => "Failed Update Inventory Art (" . $_POST['art_id'] . "+" . $_POST['title'] . ")", "type" => "failure"));
@@ -1427,7 +1427,7 @@ class Core_Api
         if($result == 1) {
             $_SESSION['error'] = '200';
             $_SESSION['notify_msg'] = $_POST['title'];
-            $this->log(array("key" => "admin", "value" => "New Inventory Added (" . $_POST['title'] . ") Successsfully", "type" => "success"));
+            $this->log(array("key" => "admin", "value" => "New Inventory Added (" . $_POST['title'] . ") ", "type" => "success"));
 
         } else {
             $_SESSION['error'] = '400';
@@ -1487,7 +1487,7 @@ class Core_Api
 
             if ($result == TRUE) {
                 $data['result'] = '200';
-                // $this->log(array("key" => "admin", "value" => "Updated Catalog Photo (" . $_POST['catalog_photo_id'] . "+" . $_POST['file_name'] . ") Successsfully", "type" => "success"));
+                // $this->log(array("key" => "admin", "value" => "Updated Catalog Photo (" . $_POST['catalog_photo_id'] . "+" . $_POST['file_name'] . ") ", "type" => "success"));
             } else {
                 $data['result'] = '501';
                 $data['error'] = "SQL DELETE" . $tbl . " FAILED " . $art_id;
@@ -1519,7 +1519,7 @@ class Core_Api
 
                             if ($result == TRUE) {
                                 $data['result'] = '200';
-                                // $this->log(array("key" => "admin", "value" => "Updated Catalog Photo (" . $_POST['catalog_photo_id'] . "+" . $_POST['file_name'] . ") Successsfully", "type" => "success"));
+                                // $this->log(array("key" => "admin", "value" => "Updated Catalog Photo (" . $_POST['catalog_photo_id'] . "+" . $_POST['file_name'] . ") ", "type" => "success"));
                             } else {
                                 $data['result'] = '501';
                                 $data['error'] = "SQL DELETE" . $tbl . " FAILED " . $art_id;
@@ -1558,7 +1558,7 @@ class Core_Api
 
                 if ($result == TRUE) {
                     $data['result'] = '200';
-                    // $this->log(array("key" => "admin", "value" => "Updated Catalog Photo (" . $_POST['catalog_photo_id'] . "+" . $_POST['file_name'] . ") Successsfully", "type" => "success"));
+                    // $this->log(array("key" => "admin", "value" => "Updated Catalog Photo (" . $_POST['catalog_photo_id'] . "+" . $_POST['file_name'] . ") ", "type" => "success"));
                 } else {
                     $data['result'] = '501';
                     $data['error'] = "SQL DELETE" . $tbl . " FAILED " . $art_id;
@@ -1627,7 +1627,7 @@ class Core_Api
 
                             if ($result_me == TRUE) {
                                 $data['result'] = '200';
-                                // $this->log(array("key" => "admin", "value" => "Updated Catalog Photo (" . $_POST['catalog_photo_id'] . "+" . $_POST['file_name'] . ") Successsfully", "type" => "success"));
+                                // $this->log(array("key" => "admin", "value" => "Updated Catalog Photo (" . $_POST['catalog_photo_id'] . "+" . $_POST['file_name'] . ") ", "type" => "success"));
                             } else {
                                 $data['result'] = '501';
                                 $data['error'] = "SQL DELETE" . $tbl . " FAILED " . $art_id;
@@ -1646,7 +1646,7 @@ class Core_Api
 
                 if ($result == TRUE) {
                     $data['result'] = '200';
-                    // $this->log(array("key" => "admin", "value" => "Updated Catalog Photo (" . $_POST['catalog_photo_id'] . "+" . $_POST['file_name'] . ") Successsfully", "type" => "success"));
+                    // $this->log(array("key" => "admin", "value" => "Updated Catalog Photo (" . $_POST['catalog_photo_id'] . "+" . $_POST['file_name'] . ") ", "type" => "success"));
                 } else {
                     $data['result'] = '501';
                     $data['error'] = "SQL DELETE" . $tbl . " FAILED " . $art_id;
@@ -1678,7 +1678,7 @@ class Core_Api
 
                 if ($result == TRUE) {
                     $data['result'] = '200';
-                    // $this->log(array("key" => "admin", "value" => "Updated Catalog Photo (" . $_POST['catalog_photo_id'] . "+" . $_POST['file_name'] . ") Successsfully", "type" => "success"));
+                    // $this->log(array("key" => "admin", "value" => "Updated Catalog Photo (" . $_POST['catalog_photo_id'] . "+" . $_POST['file_name'] . ") ", "type" => "success"));
                 } else {
                     $data['result'] = '501';
                     $data['error'] = "SQL DELETE" . $tbl . " FAILED " . $art_id;
@@ -1691,7 +1691,7 @@ class Core_Api
 
         if ($result == TRUE) {
             $data['result'] = '200';
-            $this->log(array("key" => "admin", "value" => "Updated Expenses Successsfully", "type" => "success"));
+            $this->log(array("key" => "admin", "value" => "Updated Expenses ", "type" => "success"));
         } else {
             $data['result'] = '501';
             $data['error'] = "SQL DELETE" . $tbl . " FAILED " . $art_id;
