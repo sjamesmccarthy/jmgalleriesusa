@@ -1,11 +1,11 @@
    <section id="top-nav<?= $addToClass ?>">
         <div class="grid">
     
-        <div class="col-2_md-4-middle">
-            <p class="center" ><a target="_shop" href="/shop">PRODUCTS</a><br />TINY VIEWS AND BOOKS</p>
+        <div class="col-2_md-hidden-middle">
+            <p class="center" ><a target="_shop" href="/shop">PRODUCTS</a><br />PRINTS AND tinyViews&trade;</p>
         </div>
-        <div class="col-3_md-hidden-middle">
-            <p class="center"><a target="_blog" href="https://medium.com/jmgalleriesusa">POLARIZED</a><br />a PHOTOGRAPHIC QUARTERLY</p>
+        <div class="col-3_md-middle">
+            <p class="center"><a target="_blog" href="https://medium.com/jmgalleriesusa">POLARIZED</a><br />JOURNAL & MAGAZINE</p>
         </div>
         <div class="col-2_md-4-middle">
             <p class="topnav-logo"><a href="/"><img src="/view/image/logo_fullsize.png" /></a></p>
