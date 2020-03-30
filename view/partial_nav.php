@@ -4,7 +4,7 @@
         <div class="col-2_md-hidden-middle">
             <p class="center" ><a target="_shop" href="/shop">PRODUCTS</a><br />PRINTS AND tinyViews&trade;</p>
         </div>
-        <div class="col-3_md-middle">
+        <div class="col-3_md-4-middle">
             <p class="center"><a target="_blog" href="https://medium.com/jmgalleriesusa">POLARIZED</a><br />JOURNAL & MAGAZINE</p>
         </div>
         <div class="col-2_md-4-middle">
