@@ -118,6 +118,8 @@
                 <!-- <li class="timeline-date">2019</li> -->
                 <li class="timeline-history">
                 <h3>2020</h3>
+                    <p>This was the year the world almost ended. The international pandemic known as COVID-19 swept the world in fury, infecting almost a million people and killing hundreds of thousands. Entire states, cities and countries were put on complete lock-down or shelter-in-place orders by their Government officials. The global econmony hit the brakes at 100mph and came to an alarming slow-down forcing many business to close their doors.</p>
+                    
                     <p class="timeline-height-adjust"><a href="/moments">Current Moments & Other News</a></p>
                 </li>
             </ul>

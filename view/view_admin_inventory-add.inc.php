@@ -45,12 +45,12 @@
             foreach( $locationsHistory_data as $key_lh => $val_lh) {
 
                 if(isSet($val_lh['date_ended'])) {
-                    $location_history_html .= "-" . strtoupper($val_lh['location']) . " from " . date("F d, Y", strtotime($val_lh['date_started'])) . " to " . date("F d, Y", strtotime($val_lh['date_ended'])) . "<br />";
+                    $location_history_html .= "- " . strtoupper($val_lh['location']) . " from " . date("F d, Y", strtotime($val_lh['date_started'])) . " to " . date("F d, Y", strtotime($val_lh['date_ended'])) . "<br />";
                 } else {
                     if($val_lh['location'] == "COLLECTOR") {
                         // $val_lh['location'] = $val_lh['location'] . ' (' . $val_lh['last_name'] . ')';
                     }
-                    $location_history_html .= "<b>Currently located at " . $val_lh['location'] . " since " . date("F d, Y", strtotime($val_lh['date_started'])) . "</b><br />";
+                    $location_history_html .= "@" . $val_lh['location'] . " &mdash; " . date("F d, Y", strtotime($val_lh['date_started'])) . "<br />";
                 } 
             }
 
