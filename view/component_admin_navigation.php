@@ -85,7 +85,7 @@ jQuery(document).ready(function($){
             </div>
 
             <div class="toolbox">
-                <ul class="inventory-reports">
+                <ul class="reports">
                 <li><a href="/studio/reports">Reports</a></li>
                 <!-- <li class="disabled indent">&mdash; Art, Costs, PL (everything)</li>
                 <li class="disabled indent">&mdash; Lookup Number & Edition</li>
@@ -95,7 +95,7 @@ jQuery(document).ready(function($){
             </div>
 
             <div class="toolbox">
-                <ul>
+                <ul class="collectors">
                 <li><a href="/studio/collectors">Collectors</a><p class="add-icon-nav"><a class="disabled" href="/studio/materials-add"><i class="fas fa-plus-circle"></i></a></p></li>
                 <!-- <li class="disabled">Add a Collector</li>
                 <li class="disabled">Create Certificate of Authenticity</li>
@@ -106,8 +106,6 @@ jQuery(document).ready(function($){
 
             <div class="toolbox">
                 <ul>
-                <!-- <li class="disabled">My Collection Certificates</li>
-                <li class="disabled">Contact Support</li> -->
                 <li><a href="/studio/signout">Sign Out</a></li>
                 </ul>
             </div>
