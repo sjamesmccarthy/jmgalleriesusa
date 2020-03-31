@@ -1,6 +1,6 @@
 { 
     "package_name": "jmGweb",
-    "package_version" : "1.0.0",
+    "package_version" : "1.2.0",
     "package_update_uri": "//jmgalleriesusa.com/updates.php",
     "package_git" : "//github.com/sjamesmccarthy/jmgalleriesusa",
     "package_license" : "MIT",
