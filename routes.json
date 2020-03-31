@@ -134,6 +134,34 @@
         "component": "true",
         "title": "Adding Artwork To Your Inventory"
     },
+    "/studio/suppliers": {
+        "template": "page",
+        "page": "admin_suppliers",
+        "auth": "true",
+        "component": "true",
+        "title": "Inventory of Suppliers"
+    },
+    "/studio/materials": {
+        "template": "page",
+        "page": "admin_materials",
+        "auth": "true",
+        "component": "true",
+        "title": "Inventory of Materials"
+    },
+    "/studio/reports": {
+        "template": "page",
+        "page": "admin_reports",
+        "auth": "true",
+        "component": "true",
+        "title": "Reports"
+    },
+    "/studio/collectors": {
+        "template": "page",
+        "page": "admin_collectors",
+        "auth": "true",
+        "component": "true",
+        "title": "Collectors"
+    },
     "/about": {
         "template": "page",
         "page": "about",

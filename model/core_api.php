@@ -1701,5 +1701,133 @@ class Core_Api
 
     }
 
+    public function api_Admin_Get_Suppliers() {
+
+        /* Executes SQL and then assigns object to passed var */
+        if( $this->checkDBConnection(__FUNCTION__) == true) {
+
+            $sql = "SELECT supplier_id, company, first_name, last_name, email, phone, website FROM supplier";
+        
+            $result = $this->mysqli->query($sql);
+
+            if ($result->num_rows > 0) {
+            
+                while($row = $result->fetch_assoc())
+		        {
+		            $data[] = $row;
+		        }
+                
+            } 
+            
+        }
+
+        return($data);
+
+    }
+
+    public function api_Admin_Get_Materials() {
+
+        /* Executes SQL and then assigns object to passed var */
+        if( $this->checkDBConnection(__FUNCTION__) == true) {
+
+            $sql = "SELECT
+                SM.supplier_materials_id,
+                SM.supplier_id,
+                SM.material_type,
+                SM.material,
+                SM.quantity,
+                SM.unit_type,
+                S.company
+            FROM
+                supplier_materials AS SM
+                LEFT JOIN supplier AS S ON S.supplier_id = SM.supplier_id";
+        
+            $result = $this->mysqli->query($sql);
+
+            if ($result->num_rows > 0) {
+            
+                while($row = $result->fetch_assoc())
+		        {
+		            $data[] = $row;
+		        }
+                
+            } 
+            
+        }
+
+        return($data);
+
+    }
+
+    public function api_Admin_Get_Reports() {
+
+        /* Executes SQL and then assigns object to passed var */
+        if( $this->checkDBConnection(__FUNCTION__) == true) {
+
+            $sql = "SELECT
+            R.report_id,
+            R.name,
+            R.desc,
+            R.sql,
+            R.last_run_by,
+            A.first_name,
+            A.last_name,
+            R.last_run
+        FROM
+            report as R
+            INNER JOIN artist as A ON R.last_run_by = A.artist_id";
+        
+            $result = $this->mysqli->query($sql);
+
+            if ($result->num_rows > 0) {
+            
+                while($row = $result->fetch_assoc())
+		        {
+		            $data[] = $row;
+		        }
+                
+            } 
+            
+        }
+
+        return($data);
+
+    }
+
+    public function api_Admin_Get_Collectors() {
+
+        /* Executes SQL and then assigns object to passed var */
+        if( $this->checkDBConnection(__FUNCTION__) == true) {
+
+            $sql = "SELECT
+                C.collector_id,
+                C.first_name,
+                C.last_name,
+                C.company,
+                C.email,
+                C.city,
+                C.state
+            FROM
+                collector as C
+                order by company ASC";
+        
+            $result = $this->mysqli->query($sql);
+
+            if ($result->num_rows > 0) {
+            
+                while($row = $result->fetch_assoc())
+		        {
+		            $data[] = $row;
+		        }
+                
+            } 
+            
+        }
+
+        return($data);
+
+    }
+
+
 }
 ?>

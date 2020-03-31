@@ -74,29 +74,29 @@ jQuery(document).ready(function($){
 
             <div class="toolbox">
                 <ul class="supplier supplier-add"> 
-                <li class="supplier ">Suppliers <p class="add-icon-nav"><a class="disabled" href="/studio/supplier-add"><i class="fas fa-plus-circle"></i></a></p></li>
+                <li class="supplier "><a href="/studio/suppliers">Suppliers</a> <p class=" add-icon-nav"><a class="disabled" href="/studio/supplier-add"><i class="fas fa-plus-circle"></i></a></p></li>
                 </ul>
             </div>
 
             <div class="toolbox">
                 <ul class="materials materials-add">
-                <li class="materials ">Materials <p class="add-icon-nav"><a class="disabled" href="/studio/materials-add"><i class="fas fa-plus-circle"></i></a></p></li>
+                <li class="materials "><a href="/studio/materials">Materials</a> <p class=" add-icon-nav"><a class="disabled" href="/studio/materials-add"><i class="fas fa-plus-circle"></i></a></p></li>
                 </ul>
             </div>
 
             <div class="toolbox">
                 <ul class="inventory-reports">
-                <li>Reports</li>
-                <li class="disabled indent">&mdash; Art, Costs, PL (everything)</li>
+                <li><a href="/studio/reports">Reports</a></li>
+                <!-- <li class="disabled indent">&mdash; Art, Costs, PL (everything)</li>
                 <li class="disabled indent">&mdash; Lookup Number & Edition</li>
                 <li class="disabled indent">&mdash; Lookup By Location</li>
-                <li class="disabled indent">&mdash; Damaged & Donated Summary</li>
+                <li class="disabled indent">&mdash; Damaged & Donated Summary</li> -->
                 </ul>
             </div>
 
             <div class="toolbox">
                 <ul>
-                <li class="disabled">Collectors <p class="add-icon-nav"><a class="disabled" href="/studio/materials-add"><i class="fas fa-plus-circle"></i></a></p></li>
+                <li><a href="/studio/collectors">Collectors</a><p class="add-icon-nav"><a class="disabled" href="/studio/materials-add"><i class="fas fa-plus-circle"></i></a></p></li>
                 <!-- <li class="disabled">Add a Collector</li>
                 <li class="disabled">Create Certificate of Authenticity</li>
                 <li class="disabled">r/Find Collector By Name</li>
