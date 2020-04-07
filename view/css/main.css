@@ -2660,6 +2660,10 @@ SASS, https://sass-lang.com/
   display: none;
 }
 
+.heading {
+  font-weight: 800;
+}
+
 /* ********************** */
 /* partial_newsletter */
 .newsletter-container {
