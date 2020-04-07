@@ -33,7 +33,7 @@ $html = <<<END
         <h2 class="blue">YOU MAY ALSO LIKE</h2>
         <p>More popular photographs based on what others are viewing</p>
         </div>
-    <div class="col-2-bottom" style="margin-bottom: 16px; text-align: right;padding-right: 8px;">
+    <div class="col-2-middle" style="margin-bottom: 16px; text-align: right;padding-right: 8px;">
         <a href="/galleries">view all</a>
     </div>
         $thumb_html

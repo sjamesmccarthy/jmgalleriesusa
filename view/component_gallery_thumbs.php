@@ -20,7 +20,7 @@ print "component_gallery_thumbs()";
             $thumb_html .= '<h2><a href="/' . $value['path'] . '">' . strtoupper($value['title']) . '</a></h2>';
             $thumb_html .= '<p>' . $value['desc'] .  '</p>';
             $thumb_html .= '</div>';
-            $thumb_html .= '<div class="view-all col-2-bottom">';
+            $thumb_html .= '<div class="view-all col-2-middle">';
             $thumb_html .= '<a href="/' . $value['path'] . '">view all</a>';
             $thumb_html .= "</div>";
 
