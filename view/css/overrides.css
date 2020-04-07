@@ -83,7 +83,7 @@ img {
 
 a {
     color: #2574A9;
-    font-weight: 300;
+    /* font-weight: 300; */
 }
 
 a:hover {
@@ -91,7 +91,7 @@ a:hover {
 }
 
 h1 {
-    font-weight: 300;
+    /* font-weight: 300; */
     text-transform: uppercase;
     color: #2574A9;
 }
@@ -113,8 +113,8 @@ h1.supersize {
     font-size: .9rem;
 }
 
-section {
-    margin-top: 42px;
+section, article {
+    margin-top: 36px;
     /* margin-left: 8px; */
     /* margin-right: 8px; */
 } 
@@ -237,6 +237,36 @@ button a {
     color: #2574A9;
 }
 
+.button-inv {
+    display: inline-block;
+    padding: 10px;
+    /* background-color: #71b3e0; */
+    /* background-color: rgba(46, 49, 49, .5); */
+    background-color: #FFF;
+    border: 0;
+    color: #2574A9;
+    border-radius: 4px;
+    border: 1px solid #2574A9;
+    min-width: 50px;
+    letter-spacing: 0.2em;
+    padding: 15px;
+    box-sizing: border-box;
+    text-transform: uppercase;
+}
+
+.button-inv:hover {
+    background-color: rgba(37, 116, 169, 1);
+    /* background-color: rgba(37, 116, 169, .2); */
+    /* color: rgba(37, 116, 169, 1); */
+    color: #FFF;
+    cursor: pointer;
+    border: 1px solid #FFF;
+}
+
+.button-inv a {
+    color: #2574A9;
+}
+
 /* FORMS */
 
 #form_response, #form_response-subscribe {
@@ -302,7 +332,10 @@ input[type="text"], input[type="password"], textarea, select {
     cursor: pointer;
     line-height: 24px;
     display: inline-block;
-    color: #000;
+    color: #AAA;
+    font-size: 1rem;
+    background-color: transparent;
+    text-transform: initial;
 }
 
 [type="checkbox"]:checked + label:before,

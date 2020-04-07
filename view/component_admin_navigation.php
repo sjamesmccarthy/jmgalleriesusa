@@ -61,46 +61,49 @@ jQuery(document).ready(function($){
 
             <div class="toolbox">
                 <ul class="catalog catalog-add">
-                <li class="catalog"><a href="/studio/catalog">Web Catalog</a><p class="add-icon-nav"><a href="/studio/catalog-add"><i class="fas fa-plus-circle"></i></a></p></li>
-                <!-- <li class="catalog-add indent"><a href="/studio/catalog-add">$this->nav_label_catalog</a></li> -->
+                <li class="catalog catalog-add"><a href="/studio/catalog">Web Catalog</a><p class="add-icon-nav"><a href="/studio/catalog-add"><i class="fas fa-plus-circle"></i></a></p></li>
+                </ul>
+            </div>
+
+            <div class="toolbox">
+                <ul class="collections collections-add">
+                <li class="collections collections-add"><a href="/studio/collections">Web Collections</a><p class="add-icon-nav"><a href="/studio/collections-add"><i class="fas fa-plus-circle"></i></a></p></li>
                 </ul>
             </div>
 
             <div class="toolbox">
                 <ul class="inventory inventory-add">
-                <li class="inventory"><a href="/studio/inventory">Inventory</a><p class="add-icon-nav"><a href="/studio/inventory-add"><i class="fas fa-plus-circle"></i></a></p></li>
+                <li class="inventory inventory-add"><a href="/studio/inventory">Inventory</a><p class="add-icon-nav"><a href="/studio/inventory-add"><i class="fas fa-plus-circle"></i></a></p></li>
                 </ul>
             </div>
 
             <div class="toolbox">
                 <ul class="suppliers suppliers-add"> 
-                <li class="suppliers "><a href="/studio/suppliers">Suppliers</a> <p class=" add-icon-nav"><a class="disabled" href="/studio/supplier-add"><i class="fas fa-plus-circle"></i></a></p></li>
+                <li class="suppliers suppliers-add"><a href="/studio/suppliers">Suppliers</a> <p class=" add-icon-nav"><a href="/studio/suppliers-add"><i class="fas fa-plus-circle"></i></a></p></li>
                 </ul>
             </div>
 
             <div class="toolbox">
                 <ul class="materials materials-add">
-                <li class="materials "><a href="/studio/materials">Materials</a> <p class=" add-icon-nav"><a class="disabled" href="/studio/materials-add"><i class="fas fa-plus-circle"></i></a></p></li>
+                <li class="materials materials-add"><a href="/studio/materials">Materials Summary</a> <p class=" add-icon-nav"><a class="" href="/studio/materials-add"><i class="fas fa-plus-circle"></i></a></p></li>
                 </ul>
             </div>
 
             <div class="toolbox">
-                <ul class="reports">
-                <li class="reports"><a href="/studio/reports">Reports</a></li>
-                <!-- <li class="disabled indent">&mdash; Art, Costs, PL (everything)</li>
-                <li class="disabled indent">&mdash; Lookup Number & Edition</li>
-                <li class="disabled indent">&mdash; Lookup By Location</li>
-                <li class="disabled indent">&mdash; Damaged & Donated Summary</li> -->
+                <ul class="reports reports-add">
+                <li class="reports reports-add"><a href="/studio/reports">Reports / SQL Marks</a> <p class=" add-icon-nav"><a class="" href="/studio/reports-add"><i class="fas fa-plus-circle"></i></a></p></li>
                 </ul>
             </div>
 
             <div class="toolbox">
-                <ul class="collectors">
-                <li class="collectors"><a href="/studio/collectors">Collectors</a><p class="add-icon-nav"><a class="disabled" href="/studio/materials-add"><i class="fas fa-plus-circle"></i></a></p></li>
-                <!-- <li class="disabled">Add a Collector</li>
-                <li class="disabled">Create Certificate of Authenticity</li>
-                <li class="disabled">r/Find Collector By Name</li>
-                <li class="disabled">r/Find Collectors By Photograph</li> -->
+                <ul class="collectors collectors-add">
+                <li class="collectors collectors-add"><a href="/studio/collectors">Collector Profiler</a><p class="add-icon-nav"><a href="/studio/collectors-add"><i class="fas fa-plus-circle"></i></a></p></li>
+                </ul>
+            </div>
+
+            <div class="toolbox">
+                <ul class="users users-add">
+                <li class="users users-add"><a href="/studio/users">User Management</a><p class="add-icon-nav"><a href="/studio/users-add"><i class="fas fa-plus-circle"></i></a></p></li>
                 </ul>
             </div>
 

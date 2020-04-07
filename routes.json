@@ -28,6 +28,12 @@
         "component": "true",
         "title": "Galleries"
     },
+    "/photo/[$1]": {
+        "template": "page",
+        "page": "detail",
+        "component": "true",
+        "title": "[$1]"
+    },
     "/all": {
         "template": "catalog",
         "page": "catalog",
@@ -71,12 +77,26 @@
         "component": "true",
         "title": "Sign In To Your Studio"
     },
+    "/d/collector/signin": {
+        "template": "page",
+        "page": "admin_signin",
+        "auth": "true",
+        "component": "true",
+        "title": "Sign In To Your Studio"
+    },
     "/studio/manage": {
         "template": "page",
         "page": "admin_manage",
         "auth": "true",
         "component": "true",
         "title": "Mangaing Your Studio"
+    },
+    "/d/collector": {
+        "template": "page",
+        "page": "collector_dashboard",
+        "auth": "true",
+        "component": "true",
+        "title": "Mangaing Your Collection"
     },
     "/studio/catalog": {
         "template": "page",
@@ -106,6 +126,13 @@
         "component": "true",
         "title": "Signed Out of Your Studio"
     },
+    "/d/collector/signout": {
+        "template": "page",
+        "page": "admin_signedout",
+        "auth": "true",
+        "component": "true",
+        "title": "Signed Out of Your Studio"
+    },
     "/studio/api/update/catalog": {
         "template": "script",
         "page": "ajax_admin_catalog_process.php",
@@ -119,6 +146,48 @@
         "auth": "true",
         "component": "false",
         "title": "Processing Inventory Script"
+    },
+    "/studio/api/update/suppliers": {
+        "template": "script",
+        "page": "ajax_admin_suppliers_process.php",
+        "auth": "true",
+        "component": "false",
+        "title": "Processing Suppliers Script"
+    },
+    "/studio/api/update/materials": {
+        "template": "script",
+        "page": "ajax_admin_materials_process.php",
+        "auth": "true",
+        "component": "false",
+        "title": "Processing Materials Script"
+    },
+    "/studio/api/update/collectors": {
+        "template": "script",
+        "page": "ajax_admin_collectors_process.php",
+        "auth": "true",
+        "component": "false",
+        "title": "Processing Collectors Script"
+    },
+    "/studio/api/update/reports": {
+        "template": "script",
+        "page": "ajax_admin_reports_process.php",
+        "auth": "true",
+        "component": "false",
+        "title": "Processing Reports Script"
+    },
+    "/studio/api/update/collections": {
+        "template": "script",
+        "page": "ajax_admin_collections_process.php",
+        "auth": "true",
+        "component": "false",
+        "title": "Processing Collections Script"
+    },
+    "/studio/api/update/users": {
+        "template": "script",
+        "page": "ajax_admin_users_process.php",
+        "auth": "true",
+        "component": "false",
+        "title": "Processing Users Script"
     },
     "/studio/inventory": {
         "template": "page",
@@ -141,12 +210,26 @@
         "component": "true",
         "title": "Inventory of Suppliers"
     },
+    "/studio/suppliers-add": {
+        "template": "page",
+        "page": "admin_suppliers-add",
+        "auth": "true",
+        "component": "true",
+        "title": "Adding New Supplier"
+    },
     "/studio/materials": {
         "template": "page",
         "page": "admin_materials",
         "auth": "true",
         "component": "true",
         "title": "Inventory of Materials"
+    },
+    "/studio/materials-add": {
+        "template": "page",
+        "page": "admin_materials-add",
+        "auth": "true",
+        "component": "true",
+        "title": "Adding New Materials"
     },
     "/studio/reports": {
         "template": "page",
@@ -155,12 +238,54 @@
         "component": "true",
         "title": "Reports"
     },
+    "/studio/reports-add": {
+        "template": "page",
+        "page": "admin_reports-add",
+        "auth": "true",
+        "component": "true",
+        "title": "Adding New Report SQL Mark"
+    },
+    "/studio/collections": {
+        "template": "page",
+        "page": "admin_collections",
+        "auth": "true",
+        "component": "true",
+        "title": "Collections"
+    },
+    "/studio/collections-add": {
+        "template": "page",
+        "page": "admin_collections-add",
+        "auth": "true",
+        "component": "true",
+        "title": "Adding New Collection"
+    },
+    "/studio/users": {
+        "template": "page",
+        "page": "admin_users",
+        "auth": "true",
+        "component": "true",
+        "title": "Users"
+    },
+    "/studio/users-add": {
+        "template": "page",
+        "page": "admin_users-add",
+        "auth": "true",
+        "component": "true",
+        "title": "Adding New User"
+    },
     "/studio/collectors": {
         "template": "page",
         "page": "admin_collectors",
         "auth": "true",
         "component": "true",
         "title": "Collectors"
+    },
+    "/studio/collectors-add": {
+        "template": "page",
+        "page": "admin_collectors-add",
+        "auth": "true",
+        "component": "true",
+        "title": "Adding New Collector Profile"
     },
     "/about": {
         "template": "page",
@@ -236,6 +361,12 @@
         "title": "Shop tinyViews, Wall Mounted Prints and Books"
     },
     "/newsletter": {
+        "template": "page",
+        "page": "newsletter_email",
+        "component": "true",
+        "title": "Once A Month Email"
+    },
+    "/d/collector/amazing-offer": {
         "template": "page",
         "page": "newsletter_email",
         "component": "true",

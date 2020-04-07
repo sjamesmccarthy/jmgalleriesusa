@@ -15,7 +15,8 @@
     /* Get any notifications of errors */
     if($_SESSION['error'] == "200") {
         $notification_state = "show";
-        $notification_msg = "<p class='heading'>success</p><p>" .  $_SESSION['notify_msg'] . " Has Been Updated</p>";
+        // $notification_msg = "<p class='heading'>success</p><p>" .  $_SESSION['notify_msg'] . " Has Been Updated</p>";
+        $notification_msg = $_SESSION['notification_msg'];
         $_SESSION['error'] = null;
         $_SESSION['notify_msg'] = null;
     }

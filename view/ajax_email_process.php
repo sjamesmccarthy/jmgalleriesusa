@@ -52,7 +52,7 @@ if ($recaptcha->score >= 0.5) {
 
 		case "ContactForm":
 			$to = EMAIL_TO;
-			$subject = 'webform/jmG - ' . $_POST['contactsubject'];
+			if(!$_POST['subject']) { $subject = 'webform/jmG - ' . $_POST['contactsubject']; } else { $subject = $_POST['subject']; }
 			$header_from = "FROM: " . $_POST['contactname'] . " <'" . $_POST['contactemail'] . "'>";
 			$reply_to = $_POST['contactemail'];
 			$sendReply = '0';
@@ -73,6 +73,16 @@ if ($recaptcha->score >= 0.5) {
 			$subject = 'webform/SUBSCRIBE';
 			$header_from = "FROM: " . $_POST['contactfirstname'] . " " . $_POST['contactlastname']. " <'" . $_POST['subcontactemail'] . "'>";
 			$reply_to = $_POST['subcontactemail'];
+			$sendReply = '0';
+			$send_reply_subject = null;
+			$send_reply_message = null;
+            break;
+            
+		case "referrCollectorForm":
+			$to = EMAIL_TO;
+			$subject = $_POST['referred_by'];
+			$header_from = "FROM: " . $_POST['referred_by']. " <'" . $_POST['referred_by_email'] . "'>";
+			$reply_to = $_POST['referred_by_email'];
 			$sendReply = '0';
 			$send_reply_subject = null;
 			$send_reply_message = null;

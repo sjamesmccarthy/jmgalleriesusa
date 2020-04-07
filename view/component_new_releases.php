@@ -7,8 +7,8 @@
         $thumb_new_releases_html .= "<article>";
         $thumb_new_releases_html .= '<div class="grid-4_sm-2 grid-4_md-3">';
         $thumb_new_releases_html .= '<div class="col-10" style="margin-bottom: 16px;">';
-        $thumb_new_releases_html .= '    <h2><a href="/new-releases/">NEW RELEASES</a></h2>';
-        $thumb_new_releases_html .= '    <p>a collection of photography featuring newest work in all categories.</p>';
+        $thumb_new_releases_html .= '<h2><a href="/new-releases/">NEW RELEASES</a></h2>';
+        $thumb_new_releases_html .= '<p>a collection of photography featuring newest work in all categories.</p>';
         $thumb_new_releases_html .= '</div>';
         $thumb_new_releases_html .= '<div class="view-all col-2-bottom">';
         $thumb_new_releases_html .= '<a href="/new-releases">view all</a>';
@@ -16,13 +16,17 @@
 
     
 if( !$new_releases['error']) {
-    foreach($new_releases as $k => $value) {
+    foreach($new_releases as $k => $v) {
                 
-        if( file_exists($_SERVER['DOCUMENT_ROOT'] . "/catalog/__thumbnail/" . $value['file_name'] . '.jpg')) {
-        $img_file = $value['file_name'];
+        if( file_exists($_SERVER['DOCUMENT_ROOT'] . "/catalog/__thumbnail/" . $v['file_name'] . '.jpg')) {
+        $img_file = $v['file_name'];
         } else {
             $img_file = 'image_not_found';
         }
+
+        if($v['as_gallery'] == 1) {$desc_editions = "<p>Edition of " . $this->config->limited_edition_max  . " plus 2 Artist Proofs</p>"; $available_sizes = "16x24, 20x30 24x36, 30x45, 40x60"; } else { $data_filter_G = null;  }
+        if($v['as_studio'] == 1) {$desc_editions = "<p>tinyViews&trade; Edition only</p>"; $available_sizes = "16x24, 20x30 24x36, 30x45, 40x60"; } else { $data_filter_S = null; }
+        if($v['as_open'] == 1) { $desc_editions = "<p>tinyViews&trade; Edition only</p>"; $available_sizes = "4x6, 8x8, 8x10"; } else { $data_filter_O = null; }
 
         /* For Mobile */
         /* On last two thumbnails add some css */
@@ -33,9 +37,10 @@ if( !$new_releases['error']) {
         } else {
             $grid_css = 'col';
         }
-        $thumb_new_releases_html .= '<div class="thumb overflow-hidden ' . $grid_css . '">';
-        $thumb_new_releases_html .= '<a href="/' . $value['catalog_path']  . $value['path'] . "/" . $img_file . '"><img src="/catalog/__thumbnail/' .$img_file . '.jpg" /></a><p>' . $value['title'] . '</p></div>';
-                
+        $thumb_new_releases_html .= '<div style="padding: 0 10px;" class="thumb overflow-hidden ' . $grid_css . '">';
+        // $thumb_new_releases_html .= '<a href="/' . $value['catalog_path']  . $value['path'] . "/" . $img_file . '"><img src="/catalog/__thumbnail/' .$img_file . '.jpg" /></a><p>' . $value['title'] . '</p></div>';
+        $thumb_new_releases_html .= '<a href="/' . $v['catalog_path'] . '/' . $img_file . '"><img style="width: 100%;" src="/catalog/__thumbnail/' . $img_file . '.jpg" /></a></p><h4 class="pt-8 blue"><a href="/' . $v['catalog_path'] . '/' . $img_file . '">' . $v['title'] . '</a></h4><p>' . $v['loc_place'] . '</p><p>Sizes: ' . $available_sizes . '</p>' . $desc_editions . '</div>';
+
         if($count == 3) { $count = 0; } else { $count++; }
     }
 } else {

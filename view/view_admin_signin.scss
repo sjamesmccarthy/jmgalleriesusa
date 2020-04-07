@@ -1,5 +1,20 @@
 .signin--container {
 
+    label {
+        position: absolute;
+        font-size: .8rem;
+        margin-top: -4px;
+        background-color: #DDD;
+        padding: 0 5px;
+        color: $color-black;
+        border-radius: 0 $border-radius $border-radius 0;
+        text-transform: uppercase;
+    }
+
+    .make-wide {
+        width: 100%;
+    }
+
     .error {
         margin-top: 42px;
         background-color: rgba(255,0,0, .1);
@@ -35,4 +50,49 @@
 
 .showSignOut {
     display: block !important;
+}
+
+/* Pin Code */
+
+.form_pincode {
+
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 0 auto;
+
+    input[type="tel"] {
+        border: none;
+        width: 50px;
+        height: 50px; 
+        background-color: #f1f1f1;
+        text-align: center;
+      
+        &::placeholder {
+            text-align: center;
+        }
+
+        &:not(:first-child) {
+            // margin-left: 10px;
+        }
+
+        &:hover {
+            background-color: rgba(37, 116, 169, .1);
+        }
+
+    }
+    
+    .toUpper {
+        text-transform: uppercase;
+    }
+
+    .divider >p {
+        font-size: 2rem;
+        font-weight: 800;
+        text-align: center;
+        color: #AAA;
+        margin-left: 10px;
+        margin-top: 20px;
+    }
 }

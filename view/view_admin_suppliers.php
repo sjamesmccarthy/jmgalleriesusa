@@ -13,7 +13,7 @@
                         <h2>Index of <b>Suppliers</b> (<?= $active_suppliers_count ?>)</h2>
                         </div>
                         <div class="col-1 add-icon">
-                            <!-- <a href="/studio/suppliers-add"><i class="fas fa-plus-circle"></i></a> -->
+                            <a href="/studio/suppliers-add"><i class="fas fa-plus-circle"></i></a>
                         </div>
                     </div>
 
@@ -51,7 +51,7 @@
                 { data: 'company',
                     "render": function(data, type, row, meta){
                         if(type === 'display'){
-                            data = '<a href="/studio/inventory-add?id=' + row.supplier_id + '">' + data + '</a>';
+                            data = '<a href="/studio/suppliers-add?id=' + row.supplier_id + '">' + data + '</a>';
                         }  
                         return data;
                     } 

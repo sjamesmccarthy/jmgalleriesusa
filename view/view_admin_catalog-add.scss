@@ -35,7 +35,19 @@
     }
 
     form {
-        
+        #add-collection {
+            cursor: pointer;
+            color: $color-blue;
+            text-decoration: underline;
+        }
+
+        #collections-tag {
+            min-height: 100px;
+            padding: 15px;
+            display: none;
+            overflow-y: scroll;
+        }
+
         .photopreview {
             width: 100%;
             margin-top: 1rem;

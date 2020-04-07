@@ -6,7 +6,7 @@
     $catalog_path_cleaned = ltrim($this->page->catalog_path, '/');
     
     /* Load all photo meta data */
-    $photo_meta = $this->api_Catalog_Photo($this->photo_path);
+    $photo_meta = $this->api_Catalog_Photo('0',$this->photo_path);
     if(isSet($photo_meta['catalog_photo_id'])) {
         $this->api_Update_Photo_Viewed($photo_meta['catalog_photo_id']);
     }
@@ -20,7 +20,7 @@
     /* Determine if the "TinyViews photo exists */
      if( file_exists($_SERVER['DOCUMENT_ROOT'] . "/catalog/__image/" . $photo_meta['file_name'] . '-tinyviews.jpg') ) {
 
-        $tinyviewImage = '<div class="col"><img style="width: 100%; border-radius: 0"  src="/catalog/__image/' . $photo_meta['file_name'] . '-tinyviews.jpg" /><div class="bx-buyart-btn"><a target="_shop" href="/shop">Also available in a tinyViews&trade; Edition &mdash; Buy Now</a></div></div>';
+        $tinyviewImage = '<div class="col"><img style="width: 100%; border-radius: 0"  src="/catalog/__image/' . $photo_meta['file_name'] . '-tinyviews.jpg" /><div class="bx-buyart-btn"><a target="_shop" href="/shop">tinyViews&trade; Edition &mdash; Shop Now</a></div></div>';
      } else {
          $tinyviewImage = null;
      }
@@ -59,22 +59,29 @@
     if( $photo_meta['as_gallery'] == 1) {
         $ed_G = true;
         // $as_editions_tmp .= "Gallery{print_media}";
-        $as_editions_tmp .= "Gallery Edition Limited to 12. Handmade, signed, and authenticated.";
+        $as_editions_tmp .= "Edition of " . $this->config->limited_edition_max  . " plus 2 Artist Proofs";
+        $edition_desc = $as_editions_tmp . " / $1,000 USD / Handmade and signed with Certificate of Authenticity ";
+        $btn = "BUY THIS LIMITED EDITION";
+        $btn_link = '<a href="/contact?photo=' . $photo_meta['file_name'] . '">';
+        $gallery_details = '<p class="mt-16">Each piece of artwork comes ready-to-hang, framed in a handmade dark walnut frame with Tru Vue Museum Glass protecting the print.<br />Price displayed reflects 16x24 image size. <a href="/styles">Read more about our pricing and edition sizes.</a></p>';
     }
     
     /* If as_STUDIO is set */
-    if( $photo_meta['as_studio'] == 1) {
-        $ed_S = true;
-        if($ed_G === true) { $as_editions_tmp .= ", "; }
-        $as_editions_tmp .= "Studio";
-    }
+    // if( $photo_meta['as_studio'] == 1) {
+    //     $ed_S = true;
+    //     if($ed_G === true) { $as_editions_tmp .= ", "; }
+    //     $as_editions_tmp .= "Studio";
+    // }
 
     /* If as_OPEN is set */
-    // if( $photo_meta['as_open'] == 1) {
-    //     $ed_O = true;
-    //     if($ed_G === true || $ed_S === true) { $as_editions_tmp .= ", "; }
-    //     $as_editions_tmp .= "as well as available as an Open Edition print only";
-    // }
+    if( $photo_meta['as_open'] == 1) {
+        $ed_O = true;
+        if($ed_G === true || $ed_S === true) { $as_editions_tmp .= ", "; }
+        $as_editions_tmp .= "";
+        $edition_desc = 'tinyViews&trade; Edition &mdash; Available in smaller sizes and is not signed';
+        $btn = "SHOP NOW";
+        $btn_link = '<a target="_shop" href="/shop">';
+    }
 
     /* If as_TINYVIEWS is set */
     // if( $photo_meta['as_tinyview'] == 1) {

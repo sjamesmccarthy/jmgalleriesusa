@@ -34,7 +34,7 @@ class Core_Api
 		$this->mysqli->close();
     }
 
-    public function api_Catalog_Category_Thumbs($catalog_path) {
+    public function api_Catalog_Category_Thumbs__Legacy($catalog_path) {
         
         /* Executes SQL and then assigns object to passed var */
         if( $this->checkDBConnection(__FUNCTION__) == true) {
@@ -49,7 +49,7 @@ class Core_Api
                     PH.as_open
                 FROM
                     catalog_photo AS PH
-                    RIGHT JOIN catalog_category AS CATE ON PH.catalog_category_id = CATE.catalog_category_id
+                    RIGHT JOIN catalog_collections AS CATE ON PH.catalog_collections_id = CATE.catalog_collections_id
                 WHERE
                     CATE.path = '" . $catalog_path ."'
                 AND PH.status = 'ACTIVE'
@@ -75,25 +75,29 @@ class Core_Api
     }
 
     public function api_Catalog_Category_Thumbs_All() {
-        
+
         /* Executes SQL and then assigns object to passed var */
         if( $this->checkDBConnection(__FUNCTION__) == true) {
 
             $sql = "
             SELECT
-                PH.catalog_photo_id,
-                PH.title,
-                PH.file_name,
-                PH.as_gallery,
-                PH.as_studio,
-                PH.as_open,
-                CATE.title AS cate_title,
-                CATE.path
+            	cp.catalog_photo_id,
+            	cp.title,
+                cp.file_name,
+                cp.loc_place,
+                cp.available_sizes,
+                cp.catalog_photo_id,
+                cp.as_gallery,
+                cp.as_studio,
+                cp.as_open,
+                cat.title AS cat_title,
+                cat.path as catalog_path
             FROM
-                catalog_photo AS PH
-                RIGHT JOIN catalog_category AS CATE ON PH.catalog_category_id = CATE.catalog_category_id
-                WHERE PH.status = 'ACTIVE' AND CATE.type = 'CATALOG' and CATE.status = 'ACTIVE'
-            ORDER BY PH.title";
+            	catalog_photo AS cp
+            	INNER JOIN catalog_collections AS cat ON cat.catalog_collections_id = cp.parent_collections_id
+            WHERE
+                cp.status = 'active'
+               ORDER BY cp.title";
 
             $result = $this->mysqli->query($sql);
 
@@ -116,6 +120,68 @@ class Core_Api
 
     public function api_Catalog_Category_Filmstrip($category_id, $limit) {
         
+        if($category_id != "ALL") {
+            $category = "cl.catalog_collections_id = " . $category_id
+            . " AND cc.status = 'ACTIVE' "
+            . " AND cp.status = 'ACTIVE' ";
+
+        } else {
+            $category = "cc.status = 'ACTIVE'"
+            . " AND cp.status = 'ACTIVE' ";
+        }
+
+        if($limit != "ALL") {
+            $limit = "ORDER BY RAND() LIMIT " . $limit;
+        } else {
+            $limit = "ORDER BY cp.title ASC";
+        }
+
+        /* Executes SQL and then assigns object to passed var */
+        if( $this->checkDBConnection(__FUNCTION__) == true) {
+
+            $sql = "SELECT
+            cp.catalog_photo_id,
+            cp.title,
+            cp.file_name,
+            cp.loc_place,
+            cp.available_sizes,
+            cp.catalog_photo_id,
+            cp.as_gallery,
+            cp.as_studio,
+            cp.as_open,
+            cc.title AS cate_title,
+            cc.path as catalog_path,
+            cc.status,
+            cc.type
+        FROM
+            catalog_collections_link AS cl
+            INNER JOIN catalog_photo AS cp ON cp.catalog_photo_id = cl.catalog_photo_id
+            INNER JOIN catalog_collections AS cc ON cc.catalog_collections_id = cl.catalog_collections_id
+        WHERE "
+            . $category
+            . $limit;
+            // . " ORDER BY cp.title ASC";
+
+            // $data['sql'] = $sql;
+
+            $result = $this->mysqli->query($sql);
+
+            if ($result->num_rows > 0) {
+            
+                while($row = $result->fetch_assoc())
+		        {
+		            $data[] = $row;
+		        }
+                
+            } 
+            
+        }
+
+        return($data);
+    }
+
+    public function api_Catalog_Category_Filmstrip__Legacy($category_id, $limit) {
+        
         /* Executes SQL and then assigns object to passed var */
         if( $this->checkDBConnection(__FUNCTION__) == true) {
 
@@ -127,9 +193,9 @@ class Core_Api
                 CATE.title AS cate_title
             FROM
                 catalog_photo AS PH
-                RIGHT JOIN catalog_category AS CATE ON PH.catalog_category_id = CATE.catalog_category_id
+                RIGHT JOIN catalog_collections AS CATE ON PH.catalog_collections_id = CATE.catalog_collections_id
             WHERE
-                PH.catalog_category_id = " . $category_id . " AND PH.status = 'ACTIVE' ORDER BY RAND() LIMIT " . $limit;
+                PH.catalog_collections_id = " . $category_id . " AND PH.status = 'ACTIVE' ORDER BY RAND() LIMIT " . $limit;
 
             $result = $this->mysqli->query($sql);
 
@@ -162,17 +228,71 @@ class Core_Api
         if( $this->checkDBConnection(__FUNCTION__) == true) {
 
             $sql = "SELECT
-                P.*,
-                C.path as catalog_path
-            FROM
-                catalog_photo AS P
-            INNER JOIN catalog_category AS C ON C.catalog_category_id = P.catalog_category_id
-            WHERE
-                -- created < Now() AND 
-                created > DATE_ADD(Now(), INTERVAL - " . $duration . " MONTH)
-           " . $rand . " AND P.status = 'ACTIVE'
-            ORDER BY created DESC LIMIT " . $limit;
+            PH.catalog_photo_id,
+            PH.title,
+            PH.file_name,
+            PH.loc_place,
+            PH.as_gallery,
+            PH.as_open,
+            CAT.path AS catalog_path
+        FROM
+            catalog_photo AS PH
+            INNER JOIN catalog_collections_link AS CPL on CPL.catalog_photo_id = PH.catalog_photo_id
+            INNER JOIN catalog_collections AS CAT on CAT.catalog_collections_id = CPL.catalog_collections_id
+        WHERE
+            PH.created > DATE_ADD(Now(), INTERVAL - 4 MONTH)
+            AND PH.status = 'ACTIVE'
+        ORDER BY
+            PH.created DESC
+        LIMIT " . $limit;
     
+            $result = $this->mysqli->query($sql);
+
+            if ($result->num_rows > 0) {
+            
+                while($row = $result->fetch_assoc())
+		        {
+		            $data[] = $row;
+		        }
+                
+            } else {
+                
+                $data['error'] = "No Records Found";
+                $data['sql'] = $sql;
+            }	
+            
+        }
+
+        return($data);
+    }
+
+    public function api_CollectorDash_Get_Portfolio($id) {
+        
+        /* Executes SQL and then assigns object to passed var */
+        if( $this->checkDBConnection(__FUNCTION__) == true) {
+
+            $sql = "
+            SELECT
+            A.title,
+            A.reg_num, 
+            A.print_size,
+            A.frame_size,
+            C.first_name,
+            C.last_name,
+            C.company,
+            A.value,
+            CERT.catalog_photo_id,
+            CAT.file_name,
+            CERT.serial_num,
+            CERT.purchase_date,
+            CERT.certificate_id
+        FROM
+            certificate AS CERT
+            INNER JOIN collector AS C ON CERT.collector_id = C.collector_id
+            INNER JOIN art AS A ON A.art_id = CERT.art_id
+            LEFT JOIN catalog_photo AS CAT on CAT.catalog_photo_id = CERT.catalog_photo_id
+            WHERE C.collector_id = '" . $id . "'";
+
             $result = $this->mysqli->query($sql);
 
             if ($result->num_rows > 0) {
@@ -199,20 +319,25 @@ class Core_Api
         if( $this->checkDBConnection(__FUNCTION__) == true) {
 
             $sql = "
-                SELECT
-                    V.count AS VIEWS,
-                    PH.title,
-                    PH.file_name
-                FROM
-                    catalog_photo_views AS V
-                    RIGHT JOIN catalog_photo AS PH ON V.catalog_photo_id = PH.catalog_photo_id
-                WHERE
-                    V.count >= 5
-                AND PH.status = 'ACTIVE'
-                ORDER BY
-                    RAND()
-                    DESC
-                    LIMIT 4";
+            SELECT
+            V.count AS VIEWS,
+            PH.catalog_photo_id,
+            PH.title,
+            PH.file_name,
+            CPL.catalog_collections_id,
+            CAT.path as cate_path
+        FROM
+            catalog_photo_views AS V
+            INNER JOIN catalog_photo AS PH ON V.catalog_photo_id = PH.catalog_photo_id
+            INNER JOIN catalog_collections_link AS CPL on CPL.catalog_photo_id = PH.catalog_photo_id
+            INNER JOIN catalog_collections AS CAT on CAT.catalog_collections_id = CPL.catalog_collections_id
+        WHERE
+            V.count >= 800
+            AND PH.status = 'ACTIVE'
+        ORDER BY
+            RAND()
+            DESC
+        LIMIT 4";
 
             $result = $this->mysqli->query($sql);
 
@@ -234,37 +359,30 @@ class Core_Api
         return($data);
     }
 
-    public function api_Catalog_Photo($file_name) {
-        
+    public function api_Catalog_Photo($id=0,$file_name=null) {
+
+        if($file_name == null) {
+            $where = "catalog_photo_id = '" . $id . "'";
+        } else {
+            $where = "file_name = '" . $file_name . "'";
+        }   
+
         /* Executes SQL and then assigns object to passed var */
         if( $this->checkDBConnection(__FUNCTION__) == true) {
 
-            $sql = "SELECT
-                P.*,
-                C.title as category_title
-                -- AL.*
-            FROM
-                catalog_photo AS P
-                INNER JOIN catalog_category AS C ON C.catalog_category_id = (
-                    SELECT
-                        catalog_category_id
-                    FROM
-                        catalog_photo
-                    WHERE
-                        file_name = '" . $file_name . "')
-                    -- INNER JOIN art_locations AS AL ON P.on_display = AL.art_location_id
-                WHERE
-                    file_name = '" . $file_name . "'";
+            $sql = "SELECT * FROM catalog_photo
+                WHERE " . 
+                    $where;
         
             $result = $this->mysqli->query($sql);
-            
+
             if ($result->num_rows > 0) {
             
                 while($row = $result->fetch_assoc())
 		        {
 		            $data = $row;
 		        }
-                
+
             } else {
             
                 /* This should go to a custom photo not found page */
@@ -274,7 +392,38 @@ class Core_Api
             
         }
 
-            // $this->printp_r($data);
+        return($data);
+    }
+
+    public function api_Admin_Get_CollectionsByPhoto($id, $parent_collections) {
+
+
+        /* Executes SQL and then assigns object to passed var */
+        if( $this->checkDBConnection(__FUNCTION__) == true) {
+
+            $sql = "SELECT
+            cl.catalog_photo_id,
+            cl.catalog_collections_id,
+            cc.title
+        FROM
+            catalog_collections_link as cl
+            inner join catalog_collections as cc on cc.catalog_collections_id = cl.catalog_collections_id
+        WHERE
+            cl.catalog_photo_id = '" . $id . "'
+            AND cl.catalog_collections_id NOT IN (" . $parent_collections . ")";
+
+            $result = $this->mysqli->query($sql);
+
+            if ($result->num_rows > 0) {
+            
+                while($row = $result->fetch_assoc())
+		        {
+		            $data[] = $row;
+		        }
+
+            }
+            
+        }
 
         return($data);
     }
@@ -315,9 +464,9 @@ class Core_Api
         if( $this->checkDBConnection(__FUNCTION__) == true) {
 
             if(is_null($catalog_path)) {
-                $sql = "SELECT * FROM catalog_category WHERE type='CATALOG' AND status='ACTIVE'";
+                $sql = "SELECT * FROM catalog_collections WHERE type='collection' AND status='active'";
             } else {
-                $sql = "SELECT * FROM catalog_category WHERE path ='" . $catalog_path . "' AND type='CATALOG'";
+                $sql = "SELECT * FROM catalog_collections WHERE path ='" . $catalog_path . "' AND status='active'";
             }
 
             $result = $this->mysqli->query($sql);
@@ -366,7 +515,7 @@ class Core_Api
         return($data);
     }
 
-    public function api_Auth_User($username, $password) {
+    public function api_Auth_User__Legacy($username, $password) {
 
         /* Executes SQL and then assigns object to passed var */
         if( $this->checkDBConnection(__FUNCTION__) == true) {
@@ -388,11 +537,9 @@ class Core_Api
                 AND U.USERNAME = '$username' 
             ";
 
-
-            $result = $this->mysqli->query($sql);
-            
              if ($result->num_rows > 0) {
-            
+                
+
                 while($row = $result->fetch_assoc())
 		        {
                     $data[] = $row;
@@ -418,12 +565,94 @@ class Core_Api
         return($data);
     }
 
+    public function api_Auth_User($username, $password) {
+
+        $pin = strtoupper($_POST['p_1'] . $_POST['p_2'] . $_POST['p_3'] . $_POST['p_4'] . $_POST['p_5'] . $_POST['p_6']);
+        $hash_str = md5("[/" . $_POST['username'] . "+" . $pin . "/p]");
+
+        if( $this->checkDBConnection(__FUNCTION__) == true) {
+
+            $sql = "SELECT
+                U.user_id,
+                U.username,
+                U.artist_id, 
+                U.created as membersince,
+                U.type,
+                A.artist_id,
+                A.first_name,
+                A.last_name,
+                A.email,
+                A.avatar,
+                A.website,
+                C.collector_id,
+                C.first_name as first_name_c,
+                C.last_name as last_name_c
+            FROM
+                user as U
+                LEFT JOIN artist AS A ON U.artist_id = A.artist_id
+                LEFT JOIN collector AS C ON C.collector_id = U.collector_id
+            WHERE
+                U.pin = '$hash_str'
+                AND U.USERNAME = '$username' 
+            ";
+
+            $result = $this->mysqli->query($sql);     
+            if ($result->num_rows > 0) {
+
+                while($row = $result->fetch_assoc())
+		        {
+                    $data = $row;
+		        }
+             
+                $data['result'] = '200';
+                $_SESSION['dashboard'] = $data['type'];
+                $_SESSION['uid'] =  $data['user_id'];
+                   
+                switch($data['type']) {
+
+                    case "ARTIST":
+                    $_SESSION['artist_id'] =  $data['artist_id'];
+                    break;
+
+                    case "COLLECTOR":
+                    $_SESSION['collector_id'] =  $data['collector_id'];
+                    break;
+
+                    default:
+                    // print "switch.break()";
+                    break;
+
+                }
+
+                if($_SERVER['REMOTE_ADDR'] != "::1") {
+                    $_SESSION['ip'] = $_SERVER['REMOTE_ADDR'];
+                } else {
+                    $_SESSION['ip'] = '127.0.0.1';
+                }
+                // $this->log(array("key" => "admin", "value" => "session " . session_id() . " created", "type" => "system"));
+                
+                $_SESSION['data'] = $data;
+
+            } else {
+               $data['result'] = '400';
+            }	
+        }
+
+        $this->log(array("key" => "admin", "value" => "logged in from " . $_SESSION['ip'], "type" => "system"));
+
+        return($data);
+    }
+
     public function api_Polarized_Get_Latest() {
 
-        // Read in Json file with title and description and link. 
-        // return($this->getJSON('view/data_polarized.json', 'data'));
         $result = $this->getJSON('view/data_polarized.json', 'data');
-        // $this->printp_r($result);
+        return($result);
+
+    }
+
+    public function api_AmazingOffer_Get_Latest() {
+
+        $result = $this->getJSON('view/data_amazingoffer.json', 'data');
         return($result);
 
     }
@@ -648,19 +877,20 @@ class Core_Api
         if( $this->checkDBConnection(__FUNCTION__) == true) {
 
             $sql = "SELECT
-            P.catalog_photo_id,
-            P.title,
-            P.file_name,
-            C.title as category,
-            P.status,
-            C.path,
-            PV.count as views,
-            PV.updated as lastview
+            PH.catalog_photo_id,
+            PH.title,
+            PH.file_name,
+            PH.parent_collections_id,
+            CAT.title AS category,
+            PH.status,
+            CAT.path,
+            PV.count AS views,
+            PV.updated AS lastview
         FROM
-            catalog_photo AS P
-            INNER JOIN catalog_category AS C ON P.catalog_category_id = C.catalog_category_id
-            RIGHT JOIN catalog_photo_views AS PV ON P.catalog_photo_id = PV.catalog_photo_id";
-        
+            catalog_photo AS PH
+            INNER JOIN catalog_collections AS CAT on CAT.catalog_collections_id = PH.parent_collections_id
+            RIGHT JOIN catalog_photo_views AS PV ON PH.catalog_photo_id = PV.catalog_photo_id";
+
             $result = $this->mysqli->query($sql);
 
             if ($result->num_rows > 0) {
@@ -719,12 +949,8 @@ class Core_Api
 
             $sql = "SELECT
                 A.*
-                -- C.collector_id,
-                -- C.acquired_from,
-                -- C.purchase_date
             FROM
                 art AS A
-                -- left outer join certificate as C on A.art_id = C.art_id
             WHERE
                 A.art_id ='" . $art_id . "'";
         
@@ -931,7 +1157,7 @@ class Core_Api
         /* Executes SQL and then assigns object to passed var */
         if( $this->checkDBConnection(__FUNCTION__) == true) {
 
-            $sql = "select catalog_category_id, title, type from catalog_category WHERE status = 'ACTIVE'";
+            $sql = "select catalog_collections_id, title, type from catalog_collections WHERE type='collection' AND status = 'active'";
             $result = $this->mysqli->query($sql);
 
             if ($result->num_rows > 0) {
@@ -997,6 +1223,97 @@ class Core_Api
 
     }
 
+    public function api_Admin_Get_Collector($id) {
+
+        /* Executes SQL and then assigns object to passed var */
+        if( $this->checkDBConnection(__FUNCTION__) == true) {
+
+            $sql = "SELECT
+                C.*
+            FROM
+                collector AS C
+            WHERE
+                C.collector_id ='" . $id . "'";
+        
+            $result = $this->mysqli->query($sql);
+
+            if ($result->num_rows > 0) {
+            
+                while($row = $result->fetch_assoc())
+		        {
+		            $data = $row;
+		        }
+                
+            } 
+            
+        }
+
+        return($data);
+
+    }
+
+    public function api_Admin_Get_Collector_Artwork($first_name, $last_name) {
+
+        /* Executes SQL and then assigns object to passed var */
+        if( $this->checkDBConnection(__FUNCTION__) == true) {
+
+            $sql = "
+            SELECT
+                A.title,
+                A.value,
+                A.reg_num,
+                CERT.serial_num,
+                CERT.purchase_date,
+                CERT.certificate_id
+            FROM
+                certificate AS CERT
+                INNER JOIN collector AS C ON CERT.collector_id = C.collector_id
+                INNER JOIN art AS A ON A.art_id = CERT.art_id
+                WHERE C.first_name LIKE '{$first_name}' AND C.last_name LIKE '{$last_name}'
+    ";
+        
+            $result = $this->mysqli->query($sql);
+
+            if ($result->num_rows > 0) {
+            
+                while($row = $result->fetch_assoc())
+		        {
+		            $data[] = $row;
+		        }
+                
+            } 
+            
+        }
+
+        return($data);
+
+    }
+
+    public function api_Admin_Get_Collector_UserAct($id) {
+
+        /* Executes SQL and then assigns object to passed var */
+        if( $this->checkDBConnection(__FUNCTION__) == true) {
+
+            $sql = "
+            select user_id, created, last_update from user where collector_id='" . $id . "'";
+        
+            $result = $this->mysqli->query($sql);
+
+            if ($result->num_rows > 0) {
+            
+                while($row = $result->fetch_assoc())
+		        {
+		            $data = $row;
+		        }
+                
+            } 
+            
+        }
+
+        return($data);
+
+    }
+
     public function api_Admin_Get_Locations_History($art_id) {
 
         /* Executes SQL and then assigns object to passed var */
@@ -1046,7 +1363,7 @@ class Core_Api
 
         $sql = "UPDATE catalog_photo 
         SET 
-        catalog_category_id = '$catalog_category_id',
+        parent_collections_id = '$parent_collections_id',
         title = '$title',
         story = '$story',
         file_name = '$file_name',
@@ -1069,8 +1386,31 @@ class Core_Api
         as_gallery = '$as_gallery',
         as_open = '$as_open'
         WHERE catalog_photo_id = '$catalog_photo_id' AND file_name = '$file_name'";
-
+        
         $result = $this->mysqli->query($sql);
+        
+        /* DELETE ALL catalog_collection_link records for this ID */
+        $sql_d = "DELETE FROM catalog_collections_link WHERE catalog_photo_id = '" . $catalog_photo_id . "'";
+        $result_d = $this->mysqli->query($sql_d);
+        
+        /* Add parent collection to the array */
+        if(!isSet($_POST['collections_tags'])) {
+            $collections_tags = array();
+        }
+        
+        array_push($collections_tags, $parent_collections_id);
+
+        foreach($collections_tags as $key => $value) {
+
+            $sql_ci = "INSERT INTO catalog_collections_link (catalog_photo_id,catalog_collections_id,artist_id)
+                VALUES('" . $catalog_photo_id . "','" . $value . "','" . $artist_id . "')";
+            $result_ci = $this->mysqli->query($sql_ci);
+
+        }
+
+        /* Check to see if files have been uploaded */
+        $this->uploadFile(array("jpg","jpeg"), "jpg");
+
 
         if($result == 1) {
             $_SESSION['error'] = '200';
@@ -1081,8 +1421,6 @@ class Core_Api
             $this->log(array("key" => "admin", "value" => "Failed Update Catalog Photo (" . $_POST['catalog_photo_id'] . "+" . $_POST['file_name'] . ") " . $sql, "type" => "failure"));
         }
 
-        /* Check to see if files have been uploaded */
-        $this->uploadFile(array("jpg","jpeg"), "jpg");
     }
 
     public function api_Admin_Insert_Catalog() {
@@ -1098,7 +1436,7 @@ class Core_Api
         INSERT INTO `catalog_photo` (
         `catalog_photo_id`, 
         `artist_id`, 
-        `catalog_category_id`, 
+        `parent_collections_id`, 
         `title`, 
         `story`, 
         `file_name`, 
@@ -1125,7 +1463,7 @@ class Core_Api
         ) VALUES ( 
             DEFAULT, 
             '$artist_id', 
-            '$catalog_category_id', 
+            '$parent_collections_id', 
             '$title', 
             '$story', 
             '$file_name', 
@@ -1156,7 +1494,7 @@ class Core_Api
         if($result == 1) {
             $_SESSION['error'] = '200';
             $_SESSION['notify_msg'] = $_POST['title'];
-            $this->log(array("key" => "admin", "value" => "New Photo Added (" . $_POST['title'] . " to catalog id: " . $_POST['catalog_category_id'] . ") ", "type" => "success"));
+            $this->log(array("key" => "admin", "value" => "New Photo Added (" . $_POST['title'] . " to catalog id: " . $_POST['catalog_collections_id'] . ") ", "type" => "success"));
         } else {
             $_SESSION['error'] = '400';
             $this->log(array("key" => "admin", "value" => "Failed Insert of Catalog Photo (" . $_POST['title'] . ")", "type" => "failure"));
@@ -1245,7 +1583,6 @@ class Core_Api
         $acquired_from = $this->mysqli->real_escape_string($_POST['acquired_from']);
         $date = date("Y-m-d H:i:s");
 
-        // $this->printp_r($_POST);
         /* If state_ is set than update certificate record */
         if(isSet($state_collector_id) && $state_collector_id == $collector) {
 
@@ -1358,8 +1695,6 @@ class Core_Api
             $this->log(array("key" => "admin", "value" => "Failed Update Inventory Art (" . $_POST['art_id'] . "+" . $_POST['title'] . ")", "type" => "failure"));
         }
 
-        // $this->printp_r($_POST);
-        
     }
     
     public function api_Admin_Insert_Inventory() {
@@ -1434,6 +1769,64 @@ class Core_Api
             $this->log(array("key" => "admin", "value" => "Failed Insert of Inventory Art (" . $_POST['title'] . ")", "type" => "failure"));
         }
 
+    }
+
+    public function api_Admin_Insert_Suppliers() {
+
+        /* extract Data Array */
+        extract($_POST, EXTR_PREFIX_SAME, "dup");
+
+        /* Insert into database */
+        $sql = "INSERT INTO `jmgaller_iesusa`.`supplier` (`company`, `first_name`, `last_name`, `email`, `phone`, `website`, `account_no`) 
+            VALUES ('{$company}', '{$first_name}', '{$last_name}', '{$email}', '{$phone}', '{$website}', '{$account}');";
+
+        $result = $this->mysqli->query($sql);
+        $_POST['suppliers_id'] = $this->mysqli->insert_id;
+
+        if($result == 1) {
+            $_SESSION['error'] = '200';
+            $_SESSION['notify_msg'] = $company;
+            $_SESSION['notification_msg'] = "<p class='heading'>success</p><p>" .  $company . " Has Been Added</p>";
+            $this->log(array("key" => "admin", "value" => "New Supplier Added (" . $_POST['company'] . ") ", "type" => "success"));
+
+        } else {
+            $_SESSION['error'] = '400';
+            $this->log(array("key" => "admin", "value" => "Failed Insert of Supplier (" . $_POST['company'] . ")", "type" => "failure"));
+        }
+
+    }
+
+    public function api_Admin_Update_Suppliers() {
+
+        /* extract Data Array */
+        extract($_POST, EXTR_PREFIX_SAME, "dup");
+        
+        /* Insert into database */
+             
+        $sql = "UPDATE `jmgaller_iesusa`.`supplier` 
+            SET 
+            `company` = '{$company}', 
+            `first_name` = '{$first_name}', 
+            `last_name` = '{$last_name}', 
+            `email` = '{$email}', 
+            `phone` = '{$phone}', 
+            `website` = '{$website}', 
+            `account_no` = '{$account}' 
+            WHERE `supplier_id` = '" . $supplier_id ."'";
+
+        $result = $this->mysqli->query($sql);
+        
+        if($result == 1) {
+            $_SESSION['error'] = '200';
+            $_SESSION['notify_msg'] = $company;
+            $_SESSION['notification_msg'] = "<p class='heading'>success</p><p>" .  $company . " Has Been Updated</p>";
+            $this->log(array("key" => "admin", "value" => "Updated Supplier (" . $company . ") ", "type" => "success"));
+        } else {
+            $_SESSION['error'] = '400';
+            $this->log(array("key" => "admin", "value" => "Failed Update To Supplier (" . $_POST['company'] . ")", "type" => "failure"));
+        }
+        
+        
     }
 
     public function api_Admin_Update_Inventory_Expenses() {
@@ -1552,8 +1945,6 @@ class Core_Api
                 INSERT INTO `art_costs_supplier` (`art_id`, `artist_id`, `supplier_materials_id`, `usage`)
                 VALUES('" . $art_id . "','" . $artist_id . "','" . $exp->id . "','" . $exp->quantity . "');";
 
-                // print $sql;
-
                 $result = $this->mysqli->query($sql);
 
                 if ($result == TRUE) {
@@ -1642,8 +2033,6 @@ class Core_Api
                     // echo "<hr />";
                 }
 
-                // print $sql . "<br />";
-
                 if ($result == TRUE) {
                     $data['result'] = '200';
                     // $this->log(array("key" => "admin", "value" => "Updated Catalog Photo (" . $_POST['catalog_photo_id'] . "+" . $_POST['file_name'] . ") ", "type" => "success"));
@@ -1671,8 +2060,6 @@ class Core_Api
             
                 $sql = "
                 UPDATE art_costs set status='ARCHIVED' where art_id='" . $art_id . "'";
-
-                // print $sql;
 
                 $result = $this->mysqli->query($sql);
 
@@ -1725,6 +2112,42 @@ class Core_Api
 
     }
 
+    public function api_Admin_Get_Suppliers_Item($id) {
+
+        /* Executes SQL and then assigns object to passed var */
+        if( $this->checkDBConnection(__FUNCTION__) == true) {
+
+            $sql = "SELECT
+                supplier_id,
+                company,
+                first_name,
+                last_name,
+                email,
+                phone,
+                website,
+                account_no
+            FROM
+                supplier
+            WHERE 
+            supplier_id = '" . $id . "'";
+        
+            $result = $this->mysqli->query($sql);
+
+            if ($result->num_rows > 0) {
+            
+                while($row = $result->fetch_assoc())
+		        {
+		            $data = $row;
+		        }
+                
+            } 
+            
+        }
+
+        return($data);
+
+    }
+    
     public function api_Admin_Get_Materials() {
 
         /* Executes SQL and then assigns object to passed var */
@@ -1759,6 +2182,176 @@ class Core_Api
 
     }
 
+    public function api_Admin_Get_Materials_Item($id) {
+
+        /* Executes SQL and then assigns object to passed var */
+        if( $this->checkDBConnection(__FUNCTION__) == true) {
+
+            $sql = "SELECT
+                SM.supplier_materials_id,
+                SM.supplier_id,
+                SM.material_type,
+                SM.material,
+                SM.quantity,
+                SM.unit_type,
+                SM.sku,
+                SM.cost,
+                SM.shipping_cost,
+                SM.purchased_on
+            FROM
+                supplier_materials AS SM
+            WHERE
+                SM.supplier_materials_id ='" . $id . "'";
+        
+        
+        $result = $this->mysqli->query($sql);
+        
+        if ($result->num_rows > 0) {
+            
+            while($row = $result->fetch_assoc())
+            {
+                $data = $row;
+            }
+            
+        } 
+        
+    }
+    
+    return($data);
+    
+}
+
+public function api_Admin_Get_Materials_By_Supplier($id) {
+    
+    /* Executes SQL and then assigns object to passed var */
+    if( $this->checkDBConnection(__FUNCTION__) == true) {
+        
+        $sql = "SELECT
+        SM.supplier_materials_id,
+        SM.supplier_id,
+        SM.material_type,
+        SM.material,
+        SM.quantity,
+        SM.unit_type,
+        SM.cost,
+        SM.purchased_on,
+        S.company
+    FROM
+        supplier_materials AS SM
+        LEFT JOIN supplier AS S ON S.supplier_id = SM.supplier_id
+        WHERE
+        SM.supplier_id ='" . $id . "'";
+        
+        $result = $this->mysqli->query($sql);
+        
+        if ($result->num_rows > 0) {
+            
+            while($row = $result->fetch_assoc())
+            {
+                $data[] = $row;
+            }
+            
+        } 
+        
+    }
+
+        return($data);
+
+    }
+
+    public function api_Admin_Insert_Materials() {
+
+        /* extract Data Array */
+        extract($_POST, EXTR_PREFIX_SAME, "dup");
+        if($shipping_cost == '') { $shipping_cost = '0.00';}
+        if($purchased_on == '') { $purchased_on = date("Y-m-d H:i:s"); }
+
+        /* Insert into database */
+        $sql = "INSERT INTO `jmgaller_iesusa`.`supplier_materials` (`supplier_id`, `manual_entry`, `material_type`, `material`, `sku`, `quantity`, `unit_type`, `cost`, `purchased_on`, `shipping_cost`) 
+            VALUES ('{$supplier_id}', 'FALSE', '{$material_type}', '{$material}', '{$sku}', '{$quantity}', '{$unit_type}', '{$cost}', '{$purchased_on}', '{$shipping_cost}');";
+
+        $result = $this->mysqli->query($sql);
+        $_POST['suppliers_materials_id'] = $this->mysqli->insert_id;
+
+        if($result == 1) {
+            $_SESSION['error'] = '200';
+            $_SESSION['notify_msg'] = $material;
+            $_SESSION['notification_msg'] = "<p class='heading'>success</p><p>" .  $material . " Has Been Added</p>";
+            $this->log(array("key" => "admin", "value" => "New Material Added (" . $_POST['material'] . ") ", "type" => "success"));
+
+        } else {
+            $_SESSION['error'] = '400';
+            $this->log(array("key" => "admin", "value" => "Failed Insert of Material (" . $_POST['material'] . ")", "type" => "failure"));
+        }
+
+    }
+
+    public function api_Admin_Update_Materials() {
+
+        /* extract Data Array */
+        extract($_POST, EXTR_PREFIX_SAME, "dup");
+        if($shipping_cost == '') { $shipping_cost='0.00';}
+
+        /* Insert into database */
+        $sql = "UPDATE `jmgaller_iesusa`.`supplier_materials` 
+        SET `supplier_id` = '{$supplier_id}', 
+        `manual_entry` = 'FALSE', 
+        `material_type` = '{$material_type}', 
+        `material` = '{$material}', 
+        `sku` = '{$sku}', 
+        `quantity` = '{$quantity}', 
+        `unit_type` = '{$unit_type}', 
+        `cost` = '{$cost}', 
+        `purchased_on` = '{$purchased_on}', 
+        `shipping_cost` = '{$shipping_cost}' 
+        WHERE `supplier_materials_id` = '" . $supplier_materials_id ."'";
+
+        $result = $this->mysqli->query($sql);
+
+        if($result == 1) {
+            $_SESSION['error'] = '200';
+            $_SESSION['notify_msg'] = $company;
+            $_SESSION['notification_msg'] = "<p class='heading'>success</p><p>" .  $material . " Has Been Updated</p>";
+            $this->log(array("key" => "admin", "value" => "Updated Supplier (" . $material . ") ", "type" => "success"));
+        } else {
+            $_SESSION['error'] = '400';
+            $this->log(array("key" => "admin", "value" => "Failed Update To Material (" . $_POST['material'] . ")", "type" => "failure"));
+        }
+        
+        
+    }
+
+    public function api_Admin_Get_Collections() {
+
+        /* Executes SQL and then assigns object to passed var */
+        if( $this->checkDBConnection(__FUNCTION__) == true) {
+
+            $sql = "SELECT
+            c.catalog_collections_id,
+            c.title,
+            c.path,
+            c.status,
+            c.type
+        FROM
+            catalog_collections AS c
+            ORDER BY c.title DESC";
+        
+            $result = $this->mysqli->query($sql);
+
+            if ($result->num_rows > 0) {
+            
+                while($row = $result->fetch_assoc())
+		        {
+		            $data[] = $row;
+		        }
+                
+            } 
+            
+        }
+
+        return($data);
+
+    }
     public function api_Admin_Get_Reports() {
 
         /* Executes SQL and then assigns object to passed var */
@@ -1769,13 +2362,11 @@ class Core_Api
             R.name,
             R.desc,
             R.sql,
-            R.last_run_by,
-            A.first_name,
-            A.last_name,
-            R.last_run
+            R.fav
         FROM
             report as R
-            INNER JOIN artist as A ON R.last_run_by = A.artist_id";
+            WHERE status='ACTIVE'
+            ORDER BY R.fav DESC";
         
             $result = $this->mysqli->query($sql);
 
@@ -1794,6 +2385,181 @@ class Core_Api
 
     }
 
+    public function api_Admin_Get_Collections_Item($id) {
+
+        /* Executes SQL and then assigns object to passed var */
+        if( $this->checkDBConnection(__FUNCTION__) == true) {
+
+            $sql = "SELECT
+            c.catalog_collections_id,
+            c.title,
+            c.path,
+            c.desc,
+            c.status,
+            c.type
+        FROM
+            catalog_collections AS c
+        WHERE c.catalog_collections_id = '" . $id . "'";
+        
+            $result = $this->mysqli->query($sql);
+
+            if ($result->num_rows > 0) {
+            
+                while($row = $result->fetch_assoc())
+		        {
+		            $data = $row;
+		        }
+                
+            } 
+            
+        }
+
+        return($data);
+
+    }
+
+    public function api_Admin_Get_Reports_Item($id) {
+
+        /* Executes SQL and then assigns object to passed var */
+        if( $this->checkDBConnection(__FUNCTION__) == true) {
+
+            $sql = "SELECT
+            R.report_id,
+            R.name,
+            R.desc,
+            R.sql, 
+            R.fav
+        FROM
+            report as R
+        WHERE R.report_id = '" . $id . "'";
+        
+            $result = $this->mysqli->query($sql);
+
+            if ($result->num_rows > 0) {
+            
+                while($row = $result->fetch_assoc())
+		        {
+		            $data = $row;
+		        }
+                
+            } 
+            
+        }
+
+        return($data);
+
+    }
+
+    public function api_Admin_Insert_Collections() {
+
+        /* extract Data Array */
+        extract($_POST, EXTR_PREFIX_SAME, "dup");
+
+        /* Insert into database */
+        $sql = "INSERT INTO `jmgaller_iesusa`.`catalog_collections` (`artist_id`, `title`, `path`, `desc`, `status`, `type`) 
+        VALUES ('{$artist_id}', '{$title}', '{$path}', '{$desc}', '{$status}', '{$type}');";
+
+        $result = $this->mysqli->query($sql);
+        $_POST['report_id'] = $this->mysqli->insert_id;
+
+        if($result == 1) {
+            $_SESSION['error'] = '200';
+            $_SESSION['notify_msg'] = $name;
+            $_SESSION['notification_msg'] = "<p class='heading'>success</p><p>" .  $title . " Has Been Added</p>";
+            $this->log(array("key" => "admin", "value" => "New Collection Added (" . $_POST['title'] . ") ", "type" => "success"));
+
+        } else {
+            $_SESSION['error'] = '400';
+            $this->log(array("key" => "admin", "value" => "Failed Insert of Collection (" . $_POST['title'] . ")" . $sql, "type" => "failure"));
+        }
+
+    }
+
+    public function api_Admin_Update_Collections() {
+
+        /* extract Data Array */
+        extract($_POST, EXTR_PREFIX_SAME, "dup");
+
+        /* Insert into database */
+        $sql = "UPDATE `jmgaller_iesusa`.`catalog_collections` 
+        SET `title` = '{$title}', 
+        `path` = '{$path}', 
+        `desc` = '{$desc}', 
+        `status` = '{$status}', 
+        `type` = '{$type}' 
+        WHERE `catalog_collections_id` = '" . $catalog_collections_id ."'";
+
+        $result = $this->mysqli->query($sql);
+        
+        if($result == 1) {
+            $_SESSION['error'] = '200';
+            $_SESSION['notify_msg'] = $name;
+            $_SESSION['notification_msg'] = "<p class='heading'>success</p><p>" .  $title . " Has Been Updated</p>";
+            $this->log(array("key" => "admin", "value" => "Updated Collection (" . $title . ") ", "type" => "success"));
+        } else {
+            $_SESSION['error'] = '400';
+            $this->log(array("key" => "admin", "value" => "Failed Update to Collection (" . $_POST['title'] . ")", "type" => "failure"));
+        }
+        
+    }
+
+    public function api_Admin_Insert_Reports() {
+
+        /* extract Data Array */
+        extract($_POST, EXTR_PREFIX_SAME, "dup");
+        if(!isSet($fav)) { $fav = '0'; }
+        $sql_c =  $this->mysqli->real_escape_string($sql_c);
+
+        /* Insert into database */
+        $sql = "INSERT INTO `jmgaller_iesusa`.`report` (`name`, `desc`, `sql`, `last_run_by`, `fav`) 
+        VALUES ('{$name}', '{$desc}', '{$sql_c}', '{$artist_id}', '{$fav}');";
+
+        $result = $this->mysqli->query($sql);
+        $_POST['report_id'] = $this->mysqli->insert_id;
+
+        if($result == 1) {
+            $_SESSION['error'] = '200';
+            $_SESSION['notify_msg'] = $name;
+            $_SESSION['notification_msg'] = "<p class='heading'>success</p><p>" .  $name . " Has Been Added</p>";
+            $this->log(array("key" => "admin", "value" => "New Report / SQL Mark Added (" . $_POST['name'] . ") ", "type" => "success"));
+
+        } else {
+            $_SESSION['error'] = '400';
+            $this->log(array("key" => "admin", "value" => "Failed Insert of Report / SQL Mark (" . $_POST['name'] . ")" . $sql, "type" => "failure"));
+        }
+
+    }
+
+    public function api_Admin_Update_Reports() {
+
+        /* extract Data Array */
+        extract($_POST, EXTR_PREFIX_SAME, "dup");
+        if(!isSet($fav)) { $fav = '0'; }
+        $sql_c =  $this->mysqli->real_escape_string($sql_c);
+
+        /* Insert into database */
+        $sql = "UPDATE `jmgaller_iesusa`.`report` 
+        SET `name` = '{$name}', 
+        `desc` = '{$desc}', 
+        `sql` = '{$sql_c}', 
+        `last_run_by` = '{$artist_id}', 
+        `fav` = '{$fav}' 
+        WHERE `report_id` = '" . $report_id ."'";
+
+        $result = $this->mysqli->query($sql);
+        
+        if($result == 1) {
+            $_SESSION['error'] = '200';
+            $_SESSION['notify_msg'] = $name;
+            $_SESSION['notification_msg'] = "<p class='heading'>success</p><p>" .  $name . " Has Been Updated</p>";
+            $this->log(array("key" => "admin", "value" => "Updated Report / SQL Mark (" . $name . ") ", "type" => "success"));
+        } else {
+            $_SESSION['error'] = '400';
+            $this->log(array("key" => "admin", "value" => "Failed Update Report / SQL Mark (" . $_POST['name'] . ")", "type" => "failure"));
+        }
+        
+    }
+
     public function api_Admin_Get_Collectors() {
 
         /* Executes SQL and then assigns object to passed var */
@@ -1805,11 +2571,15 @@ class Core_Api
                 C.last_name,
                 C.company,
                 C.email,
+                C.phone,
+                C.address,
+                C.address_extra,
                 C.city,
-                C.state
+                C.state,
+                C.postalcode,
+                C.country
             FROM
-                collector as C
-                order by company ASC";
+                collector as C";
         
             $result = $this->mysqli->query($sql);
 
@@ -1826,6 +2596,263 @@ class Core_Api
 
         return($data);
 
+    }
+
+    public function api_Admin_Insert_Collectors() {
+
+        /* extract Data Array */
+        extract($_POST, EXTR_PREFIX_SAME, "dup");
+
+        /* Insert into database */
+        $sql = "INSERT INTO `jmgaller_iesusa`.`collector` (`first_name`, `last_name`, `company`, `email`, `phone`, `address`, `address_extra`, `city`, `state`, `country`, `postalcode`) 
+        VALUES ('{$first_name}', '{$last_name}', '{$company}', '{$email}', '{$phone}', '{$address}', '{$address_extra}', '{$city}', '{$state}', '{$country}', '{$postalcode}');
+        ";
+
+        $result = $this->mysqli->query($sql);
+        $_POST['suppliers_id'] = $this->mysqli->insert_id;
+
+        if($result == 1) {
+            $_SESSION['error'] = '200';
+            $_SESSION['notify_msg'] = $company;
+            $_SESSION['notification_msg'] = "<p class='heading'>success</p><p>" .  $first_name . " " . $last_name . " Has Been Added</p>";
+            $this->log(array("key" => "admin", "value" => "New Collector Profile Created (" . $_POST['first_name'] . " " . $_POST['last_name'] . ") ", "type" => "success"));
+
+        } else {
+            $_SESSION['error'] = '400';
+            $this->log(array("key" => "admin", "value" => "Failed Insert of Collector Profile (" . $_POST['first_name'] . " " . $_POST['last_name'] . ")", "type" => "failure"));
+        }
+
+    }
+
+    public function api_Admin_Update_Collectors() {
+
+        /* extract Data Array */
+        extract($_POST, EXTR_PREFIX_SAME, "dup");
+        
+        /* Insert into database */
+             
+        $sql = "UPDATE `jmgaller_iesusa`.`collector` 
+            SET `first_name` = '{$first_name}', 
+            `last_name` = '{$last_name}', 
+            `company` = '{$company}', 
+            `email` = '{$email}', 
+            `phone` = '{$phone}', 
+            `address` = '{$address}', 
+            `address_extra` = '{$address_extra}', 
+            `city` = '{$city}', 
+            `state` = '{$state}', 
+            `country` = '{$country}', 
+            `postalcode` = '{$postalcode}' 
+                WHERE `collector_id` = '" . $collector_id . "'";
+
+        $result = $this->mysqli->query($sql);
+        
+        if($result == 1) {
+            $_SESSION['error'] = '200';
+            $_SESSION['notify_msg'] = $company;
+            $_SESSION['notification_msg'] = "<p class='heading'>success</p><p>" .  $first_name . " " . $last_name . " Has Been Updated</p>";
+            $this->log(array("key" => "admin", "value" => "Updated Collector Profile for (" .  $first_name . " " . $last_name . ") ", "type" => "success"));
+        } else {
+            $_SESSION['error'] = '400';
+            $this->log(array("key" => "admin", "value" => "Failed Update To Collector Profile for (" .  $first_name . " " . $last_name . ")", "type" => "failure"));
+        }
+        
+        
+    }
+
+    public function api_Admin_Get_Users() {
+
+        /* Executes SQL and then assigns object to passed var */
+        if( $this->checkDBConnection(__FUNCTION__) == true) {
+
+            $sql = "SELECT
+            U.user_id,
+            U.artist_id,
+            U.collector_id,
+            U.type,
+            U.username,
+            U.last_login,
+            U.last_login_ip,
+            C.first_name as c_first,
+            C.last_name as c_last,
+            A.first_name as a_first,
+            A.last_name as a_last
+        FROM
+            user as U
+            LEFT JOIN artist as A on U.artist_id = A.artist_id
+            LEFT JOIN collector as C on U.collector_id = C.collector_id           
+            ";
+   
+            $result = $this->mysqli->query($sql);
+
+            if ($result->num_rows > 0) {
+            
+                while($row = $result->fetch_assoc())
+		        {
+		            $data[] = $row;
+		        }
+                
+            } 
+            
+        }
+        
+        return($data);
+
+    }
+
+    public function api_Admin_Get_Users_Item($id) {
+
+        /* Executes SQL and then assigns object to passed var */
+        if( $this->checkDBConnection(__FUNCTION__) == true) {
+
+            $sql = "SELECT
+            U.user_id,
+            U.artist_id,
+            U.collector_id,
+            U.type,
+            U.username,
+            U.last_login,
+            U.last_login_ip,
+            U.pin,
+            C.first_name as c_first,
+            C.last_name as c_last,
+            A.first_name as a_first,
+            A.last_name as a_last
+        FROM
+            user as U
+            LEFT JOIN artist as A on U.artist_id = A.artist_id
+            LEFT JOIN collector as C on U.collector_id = C.collector_id 
+        WHERE U.user_id = '" . $id . "'";
+        
+            $result = $this->mysqli->query($sql);
+
+            if ($result->num_rows > 0) {
+            
+                while($row = $result->fetch_assoc())
+		        {
+		            $data = $row;
+		        }
+                
+            } 
+            
+        }
+
+        return($data);
+
+    }
+
+    public function api_Admin_Insert_Users() {
+
+        /* extract Data Array */
+        extract($_POST, EXTR_PREFIX_SAME, "dup");
+
+        $this->printp_r($_POST);
+
+        /* Generate PIN hash */
+        $hash_str = md5("[/" 
+        . $username
+        . "+"
+        .  strtoupper($pin)
+        . "/p]");
+
+        /* str to upper */
+        $type = strtoupper($type);
+
+        /* Determine Artist or Collector */
+        if($type == 'ARTIST') {
+            $add_artist_id =  "`artist_id`,";
+        } else {
+            $add_collector_id =  "`collector_id`,";
+        }
+
+        /* Insert into database */
+        $sql = "INSERT INTO `jmgaller_iesusa`.`user` 
+        ({$add_artist_id} {$add_collector_id}  `type`, `status`, `username`, `pin`, `last_login_ip`) 
+        VALUES (
+            '{$ac_id}',
+            '{$type}', 
+            'ACTIVE', 
+            '{$username}', 
+            '{$hash_str}', 
+            '{$_SESSION['ip']}'
+            );";
+
+        $result = $this->mysqli->query($sql);
+
+        if($result == 1) {
+            $_SESSION['error'] = '200';
+            $_SESSION['notify_msg'] = $username;
+            $_SESSION['notification_msg'] = "<p class='heading'>success</p><p>" .  $username . " Has Been Added</p>";
+            $this->log(array("key" => "admin", "value" => "New User Added (" . $_POST['username'] . ") ", "type" => "success"));
+
+        } else {
+            $_SESSION['error'] = '400';
+            $this->log(array("key" => "admin", "value" => "Failed To Create New User (" . $_POST['username'] . ")" . $sql, "type" => "failure"));
+        }
+
+    }
+
+    public function api_Admin_Update_User() {
+
+        /* extract Data Array */
+        extract($_POST, EXTR_PREFIX_SAME, "dup");
+       
+        /* Generate PIN hash */
+        $hash_str = md5("[/" 
+        . $username
+        . "+"
+        .  strtoupper($pin)
+        . "/p]");
+
+
+        /* Determine Artist or Collector */
+        if($type == 'ARTIST') {
+            $add_artist_id =  "`artist_id` = " . $artist_id . ",";
+        } else {
+            $add_collector_id =  "`collector_id` = " . $collector_id . ",";
+        }
+
+        /* Insert into database */
+        $sql = "UPDATE `jmgaller_iesusa`.`user` SET 
+        {$add_artist_id}
+        {$add_collector_id}
+        `type` = '{$type}', 
+        `status` = 'ACTIVE', 
+        `username` = '{$username}', 
+        `pin` = '{$hash_str}'
+        WHERE `user_id` = '{$user_id}'
+        ";
+
+        $result = $this->mysqli->query($sql);
+ 
+        if($result == 1) {
+            $_SESSION['error'] = '200';
+            $_SESSION['notify_msg'] = $name;
+            $_SESSION['notification_msg'] = "<p class='heading'>success</p><p>" .  $username . " Has Been Updated</p>";
+            $this->log(array("key" => "admin", "value" => "Updated User (" . $username . ") ", "type" => "success"));
+        } else {
+            $_SESSION['error'] = '400';
+            $this->log(array("key" => "admin", "value" => "Failed To Update User (" . $_POST['username'] . ")", "type" => "failure"));
+        }
+        
+    }
+
+    public function api_Admin_Auth_Log_Signin($uid) {
+
+        /* extract Data Array */
+        extract($_POST, EXTR_PREFIX_SAME, "dup");
+
+        if($_SERVER['REMOTE_ADDR'] != "::1") {
+            $IP = $_SERVER['REMOTE_ADDR'];
+        } else {
+            $IP = '127.0.0.1';
+        }
+
+        /* Insert into database */
+        $sql = "UPDATE `jmgaller_iesusa`.`user` SET last_login='" . date ("Y-m-d H:i:s", time()) . "', last_login_ip='" . $IP . "' WHERE user_id ='" . $uid . "'";
+
+        $result = $this->mysqli->query($sql);
+        
     }
 
 

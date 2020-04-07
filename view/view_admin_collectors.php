@@ -10,10 +10,10 @@
 
                     <div class="grid">
                         <div class="col">
-                        <h2>Index of <b>Collectors</b> (<?= $active_collectors_count ?>)</h2>
+                        <h2>Index of <b>Collector</b> Profiles(<?= $active_collectors_count ?>)</h2>
                         </div>
                         <div class="col-1 add-icon">
-                            <!-- <a href="/studio/suppliers-add"><i class="fas fa-plus-circle"></i></a> -->
+                            <a href="/studio/collectors-add"><i class="fas fa-plus-circle"></i></a>
                         </div>
                     </div>
 
@@ -54,7 +54,7 @@
                         if(row.last_name === null) { row.last_name = ''; }
 
                         if(type === 'display'){
-                            data = row.first_name + ' ' + row.last_name;
+                            data = '<a href="/studio/collectors-add?id=' + row.collector_id + '">' + row.first_name + ' ' + row.last_name + '</a>';
                         }  
                         return data;
                     } 

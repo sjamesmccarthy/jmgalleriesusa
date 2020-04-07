@@ -25,7 +25,7 @@ class Core_Site extends Core_Api
         $this->getJSON('routes.json','routes');
 
         /* Initialize the Session */
-        $this->initSession();
+        $this->initSession('jmGalleriesPublicSession');
 
         /* Start the database */
         $this->startDB();
@@ -48,14 +48,10 @@ class Core_Site extends Core_Api
 
     }
 
-    public function initSession() {
+    public function initSession($name='defaultSession') {
 
         /* Starting the session and setting the lifetime to 1 day */
-        session_start([
-            'name' => 'jmGalleriesManager',
-            'cookie_lifetime' => 0,
-            'gc_maxlifetime' => 86400
-            ]);   
+        session_start();   
 
         $this->session_started = array(session_id(), $_SESSION);
     
@@ -143,8 +139,12 @@ class Core_Site extends Core_Api
             /* Parse query string */
             if(isSet($this->routes->URI->query))
             {
+                // $this->printp_r($this->routes->URI->query);
                 $this->data->routePathQuery = explode('&', $this->routes->URI->query);
+                // $this->printp_r($this->data->routePathQuery);
                 $this->routes->URI->queryvals = explode('=', $this->routes->URI->query);
+
+
             } else {
                 $this->routes->URI->query = 'false';
             }
@@ -269,13 +269,11 @@ class Core_Site extends Core_Api
         if( file_exists($file . ".inc.php") ) {
             include_once($file . ".inc.php");
         } 
-        
+
         /* Include the partial file if exists */
         if( file_exists($file . '.php')) {
             include_once($file . '.php');
-        } else {
-            echo "Requested Object Not Available: " . $partial;
-        }
+        } 
     }
 
     public function log($log_data) {

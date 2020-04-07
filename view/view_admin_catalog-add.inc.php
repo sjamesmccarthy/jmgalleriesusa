@@ -8,17 +8,42 @@
         header('location:/studio/signin');
     }
 
+ 
     /* CHECK TO SEE IF THIS IS AN EDIT OR ADD NEW */
     if(isSet($this->routes->URI->queryvals)) {
-        $edit_file_name = $this->routes->URI->queryvals[1];
-        $edit_data = $this->api_Catalog_Photo($edit_file_name);
+        $edit_id = $this->routes->URI->queryvals[1];
+
+        $edit_data = $this->api_Catalog_Photo($edit_id);
         $this->data = $edit_data;
         extract($edit_data, EXTR_PREFIX_SAME, "dup");
-        $page_title = "Editing <b>" . $title . "</b>";
+
+        // Fetch all linked collections
+        $category_data = $this->api_Admin_Get_Catalog_Categories();
+        $collections_data = $this->api_Admin_Get_CollectionsByPhoto($catalog_photo_id, $parent_collections_id);
+        if(!isSet($collections_data)) { $collections_html= '<i style="padding-right: 5px;" class="fas fa-link"></i> link other collections'; }
+
+        foreach($category_data as $key_tag => $value_tag) {
+
+            foreach($collections_data as $key => $value) {
+               
+                    if($value_tag['catalog_collections_id'] == $value['catalog_collections_id']) {      
+                        $collections_html .= '<i style="padding-right: 5px;" class="fas fa-link"></i>' . $value['title'] . '<br />';
+                        $col_sel = 'SELECTED';
+                    }
+
+            }
+            
+            if($value_tag['catalog_collections_id'] != $edit_data['parent_collections_id']) {
+                $collections_tag_options .= '<option ' . $col_sel . ' value="' . $value_tag['catalog_collections_id'] . '">' . $value_tag['title'] . '</option>';
+                $col_sel = null;
+            }
+        }
+
+        $page_title = "Editing <b>" . $title . "</b> (" . $catalog_photo_id . ")";
         $display_show = 'photopreviewshow';
         $formType = "update";
         $button_label="update photo " . $edit_file_name;
-        $button_archive_cancel = '<button class="btn-delete mt-32" id="deletePhoto" value="ARCHIVE">archive photo</button>';
+        $button_archive_cancel = '<button class="btn-delete mt-32" id="archive" value="ARCHIVE">archive photo</button>';
         $id_field = '<input type="hidden" name="catalog_photo_id" value="' . $catalog_photo_id . '" />';
         $file_1_hidden = '<input type="hidden" name="file_1_hidden" value="' . $file_name . '.jpg" />';
         $file_2_hidden = '<input type="hidden" name="file_2_hidden" value="' . $file_name . '-thumb.jpg" />';
@@ -44,17 +69,17 @@
     $navigation_html = $this->component('admin_navigation');
 
     /* CATEGORY INDEX */
-    $category_data = $this->api_Admin_Get_Catalog_Categories();
+    // $category_data = $this->api_Admin_Get_Catalog_Categories();
     foreach($category_data as $key => $value) {
 
-        if($value['catalog_category_id'] === $catalog_category_id) { 
+        if($value['catalog_collections_id'] === $parent_collections_id) { 
             $selected = "SELECTED"; } 
         else { $selected = null; }
 
         if($value['type'] != strtoupper('collection')) {
-            $category_html .= '<option ' . $selected . ' value="' . $value['catalog_category_id'] . '">' . $value['title'] . '</option>';
+            $category_html .= '<option ' . $selected . ' value="' . $value['catalog_collections_id'] . '">' . $value['title'] . '</option>';
         } else {
-            $category_html .= '<option ' . $selected . ' value="' . $value['catalog_category_id'] . '">[collection] ' . $value['title'] . '</option>';
+            $category_html .= '<option ' . $selected . ' value="' . $value['catalog_collections_id'] . '">[collection] ' . $value['title'] . '</option>';
         }
     }
 

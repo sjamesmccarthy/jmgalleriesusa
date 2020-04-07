@@ -35,8 +35,11 @@
                 <div class="select-wrapper half-size vtop">
                     <label for="collector">COLLECTOR</label>
                     <select id="collector" name="collector">
-                    <option value="0">(no collector for this piece)</option>
+                    <option value="0">No Collector for this piece</option>
+                    <!-- <option value="0">(no collector for this piece)</option> -->
+                    <optgroup label="--- COLLECTORS">
                         <?= $collector_html ?>
+                    </optgroup>
                     </select>
                 </div>
             </div>

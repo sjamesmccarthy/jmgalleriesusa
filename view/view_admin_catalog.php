@@ -45,7 +45,7 @@
                 { data: 'title',
                     "render": function(data, type, row, meta){
                         if(type === 'display'){
-                            data = '<a href="/studio/catalog-add?id=' + row.file_name + '">' + data + '</a>';
+                            data = '<a href="/studio/catalog-add?id=' + row.catalog_photo_id + '">' + data + '</a>';
                         }  
                         return data;
                     } 

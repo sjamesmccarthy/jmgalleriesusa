@@ -1,7 +1,7 @@
-.inventory-add--container {
+.collectors-add--container {
 
-    #material_expenses_list {
-        padding: 1rem 0;
+    #edit-show {
+        opacity: .1;
     }
 
     .hide {
@@ -216,5 +216,10 @@
         }
 
     }
+
+
+.dataTables label  {
+   position: relative;
+}
 
 }

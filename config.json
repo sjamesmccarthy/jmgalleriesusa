@@ -31,14 +31,14 @@
         "1" : {
             "title" : "Flowers, Fields & Clouds",
             "link" : "flowers-fields-clouds",
-            "image" : "blades-of-balboa.jpg",
+            "image" : "daisies-for-our-lady.jpg",
             "text" : "light",
             "position" : "center"
         },
         "2" : {
             "title" : "Oceans, Lakes & Waterfalls",
             "link" : "oceans-lakes-waterfalls",
-            "image" : "elysium.jpg",
+            "image" : "bodega-trailhead.jpg",
             "text": "light",
             "position": "center"
         },
@@ -52,7 +52,7 @@
         "4" : {
             "title" : "Mountains, Deserts & Trees",
             "link" : "mountains-deserts-trees",
-            "image" : "ginormous-marble.jpg",
+            "image" : "first-light.jpg",
             "text": "light",
             "position": "center"
         }

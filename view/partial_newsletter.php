@@ -19,7 +19,7 @@
     <p id="form_response-subscribe"></p>
 </div> -->
 
-<h4 class="text-l">NEWSLETTER</h4>
+<h3 class="text-l">NEWSLETTER</h3>
 <!-- <p class="subheadline pb-16 text-l">Have a new release photo delivered right to your inbox!</p> -->
 
 <!-- Begin Mailchimp Signup Form -->

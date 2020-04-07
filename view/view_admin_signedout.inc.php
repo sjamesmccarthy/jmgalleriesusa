@@ -10,4 +10,11 @@ if($_SERVER['REMOTE_ADDR'] != "::1") {
     session_destroy();
     $this->log(array("key" => "admin", "value" => "signed out successfully from " . $_SESSION['ip'], "type" => "system"));
 
+    if($_REQUEST['ref'] == "collector") {
+        $loc = "/d/collector/signin";
+    } else {
+        $loc = "/studio/signin";
+    }
+
+    header('location:' . $loc);
 ?>

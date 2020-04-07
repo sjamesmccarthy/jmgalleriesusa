@@ -14,13 +14,9 @@
 
             <div class="grid">
                 <div class="col footer-column mb-32">
-                    <h4>COLLECTIONS</h4>
+                    <h3>COLLECTIONS</h3>
                     <ul>
-                        <li><a href="/new-releases">New Releases</a></li>
-                        <li><a href="/oceans-lakes-waterfalls">Oceans, Lakes & Waterfalls</a></li>
-                        <li><a href="/mountains-deserts-trees">Mountains, Deserts & Trees</a></li>
-                        <li><a href="/abstract-architecture-people">Abstract & Architecture</a></li>
-                        <li><a href="/flowers-fields-clouds">Flowers, Fields & Clouds</a></li>
+                        <?= $collections_html ?>
                         <li class="top-border"><a href="/all">View All</a></li>
                     </ul>
                 </div>
@@ -31,7 +27,7 @@
                     <!-- The Merc, Temecula, CA -->
                     <!-- Lake Tahoe, Virtual -->
 
-                    <h4>EXPLORE</h4>
+                    <h3>EXPLORE</h3>
                     <ul>
                         <li><a href="/exhibits">Exhibits</a></li>
                         <li><a href="/styles">Editions & Framing</a></li>
@@ -46,7 +42,7 @@
                 </div>
 
                 <div class="col footer-column">
-                        <h4>SHOP</h4>
+                        <h3>SHOP</h3>
                             <ul>
                                 <li><a target="_shop" href="/shop">tinyViews™</a></li>
                                 <!-- <li><a target="_shop" href="/thestudio">The Studio</a></li> -->
@@ -58,7 +54,7 @@
                 </div>
 
                 <div class="col footer-column">
-                    <h4>ABOUT</h4>
+                    <h3>ABOUT</h3>
                         <ul>
                             <li><a href="/about">the Photographer</a></li>
                             <!-- <li><a href="/moments">Moments, News & Events</a></li> -->

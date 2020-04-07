@@ -21,13 +21,24 @@
 
             <div>
                 <div class="select-wrapper half-size">
-                <select id="catalog_category_id" name="catalog_category_id">
-                    <option value="CATEGORY">CATEGORY</option>
+                <select id="parent_collections_id" name="parent_collections_id" style="margin-bottom: 0">
+                    <option value="PARENT COLLECTION">PARENT COLLECTION</option>
                     <option value="---">---</option>
                     <?= $category_html ?>
                 </select> 
+
+                <p id="add-collection" class="small mb-16 ml-16 mt-16">
+                    <?= $collections_html ?>
+                </p>
+                <!-- <p  class="small pb-8">edit collections</i></p> -->
+                   
+                <select id="collections-tag" name="collections_tags[]" multiple>
+                    <?= $collections_tag_options ?>
+                </select>
+
                 </div>
-                <div class="select-wrapper half-size">
+
+                <div class="select-wrapper half-size" style="vertical-align: top">
                 <select id="status" name="status">
                 <!-- $var > 2 ? true : false -->
                     <option value="ACTIVE" <?= ($status == "ACTIVE" ? "SELECTED" : ""); ?>>STATUS (ACTIVE)</option>
@@ -190,5 +201,16 @@ jQuery(document).ready(function($){
     $('#title').on('keyup', function() {
         $('#file_name').val($('#title').val().toLowerCase().replace(/\s+/g, "-"));
     });
+
+    $('#archive').on("click", function(e) {
+        e.preventDefault();
+        alert('This Feature Not Available At This Time');
+    });
+
+    $('#add-collection').on("click", function(e) {
+        e.preventDefault();
+        $('#collections-tag').toggle();
+    });
+    
 });
 </script>

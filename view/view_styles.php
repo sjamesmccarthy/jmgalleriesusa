@@ -89,7 +89,7 @@
                             <div class="divTableCell thead">Price</div>
                         </div>
                         <div class="divTableRow">
-                            <div class="divTableCell">16 x 20 inch print with frame: 20 x 24 inches</div>
+                            <div class="divTableCell">16 x 24 inch print with frame: 20 x 28 inches</div>
                             <div class="divTableCell">$1,000</div>
                         </div>
                         <div class="divTableRow">
@@ -111,7 +111,7 @@
                     </div>
                 </div>
 
-                 <p class="small">*Not all images are available as Limited Editions. Once the last edition number is sold, no more editions under that series will be available. The only way to purchase a sold-out edition would be through a collector.</p>
+                 <p class="small">*The majority of the images are a 3:2 aspect ratio. Those that are not will be noted in the images description. The above sizes are only available as Limited Editions. Once the last edition number is sold, no more editions under that series will be available. The only way to purchase a sold-out edition would be through another collector.</p>
 
 	</ul>
 

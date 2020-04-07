@@ -16,12 +16,12 @@
         <fieldset class="form-main">
         <p>
         <!-- <label class="" for="name">YOUR NAME</label> -->
-        <input type="text" id="contactname" name="contactname" placeholder="YOUR NAME" value="" required>
+        <input type="text" id="contactname" name="contactname" placeholder="YOUR NAME" value="<?= $name ?>" required>
         </p>
 
         <p>
         <!-- <label class="" for="contactinfo">Email Address or Phone Number</label> -->
-        <input type="text" id="contactemail" name="contactemail" placeholder="YOUR EMAIL" value="" required>
+        <input type="text" id="contactemail" name="contactemail" placeholder="YOUR EMAIL" value="<?= $email ?>" required>
         </p>
 
         <p>
@@ -32,7 +32,7 @@
         <div class="mt-16">
         <!-- <label class="" for="comments">TYPE YOUR MESSAGE HERE</label> -->
         <?= $message_PH ?>
-        <textarea style="margin-top: 10px" id="comments" name="comments" placeholder="TYPE HERE" rows="8"></textarea>
+        <textarea style="margin-top: 10px" id="comments" name="comments" placeholder="TYPE HERE" rows="8"><?= $msg ?></textarea>
         </div>
 
         <?= $promo_field ?>
@@ -114,6 +114,5 @@
         });
 
   });
-
 
 </script>

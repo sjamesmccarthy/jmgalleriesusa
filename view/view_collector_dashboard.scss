@@ -1,0 +1,88 @@
+.collector--section {
+
+}
+    
+.collector--main_container {
+
+    >h2 {
+        font-weight: 800;
+    }
+    
+    .signout {
+        text-align: right;
+    }
+
+    .welcome-msg {
+
+        text-align: center;
+        @extend .mb-32;
+
+        h1 {
+            text-transform: initial;
+            font-weight: 800;
+            font-size: 12rem;
+        }
+        
+        .subhead {
+            margin-top: -30px;
+            text-transform: initial;
+            font-weight: 100;
+            color: $color-blue;
+        }
+        
+        .name {
+            position: absolute;
+            right: 330px;
+            top: 55px;
+            font-weight: 100;
+            background-color: $color-blue;
+            color: #FFF;
+            padding: 10px 20px;
+        }
+
+        >p {
+            font-size: 2rem;
+            >span {
+                   color: $color-blue;
+                   font-size: 2.5rem;
+                   font-weight: 800;
+            }
+        }
+    }
+
+    .rewards {
+        font-size: 5.5rem;
+        color: $color-blue;
+    }
+
+    .half-size {
+        width: 49.1%;
+        display: inline-block;
+        // margin-left: 1rem !important;
+    }
+
+    .third-size {
+        width: 32.8%;
+        display: inline-block;
+        // margin-left: 1rem !important;
+    }
+
+    label {
+        position: absolute;
+        font-size: .8rem;
+        margin-top: -4px;
+        background-color: #DDD;
+        padding: 0 5px;
+        color: $color-black;
+        border-radius: 0 $border-radius $border-radius 0;
+    }
+
+    textarea#comments {
+        width: 99.4%;
+    }
+
+    .amazing-offer-image {
+        padding: 0;
+        border: none;
+    }
+}
