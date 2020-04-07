@@ -14,14 +14,14 @@
     
     <a name="pricing"></a>
             <li>
-            <h4>Limited Edition</h4>
+            <h3>Limited Edition</h3>
             <p>
             Fine Art in our Limited Edition is considered highly collectible and are part of a limited numbered series of <?= $this->config->limited_edition_max ?>, signed by j.McCarthy and includes a Certificate of Authenticity that is recorded in the jM Galleries Digital Artwork Archives.<p>
             <p>
             Depending on the piece, Limited Editions are either printed on Hahnemühle Canvas Metallic stretched over a 5/8" inset frame (not visible) or printed on Hahnemühle Photo Rag® Metallic FineArt paper and mounted in a premium 2 inch Dark Walnut frame protected with Tru Vue&reg; Museum Glass. </p>
             </li>
             <!-- <li>
-            <h4>Studio Limited Edition</h4>
+            <h3>Studio Limited Edition</h3>
             <p>Fine Art in our Studio Edition is also considered collectible, and is part of a limited numbered series of 12, signed by j.McCarthy and includes a Certificate of Authenticity that is recorded in the jM Galleries Digital Artwork Archives. Studio Editions are printed on high-quality photographic paper and mounted in a hand-made, open-air, Bass wood frame and includes a wire hanger.</p>
             <p>Not every photograph in the j.McCarthy collection is available as a Studio Edition print, and sizes larger than 16x24 as well as the final 6 editions of a series are only available as a Gallery Edition. 
             </p>
@@ -46,7 +46,7 @@
             </li> -->
 
             <li>
-            <h4>Open / tinyViews&trade; Edition</h4>
+            <h3>Open / tinyViews&trade; Edition</h3>
             <p>tinyViews&trade; (Large landscapes framed for small spaces&trade;)<br />
             These editions are not considered collectible and are not numbered, may not be signed, and could also include a watermark. They are not framed and printed on high-quality photo paper and may not be of archival grade.</a></p>
 
@@ -74,13 +74,13 @@
                 </div> -->
     </li>
 
-     <li><h4>Framing</h4>
+     <li><h3>Framing</h3>
         <p>
         Limited Edition Hahnemühle Photo Rag® Metallic prints are mounted in a hand-made 2 inch Dark Walnut frame protected with Tru Vue&reg; Museum Glass. The premium hardwood is sourced from a Los Angeles, California mill in the USA. The Limited Edition Hahnemühle Canvas Metallic Limited Edition is also mounted in a hand-made Dark Walnut float frame. Each will be polished and shined ready for hanging.
         </p>
     </li>
 
-    <li><h4>Pricing</h4>
+    <li><h3>Pricing</h3>
 
         <div class="divTable">
                     <div class="divTableBody">
