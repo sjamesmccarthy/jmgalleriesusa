@@ -27,8 +27,11 @@ if($_POST){
 
 } 
 
+
 /* Test reCaptcha if not robot score then create mail submissions */
 if ($recaptcha->score >= 0.5) {
+
+    $mg_meta .= "\n\n" . 'REMOTE_AGENT: ' . $_SERVER['HTTP_USER_AGENT'];
 
 	/* Remove reCaptcha info from form POST results */
 	unset($_POST['g-recaptcha-response']);
@@ -85,7 +88,8 @@ if ($recaptcha->score >= 0.5) {
 			$reply_to = $_POST['referred_by_email'];
 			$sendReply = '0';
 			$send_reply_subject = null;
-			$send_reply_message = null;
+            $send_reply_message = null;
+            $message = "Hello, " . $_POST['ref_name'] . "\n\n" . "Your friend, " . $_POST['referred_by'] . ", thought that you might be interested in looking at some fine-art photography by Fine Art Photographer, j.McCarthy.\n\n" . "You can check out his online catalog at, https://jmgalleries.com, and if you find a photo that you think would look great on your home or office wall then use this promo-code: " . $_POST['promo_code'] . " when ordering, for a 15% OFF friends & family discount. \n\n" . "Cheers,\r\n" . $_POST['referred_by'];
 			break;
 
 		default:
@@ -97,30 +101,23 @@ if ($recaptcha->score >= 0.5) {
 			break;
 	}
 	
-	$message .= "\n\n" . 'REMOTE_AGENT: ' . $_SERVER['HTTP_USER_AGENT'];
-	if(isSet($recaptcha)) {
-		print_r($recaptcha);
-		$message .= "\n\n" . "RECAPTCHA_RESPONSE: " . json_encode($recaptcha);
-	}
 
+	// if(isSet($recaptcha)) {
+	// 	$message .= "\n\n" . "RECAPTCHA_RESPONSE: " . json_encode($recaptcha);
+    // }
+    
 	$headers =  $header_from . "\r\n" . 'Reply-To: ' . $reply_to . "\r\n" . 'X-Mailer: PHP/' . phpversion() . '/jmGForm';
-	
-	print $message; 
 	mail($to, $subject, $message, $headers);
 
 	
 	/* If SendReply is TRUE then send a reply to the requestor */
 	if($sendReply == '1') {
-		// Now Send Confirmation to Person Sending The Form
 		$to = $_POST['contactemail'];
 		$header_from = "FROM: jM Galleries <'" . EMAIL_TO . "'>";
 		$reply_to = EMAIL_TO;
 		$subject = $send_reply_subject;
 		$message = $send_reply_message;
-
 		$headers =  $header_from . "\r\n" . 'Reply-To: ' . $reply_to . "\r\n" . 'X-Mailer: PHP/' . phpversion() . '/jmGForm';
-
-		print "\nSendReply:" . $sendReply . "\n" . "to: " . $_POST['contactemail'] . "\n" . $message;
 		mail($to, $subject, $message, $headers);
 	}
 

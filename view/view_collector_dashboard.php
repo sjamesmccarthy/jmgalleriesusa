@@ -60,6 +60,7 @@
                             <input type="hidden" id="formType" name="formType" value="referrCollectorForm" />
                             <input type="hidden" id="referred_by" name="referred_by" value="<?= $res_first_name ?> <?= $res_last_name ?>" />
                             <input type="hidden" id="referred_by_email" name="referred_by_email" value="<?= $res_email ?>" />
+                            <input type="hidden" id="promo_code" name="promo_code" value="<?= strtoupper($res_first_name) ?><?= $res_collector_id ?>" />
                             <input type="hidden" id="g-recaptcha-response" name="g-recaptcha-response" />
                             <input name="refer_IP" type="hidden" value="<?= $_SERVER['REMOTE_ADDR'] ?>" />
 
