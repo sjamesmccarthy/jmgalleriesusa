@@ -11,7 +11,7 @@
     <article class="mb-64">
     <div class="grid">
 
-        <div class="col-12 pb-8 mt-32">
+        <div class="col-12 pb-8 mt-32 mb-16">
         <h1 class="detail-h1"><?= $photo_meta['title'] ?></h1>
         <!-- <p class="pb-32 edition-title blue">Limited <?= $as_editions ?> </span> -->
         <!-- <p class="pb-32 edition-title blue">$1,000.00 &mdash; 16x20 inch, framed to 23x26 inches. <?= $as_editions ?></span></p> -->
@@ -31,7 +31,6 @@
     <div class="grid-2 mt-16">
             <?= $in_roomImg ?>
             <?= $in_roomImgAlt ?>
-            <!-- <?= $in_roomImgAlt2 ?> -->
             <?= $tinyviewImage ?>
     </div>
 

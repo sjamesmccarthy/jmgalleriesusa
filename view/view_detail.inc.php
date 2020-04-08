@@ -22,7 +22,7 @@
     /* Determine if the "TinyViews photo exists */
      if( file_exists($_SERVER['DOCUMENT_ROOT'] . "/catalog/__image/" . $photo_meta['file_name'] . '-tinyviews.jpg') ) {
 
-        $tinyviewImage = '<div class="col"><img class="in-room-img"  src="/catalog/__image/' . $photo_meta['file_name'] . '-tinyviews.jpg" /><div class="bx-buyart-btn"><a target="_shop" href="/shop">tinyViews&trade; Edition &mdash; Shop Now</a></div></div>';
+        $tinyviewImage = '<div class="col"><img class="in-room-img"  src="/catalog/__image/' . $photo_meta['file_name'] . '-tinyviews.jpg" /><!-- <div class="bx-buyart-btn"><a target="_shop" href="/shop">tinyViews&trade; Edition &mdash; Shop Now</a></div>--></div>';
      } else {
          $tinyviewImage = null;
      }
@@ -37,6 +37,8 @@
     /* Determine if the "VirtualRoom" photo exists */
     if( file_exists($_SERVER['DOCUMENT_ROOT'] . "/catalog/__image/" . $photo_meta['file_name'] . '-room-alt.jpg') ) {
         $in_roomImgAlt = '<div class="col"><img class="in-room-img" src="/catalog/__image/' . $photo_meta['file_name'] . '-room-alt.jpg" /></div>';
+    } else {
+        // print "image: " . $_SERVER['DOCUMENT_ROOT'] . "/catalog/__image/" . $photo_meta['file_name'] . '-room-alt.jpg' . "--NOT FOUND";
     }
 
     // } else {
@@ -73,7 +75,7 @@
         $ed_O = true;
         if($ed_G === true || $ed_S === true) { $as_editions_tmp .= ", "; }
         $as_editions_tmp .= "";
-        $edition_desc = 'tinyViews&trade; Edition &mdash; Available in 4x6, 8x8 and 8x10 and is not signed';
+        $edition_desc = 'tinyViews&trade; Edition &mdash; Available in 4x6, 8x8 and 8x10 Print Only.<br />Not part of a numbered edition. Frame not included, but available at an additional cost.';
         $btn = "BUY tinyViews&trade; NOW";
         $btn_link = '<a href="/contact?photo=' . $photo_meta['file_name'] . '&open=true">';
     }
