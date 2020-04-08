@@ -529,6 +529,34 @@ SASS, https://sass-lang.com/
   font-size: 1rem;
 }
 
+form .select-wrapper {
+  position: relative;
+  color: #808080;
+}
+
+form .select-wrapper:after {
+  font-family: FontAwesome !important;
+  content: "\f078";
+  /* FontAwesome Unicode */
+  font-weight: 900;
+  font-size: 1rem;
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  color: rgba(0, 0, 0, 0.2);
+  pointer-events: none;
+}
+
+form .half-size {
+  width: 49.1%;
+  display: inline-block;
+  margin-left: 1rem !important;
+}
+
+form .half-size:nth-of-type(1) {
+  margin-left: 0 !important;
+}
+
 /* ==========================================================================
     GRIDLEX
     Just a Flexbox Grid System - v. 2.7.1

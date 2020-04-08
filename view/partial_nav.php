@@ -2,7 +2,7 @@
         <div class="grid">
     
         <div class="col-2_md-hidden-middle">
-            <p class="center heading" ><a target="_shop" href="/shop">PRODUCTS</a><br />PRINTS & tinyViews&trade;</p>
+            <p class="center heading" ><a href="/all?filter=tinyviews">PRODUCTS</a><br />PRINTS & tinyViews&trade;</p>
         </div>
         <div class="col-3_md-4-middle">
             <p class="center heading"><a target="_blog" href="https://medium.com/jmgalleriesusa">POLARIZED</a><br />JOURNAL & MAGAZINE</p>

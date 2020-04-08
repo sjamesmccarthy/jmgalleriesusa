@@ -39,11 +39,6 @@
         $in_roomImgAlt = '<div class="col"><img class="in-room-img" src="/catalog/__image/' . $photo_meta['file_name'] . '-room-alt.jpg" /></div>';
     }
 
-    /* Determine if the "VirtualRoom" photo exists */
-    // if( file_exists($_SERVER['DOCUMENT_ROOT'] . "/catalog/__image/" . $photo_meta['file_name'] . '-room-alt2.jpg') ) {
-    //     $in_roomImgAlt2 = '<div class="col"><img class="in-room-img" src="/catalog/__image/' . $photo_meta['file_name'] . '-room-alt2.jpg" /></div>';
-    // }
-
     // } else {
 
     $super_photo = ' 
@@ -73,49 +68,16 @@
         $gallery_details = '<p class="mt-16">Each piece of artwork comes ready-to-hang, framed in a handmade dark walnut frame with Tru Vue Museum Glass protecting the print. The price displayed under the art title reflects a 16x24 image size, framed piece of art. For additional information read more about our <a href="/styles">pricing and edition sizes</a> or <a href="/contact">contact us.</a></p>';
     }
     
-    /* If as_STUDIO is set */
-    // if( $photo_meta['as_studio'] == 1) {
-    //     $ed_S = true;
-    //     if($ed_G === true) { $as_editions_tmp .= ", "; }
-    //     $as_editions_tmp .= "Studio";
-    // }
-
     /* If as_OPEN is set */
     if( $photo_meta['as_open'] == 1) {
         $ed_O = true;
         if($ed_G === true || $ed_S === true) { $as_editions_tmp .= ", "; }
         $as_editions_tmp .= "";
-        $edition_desc = 'tinyViews&trade; Edition &mdash; Available in smaller sizes and is not signed';
-        $btn = "SHOP NOW";
-        $btn_link = '<a target="_shop" href="/shop">';
+        $edition_desc = 'tinyViews&trade; Edition &mdash; Available in 4x6, 8x8 and 8x10 and is not signed';
+        $btn = "BUY tinyViews&trade; NOW";
+        $btn_link = '<a href="/contact?photo=' . $photo_meta['file_name'] . '&open=true">';
     }
 
-    /* If as_TINYVIEWS is set */
-    // if( $photo_meta['as_tinyview'] == 1) {
-    //     $ed_T = true;
-    //     if($ed_G === true || $ed_S === true || $ed_O === true) { $as_editions_tmp .= " , "; }
-    //     $as_editions_tmp .= " <a target='_shop' href='/shop'>tinyViews&trade; </a><!-- &mdash; <a target='_shop'  href='shop'>shop now</a>. -->";
-    // }
-
-    // $as_editions_tmp .= "</a>";
-
-    /* String replace {print_media} with material */
-    // switch ($photo_meta['print_media']) {
-    //     case "paper":
-    //         // $print_media = " printed on museum grade archival paper and mounted in a premium frame protected with TruView museum glass.";
-    //         break;
-
-    //     case "acrylic":
-    //         // $print_media = " printed on museum grade Acrylic with a 6mm Komatex backing with inset frame ";
-    //         break;
-
-    //     default:
-    //         $print_media = null;
-    //         break;
-    // }
-
-    // $as_editions_tmp = preg_replace("/{print_media}/i", $print_media, $as_editions_tmp);
-    // $as_editions = preg_replace("/,([^,]+)$/", "Edition as well as available in a $1", $as_editions);
     $as_editions = $as_editions_tmp;
 
     /* If ON_DISPLAY is set */
@@ -139,35 +101,7 @@
         $on_display = null;
     }
 
-    /* If IN_SHOP is set 
-    if( $photo_meta['in_shop'] != 0) {
-
-        /* Make API query to get location
-        $photo_meta_location = $this->api_Catalog_Photo_Meta_Location($photo_meta['on_display']);
-
-        $in_shop = '
-        <div class="flexfix">&nbsp;</div>
-        <div class="edition-extra">
-                <a target="_shop" href="/shop"><img src="/view/image/icon_cart.svg" /></a>
-            </div>
-            <div class="edition-extra-subline">
-                <p>
-                <a target="_shop" href="/shop">Buy Open Edition Print</a><br />
-                <span>This art is available as an unsigned <a href="/styles">open-edition print</a>.</span>
-                </p>
-            </div>';
-    } else {
-        $in_shop = null;
-    }
-    */
-
-    /* If AS_TINYVIEW is set */
-    // if( $photo_meta['as_tinyview'] != 0) {
-    //     $as_tinyview = ' as well as <a target="_shop" href="/shop">tinyViews&trade;</a>';
-    // } else {
-    //     $as_tinyview = null;
-    // }
-
+ 
     /* Photo orientation */
     if($photo_meta['orientation'] == "portrait") {
         $img_w = '64%';

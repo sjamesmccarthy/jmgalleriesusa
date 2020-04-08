@@ -318,26 +318,44 @@ class Core_Api
         /* Executes SQL and then assigns object to passed var */
         if( $this->checkDBConnection(__FUNCTION__) == true) {
 
-            $sql = "
-            SELECT
-            V.count AS VIEWS,
-            PH.catalog_photo_id,
-            PH.title,
-            PH.file_name,
-            CPL.catalog_collections_id,
-            CAT.path as cate_path
-        FROM
-            catalog_photo_views AS V
-            INNER JOIN catalog_photo AS PH ON V.catalog_photo_id = PH.catalog_photo_id
-            INNER JOIN catalog_collections_link AS CPL on CPL.catalog_photo_id = PH.catalog_photo_id
-            INNER JOIN catalog_collections AS CAT on CAT.catalog_collections_id = CPL.catalog_collections_id
-        WHERE
-            V.count >= 800
-            AND PH.status = 'ACTIVE'
-        ORDER BY
-            RAND()
-            DESC
-        LIMIT 4";
+        //     $sql = "
+        //     SELECT
+        //     V.count AS VIEWS,
+        //     PH.catalog_photo_id,
+        //     PH.title,
+        //     PH.file_name,
+        //     CPL.catalog_collections_id,
+        //     CAT.path as cate_path
+        // FROM
+        //     catalog_photo_views AS V
+        //     INNER JOIN catalog_photo AS PH ON V.catalog_photo_id = PH.catalog_photo_id
+        //     INNER JOIN catalog_collections_link AS CPL on CPL.catalog_photo_id = PH.catalog_photo_id
+        //     INNER JOIN catalog_collections AS CAT on CAT.catalog_collections_id = CPL.catalog_collections_id
+        // WHERE
+        //     V.count >= 800
+        //     AND PH.status = 'ACTIVE'
+        // ORDER BY
+        //     RAND()
+        //     DESC
+        // LIMIT 4";
+
+           $sql = "SELECT
+           V.count AS VIEWS,
+           PH.catalog_photo_id,
+           PH.title,
+           PH.file_name,
+           CAT.path as cate_path
+       FROM
+           catalog_photo_views AS V
+           INNER JOIN catalog_photo AS PH ON V.catalog_photo_id = PH.catalog_photo_id
+           INNER JOIN catalog_collections AS CAT ON CAT.catalog_collections_id = PH.parent_collections_id
+       WHERE
+           V.count >= 800
+           AND PH.status = 'ACTIVE'
+       ORDER BY
+           RAND()
+           DESC
+       LIMIT 4";
 
             $result = $this->mysqli->query($sql);
 

@@ -37,7 +37,8 @@
 
     <div>
     <?= $gallery_details ?>
-    <?= $btn_link ?><button class="mt-32"><?= $btn ?></button></a>
+    <?= $formSizes ?>
+        <?= $btn_link ?><button class="mt-32"><?= $btn ?></button></a>
     </div>
 
 </article>

@@ -22,6 +22,14 @@
 
 <script>
 jQuery(document).ready(function($){
+
+        <?php if($_REQUEST['filter'] == "tinyviews") { ?>
+        $('[class*="filter-"]').removeClass("selected");
+        $('[class*="filter-open"]').addClass("selected");
+        $('[class*="f-"]').hide();
+        $('.f-open').show();
+        <?php } ?>
+
     $('.filter-all').click(function() {
         $('[class*="filter-"]').removeClass("selected");
         $('[class*="filter-all"]').addClass("selected");
