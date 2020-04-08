@@ -8,7 +8,7 @@
 </section>
 
 <!-- <section> -->
-    <article class="">
+    <article class="mb-64">
     <div class="grid">
 
         <div class="col-12 pb-8 mt-32">
@@ -22,27 +22,28 @@
 
             <?= $photo_meta['story'] ?></p>
 
-            <?= $gallery_details ?>
-            <?= $btn_link ?><button class="mt-32"><?= $btn ?></button></a>
-
         </div>
 
         <!-- <p><?= $exif_data ?></p> -->
 
     </div>
-    </article>
-<!-- </section> -->
 
-<article>
-    <div class="grid mt-64">
+    <div class="grid-2 mt-16">
             <?= $in_roomImg ?>
             <?= $in_roomImgAlt ?>
+            <!-- <?= $in_roomImgAlt2 ?> -->
             <?= $tinyviewImage ?>
     </div>
+
+    <div>
+    <?= $gallery_details ?>
+    <?= $btn_link ?><button class="mt-32"><?= $btn ?></button></a>
+    </div>
+
 </article>
 
- <!-- generated html from component file: component_most_popular -->
+<!-- generated html from component file: component_most_popular -->
 <section id="you-may-like" class="filmstrip mt-64">
     <?= $you_may_also_like_html ?>
-</section>
+</section> 
 <!-- /generated html from component file -->

@@ -7,11 +7,13 @@
     
     /* Load all photo meta data */
     $photo_meta = $this->api_Catalog_Photo('0',$this->photo_path);
+    // $this->printp_r($photo_meta);
+
     if(isSet($photo_meta['catalog_photo_id'])) {
         $this->api_Update_Photo_Viewed($photo_meta['catalog_photo_id']);
     }
 
-    $this->catalog_title = ucwords( $photo_meta['category_title'] );
+    $this->catalog_title = ucwords( $photo_meta['catalog_title'] );
     $this->page->title = $photo_meta['title'];
     
     // $available_sizes = preg_replace("/tinyViews Edition/i", "<a href='/shop'>tinyViews&trade; Edition</a>", $photo_meta['available_sizes']);
@@ -20,7 +22,7 @@
     /* Determine if the "TinyViews photo exists */
      if( file_exists($_SERVER['DOCUMENT_ROOT'] . "/catalog/__image/" . $photo_meta['file_name'] . '-tinyviews.jpg') ) {
 
-        $tinyviewImage = '<div class="col"><img style="width: 100%; border-radius: 0"  src="/catalog/__image/' . $photo_meta['file_name'] . '-tinyviews.jpg" /><div class="bx-buyart-btn"><a target="_shop" href="/shop">tinyViews&trade; Edition &mdash; Shop Now</a></div></div>';
+        $tinyviewImage = '<div class="col"><img class="in-room-img"  src="/catalog/__image/' . $photo_meta['file_name'] . '-tinyviews.jpg" /><div class="bx-buyart-btn"><a target="_shop" href="/shop">tinyViews&trade; Edition &mdash; Shop Now</a></div></div>';
      } else {
          $tinyviewImage = null;
      }
@@ -28,14 +30,19 @@
     /* Determine if the "VirtualRoom" photo exists */
     if( file_exists($_SERVER['DOCUMENT_ROOT'] . "/catalog/__image/" . $photo_meta['file_name'] . '-room.jpg') ) {
         
-        $in_roomImg = '<div class="col"><img style="width: 100%; border-radius: 0" src="/catalog/__image/' . $photo_meta['file_name'] . '-room.jpg" /></div>';
+        $in_roomImg = '<div class="col"><img class="in-room-img" src="/catalog/__image/' . $photo_meta['file_name'] . '-room.jpg" /></div>';
     
     }
 
     /* Determine if the "VirtualRoom" photo exists */
     if( file_exists($_SERVER['DOCUMENT_ROOT'] . "/catalog/__image/" . $photo_meta['file_name'] . '-room-alt.jpg') ) {
-        $in_roomImgAlt = '<div class="col"><img style="width: 100%; border-radius: 0" src="/catalog/__image/' . $photo_meta['file_name'] . '-room-alt.jpg" /></div>';
+        $in_roomImgAlt = '<div class="col"><img class="in-room-img" src="/catalog/__image/' . $photo_meta['file_name'] . '-room-alt.jpg" /></div>';
     }
+
+    /* Determine if the "VirtualRoom" photo exists */
+    // if( file_exists($_SERVER['DOCUMENT_ROOT'] . "/catalog/__image/" . $photo_meta['file_name'] . '-room-alt2.jpg') ) {
+    //     $in_roomImgAlt2 = '<div class="col"><img class="in-room-img" src="/catalog/__image/' . $photo_meta['file_name'] . '-room-alt2.jpg" /></div>';
+    // }
 
     // } else {
 
@@ -63,7 +70,7 @@
         $edition_desc = $as_editions_tmp . " / $1,000 USD / Handmade and signed with Certificate of Authenticity ";
         $btn = "BUY THIS LIMITED EDITION";
         $btn_link = '<a href="/contact?photo=' . $photo_meta['file_name'] . '">';
-        $gallery_details = '<p class="mt-16">Each piece of artwork comes ready-to-hang, framed in a handmade dark walnut frame with Tru Vue Museum Glass protecting the print.<br />Price displayed reflects 16x24 image size. <a href="/styles">Read more about our pricing and edition sizes.</a></p>';
+        $gallery_details = '<p class="mt-16">Each piece of artwork comes ready-to-hang, framed in a handmade dark walnut frame with Tru Vue Museum Glass protecting the print. The price displayed under the art title reflects a 16x24 image size, framed piece of art. For additional information read more about our <a href="/styles">pricing and edition sizes</a> or <a href="/contact">contact us.</a></p>';
     }
     
     /* If as_STUDIO is set */

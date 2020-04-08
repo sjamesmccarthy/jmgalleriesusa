@@ -370,10 +370,19 @@ class Core_Api
         /* Executes SQL and then assigns object to passed var */
         if( $this->checkDBConnection(__FUNCTION__) == true) {
 
-            $sql = "SELECT * FROM catalog_photo
-                WHERE " . 
+            // $sql = "SELECT * FROM catalog_photo
+            //     WHERE " . 
+            //         $where;
+
+            $sql ="SELECT
+                    cp.*,
+                    cc.title as catalog_title
+                FROM
+                    catalog_photo AS cp
+                    INNER JOIN catalog_collections AS cc ON cc.catalog_collections_id = cp.parent_collections_id
+                WHERE " .
                     $where;
-        
+
             $result = $this->mysqli->query($sql);
 
             if ($result->num_rows > 0) {

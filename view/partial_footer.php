@@ -7,13 +7,14 @@
             <div class="grid">
                 <div class="col-12">
                     <div class="col pb-32 breadcrumb">
+
                     <a href="/"><img class="breadcrumb-logo" src="/view/image/logo_fullsize.png" /></a> <?= $bc_catalog ?> <img class="breadcrumb-arrow" src="/view/image/icon_navarrow-right.svg" /> <?= $this->page->title ?>
                 </div>
                 </div>
             </div>
 
             <div class="grid">
-                <div class="col footer-column mb-32">
+                <div class="col-3 footer-column mb-32">
                     <h3>COLLECTIONS</h3>
                     <ul>
                         <?= $collections_html ?>
