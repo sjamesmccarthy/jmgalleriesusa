@@ -30,7 +30,7 @@
         </p>
 
         <?= $formSizes ?>
-        
+
         <div class="mt-16">
         <!-- <label class="" for="comments">TYPE YOUR MESSAGE HERE</label> -->
         <?= $message_PH ?>
@@ -39,6 +39,7 @@
 
         <?= $promo_field ?>
         <?= $payment_field ?>
+        <?= $shipping ?>
         
         </fieldset>
 

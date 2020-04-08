@@ -34,8 +34,10 @@ if(isSet($this->data->routePathQuery[0])) {
         $formSizes = "<div class='select-wrapper'><label for='buysize'></label><select name='buysize'><option value='---'>SELECT YOUR tinyViews&trade; EDITION SIZE</option><option vlaue='4x6'>4x6 ($20)</option><option vlaue='8x8'>8x8 ($40)</option><option vlaue='8x10'>8x10 ($80)</option></select></div>";
         $promo_field = null;
         $subject_VAL = $subject_PH . " tinyViews&trade; Edition";
+        $shipping = "Shipping for tinysView&trade; is a flat-rate $5 in the USA. For orders outside the USA we will contact you with an estimate.";
     } else {
         $formSizes = "<div class='select-wrapper'><label for='buysize'></label><select name='buysize'><option value='---'>SELECT YOUR LIMITED EDITION SIZE</option><option vlaue='16x24'>16x24 ($1000)</option><option vlaue='20x30'>20x30 ($1875)</option><option vlaue='24x36'>2x36 ($2700)</option><option vlaue='30x45'>30x45 (CALL)</option><option vlaue='40x60'>40x60 (CALL)</option></select></div>";
+        $shipping = "Shipping and handling for Fine-Art orders can be quite different for each order so once determined we will contact you with an estimate.";
     }
 
 } else {

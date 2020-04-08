@@ -76,7 +76,7 @@
         if($ed_G === true || $ed_S === true) { $as_editions_tmp .= ", "; }
         $as_editions_tmp .= "";
         $edition_desc = 'tinyViews&trade; Edition &mdash; Available in 4x6, 8x8 and 8x10 Print Only.<br />Not part of a numbered edition. Frame not included, but available at an additional cost.';
-        $btn = "BUY tinyViews&trade; NOW";
+        $btn = "Add To Cart +Checkout";
         $btn_link = '<a href="/contact?photo=' . $photo_meta['file_name'] . '&open=true">';
     }
 
