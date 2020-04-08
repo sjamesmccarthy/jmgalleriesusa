@@ -2,10 +2,6 @@
 /* Dependency To */
 /* view_galleries.inc.php, The Homepage */
 
-
-
-print "component_gallery_thumbs()";
-
 /* Load all category meta data */
     $catalog_names = $this->api_Catalog_Category_List();
 
