@@ -19,7 +19,7 @@
         <div class="col-12 mt-32">
             <h1 class="detail-h1"><?= $photo_meta['title'] ?></h1>
             <p class="pb-32 edition-title"><?= $edition_desc ?></span></p>
-            <p id="price" class="price mb-16" style="margin-right: 20px; "><?= $price_array[0] ?></p>
+            <p id="price" class="price mb-16" style="margin-right: 20px; "><?= $price_array[0] ?> USD</p>
         </div>
         
         <div class="col-12 mt-16">
@@ -90,7 +90,7 @@
             //   console.log('validation PASS');
             // }
 
-              var url = "/contact?photo=<?= $photo_meta['file_name'] ?>&size=" + $('#buysize').val() + "&frame=" + $('#frame').val() + "&cost=" + $('#price').html();
+              var url = "/contact?photo=<?= $photo_meta['file_name'] ?>&size=" + $('#buysize').val() + "&frame=" + $('#frame').val() + "&cost=" + $("#buysize option:selected").attr("data-price");
 
               grecaptcha.ready(function() {
 

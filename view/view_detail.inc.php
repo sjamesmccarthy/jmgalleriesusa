@@ -67,7 +67,7 @@
         $btn_link = '<a href="/contact?photo=' . $photo_meta['file_name'] . '">';
         $gallery_details = '<p class="mt-32">Each piece of artwork comes ready-to-hang, framed in a handmade Natural Maple hardwood, Dark Walnut, Ash Gray or Snow White frame with Tru Vue Museum Glass protecting the print. If you have any questions or would like to talk with an art consultant, please <a href="/contact">contact us via email</a>.</p>';
 
-        $price_array = array('$1,000', '$1,350', '$1,950', '$3,000', '$5,500');
+        $price_array = array('1000', '1350', '1950', '3000', '5500');
 
         $sizes_frames = '<div class="col select-wrapper" style="width: 300px;  margin-right: 20px;">
             <label for="buysize"></label>
@@ -103,7 +103,7 @@
         $btn = "Add To Cart +Checkout";
         $btn_link = '<a href="/contact?photo=' . $photo_meta['file_name'] . '&open=true">';
 
-        $price_array = array('$20', '$40', '$80');
+        $price_array = array('20', '40', '80');
         
         $sizes_frames = '<div class="col select-wrapper" style="width: 300px;  margin-right: 20px;">
             <label for="buysize"></label>
@@ -117,9 +117,9 @@
         <div class="col select-wrapper" style="width: 300px; margin-right: 20px;">
             <label for="frame"></label>
             <select id="frame" name="frame">
-                <option value="PRINT-ONLY(NO-FRAME)">PRINT ONLY (NO FRAME)</option>
-                <option value="ASH-GRAY(+$20)">FRAME: Ash Gray (+$20)</option>
-                <option value="SNOW-WHITE(+$20)">FRAME: Snow White (+$20)</option>
+                <option data-price="0" value="PRINT-ONLY">PRINT ONLY (NO FRAME)</option>
+                <option data-price="20" value="ASH-GRAY(+$20)">FRAME: Ash Gray (+20 USD)</option>
+                <option data-price="20" value="SNOW-WHITE(+$20)">FRAME: Snow White (+20 USD)</option>
             </select>
         </div>';
 

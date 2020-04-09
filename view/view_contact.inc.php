@@ -29,8 +29,6 @@ if(isSet($this->data->routePathQuery[0])) {
     $subject_VAL = $subject_PH;
     $formType = "RequestQuoteForm"; 
 
-    $estimated_cost = "<h2>" . $cost . "</h2>";
-
     if($_REQUEST['open']) {
         $formSizes = "<div class='select-wrapper'><label for='buysize'></label><select name='buysize'><option value='---'>SELECT YOUR tinyViews&trade; EDITION SIZE</option><option vlaue='4x6'>4x6 ($20)</option><option vlaue='8x8'>8x8 ($40)</option><option vlaue='8x10'>8x10 ($80)</option></select></div>";
         $promo_field = null;
@@ -41,12 +39,15 @@ if(isSet($this->data->routePathQuery[0])) {
 
         if(isSet($frame)) {
             $formSizes = '<p><input type="text" id="contactsize" name="contactsize" value="' . $size . ' WITH A ' . $frame .  ' FRAME" required></p>';
+            if($frame != "PRINT-ONLY" && $cost <= 80) { $cost = $cost + 20; }
         }
         if(isSet($promo_code) && $promo_code == "COLAMOF-SAVE52") {
             $formSizes = '<p><input type="text" id="contactsize" name="contactsize" value="60CM/16x20 WITH ASH-GRAY FRAME" required></p>';
             $estimated_cost = "<h2>$480</h2>";
         }
     }
+
+    $estimated_cost = "<h2>" . $cost . " USD</h2>";
 
 } else {
     $formTitle = $this->title;
