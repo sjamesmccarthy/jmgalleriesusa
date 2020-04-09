@@ -67,7 +67,7 @@
         $btn_link = '<a href="/contact?photo=' . $photo_meta['file_name'] . '">';
         $gallery_details = '<p class="mt-32">Each piece of artwork comes ready-to-hang, framed in a handmade Natural Maple hardwood, Dark Walnut, Ash Gray or Snow White frame with Tru Vue Museum Glass protecting the print. If you have any questions or would like to talk with an art consultant, please <a href="/contact">contact us via email</a>.</p>';
 
-        $price_array = array('$1,000', '$1,875', '$2,700', '$5,000', '$10,000');
+        $price_array = array('$1,000', '$1,350', '$1,950', '$3,000', '$5,500');
 
         $sizes_frames = '<div class="col select-wrapper" style="width: 300px;  margin-right: 20px;">
             <label for="buysize"></label>

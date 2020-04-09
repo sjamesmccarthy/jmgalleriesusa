@@ -76,7 +76,7 @@
 
      <li><h3>Framing</h3>
         <p>
-        Limited Edition Hahnemühle Photo Rag® Metallic prints are mounted in a hand-made 2 inch Dark Walnut frame protected with Tru Vue&reg; Museum Glass. The premium hardwood is sourced from a Los Angeles, California mill in the USA. The Limited Edition Hahnemühle Canvas Metallic Limited Edition is also mounted in a hand-made Dark Walnut float frame. Each will be polished and shined ready for hanging.
+        Limited Edition Hahnemühle Photo Rag® Metallic prints are mounted in a hand-made 2 inch frame protected with Tru Vue&reg; Museum Glass. The premium hardwood is sourced from a Los Angeles, California mill. 
         </p>
     </li>
 
@@ -85,28 +85,40 @@
         <div class="divTable">
                     <div class="divTableBody">
                         <div class="divTableRow">
-                            <div class="divTableCell thead">Size</div>
+                            <div class="divTableCell thead">Material</div>
+                            <div class="divTableCell thead">Size (CM)</div>
+                            <div class="divTableCell thead">Size (INCHES)</div>
                             <div class="divTableCell thead">Price</div>
                         </div>
                         <div class="divTableRow">
-                            <div class="divTableCell">16 x 24 inch print with frame: 20 x 28 inches</div>
+                            <div class="divTableCell">Hahnemühle Photo Rag® Metallic Archival Paper<br />TruVue&reg; Museum Glass<br />Premium hardwood, hand-made frame</div>
+                            <div class="divTableCell">60CM</div>
+                            <div class="divTableCell">16 x 24</div>
                             <div class="divTableCell">$1,000</div>
                         </div>
                         <div class="divTableRow">
-                            <div class="divTableCell">20 x 30 inch print with frame: 24 x 34 inches</div>
-                            <div class="divTableCell">$1,875</div>
+                            <div class="divTableCell"></div>
+                            <div class="divTableCell">76CM</div>
+                            <div class="divTableCell">20 x 30</div>
+                            <div class="divTableCell">$1,350</div>
                         </div>
                         <div class="divTableRow">
-                            <div class="divTableCell">24 x 36 inch print with frame: 28 x 40 inches</div>
-                            <div class="divTableCell">$2,700</div>
+                            <div class="divTableCell"></div>
+                            <div class="divTableCell">91CM</div>
+                            <div class="divTableCell">24 x 36</div>
+                            <div class="divTableCell">$1,950</div>
                         </div>
                         <div class="divTableRow">
+                            <div class="divTableCell"></div>
+                            <div class="divTableCell">144CM</div>
                             <div class="divTableCell">30 x 45</div>
-                            <div class="divTableCell"><!-- $4,218 --><a href="/contact">Contact Us</a></div>
+                            <div class="divTableCell">$3,000</div>
                         </div>
                         <div class="divTableRow">
+                            <div class="divTableCell"></div>
+                            <div class="divTableCell">152CM</div>
                             <div class="divTableCell">40 x 60</div>
-                            <div class="divTableCell"><!-- $7,500 --><a href="/contact">Contact Us</a></div>
+                            <div class="divTableCell">$5,500</div>
                         </div>
                     </div>
                 </div>
