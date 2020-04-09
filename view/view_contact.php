@@ -5,7 +5,7 @@
 
         <div class="col-9">
 
-        <p class="blue"><?= strtoupper($subTitle); ?></p>
+        <p class="blue"><?= $subTitle ?></p>
         <h1 class="pb-16"><?= $formTitle ?></h1>
 
         <form id="contactForm" action="/view/ajax_email_process.php" method="POST">
@@ -34,13 +34,15 @@
         <div class="mt-16">
         <!-- <label class="" for="comments">TYPE YOUR MESSAGE HERE</label> -->
         <?= $message_PH ?>
-        <textarea style="margin-top: 10px" id="comments" name="comments" placeholder="TYPE HERE" rows="8"><?= $msg ?></textarea>
+        <textarea style="margin-top: 10px" id="comments" name="comments" placeholder="TYPE ANY COMMENTS HERE" rows="8"><?= $msg ?></textarea>
         </div>
-
-        <?= $promo_field ?>
-        <?= $payment_field ?>
-        <?= $shipping ?>
         
+
+        
+        <?= $promo_field ?>
+        <?= $estimated_cost ?>
+        <?= $payment_field ?>
+
         </fieldset>
 
         <button id="sendform" value="SEND"><?= $button_label ?></button>

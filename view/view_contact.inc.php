@@ -1,50 +1,58 @@
 <?php
 
+
 if(isSet($this->data->routePathQuery[0])) {
     $photo_split = explode("=", $this->data->routePathQuery[0]);
     $photo = $photo_split[1];
     $photo = urldecode($photo);
     
     $promo_split = explode("=", $this->data->routePathQuery[1]);
-    $promo_code = $promo_split[1];
+    if($promo_split[0] != "size") { $promo_code = $promo_split[1]; } else { $size = $promo_split[1];  }
 
     $email_split = explode("=", $this->data->routePathQuery[2]);
-    $email = $email_split[1];
-    $email = urldecode($email);
+    if($email_split[0] != "frame") { $email = $email_split[1]; } else { $frame = $email_split[1];  }
 
     $name_split = explode("=", $this->data->routePathQuery[3]);
-    $name = $name_split[1];
-    $name = urldecode($name);
+    if($name_split[0] != "cost") { $name = urldecode($name_split[1]); } else { $cost = $name_split[1];  }
 
     $message_split = explode("=", $this->data->routePathQuery[4]);
     $msg = $message_split[1];
     $msg = urldecode($msg);
 
-    $formTitle = "CHECKOUT for <b>" . $photo . "</b>";
+    $formTitle = "CHECKOUT <span class='lowercase light'>for</span> <span class='light initialcaps'>" . $photo . "</span>";
     $subTitle = "Thank you for your interest in collecting a j.McCarthy Limited Edition";
     $subject_PH = "PURCHASE ORDER for " . strtoupper($photo);
     $message_PH = "IN THE BOX BELOW PLEASE TELL US THE FOLLOWING: <ul class='contact-ul mb-16'><li>Shipping Address (Provide Postal Code) or Pickup (Las Vegas, Nevada)</li><li>Phone Number, An art consultant will contact you within 24 hours to complete this order</li><li>Preferred Billing Method: Credit Card, Cash or BitCoin</li><li>And, any other questions you may have.</li></ul>";
     $button_label = "PLACE YOUR ORDER";
     $promo_field = '<p class="pt-16 pb-16"><input type="text" id="contactpromocode" name="contactpromocode" placeholder="PROMO CODE" value="' . $promo_code . '" /></p>';
-    $payment_field = "<p class='pt-16 pb-16'><img style='margin-bottom: 10px; width: 150px; vertical-align: middle' src='/view/image/square-payment-icons.png' /><br />Visa, Mastercard, American Express and Discover are accepted and processed with Square.<br />Bitcoin is also accepted on request.</p>";
+    $payment_field = "<p class='pt-16 pb-16'><img style='margin-bottom: 10px; width: 150px; vertical-align: middle' src='/view/image/square-payment-icons.png' /> <i style='font-size: 1.8rem; margin-left: 5px;' class='fab fa-bitcoin'></i><br />Estimated Total Not Including Tax or Shipping.<br />Visa, Mastercard, American Express and Discover accepted and processed with Square.<br />Bitcoin is accpeted via Coinbase or Square Cash App.</p>";
     $subject_VAL = $subject_PH;
     $formType = "RequestQuoteForm"; 
+
+    $estimated_cost = "<h2>" . $cost . "</h2>";
 
     if($_REQUEST['open']) {
         $formSizes = "<div class='select-wrapper'><label for='buysize'></label><select name='buysize'><option value='---'>SELECT YOUR tinyViews&trade; EDITION SIZE</option><option vlaue='4x6'>4x6 ($20)</option><option vlaue='8x8'>8x8 ($40)</option><option vlaue='8x10'>8x10 ($80)</option></select></div>";
         $promo_field = null;
         $subject_VAL = $subject_PH . " tinyViews&trade; Edition";
-        $shipping = "Shipping for tinysView&trade; is a flat-rate $5 in the USA. For orders outside the USA we will contact you with an estimate.";
+        // $shipping = "Shipping for tinysView&trade; is a flat-rate $5 in the USA. For orders outside the USA we will contact you with an estimate.";
+
     } else {
-        $formSizes = "<div class='select-wrapper'><label for='buysize'></label><select name='buysize'><option value='---'>SELECT YOUR LIMITED EDITION SIZE</option><option vlaue='16x24'>16x24 ($1000)</option><option vlaue='20x30'>20x30 ($1875)</option><option vlaue='24x36'>2x36 ($2700)</option><option vlaue='30x45'>30x45 (CALL)</option><option vlaue='40x60'>40x60 (CALL)</option></select></div>";
-        $shipping = "Shipping and handling for Fine-Art orders can be quite different for each order so once determined we will contact you with an estimate.";
+
+        if(isSet($frame)) {
+            $formSizes = '<p><input type="text" id="contactsize" name="contactsize" value="' . $size . ' WITH A ' . $frame .  ' FRAME" required></p>';
+        }
+        if(isSet($promo_code) && $promo_code == "COLAMOF-SAVE52") {
+            $formSizes = '<p><input type="text" id="contactsize" name="contactsize" value="60CM/16x20 WITH ASH-GRAY FRAME" required></p>';
+            $estimated_cost = "<h2>$480</h2>";
+        }
     }
 
 } else {
     $formTitle = $this->title;
     $subTitle = null;
     $subject_PH = "PHOTOGRAPH TITLE OR SUBJECT";
-    $message_PH = "TYPE YOUR MESSAGE BELOW";
+    $message_PH = null; 
     $button_label = "SEND MESSAGE";
     $promo_field = null;
     $payment_field = null;

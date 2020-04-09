@@ -41,7 +41,6 @@
         // print "image: " . $_SERVER['DOCUMENT_ROOT'] . "/catalog/__image/" . $photo_meta['file_name'] . '-room-alt.jpg' . "--NOT FOUND";
     }
 
-    // } else {
 
     $super_photo = ' 
     <div class="col-12 mb-32 ' . $photo_meta['orientation'] . '">
@@ -49,12 +48,8 @@
         <img src="/catalog/__image/' . $photo_meta['file_name'] . '.jpg" />
         </p>
     </div>';
-    // }    
 
-    /* If there is no custom DESC available */
-    if( is_null($photo_meta['desc']) ) {
-        $desc = "The <a href=\"/styles\">Gallery Edition</a> is printed on Acrylic and includes an inset frame. The <a href=\"/styles\">Studio Edition</a> is a print-only. The <a href=\"/styles\">tinyViews&trade; Edition</a> are square cropped versions of select Gallery and Studio Editions. Not all photographs are available in every edition. <!-- <br /><br />Read more about <a href=\"/styles\">our styles, editions, pricing and framing options.<a/> -->";
-    }
+ 
 
     $as_editions =  null;
     $as_editions_tmp = null;
@@ -62,47 +57,75 @@
     /* If as_GALLERY is set */
     if( $photo_meta['as_gallery'] == 1) {
         $ed_G = true;
-        // $as_editions_tmp .= "Gallery{print_media}";
-        $as_editions_tmp .= "Edition of " . $this->config->limited_edition_max  . " plus 2 Artist Proofs";
-        $edition_desc = $as_editions_tmp . " / $1,000 USD / Handmade and signed with Certificate of Authenticity ";
+
+        // $as_editions_tmp .= "Edition of " . $this->config->limited_edition_max  . " plus 2 Artist Proofs";
+        // $edition_desc = $as_editions_tmp . " / $1,000 USD / Handmade and signed with Certificate of Authenticity ";
+
+        $edition_desc = 'LIMITED EDITION';
+
         $btn = "BUY THIS LIMITED EDITION";
         $btn_link = '<a href="/contact?photo=' . $photo_meta['file_name'] . '">';
-        $gallery_details = '<p class="mt-16">Each piece of artwork comes ready-to-hang, framed in a handmade dark walnut frame with Tru Vue Museum Glass protecting the print. The price displayed under the art title reflects a 16x24 image size, framed piece of art. For additional information read more about our <a href="/styles">pricing and edition sizes</a> or <a href="/contact">contact us.</a></p>';
+        $gallery_details = '<p class="mt-32">Each piece of artwork comes ready-to-hang, framed in a handmade Natural Maple hardwood, Dark Walnut, Ash Gray or Snow White frame with Tru Vue Museum Glass protecting the print. If you have any questions or would like to talk with an art consultant, please <a href="/contact">contact us via email</a>.</p>';
+
+        $price_array = array('$1,000', '$1,875', '$2,700', '$5,000', '$10,000');
+
+        $sizes_frames = '<div class="col select-wrapper" style="width: 300px;  margin-right: 20px;">
+            <label for="buysize"></label>
+            <select id="buysize" name="buysize">
+                <option data-price="' . $price_array[0] . '" value="SIZE-60CM/16x24">SIZE: 60CM</option>
+                <option data-price="' . $price_array[1] . '" value="SIZE-76CM/20x30">SIZE: 76CM</option>
+                <option data-price="' . $price_array[2] . '"value="SIZE-91CM/24x36">SIZE: 91CM </option>
+                <option data-price="' . $price_array[3] . '"value="SIZE-144CM/30x45">SIZE: 144CM</option>
+                <option data-price="' . $price_array[4] . '"value="SIZE-152CM/40x60">SIZE: 152CM </option>
+            </select>
+        </div>
+        
+        <div class="col select-wrapper" style="width: 300px; margin-right: 20px;">
+            <label for="frame"></label>
+            <select id="frame" name="frame">
+                <option value="NATURAL-LIGHT">FRAME: Natural (light) </option>
+                <option value="DARK-WALNUT">FRAME: Dark Walnut </option>
+                <option value="ASH-GRAY">FRAME: Ash Gray </option>
+                <option value="SNOW-WHITE">FRAME: Snow White</option>
+            </select>
+        </div>';
+
     }
     
     /* If as_OPEN is set */
     if( $photo_meta['as_open'] == 1) {
         $ed_O = true;
-        if($ed_G === true || $ed_S === true) { $as_editions_tmp .= ", "; }
-        $as_editions_tmp .= "";
-        $edition_desc = 'tinyViews&trade; Edition &mdash; Available in 4x6, 8x8 and 8x10 Print Only.<br />Not part of a numbered edition. Frame not included, but available at an additional cost.';
+
+        // if($ed_G === true || $ed_S === true) { $as_editions_tmp .= ", "; }
+        // $as_editions_tmp .= "";
+
+        $edition_desc = 'tinyViews&trade; Edition';
         $btn = "Add To Cart +Checkout";
         $btn_link = '<a href="/contact?photo=' . $photo_meta['file_name'] . '&open=true">';
+
+        $price_array = array('$20', '$40', '$80');
+        
+        $sizes_frames = '<div class="col select-wrapper" style="width: 300px;  margin-right: 20px;">
+            <label for="buysize"></label>
+            <select id="buysize" name="buysize">
+                <option data-price="' . $price_array[0] . '"value="SIZE-4x6">SIZE: 4x6</option>
+                <option data-price="' . $price_array[1] . '"value="SIZE-8x10">SIZE: 8x10</option>
+                <option data-price="' . $price_array[2] . '"value="SIZE-8x8">SIZE: SQUARE 8x8 </option>
+            </select>
+        </div>
+        
+        <div class="col select-wrapper" style="width: 300px; margin-right: 20px;">
+            <label for="frame"></label>
+            <select id="frame" name="frame">
+                <option value="PRINT-ONLY(NO-FRAME)">PRINT ONLY (NO FRAME)</option>
+                <option value="ASH-GRAY(+$20)">FRAME: Ash Gray (+$20)</option>
+                <option value="SNOW-WHITE(+$20)">FRAME: Snow White (+$20)</option>
+            </select>
+        </div>';
+
     }
 
-    $as_editions = $as_editions_tmp;
-
-    /* If ON_DISPLAY is set */
-    if( $photo_meta['on_display'] != 0) {
-
-        /* Make API query to get location */
-        $photo_meta_location = $this->api_Catalog_Photo_Meta_Location($photo_meta['on_display']);
-
-        $on_display = '
-        <div class="flexfix">&nbsp;</div>
-            <!-- <div class="edition-extra">
-                <a href="/exhibits"><img src="/view/image/icon_geo.svg" /></a>
-            </div> -->
-            <div class="edition-extra-subline">
-                <p>
-                <!-- <a href="/contact">See It</a><br /> -->
-                <span>This art is available to view<br />at <a href="/exhibits">' . $photo_meta_location['location'] . '</a> in ' . $photo_meta_location['city'] . ', ' . $photo_meta_location['state'] . '</span>
-                </p>
-            </div>';
-    } else {
-        $on_display = null;
-    }
-
+    // $as_editions = $as_editions_tmp;
  
     /* Photo orientation */
     if($photo_meta['orientation'] == "portrait") {

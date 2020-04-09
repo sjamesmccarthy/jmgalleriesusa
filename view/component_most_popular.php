@@ -30,7 +30,7 @@ $html = <<<END
 <article id="most-popular">
     <div class="grid-4_sm-2 grid-4_md-3">
         <div class="col-10" style="margin-bottom: 16px;">
-        <h2 class="blue">YOU MAY ALSO LIKE</h2>
+        <h4 class="blue">YOU MAY ALSO LIKE</h4>
         <p>More popular photographs based on what others are viewing</p>
         </div>
     <div class="col-2-middle" style="margin-bottom: 16px; text-align: right;padding-right: 8px;">
