@@ -38,7 +38,7 @@ if(isSet($this->data->routePathQuery[0])) {
     } else {
 
         if(isSet($frame)) {
-            $formSizes = '<p><input type="text" id="contactsize" name="contactsize" value="' . $size . ' WITH A ' . $frame .  ' FRAME" required></p>';
+            $formSizes = '<p><input type="text" id="contactsize" name="contactsize" value="' . $size . ' WITH ' . $frame .  ' FRAME" required></p>';
             if($frame != "PRINT-ONLY" && $cost <= 80) { $cost = $cost + 20; }
         }
         if(isSet($promo_code) && $promo_code == "COLAMOF-SAVE52") {
