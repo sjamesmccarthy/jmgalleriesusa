@@ -53,7 +53,7 @@
             </div>
 
             <div style="margin-bottom: 10px;">
-                <label class="half-size file">
+                <label class="file half-size file">
                 <input class="input-upload" type="file" id="file_1" name="file_1" aria-label="Choose Main Photo">
                 <input type="hidden" id="file_1_path" name="file_1_path" value="/catalog/__image/">
                 <span class="file-custom file-custom-main"></span>

@@ -90,10 +90,12 @@
         .file {
             position: relative;
             height: 50px;
+            background-color: #FFF;
         }
 
         .file-thumb {
             vertical-align: top;
+            background-color: #FFF;
         }
 
         .input-upload {
@@ -109,7 +111,7 @@
             top:0;
             right:0;
             background-color: #CCC;
-            height: 43px;
+            height: 40px;
             border-radius: 0 5px 5px 0;
             padding: 10px;
         }

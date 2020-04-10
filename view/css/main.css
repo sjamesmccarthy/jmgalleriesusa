@@ -541,6 +541,21 @@ SASS, https://sass-lang.com/
   font-size: 1rem;
 }
 
+form label {
+  position: absolute;
+  font-size: .8rem;
+  margin-top: -4px;
+  background-color: #DDD;
+  padding: 0 5px;
+  color: #4a4a4a;
+  border-radius: 0 5px 5px 0;
+  z-index: 10;
+}
+
+form label:nth-of-type(2) {
+  margin-left: 1rem !important;
+}
+
 form .select-wrapper {
   position: relative;
   color: #808080;
@@ -3193,7 +3208,7 @@ fieldset {
 }
 
 .bx-buyart-btn a > button {
-  text-transform: uppercase;
+  text-transform: uppercaform;
 }
 
 .bx-wrapper {
@@ -3610,6 +3625,11 @@ input[type="text"].amazing-offer-error {
   color: #4a4a4a;
   border-radius: 0 5px 5px 0;
   text-transform: uppercase;
+  display: none;
+}
+
+.signin--container #username {
+  text-transform: lowercase;
 }
 
 .signin--container .make-wide {
@@ -3811,10 +3831,12 @@ input[type="text"].amazing-offer-error {
 .catalog-add--container form .file {
   position: relative;
   height: 50px;
+  background-color: #FFF;
 }
 
 .catalog-add--container form .file-thumb {
   vertical-align: top;
+  background-color: #FFF;
 }
 
 .catalog-add--container form .input-upload {
@@ -3830,7 +3852,7 @@ input[type="text"].amazing-offer-error {
   top: 0;
   right: 0;
   background-color: #CCC;
-  height: 43px;
+  height: 40px;
   border-radius: 0 5px 5px 0;
   padding: 10px;
 }

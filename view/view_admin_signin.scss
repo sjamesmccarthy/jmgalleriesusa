@@ -9,8 +9,13 @@
         color: $color-black;
         border-radius: 0 $border-radius $border-radius 0;
         text-transform: uppercase;
+        display: none;
     }
 
+    #username {
+        text-transform: lowercase;
+    }
+    
     .make-wide {
         width: 100%;
     }

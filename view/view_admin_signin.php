@@ -51,7 +51,7 @@
 <script>
 jQuery(document).ready(function($){
     
-    $("input").keyup(function () {
+    $(".form_pincode input").keyup(function () {
         if (this.value.length == this.maxLength) {
           console.log(this.name);
           $(this).addClass('toUpper');
