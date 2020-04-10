@@ -20,7 +20,7 @@ SASS, https://sass-lang.com/
   margin-top: 24px !important;
 }
 
-.mt-32, .footer-links, #footer ul {
+.mt-32, .collection-list, .footer-links {
   margin-top: 32px !important;
 }
 
@@ -2833,7 +2833,7 @@ form .half-size:nth-of-type(1) {
   position: relative;
   height: 50px;
   padding: 0 24px;
-  width: 85%;
+  width: 83%;
   border: none;
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -2915,9 +2915,24 @@ form .half-size:nth-of-type(1) {
   background-color: rgba(255, 255, 255, 0.3);
 }
 
-.footer-maxwidth {
+.collection-list {
+  width: 100%;
+}
+
+.collection-list ul {
+  text-align: center;
+}
+
+.collection-list ul li {
+  display: inline-block;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.footer-max-width {
   max-width: 102.8571em;
   margin: auto;
+  padding: 0 32px 0 32px;
 }
 
 .footer-links p {
@@ -2956,23 +2971,6 @@ form .half-size:nth-of-type(1) {
 
 #footer .footer-links > h3 {
   font-size: 1.2rem;
-  color: #FFF;
-}
-
-#footer ul {
-  line-height: 1.6;
-  width: 76%;
-  margin: auto;
-}
-
-#footer ul > li {
-  display: inline-block;
-  margin-right: 30px;
-}
-
-#footer ul > li > h3 {
-  font-size: 1.5rem;
-  font-weight: 400;
   color: #FFF;
 }
 

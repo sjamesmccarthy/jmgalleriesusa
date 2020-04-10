@@ -6,9 +6,11 @@
         <main>
         
                 <?php $this->getPartial('nav'); ?>
-                
-                        <?php $this->view() ?>
 
+                        <div style="min-height: 100vh;">
+                            <?php $this->view() ?>
+                        </div>
+                        
                 <?php $this->getPartial('footer'); ?>
         
         </main>

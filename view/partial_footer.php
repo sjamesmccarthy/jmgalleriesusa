@@ -2,10 +2,10 @@
     
     <!-- <div class="thin-line"></div> -->
     
-    <div class="footer-maxwidth pt-32 pb-32">
+    <div class="pt-32 pb-32 footer-max-width">
 
-                <div class="grid-4">
-                    <div class="col-7 foot-news">
+                <div class="grid">
+                    <div class="col-7_md-10 foot-news">
                     <?php 
                         $this->getPartial('newsletter'); 
                     ?>
@@ -14,13 +14,13 @@
         
         <div class="grid">
 
-            <div class="col-12">
+            <div class="col-12_md-12 collection-list">
             <ul>
                 <?= $collections_html ?>
                 <li><a href="/all">View All</a></li>
                 <li>&mdash;</li>
-                <li><a href="/all">Pricing</a></li>
-                <li><a href="/all">Contact</a></li>
+                <li><a href="/styles">Pricing</a></li>
+                <li><a href="/contact">Contact</a></li>
             </ul>
             </div>
 
@@ -63,12 +63,15 @@
                 </div>
 
             </div> -->
+         </div>
+
+         <div class="grid-center">
 
                 <div class="col-6 breadcrumb">
                 <p><a href="/"><img class="breadcrumb-logo" src="/view/image/logo_fullsize.png" /></a> <?= $bc_catalog ?> <img class="breadcrumb-arrow" src="/view/image/icon_navarrow-right.svg" /><?= $this->page->title ?> </p>
                 </div>
                 <div class="col-6 breadcrumb">
-                <p class="right"><?= $this->config->copyright ?> | <a class="mr-16" href="/legal">Terms of Use</a> | <a class="ml-16" target="_social" href="//twitter.com/jmgalleriesusa"><i class="mr-16 fab fa-twitter"></i></a> <a target="_social" href="//instagram.com/jmgalleriesusa"><i class="mr-16 fab fa-instagram"></i></a> <a target="_social" href="//medium.com/jmgalleriesusa"><i class="mr-16 fab fa-medium"></i></a></p>
+                <p class="right"><?= $this->config->copyright ?> | <a class="mr-16" href="/legal">Terms of Use</a></p>
                 </p>
                 </div>
 
