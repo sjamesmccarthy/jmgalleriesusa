@@ -68,7 +68,7 @@
                 <p><a href="/"><img class="breadcrumb-logo" src="/view/image/logo_fullsize.png" /></a> <?= $bc_catalog ?> <img class="breadcrumb-arrow" src="/view/image/icon_navarrow-right.svg" /><?= $this->page->title ?> </p>
                 </div>
                 <div class="col-6 breadcrumb">
-                <p class="right"> <?= $this->config->copyright ?> | <a href="/legal">Terms of Use</a></p>
+                <p class="right"><?= $this->config->copyright ?> | <a class="mr-16" href="/legal">Terms of Use</a> | <a class="ml-16" target="_social" href="//twitter.com/jmgalleriesusa"><i class="mr-16 fab fa-twitter"></i></a> <a target="_social" href="//instagram.com/jmgalleriesusa"><i class="mr-16 fab fa-instagram"></i></a> <a target="_social" href="//medium.com/jmgalleriesusa"><i class="mr-16 fab fa-medium"></i></a></p>
                 </p>
                 </div>
 
