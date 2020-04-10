@@ -3131,6 +3131,12 @@ fieldset {
   /* nothing */
 }
 
+form #buysize, form #frame {
+  border: none;
+  border-bottom: 1px solid #e4e4e4;
+  border-radius: 0;
+}
+
 .top-photo {
   text-align: right;
 }
