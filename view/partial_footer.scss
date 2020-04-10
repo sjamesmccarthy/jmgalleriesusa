@@ -8,16 +8,18 @@
     // background-repeat: no-repeat;
     // background-size: cover;
     // background-position: 50% 53%;
-    // // position: absolute;
+    // position: absolute;
     // opacity: .6;
     // filter: gray;
     // filter: grayscale(100%);
-    // margin-top: 54px;
-    // width: 100vw;
-    // position: relative;
-    // margin-left: -50vw;
-    // height: 100px;
-    // left: 50%;
+    margin-top: 64px;
+    width: 100vw;
+    position: relative;
+    margin-left: -50vw;
+    // heig÷ht: 100px;
+    left: 50%;
+    background-color: #000;
+    color: #FFF;
 }
 
 #footer input[type=text] {
@@ -28,6 +30,22 @@
     max-width: 102.8571em;
     margin: auto;
     // padding: 0 32px 0 32px;
+}
+
+.footer-links {
+    @extend .mt-32;
+
+    p {
+        display: inline-block;
+        text-align: center;
+        vertical-align: middle;
+        padding-right: 50px;
+    }
+}
+
+.footer-logo img {
+    filter: invert(1);
+    width: 100px;
 }
 
 .footer-column {
@@ -42,20 +60,38 @@
 }
 
 #footer a, #footer li a {
-    color: rgb(74, 74, 74);
+    color: #FFF;
 }
 
 #footer a:hover, #footer li a:hover {
-    color: #000;
+    color: $color-blue;
 }
 
 #footer h4 {
     padding-bottom: 16px
 }
 
+#footer .footer-links > h3 {
+    font-size: 1.2rem;
+    color: #FFF;
+}
+
 #footer ul {
-    font-weight: 300;
+    @extend .mt-32;
     line-height: 1.6;
+    width: 76%;
+    margin: auto;
+
+    &>li {
+        display: inline-block;   
+        margin-right: 30px;
+
+        > h3 {
+            font-size: 1.5rem;
+            font-weight: 400;
+            color: #FFF;
+        }
+    }
 }
 
 #footer img {
@@ -77,21 +113,30 @@
 }
 
 .breadcrumb {
-    font-weight: 300;
+    @extend .pt-32;
+    padding-bottom: 0;
+
+    >p {
+        font-size: .8rem;
+        font-weight: 100;
+        display:inline-block;
+    }
 }
 
 .breadcrumb-logo {
     width: 28px; 
     vertical-align: middle;
+    filter: invert(1);
 }
 
 .breadcrumb-arrow {
     vertical-align: middle; 
-    opacity: .6; 
-    width: 6px; 
-    height: 6px;
+    // opacity: .6; 
+    width: 10px; 
+    height: 10px;
     margin-left: 10px;
     margin-right: 10px;
+    filter: invert(1);
 }
 
 .top-border {

@@ -10,7 +10,7 @@
 </section>
 
 <!-- <section> -->
-    <article class="mb-64">
+    <article class="">
     <form id="limited_ed_form" action="/contact" method="post">
     <input type="hidden" id="g-recaptcha-response" name="g-recaptcha-response" />
 
@@ -49,7 +49,7 @@
 </article>
 
 <!-- generated html from component file: component_most_popular -->
-<section id="you-may-like" class="filmstrip mt-64">
+<section id="you-may-like" class="filmstrip mt-16">
     <?= $you_may_also_like_html ?>
 </section> 
 <!-- /generated html from component file -->

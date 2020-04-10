@@ -12,7 +12,7 @@ SASS, https://sass-lang.com/
   margin-top: 8px !important;
 }
 
-.mt-16 {
+.mt-16, .foot-news {
   margin-top: 16px !important;
 }
 
@@ -20,7 +20,7 @@ SASS, https://sass-lang.com/
   margin-top: 24px !important;
 }
 
-.mt-32 {
+.mt-32, .footer-links, #footer ul {
   margin-top: 32px !important;
 }
 
@@ -56,7 +56,7 @@ SASS, https://sass-lang.com/
   margin-top: 96px !important;
 }
 
-.mb-8 {
+.mb-8, .h3-sub {
   margin-bottom: 8px !important;
 }
 
@@ -152,6 +152,54 @@ SASS, https://sass-lang.com/
   margin-left: 96px !important;
 }
 
+.mr-8, .email {
+  margin-right: 8px !important;
+}
+
+.mr-16 {
+  margin-right: 16px !important;
+}
+
+.mr-24 {
+  margin-right: 24px !important;
+}
+
+.mr-32 {
+  margin-right: 32px !important;
+}
+
+.mr-40 {
+  margin-right: 40px !important;
+}
+
+.mr-48 {
+  margin-right: 48px !important;
+}
+
+.mr-56 {
+  margin-right: 56px !important;
+}
+
+.mr-64 {
+  margin-right: 64px !important;
+}
+
+.mr-72 {
+  margin-right: 72px !important;
+}
+
+.mr-80 {
+  margin-right: 80px !important;
+}
+
+.mr-88 {
+  margin-right: 88px !important;
+}
+
+.mr-96 {
+  margin-right: 96px !important;
+}
+
 .pt-8 {
   padding-top: 8px !important;
 }
@@ -164,7 +212,7 @@ SASS, https://sass-lang.com/
   padding-top: 24px !important;
 }
 
-.pt-32 {
+.pt-32, .breadcrumb {
   padding-top: 32px !important;
 }
 
@@ -2726,6 +2774,19 @@ form .half-size:nth-of-type(1) {
 
 /* ********************** */
 /* partial_newsletter */
+.h3-sub {
+  color: #FFF;
+  font-weight: 400;
+  font-size: 1.5rem;
+}
+
+.foot-news {
+  border-left: .5px solid #FFF;
+  padding-left: 20px;
+  padding-bottom: 0;
+  margin: auto;
+}
+
 .newsletter-container {
   vertical-align: bottom;
 }
@@ -2772,11 +2833,10 @@ form .half-size:nth-of-type(1) {
   position: relative;
   height: 50px;
   padding: 0 24px;
-  width: 45%;
+  width: 85%;
   border: none;
   -webkit-appearance: none;
   -moz-appearance: none;
-  background-color: rgba(0, 0, 0, 0.05);
   border-radius: 5px;
   font-family: inherit;
   font-size: 1.0rem;
@@ -2790,10 +2850,6 @@ form .half-size:nth-of-type(1) {
   box-sizing: border-box;
   padding-left: 15px;
   margin-bottom: 1rem;
-}
-
-#mc_embed_signup .mc-inline {
-  display: inline-block;
 }
 
 #mc_embed_signup label {
@@ -2845,6 +2901,16 @@ form .half-size:nth-of-type(1) {
 
 /* ********************** */
 /* partial_footer */
+#footer {
+  margin-top: 64px;
+  width: 100vw;
+  position: relative;
+  margin-left: -50vw;
+  left: 50%;
+  background-color: #000;
+  color: #FFF;
+}
+
 #footer input[type=text] {
   background-color: rgba(255, 255, 255, 0.3);
 }
@@ -2852,6 +2918,19 @@ form .half-size:nth-of-type(1) {
 .footer-maxwidth {
   max-width: 102.8571em;
   margin: auto;
+}
+
+.footer-links p {
+  display: inline-block;
+  text-align: center;
+  vertical-align: middle;
+  padding-right: 50px;
+}
+
+.footer-logo img {
+  -webkit-filter: invert(1);
+  filter: invert(1);
+  width: 100px;
 }
 
 .footer-column {
@@ -2864,20 +2943,37 @@ form .half-size:nth-of-type(1) {
 }
 
 #footer a, #footer li a {
-  color: #4a4a4a;
+  color: #FFF;
 }
 
 #footer a:hover, #footer li a:hover {
-  color: #000;
+  color: #2574A9;
 }
 
 #footer h4 {
   padding-bottom: 16px;
 }
 
+#footer .footer-links > h3 {
+  font-size: 1.2rem;
+  color: #FFF;
+}
+
 #footer ul {
-  font-weight: 300;
   line-height: 1.6;
+  width: 76%;
+  margin: auto;
+}
+
+#footer ul > li {
+  display: inline-block;
+  margin-right: 30px;
+}
+
+#footer ul > li > h3 {
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: #FFF;
 }
 
 #footer img {
@@ -2898,21 +2994,30 @@ form .half-size:nth-of-type(1) {
 }
 
 .breadcrumb {
-  font-weight: 300;
+  padding-bottom: 0;
+}
+
+.breadcrumb > p {
+  font-size: .8rem;
+  font-weight: 100;
+  display: inline-block;
 }
 
 .breadcrumb-logo {
   width: 28px;
   vertical-align: middle;
+  -webkit-filter: invert(1);
+  filter: invert(1);
 }
 
 .breadcrumb-arrow {
   vertical-align: middle;
-  opacity: .6;
-  width: 6px;
-  height: 6px;
+  width: 10px;
+  height: 10px;
   margin-left: 10px;
   margin-right: 10px;
+  -webkit-filter: invert(1);
+  filter: invert(1);
 }
 
 .top-border {
