@@ -20,6 +20,37 @@
     left: 50%;
     background-color: #000;
     color: #FFF;
+
+    .cookie_banner {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background-color:$color-blue;
+        // height: 100px;
+        padding: 20px;
+        
+        >p {
+            color: #FFF;
+            display: inline-block;
+            vertical-align: middle;
+            padding-right: 20px;
+    
+            >i.fas {
+                font-size: 2rem;
+            }
+
+            &>a {
+                color: #CCC;
+                
+                &:hover {
+                    color: #000;
+                }
+    
+            }
+        }
+    }
+
 }
 
 #footer input[type=text] {

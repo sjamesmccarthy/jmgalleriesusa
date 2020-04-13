@@ -2782,8 +2782,8 @@ form .half-size:nth-of-type(1) {
 
 .foot-news {
   border-left: .5px solid #FFF;
-  padding-left: 20px;
-  padding-bottom: 0;
+  padding-left: 20px !important;
+  padding-bottom: 0 !important;
   margin: auto;
 }
 
@@ -2909,6 +2909,34 @@ form .half-size:nth-of-type(1) {
   left: 50%;
   background-color: #000;
   color: #FFF;
+}
+
+#footer .cookie_banner {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #2574A9;
+  padding: 20px;
+}
+
+#footer .cookie_banner > p {
+  color: #FFF;
+  display: inline-block;
+  vertical-align: middle;
+  padding-right: 20px;
+}
+
+#footer .cookie_banner > p > i.fas {
+  font-size: 2rem;
+}
+
+#footer .cookie_banner > p > a {
+  color: #CCC;
+}
+
+#footer .cookie_banner > p > a:hover {
+  color: #000;
 }
 
 #footer input[type=text] {
@@ -3430,6 +3458,15 @@ form #buysize, form #frame {
 
 /* ********************** */
 /* view_legal */
+.container > p {
+  margin-top: 1rem;
+}
+
+.divider {
+  border-top: 1px solid #e4e4e4;
+  margin-top: 40px;
+}
+
 .subsection-ul {
   margin-top: 20px;
   list-style-type: none;
@@ -3437,6 +3474,10 @@ form #buysize, form #frame {
 
 .subsection-ul li {
   margin-top: 30px;
+}
+
+.subsection-ul li .toc > li {
+  margin-top: 0;
 }
 
 .subsection-ul li > p {
@@ -3462,6 +3503,7 @@ form #buysize, form #frame {
 .subsection-ul li > ol li {
   margin-bottom: 10px;
   margin-left: 30px;
+  font-size: 1.2rem;
 }
 
 /*subsection UL*/

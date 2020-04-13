@@ -317,11 +317,11 @@
         "component": "true",
         "title": "Contact Us"
     },
-    "/legal": {
+    "/privacy": {
         "template": "page",
-        "page": "legal",
+        "page": "privacy",
         "component": "true",
-        "title": "Privacy Policy, Copyright, Terms of Sale"
+        "title": "Privacy Policy, Terms of Sale and Copyright"
     },
     "/styles": {
         "template": "page",

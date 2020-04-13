@@ -33,28 +33,28 @@
             "link" : "flowers-fields-clouds",
             "image" : "daisies-for-our-lady.jpg",
             "text" : "light",
-            "position" : "center"
+            "position" : "middle"
         },
         "2" : {
             "title" : "Oceans, Lakes & Waterfalls",
             "link" : "oceans-lakes-waterfalls",
             "image" : "bodega-trailhead.jpg",
             "text": "light",
-            "position": "center"
+            "position": "middle"
         },
         "3" : {
             "title" : "Architecture, Abstract & People",
             "link" : "abstract-architecture-people",
             "image" : "facade-to-the-sky.jpg",
             "text": "light",
-            "position": "center"
+            "position": "middle"
         },
         "4" : {
             "title" : "Mountains, Deserts & Trees",
             "link" : "mountains-deserts-trees",
             "image" : "first-light.jpg",
             "text": "light",
-            "position": "center"
+            "position": "middle"
         }
     }
 }

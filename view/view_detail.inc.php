@@ -65,28 +65,28 @@
 
         $btn = "BUY THIS LIMITED EDITION";
         $btn_link = '<a href="/contact?photo=' . $photo_meta['file_name'] . '">';
-        $gallery_details = '<p class="mt-32">Each piece of artwork comes ready-to-hang, framed in a handmade Natural Maple hardwood, Dark Walnut, Ash Gray or Snow White frame with Tru Vue Museum Glass protecting the print. If you have any questions or would like to talk with an art consultant, please <a href="/contact">contact us via email</a>.</p>';
+        $gallery_details = '<p class="mt-32">Each piece of artwork comes ready-to-hang, framed in a premium wood frame with Tru Vue Museum Glass protecting the print. If you have any questions or would like to talk with an art consultant, please <a href="/contact">contact us via email</a>.</p>';
 
         $price_array = array('1000', '1350', '1950', '3000', '5500');
 
         $sizes_frames = '<div class="col select-wrapper" style="width: 300px;  margin-right: 20px;">
             <label for="buysize"></label>
             <select id="buysize" name="buysize">
-                <option data-price="' . $price_array[0] . '" value="SIZE-60CM/16x24">SIZE: 60CM</option>
-                <option data-price="' . $price_array[1] . '" value="SIZE-76CM/20x30">SIZE: 76CM</option>
-                <option data-price="' . $price_array[2] . '"value="SIZE-91CM/24x36">SIZE: 91CM </option>
-                <option data-price="' . $price_array[3] . '"value="SIZE-144CM/30x45">SIZE: 144CM</option>
-                <option data-price="' . $price_array[4] . '"value="SIZE-152CM/40x60">SIZE: 152CM </option>
+                <option data-price="' . $price_array[0] . '" value="SIZE-60CM/16x24">SIZE: 60CM (approx. 16x24 inches)</option>
+                <option data-price="' . $price_array[1] . '" value="SIZE-76CM/20x30">SIZE: 76CM (approx. 20x30 inches)</option>
+                <option data-price="' . $price_array[2] . '"value="SIZE-91CM/24x36">SIZE: 91CM (approx. 24x36 inches)</option>
+                <option data-price="' . $price_array[3] . '"value="SIZE-144CM/30x45">SIZE: 144CM (approx. 30x45 inches)</option>
+                <option data-price="' . $price_array[4] . '"value="SIZE-152CM/40x60">SIZE: 152CM (approx. 40x60 inches)</option>
             </select>
         </div>
         
         <div class="col select-wrapper" style="width: 300px; margin-right: 20px;">
             <label for="frame"></label>
             <select id="frame" name="frame">
-                <option value="NATURAL-LIGHT">FRAME: Natural (light) </option>
-                <option value="DARK-WALNUT">FRAME: Dark Walnut </option>
-                <option value="ASH-GRAY">FRAME: Ash Gray </option>
-                <option value="SNOW-WHITE">FRAME: Snow White</option>
+                <!-- <option value="NATURAL-LIGHT">FRAME: Natural (light) </option> -->
+                <option value="DARK-WALNUT">FRAME: Dark Walnut (similar to a Dark Brown stain)</option>
+                <option value="ASH-GRAY">FRAME: Black (similar to a Light Black stain)</option>
+                <option value="SNOW-WHITE">FRAME: Whiskey (similar to a Light Brown stain)</option>
             </select>
         </div>';
 

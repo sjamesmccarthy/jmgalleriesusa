@@ -1,7 +1,7 @@
 <section id="exhibits pt-24">
     <div class="grid-noGutter-center">
 
-        <div class="col-8 pr-16">
+        <div class="col-11 pr-16">
 
             <h1>Exhibits & Pop-Up Events</h1>
 

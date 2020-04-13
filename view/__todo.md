@@ -10,3 +10,6 @@
 
 # core_site.php
 - Add MYSQL date DEFINE
+
+# templates
+- remove inline code and put into app.scss file

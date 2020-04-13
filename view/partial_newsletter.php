@@ -9,7 +9,7 @@
             <button type="submit" class="btn">
                 SIGN-UP
             </button>
-    <p class="small pb-16">Be the first to know about new releases, pop-up gallery events and exhibits, as well as new additions to our website and other news. We will never share your e-mail address and you may unsubscribe via the link found at the bottom of every email which are serviced by Mail Chimp.</p>
+    <p class="small">Be the first to know about new releases, pop-up gallery events and exhibits, as well as new additions to our website and other news. We will never share your e-mail address and you may unsubscribe via the link found at the bottom of every email which are serviced by Mail Chimp.</p>
   </div>
 </form>
 </div>

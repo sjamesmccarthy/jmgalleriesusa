@@ -34,7 +34,7 @@
        <?= $sizes_frames ?>
 
     </div>
-    <div>
+    <div class="mt-16 ml-16">
         <?= $btn_link ?><button><?= $btn ?></button></a>
         <?= $gallery_details ?>
     </div>

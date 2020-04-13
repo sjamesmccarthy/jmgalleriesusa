@@ -1,13 +1,27 @@
 /* ********************** */
 /* view_legal */
 
+.container >p {
+    margin-top: 1rem;
+}
+
+.divider {
+    border-top: 1px solid #e4e4e4;
+    margin-top: 40px;
+}
+
 .subsection-ul {
     margin-top: 20px;
     list-style-type: none;
+
 }
 
 .subsection-ul li {
     margin-top: 30px;
+
+    .toc >li {
+        margin-top: 0;
+    }
 }
 
 .subsection-ul li >p {
@@ -33,4 +47,5 @@
 .subsection-ul li >ol li {
     margin-bottom: 10px;
     margin-left: 30px;
+    font-size: 1.2rem;
 }

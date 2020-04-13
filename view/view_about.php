@@ -112,7 +112,7 @@
                         Lots of back of the studio changes happened too, from the addition of new Tamron G2 lenses, Macbooks, NAS backup solutions, framing equiment and suppliers to the purchase of an Epson SureColor P800, j.McCarthy overhauled his entire workflow creating his own turn-key studio, as well as migrated his digital darkroom from Adobe Lightroom to Phase One's Capture One.
                     </p>
 
-                    <p>It certainly was a year to remember and a sigificant turning point for jM Galleries.</p>
+                    <p>It certainly was a year to remember and a sigificant milestone for jM Galleries.</p>
                 </li>
             </ul>
 
@@ -120,7 +120,7 @@
                 <!-- <li class="timeline-date">2019</li> -->
                 <li class="timeline-history">
                 <h3>2020</h3>
-                    <p>This was the year the world almost ended. The international pandemic known as COVID-19 swept the world in fury, infecting almost a million people and killing hundreds of thousands. Entire states, cities and countries were put on complete lock-down or shelter-in-place orders by their Government officials. The global econmony hit the brakes at 100mph and came to an alarming slow-down forcing many business to close their doors.</p>
+                    <p>This was the year the world almost ended. The global pandemic known as COVID-19 swept the world in fury, infecting almost a million people and killing hundreds of thousands. Entire states, cities and countries were put on complete lock-down or shelter-in-place orders by their Government officials. The global econmony hit the brakes at 100mph and came to an alarming slow-down forcing many business to close their doors.</p>
                     
                     <p class="timeline-height-adjust"><a href="/moments">Current Moments & Other News</a></p>
                 </li>

@@ -76,7 +76,7 @@
 
      <li><h3>Framing</h3>
         <p>
-        Limited Edition Hahnemühle Photo Rag® Metallic prints are mounted in a hand-made 2 inch frame protected with Tru Vue&reg; Museum Glass. The premium hardwood is sourced from a Los Angeles, California mill. 
+        Limited Edition Hahnemühle Photo Rag® Metallic prints are mounted in a premium hardwood frame protected with Tru Vue&reg; Museum Glass.
         </p>
     </li>
 
@@ -91,7 +91,7 @@
                             <div class="divTableCell thead">Price</div>
                         </div>
                         <div class="divTableRow">
-                            <div class="divTableCell">Hahnemühle Photo Rag® Metallic Archival Paper<br />TruVue&reg; Museum Glass<br />Premium hardwood, hand-made frame</div>
+                            <div class="divTableCell">Hahnemühle Photo Rag® Metallic Archival Paper<br />TruVue&reg; Museum Glass<br />Premium hardwood frame</div>
                             <div class="divTableCell">60CM</div>
                             <div class="divTableCell">16 x 24</div>
                             <div class="divTableCell">$1,000</div>

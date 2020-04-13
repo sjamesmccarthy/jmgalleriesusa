@@ -1,10 +1,10 @@
 <section id="about pt-24">
     <div class="grid-noGutter-center">
 
-        <div class="col-8 pr-16">
+        <div class="col-11 pr-16">
 
             <h1>Moments, and Other News</h1>
-            <p class="pb-32">Stay connected with j.McCarthy and discover new events, moments and news happening at jM Galleries. </p>
+            <p class="pb-32">Stay connected with j.McCarthy and discover new events, <a href="/exhibits">pop-up exhibits</a> and news happening at jM Galleries. </p>
 
             <ul id="news-overflow">
 
