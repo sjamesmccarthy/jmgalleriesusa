@@ -23,7 +23,13 @@
                         <h2 class="uppercase ">MY AMAZING OFFER &mdash; SAVE 52%</h2>
                         <p><b>As a collector you are privy to some special, exclusive new release fine art by j.McCarthy and some amazing offers.</b></p>
                         <p class="mt-8">As So The Story Goes ... at Salk Institute for Biologocial Studies in La Jolla, California. After walking around this beautiful campus just before sunset, I finally came to the front-gate and a "closed" sign stared back at me. I stood there, blank faced and let down when a security guard approached and asked if I'd like a tour. Of course I replied "are you joking?" There was only 1 rule he said: "No tripods". He escorted me to the well-known and well-photographed courtyard and there, with my tripod benched, I got a few shots of this architecturally renowned campus that unifies the sky, sea and science and once a year during the Winter Solstice the river of life aligns directly with an ocean sunset.</p>
-                        <p class="mt-8"><a target="_ao" href="/contact?photo=<?= $res_currenOfferName ?>&pc=COLAMOF-SAVE52&e=<?= $username ?>&n=<?= $res_first_name ?> <?= $res_last_name ?>">Order Your Framed <?= $res_imageSize ?> Limited Edition Exclusive Amazing Offer Now for <b><?= $res_amazingOfferPrice ?></b> <strike><?= $res_amazingOfferRegPrice ?></strike> (52% off Limited Edition Pricing)</a></p>
+
+                        <!-- 
+                            https://jmgalleriesusa.com/contact?photo=horizontal-limits&size=SIZE-60CM/16x24&frame=DARK-WALNUT&cost=1000
+                            https://jmgalleriesusa/contact?photo=Facade%20To%20The%20Sky&size=60CM&frame=DARK-WALNUT&cost=480&promo_code=COLAMOF-SAVE52&email=matt@matt.com&name=Matthew%20Campbell
+                        -->
+
+                        <p class="mt-8"><a target="_ao" href="/contact?photo=<?= $res_currenOfferName ?>&size=SIZE-60CM&frame=DARK-WALNUT&cost=480&promo_code=COLAMOF-SAVE52&email=<?= $username ?>&name=<?= $res_first_name ?> <?= $res_last_name ?>">Order Your Framed <?= $res_imageSize ?> Limited Edition Exclusive Amazing Offer Now for <b><?= $res_amazingOfferPrice ?></b> <strike><?= $res_amazingOfferRegPrice ?></strike> (52% off Limited Edition Pricing)</a></p>
                     </div>
                     
                     <div class="amazing-offer-photo mt-32">

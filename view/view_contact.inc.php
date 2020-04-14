@@ -2,22 +2,39 @@
 
 
 if(isSet($this->data->routePathQuery[0])) {
-    $photo_split = explode("=", $this->data->routePathQuery[0]);
-    $photo = $photo_split[1];
-    $photo = urldecode($photo);
+
+    // https://jmgalleriesusa.com/contact?photo=horizontal-limits&size=SIZE-60CM/16x24&frame=DARK-WALNUT&cost=1000
+    // https://jmgalleriesusa/contact?photo=Facade%20To%20The%20Sky&size=60CM&frame=DARK-WALNUT&cost=480&promo_code=COLAMOF-SAVE52&email=matt@matt.com&name=Matthew%20Campbell
+    // [1] photo
+    // [2] size
+    // [3] frame
+    // [4] cost
+    // [5] promo_code
+    // [6] name
+    // [7] email
     
-    $promo_split = explode("=", $this->data->routePathQuery[1]);
-    if($promo_split[0] != "size") { $promo_code = $promo_split[1]; } else { $size = $promo_split[1];  }
+    foreach ($this->data->routePathQuery as $key => $value)
+    {
+        $query_str = explode("=", $value);
+        ${$query_str[0]} = urldecode($query_str[1]);
+    }    
 
-    $email_split = explode("=", $this->data->routePathQuery[2]);
-    if($email_split[0] != "frame") { $email = $email_split[1]; } else { $frame = $email_split[1];  }
+    // $photo_split = explode("=", $this->data->routePathQuery[0]);
+    // $photo = $photo_split[1];
+    // $photo = urldecode($photo);
+    
+    // $promo_split = explode("=", $this->data->routePathQuery[1]);
+    // if($promo_split[0] != "size") { $promo_code = $promo_split[1]; } else { $size = $promo_split[1];  }
 
-    $name_split = explode("=", $this->data->routePathQuery[3]);
-    if($name_split[0] != "cost") { $name = urldecode($name_split[1]); } else { $cost = $name_split[1];  }
+    // $email_split = explode("=", $this->data->routePathQuery[2]);
+    // if($email_split[0] != "frame") { $email = $email_split[1]; } else { $frame = $email_split[1];  }
 
-    $message_split = explode("=", $this->data->routePathQuery[4]);
-    $msg = $message_split[1];
-    $msg = urldecode($msg);
+    // $name_split = explode("=", $this->data->routePathQuery[3]);
+    // if($name_split[0] != "cost") { $name = urldecode($name_split[1]); } else { $cost = $name_split[1];  }
+
+    // $message_split = explode("=", $this->data->routePathQuery[4]);
+    // $msg = $message_split[1];
+    // $msg = urldecode($msg);
 
     $formTitle = "CHECKOUT <span class='lowercase light'>for</span> <span class='light initialcaps'>" . $photo . "</span>";
     $subTitle = "Thank you for your interest in collecting a j.McCarthy Limited Edition";
@@ -42,7 +59,7 @@ if(isSet($this->data->routePathQuery[0])) {
             if($frame != "PRINT-ONLY" && $cost <= 80) { $cost = $cost + 20; }
         }
         if(isSet($promo_code) && $promo_code == "COLAMOF-SAVE52") {
-            $formSizes = '<p><input type="text" id="contactsize" name="contactsize" value="60CM/16x20 WITH ASH-GRAY FRAME" required></p>';
+            $formSizes = '<p><input type="text" id="contactsize" name="contactsize" value="60CM/16x20 WITH ' . $frame . ' FRAME" required></p>';
             $estimated_cost = "<h2>$480</h2>";
         }
     }

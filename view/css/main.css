@@ -2957,6 +2957,18 @@ form .half-size:nth-of-type(1) {
   margin-right: 10px;
 }
 
+@media (max-width: 64em), (max-width: 80em) {
+  .collection-list ul > li:nth-last-child(-n+3) {
+    display: none;
+  }
+}
+
+@media (max-width: 64em) and (orientation: portrait) {
+  .collection-list ul > li:nth-child(n+5):nth-child(-n) {
+    display: none;
+  }
+}
+
 .footer-max-width {
   max-width: 102.8571em;
   margin: auto;

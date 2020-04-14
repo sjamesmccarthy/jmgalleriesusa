@@ -6,14 +6,12 @@ if($this->checkSession()) {
     $loginInfo = json_decode( $_SESSION['data'], true );
     extract($loginInfo, EXTR_PREFIX_SAME, "dup");
 } else {
-    header('location:/studio/signin');
+    header('location:/d/collector/signin');
 }
 
 /* LOOK UP COLLECTOR */
 $collector_data = $this->api_Admin_Get_Collector($_SESSION['collector_id']);
 extract($collector_data, EXTR_PREFIX_ALL, "res");
-
-// $this->printp_r($collector_data);
 
 /* YOUR COLLECTION */
 $mycollection_html = $this->component('collector_my_collection',$res_collector_id);
