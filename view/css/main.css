@@ -551,6 +551,11 @@ h6 {
   font-size: .9rem;
 }
 
+.tiny {
+  font-size: .5rem;
+  font-weight: 100;
+}
+
 .right {
   text-align: right;
 }
@@ -5574,6 +5579,10 @@ table.dataTable tbody td.valign {
 
 .reports-add--container form .cancel-button {
   margin-left: 10px;
+}
+
+.collector--main_container .whoami {
+  display: none;
 }
 
 .collector--main_container .note-from-artist p {

@@ -4,6 +4,10 @@
     
 .collector--main_container {
 
+    .whoami {
+        display: none;
+    }
+
     .note-from-artist p {
         margin-top: 10px;    
         font-size: 1.8rem;   
@@ -15,7 +19,7 @@
     #note-close {
         cursor: pointer;
     }
-    
+
     >h2 {
         font-weight: 800;
     }
