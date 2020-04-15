@@ -8,7 +8,9 @@
         header('location:/studio/signin');
     }
 
- 
+     // Fetch all linked collections
+    $category_data = $this->api_Admin_Get_Catalog_Categories();
+
     /* CHECK TO SEE IF THIS IS AN EDIT OR ADD NEW */
     if(isSet($this->routes->URI->queryvals)) {
         $edit_id = $this->routes->URI->queryvals[1];
@@ -17,8 +19,6 @@
         $this->data = $edit_data;
         extract($edit_data, EXTR_PREFIX_SAME, "dup");
 
-        // Fetch all linked collections
-        $category_data = $this->api_Admin_Get_Catalog_Categories();
         $collections_data = $this->api_Admin_Get_CollectionsByPhoto($catalog_photo_id, $parent_collections_id);
         if(!isSet($collections_data)) { $collections_html= '<i style="padding-right: 5px;" class="fas fa-link"></i> link other collections'; }
 

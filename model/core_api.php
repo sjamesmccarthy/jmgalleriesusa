@@ -277,6 +277,9 @@ class Core_Api
             A.reg_num, 
             A.print_size,
             A.frame_size,
+            A.edition_num,
+            A.edition_num_max,
+            A.series_num,
             C.first_name,
             C.last_name,
             C.company,
@@ -1510,7 +1513,6 @@ class Core_Api
         `iso`, 
         `date_taken`, 
         `orientation`, 
-        `print_media`, 
         `tags`, 
         `created`, 
         `status`, 
@@ -1537,7 +1539,6 @@ class Core_Api
             '$iso', 
             '$date_taken', 
             '$orientation', 
-            '$print_media', 
             '$tags', 
             '$created', 
             '$status', 
@@ -1548,14 +1549,30 @@ class Core_Api
             )";
 
         $result = $this->mysqli->query($sql);
+        $$catalog_photo_id = $this->mysqli->insert_id;
+
+         /* Add parent collection to the array */
+        if(!isSet($_POST['collections_tags'])) {
+            $collections_tags = array();
+        }
+        
+        array_push($collections_tags, $parent_collections_id);
+
+        foreach($collections_tags as $key => $value) {
+
+            $sql_ci = "INSERT INTO catalog_collections_link (catalog_photo_id,catalog_collections_id,artist_id)
+                VALUES('" . $catalog_photo_id . "','" . $value . "','" . $artist_id . "')";
+            $result_ci = $this->mysqli->query($sql_ci);
+
+        }
 
         if($result == 1) {
             $_SESSION['error'] = '200';
             $_SESSION['notify_msg'] = $_POST['title'];
-            $this->log(array("key" => "admin", "value" => "New Photo Added (" . $_POST['title'] . " to catalog id: " . $_POST['catalog_collections_id'] . ") ", "type" => "success"));
+            $this->log(array("key" => "admin", "value" => "New Photo Added (" . $_POST['title'] . " to catalog id: " . $_POST['parent_collections_id'] . ") ", "type" => "success"));
         } else {
             $_SESSION['error'] = '400';
-            $this->log(array("key" => "admin", "value" => "Failed Insert of Catalog Photo (" . $_POST['title'] . ")", "type" => "failure"));
+            $this->log(array("key" => "admin", "value" => "Failed Insert of Catalog Photo (" . $_POST['title'] . ") . $sql . ", "type" => "failure"));
         }
 
         /* Check to see if files have been uploaded */

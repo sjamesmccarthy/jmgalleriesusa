@@ -1,6 +1,7 @@
 #my-collection {
 
     .col-card {
+        padding-top: 10px;
 
         >p {
             font-size: 1rem;
@@ -9,7 +10,16 @@
         .more-detail {
             font-size: .8rem;
         }
+        
     }
+        .type-promo {
+            // background-color: rgba(0,0,0,.03); 
+            // padding: 10px;
+
+            >img {
+                opacity: 1;
+            }
+        }
 
     .border-top {
         border-top: .5px solid rgba(0,0,0, .1);

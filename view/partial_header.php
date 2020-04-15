@@ -19,7 +19,6 @@
     <link rel="apple-touch-icon" sizes="180x180" href="/view/image/favicon/<?= $this->env ?>/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/view/image/favicon/<?= $this->env ?>/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/view/image/favicon/<?= $this->env ?>/favicon-16x16.png">
-    <link rel="manifest" href="/view/image/favicon<?= $this->env ?>/site.webmanifest">
 
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="msapplication-TileImage" content="/view/image/favicon/ms-icon-144x144.png">

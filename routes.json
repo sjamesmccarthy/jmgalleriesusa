@@ -82,7 +82,7 @@
         "page": "admin_signin",
         "auth": "true",
         "component": "true",
-        "title": "Sign In To Your Studio"
+        "title": "Sign In To Your Collector Dashboard"
     },
     "/studio/manage": {
         "template": "page",

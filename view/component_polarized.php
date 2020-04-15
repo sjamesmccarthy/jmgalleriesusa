@@ -42,7 +42,7 @@ $html = <<< END
     <div class="grid-4_sm-2_md-3">
         <div class="mb-16 col-12">
             <h2>POLARIZED</h2>
-            <p><b>a Photographic Conversation & Quarterly</b> &mdash;  <a target="_blog" href="https://medium.com/jmgalleriesusa">read more</a></p>
+            <p><b>a Magazine for Photographers & Collectors</b> &mdash;  <a target="_blog" href="https://medium.com/jmgalleriesusa">read more</a></p>
         </div>
             $result
     </div>

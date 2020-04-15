@@ -303,9 +303,6 @@ class Core_Site extends Core_Api
 
         if( !$_POST['file_1_hidden'] || isSet(_FILES['file_1']['name']) ) {
 
-            $this->printp_r($_FILES['file_1']['name']);
-            exit;
-
             foreach($_FILES as $key => $value) {
                 
                 if($value['size'] != 0) {
@@ -319,7 +316,7 @@ class Core_Site extends Core_Api
                 $target_file = $_SERVER["DOCUMENT_ROOT"] . $_FILES[$key]['path'] . $_POST[file_name] . '.' . $ext;
 
                 if(file_exists( $target_file )) {
-                    echo "Sorry, file " . $_POST['file_name'] . " already exists. <br />";
+                    // echo "Sorry, file " . $_POST['file_name'] . " already exists. <br />";
                     $this->log(array("key" => "admin", "value" => "Overwriting Photo (" . $_POST['file_name'] . " at " . $_FILES[$key]['path'] . ")", "type" => "warning"));
                     $uploadReady = 1;
                 } else { $uploadReady=1; }
