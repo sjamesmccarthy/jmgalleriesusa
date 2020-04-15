@@ -401,7 +401,7 @@ SASS, https://sass-lang.com/
 html, body {
   margin: 0;
   padding: 0;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 300;
   line-height: 1.5;
   -webkit-box-sizing: border-box;
@@ -506,30 +506,31 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-  font-size: 42px;
+  font-size: 48px;
   font-weight: 800;
 }
 
 h2 {
-  font-size: 31.5px;
+  font-size: 36px;
   font-weight: 800;
 }
 
 h3 {
-  font-size: 28px;
+  font-size: 32px;
   font-weight: 800;
 }
 
 h4 {
-  font-size: 24.5px;
+  font-size: 28px;
 }
 
 h5 {
-  font-size: 17.5px;
+  font-size: 20px;
 }
 
 h6 {
-  font-size: 16.1px;
+  font-size: 19.2px;
+  font-weight: 400;
 }
 
 *, :before, :after {
@@ -5575,6 +5576,18 @@ table.dataTable tbody td.valign {
   margin-left: 10px;
 }
 
+.collector--main_container .note-from-artist p {
+  margin-top: 10px;
+  font-size: 1.8rem;
+  padding: 0 64px;
+  font-family: 'Homemade Apple', cursive;
+  line-height: 2;
+}
+
+.collector--main_container #note-close {
+  cursor: pointer;
+}
+
 .collector--main_container > h2 {
   font-weight: 800;
 }
@@ -5590,24 +5603,23 @@ table.dataTable tbody td.valign {
 .collector--main_container .welcome-msg h1 {
   text-transform: initial;
   font-weight: 800;
-  font-size: 12rem;
+  font-size: 4rem;
 }
 
 .collector--main_container .welcome-msg .subhead {
-  margin-top: -30px;
   text-transform: initial;
   font-weight: 100;
   color: #2574A9;
+  font-size: 2rem;
+}
+
+.collector--main_container .welcome-msg .col-em {
+  font-weight: 400;
 }
 
 .collector--main_container .welcome-msg .name {
-  position: absolute;
-  right: 330px;
-  top: 55px;
-  font-weight: 100;
-  background-color: #2574A9;
-  color: #FFF;
-  padding: 10px 20px;
+  font-weight: 800;
+  color: #2574A9;
 }
 
 .collector--main_container .welcome-msg > p {
@@ -5616,7 +5628,6 @@ table.dataTable tbody td.valign {
 
 .collector--main_container .welcome-msg > p > span {
   color: #2574A9;
-  font-size: 2.5rem;
   font-weight: 800;
 }
 
@@ -5654,12 +5665,30 @@ table.dataTable tbody td.valign {
   border: none;
 }
 
+form label:nth-of-type(2) {
+  margin-left: 0 !important;
+}
+
+#my-collection .col-card > p {
+  font-size: 1rem;
+}
+
+#my-collection .col-card .more-detail {
+  font-size: .8rem;
+}
+
+#my-collection .border-top {
+  border-top: 0.5px solid rgba(0, 0, 0, 0.1);
+  padding-top: 10px;
+  margin-top: 10px;
+}
+
 #my-collection .filmstrip-thumb {
   max-width: 310px;
 }
 
 #my-collection .art-title {
-  font-size: 1.5rem;
+  font-size: 2rem;
   font-weight: 400;
 }
 

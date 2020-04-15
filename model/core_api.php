@@ -684,6 +684,37 @@ class Core_Api
 
     }
 
+    public function api_MyRewards_Get_Points($id) {
+
+         /* Executes SQL and then assigns object to passed var */
+        if( $this->checkDBConnection(__FUNCTION__) == true) {
+
+            $sql = "SELECT
+                	SUM(a.value) as points
+                FROM
+                	collector as c
+                	INNER JOIN certificate AS cert ON c.collector_id = cert.collector_id
+                	INNER JOIN art as a on a.art_id = cert.art_id
+                WHERE
+                	c.collector_id = '" . $id . "'";
+
+            $result = $this->mysqli->query($sql);
+
+            if ($result->num_rows > 0) {
+            
+                while($row = $result->fetch_assoc())
+		        {
+		            $data = $row;
+		        }
+                
+            } 
+            
+        }
+
+        return($data);
+
+    }
+
     public function api_Hero_Get_Image() {
 
         // Read in Config var JSON with title and description and link.

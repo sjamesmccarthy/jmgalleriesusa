@@ -22,20 +22,22 @@
                     $grid_css = 'col';
                 }
 
-                if($v['reg_num'] == '') { $reg_num = null; } else { $reg_num = ' / Reg No. ' . $v['reg_num']; }
+                if($v['reg_num'] == '') { $reg_num = null; } else { $reg_num = '<p>Reg No. ' . $v['reg_num'] . '</p>'; }
 
-                $thumb_html .= '<div class="card-border overflow-hidden ' . $grid_css . '">';
-                $thumb_html .= '<img class="filmstrip-thumb" src="/catalog/__thumbnail/' .$img_file . '.jpg" /><p class="art-title">' . $v['title'] . '</p>';
-                $thumb_html .= '<p>Purchased on ' . date("F jS, Y", strtotime($v['purchase_date'])) . '</p>';
-                $thumb_html .= '<p>Serial No. ' . $v['serial_num'] . $reg_num . '</p>';
+                $thumb_html .= '<div class="col-card card-border overflow-hidden ' . $grid_css . '">';
+                $thumb_html .= '<img class="filmstrip-thumb" src="/catalog/__thumbnail/' .$img_file . '.jpg" /><h6>' . $v['title'] . '</h6>';
+                $thumb_html .= '<p>Purchased ' . date("F jS, Y", strtotime($v['purchase_date'])) . '</p>';
+                $thumb_html .= '<p>Serial No. ' . $v['serial_num'] . '</p>';
+                $thumb_html .= $reg_num;
                 $thumb_html .= '<p>' . $v['print_size'] . '(' . $v['frame_size'] . ' framed)</p>';
+                $thumb_html .= '<p class="more-detail border-top">More Detail Coming Soon</p>';
                 $thumb_html .= '</div>';
 
                 if($count == 3) { $count = 0; } else { $count++; }
             }
 
 $html = <<<END
-<article id="my-collection" class="mt-64">
+<article id="my-collection" class="mt-32">
     <div class="most-popular--title col-12">
     <h2 class="uppercase ">My Artwork</h2>
     <p><b>The below Fine-Art photographs are part of your j.McCarthy collection. </b></p>

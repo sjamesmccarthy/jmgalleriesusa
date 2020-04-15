@@ -26,6 +26,7 @@ $polarized_html = $this->component('polarized');
 
 $amazingoffer_json = $this->api_AmazingOffer_Get_Latest();
 extract($amazingoffer_json, EXTR_PREFIX_ALL, "res");
-// $this->printp_r($amazingoffer_json);
 
+$myrewards_points = $this->api_MyRewards_Get_Points($res_collector_id);
+$myrewards_points = round($myrewards_points['points']*1.5);
 ?>

@@ -1,4 +1,6 @@
 <script src="https://www.google.com/recaptcha/api.js?render=6LetD7YUAAAAAFX5cXupV3exd1YCSuYFY_az92Wh"></script>
+<link href="https://fonts.googleapis.com/css2?family=Homemade+Apple&display=swap" rel="stylesheet">
+
 <section class="collector--section">
     <div class="grid-12">
 
@@ -10,24 +12,29 @@
             </div>
 
             <div class="welcome-msg">
-                <p class="name"><?= $res_first_name ?> <?= $res_last_name ?></p>
-                <h1>Hello.</h1>
-                <h2 class="subhead">Welcome to your Limited Edition collection of j.McCarthy fine-art photography</h2>
+                <h1>Hello, <?= $res_first_name ?> <?= $res_last_name ?></h1>
+                <p class="subhead">Welcome To <span class="col-em">Your Limited Edition Collection</span>of j.McCarthy Fine Art Photography</p>
             </div>
+
+            <article class="note-from-artist">
+                    <p>
+                        Thank you for being a collector of j.McCarthy Fine Art. I am grateful for your support and continued loyalty, and hope that you have found the perfect place in your home or office for your fine art purchase. This collector portal is where you can easily manage your collection, earn rewards for referring family and friends and discover some amazing offers and new Limited Edition releases that I have curated just for my collectors. If you have any questions about your artwork or would like to inquire about new artwork, please <a href="/contact">contact</a> me.
+                   </p>
+
+                   <p>Cheers,</p>
+                   <img style="margin-left: 64px;" src="/view/image/signature_full-web.png">
+
+                    <div id="note-close" style="text-align: right"><i class="fas fa-times-circle"></i></div>
+            </article>
 
             <?= $mycollection_html ?>
 
             <article id="rewards" class="mt-32">
                 <div class="grid-4_sm-2 grid-4_md-3">
                     <div class="most-popular--title col-12">
-                        <h2 class="uppercase ">MY AMAZING OFFER &mdash; SAVE 52%</h2>
+                        <h2 class="uppercase ">YOUR AMAZING OFFER &mdash; SAVE 52%</h2>
                         <p><b>As a collector you are privy to some special, exclusive new release fine art by j.McCarthy and some amazing offers.</b></p>
                         <p class="mt-8">As So The Story Goes ... at Salk Institute for Biologocial Studies in La Jolla, California. After walking around this beautiful campus just before sunset, I finally came to the front-gate and a "closed" sign stared back at me. I stood there, blank faced and let down when a security guard approached and asked if I'd like a tour. Of course I replied "are you joking?" There was only 1 rule he said: "No tripods". He escorted me to the well-known and well-photographed courtyard and there, with my tripod benched, I got a few shots of this architecturally renowned campus that unifies the sky, sea and science and once a year during the Winter Solstice the river of life aligns directly with an ocean sunset.</p>
-
-                        <!-- 
-                            https://jmgalleriesusa.com/contact?photo=horizontal-limits&size=SIZE-60CM/16x24&frame=DARK-WALNUT&cost=1000
-                            https://jmgalleriesusa/contact?photo=Facade%20To%20The%20Sky&size=60CM&frame=DARK-WALNUT&cost=480&promo_code=COLAMOF-SAVE52&email=matt@matt.com&name=Matthew%20Campbell
-                        -->
 
                         <p class="mt-8"><a target="_ao" href="/contact?photo=<?= $res_currenOfferName ?>&size=SIZE-60CM&frame=DARK-WALNUT&cost=480&promo_code=COLAMOF-SAVE52&email=<?= $username ?>&name=<?= $res_first_name ?> <?= $res_last_name ?>">Order Your Framed <?= $res_imageSize ?> Limited Edition Exclusive Amazing Offer Now for <b><?= $res_amazingOfferPrice ?></b> <strike><?= $res_amazingOfferRegPrice ?></strike> (52% off Limited Edition Pricing)</a></p>
                     </div>
@@ -39,7 +46,7 @@
                         <img class="amazing-offer-image" style="width: <?= $res_imageWidth ?>" src="/catalog/__image/<?= $res_amazingOfferFileName ?>" alt="Amazing Offer Email Photo" />
                         </a>
                     </p>
-                    <img style="position: absolute; bottom: 30px; right: 30px; <?= $res_amazingOfferSigInvert ?>" src="/view/image/signature_full-web.png" />
+                    <img style="width: 10%; opacity: .5; position: absolute; bottom: 30px; right: 30px; <?= $res_amazingOfferSigInvert ?>" src="/view/image/logo_fullsize.png" />
                   </div>
               
 
@@ -51,9 +58,9 @@
             <article id="rewards" class="mt-32">
                 <div class="grid-4_sm-2 grid-4_md-3">
                     <div class="most-popular--title col-12">
-                    <h2 class="uppercase ">MY REWARDS</h2>
+                    <h2 class="uppercase ">YOUR REWARDS = <?= $myrewards_points ?> POINTS</h2>
                     <p><b>As a collector you are enrolled in our rewards program and it's pretty simple.</b></p>
-                    <p class="mt-8">To get started share our website with your family and friends, and if they purchase a Limited Edition Fine Art Photograph, we will send you a tinyViews&trade; of your choice. You also receive points and once you reach 2,500 points you're getting a free 16x20 Limited Edition of your selection. <u>Simply share this promo-code: <?= strtoupper($res_first_name) ?><?= $res_collector_id ?>.</u> Your friends and family will use this code when placing their fine art ordering either online, by phone or email and they will also receive a 15% friends-only discount.</p>
+                    <p class="mt-8">To get started share our website with your family and friends, and if they purchase a Limited Edition Fine Art Photograph, we will send you a tinyViews&trade; of your choice. You also receive points, and once you reach 2,500 points you're getting a free 16x20 Limited Edition of your selection. <u>Simply share this promo-code: <?= strtoupper($res_first_name) ?><?= $res_collector_id ?>.</u> Your friends and family will use this code when placing their fine art ordering either online, by phone or email and they will also receive a 15% friends-only discount.</p>
                     </div>
                     
                     <div class="col-12">
@@ -131,6 +138,11 @@
 
   jQuery(document).ready(function($){
     jQuery.noConflict();
+
+    $('#note-close').on("click", function() {
+        console.log('hideme');
+        $('.note-from-artist').slideUp("slow");
+    });
 
       $('#referrCollectorForm').submit(function() {
 
