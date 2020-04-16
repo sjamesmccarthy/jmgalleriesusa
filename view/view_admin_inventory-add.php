@@ -44,13 +44,6 @@
                 </div>
             </div>
 
-            <div id="collector_meta" class="<?= $show_collector_meta ?> hide">
-                <label for="title">Acquired From & Condition Notes</label>
-                <input class="half-size" maxlength="255" type="text" id="acquired_from" name="acquired_from" placeholder="Acquired From and Condition Notes" value="<?= $acquired_from ?>">
-                <label for="title">Acquired on Date</label>
-                <input class="half-size" maxlength="255" type="text" id="acquired_date" name="acquired_date" placeholder="Acquired on Date" value="<?= $purchase_date ?>">
-            </div>
-
             <div>
                 <label for="title">TITLE</label>
                 <input class="half-size" maxlength="255" type="text" id="title" name="title" placeholder="TITLE" value="<?= $title ?>" required>
@@ -123,6 +116,13 @@
                  <input class="half-size" type="text" id="negative_file" name="negative_file" placeholder="NEGATIVE FILE (eg, PRETTY_PHOTO.jpg)" value="<?= $negative_file ?>" required>
                  <label for="born_date">BORN ON</label>
                  <input class="half-size" type="text" id="born_date" name="born_date" placeholder="BORN ON DATE (eg, 2019-12-14 02:23:10)" value="<?= $born_date ?>" required>
+            </div>
+
+            <div id="collector_meta" class="<?= $show_collector_meta ?> hide">
+                <label for="title">Acquired From & Condition Notes</label>
+                <input class="half-size" maxlength="255" type="text" id="acquired_from" name="acquired_from" placeholder="Acquired From and Condition Notes" value="<?= $acquired_from ?>">
+                <label for="title">Acquired on Date</label>
+                <input class="half-size" maxlength="255" type="text" id="acquired_date" name="acquired_date" placeholder="Acquired on Date" value="<?= $purchase_date ?>">
             </div>
 
             <div>

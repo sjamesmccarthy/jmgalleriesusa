@@ -58,7 +58,7 @@
         } 
 
         $edit_data['coa'] = $this->api_Admin_Get_Inventory_COA($edit_id);
-        // extract($edit_data['coa'][0], EXTR_PREFIX_SAME, "dup");
+        extract($edit_data['coa'][0], EXTR_PREFIX_SAME, "dup");
 
         if( count($edit_data['coa']) > 0) {
 
