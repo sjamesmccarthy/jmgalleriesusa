@@ -1476,10 +1476,10 @@ class Core_Api
         if($result == 1) {
             $_SESSION['error'] = '200';
             $_SESSION['notify_msg'] = $_POST['title'];
-            $this->log(array("key" => "api", "value" => "Updated Catalog Photo (" . $_POST['catalog_photo_id'] . "+" . $_POST['file_name'] . ") ", "type" => "success"));
+            $this->log(array("key" => "api", "value" => "Updated Catalog Photo (" . $_POST['title'] . " (" . $_POST['catalog_photo_id'] . ") ", "type" => "success"));
         } else {
             $_SESSION['error'] = '501';
-            $this->log(array("key" => "api", "value" => "Failed Update Catalog Photo (" . $_POST['catalog_photo_id'] . "+" . $_POST['file_name'] . ") " . $sql, "type" => "failure"));
+            $this->log(array("key" => "api", "value" => "Failed Update Catalog Photo (" . $_POST['title'] . " (" . $_POST['catalog_photo_id'] . ") " . $sql, "type" => "failure"));
         }
 
     }
@@ -1764,10 +1764,10 @@ class Core_Api
         if($result == 1) {
             $_SESSION['error'] = '200';
             $_SESSION['notify_msg'] = $_POST['title'];
-            $this->log(array("key" => "api", "value" => "Updated Inventory Art (" . $_POST['art_id'] . "+" . $_POST['title'] . ") ", "type" => "success"));
+            $this->log(array("key" => "api", "value" => "Updated Inventory Art " . $_POST['title'] . " (" . $_POST['art_id'] . ") ", "type" => "success"));
         } else {
             $_SESSION['error'] = '400';
-            $this->log(array("key" => "api", "value" => "Failed Update Inventory Art (" . $_POST['art_id'] . "+" . $_POST['title'] . ")", "type" => "failure"));
+            $this->log(array("key" => "api", "value" => "Failed Update Inventory Art (" . $_POST['title'] . " (" . $_POST['art_id'] . ")", "type" => "failure"));
         }
 
     }
