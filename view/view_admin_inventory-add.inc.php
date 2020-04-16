@@ -58,7 +58,7 @@
         } 
 
         $edit_data['coa'] = $this->api_Admin_Get_Inventory_COA($edit_id);
-        extract($edit_data['coa'][0], EXTR_PREFIX_SAME, "dup");
+        // extract($edit_data['coa'][0], EXTR_PREFIX_SAME, "dup");
 
         if( count($edit_data['coa']) > 0) {
 
@@ -144,7 +144,7 @@
             $manual_entries = null;
         }
     }
-        $this->page->title = "Editing <b>" . $title . "</b> finished artwork.";
+        $this->page->title = "Editing Art: <b>" . $title . "</b> (" . $art_id . ")";
         $formTypeAction = "update";
         $button_label="update artwork: " . $title;
         $button_archive_cancel = '<a class="cancel-button" href="/studio/inventory">cancel</a>';
@@ -171,7 +171,6 @@
     /* LOCATIONS INDEX */
     $location_data = $this->api_Admin_Get_Locations('all');
     
-    // $this->printp_r($edit_data);
     $i=1;
     foreach($location_data as $key_loc => $val_loc) {
 
@@ -193,9 +192,9 @@
     foreach($collector_data as $key_col => $val_col) {
 
         /* If Editing an existing record */
-        if($val_col['collector_id'] === $collector_id) { 
+        if($val_col['collector_id'] === $edit_data['coa'][0]['collector_id']) { 
             $selected = "SELECTED"; 
-            $hidden_collector_id = '<input type="hidden" name="state_collector_id" id="state_collector_id" value="' . $collector_id . '">';
+            $hidden_collector_id = '<input type="hidden" name="state_collector_id" id="state_collector_id" value="' . $edit_data['coa'][0]['collector_id'] . '">';
             $show_collector_meta = "show";
         } 
         else { $selected = null; }

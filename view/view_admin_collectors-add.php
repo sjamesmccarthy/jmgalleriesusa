@@ -68,9 +68,10 @@
                 <thead>
                     <tr>
                         <th>title</th>
+                        <th>size</th>
                         <th>serial_num</th>
                         <th>reg_num</th>
-                        <th>certificate_id</th>
+                        <!-- <th>certificate_id</th> -->
                         <th>purchase_date</th>
                         <th>value</th>
                     </tr>
@@ -126,10 +127,18 @@ jQuery(document).ready(function($){
             // oSearch: {"sSearch": "<?= $filter ?>"},
             data: <?= $data_json ?>,
             columns: [
-                { data: 'title'},
+                { data: 'title',
+                    "render": function(data, type, row, meta){
+                        if(type === 'display'){
+                            data = '<a href="/studio/inventory-add?id=' + row.art_id + '">' + row.title + ' (CERT-' + row.certificate_id + ')</a>';
+                        }  
+                        return data;
+                    } 
+                },
+                { data: 'frame_size'},
                 { data: 'serial_num'},
                 { data: 'reg_num'},
-                { data: 'certificate_id' },
+                // { data: 'certificate_id' },
                 { data: 'purchase_date'},
                 { data: 'value' },
             ]

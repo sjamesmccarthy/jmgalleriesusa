@@ -1323,6 +1323,8 @@ class Core_Api
                 A.title,
                 A.value,
                 A.reg_num,
+                A.art_id, 
+                A.frame_size,
                 CERT.serial_num,
                 CERT.purchase_date,
                 CERT.certificate_id
