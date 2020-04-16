@@ -42,7 +42,7 @@ foreach($activity_data as $key=>$val) {
 
     $result_html .= '<li class="item">';
     $result_html .= '<p class="' . $typeClass . '"><b>' . $date . '</b></p>';
-    $result_html .= '<p class="' . $typeClass . '">[' . $val['type'] . ' event] ' . $val['value'] . '</p>';
+    $result_html .= '<p class="' . $typeClass . '">[' . $val['type'] . '] ' . $val['value'] . '</p>';
     $result_html .= '</li>';
 
 }

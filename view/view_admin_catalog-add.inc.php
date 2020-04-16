@@ -11,6 +11,27 @@
      // Fetch all linked collections
     $category_data = $this->api_Admin_Get_Catalog_Categories();
 
+    // Collection Linking
+    $collections_data = $this->api_Admin_Get_CollectionsByPhoto($catalog_photo_id, $parent_collections_id);
+    if(!isSet($collections_data)) { $collections_html= '<i style="padding-right: 5px;" class="fas fa-link"></i> link other collections'; }
+
+    foreach($category_data as $key_tag => $value_tag) {
+
+        foreach($collections_data as $key => $value) {
+           
+                if($value_tag['catalog_collections_id'] == $value['catalog_collections_id']) {      
+                    $collections_html .= '<i style="padding-right: 5px;" class="fas fa-link"></i>' . $value['title'] . '<br />';
+                    $col_sel = 'SELECTED';
+                }
+
+        }
+        
+        if($value_tag['catalog_collections_id'] != $edit_data['parent_collections_id']) {
+            $collections_tag_options .= '<option ' . $col_sel . ' value="' . $value_tag['catalog_collections_id'] . '">' . $value_tag['title'] . '</option>';
+            $col_sel = null;
+        }
+    }
+
     /* CHECK TO SEE IF THIS IS AN EDIT OR ADD NEW */
     if(isSet($this->routes->URI->queryvals)) {
         $edit_id = $this->routes->URI->queryvals[1];
@@ -19,25 +40,25 @@
         $this->data = $edit_data;
         extract($edit_data, EXTR_PREFIX_SAME, "dup");
 
-        $collections_data = $this->api_Admin_Get_CollectionsByPhoto($catalog_photo_id, $parent_collections_id);
-        if(!isSet($collections_data)) { $collections_html= '<i style="padding-right: 5px;" class="fas fa-link"></i> link other collections'; }
+        // $collections_data = $this->api_Admin_Get_CollectionsByPhoto($catalog_photo_id, $parent_collections_id);
+        // if(!isSet($collections_data)) { $collections_html= '<i style="padding-right: 5px;" class="fas fa-link"></i> link other collections'; }
 
-        foreach($category_data as $key_tag => $value_tag) {
+        // foreach($category_data as $key_tag => $value_tag) {
 
-            foreach($collections_data as $key => $value) {
+        //     foreach($collections_data as $key => $value) {
                
-                    if($value_tag['catalog_collections_id'] == $value['catalog_collections_id']) {      
-                        $collections_html .= '<i style="padding-right: 5px;" class="fas fa-link"></i>' . $value['title'] . '<br />';
-                        $col_sel = 'SELECTED';
-                    }
+        //             if($value_tag['catalog_collections_id'] == $value['catalog_collections_id']) {      
+        //                 $collections_html .= '<i style="padding-right: 5px;" class="fas fa-link"></i>' . $value['title'] . '<br />';
+        //                 $col_sel = 'SELECTED';
+        //             }
 
-            }
+        //     }
             
-            if($value_tag['catalog_collections_id'] != $edit_data['parent_collections_id']) {
-                $collections_tag_options .= '<option ' . $col_sel . ' value="' . $value_tag['catalog_collections_id'] . '">' . $value_tag['title'] . '</option>';
-                $col_sel = null;
-            }
-        }
+        //     if($value_tag['catalog_collections_id'] != $edit_data['parent_collections_id']) {
+        //         $collections_tag_options .= '<option ' . $col_sel . ' value="' . $value_tag['catalog_collections_id'] . '">' . $value_tag['title'] . '</option>';
+        //         $col_sel = null;
+        //     }
+        // }
 
         $page_title = "Editing <b>" . $title . "</b> (" . $catalog_photo_id . ")";
         $display_show = 'photopreviewshow';

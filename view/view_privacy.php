@@ -28,7 +28,7 @@
 
         </li>
 
-        <div class="divider"></div>
+        <div class="-top"></div>
         
         <li><a name="p1"></a><h3>Information We Collect</h3>
             <p>We do not collect personally identifiable information about you excluding the information when you voluntarily submit to us a quote request, purchase order, or submitting an online inquiry through our contact form. Such information may include mailing address, telephone number, e-mail address and name and is only transferred and store via our email system. It is not stored or archived in a database or shared with our parties.
@@ -98,7 +98,7 @@
 
         </li>
 
-       <div class="divider"></div>
+       <div class="divider-top"></div>
         <li><h3>Terms of Sale</h3>
 
                 <ol>

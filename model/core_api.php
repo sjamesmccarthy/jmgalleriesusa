@@ -582,7 +582,7 @@ class Core_Api
                 } else {
                     $_SESSION['ip'] = '127.0.0.1';
                 }
-                // $this->log(array("key" => "admin", "value" => "session " . session_id() . " created", "type" => "system"));
+                // $this->log(array("key" => "api", "value" => "session " . session_id() . " created", "type" => "system"));
 
             } else {
              
@@ -590,7 +590,7 @@ class Core_Api
             }	
         }
 
-        $this->log(array("key" => "admin", "value" => "logged in from " . $_SESSION['ip'], "type" => "system"));
+        $this->log(array("key" => "api", "value" => "logged in from " . $_SESSION['ip'], "type" => "system"));
         
         return($data);
     }
@@ -659,7 +659,7 @@ class Core_Api
                 } else {
                     $_SESSION['ip'] = '127.0.0.1';
                 }
-                // $this->log(array("key" => "admin", "value" => "session " . session_id() . " created", "type" => "system"));
+                // $this->log(array("key" => "api", "value" => "session " . session_id() . " created", "type" => "system"));
                 
                 $_SESSION['data'] = $data;
 
@@ -1476,10 +1476,10 @@ class Core_Api
         if($result == 1) {
             $_SESSION['error'] = '200';
             $_SESSION['notify_msg'] = $_POST['title'];
-            $this->log(array("key" => "admin", "value" => "Updated Catalog Photo (" . $_POST['catalog_photo_id'] . "+" . $_POST['file_name'] . ") ", "type" => "success"));
+            $this->log(array("key" => "api", "value" => "Updated Catalog Photo (" . $_POST['catalog_photo_id'] . "+" . $_POST['file_name'] . ") ", "type" => "success"));
         } else {
             $_SESSION['error'] = '501';
-            $this->log(array("key" => "admin", "value" => "Failed Update Catalog Photo (" . $_POST['catalog_photo_id'] . "+" . $_POST['file_name'] . ") " . $sql, "type" => "failure"));
+            $this->log(array("key" => "api", "value" => "Failed Update Catalog Photo (" . $_POST['catalog_photo_id'] . "+" . $_POST['file_name'] . ") " . $sql, "type" => "failure"));
         }
 
     }
@@ -1569,10 +1569,10 @@ class Core_Api
         if($result == 1) {
             $_SESSION['error'] = '200';
             $_SESSION['notify_msg'] = $_POST['title'];
-            $this->log(array("key" => "admin", "value" => "New Photo Added (" . $_POST['title'] . " to catalog id: " . $_POST['parent_collections_id'] . ") ", "type" => "success"));
+            $this->log(array("key" => "api", "value" => "New Photo Added (" . $_POST['title'] . ") to catalog ", "type" => "success"));
         } else {
             $_SESSION['error'] = '400';
-            $this->log(array("key" => "admin", "value" => "Failed Insert of Catalog Photo (" . $_POST['title'] . ") . $sql . ", "type" => "failure"));
+            $this->log(array("key" => "api", "value" => "Failed Insert of Catalog Photo (" . $_POST['title'] . ") . $sql . ", "type" => "failure"));
         }
 
         /* Check to see if files have been uploaded */
@@ -1643,9 +1643,9 @@ class Core_Api
             $result = $this->mysqli->query($sql);
 
             if($result == 1) {
-                $this->log(array("key" => "admin", "value" => "Location Change for Inventory Art (" . $_POST['art_id'] . "+" . $_POST['title'] . ") ", "type" => "success"));
+                $this->log(array("key" => "api", "value" => "Location Change for Inventory Art (" . $_POST['art_id'] . "+" . $_POST['title'] . ") ", "type" => "success"));
             } else {
-                $this->log(array("key" => "admin", "value" => "Failed Location Change for Inventory Art (" . $_POST['art_id'] . "+" . $_POST['title'] . ")", "type" => "failure"));
+                $this->log(array("key" => "api", "value" => "Failed Location Change for Inventory Art (" . $_POST['art_id'] . "+" . $_POST['title'] . ")", "type" => "failure"));
             }
         } 
 
@@ -1719,9 +1719,9 @@ class Core_Api
             $result = $this->mysqli->query($sql);
 
             if($result == 1) {
-                $this->log(array("key" => "admin", "value" => "Location Change for Inventory Art (" . $_POST['art_id'] . "+" . $_POST['title'] . ") ", "type" => "success"));
+                $this->log(array("key" => "api", "value" => "Location Change for Inventory Art (" . $_POST['art_id'] . "+" . $_POST['title'] . ") ", "type" => "success"));
             } else {
-                $this->log(array("key" => "admin", "value" => "Failed Location Change for Inventory Art (" . $_POST['art_id'] . "+" . $_POST['title'] . ")", "type" => "failure"));
+                $this->log(array("key" => "api", "value" => "Failed Location Change for Inventory Art (" . $_POST['art_id'] . "+" . $_POST['title'] . ")", "type" => "failure"));
             }
         } 
     }
@@ -1764,10 +1764,10 @@ class Core_Api
         if($result == 1) {
             $_SESSION['error'] = '200';
             $_SESSION['notify_msg'] = $_POST['title'];
-            $this->log(array("key" => "admin", "value" => "Updated Inventory Art (" . $_POST['art_id'] . "+" . $_POST['title'] . ") ", "type" => "success"));
+            $this->log(array("key" => "api", "value" => "Updated Inventory Art (" . $_POST['art_id'] . "+" . $_POST['title'] . ") ", "type" => "success"));
         } else {
             $_SESSION['error'] = '400';
-            $this->log(array("key" => "admin", "value" => "Failed Update Inventory Art (" . $_POST['art_id'] . "+" . $_POST['title'] . ")", "type" => "failure"));
+            $this->log(array("key" => "api", "value" => "Failed Update Inventory Art (" . $_POST['art_id'] . "+" . $_POST['title'] . ")", "type" => "failure"));
         }
 
     }
@@ -1837,11 +1837,11 @@ class Core_Api
         if($result == 1) {
             $_SESSION['error'] = '200';
             $_SESSION['notify_msg'] = $_POST['title'];
-            $this->log(array("key" => "admin", "value" => "New Inventory Added (" . $_POST['title'] . ") ", "type" => "success"));
+            $this->log(array("key" => "api", "value" => "New Inventory Added (" . $_POST['title'] . ") ", "type" => "success"));
 
         } else {
             $_SESSION['error'] = '400';
-            $this->log(array("key" => "admin", "value" => "Failed Insert of Inventory Art (" . $_POST['title'] . ")", "type" => "failure"));
+            $this->log(array("key" => "api", "value" => "Failed Insert of Inventory Art (" . $_POST['title'] . ")", "type" => "failure"));
         }
 
     }
@@ -1862,11 +1862,11 @@ class Core_Api
             $_SESSION['error'] = '200';
             $_SESSION['notify_msg'] = $company;
             $_SESSION['notification_msg'] = "<p class='heading'>success</p><p>" .  $company . " Has Been Added</p>";
-            $this->log(array("key" => "admin", "value" => "New Supplier Added (" . $_POST['company'] . ") ", "type" => "success"));
+            $this->log(array("key" => "api", "value" => "New Supplier Added (" . $_POST['company'] . ") ", "type" => "success"));
 
         } else {
             $_SESSION['error'] = '400';
-            $this->log(array("key" => "admin", "value" => "Failed Insert of Supplier (" . $_POST['company'] . ")", "type" => "failure"));
+            $this->log(array("key" => "api", "value" => "Failed Insert of Supplier (" . $_POST['company'] . ")", "type" => "failure"));
         }
 
     }
@@ -1895,10 +1895,10 @@ class Core_Api
             $_SESSION['error'] = '200';
             $_SESSION['notify_msg'] = $company;
             $_SESSION['notification_msg'] = "<p class='heading'>success</p><p>" .  $company . " Has Been Updated</p>";
-            $this->log(array("key" => "admin", "value" => "Updated Supplier (" . $company . ") ", "type" => "success"));
+            $this->log(array("key" => "api", "value" => "Updated Supplier (" . $company . ") ", "type" => "success"));
         } else {
             $_SESSION['error'] = '400';
-            $this->log(array("key" => "admin", "value" => "Failed Update To Supplier (" . $_POST['company'] . ")", "type" => "failure"));
+            $this->log(array("key" => "api", "value" => "Failed Update To Supplier (" . $_POST['company'] . ")", "type" => "failure"));
         }
         
         
@@ -1955,12 +1955,12 @@ class Core_Api
 
             if ($result == TRUE) {
                 $data['result'] = '200';
-                // $this->log(array("key" => "admin", "value" => "Updated Catalog Photo (" . $_POST['catalog_photo_id'] . "+" . $_POST['file_name'] . ") ", "type" => "success"));
+                // $this->log(array("key" => "api", "value" => "Updated Catalog Photo (" . $_POST['catalog_photo_id'] . "+" . $_POST['file_name'] . ") ", "type" => "success"));
             } else {
                 $data['result'] = '501';
                 $data['error'] = "SQL DELETE" . $tbl . " FAILED " . $art_id;
                 $data['sql'] = $sql;
-                $this->log(array("key" => "admin", "value" => "Failed DELETE Expenses from art_costs_supplier (" . $sql . ")", "type" => "failure"));
+                $this->log(array("key" => "api", "value" => "Failed DELETE Expenses from art_costs_supplier (" . $sql . ")", "type" => "failure"));
             }	
             
         }
@@ -1987,12 +1987,12 @@ class Core_Api
 
                             if ($result == TRUE) {
                                 $data['result'] = '200';
-                                // $this->log(array("key" => "admin", "value" => "Updated Catalog Photo (" . $_POST['catalog_photo_id'] . "+" . $_POST['file_name'] . ") ", "type" => "success"));
+                                // $this->log(array("key" => "api", "value" => "Updated Catalog Photo (" . $_POST['catalog_photo_id'] . "+" . $_POST['file_name'] . ") ", "type" => "success"));
                             } else {
                                 $data['result'] = '501';
                                 $data['error'] = "SQL DELETE" . $tbl . " FAILED " . $art_id;
                                 $data['sql'] = $sql;
-                                $this->log(array("key" => "admin", "value" => "Failed Insert of Manual Expense With {$exp_id} Into Linking Table (" . $sql . ")", "type" => "failure"));
+                                $this->log(array("key" => "api", "value" => "Failed Insert of Manual Expense With {$exp_id} Into Linking Table (" . $sql . ")", "type" => "failure"));
                             }	
                     
                     } else {
@@ -2024,12 +2024,12 @@ class Core_Api
 
                 if ($result == TRUE) {
                     $data['result'] = '200';
-                    // $this->log(array("key" => "admin", "value" => "Updated Catalog Photo (" . $_POST['catalog_photo_id'] . "+" . $_POST['file_name'] . ") ", "type" => "success"));
+                    // $this->log(array("key" => "api", "value" => "Updated Catalog Photo (" . $_POST['catalog_photo_id'] . "+" . $_POST['file_name'] . ") ", "type" => "success"));
                 } else {
                     $data['result'] = '501';
                     $data['error'] = "SQL DELETE" . $tbl . " FAILED " . $art_id;
                     $data['sql'] = $sql;
-                    $this->log(array("key" => "admin", "value" => "Failed Supplier-Material Expsense Insert Into Linking Table (" . $sql . ")", "type" => "failure"));
+                    $this->log(array("key" => "api", "value" => "Failed Supplier-Material Expsense Insert Into Linking Table (" . $sql . ")", "type" => "failure"));
                 }	
     
             }
@@ -2093,12 +2093,12 @@ class Core_Api
 
                             if ($result_me == TRUE) {
                                 $data['result'] = '200';
-                                // $this->log(array("key" => "admin", "value" => "Updated Catalog Photo (" . $_POST['catalog_photo_id'] . "+" . $_POST['file_name'] . ") ", "type" => "success"));
+                                // $this->log(array("key" => "api", "value" => "Updated Catalog Photo (" . $_POST['catalog_photo_id'] . "+" . $_POST['file_name'] . ") ", "type" => "success"));
                             } else {
                                 $data['result'] = '501';
                                 $data['error'] = "SQL DELETE" . $tbl . " FAILED " . $art_id;
                                 $data['sql'] = $sql_me;
-                                $this->log(array("key" => "admin", "value" => "Failed Manual Entry Insert Into Linking Table (" . $sql_me . ")", "type" => "failure"));
+                                $this->log(array("key" => "api", "value" => "Failed Manual Entry Insert Into Linking Table (" . $sql_me . ")", "type" => "failure"));
                             }		
                             
                         }
@@ -2110,12 +2110,12 @@ class Core_Api
 
                 if ($result == TRUE) {
                     $data['result'] = '200';
-                    // $this->log(array("key" => "admin", "value" => "Updated Catalog Photo (" . $_POST['catalog_photo_id'] . "+" . $_POST['file_name'] . ") ", "type" => "success"));
+                    // $this->log(array("key" => "api", "value" => "Updated Catalog Photo (" . $_POST['catalog_photo_id'] . "+" . $_POST['file_name'] . ") ", "type" => "success"));
                 } else {
                     $data['result'] = '501';
                     $data['error'] = "SQL DELETE" . $tbl . " FAILED " . $art_id;
                     $data['sql'] = $sql;
-                    $this->log(array("key" => "admin", "value" => "Failed INSERT/UPDATE Supplier Material (" . $sql . ")", "type" => "failure"));
+                    $this->log(array("key" => "api", "value" => "Failed INSERT/UPDATE Supplier Material (" . $sql . ")", "type" => "failure"));
                 }		
                 
             }
@@ -2140,12 +2140,12 @@ class Core_Api
 
                 if ($result == TRUE) {
                     $data['result'] = '200';
-                    // $this->log(array("key" => "admin", "value" => "Updated Catalog Photo (" . $_POST['catalog_photo_id'] . "+" . $_POST['file_name'] . ") ", "type" => "success"));
+                    // $this->log(array("key" => "api", "value" => "Updated Catalog Photo (" . $_POST['catalog_photo_id'] . "+" . $_POST['file_name'] . ") ", "type" => "success"));
                 } else {
                     $data['result'] = '501';
                     $data['error'] = "SQL DELETE" . $tbl . " FAILED " . $art_id;
                     $data['sql'] = $sql;
-                    $this->log(array("key" => "admin", "value" => "Failed archving Expense Item (" . $exp . ")", "type" => "failure"));
+                    $this->log(array("key" => "api", "value" => "Failed archving Expense Item (" . $exp . ")", "type" => "failure"));
                 }	
                 
             }
@@ -2153,12 +2153,12 @@ class Core_Api
 
         if ($result == TRUE) {
             $data['result'] = '200';
-            $this->log(array("key" => "admin", "value" => "Updated Expenses ", "type" => "success"));
+            $this->log(array("key" => "api", "value" => "Updated Expenses ", "type" => "success"));
         } else {
             $data['result'] = '501';
             $data['error'] = "SQL DELETE" . $tbl . " FAILED " . $art_id;
             $data['sql'] = $sql;
-            $this->log(array("key" => "admin", "value" => "Failed Update To Expenses FATAL " . __FUNCTION__, "type" => "failure"));
+            $this->log(array("key" => "api", "value" => "Failed Update To Expenses FATAL " . __FUNCTION__, "type" => "failure"));
         }	
 
     }
@@ -2352,11 +2352,11 @@ public function api_Admin_Get_Materials_By_Supplier($id) {
             $_SESSION['error'] = '200';
             $_SESSION['notify_msg'] = $material;
             $_SESSION['notification_msg'] = "<p class='heading'>success</p><p>" .  $material . " Has Been Added</p>";
-            $this->log(array("key" => "admin", "value" => "New Material Added (" . $_POST['material'] . ") ", "type" => "success"));
+            $this->log(array("key" => "api", "value" => "New Material Added (" . $_POST['material'] . ") ", "type" => "success"));
 
         } else {
             $_SESSION['error'] = '400';
-            $this->log(array("key" => "admin", "value" => "Failed Insert of Material (" . $_POST['material'] . ")", "type" => "failure"));
+            $this->log(array("key" => "api", "value" => "Failed Insert of Material (" . $_POST['material'] . ")", "type" => "failure"));
         }
 
     }
@@ -2387,10 +2387,10 @@ public function api_Admin_Get_Materials_By_Supplier($id) {
             $_SESSION['error'] = '200';
             $_SESSION['notify_msg'] = $company;
             $_SESSION['notification_msg'] = "<p class='heading'>success</p><p>" .  $material . " Has Been Updated</p>";
-            $this->log(array("key" => "admin", "value" => "Updated Supplier (" . $material . ") ", "type" => "success"));
+            $this->log(array("key" => "api", "value" => "Updated Supplier (" . $material . ") ", "type" => "success"));
         } else {
             $_SESSION['error'] = '400';
-            $this->log(array("key" => "admin", "value" => "Failed Update To Material (" . $_POST['material'] . ")", "type" => "failure"));
+            $this->log(array("key" => "api", "value" => "Failed Update To Material (" . $_POST['material'] . ")", "type" => "failure"));
         }
         
         
@@ -2541,11 +2541,11 @@ public function api_Admin_Get_Materials_By_Supplier($id) {
             $_SESSION['error'] = '200';
             $_SESSION['notify_msg'] = $name;
             $_SESSION['notification_msg'] = "<p class='heading'>success</p><p>" .  $title . " Has Been Added</p>";
-            $this->log(array("key" => "admin", "value" => "New Collection Added (" . $_POST['title'] . ") ", "type" => "success"));
+            $this->log(array("key" => "api", "value" => "New Collection Added (" . $_POST['title'] . ") ", "type" => "success"));
 
         } else {
             $_SESSION['error'] = '400';
-            $this->log(array("key" => "admin", "value" => "Failed Insert of Collection (" . $_POST['title'] . ")" . $sql, "type" => "failure"));
+            $this->log(array("key" => "api", "value" => "Failed Insert of Collection (" . $_POST['title'] . ")" . $sql, "type" => "failure"));
         }
 
     }
@@ -2570,10 +2570,10 @@ public function api_Admin_Get_Materials_By_Supplier($id) {
             $_SESSION['error'] = '200';
             $_SESSION['notify_msg'] = $name;
             $_SESSION['notification_msg'] = "<p class='heading'>success</p><p>" .  $title . " Has Been Updated</p>";
-            $this->log(array("key" => "admin", "value" => "Updated Collection (" . $title . ") ", "type" => "success"));
+            $this->log(array("key" => "api", "value" => "Updated Collection (" . $title . ") ", "type" => "success"));
         } else {
             $_SESSION['error'] = '400';
-            $this->log(array("key" => "admin", "value" => "Failed Update to Collection (" . $_POST['title'] . ")", "type" => "failure"));
+            $this->log(array("key" => "api", "value" => "Failed Update to Collection (" . $_POST['title'] . ")", "type" => "failure"));
         }
         
     }
@@ -2596,11 +2596,11 @@ public function api_Admin_Get_Materials_By_Supplier($id) {
             $_SESSION['error'] = '200';
             $_SESSION['notify_msg'] = $name;
             $_SESSION['notification_msg'] = "<p class='heading'>success</p><p>" .  $name . " Has Been Added</p>";
-            $this->log(array("key" => "admin", "value" => "New Report / SQL Mark Added (" . $_POST['name'] . ") ", "type" => "success"));
+            $this->log(array("key" => "api", "value" => "New Report / SQL Mark Added (" . $_POST['name'] . ") ", "type" => "success"));
 
         } else {
             $_SESSION['error'] = '400';
-            $this->log(array("key" => "admin", "value" => "Failed Insert of Report / SQL Mark (" . $_POST['name'] . ")" . $sql, "type" => "failure"));
+            $this->log(array("key" => "api", "value" => "Failed Insert of Report / SQL Mark (" . $_POST['name'] . ")" . $sql, "type" => "failure"));
         }
 
     }
@@ -2627,10 +2627,10 @@ public function api_Admin_Get_Materials_By_Supplier($id) {
             $_SESSION['error'] = '200';
             $_SESSION['notify_msg'] = $name;
             $_SESSION['notification_msg'] = "<p class='heading'>success</p><p>" .  $name . " Has Been Updated</p>";
-            $this->log(array("key" => "admin", "value" => "Updated Report / SQL Mark (" . $name . ") ", "type" => "success"));
+            $this->log(array("key" => "api", "value" => "Updated Report / SQL Mark (" . $name . ") ", "type" => "success"));
         } else {
             $_SESSION['error'] = '400';
-            $this->log(array("key" => "admin", "value" => "Failed Update Report / SQL Mark (" . $_POST['name'] . ")", "type" => "failure"));
+            $this->log(array("key" => "api", "value" => "Failed Update Report / SQL Mark (" . $_POST['name'] . ")", "type" => "failure"));
         }
         
     }
@@ -2690,11 +2690,11 @@ public function api_Admin_Get_Materials_By_Supplier($id) {
             $_SESSION['error'] = '200';
             $_SESSION['notify_msg'] = $company;
             $_SESSION['notification_msg'] = "<p class='heading'>success</p><p>" .  $first_name . " " . $last_name . " Has Been Added</p>";
-            $this->log(array("key" => "admin", "value" => "New Collector Profile Created (" . $_POST['first_name'] . " " . $_POST['last_name'] . ") ", "type" => "success"));
+            $this->log(array("key" => "api", "value" => "New Collector Profile Created (" . $_POST['first_name'] . " " . $_POST['last_name'] . ") ", "type" => "success"));
 
         } else {
             $_SESSION['error'] = '400';
-            $this->log(array("key" => "admin", "value" => "Failed Insert of Collector Profile (" . $_POST['first_name'] . " " . $_POST['last_name'] . ")", "type" => "failure"));
+            $this->log(array("key" => "api", "value" => "Failed Insert of Collector Profile (" . $_POST['first_name'] . " " . $_POST['last_name'] . ")", "type" => "failure"));
         }
 
     }
@@ -2726,10 +2726,10 @@ public function api_Admin_Get_Materials_By_Supplier($id) {
             $_SESSION['error'] = '200';
             $_SESSION['notify_msg'] = $company;
             $_SESSION['notification_msg'] = "<p class='heading'>success</p><p>" .  $first_name . " " . $last_name . " Has Been Updated</p>";
-            $this->log(array("key" => "admin", "value" => "Updated Collector Profile for (" .  $first_name . " " . $last_name . ") ", "type" => "success"));
+            $this->log(array("key" => "api", "value" => "Updated Collector Profile for (" .  $first_name . " " . $last_name . ") ", "type" => "success"));
         } else {
             $_SESSION['error'] = '400';
-            $this->log(array("key" => "admin", "value" => "Failed Update To Collector Profile for (" .  $first_name . " " . $last_name . ")", "type" => "failure"));
+            $this->log(array("key" => "api", "value" => "Failed Update To Collector Profile for (" .  $first_name . " " . $last_name . ")", "type" => "failure"));
         }
         
         
@@ -2858,11 +2858,11 @@ public function api_Admin_Get_Materials_By_Supplier($id) {
             $_SESSION['error'] = '200';
             $_SESSION['notify_msg'] = $username;
             $_SESSION['notification_msg'] = "<p class='heading'>success</p><p>" .  $username . " Has Been Added</p>";
-            $this->log(array("key" => "admin", "value" => "New User Added (" . $_POST['username'] . ") ", "type" => "success"));
+            $this->log(array("key" => "api", "value" => "New User Added (" . $_POST['username'] . ") ", "type" => "success"));
 
         } else {
             $_SESSION['error'] = '400';
-            $this->log(array("key" => "admin", "value" => "Failed To Create New User (" . $_POST['username'] . ")" . $sql, "type" => "failure"));
+            $this->log(array("key" => "api", "value" => "Failed To Create New User (" . $_POST['username'] . ")" . $sql, "type" => "failure"));
         }
 
     }
@@ -2904,10 +2904,10 @@ public function api_Admin_Get_Materials_By_Supplier($id) {
             $_SESSION['error'] = '200';
             $_SESSION['notify_msg'] = $name;
             $_SESSION['notification_msg'] = "<p class='heading'>success</p><p>" .  $username . " Has Been Updated</p>";
-            $this->log(array("key" => "admin", "value" => "Updated User (" . $username . ") ", "type" => "success"));
+            $this->log(array("key" => "api", "value" => "Updated User (" . $username . ") ", "type" => "success"));
         } else {
             $_SESSION['error'] = '400';
-            $this->log(array("key" => "admin", "value" => "Failed To Update User (" . $_POST['username'] . ")", "type" => "failure"));
+            $this->log(array("key" => "api", "value" => "Failed To Update User (" . $_POST['username'] . ")", "type" => "failure"));
         }
         
     }

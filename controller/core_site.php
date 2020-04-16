@@ -317,7 +317,7 @@ class Core_Site extends Core_Api
 
                 if(file_exists( $target_file )) {
                     // echo "Sorry, file " . $_POST['file_name'] . " already exists. <br />";
-                    $this->log(array("key" => "admin", "value" => "Overwriting Photo (" . $_POST['file_name'] . " at " . $_FILES[$key]['path'] . ")", "type" => "warning"));
+                    $this->log(array("key" => "core", "value" => "Overwriting Photo (" . $_POST['file_name'] . " at " . $_FILES[$key]['path'] . ")", "type" => "warning"));
                     $uploadReady = 1;
                 } else { $uploadReady=1; }
 
@@ -339,15 +339,15 @@ class Core_Site extends Core_Api
                 // Check if $uploadReady is set to 0 by an error
                 if ($uploadReady == 0) {
                     // echo "Sorry, your file, " . $value['name'] . " was not uploaded <br />";
-                    $this->log(array("key" => "admin", "value" => "Failed to Upload Photo (" . $value['name'] . " at " . $_FILES[$key]['path'] . " | " . $_POST['file_1_hidden'] . ")", "type" => "failure"));
+                    $this->log(array("key" => "core", "value" => "Failed to Upload Photo (" . $value['name'] . " at " . $_FILES[$key]['path'] . " | " . $_POST['file_1_hidden'] . ")", "type" => "failure"));
                 } else {
                     if (move_uploaded_file($_FILES[$key]["tmp_name"], $target_file)) {
                         // echo "The file ". $value['name'] . " has been uploaded<br />" . $target_file . "<hr />";
-                        $this->log(array("key" => "admin", "value" => "Upload of Photo (" . $_POST['file_name'] . " to " . $_FILES[$key]['path'] . ") Success", "type" => "system"));
+                        $this->log(array("key" => "core", "value" => "Upload of Photo (" . $_POST['file_name'] . " to " . $_FILES[$key]['path'] . ")", "type" => "system"));
 
                     } else {
                         // echo "Sorry, there was an error uploading your file.<br />" . $taget_file . "<hr />";
-                        $this->log(array("key" => "admin", "value" => "Upload of Photo (" . $_POST['file_name'] . " at " . $_FILES[$key]['path'] . " | " . $_POST['file_1_hidden'] . ") Failed", "type" => "failure"));
+                        $this->log(array("key" => "core", "value" => "Upload of Photo (" . $_POST['file_name'] . " at " . $_FILES[$key]['path'] . " | " . $_POST['file_1_hidden'] . ")", "type" => "failure"));
 
                     }
                 }
