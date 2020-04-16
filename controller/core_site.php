@@ -301,7 +301,7 @@ class Core_Site extends Core_Api
 
         $uploadReady=0;
 
-        if( !$_POST['file_1_hidden'] || isSet(_FILES['file_1']['name']) ) {
+        if( !$_POST['file_1_hidden'] || isSet($_FILES['file_1']['name']) ) {
 
             foreach($_FILES as $key => $value) {
                 
@@ -313,14 +313,14 @@ class Core_Site extends Core_Api
                 // Check if file already exists
                 // possible problem: if "photo-sunrise" exsits and file_name is changed to "photo-sunrise-2" then the original file will still exist but the URL to the photo will also change based on file_name. 
                 // possible solution: first remove the file_name photo from the $target_file path.
-                if($_FILES[$key]['path'] == "/catalog/__thumb/") { $log_loc = 'Thubnail'; } else { $log_loc = 'Main'; }
 
-                $target_file = $_SERVER["DOCUMENT_ROOT"] . $_FILES[$key]['path'] . $_POST[file_name] . '.' . $ext;
+                if($_FILES[$key]['path'] == "/catalog/__thumbnail/") { $log_loc = 'Thumbnail'; } else { $log_loc = 'Main'; }
+                $target_file = $_SERVER["DOCUMENT_ROOT"] . $_FILES[$key]['path'] . $_POST['file_name'] . '.' . $ext;
 
                 if(file_exists( $target_file )) {
-                    // echo "Sorry, file " . $_POST['file_name'] . " already exists. <br />";
-                    $this->log(array("key" => "core", "value" => "Overwriting " . $log_loc . " Photo (" . $_POST['file_name'] . $ext . ")", "type" => "warning"));
+                    $this->log(array("key" => "core", "value" => "Overwriting " . $log_loc . " Photo (" . $_POST['file_name'] . '.' . $ext . ")", "type" => "warning"));
                     $uploadReady = 1;
+                    // echo "Sorry, file " . $_POST['file_name'] . " already exists. <br />" . $uploadReady;
                 } else { $uploadReady=1; }
 
                 /* Allow certain file formats
@@ -341,23 +341,22 @@ class Core_Site extends Core_Api
                 // Check if $uploadReady is set to 0 by an error
                 if ($uploadReady == 0) {
                     // echo "Sorry, your file, " . $value['name'] . " was not uploaded <br />";
-                    $this->log(array("key" => "core", "value" => "Failed to Upload " . $log_loc . " Image File (" . $value['file_name'] . $ext . ")", "type" => "failure"));
+                    $this->log(array("key" => "core", "value" => "Failed to Upload " . $log_loc . " Image File (" . $value['file_name'] . '.' . $ext . ")", "type" => "failure"));
                 } else {
                     if (move_uploaded_file($_FILES[$key]["tmp_name"], $target_file)) {
                         // echo "The file ". $value['name'] . " has been uploaded<br />" . $target_file . "<hr />";
-                        $this->log(array("key" => "core", "value" => "Upload of " . $log_loc . " Image File (" . $_POST['file_name'] . $ext . ")", "type" => "system"));
+                        $this->log(array("key" => "core", "value" => "Upload of " . $log_loc . " Image File (" . $_POST['file_name'] . '.' . $ext . ")", "type" => "success"));
 
                     } else {
                         // echo "Sorry, there was an error uploading your file.<br />" . $taget_file . "<hr />";
-                        $this->log(array("key" => "core", "value" => "Upload of " . $log_loc . " Image File (" . $_POST['file_name'] . $ext . ")", "type" => "failure"));
+                        $this->log(array("key" => "core", "value" => "Upload of " . $log_loc . " Image File (" . $_POST['file_name'] . '.' . $ext . ")", "type" => "failure"));
 
                     }
                 }
 
             }
         } else {
-            // $this->printp_r($_POST);
-            // exit;
+            $this->log(array("key" => "core", "value" => "uploadFile() SCRIPT FAILURE", "type" => "failure"));
         }
 
     }

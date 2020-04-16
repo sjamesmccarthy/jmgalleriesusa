@@ -1478,10 +1478,10 @@ class Core_Api
         if($result == 1) {
             $_SESSION['error'] = '200';
             $_SESSION['notify_msg'] = $_POST['title'];
-            $this->log(array("key" => "api", "value" => "Updated Catalog Photo (" . $_POST['title'] . " (" . $_POST['catalog_photo_id'] . ") ", "type" => "success"));
+            $this->log(array("key" => "api", "value" => "Updated Catalog Photo " . $_POST['title'] . " (" . $_POST['catalog_photo_id'] . ") ", "type" => "success"));
         } else {
             $_SESSION['error'] = '501';
-            $this->log(array("key" => "api", "value" => "Failed Update Catalog Photo (" . $_POST['title'] . " (" . $_POST['catalog_photo_id'] . ") " . $sql, "type" => "failure"));
+            $this->log(array("key" => "api", "value" => "Failed Update Catalog Photo " . $_POST['title'] . " (" . $_POST['catalog_photo_id'] . ") " . $sql, "type" => "failure"));
         }
 
     }
@@ -1551,7 +1551,7 @@ class Core_Api
             )";
 
         $result = $this->mysqli->query($sql);
-        $$catalog_photo_id = $this->mysqli->insert_id;
+        $catalog_photo_id = $this->mysqli->insert_id;
 
          /* Add parent collection to the array */
         if(!isSet($_POST['collections_tags'])) {
