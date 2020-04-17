@@ -5,13 +5,19 @@
     <body>
         <main>
         
-                <?php $this->getPartial('nav'); ?>
+                <?php 
+                    $this->getPartial('nav'); 
+                ?>
 
                         <div style="min-height: 100vh;">
-                            <?php $this->view() ?>
+                            <?php 
+                                $this->view() 
+                            ?>
                         </div>
                         
-                <?php $this->getPartial('footer'); ?>
+                <?php 
+                    $this->getPartial('footer'); 
+                ?>
         
         </main>
     </body>

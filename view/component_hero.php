@@ -13,8 +13,6 @@ version: 1
 $hero_result = $this->api_Hero_Get_Image();
 
 $html = <<< END
-<!-- <article> -->
-    <!-- <div class="grid-1" style="margin: 0;"> -->
     <div id="hero" data-url="$this->hero_image">
             <div class="hero-text-container">
                 <p class="hero-text-explore-link"><a href="$this->hero_link">Explore This Collection</a></p>
@@ -22,8 +20,6 @@ $html = <<< END
                 <p class="hero-text-arrow"><a href="$this->hero_link"><img class="hero-down-arrow" src="/view/image/icon_down.svg" /></a></p>
             </div>
     </div>
-    <!-- </div> -->
-<!-- </article> -->
 
 <script>
 

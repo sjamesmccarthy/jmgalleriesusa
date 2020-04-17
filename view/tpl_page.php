@@ -11,7 +11,9 @@
                         <?php $this->view() ?>
                         </div>
 
-                <?php $this->getPartial('footer'); ?>
+                <?php 
+                    $this->getPartial('footer'); 
+                ?>
         
         </main>
     </body>

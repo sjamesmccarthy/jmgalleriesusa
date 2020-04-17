@@ -31,14 +31,14 @@
         "1" : {
             "title" : "Flowers, Fields & Clouds",
             "link" : "flowers-fields-clouds",
-            "image" : "daisies-for-our-lady.jpg",
+            "image" : "dream-catchers.jpg",
             "text" : "light",
             "position" : "middle"
         },
         "2" : {
             "title" : "Oceans, Lakes & Waterfalls",
             "link" : "oceans-lakes-waterfalls",
-            "image" : "bodega-trailhead.jpg",
+            "image" : "amnesia.jpg",
             "text": "light",
             "position": "middle"
         },
@@ -52,7 +52,7 @@
         "4" : {
             "title" : "Mountains, Deserts & Trees",
             "link" : "mountains-deserts-trees",
-            "image" : "first-light.jpg",
+            "image" : "watkins-window.jpg",
             "text": "light",
             "position": "middle"
         }
