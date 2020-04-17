@@ -2909,10 +2909,6 @@ form .half-size:nth-of-type(1) {
 /* partial_footer */
 #footer {
   margin-top: 64px;
-  width: 100vw;
-  position: relative;
-  margin-left: -50vw;
-  left: 50%;
   background-color: #000;
   color: #FFF;
 }

@@ -15,11 +15,11 @@
                             ?>
                         </div>
                         
+        
+        </main>
                 <?php 
                     $this->getPartial('footer'); 
                 ?>
-        
-        </main>
     </body>
     
     <?php $this->getPartial('analytics'); ?>
