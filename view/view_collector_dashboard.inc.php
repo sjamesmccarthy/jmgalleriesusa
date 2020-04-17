@@ -12,6 +12,7 @@ if($this->checkSession()) {
 /* LOOK UP COLLECTOR */
 $collector_data = $this->api_Admin_Get_Collector($_SESSION['collector_id']);
 extract($collector_data, EXTR_PREFIX_ALL, "res");
+$this->collector_data_obj = (object)$collector_data;
 
 /* YOUR COLLECTION */
 $mycollection_html = $this->component('collector_my_collection',$res_collector_id);
@@ -20,13 +21,10 @@ $mycollection_html = $this->component('collector_my_collection',$res_collector_i
 $this->config->components['polarized'] = true;
 $polarized_html = $this->component('polarized');
 
-/* Copied From view_newsletter_email.inc.php file */
-/* Need to find a better solution for this, whcih may be to deprecate the public view of the file and store this is a config file */
-/* OR put this data into a JSON object and import using the getJSON() function */
+/* MY REWARDS */
+$myrewards_html = $this->component('rewards');
 
-$amazingoffer_json = $this->api_AmazingOffer_Get_Latest();
-extract($amazingoffer_json, EXTR_PREFIX_ALL, "res");
+/* MY REWARDS */
+$amazingoffer_html = $this->component('amazingoffer');
 
-$myrewards_points = $this->api_MyRewards_Get_Points($res_collector_id);
-$myrewards_points = round($myrewards_points['points']*1.5);
 ?>
