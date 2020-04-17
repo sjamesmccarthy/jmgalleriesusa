@@ -7,7 +7,7 @@
 
         <div class="col-11" >
     
-    <h1>Editions, Framing & Pricing</h1>
+    <h1>Styles, Editions and Framing</h1>
     <p class="artists-statement padbot-30"></p>
 
 <ul class="subsection-ul">

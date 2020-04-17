@@ -130,6 +130,7 @@ section, article {
 main {
     max-width: 1440px;
     margin: auto;
+    padding: 0 20px;
 }
 
 .filmstrip img {

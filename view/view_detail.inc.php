@@ -65,7 +65,7 @@
 
         $btn = "BUY THIS LIMITED EDITION";
         $btn_link = '<a href="/contact?photo=' . $photo_meta['file_name'] . '">';
-        $gallery_details = '<p class="mt-32">Each piece of artwork comes ready-to-hang, framed in a premium wood frame with Tru Vue Museum Glass protecting the print. If you have any questions or would like to talk with an art consultant, please <a href="/contact">contact us via email</a>.</p>';
+        $gallery_details = '<p class="mt-32">Each piece of artwork comes ready-to-hang, framed in a premium wood frame with Tru Vue Museum Glass protecting the print. If you have any questions about our <a href="/styles">styles, frames and editions</a>, or would like to talk with an art consultant, please <a href="/contact">contact us via email</a>.</p>';
 
         $price_array = array('1000', '1350', '1950', '3000', '5500');
 
