@@ -3,19 +3,20 @@
     <?php $this->getPartial('header'); ?>
     
     <body>
-        <main>
+
+        <?php print $this->component('hero'); ?>
+
+            <main>
         
                 <?php $this->getPartial('nav'); ?>
 
-                        <div style="min-height: 100vh;">
+                    <div style="min-height: 100vh;">
                         <?php $this->view() ?>
-                        </div>
+                    </div>
 
-                <?php 
-                    $this->getPartial('footer'); 
-                ?>
-        
-        </main>
+            </main>
+
+                <?php $this->getPartial('footer'); ?>
     </body>
     
     <?php $this->getPartial('analytics'); ?>

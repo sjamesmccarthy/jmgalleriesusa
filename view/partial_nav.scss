@@ -4,11 +4,13 @@
 #top-nav, #top-nav-home {
     // margin-top: 42px;
     z-index: 1001;
-    position: relative;
+    position: absolute;
+    top: 16px;
+    width: 1440px;
 }
 
 .top-nav {
-    margin-top: 32px;
+    // margin-top: 32px;
 }
 
 .topnav-logo {

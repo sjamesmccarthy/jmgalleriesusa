@@ -1,7 +1,7 @@
 <?php
 
     /* FILMSTRIP: NEW RELEASES */
-    $hero_html = $this->component('hero');
+    // $hero_html = $this->component('hero');
 
     /* FILMSTRIP: NEW RELEASES */
     $thumb_new_releases_html = $this->component('new_releases');

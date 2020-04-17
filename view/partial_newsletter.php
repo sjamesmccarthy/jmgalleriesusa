@@ -1,4 +1,4 @@
-<h3 class="h3-sub">SUBSCRIBE TO OUR NEWSLETTER</h3>
+<h3 class="h3-sub">SUBSCRIBE TO THE NEWSLETTER</h3>
 
 <div id="mc_embed_signup">
     <form action="https://jmgalleries.us16.list-manage.com/subscribe/post?u=7fe25703399796912d1b5d6f8&amp;id=a869c7c419" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>

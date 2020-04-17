@@ -2,18 +2,26 @@
 /* component_hero */
 
 #hero {
-    height: 100vh !important;
+    height: 100vh;
     background: rgb(255,255,255);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
     position: relative;
     margin-top: 0px;
-    width: 100vw;
-    margin-left: -50vw;
-    height: 100px;
-    left: 50%;
+    width: 100%;
     max-height: 1236px;
+}
+
+#hero-catalog {
+    height: 200px;
+    background: rgb(255,255,255);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    margin-top: 0px;
+    width: 100%;
 }
 
 #home-image {
@@ -27,13 +35,13 @@ position: relative;
 }
 
 .hero-text-container {
-position: absolute;
-width: 100%;
-bottom: 50px;
-text-transform: uppercase;
-font-weight: 700;
-height: 20%;
-padding: 0;
+    position: absolute;
+    width: 100%;
+    bottom: 50px;
+    text-transform: uppercase;
+    font-weight: 700;
+    height: 20%;
+    padding: 0;
 }
 
 .hero-text-container-bkg {

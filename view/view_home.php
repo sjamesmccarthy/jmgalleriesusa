@@ -1,10 +1,4 @@
 
-    <!-- generated html from component file: Hero -->
-    <section id="home-image">
-        <?= $hero_html ?>
-    </section>
-    <!-- /generated html from component file -->
-    
     <!-- generated html from component file: component_polarized -->
     <section id="polarized">
         <?= $polarized_html ?>

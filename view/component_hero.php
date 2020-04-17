@@ -9,28 +9,37 @@ date: 8/29/19
 version: 1
 */
 
-/* Create an API call to get the Polarized listings */
-$hero_result = $this->api_Hero_Get_Image();
+$catalog = ltrim($this->page->catalog_path, '/');
 
-$html = <<< END
-    <div id="hero" data-url="$this->hero_image">
-            <div class="hero-text-container">
-                <p class="hero-text-explore-link"><a href="$this->hero_link">Explore This Collection</a></p>
-                <p class="hero-text"> $this->hero_title </p>
-                <p class="hero-text-arrow"><a href="$this->hero_link"><img class="hero-down-arrow" src="/view/image/icon_down.svg" /></a></p>
-            </div>
-    </div>
+if ($catalog == '') {
+    /* Create an API call to get the Polarized listings */
+    $hero_result = $this->api_Hero_Get_Image();
 
-<script>
+    $html = <<< END
+        <div id="hero" data-url="$this->hero_image">
+                <div class="hero-text-container">
+                    <p class="hero-text-explore-link"><a href="$this->hero_link">Explore This Collection</a></p>
+                    <p class="hero-text"> $this->hero_title </p>
+                    <p class="hero-text-arrow"><a href="$this->hero_link"><img class="hero-down-arrow" src="/view/image/icon_down.svg" /></a></p>
+                </div>
+        </div>
 
-    $("#hero").each( function() { 
-        $(this).css("background-image", "linear-gradient(180deg, rgba(255,255,255,1) 10%, rgba(117,117,119,0) 50%), url(/catalog/__image/" + $(this).data("url") +")" ); 
-        $(this).css("background-postion", $this->hero_position);
-    });
+    <script>
 
-</script>
+        $("#hero").each( function() { 
+            $(this).css("background-image", "linear-gradient(180deg, rgba(255,255,255,1) 10%, rgba(117,117,119,0) 50%), url(/catalog/__image/" + $(this).data("url") +")" ); 
+            $(this).css("background-postion", $this->hero_position);
+        });
 
-END;
+    </script>
+    END;
+} else {
+    $html = <<< END
+        <div id="hero-catalog">
+        </div>
+    END;
+
+}
 
 return($html);
 
