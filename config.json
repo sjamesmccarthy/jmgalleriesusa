@@ -25,6 +25,10 @@
         "polarized" : "false"
     },
 
+    "partials" : {
+        "notice" : "true"
+    },
+
     "heroimage" : {
         "always_use" : "3",
         "random" : "true",

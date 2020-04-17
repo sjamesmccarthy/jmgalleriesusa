@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-    
+
+    <?php $this->getPartial('notice'); ?>
     <?php $this->getPartial('header'); ?>
     
     <body>

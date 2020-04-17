@@ -8,7 +8,12 @@ html, body {
     -webkit-text-size-adjust: 100%;
     font-family: 'Lato', sans-serif;
     color: $color-black;
+
     overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+    display: none;
 }
 
 iframe, img, video {

@@ -412,6 +412,10 @@ html, body {
   overflow-x: hidden;
 }
 
+::-webkit-scrollbar {
+  display: none;
+}
+
 iframe, img, video {
   border: 0;
   border-style: none;
@@ -2447,7 +2451,7 @@ form .half-size:nth-of-type(1) {
   position: relative;
   margin-top: 0px;
   width: 100%;
-  max-height: 1236px;
+  max-height: 1024px;
 }
 
 #hero-catalog {
@@ -2741,7 +2745,7 @@ form .half-size:nth-of-type(1) {
 #top-nav, #top-nav-home {
   z-index: 1001;
   position: absolute;
-  top: 16px;
+  top: 48px;
   width: 1440px;
 }
 
