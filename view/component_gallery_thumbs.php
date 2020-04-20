@@ -28,8 +28,8 @@
             foreach($catalog_photos as $k => $v) {
                 
                 if($v['as_gallery'] == 1) {$desc_editions = "<p>Edition of " . $this->config->limited_edition_max  . " plus 2 Artist Proofs</p>"; $available_sizes = "16x24, 20x30 24x36, 30x45, 40x60"; } else { $data_filter_G = null;  }
-                if($v['as_studio'] == 1) {$desc_editions = "<p>tinyViews&trade; Edition only</p>"; $available_sizes = "16x24, 20x30 24x36, 30x45, 40x60"; } else { $data_filter_S = null; }
-                if($v['as_open'] == 1) { $desc_editions = "<p>tinyViews&trade; Edition only</p>"; $available_sizes = "4x6, 8x8, 8x10"; } else { $data_filter_O = null; }
+                if($v['as_studio'] == 1) {$desc_editions = "<p>Giclée, tinyViews&trade; Edition</p>"; $available_sizes = "16x24, 20x30 24x36, 30x45, 40x60"; } else { $data_filter_S = null; }
+                if($v['as_open'] == 1) { $desc_editions = "<p>Giclée, tinyViews&trade; Edition</p>"; $available_sizes = "4x6, 8x8, 8x12, 12x12, 12x18"; } else { $data_filter_O = null; }
 
                 if( file_exists($_SERVER['DOCUMENT_ROOT'] . "/catalog/__thumbnail/" . $v['file_name'] . '.jpg')) {
                     $img_file = $v['file_name'];

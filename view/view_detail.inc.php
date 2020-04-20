@@ -65,9 +65,9 @@
 
         $btn = "BUY THIS LIMITED EDITION";
         $btn_link = '<a href="/contact?photo=' . $photo_meta['file_name'] . '">';
-        $gallery_details = '<p class="mt-32">Each piece of artwork comes ready-to-hang, framed in a premium wood frame with Tru Vue Museum Glass protecting the print. If you have any questions about our <a href="/styles">styles, frames and editions</a>, or would like to talk with an art consultant, please <a href="/contact">contact us via email</a>.</p>';
+        $gallery_details = '<p class="mt-32">Limited Editions are either printed on Hahnemühle Photo Rag® Metallic Fine Art paper mounted in a Premium Designer frame protected with Tru Vue&reg; Museum Glass, or Lumachrome HD Acrylic. If you have any questions about our <a href="/styles">styles, frames and editions</a>, or would like to talk with an art consultant, please <a href="/contact">contact us</a>.</p>';
 
-        $price_array = array('1000', '1350', '1950', '3000', '5500');
+        $price_array = array('1350', '1800', '2500', '3850', '6450');
         $default_price = $price_array[0];
 
         $sizes_frames = '<div class="col select-wrapper" style="width: 300px;  margin-right: 20px;">
@@ -84,10 +84,10 @@
         <div class="col select-wrapper" style="width: 300px; margin-right: 20px;">
             <label for="frame"></label>
             <select id="frame" name="frame">
-                <!-- <option value="NATURAL-LIGHT">FRAME: Natural (light) </option> -->
-                <option value="DARK-WALNUT">FRAME: Black Vodka (similar to a Dark Black stain)</option>
-                <option value="ASH-GRAY">FRAME: Whiskey (similar to a Medium Brown stain)</option>
-                <option value="SNOW-WHITE">FRAME: Bourbon (similar to a Light Brown stain)</option>
+                <option value="Black Vodka">FRAME: Black Vodka (similar to a Dark Black stain)</option>
+                <option value="Whiskey">FRAME: Whiskey (similar to a Medium Brown stain)</option>
+                <option value="Bourbon">FRAME: Bourbon (similar to a Light Brown stain)</option>
+                <option value="Matte Charcoal">FRAME: Matte Charcoal (similar to Matte Black)</option>
             </select>
             <span class="tiny ml-16"><a href="/styles">More information about frame styles</a></span>
         </div>
@@ -103,7 +103,7 @@
         // if($ed_G === true || $ed_S === true) { $as_editions_tmp .= ", "; }
         // $as_editions_tmp .= "";
 
-        $edition_desc = 'tinyViews&trade; Edition';
+        $edition_desc = 'Giclée, tinyViews&trade; Edition';
         $btn = "Add To Cart +Checkout";
         $btn_link = '<a href="/contact?photo=' . $photo_meta['file_name'] . '&open=true">';
 
@@ -124,7 +124,7 @@
         <div class="col select-wrapper" style="width: 300px; margin-right: 20px;">
             <label for="frame"></label>
             <select id="frame" name="frame">
-                <option data-price="0" value="PRINT-ONLY">PRINT ONLY (NO FRAME)</option>
+                <option data-price="0" value="PRINT-ONLY">PRINT (or Giclée) ONLY - NO FRAME</option>
                 <option data-price="20" value="ASH-GRAY(+$$)">FRAME: Ash Gray (+$$ USD)</option>
                 <option data-price="20" value="SNOW-WHITE(+$$)">FRAME: Snow White (+$$ USD)</option>
             </select>

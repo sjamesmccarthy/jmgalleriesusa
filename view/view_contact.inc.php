@@ -22,7 +22,7 @@ if(isSet($this->data->routePathQuery[0])) {
 
     $formTitle = "CHECKOUT <span class='lowercase light'>for</span> <span class='light initialcaps'>" . $photo . "</span>";
     $subTitle = "Thank you for your interest in collecting a j.McCarthy Limited Edition";
-    $subject_PH = "PURCHASE ORDER for " . strtoupper($photo);
+    $subject_PH = "PURCHASE ORDER for " . strtoupper($photo) . " with a " . $frame . " frame";
     $message_PH = "IN THE BOX BELOW PLEASE TELL US THE FOLLOWING: <ul class='contact-ul mb-16'><li>Shipping Address (Provide Postal Code) or Pickup (Las Vegas, Nevada)</li><li>Phone Number, An art consultant will contact you within 24 hours to complete this order</li><li>Preferred Billing Method: Credit Card, Cash or BitCoin</li><li>And, any other questions you may have.</li></ul>";
     $button_label = "PLACE YOUR ORDER";
     $promo_field = '<p class="pt-16 pb-16"><input type="text" id="contactpromocode" name="contactpromocode" placeholder="PROMO CODE" value="' . $promo_code . '" /></p>';

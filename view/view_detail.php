@@ -18,7 +18,8 @@
         <div class="col-12">
             <h1 class="detail-h1"><?= $photo_meta['title'] ?></h1>
             <p class="pb-32 edition-title"><?= $edition_desc ?></span></p>
-            <p id="price" class="price mb-16" style="margin-right: 20px; "><?= $default_price ?> USD</p>
+            <p class="tiny blue" style="margin-bottom: -10px;">$ USD</p>
+            <p id="price" class="price" style="margin-right: 20px; "><?= $default_price ?> </p>
         </div>
         
         <div class="col-12 mt-16">

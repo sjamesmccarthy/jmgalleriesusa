@@ -9,7 +9,7 @@
                 <p class="name blue">j.McCarthy</p>
                 <p class="name-title">ARTIST STATEMENT</p>
                 <p class="name-statement blue">
-                Photography has always had a hidden crush on me, a self-taught explorer in the field of landscape and digital photography. My artistic intent is for my photography to take you on a journey to a place where your memories seduce you to day dream, share a story and connect with the human experience. <!-- Through purposeful paper choice, framing and composition -->
+                Creativity and art have always had a hidden crush on me, a self-taught explorer in the field of landscape and digital photography. My artistic calling is for my artwork to take you on a journey to a place where your memories draw you into a day dream to share a story and connect with the human experience. <!-- Through purposeful paper choice, framing and composition -->
                 </p>
                 <!-- <img class="bio-profile-pic" src="/view/image/profile_img.jpg" /> -->
         </div>
@@ -21,9 +21,9 @@
 
             <h3>TIMELINE</h3>
 
-            <p class="bio-copy mt-16">
+            <!-- <p class="bio-copy mt-16">
             j.McCarthy's more popular pieces include, "Happiest Time of Day", "Between The Hills", "Bonsai Zen, "Snowy Pines", "Emigrant's Fog" and "Never Ending Story". Framed editions of these pieces can sometimes be viewed at many of his <a href="/exhibits">pop-up exhibits</a> which include local-owned businesses around the locations he photographs.
-            </p>
+            </p> -->
 
             <ul
                 class="timeline">
@@ -120,7 +120,7 @@
                 <!-- <li class="timeline-date">2019</li> -->
                 <li class="timeline-history">
                 <h3>2020</h3>
-                    <p>This was the year the world almost ended. The global pandemic known as COVID-19 swept the world in fury, infecting almost a million people and killing hundreds of thousands. Entire states, cities and countries were put on complete lock-down or shelter-in-place orders by their Government officials. The global econmony hit the brakes at 100mph and came to an alarming slow-down forcing many business to close their doors.</p>
+                    <p>This was the year the world almost ended. The global pandemic known as COVID-19 (aka, Coronavirus) swept the world in haste, infecting almost a million people and killing hundreds of thousands. Entire states, cities and countries were put on complete lock-down or shelter-in-place orders by their Government officials. The global econmony hit the brakes and came to an alarming slow-down forcing many business to close their doors.</p>
                     
                     <p class="timeline-height-adjust"><a href="/moments">Current Moments & Other News</a></p>
                 </li>

@@ -2656,7 +2656,7 @@ form #buysize, form #frame {
   margin-left: 50px; }
 
 .moulding-thumb {
-  width: 32%; }
+  width: 24%; }
 
 .divTable {
   display: table;
@@ -2938,7 +2938,7 @@ input[type="text"].amazing-offer-error {
   width: 100%;
   flex-wrap: wrap;
   justify-content: space-between;
-  margin: 0 auto; }
+  margin: 1rem auto; }
   .form_pincode input[type="tel"] {
     border: none;
     width: 50px;
