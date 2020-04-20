@@ -8,7 +8,7 @@
         $thumb_new_releases_html .= '<div class="grid-4_sm-2 grid-4_md-3">';
         $thumb_new_releases_html .= '<div class="col-10" style="margin-bottom: 16px;">';
         $thumb_new_releases_html .= '<h2><a href="/new-releases/">NEW RELEASES</a></h2>';
-        $thumb_new_releases_html .= '<p>a collection of photography featuring newest work in all categories.</p>';
+        $thumb_new_releases_html .= '<p>a collection of photography featuring newest work by photographer j.McCarthy.</p>';
         $thumb_new_releases_html .= '</div>';
         $thumb_new_releases_html .= '<div class="view-all col-2-middle">';
         $thumb_new_releases_html .= '<a href="/new-releases">view all</a>';

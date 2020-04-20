@@ -1,10 +1,10 @@
 <!DOCTYPE html>
     
-    <?php $this->getPartial('notice'); ?>
     <?php $this->getPartial('header'); ?>
     
     <body>
 
+        <?php $this->getPartial('notice'); ?>
         <?php print $this->component('hero'); ?>
 
             <main>

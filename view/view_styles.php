@@ -13,118 +13,202 @@
 <ul class="subsection-ul">
     
     <a name="pricing"></a>
-            <li>
-            <h3>Limited Edition</h3>
-            <p>
-            Fine Art in our Limited Edition is considered highly collectible and are part of a limited numbered series of <?= $this->config->limited_edition_max ?>, signed by j.McCarthy and includes a Certificate of Authenticity that is recorded in the jM Galleries Digital Artwork Archives.<p>
-            <p>
-            Depending on the piece, Limited Editions are either printed on Hahnemühle Canvas Metallic stretched over a 5/8" inset frame (not visible) or printed on Hahnemühle Photo Rag® Metallic FineArt paper and mounted in a premium 2 inch Dark Walnut frame protected with Tru Vue&reg; Museum Glass. </p>
-            </li>
-            <!-- <li>
-            <h3>Studio Limited Edition</h3>
-            <p>Fine Art in our Studio Edition is also considered collectible, and is part of a limited numbered series of 12, signed by j.McCarthy and includes a Certificate of Authenticity that is recorded in the jM Galleries Digital Artwork Archives. Studio Editions are printed on high-quality photographic paper and mounted in a hand-made, open-air, Bass wood frame and includes a wire hanger.</p>
-            <p>Not every photograph in the j.McCarthy collection is available as a Studio Edition print, and sizes larger than 16x24 as well as the final 6 editions of a series are only available as a Gallery Edition. 
-            </p>
-
-             <div class="divTable">
-                    <div class="divTableBody">
-                        <div class="divTableRow">
-                            <div class="divTableCell thead">Size</div>
-                            <div class="divTableCell thead">Price</div>
-                        </div>
-                        <div class="divTableRow">
-                            <div class="divTableCell">12 x 18 </div>
-                            <div class="divTableCell">$160</div>
-                        </div>
-                        <div class="divTableRow">
-                            <div class="divTableCell">16 x 24</div>
-                            <div class="divTableCell">$240</div>
-                        </div>
-                    </div>
-                </div>
-
-            </li> -->
-
-            <li>
-            <h3>Open / tinyViews&trade; Edition</h3>
-            <p>tinyViews&trade; (Large landscapes framed for small spaces&trade;)<br />
-            These editions are not considered collectible and are not numbered, may not be signed, and could also include a watermark. They are not framed and printed on high-quality photo paper and may not be of archival grade.</a></p>
-
-            <p>*Prices, sizes and availability vary. Please visit <a target="_shop" href="/tinyviews">the shop</a> for most up-to-date information.</p>
-
-             <!-- <div class="divTable">
-                    <div class="divTableBody">
-                        <div class="divTableRow">
-                            <div class="divTableCell thead">Size</div>
-                            <div class="divTableCell thead">Price</div>
-                        </div>
-                        <div class="divTableRow">
-                            <div class="divTableCell">Trim & Frame tinyViews&trade; Calendar / 2020</div>
-                            <div class="divTableCell">$25</div>
-                        </div>
-                        <div class="divTableRow">
-                            <div class="divTableCell">5 x 7 tinyViews&trade; Small Space Art&trade; (Print Only)</div>
-                            <div class="divTableCell">$20</div>
-                        </div>
-                        <div class="divTableRow">
-                            <div class="divTableCell">8 x 8 (Hand-made Studio Framed Print)</div>
-                            <div class="divTableCell">$60</div>
-                        </div>
-                    </div>
-                </div> -->
-    </li>
-
-     <li><h3>Framing</h3>
+    <li>
+        <h3>Limited Edition</h3>
         <p>
-        Limited Edition Hahnemühle Photo Rag® Metallic prints are mounted in a premium hardwood frame protected with Tru Vue&reg; Museum Glass.
-        </p>
+        Fine Art in our Limited Edition is considered highly collectible and are part of a limited numbered series of <?= $this->config->limited_edition_max ?>, signed by j.McCarthy and includes a Certificate of Authenticity that is recorded in the jM Galleries Digital Artwork Archives.<p>
+        <p>
+        Depending on the piece, Limited Editions are either printed on Hahnemühle Canvas Metallic stretched over a 5/8" inset frame (not visible) or printed on Hahnemühle Photo Rag® Metallic FineArt paper and  mounted in a premium 2 inch wide frame protected with Tru Vue&reg; Museum Glass. </p>
+
+        <p>Once the last edition number is sold, no more editions in that series will be available. The only way to purchase a sold-out edition would be through another collector.</p>
+
+        <!-- <h3>Limited Edition Pricing</h3> -->
+
+        <div class="divTable w-100 mt-32">
+            <div class="divTableBody">
+                <div class="divTableRow">
+                    <div class="divTableCell thead border-b w-75">Limited Edition (Framed Artwork)</div>
+                    <div class="divTableCell thead border-b">Size (CM)</div>
+                    <div class="divTableCell thead border-b">Size (INCHES)</div>
+                    <div class="divTableCell thead border-b">Price</div>
+                </div>
+                <div class="divTableRow">
+                    <div class="divTableCell">Hahnemühle Photo Rag® Metallic Archival Paper</div>
+                    <div class="divTableCell border-l border-b">60CM</div>
+                    <div class="divTableCell border-l border-b">16 x 24</div>
+                    <div class="divTableCell border-l border-r">$1,000</div>
+                </div>
+                <div class="divTableRow">
+                    <div class="divTableCell"></div>
+                    <div class="divTableCell border-l border-b">76CM</div>
+                    <div class="divTableCell border-l border-b">20 x 30</div>
+                    <div class="divTableCell border-l border-b border-r">$1,350</div>
+                </div>
+                <div class="divTableRow">
+                    <div class="divTableCell"></div>
+                    <div class="divTableCell border-l border-b">91CM</div>
+                    <div class="divTableCell border-l border-b">24 x 36</div>
+                    <div class="divTableCell border-l border-b border-r">$1,950</div>
+                </div>
+                <div class="divTableRow">
+                    <div class="divTableCell"></div>
+                    <div class="divTableCell border-l border-b">144CM</div>
+                    <div class="divTableCell border-l border-b">30 x 45</div>
+                    <div class="divTableCell border-l border-b border-r">$3,000</div>
+                </div>
+                <div class="divTableRow">
+                    <div class="divTableCell border-b"></div>
+                    <div class="divTableCell border-l border-b">152CM</div>
+                    <div class="divTableCell border-l border-b">40 x 60</div>
+                    <div class="divTableCell border-l border-b border-r">$5,500</div>
+                </div>
+            </div>
+        </div>
+    
+    </li>
+           
+
+    <li>
+        <h3>Prints & tinyViews&trade; Edition</h3>
+        <p>These editions are not considered collectible and are not numbered, may not be signed, and could also include a watermark. They are printed on premium photo paper and can optionally Studio framed for an additional cost as shown below.</a></p>
+
+    <div class="divTable w-100 mt-32">
+            <div class="divTableBody">
+                <div class="divTableRow">
+                    <div class="divTableCell thead border-b w-75">Print Material</div>
+                    <div class="divTableCell thead border-b">Size (CM)</div>
+                    <div class="divTableCell thead border-b">Size (INCHES)</div>
+                    <div class="divTableCell thead border-b">Price</div>
+                </div>
+                <div class="divTableRow">
+                    <div class="divTableCell">Red River Polar Gloss Metallic Premium Photo Paper</div>
+                    <div class="divTableCell border-l border-b">15CM</div>
+                    <div class="divTableCell border-l border-b">4 x 6</div>
+                    <div class="divTableCell border-l border-b border-r">$20</div>
+                </div>
+                <div class="divTableRow">
+                    <div class="divTableCell ">May be framed with an optional Studio Frame in Snow White or Ash Gray for additional $20.</div>
+                    <div class="divTableCell border-l border-b">20CM</div>
+                    <div class="divTableCell border-l border-b">8 x 8</div>
+                    <div class="divTableCell border-l border-b border-r">$40</div>
+                </div>
+                <div class="divTableRow">
+                    <div class="divTableCell">May be framed with an optional 2-ply white mat for additional $20, but this may also increase frame size.</div>
+                    <div class="divTableCell border-l border-b">25CM</div>
+                    <div class="divTableCell border-l border-b">8 x 10</div>
+                    <div class="divTableCell border-l border-b border-r">$60</div>
+                </div>
+                <div class="divTableRow">
+                    <div class="divTableCell border-b"></div>
+                    <div class="divTableCell border-l border-b">30CM</div>
+                    <div class="divTableCell border-l border-b">12 x 12</div>
+                    <div class="divTableCell border-l border-b border-r">$80</div>
+                </div>
+                
+            </div>
+        </div>
+
+
+         <div class="divTable w-100 mt-32">
+            <div class="divTableBody">
+
+                <div class="divTableRow">
+                    <div class="divTableCell thead border-b w-75">Studio Frame</div>
+                    <div class="divTableCell thead border-b">Image Size (inches)</div>
+                    <div class="divTableCell thead border-b">Price</div>
+                </div>
+                
+                <div class="divTableRow">
+                    <div class="divTableCell"><b>Hand-made from Bass Wood painted Snow White, Ash Gray or Natural oil treatment</b></div>
+                    <div class="divTableCell border-l border-b"></div>
+                    <div class="divTableCell border-l border-b border-r"></div>
+                </div>
+                <div class="divTableRow">
+                    <div class="divTableCell ">*Glass in not included but may be added for an additional $20 per frame not including 12x12 frames.</div>
+                    <div class="divTableCell border-l border-b">4 x 6</div>
+                    <div class="divTableCell border-l border-b border-r">$20</div>
+                </div>
+                <div class="divTableRow">
+                    <div class="divTableCell"></div>
+                    <div class="divTableCell border-l border-b">8 x 8</div>
+                    <div class="divTableCell border-l border-b border-r">$20</div>
+                </div>
+                <div class="divTableRow">
+                    <div class="divTableCell"></div>
+                    <div class="divTableCell border-l border-b">8 x 10</div>
+                    <div class="divTableCell border-l border-b border-r">$20</div>
+                </div>
+                <div class="divTableRow">
+                    <div class="divTableCell border-b"></div>
+                    <div class="divTableCell border-l border-b">12 x 12</div>
+                    <div class="divTableCell border-l border-b border-r">$20</div>
+                </div>
+               
+            </div>
+        </div>
+
     </li>
 
-    <li><h3>Pricing</h3>
+     <li><h3>About Our Frames</h3>
+        <p>
+        Our frames are available in two styles: Studio and Limited Edition Premium.
+        </p>
+        <p>
+        Studio frames are hand-made from a solid one-in-a-half inch wide Bass hardwood that is sourced from a mill in Los Angeles, California. They are either painted Snow White, Ash Gray or naturally treated with a light oil. Studio framing sometimes includes a white mat and do not include glass.
+        </p>
 
-        <div class="divTable">
-                    <div class="divTableBody">
-                        <div class="divTableRow">
-                            <div class="divTableCell thead">Material</div>
-                            <div class="divTableCell thead">Size (CM)</div>
-                            <div class="divTableCell thead">Size (INCHES)</div>
-                            <div class="divTableCell thead">Price</div>
-                        </div>
-                        <div class="divTableRow">
-                            <div class="divTableCell">Hahnemühle Photo Rag® Metallic Archival Paper<br />TruVue&reg; Museum Glass<br />Premium hardwood frame</div>
-                            <div class="divTableCell">60CM</div>
-                            <div class="divTableCell">16 x 24</div>
-                            <div class="divTableCell">$1,000</div>
-                        </div>
-                        <div class="divTableRow">
-                            <div class="divTableCell"></div>
-                            <div class="divTableCell">76CM</div>
-                            <div class="divTableCell">20 x 30</div>
-                            <div class="divTableCell">$1,350</div>
-                        </div>
-                        <div class="divTableRow">
-                            <div class="divTableCell"></div>
-                            <div class="divTableCell">91CM</div>
-                            <div class="divTableCell">24 x 36</div>
-                            <div class="divTableCell">$1,950</div>
-                        </div>
-                        <div class="divTableRow">
-                            <div class="divTableCell"></div>
-                            <div class="divTableCell">144CM</div>
-                            <div class="divTableCell">30 x 45</div>
-                            <div class="divTableCell">$3,000</div>
-                        </div>
-                        <div class="divTableRow">
-                            <div class="divTableCell"></div>
-                            <div class="divTableCell">152CM</div>
-                            <div class="divTableCell">40 x 60</div>
-                            <div class="divTableCell">$5,500</div>
-                        </div>
-                    </div>
+        <p>
+        Limited Edition Premium Frames are hand-made from solid wood and depending on the size print size are either one-in-a-half or two-in-a-half inches wide. They are stained in Black, Whiskey or Dark Walnut custom surface. Limited Edition Premiuming framing sometimes includes a 4-ply archvial mat and TruVue&reg; Museum Glass to protect your artwork.
+        </p>
+
+        <div class="divTable w-100 mt-32">
+            <div class="divTableBody">
+
+                <div class="divTableRow">
+                    <div class="divTableCell thead border-b w-75">Limited Edition Premium Frame (Prices when purchased separately)</div>
+                    <div class="divTableCell thead border-b">Image Size (inches)</div>
+                    <div class="divTableCell thead border-b ">Price</div>
+                </div>
+                
+                <div class="divTableRow">
+                    <div class="divTableCell"><b>Hand-made from solid wood and stained in a Black, Whiskey or Dark Walnut custom surface.</b></div>
+                    <div class="divTableCell border-l border-b">16 x 24</div>
+                    <div class="divTableCell border-l border-b border-r">$350</div>
                 </div>
 
-                 <p class="small">*The majority of the images are a 3:2 aspect ratio. Those that are not will be noted in the images description. The above sizes are only available as Limited Editions. Once the last edition number is sold, no more editions under that series will be available. The only way to purchase a sold-out edition would be through another collector.</p>
+                <div class="divTableRow">
+                    <div class="divTableCell">Tru Vue&reg; Museum Glass is included in the price of each price.</div>
+                    <div class="divTableCell border-l border-b">20 x 30</div>
+                    <div class="divTableCell border-l border-b border-r">$450</div>
+                </div>
+                <div class="divTableRow">
+                    <div class="divTableCell">May be framed with an optional 4-ply, white archival mat for additional $75*, but this may also increase frame size.</div>
+                    <div class="divTableCell border-l border-b">24 x 36</div>
+                    <div class="divTableCell border-l border-b border-r">$550</div>
+                </div>
+                <div class="divTableRow">
+                    <div class="divTableCell ">*for mat sizes larger than 24x36 please contact us for a price.</div>
+                    <div class="divTableCell border-l border-b">30 x 45</div>
+                    <div class="divTableCell border-l border-b border-r">$850</div>
+                </div>
+                <div class="divTableRow">
+                    <div class="divTableCell border-b"></div>
+                    <div class="divTableCell border-l border-b">40 x 60</div>
+                    <div class="divTableCell border-l border-b border-r">$950</div>
+                </div>
+                
+            </div>
+        </div>
 
+        <div class="mt-32">
+            <img class="moulding-thumb" src="/view/image/moulding-60645.jpg" /> 
+            <img class="moulding-thumb" src="/view/image/moulding-60610.jpg" /> 
+            <img class="moulding-thumb" src="/view/image/moulding-60683.jpg" /> 
+        </div>
+
+    </li>
+
+    
 	</ul>
 
 

@@ -5,10 +5,9 @@ html, body {
     font-weight: $base-fw;
     line-height: $base-lh;
     box-sizing: border-box;
+    font-family: Lato, sans-serif;
     -webkit-text-size-adjust: 100%;
-    font-family: 'Lato', sans-serif;
     color: $color-black;
-
     overflow-x: hidden;
 }
 
