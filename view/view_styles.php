@@ -36,7 +36,7 @@
                     <div class="divTableCell">Hahnemühle Photo Rag® Metallic Archival Paper</div>
                     <div class="divTableCell border-l border-b">60CM</div>
                     <div class="divTableCell border-l border-b">16 x 24</div>
-                    <div class="divTableCell border-l border-r">$1,000</div>
+                    <div class="divTableCell border-l border-r border-b">$1,000</div>
                 </div>
                 <div class="divTableRow">
                     <div class="divTableCell"></div>
@@ -70,7 +70,7 @@
 
     <li>
         <h3>Prints & tinyViews&trade; Edition</h3>
-        <p>These editions are not considered collectible and are not numbered, may not be signed, and could also include a watermark. They are printed on premium photo paper and can optionally Studio framed for an additional cost as shown below.</a></p>
+        <p>These editions are not considered collectible and are not numbered, may not be signed, and could also include a watermark. They are printed on premium photo paper and can be optionally Studio framed for an additional cost as shown below.</a></p>
 
     <div class="divTable w-100 mt-32">
             <div class="divTableBody">
@@ -94,15 +94,21 @@
                 </div>
                 <div class="divTableRow">
                     <div class="divTableCell">May be framed with an optional 2-ply white mat for additional $20, but this may also increase frame size.</div>
-                    <div class="divTableCell border-l border-b">25CM</div>
-                    <div class="divTableCell border-l border-b">8 x 10</div>
+                    <div class="divTableCell border-l border-b">30CM</div>
+                    <div class="divTableCell border-l border-b">8 x 12</div>
                     <div class="divTableCell border-l border-b border-r">$60</div>
+                </div>
+                <div class="divTableRow">
+                    <div class="divTableCell"></div>
+                    <div class="divTableCell border-l border-b">30CM</div>
+                    <div class="divTableCell border-l border-b">12 x 12</div>
+                    <div class="divTableCell border-l border-b border-r">$80</div>
                 </div>
                 <div class="divTableRow">
                     <div class="divTableCell border-b"></div>
                     <div class="divTableCell border-l border-b">30CM</div>
-                    <div class="divTableCell border-l border-b">12 x 12</div>
-                    <div class="divTableCell border-l border-b border-r">$80</div>
+                    <div class="divTableCell border-l border-b">12 x 18</div>
+                    <div class="divTableCell border-l border-b border-r">$120</div>
                 </div>
                 
             </div>
@@ -135,13 +141,18 @@
                 </div>
                 <div class="divTableRow">
                     <div class="divTableCell"></div>
-                    <div class="divTableCell border-l border-b">8 x 10</div>
+                    <div class="divTableCell border-l border-b">8 x 12</div>
                     <div class="divTableCell border-l border-b border-r">$20</div>
                 </div>
                 <div class="divTableRow">
-                    <div class="divTableCell border-b"></div>
+                    <div class="divTableCell"></div>
                     <div class="divTableCell border-l border-b">12 x 12</div>
-                    <div class="divTableCell border-l border-b border-r">$20</div>
+                    <div class="divTableCell border-l border-b border-r">$40</div>
+                </div>
+                <div class="divTableRow">
+                    <div class="divTableCell border-b"></div>
+                    <div class="divTableCell border-l border-b">12 x 18</div>
+                    <div class="divTableCell border-l border-b border-r">$40</div>
                 </div>
                
             </div>
@@ -154,11 +165,11 @@
         Our frames are available in two styles: Studio and Limited Edition Premium.
         </p>
         <p>
-        Studio frames are hand-made from a solid one-in-a-half inch wide Bass hardwood that is sourced from a mill in Los Angeles, California. They are either painted Snow White, Ash Gray or naturally treated with a light oil. Studio framing sometimes includes a white mat and do not include glass.
+        Studio frames are hand-made from a solid one-in-a-half inch wide Bass hardwood that is sourced from a mill in Los Angeles, California. They are either painted Snow White, Ash Gray or naturally treated with a light oil. Studio framing sometimes includes a white mat and does not include glass.
         </p>
 
         <p>
-        Limited Edition Premium Frames are hand-made from solid wood and depending on the size print size are either one-in-a-half or two-in-a-half inches wide. They are stained in Black, Whiskey or Dark Walnut custom surface. Limited Edition Premiuming framing sometimes includes a 4-ply archvial mat and TruVue&reg; Museum Glass to protect your artwork.
+        Limited Edition Premium Frames are hand-made from solid wood and depending on the size print size are either one-in-a-half or two-in-a-half inches wide. They are stained in Black, Whiskey or Dark Walnut custom surface. Limited Edition Premiuming framing sometimes includes a 4-ply archvial mat, or linen liner and TruVue&reg; Museum Glass to protect your artwork.
         </p>
 
         <div class="divTable w-100 mt-32">
@@ -182,7 +193,7 @@
                     <div class="divTableCell border-l border-b border-r">$450</div>
                 </div>
                 <div class="divTableRow">
-                    <div class="divTableCell">May be framed with an optional 4-ply, white archival mat for additional $75*, but this may also increase frame size.</div>
+                    <div class="divTableCell">May be framed with an optional 4-ply, white archival mat or linen liner for additional $75*, but this may also increase frame size.</div>
                     <div class="divTableCell border-l border-b">24 x 36</div>
                     <div class="divTableCell border-l border-b border-r">$550</div>
                 </div>

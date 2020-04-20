@@ -19,7 +19,7 @@
                 <?= $collections_html ?>
                 <li><a href="/all">View All</a></li>
                 <li>&mdash;</li>
-                <li><a href="/styles">Pricing</a></li>
+                <li><a href="/styles">Frames & Pricing</a></li>
                 <li><a href="/contact">Contact</a></li>
             </ul>
             </div>

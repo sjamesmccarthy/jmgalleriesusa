@@ -416,10 +416,6 @@ h6 {
 [smallhalf] {
   font-size: .9rem; }
 
-.tiny {
-  font-size: .5rem;
-  font-weight: 100; }
-
 .right {
   text-align: right; }
 
@@ -436,6 +432,7 @@ https://jmgalleriesusa.com
 
 SASS, https://sass-lang.com/
 */
+/* Typography */
 .light {
   font-weight: 100; }
 
@@ -447,6 +444,12 @@ SASS, https://sass-lang.com/
 
 .lowercase {
   text-transform: lowercase; }
+
+.small {
+  font-size: .9rem; }
+
+.tiny {
+  font-size: .7rem; }
 
 .filter-thumb-gallery > p, .thumb > p {
   font-size: 1rem; }
@@ -1871,7 +1874,8 @@ form .half-size:nth-of-type(1) {
 
 .hero-down-arrow {
   margin-top: 16px;
-  filter: invert(1);
+  -webkit-filter: invert(1);
+          filter: invert(1);
   width: 48px;
   opacity: .7; }
 
@@ -2216,7 +2220,8 @@ form .half-size:nth-of-type(1) {
   padding-right: 50px; }
 
 .footer-logo img {
-  filter: invert(1);
+  -webkit-filter: invert(1);
+          filter: invert(1);
   width: 100px; }
 
 .footer-column {
@@ -2256,13 +2261,13 @@ form .half-size:nth-of-type(1) {
   padding-bottom: 0; }
   .breadcrumb > p {
     font-size: .8rem;
-    font-weight: 100;
     display: inline-block; }
 
 .breadcrumb-logo {
   width: 28px;
   vertical-align: middle;
-  filter: invert(1); }
+  -webkit-filter: invert(1);
+          filter: invert(1); }
 
 .breadcrumb-arrow {
   vertical-align: middle;
@@ -2270,7 +2275,8 @@ form .half-size:nth-of-type(1) {
   height: 10px;
   margin-left: 10px;
   margin-right: 10px;
-  filter: invert(1); }
+  -webkit-filter: invert(1);
+          filter: invert(1); }
 
 .top-border {
   border-top: 1px solid rgba(0, 0, 0, 0.07);
@@ -2939,6 +2945,14 @@ input[type="text"].amazing-offer-error {
     height: 50px;
     background-color: #f1f1f1;
     text-align: center; }
+    .form_pincode input[type="tel"]::-webkit-input-placeholder {
+      text-align: center; }
+    .form_pincode input[type="tel"]::-moz-placeholder {
+      text-align: center; }
+    .form_pincode input[type="tel"]:-ms-input-placeholder {
+      text-align: center; }
+    .form_pincode input[type="tel"]::-ms-input-placeholder {
+      text-align: center; }
     .form_pincode input[type="tel"]::placeholder {
       text-align: center; }
     .form_pincode input[type="tel"]:hover {
@@ -4382,3 +4396,4 @@ form label:nth-of-type(2) {
 #my-collection .art-title {
   font-size: 2rem;
   font-weight: 400; }
+/*# sourceMappingURL=main.css.map */

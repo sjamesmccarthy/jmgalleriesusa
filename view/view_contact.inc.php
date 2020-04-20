@@ -12,6 +12,7 @@ if(isSet($this->data->routePathQuery[0])) {
     // [5] promo_code
     // [6] name
     // [7] email
+    // [8] edition
     
     foreach ($this->data->routePathQuery as $key => $value)
     {
@@ -37,9 +38,11 @@ if(isSet($this->data->routePathQuery[0])) {
 
     } else {
 
-        if(isSet($frame)) {
+        if(isSet($frame) AND $edition == 'tinyviews') {
+            if($frame != "PRINT-ONLY" && $cost <= 80) { $cost = $cost + 20;  $fc=20; }
+            if($frame != "PRINT-ONLY" && $cost >= 81) { $cost = $cost + 40; $fc=40; }
+            $frame = str_replace("$$", "$" . $fc, $frame);
             $formSizes = '<p><input type="text" id="contactsize" name="contactsize" value="' . $size . ' WITH ' . $frame .  ' FRAME" required></p>';
-            if($frame != "PRINT-ONLY" && $cost <= 80) { $cost = $cost + 20; }
         }
         if(isSet($promo_code) && $promo_code == "COLAMOF-SAVE52") {
             $formSizes = '<p><input type="text" id="contactsize" name="contactsize" value="60CM/16x20 WITH ' . $frame . ' FRAME" required></p>';

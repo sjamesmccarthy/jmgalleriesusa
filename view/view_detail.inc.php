@@ -57,7 +57,7 @@
     /* If as_GALLERY is set */
     if( $photo_meta['as_gallery'] == 1) {
         $ed_G = true;
-
+        $edition = "limited";
         // $as_editions_tmp .= "Edition of " . $this->config->limited_edition_max  . " plus 2 Artist Proofs";
         // $edition_desc = $as_editions_tmp . " / $1,000 USD / Handmade and signed with Certificate of Authenticity ";
 
@@ -68,6 +68,7 @@
         $gallery_details = '<p class="mt-32">Each piece of artwork comes ready-to-hang, framed in a premium wood frame with Tru Vue Museum Glass protecting the print. If you have any questions about our <a href="/styles">styles, frames and editions</a>, or would like to talk with an art consultant, please <a href="/contact">contact us via email</a>.</p>';
 
         $price_array = array('1000', '1350', '1950', '3000', '5500');
+        $default_price = $price_array[0];
 
         $sizes_frames = '<div class="col select-wrapper" style="width: 300px;  margin-right: 20px;">
             <label for="buysize"></label>
@@ -84,17 +85,20 @@
             <label for="frame"></label>
             <select id="frame" name="frame">
                 <!-- <option value="NATURAL-LIGHT">FRAME: Natural (light) </option> -->
-                <option value="DARK-WALNUT">FRAME: Dark Walnut (similar to a Dark Brown stain)</option>
-                <option value="ASH-GRAY">FRAME: Black (similar to a Light Black stain)</option>
-                <option value="SNOW-WHITE">FRAME: Whiskey (similar to a Light Brown stain)</option>
+                <option value="DARK-WALNUT">FRAME: Black Vodka (similar to a Dark Black stain)</option>
+                <option value="ASH-GRAY">FRAME: Whiskey (similar to a Medium Brown stain)</option>
+                <option value="SNOW-WHITE">FRAME: Bourbon (similar to a Light Brown stain)</option>
             </select>
-        </div>';
+            <span class="tiny ml-16"><a href="/styles">More information about frame styles</a></span>
+        </div>
+        <input type="hidden" name="edition" value="limited" />';
 
     }
     
     /* If as_OPEN is set */
     if( $photo_meta['as_open'] == 1) {
         $ed_O = true;
+        $edition = "tinyviews";
 
         // if($ed_G === true || $ed_S === true) { $as_editions_tmp .= ", "; }
         // $as_editions_tmp .= "";
@@ -103,15 +107,17 @@
         $btn = "Add To Cart +Checkout";
         $btn_link = '<a href="/contact?photo=' . $photo_meta['file_name'] . '&open=true">';
 
-        $price_array = array('20', '40', '60', '80');
-        
+        $price_array = array('20', '40', '60', '80', '120');
+        $default_price = $price_array[4];
+
         $sizes_frames = '<div class="col select-wrapper" style="width: 300px;  margin-right: 20px;">
             <label for="buysize"></label>
             <select id="buysize" name="buysize">
                 <option data-price="' . $price_array[0] . '"value="SIZE-4x6">SIZE: 4x6</option>
                 <option data-price="' . $price_array[1] . '"value="SIZE-8x8">SIZE: SQUARE 8x8 </option>
-                <option data-price="' . $price_array[2] . '"value="SIZE-8x10">SIZE: 8x10</option>
-                <option data-price="' . $price_array[3] . '"value="SIZE-8x8">SIZE: SQUARE 12x12 </option>
+                <option data-price="' . $price_array[2] . '"value="SIZE-8x12">SIZE: 8x12</option>
+                <option data-price="' . $price_array[3] . '"value="SIZE-12x12">SIZE: SQUARE 12x12 </option>
+                <option SELECTED data-price="' . $price_array[4] . '"value="SIZE-12x18">SIZE: 12x18 </option>
             </select>
         </div>
         
@@ -119,10 +125,12 @@
             <label for="frame"></label>
             <select id="frame" name="frame">
                 <option data-price="0" value="PRINT-ONLY">PRINT ONLY (NO FRAME)</option>
-                <option data-price="20" value="ASH-GRAY(+$20)">FRAME: Ash Gray (+20 USD)</option>
-                <option data-price="20" value="SNOW-WHITE(+$20)">FRAME: Snow White (+20 USD)</option>
+                <option data-price="20" value="ASH-GRAY(+$$)">FRAME: Ash Gray (+$$ USD)</option>
+                <option data-price="20" value="SNOW-WHITE(+$$)">FRAME: Snow White (+$$ USD)</option>
             </select>
-        </div>';
+            <span class="tiny ml-16"><a href="/styles">More information about frame styles and pricing, not eligible for Premium framing.</a></span>
+        </div>
+         <input type="hidden" name="edition" value="open" />';
 
     }
 
