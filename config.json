@@ -27,38 +27,5 @@
 
     "partials" : {
         "notice" : "true"
-    },
-
-    "heroimage" : {
-        "always_use" : "3",
-        "random" : "true",
-        "1" : {
-            "title" : "Flowers, Fields & Clouds",
-            "link" : "flowers-fields-clouds",
-            "image" : "dream-catchers.jpg",
-            "text" : "light",
-            "position" : "middle"
-        },
-        "2" : {
-            "title" : "Oceans, Lakes & Waterfalls",
-            "link" : "oceans-lakes-waterfalls",
-            "image" : "amnesia.jpg",
-            "text": "light",
-            "position": "middle"
-        },
-        "3" : {
-            "title" : "Architecture, Abstract & People",
-            "link" : "abstract-architecture-people",
-            "image" : "facade-to-the-sky.jpg",
-            "text": "light",
-            "position": "middle"
-        },
-        "4" : {
-            "title" : "Mountains, Deserts & Trees",
-            "link" : "mountains-deserts-trees",
-            "image" : "watkins-window.jpg",
-            "text": "light",
-            "position": "middle"
-        }
     }
 }

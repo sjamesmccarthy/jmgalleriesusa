@@ -3008,6 +3008,9 @@ input[type="text"].amazing-offer-error {
   border-color: red;
   opacity: 1; }
 
+.catalog-add--container form input[type="text"] {
+  margin-bottom: 10px; }
+
 .catalog-add--container form #add-collection {
   cursor: pointer;
   color: #2574A9;
@@ -3074,7 +3077,7 @@ input[type="text"].amazing-offer-error {
   top: 0;
   right: 0;
   background-color: #CCC;
-  height: 40px;
+  height: 43px;
   border-radius: 0 5px 5px 0;
   padding: 10px; }
 

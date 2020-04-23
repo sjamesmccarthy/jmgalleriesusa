@@ -44,7 +44,12 @@
                     <option value="ACTIVE" <?= ($status == "ACTIVE" ? "SELECTED" : ""); ?>>STATUS (ACTIVE)</option>
                     <option value="DISABLED" <?= ($status != "ACTIVE" ? "SELECTED" : ""); ?>>STATUS (DISABLED)</option>
                 </select> 
+                 <p id="make-featured" class="small mb-16 mt-16">
+                     <input <?= ($featured == "1" ? "CHECKED" : ""); ?> type="checkbox" id="featured" name="featured" value="1" /> 
+                     <label for="featured" style="color: #000"> Featured Homepage Cover (note: must be landscape)</label>
+                </p>
                 </div>
+
             </div>
 
             <div>
@@ -190,7 +195,7 @@
 jQuery(document).ready(function($){
     $('#sendform').on("click", function() {
         $(":input[required]").each(function () {                     
-        var myForm = $('#sendform');
+        var myForm = $('#catalog-add');
         if (!$myForm[0].checkValidity()) 
           {                
             $('#catalog-add').submit();             

@@ -721,27 +721,56 @@ class Core_Api
     public function api_Hero_Get_Image() {
 
         // Read in Config var JSON with title and description and link.
+        // Fetch from database
+        
+           /* Executes SQL and then assigns object to passed var */
+        if( $this->checkDBConnection(__FUNCTION__) == true) {
+          
+        $sql = "
+        SELECT
+        	PH.catalog_photo_id,
+        	PH.title,
+        	PH.file_name,
+        	PH.parent_collections_id,
+        	PH.featured,
+        	CAT.title AS category,
+        	PH.status,
+        	CAT.path,
+        	PV.count AS views,
+        	PV.updated AS lastview
+        FROM
+        	catalog_photo AS PH
+        	INNER JOIN catalog_collections AS CAT ON CAT.catalog_collections_id = PH.parent_collections_id
+        	RIGHT JOIN catalog_photo_views AS PV ON PH.catalog_photo_id = PV.catalog_photo_id
+        WHERE
+        	featured = '1'
+        ORDER BY
+        	RAND()
+        	DESC
+        LIMIT 4";
 
-        if($this->config->heroimage['random'] == "false") {
+            $result = $this->mysqli->query($sql);
 
-            $this->hero_title = $this->config->heroimage[$this->config->heroimage['always_use']]['title'];   
-            $this->hero_link  = $this->config->heroimage[$this->config->heroimage['always_use']]['link'];
-            $this->hero_image = $this->config->heroimage[$this->config->heroimage['always_use']]['image'];
-            $this->hero_text = $this->config->heroimage[$this->config->heroimage['always_use']]['text'];
-            $this->hero_position = $this->config->heroimage[$this->config->heroimage['always_use']]['position'];
-
-        } else {
-            /* Do some randoming here */
-            (int)$max= sizeOf($this->config->heroimage)-2;
-            $index = rand(1, $max);
-
-            $this->hero_title = $this->config->heroimage[$index]['title'];   
-            $this->hero_link  = $this->config->heroimage[$index]['link'];
-            $this->hero_image = $this->config->heroimage[$index]['image'];
-            $this->hero_text = $this->config->heroimage[$index]['text'];
-            $this->hero_position = $this->config->heroimage[$index]['position'];
-
+            if ($result->num_rows > 0) {
+            
+                while($row = $result->fetch_assoc())
+		        {
+		            $data[] = $row;
+		        }
+                
+            } 
+            
         }
+
+            /* Do some randoming here */
+            (int)$max= count($data)-1;
+            $index = rand(0, $max);
+
+            $this->hero_title = $data[$index]['category'];   
+            $this->hero_link  = $data[$index]['path'];
+            $this->hero_image = $data[$index]['file_name'] . '.jpg'; 
+            $this->hero_text = 'light';
+            $this->hero_position = 'middle';
 
     }
 
@@ -942,6 +971,7 @@ class Core_Api
             PH.title,
             PH.file_name,
             PH.parent_collections_id,
+            PH.featured,
             CAT.title AS category,
             PH.status,
             CAT.path,
@@ -1423,6 +1453,7 @@ class Core_Api
 
         /* Insert into database */
         $story = $this->mysqli->real_escape_string($_POST['story']);
+        if( !isSet($_POST['featured']) ) { $featured = '0'; }
 
         $sql = "UPDATE catalog_photo 
         SET 
@@ -1447,9 +1478,10 @@ class Core_Api
         status = '$status',
         on_display = '$on_display',
         as_gallery = '$as_gallery',
-        as_open = '$as_open'
+        as_open = '$as_open',
+        featured = '$featured'
         WHERE catalog_photo_id = '$catalog_photo_id' AND file_name = '$file_name'";
-        
+
         $result = $this->mysqli->query($sql);
         
         /* DELETE ALL catalog_collection_link records for this ID */
@@ -1494,6 +1526,7 @@ class Core_Api
         /* Insert into database */
         $story = $this->mysqli->real_escape_string($_POST['story']);
         $title = $this->mysqli->real_escape_string($_POST['title']);
+        if( !isSet($_POST['featured']) ) { $featured = '0'; }
 
         $sql = "
         INSERT INTO `catalog_photo` (
@@ -1521,7 +1554,8 @@ class Core_Api
         `on_display`, 
         `as_gallery`, 
         `as_studio`, 
-        `as_open`
+        `as_open`,
+        `featured`,
         ) VALUES ( 
             DEFAULT, 
             '$artist_id', 
@@ -1547,7 +1581,8 @@ class Core_Api
             '$on_display', 
             '$as_gallery', 
             '$as_studio', 
-            '$as_open'
+            '$as_open',
+            '$featured'
             )";
 
         $result = $this->mysqli->query($sql);

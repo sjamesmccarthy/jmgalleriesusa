@@ -45,7 +45,8 @@
                 { data: 'title',
                     "render": function(data, type, row, meta){
                         if(type === 'display'){
-                            data = '<a href="/studio/catalog-add?id=' + row.catalog_photo_id + '">' + data + '</a>';
+                            if(row.featured     == '1') { var feat = '<i class="fas fa-asterisk"></i>'; } else { var feat = ''; }
+                            data = '<a href="/studio/catalog-add?id=' + row.catalog_photo_id + '">' + data + ' ' + feat + '</a>';
                         }  
                         return data;
                     } 
