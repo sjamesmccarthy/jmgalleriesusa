@@ -37,7 +37,8 @@
         $('.notification').delay(5000).slideUp("slow").fadeOut(3000);
 
         $('#dataTable').DataTable( {
-            paging: false,
+            paging: true,
+            lengthMenu: [[50, 75, 100, -1], [50, 75, 100, "All"]],
             searching: true,
             oSearch: {"sSearch": "ACTIVE"},
             data: <?= $data_json ?>,

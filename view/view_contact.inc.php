@@ -22,7 +22,8 @@ if(isSet($this->data->routePathQuery[0])) {
 
     $formTitle = "CHECKOUT <span class='lowercase light'>for</span> <span class='light initialcaps'>" . $photo . "</span>";
     $subTitle = "Thank you for your interest in collecting a j.McCarthy Limited Edition";
-    $subject_PH = "PURCHASE ORDER for " . strtoupper($photo) . " with a " . $frame . " frame";
+    $subject_PH = "PURCHASE ORDER for " . strtoupper($photo);
+    // . " with a " . $frame . " frame";
     $message_PH = "IN THE BOX BELOW PLEASE TELL US THE FOLLOWING: <ul class='contact-ul mb-16'><li>Shipping Address (Provide Postal Code) or Pickup (Las Vegas, Nevada)</li><li>Phone Number, An art consultant will contact you within 24 hours to complete this order</li><li>Preferred Billing Method: Credit Card, Cash or BitCoin</li><li>And, any other questions you may have.</li></ul>";
     $button_label = "PLACE YOUR ORDER";
     $promo_field = '<p class="pt-16 pb-16"><input type="text" id="contactpromocode" name="contactpromocode" placeholder="PROMO CODE" value="' . $promo_code . '" /></p>';
@@ -30,25 +31,33 @@ if(isSet($this->data->routePathQuery[0])) {
     $subject_VAL = $subject_PH;
     $formType = "RequestQuoteForm"; 
 
-    if($_REQUEST['open']) {
-        $formSizes = "<div class='select-wrapper'><label for='buysize'></label><select name='buysize'><option value='---'>SELECT YOUR tinyViews&trade; EDITION SIZE</option><option vlaue='4x6'>4x6 ($20)</option><option vlaue='8x8'>8x8 ($40)</option><option vlaue='8x10'>8x10 ($80)</option></select></div>";
-        $promo_field = null;
-        $subject_VAL = $subject_PH . " tinyViews&trade; Edition";
+    // if($_REQUEST['open']) {
+        // $formSizes = "<div class='select-wrapper'><label for='buysize'></label><select name='buysize'><option value='---'>SELECT YOUR tinyViews&trade; EDITION SIZE</option><option vlaue='4x6'>4x6 ($20)</option><option vlaue='8x8'>8x8 ($40)</option><option vlaue='8x10'>8x10 ($80)</option></select></div>";
+        // $promo_field = null;
+        // $subject_VAL = $subject_PH . " tinyViews&trade; Edition";
         // $shipping = "Shipping for tinysView&trade; is a flat-rate $5 in the USA. For orders outside the USA we will contact you with an estimate.";
 
-    } else {
+    // } else {
 
         if(isSet($frame) AND $edition == 'tinyviews') {
             if($frame != "PRINT-ONLY" && $cost <= 80) { $cost = $cost + 20;  $fc=20; }
             if($frame != "PRINT-ONLY" && $cost >= 81) { $cost = $cost + 40; $fc=40; }
-            $frame = str_replace("$$", "$" . $fc, $frame);
-            $formSizes = '<p><input type="text" id="contactsize" name="contactsize" value="' . $size . ' WITH ' . $frame .  ' FRAME" required></p>';
+
+            if ($frame != "PRINT-ONLY") {
+                $frame = str_replace("$$", "$" . $fc, $frame);
+                $frame = 'WITH ' . $frame . ' FRAME';
+            } else {
+                $frame = 'PRINT-ONLY';
+            }
         }
-        if(isSet($promo_code) && $promo_code == "COLAMOF-SAVE52") {
-            $formSizes = '<p><input type="text" id="contactsize" name="contactsize" value="60CM/16x20 WITH ' . $frame . ' FRAME" required></p>';
-            $estimated_cost = "<h2>$480</h2>";
-        }
-    }
+
+        $formSizes = '<p><input type="text" id="contactsize" name="contactsize" value="' . urldecode($size) . ' ' . $frame .  '" required></p>';
+
+        // if(isSet($promo_code) && $promo_code == "COLAMOF-SAVE52") {
+        //     $formSizes = '<p><input type="text" id="contactsize" name="contactsize" value="60CM/16x20 WITH ' . $frame . ' FRAME" required></p>';
+        //     $estimated_cost = "<h2>$480</h2>";
+        // }
+    // }
 
     $estimated_cost = "<h2>" . $cost . " USD</h2>";
 

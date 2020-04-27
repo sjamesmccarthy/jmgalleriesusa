@@ -23,9 +23,27 @@
      if( file_exists($_SERVER['DOCUMENT_ROOT'] . "/catalog/__image/" . $photo_meta['file_name'] . '-tinyviews.jpg') ) {
 
         $tinyviewImage = '<div class="col"><img class="in-room-img"  src="/catalog/__image/' . $photo_meta['file_name'] . '-tinyviews.jpg" /><!-- <div class="bx-buyart-btn"><a target="_shop" href="/shop">tinyViews&trade; Edition &mdash; Shop Now</a></div>--></div>';
+        $tv=1;
+       
      } else {
          $tinyviewImage = null;
+         $tv=0;
      }
+
+     if( file_exists($_SERVER['DOCUMENT_ROOT'] . "/catalog/__image/" . $photo_meta['file_name'] . '-tinyviews-notes.jpg') ) {
+
+        $tinyviewNotesImage = '<div class="col"><img class="in-room-img"  src="/catalog/__image/' . $photo_meta['file_name'] . '-tinyviews-notes.jpg" /><!-- <div class="bx-buyart-btn"><a target="_shop" href="/shop">tinyViews&trade; Edition &mdash; Shop Now</a></div>--></div>';
+        $tinyviewNotesOption = '<option data-price="20" value="SIZE: NOTE-CARD Set Of 3">SIZE: 5x7 NOTE CARD (Set of 3)</option>'; 
+        $tv=1;
+     } else {
+         $tinyviewNotesImage = null;
+         $tinyviewNotesOption = null;
+         $tv=0;
+     }
+
+        if($tv == 1) {
+             $tinyViewFinePrint = '<div class="col-12"><p class="tiny">*Frames, envelopes, stamps, are not included with a tinyViews&trade; Edition. Sizes may vary from 4x6 to 12x18. Printed on high quality photo paper with a white border unless optionally framed.</p></div>';
+        }
 
     /* Determine if the "VirtualRoom" photo exists */
     if( file_exists($_SERVER['DOCUMENT_ROOT'] . "/catalog/__image/" . $photo_meta['file_name'] . '-room.jpg') ) {
@@ -73,11 +91,11 @@
         $sizes_frames = '<div class="col select-wrapper" style="width: 300px;  margin-right: 20px;">
             <label for="buysize"></label>
             <select id="buysize" name="buysize">
-                <option data-price="' . $price_array[0] . '" value="SIZE-60CM/16x24">SIZE: 60CM (approx. 16x24 inches)</option>
-                <option data-price="' . $price_array[1] . '" value="SIZE-76CM/20x30">SIZE: 76CM (approx. 20x30 inches)</option>
-                <option data-price="' . $price_array[2] . '"value="SIZE-91CM/24x36">SIZE: 91CM (approx. 24x36 inches)</option>
-                <option data-price="' . $price_array[3] . '"value="SIZE-144CM/30x45">SIZE: 144CM (approx. 30x45 inches)</option>
-                <option data-price="' . $price_array[4] . '"value="SIZE-152CM/40x60">SIZE: 152CM (approx. 40x60 inches)</option>
+                <option data-price="' . $price_array[0] . '" value="SIZE: 60CM/16x24">SIZE: 60CM (approx. 16x24 inches)</option>
+                <option data-price="' . $price_array[1] . '" value="SIZE: 76CM/20x30">SIZE: 76CM (approx. 20x30 inches)</option>
+                <option data-price="' . $price_array[2] . '"value="SIZE: 91CM/24x36">SIZE: 91CM (approx. 24x36 inches)</option>
+                <option data-price="' . $price_array[3] . '"value="SIZE: 144CM/30x45">SIZE: 144CM (approx. 30x45 inches)</option>
+                <option data-price="' . $price_array[4] . '"value="SIZE: 152CM/40x60">SIZE: 152CM (approx. 40x60 inches)</option>
             </select>
         </div>
         
@@ -107,17 +125,18 @@
         $btn = "Add To Cart +Checkout";
         $btn_link = '<a href="/contact?photo=' . $photo_meta['file_name'] . '&open=true">';
 
-        $price_array = array('20', '40', '60', '80', '120');
+        $price_array = array('10', '40', '60', '80', '120');
         $default_price = $price_array[4];
 
         $sizes_frames = '<div class="col select-wrapper" style="width: 300px;  margin-right: 20px;">
             <label for="buysize"></label>
             <select id="buysize" name="buysize">
-                <option data-price="' . $price_array[0] . '"value="SIZE-4x6">SIZE: 4x6</option>
-                <option data-price="' . $price_array[1] . '"value="SIZE-8x8">SIZE: SQUARE 8x8 </option>
-                <option data-price="' . $price_array[2] . '"value="SIZE-8x12">SIZE: 8x12</option>
-                <option data-price="' . $price_array[3] . '"value="SIZE-12x12">SIZE: SQUARE 12x12 </option>
-                <option SELECTED data-price="' . $price_array[4] . '"value="SIZE-12x18">SIZE: 12x18 </option>
+                <option data-price="' . $price_array[0] . '"value="SIZE: 4x6">SIZE: 4x6</option>
+                ' . $tinyviewNotesOption . '
+                <option data-price="' . $price_array[1] . '"value="SIZE: 8x8">SIZE: SQUARE 8x8 </option>
+                <option data-price="' . $price_array[2] . '"value="SIZE: 8x12">SIZE: 8x12</option>
+                <option data-price="' . $price_array[3] . '"value="SIZE: 12x12">SIZE: SQUARE 12x12 </option>
+                <option SELECTED data-price="' . $price_array[4] . '"value="SIZE: 12x18">SIZE: 12x18 </option>
             </select>
         </div>
         

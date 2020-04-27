@@ -343,7 +343,7 @@
     },
     "/tinyviews": {
         "template": "redirect",
-        "page": "https://www.etsy.com/shop/jmGalleriesUSA",
+        "page": "/all?filter=tinyviews",
         "component": "false",
         "title": "Shop tinyViews, Wall Mounted Prints and Books"
     },

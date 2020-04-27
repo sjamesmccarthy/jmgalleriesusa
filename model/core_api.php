@@ -741,7 +741,7 @@ class Core_Api
         FROM
         	catalog_photo AS PH
         	INNER JOIN catalog_collections AS CAT ON CAT.catalog_collections_id = PH.parent_collections_id
-        	RIGHT JOIN catalog_photo_views AS PV ON PH.catalog_photo_id = PV.catalog_photo_id
+        	LEFT JOIN catalog_photo_views AS PV ON PH.catalog_photo_id = PV.catalog_photo_id
         WHERE
         	featured = '1'
         ORDER BY
@@ -980,7 +980,7 @@ class Core_Api
         FROM
             catalog_photo AS PH
             INNER JOIN catalog_collections AS CAT on CAT.catalog_collections_id = PH.parent_collections_id
-            RIGHT JOIN catalog_photo_views AS PV ON PH.catalog_photo_id = PV.catalog_photo_id";
+            LEFT JOIN catalog_photo_views AS PV ON PH.catalog_photo_id = PV.catalog_photo_id";
 
             $result = $this->mysqli->query($sql);
 
@@ -1527,6 +1527,7 @@ class Core_Api
         $story = $this->mysqli->real_escape_string($_POST['story']);
         $title = $this->mysqli->real_escape_string($_POST['title']);
         if( !isSet($_POST['featured']) ) { $featured = '0'; }
+        if( !isSet($_POST['as_studio']) ) { $as_studio = '0'; }
 
         $sql = "
         INSERT INTO `catalog_photo` (
@@ -1555,7 +1556,7 @@ class Core_Api
         `as_gallery`, 
         `as_studio`, 
         `as_open`,
-        `featured`,
+        `featured`
         ) VALUES ( 
             DEFAULT, 
             '$artist_id', 

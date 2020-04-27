@@ -163,6 +163,7 @@
                     <option value="Tamron SP 24-70mm f/2.8 Di VC USD G2" <?= ($lens_model == "Tamron SP 24-70mm f/2.8 Di VC USD G2" ? "SELECTED" : ""); ?>>Tamron SP 24-70mm f/2.8 Di VC USD G2</option>
                     <option value="Tamron SP 70-200mm f/2.8 Di VC USD G2" <?= ($lens_model == "Tamron SP 70-200mm f/2.8 Di VC USD G2" ? "SELECTED" : ""); ?>>Tamron SP 70-200mm f/2.8 Di VC USD G2</option>
                     <option value="Tamron SP 70-300mm f/4-5.6 Di LD Macro" <?= ($lens_model == "Tamron SP 70-300mm f/4-5.6 Di LD Macro" ? "SELECTED" : ""); ?>>Tamron SP 70-300mm f/4-5.6 Di LD Macro</option>
+                    <option value="Nikon AF-S VR 24-120mm f.3.5-5.56G IF-ED" <?= ($lens_model == "Nikon AF-S VR 24-120mm f.3.5-5.56G IF-ED" ? "SELECTED" : ""); ?>>Nikon AF-S VR 24-120mm f.3.5-5.56G IF-ED</option>
                     <option value="Nikon AF-S DX Nikkor 18-55mm f/3.5-5.6G VR" <?= ($lens_model == "Nikon AF-S DX Nikkor 18-55mm f/3.5-5.6G VR" ? "SELECTED" : ""); ?>>Nikon AF-S DX Nikkor 18-55mm f/3.5-5.6G VR</option>
                     <option value="Nikon AF-S Nikkor 24-85mm f/3.5-4.5GG ED VR" <?= ($lens_model == "Nikon AF-S Nikkor 24-85mm f/3.5-4.5GG ED VR" ? "SELECTED" : ""); ?>>Nikon AF-S Nikkor 24-85mm f/3.5-4.5GG ED VR</option>
                     <option value="Nikon AF-S Nikkor 50mm 1.8G" <?= ($lens_model == "Nikon AF-S Nikkor 50mm 1.8G" ? "SELECTED" : ""); ?>>Nikon AF-S Nikkor 50mm 1.8G</option>

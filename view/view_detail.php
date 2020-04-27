@@ -39,10 +39,12 @@
         <?= $gallery_details ?>
     </div>
 
-    <div class="grid-2 mt-32">
+    <div class="grid mt-32">
             <?= $in_roomImg ?>
             <?= $in_roomImgAlt ?>
             <?= $tinyviewImage ?>
+            <?= $tinyviewNotesImage ?>
+            <?= $tinyViewFinePrint ?>
     </div>
 
 </form>
