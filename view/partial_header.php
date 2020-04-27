@@ -39,6 +39,8 @@
     <script>
     jQuery(document).ready(function($){
   
+        $(".notice-contianer").fadeIn('fast').delay(5000).slideUp('slow');
+
     });
     </script>
 

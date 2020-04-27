@@ -12,6 +12,8 @@ class Core_Site extends Core_Api
 
     public function __construct() {
 
+        date_default_timezone_set('America/Los_Angeles');
+
         /* Import the config file */
         $this->getJSON('config.json','config');
 
@@ -50,8 +52,12 @@ class Core_Site extends Core_Api
 
     public function initSession($name='defaultSession') {
 
+        $session_expires = $this->config->session['expires_1w'];
+
         /* Starting the session and setting the lifetime to 1 day */
-        session_start();   
+        session_start([
+            'cookie_lifetime' => $session_expires
+        ]);   
 
         $this->session_started = array(session_id(), $_SESSION);
     

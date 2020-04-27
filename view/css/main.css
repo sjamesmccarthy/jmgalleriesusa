@@ -2026,9 +2026,17 @@ form .half-size:nth-of-type(1) {
 #top-nav, #top-nav-home {
   z-index: 1001;
   position: absolute;
-  top: 48px;
+  top: 12px;
   max-width: 1440px;
   width: 100%; }
+
+.notice-banner {
+  font-family: lato, sans-serif;
+  background-color: #e4e4e4;
+  color: #000;
+  width: 100%;
+  padding: 20px;
+  text-align: center; }
 
 .topnav-logo {
   text-align: center;
@@ -2879,13 +2887,13 @@ input[type="text"].amazing-offer-error {
   clear: both; }
 
 /*amazing-offer*/
-.admin--main_container {
-  margin-top: 42px !important; }
-  .admin--main_container .summary {
+.admin--section .admin--main_container {
+  margin-top: -32px; }
+  .admin--section .admin--main_container .summary {
     margin-top: 32px; }
-  .admin--main_container .stat {
+  .admin--section .admin--main_container .stat {
     font-size: 5rem; }
-  .admin--main_container .divider {
+  .admin--section .admin--main_container .divider {
     border-left: 1px solid #CCC; }
 
 .signin--container label {

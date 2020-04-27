@@ -5,9 +5,18 @@
     // margin-top: 42px;
     z-index: 1001;
     position: absolute;
-    top: 48px;
+    top: 12px;
     max-width: 1440px;
     width: 100%;
+}
+
+.notice-banner {
+    font-family: lato, sans-serif; 
+    background-color: #e4e4e4; 
+    color: #000; 
+    width:100%; 
+    padding: 20px; 
+    text-align: center;
 }
 
 .top-nav {

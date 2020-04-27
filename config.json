@@ -27,5 +27,10 @@
 
     "partials" : {
         "notice" : "true"
+    },
+
+    "session" : {
+        "expires_1d" : "86400",
+        "expires_1w" : "604800"
     }
 }

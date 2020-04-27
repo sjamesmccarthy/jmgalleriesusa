@@ -1,12 +1,9 @@
 .admin--section {
- 
-   
-    
-}
-    
-.admin--main_container {
-        margin-top: 42px !important;
 
+    .admin--main_container {
+
+    margin-top: -32px;
+    
         .summary {
             margin-top: 32px;
         }
@@ -18,4 +15,5 @@
         .divider {
             border-left: 1px solid #CCC;
         }
+    }
 }
