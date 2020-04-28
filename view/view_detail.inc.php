@@ -9,6 +9,29 @@
     $photo_meta = $this->api_Catalog_Photo('0',$this->photo_path);
     // $this->printp_r($photo_meta);
 
+    switch($photo_meta['parent_collections_id']) {
+
+        case "1":
+        $catalog_code = 'OLW';
+        break;
+
+        case "2":
+        $catalog_code = 'MDT';
+        break; 
+
+        case "3":
+        $catalog_code = 'AAP';
+        break; 
+
+        case "5":
+        $catalog_code = 'FFC';
+        break; 
+
+        default:
+        $catalog_code = 'UNKNOWN_VALUE';
+
+    }
+
     if(isSet($photo_meta['catalog_photo_id'])) {
         $this->api_Update_Photo_Viewed($photo_meta['catalog_photo_id']);
     }
@@ -76,6 +99,8 @@
     if( $photo_meta['as_gallery'] == 1) {
         $ed_G = true;
         $edition = "limited";
+        $catalog_no = $catalog_code . $photo_meta['catalog_photo_id'] . "LE";
+        
         // $as_editions_tmp .= "Edition of " . $this->config->limited_edition_max  . " plus 2 Artist Proofs";
         // $edition_desc = $as_editions_tmp . " / $1,000 USD / Handmade and signed with Certificate of Authenticity ";
 
@@ -117,6 +142,7 @@
     if( $photo_meta['as_open'] == 1) {
         $ed_O = true;
         $edition = "tinyviews";
+        $catalog_no = $catalog_code . $photo_meta['catalog_photo_id'] . "OT";
 
         // if($ed_G === true || $ed_S === true) { $as_editions_tmp .= ", "; }
         // $as_editions_tmp .= "";
@@ -154,6 +180,7 @@
     }
 
     // $as_editions = $as_editions_tmp;
+    $catalog_no_hidden = "<input type='hidden' name='catalog_no' value='" . $catalog_no . "' />";
  
     /* Photo orientation */
     if($photo_meta['orientation'] == "portrait") {

@@ -972,6 +972,8 @@ class Core_Api
             PH.file_name,
             PH.parent_collections_id,
             PH.featured,
+            PH.as_open,
+            PH.as_gallery,
             CAT.title AS category,
             PH.status,
             CAT.path,

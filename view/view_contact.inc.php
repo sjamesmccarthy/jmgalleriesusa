@@ -13,13 +13,14 @@ if(isSet($this->data->routePathQuery[0])) {
     // [6] name
     // [7] email
     // [8] edition
+    // [9] catalog_no
     
     foreach ($this->data->routePathQuery as $key => $value)
     {
         $query_str = explode("=", $value);
         ${$query_str[0]} = urldecode($query_str[1]);
     }    
-
+   
     $formTitle = "CHECKOUT <span class='lowercase light'>for</span> <span class='light initialcaps'>" . $photo . "</span>";
     $subTitle = "Thank you for your interest in collecting a j.McCarthy Limited Edition";
     $subject_PH = "PURCHASE ORDER for " . strtoupper($photo);
@@ -51,7 +52,7 @@ if(isSet($this->data->routePathQuery[0])) {
             }
         }
 
-        $formSizes = '<p><input type="text" id="contactsize" name="contactsize" value="' . urldecode($size) . ' ' . $frame .  '" required></p>';
+        $formSizes = '<p><input type="text" id="contactsize" name="contactsize" value="' . urldecode($size) . ' ' . $frame . ' [CATALOG NUMBER ' . $catalog_no . ']" required /></p>';
 
         // if(isSet($promo_code) && $promo_code == "COLAMOF-SAVE52") {
         //     $formSizes = '<p><input type="text" id="contactsize" name="contactsize" value="60CM/16x20 WITH ' . $frame . ' FRAME" required></p>';

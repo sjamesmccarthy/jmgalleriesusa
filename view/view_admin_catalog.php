@@ -18,7 +18,8 @@
                             <tr>
                                 <th>Title</th>
                                 <th>Catalog Category</th>
-                                <th>Status</th>
+                                <th>Edition</th>
+                                <th style="display: none">Status</th>
                                 <th>Views</th>
                                 <th>Last View</th>
                             </tr>
@@ -46,14 +47,28 @@
                 { data: 'title',
                     "render": function(data, type, row, meta){
                         if(type === 'display'){
+                            if(row.category == "Oceans, Lakes & Waterfalls") { var cate_code = 'OLW'; }
+                            if(row.category == "Flowers, Fields & Clouds") { var cate_code = 'FFC'; }
+                            if(row.category == "Abstract, Architecture & People") { var cate_code = 'AAP'; }
+                            if(row.category == "Mountains, Deserts & Trees") { var cate_code = 'MDT'; }
+                            if(row.as_open == '1') { var ed = 'OT'; } else { var ed = 'LE'; }
                             if(row.featured     == '1') { var feat = '<i class="fas fa-asterisk"></i>'; } else { var feat = ''; }
-                            data = '<a href="/studio/catalog-add?id=' + row.catalog_photo_id + '">' + data + ' ' + feat + '</a>';
+                            data = feat + ' <a href="/studio/catalog-add?id=' + row.catalog_photo_id + '">' + data + ' ' + '(' + cate_code + row.catalog_photo_id + ed + ')</a>';
                         }  
                         return data;
                     } 
                 },
                 { data: 'category' },
-                { data: 'status' },
+                { data: 'as_open',
+                    "render": function(data, type, row, meta){
+                        if(type === 'display'){
+                            if(row.as_open == '1') { var edition = 'OPEN'; } else { var edition = 'LIMITED'; }
+                            data = edition;
+                        }  
+                        return data;
+                    } 
+                },
+                { data: 'status', "bVisible":false },
                 { data: 'views' },
                 { data: 'lastview',
                     "render": function(data, type, row, meta){

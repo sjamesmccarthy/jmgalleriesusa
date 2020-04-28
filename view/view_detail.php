@@ -12,6 +12,7 @@
     <article class="">
     <form id="limited_ed_form" action="/contact" method="post">
     <input type="hidden" id="g-recaptcha-response" name="g-recaptcha-response" />
+    <?= $catalog_no_hidden ?>
 
     <div class="grid">
 
@@ -92,7 +93,7 @@
             //   console.log('validation PASS');
             // }
 
-              var url = "/contact?photo=<?= $photo_meta['file_name'] ?>&size=" + $('#buysize').val() + "&frame=" + $('#frame').val() + "&cost=" + $("#buysize option:selected").attr("data-price") + '&edition=<?= $edition ?>' ;
+              var url = "/contact?photo=<?= $photo_meta['file_name'] ?>&size=" + $('#buysize').val() + "&frame=" + $('#frame').val() + "&cost=" + $("#buysize option:selected").attr("data-price") + '&edition=<?= $edition ?>' + '&catalog_no=<?= $catalog_no ?>' ;
 
               grecaptcha.ready(function() {
 
