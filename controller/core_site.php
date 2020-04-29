@@ -52,12 +52,9 @@ class Core_Site extends Core_Api
 
     public function initSession($name='defaultSession') {
 
-        $session_expires = $this->config->session['expires_1w'];
-
-        /* Starting the session and setting the lifetime to 1 day */
-        session_start([
-            'cookie_lifetime' => $session_expires
-        ]);   
+        // This is now handled in the php.ini file at document root
+        // $session_expires = $this->config->session['expires_1w'];
+        session_start();   
 
         $this->session_started = array(session_id(), $_SESSION);
     
