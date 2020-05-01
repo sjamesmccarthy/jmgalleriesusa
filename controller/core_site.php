@@ -54,9 +54,11 @@ class Core_Site extends Core_Api
 
         // This is now handled in the php.ini file at document root
         // $session_expires = $this->config->session['expires_1w'];
-        session_start();   
 
-        $this->session_started = array(session_id(), $_SESSION);
+        if (!isset($_SESSION['uid'])) {
+            session_start();
+            $this->session_started = array(session_id(), $_SESSION);
+        }
     
     }
     

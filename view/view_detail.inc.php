@@ -84,7 +84,7 @@
 
 
     $super_photo = ' 
-    <div class="col-12 mb-32 ' . $photo_meta['orientation'] . '">
+    <div class="img-container col-12 mb-32 ' . $photo_meta['orientation'] . '">
         <p style="text-align: center">
         <img src="/catalog/__image/' . $photo_meta['file_name'] . '.jpg" />
         </p>

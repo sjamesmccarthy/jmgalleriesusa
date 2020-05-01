@@ -2,7 +2,7 @@
 <section id="detail">
 
 <!-- <section class="mt-72"> -->
-    <article class="">
+    <article style="margin-top: -30px">
        <?= $super_photo ?>
     </article>
 <!-- </section> -->
