@@ -2452,6 +2452,7 @@ form .half-size:nth-of-type(1) {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+  position: relative;
   margin-top: 0px;
   width: 100%;
   max-height: 1024px;
@@ -2756,8 +2757,8 @@ form .half-size:nth-of-type(1) {
 .notice-contianer {
   position: absolute;
   top: 0;
-  bottom: 0;
   width: 100%;
+  z-index: 1;
 }
 
 .notice-banner {
@@ -3408,6 +3409,8 @@ form #buysize, form #frame {
 .img-container {
   border-radius: 0 0 20px 20px;
   padding: 0 !important;
+  -webkit-box-shadow: 0px 20px 25px 0px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 20px 25px 0px rgba(0, 0, 0, 0.3);
 }
 
 .portrait {
@@ -3419,7 +3422,6 @@ form #buysize, form #frame {
   width: 50%;
   border-radius: 0;
   vertical-align: middle;
-  z-index: 2;
 }
 
 .landscape {

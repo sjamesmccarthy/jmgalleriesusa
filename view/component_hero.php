@@ -35,8 +35,8 @@ if ($catalog == '') {
     END;
 } else {
     $html = <<< END
-        <div id="hero-catalog">
-        </div>
+        <!-- <div id="hero-catalog">
+        </div> -->
     END;
 
 }
