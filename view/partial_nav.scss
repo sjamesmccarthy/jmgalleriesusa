@@ -10,21 +10,6 @@
     width: 100%;
 }
 
-.notice-contianer {
-    position: absolute;
-    top: 0;
-    width:100%;
-    z-index:1; 
-}
-
-.notice-banner {
-    font-family: lato, sans-serif; 
-    background-color: #e4e4e4; 
-    color: #000; 
-    padding: 20px; 
-    text-align: center;
-}
-
 .top-nav {
     // margin-top: 32px;
 }
@@ -62,4 +47,18 @@
 
 .heading {
     font-weight: 800;
+}
+
+/* FOR NOTICE */
+.notice-container {
+    position: absolute;
+    top: 0;
+    width:100%;
+    z-index:1; 
+}
+
+.notice-banner {
+    font-family: lato, sans-serif; 
+    padding: 20px; 
+    text-align: center;
 }

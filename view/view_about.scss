@@ -16,7 +16,7 @@
 .name-statement {
     padding-top: 40px;
     line-height: 1.5;
-    font-size: 2em;
+    font-size: 2.5em;
 }
 
 .bio-profile-pic-overlay {
@@ -35,14 +35,14 @@
     background-color: #FFF;
     width: 100%;
     z-index: 0;
-    opacity: .1 ;
+    opacity: .5 ;
     position: absolute;
     top: 0;
-    left: 0;
+    left: -30px;
     border: 1px dashed #000;
     padding: 30px;
-    -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
-    filter: grayscale(100%);
+    // -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+    // filter: grayscale(100%);
 }
 
 .bio-copy {
@@ -58,6 +58,7 @@
     margin-left: -50px;
     display: inline-block;
     background-color: #FFF;
+    padding: 10px;
 }
 
 .timeline-date {

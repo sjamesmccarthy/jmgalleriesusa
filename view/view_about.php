@@ -5,7 +5,7 @@
                 <!-- <img style="width: 100%" src="/view/image/upper-webber-falls.png" /> -->
                 <img class="bio-profile-pic" src="/view/image/profile_img.jpg" />
         </div>
-        <div class="col">
+        <div class="col pl-16">
                 <p class="name blue">j.McCarthy</p>
                 <p class="name-title">ARTIST STATEMENT</p>
                 <p class="name-statement blue">
@@ -17,9 +17,8 @@
     </div>
 
     <div class="grid-center">
-        <div class="col-12-center pt-48">
+        <div class="col-12-center">
 
-            <h3>TIMELINE</h3>
 
             <!-- <p class="bio-copy mt-16">
             j.McCarthy's more popular pieces include, "Happiest Time of Day", "Between The Hills", "Bonsai Zen, "Snowy Pines", "Emigrant's Fog" and "Never Ending Story". Framed editions of these pieces can sometimes be viewed at many of his <a href="/exhibits">pop-up exhibits</a> which include local-owned businesses around the locations he photographs.
@@ -29,6 +28,10 @@
                 class="timeline">
 
             <!-- <li class="timeline-date">1973</li> -->
+            <li 
+                class="timeline-history mb-16">
+            <h3>TIMELINE</h3>
+            </li>
             <li 
                 class="timeline-history">
                 <h3>1973</h3>

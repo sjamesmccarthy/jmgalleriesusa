@@ -137,7 +137,7 @@
                 <div class="select-wrapper half-size">
                 <select id="orientation" name="orientation">
                     <option value="landscape" <?= ($orientation == "landscape" ? "SELECTED" : ""); ?>>Landscape</option>
-                    <option value="portrait" <?= ($orentation == "portrait" ? "SELECTED" : ""); ?>>Portrait</option>
+                    <option value="portrait" <?= ($orientation == "portrait" ? "SELECTED" : ""); ?>>Portrait</option>
                 </select> 
                 </div>
                 <div class="half-size">

@@ -520,6 +520,9 @@ class Core_Api
 
     public function api_Update_Photo_Viewed($photo_id) {
 
+        /* Skip for ignoreIP list */
+        // If IP is in array skip logging 
+        
         if($photo_id == 0) {
             $this->log(array("key" => "public", "value" => "Invalid PhotoId (" . $photo_id . "::" . $this->page->photo_path . "::".  __FUNCTION__ . "::" . $this->routes->URI->url . "::" . $this->routes->URI->useragent . ")", "type" => "warning"));
         }

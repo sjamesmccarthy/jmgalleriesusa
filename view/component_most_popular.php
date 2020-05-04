@@ -20,7 +20,7 @@
                     $grid_css = 'col';
                 }
 
-                $thumb_html .= '<div class="padding: 0 10px; overflow-hidden ' . $grid_css . '">';
+                $thumb_html .= '<div style="padding: 0 10px;" class="overflow-hidden ' . $grid_css . '">';
                 $thumb_html .= '<a href="/' . $v['cate_path'] . "/" . $img_file . '"><img class="filmstrip-thumb" src="/catalog/__thumbnail/' .$img_file . '.jpg" /></a><p class="blue larger"><a href="/' . $v['cate_path'] . "/" . $img_file . '">' . $v['title'] . '</a></p></div>';
 
                 if($count == 3) { $count = 0; } else { $count++; }

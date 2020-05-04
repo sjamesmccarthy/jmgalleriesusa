@@ -8,6 +8,7 @@
 .pnp.js
 config.codekit3
 prepros-6.config
+prepros.config
 
 # testing
 /coverage

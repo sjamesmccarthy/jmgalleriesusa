@@ -1,0 +1,17 @@
+{ 
+   	"notices": {
+		"state": "true",
+		"covid": {
+			"title": "COVID-19",
+			"content": "DUE TO THE CORONAVIRUS GLOBAL PANDEMIC OF 2020 YOUR ORDER MAY BE DELAYED",
+			"type": "ALERT",
+			"timeout": "600"
+		},
+        "sale": {
+			"title": "tinyViews Sale",
+			"content": "ANY 12x18 tinyViews Print Now $60 With FREE Shipping.",
+			"type": "NORMAL",
+			"timeout": "600"
+		}
+	}
+}

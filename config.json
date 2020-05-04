@@ -1,17 +1,17 @@
 { 
+    "site_name": "jM Galleries",
+    "email" : "james@jmgalleries.com",
+    "phone" : "951-708-1831",
+    "copyright" : "&copy; 2013-2020 jMcCarthy, jM Galleries is a &reg; trademark of James McCarthy",
+    "coa_contract" : "md5[(title.nospaces).(series).(edition).(timestamp)]",
+    "limited_edition_max" : "24",
+
     "package_name": "jmGweb",
     "package_version" : "v1.2.1586970407",
     "package_update_uri": "//jmgalleriesusa.com/updates.php",
     "package_git" : "//github.com/sjamesmccarthy/jmgalleriesusa",
     "package_license" : "MIT",
-
-    "site_name": "jM Galleries",
-    "copyright" : "&copy; 2013-2020 jMcCarthy, jM Galleries is a &reg; trademark of James McCarthy",
-    "email" : "james@jmgalleries.com",
-    "phone" : "951-708-1831",
-
-    "coa_contract" : "md5[(title.nospaces).(series).(edition).(timestamp)]",
-    "limited_edition_max" : "24",
+    "package_blacklist" : "::1||70.170.39.149",
 
     "prefix" : {
         "template" : "tpl_",
@@ -22,15 +22,25 @@
     },
 
     "components" : {
-        "polarized" : "false"
+        "polarized" : "false",
+        "notices" : "true",
+        "newsletter" : "true"
     },
 
-    "partials" : {
-        "notice" : "true"
-    },
-
-    "session" : {
-        "expires_1d" : "86400",
-        "expires_1w" : "604800"
-    }
+   	"notices": {
+		"cv19": {
+			"title": "COVID-19",
+			"content": "DUE TO THE CORONAVIRUS GLOBAL PANDEMIC OF 2020 YOUR ORDER MAY BE DELAYED",
+			"type": "ALERT",
+			"timeout": "600",
+    		"state": "false"
+		},
+        "tvsale": {
+			"title": "tinyViews Sale",
+			"content": "ANY 12x18 tinyViews Print Now $60 With FREE Shipping.",
+			"type": "NORMAL",
+			"timeout": "600",
+    		"state": "false"
+		}
+	}
 }

@@ -287,6 +287,13 @@
         "component": "true",
         "title": "Adding New Collector Profile"
     },
+    "/studio/settings": {
+        "template": "page",
+        "page": "admin_settings",
+        "auth": "true",
+        "component": "true",
+        "title": "Update Settings"
+    },
     "/about": {
         "template": "page",
         "page": "about",

@@ -1,5 +1,8 @@
 <?php
 
+/* Dependency To */
+/* component_gallery_thumbs.php, component_new_releases.php, view_catalog.inc.php */
+
     $count=0;
     $catalog = ltrim($this->page->catalog_path, '/');
 
@@ -24,11 +27,11 @@
         if( !$catalog_photos['error']) {
             foreach($catalog_photos as $k => $v) {
                 
-                if($v['as_gallery'] == 1) { $data_filter_G = 'f-gallery'; $desc_editions = "<p>Edition of " . $this->config->limited_edition_max  . " plus 2 Artist Proofs</p>"; $available_sizes = "16x24, 20x30 24x36, 30x45, 40x60"; } else { $data_filter_G = null;  }
-                // if($v['as_studio'] == 1) {$data_filter_S = 'f-studio'; $desc_editions = "<p>tinyViews&trade; Edition only</p>"; $available_sizes = "16x24, 20x30 24x36, 30x45, 40x60"; } else { $data_filter_S = null; }
+                if($v['as_gallery'] == 1) { $data_filter_G = 'f-gallery'; $desc_editions = "<p>Edition of " . $this->config->limited_edition_max  . " plus 2 Artist Proofs</p>"; $available_sizes = "16x24, 20x30 24x36"; } else { $data_filter_G = null;  }
+                // if($v['as_studio'] == 1) {$data_filter_S = 'f-studio'; $desc_editions = "<p>tinyViews&trade; Edition only</p>"; $available_sizes = "16x24, 20x30 24x36"; } else { $data_filter_S = null; }
                 // if($v['as_open'] == 1) { $data_filter_O = 'f-open'; $desc_editions = "<p>tinyViews&trade; Edition only</p>"; $available_sizes = "4x6, 8x8, 8x10"; } else { $data_filter_O = null; }
-                if($v['as_studio'] == 1) {$desc_editions = "<p>Giclée, tinyViews&trade; Edition</p>"; $available_sizes = "16x24, 20x30 24x36, 30x45, 40x60"; } else { $data_filter_S = null; }
-                if($v['as_open'] == 1) { $desc_editions = "<p>Giclée, tinyViews&trade; Edition</p>"; $available_sizes = "4x6, 8x8, 8x12, 12x12, 12x18"; } else { $data_filter_O = null; }
+                if($v['as_studio'] == 1) {$desc_editions = "<p>Giclée, tinyViews&trade; Edition</p>"; $available_sizes = "16x24, 20x30 24x36"; } else { $data_filter_S = null; }
+                if($v['as_open'] == 1) { $desc_editions = "<p>Giclée, tinyViews&trade; Edition</p>"; $available_sizes = "5x7, 8x8, 8x12, 12x18"; } else { $data_filter_O = null; }
            
                 
                 $data_filters = "$data_filter_G $data_filter_S $data_filter_O $data_filter_T";

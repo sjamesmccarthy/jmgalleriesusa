@@ -151,13 +151,13 @@
         $btn = "Add To Cart +Checkout";
         $btn_link = '<a href="/contact?photo=' . $photo_meta['file_name'] . '&open=true">';
 
-        $price_array = array('10', '40', '60', '80', '120');
+        $price_array = array('15', '40', '60', '80', '120');
         $default_price = $price_array[4];
 
         $sizes_frames = '<div class="col select-wrapper" style="width: 300px;  margin-right: 20px;">
             <label for="buysize"></label>
             <select id="buysize" name="buysize">
-                <option data-price="' . $price_array[0] . '"value="SIZE: 4x6">SIZE: 4x6</option>
+                <option data-price="' . $price_array[0] . '"value="SIZE: 5x7">SIZE: 5x7</option>
                 ' . $tinyviewNotesOption . '
                 <option data-price="' . $price_array[1] . '"value="SIZE: 8x8">SIZE: SQUARE 8x8 </option>
                 <option data-price="' . $price_array[2] . '"value="SIZE: 8x12">SIZE: 8x12</option>

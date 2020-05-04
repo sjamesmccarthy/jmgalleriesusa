@@ -53,12 +53,6 @@ jQuery(document).ready(function($){
 
             </div>
 
-            <!-- <div class="toolbox">
-                <ul class="manage">
-                <li class="manage"><a href="/studio/manage">DASHBOARD</a></li>
-                </ul>
-            </div> -->
-
             <div class="toolbox">
                 <ul class="catalog catalog-add">
                 <li class="catalog catalog-add"><a href="/studio/catalog">Web Catalog</a><p class="add-icon-nav"><a href="/studio/catalog-add"><i class="fas fa-plus-circle"></i></a></p></li>
@@ -103,7 +97,13 @@ jQuery(document).ready(function($){
 
             <div class="toolbox">
                 <ul class="users users-add">
-                <li class="users users-add"><a href="/studio/users">User Management</a><p class="add-icon-nav"><a href="/studio/users-add"><i class="fas fa-plus-circle"></i></a></p></li>
+                <li class="users users-add"><a href="/studio/users">User Management</a><p class="add-icon-nav"><i class="fas fa-lock disabled"></i></p></li>
+                </ul>
+            </div>
+
+            <div class="toolbox">
+                <ul class="settings settings-add">
+                <li class="settings settings-add"><a href="/studio/settings">Settings</a><p class="add-icon-nav"><i class="fas fa-lock disabled"></i></p></li>
                 </ul>
             </div>
 

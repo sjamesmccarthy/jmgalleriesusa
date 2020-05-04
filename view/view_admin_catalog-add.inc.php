@@ -17,6 +17,7 @@
 
         $edit_data = $this->api_Catalog_Photo($edit_id);
         $this->data = $edit_data;
+
         extract($edit_data, EXTR_PREFIX_SAME, "dup");
 
         $collections_data = $this->api_Admin_Get_CollectionsByPhoto($catalog_photo_id, $parent_collections_id);
