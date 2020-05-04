@@ -40,13 +40,13 @@
         <?= $gallery_details ?>
     </div>
 
-    <div class="grid mt-32">
+    <div id="alt-imgs" class="grid mt-32">
             <?= $in_roomImg ?>
             <?= $in_roomImgAlt ?>
             <?= $tinyviewImage ?>
             <?= $tinyviewNotesImage ?>
-            <?= $tinyViewFinePrint ?>
     </div>
+            <?= $tinyViewFinePrint ?>
 
 </form>
 </article>
