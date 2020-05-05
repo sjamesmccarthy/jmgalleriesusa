@@ -3009,5 +3009,54 @@ public function api_Admin_Update_Settings() {
 
     }
 
+public function api_Insert_Order() {
+
+         /* extract Data Array */
+        extract($_POST, EXTR_PREFIX_SAME, "dup");
+
+        $item_pack = json_encode(array(
+            "edition"=>$edition,
+            "title"=>$title,
+            "size"=>$size,
+            "framing"=>$framing,
+            "catalog_id"=>$catalog_id
+        ));
+        
+        /* Executes SQL and then assigns object to passed var */
+        if( $this->checkDBConnection(__FUNCTION__) == true) {
+
+           /* Insert into product_customer table */
+            $sql = "
+               INSERT INTO `jmgaller_iesusa`.`product_customer` 
+               (`name`, `email`, `phone`, `address`, `address_other`, `city`, `state`, `postal_code`,`comments`) 
+               VALUES 
+               ('{$contactname}', '{$contactemail}', '{$phone}', '{$address}', '{$address_other}', '{$city}', '{$state}', '{$postalcode}', '{$comments}');";
+
+            $result = $this->mysqli->query($sql);
+            $customer_id = $this->mysqli->insert_id;
+
+            /* Insert into product_order table */
+             $sql_po = "
+               INSERT INTO `jmgaller_iesusa`.`product_order` 
+               (`product_customer_id`, `item`, `quantity`, `price`, `tax`, `shipping`, `discount`, `invoice_number`) 
+               VALUES 
+               ('{$customer_id}', '{$item_pack}', '1', '{$price}', '0', '0', '{$promocode}', '{$invoice_no}');";
+
+            $result_po = $this->mysqli->query($sql_po);
+
+            if ($result == TRUE) {
+                $data['result'] = '200';
+                 $this->log(array("key" => "api", "value" => "Order Processed for" . $contactname, "type" => "success"));
+            } else {
+                $data['error'] = "SQL UPDATE FAILED " . $photo_id;
+                $data['sql'] = $sql;
+                $this->log(array("key" => "api", "value" => "Failed To Process Order for " . $contactname, "type" => "failure"));
+            }	
+            
+        }
+
+        return($data);
+    }
+
 }
 ?>

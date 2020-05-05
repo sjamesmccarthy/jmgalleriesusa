@@ -10,6 +10,10 @@
  * @Copyright: 2017, 2019
  */
 
+require_once( $_SERVER["DOCUMENT_ROOT"] . '/model/core_api.php');
+require_once( $_SERVER["DOCUMENT_ROOT"] . '/controller/core_site.php');
+$core = new Core_Site();
+
  /* CONSTANTS */
 define('EMAIL_TO', 'james@jmgalleries.com');
 define('TIMESTAMP', time());
@@ -44,6 +48,7 @@ if ($recaptcha->score >= 0.5) {
 	switch($_POST['formType']) {
 		
 		case "AmazingOfferForm":
+            /* deprecated */
 			$to = EMAIL_TO;
 			$subject = 'AMAZING_ORDER: US-' . TIMESTAMP;
 			$header_from = "FROM: " . $_POST['contactfirstname'] . " <'" . $_POST['contactemail'] . "'>";
@@ -67,9 +72,10 @@ if ($recaptcha->score >= 0.5) {
 			$header_from = "FROM: " . $_POST['contactname'] . " <'" . $_POST['contactemail'] . "'>";
 			$reply_to = $_POST['contactemail'];
 			$sendReply = '1';
-			$send_reply_subject = 'YOUR QUOTE REQUEST';
-			$send_reply_message = 'Thank you for your quote request. An art consultant will be in contact with you at, ' . $_POST['contactemail'] . ' within 48 hours to answer any of your questions you have about our limited-edition, fine-art.' . "\r\n\r\n" . "Thank you for your support!\r\nJames, jmGalleries, https://jmgalleriesusa.com\r\n951-708-1831 PST";
-			break;
+			$send_reply_subject = 'YOUR ORDER CONFIRMATION NUMBER: ' . $_POST['invoice_no'];
+			$send_reply_message = 'Thank you for your order. An art consultant will be in contact with you at, ' . $_POST['contactemail'] . ' within 48 hours to complete your order. This will include providing you with a final invoice through our payment center, Square.' . "\r\n\r\n" . "Thank you for your support!\r\nJames, jmGalleries, https://jmgalleriesusa.com\r\n951-708-1831 PST";
+			$core->api_Insert_Order();
+            break;
 
 		case "SubscribeForm":
 			$to = EMAIL_TO;

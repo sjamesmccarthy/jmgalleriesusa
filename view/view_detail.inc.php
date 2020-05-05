@@ -113,11 +113,11 @@
         $sizes_frames = '<div class="col select-wrapper" style="width: 300px;  margin-right: 20px;">
             <label for="buysize"></label>
             <select id="buysize" name="buysize">
-                <option data-price="' . $price_array[0] . '" value="SIZE: 60CM/16x24">SIZE: 60CM (approx. 16x24 inches)</option>
-                <option data-price="' . $price_array[1] . '" value="SIZE: 76CM/20x30">SIZE: 76CM (approx. 20x30 inches)</option>
-                <option data-price="' . $price_array[2] . '"value="SIZE: 91CM/24x36">SIZE: 91CM (approx. 24x36 inches)</option>
-                <option data-price="' . $price_array[3] . '"value="SIZE: 144CM/30x45">SIZE: 144CM (approx. 30x45 inches)</option>
-                <option data-price="' . $price_array[4] . '"value="SIZE: 152CM/40x60">SIZE: 152CM (approx. 40x60 inches)</option>
+                <option data-price="' . $price_array[0] . '" value="60CM/16x24">SIZE: 60CM (approx. 16x24 inches)</option>
+                <option data-price="' . $price_array[1] . '" value="76CM/20x30">SIZE: 76CM (approx. 20x30 inches)</option>
+                <option data-price="' . $price_array[2] . '"value="91CM/24x36">SIZE: 91CM (approx. 24x36 inches)</option>
+                <option data-price="' . $price_array[3] . '"value="144CM/30x45">SIZE: 144CM (approx. 30x45 inches)</option>
+                <option data-price="' . $price_array[4] . '"value="152CM/40x60">SIZE: 152CM (approx. 40x60 inches)</option>
             </select>
         </div>
         
@@ -154,12 +154,12 @@
         $sizes_frames = '<div class="col select-wrapper" style="width: 300px;  margin-right: 20px;">
             <label for="buysize"></label>
             <select id="buysize" name="buysize">
-                <option data-price="' . $price_array[0] . '"value="SIZE: 5x7">SIZE: 5x7</option>
+                <option data-price="' . $price_array[0] . '"value="5x7">SIZE: 5x7</option>
                 ' . $tinyviewNotesOption . '
-                <option data-price="' . $price_array[1] . '"value="SIZE: 8x8">SIZE: SQUARE 8x8 </option>
-                <option data-price="' . $price_array[2] . '"value="SIZE: 8x12">SIZE: 8x12</option>
-                <option data-price="' . $price_array[3] . '"value="SIZE: 12x12">SIZE: SQUARE 12x12 </option>
-                <option SELECTED data-price="' . $price_array[4] . '"value="SIZE: 12x18">SIZE: 12x18 </option>
+                <option data-price="' . $price_array[1] . '"value="8x8">SIZE: SQUARE 8x8 </option>
+                <option data-price="' . $price_array[2] . '"value="8x12">SIZE: 8x12</option>
+                <option data-price="' . $price_array[3] . '"value="12x12">SIZE: SQUARE 12x12 </option>
+                <option SELECTED data-price="' . $price_array[4] . '"value="12x18">SIZE: 12x18 </option>
             </select>
         </div>
         

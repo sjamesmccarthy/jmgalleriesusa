@@ -32,12 +32,11 @@
         <?= $formSizes ?>
 
         <div class="mt-16">
-        <!-- <label class="" for="comments">TYPE YOUR MESSAGE HERE</label> -->
         <?= $message_PH ?>
+        
+        <!-- <label class="" for="comments">TYPE YOUR MESSAGE HERE</label> -->
         <textarea style="margin-top: 10px" id="comments" name="comments" placeholder="TYPE ANY COMMENTS HERE" rows="8"><?= $msg ?></textarea>
         </div>
-        
-
         
         <?= $promo_field ?>
         <?= $estimated_cost ?>
@@ -104,6 +103,7 @@
                           
                           var data_html = "Thank You For Your Message, an art consultant will be in touch in 48 hours<!-- (code: " + data + ")-->";
                           $('.form-main').prop('disabled', true).css('opacity','.3');
+                          $('.form-main').slideUp('slow');
                           $('#sendform').hide();
                           $('#form_response').html(data_html).addClass('success').show();
                           console.log(data);
