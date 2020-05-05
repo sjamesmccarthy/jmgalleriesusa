@@ -2859,6 +2859,36 @@ public function api_Admin_Get_Materials_By_Supplier($id) {
 
     }
 
+    public function api_Admin_Get_Orders() {
+
+        /* Executes SQL and then assigns object to passed var */
+        if( $this->checkDBConnection(__FUNCTION__) == true) {
+
+            $sql = "
+            SELECT
+            	po.*,
+            	pc.*
+            FROM
+            	product_order AS po
+            	INNER JOIN product_customer AS pc ON pc.product_customer_id = po.product_customer_id";
+        
+            $result = $this->mysqli->query($sql);
+
+            if ($result->num_rows > 0) {
+            
+                while($row = $result->fetch_assoc())
+		        {
+		            $data[] = $row;
+		        }
+                
+            } 
+            
+        }
+
+        return($data);
+
+    }
+
     public function api_Admin_Insert_Users() {
 
         /* extract Data Array */

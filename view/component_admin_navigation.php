@@ -96,6 +96,12 @@ jQuery(document).ready(function($){
             </div>
 
             <div class="toolbox">
+                <ul class="orders orders-add">
+                <li class="orders orders-add"><a href="/studio/orders">Orders</a><p class="add-icon-nav"><i class="fas fa-lock disabled"></i></p></li>
+                </ul>
+            </div>
+
+            <div class="toolbox">
                 <ul class="users users-add">
                 <li class="users users-add"><a href="/studio/users">User Management</a><p class="add-icon-nav"><i class="fas fa-lock disabled"></i></p></li>
                 </ul>

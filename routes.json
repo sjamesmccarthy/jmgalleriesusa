@@ -217,6 +217,13 @@
         "component": "true",
         "title": "Inventory of Suppliers"
     },
+    "/studio/orders": {
+        "template": "page",
+        "page": "admin_orders",
+        "auth": "true",
+        "component": "true",
+        "title": "Orders"
+    },
     "/studio/suppliers-add": {
         "template": "page",
         "page": "admin_suppliers-add",
