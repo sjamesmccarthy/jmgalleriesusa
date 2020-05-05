@@ -678,14 +678,14 @@ class Core_Api
 
     public function api_Polarized_Get_Latest() {
 
-        $result = $this->getJSON('view/data_polarized.json', 'data');
+        $result = $this->getJSON('view/data_polarized.json', 'data_polarized');
         return($result);
 
     }
 
     public function api_AmazingOffer_Get_Latest() {
 
-        $result = $this->getJSON('view/data_amazingoffer.json', 'data');
+        $result = $this->getJSON('view/data_amazingoffer.json', 'data_ao');
         return($result);
 
     }
@@ -2973,6 +2973,41 @@ public function api_Admin_Get_Materials_By_Supplier($id) {
         
     }
 
+public function api_Admin_Update_Settings() {
+
+        $form_data = json_encode($_POST);
+
+        if ($fp = fopen($_SERVER["DOCUMENT_ROOT"] . '/config.json', 'w')) {
+            fwrite($fp, $form_data);
+            fclose($fp);
+            $result=1;
+        } else {
+            $result=0;
+        }
+
+        foreach($_POST['notice_data'] as $k => $v) {
+
+           $notice_array[$v] = array("title"=>"{$_POST['notice_key_title'][$k]}", "content"=>"{$_POST['notice_key_content'][$k]}", "type"=>"{$_POST['notice_key_type'][$k]}", "timeout"=>"{$_POST['notice_key_timeout'][$k]}", "state"=>"{$_POST['notice_key_state'][$k]}");
+        }
+        
+        if ($fp_notices = fopen($_SERVER["DOCUMENT_ROOT"] . '/view/data_notices.json', 'w')) {
+            fwrite($fp_notices, json_encode($notice_array));
+            fclose($fp_notices);
+            $result=1;
+        } else {
+            $result=0;
+        }
+        
+        if($result == 1) {
+            $_SESSION['error'] = '200';
+            $_SESSION['notify_msg'] = $_POST['site_name'];
+            $this->log(array("key" => "api", "value" => "Updated Settings " . $_POST['site_name'], "type" => "success"));
+        } else {
+            $_SESSION['error'] = '501';
+            $this->log(array("key" => "api", "value" => "Failed Settings Update " . $_POST['site_name'], "type" => "failure"));
+        }
+
+    }
 
 }
 ?>

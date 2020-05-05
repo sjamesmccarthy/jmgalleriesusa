@@ -20,43 +20,45 @@
         $_SESSION['notify_msg'] = null;
     }
 
-    /* API - LIST OF PHOTOS IN CATALOG */
-    $data_html = $this->getJSON('config.json', 'data');
+    /* CORE - LIST OF SETTINGS IN config.json */
+    $data_html = $this->getJSON('config.json', 'data_config');
     extract($data_html, EXTR_PREFIX_SAME, "dup");
 
+    /* CORE - LIST OF NOTICES IN data_notices.json */
+    $notices_json = $this->getJSON('view/data_notices.json', 'data_notices');
+    extract($notices_json, EXTR_PREFIX_SAME, "dup");
+
     // Loop through components
-    foreach($data_html['components'] as $k => $v) {
+    // foreach($data_html['components'] as $k => $v) {
     
-        $components_html .= '
-        <div class="divTableRow">
-            <div class="divTableCell">' . $k . '</div>
-            <div class="divTableCell">
-                <input class="w-100" type="text" name="package_name" value="' . $v . '" />
-            </div>
-        </div>';
+    //     $components_html .= '
+    //     <div class="divTableRow">
+    //         <div class="divTableCell">' . $k . '</div>
+    //         <div class="divTableCell">
+    //             <input class="w-100" type="text" name="component_' . $k . '" value="' . $v . '" />
+    //         </div>
+    //     </div>';
             
-    }
+    // }
 
     // Loop through notices
-   foreach($data_html['notices'] as $k => $v) {
-
-    //    $this->printp_r($v);
+   foreach($notices_json as $k => $v) {
 
         $notices_html .= '
             <div class="divTableRow">
-            <input type="hidden" name="notice_key" value="' . $k . '" />
+            <input type="hidden" name="notice_data[]" value="' . $k . '" />
                 <div class="divTableCell pb-32"><p class="pb-8">-- ' . $k . '</p>
                 <!-- <div class="divTableCell"> -->
                     title<br />
-                    <input class="w-100" type="text" name="pacakge_name" value="' . $v['title'] . '" /><br />
+                    <input class="w-100" type="text" name="notice_key_title[]" value="' . $v['title'] . '" /><br />
                     content<br />
-                    <input class="w-100" type="text" name="pacakge_name" value="' . $v['content'] . '" /><br />
+                    <input class="w-100" type="text" name="notice_key_content[]" value="' . $v['content'] . '" /><br />
                     type<br />
-                    <input class="w-100" type="text" name="pacakge_name" value="' . $v['type'] . '" /><br />
+                    <input class="w-100" type="text" name="notice_key_type[]" value="' . $v['type'] . '" /><br />
                     timeout<br />
-                    <input class="w-100" type="text" name="pacakge_name" value="' . $v['timeout'] . '" /><br />
+                    <input class="w-100" type="text" name="notice_key_timeout[]" value="' . $v['timeout'] . '" /><br />
                     state<br />
-                    <input class="w-100" type="text" name="pacakge_name" value="' . $v['state'] . '" />
+                    <input class="w-100" type="text" name="notice_key_state[]" value="' . $v['state'] . '" />
                 </div>
             </div>';    
     }

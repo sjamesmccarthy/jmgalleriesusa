@@ -1,0 +1,39 @@
+/* ********************** */
+/* component_notice */
+
+.notice-container {
+    position: absolute;
+    top: 0;
+    width:100%;
+    z-index:1; 
+}
+
+.notice-banner {
+    font-family: lato, sans-serif; 
+    padding: 20px; 
+    text-align: center;
+}
+
+.notice-ALERT {
+    background-color: $color-error;
+
+    >p {
+        color: #FFFFFF;
+    }
+}
+
+.notice-WARNING {
+    background-color: $color-warning;
+
+    >p {
+        color: #FFFFFF;
+    }
+}
+
+.notice-NORMAL {
+    background-color: $color-blue;
+
+    >p {
+        color: #FFFFFF;
+    }
+}

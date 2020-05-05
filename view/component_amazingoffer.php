@@ -15,7 +15,7 @@ extract($amazingoffer_json, EXTR_PREFIX_ALL, "res");
 $order_link = '<a target="_ao" href="/contact?photo=' . urlencode($res_currenOfferName) . '&size=SIZE-60CM&frame=STUDIO-SNOW+WHITE+or+ASH+GRAY&cost=480&promo_code=ARTISTPROOF&email=' . $this->collector_data_obj->email . '&name=' . $this->collector_data_obj->first_name . ' ' . $this->collector_data_obj->last_name . '">';
 
 /* GENERATE HTML BLOCK */
-if ($this->config->components['polarized'] == 'true') {  
+if ($this->config->component_polarized == 'true') {  
 $html = <<< END
    <article id="rewards" class="mt-64">
         <div class="grid-4_sm-2 grid-4_md-3">

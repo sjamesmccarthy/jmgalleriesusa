@@ -1,6 +1,5 @@
 <?php
 
-
 if(isSet($this->data->routePathQuery[0])) {
 
     // https://jmgalleriesusa.com/contact?photo=horizontal-limits&size=SIZE-60CM/16x24&frame=DARK-WALNUT&cost=1000

@@ -1,0 +1,25 @@
+{ 
+    "site_name": "jM Galleries",
+    "email" : "james@jmgalleries.com",
+    "phone" : "951-708-1831",
+    "copyright" : "&copy; 2013-2020 jMcCarthy, jM Galleries is a &reg; trademark of James McCarthy",
+    "coa_contract" : "md5[(title.nospaces).(series).(edition).(timestamp)]",
+    "limited_edition_max" : "24",
+
+    "package_name": "jmGweb",
+    "package_version" : "v1.2.1588628345",
+    "package_release_notes": "//jmgalleriesusa.com/release-notes",
+    "package_git" : "//github.com/sjamesmccarthy/jmgalleriesusa",
+    "package_license" : "MIT",
+    "package_blacklist" : "::1||70.170.39.149",
+
+    "prefix_template" : "tpl_",
+    "prefix_page" : "view_",
+    "prefix_negatives" : "_catidx",
+    "prefix_partial" : "partial_",
+    "prefix_component" : "component_",
+
+    "component_polarized" : "false",
+    "component_notice" : "true",
+    "component_newsletter" : "false"
+}

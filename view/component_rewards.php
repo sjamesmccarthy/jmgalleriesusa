@@ -15,7 +15,7 @@ $myrewards_points = round($myrewards_points['points']*1.5);
 $p_code = strtoupper($this->collector_data_obj->last_name) . $this->collector_data_obj->collector_id;
 
 /* GENERATE HTML BLOCK */
-if ($this->config->components['polarized'] == 'true') {  
+if ($this->config->component_polarized == 'true') {  
 $html = <<< END
     <article id="rewards" class="mt-64">
         <div class="grid-4_sm-2 grid-4_md-3">

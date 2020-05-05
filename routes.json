@@ -189,6 +189,13 @@
         "component": "false",
         "title": "Processing Users Script"
     },
+    "/studio/api/update/settings": {
+        "template": "script",
+        "page": "ajax_admin_settings_process.php",
+        "auth": "true",
+        "component": "false",
+        "title": "Processing Settings Script"
+    },
     "/studio/inventory": {
         "template": "page",
         "page": "admin_inventory",

@@ -35,14 +35,4 @@
     <!-- Overrides, need to combine this with appropriate scss files, but for now deal with it -->
     <link rel="stylesheet" href="/view/css/overrides.css?<?= time(); ?>">
     
-
-    <script>
-    jQuery(document).ready(function($){
-  
-        $(".notice-container").fadeIn('fast').delay(5000).slideUp('slow');
-
-    });
-    </script>
-
-    
 </head>

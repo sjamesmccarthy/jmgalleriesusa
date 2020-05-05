@@ -4,7 +4,7 @@
     
     <body>
         
-        <?php $this->getPartial('notice'); ?>
+        <?php print $this->component('notice'); ?>
         <?php print $this->component('hero'); ?>
 
             <main>

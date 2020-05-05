@@ -1,6 +1,6 @@
 .settings--container {
 
- .tabs {
+    .tabs {
         display: flex;
         flex-wrap: wrap;
         margin-top: 8px;
@@ -14,6 +14,14 @@
             font-size: .9rem;
             text-transform: uppercase;
         }
+
+        &>div:first-child {
+            border-left: none;
+        }
+    }
+
+    h4 {
+        text-decoration: underline;
     }
 
 }

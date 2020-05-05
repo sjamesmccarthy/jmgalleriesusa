@@ -36,7 +36,7 @@ foreach($polarized_json as $key=>$value) {
 }
 
 /* GENERATE HTML BLOCK */
-if ($this->config->components['polarized'] == 'true') {  
+if ($this->config->component_polarized == 'true') {  
 $html = <<< END
 <article class="mt-64">
     <div class="grid-4_sm-2_md-3">

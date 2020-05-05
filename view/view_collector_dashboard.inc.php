@@ -18,7 +18,7 @@ $this->collector_data_obj = (object)$collector_data;
 $mycollection_html = $this->component('collector_my_collection',$res_collector_id);
 
 /* POLARIZED */
-$this->config->components['polarized'] = true;
+$this->config->component_polarized = true;
 $polarized_html = $this->component('polarized');
 
 /* MY REWARDS */
