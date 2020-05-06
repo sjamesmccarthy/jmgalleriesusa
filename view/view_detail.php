@@ -1,14 +1,12 @@
 <script src="https://www.google.com/recaptcha/api.js?render=6LetD7YUAAAAAFX5cXupV3exd1YCSuYFY_az92Wh"></script>
-<section id="detail">
 
-<!-- <section class="mt-72"> -->
-    <article style="margin-top: -30px">
+<section id="detail">
+    <article style="margin-top: -14px">
        <?= $super_photo ?>
     </article>
-<!-- </section> -->
 </section>
 
-<!-- <section> -->
+<section>
     <article class="">
     <form id="limited_ed_form" action="/contact" method="post">
     <input type="hidden" id="g-recaptcha-response" name="g-recaptcha-response" />
@@ -48,8 +46,9 @@
     </div>
             <?= $tinyViewFinePrint ?>
 
-</form>
-</article>
+    </form>
+    </article>
+</section>
 
 <!-- generated html from component file: component_most_popular -->
 <section id="you-may-like" class="filmstrip mt-16">

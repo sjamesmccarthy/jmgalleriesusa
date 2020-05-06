@@ -1,3 +1,26 @@
 /* ********************** */
 /* component_polarized */
 
+.content-border {
+border-right: 1px solid #DDD;
+padding-right: 10px;
+}
+
+
+#polarized >article >div >div.col >p {
+    padding-top: 10px;
+    color: rgba(0,0,0,.54);
+    line-height: 1.5;
+}
+
+#polarized >article >div >div.col {
+    padding: 0 20px;
+}
+
+#polarized >article >div >div.col {
+    padding: 0 20px;
+}
+
+.medium-feed-image, .medium-feed-link {
+    display: none;
+}

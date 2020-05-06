@@ -11,11 +11,16 @@
                     <div class="grid">
                         <div class="col">
                         <h2>Index of <b>Orders</b> (<?= $active_orders_count ?>)</h2>
-                        </div>
-                        <div class="col-1 add-icon">
-                            <a href="/studio/users-add"><i class="fas fa-plus-circle"></i></a>
+                        
+                            <div class="tabs"> 
+                                <div><b>OPEN</b></div>
+                                <div><a href="#system">CLOSED</a></div>
+                                <div><a href="/studio/orders"><i class="fas fa-times-circle"></i></a></div>
+                            </div>
+
                         </div>
                     </div>
+
 
                     <table id="dataTable" class="display">
                         <thead>
