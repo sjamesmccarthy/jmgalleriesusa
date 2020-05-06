@@ -28,10 +28,10 @@
 
          <div class="grid-center">
 
-                <div class="col-6 breadcrumb">
+                <div class="col-8 breadcrumb">
                 <p><a href="/"><img class="breadcrumb-logo" src="/view/image/logo_fullsize.png" /></a> <?= $bc_catalog ?> <img class="breadcrumb-arrow" src="/view/image/icon_navarrow-right.svg" /><?= $this->page->title ?> </p>
                 </div>
-                <div class="col-6-right breadcrumb">
+                <div class="col-4-right breadcrumb">
                 <p class="pull-right text-right"><?= $this->config->copyright ?><br /><a href="/privacy">Privacy Policy</a></p>
                 </div>
 

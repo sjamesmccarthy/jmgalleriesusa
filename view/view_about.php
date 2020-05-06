@@ -2,10 +2,9 @@
 
     <div class="grid-2_md-1">
         <div class="col_sm-10">
-                <!-- <img style="width: 100%" src="/view/image/upper-webber-falls.png" /> -->
                 <img class="bio-profile-pic" src="/view/image/profile_img.jpg" />
         </div>
-        <div class="col pl-16">
+        <div class="col pl-16 mt-32">
                 <p class="name blue">j.McCarthy</p>
                 <p class="name-title">ARTIST STATEMENT</p>
                 <p class="name-statement blue">

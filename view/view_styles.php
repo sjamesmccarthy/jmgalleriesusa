@@ -1,7 +1,3 @@
-<style>
-
-</style>
-
 <section id="about pt-24">
     <div class="grid-center">
 
@@ -36,7 +32,7 @@
                     <div class="divTableCell">Hahnemühle Photo Rag® Metallic Archival Paper</div>
                     <div class="divTableCell border-l border-b pl-8">60CM</div>
                     <div class="divTableCell border-l border-b pl-8">16 x 24</div>
-                    <div class="divTableCell border-l border-r border-b">$1,350</div>
+                    <div class="divTableCell border-l border-r border-b pl-8">$1,350</div>
                 </div>
                 <div class="divTableRow">
                     <div class="divTableCell">Lumachrome HD Acrylic</div>
@@ -54,7 +50,7 @@
                     <div class="divTableCell"></div>
                     <div class="divTableCell border-l border-b pl-8">144CM</div>
                     <div class="divTableCell border-l border-b pl-8">30 x 45</div>
-                    <div class="divTableCell border-l border-b border-r" pl-8>$3,850</div>
+                    <div class="divTableCell border-l border-b border-r pl-8">$3,850</div>
                 </div>
                 <div class="divTableRow">
                     <div class="divTableCell border-b"></div>

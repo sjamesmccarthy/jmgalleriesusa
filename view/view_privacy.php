@@ -1,7 +1,7 @@
 <section id="privacy pt-24">
-    <div class="grid-noGutter">
+    <div class="grid-center">
 
-        <div class="container col-11" >
+        <div class="col-11" >
 
          <h1 class="pb-32">Privacy Policy, Terms of Sale and Copyright</h1>
          
