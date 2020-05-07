@@ -5,10 +5,13 @@
     <meta copyright="<?= $this->config->copyright ?>" />
 
     <meta property="og:title" content="<?= $addSiteName ?><?= $this->title ?>" />
-    <meta property="og:url" content="<?= $this->routes->URI->url ?>" />
-    <meta property="og:description" content="Fine Art Photography" />
-    <meta property="og:image" content="//jmgalleries.com/catalog/__image/never-ending-story.jpg" />
-    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https:<?= $this->routes->URI->url ?>" />
+    <meta property="og:description" content="Artistic Photography for Fine Art Collectors & Enthusiasts" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://jmgalleries.com<?= $og_image ?>" />
+
+<!-- Add og:image_height -->
+<!-- Add Twitter Cards -->
 
     <title><?= $addSiteName ?><?= $this->title ?></title>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap" rel="stylesheet">

@@ -147,7 +147,7 @@
                      <label for="order_shipped" style="color: #000"> SHIPPED</label>
                 </p>
                 <input type="hidden" name="shipped" value="<?= $res_shipped ?>" />
-                 <input class="half-size fake-disabled" type="text" name="tracking" placeholder="CARRIER +TRACKING" value="<?= $res_shipped ?><?= $res_tracking_number_formatted ?>" /> 
+                 <input class="half-size <?= $disable_css ?>" type="text" name="tracking" placeholder="CARRIER +TRACKING" value="<?= $res_shipped ?><?= $res_tracking_number_formatted ?>" /> 
             </div> 
 
             <button class="mt-32 <?= $closed ?>" id="<?= $button_id ?>"  value="SEND"><?= $button_label ?></button>

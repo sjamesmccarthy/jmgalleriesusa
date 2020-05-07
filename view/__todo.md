@@ -1,15 +1,23 @@
 
-## Thumbnails (consider code reuse and consolidation)
-- view_home.php uses component gallery_thumbs to generate thumbnails for all but New Releases
-- view_catalog.inc.php uses ssame code but includes specific collections; all; new-releases
-- create clas for this inline style [style="padding: 0 10px;"]
+## 1.3.1
+- Add Twitter card support
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@nytimesbits" />
+<meta name="twitter:creator" content="@nickbilton" />
+<meta property="twitter:card" content="summary_large_image">
 
-## config.json
-- Add $this->config->limited_edition_max
-- Add $available_sizes 
+- bugfix: Notifcations in admin area not being destroyed on redirect from supplier to material add/edit
+- image optimization for catalog and thumbnails
+- add comma in price of details page
 
-# core_site.php
-- Add MYSQL date DEFINE
+## 1.4
+- mobile version of home page and gallery pages
 
-# templates
-- remove inline code and put into app.scss file
+## 1.4.1
+- mobile version of detail pages
+
+## 1.4.2
+- mobile version of about, styles, moments pages
+
+## 1.5
+- SQL optimization to support artist_id everywhere

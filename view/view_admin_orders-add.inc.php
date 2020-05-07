@@ -29,10 +29,8 @@ if(isSet($this->routes->URI->queryvals)) {
     $edit_data = $this->api_Admin_Get_Order($edit_id);
     extract($edit_data, EXTR_PREFIX_ALL, "res");
     $item_info = json_decode($res_item);
-    // $this->printp_r($edit_data);
  
     /* Math for total price */
-    // $quantity, $price, $tax, $shipping - $discount(code)
     $promos = array("TESTCODE"=>"10%", "COLLECT20"=>"20");
     
     foreach ($promos as $k => $v) {
@@ -49,13 +47,13 @@ if(isSet($this->routes->URI->queryvals)) {
         $button_archive_cancel = NULL;
         $form_disabled = 'disabled';
         $closed = 'closed';
-        if($res_tracking_number != '') { $res_tracking_number_formatted = " | " . $res_tracking_number; }
+        if($res_tracking_number != '') { $res_tracking_number_formatted = " | " . $res_tracking_number; $disable_css = "fake-disabled"; }
     } else {
         $button_label="update order";
         $button_archive_cancel = '<button class="btn-delete mt-32" id="archive" value="ARCHIVE">CANCEL ORDER</button>';
         $form_disabled = null;
         $closed = null;
-        if($res_tracking_number != '') { $res_tracking_number_formatted = $res_tracking_number; }
+        if($res_tracking_number != '') { $res_tracking_number_formatted = $res_tracking_number; $disable_css = "fake-disabled"; }
     }
 
     $this->page->title = "Editing Order: <b>" . $res_invoice_number. "</b>";
