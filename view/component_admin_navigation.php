@@ -35,7 +35,7 @@ jQuery(document).ready(function($){
 });
 </script>
 
-<div class="col-2 navigation--container">
+<div class="col-3 navigation--container">
             
             <div class="toolbox">
                 <p class="dashboard-icon"><a href="/studio/manage"><i class="fas fa-chart-line"></i></a></p>
@@ -121,7 +121,7 @@ jQuery(document).ready(function($){
 
         </div>
 
-        <div class="col-1"></div>
+        <!-- <div class="col-1"></div> -->
 
 END;
 

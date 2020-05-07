@@ -11,9 +11,9 @@
 
                 <?php  $this->getPartial('nav'); ?>
 
-                <div style="min-height: 100vh;">
+                <!-- <div style="min-height: 100vh;"> -->
                     <?php $this->view() ?>
-                </div>
+                <!-- </div> -->
 
             </main>                  
         

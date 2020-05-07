@@ -782,7 +782,7 @@ class Core_Api
         /* Executes SQL and then assigns object to passed var */
         if( $this->checkDBConnection(__FUNCTION__) == true) {
 
-            $sql = "select value, type, created from log where user_id = " . $_SESSION['uid'] . " order by created DESC LIMIT 20";
+            $sql = "select value, type, created from log where user_id = " . $_SESSION['uid'] . " order by created DESC LIMIT 30";
             $result = $this->mysqli->query($sql);
 
             if ($result->num_rows > 0) {
@@ -813,7 +813,7 @@ class Core_Api
                 catalog_photo_views as CV
                 INNER JOIN catalog_photo as CP on CV.catalog_photo_id = CP.catalog_photo_id
                 ORDER BY CV.count DESC
-                LIMIT 12";
+                LIMIT 20";
         
             $result = $this->mysqli->query($sql);
 
@@ -3187,10 +3187,10 @@ public function api_Admin_Get_Order($id) {
             $_SESSION['error'] = '200';
             $_SESSION['notify_msg'] = $name;
             $_SESSION['notification_msg'] = "<p class='heading'>success</p><p> Order Has Been Updated</p>";
-            $this->log(array("key" => "api", "value" => "Updated Order (" . $product_order_id . ") ", "type" => "success"));
+            $this->log(array("key" => "api", "value" => "Updated Order (id:" . $order_id . ") for " . $name, "type" => "success"));
         } else {
             $_SESSION['error'] = '400';
-            $this->log(array("key" => "api", "value" => "Failed To Update Order (" . $product_order_id . ")", "type" => "failure"));
+            $this->log(array("key" => "api", "value" => "Failed To Update Order (id:" . $order_id . ") for " . $name, "type" => "failure"));
         }
         
     }

@@ -8,8 +8,8 @@
 
             <div class="notification success <?= $notification_state ?>"><?= $notification_msg ?></div>
                
-                <div class="grid">
-                    <div class="col"><h2>Settings</h2></div>
+                <div class="grid pt-32">
+                    <div class="col nopad-left"><h2>Settings</h2></div>
                 </div>
                 
                 <div class="tabs"> 

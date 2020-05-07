@@ -1,6 +1,6 @@
       
     <!-- generated html from component file: New Releases -->
-    <section id="new-release-film-strip" style="margin-top: 48px" class="filmstrip">
+    <section id="new-release-film-strip" class="filmstrip">
         <?= $thumb_new_releases_html ?>
     </section>
     <!-- /generated html from component file -->

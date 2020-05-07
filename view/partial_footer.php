@@ -12,7 +12,7 @@
             </div>
         </div>
         
-        <div class="grid">
+        <div class="grid pt-32">
 
             <div class="col-12 collection-list">
             <ul>

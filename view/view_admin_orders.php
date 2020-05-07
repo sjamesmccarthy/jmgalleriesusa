@@ -8,8 +8,8 @@
 
             <div class="notification success <?= $notification_state ?>"><?= $notification_msg ?></div>
 
-                    <div class="grid">
-                        <div class="col">
+                    <div class="grid pt-32">
+                        <div class="col nopad-left">
                         <h2>Index of <b>Orders</b> (<?= $active_orders_count ?>)</h2>
                         
                             <div class="tabs"> 

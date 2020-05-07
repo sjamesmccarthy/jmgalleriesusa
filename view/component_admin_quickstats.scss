@@ -1,5 +1,7 @@
 .quickstats--container {
 
+    padding: 0;
+    
     .title {
         font-size: 1.3rem;
         text-align: left;
@@ -19,7 +21,7 @@
     }
 
     .table {
-        height: 142px;
+        height: 300px;
         border: 1px solid #CCC;
         padding: 28px 0;
         margin: 0;

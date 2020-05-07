@@ -52,7 +52,7 @@ foreach($activity_data as $key=>$val) {
 $html = <<< END
 <article class="activity--container">
 
-    <h2>Recent Activity</h2>
+    <h4>Recent Activity</h4>
 
         <ul class="mt-32">  
 

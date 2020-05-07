@@ -8,8 +8,8 @@
 
             <div class="notification success <?= $notification_state ?>"><?= $notification_msg ?></div>
 
-                    <div class="grid">
-                        <div class="col"><h2 class="pb-32">Catalog of <b>Active Online Photos</b> (<?= $active_photos_count ?>)</h2></div>
+                    <div class="grid pt-32">
+                        <div class="col nopad-left"><h2 class="pb-32">Catalog of <b>Active Online Photos</b> (<?= $active_photos_count ?>)</h2></div>
                         <div class="col-1 add-icon"><a href="/studio/catalog-add"><i class="fas fa-plus-circle"></i></a></div>
                     </div>
 

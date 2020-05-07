@@ -34,7 +34,7 @@ foreach($photosviewed_data as $key=>$val) {
 $html = <<< END
 <article class="photosviewed--container">
 
-<h2>Viewed Catalog Photos</h2>
+<h4>Viewed Catalog Photos</h4>
     <ul style="margin-top: 32px;">  
 
        $result_html

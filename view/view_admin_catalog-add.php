@@ -6,7 +6,7 @@
     
         <div class="col-9 catalog-add--container">
 
-            <h2 class="pb-32"><?= $page_title ?></h2>
+            <h2 class="pb-32 pt-32"><?= $page_title ?></h2>
 
             <h1><?= $formTitle ?></h1>
 

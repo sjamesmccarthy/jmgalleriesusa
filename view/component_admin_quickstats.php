@@ -22,22 +22,22 @@ $html = <<< END
     <!-- <p class="title">Total Numbers As Of {$date}</p> -->
 
     <div class="grid table">
-        <div class="col">
+        <div class="col pt-64">
             <p class="table--title">CATALOG</p>
             <p class="table--count">$tCat</p>
             <p class="table--subline">Active Online Photos</p>
         </div>
-        <div class="col gray">
+        <div class="col gray pt-64">
             <p class="table--title">COLLECTORS</p>
             <p class="table--count">$tCollectors</p>
             <p class="table--subline">Individual Only</p>
         </div>
-        <div class="col red">
+        <div class="col red pt-64">
             <p class="table--title">ALL-TIME COSTS</p>
             <p class="table--count">$$tCosts</p>
             <p class="table--subline">YTD</p>
         </div>
-        <div class="col green">
+        <div class="col green pt-64">
             <p class="table--title">REVENUE</p>
             <p class="table--count">$$tRevenue</p>
             <p class="table--subline">YTD</p>

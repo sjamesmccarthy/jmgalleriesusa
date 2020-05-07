@@ -1,5 +1,5 @@
-   <section id="top-nav<?= $addToClass ?>">
-        <div class="grid">
+   <!-- <section id="top-nav<?= $addToClass ?>"> -->
+        <div id="top-nav" class="grid">
     
         <div class="col-2_md-hidden-middle">
             <p class="center heading" ><a href="/all?filter=tinyviews">PRINTS</a><br />Giclée & tinyViews&trade;</p>
@@ -20,4 +20,4 @@
         </div>
 
         <div class="thin-line<?= $addToClass ?>"></div>
-    </section>
+    <!-- </section> -->
