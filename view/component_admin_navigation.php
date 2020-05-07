@@ -16,6 +16,7 @@ extract($loginInfo, EXTR_PREFIX_SAME, "dup");
 /* Alot of work to just get the year */
 $shortdate = explode("-", $membersince);
 $membersinceyear = $shortdate[0];
+$version = $this->config->package_version;
 
 /* Logic for determing location */
 // $this->routes->URI->path /studio/catalog, $path[2]
@@ -119,6 +120,9 @@ jQuery(document).ready(function($){
                 </ul>
             </div>
 
+            <div>
+                <p class="tiny">$version</p>
+                </div>
         </div>
 
         <!-- <div class="col-1"></div> -->

@@ -1,6 +1,7 @@
 <?php
 
 $catalog_names = $this->api_Catalog_Category_List();
+$version = $this->config->package_version;
 
 foreach($catalog_names as $k => $v) {
 

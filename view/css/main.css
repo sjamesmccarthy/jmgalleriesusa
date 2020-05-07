@@ -2731,6 +2731,11 @@ button a {
   line-height: 1.3;
   text-align: center;
 }
+@media (max-width: 64em), (max-width: 80em) {
+  .hero-text {
+    font-size: 3.2rem;
+  }
+}
 
 .hero-text-explore-link {
   color: #FFF;
@@ -2870,6 +2875,7 @@ button a {
   padding: 28px 0;
   margin: 0;
   text-align: center;
+  border-radius: 5px;
 }
 .quickstats--container .table > div:not(:last-child) {
   border-right: 1px solid #CCC;
@@ -2885,9 +2891,6 @@ button a {
   font-size: 0.8rem;
 }
 
-.photosviewed--container {
-  padding: 32px 0;
-}
 .photosviewed--container .item {
   margin-bottom: 16px;
   padding-bottom: 10px;
@@ -2910,6 +2913,7 @@ button a {
 .activity--container {
   background-color: #e4e4e4;
   padding: 32px 32px;
+  border-radius: 5px;
 }
 .activity--container .item {
   margin-bottom: 16px;
@@ -3010,6 +3014,7 @@ button a {
 }
 .navigation--container .toolbox .profile--name {
   text-align: center;
+  padding-bottom: 32px;
 }
 .navigation--container .select {
   font-size: 1.2rem;
