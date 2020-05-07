@@ -1,4 +1,4 @@
-<?php
+ <?php
 /* 
 component: HERO 
 description: returns the image and title +link for the homepage hero
@@ -28,7 +28,7 @@ if ($catalog == '') {
 
         $("#hero").each( function() { 
             $(this).css("background-image", "linear-gradient(180deg, rgba(255,255,255,1) 10%, rgba(117,117,119,0) 50%), url(/catalog/__image/" + $(this).data("url") +")" ); 
-            $(this).css("background-postion", $this->hero_position);
+            $(this).css("background-postion", "$this->hero_position");
         });
 
     </script>

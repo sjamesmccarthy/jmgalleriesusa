@@ -20,7 +20,7 @@ if(!isSet($_COOKIE['cookie_consent'])) {
     $cookie_consent = '<div class="cookie_banner">
     <p><i class="fas fa-cookie-bite"></i></p>
     <p class="pt-8">jM Galleries uses Strictly Necessary, Functional and Performance Cookies as described in our <a href="/privacy">Privacy Policy.</a><br /><a href="//duckduckgo.com">IF YOU DO NOT AGREE click here to leave.</a></p>
-    <p class="right"><button id="cookie_consent" class="button-inv">I Agree</button>
+    <p class="pull-right"><button id="cookie_consent" class="button-inv">I Agree</button>
     </div>';
 } 
 

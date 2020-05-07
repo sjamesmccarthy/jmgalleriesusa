@@ -1,10 +1,10 @@
-<section class="admin--reports-add">
+<section class="admin--collections-add">
     <div class="grid-12">
        
         <!-- insert navigation component -->
         <?= $navigation_html ?>
     
-        <div class="col-9 reports-add--container">
+        <div class="col-9 collections-add--container">
 
             <h2 class="pb-32"><?= $this->page->title ?></h2>
 

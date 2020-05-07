@@ -4,32 +4,32 @@
         padding: 1rem 0;
     }
 
-    .hide {
-        display: none;
-    }
+    // .hide {
+    //     display: none;
+    // }
 
-    .show {
-        display: block;
-    }
+    // .show {
+    //     display: block;
+    // }
 
-    h6 {
-        padding: 1rem 0 1.2rem 0;
-    }
+    // h6 {
+    //     padding: 1rem 0 1.2rem 0;
+    // }
 
-    .half-size {
-        width: 49%;
-        display: inline-block;
-        // margin-left: 1rem !important;
-    }
+    // .half-size {
+    //     width: 49%;
+    //     display: inline-block;
+    //     // margin-left: 1rem !important;
+    // }
 
-    .half-size:last-child {
-        margin-left: 1rem !important;
-    }
+    // .half-size:last-child {
+    //     margin-left: 1rem !important;
+    // }
 
-    .width-auto {
-        width: auto!important;
-        margin-left: 1rem;
-    }
+    // .width-auto {
+    //     width: auto!important;
+    //     margin-left: 1rem;
+    // }
 
      .material_supplier-container-manual-entry {
         display: none;
@@ -110,113 +110,113 @@
         opacity: 1;
     }
 
-    form {
+    // form {
         
-        label {
-            position: absolute;
-            font-size: .8rem;
-            margin-top: -4px;
-            background-color: #DDD;
-            padding: 0 5px;
-            color: $color-black;
-            border-radius: 0 $border-radius $border-radius 0;
-        }
+    //     label {
+    //         position: absolute;
+    //         font-size: .8rem;
+    //         margin-top: -4px;
+    //         background-color: #DDD;
+    //         padding: 0 5px;
+    //         color: $color-black;
+    //         border-radius: 0 $border-radius $border-radius 0;
+    //     }
 
-        label:nth-of-type(2) {
-            margin-left: 1rem !important;
-        }
+    //     label:nth-of-type(2) {
+    //         margin-left: 1rem !important;
+    //     }
 
-        p {
-            margin: 0;
-            padding: 0;
-        }
+    //     p {
+    //         margin: 0;
+    //         padding: 0;
+    //     }
 
-        .select-wrapper {
-            position: relative;
-            color: $color-black-placeholder;
-        }
+    //     .select-wrapper {
+    //         position: relative;
+    //         color: $color-black-placeholder;
+    //     }
 
-        .select-wrapper:after {
-            font-family: FontAwesome !important;
-            content: "\f078"; /* FontAwesome Unicode */
-            font-weight: 900;
-            font-size: 1rem;
-            position: absolute;
-            top: 16px;
-            right: 16px;
-            color: rgba(0,0,0,.2);
-            pointer-events: none;
-        }
+    //     .select-wrapper:after {
+    //         font-family: FontAwesome !important;
+    //         content: "\f078"; /* FontAwesome Unicode */
+    //         font-weight: 900;
+    //         font-size: 1rem;
+    //         position: absolute;
+    //         top: 16px;
+    //         right: 16px;
+    //         color: rgba(0,0,0,.2);
+    //         pointer-events: none;
+    //     }
 
-        textarea {
-            height: 250px;
-            width: 100%;
-            font-size: 1.2rem;
-            line-height: 1.8;
-            padding: 20px;
-        }
+    //     textarea {
+    //         height: 250px;
+    //         width: 100%;
+    //         font-size: 1.2rem;
+    //         line-height: 1.8;
+    //         padding: 20px;
+    //     }
         
-        .coa_list {
-            padding: 40px;
-            // background-color: $color-warning-background;
-            color: $color-warning;
-            border-radius: $border-radius;
+    //     .coa_list {
+    //         padding: 40px;
+    //         // background-color: $color-warning-background;
+    //         color: $color-warning;
+    //         border-radius: $border-radius;
 
-            > p {
-                display: inline-block;
-                vertical-align: middle;
+    //         > p {
+    //             display: inline-block;
+    //             vertical-align: middle;
 
-                &.coa-icon {
-                    font-size: 2rem;
-                    padding-right: 20px;
-                }
-            }
-        }
+    //             &.coa-icon {
+    //                 font-size: 2rem;
+    //                 padding-right: 20px;
+    //             }
+    //         }
+    //     }
 
-        .coa_list_found {
-            // background-color: $color-secondary-background;
-            color: $color-secondary;
-        }
+    //     .coa_list_found {
+    //         // background-color: $color-secondary-background;
+    //         color: $color-secondary;
+    //     }
 
-        .file {
-            position: relative;
-            height: 50px;
-        }
+    //     .file {
+    //         position: relative;
+    //         height: 50px;
+    //     }
 
-        .file-thumb {
-            vertical-align: top;
-        }
+    //     .file-thumb {
+    //         vertical-align: top;
+    //     }
 
-        .input-upload {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid #CCC;
-            border-radius: 5px;
-        }
+    //     .input-upload {
+    //         width: 100%;
+    //         padding: 10px;
+    //         border: 1px solid #CCC;
+    //         border-radius: 5px;
+    //     }
 
-        .file-custom:after {
-            z-index: 6;
-            position: absolute;
-            top:0;
-            right:0;
-            background-color: #CCC;
-            height: 43px;
-            border-radius: 0 5px 5px 0;
-            padding: 10px;
-        }
+    //     .file-custom:after {
+    //         z-index: 6;
+    //         position: absolute;
+    //         top:0;
+    //         right:0;
+    //         background-color: #CCC;
+    //         height: 43px;
+    //         border-radius: 0 5px 5px 0;
+    //         padding: 10px;
+    //     }
 
-        .file-custom-main:after {
-            content: "Main Photo";
-        }
+    //     .file-custom-main:after {
+    //         content: "Main Photo";
+    //     }
 
-        .file-custom-thumbnail:after {
-            content: "Thumbnail Photo";
-        }
+    //     .file-custom-thumbnail:after {
+    //         content: "Thumbnail Photo";
+    //     }
 
-        .cancel-button {
-            margin-left: 10px;
-        }
+    //     .cancel-button {
+    //         margin-left: 10px;
+    //     }
 
-    }
+    // }
 
 }

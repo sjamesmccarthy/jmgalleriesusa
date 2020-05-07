@@ -60,25 +60,7 @@
                 <p class="c_act_status"><?= $user_account_html ?></p> 
             </div>
 
-            <section id="purchases">
-       
-                <h4>Artwork Purchases (<?= $artwork_count ?>)</h4>
-                    
-                <table id="dataTableArtwork" class="display mt-16">
-                <thead>
-                    <tr>
-                        <th>title</th>
-                        <th>size</th>
-                        <th>serial_num</th>
-                        <th>reg_num</th>
-                        <!-- <th>certificate_id</th> -->
-                        <th>purchase_date</th>
-                        <th>value</th>
-                    </tr>
-                </thead>
-                    <tbody></tbody>
-                </table>
-            </section>
+            <?= $purchases ?>
 
             <!-- <section id="pending">
                     <h4>Pending Orders (<?= $active_materials_count ?>)</h4>

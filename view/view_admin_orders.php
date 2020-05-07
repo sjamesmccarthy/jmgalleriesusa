@@ -28,7 +28,7 @@
                                 <th>name</th>
                                 <th>item</th>
                                 <th>invoice</th>
-                                <th>open</th>
+                                <th>received</th>
                                 <th>amount</th>
                             </tr>
                         </thead>
@@ -74,7 +74,7 @@
                         return data;
                     } 
                 },
-                { data: 'opened'},
+                { data: 'received'},
                 { data: 'price'}
             ]
         } );

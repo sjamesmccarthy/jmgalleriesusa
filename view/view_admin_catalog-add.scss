@@ -1,44 +1,44 @@
 .catalog-add--container {
 
     h6 {
-        margin: 1rem 0;
+        padding: 1rem 0 1.2rem 0;
     }
 
-    .half-size {
-        width: 49%;
-        display: inline-block;
-        margin-left: 1rem !important;
-    }
+    // .half-size {
+    //     width: 49%;
+    //     display: inline-block;
+    //     margin-left: 1rem !important;
+    // }
 
-    .half-size:nth-of-type(1) {
-        margin-left: 0 !important;
-    }
+    // .half-size:nth-of-type(1) {
+    //     margin-left: 0 !important;
+    // }
 
-    .small {
-        font-size: 1rem;
-        color: $color-black-placeholder;
-    }
+    // .small {
+    //     font-size: 1rem;
+    //     color: $color-black-placeholder;
+    // }
 
-    .btn-delete {
-        opacity: .3;
-        position: absolute;
-        right: 5px;
-        background-color: rgba(255,0,0,.2);
-        border: none;
-    }
+    // .btn-delete {
+    //     opacity: .3;
+    //     position: absolute;
+    //     right: 5px;
+    //     background-color: rgba(255,0,0,.2);
+    //     border: none;
+    // }
 
-    .btn-delete:hover {
-        background-color: red!important;
-        color: #FFF!important;
-        border-color: red;
-        opacity: 1;
-    }
+    // .btn-delete:hover {
+    //     background-color: red!important;
+    //     color: #FFF!important;
+    //     border-color: red;
+    //     opacity: 1;
+    // }
 
     form {
 
-        input[type="text"] {
-            margin-bottom: 10px;
-        }
+        // input[type="text"] {
+        //     margin-bottom: 10px;
+        // }
 
         #add-collection {
             cursor: pointer;
@@ -67,22 +67,22 @@
             display: inline-block;
         }
 
-        .select-wrapper {
-            position: relative;
-            color: $color-black-placeholder;
-        }
+        // .select-wrapper {
+        //     position: relative;
+        //     color: $color-black-placeholder;
+        // }
 
-        .select-wrapper:after {
-            font-family: FontAwesome !important;
-            content: "\f078"; /* FontAwesome Unicode */
-            font-weight: 900;
-            font-size: 1rem;
-            position: absolute;
-            top: 16px;
-            right: 16px;
-            color: rgba(0,0,0,.2);
-            pointer-events: none;
-        }
+        // .select-wrapper:after {
+        //     font-family: FontAwesome !important;
+        //     content: "\f078"; /* FontAwesome Unicode */
+        //     font-weight: 900;
+        //     font-size: 1rem;
+        //     position: absolute;
+        //     top: 16px;
+        //     right: 16px;
+        //     color: rgba(0,0,0,.2);
+        //     pointer-events: none;
+        // }
 
         textarea {
             height: 250px;
@@ -129,9 +129,9 @@
             content: "Thumbnail Photo";
         }
 
-        .cancel-button {
-            margin-left: 10px;
-        }
+        // .cancel-button {
+        //     margin-left: 10px;
+        // }
 
     }
 

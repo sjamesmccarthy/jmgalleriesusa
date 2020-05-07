@@ -3058,9 +3058,9 @@ public function api_Insert_Order() {
            /* Insert into product_customer table */
             $sql = "
                INSERT INTO `jmgaller_iesusa`.`product_customer` 
-               (`name`, `email`, `phone`, `address`, `address_other`, `city`, `state`, `postal_code`,`comments`) 
+               (`name`, `email`, `phone`, `address`, `address_other`, `city`, `state`, `postal_code`) 
                VALUES 
-               ('{$contactname}', '{$contactemail}', '{$phone}', '{$address}', '{$address_other}', '{$city}', '{$state}', '{$postalcode}', '{$comments}');";
+               ('{$contactname}', '{$contactemail}', '{$phone}', '{$address}', '{$address_other}', '{$city}', '{$state}', '{$postalcode}');";
 
             $result = $this->mysqli->query($sql);
             $customer_id = $this->mysqli->insert_id;
@@ -3068,9 +3068,9 @@ public function api_Insert_Order() {
             /* Insert into product_order table */
              $sql_po = "
                INSERT INTO `jmgaller_iesusa`.`product_order` 
-               (`product_customer_id`, `item`, `quantity`, `price`, `tax`, `shipping`, `discount`, `invoice_number`) 
+               (`product_customer_id`, `item`, `notes`, `quantity`, `price`, `tax`, `shipping`, `discount`, `invoice_number`) 
                VALUES 
-               ('{$customer_id}', '{$item_pack}', '1', '{$price}', '0', '0', '{$promocode}', '{$invoice_no}');";
+               ('{$customer_id}', '{$item_pack}', '{$comments}', '1', '{$price}', '0', '0', '{$promocode}', '{$invoice_no}');";
 
             $result_po = $this->mysqli->query($sql_po);
 
@@ -3086,6 +3086,113 @@ public function api_Insert_Order() {
         }
 
         return($data);
+    }
+
+public function api_Admin_Get_Order($id) {
+
+        /* Executes SQL and then assigns object to passed var */
+        if( $this->checkDBConnection(__FUNCTION__) == true) {
+
+           /* Insert into product_customer table */
+            $sql = "
+            SELECT
+            	pc.*,
+            	po.*
+            FROM
+            	product_customer AS pc
+            	INNER JOIN product_order AS po ON po.product_customer_id = pc.product_customer_id
+            WHERE
+            	po.product_order_id = '" .$id . "'";
+
+             $result = $this->mysqli->query($sql);
+
+            if ($result->num_rows > 0) {
+            
+                while($row = $result->fetch_assoc())
+		        {
+		            $data = $row;
+		        }
+                
+            } 
+
+        }
+
+        return($data);
+    }
+
+ public function api_Admin_Update_Order() {
+
+        /* extract Data Array */
+        extract($_POST, EXTR_PREFIX_SAME, "dup");
+        $timestamp = date ("Y-m-d H:i:s", time());
+
+        /* Items Array */
+        $item_pack = json_encode(array(
+            "edition"=>$item_edition,
+            "title"=>$item_title,
+            "size"=>$item_size,
+            "framing"=>$item_framing,
+            "catalog_id"=>$item_catalog_id
+        ));
+
+        $sql_invoiced = null;
+        $sql_printed = null;
+        $sql_packaged = null;
+        $sql_shipped = null;
+        $sql_closed = null;
+
+        /* Sort through workflow */
+        if($order_invoiced == "1") { $sql_invoiced = ", invoiced = '" . $timestamp . "'"; $close_count++; }
+        if($order_printed == "1") { $sql_printed = ", printed = '" . $timestamp . "'"; $close_count++; }
+        if($order_packaged == "1") { $sql_packaged = ", packaged = '" . $timestamp . "'"; $close_count++; }
+        if($order_shipped == "1") { $sql_shipped = ", shipped = '" . $timestamp . "'"; $close_count++; }
+        if( !isSet($_POST['added_newsletter']) ) { $added_newsletter = 0; }
+
+        if($close_count == 4) { $closed = $sql_closed = ", closed ='1'"; }
+
+        /* Update product_customer */
+        $sql = "
+        UPDATE `jmgaller_iesusa`.`product_customer` SET 
+            name = '{$name}',
+            email = '{$email}',
+            phone = '{$phone}',
+            address = '{$address}',
+            address_other = '{$address_other}',
+            city = '{$city}',
+            state = '{$state}',
+            postal_code = '{$postal_code}',
+            added_newsletter = '{$added_newsletter}'
+
+            WHERE product_customer_id = '{$product_customer_id}'
+        ";
+
+        $result = $this->mysqli->query($sql);
+
+        /* Update product_order */
+        $sql_o = "
+        UPDATE `jmgaller_iesusa`.`product_order` SET 
+            item = '{$item_pack}', 
+            quantity = '{$quantity}',
+            price = '{$price}', 
+            tax = '{$tax}', 
+            shipping = '{$shipping}',
+            discount = '{$promocode}', 
+            tracking_number = '{$tracking}' " . $sql_invoiced . $sql_printed . $sql_packaged . $sql_shipped . $sql_closed .
+            "WHERE product_order_id = '{$order_id}'
+        ";
+        
+        $result_o = $this->mysqli->query($sql_o);
+
+        if($result == 1) {
+            $_SESSION['error'] = '200';
+            $_SESSION['notify_msg'] = $name;
+            $_SESSION['notification_msg'] = "<p class='heading'>success</p><p> Order Has Been Updated</p>";
+            $this->log(array("key" => "api", "value" => "Updated Order (" . $product_order_id . ") ", "type" => "success"));
+        } else {
+            $_SESSION['error'] = '400';
+            $this->log(array("key" => "api", "value" => "Failed To Update Order (" . $product_order_id . ")", "type" => "failure"));
+        }
+        
     }
 
 }

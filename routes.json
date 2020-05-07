@@ -196,6 +196,13 @@
         "component": "false",
         "title": "Processing Settings Script"
     },
+    "/studio/api/update/order": {
+        "template": "script",
+        "page": "ajax_admin_orders_process.php",
+        "auth": "true",
+        "component": "false",
+        "title": "Processing Order Script"
+    },
     "/studio/inventory": {
         "template": "page",
         "page": "admin_inventory",
@@ -223,6 +230,13 @@
         "auth": "true",
         "component": "true",
         "title": "Orders"
+    },
+    "/studio/orders-add": {
+        "template": "page",
+        "page": "admin_orders-add",
+        "auth": "true",
+        "component": "true",
+        "title": "Editing Order"
     },
     "/studio/suppliers-add": {
         "template": "page",

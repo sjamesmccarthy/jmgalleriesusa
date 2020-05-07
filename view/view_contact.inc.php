@@ -27,10 +27,13 @@ if(isSet($this->data->routePathQuery[0])) {
 
             if ($frame != "PRINT-ONLY") {
                 $frame = str_replace("$$", "$" . $fc, $frame);
-                $frame = 'WITH ' . $frame . ' FRAME';
+                // $frame = $frame;
+                $frame_long = ' with a ' . $frame . ' frame';
             } else {
                 $frame = 'PRINT-ONLY';
             }
+        } else {
+            $frame_long = ' with a ' . $frame . ' frame';
         }
 
     $formTitle = "CHECKOUT <span class='lowercase light'>for</span> <span class='light initialcaps'>" . $photo . "</span>";
@@ -47,6 +50,7 @@ if(isSet($this->data->routePathQuery[0])) {
         '<input type="hidden" name="framing" value ="' . $frame . '" />' .
         '<input type="hidden" name="catalog_id" value ="' . $catalog_no . '" />' .
         '<input type="hidden" name="invoice_no" value ="' . time() . '-' . $catalog_no . '" />' .
+        '<p class="notice">-- Due to COVID-19 all frames are on back order because of supply-chain delays</p>' .
         '<p><input type="text" name="phone" placeholder="PHONE (eg. 951-708-1831)" required /><p>' .
         '<p><input type="text" name="address" placeholder="SHIPPING ADDRESS" required /><p>' .
         '<p><input type="text" name="address_other" placeholder="SHIPPING ADDRESS SECOND LINE (eg. Suite, Apt)" /><p>' .
@@ -60,7 +64,7 @@ if(isSet($this->data->routePathQuery[0])) {
     $payment_field = "<p class='pt-16 pb-16'><img style='margin-bottom: 10px; width: 150px; vertical-align: middle' src='/view/image/square-payment-icons.png' /> <i style='font-size: 1.8rem; margin-left: 5px;' class='fab fa-bitcoin'></i><br />Estimated Total Not Including Tax or Shipping or any Promotional Codes.<br />Visa, Mastercard, American Express and Discover accepted and processed with Square.<br />Bitcoin is accpeted via Coinbase or Square Cash App.</p>";
     $subject_VAL = $subject_PH;
     $formType = "RequestQuoteForm"; 
-    $formSizes = '<p><input type="text" id="contactsize" name="contactsize" value="' . urldecode($size) . ' ' . $frame . ' [CATALOG NUMBER ' . $catalog_no . ']" required /></p>';
+    $formSizes = '<p><input type="text" id="contactsize" name="contactsize" value="' . urldecode($size) . ' ' . $frame_long . ' [CATALOG NUMBER ' . $catalog_no . ']" required /></p>';
     $estimated_cost = "<h2>" . $cost . " USD</h2>";
 
 } else {

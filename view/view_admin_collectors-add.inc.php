@@ -23,6 +23,25 @@ if(isSet($this->routes->URI->queryvals)) {
     $user_data = $this->api_Admin_Get_Collector_UserAct($res_collector_id);
     $user_count = count($user_data);
 
+    $purchases = '<section id="purchases">
+       
+                <h4>Artwork Purchases (' . $artwork_count . ')</h4>
+                    
+                <table id="dataTableArtwork" class="display mt-16">
+                <thead>
+                    <tr>
+                        <th>title</th>
+                        <th>size</th>
+                        <th>serial_num</th>
+                        <th>reg_num</th>
+                        <th>purchase_date</th>
+                        <th>value</th>
+                    </tr>
+                </thead>
+                    <tbody></tbody>
+                </table>
+            </section>';
+
     if($user_count >= 1) {
         $user_account_html = "<a href='/studio/users-add?id=" . $user_data['user_id'] . "'>User Account Active.</a> Last activity on " . date("F jS, Y", strtotime($user_data['created']));
     } else {
