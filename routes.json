@@ -328,6 +328,12 @@
         "component": "false",
         "title": "About"
     },
+    "/release-notes": {
+        "template": "page",
+        "page": "release-notes",
+        "component": "false",
+        "title": "Release Notes"
+    },
     "/news": {
         "template": "page",
         "page": "news",

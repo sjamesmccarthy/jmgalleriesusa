@@ -9,7 +9,7 @@
             <!-- quickstats -->
             <?= $quickstats_html ?>
 
-            <div class="grid pt-32 pb-32">
+            <div class="grid pt-32 nopad-left pb-32">
                 <div class="col nopad-left">
                     <!-- photosviewed -->
                     <?= $photosviewed_html ?>

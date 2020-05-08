@@ -18,7 +18,7 @@
             <h1 class="detail-h1"><?= $photo_meta['title'] ?></h1>
             <p class="pb-32 edition-title"><?= $edition_desc ?></span></p>
             <p class="tiny blue" style="margin-bottom: -10px; margin-left: 5px;">$ USD</p>
-            <p id="price" class="price" style="margin-right: 20px; "><?= $default_price ?> </p>
+            <p id="price" class="price" style="margin-right: 20px; "><?= number_format($default_price) ?> </p>
         </div>
         
         <div class="col-12 mt-16">
@@ -63,13 +63,24 @@
 
     $('#buysize').on("change", function(e) {
 
-        $('#price').html($("#buysize option:selected").attr("data-price"));
+        var nf = new Intl.NumberFormat();
+        var p = $("#buysize option:selected").attr("data-price");
+        $('#price').html(nf.format(p));
 
+        // Check Frame Options
+        var ps = $("#buysize option:selected").val();
+
+        // Remove frame options from 5x7 and NOTECARDS
+        if(ps == '5x7' || ps == 'NOTECARDS') { 
+            $('#frame').find('option').not(':first').css("display", "none"); } 
+        else {
+            $('#frame').find('option').not(':first').css("display", "block");
+        }
     });
 
       $('#limited_ed_form').submit(function() {
 
-        console.log('start.form.limited_ed_form.submission');
+        // console.log('start.form.limited_ed_form.submission');
 
         grecaptcha.execute('6LetD7YUAAAAAFX5cXupV3exd1YCSuYFY_az92Wh', {action: 'homepage'}).then(function(token) {
               document.getElementById('g-recaptcha-response').value = token;

@@ -237,8 +237,8 @@ class Core_Api
             CAT.path AS catalog_path
         FROM
             catalog_photo AS PH
-            INNER JOIN catalog_collections_link AS CPL on CPL.catalog_photo_id = PH.parent_collections_id
-            INNER JOIN catalog_collections AS CAT on CAT.catalog_collections_id = CPL.catalog_collections_id
+        	INNER JOIN catalog_collections AS CAT ON CAT.catalog_collections_id = PH.parent_collections_id
+        	INNER JOIN catalog_collections_link AS CPL ON CPL.catalog_photo_id = PH.parent_collections_id
         WHERE
             PH.created > DATE_ADD(Now(), INTERVAL - 4 MONTH)
             AND PH.status = 'ACTIVE'

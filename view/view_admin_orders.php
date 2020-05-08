@@ -8,7 +8,7 @@
 
             <div class="notification success <?= $notification_state ?>"><?= $notification_msg ?></div>
 
-                    <div class="grid pt-32">
+                    <div class="grid pt-32 nopad-left">
                         <div class="col nopad-left">
                         <h2>Index of <b>Orders</b> (<?= $active_orders_count ?>)</h2>
                         

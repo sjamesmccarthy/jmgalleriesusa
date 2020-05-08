@@ -12,7 +12,7 @@
             </div>
         </div>
         
-        <div class="grid pt-32">
+        <div class="grid pt-32 nopad-left">
 
             <div class="col-12 collection-list">
             <ul>
@@ -32,7 +32,7 @@
                 <p><a href="/"><img class="breadcrumb-logo" src="/view/image/logo_fullsize.png" /></a> <?= $bc_catalog ?> <img class="breadcrumb-arrow" src="/view/image/icon_navarrow-right.svg" /><?= $this->page->title ?> </p>
                 </div>
                 <div class="col-5-right breadcrumb">
-                <p class="pull-right text-right"><?= $this->config->copyright ?> &mdash; <a href="/privacy">Privacy Policy</a><br /> Made With &#10084; in Las Vegas,  <?= $version ?></p>
+                <p class="pull-right text-right"><?= $this->config->copyright ?> &mdash; <a href="/privacy">Privacy Policy</a><br /> Made With &#10084; in Las Vegas,  <a href="/release-notes"><?= $version ?></a></p>
                 </div>
 
         </div>

@@ -4,14 +4,17 @@
     <meta site_name="<?= $this->config->site_name ?>" />
     <meta copyright="<?= $this->config->copyright ?>" />
 
-    <meta property="og:title" content="<?= $addSiteName ?><?= $this->title ?>" />
+    <meta property="og:title" content="<?= $this->title ?> at <?= $addSiteName ?> by j.McCarthy" />
     <meta property="og:url" content="https:<?= $this->routes->URI->url ?>" />
     <meta property="og:description" content="Artistic Photography for Fine Art Collectors & Enthusiasts" />
     <meta property="og:type" content="website" />
     <meta property="og:image" content="https://jmgalleries.com<?= $og_image ?>" />
+    <meta property="og:image:alt" content="<?= $this->title ?> at <?= $addSiteName ?> by j.McCarthy" />
 
-<!-- Add og:image_height -->
-<!-- Add Twitter Cards -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@jmgalleriesusa" />
+    <meta name="twitter:creator" content="@jmgalleriesusa" />
+    <meta name="twitter:card" content="summary_large_image" />
 
     <title><?= $addSiteName ?><?= $this->title ?></title>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap" rel="stylesheet">

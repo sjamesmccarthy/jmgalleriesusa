@@ -667,7 +667,6 @@ section, article {
 [class~=col], [class*=col-], [class*=col_],
 [class~=grid], [class*=grid-], [class*=grid_] {
   position: relative;
-  margin: 0 !important;
 }
 
 .overflow-hidden {
@@ -676,6 +675,7 @@ section, article {
 
 .nopad-left {
   padding-left: 0 !important;
+  margin-left: 0 !important;
 }
 
 /* ReCaptcha */
@@ -4013,6 +4013,15 @@ input[type=text].amazing-offer-error {
 }
 
 /*amazing-offer*/
+#release-notes ul {
+  list-style: square;
+}
+#release-notes ul li {
+  list-style: square;
+  margin-left: 64px;
+  margin-top: 10px;
+}
+
 .admin--section .admin--main_container {
   margin-top: -32px;
 }

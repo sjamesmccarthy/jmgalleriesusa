@@ -8,7 +8,7 @@
 
             <div class="notification success <?= $notification_state ?>"><?= $notification_msg ?></div>
                
-                <div class="grid pt-32">
+                <div class="grid pt-32 nopad-left">
                     <div class="col nopad-left"><h2>Settings</h2></div>
                 </div>
                 
@@ -255,7 +255,7 @@
 
                 </div>
 
-                <div class="grid pt-32" id="tab-session">
+                <div class="grid pt-32 nopad-left" id="tab-session">
                   <button id="sendform">UPDATE SETTINGS</button>
                 </div>
                 </form>

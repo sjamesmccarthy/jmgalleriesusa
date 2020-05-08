@@ -1,17 +1,16 @@
 
 ## 1.3.1
-- Add Twitter card support
-<meta name="twitter:card" content="summary" />
-<meta name="twitter:site" content="@nytimesbits" />
-<meta name="twitter:creator" content="@nickbilton" />
-<meta property="twitter:card" content="summary_large_image">
-
-- bugfix: Notifcations in admin area not being destroyed on redirect from supplier to material add/edit
-- image optimization for catalog and thumbnails
-- add comma in price of details page
++ Twitter card meta
++ add comma in price of details page
++ create release notes page
+- introduce tinyViews Notecards
++ updated margin/padding issues admin area
++ Add frame pricing logic into view for tinyViews
 
 ## 1.4
+- bugfix: Notifcations in admin area not being destroyed on redirect from supplier to material add/edit
 - mobile version of home page and gallery pages
+- image optimization for catalog and thumbnails
 
 ## 1.4.1
 - mobile version of detail pages

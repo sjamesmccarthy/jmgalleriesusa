@@ -56,7 +56,7 @@
      if( file_exists($_SERVER['DOCUMENT_ROOT'] . "/catalog/__image/" . $photo_meta['file_name'] . '-tinyviews-notes.jpg') ) {
 
         $tinyviewNotesImage = '<div class="col"><img class="in-room-img"  src="/catalog/__image/' . $photo_meta['file_name'] . '-tinyviews-notes.jpg" /><!-- <div class="bx-buyart-btn"><a target="_shop" href="/shop">tinyViews&trade; Edition &mdash; Shop Now</a></div>--></div>';
-        $tinyviewNotesOption = '<option data-price="20" value="SIZE: NOTE-CARD Set Of 3">SIZE: 5x7 NOTE CARD (Set of 3)</option>'; 
+        $tinyviewNotesOption = '<option data-price="20" value="NOTECARDS">SIZE: 5x7 NOTE CARD (Set of 3)</option>'; 
         $tv=1;
      } else {
          $tinyviewNotesImage = null;
@@ -167,8 +167,8 @@
             <label for="frame"></label>
             <select id="frame" name="frame">
                 <option data-price="0" value="PRINT-ONLY">PRINT (or Giclée) ONLY - NO FRAME</option>
-                <option data-price="20" value="ASH-GRAY(+$$)">FRAME: Ash Gray (+$$ USD)</option>
-                <option data-price="20" value="SNOW-WHITE(+$$)">FRAME: Snow White (+$$ USD)</option>
+                <option data-price="40" value="ASH-GRAY(+$20)">FRAME: Ash Gray (+$40 USD)</option>
+                <option data-price="40" value="SNOW-WHITE(+$20)">FRAME: Snow White (+$40 USD)</option>
             </select>
             <span class="tiny ml-16"><a href="/styles">More information about frame styles and pricing, not eligible for Premium framing.</a></span>
         </div>
