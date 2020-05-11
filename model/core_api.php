@@ -3066,6 +3066,7 @@ public function api_Insert_Order() {
             $customer_id = $this->mysqli->insert_id;
 
             /* Insert into product_order table */
+            $promocode = strtoupper($promocode);
              $sql_po = "
                INSERT INTO `jmgaller_iesusa`.`product_order` 
                (`product_customer_id`, `item`, `notes`, `quantity`, `price`, `tax`, `shipping`, `discount`, `invoice_number`) 
@@ -3168,6 +3169,7 @@ public function api_Admin_Get_Order($id) {
         $result = $this->mysqli->query($sql);
 
         /* Update product_order */
+        $discount = strtoupper($discount);
         $sql_o = "
         UPDATE `jmgaller_iesusa`.`product_order` SET 
             item = '{$item_pack}', 

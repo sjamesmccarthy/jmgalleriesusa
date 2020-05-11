@@ -3435,6 +3435,10 @@ fieldset {
   margin-left: 40px;
 }
 
+.toUpper {
+  text-transform: uppercase;
+}
+
 /* ********************** */
 /* view_about */
 .name-container {

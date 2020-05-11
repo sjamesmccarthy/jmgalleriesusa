@@ -100,10 +100,10 @@
                 <input type="hidden" name="promocode" value="<?= $res_discount ?>" />
               <div>            
                 <label for="title">Promotinonal Discount</label>
-                <input class="half-size" type="text" name="discount" placeholder="PROMOTIONAL DISCOUNT" value="<?= $res_discount ?>" />
+                <input class="half-size" type="text" id="discount" name="discount" placeholder="PROMOTIONAL DISCOUNT" value="<?= $res_discount ?>" />
 
                 <label for="title"></label>
-                <input class="half-size bkg-green" type="text" name="discount" value="$<?= $total_price ?> <?= $promo_discount ?>" disabled />
+                <input class="half-size bkg-green" type="text" name="total" value="$<?= $total_price ?> <?= $promo_discount ?>" disabled />
 
             </div> 
 
@@ -163,10 +163,9 @@
 <script>
 jQuery(document).ready(function($){
     
-    $("#pin").keypress(function () {
+    $("#discount").keyup(function () {
           $(this).addClass('toUpper');
     });
-
 
     $('#sendform').on("click", function() {
         $(":input[required]").each(function () {                     

@@ -15,7 +15,7 @@ require_once( $_SERVER["DOCUMENT_ROOT"] . '/controller/core_site.php');
 $core = new Core_Site();
 
     // $core->printp_r($_POST);
-    $res_discount = $_POST['promo'];
+    $res_discount = strtoupper($_POST['promo']);
     $res_price= $_POST['cost'];
 
      /* Math for total price */

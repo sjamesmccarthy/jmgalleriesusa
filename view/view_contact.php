@@ -61,6 +61,10 @@
   jQuery(document).ready(function($){
     jQuery.noConflict();
 
+    $("#promocode").keyup(function () {
+          $(this).addClass('toUpper');
+    });
+
     $('#apply_promo').on("click", function(e) {
         e.preventDefault();
 

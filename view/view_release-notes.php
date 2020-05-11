@@ -17,6 +17,7 @@
             <li>added: github repo link to this page (see very bottom)</li>
             <li>added: Nikon AF-S Nikkor 55-300 f/4.5-5.6 ED VR Lens to admin control / catalog-add</li>
             <li>updated: collector portal amazing offer component layout.</li>
+            <li>bugfix: promo-codes types in lowercase would be marked invalid.</li>
         	</ul>
         </p>
 
