@@ -1,42 +1,35 @@
 <section id="about pt-24">
-
-    <div class="grid-2_md-1">
-        <div class="col">
-                <img class="bio-profile-pic" src="/view/image/profile_img.jpg" />
-        </div>
-        <div class="col pl-16 mt-32 artist-statement">
-                <p class="name blue">j.McCarthy</p>
-                <p class="name-title">ARTIST STATEMENT</p>
-                <p class="name-statement blue">
-                Creativity and art have always had a hidden crush on me, a self-taught explorer in the field of landscape and digital photography. My artistic calling is for my artwork to take you on a journey to a place where your memories draw you into a day dream to share a story and connect with the human experience. <!-- Through purposeful paper choice, framing and composition -->
-                </p>
-                <p class="pt-32">
-                    <img src="/view/image/signature_full-web.png" />
-                </p>
-
-                <p class="pt-8 ml-16">
-                    <a target="_new" class="mr-16" href="http://twitter.com/jmgalleriesusa"><i class="fab fa-twitter"></a></i> 
-                    <a target="_new" class="mr-16" href="http://instagram.com/jmgalleriesusa"><i class="fab fa-instagram"></a></i> 
-                    <a target="_new" class="mr-16" href="http://linkedin.com/company/jmgalleriesusa"><i class="fab fa-linkedin"></a></i>
-                    <a target="_new" class="mr-16" href="http://facebook.com/jmgalleriesusa"><i class="fab fa-facebook"></a></i>
-                </p>
-                <!-- <img class="bio-profile-pic" src="/view/image/profile_img.jpg" /> -->
-        </div>
-
-    </div>
-
     <div class="grid-center">
-        <div class="col-12-center">
 
+        <div class="col-11">
 
-            <!-- <p class="bio-copy mt-16">
-            j.McCarthy's more popular pieces include, "Happiest Time of Day", "Between The Hills", "Bonsai Zen, "Snowy Pines", "Emigrant's Fog" and "Never Ending Story". Framed editions of these pieces can sometimes be viewed at many of his <a href="/exhibits">pop-up exhibits</a> which include local-owned businesses around the locations he photographs.
-            </p> -->
+                <div class="grid-2_md-1">
+                    <div class="col">
+                            <img class="bio-profile-pic" src="/view/image/profile_img.jpg" />
+                    </div>
+                    <div class="col pl-16 mt-32 artist-statement">
+                            <p class="name blue">j.McCarthy</p>
+                            <p class="name-title">ARTIST STATEMENT</p>
+                            <p class="name-statement blue">
+                            Creativity and art have always had a hidden crush on me, a self-taught explorer in the field of landscape and digital photography. My artistic calling is for my artwork to take you on a journey to a place where your memories draw you into a day dream to share a story and connect with the human experience. <!-- Through purposeful paper choice, framing and composition -->
+                            </p>
+                            <p class="pt-32">
+                                <img src="/view/image/signature_full-web.png" />
+                            </p>
+
+                            <p class="pt-8 ml-16">
+                                <a target="_new" class="mr-16" href="http://twitter.com/jmgalleriesusa"><i class="fab fa-twitter"></a></i> 
+                                <a target="_new" class="mr-16" href="http://instagram.com/jmgalleriesusa"><i class="fab fa-instagram"></a></i> 
+                                <a target="_new" class="mr-16" href="http://linkedin.com/company/jmgalleriesusa"><i class="fab fa-linkedin"></a></i>
+                                <a target="_new" class="mr-16" href="http://facebook.com/jmgalleriesusa"><i class="fab fa-facebook"></a></i>
+                            </p>
+                            <!-- <img class="bio-profile-pic" src="/view/image/profile_img.jpg" /> -->
+                    </div>
+
+                </div>
 
             <ul
                 class="timeline">
-
-            <!-- <li class="timeline-date">1973</li> -->
             <li 
                 class="timeline-history mb-16">
             <h3>TIMELINE</h3>

@@ -1,10 +1,9 @@
-<section id="about pt-24">
+<section id="styles pt-24">
     <div class="grid-center">
 
         <div class="col-11" >
     
     <h1>Styles, Editions and Framing</h1>
-    <p class="artists-statement padbot-30"></p>
 
 <ul class="subsection-ul">
     

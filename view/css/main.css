@@ -3456,7 +3456,7 @@ fieldset {
 .name-statement {
   padding-top: 40px;
   line-height: 1.5;
-  font-size: 2em;
+  font-size: 1.6rem;
 }
 
 .artist-statement {
@@ -3499,7 +3499,6 @@ fieldset {
 }
 
 .timeline-history > h3 {
-  margin-left: -50px;
   display: inline-block;
   background-color: #FFF;
   padding: 10px;
@@ -3559,7 +3558,6 @@ fieldset {
 
 #news-overflow li {
   margin-bottom: 10px;
-  margin-left: 20px;
 }
 
 .twitter-feed {
@@ -3825,7 +3823,6 @@ form #buysize, form #frame {
 /* view_styles */
 .subsection-ul > li {
   margin-top: 32px;
-  margin-left: 50px;
 }
 
 .moulding-thumb {

@@ -3,7 +3,7 @@
 <section id="contact">
     <div class="grid-center">
 
-        <div class="col-9">
+        <div class="col-11">
 
         <p class="blue"><?= $subTitle ?></p>
         <h1 class="pb-16"><?= $formTitle ?></h1>
