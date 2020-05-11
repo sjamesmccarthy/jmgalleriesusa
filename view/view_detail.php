@@ -76,6 +76,32 @@
         else {
             $('#frame').find('option').not(':first').css("display", "block");
         }
+
+        $("#frame").prop('selectedIndex', 0);  
+
+    });
+
+    $('#frame').on("change", function(e) {
+        var fr = $("#frame option:selected").val();
+
+        if($("#frame option:selected").val() == "ASH-GRAY(+$40)" || $("#frame option:selected").val() == "SNOW-WHITE(+$40)") {
+
+            var print = parseFloat($("#buysize option:selected").attr("data-price"));
+            var fp = 40; 
+            var newprice = print + fp;
+            // $('#price').html( newprice);
+
+        } else {
+            
+            var newprice = parseFloat($("#buysize option:selected").attr("data-price"));
+            // $('#price').html( print);
+        }
+
+        var nf = new Intl.NumberFormat();
+        var p = newprice;
+        $('#price').html(nf.format(p));
+
+
     });
 
       $('#limited_ed_form').submit(function() {

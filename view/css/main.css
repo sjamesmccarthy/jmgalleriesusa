@@ -708,6 +708,10 @@ section, article {
   font-size: 0.9rem;
 }
 
+.hidden {
+  display: none;
+}
+
 .pull-left {
   float: left;
 }

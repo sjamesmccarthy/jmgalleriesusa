@@ -17,6 +17,7 @@
                     <div><a href="#system">SYSTEM</a></div>
                     <div><a href="#components">COMPONENTS</a></div>
                     <div><a href="#notices">NOTICES</a></div>
+                    <div><a href="#promos">PROMO-CODES</a></div>
                     <div><a href="#session">SESSION</a></div>
                 </div>
 
@@ -85,7 +86,7 @@
                                     </div>
                                 </div>
                                 <div class="divTableRow">
-                                    <div class="divTableCell">package_version</div>
+                                    <div class="divTableCell"><a id="getTS" href="#">package_version</a> -- <span class="small"> Build : </span> <span id="ts" class="small"></span></div>
                                     <div class="divTableCell">
                                          <input class="w-100" type="text" name="package_version" value="<?= $package_version ?>" />
                                     </div>
@@ -153,6 +154,51 @@
                 </div>
 
                 <div class="grid" id="tab-components">
+                    <a name="promos"></a><h4>Promo Codes</h4>
+
+                    <div class="divTable w-100 mt-32 pb-32">
+
+                        <div class="divTableBody">
+                             <div class="divTableCell thead w-50"></div>
+                             <div class="divTableCell thead pl-8"></div>
+                        </div>
+
+                       <div class="divTableRow">
+                            <div class="divTableCell">seasonal</div>
+                            <div class="divTableCell">
+                                 <input class="w-100" type="text" name="promo_seasonal" value="<?= $promo_seasonal ?>"  />
+                            </div>
+                        </div>
+                       <div class="divTableRow">
+                            <div class="divTableCell">holiday</div>
+                            <div class="divTableCell">
+                                 <input class="w-100" type="text" name="promo_holiday" value="<?= $promo_holiday ?>"  />
+                            </div>
+                        </div>
+                       <div class="divTableRow">
+                            <div class="divTableCell">generic</div>
+                            <div class="divTableCell">
+                                 <input class="w-100" type="text" name="promo_generic" value="<?= $promo_generic ?>"  />
+                            </div>
+                        </div>
+                       <div class="divTableRow">
+                            <div class="divTableCell">collector</div>
+                            <div class="divTableCell">
+                                 <input class="w-100" type="text" name="promo_collector" value="<?= $promo_collector ?>"  />
+                            </div>
+                        </div>
+                       <div class="divTableRow">
+                            <div class="divTableCell">special</div>
+                            <div class="divTableCell">
+                                 <input class="w-100" type="text" name="promo_special" value="<?= $promo_special ?>"  />
+                            </div>
+                        </div>
+                                
+                    </div>
+
+                </div>
+
+                 <div class="grid" id="tab-promos">
                     <a name="components"></a><h4>Components</h4>
 
                     <div class="divTable w-100 mt-32 pb-32">
@@ -184,6 +230,7 @@
                     </div>
 
                 </div>
+
 
                 <div class="grid" id="tab-notices">
                     <div class="col-12">
@@ -268,6 +315,13 @@
 
 <script>
 jQuery(document).ready(function($){
+
+    $('#getTS').on("click", function(e) {
+       e.preventDefault();
+       let ts = Date.now();
+        $('#ts').html( ts );
+    });
+
     $('#sendform').on("click", function() {
         $(":input[required]").each(function () {                     
         var myForm = $('#settings-add');

@@ -1,12 +1,13 @@
     {
-        "amazingOfferPrice": "$480",
-        "amazingOfferRegPrice": "$1000",
+        "amazingOfferPrice": "690",
+        "amazingOfferRegPrice": "1380",
         "amazingOfferMonth": "April",
         "amazingOfferTitleMonth": "facade-to-the-sky.jpg",
         "amazingOfferFileName": "facade-to-the-sky.jpg",
+        "amazingOfferCatalogNumber": "AAP53LE",
         "amazingOfferSigInvert": "filter: invert(1);",
         "amazingOfferTitleLocation": "La Jolla, California",
         "currenOfferName": "Facade To The Sky",
         "imageWidth": "100%",
-        "imageSize": "16x20"
+        "imageSize": "16x24"
     }

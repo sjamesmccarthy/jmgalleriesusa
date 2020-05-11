@@ -1,11 +1,6 @@
-
-## 1.3.1
-+ Twitter card meta
-+ add comma in price of details page
-+ create release notes page
-- introduce tinyViews Notecards
-+ updated margin/padding issues admin area
-+ Add frame pricing logic into view for tinyViews
+## 1.3.3
+- add imgs for notecards
+- make photo titles consistent (lower, upper, initial)
 
 ## 1.4
 - bugfix: Notifcations in admin area not being destroyed on redirect from supplier to material add/edit

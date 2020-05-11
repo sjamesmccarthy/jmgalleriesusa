@@ -12,7 +12,8 @@ version: 1
 
 $myrewards_points = $this->api_MyRewards_Get_Points($this->collector_data_obj->collector_id);
 $myrewards_points = round($myrewards_points['points']*1.5);
-$p_code = strtoupper($this->collector_data_obj->last_name) . $this->collector_data_obj->collector_id;
+// $p_code = strtoupper($this->collector_data_obj->last_name) . $this->collector_data_obj->collector_id;
+$p_code = "ARTROCKS15";
 
 /* GENERATE HTML BLOCK */
 if ($this->config->component_polarized == 'true') {  
@@ -22,7 +23,7 @@ $html = <<< END
             <div class="most-popular--title col-12">
             <h2 class="uppercase ">YOUR REWARDS = $myrewards_points  POINTS</h2>
             <p><b>As a collector you are enrolled in our rewards program and it's pretty simple.</b></p>
-            <p class="mt-8">To get started share our website with your family and friends, and if they purchase a Limited Edition Fine Art Photograph, we will send you a tinyViews&trade; of your choice. You also receive points, and once you reach 2,500 points you're getting a free 16x20 Limited Edition of your selection. <u>Simply share this promo-code: {$p_code} ,</u> and your friends and family will use this code when ordering their fine art either online, by phone or email. They will also receive a 15% #itswhoyouknow discount.</p>
+            <p class="mt-8">To get started share our website with your family and friends, and if they purchase a Limited Edition Fine Art Photograph, we will send you a tinyViews&trade; of your choice. You also receive points, and once you reach 2,500 points you're getting a free 12x18 Collector Proof of your selection. <u>Simply share this promo-code: {$p_code} ,</u> and your friends and family will use this code when ordering their fine art either online, by phone or email. They will also receive a 15% #itswhoyouknow discount.</p>
             </div>
             
             <div class="col-12">

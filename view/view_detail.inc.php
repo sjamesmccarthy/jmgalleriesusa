@@ -167,8 +167,8 @@
             <label for="frame"></label>
             <select id="frame" name="frame">
                 <option data-price="0" value="PRINT-ONLY">PRINT (or Giclée) ONLY - NO FRAME</option>
-                <option data-price="40" value="ASH-GRAY(+$20)">FRAME: Ash Gray (+$40 USD)</option>
-                <option data-price="40" value="SNOW-WHITE(+$20)">FRAME: Snow White (+$40 USD)</option>
+                <option data-price="40" value="ASH-GRAY(+$40)">FRAME: Ash Gray (+$40 USD)</option>
+                <option data-price="40" value="SNOW-WHITE(+$40)">FRAME: Snow White (+$40 USD)</option>
             </select>
             <span class="tiny ml-16"><a href="/styles">More information about frame styles and pricing, not eligible for Premium framing.</a></span>
         </div>

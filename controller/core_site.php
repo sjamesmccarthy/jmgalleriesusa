@@ -136,7 +136,7 @@ class Core_Site extends Core_Api
                 $this->routes->URI->path = "/404";
                 $this->page->title = $this->routes->{$this->routes->URI->path}['title'];
                 $this->routes->URI->requested_path = $URIx;
-
+                $this->page->catalog_path = '404';
                 /* Log error */
                 
             }

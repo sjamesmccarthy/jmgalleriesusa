@@ -3162,7 +3162,6 @@ public function api_Admin_Get_Order($id) {
             state = '{$state}',
             postal_code = '{$postal_code}',
             added_newsletter = '{$added_newsletter}'
-
             WHERE product_customer_id = '{$product_customer_id}'
         ";
 
@@ -3176,7 +3175,7 @@ public function api_Admin_Get_Order($id) {
             price = '{$price}', 
             tax = '{$tax}', 
             shipping = '{$shipping}',
-            discount = '{$promocode}', 
+            discount = '{$discount}', 
             tracking_number = '{$tracking}' " . $sql_invoiced . $sql_printed . $sql_packaged . $sql_shipped . $sql_closed .
             "WHERE product_order_id = '{$order_id}'
         ";

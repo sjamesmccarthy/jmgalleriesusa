@@ -61,6 +61,52 @@
   jQuery(document).ready(function($){
     jQuery.noConflict();
 
+    $('#apply_promo').on("click", function(e) {
+        e.preventDefault();
+
+        // run ajax call to small php script which process this. 
+        // script will return an integer. 
+        // then use javascript to format
+        // console.log(payload);
+
+        if( $('#promocode').val() != '' ) {
+
+            var url = "/view/ajax_promocode_process.php";
+
+            $.ajax({
+                  type: "POST",
+                  url: url,
+                  data: { "promo":$('#promocode').val(), "cost":$('#estimated_cost').text() },
+                  async: true,
+                  success: function(data)
+                  {
+                      if(data == "INVALID CODE") {
+                          $('#promocode').val(data).css('color','red');
+                      } else {
+                          var oldprice = $('#estimated_cost').text();
+                          $('#estimated_cost_format').html(data + ' USD <span style="text-decoration: line-through; color: #e4e4e4;">' + oldprice + '<span>');
+                          console.log(data);
+                      }
+                  },
+                  error : function(request,error) {
+                      console.log("Request: "+JSON.stringify(request));
+                  }
+                });
+
+            // var promo_code = $('#promocode').val();
+            // var promo_type = promo_code.split(':')
+            // var promo_amount = 0;
+            // var estimated_cost = $('#estimated_cost').text();
+            // var new_price = estimated_cost - promo_type[1];
+            // var format_usd = new Intl.NumberFormat('en-US', {
+            //   style: 'currency',
+            //   currency: 'USD',
+            // });
+            // console.log('apply promo clicked ' + format_usd.format(new_price) );
+        }
+
+    });
+
       $('#contactForm').submit(function() {
 
         console.log('start.form.contactForm.submission');
@@ -81,7 +127,7 @@
 
             if (name == '' || email == '' || subject == '') {
               alert("Please Fill Required Fields To Send Message.");
-              return false;
+            //   return false;
             } else {
               console.log('validation PASS');
             }
@@ -114,7 +160,7 @@
                     });
                     
                     return false;
-                  });;
+                  });
               });
         });
 

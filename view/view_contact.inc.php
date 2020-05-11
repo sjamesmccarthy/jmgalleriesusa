@@ -60,12 +60,13 @@ if(isSet($this->data->routePathQuery[0])) {
 
 
     $button_label = "PLACE YOUR ORDER";
-    $promo_field = '<p class="pt-16 pb-16"><input style="margin-bottom: 0;" type="text" id="promocode" name="promocode" placeholder="PROMO CODE (DISCOUNT WILL BE APPLIED ON FINAL INVOICE)" value="' . $promo_code . '" /><!-- <br /><span class="tiny">Discount will be applied on final invoice</span>--></p>';
-    $payment_field = "<p class='pt-16 pb-16'><img style='margin-bottom: 10px; width: 150px; vertical-align: middle' src='/view/image/square-payment-icons.png' /> <i style='font-size: 1.8rem; margin-left: 5px;' class='fab fa-bitcoin'></i><br />Estimated Total Not Including Tax or Shipping or any Promotional Codes.<br />Visa, Mastercard, American Express and Discover accepted and processed with Square.<br />Bitcoin is accpeted via Coinbase or Square Cash App.</p>";
+    $promo_field = '<p class="pt-8 pb-32"><input class="half-size" style="margin-bottom: 0;" type="text" id="promocode" name="promocode" placeholder="PROMO CODE" value="' . $promo_code . '" /> <span class="ml-16 tiny"><a href="#" id="apply_promo">apply code</a></span></p>';
+    $payment_field = "<p class='pt-16 pb-16'><img style='margin-bottom: 10px; width: 150px; vertical-align: middle' src='/view/image/square-payment-icons.png' /> <i style='font-size: 1.8rem; margin-left: 5px;' class='fab fa-bitcoin'></i><br /><span class='small'Estimated Total Not Including Tax or Shipping or any Promotional Codes.<br />Visa, Mastercard, American Express and Discover accepted and processed with Square.<br />Bitcoin is accpeted via Coinbase or Square Cash App.</span></p>";
     $subject_VAL = $subject_PH;
     $formType = "RequestQuoteForm"; 
     $formSizes = '<p><input type="text" id="contactsize" name="contactsize" value="' . urldecode($size) . ' ' . $frame_long . ' [CATALOG NUMBER ' . $catalog_no . ']" required /></p>';
-    $estimated_cost = "<h2>" . $cost . " USD</h2>";
+
+    $estimated_cost = "<span id='estimated_cost' class='hidden'>" . $cost . "</span><h2><span id='estimated_cost_format'>" . number_format($cost) . " USD</span></h2>";
 
 } else {
     // Just a regular contact form

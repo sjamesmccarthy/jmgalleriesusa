@@ -31,15 +31,40 @@ if(isSet($this->routes->URI->queryvals)) {
     $item_info = json_decode($res_item);
  
     /* Math for total price */
-    $promos = array("TESTCODE"=>"10%", "COLLECT20"=>"20");
-    
-    foreach ($promos as $k => $v) {
-        if($res_discount == $k) { $promo_discount = $v; $promo_active = 1; }
+    $promos_array = array($this->config->promo_seasonal, $this->config->promo_holiday, $this->config->promo_generic, $this->config->promo_collector, $this->config->promo_special);
+
+    foreach ($promos_array as $key => $val) {
+
+            $promos_split = explode(":", $val);
+             if ($res_discount == $promos_split[0]) {
+                 $promo = array($promos_split[0] => $promos_split[1]);
+             }
+
     }
 
-    $total_price = (int)$res_price + (int)$res_tax + (int)$res_shipping - (int)$promo_discount;
+    foreach ($promo as $k => $v) {
+        if($res_discount == $k) { 
+            $promo_discount = $v; 
+            
+            if( strpos($promo_discount, '%') ) {
+                // this is percentage of
+                $n_percent = rtrim($promo_discount) / 100;
+                $get_precent_off = (int)$res_price * $n_percent;
+                $total_price = (int)$res_price + (int)$res_tax + (int)$res_shipping - $get_precent_off;
+                $usd=null;
+            } else {
+                $usd = '$';
+                $total_price = (int)$res_price + (int)$res_tax + (int)$res_shipping - (int)$promo_discount;
+            }
+
+            $promo_active = 1; 
+        } 
+    }
+
     if ($promo_active == 1) {
-        $promo_discount = "(REFLECTS " . $res_discount . " PROMO " . $promo_discount . " OFF)";
+        $promo_discount = "(REFLECTS " . $res_discount . " PROMO " . $usd . $promo_discount . " OFF)";
+    } else {
+        $total_price = (int)$res_price + (int)$res_tax + (int)$res_shipping;
     }
     
     if( isSet($res_received) AND isSet($res_invoiced) AND isSet($res_printed) AND isSet($res_packaged) AND isSet($res_shipped) ) {

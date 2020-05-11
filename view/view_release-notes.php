@@ -7,9 +7,22 @@
         <p>jM Galleries is powered by STUDIO610, software written for artists made by artists.</p>
         <p>It includes a custom template engine, customer relation and inventory component as well as suite of tools for art collectors.</p>
 
+        <p class="pt-16">v1.3.2 : May 11, 2020</p>
+        	<ul>
+            <li>added: promo-codes are now part of settings in admin control.</li>
+            <li>bugfix: error_404 page was diplaying hero component</li>
+            <li>update: real-time cost calc in image detail page now when adding frames.</li>
+            <li>added: contact/check-out form now applies promo-code discounts in real-time.</li>
+            <li>added: ability to fetch build number in admin control / settings</li>
+            <li>added: github repo link to this page (see very bottom)</li>
+            <li>added: Nikon AF-S Nikkor 55-300 f/4.5-5.6 ED VR Lens to admin control / catalog-add</li>
+            <li>updated: collector portal amazing offer component layout.</li>
+        	</ul>
+        </p>
+
         <p class="pt-16">v1.3.1 : May 8, 2020</p>
         	<ul>
-            <li>bugfix: api-call for New Release filmstrip component now displays correct collection path.
+            <li>bugfix: api-call for New Release filmstrip component now displays correct collection path.</li>
             <li>update: Removed framing pricing for 5x7 and notecards (tinyViews)</li>
         	<li>new: added Twitter card support for large summary cards.</li>
         	<li>update: added comma in pricing display on image details view.</li>
@@ -46,7 +59,7 @@
         </p>
 
         <p class="mt-32">Built using PHP7, MySQL and jQuery on a Macbook Pro.</p>
-        <p>Applications used include: Sketch, VS Code, TablePlus, CodeKit, CaptureOne 20, Transmit.</p>
+        <p>Applications used include: Sketch, VS Code, TablePlus, CodeKit, CaptureOne 20, Transmit and <a href="https://github.com/sjamesmccarthy/jmgalleriesusa">GitHub.</a></p>
         <p class="mt-32">If you're an artist or photographer and are interested in using STUDIO610 <a href="/contact">please contact me for a demo.</a></p>
         </div>
  
