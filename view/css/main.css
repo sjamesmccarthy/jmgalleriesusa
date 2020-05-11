@@ -3456,7 +3456,12 @@ fieldset {
 .name-statement {
   padding-top: 40px;
   line-height: 1.5;
-  font-size: 2.5em;
+  font-size: 2em;
+}
+
+.artist-statement {
+  box-sizing: border-box;
+  padding-left: 32px !important;
 }
 
 .bio-profile-pic-overlay {
@@ -3471,16 +3476,17 @@ fieldset {
 }
 
 .bio-profile-pic {
-  border-radius: 500px;
+  border-radius: 0;
   background-color: #FFF;
   width: 100%;
   z-index: 0;
-  opacity: 0.1;
-  position: absolute;
-  top: 120px;
-  left: -30px;
-  border: 1px dashed #000;
+  opacity: 0.5;
+  margin-top: 32px;
+  border: 1px solid #000;
   padding: 30px;
+  -webkit-filter: grayscale(100%);
+  /* Safari 6.0 - 9.0 */
+  filter: grayscale(100%);
 }
 
 .bio-copy {
@@ -3488,7 +3494,7 @@ fieldset {
 }
 
 .timeline {
-  width: 85%;
+  width: 100%;
   margin: 60px auto;
 }
 
@@ -3508,7 +3514,7 @@ fieldset {
 
 .timeline-history {
   display: inline-block;
-  width: 85%;
+  width: 100%;
   border-left: 1px solid #CCC;
   padding-left: 20px;
   vertical-align: top;

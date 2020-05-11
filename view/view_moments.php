@@ -137,7 +137,13 @@
             <li><p><span class="news-date">Mon Jun 13</span> <br /> </b> Enjoy my new curated selection of <b>Street and People</b> gallery; Random incidents in public places that capture life in its moment.
             </p></li>
 
-            <li><p><a target="_new" href="http://twitter.com/jmgalleriesusa"><i class="fab fa-twitter"></a></i></p></li>
+            <li class="pt-32">    <p class="">
+                    <a target="_new" class="mr-16" href="http://twitter.com/jmgalleriesusa"><i class="fab fa-twitter"></a></i> 
+                    <a target="_new" class="mr-16" href="http://instagram.com/jmgalleriesusa"><i class="fab fa-instagram"></a></i> 
+                    <a target="_new" class="mr-16" href="http://linkedin.com/company/jmgalleriesusa"><i class="fab fa-linkedin"></a></i>
+                    <a target="_new" class="mr-16" href="http://facebook.com/jmgalleriesusa"><i class="fab fa-facebook"></a></i>
+                </p>
+            </li>
             </ul>
 </div>
 

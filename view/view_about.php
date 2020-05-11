@@ -1,14 +1,24 @@
 <section id="about pt-24">
 
     <div class="grid-2_md-1">
-        <div class="col_sm-10">
+        <div class="col">
                 <img class="bio-profile-pic" src="/view/image/profile_img.jpg" />
         </div>
-        <div class="col pl-16 mt-32">
+        <div class="col pl-16 mt-32 artist-statement">
                 <p class="name blue">j.McCarthy</p>
                 <p class="name-title">ARTIST STATEMENT</p>
                 <p class="name-statement blue">
                 Creativity and art have always had a hidden crush on me, a self-taught explorer in the field of landscape and digital photography. My artistic calling is for my artwork to take you on a journey to a place where your memories draw you into a day dream to share a story and connect with the human experience. <!-- Through purposeful paper choice, framing and composition -->
+                </p>
+                <p class="pt-32">
+                    <img src="/view/image/signature_full-web.png" />
+                </p>
+
+                <p class="pt-8 ml-16">
+                    <a target="_new" class="mr-16" href="http://twitter.com/jmgalleriesusa"><i class="fab fa-twitter"></a></i> 
+                    <a target="_new" class="mr-16" href="http://instagram.com/jmgalleriesusa"><i class="fab fa-instagram"></a></i> 
+                    <a target="_new" class="mr-16" href="http://linkedin.com/company/jmgalleriesusa"><i class="fab fa-linkedin"></a></i>
+                    <a target="_new" class="mr-16" href="http://facebook.com/jmgalleriesusa"><i class="fab fa-facebook"></a></i>
                 </p>
                 <!-- <img class="bio-profile-pic" src="/view/image/profile_img.jpg" /> -->
         </div>

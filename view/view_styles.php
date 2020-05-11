@@ -187,29 +187,24 @@
                     <div class="divTableCell border-l border-b border- pl-8r"></div>
                 </div>
                 <div class="divTableRow">
-                    <div class="divTableCell ">*Glass in not included but may be added for an additional $20 per frame not including 12x12 frames.</div>
-                    <div class="divTableCell border-l border-b pl-8">5 x 7</div>
-                    <div class="divTableCell border-l border-b border-r pl-8">$20</div>
-                </div>
-                <div class="divTableRow">
-                    <div class="divTableCell"></div>
+                    <div class="divTableCell">*Glass in not included but may be added for an additional $20 per frame not including 12x12 frames.</div>
                     <div class="divTableCell border-l border-b pl-8">8 x 8</div>
                     <div class="divTableCell border-l border-b border-r pl-8">$40</div>
                 </div>
                 <div class="divTableRow">
                     <div class="divTableCell"></div>
                     <div class="divTableCell border-l border-b pl-8">8 x 12</div>
-                    <div class="divTableCell border-l border-b border-r pl-8">$60</div>
+                    <div class="divTableCell border-l border-b border-r pl-8">$40</div>
                 </div>
                 <div class="divTableRow">
                     <div class="divTableCell"></div>
                     <div class="divTableCell border-l border-b pl-8">12 x 12</div>
-                    <div class="divTableCell border-l border-b border-r pl-8">$80</div>
+                    <div class="divTableCell border-l border-b border-r pl-8">$40</div>
                 </div>
                 <div class="divTableRow">
                     <div class="divTableCell border-b"></div>
                     <div class="divTableCell border-l border-b pl-8">12 x 18</div>
-                    <div class="divTableCell border-l border-b border-r pl-8">$120</div>
+                    <div class="divTableCell border-l border-b border-r pl-8">$40</div>
                 </div>
                
             </div>
