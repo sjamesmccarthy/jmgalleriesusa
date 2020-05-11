@@ -14,7 +14,7 @@
         </div>
 
         <!-- generated html from component file -->
-        <?= $thumb_html ?>
+            <?= $thumb_html ?>
         <!-- /generated html from component file -->
   
     </div>

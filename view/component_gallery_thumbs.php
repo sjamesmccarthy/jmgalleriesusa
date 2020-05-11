@@ -8,7 +8,7 @@
 
     foreach($catalog_names as $key=>$value) {
 
-            $thumb_html .= "<article>";
+            $thumb_html .= "<article id='filmstrip'>";
             $thumb_html .= '<div class="grid-4_sm-2 grid-4_md-3">';
 
         if(strtolower($value['title']) != 'new releases') {

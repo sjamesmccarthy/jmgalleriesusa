@@ -1,6 +1,15 @@
 /* ********************** */
 /* component_gallery_thumbs */
 
+#filmstrip {
+
+    h4 {
+        text-transform: uppercase;
+        font-size: 1.3rem;
+        font-weight: 400;
+    }
+}
+
 .thumb img {
     width: 100%;
 }

@@ -32,7 +32,7 @@
                 class="timeline">
             <li 
                 class="timeline-history mb-16">
-            <h3>TIMELINE</h3>
+            <h2>TIMELINE</h2>
             </li>
             <li 
                 class="timeline-history">
@@ -100,7 +100,7 @@
             <ul class="timeline">
                 <!-- <li class="timeline-date">2018</li> -->
                 <li class="timeline-history">
-                    <h3>2018-2019</h3>
+                    <h3>2018, 2019</h3>
                     <p>
                         As the infamous sign says: Welcome To Fabulous Las Vegas!
                     </p>
@@ -110,24 +110,44 @@
                     </p>
 
                     <p>
-                        This year was also the start of an infautation with Art Off The Walls, a first-Friday event in Temecula, California where j.McCarthy had the oportunity to share his passion of landscape photography with the backwoods of San Diego, California, but it wasn't all about exhbiting.
+                        2018 was also the start of an infautation with Art Off The Walls, a first-Friday event in Temecula, California where j.McCarthy had the oportunity to share his passion of landscape photography with the backwoods of San Diego, California, but it wasn't all about exhbiting.
                     </p>
                     
                     <p>
                         Lots of back of the studio changes happened too, from the addition of new Tamron G2 lenses, Macbooks, NAS backup solutions, framing equiment and suppliers to the purchase of an Epson SureColor P800, j.McCarthy overhauled his entire workflow creating his own turn-key studio, as well as migrated his digital darkroom from Adobe Lightroom to Phase One's Capture One.
                     </p>
 
-                    <p>It certainly was a year to remember and a sigificant milestone for jM Galleries.</p>
+                    <p>j.McCarthy kicked off 2019 with a 3 month exhibit at the Temecula Public Library in Temecula, California. He closed out the year launching a new online catalog and annoucing a move to Southern California. </p> 
+                </li>
+                </ul>
+
+                <ul class="timeline">
+                <li class="timeline-history">
+                    <h3>2020</h3>
+                    <p>It was the beginning of a new chapter in Southern California, or so it was supposed to have been. After a few months in transition, and because of unforseen circumstsances, the adventure ended as quickly as it had begun and j.McCarthy found himself back in Las Vegas.
+                    </p>
+                        
+                    <p>The global pandemic known as COVID-19 (aka Coronavirus, aka a really severe Flu which reaked havoc on the elderly and those with respitory conditions) swept the world in haste, starting at ground-zero in WuHan China. The virus quickly infected almost a million people and killing hundreds of thousands, but the econonic shutdown and media-induced panic is what ultimately devasted more lives.</p>
+                    
+                    <p>Entire states, cities and countries were put on complete lock-down or shelter-in-place orders by their Government officials in fear of an unknown death-toll which the media was comparing to the Black Plague of 1346. Although, the human-race has learned a lot since then with science and medicine, none-the-less, the US econmony hit the brakes as the major media outlets blasted information with irregard to fact-checking and common-sense. Unfortunately, many businesses had to close their doors permanently.</p>
+                    
+                    <p>So, that was March. It's now mid-May and people are still locking themselves inside afraid to breath the air outside even though it's perfectly safe. But, as we enter a time which is starting to be compared to the Great Depression of 1929-1939, the US unemployment rate is almost at 20% (highest on-record), businesses are slow to re-open and the future is still very uncertain.</p>
+                    
+                    <p>The only thing for certain right now is that we have a very long road back to normalcy, and the ship back to California has since sailed.
+                    </p>
+
                 </li>
             </ul>
 
             <ul class="timeline">
                 <!-- <li class="timeline-date">2019</li> -->
-                <li class="timeline-history">
-                <h3>2020</h3>
-                    <p>This was the year the world almost ended. The global pandemic known as COVID-19 (aka, Coronavirus) swept the world in haste, infecting almost a million people and killing hundreds of thousands. Entire states, cities and countries were put on complete lock-down or shelter-in-place orders by their Government officials. The global econmony hit the brakes and came to an alarming slow-down forcing many business to close their doors.</p>
-                    
-                    <p class="timeline-height-adjust"><a href="/moments">Current Moments & Other News</a></p>
+                <li class="timeline-history">                  
+                    <p class="pt-8 ml-16">
+                                <a target="_new" class="mr-16" href="http://twitter.com/jmgalleriesusa"><i class="fab fa-twitter"></a></i> 
+                                <a target="_new" class="mr-16" href="http://instagram.com/jmgalleriesusa"><i class="fab fa-instagram"></a></i> 
+                                <a target="_new" class="mr-16" href="http://linkedin.com/company/jmgalleriesusa"><i class="fab fa-linkedin"></a></i>
+                                <a target="_new" class="mr-16" href="http://facebook.com/jmgalleriesusa"><i class="fab fa-facebook"></a></i>
+                            </p>
                 </li>
             </ul>
 
