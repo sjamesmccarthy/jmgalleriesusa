@@ -72,9 +72,12 @@
 
         // Remove frame options from 5x7 and NOTECARDS
         if(ps == '5x7' || ps == 'NOTECARDS') { 
-            $('#frame').find('option').not(':first').css("display", "none"); } 
-        else {
-            $('#frame').find('option').not(':first').css("display", "block");
+            // $('#frame').find('option').not(':first').css("display", "none"); 
+            $('#frame').find('option').not(':first').attr("disabled", "disabled"); 
+            console.log('5x7');
+       } else {
+            // $('#frame').find('option').not(':first').css("display", "block");
+            $('#frame').find('option').not(':first').removeAttr("disabled");
         }
 
         $("#frame").prop('selectedIndex', 0);  

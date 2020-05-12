@@ -91,9 +91,19 @@
                 <h6>Available Editions</h6>
 
                 <div class="select-wrapper half-size">
-                <select id="as_gallery" name="as_gallery">
-                    <option value="1" <?= ($as_gallery == "1" ? "SELECTED" : ""); ?>>as LIMITED EDITION</option>
-                    <option value="0" <?= ($as_gallery == "0" ? "SELECTED" : ""); ?>>no (LIMITED EDITION)</option>
+                <select id="as_edition" name="as_edition">
+                    <option value="as_gallery" <?= ($as_gallery == "1" ? "SELECTED" : ""); ?>>as LIMITED EDITION</option>
+                    <!-- <option value="0" <?= ($as_gallery == "0" ? "SELECTED" : ""); ?>>no (LIMITED EDITION)</option> -->
+                    <option value="as_open" <?= ($as_open == "1" ? "SELECTED" : ""); ?>>as OPEN/tinyViews&trade; EDITION</option>
+                    <!-- <option value="0" <?= ($as_open == "0" ? "SELECTED" : ""); ?>>no (OPEN/tinyViews&trade; EDITION)</option> -->
+                </select>
+                </div>
+                <input type="hidden" name="previous_edition" value="<?= $previous_edition ?>" />
+
+                <div class="select-wrapper half-size">
+                <select id="on_display" name="on_display">
+                    <option value="0">on Display (Select Location)</option>
+                    <?= $location_html ?>
                 </select> 
                 </div>
 
@@ -113,23 +123,23 @@
                 </select> 
                 </div> -->
 
-                <div class="select-wrapper half-size">
+                <!-- <div class="select-wrapper half-size">
                 <select id="as_open" name="as_open">
                     <option value="1" <?= ($as_open == "1" ? "SELECTED" : ""); ?>>as OPEN/tinyViews&trade; EDITION</option>
                     <option value="0" <?= ($as_open == "0" ? "SELECTED" : ""); ?>>no (OPEN/tinyViews&trade; EDITION)</option>
                 </select> 
-                </div>
+                </div> -->
 
             <div>
                 <!-- <div class="half-size">
                     <input  type="text" id="print_media" name="print_media" placeholder="PRINT MEDIA: PAPER, ACRYLIC" value="<?= $print_media ?>">
                 </div> -->
-                <div class="select-wrapper half-size">
+                <!-- <div class="select-wrapper half-size">
                 <select id="on_display" name="on_display">
                     <option value="0">on Display (Select Location)</option>
                     <?= $location_html ?>
                 </select> 
-                </div>
+                </div> -->
             </div>
             
             <div>

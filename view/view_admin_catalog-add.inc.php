@@ -20,6 +20,18 @@
 
         extract($edit_data, EXTR_PREFIX_SAME, "dup");
 
+        if($as_gallery == "1") {
+            $previous_edition = "as_gallery";
+        } 
+
+        if($as_studio == "1") {
+            $previous_edition = "as_studio";
+        } 
+
+        if($as_open == "1") {
+            $previous_edition = "as_open";
+        } 
+
         $collections_data = $this->api_Admin_Get_CollectionsByPhoto($catalog_photo_id, $parent_collections_id);
         if(!isSet($collections_data)) { $collections_html= '<i style="padding-right: 5px;" class="fas fa-link"></i> link other collections'; }
 

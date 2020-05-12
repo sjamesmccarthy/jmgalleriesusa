@@ -20,7 +20,6 @@
 	
 
 $this->api_Admin_Update_Order();
-exit;
 
 $redirect_to = '/orders';
 header('location:/studio' . $redirect_to);

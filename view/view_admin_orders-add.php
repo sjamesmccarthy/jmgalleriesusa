@@ -13,6 +13,7 @@
             <form id="reports-add" action="/studio/api/update/order" method="POST">
             <fieldset <?= $form_disabled ?>>
             <input type="hidden" id="formTypeAction" name="formTypeAction" value="<?= $formTypeAction ?>" />
+            <input type="hidden" id="invoice_no" name="invoice_no" value="<?= $res_invoice_number ?>" />
             <?= $id_field ?>
 
            <h4 class="pb-16">Customer Information</h4>
@@ -114,6 +115,15 @@
                      <label for="order_received" style="color: #000"> RECEIVED</label>
                 </p>
                 <input class="half-size fake-disabled" type="text" name="received" placeholder="PENDING" value="<?= $res_received ?>" disabled/>
+            </div>
+
+                <input type="hidden" name="acepted" value="<?= $res_accepted ?>" />
+            <div>            
+                 <p id="1-2_order_accepted" class="half-size small mb-16 mt-16">
+                     <input <?= ($res_accepted != '' ? "CHECKED DISABLED" : ""); ?> type="checkbox" id="order_accepted" name="order_accepted" value="1" /> 
+                     <label for="order_accepted" style="color: #000"> ACCEPTED</label>
+                </p>
+                <input class="half-size fake-disabled" type="text" name="accepted" placeholder="PENDING" value="<?= $res_accepted ?>" disabled/>
             </div>
 
             <div>            

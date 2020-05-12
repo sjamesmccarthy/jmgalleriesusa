@@ -22,6 +22,9 @@
             <li>bugfix: catalog listing not filtering correctly.</li>
             <li>bugfix: order process (ajax script) now inserts into product order table and passing promocode as ALLCAPS.</li>
             <li>added: integrated available-size and edition into admin control : settings.</li>
+            <li>updated: admin control : catalog only allows limited or open editions.</li>
+            <li>updated: admin control : order now sends update emails for each step of the sales/creation workflow.</li>
+            <li>bugfix: disabling frame options in detail page now works in Safari.</li>
         	</ul>
         </p>
 

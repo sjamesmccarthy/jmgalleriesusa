@@ -1,6 +1,5 @@
 ## 1.3.3
 - add imgs for notecards
-- make photo titles consistent (lower, upper, initial)
 
 ## 1.4
 - bugfix: Notifcations in admin area not being destroyed on redirect from supplier to material add/edit

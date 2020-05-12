@@ -1440,6 +1440,25 @@ class Core_Api
         $story = $this->mysqli->real_escape_string($_POST['story']);
         if( !isSet($_POST['featured']) ) { $featured = '0'; }
 
+        /* do a little fixing on edition type */
+        // if($previous_edition == "as_gallery") {
+        //     $as_gallery = "0";
+        // }
+
+        // if($previous_edition == "as_open") {
+        //     $as_open = "0";
+        // }
+
+        if($as_edition == "as_gallery") {
+            $as_gallery = "1";
+            $as_open = "0";
+        }
+
+        if($as_edition == "as_open") {
+            $as_open = "1";
+            $as_gallery = "0";
+        }
+
         $sql = "UPDATE catalog_photo 
         SET 
         parent_collections_id = '$parent_collections_id',
@@ -1513,6 +1532,16 @@ class Core_Api
         $title = $this->mysqli->real_escape_string($_POST['title']);
         if( !isSet($_POST['featured']) ) { $featured = '0'; }
         if( !isSet($_POST['as_studio']) ) { $as_studio = '0'; }
+
+        if($as_edition == "as_gallery") {
+            $as_gallery = "1";
+            $as_open = "0";
+        }
+
+        if($as_edition == "as_open") {
+            $as_open = "1";
+            $as_gallery = "0";
+        }
 
         $sql = "
         INSERT INTO `catalog_photo` (
@@ -3120,6 +3149,7 @@ public function api_Admin_Get_Order($id) {
             "catalog_id"=>$item_catalog_id
         ));
 
+        $sql_accepted = null;
         $sql_invoiced = null;
         $sql_printed = null;
         $sql_packaged = null;
@@ -3127,13 +3157,63 @@ public function api_Admin_Get_Order($id) {
         $sql_closed = null;
 
         /* Sort through workflow */
-        if($order_invoiced == "1") { $sql_invoiced = ", invoiced = '" . $timestamp . "'"; $close_count++; }
-        if($order_printed == "1") { $sql_printed = ", printed = '" . $timestamp . "'"; $close_count++; }
-        if($order_packaged == "1") { $sql_packaged = ", packaged = '" . $timestamp . "'"; $close_count++; }
-        if($order_shipped == "1") { $sql_shipped = ", shipped = '" . $timestamp . "'"; $close_count++; }
+        if($order_accepted == "1") { 
+            $sql_accepted = ", accepted = '" . $timestamp . "'"; 
+            $to = $email;
+			$subject = 'Order ' . $invoice_no . ' Received & Processing';
+			$header_from = "FROM: jM Galleries " . $this->config->email . " <'" . $this->config->site_name . "'>";
+			$reply_to = $this->config->email;
+        	$headers =  $header_from . "\r\n" . 'Reply-To: ' . $reply_to . "\r\n" . 'X-Mailer: PHP/' . phpversion() . '/jmGForm';
+            $message = "Hello " . $name . ",\nThis is an automated message to let you know that your fine-art, " . strtoupper($item_title) . ", order has been received and is in the works. While your artwork is being created, you will be receiving periodic email updates from me, so please make sure these messages are not being flagged as spam/junk. If you have any questions please call or text me at 951-708-1831 or email at james@jmgalleries.com \n\nThank you for supporting the Arts!\n\n--j.McCarthy\n\n";
+        	mail($to, $subject, $message, $headers);
+            $close_count++;
+        }
+
+        if($order_invoiced == "1") { 
+            $sql_invoiced = ", invoiced = '" . $timestamp . "'"; 
+            $to = $email;
+			$subject = 'Order ' . $invoice_no . ' Invoice Sent';
+			$header_from = "FROM: jM Galleries " . $this->config->email . " <'" . $this->config->site_name . "'>";
+			$reply_to = $this->config->email;
+        	$headers =  $header_from . "\r\n" . 'Reply-To: ' . $reply_to . "\r\n" . 'X-Mailer: PHP/' . phpversion() . '/jmGForm';
+            $message = "Hello " . $name . ",\nThis is an automated message to let you know that your fine-art, " . strtoupper($item_title) . ", has been invoiced through our payment processor Square. If you haven't received an email from Square please check your junk/spam box. If you see an error in the invoice please contact me at 951-708-1831 or james@jmgalleries.com.\n\nThank you for supporting the Arts!\n\n--j.McCarthy\n\n";
+        	mail($to, $subject, $message, $headers);
+            $close_count++; 
+        }
+
+        if($order_printed == "1") { 
+            $sql_printed = ", printed = '" . $timestamp . "'"; 
+            $to = $email;
+			$subject = 'Order ' . $invoice_no . ' Printing Complete';
+			$header_from = "FROM: jM Galleries " . $this->config->email . " <'" . $this->config->site_name . "'>";
+			$reply_to = $this->config->email;
+        	$headers =  $header_from . "\r\n" . 'Reply-To: ' . $reply_to . "\r\n" . 'X-Mailer: PHP/' . phpversion() . '/jmGForm';
+            $message = "Hello " . $name . ",\nThis is an automated message to let you know that your fine-art, " . strtoupper($item_title) . ", has been printed and is getting prepped from any other work necessary before shipping. Once the product has shipped you will be receiving another message with tracking information.\n\nThank you for supporting the Arts!\n\n--j.McCarthy\n\n";
+        	mail($to, $subject, $message, $headers);
+            $close_count++; 
+        }
+
+        if($order_packaged == "1") { 
+            $sql_packaged = ", packaged = '" . $timestamp . "'"; 
+            $close_count++; 
+        }
+
+        if($order_shipped == "1") { 
+            $sql_shipped = ", shipped = '" . $timestamp . "'"; 
+            $sql_printed = ", printed = '" . $timestamp . "'"; 
+            $to = $email;
+			$subject = 'Order ' . $invoice_no . ' Has Shipped';
+			$header_from = "FROM: jM Galleries " . $this->config->email . " <'" . $this->config->site_name . "'>";
+			$reply_to = $this->config->email;
+        	$headers =  $header_from . "\r\n" . 'Reply-To: ' . $reply_to . "\r\n" . 'X-Mailer: PHP/' . phpversion() . '/jmGForm';
+            $message = "Hello " . $name . ",\nThis is an automated message to let you know that your fine-art, " . strtoupper($item_title) . ", has been shipped via UPS. The tracking number is:\n\n" . $tracking . "\nhttps://www.ups.com/track?loc=en_US&tracknum=" . $tracking . "\n\nThank you for supporting the Arts!\n\n--j.McCarthy\n\n";
+        	mail($to, $subject, $message, $headers);
+            $close_count++; 
+        }
+
         if( !isSet($_POST['added_newsletter']) ) { $added_newsletter = 0; }
 
-        if($close_count == 4) { $closed = $sql_closed = ", closed ='1'"; }
+        if($close_count == 5) { $closed = $sql_closed = ", closed ='1'"; }
 
         /* Update product_customer */
         $sql = "
@@ -3162,7 +3242,7 @@ public function api_Admin_Get_Order($id) {
             tax = '{$tax}', 
             shipping = '{$shipping}',
             discount = '{$discount}', 
-            tracking_number = '{$tracking}' " . $sql_invoiced . $sql_printed . $sql_packaged . $sql_shipped . $sql_closed .
+            tracking_number = '{$tracking}' " . $sql_accepted . $sql_invoiced . $sql_printed . $sql_packaged . $sql_shipped . $sql_closed .
             "WHERE product_order_id = '{$order_id}'
         ";
         
