@@ -28,9 +28,21 @@
 
             foreach($catalog_photos as $k => $v) {
                 
-                if($v['as_gallery'] == 1) {$desc_editions = "<p>Edition of " . $this->config->limited_edition_max  . " plus 2 Artist Proofs</p>"; $available_sizes = "16x24, 20x30 24x36"; } else { $data_filter_G = null;  }
-                if($v['as_studio'] == 1) {$desc_editions = "<p>Giclée, tinyViews&trade; Edition</p>"; $available_sizes = "16x24, 20x30 24x36"; } else { $data_filter_S = null; }
-                if($v['as_open'] == 1) { $desc_editions = "<p>Giclée, tinyViews&trade; Edition</p>"; $available_sizes = "5x7, 8x8, 8x12, 12x18"; } else { $data_filter_O = null; }
+                if($v['as_gallery'] == 1) {
+                    $edition_desc = str_replace("{limited_edition_max}", $this->config->limited_edition_max, $this->config->edition_description_limited);
+                    $desc_editions = "<p>" . $edition_desc  . "</p>"; 
+                    $available_sizes = $this->config->available_sizes_limited; } 
+                    else { $data_filter_G = null;  }
+
+                if($v['as_studio'] == 1) {
+                    $desc_editions = "<p>" . $this->config->edition_description_open . "</p>"; 
+                    $available_sizes = $this->config->available_sizes_open; } 
+                    else { $data_filter_S = null; }
+
+                if($v['as_open'] == 1) { 
+                    $desc_editions = "<p>" . $this->config->edition_description_open . "</p>"; 
+                    $available_sizes = $this->config->available_sizes_open; } 
+                    else { $data_filter_O = null; }
 
                 if( file_exists($_SERVER['DOCUMENT_ROOT'] . "/catalog/__thumbnail/" . $v['file_name'] . '.jpg')) {
                     $img_file = $v['file_name'];

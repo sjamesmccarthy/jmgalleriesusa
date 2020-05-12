@@ -4799,6 +4799,10 @@ table.dataTable tbody td.valign {
   text-decoration: underline;
 }
 
+.code-block {
+  display: none;
+}
+
 .collector--main_container .whoami {
   display: none;
 }

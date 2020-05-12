@@ -39,6 +39,7 @@
 
     </div>
 
+    <?= $env ?>
     <?= $cookie_consent ?>
 
 </section>

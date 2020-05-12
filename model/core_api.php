@@ -3021,6 +3021,8 @@ public function api_Admin_Update_Settings() {
 
 public function api_Insert_Order() {
 
+        // print "api_Insert_Order().start";
+
          /* extract Data Array */
         extract($_POST, EXTR_PREFIX_SAME, "dup");
 
@@ -3042,6 +3044,7 @@ public function api_Insert_Order() {
                VALUES 
                ('{$contactname}', '{$contactemail}', '{$phone}', '{$address}', '{$address_other}', '{$city}', '{$state}', '{$postalcode}');";
 
+            $data['sql'] = $sql;
             $result = $this->mysqli->query($sql);
             $customer_id = $this->mysqli->insert_id;
 
@@ -3053,6 +3056,7 @@ public function api_Insert_Order() {
                VALUES 
                ('{$customer_id}', '{$item_pack}', '{$comments}', '1', '{$price}', '0', '0', '{$promocode}', '{$invoice_no}');";
 
+            $data['sql_po'] = $sql_po;
             $result_po = $this->mysqli->query($sql_po);
 
             if ($result == TRUE) {
@@ -3163,7 +3167,7 @@ public function api_Admin_Get_Order($id) {
         ";
         
         $result_o = $this->mysqli->query($sql_o);
-
+        
         if($result == 1) {
             $_SESSION['error'] = '200';
             $_SESSION['notify_msg'] = $name;

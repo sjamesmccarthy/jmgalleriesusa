@@ -151,7 +151,7 @@
                       success: function(data)
                       {
                           
-                          var data_html = "Thank You For Your Order, an art consultant will be in touch in 48 hours.<!-- (code: " + data + ")-->";
+                          var data_html = "Thank You For Your Order, an art consultant will be in touch in 48 hours.";
                           $('.form-main').prop('disabled', true).css('opacity','.3');
                           $('.form-main').slideUp('slow');
                           $('#sendform').hide();

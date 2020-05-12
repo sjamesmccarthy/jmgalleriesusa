@@ -8,7 +8,7 @@
                 <li class="filter-all selected">All</li>
                 <li class="filter-gallery">Limited Edition</li>
                 <!-- <li class="filter-studio">Studio Edition</li> -->
-                <li class="filter-open">tinyViews&trade; Edition</li>
+                <li class="filter-open">Giclée & tinyViews&trade;</li>
                 <!-- <li class="filter-tinyviews">tinyViews&trade; Edition</li> -->
             </ul>
         </div>
@@ -41,12 +41,14 @@ jQuery(document).ready(function($){
         $('[class*="f-"]').hide();
         $('.f-gallery').show();
     });
+
     // $('.filter-studio').click(function() {
     //     $('[class*="filter-"]').removeClass("selected");
     //     $('[class*="filter-studio"]').addClass("selected");
     //     $('[class*="f-"]').hide();
     //     $('.f-studio').show();
     // });
+
     $('.filter-open').click(function() {
         $('[class*="filter-"]').removeClass("selected");
         $('[class*="filter-open"]').addClass("selected");

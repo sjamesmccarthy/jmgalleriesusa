@@ -3,6 +3,10 @@
 $catalog_names = $this->api_Catalog_Category_List();
 $version = $this->config->package_version;
 
+if($this->env == "local") {
+    $env = "<p style='background-color: yellow; color: black; padding: 10px;'>env:" . $this->env . "</p>";
+}
+
 foreach($catalog_names as $k => $v) {
 
     $collections_html .= '<li><a href="/' . $v['path'] . '">' . $v['title'] . '</a></li>';

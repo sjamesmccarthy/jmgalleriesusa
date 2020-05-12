@@ -39,7 +39,7 @@
 
         $('#dataTable').DataTable( {
             paging: true,
-            lengthMenu: [[50, 75, 100, -1], [50, 75, 100, "All"]],
+            lengthMenu: [[75, 100, 175, -1], [75, 100, 175, "All"]],
             searching: true,
             oSearch: {"sSearch": "ACTIVE"},
             data: <?= $data_json ?>,

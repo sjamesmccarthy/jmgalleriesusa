@@ -19,6 +19,9 @@
             <li>updated: collector portal amazing offer component layout.</li>
             <li>bugfix: promo-codes types in lowercase would be marked invalid.</li>
             <li>update: cleaned up layout styles on misc. pages</li>
+            <li>bugfix: catalog listing not filtering correctly.</li>
+            <li>bugfix: order process (ajax script) now inserts into product order table and passing promocode as ALLCAPS.</li>
+            <li>added: integrated available-size and edition into admin control : settings.</li>
         	</ul>
         </p>
 

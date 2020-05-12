@@ -22,6 +22,8 @@
 
     /* CORE - LIST OF SETTINGS IN config.json */
     $data_html = $this->getJSON('config.json', 'data_config');
+    $code_block = $data_html;
+
     extract($data_html, EXTR_PREFIX_SAME, "dup");
 
     /* CORE - LIST OF NOTICES IN data_notices.json */

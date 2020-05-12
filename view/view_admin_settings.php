@@ -19,6 +19,11 @@
                     <div><a href="#notices">NOTICES</a></div>
                     <div><a href="#promos">PROMO-CODES</a></div>
                     <div><a href="#session">SESSION</a></div>
+                    <div><a id="show-code" href="#">&lt;/&gt;</a></div>
+                </div>
+
+                <div class="code-block">
+                    <?php $this->printp_r($code_block); ?>
                 </div>
 
                 <form id="settings-upd" action="/studio/api/update/settings" method="POST" enctype="multipart/form-data">
@@ -67,6 +72,31 @@
                                  <input class="w-100" type="text" name="limited_edition_max" value="<?= $limited_edition_max ?>" />
                             </div>
                         </div>
+                        <div class="divTableRow">
+                            <div class="divTableCell">available_sizes_limited</div>
+                            <div class="divTableCell">
+                                 <input class="w-100" type="text" name="available_sizes_limited" value="<?= $available_sizes_limited ?>" />
+                            </div>
+                        </div>
+                        <div class="divTableRow">
+                            <div class="divTableCell">edition_description_limited</div>
+                            <div class="divTableCell">
+                                 <input class="w-100" type="text" name="edition_description_limited" value="<?= $edition_description_limited ?>" />
+                            </div>
+                        </div>
+                        <div class="divTableRow">
+                            <div class="divTableCell">available_sizes_open</div>
+                            <div class="divTableCell">
+                                 <input class="w-100" type="text" name="available_sizes_open" value="<?= $available_sizes_open ?>" />
+                            </div>
+                        </div>
+                        <div class="divTableRow">
+                            <div class="divTableCell">edition_description_open</div>
+                            <div class="divTableCell">
+                                 <input class="w-100" type="text" name="edition_description_open" value="<?= $edition_description_open ?>" />
+                            </div>
+                        </div>
+
                     </div>
                 </div>
 
@@ -315,6 +345,11 @@
 
 <script>
 jQuery(document).ready(function($){
+
+    $('#show-code').on("click", function(e) {
+        e.preventDefault();
+        $('.code-block').toggle();
+    });
 
     $('#getTS').on("click", function(e) {
        e.preventDefault();
