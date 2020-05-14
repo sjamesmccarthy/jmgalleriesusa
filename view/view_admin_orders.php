@@ -75,7 +75,15 @@
                     } 
                 },
                 { data: 'received'},
-                { data: 'price'}
+                { data: 'price',
+                        "render": function(data, type, row, meta){
+                            if(type === 'display'){
+                                if(row.discount != '') { var promo = ' (-PROMO)'; } else { var promo = ''; }
+                                data = data + promo;
+                            }  
+                        return data;
+                    } 
+                }
             ]
         } );
         
