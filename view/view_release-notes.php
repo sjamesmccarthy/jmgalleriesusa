@@ -9,7 +9,8 @@
 
         <p class="pt-16">v1.3.3 : May 14, 2020</p>
         	<ul>
-            <li>added: promo-codes are now part of settings in admin control.</li>
+            <li>added: inventory integration when procesing order.</li>
+            <li>bugfix: manual entry now hidden by default on admin control : inventory form.</li>
         	</ul>
         </p>
 
@@ -32,6 +33,7 @@
             <li>updated: admin control : order now sends update emails for each step of the sales/creation workflow.</li>
             <li>bugfix: disabling frame options in detail page now works in Safari.</li>
             <li>added: collector integration from admin control : order.</li>
+            <li>added: notecard images to some tinyViews editions.</li>
         	</ul>
         </p>
 

@@ -28,7 +28,13 @@ switch($_POST['formTypeAction']) {
 		$this->api_Admin_Update_Inventory_Location();
 		$this->api_Admin_Update_Inventory_Collector();
 		$this->api_Admin_Update_Inventory_Expenses();
-		$redirect_to = '/inventory';
+        if(isSet($_POST['orders_redirect'])) { 
+			$redirect_to = '/orders-add?id=' . $_POST['orders_redirect'];
+		}
+		else {
+			$redirect_to = '/inventory';
+		}
+
 	break;
 	
 	case "update":

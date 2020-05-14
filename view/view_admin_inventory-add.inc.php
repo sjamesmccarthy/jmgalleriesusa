@@ -8,6 +8,56 @@
         header('location:/studio/signin');
     }
 
+
+if(count($this->data->routePathQuery) > 2) {
+    
+    foreach($this->data->routePathQuery as $key => $val) {
+        $params[] = explode('=', $val); // fastest but not best way to handle this
+    }
+
+    /* Array
+    (
+        [0] => ref=2
+        [1] => loc=STUDIO
+        [2] => title=WANDERING
+        [3] => col=19
+        [4] => estyle=tinyviews
+        [5] => psize=12x18
+        [6] => fr=PRINT-ONLY
+        [7] => lp=120
+        [8] => val=120
+        [9] => neg=MDT25OT_WANDERING
+        [10] => acq=2020-05-06%2007:28:10
+    ) */
+    // $this->printp_r($this->data->routePathQuery);
+
+    $title = $params[2][1];
+    if($params[4][1] == 'tinyviews') {
+        $edition_style = "OPEN";
+    } else {
+        $edition_style = "GALLERY";
+    }
+
+    $edition_num_max = $this->config->limited_edition_max;
+    $print_size = $params[5][1];
+    $print_media = "PAPER";
+    $frame_desc = urldecode($params[6][1]);
+    $listed = $params[7][1];
+    $value = $params[8][1];
+    $negative_file = $params[9][1];
+    $acquired_from = "WEB ORDER";
+    $purchase_date = urldecode($params[10][1]);
+
+    // collector ID set below $params[3][1]
+    $redirect_url = "<input type='hidden' name='orders_redirect' value='" . $params[0][1] . "' />";
+    $redirect_url .= "<input type='hidden' name='product_order_id' value='" . $params[0][1] . "' />";
+
+
+    unset($this->routes->URI->queryvals);
+} else {
+    $redirect_url = null;
+}
+
     /* Get Supplier_Materials for drop select list */
     $supplier_materials_data = $this->api_Admin_Get_Inventory_Supplier_Materials();
     // print "fetch.api_Admin_Get_Inventory_Supplier_Materials()";
@@ -192,7 +242,7 @@
     foreach($collector_data as $key_col => $val_col) {
 
         /* If Editing an existing record */
-        if($val_col['collector_id'] === $edit_data['coa'][0]['collector_id']) { 
+        if($val_col['collector_id'] === $edit_data['coa'][0]['collector_id'] || $val_col['collector_id'] === $params[3][1]) { 
             $selected = "SELECTED"; 
             $hidden_collector_id = '<input type="hidden" name="state_collector_id" id="state_collector_id" value="' . $edit_data['coa'][0]['collector_id'] . '">';
             $show_collector_meta = "show";

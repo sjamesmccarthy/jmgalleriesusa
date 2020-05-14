@@ -100,7 +100,7 @@
 
                 <input type="hidden" name="promocode" value="<?= $res_discount ?>" />
               <div>            
-                <label for="title">Promotinonal Discount</label>
+                <label for="title">Promotional Discount</label>
                 <input class="half-size" type="text" id="discount" name="discount" placeholder="PROMOTIONAL DISCOUNT" value="<?= $res_discount ?>" />
 
                 <label for="title"></label>
@@ -138,7 +138,7 @@
             <div>
                 <p id="3_order_printed" class="half-size small mb-16 mt-16">
                      <input <?= ($res_printed != '' ? "CHECKED disabled" : ""); ?> type="checkbox" id="order_printed" name="order_printed" value="1" /> 
-                     <label for="order_printed" style="color: #000"> PRINTED | <?= $collector_link ?> | <a target="_new" href="/studio/inventory-add">Create Inventory Record</a> </label>
+                     <label for="order_printed" style="color: #000"> PRINTED | <?= $collector_link ?> | <?= $inventory_link ?> </label>
                 </p>
                 <input type="hidden" name="printed" value="<?= $res_printed ?>" />
                 <input class="half-size fake-disabled" type="text" name="printed" placeholder="PENDING" value="<?= $res_printed ?>" disabled/>

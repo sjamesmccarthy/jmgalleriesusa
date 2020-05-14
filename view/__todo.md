@@ -1,18 +1,15 @@
 ## 1.3.3
-- add imgs for notecards
-- bugfix: manual entry selection admin : inventory
-- added: inventory integration from order to admin  control
-
 
 ## 1.4
 - bugfix: Notifcations in admin area not being destroyed on redirect from supplier to material add/edit
-- mobile version of home page and gallery pages
 - image optimization for catalog and thumbnails
-
-## 1.4.1
-- mobile version of detail pages
+- mobile version of homepage, collection pages
+- separate sessions for collector portal and admin control
 
 ## 1.4.2
+- mobile version of details page
+
+## 1.4.3
 - mobile version of about, styles, moments pages
 
 ## 1.5

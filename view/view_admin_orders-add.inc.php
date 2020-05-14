@@ -36,7 +36,12 @@ if(isSet($this->routes->URI->queryvals)) {
     $last_name  = $split_name[1];
 
     $checkForCollector = $this->api_Admin_Get_CollectorByName($first_name, $last_name);
-    if( count($checkForCollector) == 1) { $collector_link = "Collector Found (" . $checkForCollector['collector_id'] . ")"; } else { $collector_link = '<a target="_new" href="/studio/collectors-add?ref=' . $res_product_customer_id . '&orders_id=' .$edit_id . '">Create Collector Profile</a>'; }
+    if( count($checkForCollector) == 1) { $collector_link = "Collector Found (" . $checkForCollector['collector_id'] . ")"; } else { $collector_link = '<a target="_new" href="/studio/collectors-add?ref=' . $res_product_customer_id . '&orders_id=' .$edit_id . '">Create Collector Profile</a>'; $checkForCollector['collector_id'] = null; }
+
+    $checkForInventory = $this->api_Admin_Get_InventoryByOrderId($edit_id);
+    if( count($checkForInventory) == 1) { $inventory_link = "Inventory Found (" . $checkForInventory['art_id'] . ")"; } else {
+         $inventory_link = '<a href="/studio/inventory-add?ref=' . $edit_id . '&loc=STUDIO&title=' . strtoupper($item_info->title) . '&col=' . $checkForCollector['collector_id'] . '&estyle=' . $item_info->edition . '&psize=' . $item_info->size . '&fr=' . urlencode($item_info->framing) . '&lp=' . $res_price . '&val=' . $res_price . '&neg=' . $item_info->catalog_id . '_' . strtoupper($item_info->title) . '&acq=' . $res_received . '">Create Inventory Record</a>';
+     }
 
     /* Math for total price */
     $promos_array = array($this->config->promo_seasonal, $this->config->promo_holiday, $this->config->promo_generic, $this->config->promo_collector, $this->config->promo_special);

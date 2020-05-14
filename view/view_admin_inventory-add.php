@@ -17,6 +17,7 @@
             <?= $hidden_location_id ?>
             <?= $hidden_collector_id ?>
             <?= $hidden_remove_manual_suppliers ?>
+            <?= $redirect_url ?>
 
             <input type="hidden" id="created" name="created" value="<?= $created ?>" />
             <input type="hidden" id="artist_id" name="artist_id" value="1" />
@@ -59,9 +60,9 @@
             </div>
             <div>
                 <label for="edition_num">EDITION NUM</label>
-                <input class="half-size" type="text" id="edition_num" name="edition_num" placeholder="EDITION NO." value="<?= $edition_num ?>" required>
+                <input class="half-size" type="text" id="edition_num" name="edition_num" placeholder="EDITION NO." value="<?= $edition_num ?>" >
                 <label for="edition_num_max">EDITION NUM MAX</label>
-                <input class="half-size" type="text" id="edition_num_max" name="edition_num_max" placeholder="EDITION NO. MAX" value="<?= $edition_num_max ?>" required>
+                <input class="half-size" type="text" id="edition_num_max" name="edition_num_max" placeholder="EDITION NO. MAX" value="<?= $edition_num_max ?>" >
             </div>
 
             <div>
@@ -76,14 +77,14 @@
 
                 <div>
                     <label for="frame_size">FRAME SIZE</label>
-                    <input class="half-size" type="text" id="frame_size" name="frame_size" placeholder="FRAME SIZE (eg, 18x26, 28x40)" value="<?= $frame_size ?>" required>
+                    <input class="half-size" type="text" id="frame_size" name="frame_size" placeholder="FRAME SIZE (eg, 18x26, 28x40)" value="<?= $frame_size ?>" >
                     <label for="frame_material">FRAME MATERIAL</label>
-                    <input class="half-size" type="text" id="frame_material" name="frame_material" placeholder="FRAME MATERIAL (eg, Bass 530, Inset Wood/Metal)" value="<?= $frame_material ?>" required>
+                    <input class="half-size" type="text" id="frame_material" name="frame_material" placeholder="FRAME MATERIAL (eg, Bass 530, Inset Wood/Metal)" value="<?= $frame_material ?>" >
                 </div>
 
                 <div>
                     <label for="frame_desc">FRAME DESC</label>
-                    <input type="text" id="frame_desc" name="frame_desc" placeholder="FRAME DESC (eg, PAINTED ASH, STAINED NATURAL)" value="<?= $frame_desc ?>" required>
+                    <input type="text" id="frame_desc" name="frame_desc" placeholder="FRAME DESC (eg, PAINTED ASH, STAINED NATURAL)" value="<?= $frame_desc ?>" >
                 </div>
 
                 <div>

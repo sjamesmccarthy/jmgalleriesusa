@@ -1787,7 +1787,7 @@ class Core_Api
         $notes = $this->mysqli->real_escape_string($_POST['notes']);
         if(empty($_POST['value'])) { $value = '0.00'; }
         if(empty($_POST['listed'])) { $listed = '0.00'; }
-
+        
         $sql = "UPDATE art 
         SET 
         `art_location_id`='$art_location',
@@ -1809,7 +1809,7 @@ class Core_Api
         `born_date`='$born_date',
         `listed`='$listed',
         `value`='$value'
-        WHERE art_id = '$art_id'";
+         WHERE art_id = '$art_id'";
 
         $result = $this->mysqli->query($sql);
 
@@ -1835,6 +1835,15 @@ class Core_Api
         $notes = $this->mysqli->real_escape_string($_POST['notes']);
         if(empty($_POST['value'])) { $value = '0.00'; }
         if(empty($_POST['listed'])) { $listed = '0.00'; }
+         
+        if(isSet($_POST['product_order_id'])) { 
+            $sql_product_order_id = ", `product_order_id`"; 
+            $sql_product_order_id_val = ", '" . $_POST['product_order_id'] . "'"; 
+
+        } else { 
+            $sql_product_order_id = null; 
+        }
+
 
         $sql = "
         INSERT INTO `art` (
@@ -1858,8 +1867,8 @@ class Core_Api
         `notes`, 
         `born_date`,
         `listed`,
-        `value`
-        ) VALUES ( 
+        `value`" . $sql_product_order_id .
+        ") VALUES ( 
             DEFAULT, 
             '$artist_id', 
             '$art_location',
@@ -1880,8 +1889,8 @@ class Core_Api
             '$notes',
             '$born_date',
             '$listed',
-            '$value'
-            )";
+            '$value'" . $sql_product_order_id_val .
+            ")";
 
         $result = $this->mysqli->query($sql);
         $_POST['art_id'] = $this->mysqli->insert_id;
@@ -3097,6 +3106,36 @@ public function api_Insert_Order() {
                 $this->log(array("key" => "api", "value" => "Failed To Process Order for " . $contactname, "type" => "failure"));
             }	
             
+        }
+
+        return($data);
+    }
+
+public function api_Admin_Get_InventoryByOrderId($id) {
+
+        /* Executes SQL and then assigns object to passed var */
+        if( $this->checkDBConnection(__FUNCTION__) == true) {
+
+           /* Insert into product_customer table */
+            $sql = "
+            SELECT
+            	art_id
+            FROM
+            	art
+            WHERE
+            	art.product_order_id = '" .$id . "'";
+
+             $result = $this->mysqli->query($sql);
+
+            if ($result->num_rows > 0) {
+            
+                while($row = $result->fetch_assoc())
+		        {
+		            $data = $row;
+		        }
+                
+            } 
+
         }
 
         return($data);
