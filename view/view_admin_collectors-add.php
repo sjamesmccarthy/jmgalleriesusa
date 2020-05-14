@@ -13,6 +13,7 @@
             <form id="collectors-add" action="/studio/api/update/collectors" method="POST">
             <input type="hidden" id="formTypeAction" name="formTypeAction" value="<?= $formTypeAction ?>" />
             <?= $id_field ?>
+            <?= $redirect_url ?>
             <input type="hidden" id="artist_id" name="artist_id" value="1" />
 
             <div>

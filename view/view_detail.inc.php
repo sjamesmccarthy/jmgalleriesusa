@@ -43,7 +43,7 @@
     $available_sizes = $photo_meta['available_sizes'];
 
     /* Determine if the "TinyViews photo exists */
-     if( file_exists($_SERVER['DOCUMENT_ROOT'] . "/catalog/__image/" . $photo_meta['file_name'] . '-tinyviews.jpg') ) {
+     if( file_exists($_SERVER['DOCUMENT_ROOT'] . "/catalog/__image/" . $photo_meta['file_name'] . '-tinyviews.jpg') && $photo_meta['as_gallery'] == "0" ) {
 
         $tinyviewImage = '<div class="col"><img class="in-room-img"  src="/catalog/__image/' . $photo_meta['file_name'] . '-tinyviews.jpg" /><!-- <div class="bx-buyart-btn"><a target="_shop" href="/shop">tinyViews&trade; Edition &mdash; Shop Now</a></div>--></div>';
         $tv=1;
@@ -53,10 +53,10 @@
          $tv=0;
      }
 
-     if( file_exists($_SERVER['DOCUMENT_ROOT'] . "/catalog/__image/" . $photo_meta['file_name'] . '-tinyviews-notes.jpg') ) {
+     if( file_exists($_SERVER['DOCUMENT_ROOT'] . "/catalog/__image/" . $photo_meta['file_name'] . '-tinyviews-notes.jpg') && $photo_meta['as_gallery'] == "0" ) {
 
         $tinyviewNotesImage = '<div class="col"><img class="in-room-img"  src="/catalog/__image/' . $photo_meta['file_name'] . '-tinyviews-notes.jpg" /><!-- <div class="bx-buyart-btn"><a target="_shop" href="/shop">tinyViews&trade; Edition &mdash; Shop Now</a></div>--></div>';
-        $tinyviewNotesOption = '<option data-price="20" value="NOTECARDS">SIZE: 5x7 NOTE CARD (Set of 3)</option>'; 
+        $tinyviewNotesOption = '<option data-price="20" value="NOTECARDS">SIZE: 5x7 NOTECARD/POSTCARD (Set of 3)</option>'; 
         $tv=1;
      } else {
          $tinyviewNotesImage = null;
@@ -69,14 +69,14 @@
         }
 
     /* Determine if the "VirtualRoom" photo exists */
-    if( file_exists($_SERVER['DOCUMENT_ROOT'] . "/catalog/__image/" . $photo_meta['file_name'] . '-room.jpg') ) {
+    if( file_exists($_SERVER['DOCUMENT_ROOT'] . "/catalog/__image/" . $photo_meta['file_name'] . '-room.jpg') && $photo_meta['as_gallery'] == "0" ) {
         
         $in_roomImg = '<div class="col"><img class="in-room-img" src="/catalog/__image/' . $photo_meta['file_name'] . '-room.jpg" /></div>';
     
     } 
 
     /* Determine if the "VirtualRoom" photo exists */
-    if( file_exists($_SERVER['DOCUMENT_ROOT'] . "/catalog/__image/" . $photo_meta['file_name'] . '-room-alt.jpg') ) {
+    if( file_exists($_SERVER['DOCUMENT_ROOT'] . "/catalog/__image/" . $photo_meta['file_name'] . '-room-alt.jpg') && $photo_meta['as_gallery'] == "0" ) {
         $in_roomImgAlt = '<div class="col"><img class="in-room-img" src="/catalog/__image/' . $photo_meta['file_name'] . '-room-alt.jpg" /></div>';
     } 
 
@@ -124,10 +124,10 @@
         <div class="col select-wrapper" style="width: 300px; margin-right: 20px;">
             <label for="frame"></label>
             <select id="frame" name="frame">
-                <option value="Black Vodka">FRAME: Black Vodka (similar to a Dark Black stain)</option>
-                <option value="Whiskey">FRAME: Whiskey (similar to a Medium Brown stain)</option>
-                <option value="Bourbon">FRAME: Bourbon (similar to a Light Brown stain)</option>
-                <option value="Matte Charcoal">FRAME: Matte Charcoal (similar to Matte Black)</option>
+                <option value="Black Vodka">FRAME: Premium Designer Black Vodka (similar to a Dark Black stain)</option>
+                <option value="Whiskey">FRAME: Premium Designer Whiskey (similar to a Medium Brown stain)</option>
+                <option value="Bourbon">FRAME: Premium Designer Bourbon (similar to a Light Brown stain)</option>
+                <option value="Matte Charcoal">FRAME: Premium Designer Matte Charcoal (similar to Matte Black)</option>
             </select>
             <span class="tiny ml-16"><a href="/styles">More information about frame styles</a></span>
         </div>
@@ -148,7 +148,7 @@
         $btn = "Add To Cart +Checkout";
         $btn_link = '<a href="/contact?photo=' . $photo_meta['file_name'] . '&open=true">';
 
-        $price_array = array('15', '40', '60', '80', '120');
+        $price_array = array('20', '40', '60', '80', '120');
         $default_price = $price_array[4];
 
         $sizes_frames = '<div class="col select-wrapper" style="width: 300px;  margin-right: 20px;">
@@ -167,10 +167,10 @@
             <label for="frame"></label>
             <select id="frame" name="frame">
                 <option data-price="0" value="PRINT-ONLY">PRINT (or Giclée) ONLY - NO FRAME</option>
-                <option data-price="40" value="ASH-GRAY(+$40)">FRAME: Ash Gray (+$40 USD)</option>
-                <option data-price="40" value="SNOW-WHITE(+$40)">FRAME: Snow White (+$40 USD)</option>
+                <option data-price="40" value="ASH-GRAY(+$40)">FRAME: Studio Ash Gray (+$40 USD)</option>
+                <option data-price="40" value="SNOW-WHITE(+$40)">FRAME: Studio Snow White (+$40 USD)</option>
             </select>
-            <span class="tiny ml-16"><a href="/styles">More information about frame styles and pricing, not eligible for Premium framing.</a></span>
+            <span class="tiny ml-16"><a href="/styles">More information about frame styles and pricing</span>
         </div>
          <input type="hidden" name="edition" value="open" />';
 

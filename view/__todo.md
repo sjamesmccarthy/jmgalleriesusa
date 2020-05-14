@@ -1,5 +1,8 @@
 ## 1.3.3
 - add imgs for notecards
+- bugfix: manual entry selection admin : inventory
+- added: inventory integration from order to admin  control
+
 
 ## 1.4
 - bugfix: Notifcations in admin area not being destroyed on redirect from supplier to material add/edit

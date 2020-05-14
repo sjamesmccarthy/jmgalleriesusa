@@ -3102,6 +3102,66 @@ public function api_Insert_Order() {
         return($data);
     }
 
+public function api_Admin_Get_CollectorByName($first,$last) {
+
+        /* Executes SQL and then assigns object to passed var */
+        if( $this->checkDBConnection(__FUNCTION__) == true) {
+
+           /* Insert into product_customer table */
+            $sql = "
+            SELECT
+            	collector_id
+            FROM
+            	collector
+            WHERE
+            	collector.first_name = '" .$first . "' AND collector.last_name='" . $last . "'";
+
+             $result = $this->mysqli->query($sql);
+
+            if ($result->num_rows > 0) {
+            
+                while($row = $result->fetch_assoc())
+		        {
+		            $data = $row;
+		        }
+                
+            } 
+
+        }
+
+        return($data);
+    }
+
+public function api_Admin_Get_Order_Customer($id) {
+
+        /* Executes SQL and then assigns object to passed var */
+        if( $this->checkDBConnection(__FUNCTION__) == true) {
+
+           /* Insert into product_customer table */
+            $sql = "
+            SELECT
+            	pc.*
+            FROM
+            	product_customer AS pc
+            WHERE
+            	pc.product_customer_id = '" .$id . "'";
+
+             $result = $this->mysqli->query($sql);
+
+            if ($result->num_rows > 0) {
+            
+                while($row = $result->fetch_assoc())
+		        {
+		            $data = $row;
+		        }
+                
+            } 
+
+        }
+
+        return($data);
+    }
+
 public function api_Admin_Get_Order($id) {
 
         /* Executes SQL and then assigns object to passed var */
@@ -3176,7 +3236,7 @@ public function api_Admin_Get_Order($id) {
 			$header_from = "FROM: jM Galleries " . $this->config->email . " <'" . $this->config->site_name . "'>";
 			$reply_to = $this->config->email;
         	$headers =  $header_from . "\r\n" . 'Reply-To: ' . $reply_to . "\r\n" . 'X-Mailer: PHP/' . phpversion() . '/jmGForm';
-            $message = "Hello " . $name . ",\nThis is an automated message to let you know that your fine-art, " . strtoupper($item_title) . ", has been invoiced through our payment processor Square. If you haven't received an email from Square please check your junk/spam box. If you see an error in the invoice please contact me at 951-708-1831 or james@jmgalleries.com.\n\nThank you for supporting the Arts!\n\n--j.McCarthy\n\n";
+            $message = "Hello " . $name . ",\nThis is an automated message to let you know that your fine-art, " . strtoupper($item_title) . ", has been invoiced through our payment processor Square. If you haven't received an email from Square please check your junk/spam box. If you see an error in the invoice please contact me at 951-708-1831 or email at james@jmgalleries.com.\n\nThank you for supporting the Arts!\n\n--j.McCarthy\n\n";
         	mail($to, $subject, $message, $headers);
             $close_count++; 
         }
@@ -3206,7 +3266,7 @@ public function api_Admin_Get_Order($id) {
 			$header_from = "FROM: jM Galleries " . $this->config->email . " <'" . $this->config->site_name . "'>";
 			$reply_to = $this->config->email;
         	$headers =  $header_from . "\r\n" . 'Reply-To: ' . $reply_to . "\r\n" . 'X-Mailer: PHP/' . phpversion() . '/jmGForm';
-            $message = "Hello " . $name . ",\nThis is an automated message to let you know that your fine-art, " . strtoupper($item_title) . ", has been shipped via UPS. The tracking number is:\n\n" . $tracking . "\nhttps://www.ups.com/track?loc=en_US&tracknum=" . $tracking . "\n\nThank you for supporting the Arts!\n\n--j.McCarthy\n\n";
+            $message = "Hello " . $name . ",\nThis is an automated message to let you know that your fine-art, " . strtoupper($item_title) . ", has been shipped via UPS. The tracking number is:\n\n" . $tracking . "\nhttps://www.ups.com/track?loc=en_US&tracknum=" . $tracking . "\n\nPlease allow 24 hours for tracking information to intially update with the carrier.\n\nThank you for supporting the Arts!\n\n--j.McCarthy\n\n";
         	mail($to, $subject, $message, $headers);
             $close_count++; 
         }

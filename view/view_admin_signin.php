@@ -1,5 +1,5 @@
 <section id="login" class="form">
-  <div class="grid-3-center signin--container">
+  <div class="grid-2-center signin--container">
   
     <div class="col">
       <h1 style="padding-bottom: 20px;">Sign In </h1>

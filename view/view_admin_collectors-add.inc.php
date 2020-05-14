@@ -8,6 +8,27 @@ if($this->checkSession()) {
     header('location:/studio/signin');
 }
 
+if(count($this->data->routePathQuery) == 2) {
+    
+    $ref = explode('=', $this->data->routePathQuery[0]);
+    $cust_id = $ref[1];
+    
+    $cust_data = $this->api_Admin_Get_Order_Customer($cust_id);
+    extract($cust_data, EXTR_PREFIX_ALL, "res");    
+    $name = explode(' ', $res_name);
+    $res_first_name = $name[0];
+    $res_last_name = $name[1];
+    $res_postalcode = $res_postal_code;
+
+    $order = explode('=', $this->data->routePathQuery[1]);
+    $redirect_id = $order[1];
+    $redirect_url = "<input type='hidden' name='orders_redirect' value='" . $redirect_id . "' />";
+
+    unset($this->routes->URI->queryvals);
+} else {
+    $redirect_url = null;
+}
+
 /* CHECK TO SEE IF THIS IS AN EDIT OR ADD NEW */
 if(isSet($this->routes->URI->queryvals)) {
     

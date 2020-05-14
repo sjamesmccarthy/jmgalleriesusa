@@ -7,6 +7,12 @@
         <p>jM Galleries is powered by STUDIO610, software written for artists made by artists.</p>
         <p>It includes a custom template engine, customer relation and inventory component as well as suite of tools for art collectors.</p>
 
+        <p class="pt-16">v1.3.3 : May 14, 2020</p>
+        	<ul>
+            <li>added: promo-codes are now part of settings in admin control.</li>
+        	</ul>
+        </p>
+
         <p class="pt-16">v1.3.2 : May 11, 2020</p>
         	<ul>
             <li>added: promo-codes are now part of settings in admin control.</li>
@@ -25,6 +31,7 @@
             <li>updated: admin control : catalog only allows limited or open editions.</li>
             <li>updated: admin control : order now sends update emails for each step of the sales/creation workflow.</li>
             <li>bugfix: disabling frame options in detail page now works in Safari.</li>
+            <li>added: collector integration from admin control : order.</li>
         	</ul>
         </p>
 

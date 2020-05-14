@@ -17,12 +17,12 @@
                                 <img src="/view/image/signature_full-web.png" />
                             </p>
 
-                            <p class="pt-8 ml-16">
+                            <!-- <p class="pt-8 ml-16">
                                 <a target="_new" class="mr-16" href="http://twitter.com/jmgalleriesusa"><i class="fab fa-twitter"></a></i> 
                                 <a target="_new" class="mr-16" href="http://instagram.com/jmgalleriesusa"><i class="fab fa-instagram"></a></i> 
                                 <a target="_new" class="mr-16" href="http://linkedin.com/company/jmgalleriesusa"><i class="fab fa-linkedin"></a></i>
                                 <a target="_new" class="mr-16" href="http://facebook.com/jmgalleriesusa"><i class="fab fa-facebook"></a></i>
-                            </p>
+                            </p> -->
                             <!-- <img class="bio-profile-pic" src="/view/image/profile_img.jpg" /> -->
                     </div>
 
@@ -127,13 +127,13 @@
                     <p>It was the beginning of a new chapter in Southern California, or so it was supposed to have been. After a few months in transition, and because of unforseen circumstsances, the adventure ended as quickly as it had begun and j.McCarthy found himself back in Las Vegas.
                     </p>
                         
-                    <p>The global pandemic known as COVID-19 (aka Coronavirus, aka a really severe Flu which reaked havoc on the elderly and those with respitory conditions) swept the world in haste, starting at ground-zero in WuHan China. The virus quickly infected almost a million people and killing hundreds of thousands, but the econonic shutdown and media-induced panic is what ultimately devasted more lives.</p>
+                    <p>The global pandemic known as COVID-19 (aka Coronavirus, aka a really severe Flu which atacked elderly and those with respitory conditions) swept the world in haste, starting at ground-zero in Wuhan China. The virus quickly infected almost a million people and killing hundreds of thousands world-wide, but the econonic shutdown and media-induced panic is what ultimately devasted more lives.</p>
                     
-                    <p>Entire states, cities and countries were put on complete lock-down or shelter-in-place orders by their Government officials in fear of an unknown death-toll which the media was comparing to the Black Plague of 1346. Although, the human-race has learned a lot since then with science and medicine, none-the-less, the US econmony hit the brakes as the major media outlets blasted information with irregard to fact-checking and common-sense. Unfortunately, many businesses had to close their doors permanently.</p>
+                    <p>Entire states, cities and countries were put on complete lock-down or shelter-in-place orders by their Government officials in fear of an unknown death-toll which the media was comparing to the Black Plague of 1346. Although, the human-race has learned a lot since then with science and medicine, none-the-less, the US economy halted as the major media outlets blasted information with irregard to fact-checking, common-sense and the effect their words would have on society. Unfortunately, many businesses had to close their doors permanently.</p>
                     
-                    <p>So, that was March. It's now mid-May and people are still locking themselves inside afraid to breath the air outside even though it's perfectly safe. But, as we enter a time which is starting to be compared to the Great Depression of 1929-1939, the US unemployment rate is almost at 20% (highest on-record), businesses are slow to re-open and the future is still very uncertain.</p>
+                    <p>So, that was March. It's now mid-May and people are still locking themselves inside afraid to breath the air outside even though it's perfectly safe. But, as we enter a time which is starting to be compared to the Great Depression of 1929-1939 becasue the US unemployment rate is almost at 20% (highest on-record), businesses are slow to re-open and in-person customers are hard to find.</p>
                     
-                    <p>The only thing for certain right now is that we have a very long road back to normalcy, and the ship back to California has since sailed.
+                    <p>The only thing for certain right now is that we have a very long road back to normalcy, and the ship back to California for me, has since sailed.
                     </p>
 
                 </li>

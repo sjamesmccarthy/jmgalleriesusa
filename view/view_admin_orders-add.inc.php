@@ -30,6 +30,14 @@ if(isSet($this->routes->URI->queryvals)) {
     extract($edit_data, EXTR_PREFIX_ALL, "res");
     $item_info = json_decode($res_item);
  
+    /* Check for existing collector record */
+    $split_name = explode(" ", $res_name);
+    $first_name = $split_name[0];
+    $last_name  = $split_name[1];
+
+    $checkForCollector = $this->api_Admin_Get_CollectorByName($first_name, $last_name);
+    if( count($checkForCollector) == 1) { $collector_link = "Collector Found (" . $checkForCollector['collector_id'] . ")"; } else { $collector_link = '<a target="_new" href="/studio/collectors-add?ref=' . $res_product_customer_id . '&orders_id=' .$edit_id . '">Create Collector Profile</a>'; }
+
     /* Math for total price */
     $promos_array = array($this->config->promo_seasonal, $this->config->promo_holiday, $this->config->promo_generic, $this->config->promo_collector, $this->config->promo_special);
 

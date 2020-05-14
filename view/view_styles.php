@@ -28,19 +28,19 @@
                     <div class="divTableCell thead border-b pl-8">Price</div>
                 </div>
                 <div class="divTableRow">
-                    <div class="divTableCell">Hahnemühle Photo Rag® Metallic Archival Paper</div>
+                    <div class="divTableCell">Hahnemühle Photo Rag® Metallic Archival Paper<br />with Premium Designer Frame</div>
                     <div class="divTableCell border-l border-b pl-8">60CM</div>
                     <div class="divTableCell border-l border-b pl-8">16 x 24</div>
                     <div class="divTableCell border-l border-r border-b pl-8">$1,350</div>
                 </div>
                 <div class="divTableRow">
-                    <div class="divTableCell">Lumachrome HD Acrylic</div>
+                    <div class="divTableCell">Lumachrome HD Acrylic (Premium Desinger Frame Additional Cost)</div>
                     <div class="divTableCell border-l border-b pl-8">76CM</div>
                     <div class="divTableCell border-l border-b pl-8">20 x 30</div>
                     <div class="divTableCell border-l border-b border-r pl-8">$1,800</div>
                 </div>
                 <div class="divTableRow">
-                    <div class="divTableCell">Premium Designer Frame</div>
+                    <div class="divTableCell"></div>
                     <div class="divTableCell border-l border-b pl-8">91CM</div>
                     <div class="divTableCell border-l border-b pl-8">24 x 36</div>
                     <div class="divTableCell border-l border-b border-r pl-8">$2,500</div>
@@ -125,7 +125,7 @@
            
 
     <li>
-        <h3>Giclée & tinyViews&trade; Edition</h3>
+        <h3>Giclée Prints & tinyViews&trade; Edition</h3>
         <p>These editions are not considered collectible and are not numbered, may not be signed, and could also include a watermark. They are printed on premium photo paper with a large format inkjet printer and can be optionally Studio framed for an additional cost as shown below.</a></p>
 
     <div class="divTable w-100 mt-32">
@@ -137,19 +137,19 @@
                     <div class="divTableCell thead border-b">Price</div>
                 </div>
                 <div class="divTableRow">
-                    <div class="divTableCell">Red River Polar Gloss Metallic Premium Photo Paper</div>
-                    <div class="divTableCell border-l border-b pl-8">15CM</div>
-                    <div class="divTableCell border-l border-b pl-8">4 x 6</div>
+                    <div class="divTableCell">Premium Photo Paper</div>
+                    <div class="divTableCell border-l border-b pl-8">17CM</div>
+                    <div class="divTableCell border-l border-b pl-8">5 x 7</div>
                     <div class="divTableCell border-l border-b border-r pl-8">$20</div>
                 </div>
                 <div class="divTableRow">
-                    <div class="divTableCell ">May be framed with an optional Studio Frame in Snow White or Ash Gray for additional $20.</div>
+                    <div class="divTableCell ">May be framed with an optional Studio Frame in Snow White or Ash Gray for additional cost.</div>
                     <div class="divTableCell border-l border-b pl-8">20CM</div>
                     <div class="divTableCell border-l border-b pl-8">8 x 8</div>
                     <div class="divTableCell border-l border-b border-r pl-8">$40</div>
                 </div>
                 <div class="divTableRow">
-                    <div class="divTableCell">May be framed with an optional 2-ply white mat for additional $20, but this may also increase frame size.</div>
+                    <div class="divTableCell">May be framed with an optional 2-ply white mat for additional cost, but this may also increase frame size.</div>
                     <div class="divTableCell border-l border-b pl-8">30CM</div>
                     <div class="divTableCell border-l border-b pl-8">8 x 12</div>
                     <div class="divTableCell border-l border-b border-r pl-8">$60</div>
@@ -186,7 +186,7 @@
                     <div class="divTableCell border-l border-b border- pl-8r"></div>
                 </div>
                 <div class="divTableRow">
-                    <div class="divTableCell">*Glass in not included but may be added for an additional $20 per frame not including 12x12 frames.</div>
+                    <div class="divTableCell">*Glass in not included.</div>
                     <div class="divTableCell border-l border-b pl-8">8 x 8</div>
                     <div class="divTableCell border-l border-b border-r pl-8">$40</div>
                 </div>

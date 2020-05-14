@@ -25,7 +25,12 @@ switch($_POST['formTypeAction']) {
 
 	case "insert":
 		$this->api_Admin_Insert_Collectors();
-		$redirect_to = '/collectors';
+        if(isSet($_POST['orders_redirect'])) { 
+			$redirect_to = '/orders-add?id=' . $_POST['orders_redirect'];
+		}
+		else {
+			$redirect_to = '/collectors';
+		}
 	break;
 	
 	case "update":
