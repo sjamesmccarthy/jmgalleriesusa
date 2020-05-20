@@ -32,7 +32,7 @@
                 <p><a href="/"><img class="breadcrumb-logo" src="/view/image/logo_fullsize.png" /></a> <?= $bc_catalog ?> <img class="breadcrumb-arrow" src="/view/image/icon_navarrow-right.svg" /><?= $this->page->title ?> </p>
                 </div>
                 <div class="col-5-right breadcrumb">
-                <p class="pull-right text-right"><?= $this->config->copyright ?> &mdash; <a href="/privacy">Privacy Policy</a><br /> Made With &#10084; in Las Vegas,  <a href="/release-notes"><?= $version ?></a></p>
+                <p class="pull-right text-right"><?= $this->config->copyright ?><br /> <a href="/release-notes">Made With &#10084; in Las Vegas</a> | <a href="/privacy">Privacy Policy</a></p>
                 </div>
 
         </div>

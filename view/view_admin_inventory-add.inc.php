@@ -112,7 +112,6 @@ if(count($this->data->routePathQuery) > 2) {
 
         if( count($edit_data['coa']) > 0) {
 
-                
             foreach( $edit_data['coa'] as $key => $val) {
                 $coa_html = "<div class='coa_list coa_list_found'><p class='coa-icon'><i class='fas fa-award'></i></p><p>" . $val['coa_first_name'] . " " . $val['coa_last_name'] . "<br />Certificate of Authenticity issued on " . date("F d, Y", strtotime($val['coa_purchase_date'])) . "</p></div>";
             }
@@ -150,10 +149,11 @@ if(count($this->data->routePathQuery) > 2) {
         // outer loop for the cost_data
         foreach( $costs_data as $key_sc => $val_sc) {
 
+            $calcd_cost_html = $val_sc['calcd_cost'] + $calcd_cost_html;
+
             if($val_sc['manual_entry'] == "TRUE") {
 
                 // REMOVED calcd_cost to cost --check sql and API(api_Admin_Get_Inventory_Item_Costs)
-
                 $manual_entries = '<div class="supplier_materials"><div class="AUTO_GENERATED-- manual-entry material_expense_supplier-' . $x . '-manual-entry half-size show"><label for="material-expense">MATERIAL EXPENSE</label>
                 <input type="hidden" id="hidden-material_expense_supplierid_manual-entry" name="hidden-material_expense_supplierid_manual-entry[]" placeholder="MANUAL ENTRY" value="' . $val_sc['supplier_materials_id'] . '">
                 <input type="text" id="material_expense_supplier-' . $x . '_manual-entry" name="material_expense_supplier_manual-entry[]" placeholder="MANUAL ENTRY" value="' . ucwords($val_sc['material_desc']) . '"></div><label class="ml-1" for="material-quantity">QUANTITY</label> <input data-exp="' . $x . '" class="width-auto material_quan" type="text" id="material_quantity-' . $x . '" name="material_quantity_manual-entry[]" placeholder="QUANTITY" value="' . $val_sc['material_used'] . '" ><label class="ml-1" for="material-cost">COST</label><input data-exp="' . $x . '" class="width-auto material_quan" type="text" id="material_cost-' . $x . '" name="material_cost_manual-entry[]" placeholder="" value="' . $val_sc['cost'] . '" ><span class="remove-add" data-supid="' . $x . '"><i data-exp="' . $x . '" class="fas fa-times"></i></span></div>'; 
@@ -203,6 +203,10 @@ if(count($this->data->routePathQuery) > 2) {
         $this->nav_label_inventory = "Updating Artwork";
         if($edit_data['reg_num'] == "" ) { $reg_num = strtotime($edit_data['born_date']); }
         $born_date = date("Y-m-d H:i:s", strtotime($edit_data['born_date']));
+
+        $secret = "{$serial_num}-{$reg_num}-{$negative_file}";
+        $validation_hash = hash("adler32", $secret, FALSE);
+
     } else {
         $formTypeAction = "insert";
         $button_label = "add new artwork";

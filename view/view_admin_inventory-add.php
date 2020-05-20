@@ -108,18 +108,19 @@
             <div>
                 <label for="serial_num">SERIAL NUM</label>
                 <input class="half-size" type="text" id="serial_num" name="serial_num" placeholder="SERIAL NO. (eg, 251387)" value="<?= $serial_num ?>">
-                <label for="reg_num">REG NUM</label>
+                <label style="display:inline-block;" for="reg_num">REG NUM (Validation Hash =  <?= $validation_hash ?>)</label>
                 <input class="half-size" type="text" id="reg_num" name="reg_num" placeholder="Artwork Reg No. (eg, 1569069144 aka Born On Date)" value="<?= $reg_num ?>">
             </div>
             
             <div>
-                <label for="negative_file">NEGATIVE FILE</label>
+                <label style="display:inline-block;" for="negative_file">NEGATIVE FILE (also used as adler32[secret])</label>
                  <input class="half-size" type="text" id="negative_file" name="negative_file" placeholder="NEGATIVE FILE (eg, PRETTY_PHOTO.jpg)" value="<?= $negative_file ?>" required>
                  <label for="born_date">BORN ON</label>
                  <input class="half-size" type="text" id="born_date" name="born_date" placeholder="BORN ON DATE (eg, 2019-12-14 02:23:10)" value="<?= $born_date ?>" required>
             </div>
 
-            <div id="collector_meta" class="<?= $show_collector_meta ?> hide">
+            <!-- $show_collector_meta -->
+            <div id="collector_meta">
                 <label for="title">Acquired From & Condition Notes</label>
                 <input class="half-size" maxlength="255" type="text" id="acquired_from" name="acquired_from" placeholder="Acquired From and Condition Notes" value="<?= $acquired_from ?>">
                 <label for="title">Acquired on Date</label>
@@ -131,6 +132,12 @@
                 <?= $coa_html ?>
             </div>
             
+            <?php ?>
+            <div id="pl-summary" style="border-top: 1px solid #e4e4e4;">
+                <h6 class="mt-16">P/L Summary</h6>
+                <p>Total Costs = <?= $calcd_cost_html ?> / Total Value = <?= $value ?> / <u>PL =<?= $value - $calcd_cost_html; ?></u></p>
+            </div>
+
             <div id="supplier_materials_wrapper" class="mt-32">
                 
                 <h6>Material Expenses</h6>

@@ -71,7 +71,8 @@
                 <li class="timeline-history">
                     <h3>2012</h3>
                     <p>
-                    As they say, "time flies" and "life happens". j.McCarthy graduated from the University of Nevada, Reno in 1994 with a Bachelors degree in Liberal Arts, was blessed with three beautiful daughters and in 2012 moved back to the Sacramento area where he was reunited with long time friend, and fellow fine-art photographer, <a href="http://steveroyjr.com/" target="_new">Steve Roy</a>. Steve inspired j.McCarthy to pick-up his camera, a Nikon 1 V1 at the time, and start looking through the lens again. It wasn't long before j.McCarthy upgraded to a Nikon D5200 then a few months after that a full-frame Nikon D600. He often found himself and Steve road-tripping through Napa to the Pacific Ocean, shooting up and down the Northern California Coast.</p>
+                    As they say, "time flies" and "life happens". j.McCarthy graduated from the University of Nevada, Reno in 1994 with a Bachelors degree in Liberal Arts, was blessed with three beautiful daughters.</p>
+                    <p>In 2012, he moved back to the Sacramento area where he was reunited with long time friend, and fellow fine-art photographer, <a href="http://steveroyjr.com/" target="_new">Steve Roy</a>. Steve inspired j.McCarthy to pick-up his camera, a Nikon 1 V1 at the time, and start looking through the lens again. It wasn't too long after when j.McCarthy took his desire to master fine-art photography up a new level and upgraded to a Nikon D5200.  Not a few months later, he graduated into the full-frame world with Nikon's D600 and him and Steve could often be discovered road-tripping through Napa to the Pacific Ocean, shooting up and down the Northern California Coast.</p>
                     <p>With Steve's encouragement, he launched a website showcasing his work, which at that time was primarily black and white photography.
                     </p>
                 </li>
@@ -82,13 +83,13 @@
                 <li class="timeline-history">
                     <h3>2015 - 2017</h3>
                     <p>
-                    After moving back to the Reno/Tahoe area in 2015, j.McCarthy met his better-half, Michele, who after seeing his work, inspired him to  publicly display and sell his photographs.
+                    After moving back to the Reno/Tahoe area in 2015, j.McCarthy met his better-half, Michele, who after seeing his work, inspired him to start publicly displaying and selling his photographs.
                     </p>
             
                     <p>
-                    In June of 2016 his first photos, printed on metal, were displayed at a local tap-house, Beer NV, in Reno, Nevada. Soon after was his first sale, Between The Hills, then a gallery showing in Carson City, Nevada at Brewery Arts Center.</p>
+                    In June of 2016 his first photos, printed on metal, were displayed at a local tap-house, Beer NV, in Reno, Nevada. Soon after was his first sale, Between The Hills. Not long after that, a gallery showing in Carson City, Nevada at the Brewery Arts Center with the Nevada Artists Association.</p>
                     
-                    <p>In early 2016, j.McCarthy started crafting his own frames from dark Walnut and continued showing and selling new artwork through out the year. 
+                    <p>In early 2016, j.McCarthy started hand-making his own frames out of dark Walnut and continued showing and selling new artwork through out the area. 
                     </p>
 
                     <p>
@@ -106,18 +107,24 @@
                     </p>
 
                     <p>
-                        Turning the page and beginning a new chapter was the start to opening new doors for j.McCarthy beginning with a new place to exhibit his photography in Henderson, Nevada, a not-so-small, suburb of Las Vegas. Joe Maxx Coffee Company welcomed j.McCarthy into both of their Las Vegas area coffee houses.
+                        Turning the page and beginning a new chapter was the start to opening new doors for j.McCarthy beginning with a new place to exhibit his photography in Henderson, Nevada. The locally owned, Joe Maxx Coffee Company welcomed j.McCarthy into both of their Las Vegas area coffee houses where he displayed over 40 pieces of fine-art between their two locations. 
                     </p>
 
                     <p>
-                        2018 was also the start of an infautation with Art Off The Walls, a first-Friday event in Temecula, California where j.McCarthy had the oportunity to share his passion of landscape photography with the backwoods of San Diego, California, but it wasn't all about exhbiting.
+                        2018 was also the start of an infatuation with Art Off The Walls, a first-Friday event in Temecula, California where j.McCarthy had the oportunity to share his passion of landscape photography with the backwoods of San Diego, California, but it wasn't all about exhbiting.
                     </p>
                     
                     <p>
-                        Lots of back of the studio changes happened too, from the addition of new Tamron G2 lenses, Macbooks, NAS backup solutions, framing equiment and suppliers to the purchase of an Epson SureColor P800, j.McCarthy overhauled his entire workflow creating his own turn-key studio, as well as migrated his digital darkroom from Adobe Lightroom to Phase One's Capture One.
+                        Lots of back of the studio changes happened too, from the addition of new gear, including, Tamron G2 lenses, a Macbook Pro, Synology NAS backup solutions, framing equiment and suppliers, to the purchase of an Epson SureColor P800. j.McCarthy overhauled his entire workflow creating his own turn-key studio, as well as migrated his digital darkroom from Adobe's Lightroom to Phase One's Capture One Pro.
                     </p>
 
-                    <p>j.McCarthy kicked off 2019 with a 3 month exhibit at the Temecula Public Library in Temecula, California. He closed out the year launching a new online catalog and annoucing a move to Southern California. </p> 
+                    <p>
+                        The next year came in the blink of an eye, and to kick-off 2019, j.McCarthy announced with a 3 month exhibit at the Temecula Public Library in Temecula, California. He closed out the year launching a new website and annoucing a move to Southern California.
+                     </p> 
+                     
+                     <p>
+                     In January 2020, j.McCarthy put a foot forward in starting a new chapter in Tememcula, California.
+                     </p>
                 </li>
                 </ul>
 
@@ -129,11 +136,11 @@
                         
                     <p>The global pandemic known as COVID-19 (aka Coronavirus, aka a really severe Flu which atacked elderly and those with respitory conditions) swept the world in haste, starting at ground-zero in Wuhan China. The virus quickly infected almost a million people and killing hundreds of thousands world-wide, but the econonic shutdown and media-induced panic is what ultimately devasted more lives.</p>
                     
-                    <p>Entire states, cities and countries were put on complete lock-down or shelter-in-place orders by their Government officials in fear of an unknown death-toll which the media was comparing to the Black Plague of 1346. Although, the human-race has learned a lot since then with science and medicine, none-the-less, the US economy halted as the major media outlets blasted information with irregard to fact-checking, common-sense and the effect their words would have on society. Unfortunately, many businesses had to close their doors permanently.</p>
+                    <p>Entire states, cities and countries were put on complete lock-down or shelter-in-place orders by their Government officials in fear of an unknown death-toll which the media was comparing to the Black Plague of 1346. The US economy halted as the major media outlets blasted mis-information with irregard to fact-checking, common-sense and the effect their words would have on people, cities, countries and society.</p>
                     
-                    <p>So, that was March. It's now mid-May and people are still locking themselves inside afraid to breath the air outside even though it's perfectly safe. But, as we enter a time which is starting to be compared to the Great Depression of 1929-1939 becasue the US unemployment rate is almost at 20% (highest on-record), businesses are slow to re-open and in-person customers are hard to find.</p>
+                    <p>So, that was March. It's now mid-May and people are still locking themselves inside afraid to breath the air outside even though it's perfectly safe. But, as we enter a time which is starting to be compared to the Great Depression of 1929-1939 as US unemployment rate climb past 24% (highest on-record), businesses are slow to re-open and in-person customers are hard to find. Unfortunately, many businesses have been forced to close their doors permanently.</p>
                     
-                    <p>The only thing for certain right now is that we have a very long road back to normalcy, and the ship back to California for me, has since sailed.
+                    <p>The only thing for certain right now is that we have a very long road back to normalcy, and the ship back to California for me, has since sailed, and what's next is unknown.
                     </p>
 
                 </li>
