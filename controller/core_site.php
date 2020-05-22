@@ -249,7 +249,7 @@ class Core_Site extends Core_Api
 
         /* Loads JSON filer and then assigns object to passed var */
         $dataJSON = file_get_contents($_SERVER["DOCUMENT_ROOT"] . "/"  . $file);
-        $data = json_decode($dataJSON, true);
+        $data = json_decode($dataJSON, true, JSON_UNESCAPED_SLASHES);
         $this->$output_var = (object) $data;
 
         return( $data );

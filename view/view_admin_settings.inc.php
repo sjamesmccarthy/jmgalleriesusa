@@ -26,22 +26,27 @@
 
     extract($data_html, EXTR_PREFIX_SAME, "dup");
 
+    /* Get Available Sizes */
+    // $tv_price_array = json_decode($this->config->tv_pricing, true);
+    // $available_sizes_open = null;
+    // $tv_prices_count = count($tv_price_array);
+
+    // {"5x7":"20","8x8":"40","8x12":"60","12x12":"80","12x18":"120","5x7NC": "30"}
+    // $i=1;
+    // foreach($tv_price_array as $key_size => $val_price) {
+    //     if ($i != 1) {
+    //         $comma = ', ';
+    //     } 
+    //     if ($i == ($tv_prices_count - 1) ) {
+    //         $comma = " & ";
+    //     }
+    //     $available_sizes_open .= $comma . $key_size;
+    //     $i++;
+    // }
+
     /* CORE - LIST OF NOTICES IN data_notices.json */
     $notices_json = $this->getJSON('view/data_notices.json', 'data_notices');
     extract($notices_json, EXTR_PREFIX_SAME, "dup");
-
-    // Loop through components
-    // foreach($data_html['components'] as $k => $v) {
-    
-    //     $components_html .= '
-    //     <div class="divTableRow">
-    //         <div class="divTableCell">' . $k . '</div>
-    //         <div class="divTableCell">
-    //             <input class="w-100" type="text" name="component_' . $k . '" value="' . $v . '" />
-    //         </div>
-    //     </div>';
-            
-    // }
 
     // Loop through notices
    foreach($notices_json as $k => $v) {

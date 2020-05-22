@@ -39,24 +39,32 @@
     $this->catalog_title = ucwords( $photo_meta['catalog_title'] );
     $this->page->title = $photo_meta['title'];
     
-    // $available_sizes = preg_replace("/tinyViews Edition/i", "<a href='/shop'>tinyViews&trade; Edition</a>", $photo_meta['available_sizes']);
     $available_sizes = $photo_meta['available_sizes'];
+
+    $tv_price_array = json_decode($this->config->tv_pricing, true);
+    // {"5x7":"20","8x8":"40","8x12":"60","12x12":"80","12x18":"120","5x7NC": "30"}
+
+    $le_price_array = json_decode($this->config->le_pricing, true);
+    // {"16x24": "1350","20x30": "1800","24x36": "2500","30x45": "3850","40x60": "6450"}
 
     /* Determine if the "TinyViews photo exists */
      if( file_exists($_SERVER['DOCUMENT_ROOT'] . "/catalog/__image/" . $photo_meta['file_name'] . '-tinyviews.jpg') && $photo_meta['as_gallery'] == "0" ) {
 
         $tinyviewImage = '<div class="col"><img class="in-room-img"  src="/catalog/__image/' . $photo_meta['file_name'] . '-tinyviews.jpg" /><!-- <div class="bx-buyart-btn"><a target="_shop" href="/shop">tinyViews&trade; Edition &mdash; Shop Now</a></div>--></div>';
+        $tinyviewSquareOption = '<option data-price="' . $tv_price_array['8x8'] . '" value="8x8">SIZE: SQUARE 8x8</option>';
+        $tinyviewSquareOption .= '<!-- <option data-price="' . $tv_price_array['12x12'] . '" value="12x12">SIZE: SQUARE 12x12</option> -->';
         $tv=1;
        
      } else {
          $tinyviewImage = null;
          $tv=0;
+         $tinyviewSquareOption = null;
      }
 
      if( file_exists($_SERVER['DOCUMENT_ROOT'] . "/catalog/__image/" . $photo_meta['file_name'] . '-tinyviews-notes.jpg') && $photo_meta['as_gallery'] == "0" ) {
 
         $tinyviewNotesImage = '<div class="col"><img class="in-room-img"  src="/catalog/__image/' . $photo_meta['file_name'] . '-tinyviews-notes.jpg" /><!-- <div class="bx-buyart-btn"><a target="_shop" href="/shop">tinyViews&trade; Edition &mdash; Shop Now</a></div>--></div>';
-        $tinyviewNotesOption = '<option data-price="20" value="NOTECARDS">SIZE: 5x7 NOTECARD/POSTCARD (Set of 3)</option>'; 
+        $tinyviewNotesOption = '<option data-price="' . $tv_price_array['5x7NC'] . '" value="NOTECARDS">SIZE: 5x7 NOTECARD/POSTCARD (Set of 3)</option>'; 
         $tv=1;
      } else {
          $tinyviewNotesImage = null;
@@ -107,17 +115,16 @@
         $btn_link = '<a href="/contact?photo=' . $photo_meta['file_name'] . '">';
         $gallery_details = '<p class="mt-32">Limited Editions are either printed on Hahnemühle Photo Rag® Metallic Fine Art paper mounted in a Premium Designer frame protected with Tru Vue&reg; Museum Glass, or Lumachrome HD Acrylic. If you have any questions about our <a href="/styles">styles, frames and editions</a>, or would like to talk with an art consultant, please <a href="/contact">contact us</a>.</p>';
 
-        $price_array = array('1350', '1800', '2500', '3850', '6450');
-        $default_price = $price_array[0];
+        $default_price = $le_price_array['16x24'];
 
         $sizes_frames = '<div class="col select-wrapper" style="width: 300px;  margin-right: 20px;">
             <label for="buysize"></label>
             <select id="buysize" name="buysize">
-                <option data-price="' . $price_array[0] . '" value="60CM/16x24">SIZE: 60CM (approx. 16x24 inches)</option>
-                <option data-price="' . $price_array[1] . '" value="76CM/20x30">SIZE: 76CM (approx. 20x30 inches)</option>
-                <option data-price="' . $price_array[2] . '"value="91CM/24x36">SIZE: 91CM (approx. 24x36 inches)</option>
-                <option data-price="' . $price_array[3] . '"value="144CM/30x45">SIZE: 144CM (approx. 30x45 inches)</option>
-                <option data-price="' . $price_array[4] . '"value="152CM/40x60">SIZE: 152CM (approx. 40x60 inches)</option>
+                <option data-price="' . $le_price_array['16x24'] . '" value="60CM/16x24">SIZE: 60CM (approx. 16x24 inches)</option>
+                <option data-price="' . $le_price_array['20x30'] . '" value="76CM/20x30">SIZE: 76CM (approx. 20x30 inches)</option>
+                <option data-price="' . $le_price_array['24x36'] . '"value="91CM/24x36">SIZE: 91CM (approx. 24x36 inches)</option>
+                <option data-price="' . $le_price_array['30x45'] . '"value="144CM/30x45">SIZE: 144CM (approx. 30x45 inches)</option>
+                <option data-price="' . $le_price_array['40x60'] . '"value="152CM/40x60">SIZE: 152CM (approx. 40x60 inches)</option>
             </select>
         </div>
         
@@ -144,22 +151,20 @@
         // if($ed_G === true || $ed_S === true) { $as_editions_tmp .= ", "; }
         // $as_editions_tmp .= "";
 
-        $edition_desc = 'Giclée, tinyViews&trade; Edition';
+        $edition_desc = $this->config->edition_description_open;
         $btn = "Add To Cart +Checkout";
         $btn_link = '<a href="/contact?photo=' . $photo_meta['file_name'] . '&open=true">';
 
-        $price_array = array('20', '40', '60', '80', '120');
-        $default_price = $price_array[4];
+        $default_price = $tv_price_array['12x18'];
 
         $sizes_frames = '<div class="col select-wrapper" style="width: 300px;  margin-right: 20px;">
             <label for="buysize"></label>
             <select id="buysize" name="buysize">
-                <option data-price="' . $price_array[0] . '"value="5x7">SIZE: 5x7</option>
+                <option data-price="' . $tv_price_array['5x7'] . '"value="5x7">SIZE: 5x7</option>
                 ' . $tinyviewNotesOption . '
-                <option data-price="' . $price_array[1] . '"value="8x8">SIZE: SQUARE 8x8 </option>
-                <option data-price="' . $price_array[2] . '"value="8x12">SIZE: 8x12</option>
-                <option data-price="' . $price_array[3] . '"value="12x12">SIZE: SQUARE 12x12 </option>
-                <option SELECTED data-price="' . $price_array[4] . '"value="12x18">SIZE: 12x18 </option>
+                <option data-price="' . $tv_price_array['8x12'] . '"value="8x12">SIZE: 8x12</option>
+                <option SELECTED data-price="' . $tv_price_array['12x18'] . '"value="12x18">SIZE: 12x18 </option>
+                ' . $tinyviewSquareOption . '
             </select>
         </div>
         

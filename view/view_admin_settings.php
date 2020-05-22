@@ -73,25 +73,25 @@
                             </div>
                         </div>
                         <div class="divTableRow">
-                            <div class="divTableCell">available_sizes_limited</div>
+                            <div class="divTableCell">available_sizes_limited (label for Filmstrip only)</div>
                             <div class="divTableCell">
                                  <input class="w-100" type="text" name="available_sizes_limited" value="<?= $available_sizes_limited ?>" />
                             </div>
                         </div>
                         <div class="divTableRow">
-                            <div class="divTableCell">edition_description_limited</div>
+                            <div class="divTableCell">edition_description_limited (label for Filmstrip &Details)</div>
                             <div class="divTableCell">
                                  <input class="w-100" type="text" name="edition_description_limited" value="<?= $edition_description_limited ?>" />
                             </div>
                         </div>
                         <div class="divTableRow">
-                            <div class="divTableCell">available_sizes_open</div>
+                            <div class="divTableCell">available_sizes_open (label for Filmstrip only)</div>
                             <div class="divTableCell">
                                  <input class="w-100" type="text" name="available_sizes_open" value="<?= $available_sizes_open ?>" />
                             </div>
                         </div>
                         <div class="divTableRow">
-                            <div class="divTableCell">edition_description_open</div>
+                            <div class="divTableCell">edition_description_open (label for Filmstrip &Details)</div>
                             <div class="divTableCell">
                                  <input class="w-100" type="text" name="edition_description_open" value="<?= $edition_description_open ?>" />
                             </div>
@@ -220,7 +220,33 @@
                        <div class="divTableRow">
                             <div class="divTableCell">special</div>
                             <div class="divTableCell">
-                                 <input class="w-100" type="text" name="promo_special" value="<?= $promo_special ?>"  />
+                                 <input class="w-100" type="text" name="promo_special" value='<?= $promo_special ?>'  />
+                            </div>
+                        </div>
+
+                       <div class="divTableRow">
+                            <div class="divTableCell">le_pricing</div>
+                            <div class="divTableCell">
+                                 <input class="w-100" type="text" name="le_pricing" value='<?= $le_pricing ?>' />
+                            </div>
+                        </div>
+                       <div class="divTableRow">
+                            <div class="divTableCell">le_frames_pricing</div>
+                            <div class="divTableCell">
+                                 <input class="w-100" type="text" name="le_frames_pricing" value='<?= $le_frames_pricing ?>'  />
+                            </div>
+                        </div>
+
+                       <div class="divTableRow">
+                            <div class="divTableCell">tv_pricing</div>
+                            <div class="divTableCell">
+                                 <input class="w-100" type="text" name="tv_pricing" value='<?= $tv_pricing ?>' />
+                            </div>
+                        </div>
+                       <div class="divTableRow">
+                            <div class="divTableCell">studio_frames_pricing</div>
+                            <div class="divTableCell">
+                                 <input class="w-100" type="text" name="studio_frames_pricing" value='<?= $studio_frames_pricing ?>'  />
                             </div>
                         </div>
                                 

@@ -10,6 +10,7 @@
         <!-- <p class="pt-16">v1.3.4<br />May 14, 2020</p> -->
         	<ul>
             <li>added: P/L in admin control : inventory.</li>
+            <li>updated: removed deprecated files</li>
         	</ul>
         <!-- </p> -->
 

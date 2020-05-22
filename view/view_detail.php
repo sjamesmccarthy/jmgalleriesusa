@@ -18,7 +18,7 @@
             <h1 class="detail-h1"><?= $photo_meta['title'] ?></h1>
             <p class="pb-32 edition-title"><?= $edition_desc ?></span></p>
             <p class="tiny blue" style="margin-bottom: -10px; margin-left: 5px;">$ USD</p>
-            <p id="price" class="price" style="margin-right: 20px; "><?= number_format($default_price) ?> </p>
+            <p id="price" class="price" style="margin-right: 20px; "><?= number_format($default_price, 2) ?> </p>
         </div>
         
         <div class="col-12 mt-16">
@@ -87,6 +87,8 @@
     $('#frame').on("change", function(e) {
         var fr = $("#frame option:selected").val();
 
+    /* */
+    
         if($("#frame option:selected").val() == "ASH-GRAY(+$40)" || $("#frame option:selected").val() == "SNOW-WHITE(+$40)") {
 
             var print = parseFloat($("#buysize option:selected").attr("data-price"));
@@ -103,7 +105,6 @@
         var nf = new Intl.NumberFormat();
         var p = newprice;
         $('#price').html(nf.format(p));
-
 
     });
 

@@ -66,7 +66,7 @@ if(isSet($this->data->routePathQuery[0])) {
     $formType = "RequestQuoteForm"; 
     $formSizes = '<p><input type="text" id="contactsize" name="contactsize" value="' . urldecode($size) . ' ' . $frame_long . ' [CATALOG NUMBER ' . $catalog_no . ']" required /></p>';
 
-    $estimated_cost = "<span id='estimated_cost' class='hidden'>" . $cost . "</span><h2><span id='estimated_cost_format'>" . number_format($cost) . " USD</span></h2>";
+    $estimated_cost = "<span id='estimated_cost' class='hidden'>" . $cost . "</span><h2><span id='estimated_cost_format'>" . number_format($cost, 2) . " USD</span></h2>";
 
 } else {
     // Just a regular contact form

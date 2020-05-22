@@ -28,34 +28,34 @@
                     <div class="divTableCell thead border-b pl-8">Price</div>
                 </div>
                 <div class="divTableRow">
-                    <div class="divTableCell">Hahnemühle Photo Rag® Metallic Archival Paper<br />with Premium Designer Frame</div>
+                    <div class="divTableCell">Hahnemühle Photo Rag® Metallic Archival Paper with Premium Designer Frame, or Lumachrome HD Acrylic.</div>
                     <div class="divTableCell border-l border-b pl-8">60CM</div>
                     <div class="divTableCell border-l border-b pl-8">16 x 24</div>
-                    <div class="divTableCell border-l border-r border-b pl-8">$1,350</div>
+                    <div class="divTableCell border-l border-r border-b pl-8"><?= $le_price_array['16x24']?></div>
                 </div>
                 <div class="divTableRow">
-                    <div class="divTableCell">Lumachrome HD Acrylic (Premium Desinger Frame Additional Cost)</div>
+                    <div class="divTableCell">Note: This is artist choice by piece.</div>
                     <div class="divTableCell border-l border-b pl-8">76CM</div>
                     <div class="divTableCell border-l border-b pl-8">20 x 30</div>
-                    <div class="divTableCell border-l border-b border-r pl-8">$1,800</div>
+                    <div class="divTableCell border-l border-b border-r pl-8"><?= $le_price_array['20x30']?></div>
                 </div>
                 <div class="divTableRow">
                     <div class="divTableCell"></div>
                     <div class="divTableCell border-l border-b pl-8">91CM</div>
                     <div class="divTableCell border-l border-b pl-8">24 x 36</div>
-                    <div class="divTableCell border-l border-b border-r pl-8">$2,500</div>
+                    <div class="divTableCell border-l border-b border-r pl-8"><?= $le_price_array['24x36']?></div>
                 </div>
                 <div class="divTableRow">
                     <div class="divTableCell"></div>
                     <div class="divTableCell border-l border-b pl-8">144CM</div>
                     <div class="divTableCell border-l border-b pl-8">30 x 45</div>
-                    <div class="divTableCell border-l border-b border-r pl-8">$3,850</div>
+                    <div class="divTableCell border-l border-b border-r pl-8"><?= $le_price_array['30x45']?></div>
                 </div>
                 <div class="divTableRow">
                     <div class="divTableCell border-b"></div>
                     <div class="divTableCell border-l border-b pl-8">152CM</div>
                     <div class="divTableCell border-l border-b pl-8">40 x 60</div>
-                    <div class="divTableCell border-l border-b border-r pl-8">$6,450</div>
+                    <div class="divTableCell border-l border-b border-r pl-8"><?= $le_price_array['40x60']?></div>
                 </div>
             </div>
         </div>
@@ -79,36 +79,42 @@
             <div class="divTableBody">
 
                 <div class="divTableRow">
-                    <div class="divTableCell thead border-b w-75">Limited Edition Premium Designer Frame (Prices when purchased separately)</div>
-                    <div class="divTableCell thead border-b pl-8">Image Size (inches)</div>
-                    <div class="divTableCell thead border-b pl-8">Price</div>
+                    <div class="divTableCell thead border-b w-70">Limited Edition Premium Designer Frame (Prices when purchased separately)</div>
+                    <div class="divTableCell thead border-b pl-8">Print Size (inches)</div>
+                    <div class="divTableCell thead border-b pl-8">Framed Size (inches)</div>
+                    <div class="divTableCell thead border-b pl-8 pr-8">Price</div>
                 </div>
                 
                 <div class="divTableRow">
                     <div class="divTableCell"><b>Hand-made from solid wood in a Black, Whiskey, Bourbon or Matte Charcoal custom surface.</b></div>
-                    <div class="divTableCell border-l border-b pl-8">16 x 24</div>
-                    <div class="divTableCell border-l border-b border-r pl-8">$350</div>
+                    <div class="divTableCell border-l border-b pl-8">16x24</div>
+                    <div class="divTableCell border-l border-b pl-8">20 3/4 x 38 3/4</div>
+                    <div class="divTableCell border-l border-b border-r pl-8 pr-8"><?= $le_frames_pricing['16x24']?></div>
                 </div>
 
                 <div class="divTableRow">
                     <div class="divTableCell">For archival paper based artwork, Tru Vue&reg; Museum Glass is included to protect the artwork.</div>
                     <div class="divTableCell border-l border-b pl-8">20 x 30</div>
-                    <div class="divTableCell border-l border-b border-r pl-8">$450</div>
+                    <div class="divTableCell border-l border-b pl-8">24 3/4 x 34 3/4</div>
+                    <div class="divTableCell border-l border-b border-r pl-8 pr-8"><?= $le_frames_pricing['20x30']?></div>
                 </div>
                 <div class="divTableRow">
                     <div class="divTableCell">May be framed with an optional 4-ply, white archival mat or linen liner for additional $75*, but this may also increase frame size.</div>
                     <div class="divTableCell border-l border-b pl-8">24 x 36</div>
-                    <div class="divTableCell border-l border-b border-r pl-8">$550</div>
+                    <div class="divTableCell border-l border-b pl-8">28 3/4 x 40 3/4</div>
+                    <div class="divTableCell border-l border-b border-r pl-8 pr-8"><?= $le_frames_pricing['24x36']?></div>
                 </div>
                 <div class="divTableRow">
                     <div class="divTableCell ">*for mat and linen liner sizes larger than 24x36 please contact us for a price.</div>
                     <div class="divTableCell border-l border-b pl-8">30 x 45</div>
-                    <div class="divTableCell border-l border-b border-r pl-8">$850</div>
+                    <div class="divTableCell border-l border-b pl-8">37 1/2 x 52 1/2</div>
+                    <div class="divTableCell border-l border-b border-r pl-8 pr-8"><?= $le_frames_pricing['30x45']?></div>
                 </div>
                 <div class="divTableRow">
                     <div class="divTableCell border-b"></div>
                     <div class="divTableCell border-l border-b pl-8">40 x 60</div>
-                    <div class="divTableCell border-l border-b border-r pl-8">$950</div>
+                    <div class="divTableCell border-l border-b pl-8">47 1/2 x 67 1/2</div>
+                    <div class="divTableCell border-l border-b border-r pl-8 pr-8"><?= $le_frames_pricing['40x60']?></div>
                 </div>
                 
             </div>
@@ -131,40 +137,29 @@
     <div class="divTable w-100 mt-32">
             <div class="divTableBody">
                 <div class="divTableRow">
-                    <div class="divTableCell thead border-b w-75">Print Material</div>
-                    <div class="divTableCell thead border-b">Size (CM)</div>
-                    <div class="divTableCell thead border-b">Size (INCHES)</div>
+                    <div class="divTableCell thead border-b w-80">Print Material</div>
+                    <div class="divTableCell thead border-b">Size (inches)</div>
                     <div class="divTableCell thead border-b">Price</div>
                 </div>
                 <div class="divTableRow">
                     <div class="divTableCell">Premium Photo Paper</div>
-                    <div class="divTableCell border-l border-b pl-8">17CM</div>
                     <div class="divTableCell border-l border-b pl-8">5 x 7</div>
-                    <div class="divTableCell border-l border-b border-r pl-8">$20</div>
+                    <div class="divTableCell border-l border-b border-r pl-8"><?= $tv_price_array['5x7']?></div>
                 </div>
                 <div class="divTableRow">
                     <div class="divTableCell ">May be framed with an optional Studio Frame in Snow White or Ash Gray for additional cost.</div>
-                    <div class="divTableCell border-l border-b pl-8">20CM</div>
                     <div class="divTableCell border-l border-b pl-8">8 x 8</div>
-                    <div class="divTableCell border-l border-b border-r pl-8">$40</div>
+                    <div class="divTableCell border-l border-b border-r pl-8"><?= $tv_price_array['8x8']?></div>
                 </div>
                 <div class="divTableRow">
                     <div class="divTableCell">May be framed with an optional 2-ply white mat for additional cost, but this may also increase frame size.</div>
-                    <div class="divTableCell border-l border-b pl-8">30CM</div>
                     <div class="divTableCell border-l border-b pl-8">8 x 12</div>
-                    <div class="divTableCell border-l border-b border-r pl-8">$60</div>
-                </div>
-                <div class="divTableRow">
-                    <div class="divTableCell"></div>
-                    <div class="divTableCell border-l border-b pl-8">30CM</div>
-                    <div class="divTableCell border-l border-b pl-8">12 x 12</div>
-                    <div class="divTableCell border-l border-b border-r pl-8">$80</div>
+                    <div class="divTableCell border-l border-b border-r pl-8"><?= $tv_price_array['8x12']?></div>
                 </div>
                 <div class="divTableRow">
                     <div class="divTableCell border-b"></div>
-                    <div class="divTableCell border-l border-b pl-8">30CM</div>
                     <div class="divTableCell border-l border-b pl-8">12 x 18</div>
-                    <div class="divTableCell border-l border-b border-r pl-8">$120</div>
+                    <div class="divTableCell border-l border-b border-r pl-8"><?= $tv_price_array['12x18']?></div>
                 </div>
                 
             </div>
@@ -175,35 +170,35 @@
             <div class="divTableBody">
 
                 <div class="divTableRow">
-                    <div class="divTableCell thead border-b w-75">Studio Frame</div>
-                    <div class="divTableCell thead border-b pl-8">Image Size (inches)</div>
+                    <div class="divTableCell thead border-b w-70">Studio Frame</div>
+                    <div class="divTableCell thead border-b pl-8">Image Area (inches)</div>
+                    <div class="divTableCell thead border-b pl-8">Framed Size (inches)</div>
                     <div class="divTableCell thead border-b pl-8">Price</div>
                 </div>
                 
                 <div class="divTableRow">
                     <div class="divTableCell"><b>Hand-made from Bass Wood painted Snow White, Ash Gray or Natural oil treatment</b></div>
-                    <div class="divTableCell border-l border-b pl-8"></div>
-                    <div class="divTableCell border-l border-b border- pl-8r"></div>
-                </div>
-                <div class="divTableRow">
-                    <div class="divTableCell">*Glass in not included.</div>
+                    <div class="divTableCell border-l border-b pl-8">7 1/2" x 7 1/2"</div>
                     <div class="divTableCell border-l border-b pl-8">8 x 8</div>
-                    <div class="divTableCell border-l border-b border-r pl-8">$40</div>
+                    <div class="divTableCell border-l border-b border-r pl-8"><?= $studio_frames_pricing['8x8']?></div>
                 </div>
                 <div class="divTableRow">
-                    <div class="divTableCell"></div>
+                    <div class="divTableCell">*Glass not included.</div>
+                    <div class="divTableCell border-l border-b pl-8">7 1/2" x 11 1/2"</div>
                     <div class="divTableCell border-l border-b pl-8">8 x 12</div>
-                    <div class="divTableCell border-l border-b border-r pl-8">$40</div>
+                    <div class="divTableCell border-l border-b border-r pl-8"><?= $studio_frames_pricing['8x12']?></div>
                 </div>
                 <div class="divTableRow">
                     <div class="divTableCell"></div>
+                    <div class="divTableCell border-l border-b pl-8">11 1/2" x 11 1/2"</div>
                     <div class="divTableCell border-l border-b pl-8">12 x 12</div>
-                    <div class="divTableCell border-l border-b border-r pl-8">$40</div>
+                    <div class="divTableCell border-l border-b border-r pl-8"><?= $studio_frames_pricing['12x12']?></div>
                 </div>
                 <div class="divTableRow">
                     <div class="divTableCell border-b"></div>
+                    <div class="divTableCell border-l border-b pl-8">11 1/2" x 17 1/2"</div>
                     <div class="divTableCell border-l border-b pl-8">12 x 18</div>
-                    <div class="divTableCell border-l border-b border-r pl-8">$40</div>
+                    <div class="divTableCell border-l border-b border-r pl-8"><?= $studio_frames_pricing['12x18']?></div>
                 </div>
                
             </div>
