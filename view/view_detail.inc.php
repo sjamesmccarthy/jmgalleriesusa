@@ -42,16 +42,16 @@
     $available_sizes = $photo_meta['available_sizes'];
 
     $tv_price_array = json_decode($this->config->tv_pricing, true);
-    // {"5x7":"20","8x8":"40","8x12":"60","12x12":"80","12x18":"120","5x7NC": "30"}
+    $studio_frames_pricing = json_decode($this->config->studio_frames_pricing, true);
 
     $le_price_array = json_decode($this->config->le_pricing, true);
-    // {"16x24": "1350","20x30": "1800","24x36": "2500","30x45": "3850","40x60": "6450"}
+    $le_frames_pricing = json_decode($this->config->le_frames_pricing, true);
 
     /* Determine if the "TinyViews photo exists */
      if( file_exists($_SERVER['DOCUMENT_ROOT'] . "/catalog/__image/" . $photo_meta['file_name'] . '-tinyviews.jpg') && $photo_meta['as_gallery'] == "0" ) {
 
         $tinyviewImage = '<div class="col"><img class="in-room-img"  src="/catalog/__image/' . $photo_meta['file_name'] . '-tinyviews.jpg" /><!-- <div class="bx-buyart-btn"><a target="_shop" href="/shop">tinyViews&trade; Edition &mdash; Shop Now</a></div>--></div>';
-        $tinyviewSquareOption = '<option data-price="' . $tv_price_array['8x8'] . '" value="8x8">SIZE: SQUARE 8x8</option>';
+        $tinyviewSquareOption = '<option data-price="' . $tv_price_array['8x8'] . '" ' . 'data-frameprice="' . $studio_frames_pricing['8x8'] . '" value="8x8">SIZE: SQUARE 8x8</option>';
         $tinyviewSquareOption .= '<!-- <option data-price="' . $tv_price_array['12x12'] . '" value="12x12">SIZE: SQUARE 12x12</option> -->';
         $tv=1;
        
@@ -72,21 +72,29 @@
          $tv=0;
      }
 
-        if($tv == 1) {
-             $tinyViewFinePrint = '<div class="col-12"><p class="tiny">*Frames, envelopes, stamps, are not included with a tinyViews&trade; Edition. Sizes may vary from 4x6 to 12x18. Printed on high quality photo paper with a white border unless optionally framed.</p></div>';
-        }
-
     /* Determine if the "VirtualRoom" photo exists */
     if( file_exists($_SERVER['DOCUMENT_ROOT'] . "/catalog/__image/" . $photo_meta['file_name'] . '-room.jpg') && $photo_meta['as_gallery'] == "0" ) {
-        
         $in_roomImg = '<div class="col"><img class="in-room-img" src="/catalog/__image/' . $photo_meta['file_name'] . '-room.jpg" /></div>';
-    
-    } 
+        $tv=1;
+    } else {
+        $in_roomImg = null;
+        $tv=0;
+    }
 
     /* Determine if the "VirtualRoom" photo exists */
     if( file_exists($_SERVER['DOCUMENT_ROOT'] . "/catalog/__image/" . $photo_meta['file_name'] . '-room-alt.jpg') && $photo_meta['as_gallery'] == "0" ) {
         $in_roomImgAlt = '<div class="col"><img class="in-room-img" src="/catalog/__image/' . $photo_meta['file_name'] . '-room-alt.jpg" /></div>';
-    } 
+        $tv=1;
+    } else {
+        $in_roomImgAlt = null;
+        $tv=0;
+    }
+
+    if($tv == 1) {
+         $tv_img_disclaimer = '*Frames, envelopes, stamps, plants and pens are not included with any tinyViews&trade; Edition.';
+    } else {
+        $tv_img_disclaimer = null;
+    }
 
     $super_photo = ' 
     <div class="img-container col-12 mb-32 ' . $photo_meta['orientation'] . '">
@@ -95,10 +103,35 @@
         </p>
     </div>';
 
- 
-
     $as_editions =  null;
     $as_editions_tmp = null;
+
+    
+    if ($photo_meta['desc'] != null) {
+
+        if ($photo_meta['desc'] == 'paper') {
+            $edition_desc_material = 'Hahnemühle Photo Rag® Metallic Fine Art Paper';
+        } 
+
+        if ($photo_meta['desc'] == 'acrylic') {
+            $edition_desc_material = 'Lumachrome HD Acrylic';
+            $frame_disabled = 'disabled';
+            $frame_disabled_option = '<option value="ACRYLIC">Frame Optional at Additional Cost (Please specify in order form)</option>';
+            $frame_info_link = 'Premium Designer Frames pricing';
+        } 
+
+        $edition_desc_material_slash = '/ ' . $edition_desc_material;
+    } else {
+
+        if ($photo_meta['as_open'] != 1) {
+            $edition_desc_material_slash = '/ ' . 'Collectors Choice of Fine Art Paper or Acrylic';
+            $frame_info_link = 'the Premium Designer Frames';
+        } else {
+            $edition_desc_material_slash = null;
+            $frame_info_link = 'the Premium Designer Frames';
+        }
+    }
+
 
     /* If as_GALLERY is set */
     if( $photo_meta['as_gallery'] == 1) {
@@ -106,14 +139,12 @@
         $edition = "limited";
         $catalog_no = $catalog_code . $photo_meta['catalog_photo_id'] . "LE";
         
-        // $as_editions_tmp .= "Edition of " . $this->config->limited_edition_max  . " plus 2 Artist Proofs";
-        // $edition_desc = $as_editions_tmp . " / $1,000 USD / Handmade and signed with Certificate of Authenticity ";
-
         $edition_desc = 'LIMITED EDITION';
+        $edition_max  = ' OF ' . $this->config->limited_edition_max;
 
         $btn = "BUY THIS LIMITED EDITION";
         $btn_link = '<a href="/contact?photo=' . $photo_meta['file_name'] . '">';
-        $gallery_details = '<p class="mt-32">Limited Editions are either printed on Hahnemühle Photo Rag® Metallic Fine Art paper mounted in a Premium Designer frame protected with Tru Vue&reg; Museum Glass, or Lumachrome HD Acrylic. If you have any questions about our <a href="/styles">styles, frames and editions</a>, or would like to talk with an art consultant, please <a href="/contact">contact us</a>.</p>';
+        $gallery_details = '<p class="col-12 mt-32">Limited Editions are either printed on ' . $edition_desc_material . ' mounted in a Premium Designer frame and protected with Tru Vue&reg; Museum Glass, or Lumachrome HD Acrylic without framing. If you have any questions about our <a href="/styles">styles, frames and editions</a>, or would like to talk with an art consultant, please <a href="/contact">contact us</a>.</p>';
 
         $default_price = $le_price_array['16x24'];
 
@@ -131,12 +162,12 @@
         <div class="col select-wrapper" style="width: 300px; margin-right: 20px;">
             <label for="frame"></label>
             <select id="frame" name="frame">
-                <option value="Black Vodka">FRAME: Premium Designer Black Vodka (similar to a Dark Black stain)</option>
-                <option value="Whiskey">FRAME: Premium Designer Whiskey (similar to a Medium Brown stain)</option>
-                <option value="Bourbon">FRAME: Premium Designer Bourbon (similar to a Light Brown stain)</option>
-                <option value="Matte Charcoal">FRAME: Premium Designer Matte Charcoal (similar to Matte Black)</option>
+                ' . $frame_disabled_option . '
+                <option value="Black Vodka"' . $frame_disabled . '>FRAME: Premium Designer Black Vodka (similar to a Dark Black stain)</option>
+                <option value="Whiskey"' . $frame_disabled . '>FRAME: Premium Designer Whiskey (similar to a Medium Brown stain)</option>
+                <option value="Bourbon"' . $frame_disabled . '>FRAME: Premium Designer Bourbon (similar to a Light Brown stain)</option>
             </select>
-            <span class="tiny ml-16"><a href="/styles">More information about frame styles</a></span>
+            <span class="tiny ml-16"><a href="/styles">More information about ' . $frame_info_link . '</a></span>
         </div>
         <input type="hidden" name="edition" value="limited" />';
 
@@ -152,18 +183,21 @@
         // $as_editions_tmp .= "";
 
         $edition_desc = $this->config->edition_description_open;
+        $edition_desc_material_slash = null;
+        $edition_max = null;
+
         $btn = "Add To Cart +Checkout";
         $btn_link = '<a href="/contact?photo=' . $photo_meta['file_name'] . '&open=true">';
 
-        $default_price = $tv_price_array['12x18'];
+        $default_price = $tv_price_array['11x14'];
 
         $sizes_frames = '<div class="col select-wrapper" style="width: 300px;  margin-right: 20px;">
             <label for="buysize"></label>
             <select id="buysize" name="buysize">
-                <option data-price="' . $tv_price_array['5x7'] . '"value="5x7">SIZE: 5x7</option>
+                <option data-price="' . $tv_price_array['5x7'] . '" ' . 'data-frameprice="0" value="5x7">SIZE: 5x7</option>
                 ' . $tinyviewNotesOption . '
-                <option data-price="' . $tv_price_array['8x12'] . '"value="8x12">SIZE: 8x12</option>
-                <option SELECTED data-price="' . $tv_price_array['12x18'] . '"value="12x18">SIZE: 12x18 </option>
+                <option data-price="' . $tv_price_array['8x10'] . '" ' . 'data-frameprice="' . $studio_frames_pricing['8x10'] . '" value="8x10">SIZE: 8x10</option>
+                <option SELECTED data-price="' . $tv_price_array['11x14'] . '" data-frameprice="' . $studio_frames_pricing['11x14'] . '" value="11x14">SIZE: 11x14 </option>
                 ' . $tinyviewSquareOption . '
             </select>
         </div>
@@ -172,12 +206,14 @@
             <label for="frame"></label>
             <select id="frame" name="frame">
                 <option data-price="0" value="PRINT-ONLY">PRINT (or Giclée) ONLY - NO FRAME</option>
-                <option data-price="40" value="ASH-GRAY(+$40)">FRAME: Studio Ash Gray (+$40 USD)</option>
-                <option data-price="40" value="SNOW-WHITE(+$40)">FRAME: Studio Snow White (+$40 USD)</option>
+                <option data-price="40" value="Studio-Ash-Gray">FRAME: Studio Ash Gray</option>
+                <option data-price="40" value="Studio-Snow-White">FRAME: Studio Snow White</option>
             </select>
             <span class="tiny ml-16"><a href="/styles">More information about frame styles and pricing</span>
         </div>
          <input type="hidden" name="edition" value="open" />';
+
+         $tinyViewFinePrint = '<div class="col-12 mt-16 mb-64"><p>tinyViews&trade; Giclée Prints are available in standard framing sizes 5x7, 8x10 and 11x14 with a 1/2" white border ready for framing. Please read our <a target="_info" href="/styles">Frames, Editions and Pricing</a> page for more information about our Studio Frames for tinyViews&trade; Giclée Prints.' . $tv_img_disclaimer . '</p></div>';
 
     }
 

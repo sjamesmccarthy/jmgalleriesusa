@@ -338,7 +338,7 @@ class Core_Api
        ORDER BY
            RAND()
            DESC
-       LIMIT 4";
+       LIMIT 5";
 
             $result = $this->mysqli->query($sql);
 
@@ -1483,7 +1483,8 @@ class Core_Api
         on_display = '$on_display',
         as_gallery = '$as_gallery',
         as_open = '$as_open',
-        featured = '$featured'
+        featured = '$featured',
+        `desc` = '$desc'
         WHERE catalog_photo_id = '$catalog_photo_id' AND file_name = '$file_name'";
 
         $result = $this->mysqli->query($sql);
@@ -1509,7 +1510,6 @@ class Core_Api
 
         /* Check to see if files have been uploaded */
         $this->uploadFile(array("jpg","jpeg"), "jpg");
-
 
         if($result == 1) {
             $_SESSION['error'] = '200';
@@ -1549,6 +1549,7 @@ class Core_Api
         `artist_id`, 
         `parent_collections_id`, 
         `title`, 
+        `desc`,
         `story`, 
         `file_name`, 
         `loc_city`, 
@@ -1576,6 +1577,7 @@ class Core_Api
             '$artist_id', 
             '$parent_collections_id', 
             '$title', 
+            '$desc',
             '$story', 
             '$file_name', 
             '$loc_city', 

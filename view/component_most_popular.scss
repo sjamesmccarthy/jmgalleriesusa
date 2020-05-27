@@ -8,8 +8,12 @@
 
     h4 {
         text-transform: uppercase;
-        font-size: 1.3rem;
-        font-weight: 400;
+        font-size: 1.2rem;
+        font-weight: 300;
+    }
+
+    .thin {
+        font-weight: 300;
     }
 
     p {
@@ -17,6 +21,6 @@
     }
     
     .filmstrip-thumb {
-        max-width: 360px;
+        max-width: 260px;
     }
 }

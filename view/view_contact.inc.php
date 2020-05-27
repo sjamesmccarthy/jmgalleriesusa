@@ -22,22 +22,27 @@ if(isSet($this->data->routePathQuery[0])) {
    
 
         if(isSet($frame) AND $edition == 'tinyviews') {
-            if($frame != "PRINT-ONLY" && $cost <= 80) { $cost = $cost + 20;  $fc=20; }
-            if($frame != "PRINT-ONLY" && $cost >= 81) { $cost = $cost + 40; $fc=40; }
+            // if($frame != "PRINT-ONLY" && $cost <= 80) { $cost = $cost + 20;  $fc=20; }
+            // if($frame != "PRINT-ONLY" && $cost >= 81) { $cost = $cost + 40; $fc=40; }
 
             if ($frame != "PRINT-ONLY") {
                 $frame = str_replace("$$", "$" . $fc, $frame);
-                // $frame = $frame;
                 $frame_long = ' with a ' . $frame . ' frame';
             } else {
-                $frame = 'PRINT-ONLY';
+                $frame_long = 'PRINT-ONLY';
             }
+
         } else {
-            $frame_long = ' with a ' . $frame . ' frame';
+            if ($frame = 'ACRYLIC') {
+                $frame_long = 'Acrylic Print (without frame)';
+            } else {
+                $frame_long = ' with a ' . $frame . ' frame';
+            }
         }
 
     $formTitle = "CHECKOUT <span class='lowercase light'>for</span> <span class='light initialcaps'>" . $photo . "</span>";
     $subTitle = "Thank you for your interest in collecting a j.McCarthy Limited Edition";
+    $subNotice = '<p class="notice mb-16">notice: Due to COVID-19 all frames are on back order because of supply-chain delays</p>';
     $subject_PH = "PURCHASE ORDER for " . strtoupper($photo);
 
     /* Shipping Information */
@@ -50,13 +55,12 @@ if(isSet($this->data->routePathQuery[0])) {
         '<input type="hidden" name="framing" value ="' . $frame . '" />' .
         '<input type="hidden" name="catalog_id" value ="' . $catalog_no . '" />' .
         '<input type="hidden" name="invoice_no" value ="' . time() . '-' . $catalog_no . '" />' .
-        '<p class="notice">-- Due to COVID-19 all frames are on back order because of supply-chain delays</p>' .
-        '<p><input type="text" name="phone" placeholder="PHONE (eg. 951-708-1831)" required /><p>' .
-        '<p><input type="text" name="address" placeholder="SHIPPING ADDRESS (OR PICKUP LOCATION eg. Joe Maxx Coffee Henderson)" required /><p>' .
-        '<p><input type="text" name="address_other" placeholder="SHIPPING ADDRESS SECOND LINE (eg. Suite, Apt)" /><p>' .
-        '<p><input type="text" name="city" placeholder="CITY (eg. RENO, LAS VEGAS, TEMECULA)" required/><p>' .
-        '<p><input type="text" name="state" placeholder="State (eg. NV, CA, NY, TX)" required/><p>' .
-        '<p><input type="text" name="postalcode" placeholder="Postal Code (eg. 95474)" required/><p>';
+        '<p><input class="half-size" type="text" name="phone" placeholder="PHONE (eg, 951-708-1831)" required /><p>' .
+        '<p><input class="half-size" type="text" name="address" placeholder="SHIPPING ADDRESS (eg, 123 Main St.)" required />' .
+        '<input class="half-size" type="text" name="address_other" placeholder="SHIPPING ADDRESS SECOND LINE (eg, Suite, Apt)" /></p>' .
+        '<p><input class="half-size" type="text" name="city" placeholder="CITY (eg, Las Vegas, Dallas, Barstow)" required/>' .
+        '<input class="half-size" type="text" name="state" placeholder="State (eg, NV, CA, NY, TX)" required/></p>' .
+        '<p><input class="half-size" type="text" name="postalcode" placeholder="Postal Code (eg, 95474)" required/><p>';
 
 
     $button_label = "PLACE YOUR ORDER";
@@ -64,7 +68,7 @@ if(isSet($this->data->routePathQuery[0])) {
     $payment_field = "<p class='pt-16 pb-16'><img style='margin-bottom: 10px; width: 150px; vertical-align: middle' src='/view/image/square-payment-icons.png' /> <i style='font-size: 1.8rem; margin-left: 5px;' class='fab fa-bitcoin'></i><br /><span class='small'Estimated Total Not Including Tax or Shipping or any Promotional Codes.<br />Visa, Mastercard, American Express and Discover accepted and processed with Square.<br />Bitcoin is accepted via Coinbase or Square Cash App.<br />Cash (USD) is accepted on pickup only orders.<br />No checks.</span></p>";
     $subject_VAL = $subject_PH;
     $formType = "RequestQuoteForm"; 
-    $formSizes = '<p><input type="text" id="contactsize" name="contactsize" value="' . urldecode($size) . ' ' . $frame_long . ' [CATALOG NUMBER ' . $catalog_no . ']" required /></p>';
+    $formSizes = '<input class="half-size" type="text" id="contactsize" name="contactsize" value="' . urldecode($size) . ' ' . $frame_long . ' [CATALOG NUMBER ' . $catalog_no . ']" required />';
 
     $estimated_cost = "<span id='estimated_cost' class='hidden'>" . $cost . "</span><h2><span id='estimated_cost_format'>" . number_format($cost, 2) . " USD</span></h2>";
 
@@ -79,6 +83,7 @@ if(isSet($this->data->routePathQuery[0])) {
     $payment_field = null;
     $subject_VAL = null;
     $formType = "ContactForm";
+    $subNotice = null;
 }
     
 ?>

@@ -6,6 +6,10 @@
     margin-top: -32px;
 }
 
+.frame_data {
+    font-size: .9rem !important;
+}
+
 form {
     #buysize, #frame {
         border: none;
@@ -75,7 +79,7 @@ form {
 .detail-story {
     line-height: 1.6; 
     color: #4D4D4D; 
-    font-size: 1.8rem;
+    font-size: 1.5rem;
 }
 
 .lg-img img {
@@ -123,7 +127,7 @@ form {
     display: block;
      
       >p >img {
-        width: 50%;
+        width: 43%;
         border-radius: 0;
         vertical-align: middle;
     }

@@ -115,6 +115,11 @@
                 </div> -->
 
             </div>
+
+            <div>
+                <input class="half-size" type="text" id="desc" name="desc" placeholder="DESCRIPTION OF MATERIAL (eg, paper or acrylic)" value="<?= $desc ?>" required>
+            </div>
+
             <div>
                 <!-- <div class="select-wrapper half-size">
                 <select id="as_tinyviews" name="as_tinyview">

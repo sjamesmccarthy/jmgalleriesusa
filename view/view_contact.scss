@@ -8,10 +8,13 @@ fieldset {
 }
 
 .notice {
-    color: red;
     font-size: .9rem;
-    margin-top: -1rem;
-    margin-bottom: 1rem;
+    padding: 10px;
+    background-color: $color-warning-background;
+    color: $color-warning;
+    border-radius: 4px;
+    text-transform: uppercase;
+    text-align: center;
 }
 
 #contact {

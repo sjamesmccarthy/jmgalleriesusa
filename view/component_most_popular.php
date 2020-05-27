@@ -28,14 +28,14 @@
             }
 
 $html = <<<END
-<article id="most-popular">
-    <div class="grid-4_sm-2 grid-4_md-3">
+<article id="most-popular" class="mt-0">
+    <div class="grid_sm-2 grid_md-3">
         <div class="col-10" style="margin-bottom: 16px;">
-        <h2 class="blue">YOU MAY ALSO LIKE</h2>
+        <h2 class="blue thin">YOU MAY ALSO LIKE</h2>
         <p>More popular photographs based on what others are viewing</p>
         </div>
     <div class="col-2-middle" style="margin-bottom: 16px; text-align: right;padding-right: 8px;">
-        <a href="/galleries">view all</a>
+        <!-- <a href="/galleries">view all</a> -->
     </div>
         $thumb_html
     </div>

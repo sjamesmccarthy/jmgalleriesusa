@@ -8,28 +8,30 @@
         <p class="blue"><?= $subTitle ?></p>
         <h1 class="pb-16"><?= $formTitle ?></h1>
 
+        <?= $subNotice ?>
+
         <form id="contactForm" action="/view/ajax_email_process.php" method="POST">
         <input type="hidden" id="formType" name="formType" value="<?= $formType ?>" />
         <input type="hidden" id="g-recaptcha-response" name="g-recaptcha-response" />
         <input name="refer_IP" type="hidden" value="<?= $_SERVER['REMOTE_ADDR'] ?>" />
 
         <fieldset class="form-main">
-        <p>
+        <!-- <p> -->
         <!-- <label class="" for="name">YOUR NAME</label> -->
-        <input type="text" id="contactname" name="contactname" placeholder="YOUR NAME" value="<?= $name ?>" required>
-        </p>
+        <input class="half-size"type="text" id="contactname" name="contactname" placeholder="YOUR NAME (eg, John Smith)" value="<?= $name ?>" required>
+        <!-- </p> -->
+
+        <!-- <p> -->
+        <!-- <label class="" for="contactinfo">Email Address or Phone Number</label> -->
+        <input class="half-size" type="text" id="contactemail" name="contactemail" placeholder="YOUR EMAIL (eg, john.smith@ydomain.com)" value="<?= $email ?>" required>
+        <!-- </p> -->
 
         <p>
         <!-- <label class="" for="contactinfo">Email Address or Phone Number</label> -->
-        <input type="text" id="contactemail" name="contactemail" placeholder="YOUR EMAIL" value="<?= $email ?>" required>
-        </p>
-
-        <p>
-        <!-- <label class="" for="contactinfo">Email Address or Phone Number</label> -->
-        <input type="text" id="contactsubject" name="contactsubject" placeholder="<?= $subject_PH ?>" value="<?= $subject_VAL ?>" required>
-        </p>
+        <input class="half-size" type="text" id="contactsubject" name="contactsubject" placeholder="<?= $subject_PH ?>" value="<?= $subject_VAL ?>" required>
 
         <?= $formSizes ?>
+        </p>
 
         <div class="mt-16">
         <?= $message_PH ?>

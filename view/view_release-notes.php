@@ -5,14 +5,24 @@
 
         <h1>RELEASE NOTES</h1>
         <p class="mb-16">current release version <?= $this->config->package_version ?><br />
-        Monday, May 18, 2020</p>
+        Wednesday, May 27, 2020</p>
        
-        <!-- <p class="pt-16">v1.3.4<br />May 14, 2020</p> -->
+        <!-- <p class="pt-16">v1.3.5<br />May 14, 2020</p> -->
+        	<ul>
+            <li>added: automated pricing for frames and images.</li>
+            <li>updated: checkout order form for additional variations.</li>
+            <li>added: for Limited Editions Fine Art Paper or Acrylic are now shown.</li>
+            <li>updated: image details for pricing information, you may also like filmstrip +1 image.</li>
+            <li>optimized: all images have been compressed.</li>
+        	</ul>
+        <!-- </p> -->
+
+        <p class="pt-16">v1.3.4<br />May 14, 2020</p>
         	<ul>
             <li>added: P/L in admin control : inventory.</li>
             <li>updated: removed deprecated files</li>
         	</ul>
-        <!-- </p> -->
+        </p>
 
         <p class="pt-16">v1.3.3<br />May 14, 2020</p>
         	<ul>
