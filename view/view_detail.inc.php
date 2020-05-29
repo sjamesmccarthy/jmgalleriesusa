@@ -125,6 +125,7 @@
 
         if ($photo_meta['as_open'] != 1) {
             $edition_desc_material_slash = '/ ' . 'Collectors Choice of Fine Art Paper or Acrylic';
+            $edition_desc_material = 'Hahnemühle Photo Rag® Metallic Fine Art Paper (including frame) or Lumachrome HD Acrylic (frame additional)';
             $frame_info_link = 'the Premium Designer Frames';
         } else {
             $edition_desc_material_slash = null;
@@ -205,9 +206,9 @@
         <div class="col select-wrapper" style="width: 300px; margin-right: 20px;">
             <label for="frame"></label>
             <select id="frame" name="frame">
-                <option data-price="0" value="PRINT-ONLY">PRINT (or Giclée) ONLY - NO FRAME</option>
-                <option data-price="40" value="Studio-Ash-Gray">FRAME: Studio Ash Gray</option>
-                <option data-price="40" value="Studio-Snow-White">FRAME: Studio Snow White</option>
+                <option value="PRINT-ONLY">PRINT (or Giclée) ONLY - NO FRAME</option>
+                <option value="Studio-Ash-Gray">FRAME: Studio Ash Gray</option>
+                <option value="Studio-Snow-White">FRAME: Studio Snow White</option>
             </select>
             <span class="tiny ml-16"><a href="/styles">More information about frame styles and pricing</span>
         </div>

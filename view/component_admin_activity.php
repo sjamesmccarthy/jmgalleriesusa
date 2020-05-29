@@ -17,32 +17,32 @@ foreach($activity_data as $key=>$val) {
     switch($val['type']) {
 
         case "system":
-            $typeClass = "system";
+            $typeClass = "system-log";
         break;
 
         case "success":
-            $typeClass = "success";
+            $typeClass = "success-log";
         break;
 
         case "warning":
-            $typeClass = "warning";
+            $typeClass = "warning-log";
         break;
 
         case "failure":
-            $typeClass = "failure";
+            $typeClass = "failure-log";
         break;
 
         default:
-            $typeClass = "system";
+            $typeClass = "system-log";
         break;
 
     }
 
     $date = date("F j, Y h:i:s A", strtotime($val['created']));
 
-    $result_html .= '<li class="item">';
-    $result_html .= '<p class="' . $typeClass . '"><b>' . $date . '</b></p>';
-    $result_html .= '<p class="' . $typeClass . '">[' . $val['type'] . '] ' . $val['value'] . '</p>';
+    $result_html .= '<li class="item ' . $typeClass . '">';
+    $result_html .= '<b>' . $date . '</b><br />';
+    $result_html .= '[' . $val['type'] . '] ' . $val['value'];
     $result_html .= '</li>';
 
 }
@@ -52,7 +52,7 @@ foreach($activity_data as $key=>$val) {
 $html = <<< END
 <article class="activity--container">
 
-    <h4>Recent Activity</h4>
+    <h4>Recent Activity Log</h4>
 
         <ul class="mt-32">  
 

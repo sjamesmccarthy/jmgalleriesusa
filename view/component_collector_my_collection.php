@@ -26,14 +26,16 @@
         // }
 
         if($v['reg_num'] == '') { $reg_num = null; } else { $reg_num = '<p>Reg No. ' . $v['reg_num'] . '</p>'; }
+        if($v['frame_size'] != '') { $add_frame_meta = ', (' . $v['frame_size'] . ' framed)'; } else { $add_frame_meta = null; }
 
         $thumb_html .= '<div class="col-card card-border ' . $grid_css . '">';
         $thumb_html .= '<img class="filmstrip-thumb" src="/catalog/__thumbnail/' .$img_file . '.jpg" /><h6>' . $v['title'] . ' #' . $v['edition_num'] . '/' .  $v['edition_num_max'] .'</h6>';
         $thumb_html .= '<p>Purchased ' . date("F jS, Y", strtotime($v['purchase_date'])) . '</p>';
         $thumb_html .= '<p>Serial No. ' . $v['serial_num'] . '</p>';
         $thumb_html .= $reg_num;
-        $thumb_html .= '<p>' . $v['print_size'] . '(' . $v['frame_size'] . ' framed)</p>';
-        $thumb_html .= '<p class="more-detail border-top">More Detail Coming Soon</p>';
+        $thumb_html .= '<p>' . $v['print_size'] . ' print ' . $add_frame_meta . '</p>';
+        $thumb_html .= '<p>' . $v['edition_style'] . ' EDITION</p>';
+        // $thumb_html .= '<p class="more-detail border-top">More Detail Coming Soon</p>';
         $thumb_html .= '</div>';
         
         $count++;
@@ -44,37 +46,37 @@
             if($i == 1) {
                 $number = '2';
                 $number_long = 'second';
-                $pcode =  'SUGAR20';
-                $poffer = '20% OFF';
+                $pcode =  'ART15';
+                $poffer = '15% OFF';
                 $img = NULL;
             }
             if($i == 2) {
                 $number = '3';
                 $number_long = 'third';
-                $pcode =  'TREE30';
-                $poffer = '30% OFF';
+                $pcode =  'WEBDEAL';
+                $poffer = '$20 OFF';
                 $img = '_alt';
             }
             if($i == 3) {
                 $number = '4';
                 $number_long = 'fourth';
-                $pcode =  'UCOMPME';
-                $poffer = '$100 OFF';
+                $pcode =  'COLLECTME';
+                $poffer = '25% OFF';
                 $img = '_alt_last';
             }
             
-            $thumb_html .='<div class="col-card type-promo card-border"><img class="filmstrip-thumb" src="/catalog/__thumbnail/image_filler' . $img . '.jpg"><p>Your Next <!-- (No. ' . $number . ') --> Limited Edition Art</p><p>Use promo-code: ' . $pcode . ' and</p><p>receive <b>' . $poffer . ' your ' . $number_long . '</p><p>fine art limited-edition purchase</b></p><p></p><p class="more-detail border-top"><a target="_shop" href="/galleries">Browse The Catalog</a></p></div>'; 
+            $thumb_html .='<div class="col-card type-promo card-border"><img class="filmstrip-thumb" src="/catalog/__thumbnail/image_filler' . $img . '.jpg"><p class="mb-16">Your Next (No. ' . $number . ') Limited Edition Art</p><p>Use promo-code: ' . $pcode . ' and</p><p>receive <b>' . $poffer . ' your ' . $number_long . '</p><p>fine art limited-edition purchase</b></p><p></p><p class="more-detail mt-16"><a target="_shop" href="/galleries">Browse The Catalog</a></p></div>'; 
     }
 
 $html = <<<END
 <article id="my-collection" class="mt-32">
     <div class="most-popular--title col-12">
     <h2 class="uppercase ">Your Artwork</h2>
-    <p><b>The below Fine-Art photographs are part of your j.McCarthy collection. </b></p>
+    <p><b>The below Fine-Art collectibles are part of your j.McCarthy collection. </b></p>
     <p class="mt-8"></p>
     </div>
     <!-- style="background-color: rgba(0,0,0,.05); padding: 35px 0 10px 20px;" -->
-    <div class="grid-4-center mt-16">
+    <div class="grid-4 mt-16">
         $thumb_html
     </div>
 </article>

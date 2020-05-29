@@ -7,26 +7,19 @@
         <div class="col-12 collector--main_container">
 
            <div class="signout">
-               <p><span class="whoami"><?= $res_first_name ?> <?= $res_last_name ?> &mdash; </span><a href="/d/collector/signout?ref=collector">sign out</a></p>
+               <p><span class="whoami"><?= $res_first_name ?> <?= $res_last_name ?> &mdash; </span><a id="myaccount" href="">account</a> | <a href="/d/collector/signout?ref=collector">sign out</a></p>
             </div>
 
-            <article class="note-from-artist">
-                    <p>
-                        Hello <?= $res_first_name ?> <?= $res_last_name ?>,<br /><br />Thank you for being a collector of j.McCarthy Fine Art. I am grateful for your support and continued loyalty, and hope that you have found the perfect place in your home or office for your fine art purchase.<br /><br />This collector portal is where you can easily manage your collection, earn rewards for referring family and friends and discover some amazing offers and new Limited Edition releases that I have curated just for my collectors. If you have any questions about your artwork or would like to inquire about new artwork, please <a href="/contact">contact</a> me.
-                   </p>
-
-                   <p style="text-align: right">Cheers, <br /><img src="/view/image/signature_full-web.png"></p>
-
-                    <div id="note-close" style="text-align: right"><i class="fas fa-times-circle"></i></div>
-            </article>
-
+            <?= $myaccount_html ?>
+            <?= $note_html ?>
+            
             <?= $mycollection_html ?>
             <?= $myrewards_html ?>
             <?= $amazingoffer_html ?>
             <?= $polarized_html ?>
 
             <article id="version">
-                <p class="tiny">v1.0.1587154706</p>
+                <p class="tiny"><?= $this->config->package_version ?></p>
            </article>
 
         </div>
@@ -39,14 +32,34 @@
   jQuery(document).ready(function($){
     jQuery.noConflict();
 
+    if(getCookie('collector_note') == "CLOSE") {
+        $('.note-from-artist').hide();
+    } else {
+        $('.note-from-artist').show();
+
+    }
+    
+    $('#myaccount').on("click", function(e) {
+        e.preventDefault();
+        $('#my-account').toggle();
+    });
+
     $('#note-close').on("click", function() {
-        console.log('hideme');
+        console.log('hiding-note');
         $('.note-from-artist').slideUp("slow");
         $('.whoami').show();
         $('html,body').animate({ scrollTop: 0 }, "slow");
+
+        let var_collector_note = 'CLOSE';
+
+        if(getCookie('collector_note') == false) {
+          setCookie('collector_note',var_collector_note,'1');
+          console.log('cookie.Set(' + var_collector_note + ')');
+        } 
+
     });
 
-      $('#referrCollectorForm').submit(function() {
+    $('#referrCollectorForm').submit(function() {
 
         console.log('start.form.referrCollectorForm.submission');
 
@@ -56,7 +69,6 @@
         });
 
             event.preventDefault();
-            console.log('Sending... ' + $('#g-recaptcha-response').val());
 
               var url = "/view/ajax_email_process.php";
 
@@ -88,6 +100,82 @@
               });
         });
 
-  });
+        $('#collector-account').submit(function() {
+
+        console.log('start.form.AccountSettings.submission');
+
+        grecaptcha.execute('6LetD7YUAAAAAFX5cXupV3exd1YCSuYFY_az92Wh', {action: 'homepage'}).then(function(token) {
+              document.getElementById('g-recaptcha-response').value = token;
+              console.log('grecaptcha.ready');
+        });
+
+            event.preventDefault();
+
+              var url = "/view/ajax_collector_account_process.php";
+
+              grecaptcha.ready(function() {
+
+                  grecaptcha.execute('6LetD7YUAAAAAFX5cXupV3exd1YCSuYFY_az92Wh', {action: 'homepage'}).then(function(token) {
+                    $.ajax({
+                      type: "POST",
+                      url: url,
+                      data: $("#collector-account").serialize(),
+                      async: true,
+                      success: function(data)
+                      {
+                          console.log(data);
+                          if(data == 200) {
+                          var data_html = "Your PIN Has Been Successfully Changed - Please Don't Forget It";
+                          $('.form_response').removeClass('error');
+                          $('.form_response').html(data_html).addClass('success').show().delay('5000').slideUp("slow")
+                          $('#pin, #pin_check, #pin_btn').attr('disabled','disabled').addClass('disabled-ele');
+                          $('#pin_btn').addClass('disabled-ele');
+                          $('.tryagain').show();
+                          } else {
+                          var data_html = "We Are Sorry There Was A Problem Changing Your PIN - Contact Support";
+                          $('.form_response').removeClass('success');
+                          $('.form_response').html(data_html).addClass('error').show().delay('5000').slideUp("slow")
+                          }
+                      },
+                      error : function(request,error) {
+                          console.log("Request: "+JSON.stringify(request));
+                      }
+                    });
+                    
+                    return false;
+                  });;
+              });
+        });
+
+
+    });
+
+    function setCookie(cname, cvalue, exdays) {
+    // console.log('Setting-Cookie ' + cname)
+      var d = new Date();
+      if(exdays != '0') {
+          d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+          var expires = "expires="+d.toUTCString();
+      } else {
+          var expires = null; 
+      }
+
+      document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+    }
+
+    function getCookie(cname) {
+      var name = cname + "=";
+      var ca = document.cookie.split(';');
+      for(var i = 0; i < ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0) == ' ') {
+          c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+          return c.substring(name.length, c.length);
+        }
+      }
+      return "";
+    }
 
 </script>

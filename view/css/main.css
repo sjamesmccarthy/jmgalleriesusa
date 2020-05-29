@@ -397,6 +397,14 @@ textarea { height: 250px; width: 100%; font-size: 1.2rem; line-height: 1.8; padd
 
 #form_response { background-color: rgba(130, 189, 94, 0.2); border: 1px solid #82bd5e; padding: 30px; border-radius: 3px; display: none; font-size: 1.5rem; text-align: center; color: green; }
 
+.success { margin-bottom: 1rem; padding: 20px; background-color: #d4edda; color: #155724; text-align: center; }
+
+.error { margin-bottom: 1rem; padding: 20px; background-color: #f5c6cb; color: #721c24; text-align: center; }
+
+.disabled-ele { background-color: #FFF !important; border-color: #e4e4e4 !important; color: #e4e4e4; }
+
+.disabled-ele:hover { background-color: #FFF; border-color: #e4e4e4; color: #e4e4e4; cursor: initial; }
+
 /* form checkbox */
 [type="checkbox"]:checked, [type="checkbox"]:not(:checked) { position: absolute; left: -9999px; }
 
@@ -415,7 +423,7 @@ textarea { height: 250px; width: 100%; font-size: 1.2rem; line-height: 1.8; padd
 [type="checkbox"]:disabled:checked + label:after { background: #aaa; }
 
 /* Buttons */
-button { display: inline-block; padding: 10px; background-color: #2574A9; color: #FFFFFF; border-radius: 5px; border: 1px solid #2574A9; min-width: 50px; letter-spacing: 0.2em; padding: 15px; box-sizing: border-box; text-transform: uppercase; }
+button { display: inline-block; padding: 10px; background-color: #2574A9; color: #FFFFFF; border-radius: 5px; border: 1px solid #2574A9; min-width: 50px; letter-spacing: 0.2em; padding: 12px; box-sizing: border-box; text-transform: uppercase; }
 
 button:hover { background-color: white; color: #2574a9; cursor: pointer; }
 
@@ -754,29 +762,27 @@ button a { color: #2574A9; }
 
 .quickstats--container .table .table--subline { font-size: .8rem; }
 
+.photosviewed--container { border-right: 1px solid #e4e4e4; }
+
 .photosviewed--container .item { margin-bottom: 16px; padding-bottom: 10px; }
 
 .photosviewed--container .item .photo { display: inline-block; }
 
-.photosviewed--container .item .photo img { width: 100px; }
+.photosviewed--container .item .photo img { width: 116px; padding-right: 10px; }
 
-.photosviewed--container .item .detail { display: inline-block; padding-left: 10px; vertical-align: top; }
+.photosviewed--container .item .detail { display: inline-block; vertical-align: top; }
 
 .photosviewed--container .item .detail p { font-size: 1rem; }
 
-.activity--container { background-color: #e4e4e4; padding: 32px 32px; border-radius: 5px; }
+.activity--container .item { margin-bottom: 16px; padding: 10px; border-radius: 4px; font-size: 0.8em; }
 
-.activity--container .item { margin-bottom: 16px; }
+.activity--container .item.system-log { color: #4a4a4a; background-color: #b8daff; }
 
-.activity--container .item p { font-size: 1rem; }
+.activity--container .item.warning-log { color: #856404; background-color: #fff3cd; }
 
-.activity--container .item p.system { color: #4a4a4a; }
+.activity--container .item.success-log { color: #155724; background-color: #d4edda; }
 
-.activity--container .item p.warning { color: #856404; }
-
-.activity--container .item p.success { color: #155724; }
-
-.activity--container .item p.failure { color: #721c24; }
+.activity--container .item.failure-log { color: #721c24; background-color: #f5c6cb; }
 
 .navigation--container { min-height: 50vh; border-radius: 4px; padding-right: 64px; }
 
@@ -1544,11 +1550,15 @@ table.dataTable tbody td.valign { vertical-align: middle; }
 
 .code-block { display: none; }
 
-.collector--main_container .whoami { display: none; }
+.collector--main_container .note-from-artist { display: none; }
 
 .collector--main_container .note-from-artist p { margin-top: 10px; font-size: 1.8rem; padding: 0 64px; font-family: 'Homemade Apple', cursive; line-height: 2; }
 
-.collector--main_container #note-close { cursor: pointer; }
+.collector--main_container #note-close { cursor: pointer; text-align: right; border-bottom: 5px solid #e4e4e4; padding-bottom: 1rem; }
+
+.collector--main_container #note-close .label { background-color: #e4e4e4; padding: 10px; border-radius: 4px; }
+
+.collector--main_container #note-close .label-icon { vertical-align: middle; }
 
 .collector--main_container > h2 { font-weight: 800; }
 
@@ -1569,8 +1579,6 @@ table.dataTable tbody td.valign { vertical-align: middle; }
 .collector--main_container .welcome-msg > p > span { color: #2574A9; font-weight: 800; }
 
 .collector--main_container .rewards { font-size: 5.5rem; color: #2574A9; }
-
-.collector--main_container .half-size { width: 49%; display: inline-block; }
 
 .collector--main_container .third-size { width: 39%; display: inline-block; }
 
@@ -1593,4 +1601,10 @@ table.dataTable tbody td.valign { vertical-align: middle; }
 #my-collection .filmstrip-thumb { max-width: 310px; }
 
 #my-collection .art-title { font-size: 2rem; font-weight: 400; }
+
+#my-account { display: none; border-bottom: 5px solid #e4e4e4; padding-bottom: 1rem; }
+
+#my-account .form_response { display: none; }
+
+#my-account .tryagain { display: none; margin-top: -1rem; }
 /*# sourceMappingURL=main.css.map */

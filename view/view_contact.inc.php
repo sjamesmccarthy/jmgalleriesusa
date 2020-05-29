@@ -33,7 +33,8 @@ if(isSet($this->data->routePathQuery[0])) {
             }
 
         } else {
-            if ($frame = 'ACRYLIC') {
+
+            if ($frame == 'ACRYLIC') {
                 $frame_long = 'Acrylic Print (without frame)';
             } else {
                 $frame_long = ' with a ' . $frame . ' frame';

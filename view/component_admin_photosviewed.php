@@ -22,8 +22,8 @@ foreach($photosviewed_data as $key=>$val) {
     $result_html .= '</div>';
     $result_html .= '<div class="detail">';
     $result_html .= '<p><b>' . $val['title'] . '</b></p>';
-    $result_html .= '<p>Last Viewed ' . $date . '</p>';
-    $result_html .= '<p>Total Views ' . $val['count'] . '</p>';
+    $result_html .= '<p>' . $date . '</p>';
+    $result_html .= '<p>' . $val['count'] . '</p>';
     $result_html .= '</div>';
     $result_html .= '</li>';
 
@@ -35,6 +35,8 @@ $html = <<< END
 <article class="photosviewed--container">
 
 <h4>Viewed Catalog Photos</h4>
+<a target="_ga" href="https://analytics.google.com/analytics/web/#/report-home/a73077319w120066830p125611649">View Google Analytics</a>
+
     <ul style="margin-top: 32px;">  
 
        $result_html

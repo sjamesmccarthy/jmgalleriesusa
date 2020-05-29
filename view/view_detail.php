@@ -14,12 +14,12 @@
 
     <div class="grid">
 
-        <div class="col-10">
+        <div class="col-9">
             <h1 class="detail-h1"><?= $photo_meta['title'] ?></h1>
             <p class="pb-32 edition-title"><?= $edition_desc ?> <?= $edition_max ?> <?= $edition_desc_material_slash ?></span></p>
         </div>
 
-        <div class="col-2">
+        <div class="col-3">
             <p class="tiny blue right" style="margin-bottom: -10px; margin-left: 5px;">$ USD</p>
             <p class="right"><span id="price" class="price right"><?= number_format($default_price, 2) ?></span><br /><span class="frame_data price"></span></p>
             <input type="hidden" name="total_cost" id="total_cost" value="<?= $default_price ?>" />
@@ -101,21 +101,32 @@
             var print = parseFloat($("#buysize option:selected").attr("data-price"));
             var fp = parseFloat($("#buysize option:selected").attr("data-frameprice")); 
             // console.log(fp);
+
             var newprice = print + fp;
+            // console.log('newprice='+newprice);
+
+            newprice_f = parseFloat(newprice).toFixed(2);
+            // console.log('newprice_f=' + newprice_f);
+
+            // var nf = new Intl.NumberFormat();
+            // newprice = (nf.format(newprice_f));
+            // $('#price').html('np ' + newprice_f);
+
             $('.frame_data').html( '(+' + fp + ' ' + $("#frame option:selected").val() + ' Frame)');
-            $('#total_cost').val(newprice);
-            console.log('frame.changed(' + $('#frame_data_cost').val() + ')');
+            // $('#total_cost').val(newprice_f);
+            // console.log('frame.changed(' + $('#total_cost').val() + ')');
 
         } else {
-            console.log('frame.changed(print)');
+            console.log('frame.changed(print-only)');
             var newprice = parseFloat($("#buysize option:selected").attr("data-price"));
              $('.frame_data').html('');
         }
 
-        var nf = new Intl.NumberFormat();
-        var p = newprice;
-        $('#price').html(nf.format(p));
-        $('#total_cost').val(p);
+        // var nf = new Intl.NumberFormat();
+        // var p = newprice_f;
+        // console.log('p=' + p);
+        $('#price').html(newprice_f);
+        $('#total_cost').val(newprice_f);
 
     });
 

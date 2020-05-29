@@ -1,32 +1,37 @@
 .activity--container {
 
-    background-color: #e4e4e4;
-    padding: 32px 32px;
-    border-radius: 5px;
+    // background-color: #e4e4e4;
+    // padding: 32px 32px;
+    // border-radius: 5px;
+    // border-left: 1px solid #e4e4e4;
 
     .item {
         margin-bottom: 16px;
+        padding: 10px;
+        border-radius: 4px;
 
-        p {
-            font-size: 1rem;
+            font-size: 0.8em;
 
-            &.system {
+            &.system-log {
                 color: $color-black;
+                background-color: $color-primary-background;
             }
 
-            &.warning {
+            &.warning-log {
                 color: $color-warning;
+                background-color: $color-warning-background;
             }
 
-            &.success {
+            &.success-log {
                 color: $color-success;
+                background-color: $color-success-background;
             }
     
-            &.failure {
+            &.failure-log {
                 color: $color-error;
+                background-color: $color-error-background;
             }
 
-        }
         
     }
 

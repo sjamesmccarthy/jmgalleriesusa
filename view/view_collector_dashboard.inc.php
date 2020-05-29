@@ -14,6 +14,16 @@ $collector_data = $this->api_Admin_Get_Collector($_SESSION['collector_id']);
 extract($collector_data, EXTR_PREFIX_ALL, "res");
 $this->collector_data_obj = (object)$collector_data;
 
+// $this->printp_r($this->collector_data_obj);
+// $this->printp_r($_SESSION);
+
+
+/* ACCOUNT INFO */
+$myaccount_html = $this->component('collector_account');
+
+/* NOTE */
+$note_html = $this->component('collector_note');
+
 /* YOUR COLLECTION */
 $mycollection_html = $this->component('collector_my_collection',$res_collector_id);
 

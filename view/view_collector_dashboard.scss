@@ -5,9 +5,13 @@
 .collector--main_container {
 
     .whoami {
-        display: none;
+        // display: none;
     }
 
+    .note-from-artist {
+        display:none;
+    }
+    
     .note-from-artist p {
         margin-top: 10px;    
         font-size: 1.8rem;   
@@ -18,6 +22,18 @@
 
     #note-close {
         cursor: pointer;
+        text-align: right;
+        border-bottom: 5px solid #e4e4e4;
+        padding-bottom: 1rem;
+
+        .label {
+            background-color: #e4e4e4;
+            padding: 10px;
+            border-radius: 4px;
+        }
+        .label-icon {
+            vertical-align: middle;
+        }
     }
 
     >h2 {
@@ -75,12 +91,6 @@
     .rewards {
         font-size: 5.5rem;
         color: $color-blue;
-    }
-
-    .half-size {
-        width: 49%;
-        display: inline-block;
-        // margin-left: 1rem !important;
     }
 
     .third-size {

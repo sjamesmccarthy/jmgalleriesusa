@@ -14,6 +14,9 @@
             <li>added: for Limited Editions Fine Art Paper or Acrylic are now shown.</li>
             <li>updated: image details for pricing information, you may also like filmstrip +1 image.</li>
             <li>optimized: all images have been compressed.</li>
+            <li>updated: collector portal dashboard.</li>
+            <li>bugfix: numnber format for details pricing.</li>
+            <li>updated: admin control : inventory now support catalog_photo_id.</li>
         	</ul>
         <!-- </p> -->
 

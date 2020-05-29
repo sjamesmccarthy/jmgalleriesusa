@@ -127,6 +127,11 @@
                 <input class="half-size" maxlength="255" type="text" id="acquired_date" name="acquired_date" placeholder="Acquired on Date" value="<?= $purchase_date ?>">
             </div>
 
+            <div id="collector_meta">
+                <label for="title">Catalog Id</label>
+                <input class="half-size" maxlength="255" type="text" id="catalog_photo_id" name="catalog_photo_id" placeholder="Catalog Photo Id (eg, 45)" value="<?= $catalog_photo_id ?>">
+            </div>
+
             <div>
                 <h6>Certificates Issued</h6>
                 <?= $coa_html ?>

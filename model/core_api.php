@@ -279,6 +279,7 @@ class Core_Api
             A.frame_size,
             A.edition_num,
             A.edition_num_max,
+            A.edition_style,
             A.series_num,
             C.first_name,
             C.last_name,
@@ -762,7 +763,7 @@ class Core_Api
         /* Executes SQL and then assigns object to passed var */
         if( $this->checkDBConnection(__FUNCTION__) == true) {
 
-            $sql = "select value, type, created from log where user_id = " . $_SESSION['uid'] . " order by created DESC LIMIT 30";
+            $sql = "select value, type, created from log where user_id = " . $_SESSION['uid'] . " order by created DESC LIMIT 25";
             $result = $this->mysqli->query($sql);
 
             if ($result->num_rows > 0) {
@@ -1063,7 +1064,8 @@ class Core_Api
                 CERT.purchase_date as coa_purchase_date,
                 CERT.certificate_id as coa_certificate_id,
                 CERT.acquired_from,
-                CERT.purchase_date
+                CERT.purchase_date,
+                CERT.catalog_photo_id
             FROM
                 certificate AS CERT
                 INNER JOIN collector AS C ON CERT.collector_id = C.collector_id
@@ -1721,7 +1723,8 @@ class Core_Api
                 `serial_num`='$serial_num',
                 `artwork_reg`='$reg_num',
                 `acquired_from`='$acquired_from',
-                `purchase_date`='$acquired_date'
+                `purchase_date`='$acquired_date',
+                `catalog_photo_id`='$catalog_photo_id'
             WHERE 
                 art_id='" . $art_id . "' AND collector_id='" . $collector . "'";
 
@@ -1757,7 +1760,8 @@ class Core_Api
                 `serial_num`,
                 `artwork_reg`,
                 `acquired_from`,
-                `purchase_date`
+                `purchase_date`,
+                `catalog_photo_id`
             ) VALUES ( 
                 DEFAULT, 
                 '$art_id', 
@@ -1765,7 +1769,8 @@ class Core_Api
                 '$serial_num',
                 '$reg_num',
                 '$acquired_from',
-                '$acquired_date'
+                '$acquired_date',
+                '$catalog_photo_id'
             )";
 
             // print "<hr />$sql";
@@ -2221,7 +2226,7 @@ class Core_Api
             $data['result'] = '501';
             $data['error'] = "SQL DELETE" . $tbl . " FAILED " . $art_id;
             $data['sql'] = $sql;
-            $this->log(array("key" => "api", "value" => "Failed Update To Expenses FATAL " . __FUNCTION__, "type" => "failure"));
+            $this->log(array("key" => "api", "value" => "Failed Update To Expenses FATAL (" . $data['error'] . ")" . __FUNCTION__, "type" => "failure"));
         }	
 
     }
@@ -2998,9 +3003,11 @@ public function api_Admin_Get_Materials_By_Supplier($id) {
             $_SESSION['notify_msg'] = $name;
             $_SESSION['notification_msg'] = "<p class='heading'>success</p><p>" .  $username . " Has Been Updated</p>";
             $this->log(array("key" => "api", "value" => "Updated User (" . $username . ") ", "type" => "success"));
+            return(true);
         } else {
             $_SESSION['error'] = '400';
             $this->log(array("key" => "api", "value" => "Failed To Update User (" . $_POST['username'] . ")", "type" => "failure"));
+            return(false);
         }
         
     }

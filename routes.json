@@ -133,6 +133,13 @@
         "component": "true",
         "title": "Signed Out of Your Studio"
     },
+    "/studio/api/update/collector-account": {
+        "template": "script",
+        "page": "ajax_collector_account_process.php",
+        "auth": "true",
+        "component": "false",
+        "title": "Processing Collector Account Script"
+    },
     "/studio/api/update/catalog": {
         "template": "script",
         "page": "ajax_admin_catalog_process.php",
