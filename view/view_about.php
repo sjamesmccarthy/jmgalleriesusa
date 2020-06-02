@@ -17,13 +17,13 @@
                                 <img src="/view/image/signature_full-web.png" />
                             </p>
 
-                            <!-- <p class="pt-8 ml-16">
+                            <p class="pt-8 ml-16">
                                 <a target="_new" class="mr-16" href="http://twitter.com/jmgalleriesusa"><i class="fab fa-twitter"></a></i> 
                                 <a target="_new" class="mr-16" href="http://instagram.com/jmgalleriesusa"><i class="fab fa-instagram"></a></i> 
                                 <a target="_new" class="mr-16" href="http://linkedin.com/company/jmgalleriesusa"><i class="fab fa-linkedin"></a></i>
                                 <a target="_new" class="mr-16" href="http://facebook.com/jmgalleriesusa"><i class="fab fa-facebook"></a></i>
-                            </p> -->
-                            <!-- <img class="bio-profile-pic" src="/view/image/profile_img.jpg" /> -->
+                                <a target="_new" class="mr-16" href="http://jmccarthyusa.com"><i class="fab fa-github"></a></i>
+                            </p>
                     </div>
 
                 </div>
@@ -146,11 +146,12 @@
                 <!-- <li class="timeline-date">2019</li> -->
                 <li class="timeline-history">                  
                     <p class="pt-8 ml-16">
-                                <a target="_new" class="mr-16" href="http://twitter.com/jmgalleriesusa"><i class="fab fa-twitter"></a></i> 
-                                <a target="_new" class="mr-16" href="http://instagram.com/jmgalleriesusa"><i class="fab fa-instagram"></a></i> 
-                                <a target="_new" class="mr-16" href="http://linkedin.com/company/jmgalleriesusa"><i class="fab fa-linkedin"></a></i>
-                                <a target="_new" class="mr-16" href="http://facebook.com/jmgalleriesusa"><i class="fab fa-facebook"></a></i>
-                            </p>
+                        <a target="_new" class="mr-16" href="http://twitter.com/jmgalleriesusa"><i class="fab fa-twitter"></a></i> 
+                        <a target="_new" class="mr-16" href="http://instagram.com/jmgalleriesusa"><i class="fab fa-instagram"></a></i> 
+                        <a target="_new" class="mr-16" href="http://linkedin.com/company/jmgalleriesusa"><i class="fab fa-linkedin"></a></i>
+                        <a target="_new" class="mr-16" href="http://facebook.com/jmgalleriesusa"><i class="fab fa-facebook"></a></i>
+                        <a target="_new" class="mr-16" href="http://jmccarthyusa.com"><i class="fab fa-github"></a></i>
+                    </p>
                 </li>
             </ul>
 

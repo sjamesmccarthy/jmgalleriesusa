@@ -666,7 +666,11 @@ button a { color: #2574A9; }
 
 #most-popular p { font-size: 1rem; }
 
-#most-popular .filmstrip-thumb { max-width: 260px; }
+#most-popular .thumb img { width: 100%; border-bottom: 5px solid transparent; }
+
+#most-popular .thumb img:hover { border-bottom: 5px solid #2574A9; }
+
+#most-popular .filmstrip-thumb { max-width: 260px; border-bottom: 1px solid transparent; }
 
 @media (max-width: 64em), (max-width: 80em) { #most-popular .filmstrip-thumb { max-width: 220px; } }
 
@@ -712,7 +716,9 @@ button a { color: #2574A9; }
 /* component_gallery_thumbs */
 #filmstrip h4 { text-transform: uppercase; font-size: 1.3rem; font-weight: 400; }
 
-.thumb img { width: 100%; }
+.thumb img { width: 100%; border-bottom: 5px solid transparent; }
+
+.thumb img:hover { border-bottom: 5px solid #2574A9; }
 
 .view-all { margin-bottom: 16px; text-align: right; padding-right: 8px !important; }
 
@@ -766,17 +772,15 @@ button a { color: #2574A9; }
 
 .quickstats--container .table .table--subline { font-size: .8rem; }
 
-.photosviewed--container { border-right: 1px solid #e4e4e4; }
-
-.photosviewed--container .item { margin-bottom: 16px; padding-bottom: 10px; }
+.photosviewed--container .item { margin-bottom: 8px; padding: 10px; border-bottom: 1px solid #e4e4e4; }
 
 .photosviewed--container .item .photo { display: inline-block; }
 
-.photosviewed--container .item .photo img { width: 116px; padding-right: 10px; }
+.photosviewed--container .item .photo img { width: 100px; padding-right: 10px; }
 
 .photosviewed--container .item .detail { display: inline-block; vertical-align: top; }
 
-.photosviewed--container .item .detail p { font-size: 1rem; }
+.photosviewed--container .item .detail p { font-size: .8rem; }
 
 .activity--container .item { margin-bottom: 16px; padding: 10px; border-radius: 4px; font-size: 0.8em; }
 

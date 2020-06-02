@@ -15,8 +15,10 @@
             <li>updated: image details for pricing information, you may also like filmstrip +1 image.</li>
             <li>optimized: all images have been compressed.</li>
             <li>updated: collector portal dashboard.</li>
-            <li>bugfix: numnber format for details pricing.</li>
+            <li>bugfix: number format for details pricing.</li>
             <li>updated: admin control : inventory now support catalog_photo_id.</li>
+            <li>updated: about now includes link to github account.</li>
+            <li>updated: control : admin recently viewed images component modified UI.</li>
         	</ul>
         </p>
 
@@ -28,7 +30,7 @@
             <li>updated: image details for pricing information, you may also like filmstrip +1 image.</li>
             <li>optimized: all images have been compressed.</li>
             <li>updated: collector portal dashboard.</li>
-            <li>bugfix: numnber format for details pricing.</li>
+            <li>bugfix: number format for details pricing.</li>
             <li>updated: admin control : inventory now support catalog_photo_id.</li>
         	</ul>
         </p>
@@ -42,7 +44,7 @@
 
         <p class="pt-16">v1.3.3<br />May 14, 2020</p>
         	<ul>
-            <li>added: inventory integration when procesing order.</li>
+            <li>added: inventory integration when processing order.</li>
             <li>bugfix: manual entry now hidden by default on admin control : inventory form.</li>
         	</ul>
         </p>
@@ -50,7 +52,7 @@
         <p class="pt-16">v1.3.2<br />May 11, 2020</p>
         	<ul>
             <li>added: promo-codes are now part of settings in admin control.</li>
-            <li>bugfix: error_404 page was diplaying hero component</li>
+            <li>bugfix: error_404 page was displaying hero component</li>
             <li>update: real-time cost calc in image detail page now when adding frames.</li>
             <li>added: contact/check-out form now applies promo-code discounts in real-time.</li>
             <li>added: ability to fetch build number in admin control / settings</li>
@@ -104,7 +106,7 @@
 
         <p class="pt-16">v1.0.0<br />September 5, 2019</p>
         	<ul>
-        	<li>New website launched with a new modern, timeless and miminalistic style, including a few New Releases too.</li>
+        	<li>New website launched with a new modern, timeless and minimalist style, including a few New Releases too.</li>
         	</ul>
         </p>
 

@@ -794,7 +794,7 @@ class Core_Api
                 catalog_photo_views as CV
                 INNER JOIN catalog_photo as CP on CV.catalog_photo_id = CP.catalog_photo_id
                 ORDER BY CV.count DESC
-                LIMIT 20";
+                LIMIT 21";
         
             $result = $this->mysqli->query($sql);
 
