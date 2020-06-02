@@ -38,7 +38,7 @@
                 class="timeline-history">
                 <h3>1973</h3>
             <p>
-            Born in Concord, a small, historical, suburb outside Boston, Massachusetts, j.McCarthy explored the rich history of the makings of America during his youth.  He learned to appreciate the beauty and stories that are shared by the landscape around us. From as far East as Boston where America's freedom was founded when Paul Revere gallopped over cobble-stone rock on his candle-lit "midnight ride" yelling, "The Brittish are coming!" to as far-away West into the Gold Rush of the Sierra Nevada Mountains.
+            Born in Concord, a small, historical, suburb outside Boston, Massachusetts, j.McCarthy explored the rich history of the makings of America during his youth.  He learned to appreciate the beauty and stories that are shared by the landscape around us. From as far East as Boston where America's freedom was founded when Paul Revere galloped over cobble-stone rock on his candle-lit "midnight ride" yelling, "The British are coming!" to as far-away West into the Gold Rush of the Sierra Nevada Mountains.
             </p>
             </li>
             </ul>
@@ -111,15 +111,15 @@
                     </p>
 
                     <p>
-                        2018 was also the start of an infatuation with Art Off The Walls, a first-Friday event in Temecula, California where j.McCarthy had the oportunity to share his passion of landscape photography with the backwoods of San Diego, California, but it wasn't all about exhbiting.
+                        2018 was also the start of an infatuation with Art Off The Walls, a first-Friday event in Temecula, California where j.McCarthy had the opportunity to share his passion of landscape photography with the backwoods of San Diego, California, but it wasn't all about exhibiting.
                     </p>
                     
                     <p>
-                        Lots of back of the studio changes happened too, from the addition of new gear, including, Tamron G2 lenses, a Macbook Pro, Synology NAS backup solutions, framing equiment and suppliers, to the purchase of an Epson SureColor P800. j.McCarthy overhauled his entire workflow creating his own turn-key studio, as well as migrated his digital darkroom from Adobe's Lightroom to Phase One's Capture One Pro.
+                        Lots of back of the studio changes happened too, from the addition of new gear, including, Tamron G2 lenses, a Macbook Pro, Synology NAS backup solutions, framing equipment and suppliers, to the purchase of an Epson SureColor P800. j.McCarthy overhauled his entire workflow creating his own turn-key studio, as well as migrated his digital darkroom from Adobe's Lightroom to Phase One's Capture One Pro.
                     </p>
 
                     <p>
-                        The next year came in the blink of an eye, and to kick-off 2019, j.McCarthy announced with a 3 month exhibit at the Temecula Public Library in Temecula, California. He closed out the year launching a new website and annoucing a move to Southern California.
+                        The next year came in the blink of an eye, and to kick-off 2019, j.McCarthy announced with a 3 month exhibit at the Temecula Public Library in Temecula, California. He closed out the year launching a new website and announcing a move to Southern California.
                      </p> 
                      
                      <p>
@@ -131,14 +131,10 @@
                 <ul class="timeline">
                 <li class="timeline-history">
                     <h3>2020</h3>
-                    <p>It was the beginning of a new chapter in Southern California, or so it was supposed to have been. After a few months in transition, and because of unforseen circumstsances, the adventure ended as quickly as it had begun and j.McCarthy found himself back in Las Vegas.
+                    <p>It was the beginning of a new chapter in Southern California, or so it was supposed to have been. After a few months in transition, and because of unforeseen circumstances, the adventure ended as quickly as it had begun and j.McCarthy found himself back in Las Vegas.
                     </p>
                         
-                    <p>The global pandemic known as COVID-19 (aka Coronavirus, aka a really severe Flu which atacked elderly and those with respitory conditions) swept the world in haste, starting at ground-zero in Wuhan China. The virus quickly infected almost a million people and killing hundreds of thousands world-wide, but the econonic shutdown and media-induced panic is what ultimately devasted more lives.</p>
-                    
-                    <p>Entire states, cities and countries were put on complete lock-down or shelter-in-place orders by their Government officials in fear of an unknown death-toll which the media was comparing to the Black Plague of 1346. The US economy halted as the major media outlets blasted mis-information with irregard to fact-checking, common-sense and the effect their words would have on people, cities, countries and society.</p>
-                    
-                    <p>So, that was March. It's now mid-May and people are still locking themselves inside afraid to breath the air outside even though it's perfectly safe. But, as we enter a time which is starting to be compared to the Great Depression of 1929-1939 as US unemployment rate climb past 24% (highest on-record), businesses are slow to re-open and in-person customers are hard to find. Unfortunately, many businesses have been forced to close their doors permanently.</p>
+                    <p>The global pandemic known as COVID-19 (aka Coronavirus, aka a really severe Flu which attacked elderly and those with respiratory conditions) swept the world in haste, starting at ground-zero in Wuhan China. The virus quickly infected almost a million people and killing hundreds of thousands world-wide, but the economic shutdown and media-induced panic is what ultimately hurt more lives. Entire states, cities and countries were put on complete lock-down or shelter-in-place orders by their Government officials in fear of an unknown death-toll which the media was comparing to the Black Plague of 1346. The US economy came to a halt. Unemployment grew to over 30% in some States; numbers like this have not been seen since the Great Depression. That was March, April and May. By June, people still kept to themselves inside afraid to breath the air outside even though it's perfectly safe. Riots and protests ensued around the globe further hurting any economic recovery attempting to ignite.</p>
                     
                     <p>The only thing for certain right now is that we have a very long road back to normalcy, and the ship back to California for me, has since sailed, and what's next is unknown.
                     </p>

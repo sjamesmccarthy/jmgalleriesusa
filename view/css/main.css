@@ -660,13 +660,17 @@ button a { color: #2574A9; }
 
 /* ********************** */
 /* component_most_popular */
-#most-popular h4 { text-transform: uppercase; font-size: 1.2rem; font-weight: 300; }
+#most-popular h4 { text-transform: uppercase; font-size: 1rem; font-weight: 300; }
 
 #most-popular .thin { font-weight: 300; }
 
 #most-popular p { font-size: 1rem; }
 
 #most-popular .filmstrip-thumb { max-width: 260px; }
+
+@media (max-width: 64em), (max-width: 80em) { #most-popular .filmstrip-thumb { max-width: 220px; } }
+
+@media (max-width: 64em) and (orientation: portrait) { #most-popular .filmstrip-thumb { max-width: 220px; } }
 
 /* ********************** */
 /* component_hero */
@@ -1387,6 +1391,8 @@ table.dataTable tbody td.valign { vertical-align: middle; }
 .dataTables_length label select { width: initial; }
 
 .reports-add--container #material_expenses_list { padding: 1rem 0; }
+
+.reports-add--container #sql_c { font-size: .7rem; max-height: 400px; }
 
 .reports-add--container .material_supplier-container-manual-entry { display: none; }
 
