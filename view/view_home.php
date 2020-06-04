@@ -6,7 +6,7 @@
     <!-- /generated html from component file -->
 
     <!-- generated html from component file: New Releases -->
-    <section id="new-release-film-strip" style="margin-top: -190px">
+    <section id="new-release-film-strip">
         <?= $thumb_new_releases_html ?>
     </section>
     <!-- /generated html from component file -->

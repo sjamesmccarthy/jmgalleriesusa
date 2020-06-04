@@ -5,11 +5,11 @@
     <body>
         
         <?php print $this->component('notice'); ?>
-        <?php print $this->component('hero'); ?>
 
             <main>
 
                 <?php  $this->getPartial('nav'); ?>
+                <?php print $this->component('hero'); ?>
 
                 <!-- <div style="min-height: 100vh;"> -->
                     <?php $this->view() ?>

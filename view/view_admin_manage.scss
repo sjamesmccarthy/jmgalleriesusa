@@ -2,8 +2,17 @@
 
     .admin--main_container {
 
-    margin-top: -32px;
-    
+        padding: 0;
+
+        .grid {
+            margin: 0;
+        }
+
+        >h1 {
+            text-transform: initial;
+            font-weight: 300;
+        }
+
         .summary {
             margin-top: 32px;
         }

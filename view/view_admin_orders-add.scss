@@ -1,7 +1,28 @@
 .orders-add--container {
 
+    background-color: rgba(0,0,0,.02);
+        border-radius: 6px;
+        margin: 0;
+        padding: 0;
+
+    .admin-header {
+        background-color: rgba(0,0,0,.08);
+        margin: 0;
+        border-radius: 6px 6px 0 0;
+        padding: 1rem;
+        margin-bottom: 1rem;
+    
+        h2 {
+            font-weight: 300;
+        }
+    }
+
     .closed {
         background-color: #000;
         color: #e4e4e4;
+    }
+
+    form {
+        padding: 1rem;
     }
 }

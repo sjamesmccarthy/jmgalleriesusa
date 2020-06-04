@@ -4,13 +4,21 @@
         <!-- insert navigation component -->
         <?= $navigation_html ?>
     
-        <div class="col-9 admin--main_container pt-32">
+        <div class="col-9 admin--main_container">
 
-            <!-- quickstats -->
-            <?= $quickstats_html ?>
+            <!-- <article id="welcome_msg"> -->
+                <h1><?= $first_name ?>, here is your dashboard.</h1>
+            <!-- </article> -->
 
-            <div class="grid pt-32 nopad-left pb-32">
-                <div class="col nopad-left">
+
+            <div class="grid">
+
+                <div class="col-12">
+                    <!-- quickstats -->
+                    <?= $quickstats_html ?>
+               </div>
+
+                <div class="col ">
                     <!-- photosviewed -->
                     <?= $photosviewed_html ?>
                 </div>

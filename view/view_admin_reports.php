@@ -1,15 +1,15 @@
-<section class="reportsidx--container">
+<section class="reports--container">
     <div class="grid-12">
        
         <!-- insert navigation component -->
         <?= $navigation_html ?>
     
-        <div class="col-9 reports--container">
+        <div class="col-9 reportsidx--container">
 
             <div class="notification success <?= $notification_state ?>"><?= $notification_msg ?></div>
 
-                    <div class="grid pt-32 nopad-left">
-                        <div class="col nopad-left">
+                    <div class="grid admin-header">
+                        <div class="col">
                         <h2>Index of <b>Reports / SQL Marks</b> (<?= $active_reports_count ?>)</h2>
                         </div>
                         <div class="col-1 add-icon">
@@ -42,7 +42,7 @@
             processing: true,
             paging: false,
             pagingType: "numbers",
-            searching: true,
+            searching: false,
             // oSearch: {"sSearch": "<?= $filter ?>"},
             data: <?= $data_json ?>,
             columns: [

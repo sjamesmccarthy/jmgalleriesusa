@@ -2,7 +2,7 @@
 
     min-height: 50vh;
     border-radius: 4px;
-    padding-right: 64px;
+    padding-right: 32px;
 
     .add-icon-nav {
         position: absolute;
@@ -21,6 +21,7 @@
         .dashboard-icon {
             font-size: 1.5rem;
             text-align: right;
+            margin-right: 60px;
         }
 
         ul li {
@@ -28,9 +29,10 @@
             font-weight: 300;
             font-size: 1rem;
             position: relative;
+            // margin-left: 2rem;
 
             &.indent {
-                margin-left: 25px;
+                // margin-left: 25px;
                 // text-align: right;
                 // margin-right: 10px;
             }
@@ -52,10 +54,10 @@
         .selected {
             font-weight: 900;
             // background-color: #CCC;
-            border-left: 1px solid #000;
+            border-left: 3px solid #000;
             padding: 0 0 0 10px;
             color: #000;
-            // margin-left: -10px;
+            margin-left: -10px;
             // text-transform: uppercase;
 
             &:before {

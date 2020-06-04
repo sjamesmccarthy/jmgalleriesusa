@@ -14,7 +14,10 @@ $photosviewed_data = $this->api_Admin_Component_Photos_Viewed();
 
 foreach($photosviewed_data as $key=>$val) {
 
-    $date = date("F j, Y h:i:s A", strtotime($val['updated']));
+    $date = date("h:i A, F j, Y", strtotime($val['updated']));
+    if($val['as_gallery'] == '1') { $edition = 'Limited'; }
+    if($val['as_studio'] == '1') { $edition = 'Studio'; }
+    if($val['as_open'] == '1') { $edition = 'Open'; }
 
     $result_html .= '<li class="item">';
     $result_html .= '<div class="photo">';
@@ -22,8 +25,8 @@ foreach($photosviewed_data as $key=>$val) {
     $result_html .= '</div>';
     $result_html .= '<div class="detail">';
     $result_html .= '<p><b>' . $val['title'] . '</b></p>';
-    $result_html .= '<p>' . $date . '</p>';
-    $result_html .= '<p>' . $val['count'] . '</p>';
+    $result_html .= '<p>' . $val['count'] . ' views @ ' . $date . '</p>';
+    $result_html .= '<p>' . $edition . ' Edition</p>';
     $result_html .= '</div>';
     $result_html .= '</li>';
 
@@ -34,8 +37,10 @@ foreach($photosviewed_data as $key=>$val) {
 $html = <<< END
 <article class="photosviewed--container">
 
-<h4>Viewed Catalog Photos</h4>
-<a target="_ga" href="https://analytics.google.com/analytics/web/#/report-home/a73077319w120066830p125611649">View Google Analytics</a>
+<div class="table--box gray">
+    <h4>Viewed Catalog Photos</h4>
+    <a target="_ga" href="https://analytics.google.com/analytics/web/#/report-home/a73077319w120066830p125611649">View Google Analytics</a>
+</div>
 
     <ul style="margin-top: 32px;">  
 

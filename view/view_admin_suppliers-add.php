@@ -6,9 +6,11 @@
     
         <div class="col-9 suppliers-add--container">
 
-            <h2 class="pb-32 pt-32"><?= $this->page->title ?></h2>
+            <div class="admin-header">
+            <h2><?= $this->page->title ?></h2>
+            </div>
 
-            <h1><?= $formTitle ?></h1>
+            <!-- <h1><?= $formTitle ?></h1> -->
 
             <form id="suppliers-add" action="/studio/api/update/suppliers" method="POST">
             <input type="hidden" id="formTypeAction" name="formTypeAction" value="<?= $formTypeAction ?>" />

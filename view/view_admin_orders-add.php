@@ -6,9 +6,12 @@
     
         <div class="col-9 orders-add--container">
 
-            <h2 class="pb-32 pt-32"><?= $this->page->title ?></h2>
 
-            <h1><?= $formTitle ?></h1>
+            <div class="admin-header">
+                <h2><?= $this->page->title ?></h2>
+            </div>
+
+            <!-- <h1><?= $formTitle ?></h1> -->
 
             <form id="reports-add" action="/studio/api/update/order" method="POST">
             <fieldset <?= $form_disabled ?>>

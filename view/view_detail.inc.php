@@ -214,7 +214,7 @@
         </div>
          <input type="hidden" name="edition" value="open" />';
 
-         $tinyViewFinePrint = '<div class="col-12 mt-16 mb-64"><p>tinyViews&trade; Giclée Prints are available in standard framing sizes 5x7, 8x10 and 11x14 with a 1/2" white border ready for framing. Please read our <a target="_info" href="/styles">Frames, Editions and Pricing</a> page for more information about our Studio Frames for tinyViews&trade; Giclée Prints.' . $tv_img_disclaimer . '</p></div>';
+         $tinyViewFinePrint = '<div class="col-12 mt-16 mb-64 ml-8"><p>tinyViews&trade; Giclée Prints are available in standard framing sizes 5x7, 8x10 and 11x14 with a 1/2" white border ready for framing. Please read our <a target="_info" href="/styles">Frames, Editions and Pricing</a> page for more information about our Studio Frames for tinyViews&trade; Giclée Prints.' . $tv_img_disclaimer . '</p></div>';
 
     }
 

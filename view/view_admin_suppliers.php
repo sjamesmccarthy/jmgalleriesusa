@@ -8,8 +8,8 @@
 
             <div class="notification success <?= $notification_state ?>"><?= $notification_msg ?></div>
 
-                    <div class="grid pt-32 nopad-left">
-                        <div class="col nopad-left">
+                    <div class="grid admin-header">
+                        <div class="col">
                         <h2>Index of <b>Suppliers</b> (<?= $active_suppliers_count ?>)</h2>
                         </div>
                         <div class="col-1 add-icon">

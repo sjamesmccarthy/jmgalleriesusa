@@ -20,7 +20,7 @@
         </div>
 
         <div class="col-3">
-            <p class="tiny blue right" style="margin-bottom: -10px; margin-left: 5px;">$ USD</p>
+            <p class="small blue right" style="margin-bottom: -10px; margin-left: 5px;">$ USD</p>
             <p class="right"><span id="price" class="price right"><?= number_format($default_price, 2) ?></span><br /><span class="frame_data price"></span></p>
             <input type="hidden" name="total_cost" id="total_cost" value="<?= $default_price ?>" />
         </div>
@@ -36,7 +36,7 @@
        <?= $sizes_frames ?>
     </div>
 
-    <div class="mt-16 ml-16 mb-64">
+    <div class="mt-16 ml-16 mb-16">
         <?= $btn_link ?><button><?= $btn ?></button></a>
         <?= $gallery_details ?>
     </div>

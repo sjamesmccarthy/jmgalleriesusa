@@ -18,8 +18,7 @@
 
     <title><?= $addSiteName ?><?= $this->title ?></title>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap" rel="stylesheet">
-
-    <link rel="stylesheet" href="/view/css/main.css?<?= time(); ?>">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,400&display=swap" rel="stylesheet">
 
    
     <link rel="apple-touch-icon" sizes="180x180" href="/view/image/favicon/<?= $this->env ?>/apple-touch-icon.png">
@@ -33,12 +32,12 @@
     <meta name="p:domain_verify" content="b1aefccc20a0932f9e254f23dac1e4e3"/>
 
     <!-- Third party utilities -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js" integrity="sha256-xNjb53/rY+WmG+4L6tTl9m6PpqknWZvRt0rO1SRnJzw=" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/27673c99c5.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.10.20/r-2.2.3/sl-1.3.1/datatables.min.css"/>
-    <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.20/r-2.2.3/sl-1.3.1/datatables.min.js"></script>
-
-    <!-- Overrides, need to combine this with appropriate scss files, but for now deal with it -->
-    <!-- <link rel="stylesheet" href="/view/css/overrides.css?<?= time(); ?>"> -->
+    <script type="text/javascript" src="//cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css"/>
     
+    <link rel="stylesheet" href="/view/css/main.css?<?= time(); ?>">
+
 </head>

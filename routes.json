@@ -327,7 +327,7 @@
         "page": "admin_settings",
         "auth": "true",
         "component": "true",
-        "title": "Update Settings"
+        "title": "Settings"
     },
     "/about": {
         "template": "page",

@@ -34,6 +34,11 @@ class Core_Api
 		$this->mysqli->close();
     }
 
+    public function getVersion() {
+        $ver = $this->mysqli->server_info;
+        return($ver);
+    }
+
     public function api_Catalog_Category_Thumbs__Legacy($catalog_path) {
         
         /* Executes SQL and then assigns object to passed var */
@@ -763,7 +768,7 @@ class Core_Api
         /* Executes SQL and then assigns object to passed var */
         if( $this->checkDBConnection(__FUNCTION__) == true) {
 
-            $sql = "select value, type, created from log where user_id = " . $_SESSION['uid'] . " order by created DESC LIMIT 28";
+            $sql = "select value, type, created from log where user_id = " . $_SESSION['uid'] . " order by created DESC LIMIT 100";
             $result = $this->mysqli->query($sql);
 
             if ($result->num_rows > 0) {
@@ -789,12 +794,16 @@ class Core_Api
                 CV.count,
                 CP.title,
                 CP.file_name,
+                CP.as_gallery,
+                CP.as_studio,
+                CP.as_open,
                 CV.updated
                 FROM
                 catalog_photo_views as CV
                 INNER JOIN catalog_photo as CP on CV.catalog_photo_id = CP.catalog_photo_id
+                WHERE CP.status = 'ACTIVE'
                 ORDER BY CV.count DESC
-                LIMIT 21";
+                LIMIT 100";
         
             $result = $this->mysqli->query($sql);
 

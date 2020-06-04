@@ -150,7 +150,7 @@
                     <div class="divTableCell "></div>
                     <div class="divTableCell border-l border-b pl-8">8 x 8</div>
                     <div class="divTableCell border-l border-b border-r pl-8">$<?= $tv_price_array['8x8']?></div>
-                </div>$
+                </div>
                 <div class="divTableRow">
                     <div class="divTableCell"></div>
                     <div class="divTableCell border-l border-b pl-8">8 x 10</div>

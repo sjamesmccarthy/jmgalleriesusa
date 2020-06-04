@@ -5,10 +5,13 @@ html, body {
     font-weight: $base-fw;
     line-height: $base-lh;
     box-sizing: border-box;
-    font-family: Lato, sans-serif;
+    // font-family: 'Lato', sans-serif;
+    font-family: 'Roboto', sans-serif;
     -webkit-text-size-adjust: 100%;
+    -webkit-font-smoothing: antialiased;
     color: $color-black;
     overflow-x: hidden;
+    box-sizing: border-box;
 }
 
 ::-webkit-scrollbar {
@@ -132,11 +135,7 @@ h6 {
     font-weight: 400;
 }
 
-*, :before, :after {
-    box-sizing: inherit;
-  }
-
-  /* Shorthand */
+/* Shorthand */
   
 [hidden] {
   display: none;

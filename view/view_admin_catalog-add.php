@@ -6,9 +6,9 @@
     
         <div class="col-9 catalog-add--container">
 
-            <h2 class="pb-32 pt-32"><?= $page_title ?></h2>
-
-            <h1><?= $formTitle ?></h1>
+            <div class="admin-header">
+                <h2><?= $page_title ?></h2>
+            </div>
 
             <form id="catalog-add" action="/studio/api/update/catalog" method="POST" enctype="multipart/form-data">
             <input type="hidden" id="formType" name="formType" value="<?= $formType ?>" />

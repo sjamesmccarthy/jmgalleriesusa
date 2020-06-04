@@ -1,44 +1,29 @@
 .catalog-add--container {
 
+        background-color: rgba(0,0,0,.02);
+        border-radius: 6px;
+        margin: 0;
+        padding: 0;
+
+    .admin-header {
+        background-color: rgba(0,0,0,.08);
+        margin: 0;
+        border-radius: 6px 6px 0 0;
+        padding: 1rem;
+        margin-bottom: 1rem;
+    
+        h2 {
+            font-weight: 300;
+        }
+    }
+
     h6 {
         padding: 1rem 0 1.2rem 0;
     }
 
-    // .half-size {
-    //     width: 49%;
-    //     display: inline-block;
-    //     margin-left: 1rem !important;
-    // }
-
-    // .half-size:nth-of-type(1) {
-    //     margin-left: 0 !important;
-    // }
-
-    // .small {
-    //     font-size: 1rem;
-    //     color: $color-black-placeholder;
-    // }
-
-    // .btn-delete {
-    //     opacity: .3;
-    //     position: absolute;
-    //     right: 5px;
-    //     background-color: rgba(255,0,0,.2);
-    //     border: none;
-    // }
-
-    // .btn-delete:hover {
-    //     background-color: red!important;
-    //     color: #FFF!important;
-    //     border-color: red;
-    //     opacity: 1;
-    // }
-
     form {
 
-        // input[type="text"] {
-        //     margin-bottom: 10px;
-        // }
+        padding: 1rem;
 
         #add-collection {
             cursor: pointer;
@@ -67,23 +52,6 @@
             display: inline-block;
         }
 
-        // .select-wrapper {
-        //     position: relative;
-        //     color: $color-black-placeholder;
-        // }
-
-        // .select-wrapper:after {
-        //     font-family: FontAwesome !important;
-        //     content: "\f078"; /* FontAwesome Unicode */
-        //     font-weight: 900;
-        //     font-size: 1rem;
-        //     position: absolute;
-        //     top: 16px;
-        //     right: 16px;
-        //     color: rgba(0,0,0,.2);
-        //     pointer-events: none;
-        // }
-
         textarea {
             height: 250px;
             width: 100%;
@@ -95,12 +63,12 @@
         .file {
             position: relative;
             height: 50px;
-            background-color: #FFF;
+            background-color: transparent;
         }
 
         .file-thumb {
             vertical-align: top;
-            background-color: #FFF;
+            background-color: transparent;
         }
 
         .input-upload {
@@ -128,10 +96,6 @@
         .file-custom-thumbnail:after {
             content: "Thumbnail Photo";
         }
-
-        // .cancel-button {
-        //     margin-left: 10px;
-        // }
 
     }
 

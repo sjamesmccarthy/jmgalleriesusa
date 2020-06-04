@@ -11,6 +11,8 @@ version: 1
 
 /* Create an API call to get the Polarized listings */
 $activity_data = $this->api_Admin_Component_Activity();
+$phpv = PHP_VERSION;
+$mysqlv = $this->getVersion();
 
 foreach($activity_data as $key=>$val) {
     
@@ -52,13 +54,16 @@ foreach($activity_data as $key=>$val) {
 $html = <<< END
 <article class="activity--container">
 
+<div class="table--box gray">
     <h4>Recent Activity Log</h4>
+    System Health: <b>Good</b> | PHP v{$phpv} & MySQL v{$mysqlv} | <a href="/studio/settings">Settings</a>
+</div>
 
-        <ul class="mt-32">  
+    <ul class="mt-32">  
 
-            $result_html
-        
-        </ul>
+        $result_html
+    
+    </ul>
 
 </article>
 END;

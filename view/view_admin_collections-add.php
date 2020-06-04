@@ -6,9 +6,10 @@
     
         <div class="col-9 collections-add--container">
 
-            <h2 class="pb-32 pt-32"><?= $this->page->title ?></h2>
+            <div class="admin-header">
+            <h2><?= $this->page->title ?></h2>
+            </div>
 
-            <h1><?= $formTitle ?></h1>
 
             <form id="reports-add" action="/studio/api/update/collections" method="POST">
             <input type="hidden" id="formTypeAction" name="formTypeAction" value="<?= $formTypeAction ?>" />

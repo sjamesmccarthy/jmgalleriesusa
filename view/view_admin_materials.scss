@@ -1,5 +1,30 @@
 .materials--container {
 
+        background-color: rgba(0,0,0,.05);
+        border-radius: 6px;
+        margin: 0;
+        padding: 0;
+
+        .admin-header {
+            background-color: rgba(0,0,0,.08);
+            margin: 0;
+            border-radius: 6px 6px 0 0;
+            padding: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        h2 {
+            font-weight: 300;
+        }
+
+        .dataTables_wrapper .dataTables_length, .dataTables_filter, .dataTables_info, .dataTables_paginate {
+            padding: 1rem;
+        }
+
+        .dataTables_wrapper .dataTables_filter input {
+            font-size: .8rem;
+        }
+        
 }
 
 .dataTables_length label select {

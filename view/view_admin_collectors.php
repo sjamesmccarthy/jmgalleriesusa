@@ -4,12 +4,12 @@
         <!-- insert navigation component -->
         <?= $navigation_html ?>
     
-        <div class="col-9 collector--container">
+        <div class="col-9 collectors--container">
 
             <div class="notification success <?= $notification_state ?>"><?= $notification_msg ?></div>
 
-                    <div class="grid pt-32 nopad-left">
-                        <div class="col nopad-left">
+                    <div class="grid admin-header">
+                        <div class="col">
                         <h2>Index of <b>Collector</b> Profiles(<?= $active_collectors_count ?>)</h2>
                         </div>
                         <div class="col-1 add-icon">

@@ -1,5 +1,5 @@
-<section class="orders--container">
-    <div class="grid-12">
+<section class="ordersidx--container">
+    <div class="grid">
        
         <!-- insert navigation component -->
         <?= $navigation_html ?>
@@ -8,19 +8,11 @@
 
             <div class="notification success <?= $notification_state ?>"><?= $notification_msg ?></div>
 
-                    <div class="grid pt-32 nopad-left">
-                        <div class="col nopad-left">
+                    <div class="grid admin-header">
+                        <div class="col pb-0">
                         <h2>Index of <b>Orders</b> (<?= $active_orders_count ?>)</h2>
-                        
-                            <div class="tabs"> 
-                                <div><b>OPEN</b></div>
-                                <div><a href="#system">CLOSED</a></div>
-                                <div><a href="/studio/orders"><i class="fas fa-times-circle"></i></a></div>
-                            </div>
-
                         </div>
                     </div>
-
 
                     <table id="dataTable" class="display">
                         <thead>

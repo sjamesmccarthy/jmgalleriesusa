@@ -5,9 +5,16 @@
 
         <h1>RELEASE NOTES</h1>
         <p class="mb-16">current release version <?= $this->config->package_version ?><br />
-        Friday, May 29, 2020</p>
+        Wednesday, June 4, 2020</p>
        
         <!-- <p class="pt-16">v1.3.6<br />May 29, 2020</p> -->
+        	<ul>
+            <li>updated: New Admin Control UI.</li>
+            <li>bugfix: top navigation positioning bug.</li>
+        	</ul>
+        </p>
+        
+        <p class="pt-16">v1.3.6<br />May 29, 2020</p>
         	<ul>
             <li>added: automated pricing for frames and images.</li>
             <li>updated: checkout order form for additional variations.</li>

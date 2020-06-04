@@ -1,5 +1,22 @@
 .settings--container {
 
+        background-color: rgba(0,0,0,.02);
+        border-radius: 6px;
+        margin: 0;
+        padding: 0;
+
+    .admin-header {
+        background-color: rgba(0,0,0,.08);
+        margin: 0;
+        border-radius: 6px 6px 0 0;
+        padding: 1rem 1rem 0 1rem;
+        // margin-bottom: 1rem;
+    
+        h2 {
+            font-weight: 300;
+        }
+    }
+
     .tabs {
         display: flex;
         flex-wrap: wrap;
@@ -28,4 +45,15 @@
 
 .code-block {
     display: none;
+    background-color: rgba(0,0,0, .2);
+
+    pre {
+        margin: 0 10px auto auto;
+        padding: 10px;
+        font-size: .7rem;
+    }
+}
+
+form {
+    padding: 1rem;
 }

@@ -1,4 +1,4 @@
-<section class="settings--container">
+<section class="settingsidx--container">
     <div class="grid-12">
        
         <!-- insert navigation component -->
@@ -8,20 +8,21 @@
 
             <div class="notification success <?= $notification_state ?>"><?= $notification_msg ?></div>
                
-                <div class="grid pt-32 nopad-left">
-                    <div class="col nopad-left"><h2>Settings</h2></div>
+               <div class="grid admin-header">
+                   <div class="col pb-0">
+                    <h2><?= $this->page->title ?></h2>
+                        <div class="tabs"> 
+                            <div><b>ABOUT</b></div>
+                            <div><a href="#system">SYSTEM</a></div>
+                            <div><a href="#components">COMPONENTS</a></div>
+                            <div><a href="#notices">NOTICES</a></div>
+                            <div><a href="#promos">PROMO-CODES</a></div>
+                            <div><a href="#session">SESSION</a></div>
+                            <div><a id="show-code" href="#">&lt;/&gt;</a></div>
+                        </div>
+                    </div>
                 </div>
                 
-                <div class="tabs"> 
-                    <div><b>ABOUT</b></div>
-                    <div><a href="#system">SYSTEM</a></div>
-                    <div><a href="#components">COMPONENTS</a></div>
-                    <div><a href="#notices">NOTICES</a></div>
-                    <div><a href="#promos">PROMO-CODES</a></div>
-                    <div><a href="#session">SESSION</a></div>
-                    <div><a id="show-code" href="#">&lt;/&gt;</a></div>
-                </div>
-
                 <div class="code-block">
                     <?php $this->printp_r($code_block); ?>
                 </div>
