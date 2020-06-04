@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 
     <?php $this->getPartial('header'); ?>
+    <?php print $this->component('hero'); ?>
     
     <body>
         
@@ -9,7 +10,6 @@
             <main>
 
                 <?php  $this->getPartial('nav'); ?>
-                <?php print $this->component('hero'); ?>
 
                 <!-- <div style="min-height: 100vh;"> -->
                     <?php $this->view() ?>

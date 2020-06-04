@@ -7,7 +7,7 @@
                     <div class="col">
                             <img class="bio-profile-pic" src="/view/image/profile_img.jpg" />
                     </div>
-                    <div class="col pl-16 mt-32 artist-statement">
+                    <div class="col pl-16 mt-16 artist-statement">
                             <p class="name blue">j.McCarthy</p>
                             <p class="name-title">ARTIST STATEMENT</p>
                             <p class="name-statement blue">

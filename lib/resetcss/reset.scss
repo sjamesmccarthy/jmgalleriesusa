@@ -43,11 +43,12 @@ ol, ul, li, dl, dt, dd {
     box-sizing: border-box;
 }
 
-p, blockquote, caption, figure, legend {
+p, div, blockquote, caption, figure, legend {
     margin: 0;
     padding: 0 0 0 0;
     font-size: 1.1rem;
     font-weight: 300;
+    box-sizing: border-box;
 }
 
 button,

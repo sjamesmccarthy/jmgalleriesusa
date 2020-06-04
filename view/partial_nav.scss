@@ -1,17 +1,19 @@
 /* ********************** */
 /* partial_nav */
 
-#top-nav, #top-nav-home {
-    // margin-top: 42px;
+#top-nav-home {
     z-index: 1001;
-    // position: absolute;
-    // top: 48px;
+    position: absolute;
+    top: 32px;
     max-width: 1440px;
     width: 100%;
 }
 
-.top-nav {
-    // margin-top: 32px;
+#top-nav {
+    z-index: 1001;
+    max-width: 1440px;
+    width: 100%;
+    margin-bottom: 32px;
 }
 
 .topnav-logo {
