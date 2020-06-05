@@ -32,7 +32,7 @@
 
     </div>
             
-    <div class="grid mt-32">
+    <div class="grid mt-16">
        <?= $sizes_frames ?>
     </div>
 
@@ -41,12 +41,14 @@
         <?= $gallery_details ?>
     </div>
 
-        <div id="alt-imgs" class="grid">
-        <?= $in_roomImg ?>
-        <?= $in_roomImgAlt ?>
-        <?= $tinyviewImage ?>
-        <?= $tinyviewNotesImage ?>
-        </div>
+        <article>
+            <div id="alt-imgs" class="grid">
+            <?= $in_roomImg ?>
+            <?= $in_roomImgAlt ?>
+            <?= $tinyviewImage ?>
+            <?= $tinyviewNotesImage ?>
+            </div>
+        </article>
 
     <?= $tinyViewFinePrint ?>
 

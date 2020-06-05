@@ -110,7 +110,7 @@ jQuery(document).ready(function($){
 
             <div class="toolbox">
                 <ul class="settings settings-add">
-                <li class="settings settings-add"><a href="/studio/settings">Settings</a><p class="add-icon-nav"><i class="fas fa-lock disabled"></i></p></li>
+                <li class="settings settings-add"><a href="/studio/settings">Settings</a><p class="tiny">$version</p><p class="add-icon-nav"><i class="fas fa-lock disabled"></i></p></li>
                 </ul>
             </div>
 
@@ -120,10 +120,11 @@ jQuery(document).ready(function($){
                 </ul>
             </div>
 
-            <div>
+            <!-- <div>
                 <p class="tiny">$version</p>
-                </div>
-        </div>
+            </div> -->
+            
+            </div>
 
         <!-- <div class="col-1"></div> -->
 

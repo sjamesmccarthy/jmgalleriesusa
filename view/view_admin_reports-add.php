@@ -6,11 +6,16 @@
     
         <div class="col-9 reports-add--container">
 
-            <div class="admin-header">
-            <h2><?= $this->page->title ?></h2>
+            <div class="grid admin-header">
+                <div class="col">
+                    <h2><?= $this->page->title ?></h2>
+                     <!-- <div class="tabs"> 
+                        <div data-name="SQL" class="tab-menu tab-SQL active" style="border-bottom:3px solid #000">SQL</div>
+                        <div data-name="RESULTS" class="tab-menu tab-RESULTS"><a href="/studio/reports">RESULTS</a></div>
+                        <div ><a href="/studio/reports"><i class="fas fa-times-circle"></i></a></div>
+                    </div> -->
+                </div>
             </div>
-
-            <!-- <h1><?= $formTitle ?></h1> -->
 
             <form id="reports-add" action="/studio/api/update/reports" method="POST">
             <input type="hidden" id="formTypeAction" name="formTypeAction" value="<?= $formTypeAction ?>" />
@@ -25,15 +30,22 @@
             </div>
 
             <div>
+                <label for="title">NAME</label>
+                <input class="" type="text" id="columns" name="columns" placeholder="COLUMNS (eg, id,firstname,lastname,email,phone)" value="<?= $res_columns ?>" />
+            </div>
+
+            <div>
                 <label for="sql_code">SQL</label>
                 <textarea id="sql_c" name="sql_c"><?= $res_sql ?></textarea>
             </div>
             
             <div>
-            <p class="pt-16">
-          <input type="checkbox" id="fav" name="fav" value="1" <?= ($res_fav == "1" ? "CHECKED" : ""); ?> /> 
-          <label for="fav" style="font-size: 1.2rem; background-color: transparent;">Favorite</label>
-        </p>
+                <p class="pt-16 half-size">
+                  <input type="checkbox" id="fav" name="fav" value="1" <?= ($res_fav == "1" ? "CHECKED" : ""); ?> /> 
+                  <label for="fav" style="font-size: 1.2rem; background-color: transparent;">Favorite</label>
+                </p>
+                <div class="half-size"><p class="btn_small_gray pull-right ml-8 active">Edit SQL</p>
+                <p class="btn_small_gray pull-right">Run Query</p></div>
             </div>
 
             <div class="clear">
@@ -52,7 +64,13 @@
 
 <script>
 jQuery(document).ready(function($){
-      
+
+   $('.tab-menu').on("click", function() {
+       $('.tab-menu').removeClass("active");
+       $('.tab-' + $(this).attr("data-name") ).addClass('active');
+       console.log('changing tab active: ' + '.tab-' + $(this).attr("data-name"));
+   });
+
     $('#sendform').on("click", function() {
         $(":input[required]").each(function () {                     
         var myForm = $('#sendform');

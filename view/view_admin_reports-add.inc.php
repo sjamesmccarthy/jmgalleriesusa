@@ -16,9 +16,9 @@ if(isSet($this->routes->URI->queryvals)) {
     $edit_data = $this->api_Admin_Get_Reports_Item($edit_id);
     extract($edit_data, EXTR_PREFIX_ALL, "res");
 
-    $this->page->title = "Editing Report: <b>" . $res_name . "</b>";
+    $this->page->title = "/r  <b>" . $res_name . "</b>";
     $formTypeAction = "update";
-    $button_label="update report";
+    $button_label="save report";
     // $button_archive_cancel = '<button class="btn-delete mt-32" id="archive" value="ARCHIVE">archive supplier</button>';
     $button_archive_cancel = '<a class="cancel-button" href="/studio/reports">cancel</a>';
     $id_field = '<input type="hidden" name="report_id" value="' . $res_report_id . '" />';

@@ -39,7 +39,7 @@ $html = <<< END
 
 <div class="table--box gray">
     <h4>Viewed Catalog Photos</h4>
-    <a target="_ga" href="https://analytics.google.com/analytics/web/#/report-home/a73077319w120066830p125611649">View Google Analytics</a>
+    <span class="small"><a target="_ga" href="https://analytics.google.com/analytics/web/#/report-home/a73077319w120066830p125611649">View Google Analytics</a></span>
 </div>
 
     <ul style="margin-top: 32px;">  

@@ -13,13 +13,14 @@
                         <h2>Index of <b>Inventory</b> (<?= $active_inventory_count ?>)</h2>
                         
                             <div class="tabs"> 
-                                <div><a href="?filter=STUDIO">STUDIO</a></div>
-                                <div><a href="?filter=HC">HOME COLLECTION</a></div>
-                                <div><a href="?filter=DONATED">DONATED</a></div>
-                                <div><a href="?filter=COLLECTOR">COLLECTOR</a></div>
-                                <div><a href="?filter=tinyviews">tinyVIEWS</a></div>
-                                <div><a href="?filter=DESTROYED">DESTROYED</a></div>
-                                <div><a href="/studio/inventory"><i class="fas fa-times-circle"></i></a></div>
+                                <div class="tab-ACTIVE <?= $active_filter ?>" ><a href="?filter=ACTIVE">ACTIVE</a></div>
+                                <div class="tab-STUDIO" ><a href="?filter=STUDIO">STUDIO</a></div>
+                                <div class="tab-HC" ><a href="?filter=HC">HOME COLLECTION</a></div>
+                                <div class="tab-DONATED" ><a href="?filter=DONATED">DONATED</a></div>
+                                <div class="tab-COLLECTOR" ><a href="?filter=COLLECTOR">COLLECTOR</a></div>
+                                <div class="tab-TINYVIEWS" ><a href="?filter=TINYVIEWS">tinyVIEWS</a></div>
+                                <div class="tab-DESTROYED" ><a href="?filter=DESTROYED">DESTROYED</a></div>
+                                <div class="tab-INVENTORY" ><a href="/studio/inventory"><i class="fas fa-times-circle"></i></a></div>
                             </div>
 
                         </div>
@@ -49,7 +50,9 @@
 
 <script>
     jQuery(document).ready(function($){
-       
+        
+        $('.tab-<?= $filter ?>').addClass('active');
+
         $('.notification').delay(5000).slideUp("slow").fadeOut(3000);
 
         $('#dataTable').DataTable( {

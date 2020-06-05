@@ -1,12 +1,12 @@
 <!DOCTYPE html>
     
     <?php $this->getPartial('header'); ?>
+    <?php print $this->component('hero'); ?>
     
     <body>
-
+        
         <?php print $this->component('notice'); ?>
-        <?php print $this->component('hero'); ?>
-
+        
             <main>
         
                 <?php $this->getPartial('nav'); ?>

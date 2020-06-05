@@ -3,7 +3,8 @@
        
         <!-- insert navigation component -->
         <?= $navigation_html ?>
-    
+
+        <a name="top"></a>
         <div class="col-9 settings--container">
 
             <div class="notification success <?= $notification_state ?>"><?= $notification_msg ?></div>
@@ -12,13 +13,14 @@
                    <div class="col pb-0">
                     <h2><?= $this->page->title ?></h2>
                         <div class="tabs"> 
-                            <div><b>ABOUT</b></div>
-                            <div><a href="#system">SYSTEM</a></div>
-                            <div><a href="#components">COMPONENTS</a></div>
-                            <div><a href="#notices">NOTICES</a></div>
-                            <div><a href="#promos">PROMO-CODES</a></div>
-                            <div><a href="#session">SESSION</a></div>
-                            <div><a id="show-code" href="#">&lt;/&gt;</a></div>
+                            <div data-name="ABOUT" class="tab-menu tab-ABOUT active"><a href="#about">ABOUT</a></div>
+                            <div data-name="SYSTEM" class="tab-menu tab-SYSTEM"><a href="#system">SYSTEM</a></div>
+                            <div data-name="COMPONENTS" class="tab-menu tab-COMPONENTS"><a href="#components">COMPONENTS</a></div>
+                            <div data-name="NOTICES" class="tab-menu tab-NOTICES"><a href="#notices">NOTICES</a></div>
+                            <div data-name="PROMOCODES" class="tab-menu tab-PROMOCODES"><a href="#promos">PROMO-CODES</a></div>
+                            <div data-name="SESSION" class="tab-menu tab-SESSION"><a href="#session">SESSION</a></div>
+                            <div data-name="CODE" class="tab-menu tab-CODE"><a id="show-code" href="#">&lt;/&gt;</a></div>
+                            <div><p id="sendform" class="btn_small">UPDATE SETTINGS</p></div>
                         </div>
                     </div>
                 </div>
@@ -102,7 +104,7 @@
                 </div>
 
                 <div class="grid" id="tab-system">
-                    <a name="system"></a><h4>System</h4>
+                    <a name="system" href="#top"><i class="fas fa-arrow-circle-up"></i></a> <h4>System</h4>
 
                             <div class="divTable w-100 mt-32 pb-32">
                                 <div class="divTableBody">
@@ -185,7 +187,7 @@
                 </div>
 
                 <div class="grid" id="tab-components">
-                    <a name="promos"></a><h4>Promo Codes</h4>
+                    <a name="promos" href="#top"><i class="fas fa-arrow-circle-up"></i></a><h4>Promo Codes</h4>
 
                     <div class="divTable w-100 mt-32 pb-32">
 
@@ -256,7 +258,7 @@
                 </div>
 
                  <div class="grid" id="tab-promos">
-                    <a name="components"></a><h4>Components</h4>
+                    <a name="components" href="#top"><i class="fas fa-arrow-circle-up"></i></a><h4>Components</h4>
 
                     <div class="divTable w-100 mt-32 pb-32">
 
@@ -290,8 +292,8 @@
 
 
                 <div class="grid" id="tab-notices">
+                        <a name="notices" href="#top"><i class="fas fa-arrow-circle-up"></i></a><h4>Notices</h4>
                     <div class="col-12">
-                        <a name="notices"></a><h4>Notices</h4>
                         <p class="small">file://view/data_notices.json</p>
                     </div>
 
@@ -307,8 +309,8 @@
                 </div>
 
                 <div class="grid" id="tab-session">
+                        <a name="session" href="#top"><i class="fas fa-arrow-circle-up"></i></a><h4>Session</h4>
                     <div class="col-12">
-                        <a name="session"></a><h4>Session</h4>
                         <p class="small"> file://.user.ini file on server</p>
                     </div>
 
@@ -373,6 +375,12 @@
 <script>
 jQuery(document).ready(function($){
 
+    $('.tab-menu').on("click", function() {
+        $('.tab-menu').removeClass("active");
+        $('.tab-' + $(this).attr("data-name") ).addClass('active');
+        console.log('changing tab active: ' + '.tab-' + $(this).attr("data-name"));
+    });
+
     $('#show-code').on("click", function(e) {
         e.preventDefault();
         $('.code-block').toggle();
@@ -385,13 +393,15 @@ jQuery(document).ready(function($){
     });
 
     $('#sendform').on("click", function() {
-        $(":input[required]").each(function () {                     
-        var myForm = $('#settings-add');
-        if (!$myForm[0].checkValidity()) 
-          {                
-            $('#settings-upd').submit();             
-          } 
-        });
+        console.log('#sendform.clicked()');
+        // $(":input[required]").each(function () {   
+            // console.log('checking input fields');                  
+            // var myForm = $('#settings-upd');
+            // if (!$myForm[0].checkValidity()) 
+            //   {                
+                $('#settings-upd').submit();             
+            //   } 
+        // });
     });
 });
 </script>

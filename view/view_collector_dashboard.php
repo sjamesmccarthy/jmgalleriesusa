@@ -14,8 +14,8 @@
             <?= $note_html ?>
             
             <?= $mycollection_html ?>
-            <?= $myrewards_html ?>
             <?= $amazingoffer_html ?>
+            <?= $myrewards_html ?>
             <?= $polarized_html ?>
 
             <article id="version">

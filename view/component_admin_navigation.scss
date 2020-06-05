@@ -1,20 +1,20 @@
 .navigation--container {
 
-    min-height: 50vh;
-    border-radius: 4px;
+    // height: 100vh;
+    border-radius: $border-radius;
     padding-right: 32px;
 
     .add-icon-nav {
         position: absolute;
-        top: 0;
-        right: 0;
+        top: 17px;
+        right: 14px;
     }
 
     .disabled {
         color: rgba(0,0,0,.2);
     }
     
-     .toolbox {
+    .toolbox {
         padding-top: 10px;
         padding-bottom: 10px;
 
@@ -25,16 +25,15 @@
         }
 
         ul li {
-            margin-bottom: 10px;
+            // margin-bottom: 10px;
             font-weight: 300;
             font-size: 1rem;
             position: relative;
-            // margin-left: 2rem;
+            padding: 1rem;
+            border-bottom: 5px solid transparent;
 
             &.indent {
-                // margin-left: 25px;
-                // text-align: right;
-                // margin-right: 10px;
+   
             }
 
             &.disabled {
@@ -45,16 +44,26 @@
                 position: absolute;
                 right: 0;
             }
+
+            &:hover {
+                border-bottom: 5px solid $color-light-gray;
+                // border-top-right-radius: 1rem;
+            }
         }
 
         .selected-item {
             text-transform: uppercase;
+            background-color: $color-silver;
+            border-bottom: 5px solid $color-light-gray;
+            color: #000;
+            // border-top-right-radius: 1rem;
+            padding: 1rem;
         }
 
         .selected {
             font-weight: 900;
             // background-color: #CCC;
-            border-left: 3px solid #000;
+            // border-left: 3px solid rgba(0, 0, 0, 0.08);
             padding: 0 0 0 10px;
             color: #000;
             margin-left: -10px;
@@ -72,8 +81,8 @@
             }
 
             a {
-                color: #000;
-                font-weight: 500;
+                color: $color-black;
+                font-weight: 400;
 
                 &:hover {
                     color: #2574A9;
@@ -83,8 +92,8 @@
         }
 
         &:not(:last-child) {
-            border-bottom: 1px solid rgba(0,0,0,.1);
-            margin-bottom: 10px;
+            // border-bottom: 1px solid rgba(0,0,0,.05);
+            // margin-bottom: 10px;
             position: relative;
         }
 
@@ -102,7 +111,7 @@
 
         .profile--name {
            text-align: center;
-           padding-bottom: 32px;
+           padding-bottom: 1rem;
         }
     }
 

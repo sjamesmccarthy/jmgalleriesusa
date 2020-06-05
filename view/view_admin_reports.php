@@ -35,7 +35,7 @@
 
 <script>
     jQuery(document).ready(function($){
-       
+
         $('.notification').delay(5000).slideUp("slow").fadeOut(3000);
 
         $('#dataTable').DataTable( {

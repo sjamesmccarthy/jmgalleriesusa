@@ -25,7 +25,7 @@
         .table--box {
             margin-right: 1rem;
             border-radius: 6px;
-            padding: 20px;
+            padding: 0px;
 
             &:last-child {
                 margin-right: 0;
@@ -61,7 +61,8 @@
             width: 75%;
             text-align: left;
             display: inline-block;
-
+           padding: 20px;
+           
             &.link {
                 width: 25%;
                 text-align: right;

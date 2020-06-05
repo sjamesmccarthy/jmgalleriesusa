@@ -17,25 +17,25 @@
         }
     }
 
-    .tabs {
-        display: flex;
-        flex-wrap: wrap;
-        margin-top: 8px;
+    // .tabs {
+    //     display: flex;
+    //     flex-wrap: wrap;
+    //     margin-top: 8px;
 
-        &>div {
-            background-color: #f1f1f1;
-            min-width: 100px;
-            border-left: 1px solid #DDD;
-            padding: 10px;
-            text-align: center;
-            font-size: .9rem;
-            text-transform: uppercase;
-        }
+    //     &>div {
+    //         background-color: #f1f1f1;
+    //         min-width: 100px;
+    //         border-left: 1px solid #DDD;
+    //         padding: 10px;
+    //         text-align: center;
+    //         font-size: .9rem;
+    //         text-transform: uppercase;
+    //     }
 
-        &>div:first-child {
-            border-left: none;
-        }
-    }
+    //     &>div:first-child {
+    //         border-left: none;
+    //     }
+    // }
 
     h4 {
         text-decoration: underline;

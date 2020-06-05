@@ -9,12 +9,17 @@
         background-color: rgba(0,0,0,.08);
         margin: 0;
         border-radius: 6px 6px 0 0;
-        padding: 1rem;
+        padding: .5rem 0 0 .5rem;
         margin-bottom: 1rem;
     
         h2 {
             font-weight: 300;
         }
+    }
+
+    .active {
+       background-color: #FFF;
+       color: $color-black;
     }
 
     #material_expenses_list {
@@ -90,6 +95,7 @@ form {
 
     textarea {
         overflow-y: scroll;
+        min-height: 300px;
     }
 }
 

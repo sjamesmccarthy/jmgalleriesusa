@@ -12,7 +12,7 @@
             </div>
         </div>
         
-        <div class="grid pt-32 nopad-left">
+        <div class="grid nopad-left">
 
             <div class="col-12 collection-list">
             <ul>

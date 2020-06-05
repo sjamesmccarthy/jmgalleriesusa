@@ -56,7 +56,7 @@ $html = <<< END
 
 <div class="table--box gray">
     <h4>Recent Activity Log</h4>
-    System Health: <b>Good</b> | PHP v{$phpv} & MySQL v{$mysqlv} | <a href="/studio/settings">Settings</a>
+    <span class="small">Health: <b>Good</b> | PHP v{$phpv} & MySQL v{$mysqlv} | <a href="/studio/settings">Settings</a></span>
 </div>
 
     <ul class="mt-32">  
