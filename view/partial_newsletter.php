@@ -1,3 +1,9 @@
+<?php 
+    if ($this->config->component_newsletter == "true") {
+        ?>
+<div class="grid-center">
+            <div class="col-8_md-10 foot-news">
+
 <h3 class="h3-sub">SUBSCRIBE TO THE NEWSLETTER</h3>
 
 <div id="mc_embed_signup">
@@ -14,4 +20,8 @@
 </form>
 </div>
 
+</div>
+</div>
+<?php
+    } ?>
 <!--End mc_embed_signup-->

@@ -30,8 +30,16 @@
             </div>
 
             <div>
-                <label for="title">NAME</label>
+                <p style="width:75%; float: left;">
+                <label for="title">COLUMNS</label>
                 <input class="" type="text" id="columns" name="columns" placeholder="COLUMNS (eg, id,firstname,lastname,email,phone)" value="<?= $res_columns ?>" />
+                </p>
+
+                <p class="pt-16" style="width: 24%; float:right; margin-left: 8px;">
+                  <input type="checkbox" id="fav" name="fav" value="1" <?= ($res_fav == "1" ? "CHECKED" : ""); ?> /> 
+                  <label for="fav" style="font-size: 1.2rem; background-color: transparent;">Mark As Favorite</label>
+                </p>
+
             </div>
 
             <div>
@@ -40,17 +48,16 @@
             </div>
             
             <div>
-                <p class="pt-16 half-size">
-                  <input type="checkbox" id="fav" name="fav" value="1" <?= ($res_fav == "1" ? "CHECKED" : ""); ?> /> 
-                  <label for="fav" style="font-size: 1.2rem; background-color: transparent;">Favorite</label>
-                </p>
+                <p class="pt-16 half-size"></p>
                 <div class="half-size"><p class="btn_small_gray pull-right ml-8 active">Edit SQL</p>
                 <p class="btn_small_gray pull-right">Run Query</p></div>
             </div>
 
             <div class="clear">
                 <button class="mt-32" id="sendform" value="SEND"><?= $button_label ?></button>
-                <?= $button_archive_cancel ?>
+                <!-- <?= $button_archive_cancel ?> -->
+
+                <p class="mt-8 small">*Saving the report will not run the query. It will return you back to the Reports Index.</p>
             </div>
 
             </form>

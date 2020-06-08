@@ -17,7 +17,7 @@
                             <div data-name="SYSTEM" class="tab-menu tab-SYSTEM"><a href="#system">SYSTEM</a></div>
                             <div data-name="COMPONENTS" class="tab-menu tab-COMPONENTS"><a href="#components">COMPONENTS</a></div>
                             <div data-name="NOTICES" class="tab-menu tab-NOTICES"><a href="#notices">NOTICES</a></div>
-                            <div data-name="PROMOCODES" class="tab-menu tab-PROMOCODES"><a href="#promos">PROMO-CODES</a></div>
+                            <div data-name="PROMOCODES" class="tab-menu tab-PROMOCODES"><a href="#promos">Pricing & PROMOS</a></div>
                             <div data-name="SESSION" class="tab-menu tab-SESSION"><a href="#session">SESSION</a></div>
                             <div data-name="CODE" class="tab-menu tab-CODE"><a id="show-code" href="#">&lt;/&gt;</a></div>
                             <div><p id="sendform" class="btn_small">UPDATE SETTINGS</p></div>
@@ -104,7 +104,14 @@
                 </div>
 
                 <div class="grid" id="tab-system">
-                    <a name="system" href="#top"><i class="fas fa-arrow-circle-up"></i></a> <h4>System</h4>
+
+                    <div class="col">
+                        <h4>System</h4>
+                    </div>
+
+                    <div class="col right">
+                        <a name="system" href="#top"><i class="fas fa-arrow-circle-up"></i></a> 
+                    </div>
 
                             <div class="divTable w-100 mt-32 pb-32">
                                 <div class="divTableBody">
@@ -187,7 +194,14 @@
                 </div>
 
                 <div class="grid" id="tab-components">
-                    <a name="promos" href="#top"><i class="fas fa-arrow-circle-up"></i></a><h4>Promo Codes</h4>
+
+                    <div class="col">
+                        <h4>Pricing & Promos</h4>
+                    </div>
+
+                    <div class="col right">
+                        <a name="promos" href="#top"><i class="fas fa-arrow-circle-up"></i></a> 
+                    </div>
 
                     <div class="divTable w-100 mt-32 pb-32">
 
@@ -258,7 +272,14 @@
                 </div>
 
                  <div class="grid" id="tab-promos">
-                    <a name="components" href="#top"><i class="fas fa-arrow-circle-up"></i></a><h4>Components</h4>
+
+                    <div class="col">
+                        <h4>Components</h4>
+                    </div>
+
+                    <div class="col right">
+                        <a name="components" href="#top"><i class="fas fa-arrow-circle-up"></i></a> 
+                    </div>
 
                     <div class="divTable w-100 mt-32 pb-32">
 
@@ -292,7 +313,15 @@
 
 
                 <div class="grid" id="tab-notices">
-                        <a name="notices" href="#top"><i class="fas fa-arrow-circle-up"></i></a><h4>Notices</h4>
+
+                    <div class="col">
+                        <h4>Notices</h4>
+                    </div>
+
+                    <div class="col right">
+                        <a name="notices" href="#top"><i class="fas fa-arrow-circle-up"></i></a> 
+                    </div>
+
                     <div class="col-12">
                         <p class="small">file://view/data_notices.json</p>
                     </div>
@@ -309,7 +338,15 @@
                 </div>
 
                 <div class="grid" id="tab-session">
-                        <a name="session" href="#top"><i class="fas fa-arrow-circle-up"></i></a><h4>Session</h4>
+
+                    <div class="col">
+                        <h4>Session</h4>
+                    </div>
+
+                    <div class="col right">
+                        <a name="session" href="#top"><i class="fas fa-arrow-circle-up"></i></a> 
+                    </div>
+                        
                     <div class="col-12">
                         <p class="small"> file://.user.ini file on server</p>
                     </div>

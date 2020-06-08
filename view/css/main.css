@@ -670,11 +670,15 @@ button a { color: #2574A9; }
 .thead { font-weight: 700; }
 
 /* Tabs */
-.tabs { display: flex; flex-wrap: wrap; margin-top: 8px; }
+.tabs { display: flex; flex-wrap: wrap; margin-top: 1rem; }
 
-.tabs > div { background-color: #f1f1f1; min-width: 100px; border-left: 1px solid #DDD; padding: 10px; text-align: center; font-size: .9rem; text-transform: uppercase; }
+.tabs > div { background-color: #f1f1f1; min-width: 100px; padding: 10px; text-align: center; font-size: .9rem; text-transform: uppercase; }
 
-.tabs .active { background-color: #DCDCDC; border-bottom: 5px solid #D3D3D3; }
+.tabs > div:hover:not(:last-child) { border-bottom: 5px solid #4a4a4a; cursor: pointer; }
+
+.tabs > div:hover:not(:last-child) a { color: #4a4a4a; }
+
+.tabs .active { border-bottom: 5px solid #4a4a4a; }
 
 .tabs .active > a { color: #000; }
 
@@ -856,15 +860,17 @@ button a { color: #2574A9; }
 
 .navigation--container .toolbox .dashboard-icon { font-size: 1.5rem; text-align: right; margin-right: 60px; }
 
-.navigation--container .toolbox ul li { font-weight: 300; font-size: 1rem; position: relative; padding: 1rem; border-bottom: 5px solid transparent; }
+.navigation--container .toolbox ul li { font-weight: 300; font-size: 1rem; position: relative; padding: 1rem; border-left: 5px solid transparent; }
 
 .navigation--container .toolbox ul li.disabled { color: rgba(0, 0, 0, 0.2); }
 
 .navigation--container .toolbox ul li span.add-inline { position: absolute; right: 0; }
 
-.navigation--container .toolbox ul li:hover { border-bottom: 5px solid #D3D3D3; }
+.navigation--container .toolbox ul li:hover:not(.selected-item) { border-left: 5px solid #4a4a4a; background-color: #f9f9f9; cursor: pointer; }
 
-.navigation--container .toolbox .selected-item { text-transform: uppercase; background-color: #DCDCDC; border-bottom: 5px solid #D3D3D3; color: #000; padding: 1rem; }
+.navigation--container .toolbox ul li:hover:not(.selected-item) a { color: #4a4a4a; }
+
+.navigation--container .toolbox .selected-item { text-transform: uppercase; background-color: #DCDCDC; border-left: 5px solid #000; color: #000; padding: 1rem; }
 
 .navigation--container .toolbox .selected { font-weight: 900; padding: 0 0 0 10px; color: #000; margin-left: -10px; }
 

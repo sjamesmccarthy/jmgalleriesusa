@@ -2580,6 +2580,7 @@ public function api_Admin_Get_Materials_By_Supplier($id) {
             R.name,
             R.desc,
             R.sql, 
+            R.columns,
             R.fav
         FROM
             report as R
@@ -2663,8 +2664,8 @@ public function api_Admin_Get_Materials_By_Supplier($id) {
         $sql_c =  $this->mysqli->real_escape_string($sql_c);
 
         /* Insert into database */
-        $sql = "INSERT INTO `jmgaller_iesusa`.`report` (`name`, `desc`, `sql`, `last_run_by`, `fav`) 
-        VALUES ('{$name}', '{$desc}', '{$sql_c}', '{$artist_id}', '{$fav}');";
+        $sql = "INSERT INTO `jmgaller_iesusa`.`report` (`name`, `desc`, `sql`, `columns`, `last_run_by`, `fav`) 
+        VALUES ('{$name}', '{$desc}', '{$sql_c}', '{$columns}', '{$artist_id}', '{$fav}');";
 
         $result = $this->mysqli->query($sql);
         $_POST['report_id'] = $this->mysqli->insert_id;
@@ -2694,9 +2695,13 @@ public function api_Admin_Get_Materials_By_Supplier($id) {
         SET `name` = '{$name}', 
         `desc` = '{$desc}', 
         `sql` = '{$sql_c}', 
+        `columns` = '{$columns}', 
         `last_run_by` = '{$artist_id}', 
         `fav` = '{$fav}' 
         WHERE `report_id` = '" . $report_id ."'";
+
+    // print $sql;
+    // exit;
 
         $result = $this->mysqli->query($sql);
         

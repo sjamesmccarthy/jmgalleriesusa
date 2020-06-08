@@ -43,7 +43,9 @@ if(isSet($this->data->routePathQuery[0])) {
 
     $formTitle = "CHECKOUT <span class='lowercase light'>for</span> <span class='light initialcaps'>" . $photo . "</span>";
     $subTitle = "Thank you for your interest in collecting a j.McCarthy Limited Edition";
-    $subNotice = '<p class="notice mb-16">notice: Due to COVID-19 all frames are on back order because of supply-chain delays</p>';
+    if ($this->config->component_notice == 'true') {
+        $subNotice = '<p class="notice mb-16">' . $this->data_notices->WARNING['content'] . '</p>';
+    }
     $subject_PH = "PURCHASE ORDER for " . strtoupper($photo);
 
     /* Shipping Information */

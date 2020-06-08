@@ -4,13 +4,10 @@
     
     <div class="pt-32 pb-32 footer-max-width">
     
-        <div class="grid-center">
-            <div class="col-8_md-10 foot-news">
+        
             <?php 
                 $this->getPartial('newsletter'); 
             ?>
-            </div>
-        </div>
         
         <div class="grid nopad-left">
 
