@@ -1,10 +1,10 @@
+<a name="top"></a>
 <section class="settingsidx--container">
     <div class="grid-12">
        
         <!-- insert navigation component -->
         <?= $navigation_html ?>
 
-        <a name="top"></a>
         <div class="col-9 settings--container">
 
             <div class="notification success <?= $notification_state ?>"><?= $notification_msg ?></div>
@@ -20,7 +20,7 @@
                             <div data-name="PROMOCODES" class="tab-menu tab-PROMOCODES"><a href="#promos">Pricing & PROMOS</a></div>
                             <div data-name="SESSION" class="tab-menu tab-SESSION"><a href="#session">SESSION</a></div>
                             <div data-name="CODE" class="tab-menu tab-CODE"><a id="show-code" href="#">&lt;/&gt;</a></div>
-                            <div><p id="sendform" class="btn_small">UPDATE SETTINGS</p></div>
+                            <!-- <div><p id="sendform" class="btn_small">UPDATE SETTINGS</p></div> -->
                         </div>
                     </div>
                 </div>

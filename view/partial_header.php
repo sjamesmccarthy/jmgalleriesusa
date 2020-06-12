@@ -1,5 +1,7 @@
 <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0.5, maximum-scale=3.0, minimum-scale=0.5">
+
     <meta version="<?= $this->config->package_version ?>" />
     <meta site_name="<?= $this->config->site_name ?>" />
     <meta copyright="<?= $this->config->copyright ?>" />

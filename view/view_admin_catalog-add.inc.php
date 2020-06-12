@@ -17,7 +17,6 @@
 
         $edit_data = $this->api_Catalog_Photo($edit_id);
         $this->data = $edit_data;
-
         extract($edit_data, EXTR_PREFIX_SAME, "dup");
 
         if($as_gallery == "1") {

@@ -6,7 +6,6 @@
     $count=0;
     $catalog = ltrim($this->page->catalog_path, '/');
 
-
     /* Load all category meta data */
     $catalog_meta = $this->api_Catalog_Category_List($catalog);
 

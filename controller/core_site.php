@@ -42,7 +42,6 @@ class Core_Site extends Core_Api
         /* Check for enviroment in URI based on domain extension */
         $uri = explode('.', $_SERVER['SERVER_NAME']);
 
-
         if(!isSet($uri[1]) || $uri[1] == 'local') { $this->env = 'local'; } else { $this->env = "prod"; }
         
         /* Error reporting levels being outputted to screen and logged */

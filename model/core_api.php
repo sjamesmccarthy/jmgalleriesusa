@@ -2683,7 +2683,7 @@ public function api_Admin_Get_Materials_By_Supplier($id) {
 
     }
 
-    public function api_Admin_Update_Reports() {
+    public function api_Admin_Update_Reports($sqlOnly=null) {
 
         /* extract Data Array */
         extract($_POST, EXTR_PREFIX_SAME, "dup");
@@ -2700,16 +2700,17 @@ public function api_Admin_Get_Materials_By_Supplier($id) {
         `fav` = '{$fav}' 
         WHERE `report_id` = '" . $report_id ."'";
 
-    // print $sql;
-    // exit;
-
         $result = $this->mysqli->query($sql);
         
         if($result == 1) {
-            $_SESSION['error'] = '200';
-            $_SESSION['notify_msg'] = $name;
-            $_SESSION['notification_msg'] = "<p class='heading'>success</p><p>" .  $name . " Has Been Updated</p>";
-            $this->log(array("key" => "api", "value" => "Updated Report / SQL Mark (" . $name . ") ", "type" => "success"));
+            if($sqlOnly != 1) {
+                $_SESSION['error'] = '200';
+                $_SESSION['notify_msg'] = $name;
+                $_SESSION['notification_msg'] = "<p class='heading'>success</p><p>" .  $name . " Has Been Updated</p>";
+                $this->log(array("key" => "api", "value" => "Updated Report / SQL Mark (" . $name . ") ", "type" => "success"));
+            } else {
+                $this->log(array("key" => "api", "value" => "Updated SQL Statement via Ajax.API  (" . $name . ") ", "type" => "success"));
+            }
         } else {
             $_SESSION['error'] = '400';
             $this->log(array("key" => "api", "value" => "Failed Update Report / SQL Mark (" . $_POST['name'] . ")", "type" => "failure"));
@@ -2979,6 +2980,44 @@ public function api_Admin_Get_Materials_By_Supplier($id) {
 
     }
 
+    private function processUserRolesApps() {
+
+        print "processUserRolesApps()";
+
+        /* Updated Roles link table */
+        /* delete all from user_role_link, then insert */
+
+        /* Insert into database */
+        // $sql = "UPDATE `jmgaller_iesusa`.`user` SET 
+        // {$add_artist_id}
+        // {$add_collector_id}
+        // `type` = '{$type}', 
+        // `status` = 'ACTIVE', 
+        // `username` = '{$username}', 
+        // `pin` = '{$hash_str}'
+        // WHERE `user_id` = '{$user_id}'
+        // ";
+
+        // $result = $this->mysqli->query($sql);
+
+        /* Update Apps link table */
+        /* delete all from user_apps_link, then insert */
+
+        /* Insert into database */
+        // $sql = "UPDATE `jmgaller_iesusa`.`user` SET 
+        // {$add_artist_id}
+        // {$add_collector_id}
+        // `type` = '{$type}', 
+        // `status` = 'ACTIVE', 
+        // `username` = '{$username}', 
+        // `pin` = '{$hash_str}'
+        // WHERE `user_id` = '{$user_id}'
+        // ";
+
+        // $result = $this->mysqli->query($sql);
+
+    }
+
     public function api_Admin_Update_User() {
 
         /* extract Data Array */
@@ -2998,6 +3037,9 @@ public function api_Admin_Get_Materials_By_Supplier($id) {
         } else {
             $add_collector_id =  "`collector_id` = " . $collector_id . ",";
         }
+
+        /* Updated Roles & Apps link table */
+        $this->processUserRolesApps();
 
         /* Insert into database */
         $sql = "UPDATE `jmgaller_iesusa`.`user` SET 
@@ -3381,6 +3423,90 @@ public function api_Admin_Get_Order($id) {
         }
         
     }
+
+    public function api_Admin_Get_Reports_Sql($sql) {
+
+    /* Executes SQL and then assigns object to passed var */
+    if( $this->checkDBConnection(__FUNCTION__) == true) {
+
+        $result = $this->mysqli->query($sql);
+
+        if ($result->num_rows > 0) {
+        
+            while($row = $result->fetch_assoc())
+	        {
+	            $data[] = $row;
+	        }
+            
+        } 
+        
+    }
+
+    return($data);
+
+    }
+
+    public function api_Admin_Get_Apps() {
+
+        /* Executes SQL and then assigns object to passed var */
+        if( $this->checkDBConnection(__FUNCTION__) == true) {
+
+            $sql = "SELECT
+                user_apps_id,
+                user_role_id,
+                title,
+                short_code
+            FROM
+                user_apps
+            WHERE
+                status='1'";
+        
+            $result = $this->mysqli->query($sql);
+
+            if ($result->num_rows > 0) {
+            
+                while($row = $result->fetch_assoc())
+		        {
+		            $data[] = $row;
+		        }
+                
+            } 
+            
+        }
+
+        return($data);
+
+    }
+
+    public function api_Admin_Get_Roles() {
+
+        /* Executes SQL and then assigns object to passed var */
+        if( $this->checkDBConnection(__FUNCTION__) == true) {
+
+            $sql = "SELECT
+                user_role_id,
+                role
+            FROM
+                user_role
+            WHERE status = '1'";
+        
+            $result = $this->mysqli->query($sql);
+
+            if ($result->num_rows > 0) {
+            
+                while($row = $result->fetch_assoc())
+		        {
+		            $data[] = $row;
+		        }
+                
+            } 
+            
+        }
+
+        return($data);
+
+    }
+
 
 }
 ?>

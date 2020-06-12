@@ -1,5 +1,21 @@
 .reports-add--container {
 
+    .sql_e_banner, .sql_e_banner_count {
+        display: none;
+    }
+
+    #form_result {
+        overflow-x: scroll;
+    }
+
+    .sql_res {
+        padding: 0 20px;
+
+        >p {
+            font-size: .8rem;
+        }
+    }
+
      background-color: rgba(0,0,0,.02);
         border-radius: 6px;
         margin: 0;
@@ -92,7 +108,7 @@
 
 form {
     padding: 1rem;
-
+    
     textarea {
         overflow-y: scroll;
         min-height: 300px;

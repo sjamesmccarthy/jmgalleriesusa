@@ -49,6 +49,22 @@ if(isSet($this->routes->URI->queryvals)) {
     $button_archive_cancel = '<a class="cancel-button" href="/studio/users">cancel</a>';
 }
 
+/* Get List of Apps */
+$apps_list = $this->api_Admin_Get_Apps();
+foreach ($apps_list AS $k_apps => $v_apps) {
+    $checked = 'CHECKED';
+    $apps_html .= '<li><input type="checkbox" id="apps-' . $v_apps['short_code'] . '" name="apps[]" value="1" ' . $checked . '/> 
+                   <label for="apps-' . $v_apps['short_code'] . '" style="font-size: 1.2rem; background-color: transparent;">' . $v_apps['title'] . '</label></li>';
+}
+
+/* Get List of User Roles */
+$roles_list = $this->api_Admin_Get_Roles();
+foreach ($roles_list AS $k_roles => $v_roles) {
+    if(isSet($res_type) && $res_type == $v_roles['role']) { $checked = 'CHECKED'; } else { $checked = null; }
+    $roles_html .= '<li><input type="checkbox" id="role-' . $v_roles['role'] . '" name="role[]" value="1" ' . $checked . '/> 
+                   <label for="role-' . $v_roles['role'] . '" style="font-size: 1.2rem; background-color: transparent;">' . $v_roles['role'] . '</label></li>';
+}
+
 /* NAVIGATION LOAD */
 $navigation_html = $this->component('admin_navigation');
 

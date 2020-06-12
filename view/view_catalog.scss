@@ -38,12 +38,16 @@
     display: inline-block;
     font-size: 1.4rem;
     padding: .5rem;
-    width: 250px; /* 214px; */
+    width: 285px; /* 214px; */
     color: $color-blue;
 
+        &:not(:last-child) {
+            margin-right: 10px;
+        }
+
         &:first-child {
-            padding-right: 50px;
-            border-right: 1px solid #AAA;
+            // padding-right: 50px;
+            // border-right: 1px solid #AAA;
         }
 
         &:hover {
@@ -54,6 +58,7 @@
         
         &.selected {
             font-weight: 700;
+            border-bottom: 3px solid $color-blue;
         }
     }
 

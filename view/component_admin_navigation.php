@@ -38,7 +38,7 @@ jQuery(document).ready(function($){
 
 <div class="col-3 navigation--container">
             
-            <div class="toolbox">
+            <div class="toolbox mb-32">
                 <p class="dashboard-icon"><a href="/studio/manage"><i class="fas fa-chart-line"></i></a></p>
 
                 <div class="profile--image">

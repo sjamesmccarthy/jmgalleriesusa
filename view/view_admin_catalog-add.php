@@ -58,22 +58,24 @@
             </div>
 
             <div style="margin-bottom: 10px;">
-                <label class="file half-size file">
+                <div class="file half-size">
+                <p>Image: __image/<?= $file_name ?></p>
+                <img class="photopreview <?= $display_show ?>" src="/catalog/__image/<?= $file_name ?>.jpg?<?= date(); ?>" />
                 <input class="input-upload" type="file" id="file_1" name="file_1" aria-label="Choose Main Photo">
                 <input type="hidden" id="file_1_path" name="file_1_path" value="/catalog/__image/">
-                <span class="file-custom file-custom-main"></span>
-                <img class="photopreview <?= $display_show ?>" src="/catalog/__image/<?= $file_name ?>.jpg?<?= date(); ?>" />
-                </label>
+                <!-- <span class="file-custom file-custom-main"></span> -->
+                </div>
 
-                <label class="half-size file file-thumb">
+                <div class="half-size file file-thumb">
+                <p>Thumbnail: __thumbnail/<?= $file_name ?></p>
+                <img class="photopreview photopreviewthumb <?= $display_show ?>" src="/catalog/__thumbnail/<?= $file_name ?>.jpg?<?= date(); ?>" />
                 <input class="input-upload"  type="file" id="file_2" name="file_2" aria-label="Choose Main Photo">
                 <input type="hidden" id="file_2_path" name="file_2_path" value="/catalog/__thumbnail/">
-                <span class="file-custom file-custom-thumbnail"></span>
-                <img class="photopreview photopreviewthumb <?= $display_show ?>" src="/catalog/__thumbnail/<?= $file_name ?>.jpg?<?= date(); ?>" />
-                </label>
+                <!-- <span class="file-custom file-custom-thumbnail"></span> -->
+                </div>
             </div>
 
-            <div>
+            <div class="mt-24">
                 <input class="half-size"  type="text" id="loc_place" name="loc_place" placeholder="LOCATION PLACE" value="<?= $loc_place ?>" required>
                 <input class="half-size" type="text" id="loc_waypoint" name="loc_waypoint" placeholder="LOCATION WAYPOINT" value="<?= $loc_waypoint ?>">
             </div>

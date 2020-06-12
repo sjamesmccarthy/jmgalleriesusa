@@ -22,7 +22,7 @@
                             <tr>
                                 <th></th>
                                 <th>name</th>
-                                <th>sql</th>
+                                <th>desc</th>
                             </tr>
                         </thead>
                         <tbody></tbody>
@@ -60,12 +60,12 @@
                 { data: 'name',
                     "render": function(data, type, row, meta){
                         if(type === 'display'){
-                            data = '<a href="/studio/reports-add?id=' + row.report_id + '">' + row.name + '</a><br />' + row.desc;
+                            data = '<a href="/studio/reports-add?id=' + row.report_id + '">' + row.name + '</a>';
                         }  
                         return data;
                     } 
                 },
-                { data: 'sql'}
+                { data: 'desc'}
             ],
             "columnDefs": [
                 { "width": "2%", "targets": 0 },

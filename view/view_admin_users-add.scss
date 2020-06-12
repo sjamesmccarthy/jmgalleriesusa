@@ -116,6 +116,19 @@
 
     form {
         padding: 1rem;
+
+        ul {
+
+            margin-left: 1rem; 
+
+            li {
+                margin-top: 1rem;
+                
+                label {
+                    color: $color-black !important;
+                }
+            }
+        }
     }
 
 }

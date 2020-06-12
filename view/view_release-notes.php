@@ -5,9 +5,16 @@
 
         <h1>RELEASE NOTES</h1>
         <p class="mb-16">current release version <?= $this->config->package_version ?><br />
-        Wednesday, June 4, 2020</p>
+        Friday, June 12, 2020</p>
        
-        <!-- <p class="pt-16">v1.3.6<br />May 29, 2020</p> -->
+        <!-- <p class="pt-16">v1.3.8<br />Jun 12, 2020</p> -->
+        	<ul>
+            <li>added: user roles to admin : control</li>
+            <li>added: top navigation state indicators.</li>
+        	</ul>
+        </p>
+
+        <p class="pt-16">v1.3.7<br />June 4, 2020</p>
         	<ul>
             <li>updated: New Admin Control UI.</li>
             <li>bugfix: top navigation positioning bug.</li>

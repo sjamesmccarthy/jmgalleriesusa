@@ -64,6 +64,7 @@
             position: relative;
             height: 50px;
             background-color: transparent;
+            margin-bottom: 1rem;
         }
 
         .file-thumb {
@@ -72,10 +73,10 @@
         }
 
         .input-upload {
-            width: 100%;
+            // width: 80%;
             padding: 10px;
             border: 1px solid #CCC;
-            border-radius: 5px;
+            border-radius: $border-radius;
         }
 
         .file-custom:after {

@@ -1,10 +1,23 @@
 <?php
 
+    $nav_pages = array('all', 'polarized', 'moments', 'about');
+    $current_page = ltrim($this->catalog_path, '/');
+
     if($this->catalog_path == "/") {
         $addToClass = '-home';
-        // $addToClass = null;
     } else {
         $addToClass = null;
+
+        foreach ($nav_pages as $k => $v) {
+            
+            if ( $current_page == $v ) {
+                ${$current_page} = "active-" . $current_page;
+            } else {
+                // $class_state = "not-active";
+            }
+
+        }
+        
     }
     
 ?>
