@@ -28,6 +28,7 @@ if(isSet($this->routes->URI->queryvals)) {
     extract($edit_data, EXTR_PREFIX_ALL, "res");
 
     $user_roles = $this->api_Admin_Get_RolesByUser($edit_id);
+    $user_apps = $this->api_Admin_Get_AppsByUser($edit_id);
 
     if($res_type == "ARTIST") {
         $type_id = $id_field = '<input type="hidden" name="artist_id" value="' . $res_artist_id . '" />';
@@ -50,14 +51,26 @@ if(isSet($this->routes->URI->queryvals)) {
     $this->page->title = "Adding <b>New User</b>";
     $button_archive_cancel = '<a class="cancel-button" href="/studio/users">cancel</a>';
     $user_roles = null;
+    $user_apps = null;
 }
 
 /* Get List of Apps */
 $apps_list = $this->api_Admin_Get_Apps();
+
 foreach ($apps_list AS $k_apps => $v_apps) {
-    $checked_apps = 'CHECKED';
-    $apps_html .= '<li><input type="checkbox" id="apps-' . $v_apps['short_code'] . '" name="apps[]" value="1" ' . $checked_apps . '/> 
-                   <label for="apps-' . $v_apps['short_code'] . '" style="font-size: 1.2rem; background-color: transparent;">' . $v_apps['title'] . '</label></li>';
+    
+    $apps_html .= '<li><input type="checkbox" id="apps-' . $v_apps['short_code'] . '" name="apps[]" value="' . $v_apps['user_apps_id'] . '"';
+    
+    if(isSet($edit_id)) {
+        foreach ($user_apps as $ku_apps => $vu_apps) {
+            if ($v_apps['user_apps_id'] == $vu_apps['user_apps_id']) {
+                $apps_html .= "CHECKED";
+            }
+        }
+    }
+
+    $apps_html .= '/> 
+   <label for="apps-' . $v_apps['short_code'] . '" style="font-size: 1.2rem; background-color: transparent;">' . $v_apps['title'] . '</label></li>';
 }
 
 /* Get List of User Roles */
