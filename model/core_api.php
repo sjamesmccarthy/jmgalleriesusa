@@ -2980,23 +2980,28 @@ public function api_Admin_Get_Materials_By_Supplier($id) {
 
     }
 
-    private function processUserRolesApps() {
-
-        print "processUserRolesApps()";
+    private function processUserRolesApps($id) {
 
         /* Updated Roles link table */
         /* delete all from user_role_link, then insert */
 
+         /* DELETE ALL user_role_link records for this ID */
+        $sql_d = "DELETE FROM user_role_link WHERE user_id = '" . $id . "'";
+        $result_d = $this->mysqli->query($sql_d);
+        
+        foreach ($_POST['role'] as $k_role => $v_role) {
+
+             $sql_r = "
+                   INSERT INTO `jmgaller_iesusa`.`user_role_link` 
+                   (`user_id`, `user_role_id`) 
+                   VALUES 
+                   ('{$id}', '{$v_role}');";
+            
+            $result_roles = $this->mysqli->query($sql_r);
+
+        }
+
         /* Insert into database */
-        // $sql = "UPDATE `jmgaller_iesusa`.`user` SET 
-        // {$add_artist_id}
-        // {$add_collector_id}
-        // `type` = '{$type}', 
-        // `status` = 'ACTIVE', 
-        // `username` = '{$username}', 
-        // `pin` = '{$hash_str}'
-        // WHERE `user_id` = '{$user_id}'
-        // ";
 
         // $result = $this->mysqli->query($sql);
 
@@ -3039,7 +3044,7 @@ public function api_Admin_Get_Materials_By_Supplier($id) {
         }
 
         /* Updated Roles & Apps link table */
-        $this->processUserRolesApps();
+        $this->processUserRolesApps($user_id);
 
         /* Insert into database */
         $sql = "UPDATE `jmgaller_iesusa`.`user` SET 
@@ -3490,6 +3495,35 @@ public function api_Admin_Get_Order($id) {
                 user_role
             WHERE status = '1'";
         
+            $result = $this->mysqli->query($sql);
+
+            if ($result->num_rows > 0) {
+            
+                while($row = $result->fetch_assoc())
+		        {
+		            $data[] = $row;
+		        }
+                
+            } 
+            
+        }
+
+        return($data);
+
+    }
+
+    public function api_Admin_Get_RolesByUser($id) {
+
+        /* Executes SQL and then assigns object to passed var */
+        if( $this->checkDBConnection(__FUNCTION__) == true) {
+
+            $sql = "SELECT
+                user_id,
+                user_role_id
+            FROM
+                user_role_link
+            WHERE user_id = '" . $id . "'";
+
             $result = $this->mysqli->query($sql);
 
             if ($result->num_rows > 0) {

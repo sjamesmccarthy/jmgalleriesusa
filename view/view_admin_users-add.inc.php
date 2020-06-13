@@ -27,6 +27,8 @@ if(isSet($this->routes->URI->queryvals)) {
     $edit_data = $this->api_Admin_Get_Users_Item($edit_id);
     extract($edit_data, EXTR_PREFIX_ALL, "res");
 
+    $user_roles = $this->api_Admin_Get_RolesByUser($edit_id);
+
     if($res_type == "ARTIST") {
         $type_id = $id_field = '<input type="hidden" name="artist_id" value="' . $res_artist_id . '" />';
         $ac_id = $res_artist_id;
@@ -47,22 +49,34 @@ if(isSet($this->routes->URI->queryvals)) {
     $legacy_exp_field = null;
     $this->page->title = "Adding <b>New User</b>";
     $button_archive_cancel = '<a class="cancel-button" href="/studio/users">cancel</a>';
+    $user_roles = null;
 }
 
 /* Get List of Apps */
 $apps_list = $this->api_Admin_Get_Apps();
 foreach ($apps_list AS $k_apps => $v_apps) {
-    $checked = 'CHECKED';
-    $apps_html .= '<li><input type="checkbox" id="apps-' . $v_apps['short_code'] . '" name="apps[]" value="1" ' . $checked . '/> 
+    $checked_apps = 'CHECKED';
+    $apps_html .= '<li><input type="checkbox" id="apps-' . $v_apps['short_code'] . '" name="apps[]" value="1" ' . $checked_apps . '/> 
                    <label for="apps-' . $v_apps['short_code'] . '" style="font-size: 1.2rem; background-color: transparent;">' . $v_apps['title'] . '</label></li>';
 }
 
 /* Get List of User Roles */
 $roles_list = $this->api_Admin_Get_Roles();
+
 foreach ($roles_list AS $k_roles => $v_roles) {
-    if(isSet($res_type) && $res_type == $v_roles['role']) { $checked = 'CHECKED'; } else { $checked = null; }
-    $roles_html .= '<li><input type="checkbox" id="role-' . $v_roles['role'] . '" name="role[]" value="1" ' . $checked . '/> 
-                   <label for="role-' . $v_roles['role'] . '" style="font-size: 1.2rem; background-color: transparent;">' . $v_roles['role'] . '</label></li>';
+
+    $roles_html .= '<li><input type="checkbox" id="role-' . $v_roles['role'] . '" name="role[]" value="' . $v_roles['user_role_id'] . '" ';
+
+    if(isSet($edit_id)) {
+        foreach ($user_roles as $ku_roles => $vu_roles) {
+            if ($v_roles['user_role_id'] == $vu_roles['user_role_id']) {
+                $roles_html .= "CHECKED";
+            }
+        }
+    }
+        $roles_html .= '/> 
+        <label for="role-' . $v_roles['role'] . '" style="font-size: 1.2rem; background-color: transparent;">' . $v_roles['role'] . '</label></li>';
+
 }
 
 /* NAVIGATION LOAD */
