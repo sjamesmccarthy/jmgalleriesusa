@@ -2934,7 +2934,7 @@ public function api_Admin_Get_Materials_By_Supplier($id) {
         /* extract Data Array */
         extract($_POST, EXTR_PREFIX_SAME, "dup");
 
-        $this->printp_r($_POST);
+        // $this->printp_r($_POST);
 
         /* Generate PIN hash */
         $hash_str = md5("[/" 
@@ -2966,6 +2966,11 @@ public function api_Admin_Get_Materials_By_Supplier($id) {
             );";
 
         $result = $this->mysqli->query($sql);
+        $new_id = $this->mysqli->insert_id;
+
+        /* Updated Roles & Apps link table */
+        $this->processUserRoles($new_id,'new_user');
+        $this->processUserApps($new_id,'new_user');
 
         if($result == 1) {
             $_SESSION['error'] = '200';
@@ -2980,15 +2985,17 @@ public function api_Admin_Get_Materials_By_Supplier($id) {
 
     }
 
-    private function processUserRoles($id) {
+    private function processUserRoles($id,$state=null) {
 
         /* Updated Roles link table */
         /* delete all from user_role_link, then insert */
 
          /* DELETE ALL user_role_link records for this ID */
-        $sql_d = "DELETE FROM user_role_link WHERE user_id = '" . $id . "'";
-        $result_d = $this->mysqli->query($sql_d);
-        
+        if($state != "new_user") {
+            $sql_d = "DELETE FROM user_role_link WHERE user_id = '" . $id . "'";
+            $result_d = $this->mysqli->query($sql_d);
+        }
+
         foreach ($_POST['role'] as $k_role => $v_role) {
 
              $sql_r = "
@@ -3003,15 +3010,17 @@ public function api_Admin_Get_Materials_By_Supplier($id) {
 
     }
 
-    private function processUserApps($id) {
+    private function processUserApps($id,$state=null) {
 
         /* Updated Roles link table */
         /* delete all from user_role_link, then insert */
 
          /* DELETE ALL user_role_link records for this ID */
-        $sql_d = "DELETE FROM user_apps_link WHERE user_id = '" . $id . "'";
-        $result_d = $this->mysqli->query($sql_d);
-        
+        if ($state != "new_user") {
+            $sql_d = "DELETE FROM user_apps_link WHERE user_id = '" . $id . "'";
+            $result_d = $this->mysqli->query($sql_d);
+        }
+
         foreach ($_POST['apps'] as $k_apps => $v_apps) {
 
              $sql_a = "
@@ -3031,12 +3040,18 @@ public function api_Admin_Get_Materials_By_Supplier($id) {
         /* extract Data Array */
         extract($_POST, EXTR_PREFIX_SAME, "dup");
        
-        /* Generate PIN hash */
-        $hash_str = md5("[/" 
-        . $username
-        . "+"
-        .  strtoupper($pin)
-        . "/p]");
+       if ($pin != '') {
+            /* Generate PIN hash */
+            $hash_str = md5("[/"
+            . $username
+            . "+"
+            .  strtoupper($pin)
+            . "/p]");
+
+            $pin_sql = ",`pin`= '" . $hash_str . "'";
+       } else {
+            $pin_sql = null;
+       }
 
 
         /* Determine Artist or Collector */
@@ -3056,8 +3071,8 @@ public function api_Admin_Get_Materials_By_Supplier($id) {
         {$add_collector_id}
         `type` = '{$type}', 
         `status` = 'ACTIVE', 
-        `username` = '{$username}', 
-        `pin` = '{$hash_str}'
+        `username` = '{$username}' 
+        {$pin_sql}
         WHERE `user_id` = '{$user_id}'
         ";
 

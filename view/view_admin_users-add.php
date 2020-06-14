@@ -8,6 +8,7 @@
 
             <div class="admin-header">
                 <h2><?= $this->page->title ?></h2>
+                <p class="close-x"><i class="fas fa-times-circle"></i></p>
             </div>
 
             <form id="reports-add" action="/studio/api/update/users" method="POST">
@@ -25,7 +26,7 @@
                 <label for="edition-style">TYPE</label>
                 <input class="half-size" maxlength="255" type="text" id="type" name="type" placeholder="TYPE (eg, ARTIST, COLLECTOR)" value="<?= $res_type ?>">
                 <label for="edition-style">ID</label>
-                <input class="half-size" maxlength="255" type="text" id="ac_id" name="ac_id" placeholder="ARTIST OR COLLECTOR ID (eg, 15)" value="<?= $ac_id ?>" disabled />
+                <input class="half-size" maxlength="255" type="text" id="ac_id" name="ac_id" placeholder="ARTIST OR COLLECTOR ID (eg, 15)" value="<?= $ac_id ?>" <?= $disabled ?>/>
             </div>
 
             <div>            
@@ -34,7 +35,7 @@
                 
 
                 <label for="edition-style">MD5</label>
-                <input class="half-size" maxlength="255" type="text" id="pinMD5" name="pinMD5" value="<?= $res_pin ?>" readonly />
+                <input class="half-size" maxlength="255" type="text" id="pinMD5" name="pinMD5" value="<?= $res_pin ?>" disabled />
             </div>
 
             <div class="half-size valign-top">
@@ -69,6 +70,10 @@
 <script>
 jQuery(document).ready(function($){
     
+    $('.close-x').on("click", function() {
+        window.location.href = '/studio/users';
+    });
+
     $("#pin").keypress(function () {
           $(this).addClass('toUpper');
     });

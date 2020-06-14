@@ -11,6 +11,8 @@
             <div class="grid admin-header">
                 <div class="col pb-0">
                     <h2><?= $this->page->title ?></h2>
+                    <p class="close-x"><i class="fas fa-times-circle"></i></p>
+                    
                     <div class="tabs"> 
                         <div class="tab-SQL <?= $active_filter ?>">SQL</div>
                         <div class="tab-RESULT" ><a href="?id=<?= $res_report_id ?>&report=true">RESULT</a></div>
@@ -108,6 +110,10 @@
 
 <script>
 jQuery(document).ready(function($){
+
+    $('.close-x').on("click", function() {
+        window.location.href = '/studio/reports';
+    });
 
     $('.tab-<?= $filter ?>').addClass('active');
 

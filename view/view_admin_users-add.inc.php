@@ -44,6 +44,7 @@ if(isSet($this->routes->URI->queryvals)) {
     // $button_archive_cancel = '<button class="btn-delete mt-32" id="archive" value="ARCHIVE">archive supplier</button>';
     $button_archive_cancel = '<a class="cancel-button" href="/studio/users">cancel</a>';
     $id_field = '<input type="hidden" name="user_id" value="' . $res_user_id . '" />';
+    $disabled = 'disabled';
 } else {
     $formTypeAction = "insert";
     $button_label = "add new user";
@@ -52,6 +53,7 @@ if(isSet($this->routes->URI->queryvals)) {
     $button_archive_cancel = '<a class="cancel-button" href="/studio/users">cancel</a>';
     $user_roles = null;
     $user_apps = null;
+    $res_pin = 'HASH__md5([/username+pin/p])';
 }
 
 /* Get List of Apps */

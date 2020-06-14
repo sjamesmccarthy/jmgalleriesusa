@@ -7,7 +7,8 @@
         <div class="col-9 collections-add--container">
 
             <div class="admin-header">
-            <h2><?= $this->page->title ?></h2>
+                <h2><?= $this->page->title ?></h2>
+                <p class="close-x"><i class="fas fa-times-circle"></i></p>
             </div>
 
 
@@ -62,7 +63,11 @@
 
 <script>
 jQuery(document).ready(function($){
-      
+    
+    $('.close-x').on("click", function() {
+        window.location.href = '/studio/collections';
+    });
+
     $('#sendform').on("click", function() {
         $(":input[required]").each(function () {                     
         var myForm = $('#sendform');

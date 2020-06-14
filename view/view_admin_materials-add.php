@@ -7,7 +7,8 @@
         <div class="col-9 materials-add--container">
 
             <div class="admin-header">
-            <h2><?= $this->page->title ?></h2>
+                <h2><?= $this->page->title ?></h2>
+                <p class="close-x"><i class="fas fa-times-circle"></i></p>
             </div>
 
             <!-- <h1><?= $formTitle ?></h1> -->
@@ -83,7 +84,11 @@
 
 <script>
 jQuery(document).ready(function($){
-      
+
+    $('.close-x').on("click", function() {
+        window.location.href = '/studio/materials';
+    });
+
     $('#sendform').on("click", function() {
         $(":input[required]").each(function () {                     
         var myForm = $('#sendform');

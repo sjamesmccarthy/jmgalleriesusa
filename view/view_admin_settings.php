@@ -12,6 +12,8 @@
                <div class="grid admin-header">
                    <div class="col pb-0">
                     <h2><?= $this->page->title ?></h2>
+                    <p class="close-x"><i class="fas fa-times-circle"></i></p>
+
                         <div class="tabs"> 
                             <div data-name="ABOUT" class="tab-menu tab-ABOUT active"><a href="#about">ABOUT</a></div>
                             <div data-name="SYSTEM" class="tab-menu tab-SYSTEM"><a href="#system">SYSTEM</a></div>
@@ -411,6 +413,10 @@
 
 <script>
 jQuery(document).ready(function($){
+
+    $('.close-x').on("click", function() {
+        window.location.href = '/studio/manage';
+    });
 
     $('.tab-menu').on("click", function() {
         $('.tab-menu').removeClass("active");
