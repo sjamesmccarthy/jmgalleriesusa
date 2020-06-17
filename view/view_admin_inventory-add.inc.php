@@ -15,22 +15,6 @@ if(count($this->data->routePathQuery) > 2) {
         $params[] = explode('=', $val); // fastest but not best way to handle this
     }
 
-    /* Array
-    (
-        [0] => ref=2
-        [1] => loc=STUDIO
-        [2] => title=WANDERING
-        [3] => col=19
-        [4] => estyle=tinyviews
-        [5] => psize=12x18
-        [6] => fr=PRINT-ONLY
-        [7] => lp=120
-        [8] => val=120
-        [9] => neg=MDT25OT_WANDERING
-        [10] => acq=2020-05-06%2007:28:10
-    ) */
-    // $this->printp_r($this->data->routePathQuery);
-
     $title = $params[2][1];
     if($params[4][1] == 'tinyviews') {
         $edition_style = "OPEN";

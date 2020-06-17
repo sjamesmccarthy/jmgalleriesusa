@@ -23,6 +23,8 @@ $version = $this->config->package_version;
 $path = explode('/', $this->routes->URI->path);
 $path = $path[2];
 
+/* Fetch list of apps by user */
+
 if(is_null($this->nav_label)) { $this->nav_label = "Adding Photo"; }
 
 /* GENERATE HTML BLOCK */

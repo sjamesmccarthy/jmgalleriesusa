@@ -1106,32 +1106,20 @@ class Core_Api
         if( $this->checkDBConnection(__FUNCTION__) == true) {
 
             $sql = "SELECT
-                SM.supplier_materials_id,
+            	SM.supplier_materials_id,
                 SM.manual_entry,
-                S.supplier_id,
-                S.company as supplier,
-                SM.material_type,
+            	SM.supplier_id,
+            	SM.material_type,
+            	SM.material as material_desc,
                 SM.cost,
-                SM.quantity as quantity_bought,
-                ACS.usage as material_used,
-                SM.unit_type,
-                SM.material as material_desc,
-                (CASE 
-                    WHEN SM.unit_type = 'hourly' THEN ACS.usage
-                    ELSE (SM.quantity - ACS.usage)
-                END) AS calcd_inventory,
-                (CASE 
-                    WHEN SM.unit_type = 'each' THEN SM.cost
-                    WHEN SM.unit_type = 'hourly' THEN SM.cost * ACS.usage
-                    ELSE (SM.cost/SM.quantity)
-                END) AS calcd_cost
+            	SM.quantity as quantity_bought,
+            	SM.unit_type,
+            	S.company as supplier
             FROM
-                art AS A
-                INNER JOIN art_costs_supplier AS ACS ON A.art_id = ACS.art_id
-                RIGHT OUTER JOIN supplier_materials AS SM ON ACS.supplier_materials_id = SM.supplier_materials_id
-                LEFT OUTER JOIN supplier AS S ON SM.supplier_id = S.supplier_id
-                WHERE S.supplier_id NOT IN (0)
-                ORDER BY SM.material_type ASC
+            	supplier_materials AS SM
+            	LEFT JOIN supplier AS S ON S.supplier_id = SM.supplier_id
+            where SM.manual_entry = 'false'
+            ORDER BY SM.material_type ASC
             ";
 
             $result = $this->mysqli->query($sql);
@@ -1216,7 +1204,7 @@ class Core_Api
                     LEFT OUTER JOIN supplier AS S ON SM.supplier_id = S.supplier_id
                 WHERE
                     A.art_id ='" . $art_id . "'";
-                
+
                     $result = $this->mysqli->query($sql);
 
                     if ($result->num_rows > 0) {

@@ -5,9 +5,16 @@
 
         <h1>RELEASE NOTES</h1>
         <p class="mb-16">current release version <?= $this->config->package_version ?><br />
-        Friday, June 12, 2020</p>
+        Tuesday, June 16, 2020</p>
        
-        <!-- <p class="pt-16">v1.3.8<br />Jun 12, 2020</p> -->
+        <!-- <p class="pt-16">v1.3.9<br />Jun 16, 2020</p> -->
+        	<ul>
+            <li>added: user roles to admin : control</li>
+            <li>added: top navigation state indicators.</li>
+        	</ul>
+        </p>
+
+        <p class="pt-16">v1.3.8<br />Jun 12, 2020</p>
         	<ul>
             <li>added: user roles to admin : control</li>
             <li>added: top navigation state indicators.</li>
