@@ -71,7 +71,12 @@
     justify-content: space-between;
     margin: 1rem auto;
 
-    input[type="tel"] {
+    .mask {
+        color: $color-black;
+        background-color: $color-black !important;
+
+    }
+    input {
         border: none;
         width: 50px;
         height: 50px; 

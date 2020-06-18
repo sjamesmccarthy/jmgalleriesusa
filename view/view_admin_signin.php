@@ -51,12 +51,16 @@
 <script>
 jQuery(document).ready(function($){
     
-    $(".form_pincode input").keyup(function () {
-        if (this.value.length == this.maxLength) {
-          console.log(this.name);
-          $(this).addClass('toUpper');
+    $(".form_pincode input").on("click",function() {
+          $(this).val('');
+          $(this).removeClass("mask");
+    });
+
+    $(".form_pincode input").keypress(function () {
+        // if (this.value.length == this.maxLength) {
+          $(this).addClass('mask','toUpper');
           $(this).next('input').focus();
-        }
+        // }
     });
 
     $('#remember_me').on("click", function() {

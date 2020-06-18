@@ -1310,19 +1310,21 @@ form #buysize, form #frame { border: none; border-bottom: 1px solid #e4e4e4; bor
 /* Pin Code */
 .form_pincode { display: flex; width: 100%; flex-wrap: wrap; justify-content: space-between; margin: 1rem auto; }
 
-.form_pincode input[type="tel"] { border: none; width: 50px; height: 50px; background-color: #f1f1f1; text-align: center; }
+.form_pincode .mask { color: #4a4a4a; background-color: #4a4a4a !important; }
 
-.form_pincode input[type="tel"]::-webkit-input-placeholder { text-align: center; }
+.form_pincode input { border: none; width: 50px; height: 50px; background-color: #f1f1f1; text-align: center; }
 
-.form_pincode input[type="tel"]::-moz-placeholder { text-align: center; }
+.form_pincode input::-webkit-input-placeholder { text-align: center; }
 
-.form_pincode input[type="tel"]:-ms-input-placeholder { text-align: center; }
+.form_pincode input::-moz-placeholder { text-align: center; }
 
-.form_pincode input[type="tel"]::-ms-input-placeholder { text-align: center; }
+.form_pincode input:-ms-input-placeholder { text-align: center; }
 
-.form_pincode input[type="tel"]::placeholder { text-align: center; }
+.form_pincode input::-ms-input-placeholder { text-align: center; }
 
-.form_pincode input[type="tel"]:hover { background-color: rgba(37, 116, 169, 0.1); }
+.form_pincode input::placeholder { text-align: center; }
+
+.form_pincode input:hover { background-color: rgba(37, 116, 169, 0.1); }
 
 .form_pincode .toUpper { text-transform: uppercase; }
 
