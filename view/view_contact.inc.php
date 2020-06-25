@@ -19,7 +19,12 @@ if(isSet($this->data->routePathQuery[0])) {
         $query_str = explode("=", $value);
         ${$query_str[0]} = urldecode($query_str[1]);
     }    
-   
+  
+
+        if(isSet($email)) {
+            $collector_address = $this->api_Admin_Get_Collector('null',$email);
+            extract($collector_address, EXTR_PREFIX_SAME, "dup");
+        }
 
         if(isSet($frame) AND $edition == 'tinyviews') {
             // if($frame != "PRINT-ONLY" && $cost <= 80) { $cost = $cost + 20;  $fc=20; }
@@ -58,12 +63,12 @@ if(isSet($this->data->routePathQuery[0])) {
         '<input type="hidden" name="framing" value ="' . $frame . '" />' .
         '<input type="hidden" name="catalog_id" value ="' . $catalog_no . '" />' .
         '<input type="hidden" name="invoice_no" value ="' . time() . '-' . $catalog_no . '" />' .
-        '<p><input class="half-size" type="text" name="phone" placeholder="PHONE (eg, 951-708-1831)" required /><p>' .
-        '<p><input class="half-size" type="text" name="address" placeholder="SHIPPING ADDRESS (eg, 123 Main St.)" required />' .
-        '<input class="half-size" type="text" name="address_other" placeholder="SHIPPING ADDRESS SECOND LINE (eg, Suite, Apt)" /></p>' .
-        '<p><input class="half-size" type="text" name="city" placeholder="CITY (eg, Las Vegas, Dallas, Barstow)" required/>' .
-        '<input class="half-size" type="text" name="state" placeholder="State (eg, NV, CA, NY, TX)" required/></p>' .
-        '<p><input class="half-size" type="text" name="postalcode" placeholder="Postal Code (eg, 95474)" required/><p>';
+        '<p><input class="half-size" type="text" name="phone" placeholder="PHONE (eg, 951-708-1831)" value="' . $phone . '"required /><p>' .
+        '<p><input class="half-size" type="text" name="address" placeholder="SHIPPING ADDRESS (eg, 123 Main St.)" value="' . $address . '" $required />' .
+        '<input class="half-size" type="text" name="address_other" placeholder="SHIPPING ADDRESS SECOND LINE (eg, Suite, Apt)" value="' . $address_exxtra . '"/></p>' .
+        '<p><input class="half-size" type="text" name="city" placeholder="CITY (eg, Las Vegas, Dallas, Barstow)" value="' . $city . '"required/>' .
+        '<input class="half-size" type="text" name="state" placeholder="State (eg, NV, CA, NY, TX)" value="' . $state . '"required/></p>' .
+        '<p><input class="half-size" type="text" name="postalcode" placeholder="Postal Code (eg, 95474)" value="' . $postalcode . '"required/><p>';
 
 
     $button_label = "PLACE YOUR ORDER";

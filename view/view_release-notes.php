@@ -4,13 +4,26 @@
         <div class="col-11">
 
         <h1>RELEASE NOTES</h1>
-        <p class="mb-16">current release version <?= $this->config->package_version ?><br />
-        Tuesday, June 16, 2020</p>
-       
-        <!-- <p class="pt-16">v1.3.9<br />Jun 16, 2020</p> -->
+        <!-- <p class="mb-16">current release version <?= $this->config->package_version ?><br />
+        Thursday, June 25, 2020</p> -->
+ 
+
+        <p class="pt-16">v1.4.0<br />Jun 25, 2020</p>
+        	<ul>
+            <li>updated: navigation is now automated based on app permissions by user.</li>
+            <li>updated: routing of collections is now automated by admin : control collections table.</li>
+            <li>updated: collector address now auto-filled when ordering special edition through collector portal.</li>
+            <li>bugfix: iPad OS javascript onKeypress fixed for admin sign-in form.</li>
+            <li>updated: admin/collector sign-in pass-code now masked on keypress.</li>
+            
+        	</ul>
+        </p>
+
+        <p class="pt-16">v1.3.9<br />Jun 16, 2020</p>
         	<ul>
             <li>added: user roles to admin : control</li>
             <li>added: top navigation state indicators.</li>
+            <li>added: pin masked when signing in as collector or artist.</li>
         	</ul>
         </p>
 

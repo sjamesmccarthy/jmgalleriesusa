@@ -74,6 +74,8 @@ class Core_Site extends Core_Api
 
     public function getRoute() {
         
+        $pass_error_page = false;
+
         /* Parse the URI */
         $this->routes->URI = (object) parse_url($_SERVER['REQUEST_URI']);
         $this->routes->URI->url = "//{$_SERVER['HTTP_HOST']}{$_SERVER['REQUEST_URI']}";
@@ -85,8 +87,7 @@ class Core_Site extends Core_Api
             }
 
             /* Match the [path] of URI to the routes.json */
-            if(property_exists($this->routes, $this->routes->URI->path) == true)
-            {
+            if (property_exists($this->routes, $this->routes->URI->path) == true) {
                 /* Direct route match URI === route path */
                 $this->routes->URI->match = 'true';
                 $this->page->title = $this->routes->{$this->routes->URI->path}['title'];
@@ -95,21 +96,44 @@ class Core_Site extends Core_Api
                 $this->routes->URI->page = $this->routes->{$this->routes->URI->path}['page'];
 
                 /* Check if Template type is redirect */
-                if( $this->routes->{$this->routes->URI->path}['template'] == "redirect" ) {
+                if ($this->routes->{$this->routes->URI->path}['template'] == "redirect") {
                     header('location:' . $this->routes->{$this->routes->URI->path}['page']);
                 }
 
                 /* Check if Template type is script */
-                if( $this->routes->{$this->routes->URI->path}['template'] == "script" ) {
+                if ($this->routes->{$this->routes->URI->path}['template'] == "script") {
                     // header('location:' . $this->routes->{$this->routes->URI->path}['page']);
                     
-                    if(file_exists( $_SERVER["DOCUMENT_ROOT"] . "/view/" . $this->routes->{$this->routes->URI->path}['page'] )) {
+                    if (file_exists($_SERVER["DOCUMENT_ROOT"] . "/view/" . $this->routes->{$this->routes->URI->path}['page'])) {
                         include_once($_SERVER["DOCUMENT_ROOT"] . "/view/" . $this->routes->{$this->routes->URI->path}['page']);
                     } else {
-                        $this->errors['script'] = 'Script Not Found : ' . __FILE__ . ' : ' . __FUNCTION__ . ' : ' . __LINE__ . ' : ' . $this->routes->{$this->routes->URI->path}['page']; 
+                        $this->errors['script'] = 'Script Not Found : ' . __FILE__ . ' : ' . __FUNCTION__ . ' : ' . __LINE__ . ' : ' . $this->routes->{$this->routes->URI->path}['page'];
                     }
                 }
+            
+            /* Add else if which checks for 1 wildcard string and then checks database for that collection */
+            /* Problem: this could catch single path URIs and send 404 */
+            } else if (preg_match_all("/^\/[^\/]+\/$/m", $this->routes->URI->path . '/') == true) {
                 
+                /* splitting the URI path by forward slash */
+                $URIx = explode('/', $this->routes->URI->path);
+
+                /* API look up of collection, if found load, else $pass_error_page = true */
+                $check_collection = $this->api_Admin_Get_LookUpCollectionByName($URIx[1]);
+
+                if (count($check_collection) == 1) {
+                    /* Mutating the routes URI so the regEx can be found in the routes JSON object */
+                    $this->routes->URI->path = "[$1]";
+                    $this->routes->URI->template = $this->routes->{'[$1]'}['template'];
+                    $this->routes->URI->page = $this->routes->{'[$1]'}['page'];
+                
+                    /* Adding data to the page index of the data object that is accessible in the templates and pages */
+                    $this->page->title = ucwords(str_ireplace("-", " ", $URIx[2]));
+                    $this->page->catalog_path = '/' . $URIx[1];
+                    // $this->page->photo = $URIx[2];
+                    $this->page->photo_path = $URIx[2];
+                } else { $pass_error_page = true; }
+
             } else if (preg_match_all("/^\/[^\/]+\/[^\/]+\/$/m", $this->routes->URI->path . '/') == true) {
 
                 /* splitting the URI path by forward slash */
@@ -127,8 +151,11 @@ class Core_Site extends Core_Api
                 $this->page->photo_path = $URIx[2];
             
             } else {
+                $pass_error_page = true;
+            }
 
-                 /* splitting the URI path by forward slash */
+            if($pass_error_page == true) {
+                  /* splitting the URI path by forward slash */
                 $URIx = explode('/', $this->routes->URI->path);
 
                 /* Error 404, page URI not found. Simply rewrite the URI as /404 */
@@ -137,7 +164,6 @@ class Core_Site extends Core_Api
                 $this->routes->URI->requested_path = $URIx;
                 $this->page->catalog_path = '404';
                 /* Log error */
-                
             }
 
             /* Parse query string */

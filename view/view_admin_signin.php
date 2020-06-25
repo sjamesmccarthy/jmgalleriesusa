@@ -56,11 +56,12 @@ jQuery(document).ready(function($){
           $(this).removeClass("mask");
     });
 
-    $(".form_pincode input").keypress(function () {
-        // if (this.value.length == this.maxLength) {
+    $(".form_pincode input").on("keyup", function () {
+        if (this.value.length == this.maxLength) {
+          console.log(event.which);
           $(this).addClass('mask','toUpper');
-          $(this).next('input').focus();
-        // }
+          $(this).next('.form_pincode input').focus();
+        }
     });
 
     $('#remember_me').on("click", function() {

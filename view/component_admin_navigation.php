@@ -18,12 +18,33 @@ $shortdate = explode("-", $membersince);
 $membersinceyear = $shortdate[0];
 $version = $this->config->package_version;
 
-/* Logic for determing location */
+/* Logic for determining location */
 // $this->routes->URI->path /studio/catalog, $path[2]
 $path = explode('/', $this->routes->URI->path);
 $path = $path[2];
 
 /* Fetch list of apps by user */
+$apps_list = $this->api_Admin_Get_Nav_AppsByUser($user_id);
+// $this->printp_r($apps_list);
+
+foreach ($apps_list as $k_aps => $v_apps) {
+    $nav_html .= '
+        <div class="toolbox">
+            <ul class="' . $v_apps['short_code'] . ' ' . $v_apps['short_code'] . '-add">
+            <li class="' . $v_apps['short_code'] . ' ' . $v_apps['short_code'] . '-add"><a href="/studio/' . $v_apps['short_code'] . '">'. $v_apps['title'] . '</a>';
+            
+    if($v_apps['add_new'] == 1) {
+        $nav_html .= '
+                <p class="add-icon-nav"><a href="/studio/' . $v_apps['short_code'] . '-add"><i class="fas fa-plus-circle"></i></a></p>
+        ';
+    }
+
+    $nav_html .= '
+            </li>            
+            </ul>
+        </div>';
+
+}
 
 if(is_null($this->nav_label)) { $this->nav_label = "Adding Photo"; }
 
@@ -56,7 +77,7 @@ jQuery(document).ready(function($){
 
             </div>
 
-            <div class="toolbox">
+            <!-- <div class="toolbox">
                 <ul class="catalog catalog-add">
                 <li class="catalog catalog-add"><a href="/studio/catalog">Web Catalog</a><p class="add-icon-nav"><a href="/studio/catalog-add"><i class="fas fa-plus-circle"></i></a></p></li>
                 </ul>
@@ -114,7 +135,11 @@ jQuery(document).ready(function($){
                 <ul class="settings settings-add">
                 <li class="settings settings-add"><a href="/studio/settings">Settings</a><p class="tiny">$version</p><p class="add-icon-nav"><i class="fas fa-lock disabled"></i></p></li>
                 </ul>
-            </div>
+            </div> 
+
+            <hr /> -->
+
+            $nav_html
 
             <div class="toolbox">
                 <ul>

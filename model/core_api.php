@@ -1250,6 +1250,30 @@ class Core_Api
 
     }
 
+    public function api_Admin_Get_LookUpCollectionByName($path) {
+
+        /* Executes SQL and then assigns object to passed var */
+        if( $this->checkDBConnection(__FUNCTION__) == true) {
+
+            $sql = "SELECT title, path from catalog_collections where path='" . $path . "' AND status='active'";
+
+            $result = $this->mysqli->query($sql);
+
+            if ($result->num_rows > 0) {
+            
+                while($row = $result->fetch_assoc())
+		        {
+		            $data[] = $row;
+		        }
+                
+            } 
+            
+        }
+
+        return($data);
+
+    }
+
     public function api_Admin_Get_Locations($all=null) {
 
         /* Executes SQL and then assigns object to passed var */
@@ -1298,7 +1322,13 @@ class Core_Api
 
     }
 
-    public function api_Admin_Get_Collector($id) {
+    public function api_Admin_Get_Collector($id,$email=null) {
+
+        if($id != "null") {
+            $where_clause = "C.collector_id ='" . $id . "'";
+        } else {
+            $where_clause = "C.email ='" . $email . "'";
+        }
 
         /* Executes SQL and then assigns object to passed var */
         if( $this->checkDBConnection(__FUNCTION__) == true) {
@@ -1307,9 +1337,8 @@ class Core_Api
                 C.*
             FROM
                 collector AS C
-            WHERE
-                C.collector_id ='" . $id . "'";
-        
+            WHERE " . $where_clause;
+                
             $result = $this->mysqli->query($sql);
 
             if ($result->num_rows > 0) {
@@ -2899,6 +2928,43 @@ public function api_Admin_Get_Materials_By_Supplier($id) {
             FROM
             	product_order AS po
             	INNER JOIN product_customer AS pc ON pc.product_customer_id = po.product_customer_id";
+        
+            $result = $this->mysqli->query($sql);
+
+            if ($result->num_rows > 0) {
+            
+                while($row = $result->fetch_assoc())
+		        {
+		            $data[] = $row;
+		        }
+                
+            } 
+            
+        }
+
+        return($data);
+
+    }
+
+    public function api_Admin_Get_Nav_AppsByUser($id) {
+
+        /* Executes SQL and then assigns object to passed var */
+        if( $this->checkDBConnection(__FUNCTION__) == true) {
+
+            $sql = "
+            SELECT
+            	ua.user_apps_id,
+                ua.user_role_id,
+            	ua.title,
+            	ua.path,
+                ua.add_new,
+                ua.short_code
+            FROM
+            	user_apps AS ua
+            	INNER JOIN user_apps_link AS uap ON ua.user_apps_id = uap.user_apps_id
+            WHERE
+            	uap.user_id = '1'
+            	AND ua.user_role_id != '" . $id . "'";
         
             $result = $this->mysqli->query($sql);
 
