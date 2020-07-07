@@ -128,34 +128,61 @@ class Core_Site extends Core_Api
                     $this->routes->URI->page = $this->routes->{'[$1]'}['page'];
                 
                     /* Adding data to the page index of the data object that is accessible in the templates and pages */
-                    $this->page->title = ucwords(str_ireplace("-", " ", $URIx[2]));
+                    $this->page->title = ucwords(str_ireplace("-", " ", $URIx[1]));
                     $this->page->catalog_path = '/' . $URIx[1];
                     // $this->page->photo = $URIx[2];
                     $this->page->photo_path = $URIx[2];
-                } else { $pass_error_page = true; }
+                } 
+                else { $pass_error_page = true; }
 
+            /* Two wild card paths in URI */
             } else if (preg_match_all("/^\/[^\/]+\/[^\/]+\/$/m", $this->routes->URI->path . '/') == true) {
 
                 /* splitting the URI path by forward slash */
                 $URIx = explode('/', $this->routes->URI->path);
 
-                /* Mutating the routes URI so the regEx can be found in the routes JSON object */
-                $this->routes->URI->path = "[$1]/[$2]";
-                $this->routes->URI->template = $this->routes->{'[$1]/[$2]'}['template'];
-                $this->routes->URI->page = $this->routes->{'[$1]/[$2]'}['page'];
+                if($URIx[1] == "polarized") {
+
+                    // API look up of post title
+                    $result = $this->api_Admin_Get_Fieldnotes_Item(null,$URIx[2]);
+
+                    if(count($result) > 0) {
+                         /* Mutating the routes URI so the regEx can be found in the routes JSON object */
+                        $this->routes->URI->path = "/polarized/[$1]";
+                        $this->routes->URI->template = $this->routes->{'/polarized/[$1]'}['template'];
+                        $this->routes->URI->page = $this->routes->{'/polarized/[$1]'}['page'];
+
+                        /* Adding data to the page index of the data object that is accessible in the templates and pages */
+                        $this->page->title = ucwords(str_ireplace("-", " ", $URIx[2]));
+                        $this->page->catalog_path = '/' . $URIx[1] . '/' . $URIx[2];
+                        $this->page->image_path = $result['image'];
+                        $this->page->fieldnotes_id = $result['fieldnotes_id'];
+
+                    } else {
+                        $pass_error_page = true;
+                    }
+                    
+                } else {
+
+                    /* Mutating the routes URI so the regEx can be found in the routes JSON object */
+                    $this->routes->URI->path = "[$1]/[$2]";
+                    $this->routes->URI->template = $this->routes->{'[$1]/[$2]'}['template'];
+                    $this->routes->URI->page = $this->routes->{'[$1]/[$2]'}['page'];
             
-                /* Adding data to the page index of the data object that is accessible in the templates and pages */
-                $this->page->title = ucwords(str_ireplace("-", " ", $URIx[2]));
-                $this->page->catalog_path = '/' . $URIx[1];
-                // $this->page->photo = $URIx[2];
-                $this->page->photo_path = $URIx[2];
-            
+                    /* Adding data to the page index of the data object that is accessible in the templates and pages */
+                    $this->page->title = ucwords(str_ireplace("-", " ", $URIx[2]));
+                    $this->page->catalog_path = '/' . $URIx[1];
+                    // $this->page->photo = $URIx[2];
+                    $this->page->photo_path = $URIx[2];
+                }
+
             } else {
                 $pass_error_page = true;
             }
 
             if($pass_error_page == true) {
-                  /* splitting the URI path by forward slash */
+                
+                /* splitting the URI path by forward slash */
                 $URIx = explode('/', $this->routes->URI->path);
 
                 /* Error 404, page URI not found. Simply rewrite the URI as /404 */
@@ -164,17 +191,13 @@ class Core_Site extends Core_Api
                 $this->routes->URI->requested_path = $URIx;
                 $this->page->catalog_path = '404';
                 /* Log error */
-            }
+            } 
 
             /* Parse query string */
             if(isSet($this->routes->URI->query))
             {
-                // $this->printp_r($this->routes->URI->query);
                 $this->data->routePathQuery = explode('&', $this->routes->URI->query);
-                // $this->printp_r($this->data->routePathQuery);
                 $this->routes->URI->queryvals = explode('=', $this->routes->URI->query);
-
-
             } else {
                 $this->routes->URI->query = 'false';
             }
@@ -185,14 +208,16 @@ class Core_Site extends Core_Api
         if( $this->routes->{$this->routes->URI->path}['component'] == "true") { $this->routes->URI->component= $_SERVER["DOCUMENT_ROOT"] . "/view/" . $this->config->prefix_page . $this->routes->{$this->routes->URI->path}['page'] . ".inc.php"; }
         $this->routes->URI->template = $_SERVER["DOCUMENT_ROOT"] . "/view/" . $this->config->prefix_template . $this->routes->{$this->routes->URI->path}['template'] . ".php";
         $this->routes->URI->view = $_SERVER["DOCUMENT_ROOT"] . "/view/" . $this->config->prefix_page . $this->routes->{$this->routes->URI->path}['page'] . ".php";
+
     }
 
     public function render() {
 
         /* Assign variables to be used in page content */
-        foreach($this->page as $k => $v) {
-            $this->$k = $v;
-        }
+        /* when commented primarily breaks navigation */
+        // foreach($this->page as $k => $v) {
+            // $this->$k = $v;
+        // }
 
         /* start buffering the page */
         ob_start();
@@ -200,7 +225,8 @@ class Core_Site extends Core_Api
         /* include the template page specifed in the routes config if the template file is not valid then push to Route 404 */
         if(file_exists($this->routes->URI->template)) {
             include($this->routes->URI->template);
-        } else { 
+        } 
+        else { 
             $this->errors['component'] = 'Template Not Found : ' . __FILE__ . ' : ' . __FUNCTION__ . ' : ' . __LINE__ . ' : ' . $this->routes->URI->template; 
         }
 
@@ -219,22 +245,24 @@ class Core_Site extends Core_Api
 
     public function view($view=null) {
 
-
         /* include the template page specifed in the routes config */
         if(file_exists($this->routes->URI->view)) {
             
             /* Check to see if a component file for this view is enabled and then if exists */
             if($this->routes->{$this->routes->URI->path}['component'] == "true") {
-                if(file_exists($this->routes->URI->component)) { include($this->routes->URI->component); }
-                else { 
+
+                if(file_exists($this->routes->URI->component)) { 
+                    include($this->routes->URI->component);
+                } else { 
                     $this->errors['component'] = 'Component Not Found : ' . __FILE__ . ' : ' . __FUNCTION__ . ' : ' . __LINE__ . ' : ' . $this->routes->URI->component; 
                 }
+
             } 
             
             /* Assign variables to be used in page content */
-            foreach($this->page as $k => $v) {
-                $this->$k = $v;
-            }
+            // foreach($this->page as $k => $v) {
+            //     $this->$k = $v;
+            // }
 
             /* This file needs to load after the .inc file so inherits any data attributes */
             include($this->routes->URI->view);
@@ -243,31 +271,7 @@ class Core_Site extends Core_Api
             $this->errors['component'] = 'View Not Found : ' . __FILE__ . ' : ' . __FUNCTION__ . ' : ' . __LINE__ . ' : ' . $this->routes->URI->view; 
 
         }
-    }
 
-    public function printp_r($value) {
-
-        /* Makes a print_r dump a little easier on the brain */
-        echo "<pre style='text-align: left'>"; print_r($value); echo "</pre>";
-    }
-
-    public function debugInfo() {
-
-        if( $this->routes->URI->query == "debug=false" ) {
-            /* Only used for override of default state if set to true */
-             echo "<div style='padding: 40px; background-color: rgba(255, 249, 222, 1);'><p>DEBUG --forced-false</p></div>";
-
-        } else {
-            /* Outputs some objects and arrays for debugging */
-            if($this->config_env->env[$this->env]['debug'] == "true" || $this->routes->URI->query == "debug=true") {
-            echo "<div style='position: relative; padding: 40px; background-color: rgba(255, 249, 222, 1);'><p>DEBUG --config-true</p>";
-            echo "<hr />";
-            $this->printp_r($this);
-            // echo "<hr />";
-            // print phpinfo();
-            echo "</div>";
-            }
-        }
     }
 
     public function getJSON($file, $output_var) {
@@ -375,6 +379,62 @@ class Core_Site extends Core_Api
             $this->log(array("key" => "core", "value" => "uploadFile() SCRIPT FAILURE", "type" => "failure"));
         }
 
+    }
+
+    public function console($val, $exit=0, $file=__FILE__, $method=__FUNCTION__, $line=__LINE__) {
+
+        if ($this->config_env->env[$this->env]['show_console'] == "true") {
+            echo "<div style='position: relative; padding: 10px; background-color: rgba(0,0,0, .1);'>";
+                if (gettype($val) == "string") {
+                    echo "<p>>>>>> " . $line . " | ". $val . "<br ><span class='tiny'>" . $file . "</span></p>";
+                }
+
+                if (gettype($val) == "array" ||
+                gettype($val) == "object") {
+                    echo ">>>>> " . $line . " | typeof." . gettype($val) . "<br /><span class='tiny'>" . $file . "</span><pre style='text-align: left'>";
+                    print_r($val);
+                    echo "</pre>";
+                }
+            echo "</div>";
+
+            if ($exit == 1) {
+                exit;
+            }
+        }
+
+    }
+
+    public function printp_r($value) {
+
+        /* Makes a print_r dump a little easier on the brain */
+        // echo "<pre style='text-align: left'>"; print_r($value); echo "</pre>";
+        echo "<p style='background-color: red; color: #FFF;'>>>>>>> WARNING: " .  __FUNCTION__ . " IS DEPRECATED AS OF v1.4.1 PLEASE USE THE NEW console(msg, true) METHOD</p>";
+    }
+
+    public function debugInfo() {
+
+        /* Outputs some objects and arrays for debugging */
+        if ($this->routes->URI->query == "debug=false") {
+            return 0;
+        } 
+        else if($this->config_env->env[$this->env]['debug'] == "true" || $this->routes->URI->query == "debug=true") {
+            
+            $result = get_object_vars($this);
+
+            if($this->config_env->env[$this->env]['exclude_vars'] == "true") {
+                unset($result['routes']);
+                unset($result['config_env']);
+                unset($result['mysqli']);
+            } 
+
+            echo "<div style='background-color: rgba(0,0,0, .1);'><p>>>>>> DEBUG INFO --start --env</p>";
+            echo "<p>>>>>> " . $this->env . " / " . date('l jS \of F Y h:i:s A') . "</p>";
+            $this->console($result);
+            if(isSet($_POST)) { $this->console($_POST); }
+            if(isSet($_SESSION)) { $this->console($_SESSION); }
+            if(isSet($_FILES)) { $this->console($_FILES); }
+            echo "<p>>>>>> DEBUG INFO --exit</p></div>";
+        }
     }
 }
 ?>

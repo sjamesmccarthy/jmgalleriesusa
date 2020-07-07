@@ -1,6 +1,6 @@
 <?php
 
-class Core_Api
+class Core_Api extends Fieldnotes_Api
 {
     public $mysqli;
     
@@ -377,10 +377,6 @@ class Core_Api
         /* Executes SQL and then assigns object to passed var */
         if( $this->checkDBConnection(__FUNCTION__) == true) {
 
-            // $sql = "SELECT * FROM catalog_photo
-            //     WHERE " . 
-            //         $where;
-
             $sql ="SELECT
                     cp.*,
                     cc.title as catalog_title
@@ -401,9 +397,12 @@ class Core_Api
 
             } else {
             
+
+                $_SESSION['404_msg'] = '<p>No Photo Was Found By This Name (e_code: ' . __FUNCTION__ . '[' . $file_name . '])</p>';
+                // $this->log(array("key" => "api", "value" => "Failed Update Catalog Photo " . $_POST['title'] . " (" . $_POST['catalog_photo_id'] . ") " . $sql, "type" => "failure"));
+
                 /* This should go to a custom photo not found page */
                 header('location: /404');
-                $data[] = "No Records Found";
             }	
             
         }
@@ -2521,6 +2520,7 @@ public function api_Admin_Get_Materials_By_Supplier($id) {
         return($data);
 
     }
+
     public function api_Admin_Get_Reports() {
 
         /* Executes SQL and then assigns object to passed var */
@@ -2964,7 +2964,9 @@ public function api_Admin_Get_Materials_By_Supplier($id) {
             	INNER JOIN user_apps_link AS uap ON ua.user_apps_id = uap.user_apps_id
             WHERE
             	uap.user_id = '1'
-            	AND ua.user_role_id != '" . $id . "'";
+            	AND ua.user_role_id != '" . $id . "'
+                AND ua.status = '1'
+                ORDER BY ua.title ASC";
         
             $result = $this->mysqli->query($sql);
 
@@ -3166,16 +3168,6 @@ public function api_Admin_Get_Materials_By_Supplier($id) {
 
 public function api_Admin_Update_Settings() {
 
-        $form_data = json_encode($_POST);
-
-        if ($fp = fopen($_SERVER["DOCUMENT_ROOT"] . '/config.json', 'w')) {
-            fwrite($fp, $form_data);
-            fclose($fp);
-            $result=1;
-        } else {
-            $result=0;
-        }
-
         foreach($_POST['notice_data'] as $k => $v) {
 
            $notice_array[$v] = array("title"=>"{$_POST['notice_key_title'][$k]}", "content"=>"{$_POST['notice_key_content'][$k]}", "type"=>"{$_POST['notice_key_type'][$k]}", "timeout"=>"{$_POST['notice_key_timeout'][$k]}", "state"=>"{$_POST['notice_key_state'][$k]}");
@@ -3189,6 +3181,23 @@ public function api_Admin_Update_Settings() {
             $result=0;
         }
         
+        unset($_POST['notice_data']);
+        unset($_POST['notice_key_title']);
+        unset($_POST['notice_key_content']);
+        unset($_POST['notice_key_type']);
+        unset($_POST['notice_key_timeout']);
+        unset($_POST['notice_key_state']);
+
+        $form_data = json_encode($_POST);
+
+        if ($fp = fopen($_SERVER["DOCUMENT_ROOT"] . '/config.json', 'w')) {
+            fwrite($fp, $form_data);
+            fclose($fp);
+            $result=1;
+        } else {
+            $result=0;
+        }
+
         if($result == 1) {
             $_SESSION['error'] = '200';
             $_SESSION['notify_msg'] = $_POST['site_name'];

@@ -28,7 +28,8 @@
                 </div>
                 
                 <div class="code-block">
-                    <?php $this->printp_r($code_block); ?>
+                    <?php $this->console($code_block,__FILE__,null,__LINE__,0); ?>
+                    <?php $this->console($notices_json,__FILE__,null,__LINE__,0); ?>
                 </div>
 
                 <form id="settings-upd" action="/studio/api/update/settings" method="POST" enctype="multipart/form-data">

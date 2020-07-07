@@ -2,6 +2,19 @@
 
     .signin--area {
         max-width: 35%;
+
+         @media (max-width: 64em) and (orientation: portrait),
+            (max-width: 80em) and (orientation: portrait) 
+            {
+               max-width:100%;
+            }
+
+        @media (max-width: 64em) and (orientation: landscape),
+            (max-width: 80em) and (orientation: landscape),
+            (min-device-width: 768px) and (orientation: portrait)
+                {
+                    max-width: 50%;
+                }
     }
     
     // label {
@@ -17,7 +30,7 @@
     // }
 
     #username {
-        text-transform: lowercase;
+        // text-transform: lowercase;
     }
     
     .make-wide {

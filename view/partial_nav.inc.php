@@ -1,9 +1,10 @@
 <?php
 
-    $nav_pages = array('all', 'polarized', 'moments', 'about');
-    $current_page = ltrim($this->catalog_path, '/');
 
-    if($this->catalog_path == "/") {
+    $nav_pages = array('all', 'polarized', 'moments', 'about');
+    $current_page = ltrim($this->page->catalog_path, '/');
+
+    if($this->page->catalog_path == "/") {
         $addToClass = '-home';
     } else {
         $addToClass = null;

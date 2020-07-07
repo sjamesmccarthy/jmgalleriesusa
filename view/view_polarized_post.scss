@@ -1,0 +1,76 @@
+#polarized {
+
+    padding: 0 32px;
+
+    .__container {
+
+        .__container--toc {
+            font-size: 2rem;
+            margin-top: -2.5rem;
+        }
+
+        .__container--bottom_toc {
+            font-size: 2rem;
+        }
+    }
+}
+
+.avatar {
+    width: 24px;
+    margin-top: 10px;
+
+    >img {
+        width: 100%;
+        // border: 1px solid $color-blue;
+        // padding: 5px;
+        border-radius: 100px;
+    }
+}
+
+.byline {
+  width: 100%;
+  font-weight: 400;
+  font-size: .8rem;
+  padding-left: .5rem;
+  margin-top: 4px;
+}
+
+.content__area {
+
+        p {
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+            line-height: 1.6;
+        }
+
+}
+
+.image {
+    position: relative;
+    margin-left: -25%;
+    width: 150%;
+
+        @media (max-width: 64em) and (orientation: portrait),
+        (max-width: 80em) and (orientation: portrait) 
+        {
+           margin-left: 0;
+           width: 100%;
+        }
+
+    img {
+
+        width: 100%;
+        box-shadow: 0px 20px 25px 0px rgba(0, 0, 0, 0.3);
+
+        @media (max-width: 64em) and (orientation: portrait),
+        (max-width: 80em) and (orientation: portrait) 
+        {
+            box-shadow: none;
+        }
+
+    }
+
+    .caption {
+        font-size: .7rem;
+    }
+}

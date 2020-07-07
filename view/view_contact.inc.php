@@ -82,7 +82,7 @@ if(isSet($this->data->routePathQuery[0])) {
 
 } else {
     // Just a regular contact form
-    $formTitle = $this->title;
+    $formTitle = $this->page->title;
     $subTitle = null;
     $subject_PH = "PHOTOGRAPH TITLE OR SUBJECT";
     $message_PH = "IN THE AREA BELOW PLEASE TELL US HOW WE CAN HELP YOU."; 

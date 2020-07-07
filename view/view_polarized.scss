@@ -1,0 +1,130 @@
+#polarized {
+
+    padding: 0 32px;
+    
+    .__container {
+
+        @media (max-width: 64em) and (orientation: portrait),
+            (max-width: 80em) and (orientation: portrait) 
+            {
+               flex-basis: 100%;
+               max-width: 100%;
+            }
+        @media (max-width: 64em) and (orientation: landscape),
+            (max-width: 80em) and (orientation: landscape) 
+            {
+               flex-basis: 100%;
+               max-width: 100%;
+            }
+
+        ul li {
+            list-style: square;
+            margin-left: 1rem;
+        }
+    }
+}
+
+.storycard {
+    margin-bottom: 32px;
+    position: relative;
+    display: flex;
+
+    h4 {
+        font-weight: 600;
+        font-size: 1.2rem;
+
+        a {
+            color: #000;
+
+            &hover {
+                color: lighten(#000,20%);
+            }
+        }
+    }
+          .content--preview {
+            flex: 2;
+              background-color: #FFF;
+              padding-right: 1rem;
+
+              .--tag, .--byline {
+                    font-size: .7rem;
+              }
+
+              .--byline {
+                  font-weight: 400;
+              }
+
+              .--teaser {
+                  padding-top: .5rem;
+                  font-size: .9rem;
+              }
+          }
+
+          .content__image--preview {   
+            flex: 1;
+              padding: 0 0 0 0; 
+              margin: 0;
+              max-height: 150px;
+              width: 235px;
+              border-radius: $border-radius;
+              overflow-y: hidden;
+
+              >img {
+                  width: 100%;
+                  height: auto;
+                  vertical-align: top;
+                  border-radius: $border-radius;
+              }
+          }
+}
+
+.storycard--background {
+    position: relative;
+    margin-bottom: 32px;
+    color: #FFF;
+    border-radius: $border-radius;
+    position: relative;
+    padding: 0;
+    // height: 220px;
+
+    h4 {
+        font-weight: 600;
+        font-size: 1.5rem;
+
+        a {
+            color: #FFF;
+
+            &:hover {
+                color: darken(#FFF, 20%);
+            }
+        }
+    }
+          .content--preview {
+              background-color: rgba(0,0,0,.5);
+              padding: 2% 32px;
+              height: 100%;
+              border-radius: $border-radius;
+
+              .--tag, .--byline {
+                    font-size: .7rem;
+              }
+
+              .--byline {
+                  font-weight: 400;
+              }
+          }
+
+          .content__image--preview {   
+               padding: 0; margin: 0;
+            //    height: 240px;
+               overflow: hidden;
+              border-radius: $border-radius;
+
+              >img {
+                  width: 120%;
+                  overflow: hidden;
+                  vertical-align: top;
+                  border-radius: $border-radius;
+              }
+          }
+}

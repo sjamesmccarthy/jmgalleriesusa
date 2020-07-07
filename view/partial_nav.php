@@ -4,10 +4,10 @@
         <?= $active ?>
 
         <div class="col-2_md-hidden-middle">
-            <p class="center heading" ><a href="/all?filter=tinyviews" class="<?= $all ?>">PRINTS</a><br />Giclée & tinyViews&trade;</p>
+            <p class="center heading" ><a href="/all?filter=tinyviews" class="<?= $all ?>">PRINTS</a><br />GICLÉE & tinyVIEWS&trade;</p>
         </div>
         <div class="col-3_md-4-middle">
-            <p class="center heading"><a target="_blog" href="https://medium.com/jmgalleriesusa" class="<?= $polarized ?>">POLARIZED</a><br />JOURNAL & MAGAZINE</p>
+            <p class="center heading"><a href="/polarized" class="<?= $polarized ?>">POLARIZED</a><br />short FIELD NOTES</p>
         </div>
         <div class="col-2_md-4-middle">
             <p class="topnav-logo"><a href="/"><img src="/view/image/logo_fullsize.png" /></a></p>

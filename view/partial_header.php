@@ -1,24 +1,25 @@
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=0.5, maximum-scale=3.0, minimum-scale=0.5">
+    <meta name="viewport" content="width=device-width, initial-scale=.75, maximum-scale=1.0, minimum-scale=.75">
+
+    <title><?= $title_formatted ?></title>
 
     <meta version="<?= $this->config->package_version ?>" />
     <meta site_name="<?= $this->config->site_name ?>" />
     <meta copyright="<?= $this->config->copyright ?>" />
 
-    <meta property="og:title" content="<?= $this->title ?> at <?= $addSiteName ?> by j.McCarthy" />
+    <meta property="og:title" content="<?= $this->page->title ?> by j.McCarthy" />
     <meta property="og:url" content="https:<?= $this->routes->URI->url ?>" />
     <meta property="og:description" content="Artistic Photography for Fine Art Collectors & Enthusiasts" />
     <meta property="og:type" content="website" />
     <meta property="og:image" content="https://jmgalleries.com<?= $og_image ?>" />
-    <meta property="og:image:alt" content="<?= $this->title ?> at <?= $addSiteName ?> by j.McCarthy" />
+    <meta property="og:image:alt" content="<?= $this->page->title ?> by j.McCarthy" />
 
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:site" content="@jmgalleriesusa" />
     <meta name="twitter:creator" content="@jmgalleriesusa" />
     <meta name="twitter:card" content="summary_large_image" />
 
-    <title><?= $addSiteName ?><?= $this->title ?></title>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,400&display=swap" rel="stylesheet">
 
@@ -39,7 +40,9 @@
     <script src="https://kit.fontawesome.com/27673c99c5.js" crossorigin="anonymous"></script>
     <script type="text/javascript" src="//cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
     <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css"/>
-    
+
+    <!-- <script src="//cdn.ckeditor.com/4.14.1/basic/ckeditor.js"></script> -->
+
     <link rel="stylesheet" href="/view/css/main.css?<?= time(); ?>">
 
 </head>

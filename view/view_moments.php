@@ -146,10 +146,4 @@
             </li>
             </ul>
 </div>
-
-    <!-- <div class="col-3 twitter-feed">
-            <div class="twitter-feed">
-                <a class="twitter-timeline" data-width="300" data-height="2000" data-theme="light" href="https://twitter.com/jmgalleriesusa">Tweets by @jmgalleriesusa</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
-            </div>
-    </div> -->
 </section>

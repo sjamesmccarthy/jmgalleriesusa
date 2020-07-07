@@ -10,8 +10,8 @@
 
 .foot-news {
     @extend .mt-16;
-    border-left: .5px solid #FFF;
-    padding-left: 20px !important;
+    // border-left: .5px solid #FFF;
+    // padding-left: 20px !important;
     padding-bottom: 0 !important;
     margin: auto;
 }
@@ -41,12 +41,13 @@
 
 #mc_embed_signup {
     background-color: none;
+    padding: 0 !important;
 
     input {
         position: relative;
         height: 50px;
         padding: 0 24px;
-        width: 83%;
+        min-width: 86%;
         border: none;
         -webkit-appearance: none;
         -moz-appearance: none;
@@ -77,28 +78,11 @@
             border-radius: 0 $border-radius $border-radius 0;
     }
 
-    /* button {
-        display: inline-block;
-        padding: 10px;
-        // margin-left: 10px;
-        background-color: #2574A9;
-        border: 0;
-        color: #FFF;
-        border-radius: 4px;
-        border: 1px solid #2574A9;
-        min-width: 50px;
-        height: 50px; 
-        
-        &:hover {
-            background-color: #ffffff;
-            cursor: pointer;
-            color: #2574A9;
-        }
-
-    } */
-
 }
 
+form {
+    padding: 0 !important;
+}
 
 .form-icon {
     position: absolute;

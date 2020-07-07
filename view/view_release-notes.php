@@ -8,9 +8,20 @@
         Thursday, June 25, 2020</p> -->
  
 
+        <p class="pt-16"><?= $this->config->package_version ?><br />Jul 06, 2020</p>
+        	<ul>
+            <li>updated: routing engine in core_site, debugging layout &tools</li>
+            <li>updated: how config file handles settings and notices</li>
+            <li>added: new stand-alone page for Polarized</li>
+            <li>added: new admin: control app for Polarized</li>
+            
+            
+        	</ul>
+        </p>
+
         <p class="pt-16">v1.4.0<br />Jun 25, 2020</p>
         	<ul>
-            <li>updated: navigation is now automated based on app permissions by user.</li>
+            <li>updated: admin navigation is now automated based on app permissions by user.</li>
             <li>updated: routing of collections is now automated by admin : control collections table.</li>
             <li>updated: collector address now auto-filled when ordering special edition through collector portal.</li>
             <li>bugfix: iPad OS javascript onKeypress fixed for admin sign-in form.</li>

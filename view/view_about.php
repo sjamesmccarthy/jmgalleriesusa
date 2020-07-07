@@ -19,10 +19,7 @@
 
                             <p class="pt-8 ml-16">
                                 <a target="_new" class="mr-16" href="http://twitter.com/jmgalleriesusa"><i class="fab fa-twitter"></a></i> 
-                                <a target="_new" class="mr-16" href="http://instagram.com/jmgalleriesusa"><i class="fab fa-instagram"></a></i> 
                                 <a target="_new" class="mr-16" href="http://linkedin.com/company/jmgalleriesusa"><i class="fab fa-linkedin"></a></i>
-                                <a target="_new" class="mr-16" href="http://facebook.com/jmgalleriesusa"><i class="fab fa-facebook"></a></i>
-                                <a target="_new" class="mr-16" href="http://jmccarthyusa.com"><i class="fab fa-github"></a></i>
                             </p>
                     </div>
 
@@ -147,10 +144,7 @@
                 <li class="timeline-history">                  
                     <p class="pt-8 ml-16">
                         <a target="_new" class="mr-16" href="http://twitter.com/jmgalleriesusa"><i class="fab fa-twitter"></a></i> 
-                        <a target="_new" class="mr-16" href="http://instagram.com/jmgalleriesusa"><i class="fab fa-instagram"></a></i> 
                         <a target="_new" class="mr-16" href="http://linkedin.com/company/jmgalleriesusa"><i class="fab fa-linkedin"></a></i>
-                        <a target="_new" class="mr-16" href="http://facebook.com/jmgalleriesusa"><i class="fab fa-facebook"></a></i>
-                        <a target="_new" class="mr-16" href="http://jmccarthyusa.com"><i class="fab fa-github"></a></i>
                     </p>
                 </li>
             </ul>

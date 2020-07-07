@@ -1,0 +1,78 @@
+.fieldnotes-add--container {
+
+        background-color: rgba(0,0,0,.02);
+        border-radius: 6px;
+        margin: 0;
+        padding: 0;
+
+    .admin-header {
+        background-color: rgba(0,0,0,.08);
+        margin: 0;
+        border-radius: 6px 6px 0 0;
+        padding: 1rem;
+        margin-bottom: 1rem;
+        position: relative;
+        
+        h2 {
+            font-weight: 300;
+        }
+    }
+
+    .show-image {
+        width: 100%;
+    }
+
+    .file {
+        position: relative;
+
+        .file__upload-container {
+            position: absolute;
+            bottom: 6rem;
+            left: 1rem;
+        }
+
+        .file--image_info {
+            background-color: #000;
+            color: #FFF;
+            padding: 10px;
+            line-height: 1.5;
+        }
+    }
+
+    .image_filler {
+        width: 100%;
+        height: 609px;
+        background-color: #e4e4e4;
+        padding-top: 28%;
+    }
+    
+#result {
+    margin-bottom: 1rem;
+    background-color: #fff3cd;
+    margin-top: -.5rem;
+    padding: 1rem;
+
+    .slash {
+        font-size: 1.5rem;
+    }
+}
+
+#wordCount, #wordLimit {
+    color: $color-black;
+    font-size: 1.5rem;
+}
+
+form {
+
+    .input-upload {
+        margin-bottom: 1rem;
+    }
+
+    textarea {
+        overflow-y: scroll;
+        min-height: 750px;
+    }
+
+}
+
+}

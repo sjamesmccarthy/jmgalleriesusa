@@ -6,7 +6,7 @@
     $catalog_path_cleaned = ltrim($this->page->catalog_path, '/');
     
     /* Load all photo meta data */
-    $photo_meta = $this->api_Catalog_Photo('0',$this->photo_path);
+    $photo_meta = $this->api_Catalog_Photo('0',$this->page->photo_path);
     // $this->printp_r($photo_meta);
 
     switch($photo_meta['parent_collections_id']) {
@@ -258,9 +258,9 @@
 ?>
 
 <script>
-    var title = document.title;
-    var dbTitle = "<?= $photo_meta['title'] ?>";
-    if (document.title != dbTitle) {
-        document.title = dbTitle;
-    }
+    // var title = document.title;
+    // var dbTitle = "<?= $photo_meta['title'] ?>";
+    // if (document.title != dbTitle) {
+    //     document.title = dbTitle;
+    // }
 </script>

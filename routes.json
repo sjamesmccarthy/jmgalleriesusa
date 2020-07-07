@@ -158,6 +158,13 @@
         "component": "false",
         "title": "Processing Reports Script"
     },
+    "/studio/api/update/fieldnotes": {
+        "template": "script",
+        "page": "ajax_admin_fieldnotes_process.php",
+        "auth": "true",
+        "component": "false",
+        "title": "Processing Field Notes Script"
+    },
     "/studio/api/update/collections": {
         "template": "script",
         "page": "ajax_admin_collections_process.php",
@@ -256,6 +263,23 @@
         "component": "true",
         "title": "Adding New Report SQL Mark"
     },
+    "/studio/fieldnotes": {
+        "template": "page",
+        "page": "admin_fieldnotes",
+        "auth": "true",
+        "component": "true",
+        "title": "Field Notes"
+    },
+    "/studio/fieldnotes-add": {
+        "template": "page",
+        "page": "admin_fieldnotes-add",
+        "auth": "true",
+        "component": "true",
+        "title": "Adding New Fieldnotes",
+        "header": {
+            "js": "wordcount.js"
+        }
+    },
     "/studio/collections": {
         "template": "page",
         "page": "admin_collections",
@@ -334,6 +358,18 @@
         "page": "exhibits",
         "component": "true",
         "title": "Exhibits in Nevada & California"
+    },
+    "/polarized": {
+        "template": "page",
+        "page": "polarized",
+        "component": "true",
+        "title": "Polarized, A Conversations For Photographers & Collectors"
+    },
+    "/polarized/[$1]": {
+        "template": "page",
+        "page": "polarized_post",
+        "component": "true",
+        "title": "[$1]"
     },
     "/contact": {
         "template": "page",
