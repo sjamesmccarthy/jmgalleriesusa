@@ -16,7 +16,7 @@
 }
 
 .avatar {
-    width: 24px;
+    width: 42px;
     margin-top: 10px;
 
     >img {
@@ -30,17 +30,21 @@
 .byline {
   width: 100%;
   font-weight: 400;
-  font-size: .8rem;
-  padding-left: .5rem;
-  margin-top: 4px;
+  font-size: 1rem;
+  padding-left: 20px;
+  margin-top: 8px;
 }
 
 .content__area {
 
-        p {
+        ul {
+            margin: 1rem;
+        }
+
+        div, p {
             margin-bottom: 15px;
-            font-size: 1.3rem;
-            line-height: 1.6;
+            // font-size: 1.3rem;
+            // line-height: 1.6;
         }
 
 }

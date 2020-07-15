@@ -10,7 +10,7 @@ html, body {
     -webkit-text-size-adjust: 100%;
     -webkit-font-smoothing: antialiased;
     color: $color-black;
-    overflow-x: hidden;
+    // overflow-x: hidden;
     box-sizing: border-box;
 }
 
@@ -44,10 +44,11 @@ ol, ul, li, dl, dt, dd {
 }
 
 p, div, blockquote, caption, figure, legend {
-    margin: 0;
+    margin: 0 0 0 0;
     padding: 0 0 0 0;
-    font-size: 1rem;
+    font-size: 1.3rem;
     font-weight: 300;
+    line-height: 1.6;
     box-sizing: border-box;
 }
 
@@ -97,7 +98,7 @@ a {
 
 b,
 strong {
-  font-weight: bolder;
+  font-weight: 700;
 }
 
 small {

@@ -150,7 +150,7 @@ public function api_Admin_Update_Fieldnotes() {
         SET 
             title = '$title',
             short_path = '$short_path',
-            content = '$content',
+            content = REPLACE(\"$content\", \"\\r\\n\", \"\"),
             type = '$type',
             count = '$words',
             image = '$image',
@@ -232,7 +232,7 @@ public function api_Admin_Insert_Fieldnotes() {
                 '$title', 
                 '$image',
                 '$caption', 
-                '$content', 
+                REPLACE(\"$content\", \"\\r\\n\", \"\"), 
                 '$type', 
                 '$featured',
                 '$short_path',

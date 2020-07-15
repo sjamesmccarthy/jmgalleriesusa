@@ -4,18 +4,24 @@
         <div class="col-11">
 
         <h1>RELEASE NOTES</h1>
-        <!-- <p class="mb-16">current release version <?= $this->config->package_version ?><br />
-        Thursday, June 25, 2020</p> -->
- 
 
-        <p class="pt-16"><?= $this->config->package_version ?><br />Jul 06, 2020</p>
+        <!-- 1.4.2 -->
+        <p class="pt-16"><?= $this->config->package_version ?><br />Jul 16, 2020</p>
+        	<ul>
+            <li>updated: core to include page specific css, js and font files.</li>
+            <li>updated: fieldnotes API to better manage entires in database.</li>
+            <li>added: new WYSIWYG Editor for fieldnotes.</li>
+            <li>updated: fieldnotes content and layout template.</li>
+            <li>updated: minor changes to reset and app SCSS files for new Editor.</li>
+        	</ul>
+        </p>
+
+        <p class="pt-16">v1.4.1<br />Jul 06, 2020</p>
         	<ul>
             <li>updated: routing engine in core_site, debugging layout &tools</li>
             <li>updated: how config file handles settings and notices</li>
             <li>added: new stand-alone page for Polarized</li>
             <li>added: new admin: control app for Polarized</li>
-            
-            
         	</ul>
         </p>
 

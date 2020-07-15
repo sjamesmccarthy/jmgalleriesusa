@@ -14,6 +14,20 @@
     }
 
     $title_formatted = $this->config->site_name . ' | ' . $this->page->title;
-    // print $title_formatted;
+
+    /* Look for CSS and JS files to include */
+    if(isSet($this->page->header)) {
+
+        if(isSet($this->page->header['css'])) {
+            $header_css = '<link rel="stylesheet" type="text/css" href="' . $this->page->header['css'] . '"/>';
+        }
+        if(isSet($this->page->header['js'])) {
+            $header_js = '<script type="text/javascript" src="' . $this->page->header['js'] . '"></script>';
+        }
+        if(isSet($this->page->header['font'])) {
+            $header_font = '<link href="' . $this->page->header['font'] . '" rel="stylesheet">';
+        }
+
+    }
 
 ?>

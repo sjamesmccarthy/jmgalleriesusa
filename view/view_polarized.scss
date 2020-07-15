@@ -5,17 +5,20 @@
     .__container {
 
         @media (max-width: 64em) and (orientation: portrait),
-            (max-width: 80em) and (orientation: portrait) 
+            (max-width: 80em) and (orientation: portrait),
+            (min-device-width: 375px) and (max-device-height: 812px) 
+            and (orientation : landscape) and (-webkit-device-pixel-ratio: 3)
             {
                flex-basis: 100%;
                max-width: 100%;
             }
-        @media (max-width: 64em) and (orientation: landscape),
-            (max-width: 80em) and (orientation: landscape) 
-            {
-               flex-basis: 100%;
-               max-width: 100%;
-            }
+
+        // @media (max-width: 64em) and (orientation: landscape),
+        //     (max-width: 80em) and (orientation: landscape) 
+        //     {
+        //        flex-basis: 100%;
+        //        max-width: 100%;
+        //     }
 
         ul li {
             list-style: square;
@@ -28,7 +31,8 @@
     margin-bottom: 32px;
     position: relative;
     display: flex;
-
+    border-bottom: 1px solid #e4e4e4;
+    
     h4 {
         font-weight: 600;
         font-size: 1.2rem;
@@ -54,27 +58,27 @@
                   font-weight: 400;
               }
 
-              .--teaser {
+              .--teaser,
+              .--teaser >p{
                   padding-top: .5rem;
-                  font-size: .9rem;
+                  font-size: 1rem;
               }
           }
 
           .content__image--preview {   
-            flex: 1;
-              padding: 0 0 0 0; 
-              margin: 0;
-              max-height: 150px;
-              width: 235px;
-              border-radius: $border-radius;
-              overflow-y: hidden;
+                justify-content: center;
+                display: flex;
+                flex-direction: row;
+                overflow: hidden;
+                padding: 0;
+                height: 161px;
+                flex:1;
+                border-radius: $border-radius;
 
-              >img {
-                  width: 100%;
-                  height: auto;
-                  vertical-align: top;
-                  border-radius: $border-radius;
-              }
+                    >img {
+                        flex: 2;
+                        height: 100%;
+                    }
           }
 }
 

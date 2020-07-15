@@ -36,9 +36,9 @@ foreach ($fieldnotes_data as $key => $value) {
             $card_html .= '
                     <div class="col-6_sm-12 storycard">
                         <div class="content--preview">
-                            <p class="--tag">ARTICLE</p>
+                            <p class="--tag">' . strtoupper($value['type']) . '</p>
                             <h4><a href="/polarized/' . $value['short_path'] . '">' . $value['title'] . '</a></h4>
-                            <p class="--teaser">' . $content_leadin_short . '</p>
+                            <div class="--teaser">' . $content_leadin_short . '</div>
                             
                             <div class="" style="display: flex; position: relative; margin-top: 1rem;">
                                 <div style="width: 30px; margin-top: 2px;">
@@ -63,7 +63,7 @@ foreach ($fieldnotes_data as $key => $value) {
                 <div class="col-6_sm-12 storycard--background" style="background: rgba(0,0,0,1) url(/view/image/fieldnotes/' . $value['image'] . ') no-repeat center; background-size: auto;">
                     <div class="content--preview">
                         <div style="padding-top: inherit;">
-                        <p class="--tag">ARTICLE</p>
+                        <p class="--tag">' . strtoupper($value['type']) . '</p>
                         <h4><a href="/polarized/' . $value['short_path'] . '">' . $value['title'] . '</a></h4>
                         
                         <div class="mt-8" style="display: flex; position: relative;">

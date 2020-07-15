@@ -28,7 +28,9 @@ if(isSet($this->routes->URI->queryvals)) {
     $edit_id = $params[0][1];
 
     $edit_data = $this->api_Admin_Get_Fieldnotes_Item($edit_id);
+    
     extract($edit_data, EXTR_PREFIX_ALL, "res");
+    // $res_content = nl2br(strtr($res_content, array('\r' => chr(13), '\n' => chr(10))));
 
     $tags_data = $this->api_Admin_Get_Fieldnotes_Tags($edit_id);
     foreach ($tags_data as $key => $value) {

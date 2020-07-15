@@ -9,12 +9,7 @@
         "template" : "catalog",
         "page" : "home",
         "title" : "Welcome To jM Galleries",
-        "component": "true",
-        "header": {
-            "css": "media.css, colors.css",
-            "js": "",
-            "font": "fontawesome.otf"
-        }
+        "component": "true"
     },
     "[$1]/[$2]": {
         "template": "page",
@@ -277,7 +272,8 @@
         "component": "true",
         "title": "Adding New Fieldnotes",
         "header": {
-            "js": "wordcount.js"
+            "js": "wordcount.js",
+            "css": "editor.css"
         }
     },
     "/studio/collections": {
@@ -369,7 +365,10 @@
         "template": "page",
         "page": "polarized_post",
         "component": "true",
-        "title": "[$1]"
+        "title": "[$1]",
+        "header": {
+            "css": "editor.css"
+        }
     },
     "/contact": {
         "template": "page",
