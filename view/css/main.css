@@ -197,19 +197,23 @@ SASS, https://sass-lang.com/
 
 .content_html blockquote { border-left: 3px solid #e4e4e4; padding-left: 1rem; margin: 2rem 4rem; }
 
+.make_small { min-height: 200px !important; max-height: 200px !important; background-color: rgba(0, 0, 0, 0.1) !important; color: rgba(0, 0, 0, 0.3); }
+
 [contenteditable] { min-height: 700px; max-height: 800px; border: 1px solid #e4e4e4; border-top: 0; padding: 20px; background-color: rgba(255, 255, 255, 0.5); overflow: scroll; }
 
 [contenteditable]:focus { outline: none; border-bottom: 15px solid #e4e4e4; }
 
 .raw_edit_container { display: none; }
 
-.raw_edit_save { display: none; text-align: right; color: #b1b1b1; font-size: 1rem; padding-right: 1rem; margin-bottom: .5rem; }
+.raw_edit_save { display: none; text-align: right; color: #b1b1b1; font-size: .9rem; padding-right: 1rem; margin-bottom: .5rem; }
 
 .raw_edit_save:hover { color: #000; cursor: pointer; }
 
+.raw_close:hover { cursor: pointer; }
+
 .content_raw_changes { color: #2574A9; padding-right: .5rem; }
 
-.content_raw { font-size: 1.2rem; line-height: 1.5; margin: 0; padding: 1rem; border-color: #000; background-color: black; color: #FFF; height: 700px; }
+.content_raw { font-size: 1.2rem; line-height: 1.5; margin: 0; padding: 1rem; border-color: #e4e4e4; background-color: #FFF; color: #000; height: 700px; }
 
 .content_raw textarea { margin: 0; }
 
@@ -481,7 +485,7 @@ td, th { padding: 0; text-align: left; }
 
 ol, ul, li, dl, dt, dd { margin: 0; padding: 0; list-style: none; box-sizing: border-box; }
 
-p, div, blockquote, caption, figure, legend { margin: 0 0 0 0; padding: 0 0 0 0; font-size: 1.3rem; font-weight: 300; line-height: 1.6; box-sizing: border-box; }
+p, div, blockquote, caption, figure, legend { margin: 0 0 0 0; padding: 0 0 0 0; font-size: 1rem; font-weight: 300; line-height: 1.6; box-sizing: border-box; }
 
 button, input, select, textarea { font-family: inherit; line-height: inherit; font-size: 100%; margin: 0; overflow: auto; -webkit-appearance: none; }
 

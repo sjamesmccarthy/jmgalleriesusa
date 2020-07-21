@@ -75,7 +75,7 @@
                             <span id="wordCount">0</span> <span class="slash"><b>WORDS</b>, </span> <span id="wordLimit">READY, SET, WRITE.</a><br/>
                         </p>
 
-                    <div class="raw_edit_container"><textarea name="content" id="content" class="content_raw"></textarea><p class="raw_edit_save"><span class="content_raw_changes">CHANGES MADE BE SURE TO SYNC</span> <i class="fas fa-sync"></i></p></div>
+                    <div class="raw_edit_container"><p class="right mb-8 raw_close"><i class="fas fa-times-circle"></i></p><textarea name="content" id="content" class="content_raw"></textarea></div>
 
                 </div>
 

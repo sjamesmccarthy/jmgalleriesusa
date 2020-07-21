@@ -31,6 +31,13 @@
     margin: 2rem 4rem;
 }
 
+.make_small {
+    min-height: 200px !important;
+    max-height: 200px !important;
+    background-color: rgba(0,0,0, .1) !important;
+    color: rgba(0,0,0, .3);
+}
+
 [contenteditable] {
     min-height: 700px;
     max-height: 800px;
@@ -54,13 +61,17 @@
     display: none;
     text-align: right;
     color: darken(#e4e4e4, 20%);
-    font-size: 1rem;
+    font-size: .9rem;
     padding-right: 1rem;
     margin-bottom: .5rem;
 }
 
 .raw_edit_save:hover {
     color: #000;
+    cursor: pointer;
+}
+
+.raw_close:hover {
     cursor: pointer;
 }
 
@@ -74,9 +85,10 @@
     line-height: 1.5;
     margin: 0;
     padding: 1rem;
-    border-color: #000;
-    background-color: rgba(0,0,0,1);
-    color: #FFF;
+    border-color: #e4e4e4;
+    background-color: #FFF;
+    // color: #FFF;
+    color: #000;
     height: 700px;
 }
 
