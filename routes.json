@@ -272,8 +272,7 @@
         "component": "true",
         "title": "Adding New Fieldnotes",
         "header": {
-            "js": "wordcount.js",
-            "css": "editor.css"
+            "js": "/lib/editor/src/editor.js"
         }
     },
     "/studio/collections": {

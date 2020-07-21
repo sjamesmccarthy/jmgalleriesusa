@@ -36,7 +36,7 @@
                 </div>
 
                 <div>
-                    <p class="one-thirds right">https://jmgalleriesusa.com/polarized/</p>
+                    <p class="one-thirds right small">https://jmgalleriesusa.com/polarized/</p>
                     <label for="title">SHORT-URL-PATH</label>
                     <input class="two-thirds" maxlength="40" class="half-size ml-16" type="text" id="short_path" name="short_path" placeholder="SHORT-URL-PATH (eg, when-does-a-photograph-become-fineart)" value="<?= $res_short_path ?>" required>
                 </div>
@@ -72,13 +72,10 @@
                     <div class="content_html" contenteditable="true"><?= $res_content ?></div>
 
                         <p id="result">
-                            <span id="wordCount">0</span> <span class="slash">WORDS /</span> <span id="wordLimit">READY, SET, WRITE.</a><br/>
-                            <!-- Total Characters(including spaces): <span id="totalChars">0</span><br/> -->
-                            <!-- Characters (excluding trails): <span id="charCount">0</span><br/> -->
-                            <!-- Characters (excluding all spaces): <span id="charCountNoSpace">0</span> -->
+                            <span id="wordCount">0</span> <span class="slash"><b>WORDS</b>, </span> <span id="wordLimit">READY, SET, WRITE.</a><br/>
                         </p>
-                    
-                    <div class="raw_edit_container"><p class="raw_edit_save"><i class="fas fa-save"></i></p><textarea name="content" id="content" class="content_raw"></textarea></div>
+
+                    <div class="raw_edit_container"><textarea name="content" id="content" class="content_raw"></textarea><p class="raw_edit_save"><span class="content_raw_changes">CHANGES MADE BE SURE TO SYNC</span> <i class="fas fa-sync"></i></p></div>
 
                 </div>
 
@@ -114,54 +111,6 @@
 
 <script>
 jQuery(document).ready(function($){
-
-/* ****** */
-console.log($("div[class*='actions'] button").length)
-
-/* Update the textarea content_raw onLoad */
-$('.content_raw').val( $('.content_html').html() );
-
-
-$('.content_html').on('keypress', function(e) {
-    $('.content_raw').val( $('.content_html').html() );
-});
-
-$('.raw_edit_save').on("click", function(e) {
-    $('.content_html').html( $('.content_raw').val() );
-});
-
-$("div[class*='actions'] button").on("click", function(e) {
-    e.preventDefault();
-    var action = e.target.dataset.action;
-    
-    if (action) {
-            if (action == 'h1' || action == 'h2' || action == 'p' || action == 'blockquote') {
-                document.execCommand('formatBlock', false, action);
-                console.log('formatBlock__' + action);
-            } else if (action == 'createLink') {
-                url = prompt('Enter the link here: ', 'https:\/\/');
-                document.execCommand(action, false, url);
-            } else if (action == 'stripHTML') {
-                console.log('stripHTML');
-                var StrippedString = $('.content_html').html().replace(/(<([^>]+)>)/ig,"");
-                $('.content_html').html(StrippedString);
-                $('.content_raw').val(StrippedString);
-                console.log(StrippedString);
-            } else if (action == 'code') {
-                e.preventDefault();
-                $('.raw_edit_container').toggle();
-            } else {
-                document.execCommand(action,false);
-                console.log(action);
-            }
-            $('.content_raw').val( $('.content_html').html() );
-    } else {
-        console.log('noaction');
-    }
-
-});
-    
-/* ****** */
 
     counter = function() {
         

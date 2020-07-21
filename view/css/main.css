@@ -184,6 +184,55 @@ SASS, https://sass-lang.com/
 
 @media (max-width: 23em) { [class*="xs-hidden"] { display: none; } }
 
+/* Editor CSS */
+.content_html, .content_html div, .content_html p { line-height: 1.6; margin-bottom: 1rem; }
+
+.content_html h1 { font-size: 2rem !important; }
+
+.content_html b { font-weight: 700 !important; }
+
+.content_html ul { margin-left: 2rem; }
+
+.content_html ul li { list-style-type: square; margin-bottom: .5rem; }
+
+.content_html blockquote { border-left: 3px solid #e4e4e4; padding-left: 1rem; margin: 2rem 4rem; }
+
+[contenteditable] { min-height: 700px; max-height: 800px; border: 1px solid #e4e4e4; border-top: 0; padding: 20px; background-color: rgba(255, 255, 255, 0.5); overflow: scroll; }
+
+[contenteditable]:focus { outline: none; border-bottom: 15px solid #e4e4e4; }
+
+.raw_edit_container { display: none; }
+
+.raw_edit_save { display: none; text-align: right; color: #b1b1b1; font-size: 1rem; padding-right: 1rem; margin-bottom: .5rem; }
+
+.raw_edit_save:hover { color: #000; cursor: pointer; }
+
+.content_raw_changes { color: #2574A9; padding-right: .5rem; }
+
+.content_raw { font-size: 1.2rem; line-height: 1.5; margin: 0; padding: 1rem; border-color: #000; background-color: black; color: #FFF; height: 700px; }
+
+.content_raw textarea { margin: 0; }
+
+.content_raw:focus + .raw_edit_save { color: red !important; }
+
+.fn__editor { display: flex; flex-direction: row; width: 100%; border-left: 1px solid #e4e4e4; border-right: 1px solid #e4e4e4; border-top: 1px solid #e4e4e4; border-bottom-right-radius: 0; border-bottom-left-radius: 0; }
+
+.fn__editor .fn__editor_tools { flex-grow: 1; border-bottom: 1px solid #e4e4e4; }
+
+.fn__editor .fn__editor_tools button { border: 0; border-right: 1px solid #e4e4e4; vertical-align: middle; text-align: center; display: inline-block; background-color: transparent; color: #000; border-radius: 0; min-width: 59px; letter-spacing: 0; white-space: initial; }
+
+.fn__editor .fn__editor_tools button:hover { background-color: rgba(0, 0, 0, 0.2); cursor: pointer; border-right: 0; }
+
+.fn__editor .fn__editor_tools button:last-child { border-right: 0; float: right; }
+
+.fn__editor .fn__editor_tools button:last-child:hover { background-color: rgba(0, 0, 0, 0.75); color: yellow; }
+
+.fn__editor .--preview { flex-grow: 0; }
+
+.fn__editor .--preview button { border-right: 0; border-left: 1px solid #e4e4e4; }
+
+.fn__editor .--preview:hover { cursor: pointer; }
+
 /* variables */
 /* https://htmlcolorcodes.com/ */
 /* alert colors (type, background, border, font) */
@@ -1013,7 +1062,7 @@ button a { color: #2574A9; }
 
 .footer-column > h3 { padding-bottom: 10px; font-weight: 800; }
 
-#footer a, #footer li a { color: #FFF; }
+#footer a, #footer li a { color: #FFF; font-size: 1rem; }
 
 #footer a:hover, #footer li a:hover { color: #2574A9; }
 
@@ -1716,11 +1765,11 @@ table.dataTable tbody td.valign { vertical-align: middle; }
 
 .fieldnotes-add--container .image_filler { width: 100%; height: 609px; background-color: #e4e4e4; padding-top: 28%; }
 
-.fieldnotes-add--container #result { margin-bottom: 1rem; text-align: center; }
+.fieldnotes-add--container #result { margin: 3rem 0; text-align: center; }
 
-.fieldnotes-add--container #result .slash { font-size: 1.5rem; }
+.fieldnotes-add--container #result .slash { font-size: 1.2rem; }
 
-.fieldnotes-add--container #wordCount, .fieldnotes-add--container #wordLimit { color: #4a4a4a; font-size: 1.5rem; }
+.fieldnotes-add--container #wordCount, .fieldnotes-add--container #wordLimit { color: #4a4a4a; font-size: 1.2rem; font-weight: 700; }
 
 .fieldnotes-add--container form { padding: 1rem; }
 
@@ -1729,53 +1778,6 @@ table.dataTable tbody td.valign { vertical-align: middle; }
 .fieldnotes-add--container form textarea { overflow-y: scroll; min-height: 750px; }
 
 .fieldnotes-add--container form #content { border-top-right-radius: 0; border-top-left-radius: 0; }
-
-.fn__editor { display: flex; flex-direction: row; width: 100%; border-left: 1px solid #e4e4e4; border-right: 1px solid #e4e4e4; border-top: 1px solid #e4e4e4; border-bottom-right-radius: 0; border-bottom-left-radius: 0; }
-
-.fn__editor .fn__editor_tools { flex-grow: 1; border-bottom: 1px solid #e4e4e4; }
-
-.fn__editor .fn__editor_tools button { border: 0; border-right: 1px solid #e4e4e4; vertical-align: middle; text-align: center; display: inline-block; background-color: transparent; color: #000; border-radius: 0; min-width: 59px; letter-spacing: 0; white-space: initial; }
-
-.fn__editor .fn__editor_tools button:hover { background-color: rgba(0, 0, 0, 0.2); cursor: pointer; border-right: 0; }
-
-.fn__editor .fn__editor_tools button:last-child { border-right: 0; float: right; }
-
-.fn__editor .fn__editor_tools button:last-child:hover { background-color: rgba(0, 0, 0, 0.75); color: yellow; }
-
-.fn__editor .--preview { flex-grow: 0; }
-
-.fn__editor .--preview button { border-right: 0; border-left: 1px solid #e4e4e4; }
-
-.fn__editor .--preview:hover { cursor: pointer; }
-
-/* Editor CSS */
-.content_html, .content_html div, .content_html p { line-height: 1.6; margin-bottom: 1rem; }
-
-.content_html h1 { font-size: 2rem !important; }
-
-.content_html b { font-weight: 700 !important; }
-
-.content_html ul { margin-left: 2rem; }
-
-.content_html ul li { list-style-type: square; margin-bottom: .5rem; }
-
-.content_html blockquote { border-left: 3px solid #e4e4e4; padding-left: 1rem; margin: 2rem 4rem; }
-
-[contenteditable] { min-height: 700px; max-height: 800px; border: 1px solid #e4e4e4; border-top: 0; padding: 20px; background-color: rgba(255, 255, 255, 0.5); overflow: scroll; }
-
-[contenteditable]:focus { outline: none; border-bottom: 15px solid #e4e4e4; }
-
-.raw_edit_container { display: none; }
-
-.raw_edit_save { text-align: right; color: #e4e4e4; }
-
-.raw_edit_save:hover { color: #000; cursor: pointer; }
-
-.content_raw { min-height: 450px !important; font-size: 1.2rem; line-height: 1.5; margin: 1rem 0; padding: 1rem; border-color: #000; background-color: rgba(0, 0, 0, 0.75); color: #e4e4e4; }
-
-.content_raw:focus { background-color: black; color: #FFF; height: 700px; }
-
-.content_raw:focus + .raw_edit_save { color: red !important; }
 
 .collectors--container { background-color: rgba(0, 0, 0, 0.05); border-radius: 6px; margin: 0; padding: 0; }
 

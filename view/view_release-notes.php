@@ -5,7 +5,14 @@
 
         <h1>RELEASE NOTES</h1>
 
-        <!-- 1.4.2 -->
+        <!-- 1.4.3 -->
+        <p class="pt-16"><?= $this->config->package_version ?><br />Jul 21, 2020</p>
+        	<ul>
+            <li>updated: footer collection nav font size.</li>
+            <li>updated: debug styling for arrays and objects for better clarity.</li>
+        	</ul>
+        </p>
+
         <p class="pt-16"><?= $this->config->package_version ?><br />Jul 16, 2020</p>
         	<ul>
             <li>updated: core to include page specific css, js and font files.</li>

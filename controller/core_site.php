@@ -384,14 +384,14 @@ class Core_Site extends Core_Api
     public function console($val, $exit=0, $file=__FILE__, $method=__FUNCTION__, $line=__LINE__) {
 
         if ($this->config_env->env[$this->env]['show_console'] == "true") {
-            echo "<div style='position: relative; padding: 10px; background-color: rgba(0,0,0, .1);'>";
+            echo "<div style='position: relative; padding: 10px; background-color: #ffff99; font-size: 1rem; color: #8900ff;'>";
                 if (gettype($val) == "string") {
-                    echo "<p>>>>>> " . $line . " | ". $val . "<br ><span class='tiny'>" . $file . "</span></p>";
+                    echo "<p>>>>>>Line: " . $line . " | ". $val . "<br ><span class=''>File: " . $file . "</span></p>";
                 }
 
                 if (gettype($val) == "array" ||
                 gettype($val) == "object") {
-                    echo ">>>>> " . $line . " | typeof." . gettype($val) . "<br /><span class='tiny'>" . $file . "</span><pre style='text-align: left'>";
+                    echo ">>>>>Line: " . $line . " | typeof." . gettype($val) . "<br /><span class=''>File: " . $file . "</span><pre style='text-align: left; margin-left: 2rem; border-left: 1px solid #8900ff; padding-left: 1rem;'>";
                     print_r($val);
                     echo "</pre>";
                 }
@@ -427,13 +427,13 @@ class Core_Site extends Core_Api
                 unset($result['mysqli']);
             } 
 
-            echo "<div style='background-color: rgba(0,0,0, .1);'><p>>>>>> DEBUG INFO --start --env</p>";
-            echo "<p>>>>>> " . $this->env . " / " . date('l jS \of F Y h:i:s A') . "</p>";
+            echo "<div style='background-color: yellow; font-size: 1rem;'><p style='font-size: 1rem;'>>>>>> DEBUG INFO --start --env</p>";
+            echo "<p style='font-size: 1rem;'>>>>>> " . $this->env . " / " . date('l jS \of F Y h:i:s A') . "</p></div>";
             $this->console($result);
             if(isSet($_POST)) { $this->console($_POST); }
             if(isSet($_SESSION)) { $this->console($_SESSION); }
             if(isSet($_FILES)) { $this->console($_FILES); }
-            echo "<p>>>>>> DEBUG INFO --exit</p></div>";
+            echo "<div style='background-color: yellow; font-size: 1rem;'><p style='font-size: 1rem;'>>>>>> DEBUG INFO --exit</p></div>";
         }
     }
 }
