@@ -30,6 +30,16 @@ foreach ($fieldnotes_data as $key => $value) {
     $read_time = $this->__readTime($value['count']);
     $large_cards = 6;
 
+    /* Check for image */
+    if ( file_exists($_SERVER['DOCUMENT_ROOT'] . "/view/image/fieldnotes/" . $value['image'] ) ) {
+        $img_html = 
+            '<div class="col sm-hidden content__image--preview">
+                <img src="/view/image/fieldnotes/' . $value['image'] . '" /><br />
+            </div>';
+    } else {
+        $img_html = '<!-- err_code: no image found -->';
+    }
+
     if($i < $large_cards) {
 
         if ($value['featured'] != "1") {
@@ -49,11 +59,8 @@ foreach ($fieldnotes_data as $key => $value) {
                                     ' . date("F d, Y", strtotime($value['created'])) . ' - ' . $value['count'] . ' Words, ' . $read_time . '</p>
                                 </div>
                             </div>
-                        </div>
-
-                        <div class="col sm-hidden content__image--preview">
-                            <img src="/view/image/fieldnotes/' . $value['image'] . '" />
-                        </div> 
+                        </div>' 
+                        . $img_html . '
                     </div>
             ';
 

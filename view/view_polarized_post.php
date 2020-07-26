@@ -29,10 +29,11 @@
                         <?= $res_content_leadin ?>
                     </div><!- cl_teaser -->
 
-                    <div class="image">
+                    <!-- <div class="image">
                         <img src="/view/image/fieldnotes/<?= $res_image ?>" /><br />
                         <span class="caption"><?= $res_caption ?></span>
-                    </div>
+                    </div> -->
+                    <?= $img_html ?>
 
                     <div class="mt-32"><?= $res_content ?></div>
 

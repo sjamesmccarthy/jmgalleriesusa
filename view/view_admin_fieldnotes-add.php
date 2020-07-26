@@ -42,13 +42,63 @@
                 </div>
 
                  <div class="file mt-16">
-                    <?= $show_image_html ?>
-                    <input type="text" id="caption" name="caption" value='<?= $res_caption ?>' placeholder="CAPTION (eg. Photo Credit James McCarthy)">
-                    
-                    <div class="file__upload-container">
-                        <input class="input-upload" type="file" id="file_1" name="file_1" aria-label="Choose Main Photo"><br /><?= $image_info ?>
-                        <input type="hidden" id="file_1_path" name="file_1_path" value="/view/image/fieldnotes/">
+                    <ul class="files_nav">
+                        <li class="files_nav--invert"><i class="far fa-images"></i> COVER IMAGE</li>
+                        <li class="files_nav--filmstrip hidden"><i class="far fa-images"></i></li>
+                        <li class="files_nav--filmstrip hidden"><i class="far fa-images"></i></li>
+                        <li class="files_nav--filmstrip hidden"><i class="far fa-images"></i></li>
+                        <li class="files_nav--filmstrip hidden"><i class="far fa-images"></i></li>
+                    </ul>
+                    <div class="file_1">
+                        <?= $show_image_html ?>
+                        <input type="text" id="caption" name="caption" value='<?= $res_caption ?>' placeholder="CAPTION (eg. Photo Credit James McCarthy)">
+                        
+                        <div class="file__upload-container">
+                        <i class="fas fa-file-upload file__upload-icon"></i>
+                            <input class="input-upload" type="file" id="file_1" name="file_1" aria-label="Choose Main Photo"><br /><?= $image_info ?>
+                            <input type="hidden" id="file_1_path" name="file_1_path" value="/view/image/fieldnotes/">
                         </div>
+                    </div>
+                    <div class="file_2">
+                        <?= $show_image_html ?>
+                        <input type="text" id="caption" name="caption" value='<?= $res_caption ?>' placeholder="CAPTION (eg. Photo Credit James McCarthy)">
+                        
+                        <div class="file__upload-container">
+                        <i class="fas fa-file-upload file__upload-icon"></i>
+                            <input class="input-upload" type="file" id="file_1" name="file_1" aria-label="Choose Main Photo"><br /><?= $image_info ?>
+                            <input type="hidden" id="file_1_path" name="file_1_path" value="/view/image/fieldnotes/">
+                        </div>
+                    </div>
+                    <div class="file_3">
+                        <?= $show_image_html ?>
+                        <input type="text" id="caption" name="caption" value='<?= $res_caption ?>' placeholder="CAPTION (eg. Photo Credit James McCarthy)">
+                        
+                        <div class="file__upload-container">
+                        <i class="fas fa-file-upload file__upload-icon"></i>
+                            <input class="input-upload" type="file" id="file_1" name="file_1" aria-label="Choose Main Photo"><br /><?= $image_info ?>
+                            <input type="hidden" id="file_1_path" name="file_1_path" value="/view/image/fieldnotes/">
+                        </div>
+                    </div>
+                    <div class="file_4">
+                        <?= $show_image_html ?>
+                        <input type="text" id="caption" name="caption" value='<?= $res_caption ?>' placeholder="CAPTION (eg. Photo Credit James McCarthy)">
+                        
+                        <div class="file__upload-container">
+                        <i class="fas fa-file-upload file__upload-icon"></i>
+                            <input class="input-upload" type="file" id="file_1" name="file_1" aria-label="Choose Main Photo"><br /><?= $image_info ?>
+                            <input type="hidden" id="file_1_path" name="file_1_path" value="/view/image/fieldnotes/">
+                        </div>
+                    </div>
+                    <div class="file_5">
+                        <?= $show_image_html ?>
+                        <input type="text" id="caption" name="caption" value='<?= $res_caption ?>' placeholder="CAPTION (eg. Photo Credit James McCarthy)">
+                        
+                        <div class="file__upload-container">
+                        <i class="fas fa-file-upload file__upload-icon"></i>
+                            <input class="input-upload" type="file" id="file_1" name="file_1" aria-label="Choose Main Photo"><br /><?= $image_info ?>
+                            <input type="hidden" id="file_1_path" name="file_1_path" value="/view/image/fieldnotes/">
+                        </div>
+                    </div>
 
                 </div>
 
@@ -56,8 +106,8 @@
             
                     <p>CONTENT</p>
 
-                    <label for="teaser">teaser</label>
-                    <input class="mt-8" maxlength="250" type="text" id="teaser" name="teaser" placeholder="TEASER (eg, MAXLENGTH 133 CHARACTERS.)" value="<?= $res_teaser ?>" >
+                    <!-- <label for="teaser">teaser</label> -->
+                    <input class="mt-8" maxlength="250" type="hidden" id="teaser" name="teaser" placeholder="TEASER (eg, MAXLENGTH 133 CHARACTERS.)" value="<?= $res_teaser ?>" >
 
                     <div class="fn__editor">
                         <div class="actions fn__editor_tools">
@@ -75,9 +125,7 @@
                             <span id="wordCount">0</span> <span class="slash"><b>WORDS</b>, </span> <span id="wordLimit">READY, SET, WRITE.</a><br/>
                         </p>
 
-                    <div class="raw_edit_container"><p class="right mb-8 raw_close"><i class="fas fa-times-circle"></i></p><textarea name="content" id="content" class="content_raw"></textarea></div>
-
-                </div>
+                    <div class="raw_edit_container"><p class="right mb-8 raw_close"><i class="fas fa-times-circle"></i></p><textarea name="content" id="content" class="content_raw"></textarea></div> </div>
 
                 <div class="mt-16">
                     <input class="half-size" type="text" id="tags" name="tags" placeholder="TAGS (eg. adventure, tutorial, opinion, historical-profile)" value="<?= $res_tags ?>">
@@ -162,6 +210,15 @@ jQuery(document).ready(function($){
     $('.content_html').focus(counter);
 
     counter();
+
+    $('#type').change(function() {
+        var idx = $("#type").prop('selectedIndex');
+        if(idx == 1) {
+            $('.files_nav--filmstrip').removeClass('hidden');
+        } else {
+            $('.files_nav--filmstrip').addClass('hidden');
+        }
+    });
 
     $('.close-x').on("click", function() {
         window.location.href = '/studio/fieldnotes';

@@ -27,6 +27,14 @@ if($sections == 2) {
 $res_content = str_replace('<div><br></div>', '', $res_content);
 $res_content = str_replace('<p><br></p>', '', $res_content);
 
+/* Check for image */
+if ( file_exists($_SERVER['DOCUMENT_ROOT'] . "/view/image/fieldnotes/" . $res_image ) ) {
+    $img_html .= '<div class="image">
+        <img src="/view/image/fieldnotes/' . $res_image . '" /><br />
+        <span class="caption"><?= $res_caption ?></span>
+        </div>';
+}
+
 $read_time = $this->__readTime($res_count);
 $res_created = date("F d, Y", strtotime($res_created));
 

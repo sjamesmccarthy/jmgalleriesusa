@@ -51,8 +51,8 @@
 
 .image {
     position: relative;
-    margin-left: -25%;
-    width: 150%;
+    margin-left: -12%;
+    width: 120%;
 
         @media (max-width: 64em) and (orientation: portrait),
         (max-width: 80em) and (orientation: portrait) 
@@ -65,6 +65,7 @@
 
         width: 100%;
         box-shadow: 0px 20px 25px 0px rgba(0, 0, 0, 0.3);
+        border-radius: 1rem;
 
         @media (max-width: 64em) and (orientation: portrait),
         (max-width: 80em) and (orientation: portrait) 
