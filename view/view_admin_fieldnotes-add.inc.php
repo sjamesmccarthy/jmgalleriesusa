@@ -44,6 +44,8 @@ if(isSet($this->routes->URI->queryvals)) {
     }
         $res_tags = trim($tags, ", ");
 
+    /* TODO: condense this isn't a single loop */
+    
     if($res_image != '') {
         $show_image1_html = '<div class="show-image-container"><img src="/view/image/fieldnotes/' . $res_image . '" class="show-image" /></div>';
         $res_caption_file_1 = $res_caption;

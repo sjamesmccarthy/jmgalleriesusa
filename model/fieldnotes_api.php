@@ -269,8 +269,8 @@ public function api_Admin_Insert_Fieldnotes() {
         if(!isset($featured)) { $featured ="0"; }
 
         if(isSet($_FILES['file_1']['name'])) {
-            $_FILES['file_1']['name'] = $short_path . '.jpg';
-            $image= $short_path . '.jpg';
+            // $_FILES['file_1']['name'] = $short_path . '.jpg';
+            $img_path = $short_path . '_file_1.jpg';
         }
 
          $sql = "
@@ -288,8 +288,8 @@ public function api_Admin_Insert_Fieldnotes() {
             VALUES (
                 '$user_id', 
                 '$title', 
-                '$image',
-                '$caption', 
+                '$img_path',
+                '$file_1_caption', 
                 REPLACE(\"$content\", \"\\r\\n\", \"\"), 
                 '$type', 
                 '$featured',
@@ -316,8 +316,26 @@ public function api_Admin_Insert_Fieldnotes() {
             }
         } 
 
+        /* Fieldnotes_images and captions */
+        $i=1;
+        foreach ($_FILES as $key => $val) {
+
+        if($val['size'] > 0) {
+        $img_path = $short_path . '_' . $key . '.jpg';
+        $idx_caption = $key . "_caption";
+        $idx_path = $key . "_path";
+
+        /* insert into the database */
+        $sql_img_i = "INSERT INTO fieldnotes_images (fieldnotes_id, path, caption, file_order)
+        VALUES('" . $fieldnotes_id . "','" . $img_path . "','" . $_POST[$idx_caption] . "','" . $i . "')";
+        $result_img_i = $this->mysqli->query($sql_img_i);
+
+        } 
+        $i++;
+        }
+
         /* Check to see if files have been uploaded */
-        $this->__uploadFile(array("jpg","jpeg"), "jpg");
+        $this->__uploadFiles(array("jpg","jpeg"), "jpg");
 
         if($result == 1) {
             $_SESSION['error'] = '200';
@@ -356,7 +374,6 @@ public function __readTime($count) {
 public function __uploadFiles($fileTypes=array("jpeg"), $ext="jpg") {
 
     $uploadReady=0;
-
         foreach($_FILES as $key => $value) {
 
             $_FILES[$key]['path'] = '/view/image/fieldnotes/';
@@ -403,7 +420,6 @@ public function __uploadFiles($fileTypes=array("jpeg"), $ext="jpg") {
             }
 
         }
-
 }
 
 public function x__uploadFile($fileTypes=array("jpeg"), $ext="jpg") {

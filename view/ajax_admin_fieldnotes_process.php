@@ -27,7 +27,7 @@ switch($_POST['formTypeAction']) {
 
 	case "insert":
         // $this->console('insert().run',0);
-		$this->api_Admin_Insert_Fieldnotes();
+        $this->api_Admin_Insert_Fieldnotes();
 		$redirect_to = '/fieldnotes';
 	break;
 
