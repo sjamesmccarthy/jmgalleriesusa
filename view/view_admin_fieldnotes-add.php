@@ -28,8 +28,8 @@
                    
                     <div class="one-thirds select-wrapper">
                     <select id="type" name="type" style="margin-bottom: 0">
-                          <option value="article" <?= ($res_status == "article" ? "SELECTED" : ""); ?>>ARTICLE</option>
-                          <option value="fimlstrip" <?= ($res_status == "fimlstrip" ? "SELECTED" : ""); ?>>FILMSTRIP</option>
+                          <option value="article" <?= ($res_type == "article" ? "SELECTED" : ""); ?>>ARTICLE</option>
+                          <option value="filmstrip" <?= ($res_type == "filmstrip" ? "SELECTED" : ""); ?>>FILMSTRIP</option>
                     </select> 
                     </div>
                     <!-- <input type="hidden" id="type" name="type" placeholder="TYPE (eg, TEXT, FILMSTRIP)" value="text"> -->
@@ -43,66 +43,81 @@
 
                  <div class="file mt-16">
                     <ul class="files_nav">
-                        <li class="files_nav--invert"><i class="far fa-images"></i> COVER IMAGE</li>
-                        <li class="files_nav--filmstrip hidden"><i class="far fa-images"></i></li>
-                        <li class="files_nav--filmstrip hidden"><i class="far fa-images"></i></li>
-                        <li class="files_nav--filmstrip hidden"><i class="far fa-images"></i></li>
-                        <li class="files_nav--filmstrip hidden"><i class="far fa-images"></i></li>
+                        <li data-file="file_1" class="files_nav--invert"><i class="far fa-images"></i> COVER IMAGE</li>
+                        <li data-file="file_2" class="files_nav--filmstrip hidden"><i class="far fa-images"></i></li>
+                        <li data-file="file_3" class="files_nav--filmstrip hidden"><i class="far fa-images"></i></li>
+                        <li data-file="file_4" class="files_nav--filmstrip hidden"><i class="far fa-images"></i></li>
+                        <li data-file="file_5" class="files_nav--filmstrip hidden"><i class="far fa-images"></i></li>
                     </ul>
-                    <div class="file_1">
-                        <?= $show_image_html ?>
-                        <input type="text" id="caption" name="caption" value='<?= $res_caption ?>' placeholder="CAPTION (eg. Photo Credit James McCarthy)">
-                        
-                        <div class="file__upload-container">
-                        <i class="fas fa-file-upload file__upload-icon"></i>
+
+                    <!-- File_1 -->
+                    <div class="file_block--input file_1">
+                        <div>
+                            <?= $show_image1_html ?>
+                            <div class="file__upload-container">
+                            <i class="fas fa-file-upload file__upload-icon"> 1</i>
                             <input class="input-upload" type="file" id="file_1" name="file_1" aria-label="Choose Main Photo"><br /><?= $image_info ?>
-                            <input type="hidden" id="file_1_path" name="file_1_path" value="/view/image/fieldnotes/">
+                            <input type="hidden" id="file_1_path" name="file_1_path" value="<?= $res_image ?>">
                         </div>
+                        </div>
+                        <textarea name="file_1_caption" placeholder="TYPE A SHORT CAPTION NO LONGER THAN 1 LINE FOR THIS IMAGE."><?= $res_caption_file_1 ?></textarea>
                     </div>
-                    <div class="file_2">
-                        <?= $show_image_html ?>
-                        <input type="text" id="caption" name="caption" value='<?= $res_caption ?>' placeholder="CAPTION (eg. Photo Credit James McCarthy)">
-                        
-                        <div class="file__upload-container">
-                        <i class="fas fa-file-upload file__upload-icon"></i>
-                            <input class="input-upload" type="file" id="file_1" name="file_1" aria-label="Choose Main Photo"><br /><?= $image_info ?>
-                            <input type="hidden" id="file_1_path" name="file_1_path" value="/view/image/fieldnotes/">
+
+                   <!-- File_2 -->
+                   <div class="file_block--input file_2">
+                        <div>
+                            <?= $show_image2_html ?>
+                            <div class="file__upload-container">
+                            <i class="fas fa-file-upload file__upload-icon"> 2</i>
+                            <input class="input-upload" type="file" id="file_2" name="file_2" aria-label="Choose Main Photo"><br /><?= $image_info ?>
+                            <input type="hidden" id="file_2_path" name="file_2_path" value="<?= $res_image_2 ?>">
                         </div>
+                        </div>
+                        <textarea name="file_2_caption" placeholder="TYPE A SHORT CAPTION NO LONGER THAN 1 LINE FOR THIS IMAGE."><?= $res_caption_file_2 ?></textarea>
                     </div>
-                    <div class="file_3">
-                        <?= $show_image_html ?>
-                        <input type="text" id="caption" name="caption" value='<?= $res_caption ?>' placeholder="CAPTION (eg. Photo Credit James McCarthy)">
-                        
-                        <div class="file__upload-container">
-                        <i class="fas fa-file-upload file__upload-icon"></i>
-                            <input class="input-upload" type="file" id="file_1" name="file_1" aria-label="Choose Main Photo"><br /><?= $image_info ?>
-                            <input type="hidden" id="file_1_path" name="file_1_path" value="/view/image/fieldnotes/">
+
+                    <!-- File_3 -->
+                    <div class="file_block--input file_3">
+                        <div>
+                            <?= $show_image3_html ?>
+                            <div class="file__upload-container">
+                            <i class="fas fa-file-upload file__upload-icon"> 3</i>
+                            <input class="input-upload" type="file" id="file_3" name="file_3" aria-label="Choose Main Photo"><br /><?= $image_info ?>
+                            <input type="hidden" id="file_3_path" name="file_3_path" value="<?= $res_image_3 ?>">
+                            </div>
                         </div>
+                        <textarea name="file_3_caption" placeholder="TYPE A SHORT CAPTION NO LONGER THAN 1 LINE FOR THIS IMAGE."><?= $res_caption_file_3 ?></textarea>
                     </div>
-                    <div class="file_4">
-                        <?= $show_image_html ?>
-                        <input type="text" id="caption" name="caption" value='<?= $res_caption ?>' placeholder="CAPTION (eg. Photo Credit James McCarthy)">
-                        
-                        <div class="file__upload-container">
-                        <i class="fas fa-file-upload file__upload-icon"></i>
-                            <input class="input-upload" type="file" id="file_1" name="file_1" aria-label="Choose Main Photo"><br /><?= $image_info ?>
-                            <input type="hidden" id="file_1_path" name="file_1_path" value="/view/image/fieldnotes/">
+
+                    <!-- File_4 -->
+                    <div class="file_block--input file_4">
+                        <div>
+                            <?= $show_image4_html ?>
+                            <div class="file__upload-container">
+                            <i class="fas fa-file-upload file__upload-icon"> 4</i>
+                            <input class="input-upload" type="file" id="file_4" name="file_4" aria-label="Choose Main Photo"><br /><?= $image_info ?>
+                            <input type="hidden" id="file_4_path" name="file_4_path" value="<?= $res_image_4 ?>">
                         </div>
+                        </div>
+                        <textarea name="file_4_caption" placeholder="TYPE A SHORT CAPTION NO LONGER THAN 1 LINE FOR THIS IMAGE."><?= $res_caption_file_4 ?></textarea>
                     </div>
-                    <div class="file_5">
-                        <?= $show_image_html ?>
-                        <input type="text" id="caption" name="caption" value='<?= $res_caption ?>' placeholder="CAPTION (eg. Photo Credit James McCarthy)">
-                        
-                        <div class="file__upload-container">
-                        <i class="fas fa-file-upload file__upload-icon"></i>
-                            <input class="input-upload" type="file" id="file_1" name="file_1" aria-label="Choose Main Photo"><br /><?= $image_info ?>
-                            <input type="hidden" id="file_1_path" name="file_1_path" value="/view/image/fieldnotes/">
+
+                    <!-- File_5 -->
+                    <div class="file_block--input file_5">
+                        <div>
+                            <?= $show_image5_html ?>
+                            <div class="file__upload-container">
+                            <i class="fas fa-file-upload file__upload-icon"> 5</i>
+                            <input class="input-upload" type="file" id="file_5" name="file_5" aria-label="Choose Main Photo"><br /><?= $image_info ?>
+                            <input type="hidden" id="file_5_path" name="file_5_path" value="<?= $res_image_5 ?>">
                         </div>
+                        </div>
+                        <textarea name="file_5_caption" placeholder="TYPE A SHORT CAPTION NO LONGER THAN 1 LINE FOR THIS IMAGE."><?= $res_caption_file_5 ?></textarea>
                     </div>
 
                 </div>
 
-                <div class="mt-32">
+                <div id="content_area" class="mt-32">
             
                     <p>CONTENT</p>
 
@@ -125,7 +140,9 @@
                             <span id="wordCount">0</span> <span class="slash"><b>WORDS</b>, </span> <span id="wordLimit">READY, SET, WRITE.</a><br/>
                         </p>
 
-                    <div class="raw_edit_container"><p class="right mb-8 raw_close"><i class="fas fa-times-circle"></i></p><textarea name="content" id="content" class="content_raw"></textarea></div> </div>
+                    <div class="raw_edit_container"><p class="right mb-8 raw_close"><i class="fas fa-times-circle"></i></p><textarea name="content" id="content" class="content_raw"></textarea></div> 
+                
+                </div>
 
                 <div class="mt-16">
                     <input class="half-size" type="text" id="tags" name="tags" placeholder="TAGS (eg. adventure, tutorial, opinion, historical-profile)" value="<?= $res_tags ?>">
@@ -159,6 +176,13 @@
 
 <script>
 jQuery(document).ready(function($){
+
+    if( $('#type').prop('selectedIndex') == 1 ) {
+        $('.files_nav--filmstrip').removeClass('hidden');
+            $('#content_area').hide();
+            $('.file_block--input textarea[name *= "caption"]').addClass('taller');
+            $('.file_block--input textarea[name *= "caption"]').attr('placeholder',"TYPE A SHORT DESCRIPTION ABOUT THIS PHOTO, SLIGHTLY LONGER THAN A CAPTION.");
+    }
 
     counter = function() {
         
@@ -215,9 +239,21 @@ jQuery(document).ready(function($){
         var idx = $("#type").prop('selectedIndex');
         if(idx == 1) {
             $('.files_nav--filmstrip').removeClass('hidden');
+            $('#content_area').hide();
+            $('.file_block--input textarea[name *= "caption"]').addClass('taller');
+            $('.file_block--input textarea[name *= "caption"]').attr('placeholder',"TYPE A SHORT DESCRIPTION ABOUT THIS PHOTO, SLIGHTLY LONGER THAN A CAPTION.");
         } else {
             $('.files_nav--filmstrip').addClass('hidden');
+            $('.file_block--input textarea[name *= "caption"]').removeClass('taller');
+            $('#content_area').show();
+            $('.file_block--input textarea[name *= "caption"]').attr('placeholder',"TYPE A SHORT CAPTION NO LONGER THAN 1 LINE FOR THIS IMAGE.");
         }
+    });
+
+    $('.files_nav li').on('click', function(e) {
+        var tab = $(this).data('file');
+        $('.file_block--input').hide();
+        $('.' + tab).show();
     });
 
     $('.close-x').on("click", function() {

@@ -1362,7 +1362,7 @@ form #buysize, form #frame { border: none; border-bottom: 1px solid #e4e4e4; bor
 
 .storycard h4 ahover { color: #333333; }
 
-.storycard .content--preview { flex: 2; background-color: #FFF; padding-right: 1rem; }
+.storycard .content--preview { flex: 3; background-color: #FFF; padding-right: 1rem; }
 
 .storycard .content--preview .--tag, .storycard .content--preview .--byline { font-size: .7rem; }
 
@@ -1761,17 +1761,23 @@ table.dataTable tbody td.valign { vertical-align: middle; }
 
 .fieldnotes-add--container .admin-header h2 { font-weight: 300; }
 
+.fieldnotes-add--container .show-image-container { text-align: center; height: 660px; overflow: hidden; }
+
 .fieldnotes-add--container .show-image { width: 100%; }
 
 .fieldnotes-add--container .file { position: relative; }
 
+.fieldnotes-add--container .file .file_block--input textarea[name*="caption"] { min-height: 75px; height: 75px; overflow: auto; }
+
+.fieldnotes-add--container .file .taller { min-height: 150px !important; height: 150px !important; }
+
 .fieldnotes-add--container .file .file_2, .fieldnotes-add--container .file .file_3, .fieldnotes-add--container .file .file_4, .fieldnotes-add--container .file .file_5 { display: none; }
 
-.fieldnotes-add--container .file .file__upload-container { position: absolute; bottom: 6rem; left: 1rem; border-top: 3px solid #CCC; padding-top: 1rem; }
+.fieldnotes-add--container .file .file__upload-container { border-top: 3px solid #CCC; padding: 1rem; background-color: #000; }
 
-.fieldnotes-add--container .file .file__upload-icon { font-size: 3rem; }
+.fieldnotes-add--container .file .file__upload-icon { font-size: 3rem; color: #FFF; }
 
-.fieldnotes-add--container .file .file--image_info { background-color: #000; color: #FFF; padding: 10px; line-height: 1.5; }
+.fieldnotes-add--container .file .file--image_info { background-color: #000; color: #FFF; line-height: 1.5; }
 
 .fieldnotes-add--container .file .files_nav { display: inline-block; }
 
@@ -1783,7 +1789,7 @@ table.dataTable tbody td.valign { vertical-align: middle; }
 
 .fieldnotes-add--container .file .files_nav .files_nav--invert { background-color: #000; color: #FFF; }
 
-.fieldnotes-add--container .image_filler { width: 100%; height: 609px; background-color: #e4e4e4; padding-top: 28%; border-top: 3px solid #000; }
+.fieldnotes-add--container .image_filler { width: 100%; height: 660px; background-color: #e4e4e4; padding-top: 28%; border-top: 3px solid #000; }
 
 .fieldnotes-add--container #result { margin: 3rem 0; text-align: center; }
 
@@ -1793,7 +1799,7 @@ table.dataTable tbody td.valign { vertical-align: middle; }
 
 .fieldnotes-add--container form { padding: 1rem; }
 
-.fieldnotes-add--container form .input-upload { margin-bottom: 1rem; vertical-align: middle; padding-left: 1rem; }
+.fieldnotes-add--container form .input-upload { margin-bottom: 1rem; vertical-align: middle; padding-left: 1rem; color: #FFF; }
 
 .fieldnotes-add--container form textarea { overflow-y: scroll; min-height: 750px; }
 

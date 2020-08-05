@@ -5,28 +5,15 @@
 
         <h1>RELEASE NOTES</h1>
 
-        <!-- 1.4.4 -->
-        <p class="pt-16"><?= $this->config->package_version ?><br />Jul 21, 2020</p>
-        	<ul>
-            <li>updated: if img_file is not found no image will load for Fieldnotes.</li>
-        	</ul>
-        </p>
-
-        <!-- 1.4.3 -->
-        <p class="pt-16">1.4.3<br />Jul 21, 2020</p>
-        	<ul>
-            <li>updated: footer collection nav font size.</li>
-            <li>updated: debug styling for arrays and objects for better clarity.</li>
-        	</ul>
-        </p>
-
-        <p class="pt-16"><?= $this->config->package_version ?><br />Jul 16, 2020</p>
+        <p class="pt-16">v1.4.3<br />Jul 16, 2020</p>
         	<ul>
             <li>updated: core to include page specific css, js and font files.</li>
             <li>updated: fieldnotes API to better manage entires in database.</li>
             <li>added: new WYSIWYG Editor for fieldnotes.</li>
             <li>updated: fieldnotes content and layout template.</li>
             <li>updated: minor changes to reset and app SCSS files for new Editor.</li>
+            <li>updated: footer collection nav font size.</li>
+            <li>updated: debug styling for arrays and objects for better clarity.</li>
         	</ul>
         </p>
 

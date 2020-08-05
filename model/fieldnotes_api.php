@@ -4,6 +4,31 @@ class Fieldnotes_Api
 {
     // public $mysqli;
 
+public function api_Admin_Get_FieldnotesImagesById($id) {
+
+        /* Executes SQL and then assigns object to passed var */
+        if( $this->checkDBConnection(__FUNCTION__) == true) {
+
+            $sql = "select * from fieldnotes_images 
+                where fieldnotes_id = '" . $id . "' and status='active' order by file_order ASC";
+        
+            $result = $this->mysqli->query($sql);
+
+            if ($result->num_rows > 0) {
+            
+                while($row = $result->fetch_assoc())
+		        {
+		            $data[] = $row;
+		        }
+                
+            } 
+            
+        }
+
+        return($data);
+
+    }
+
 public function api_Admin_Get_Fieldnotes($status=null) {
 
     if(!is_null($status)) {
@@ -130,17 +155,20 @@ public function api_Admin_Get_Fieldnotes($status=null) {
 
 public function api_Admin_Update_Fieldnotes() {
 
-        $mysql_ts = $mysql_ts = date('Y-m-d H:i:s');
+        $mysql_ts = date('Y-m-d H:i:s');
 
         /* extract Data Array */
         extract($_POST, EXTR_PREFIX_SAME, "dup");
+
+        // $this->console($_POST);
+        // $this->console($_FILES);
 
         /* Insert into database */
         $content = $this->mysqli->real_escape_string($_POST['content']);
         
         if(isSet($_FILES['file_1']['name'])) {
-            $_FILES['file_1']['name'] = $short_path . '.jpg';
-            $image= $short_path . '.jpg';
+            // $_FILES['file_1']['name'] = $short_path . '.jpg';
+            $img_path = $short_path . '_file_1.jpg';
         } 
 
         if(!isset($featured)) { $featured ="0"; }
@@ -153,13 +181,13 @@ public function api_Admin_Update_Fieldnotes() {
             content = REPLACE(\"$content\", \"\\r\\n\", \"\"),
             type = '$type',
             count = '$words',
-            image = '$image',
-            caption = '$caption',
+            image = '$img_path',
+            caption = '$file_1_caption',
             featured = '$featured',
             created = '$date',
             modified = '$mysql_ts',
             status = '$status'
-        WHERE fieldnotes_id = '$fieldnotes_id'
+        WHERE fieldnotes_id = '$fieldnotes_id' 
         ";
 
         $result = $this->mysqli->query($sql,1);
@@ -183,8 +211,38 @@ public function api_Admin_Update_Fieldnotes() {
             }
         } 
 
-        /* Check to see if files have been uploaded */
-        $this->__uploadFile(array("jpg","jpeg"), "jpg");
+        /* Fieldnotes_images and captions */
+        $i=1;
+        foreach ($_FILES as $key => $val) {
+            
+            if($val['size'] > 0) {
+                $img_path = $short_path . '_' . $key . '.jpg';
+                $idx_caption = $key . "_caption";
+                $idx_path = $key . "_path";
+
+                /* DELETE ALL image meta data from fieldnotes_images table for image being modified */
+                $sql_img_d = "DELETE FROM fieldnotes_images WHERE path = '" . $img_path . "'";
+                $result_img_d = $this->mysqli->query($sql_img_d);
+                
+                /* insert into the database */
+                $sql_img_i = "INSERT INTO fieldnotes_images (fieldnotes_id, path, caption, file_order)
+                    VALUES('" . $fieldnotes_id . "','" . $img_path . "','" . $_POST[$idx_caption] . "','" . $i . "')";
+                $result_img_i = $this->mysqli->query($sql_img_i);
+
+            } else {
+
+                /* UPDATE captions for all images */
+                if(${"file_" . $i . "_path"} != "" ) {
+                    $sql_cap_u = "UPDATE `jmgaller_iesusa`.`fieldnotes_images` SET `caption` = '" . ${"file_" . $i . "_caption"} . "' WHERE `fieldnotes_id` = '" . $fieldnotes_id . "' AND `path`='" . ${"file_" . $i . "_path"} . "'";
+                    $result_cap_u = $this->mysqli->query($sql_cap_u);
+                }
+
+            }
+            $i++;
+        }
+        
+         /* Check to see if files have been uploaded */
+         $this->__uploadFiles(array("jpg","jpeg"), "jpg");
 
         if($result == 1) {
             $_SESSION['error'] = '200';
@@ -239,8 +297,6 @@ public function api_Admin_Insert_Fieldnotes() {
                 '$mysql_ts',
                 '$status'
                 );";
-
-        // $this->console($sql,1);
 
         $result = $this->mysqli->query($sql);
         $fieldnotes_id = $this->mysqli->insert_id;
@@ -297,7 +353,60 @@ public function __readTime($count) {
     return($read_time);
 }
 
-public function __uploadFile($fileTypes=array("jpeg"), $ext="jpg") {
+public function __uploadFiles($fileTypes=array("jpeg"), $ext="jpg") {
+
+    $uploadReady=0;
+
+        foreach($_FILES as $key => $value) {
+
+            $_FILES[$key]['path'] = '/view/image/fieldnotes/';
+            
+            if($value['size'] != 0) {
+                // $_FILES[$key]['path'] = $_POST[$key . '_path'];
+                $uploadReady=1;
+                // $this->console($value);
+            } else { $uploadReady=0; }
+
+            // if($_FILES[$key]['path'] == "/catalog/__thumbnail/") { $log_loc = 'Thumbnail'; } else { $log_loc = 'Main'; }
+            $target_file = $_SERVER["DOCUMENT_ROOT"] . $_FILES[$key]['path'] . $_POST['short_path'] . '_' . $key . '.' . $ext;
+
+            if(file_exists( $target_file )) {
+                // $this->log(array("key" => "core", "value" => "Overwriting " . $log_loc . " Photo (" . $_POST['file_name'] . '.' . $ext . ")", "type" => "warning"));
+                $uploadReady = 1;
+
+                // need to throw an overwrite flag only if $_FILES[$key]['name']
+                if( isSet($_FILES[$key]['name'])) {
+                    $uploadOverwrite = 1;
+                } 
+
+            } else { $uploadReady=1; $uploadOverwrite = 0; }
+
+            // Check if $uploadReady is set to 0 by an error
+            if($value['size'] != '0') {
+
+                if ($uploadReady == 0) {
+                    $this->log(array("key" => "api_FieldNotes", "value" => "Failed to Upload / uploadReady=0", "type" => "failure"));
+                } else {
+                    
+                    // $this->console($target_file);
+
+                    if (move_uploaded_file($_FILES[$key]["tmp_name"], $target_file)) {
+                        if ($uploadOverwrite == 0) {
+                            $this->log(array("key" => "api_FieldNotes", "value" => "Upload of " . $log_loc . " Image File (" . $_POST['file_name'] . '.' . $ext . ")", "type" => "success"));
+                        } else {
+                            $this->log(array("key" => "api_FieldNotes", "value" => "Overwriting " . $log_loc . " Photo (" . $_POST['file_name'] . '.' . $ext . ")", "type" => "warning"));
+                        }
+                    } else {
+                        // $this->log(array("key" => "system", "value" => "move_uploaded_file() FAILURE on line " . __LINE__, "type" => "failure"));
+                    }
+                }
+            }
+
+        }
+
+}
+
+public function x__uploadFile($fileTypes=array("jpeg"), $ext="jpg") {
 
         $uploadReady=0;
 

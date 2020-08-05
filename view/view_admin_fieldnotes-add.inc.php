@@ -28,9 +28,15 @@ if(isSet($this->routes->URI->queryvals)) {
     $edit_id = $params[0][1];
 
     $edit_data = $this->api_Admin_Get_Fieldnotes_Item($edit_id);
+    $image_data = $this->api_Admin_Get_FieldnotesImagesById($edit_id);
     
     extract($edit_data, EXTR_PREFIX_ALL, "res");
-    // $res_content = nl2br(strtr($res_content, array('\r' => chr(13), '\n' => chr(10))));
+    $i=1;
+    foreach ($image_data as $iK => $iV) {
+        ${"res_image_" . $iV['file_order']} = $iV['path'];
+        ${"res_caption_file_" . $iV['file_order']} = $iV['caption'];
+        $i++;
+    }
 
     $tags_data = $this->api_Admin_Get_Fieldnotes_Tags($edit_id);
     foreach ($tags_data as $key => $value) {
@@ -39,7 +45,34 @@ if(isSet($this->routes->URI->queryvals)) {
         $res_tags = trim($tags, ", ");
 
     if($res_image != '') {
-        $show_image_html = '<p class="mb-16"><img src="/view/image/fieldnotes/' . $res_image . '" class="show-image" /></p>';
+        $show_image1_html = '<div class="show-image-container"><img src="/view/image/fieldnotes/' . $res_image . '" class="show-image" /></div>';
+        $res_caption_file_1 = $res_caption;
+    } else {
+        $show_image1_html = '<div class="image_filler"><h4 class="center">UPLOAD IMAGE<br />1050 x 619 pixels</h4></div>';
+    }
+
+    if(isSet($res_image_2)) {
+        $show_image2_html = '<div class="show-image-container"><img src="/view/image/fieldnotes/' . $res_image_2 . '" class="show-image" /></div>';
+    } else {
+        $show_image2_html = '<div class="image_filler"><h4 class="center">UPLOAD IMAGE<br />1050 x 619 pixels</h4></div>';
+    }
+
+    if(isSet($res_image_3)) {
+        $show_image3_html = '<div class="show-image-container"><img src="/view/image/fieldnotes/' . $res_image_3 . '" class="show-image" /></div>';
+    } else {
+        $show_image3_html = '<div class="image_filler"><h4 class="center">UPLOAD IMAGE<br />1050 x 619 pixels</h4></div>';
+    }
+
+    if(isSet($res_image_4)) {
+        $show_image4_html = '<div class="show-image-container"><img src="/view/image/fieldnotes/' . $res_image_4 . '" class="show-image" /></div>';
+    } else {
+        $show_image4_html = '<div class="image_filler"><h4 class="center">UPLOAD IMAGE<br />1050 x 619 pixels</h4></div>';
+    }
+
+    if(isSet($res_image_5)) {
+        $show_image5_html = '<div class="show-image-container"><img src="/view/image/fieldnotes/' . $res_image_5 . '" class="show-image" /></div>';
+    } else {
+        $show_image5_html = '<div class="image_filler"><h4 class="center">UPLOAD IMAGE<br />1050 x 619 pixels</h4></div>';
     }
 
     $this->page->title = "<b>Editing Field Note, ID " . $res_fieldnotes_id . "</b>";
@@ -62,7 +95,11 @@ if(isSet($this->routes->URI->queryvals)) {
     $button_archive_cancel = '<a class="cancel-button" href="/studio/fieldnotes">cancel</a>';
     // $date_field_hidden = 'noshow';
     $res_created = $mysql_ts = date('Y-m-d H:i:s');
-    $show_image_html = '<div class="image_filler"><h4 class="center">UPLOAD IMAGE<br />1050 x 619 pixels</h4></div>';
+    $show_image1_html = '<div class="image_filler"><h4 class="center">UPLOAD IMAGE<br />1050 x 619 pixels</h4></div>';
+    $show_image2_html = '<div class="image_filler"><h4 class="center">UPLOAD IMAGE<br />1050 x 619 pixels</h4></div>';
+    $show_image3_html = '<div class="image_filler"><h4 class="center">UPLOAD IMAGE<br />1050 x 619 pixels</h4></div>';
+    $show_image4_html = '<div class="image_filler"><h4 class="center">UPLOAD IMAGE<br />1050 x 619 pixels</h4></div>';
+    $show_image5_html = '<div class="image_filler"><h4 class="center">UPLOAD IMAGE<br />1050 x 619 pixels</h4></div>';
 }
 
 /* NAVIGATION LOAD */
