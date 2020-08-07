@@ -245,7 +245,7 @@ class Core_Api extends Fieldnotes_Api
         	INNER JOIN catalog_collections AS CAT ON CAT.catalog_collections_id = PH.parent_collections_id
         	INNER JOIN catalog_collections_link AS CPL ON CPL.catalog_photo_id = PH.parent_collections_id
         WHERE
-            PH.created > DATE_ADD(Now(), INTERVAL - 3 MONTH)
+            PH.created > DATE_ADD(Now(), INTERVAL - 6 MONTH)
             AND PH.status = 'ACTIVE'
         ORDER BY
             PH.created DESC

@@ -178,6 +178,7 @@ public function api_Admin_Update_Fieldnotes() {
         SET 
             title = '$title',
             short_path = '$short_path',
+            teaser = '$teaser',
             content = REPLACE(\"$content\", \"\\r\\n\", \"\"),
             type = '$type',
             count = '$words',
@@ -280,6 +281,7 @@ public function api_Admin_Insert_Fieldnotes() {
                 `image`, 
                 `caption`,
                 `content`, 
+                `teaser`,
                 `type`, 
                 `featured`,
                 `short_path`,
@@ -291,6 +293,7 @@ public function api_Admin_Insert_Fieldnotes() {
                 '$img_path',
                 '$file_1_caption', 
                 REPLACE(\"$content\", \"\\r\\n\", \"\"), 
+                '$teaser',
                 '$type', 
                 '$featured',
                 '$short_path',
@@ -409,9 +412,9 @@ public function __uploadFiles($fileTypes=array("jpeg"), $ext="jpg") {
 
                     if (move_uploaded_file($_FILES[$key]["tmp_name"], $target_file)) {
                         if ($uploadOverwrite == 0) {
-                            $this->log(array("key" => "api_FieldNotes", "value" => "Upload of " . $log_loc . " Image File (" . $_POST['file_name'] . '.' . $ext . ")", "type" => "success"));
+                            $this->log(array("key" => "api_FieldNotes", "value" => "Upload of " . $log_loc . " Image File (" . $_POST['short_path'] . '_' . $key . '.' . $ext . ")", "type" => "success"));
                         } else {
-                            $this->log(array("key" => "api_FieldNotes", "value" => "Overwriting " . $log_loc . " Photo (" . $_POST['file_name'] . '.' . $ext . ")", "type" => "warning"));
+                            $this->log(array("key" => "api_FieldNotes", "value" => "Overwriting " . $log_loc . " Photo (" . $_POST['short_path'] . '_' . $key . '.' . $ext . ")", "type" => "warning"));
                         }
                     } else {
                         // $this->log(array("key" => "system", "value" => "move_uploaded_file() FAILURE on line " . __LINE__, "type" => "failure"));

@@ -43,11 +43,11 @@
 
                  <div class="file mt-16">
                     <ul class="files_nav">
-                        <li data-file="file_1" class="files_nav--invert"><i class="far fa-images"></i> COVER IMAGE</li>
+                        <li data-file="file_1" class="files_nav--invert"><i class="far fa-images"></i></li>
                         <li data-file="file_2" class="files_nav--filmstrip hidden"><i class="far fa-images"></i></li>
                         <li data-file="file_3" class="files_nav--filmstrip hidden"><i class="far fa-images"></i></li>
                         <li data-file="file_4" class="files_nav--filmstrip hidden"><i class="far fa-images"></i></li>
-                        <li data-file="file_5" class="files_nav--filmstrip hidden"><i class="far fa-images"></i></li>
+                        <!-- <li data-file="file_5" class="files_nav--filmstrip hidden"><i class="far fa-images"></i></li> -->
                     </ul>
 
                     <!-- File_1 -->
@@ -117,12 +117,14 @@
 
                 </div>
 
+                <div id="teaser">
+                    <label for="teaser">teaser</label>
+                    <input class="mt-8" maxlength="250" type="text" id="teaser" name="teaser" placeholder="TEASER (eg, MAXLENGTH 133 CHARACTERS.)" value="<?= $res_teaser ?>" >
+                </div>
+
                 <div id="content_area" class="mt-32">
             
                     <p>CONTENT</p>
-
-                    <!-- <label for="teaser">teaser</label> -->
-                    <input class="mt-8" maxlength="250" type="hidden" id="teaser" name="teaser" placeholder="TEASER (eg, MAXLENGTH 133 CHARACTERS.)" value="<?= $res_teaser ?>" >
 
                     <div class="fn__editor">
                         <div class="actions fn__editor_tools">

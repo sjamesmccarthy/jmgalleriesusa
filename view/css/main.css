@@ -1392,6 +1392,12 @@ form #buysize, form #frame { border: none; border-bottom: 1px solid #e4e4e4; bor
 
 .storycard--background .content__image--preview > img { width: 120%; overflow: hidden; vertical-align: top; border-radius: 6px; }
 
+.storycard--background div[id*='imgT']:hover { cursor: pointer; }
+
+.storycard--background .filmstrip--large-preview, .storycard--background .filmstrip--large-preview div[id*='img_'] { display: none; }
+
+.storycard--background .close_filmstrip { cursor: pointer; }
+
 #polarized { padding: 0 32px; }
 
 #polarized .__container .__container--toc { font-size: 2rem; margin-top: -2.5rem; }
