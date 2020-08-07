@@ -5,6 +5,13 @@
 
         <h1>RELEASE NOTES</h1>
 
+        <p class="pt-16">v1.4.4<br />Aug 07, 2020</p>
+        	<ul>
+            <li>added: FILMSTRIP type for Polarized.</li>
+            <li>minor bug fixes throughout the app.</li>
+        	</ul>
+        </p>
+
         <p class="pt-16">v1.4.3<br />Jul 16, 2020</p>
         	<ul>
             <li>updated: core to include page specific css, js and font files.</li>
