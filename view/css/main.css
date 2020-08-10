@@ -1382,7 +1382,7 @@ form #buysize, form #frame { border: none; border-bottom: 1px solid #e4e4e4; bor
 
 .storycard--background h4 a:hover { color: #cccccc; }
 
-.storycard--background .content--preview { background-color: rgba(0, 0, 0, 0.5); padding: 2% 32px; height: 100%; border-radius: 6px; }
+.storycard--background .content--preview { background-color: rgba(0, 0, 0, 0.5); padding: 0 32px; height: 100%; border-radius: 6px; }
 
 .storycard--background .content--preview .--tag, .storycard--background .content--preview .--byline { font-size: .7rem; }
 

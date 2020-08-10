@@ -5,7 +5,7 @@
 
             <p class="__container--toc"><a href="/polarized">&#8672;</a></p>
             <h1>Polarized.</h1>
-            <p class="pb-32 blue" style="margin-top: -10px">a Collection of fieldnotes by Photogrpaher j.McCarthy</p>
+            <p class="pb-32 blue" style="margin-top: -10px">a Collection of field-notes by Photographer j.McCarthy</p>
 
             <h3><?= $res_title?></h3>
              <div class="mt-32 mb-16" style="display: flex; position: relative;   border-bottom: 1px solid #e4e4e4;
