@@ -1414,7 +1414,7 @@ form #buysize, form #frame { border: none; border-bottom: 1px solid #e4e4e4; bor
 
 .content__area div, .content__area p { margin-bottom: 15px; }
 
-.image { position: relative; margin-left: -12%; width: 120%; }
+.image { position: relative; }
 
 @media (max-width: 64em) and (orientation: portrait), (max-width: 80em) and (orientation: portrait) { .image { margin-left: 0; width: 100%; } }
 

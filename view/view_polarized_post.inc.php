@@ -31,7 +31,7 @@ $res_content = str_replace('<p><br></p>', '', $res_content);
 if ( file_exists($_SERVER['DOCUMENT_ROOT'] . "/view/image/fieldnotes/" . $res_image ) ) {
     $img_html .= '<div class="image">
         <img src="/view/image/fieldnotes/' . $res_image . '" /><br />
-        <span class="caption"><?= $res_caption ?></span>
+        <span class="caption">' . $res_caption . '</span>
         </div>';
 }
 

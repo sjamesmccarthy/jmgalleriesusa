@@ -133,7 +133,9 @@ foreach ($fieldnotes_data as $key => $value) {
         }
 
     } else {
-        $card_older_html .= '<li class="small"><a href="/polarized/' . $value['short_path'] . '">' . $value['title'] . '</a></li>';
+        if($value['type'] != "filmstrip") {
+            $card_older_html .= '<li class="small"><a href="/polarized/' . $value['short_path'] . '">' . $value['title'] . '</a></li>';
+        }
     }
 
    $i++; 

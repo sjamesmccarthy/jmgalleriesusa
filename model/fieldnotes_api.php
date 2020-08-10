@@ -164,6 +164,9 @@ public function api_Admin_Update_Fieldnotes() {
         // $this->console($_FILES);
 
         /* Insert into database */
+        $title = $this->mysqli->real_escape_string($_POST['title']);
+        $teaser = $this->mysqli->real_escape_string($_POST['teaser']);
+        $file_1_caption = $this->mysqli->real_escape_string($_POST['file_1_caption']);
         $content = $this->mysqli->real_escape_string($_POST['content']);
         
         if(isSet($_FILES['file_1']['name'])) {
@@ -226,6 +229,7 @@ public function api_Admin_Update_Fieldnotes() {
                 $result_img_d = $this->mysqli->query($sql_img_d);
                 
                 /* insert into the database */
+                $_POST[$idx_caption] = $this->mysqli->real_escape_string($_POST[$idx_caption]);
                 $sql_img_i = "INSERT INTO fieldnotes_images (fieldnotes_id, path, caption, file_order)
                     VALUES('" . $fieldnotes_id . "','" . $img_path . "','" . $_POST[$idx_caption] . "','" . $i . "')";
                 $result_img_i = $this->mysqli->query($sql_img_i);
@@ -266,6 +270,9 @@ public function api_Admin_Insert_Fieldnotes() {
         extract($_POST, EXTR_PREFIX_SAME, "dup");
 
         /* Insert into database */
+        $teaser = $this->mysqli->real_escape_string($_POST['teaser']);
+        $title = $this->mysqli->real_escape_string($_POST['title']);
+        $file_1_caption = $this->mysqli->real_escape_string($_POST['file_1_caption']);
         $content = $this->mysqli->real_escape_string($_POST['content']);
         if(!isset($featured)) { $featured ="0"; }
 
@@ -329,6 +336,7 @@ public function api_Admin_Insert_Fieldnotes() {
         $idx_path = $key . "_path";
 
         /* insert into the database */
+        $_POST[$idx_caption] = $this->mysqli->real_escape_string($_POST[$idx_caption]);
         $sql_img_i = "INSERT INTO fieldnotes_images (fieldnotes_id, path, caption, file_order)
         VALUES('" . $fieldnotes_id . "','" . $img_path . "','" . $_POST[$idx_caption] . "','" . $i . "')";
         $result_img_i = $this->mysqli->query($sql_img_i);
