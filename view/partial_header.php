@@ -7,16 +7,18 @@
     <meta version="<?= $this->config->package_version ?>" />
     <meta site_name="<?= $this->config->site_name ?>" />
     <meta copyright="<?= $this->config->copyright ?>" />
+
     <meta property="og:title" content="<?= $this->page->title ?> by j.McCarthy" />
     <meta property="og:url" content="https:<?= $this->routes->URI->url ?>" />
     <meta property="og:description" content="Artistic Photography for Fine Art Collectors & Enthusiasts" />
     <meta property="og:type" content="website" />
     <meta property="og:image" content="https://jmgalleries.com<?= $og_image ?>" />
     <meta property="og:image:alt" content="<?= $this->page->title ?> by j.McCarthy" />
-    <meta name="twitter:card" content="summary" />
+
     <meta name="twitter:site" content="@jmgalleriesusa" />
     <meta name="twitter:creator" content="@jmgalleriesusa" />
     <meta name="twitter:card" content="summary_large_image" />
+    <meta property="twitter:image" content="https://jmgalleries.com<?= $og_image ?>" />
 
     <!-- core fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap" rel="stylesheet">

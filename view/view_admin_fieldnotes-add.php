@@ -1,10 +1,10 @@
 <section class="admin--fieldnotes-add">
-    <div class="grid-12">
+    <div class="grid">
        
         <!-- insert navigation component -->
         <?= $navigation_html ?>
     
-        <div class="col-9 fieldnotes-add--container">
+        <div class="col fieldnotes-add--container">
 
             <div class="notification success <?= $notification_state ?>"><?= $_SESSION['notification_msg'] ?></div>
 
@@ -117,7 +117,7 @@
 
                 </div>
 
-                <div id="teaser">
+                <div class="teaser_container">
                     <label for="teaser">teaser</label>
                     <input class="mt-8" maxlength="250" type="text" id="teaser" name="teaser" placeholder="TEASER (eg, MAXLENGTH 133 CHARACTERS.)" value="<?= $res_teaser ?>" >
                 </div>
@@ -179,11 +179,14 @@
 <script>
 jQuery(document).ready(function($){
 
+    /* onPageLoad check to see if it's a filmstrip */
     if( $('#type').prop('selectedIndex') == 1 ) {
+        console.log('type=filmstrip');
         $('.files_nav--filmstrip').removeClass('hidden');
-            $('#content_area').hide();
-            $('.file_block--input textarea[name *= "caption"]').addClass('taller');
-            $('.file_block--input textarea[name *= "caption"]').attr('placeholder',"TYPE A SHORT DESCRIPTION ABOUT THIS PHOTO, SLIGHTLY LONGER THAN A CAPTION.");
+        $('#content_area').hide();
+        $('.teaser_container').show();
+        $('.file_block--input textarea[name *= "caption"]').addClass('taller');
+        $('.file_block--input textarea[name *= "caption"]').attr('placeholder',"TYPE A SHORT DESCRIPTION ABOUT THIS PHOTO, SLIGHTLY LONGER THAN A CAPTION.");
     }
 
     counter = function() {
@@ -242,11 +245,13 @@ jQuery(document).ready(function($){
         if(idx == 1) {
             $('.files_nav--filmstrip').removeClass('hidden');
             $('#content_area').hide();
+            $('.teaser_container').show();
             $('.file_block--input textarea[name *= "caption"]').addClass('taller');
             $('.file_block--input textarea[name *= "caption"]').attr('placeholder',"TYPE A SHORT DESCRIPTION ABOUT THIS PHOTO, SLIGHTLY LONGER THAN A CAPTION.");
         } else {
             $('.files_nav--filmstrip').addClass('hidden');
             $('.file_block--input textarea[name *= "caption"]').removeClass('taller');
+            $('.teaser_container').hide();
             $('#content_area').show();
             $('.file_block--input textarea[name *= "caption"]').attr('placeholder',"TYPE A SHORT CAPTION NO LONGER THAN 1 LINE FOR THIS IMAGE.");
         }

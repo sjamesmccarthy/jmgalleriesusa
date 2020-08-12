@@ -1,3 +1,24 @@
+.menu-icon {
+    font-size: 2rem;
+    color: $color-blue;
+    position: absolute;
+    left: 3rem;
+
+    &:hover {
+        cursor: pointer;
+        color: $color-black;
+    }
+
+    &.menu-icon--active {
+        border-bottom: 1px solid #e4e4e4;
+        color: #e4e4e4;
+
+        &:hover {
+            color: $color-blue;
+        }
+    }
+}
+
 .navigation--container {
 
     // height: 100vh;

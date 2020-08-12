@@ -1,10 +1,10 @@
 <section class="admin--users-add">
-    <div class="grid-12">
+    <div class="grid">
        
         <!-- insert navigation component -->
         <?= $navigation_html ?>
     
-        <div class="col-9 users-add--container">
+        <div class="col users-add--container">
 
             <div class="admin-header">
                 <h2><?= $this->page->title ?></h2>

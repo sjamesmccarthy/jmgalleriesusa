@@ -1,10 +1,10 @@
 <section class="fieldnotes--container">
-    <div class="grid-12">
+    <div class="grid-">
        
         <!-- insert navigation component -->
         <?= $navigation_html ?>
     
-        <div class="col-9 fieldnotesidx--container">
+        <div class="col fieldnotesidx--container">
 
             <div class="notification success <?= $notification_state ?>"><?= $notification_msg ?></div>
 

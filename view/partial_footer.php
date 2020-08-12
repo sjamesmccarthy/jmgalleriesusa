@@ -29,7 +29,7 @@
                 <p><a href="/"><img class="breadcrumb-logo" src="/view/image/logo_fullsize.png" /></a> <?= $bc_catalog ?> <img class="breadcrumb-arrow" src="/view/image/icon_navarrow-right.svg" /><?= $this->page->title ?> </p>
                 </div>
                 <div class="col-5_sm-12 breadcrumb text-right">
-                    <p><?= $this->config->copyright ?> | <a href="/release-notes">Made With &#10084; in Las Vegas</a> | <a href="/privacy">Privacy Policy</a></p>
+                    <p><?= $this->config->copyright ?> &mdash; <a href="/release-notes">Made in USA</a> | <a href="/privacy">Privacy Policy</a></p>
                 </div>
 
         </div>

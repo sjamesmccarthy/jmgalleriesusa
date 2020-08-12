@@ -84,7 +84,7 @@ foreach ($fieldnotes_data as $key => $value) {
                     if ($j == $image_count) { $m_right = null; } else { $m_right = null; }
 
                     /* HTML for the images in the strip */
-                    $strip_html .= '<div id="imgT_' . $j . '" style="flex: 1; text-align:center;' . $m_right . '" data-file="' . $j . '"><img style="height: 120px; border-radius: 6px;" src="/view/image/fieldnotes/' . $imgV['path'] . '" /></div>';
+                    $strip_html .= '<div id="imgT_' . $j . '" style="flex: 1; max-width: 180px; text-align:center;' . $m_right . '" data-file="' . $j . '"><img style="height: 120px; border-radius: 6px;" src="/view/image/fieldnotes/' . $imgV['path'] . '" /></div>';
 
                     $image_large .= '<div id="img_' . $j . '_expanded" style="background-color: #000; min-height:300px;position: relative;"><img style="width: 100%;" src="/view/image/fieldnotes/' . $imgV['path'] . '" /><p id="caption_' . $j . '" style="padding: 1rem;">' . $imgV['caption'] . '</p></div>';
                     $j++;
@@ -92,13 +92,13 @@ foreach ($fieldnotes_data as $key => $value) {
 
             $card_html .= '
                 <div class="col-6_sm-12 storycard--background" style="background-color: #000;">
-                    <div style="border-radius: 6px; padding: .5rem 3rem 1rem 3rem; background-color: rgba(0, 0, 0, 0.5);padding-top: 1rem;">
+                    <div style="border-radius: 6px; padding: .5rem 2rem 0 2rem; background-color: rgba(0, 0, 0, 0.5);padding-top: 1rem;">
                         <p style="font-size: .7rem;">FILMSTRIP</p><h4 style="color: #FFFFFF;">' . $value['title']. '</h4><p style="font-size: .7rem;">By ' . $value['byline'] . ' — ' . date("F d, Y", strtotime($value['created'])) . '</p>
                     </div>
-                    <div class="content--preview" style="display: flex; flex-wrap: wrap; justify-content: center;">                        
+                    <div class="content--preview" style="display: flex; flex-wrap: wrap; justify-content: space-between;">                        
                     <!-- HTML for images -->' . $strip_html . 
                     '</div>
-                    <div id="content--teaser"><p style="padding: .5rem 3rem 1rem 3rem;color:#FFF;">' . $value['teaser'] . '</p></div> 
+                    <div id="content--teaser"><p style="padding: .5rem 2rem .5rem 2rem;color:#FFF;">' . $value['teaser'] . '</p></div> 
                     <!-- Large Preview of Image Selected -->
                     <div id="fimlstrip--preview_' . $j . '" class="filmstrip--large-preview">
                         <p data-filmstrip="' .$j . '" class="close_filmstrip" style="border-bottom-left-radius: 69px; background-color: rgba(255,255,255,.5); text-align: right;padding: 24px;position: absolute;top: 0;right: 0;color: #000;"><i style="position:absolute; top:13px;right:10px;" class="fas fa-times-circle" aria-hidden="true"></i></p>'

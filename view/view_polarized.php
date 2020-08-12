@@ -28,11 +28,11 @@ jQuery(document).ready(function($){
             console.log(".filmstrip--preview visible");
             $("div[id*='imgT']").css("border","none");
             $('#content--teaser').hide();
-            $('#' + ele).css("border-bottom", "1px solid #FFF").css("padding-bottom",".5rem").css("margin-bottom",".5rem");
+            $('#' + ele).css("border-bottom", "1px solid #FFF").css("padding-bottom",".5rem").css("margin-bottom","1rem");
         } else {
             $("div[id*='imgT']").css("border","none");
             $('#content--teaser').hide();
-            $('#' + ele).css("border-bottom", "1px solid #FFF").css("padding-bottom",".5rem").css("margin-bottom",".5rem");
+            $('#' + ele).css("border-bottom", "1px solid #FFF").css("padding-bottom",".5rem").css("margin-bottom","1rem");
             $(".filmstrip--large-preview").slideDown();
         }
         
@@ -45,7 +45,7 @@ jQuery(document).ready(function($){
 
     $(".close_filmstrip").on("click", function(e) {
         console.log( $(".close_filmstrip").attr("data-filmstrip") );
-        $("div[id*='imgT']").css("border","none");
+        $("div[id*='imgT']").css("border","none").css("padding-bottom","0").css("margin-bottom","0");
         $(".filmstrip--large-preview").slideUp();
         $('#content--teaser').show();
     });

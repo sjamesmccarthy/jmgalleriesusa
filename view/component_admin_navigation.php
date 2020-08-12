@@ -50,31 +50,26 @@ if(is_null($this->nav_label)) { $this->nav_label = "Adding Photo"; }
 
 /* GENERATE HTML BLOCK */
 $html = <<< END
-<script>
-jQuery(document).ready(function($){
-
-    $('ul li.$path').addClass('selected-item');
-    $('ul.$path').addClass('selected');
-
-});
-</script>
+<div>
+    <p class="menu-icon"><i class="fas fa-theater-masks"></i></p>
+</div>
 
 <div class="col-3 navigation--container">
             
             <div class="toolbox mb-32">
-                <p class="dashboard-icon"><a href="/studio/manage"><i class="fas fa-chart-line"></i></a></p>
-
-                <div class="profile--image">
-                    <img src="/view/image/avatar/$avatar" />
-                </div>
-                
-                <div class="profile--name">
-                    <p>$first_name $last_name</p>
-                    <p><a href="$website" target="_out">$website</a></p>
-                    <!-- <p style="font-size: .9rem;">Member since $membersinceyear</p> -->
-                    <!-- <p class="mb-16 mt-16"><a href="/studio/manage">DASHBOARD</a></p> -->
-                </div>
-
+            
+            <div class="profile--image">
+            <img src="/view/image/avatar/$avatar" />
+            </div>
+            
+            <div class="profile--name border--bottom">
+            <p>$first_name $last_name</p>
+            <p><a href="$website" target="_out">$website</a></p>
+            <!-- <p style="font-size: .9rem;">Member since $membersinceyear</p> -->
+            <p class="mt-16"><a href="/studio/manage">DASHBOARD</a></p>
+            </div>
+            
+            <!-- <p class="dashboard-icon"><a href="/studio/manage"><i class="fas fa-chart-line"></i></a></p> -->
             </div>
 
             <!-- <div class="toolbox">
@@ -154,6 +149,28 @@ jQuery(document).ready(function($){
             </div>
 
         <!-- <div class="col-1"></div> -->
+
+
+<script>
+jQuery(document).ready(function($){
+
+    $('ul li.$path').addClass('selected-item');
+    $('ul.$path').addClass('selected');
+
+    $('.menu-icon').on("click",function(e) {
+        console.log('menu-icon.click');
+        $('.navigation--container').toggle();
+
+        if( $('.navigation--container').is(':visible') ) { 
+            $('.menu-icon').removeClass('menu-icon--active');
+        } else {
+            $('.menu-icon').addClass('menu-icon--active');
+        }
+
+    });
+
+});
+</script>
 
 END;
 

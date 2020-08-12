@@ -4,7 +4,7 @@
         <!-- insert navigation component -->
         <?= $navigation_html ?>
     
-        <div class="col-9 catalog--container">
+        <div class="col catalog--container">
 
             <div class="notification success <?= $notification_state ?>"><?= $notification_msg ?></div>
 

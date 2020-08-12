@@ -1,10 +1,10 @@
 <section class="admin--reports-add">
-    <div class="grid-12">
+    <div class="grid">
        
         <!-- insert navigation component -->
         <?= $navigation_html ?>
     
-        <div class="col-9 reports-add--container">
+        <div class="col reports-add--container">
 
             <div class="notification success <?= $notification_state ?>"><?= $_SESSION['notification_msg'] ?></div>
 
@@ -185,6 +185,7 @@ jQuery(document).ready(function($){
     $('.tab-SQL').on("click", function() {
         console.log('tab-SQL-click');
         $('#form_result').hide();
+        $('#form_sql').removeClass('noshow');
         $('#form_sql').show();
         $('.tab-RESULT').removeClass('active');
         $('.tab-SQL').addClass('active');

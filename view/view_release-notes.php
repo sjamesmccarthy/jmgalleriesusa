@@ -5,6 +5,15 @@
 
         <h1>RELEASE NOTES</h1>
 
+        <p class="pt-16">v1.4.5<br />Aug 12, 2020</p>
+        	<ul>
+            <li>bugfix: SQL not show/hide on tab click.</li>
+            <li>bugfix: Twitter card image fix.</li>
+            <li>update: admin : control Filmstrip now shows teaser by default.</li>
+            <li>update: admin navigation panel now show/hide on mask click; form area expands 100%.</li>
+        	</ul>
+        </p>
+
         <p class="pt-16">v1.4.4<br />Aug 07, 2020</p>
         	<ul>
             <li>added: FILMSTRIP type for Polarized.</li>

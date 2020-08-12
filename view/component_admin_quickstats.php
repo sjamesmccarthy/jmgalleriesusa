@@ -36,7 +36,7 @@ foreach ($this->data_notices as $key => $val) {
 
 /* GENERATE HTML BLOCK */
 $html = <<< END
-<article class="quickstats--container">
+<section class="quickstats--container">
 
     <!-- <p class="title">Total Numbers As Of {$date}</p> -->
 
@@ -66,7 +66,7 @@ $html = <<< END
 
     {$notice_alert}
 
-</article>
+</section>
 END;
 
 return($html);

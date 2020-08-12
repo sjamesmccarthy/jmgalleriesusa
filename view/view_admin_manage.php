@@ -1,23 +1,22 @@
 <section class="admin--section">
-    <div class="grid-12">
+    <div class="grid-">
         
         <!-- insert navigation component -->
         <?= $navigation_html ?>
     
-        <div class="col-9 admin--main_container">
+        <div class="col admin--main_container">
 
-            <!-- <article id="welcome_msg"> -->
-                <h1><?= $first_name ?>, here is your dashboard.</h1>
-            <!-- </article> -->
-
+            <!-- <h1><?= $first_name ?>, here is your dashboard.</h1> -->
 
             <div class="grid">
 
-                <div class="col-12">
+                <div class="col">
                     <!-- quickstats -->
                     <?= $quickstats_html ?>
                </div>
+            </div>
 
+            <div class="grid">
                 <div class="col ">
                     <!-- photosviewed -->
                     <?= $photosviewed_html ?>

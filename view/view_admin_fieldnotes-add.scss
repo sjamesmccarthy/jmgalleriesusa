@@ -18,6 +18,10 @@
         }
     }
 
+    .teaser_container {
+        display: none;
+    }
+    
     .show-image-container {
         text-align: center; 
         height: 660px;
@@ -32,13 +36,11 @@
         position: relative;
 
         .file_block--input textarea[name *= "caption"] {
-           min-height: 75px;
            height: 75px;
-           overflow: auto;
+           font-size: .9rem;
         }
 
         .taller {
-            min-height: 150px !important;
             height: 150px !important;
         }
 
@@ -131,10 +133,10 @@ form {
         color: #FFF;
     }
 
-    textarea {
-        overflow-y: scroll;
-        min-height: 750px;
-    }
+    // textarea {
+    //     overflow-y: scroll;
+    //     min-height: 750px;
+    // }
 
     #content {
         border-top-right-radius: 0;

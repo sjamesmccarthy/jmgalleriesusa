@@ -1,10 +1,10 @@
 <section class="collectionsidx--container">
-    <div class="grid-12">
+    <div class="grid">
        
         <!-- insert navigation component -->
         <?= $navigation_html ?>
     
-        <div class="col-9 collections--container">
+        <div class="col collections--container">
 
             <div class="notification success <?= $notification_state ?>"><?= $notification_msg ?></div>
 

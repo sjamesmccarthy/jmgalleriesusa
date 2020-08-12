@@ -578,6 +578,8 @@ table.dataTable.row-border tbody th, table.dataTable.row-border tbody td, table.
 .grecaptcha-badge { visibility: collapse !important; }
 
 /* Typography */
+.border--bottom { border-bottom: 1px solid #e4e4e4; }
+
 blockquote { border-left: 3px solid #e4e4e4; padding-left: 1rem; margin: 2rem 4rem; }
 
 .light { font-weight: 100; }
@@ -857,7 +859,7 @@ button a { color: #2574A9; }
 
 .notice-NORMAL > p { color: #FFFFFF; }
 
-.quickstats--container { padding: 0; }
+.quickstats--container { padding: 0; margin-top: 0; }
 
 .quickstats--container a { color: #000; }
 
@@ -899,7 +901,7 @@ button a { color: #2574A9; }
 
 .quickstats--container .table .green-bkg { background-color: #267226; color: #FFF; }
 
-.photosviewed--container { background-color: rgba(0, 0, 0, 0.05); border-radius: 6px 6px 0 0; padding: 0; max-height: 1200px; overflow: scroll; }
+.photosviewed--container { background-color: rgba(0, 0, 0, 0.05); border-radius: 6px 6px 0 0; padding: 0; margin-top: 0; max-height: 1000px; overflow: scroll; }
 
 .photosviewed--container .table--box { padding: 20px; line-height: 1.2; }
 
@@ -915,7 +917,7 @@ button a { color: #2574A9; }
 
 .photosviewed--container .item .detail p { font-size: .8rem; }
 
-.activity--container { background-color: rgba(0, 0, 0, 0.05); border-radius: 6px 6px 0 0; max-height: 1200px; overflow: scroll; padding: 0; }
+.activity--container { background-color: rgba(0, 0, 0, 0.05); border-radius: 6px 6px 0 0; max-height: 1000px; overflow: scroll; padding: 0; margin-top: 0; }
 
 .activity--container .table--box { padding: 20px; line-height: 1.2; }
 
@@ -930,6 +932,14 @@ button a { color: #2574A9; }
 .activity--container .item.success-log { color: #155724; }
 
 .activity--container .item.failure-log { color: #721c24; }
+
+.menu-icon { font-size: 2rem; color: #2574A9; position: absolute; left: 3rem; }
+
+.menu-icon:hover { cursor: pointer; color: #4a4a4a; }
+
+.menu-icon.menu-icon--active { border-bottom: 1px solid #e4e4e4; color: #e4e4e4; }
+
+.menu-icon.menu-icon--active:hover { color: #2574A9; }
 
 .navigation--container { border-radius: 6px; padding-right: 32px; }
 
@@ -1066,7 +1076,7 @@ button a { color: #2574A9; }
 
 .footer-column > h3 { padding-bottom: 10px; font-weight: 800; }
 
-#footer a, #footer li a { color: #FFF; font-size: 1rem; }
+#footer a, #footer li a { color: #FFF; }
 
 #footer a:hover, #footer li a:hover { color: #2574A9; }
 
@@ -1713,7 +1723,7 @@ table.dataTable tbody td.valign { vertical-align: middle; }
 
 .reports-add--container .admin-header h2 { font-weight: 300; }
 
-.reports-add--container .active { background-color: #FFF; color: #4a4a4a; }
+.reports-add--container .active { background-color: #FFF; color: #4a4a4a; display: block; }
 
 .reports-add--container #material_expenses_list { padding: 1rem 0; }
 
@@ -1767,15 +1777,17 @@ table.dataTable tbody td.valign { vertical-align: middle; }
 
 .fieldnotes-add--container .admin-header h2 { font-weight: 300; }
 
+.fieldnotes-add--container .teaser_container { display: none; }
+
 .fieldnotes-add--container .show-image-container { text-align: center; height: 660px; overflow: hidden; }
 
 .fieldnotes-add--container .show-image { width: 100%; }
 
 .fieldnotes-add--container .file { position: relative; }
 
-.fieldnotes-add--container .file .file_block--input textarea[name*="caption"] { min-height: 75px; height: 75px; overflow: auto; }
+.fieldnotes-add--container .file .file_block--input textarea[name*="caption"] { height: 75px; font-size: .9rem; }
 
-.fieldnotes-add--container .file .taller { min-height: 150px !important; height: 150px !important; }
+.fieldnotes-add--container .file .taller { height: 150px !important; }
 
 .fieldnotes-add--container .file .file_2, .fieldnotes-add--container .file .file_3, .fieldnotes-add--container .file .file_4, .fieldnotes-add--container .file .file_5 { display: none; }
 
@@ -1806,8 +1818,6 @@ table.dataTable tbody td.valign { vertical-align: middle; }
 .fieldnotes-add--container form { padding: 1rem; }
 
 .fieldnotes-add--container form .input-upload { margin-bottom: 1rem; vertical-align: middle; padding-left: 1rem; color: #FFF; }
-
-.fieldnotes-add--container form textarea { overflow-y: scroll; min-height: 750px; }
 
 .fieldnotes-add--container form #content { border-top-right-radius: 0; border-top-left-radius: 0; }
 

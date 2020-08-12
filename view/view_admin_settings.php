@@ -1,11 +1,11 @@
 <a name="top"></a>
 <section class="settingsidx--container">
-    <div class="grid-12">
+    <div class="grid">
        
         <!-- insert navigation component -->
         <?= $navigation_html ?>
 
-        <div class="col-9 settings--container">
+        <div class="col settings--container">
 
             <div class="notification success <?= $notification_state ?>"><?= $notification_msg ?></div>
                

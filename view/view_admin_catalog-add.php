@@ -1,10 +1,10 @@
 <section class="admin--catalog-add">
-    <div class="grid-12">
+    <div class="grid">
        
         <!-- insert navigation component -->
         <?= $navigation_html ?>
     
-        <div class="col-9 catalog-add--container">
+        <div class="col catalog-add--container">
 
             <div class="admin-header">
                 <h2><?= $page_title ?></h2>
