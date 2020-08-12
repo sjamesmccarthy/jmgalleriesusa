@@ -11,6 +11,7 @@
             <li>bugfix: Twitter card image fix.</li>
             <li>update: admin : control Filmstrip now shows teaser by default.</li>
             <li>update: admin navigation panel now show/hide on mask click; form area expands 100%.</li>
+            <li>update: changed header labels, minor footer update.</li>
         	</ul>
         </p>
 

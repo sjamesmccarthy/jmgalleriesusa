@@ -41,23 +41,24 @@ foreach ($fieldnotes_data as $key => $value) {
         $img_html = '<!-- err_code: no image found -->';
     }
 
+
     if($i < $large_cards) {
 
-        if ($value['type'] == "featured") {
+        if ($value['featured'] == "1") {
             
             $card_html .= '
-                <div class="col-6_sm-12 storycard--background" style="background: rgba(0,0,0,1) url(/view/image/fieldnotes/' . $value['image'] . ') no-repeat center; background-size: auto;">
+                <div class="col-6_sm-12 storycard--background" style="background: rgba(0,0,0,1) url(/view/image/fieldnotes/' . $value['image'] . ') no-repeat center; background-size: cover;">
                     <div class="content--preview">
-                        <div style="padding-top: inherit;">
+                        <div style="padding: 2rem .1rem;">
                         <p class="--tag">' . strtoupper($value['type']) . '</p>
                         <h4><a href="/polarized/' . $value['short_path'] . '">' . $value['title'] . '</a></h4>
                         
                         <div class="mt-8" style="display: flex; position: relative;">
-                                <div style="width: 30px; margin-top: 2px;">
+                                <div style="width: 38px; margin-top: 2px;">
                                     <img src="/view/image/avatar/jamesmccarthy_1.jpg" style="border-radius: 100px; width: 100%;"/>
                                 </div>
-                                <div class="byline" style="width: 100%;">
-                                    <p class="--byline">' . $value['byline'] . '<br />
+                                <div class="--byline" style="width: 100%;">
+                                    <p class="--byline"><b>' . $value['byline'] . '</b><br />
                                     ' . date("F d, Y", strtotime($value['created'])) . ' - ' . $value['count'] . ' Words, ' . $read_time . '</p>
                                 </div>
                         </div>
@@ -92,8 +93,8 @@ foreach ($fieldnotes_data as $key => $value) {
 
             $card_html .= '
                 <div class="col-6_sm-12 storycard--background" style="background-color: #000;">
-                    <div style="border-radius: 6px; padding: .5rem 2rem 0 2rem; background-color: rgba(0, 0, 0, 0.5);padding-top: 1rem;">
-                        <p style="font-size: .7rem;">FILMSTRIP</p><h4 style="color: #FFFFFF;">' . $value['title']. '</h4><p style="font-size: .7rem;">By ' . $value['byline'] . ' — ' . date("F d, Y", strtotime($value['created'])) . '</p>
+                    <div style="border-radius: 6px; padding: .5rem 2rem .5rem 2rem; background-color: rgba(0, 0, 0, 0.5);padding-top: 1rem;">
+                        <p style="font-size: .7rem;">FILMSTRIP</p><h4 style="color: #FFFFFF;">' . $value['title']. '</h4><p style="font-size: .8rem;"><b>' . $value['byline'] . '</b> &mdash; ' . date("F d, Y", strtotime($value['created'])) . '</p>
                     </div>
                     <div class="content--preview" style="display: flex; flex-wrap: wrap; justify-content: space-between;">                        
                     <!-- HTML for images -->' . $strip_html . 
@@ -117,11 +118,11 @@ foreach ($fieldnotes_data as $key => $value) {
                             <div class="--teaser">' . $content_leadin_short . '</div>
                             
                             <div class="" style="display: flex; position: relative; margin-top: 1rem;">
-                                <div style="width: 30px; margin-top: 2px;">
+                                <div style="width: 38px; margin-top: 2px;">
                                     <img src="/view/image/avatar/jamesmccarthy_1.jpg" style="border-radius: 100px; width: 100%;"/>
                                 </div>
                                 <div class="" style="width: 100%; padding-left: .5rem;">
-                                    <p class="--byline">' . $value['byline'] . '<br />
+                                    <p class="--byline"><b>' . $value['byline'] . '</b><br />
                                     ' . date("F d, Y", strtotime($value['created'])) . ' - ' . $value['count'] . ' Words, ' . $read_time . '</p>
                                 </div>
                             </div>

@@ -17,7 +17,7 @@
                 <li><a href="/all">View All</a></li>
                 <li>&mdash;</li>
                 <li><a href="/styles">Frames & Pricing</a></li>
-                <li><a href="/contact">Contact</a></li>
+                <li><a href="/contact">Contact Us</a></li>
             </ul>
             </div>
           

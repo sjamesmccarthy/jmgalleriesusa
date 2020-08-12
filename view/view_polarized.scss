@@ -1,4 +1,4 @@
-#polarized {
+#polarized_idx {
 
     padding: 0 32px;
     
@@ -39,6 +39,7 @@
     position: relative;
     display: flex;
     border-bottom: 1px solid #e4e4e4;
+    padding-bottom: 2rem;
     
     h4 {
         font-weight: 600;
@@ -62,7 +63,9 @@
               }
 
               .--byline {
+                  font-family: 'lato', sans-serif !important;
                   font-weight: 400;
+                font-size: .8rem;
               }
 
               .--teaser,
@@ -112,17 +115,19 @@
     }
 
     .content--preview {
-        background-color: rgba(0,0,0,.5);
+        // background-color: rgba(0,0,0,.5);
         padding: 0 32px;
         height: 100%;
         border-radius: $border-radius;
 
         .--tag, .--byline {
-            font-size: .7rem;
+            font-size: .8rem;
         }
 
         .--byline {
+            font-family: Lato, sans-serif !important;
             font-weight: 400;
+            padding-left: .3rem;
         }
     } 
 

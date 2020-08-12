@@ -184,7 +184,7 @@ jQuery(document).ready(function($){
         console.log('type=filmstrip');
         $('.files_nav--filmstrip').removeClass('hidden');
         $('#content_area').hide();
-        $('.teaser_container').show();
+        // $('.teaser_container').show();
         $('.file_block--input textarea[name *= "caption"]').addClass('taller');
         $('.file_block--input textarea[name *= "caption"]').attr('placeholder',"TYPE A SHORT DESCRIPTION ABOUT THIS PHOTO, SLIGHTLY LONGER THAN A CAPTION.");
     }
@@ -245,13 +245,13 @@ jQuery(document).ready(function($){
         if(idx == 1) {
             $('.files_nav--filmstrip').removeClass('hidden');
             $('#content_area').hide();
-            $('.teaser_container').show();
+            // $('.teaser_container').show();
             $('.file_block--input textarea[name *= "caption"]').addClass('taller');
             $('.file_block--input textarea[name *= "caption"]').attr('placeholder',"TYPE A SHORT DESCRIPTION ABOUT THIS PHOTO, SLIGHTLY LONGER THAN A CAPTION.");
         } else {
             $('.files_nav--filmstrip').addClass('hidden');
             $('.file_block--input textarea[name *= "caption"]').removeClass('taller');
-            $('.teaser_container').hide();
+            // $('.teaser_container').hide();
             $('#content_area').show();
             $('.file_block--input textarea[name *= "caption"]').attr('placeholder',"TYPE A SHORT CAPTION NO LONGER THAN 1 LINE FOR THIS IMAGE.");
         }

@@ -2,8 +2,22 @@
 
     padding: 0 32px;
 
+    #teaser >p {
+        font-size: 1.5rem;
+        padding-bottom: 2rem;
+    }
+
+        div, p {
+            font-family: 'Source Serif Pro', serif;
+            font-weight: 400;
+        }
+
     .__container {
 
+        h3 {
+            font-size: 2.5rem;
+            font-weight: 600;
+        }
         .__container--toc {
             font-size: 2rem;
             margin-top: -2.5rem;
@@ -29,8 +43,9 @@
 
 .byline {
   width: 100%;
+  font-family: 'lato', sans-serif !important;
   font-weight: 400;
-  font-size: 1rem;
+  font-size: .9rem;
   padding-left: 20px;
   margin-top: 8px;
 }
@@ -42,7 +57,7 @@
         }
 
         div, p {
-            margin-bottom: 15px;
+            margin-bottom: 2rem;
             // font-size: 1.3rem;
             // line-height: 1.6;
         }
@@ -51,8 +66,8 @@
 
 .image {
     position: relative;
-    // margin-left: -12%;
-    // width: 120%;
+    margin-left: -12%;
+    width: 120%;
 
         @media (max-width: 64em) and (orientation: portrait),
         (max-width: 80em) and (orientation: portrait) 

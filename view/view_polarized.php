@@ -1,10 +1,10 @@
-<section id="polarized" class="pt-24">
+<section id="polarized_idx" class="pt-24">
     <div class="grid-noGutter-center">
 
         <div class="col-8 __container">
 
-            <h1>Polarized</h1>
-            <p class="pb-32 blue" style="margin-top: -10px">a Collection of field-notes by Photographer j.McCarthy</p>
+            <!-- <h1>JOURNAL</h1> -->
+            <h4 class="mb-64 blue">a Collection of Field-Notes by Photographer j.McCarthy</h4>
 
             <?= $card_html ?>
             <div style="margin-bottom: 1rem; text-transform: uppercase; font-weight: 800;">Some older FIELD NOTES and other thoughts</div>

@@ -4,22 +4,26 @@
         <div class="col-8 __container">
 
             <p class="__container--toc"><a href="/polarized">&#8672;</a></p>
-            <h1>Polarized.</h1>
-            <p class="pb-32 blue" style="margin-top: -10px">a Collection of field-notes by Photographer j.McCarthy</p>
+            <!-- <h1>Journal</h1>
+            <p class="pb-32 blue" style="margin-top: -10px">a Collection of field-notes by Photographer j.McCarthy</p> -->
 
             <h3><?= $res_title?></h3>
             
-             <div class="mt-32 mb-16" style="display: flex; position: relative;   border-bottom: 1px solid #e4e4e4; padding-bottom: 1rem;">
+            <div>
+                <p style="font-family: 'roboto', sans-serif; font-size: 1.3rem;color: rgba(117,117,117);padding-top: .5rem;"><?= $res_teaser?></p>
+            </div>
+
+             <div class="mt-32 mb-16" style="display: flex; position: relative;">
                 <div class="avatar">
                     <img src="/view/image/avatar/jamesmccarthy_1.jpg" />
                 </div>
                 <div class="byline" style="flex:5;">
-                    Written By <?= $res_first_name ?> <?= $res_last_name ?><br />
+                    <b><?= $res_first_name ?> <?= $res_last_name ?></b><br />
                     <?= $res_created  ?> &hybull; <?= $res_count ?>  Words, <?= $read_time ?>
                 </div>
                 <div class="mt-16">
-                    <p style="display: inline-block" class="mr-16"><a target="_social" href="https://twitter.com/jmgalleriesusa"><i class="fab fa-twitter"></i></a></p>
-                    <p style="display: inline-block" ><a target="_social" href="https://www.linkedin.com/in/jmccarthyusa/"><i class="fab fa-linkedin"></i></a></p>
+                    <p style="display: inline-block; font-size: 1.5rem;" class="mr-16"><a target="_social" href="https://twitter.com/jmgalleriesusa"><i class="fab fa-twitter"></i></a></p>
+                    <p style="display: inline-block; font-size: 1.5rem;" ><a target="_social" href="https://www.linkedin.com/in/jmccarthyusa/"><i class="fab fa-linkedin"></i></a></p>
                 </div>
             </div>
 

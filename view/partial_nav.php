@@ -4,18 +4,21 @@
         <?= $active ?>
 
         <div class="col-2_md-hidden-middle">
-            <p class="center heading" ><a href="/all?filter=tinyviews" class="<?= $all ?>">PRINTS</a><br />GICLÉE & tinyVIEWS&trade;</p>
+            <p class="center heading" ><a href="/all?filter=tinyviews" class="<?= $all ?>">SHOP</a><br /><!-- GICLÉE -->PRINTS & tinyVIEWS&trade;</p>
         </div>
         <div class="col-3_md-4-middle">
-            <p class="center heading"><a href="/polarized" class="<?= $polarized ?>">POLARIZED</a><br />short FIELD NOTES</p>
+            <p class="center heading"><a href="/polarized" class="<?= $polarized ?>">JOURNAL</a><br />short FIELD NOTES</p>
         </div>
         <div class="col-2_md-4-middle">
             <p class="topnav-logo"><a href="/"><img src="/view/image/logo_fullsize.png" /></a></p>
             <p class="topnav-subline">beta</p>
         </div>
         <div class="col-3_md-hidden-middle">
-            <p class="center heading"><a href="/moments" class="<?= $moments ?>">MOMENTS</a><br />NEWS & EVENTS</p>
+            <p class="center heading"><a href="/galleries" class="<?= $moments ?>">THE WORK</a><br />by COLLECTION</p>
         </div>
+        <!-- <div class="col-3_md-hidden-middle">
+            <p class="center heading"><a href="/moments" class="<?= $moments ?>">MOMENTS</a><br />NEWS & EVENTS</p>
+        </div> -->
         <div class="col-2_md-4-middle">
             <p class="center heading"><a href="/about" class="<?= $about ?>">ABOUT</a><br />j.MCCARTHY</p>
         </div>
