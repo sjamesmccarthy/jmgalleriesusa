@@ -50,8 +50,9 @@ if(is_null($this->nav_label)) { $this->nav_label = "Adding Photo"; }
 
 /* GENERATE HTML BLOCK */
 $html = <<< END
-<div>
-    <p class="menu-icon"><i class="fas fa-theater-masks"></i></p>
+<div class="menu-icon--container">
+    <p class="menu-icon"><i class="fas fa-adjust"></i></p>
+    <p class="tiny center blue">MENU</p>
 </div>
 
 <div class="col-3 navigation--container">
@@ -59,7 +60,7 @@ $html = <<< END
             <div class="toolbox mb-32">
             
             <div class="profile--image">
-            <img src="/view/image/avatar/$avatar" />
+                <img src="/view/image/avatar/$avatar" />
             </div>
             
             <div class="profile--name border--bottom">
@@ -163,8 +164,10 @@ jQuery(document).ready(function($){
 
         if( $('.navigation--container').is(':visible') ) { 
             $('.menu-icon').removeClass('menu-icon--active');
+            $('.menu-icon').removeClass('flip');
         } else {
             $('.menu-icon').addClass('menu-icon--active');
+            $('.menu-icon').addClass('flip');
         }
 
     });

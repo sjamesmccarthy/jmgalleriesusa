@@ -933,13 +933,23 @@ button a { color: #2574A9; }
 
 .activity--container .item.failure-log { color: #721c24; }
 
-.menu-icon { font-size: 2rem; color: #2574A9; position: absolute; left: 3rem; }
+@-webkit-keyframes flip_animation { 0% { color: #e4e4e4; }
+  50% { color: #000; }
+  100% { color: #2574A9; } }
 
-.menu-icon:hover { cursor: pointer; color: #4a4a4a; }
+@keyframes flip_animation { 0% { color: #e4e4e4; }
+  50% { color: #000; }
+  100% { color: #2574A9; } }
 
-.menu-icon.menu-icon--active { border-bottom: 1px solid #e4e4e4; color: #e4e4e4; }
+.menu-icon--container { padding-right: 1rem; }
 
-.menu-icon.menu-icon--active:hover { color: #2574A9; }
+.menu-icon--container .menu-icon { font-size: 2rem; color: #2574A9; }
+
+.menu-icon--container .menu-icon:hover { cursor: pointer; color: #4a4a4a; }
+
+.menu-icon--container .menu-icon.flip { -webkit-animation-name: flip_animation; animation-name: flip_animation; -webkit-animation-duration: 1s; animation-duration: 1s; transform: rotate(-90deg); }
+
+.menu-icon--container .menu-icon.menu-icon--active:hover { color: #4a4a4a; }
 
 .navigation--container { border-radius: 6px; padding-right: 32px; }
 
