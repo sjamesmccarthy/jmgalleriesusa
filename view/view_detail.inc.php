@@ -145,7 +145,7 @@
 
         $btn = "BUY THIS LIMITED EDITION";
         $btn_link = '<a href="/contact?photo=' . $photo_meta['file_name'] . '">';
-        $gallery_details = '<p class="col-12 mt-32">Limited Editions are either printed on ' . $edition_desc_material . ' mounted in a Premium Designer frame and protected with Tru Vue&reg; Museum Glass, or Lumachrome HD Acrylic without framing. If you have any questions about our <a href="/styles">styles, frames and editions</a>, or would like to talk with an art consultant, please <a href="/contact">contact us</a>.</p>';
+        $gallery_details = '<p class="col-12 mt-32"><!-- Limited Editions are either printed on ' . $edition_desc_material . ' mounted in a Premium Designer frame and protected with Tru Vue&reg; Museum Glass, or Lumachrome HD Acrylic without framing. -->If you have any questions about our <a href="/styles">styles, frames and editions</a>, or would like to talk with an art consultant, please <a href="/contact">contact us</a>.</p>';
 
         $default_price = $le_price_array['16x24'];
 
