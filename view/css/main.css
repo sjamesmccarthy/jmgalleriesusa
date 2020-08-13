@@ -1426,7 +1426,7 @@ form #buysize, form #frame { border: none; border-bottom: 1px solid #e4e4e4; bor
 
 #polarized .__container h3 { font-size: 2.5rem; font-weight: 600; }
 
-#polarized .__container .__container--toc { font-size: 2rem; margin-top: -2.5rem; }
+#polarized .__container .__container--toc { font-size: 2rem; margin-top: -2.5rem; display: none; }
 
 #polarized .__container .__container--bottom_toc { font-size: 2rem; }
 
@@ -1435,6 +1435,16 @@ form #buysize, form #frame { border: none; border-bottom: 1px solid #e4e4e4; bor
 .avatar > img { width: 100%; border-radius: 100px; }
 
 .byline { width: 100%; font-family: 'lato', sans-serif !important; font-weight: 400; font-size: .9rem; padding-left: 20px; margin-top: 8px; }
+
+.byline--social { margin-top: 1rem; }
+
+.byline--social .--follow { margin-right: 1rem; font-size: .8rem; vertical-align: middle; margin-top: -8px; }
+
+.byline--social > p { display: inline-block; font-size: 1.5rem; }
+
+.byline--social > p > a { color: #4a4a4a; }
+
+.byline--social > p > a:hover { color: #2574A9; }
 
 .content__area ul { margin: 1rem; }
 

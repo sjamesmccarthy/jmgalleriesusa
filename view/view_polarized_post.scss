@@ -21,6 +21,7 @@
         .__container--toc {
             font-size: 2rem;
             margin-top: -2.5rem;
+            display: none;
         }
 
         .__container--bottom_toc {
@@ -50,6 +51,31 @@
   margin-top: 8px;
 }
 
+.byline--social {
+
+    margin-top: 1rem;
+
+    .--follow {
+        margin-right: 1rem;
+        font-size: .8rem;
+        vertical-align: middle;
+        margin-top: -8px;
+    }
+
+    >p {
+
+        display: inline-block; 
+        font-size: 1.5rem;
+
+        >a {
+            color: $color-black;
+
+            &:hover {
+                color: $color-blue;
+            }
+        }
+    }
+}
 .content__area {
 
         ul {

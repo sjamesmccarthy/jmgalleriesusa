@@ -21,9 +21,10 @@
                     <b><?= $res_first_name ?> <?= $res_last_name ?></b><br />
                     <?= $res_created  ?> &hybull; <?= $res_count ?>  Words, <?= $read_time ?>
                 </div>
-                <div class="mt-16">
-                    <p style="display: inline-block; font-size: 1.5rem;" class="mr-16"><a target="_social" href="https://twitter.com/jmgalleriesusa"><i class="fab fa-twitter"></i></a></p>
-                    <p style="display: inline-block; font-size: 1.5rem;" ><a target="_social" href="https://www.linkedin.com/in/jmccarthyusa/"><i class="fab fa-linkedin"></i></a></p>
+                <div class="byline--social" mt-16">
+                    <p class="--follow">FOLLOW ON</p>
+                    <p class="mr-16"><a target="_social" href="https://twitter.com/jmgalleriesusa"><i class="fab fa-twitter"></i></a></p>
+                    <p><a target="_social" href="https://www.linkedin.com/in/jmccarthyusa/"><i class="fab fa-linkedin"></i></a></p>
                 </div>
             </div>
 
@@ -42,12 +43,13 @@
                 </div>
 
             <div class="mt-32">
-                <p class="small blue right" style="font-weight: 700; margin-bottom: .5rem;">Share on Twitter and LinkedIn</p>
-                 <p style="border-top: 1px solid #e4e4e4; padding-top: 1rem; border-radius: 0; font-size: 1.2rem; text-align: right;"><a style="margin-left: 20px; margin-right: 20px;" target="_social" href="<?= $social_twitter ?>"><i class="fab fa-twitter"></i></a> <a target="_social" href="<?= $social_linkedin ?>"><i class="fab fa-linkedin"></i></a></p>
+                <!-- <p class="__container--bottom_toc"><a href="/polarized">&#8672;</a></p> -->
+                <!-- <p class="small blue right" style="font-weight: 700; margin-bottom: .5rem;">Share on Twitter and LinkedIn</p> -->
+                <p style="padding-top: 1rem; border-radius: 0; font-size: 1.2rem; text-align: left;"><a href="/polarized">&#8672;</a> <a style="margin-left: 20px; margin-right: 20px;" target="_social" href="<?= $social_twitter ?>"><i class="fab fa-twitter"></i></a> <a target="_social" href="<?= $social_linkedin ?>"><i class="fab fa-linkedin"></i></a></p>
             </div>
 
             <div>
-                <p class="__container--bottom_toc"><a href="/polarized">&#8672;</a></p>
+                <!-- <p class="__container--bottom_toc"><a href="/polarized">&#8672;</a></p> -->
             </div>
 
         </div>
