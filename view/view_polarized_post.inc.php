@@ -39,6 +39,6 @@ $read_time = $this->__readTime($res_count);
 $res_created = date("F d, Y", strtotime($res_created));
 
 /* Create social links */
-$social_twitter = 'http://twitter.com/share?text=' . $res_title . '&url=' . 'https://jmgalleries.com/polarized/' . $res_short_path . '&hashtags=jmgalleriesusa';
+$social_twitter = 'http://twitter.com/share?text=' . urlencode($res_title) . '&url=' . 'https://jmgalleries.com/polarized/' . $res_short_path . '&hashtags=jmgalleriesusa';
 $social_linkedin = 'https://www.linkedin.com/sharing/share-offsite/?url=' . 'https://jmgalleries.com/polarized/' . $res_short_path . '&hashtags=jmgalleriesusa';
 ?>

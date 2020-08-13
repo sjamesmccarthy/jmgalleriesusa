@@ -1,14 +1,15 @@
 <div class="responses__container">
-    <h3>Responses (13)</h3>
+    <h3>Responses (1)</h3>
     <p class="--close"><i class="fas fa-times"></i></p>
 
     <div class="--response-content-container">
         <div class="--response-content-card border--bottom">
             <form>
-                <textarea  name="response_content" placeholder="What are your thoughts?"></textarea>
-                <input type="text" name="response_email" placeholder="Type email to verify your response" />
-                <div style="text-align: right;" class="mt-16">
-                    <p style="display: inline-block; text-align: right; margin-right: 1rem; margin-top: .4rem; font-size: .9rem;"><a href="">cancel</a></p><button>Respond</button>
+                <textarea  name="response_content" placeholder="What are your thoughts?" disabled="disabled"></textarea>
+                <input type="text" name="response_email" placeholder="Type email to verify your response" disabled="disabled" />
+                <div style="text-align: right;" class="">
+                    <p style="display: inline-block; text-align: right; margin-right: 1rem; margin-top: .4rem; font-size: .9rem;"><a class="noshow" href="" >cancel</a></p><button class="noshow">Respond</button>
+                    <p class="center">FEATURE PREVIEW - COMING SOON</p>
                 </div>
             </form>
         </div>
@@ -16,14 +17,29 @@
 
     <!-- responses pulled from database -->
     <div class="--response-data-card border--bottom">
-        <p class="--avatar">J</p>
+        <p class="--avatar">A</p>
+        <p class="--avatar-byline"> ansel.adams@<br />August 13, 2020</p>
+        <div class="--content">
+            <p>Millions of men have lived to fight, build palaces and boundaries, shape destinies and societies; but the compelling force of all times has been the force of originality and creation profoundly affecting the roots of human spirit.</p>
+
+            <p>In my mind's eye, I visualize how a particular... sight and feeling will appear on a print. If it excites me, there is a good chance it will make a good photograph. It is an intuitive sense, an ability that comes from a lot of practice.</p>
+        </div>
+    </div>
+
+    <div class="--response-data-card">
+        <p style="text-align: center; padding-top: 20vh;">
+            No responses yet, be the first to leave one.
+        </p>
+
+        <!-- <p class="--avatar">J</p>
         <p class="--avatar-byline"> James McCarthy<br />August 13, 2020</p>
         <div class="--content">
             <p>Donec sed odio dui. Donec id elit non mi porta gravida at eget metus. Maecenas faucibus mollis interdum. Cras mattis consectetur purus sit amet fermentum. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras mattis consectetur purus sit amet fermentum.</p>
 
             <p>Nullam quis risus eget urna mollis ornare vel eu leo. Vestibulum id ligula porta felis euismod semper. Vestibulum id ligula porta felis euismod semper. Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
-        </div>
+        </div> -->
     </div>
+
 
 </div>
 
@@ -71,14 +87,20 @@
 
                 </div>
 
-            <div class="mt-32">
-                <!-- <p class="__container--bottom_toc"><a href="/polarized">&#8672;</a></p> -->
-                <!-- <p class="small blue right" style="font-weight: 700; margin-bottom: .5rem;">Share on Twitter and LinkedIn</p> -->
-                <p style="padding-top: 1rem; border-radius: 0; font-size: 1.2rem; text-align: left;"><a href="/polarized">&#8672;</a> <a style="margin-left: 20px; margin-right: 20px;" target="_social" href="<?= $social_twitter ?>"><i class="fab fa-twitter"></i></a> <a target="_social" href="<?= $social_linkedin ?>"><i class="fab fa-linkedin"></i></a><a class="response--icon" href=""><i class="fas fa-comment-alt"></i> 13</a></p>
+            <div class="mt-32 --social-links">
+                <div style="display: inline-block">
+                    <a class="response--icon" href=""><i class="fas fa-comment-alt"></i></a>
+                    <p style="display:inline-block; vertical-align: top; margin-left: .5rem; margin-top: 4px;">No responses yet, be the first to leave one.</p>
+                </div>
+
+                <div style="display: inline-block; float: right;">
+                        <a target="_social" href="<?= $social_twitter ?>"><i class="fab fa-twitter"></i></a>
+                </div>
+
             </div>
 
             <div>
-                <!-- <p class="__container--bottom_toc"><a href="/polarized">&#8672;</a></p> -->
+                <p class="__container--bottom_toc"><a href="/polarized">&#8672;</a></p>
             </div>
 
         </div>

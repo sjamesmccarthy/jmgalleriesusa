@@ -25,7 +25,11 @@
         }
 
         .__container--bottom_toc {
-            font-size: 2rem;
+            margin-left: -8rem;
+            font-size: 3rem;
+            border-top: 1px solid #e4e4e4;
+            padding-top: .5rem;
+            margin-top: .5rem;
         }
     }
 }
@@ -49,6 +53,15 @@
   font-size: .9rem;
   padding-left: 20px;
   margin-top: 8px;
+}
+
+.--social-links a {
+    color: $color-black;
+    font-size: 1.5rem;
+
+    &:hover {
+        color: $color-blue;
+    }
 }
 
 .byline--social {
@@ -133,6 +146,7 @@
     color: #000;
     padding: 2rem;
     display: none;
+    overflow: scroll;
 }
 
     .responses__container >h3 {
@@ -212,6 +226,6 @@
         }
 
     .response--icon {
-        float: right;
-        font-size: .9rem;
+        font-size: 1.5rem;
+        // margin-left: 1.5rem;
     }
