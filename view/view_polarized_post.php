@@ -1,3 +1,32 @@
+<div class="responses__container">
+    <h3>Responses (13)</h3>
+    <p class="--close"><i class="fas fa-times"></i></p>
+
+    <div class="--response-content-container">
+        <div class="--response-content-card border--bottom">
+            <form>
+                <textarea  name="response_content" placeholder="What are your thoughts?"></textarea>
+                <input type="text" name="response_email" placeholder="Type email to verify your response" />
+                <div style="text-align: right;" class="mt-16">
+                    <p style="display: inline-block; text-align: right; margin-right: 1rem; margin-top: .4rem; font-size: .9rem;"><a href="">cancel</a></p><button>Respond</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- responses pulled from database -->
+    <div class="--response-data-card border--bottom">
+        <p class="--avatar">JA</p>
+        <p class="--avatar-byline"> James McCarthy<br />August 13, 2020</p>
+        <div class="--content">
+            <p>Donec sed odio dui. Donec id elit non mi porta gravida at eget metus. Maecenas faucibus mollis interdum. Cras mattis consectetur purus sit amet fermentum. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras mattis consectetur purus sit amet fermentum.</p>
+
+            <p>Nullam quis risus eget urna mollis ornare vel eu leo. Vestibulum id ligula porta felis euismod semper. Vestibulum id ligula porta felis euismod semper. Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
+        </div>
+    </div>
+
+</div>
+
 <section id="polarized" class="pt-24">
     <div class="grid-noGutter-center">
 
@@ -45,7 +74,7 @@
             <div class="mt-32">
                 <!-- <p class="__container--bottom_toc"><a href="/polarized">&#8672;</a></p> -->
                 <!-- <p class="small blue right" style="font-weight: 700; margin-bottom: .5rem;">Share on Twitter and LinkedIn</p> -->
-                <p style="padding-top: 1rem; border-radius: 0; font-size: 1.2rem; text-align: left;"><a href="/polarized">&#8672;</a> <a style="margin-left: 20px; margin-right: 20px;" target="_social" href="<?= $social_twitter ?>"><i class="fab fa-twitter"></i></a> <a target="_social" href="<?= $social_linkedin ?>"><i class="fab fa-linkedin"></i></a></p>
+                <p style="padding-top: 1rem; border-radius: 0; font-size: 1.2rem; text-align: left;"><a href="/polarized">&#8672;</a> <a style="margin-left: 20px; margin-right: 20px;" target="_social" href="<?= $social_twitter ?>"><i class="fab fa-twitter"></i></a> <a target="_social" href="<?= $social_linkedin ?>"><i class="fab fa-linkedin"></i></a><a class="response--icon" href=""><i class="fas fa-comment-alt"></i> 13</a></p>
             </div>
 
             <div>
@@ -56,3 +85,31 @@
 
     </div>
 </section>
+
+<script>
+jQuery(document).ready(function($){
+
+    $('.response--icon').on("click", function(e) {
+        console.log('responses--icon.click');
+        $('.responses__container').toggle();
+        e.preventDefault();
+    });
+
+    /* Closing responses area */
+    $('.--close').on("click", function(e) {
+        console.log('close--icon.click');
+        $('.responses__container').toggle();
+        e.preventDefault();
+    });
+
+    $(document).mouseup(function(e) {
+    var container = $('.responses__container');
+    if (!container.is(e.target) && container.has(e.target).length === 0) {
+        container.hide();
+    }
+
+});
+
+
+});
+</script>
