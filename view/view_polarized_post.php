@@ -16,7 +16,7 @@
 
     <!-- responses pulled from database -->
     <div class="--response-data-card border--bottom">
-        <p class="--avatar">JA</p>
+        <p class="--avatar">J</p>
         <p class="--avatar-byline"> James McCarthy<br />August 13, 2020</p>
         <div class="--content">
             <p>Donec sed odio dui. Donec id elit non mi porta gravida at eget metus. Maecenas faucibus mollis interdum. Cras mattis consectetur purus sit amet fermentum. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras mattis consectetur purus sit amet fermentum.</p>
