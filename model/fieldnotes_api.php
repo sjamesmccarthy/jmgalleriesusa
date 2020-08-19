@@ -92,6 +92,7 @@ public function api_Admin_Get_Fieldnotes($status=null) {
             f.caption,
             f.teaser,
             f.count,
+            f.cheers,
             f.type,
             f.featured,
             f.created,
@@ -152,6 +153,31 @@ public function api_Admin_Get_Fieldnotes($status=null) {
         return($data);
 
     }
+
+public function api_Admin_Update_Fieldnotes_Cheer($id) {
+
+        /* Executes SQL and then assigns object to passed var */
+        if( $this->checkDBConnection(__FUNCTION__) == true) {
+
+            $sql = "
+            UPDATE fieldnotes
+            SET cheers = cheers + 1
+            WHERE fieldnotes_id = '" . $id . "'";
+
+            $result = $this->mysqli->query($sql);
+
+            if ($result == TRUE) {
+                $data['result'] = '200';
+            } else {
+                $data['error'] = "SQL UPDATE FAILED " . $id;
+                $data['sql'] = $sql;
+            }	
+            
+        }
+
+        return($data);
+
+}
 
 public function api_Admin_Update_Fieldnotes() {
 
@@ -486,4 +512,92 @@ public function x__uploadFile($fileTypes=array("jpeg"), $ext="jpg") {
 
     }
 
+    public function api_Admin_Get_Fieldnotes_Responses($id) {
+
+        /* Executes SQL and then assigns object to passed var */
+        if( $this->checkDBConnection(__FUNCTION__) == true) {
+
+            $sql = "SELECT
+            *
+        FROM
+            fieldnotes_responses 
+        WHERE fieldnotes_id = '" . $id . "' ORDER BY created DESC";
+        
+        $result = $this->mysqli->query($sql);
+
+        if ($result->num_rows > 0) {
+        
+            while($row = $result->fetch_assoc())
+            {
+                $data[] = $row;
+            }
+            
+        } 
+            
+        }
+
+        return($data);
+
+    }
+
+    public function api_Admin_Insert_Fieldnotes_Responses() {
+
+         /* Executes SQL and then assigns object to passed var */
+         if( $this->checkDBConnection(__FUNCTION__) == true) {
+
+            $sql = "INSERT INTO `jmgaller_iesusa`.`fieldnotes_responses` (`fieldnotes_id`, `email`, `response_ip`, `response`) 
+            VALUES (
+            '" . $_POST['fieldnotes_id'] . "', 
+            '" . $_POST['response_email'] . "', 
+            '" . $_SERVER['REMOTE_ADDR'] . "', 
+            '" . strip_tags($_POST['response_content']) . "')";
+            $result = $this->mysqli->query($sql);
+            
+            $email = explode('@', $_POST['response_email']);
+            
+            /* Look for gravatar */
+            $gravatar_url = $this->get_gravatar($_POST['response_email']);
+
+            $data_html = '
+                <div class="--response-data-card border--bottom">
+                <p class="--avatar">
+                <!-- <i class="fas fa-user-astronaut"></i> -->
+                ' . $gravatar_url . '
+                </p>
+                <p class="--avatar-byline">' . date("F d, Y", time()) . '<br />' . $email[0] . ' responded ...</p>
+                <div class="--content">'
+                . strip_tags($_POST['response_content']) . 
+                '</div>
+                </div>';
+            
+            return($data_html);
+
+         }
+
+    }
+
+    public function get_gravatar( $email, $s = 80, $d = 'mp', $r = 'g', $img = true, $atts = array() ) {
+        $url = 'https://www.gravatar.com/avatar/';
+        $url .= md5( strtolower( trim( $email ) ) );
+        $url .= "?s=$s&d=$d&r=$r";
+    
+        // Now check the headers...
+        // $headers = @get_headers( $url );
+    
+        // If 200 is found, the user has a Gravatar; otherwise, they don't.
+        // if ( preg_match( '|200|', $headers[0]) ) {
+        //     echo "true";
+        // } else {
+        //     echo "false";
+        // }
+        
+        if ( $img ) {
+            $url = '<img src="' . $url . '"';
+            foreach ( $atts as $key => $val )
+                $url .= ' ' . $key . '="' . $val . '"';
+            $url .= ' />';
+        }
+    
+        return $url;
+    }
 }

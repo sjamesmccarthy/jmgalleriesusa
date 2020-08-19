@@ -4,7 +4,7 @@
         <div class="col-8 __container">
 
             <!-- <h1>JOURNAL</h1> -->
-            <h4 class="mb-64 blue">a Collection of Field-Notes by Photographer j.McCarthy</h4>
+            <h4 class="subtitle blue">a Collection of Field-Notes by Photographer j.McCarthy</h4>
 
             <?= $card_html ?>
             <div style="margin-bottom: 1rem; text-transform: uppercase; font-weight: 800;">Some older FIELD NOTES and other thoughts</div>

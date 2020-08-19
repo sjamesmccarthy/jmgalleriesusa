@@ -31,6 +31,9 @@ if(isSet($this->routes->URI->queryvals)) {
     $image_data = $this->api_Admin_Get_FieldnotesImagesById($edit_id);
     
     extract($edit_data, EXTR_PREFIX_ALL, "res");
+    $res_title = htmlspecialchars($res_title);
+    $res_teaser = htmlspecialchars($res_teaser);
+
     $i=1;
     foreach ($image_data as $iK => $iV) {
         ${"res_image_" . $iV['file_order']} = $iV['path'];

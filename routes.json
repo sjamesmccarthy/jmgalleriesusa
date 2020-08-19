@@ -366,7 +366,6 @@
         "component": "true",
         "title": "[$1]",
         "header": {
-            "css": "editor.css"
         }
     },
     "/contact": {

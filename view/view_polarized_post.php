@@ -1,52 +1,37 @@
-<div class="responses__container">
-    <h3>Responses (1)</h3>
+<script src="https://www.google.com/recaptcha/api.js?render=6LetD7YUAAAAAFX5cXupV3exd1YCSuYFY_az92Wh"></script>
+
+<div class="grid">
+<div class="col-3_sm-12 responses__container">
+    <h3>Responses (<span class="resp_count"><?= $resp_count ?></span>)</h3>
     <p class="--close"><i class="fas fa-times"></i></p>
 
     <div class="--response-content-container">
-        <div class="--response-content-card border--bottom">
-            <form>
-                <textarea  name="response_content" placeholder="What are your thoughts?" disabled="disabled"></textarea>
-                <input type="text" name="response_email" placeholder="Type email to verify your response" disabled="disabled" />
-                <div style="text-align: right;" class="">
-                    <p style="display: inline-block; text-align: right; margin-right: 1rem; margin-top: .4rem; font-size: .9rem;"><a class="noshow" href="" >cancel</a></p><button class="noshow">Respond</button>
-                    <p class="center">FEATURE PREVIEW - COMING SOON</p>
+        <div class="--response-content-card">
+        <form id="responseForm" action="/view/ajax_fieldnotes_responses_process.php" method="POST">
+            <input type="hidden" id="g-recaptcha-response" name="g-recaptcha-response" />
+            <input type="hidden" id="fieldnotes_id" name="fieldnotes_id" value= "<?= $this->page->fieldnotes_id ?>" />
+                <textarea id="response_content" name="response_content" placeholder="What are your thoughts?"></textarea>
+                <input type="text" id="response_email" name="response_email" placeholder="Type email to verify your response" />
+                <div class="--response-content-card-cta" style="padding-top: 1rem">
+                    <button>Respond</button>
+                    <p style="display: inline-block; float: right; margin-top: .4rem; font-size: .9rem;"><a class="--response-content-card-cancel" href="#">cancel</a></p>
                 </div>
-            </form>
+        </form>
         </div>
     </div>
 
     <!-- responses pulled from database -->
-    <div class="--response-data-card border--bottom">
-        <p class="--avatar">A</p>
-        <p class="--avatar-byline"> ansel.adams@<br />August 13, 2020</p>
-        <div class="--content">
-            <p>Millions of men have lived to fight, build palaces and boundaries, shape destinies and societies; but the compelling force of all times has been the force of originality and creation profoundly affecting the roots of human spirit.</p>
-
-            <p>In my mind's eye, I visualize how a particular... sight and feeling will appear on a print. If it excites me, there is a good chance it will make a good photograph. It is an intuitive sense, an ability that comes from a lot of practice.</p>
-        </div>
+    <div class="responses">
+        <?= $fieldsnotes_respsonses_html ?>
     </div>
 
-    <div class="--response-data-card">
-        <p style="text-align: center; padding-top: 20vh;">
-            No responses yet, be the first to leave one.
-        </p>
-
-        <!-- <p class="--avatar">J</p>
-        <p class="--avatar-byline"> James McCarthy<br />August 13, 2020</p>
-        <div class="--content">
-            <p>Donec sed odio dui. Donec id elit non mi porta gravida at eget metus. Maecenas faucibus mollis interdum. Cras mattis consectetur purus sit amet fermentum. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras mattis consectetur purus sit amet fermentum.</p>
-
-            <p>Nullam quis risus eget urna mollis ornare vel eu leo. Vestibulum id ligula porta felis euismod semper. Vestibulum id ligula porta felis euismod semper. Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
-        </div> -->
-    </div>
-
-
+</div>
 </div>
 
 <section id="polarized" class="pt-24">
     <div class="grid-noGutter-center">
 
-        <div class="col-8 __container">
+        <div class="col-8_sm-12 __container">
 
             <p class="__container--toc"><a href="/polarized">&#8672;</a></p>
             <!-- <h1>Journal</h1>
@@ -88,9 +73,15 @@
                 </div>
 
             <div class="mt-32 --social-links">
+
+                <div style="display: inline-block; margin-right: 2rem;">
+                    <a class="response--icon-cheers" href=""><i class="fas fa-glass-cheers"></i></a>
+                    <p style="display:inline-block; vertical-align: top; margin-left: .5rem; margin-top: 7px; font-size: .8rem;"><span class="repsonse--cheers-count"><?= $res_cheers ?></span> Cheers!</p>
+                </div>
+
                 <div style="display: inline-block">
                     <a class="response--icon" href=""><i class="fas fa-comment-alt"></i></a>
-                    <p style="display:inline-block; vertical-align: top; margin-left: .5rem; margin-top: 4px;">No responses yet, be the first to leave one.</p>
+                    <p class="response--icon--count" style="display:inline-block; vertical-align: top; margin-left: .5rem; margin-top: 7px; font-size: .8rem;"><?= $res_responses ?></p>
                 </div>
 
                 <div style="display: inline-block; float: right;">
@@ -111,6 +102,15 @@
 <script>
 jQuery(document).ready(function($){
 
+    $('.--response-content-card-cancel').on("click", function(e) { 
+        $('.--response-content-card-cta').hide();
+        e.preventDefault();
+    });
+
+    $('#response_content, #response_email').on("click", function(e) { 
+        $('.--response-content-card-cta').show();
+    });
+
     $('.response--icon').on("click", function(e) {
         console.log('responses--icon.click');
         $('.responses__container').toggle();
@@ -125,13 +125,91 @@ jQuery(document).ready(function($){
     });
 
     $(document).mouseup(function(e) {
-    var container = $('.responses__container');
-    if (!container.is(e.target) && container.has(e.target).length === 0) {
-        container.hide();
-    }
+        var container = $('.responses__container');
+        if (!container.is(e.target) && container.has(e.target).length === 0) {
+            container.hide();
+        }
+    });
 
+    $('.response--icon-cheers').on("click", function(e) {
+
+            var count = $('.repsonse--cheers-count').html();
+            if ( count >= 1 ) {
+                ++count;
+            } else {
+                count = '1';
+            }
+
+        /* AJAX update to fieldnote record */
+        var fn_ID = <?php echo $this->page->fieldnotes_id ?>;
+        var url = "/view/ajax_cheers_process.php";
+    
+        $.ajax({
+            type: "POST",
+            url: url,
+            data: { id: fn_ID },
+            async: true,
+            success: function(data)
+            {
+                $('.repsonse--cheers-count').html( count );
+            },
+            error : function(request,error) {
+                console.log("ERROR: "+JSON.stringify(request));
+            }
+        });
+
+        e.preventDefault();
+    });
+
+$('#responseForm').submit(function(e) {
+console.log('responseForm.ajax.start()');
+
+grecaptcha.execute('6LetD7YUAAAAAFX5cXupV3exd1YCSuYFY_az92Wh', {action: 'homepage'}).then(function(token) {
+      document.getElementById('g-recaptcha-response').value = token;
+      console.log('grecaptcha.ready');
 });
 
+    event.preventDefault();
+    console.log('Sending... ' + $('#g-recaptcha-response').val());
+
+      var url = "/view/ajax_fieldnotes_responses_process.php";
+
+      grecaptcha.ready(function() {
+
+          grecaptcha.execute('6LetD7YUAAAAAFX5cXupV3exd1YCSuYFY_az92Wh', {action: 'responses'}).then(function(token) {
+            $.ajax({
+              type: "POST",
+              url: url,
+              data: $("#responseForm").serialize(),
+              async: true,
+              success: function(data)
+              {
+                  
+                // console.log(data);
+                var resp_count = $('.resp_count').html();
+                if ( resp_count >= 1 ) {
+                    ++resp_count;
+                } else {
+                    resp_count = '1';
+                }
+
+                $( ".responses" ).prepend( data );
+                $('.resp_count').html( resp_count );
+                $('.response--icon--count').html( resp_count + ' Responses');
+                $('.no_resp_yet').hide();
+                $('.--response-content-container').hide();
+              },
+              error : function(request,error) {
+                  console.log("Error: "+JSON.stringify(request));
+              }
+            });
+            
+            return false;
+          });
+      });
+
+      e.preventDefault();
+});
 
 });
 </script>

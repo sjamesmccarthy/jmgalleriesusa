@@ -20,6 +20,22 @@
         //        max-width: 100%;
         //     }
 
+        .subtitle {
+            
+            padding-bottom: 4rem;
+
+            @media (max-width: 64em) and (orientation: portrait),
+            (max-width: 80em) and (orientation: portrait) 
+            {
+                font-size: 1.8rem;
+                font-weight: 600;
+                text-align: center;
+                word-wrap: break-word;
+                padding-bottom: 2rem;
+            }
+
+        }
+
         ul li {
             list-style: square;
             margin-left: 1rem;

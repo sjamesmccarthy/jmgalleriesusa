@@ -10,6 +10,7 @@
  * @Copyright: 2017, 2019
  */
 
+require_once( $_SERVER["DOCUMENT_ROOT"] . '/model/fieldnotes_api.php');
 require_once( $_SERVER["DOCUMENT_ROOT"] . '/model/core_api.php');
 require_once( $_SERVER["DOCUMENT_ROOT"] . '/controller/core_site.php');
 $core = new Core_Site();

@@ -5,6 +5,15 @@
 
         <h1>RELEASE NOTES</h1>
 
+        <p class="pt-16">v1.4.6<br />Aug 19, 2020</p>
+        	<ul>
+            <li>bugfix: routing file for editor css.</li>
+            <li>bugfix: admin control collapase navigation panel.</li>
+            <li>added: Cheers! to fieldnotes</li>
+            <li>added: Responses! to fieldnotes</li>
+        	</ul>
+        </p>
+
         <p class="pt-16">v1.4.5<br />Aug 12, 2020</p>
         	<ul>
             <li>bugfix: SQL not show/hide on tab click.</li>
