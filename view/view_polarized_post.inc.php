@@ -47,13 +47,14 @@ if( count($fieldsnotes_respsonses_data) >= 1) {
         /* Look for gravatar */
         $gravatar_url = get_gravatar($fV['email']);
         
+        /* This HTML is duplicated in fieldnotes_api, api_Admin_Insert_Fieldnotes_Responses() */
         $fieldsnotes_respsonses_html .= '
         <div class="--response-data-card border--bottom">
         <p class="--avatar">
            <!-- <i class="fas fa-user-astronaut"></i> -->
            ' . $gravatar_url . '
         </p>
-        <p class="--avatar-byline">' . date("F d, Y", strtotime($fV['created'])) . '<br />' . $email[0] . ' responded ...</p>
+        <p class="--avatar-byline">' . date("l, F j, Y, g:i a", strtotime($fV['created'])) . '<br />@' . $email[0] . ' responded ...</p>
         <div class="--content">'
         . $fV['response'] . 
         '</div>

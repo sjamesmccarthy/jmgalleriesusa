@@ -10,8 +10,9 @@
         <form id="responseForm" action="/view/ajax_fieldnotes_responses_process.php" method="POST">
             <input type="hidden" id="g-recaptcha-response" name="g-recaptcha-response" />
             <input type="hidden" id="fieldnotes_id" name="fieldnotes_id" value= "<?= $this->page->fieldnotes_id ?>" />
-                <textarea id="response_content" name="response_content" placeholder="What are your thoughts?"></textarea>
-                <input type="text" id="response_email" name="response_email" placeholder="Type email to verify your response" />
+                <textarea id="response_content" name="response_content" placeholder="What are your thoughts?" required></textarea>
+                <input type="text" id="response_email" name="response_email" placeholder="What is your email? we use this for your avatar." required/><br />
+                <span class="tiny ml-16" style="color: #CCC">Avatars are imported from <a style="color: #AAA" target="_new" href="https://gravatar.com">Gravtar</a> if available.</span>
                 <div class="--response-content-card-cta" style="padding-top: 1rem">
                     <button>Respond</button>
                     <p style="display: inline-block; float: right; margin-top: .4rem; font-size: .9rem;"><a class="--response-content-card-cancel" href="#">cancel</a></p>
@@ -166,7 +167,7 @@ console.log('responseForm.ajax.start()');
 
 grecaptcha.execute('6LetD7YUAAAAAFX5cXupV3exd1YCSuYFY_az92Wh', {action: 'homepage'}).then(function(token) {
       document.getElementById('g-recaptcha-response').value = token;
-      console.log('grecaptcha.ready');
+      console.log('LINE-169-grecaptcha.ready');
 });
 
     event.preventDefault();

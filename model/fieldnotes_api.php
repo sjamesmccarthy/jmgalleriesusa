@@ -545,12 +545,14 @@ public function x__uploadFile($fileTypes=array("jpeg"), $ext="jpg") {
          /* Executes SQL and then assigns object to passed var */
          if( $this->checkDBConnection(__FUNCTION__) == true) {
 
+            $response_content = $this->mysqli->real_escape_string($_POST['response_content']);
+
             $sql = "INSERT INTO `jmgaller_iesusa`.`fieldnotes_responses` (`fieldnotes_id`, `email`, `response_ip`, `response`) 
             VALUES (
             '" . $_POST['fieldnotes_id'] . "', 
             '" . $_POST['response_email'] . "', 
             '" . $_SERVER['REMOTE_ADDR'] . "', 
-            '" . strip_tags($_POST['response_content']) . "')";
+            '" . strip_tags($response_content) . "')";
             $result = $this->mysqli->query($sql);
             
             $email = explode('@', $_POST['response_email']);
@@ -558,13 +560,14 @@ public function x__uploadFile($fileTypes=array("jpeg"), $ext="jpg") {
             /* Look for gravatar */
             $gravatar_url = $this->get_gravatar($_POST['response_email']);
 
+            /* This HTML is duplicated in view_polarized_post.php */
             $data_html = '
                 <div class="--response-data-card border--bottom">
                 <p class="--avatar">
                 <!-- <i class="fas fa-user-astronaut"></i> -->
                 ' . $gravatar_url . '
                 </p>
-                <p class="--avatar-byline">' . date("F d, Y", time()) . '<br />' . $email[0] . ' responded ...</p>
+                <p class="--avatar-byline">' . date("F d, Y", time()) . '<br />@' . $email[0] . ' responded ...</p>
                 <div class="--content">'
                 . strip_tags($_POST['response_content']) . 
                 '</div>
