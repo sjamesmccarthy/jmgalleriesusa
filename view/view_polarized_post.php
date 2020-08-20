@@ -76,12 +76,12 @@
             <div class="mt-32 --social-links">
 
                 <div style="display: inline-block; margin-right: 2rem;">
-                    <a class="response--icon-cheers" href=""><i class="fas fa-glass-cheers"></i></a>
+                    <a class="response--icon-cheers" href="#"><i class="fas fa-glass-cheers"></i></a>
                     <p style="display:inline-block; vertical-align: top; margin-left: .5rem; margin-top: 7px; font-size: .8rem;"><span class="repsonse--cheers-count"><?= $res_cheers ?></span> Cheers!</p>
                 </div>
 
                 <div style="display: inline-block">
-                    <a class="response--icon" href=""><i class="fas fa-comment-alt"></i></a>
+                    <a class="response--icon response--icon-bubble" href=""><i class="fas fa-comment-alt"></i></a>
                     <p class="response--icon--count" style="display:inline-block; vertical-align: top; margin-left: .5rem; margin-top: 7px; font-size: .8rem;"><?= $res_responses ?></p>
                 </div>
 

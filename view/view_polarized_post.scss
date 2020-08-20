@@ -60,7 +60,7 @@ blockquote {
   margin-top: 8px;
 }
 
-.--social-links a {
+.--social-links_a a {
     color: $color-black;
     font-size: 1.5rem;
 
@@ -152,7 +152,7 @@ blockquote {
     padding: 2rem;
     display: none;
     overflow: scroll;
-    width: 30%;
+    min-width: 30%;
 
 }
 
@@ -251,4 +251,18 @@ blockquote {
     .response--icon {
         font-size: 1.5rem;
         // margin-left: 1.5rem;
+    }
+
+    .response--icon-cheers i,
+    .response--icon-bubble i {
+        font-size: 1.5rem;
+        transition: transform .2s;
+        color: $color-black;
+
+        &:hover {
+            -ms-transform: scale(1.5); /* IE 9 */
+            -webkit-transform: scale(3.5); /* Safari 3-8 */
+            transform: scale(1.5); 
+            color: $color-blue;
+        }
     }

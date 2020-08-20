@@ -11,6 +11,7 @@
             <li>bugfix: admin control collapase navigation panel.</li>
             <li>added: Cheers! to fieldnotes</li>
             <li>added: Responses! to fieldnotes</li>
+            <li>added: small animation to Cheers! and Responses! icons in fieldnotes</li>
         	</ul>
         </p>
 
