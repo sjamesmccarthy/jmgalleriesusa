@@ -16,13 +16,7 @@
 
         <div class="col-9">
             <h1 class="detail-h1"><?= $photo_meta['title'] ?></h1>
-            <p class="pb-32 edition-title"><?= $edition_desc ?> <?= $edition_max ?> <?= $edition_desc_material_slash ?></span></p>
-        </div>
-
-        <div class="col-3">
-            <p class="small blue right" style="margin-bottom: -10px; margin-left: 5px;">$ USD</p>
-            <p class="right"><span id="price" class="price right"><?= number_format($default_price, 2) ?></span><br /><span class="frame_data price"></span></p>
-            <input type="hidden" name="total_cost" id="total_cost" value="<?= $default_price ?>" />
+            <p class="edition-title"><?= $edition_desc ?> <?= $edition_max ?> <?= $edition_desc_material_slash ?></span></p>
         </div>
         
         <div class="col-12 mt-16">
@@ -33,6 +27,13 @@
     </div>
             
     <div class="grid mt-16">
+
+    <div class="col-3">
+            <!-- <p class="small blue" style="margin-bottom: -10px; margin-left: 5px;">$ USD</p> -->
+            <p class="blue price">$<span id="price" class="price"><?= number_format($default_price, 2) ?></span></p><p class="frame_data price"></p>
+            <input type="hidden" name="total_cost" id="total_cost" value="<?= $default_price ?>" />
+        </div>
+
        <?= $sizes_frames ?>
     </div>
 
