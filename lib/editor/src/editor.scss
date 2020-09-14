@@ -3,7 +3,7 @@
 .content_html,
 .content_html div,
 .content_html p {
-    // font-size: 1.3rem;
+    font-size: 1.3rem;
     line-height: 1.6;
     margin-bottom: 1rem;
 }
@@ -17,12 +17,12 @@
 }
 
 .content_html ul {
-    margin-left: 2rem;
+    margin-left: 4rem;
 }
 
 .content_html ul li {
     list-style-type: square;
-    margin-bottom: .5rem;
+    margin-bottom: 1rem;
 }
 
 .content_html blockquote {
@@ -32,10 +32,11 @@
 }
 
 .make_small {
-    min-height: 200px !important;
-    max-height: 200px !important;
+    min-height: 32px !important;
+    max-height: 32px !important;
     background-color: rgba(0,0,0, .1) !important;
     color: rgba(0,0,0, .3);
+    pointer-events:none;
 }
 
 [contenteditable] {
@@ -71,8 +72,14 @@
     cursor: pointer;
 }
 
-.raw_close:hover {
-    cursor: pointer;
+.raw_close {
+
+    display: inline-block;
+    float: right;
+
+    &:hover {
+        cursor: pointer;
+    }
 }
 
 .content_raw_changes {

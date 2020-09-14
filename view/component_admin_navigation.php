@@ -155,6 +155,12 @@ $html = <<< END
 <script>
 jQuery(document).ready(function($){
 
+    if(getCookie('aN') == "true") {
+        console.log('getCookie(aN)' + getCookie('aN'));
+        $('.navigation--container').toggle();
+        $('.menu-icon').addClass('flip');
+    }
+
     $('ul li.$path').addClass('selected-item');
     $('ul.$path').addClass('selected');
 
@@ -165,9 +171,13 @@ jQuery(document).ready(function($){
         if( $('.navigation--container').is(':visible') ) { 
             $('.menu-icon').removeClass('menu-icon--active');
             $('.menu-icon').removeClass('flip');
+            setCookie('aN',"false",'30');
+            console.log('cookie.Set(aN=false,30)');
         } else {
             $('.menu-icon').addClass('menu-icon--active');
             $('.menu-icon').addClass('flip');
+            setCookie('aN',"true",'30');
+            console.log('cookie.Set(aN=true,30)');
         }
 
     });

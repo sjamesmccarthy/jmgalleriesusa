@@ -67,7 +67,7 @@
 
                     <?= $img_html ?>
 
-                    <div class="mt-32">
+                    <div class="mt-32 mb-64">
                         <?= $res_content ?>
                     </div>
 
