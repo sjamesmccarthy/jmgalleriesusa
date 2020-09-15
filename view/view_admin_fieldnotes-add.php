@@ -13,7 +13,7 @@
                     <p class="close-x"><i class="fas fa-times-circle"></i></p>
             </div>
 
-        <div>
+            <div>
 
                 <form id="fieldnotesadd" action="/studio/api/update/fieldnotes" method="POST" enctype="multipart/form-data">
                 <input type="hidden" id="formTypeAction" name="formTypeAction" value="<?= $formTypeAction ?>" />
@@ -128,7 +128,7 @@
 
                     <div class="fn__editor">
                         <div class="actions fn__editor_tools">
-                            <button data-action="bold"><i data-action="bold" class="fas fa-bold"></i></button><button data-action="italic"><i data-action="italic" class="fas fa-italic"></i></button><button data-action="underline"><i data-action="underline" class="fas fa-underline"></i></button><!-- <button data-action="justifyLeft"><i data-action="justifyLeft" class="fas fa-align-left"></i></button><button data-action="justifyCenter"><i data-action="justifyCenter" class="fas fa-align-center"></i></button><button data-action="justifyRight"><i data-action="justifyRight" class="fas fa-align-right"></i></button> --><!-- <button data-action="h1"><i data-action="h1" class="fas fa-heading"></i>1</button><button data-action="h2"><i data-action="h2" class="fas fa-heading"></i>2</button> --><button data-action="insertUnorderedList"><i data-action="insertUnorderedList" class="fas fa-list-ul"></i></button><button data-action="indent"><i data-action="indent" class="fas fa-indent"></i></button><button data-action="outdent"><i data-action="outdent" class="fas fa-outdent"></i></button><button data-action="blockquote"><i data-action="blockquote" class="fas fa-quote-right"></i></button><button data-action="insertImage"><i data-action="insertImage" class="fas fa-image"></i></button><button data-action="createLink"><i data-action="createLink" class="fas fa-link"></i></button><!-- <button data-action="unLink"><i data-action="unLink" class="fas fa-unlink"></i></button> --><button data-action="p"><i data-action="p" class="fas fa-paragraph"></i></button><button data-action="stripHTML"><i data-action="stripHTML" class="fas fa-eraser"></i></button><button data-action="code"><i data-action="code" class="fas fa-code"></i></button>
+                            <button data-action="bold"><i data-action="bold" class="fas fa-bold"></i></button><button data-action="italic"><i data-action="italic" class="fas fa-italic"></i></button><button data-action="underline"><i data-action="underline" class="fas fa-underline"></i></button><!-- <button data-action="justifyLeft"><i data-action="justifyLeft" class="fas fa-align-left"></i></button><button data-action="justifyCenter"><i data-action="justifyCenter" class="fas fa-align-center"></i></button><button data-action="justifyRight"><i data-action="justifyRight" class="fas fa-align-right"></i></button> --><!-- <button data-action="h1"><i data-action="h1" class="fas fa-heading"></i>1</button><button data-action="h2"><i data-action="h2" class="fas fa-heading"></i>2</button> --><button data-action="insertUnorderedList"><i data-action="insertUnorderedList" class="fas fa-list-ul"></i></button><button data-action="indent"><i data-action="indent" class="fas fa-indent"></i></button><button data-action="outdent"><i data-action="outdent" class="fas fa-outdent"></i></button><button data-action="blockquote"><i data-action="blockquote" class="fas fa-quote-right"></i></button><button data-action="insertImage"><i data-action="insertImage" class="fas fa-image"></i></button><button data-action="createLink"><i data-action="createLink" class="fas fa-link"></i></button><!-- <button data-action="unLink"><i data-action="unLink" class="fas fa-unlink"></i></button> --><button data-action="p"><i data-action="p" class="fas fa-paragraph"></i></button><button data-action="stripHTML"><i data-action="stripHTML" class="fas fa-eraser"></i></button><!--<button data-action="save"><i data-action="save" class="fas fa-save"></i></button>--><button data-action="code"><i data-action="code" class="fas fa-code"></i></button>
                         </div>
 
                         <!-- <div class="fn__editor_tools --preview">
@@ -137,15 +137,16 @@
                     </div>
 
                     <div class="content_html" contenteditable="true"><?= $res_content ?></div>
-
-                        <p id="result">
-                            <span id="wordCount">0</span> <span class="slash"><b>WORDS</b>, </span> <span id="wordLimit">READY, SET, WRITE.</a><br/>
-                        </p>
-
                     <div class="raw_edit_container"><p style="display: inline-block">HTML CODE VIEW</p><p class="right mb-8 raw_close"><i class="fas fa-times-circle"></i></p><textarea name="content" id="content" class="content_raw"></textarea></div> 
-                
+
                 </div>
 
+
+                <div class="bottom_container">
+                <p id="result">
+                    <span id="wordCount">0</span> <span class="slash"><b>WORDS</b>, </span> <span id="wordLimit">READY, SET, WRITE.</a><br/>
+                </p>
+            
                 <div class="mt-16">
                     <input class="half-size" type="text" id="tags" name="tags" placeholder="TAGS (eg. adventure, tutorial, opinion, historical-profile)" value="<?= $res_tags ?>">
                     <input class="half-size <?= $date_field_hidden ?>" type="text" id="date" name="date" placeholder="CREATED ON (eg. 2020-07-01 08:32:08)" value="<?= $res_created ?>">
@@ -171,7 +172,8 @@
                 </form>
 
                 <p id="form_response"> </p>
-        </div>
+                </div>
+            </div>
 
     </div>
 </section>

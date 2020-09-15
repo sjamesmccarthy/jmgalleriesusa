@@ -193,7 +193,7 @@ SASS, https://sass-lang.com/
 
 .content_html ul { margin-left: 4rem; }
 
-.content_html ul li { list-style-type: square; margin-bottom: .5rem; }
+.content_html ul li { list-style-type: square; margin-bottom: 1rem; }
 
 .content_html blockquote { border-left: 3px solid #e4e4e4; padding-left: 1rem; margin: 2rem 4rem; }
 
