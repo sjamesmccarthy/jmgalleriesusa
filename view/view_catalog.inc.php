@@ -18,8 +18,17 @@
     if( $catalog_meta[0]['path'] == 'new-releases') {
          $catalog_photos = $catalog_photos = $this->api_Catalog_Get_New_Releases(100, 4);
     } else if( $catalog_meta[0]['path'] == 'all') {
-         $catalog_photos = $this->api_Catalog_Category_Thumbs_All();
+
+        if($this->routes->URI->queryvals[1] == 'tinyviews') {
+            $catalog_title = 'SHOP';
+            $catalog_desc = 'Beautiful Giclée Prints & tinyViews&trade; / Open Edition Fine Art at Affordable Prices.';
+            $catalog_tabs_hidden = true;
+        } 
+        
+        $catalog_photos = $this->api_Catalog_Category_Thumbs_All();
+
     } else {
+        $catalog_tabs_hidden = false;
         $catalog_photos = $this->api_Catalog_Category_Filmstrip($catalog_meta[0]['catalog_collections_id'], 'ALL');
     }
 
@@ -40,9 +49,33 @@
                 else { $data_filter_S = null; }
 
                 if($v['as_open'] == 1) { 
-                $data_filter_O = 'f-open'; 
-                $desc_editions = "<p>" . $this->config->edition_description_open . "</p>"; 
-                $available_sizes = $this->config->available_sizes_open; } 
+                $data_filter_O = 'f-open';
+                $open_pricing_array = json_decode($this->config->tv_pricing, true);
+
+                $i=0;
+                $iRand = rand(0,4);
+                foreach ($open_pricing_array as $opK => $opV) {
+                
+                    if($i == $iRand) {
+                        $rPrice = $opV;
+                        $rSize = $opK;
+                    }
+
+                    $i++;
+                }
+
+                // $desc_editions = "<p>" . $this->config->edition_description_open . "</p>"; 
+                $desc_editions = "<p style='display: inline-block; font-weight: 700; padding-right: 1rem;'>$" . $rPrice . " (" . $rSize . ")</p><p style='background-color: #D4E9D7; padding: 3px 6px; display: inline-block; font-size: 11px; color: #000; font-weight: 700; border-radius: 20px;'>PRINT ONLY SALE</p><!-- <p style='position: absolute; top: 1rem; right: 1rem;
+                background-color: #000;
+                padding: 5px;
+                color: #FFF;
+                border-radius: 6px;
+                width: 140px;
+                text-align: center;
+                font-size: 12px;
+                font-weight: 700;'>ADD TO CART +ORDER</p> -->"; 
+                $available_sizes = $this->config->available_sizes_open; 
+                } 
                 else { $data_filter_O = null; }
 
                 // if($v['as_gallery'] == 1) { 
@@ -84,7 +117,7 @@
                 }
                 
                 // <div style="overflow: hidden; height: 203px;" class="' . $grid_css . '">
-                $thumb_html .= '<div style="padding: 0 10px; overflow: hidden; margin-bottom: 32px" class="thumb ' . $grid_css .  ' pb-16 filter-thumb-gallery '. $data_filters . '"><a href="/' . $v['catalog_path'] . '/' . $img_file . '"><img style="width: 100%;" src="/catalog/__thumbnail/' . $img_file . '.jpg" /></a></p><h4 class="pt-8 blue"><a href="/' . $v['catalog_path'] . '/' . $img_file . '">' . $v['title'] . '</a></h4><p>' . $v['loc_place'] . '</p><p>Sizes: ' . $available_sizes . '</p>' . $desc_editions . '</div>';
+                $thumb_html .= '<div style="position: relative; padding: 0 10px; overflow: hidden; margin-bottom: 32px" class="thumb ' . $grid_css .  ' pb-16 filter-thumb-gallery '. $data_filters . '"><a href="/' . $v['catalog_path'] . '/' . $img_file . '"><img style="width: 100%;" src="/catalog/__thumbnail/' . $img_file . '.jpg" /></a></p><h4 class="pt-8 blue"><a href="/' . $v['catalog_path'] . '/' . $img_file . '">' . $v['title'] . '</a></h4><p>' . $v['loc_place'] . '</p><p>Sizes: ' . $available_sizes . '</p>' . $desc_editions . '</div>';
 
                 /* <!-- <p><a href="/' . $v['catalog_path'] . '/' . $img_file . '">' . $v['title'] . '</a>--><!-- <br />Exhibiting at Joe Maxx Coffee, Las Vegas --> */
                 

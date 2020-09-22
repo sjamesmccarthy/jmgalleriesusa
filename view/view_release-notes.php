@@ -5,6 +5,16 @@
 
         <h1>RELEASE NOTES</h1>
 
+        <p class="pt-16">v1.4.7<br />Sep 22, 2020</p>
+        	<ul>
+            <li>bugfix: admin control settings code view now shows in production</li>
+            <li>fieldnotes now display lists properly.</li>
+            <li>admin control fieldnotes editor now removing Safari span bug</li>
+            <li>added new "shop" view in catalog with price and promo flags.</li>
+            <li>misc. update to About</li>
+        	</ul> 
+        </p>
+
         <p class="pt-16">v1.4.6<br />Aug 19, 2020</p>
         	<ul>
             <li>bugfix: routing file for editor css.</li>

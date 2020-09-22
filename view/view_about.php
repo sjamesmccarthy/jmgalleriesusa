@@ -11,7 +11,7 @@
                             <p class="name blue">j.McCarthy</p>
                             <p class="name-title">ARTIST STATEMENT</p>
                             <p class="name-statement blue">
-                            Creativity and art have always had a hidden crush on me, a self-taught explorer in the field of landscape and digital photography. My artistic calling is for my artwork to take you on a journey to a place where your memories draw you into a day dream to share a story and connect with the human experience. <!-- Through purposeful paper choice, framing and composition -->
+                            Creativity and art have always had a hidden crush on me, a self-taught explorer in the field of landscape and digital photography. Through purposeful paper choice, framing and composition, I aspire for my artwork to take you on a journey to a place you once remember or a place of new discovery and connect you with the human experience. 
                             </p>
                             <p class="pt-32">
                                 <img src="/view/image/signature_full-web.png" />
@@ -118,22 +118,18 @@
                     <p>
                         The next year came in the blink of an eye, and to kick-off 2019, j.McCarthy announced with a 3 month exhibit at the Temecula Public Library in Temecula, California. He closed out the year launching a new website and announcing a move to Southern California.
                      </p> 
-                     
-                     <p>
-                     In January 2020, j.McCarthy put a foot forward in starting a new chapter in Tememcula, California.
-                     </p>
+
                 </li>
                 </ul>
 
                 <ul class="timeline">
                 <li class="timeline-history">
                     <h3>2020</h3>
-                    <p>It was the beginning of a new chapter in Southern California, or so it was supposed to have been. After a few months in transition, and because of unforeseen circumstances, the adventure ended as quickly as it had begun and j.McCarthy found himself back in Las Vegas.
+                    <p>It was the beginning of a new chapter in Southern California, or so it was supposed to have been. After a few months in transition, and because of unforeseen circumstances, the adventure ended as quickly as it had begun and j.McCarthy found himself back in Las Vegas. Not a week later, the global pandemic known as COVID-19 cancelled everything in 2020. <!-- (aka Coronavirus, aka a really severe Flu which attacked elderly and those with respiratory conditions) swept the world in haste, starting at ground-zero in Wuhan China. The virus quickly infected almost a million people and killing hundreds of thousands world-wide, but the economic shutdown and media-induced panic is what ultimately hurt more lives. Entire states, cities and countries were put on complete lock-down or shelter-in-place orders by their Government officials in fear of an unknown death-toll which the media was comparing to the Black Plague of 1346. The US economy came to a halt. Unemployment grew to over 30% in some States; numbers like this have not been seen since the Great Depression. That was March, April and May. By June, people still kept to themselves inside afraid to breath the air outside even though it's perfectly safe. Riots and protests ensued around the globe further hurting any economic recovery attempting to ignite. The only thing for certain right now is that we have a very long road back to normalcy. -->
                     </p>
-                        
-                    <p>The global pandemic known as COVID-19 (aka Coronavirus, aka a really severe Flu which attacked elderly and those with respiratory conditions) swept the world in haste, starting at ground-zero in Wuhan China. The virus quickly infected almost a million people and killing hundreds of thousands world-wide, but the economic shutdown and media-induced panic is what ultimately hurt more lives. Entire states, cities and countries were put on complete lock-down or shelter-in-place orders by their Government officials in fear of an unknown death-toll which the media was comparing to the Black Plague of 1346. The US economy came to a halt. Unemployment grew to over 30% in some States; numbers like this have not been seen since the Great Depression. That was March, April and May. By June, people still kept to themselves inside afraid to breath the air outside even though it's perfectly safe. Riots and protests ensued around the globe further hurting any economic recovery attempting to ignite.</p>
-                    
-                    <p>The only thing for certain right now is that we have a very long road back to normalcy, and the ship back to California for me, has since sailed, and what's next is unknown.
+
+                    <p>
+                    In September, j.McCarthy relocated back to the Carson/Tahoe area.
                     </p>
 
                 </li>

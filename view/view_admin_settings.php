@@ -28,8 +28,11 @@
                 </div>
                 
                 <div class="code-block">
-                    <?php $this->console($code_block,__FILE__,null,__LINE__,0); ?>
-                    <?php $this->console($notices_json,__FILE__,null,__LINE__,0); ?>
+                    <pre>
+                    <?php print_r($code_block); ?>
+                    <hr />
+                    <?php print_r($notices_json); ?>
+                    </pre>
                 </div>
 
                 <form id="settings-upd" action="/studio/api/update/settings" method="POST" enctype="multipart/form-data">
@@ -426,6 +429,7 @@ jQuery(document).ready(function($){
     });
 
     $('#show-code').on("click", function(e) {
+        console.log('show-code(toggle)');
         e.preventDefault();
         $('.code-block').toggle();
     });

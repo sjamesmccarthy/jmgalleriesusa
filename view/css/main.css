@@ -1001,7 +1001,7 @@ button a { color: #2574A9; }
 
 #top-nav .active-moments, #top-nav .active-all, #top-nav .active-polarized, #top-nav .active-about { border-bottom: 3px solid #2574A9; padding-bottom: 40px; }
 
-.topnav-logo { text-align: center; padding-left: 30px; }
+.topnav-logo { text-align: center; }
 
 .topnav-logo img { width: 124px; }
 
@@ -1436,7 +1436,7 @@ form #buysize, form #frame { border: none; border-bottom: 1px solid #e4e4e4; bor
 
 #polarized .__container .__container--toc { font-size: 2rem; margin-top: -2.5rem; display: none; }
 
-#polarized .__container .__container--bottom_toc { margin-left: -8rem; font-size: 3rem; border-top: 1px solid #e4e4e4; padding-top: .5rem; margin-top: .5rem; }
+#polarized .__container .__container--bottom_toc { margin-left: -5%; font-size: 3rem; border-top: 1px solid #e4e4e4; padding-top: .5rem; margin-top: .5rem; }
 
 .avatar { width: 42px; margin-top: 10px; }
 

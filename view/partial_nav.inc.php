@@ -11,14 +11,14 @@
 
         foreach ($nav_pages as $k => $v) {
             
-            if ( $current_page == $v ) {
+            if ( $current_page == $v) {
                 ${$current_page} = "active-" . $current_page;
-            } else {
-                // $class_state = "not-active";
+            } else if ( strpos($current_page, 'polarized') !== false ) {
+                $polarized = "active-polarized";
             }
 
         }
         
     }
     
-?>
+?> 

@@ -4,6 +4,9 @@
         <div class="col-12 title pb-32">
             <h2><?= strtoupper($catalog_title) ?></h2>
             <p><?= $catalog_desc ?></p>
+            <?php 
+                if($catalog_tabs_hidden != true) {
+            ?>
             <ul class="filter-editions-list">
                 <li class="filter-all selected">All</li>
                 <li class="filter-gallery">Limited Edition</li>
@@ -11,6 +14,7 @@
                 <li class="filter-open">Giclée Prints & tinyViews&trade;</li>
                 <!-- <li class="filter-tinyviews">tinyViews&trade; Edition</li> -->
             </ul>
+            <?php } ?>
         </div>
 
         <!-- generated html from component file -->

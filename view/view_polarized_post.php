@@ -32,11 +32,11 @@
 <section id="polarized" class="pt-24">
     <div class="grid-noGutter-center">
 
-        <div class="col-8_sm-12 __container">
+        <div class="col-8_md-10_sm-12 __container">
 
             <p class="__container--toc"><a href="/polarized">&#8672;</a></p>
-            <!-- <h1>Journal</h1>
-            <p class="pb-32 blue" style="margin-top: -10px">a Collection of field-notes by Photographer j.McCarthy</p> -->
+            <!-- <h1>Journal</h1> -->
+            <p class="blue">&mdash; a Field Note by Photographer j.McCarthy</p>
 
             <h3><?= $res_title?></h3>
             
@@ -44,7 +44,7 @@
                 <p style="font-family: 'roboto', sans-serif; font-size: 1.3rem;color: rgba(117,117,117);padding-top: .5rem;"><?= $res_teaser?></p>
             </div>
 
-             <div class="mt-32 mb-16" style="display: flex; position: relative;">
+             <div class="mt-32 mb-16 hidden" style="display: flex; position: relative;">
                 <div class="avatar">
                     <img src="/view/image/avatar/jamesmccarthy_1.jpg" />
                 </div>
