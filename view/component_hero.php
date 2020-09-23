@@ -27,7 +27,7 @@ if ($catalog == '') {
     <script>
 
         $("#hero").each( function() { 
-            $(this).css("background-image", "linear-gradient(rgba(255,255,255,.9) 10%, rgba(117,117,119,0) 50%), url(/catalog/__image/" + $(this).data("url") +")" ); 
+            $(this).css("background-image", "linear-gradient(rgba(255,255,255,.5) 0%, rgba(117,117,119,0) 50%), url(/catalog/__image/" + $(this).data("url") +")" ); 
             $(this).css("background-postion", "$this->hero_position");
         });
 
