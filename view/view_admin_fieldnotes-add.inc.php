@@ -34,11 +34,16 @@ if(isSet($this->routes->URI->queryvals)) {
     $res_title = htmlspecialchars($res_title);
     $res_teaser = htmlspecialchars($res_teaser);
 
-    $i=1;
-    foreach ($image_data as $iK => $iV) {
-        ${"res_image_" . $iV['file_order']} = $iV['path'];
-        ${"res_caption_file_" . $iV['file_order']} = $iV['caption'];
-        $i++;
+    if( $image_data[0] != 'NaN') {
+        $imgsLoaded = 1;
+        $i=1;
+        foreach ($image_data as $iK => $iV) {
+            ${"res_image_" . $iV['file_order']} = $iV['path'];
+            ${"res_caption_file_" . $iV['file_order']} = $iV['caption'];
+            $i++;
+        }
+    } else {
+        $res_image = null;
     }
 
     $tags_data = $this->api_Admin_Get_Fieldnotes_Tags($edit_id);

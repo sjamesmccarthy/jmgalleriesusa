@@ -16,11 +16,11 @@
 .name-statement {
     padding-top: 40px;
     line-height: 1.5;
-    font-size: 1.6rem;
+    font-size: 1.3rem;
 }
 .artist-statement {
     box-sizing: border-box;
-    padding-left: 32px !important;
+    padding-left: 64px !important;
 }
 
 .bio-profile-pic-overlay {
@@ -56,12 +56,12 @@
 
 .timeline {
     width: 100%;
-    margin: 64px auto;
+    margin: 2rem auto;
     padding-left: 100px;
 }
 
 .timeline-history >h3 {
-    // margin-left: -50px;
+    margin-left: -4rem;
     display: inline-block;
     background-color: #FFF;
     padding: 10px;

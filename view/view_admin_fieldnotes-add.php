@@ -41,14 +41,16 @@
                     <input class="two-thirds" maxlength="40" class="half-size ml-16" type="text" id="short_path" name="short_path" placeholder="SHORT-URL-PATH (eg, when-does-a-photograph-become-fineart)" value="<?= $res_short_path ?>" required>
                 </div>
 
+                <div class="add-imgs"><i class="far fa-images"></i></div>
                  <div class="file mt-16">
                     <ul class="files_nav">
-                        <li data-file="file_1" class="files_nav--invert"><i class="far fa-images"></i></li>
+                        <li data-file="file_1" class="files_nav--invert"><i class="far fa-images"></i></li> 
                         <li data-file="file_2" class="files_nav--filmstrip hidden"><i class="far fa-images"></i></li>
                         <li data-file="file_3" class="files_nav--filmstrip hidden"><i class="far fa-images"></i></li>
                         <li data-file="file_4" class="files_nav--filmstrip hidden"><i class="far fa-images"></i></li>
                         <!-- <li data-file="file_5" class="files_nav--filmstrip hidden"><i class="far fa-images"></i></li> -->
                     </ul>
+                    <div class="skip-imgs"><i class="far fa-eye-slash"></i></div>
 
                     <!-- File_1 -->
                     <div class="file_block--input file_1">
@@ -122,7 +124,7 @@
                     <input class="mt-8" maxlength="250" type="text" id="teaser" name="teaser" placeholder="TEASER (eg, MAXLENGTH 133 CHARACTERS.)" value="<?= $res_teaser ?>" >
                 </div>
 
-                <div id="content_area" class="mt-32">
+                <div id="content_area" class="mt-16">
             
                     <p>CONTENT</p>
 
@@ -190,6 +192,26 @@ jQuery(document).ready(function($){
         $('.file_block--input textarea[name *= "caption"]').addClass('taller');
         $('.file_block--input textarea[name *= "caption"]').attr('placeholder',"TYPE A SHORT DESCRIPTION ABOUT THIS PHOTO, SLIGHTLY LONGER THAN A CAPTION.");
     }
+
+    <?php if($imgsLoaded != 1) { ?>
+        $('.file').hide();
+        $('.add-imgs').show();
+    <?php } else  { ?>
+        $('.file').show();
+        $('.add-imgs').hide();
+    <?php } ?>
+
+    $('.skip-imgs').on("click", function(e) {
+        console.log('skip-imgs.clicked');
+        $('.file').toggle();
+        $('.add-imgs').toggle();
+    });
+
+    $('.add-imgs').on("click", function(e) {
+        console.log('add-imgs.clicked');
+        $('.file').toggle();
+        $('.add-imgs').toggle();
+    });
 
     counter = function() {
         

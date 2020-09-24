@@ -144,7 +144,7 @@
 }
 
 .breadcrumb {
-    @extend .pt-32;
+    // @extend .pt-32;
     padding-bottom: 0;
 
     >p {
@@ -176,9 +176,27 @@
     width: 75%;
 }
  
-.copyright {
+.copyright-old {
     font-size: .9rem;
     position: absolute; 
     right: 20px; 
     bottom: 20px;
+}
+
+.copyright {
+
+    text-align: right;
+
+    @media (max-width: 64em) and (orientation: portrait),
+    (max-width: 80em) and (orientation: portrait) 
+    {
+        text-align: center;
+    }
+
+    @media (min-device-width: 375px) and (max-device-height: 812px) 
+        and (orientation : landscape)
+    {
+        text-align: center;
+    }
+
 }

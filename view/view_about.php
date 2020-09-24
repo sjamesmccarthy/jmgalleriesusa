@@ -4,8 +4,8 @@
         <div class="col-11">
 
                 <div class="grid-2_md-1">
-                    <div class="col">
-                            <img class="bio-profile-pic" src="/view/image/profile_img.jpg" />
+                    <div class="col" style="background-image: linear-gradient(to right, rgba(255,255,255,.1), rgba(255,255,255,1)), url(/view/image/profile_img.jpg); background-size: cover; border-top-left-radius: 2rem; border-bottom-left-radius: 2rem;">
+                            <!-- <img class="bio-profile-pic" src="/view/image/profile_img.jpg" /> -->
                     </div>
                     <div class="col pl-16 mt-16 artist-statement">
                             <p class="name blue">j.McCarthy</p>
@@ -25,12 +25,10 @@
 
                 </div>
 
-            <ul
-                class="timeline">
-            <li 
-                class="timeline-history mb-16">
+            <ul class="timeline mt-64">
+            <!-- <li class="timeline-history mb-32">
             <h2>TIMELINE</h2>
-            </li>
+            </li> -->
             <li 
                 class="timeline-history">
                 <h3>1973</h3>

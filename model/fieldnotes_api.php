@@ -21,7 +21,9 @@ public function api_Admin_Get_FieldnotesImagesById($id) {
 		            $data[] = $row;
 		        }
                 
-            } 
+            }  else {
+                $data[] = "NaN";
+            }
             
         }
 

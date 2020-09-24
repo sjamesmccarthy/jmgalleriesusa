@@ -5,6 +5,13 @@
 
         <h1>RELEASE NOTES</h1>
 
+        <p class="pt-16">v1.4.8<br />Sep 42, 2020</p>
+        	<ul>
+            <li>bugfix: fieldnotes index malforming HTML</li>
+            <li>bugfix: breadcrumb in footer now links to colletion index again.</li>
+        	</ul> 
+        </p>
+
         <p class="pt-16">v1.4.7<br />Sep 22, 2020</p>
         	<ul>
             <li>bugfix: admin control settings code view now shows in production</li>

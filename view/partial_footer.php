@@ -9,7 +9,7 @@
                 $this->getPartial('newsletter'); 
             ?>
         
-        <div class="grid nopad-left">
+        <div class="grid nopad-left hidden">
 
             <div class="col-12 collection-list">
             <ul>
@@ -23,13 +23,14 @@
           
          </div>
 
-         <div class="grid-center">
+         <div class="grid-center-noGutter">
 
                 <div class="col-7_sm-hidden breadcrumb">
                 <p><a href="/"><img class="breadcrumb-logo" src="/view/image/logo_fullsize.png" /></a> <?= $bc_catalog ?> <img class="breadcrumb-arrow" src="/view/image/icon_navarrow-right.svg" /><?= $this->page->title ?> </p>
                 </div>
-                <div class="col-5_sm-12 breadcrumb text-right">
-                    <p><?= $this->config->copyright ?> &mdash; <a href="/release-notes">Made in USA</a> | <a href="/privacy">Privacy Policy</a></p>
+
+                <div class="col-5_sm-12 breadcrumb copyright">
+                    <p><a href="/release-notes"><?= $this->config->copyright ?></a> | <a href="/privacy">Privacy Policy</a></p>
                 </div>
 
         </div>

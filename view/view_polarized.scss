@@ -70,7 +70,7 @@
         }
     }
           .content--preview {
-            flex: 3;
+              flex: 3;
               background-color: #FFF;
               padding-right: 1rem;
 
@@ -85,7 +85,8 @@
               }
 
               .--teaser,
-              .--teaser >p{
+              .--teaser >p,
+              .--teaser >div{
                   padding-top: .5rem;
                   font-size: 1rem;
               }

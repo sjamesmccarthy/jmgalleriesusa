@@ -345,7 +345,7 @@ SASS, https://sass-lang.com/
 
 .pt-24 { padding-top: 24px !important; }
 
-.pt-32, .breadcrumb { padding-top: 32px !important; }
+.pt-32 { padding-top: 32px !important; }
 
 .pt-40 { padding-top: 40px !important; }
 
@@ -1114,7 +1114,13 @@ button a { color: #2574A9; }
 
 .top-border { border-top: 1px solid rgba(0, 0, 0, 0.07); padding: 5px 0; margin-top: 5px; width: 75%; }
 
-.copyright { font-size: .9rem; position: absolute; right: 20px; bottom: 20px; }
+.copyright-old { font-size: .9rem; position: absolute; right: 20px; bottom: 20px; }
+
+.copyright { text-align: right; }
+
+@media (max-width: 64em) and (orientation: portrait), (max-width: 80em) and (orientation: portrait) { .copyright { text-align: center; } }
+
+@media (min-device-width: 375px) and (max-device-height: 812px) and (orientation: landscape) { .copyright { text-align: center; } }
 
 /* ********************** */
 /* view_e404 */
@@ -1162,9 +1168,9 @@ fieldset { border: 0; padding-left: 0; }
 
 .name-title { font-size: 1rem; }
 
-.name-statement { padding-top: 40px; line-height: 1.5; font-size: 1.6rem; }
+.name-statement { padding-top: 40px; line-height: 1.5; font-size: 1.3rem; }
 
-.artist-statement { box-sizing: border-box; padding-left: 32px !important; }
+.artist-statement { box-sizing: border-box; padding-left: 64px !important; }
 
 .bio-profile-pic-overlay { position: absolute; right: -124px; top: 148px; border-radius: 260px; padding: 10px; background-color: #FFF; width: 240px; z-index: 1001; }
 
@@ -1172,9 +1178,9 @@ fieldset { border: 0; padding-left: 0; }
 
 .bio-copy { font-size: 1.6rem; }
 
-.timeline { width: 100%; margin: 64px auto; padding-left: 100px; }
+.timeline { width: 100%; margin: 2rem auto; padding-left: 100px; }
 
-.timeline-history > h3 { display: inline-block; background-color: #FFF; padding: 10px; }
+.timeline-history > h3 { margin-left: -4rem; display: inline-block; background-color: #FFF; padding: 10px; }
 
 .timeline-date { display: inline-block; font-size: 1.5rem; border-bottom: 1px solid #CCC; padding-bottom: 10px; }
 
@@ -1244,7 +1250,7 @@ form #buysize, form #frame { border: none; border-bottom: 1px solid #e4e4e4; bor
 
 .portrait { background-color: black; display: block; }
 
-.portrait > p > img { width: 43%; border-radius: 0; vertical-align: middle; }
+.portrait > p > img { width: 43%; border-radius: 0; vertical-align: middle; border-left: 5px solid rgba(255, 255, 255, 0.9); border-right: 5px solid rgba(255, 255, 255, 0.9); }
 
 .landscape { background-color: black; display: block; }
 
@@ -1396,7 +1402,7 @@ form #buysize, form #frame { border: none; border-bottom: 1px solid #e4e4e4; bor
 
 .storycard .content--preview .--byline { font-family: 'lato', sans-serif !important; font-weight: 400; font-size: .8rem; }
 
-.storycard .content--preview .--teaser, .storycard .content--preview .--teaser > p { padding-top: .5rem; font-size: 1rem; }
+.storycard .content--preview .--teaser, .storycard .content--preview .--teaser > p, .storycard .content--preview .--teaser > div { padding-top: .5rem; font-size: 1rem; }
 
 .storycard .content__image--preview { justify-content: center; display: flex; flex-direction: row; overflow: hidden; padding: 0; height: 161px; flex: 1; border-radius: 6px; }
 
@@ -1881,15 +1887,25 @@ table.dataTable tbody td.valign { vertical-align: middle; }
 
 .fieldnotes-add--container { background-color: rgba(0, 0, 0, 0.02); border-radius: 6px; margin: 0; padding: 0; }
 
+.fieldnotes-add--container .add-imgs { display: none; }
+
+.fieldnotes-add--container .add-imgs:hover { cursor: pointer; }
+
 .fieldnotes-add--container .admin-header { background-color: rgba(0, 0, 0, 0.08); margin: 0; border-radius: 6px 6px 0 0; padding: 1rem; margin-bottom: 1rem; position: relative; }
 
 .fieldnotes-add--container .admin-header h2 { font-weight: 300; }
+
+.fieldnotes-add--container .teaser_container { margin-top: 1rem; }
 
 .fieldnotes-add--container .show-image-container { text-align: center; height: 660px; overflow: hidden; }
 
 .fieldnotes-add--container .show-image { width: 100%; }
 
-.fieldnotes-add--container .file { position: relative; }
+.fieldnotes-add--container .file { position: relative; display: none; }
+
+.fieldnotes-add--container .file .skip-imgs { float: right; }
+
+.fieldnotes-add--container .file .skip-imgs:hover { cursor: pointer; }
 
 .fieldnotes-add--container .file .file_block--input textarea[name*="caption"] { height: 64px; font-size: .9rem; }
 

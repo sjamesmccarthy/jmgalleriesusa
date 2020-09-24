@@ -5,6 +5,14 @@
         margin: 0;
         padding: 0;
 
+    .add-imgs {
+        display: none;
+        
+        &:hover {
+            cursor: pointer;
+        }
+    }
+
     .admin-header {
         background-color: rgba(0,0,0,.08);
         margin: 0;
@@ -26,6 +34,7 @@
 
     .teaser_container {
         // display: none;
+        margin-top: 1rem;
     }
     
     .show-image-container {
@@ -40,6 +49,15 @@
 
     .file {
         position: relative;
+        display: none;
+        
+        .skip-imgs {
+            float: right;
+
+            &:hover {
+                cursor: pointer;
+            }
+        }
 
         .file_block--input textarea[name *= "caption"] {
            height: 64px;

@@ -6,14 +6,18 @@
             <!-- <h1>JOURNAL</h1> -->
             <h4 class="subtitle blue">a Collection of Field-Notes by Photographer j.McCarthy</h4>
 
-            <?= $card_html ?>
+            <!-- START_CARDS -->
+            <div style="display: block">
+                <?= $card_html ?>
+            </div>
+            <!-- /START_CARDS -->
+
             <div style="margin-bottom: 1rem; text-transform: uppercase; font-weight: 800;">Some older FIELD NOTES and other thoughts</div>
             <ul>
                 <?= $card_older_html ?>
             </ul>
            
         </div>
-   
 
     </div>
 </section>
@@ -28,11 +32,11 @@ jQuery(document).ready(function($){
             console.log(".filmstrip--preview visible");
             $("div[id*='imgT']").css("border","none");
             $('#content--teaser').hide();
-            $('#' + ele).css("border-bottom", "1px solid #FFF").css("padding-bottom",".5rem").css("margin-bottom","1rem");
+            $('#' + ele).css("border-bottom", "1px solid #CCC").css("padding-bottom",".5rem").css("margin-bottom","1rem");
         } else {
             $("div[id*='imgT']").css("border","none");
             $('#content--teaser').hide();
-            $('#' + ele).css("border-bottom", "1px solid #FFF").css("padding-bottom",".5rem").css("margin-bottom","1rem");
+            $('#' + ele).css("border-bottom", "1px solid #CCC").css("padding-bottom",".5rem").css("margin-bottom","1rem");
             $(".filmstrip--large-preview").slideDown();
         }
         

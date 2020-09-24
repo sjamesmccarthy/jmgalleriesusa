@@ -19,7 +19,7 @@ foreach ($fieldnotes_data as $key => $value) {
     $sections = count($content);
 
     if($sections == 2) {
-        $content_leadin = $content[0];
+        $content_leadin = strip_tags($content[0]);
         $content_leadin_short = substr( $content_leadin, 0, strrpos( substr( $content_leadin, 0, 130), ' ' ) ) . '...';
         $content = nl2br($content[1]);
     } else {
@@ -82,10 +82,10 @@ foreach ($fieldnotes_data as $key => $value) {
                     $file_path = $imgV['path'];
                     $file_caption = $imgV['caption'];
 
-                    if ($j == $image_count) { $m_right = null; } else { $m_right = null; }
+                    if ($j == $image_count) { $m_right = null; } else { $m_right = 'margin-right: 10px'; }
 
                     /* HTML for the images in the strip */
-                    $strip_html .= '<div id="imgT_' . $j . '" style="flex: 1; max-width: 180px; text-align:center;' . $m_right . '" data-file="' . $j . '"><img style="height: 120px; border-radius: 6px;" src="/view/image/fieldnotes/' . $imgV['path'] . '" /></div>';
+                    $strip_html .= '<div id="imgT_' . $j . '" style="background-color: #000; flex: 1; width: 100%;' . $m_right . '" data-file="' . $j . '"><img style="min-height: 120px; max-height: 135px; border-radius: 6px;" src="/view/image/fieldnotes/' . $imgV['path'] . '" /></div>';
 
                     $image_large .= '<div id="img_' . $j . '_expanded" style="background-color: #000; min-height:300px;position: relative;"><img style="width: 100%;" src="/view/image/fieldnotes/' . $imgV['path'] . '" /><p id="caption_' . $j . '" style="padding: 1rem;">' . $imgV['caption'] . '</p></div>';
                     $j++;
@@ -96,7 +96,7 @@ foreach ($fieldnotes_data as $key => $value) {
                     <div style="border-radius: 6px; padding: .5rem 2rem .5rem 2rem; background-color: rgba(0, 0, 0, 0.5);padding-top: 1rem;">
                         <p style="font-size: .7rem;">FILMSTRIP</p><h4 style="color: #FFFFFF;">' . $value['title']. '</h4><p style="font-size: .8rem;"><b>' . $value['byline'] . '</b> &mdash; ' . date("F d, Y", strtotime($value['created'])) . '</p>
                     </div>
-                    <div class="content--preview" style="display: flex; flex-wrap: wrap; justify-content: space-between;">                        
+                    <div class="content--preview" style="display: flex; flex-wrap: wrap; justify-content: left;">                        
                     <!-- HTML for images -->' . $strip_html . 
                     '</div>
                     <div id="content--teaser"><p style="padding: .5rem 2rem .5rem 2rem;color:#FFF;">' . $value['teaser'] . '</p></div> 
@@ -126,8 +126,10 @@ foreach ($fieldnotes_data as $key => $value) {
                                     ' . date("F d, Y", strtotime($value['created'])) . ' - ' . $value['count'] . ' Words, ' . $read_time . '</p>
                                 </div>
                             </div>
-                        </div>' 
-                        . $img_html . '
+                        </div>
+
+                       ' .  $img_html . '
+                        
                     </div>
             ';
             
