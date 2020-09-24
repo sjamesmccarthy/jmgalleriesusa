@@ -18,30 +18,31 @@
         <fieldset class="form-main">
         <!-- <p> -->
         <!-- <label class="" for="name">YOUR NAME</label> -->
-        <input class="half-size"type="text" id="contactname" name="contactname" placeholder="YOUR NAME (eg, John Smith)" value="<?= $name ?>" required>
+        <input class="half-size-old"type="text" id="contactname" name="contactname" placeholder="YOUR NAME (eg, John Smith)" value="<?= $name ?>" required>
         <!-- </p> -->
 
         <!-- <p> -->
         <!-- <label class="" for="contactinfo">Email Address or Phone Number</label> -->
-        <input class="half-size" type="text" id="contactemail" name="contactemail" placeholder="YOUR EMAIL (eg, john.smith@ydomain.com)" value="<?= $email ?>" required>
+        <input class="half-size-old" type="text" id="contactemail" name="contactemail" placeholder="YOUR EMAIL (eg, john.smith@ydomain.com)" value="<?= $email ?>" required>
         <!-- </p> -->
 
         <p>
         <!-- <label class="" for="contactinfo">Email Address or Phone Number</label> -->
-        <input class="half-size" type="text" id="contactsubject" name="contactsubject" placeholder="<?= $subject_PH ?>" value="<?= $subject_VAL ?>" required>
+        <input class="half-size-old" type="text" id="contactsubject" name="contactsubject" placeholder="<?= $subject_PH ?>" value="<?= $subject_VAL ?>" required>
+        </p>
 
         <?= $formSizes ?>
-        </p>
+        <?= $promo_field ?>
+        <?= $estimated_cost ?>
 
         <div class="mt-16">
         <?= $message_PH ?>
-        
+
         <!-- <label class="" for="comments">TYPE YOUR MESSAGE HERE</label> -->
-        <textarea style="margin-top: 10px" id="comments" name="comments" placeholder="TYPE ANY COMMENTS HERE" rows="8"><?= $msg ?></textarea>
+        <textarea style="margin-top: 10px" id="comments" name="comments" placeholder="TYPE ANY ADDITIONAL INFORMATION HERE" rows="8"><?= $msg ?></textarea>
         </div>
         
-        <?= $promo_field ?>
-        <?= $estimated_cost ?>
+        <!-- <?= $promo_field ?> -->
         <?= $payment_field ?>
 
         </fieldset>
@@ -78,6 +79,7 @@
         if( $('#promocode').val() != '' ) {
 
             var url = "/view/ajax_promocode_process.php";
+            console.log("promo:" + $('#promocode').val() + "," + "cost:" + $('#estimated_cost').text());
 
             $.ajax({
                   type: "POST",

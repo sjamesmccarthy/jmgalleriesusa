@@ -1,6 +1,6 @@
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=.75, maximum-scale=1.0, minimum-scale=.75">
+    <meta name="viewport" content="width=device-width, initial-scale=.5, maximum-scale=1.0, minimum-scale=.5">
     
     <title><?= $title_formatted ?></title>
     

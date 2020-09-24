@@ -7,7 +7,7 @@
             <p class="center heading" ><a href="/all?filter=tinyviews" class="<?= $all ?>">SHOP</a><br /><!-- GICLÉE -->PRINTS & tinyVIEWS&trade;</p>
         </div>
         <div class="col-3_md-4-middle">
-            <p class="center heading"><a href="/polarized" class="<?= $polarized ?>">JOURNAL</a><br />short FIELD NOTES</p>
+            <p class="center heading"><a href="/polarized" class="<?= $polarized ?>">JOURNAL</a><br />field NOTES</p>
         </div>
         <div class="col-2_md-4-middle">
             <p class="topnav-logo"><a href="/"><img src="/view/image/logo_fullsize.png" /></a></p>

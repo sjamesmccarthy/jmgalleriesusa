@@ -1,5 +1,7 @@
 .reports-add--container {
 
+    overflow-x: scroll;
+    
     .sql_e_banner, .sql_e_banner_count {
         display: none;
     }

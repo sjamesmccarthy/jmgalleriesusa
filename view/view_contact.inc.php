@@ -63,29 +63,31 @@ if(isSet($this->data->routePathQuery[0])) {
         '<input type="hidden" name="framing" value ="' . $frame . '" />' .
         '<input type="hidden" name="catalog_id" value ="' . $catalog_no . '" />' .
         '<input type="hidden" name="invoice_no" value ="' . time() . '-' . $catalog_no . '" />' .
-        '<p><input class="half-size" type="text" name="phone" placeholder="PHONE (eg, 951-708-1831)" value="' . $phone . '"required /><p>' .
-        '<p><input class="half-size" type="text" name="address" placeholder="SHIPPING ADDRESS (eg, 123 Main St.)" value="' . $address . '" $required />' .
-        '<input class="half-size" type="text" name="address_other" placeholder="SHIPPING ADDRESS SECOND LINE (eg, Suite, Apt)" value="' . $address_exxtra . '"/></p>' .
-        '<p><input class="half-size" type="text" name="city" placeholder="CITY (eg, Las Vegas, Dallas, Barstow)" value="' . $city . '"required/>' .
-        '<input class="half-size" type="text" name="state" placeholder="State (eg, NV, CA, NY, TX)" value="' . $state . '"required/></p>' .
-        '<p><input class="half-size" type="text" name="postalcode" placeholder="Postal Code (eg, 95474)" value="' . $postalcode . '"required/><p>';
+        '<h3 class="">Ship To</h3' . 
+        '<p><input class="half-size-old" type="text" name="address" placeholder="SHIPPING ADDRESS (eg, 123 Main St.)" value="' . $address . '" $required />' .
+        '<input class="half-size-old" type="text" name="address_other" placeholder="SHIPPING ADDRESS SECOND LINE (eg, Suite, Apt)" value="' . $address_exxtra . '"/></p>' .
+        '<p><input class="half-size-old" type="text" name="city" placeholder="CITY (eg, Las Vegas, Dallas, Barstow)" value="' . $city . '"required/>' .
+        '<input class="half-size-old" type="text" name="state" placeholder="State (eg, NV, CA, NY, TX)" value="' . $state . '"required/></p>' .
+        '<p><input class="half-size-old" type="text" name="postalcode" placeholder="Postal Code (eg, 95474)" value="' . $postalcode . '"required/><p>' .
+        '<p><input class="half-size-old" type="text" name="phone" placeholder="PHONE (eg, 951-708-1831)" value="' . $phone . '"required /><p>';
 
 
     $button_label = "PLACE YOUR ORDER";
-    $promo_field = '<p class="pt-8 pb-32"><input class="half-size" style="margin-bottom: 0;" type="text" id="promocode" name="promocode" placeholder="PROMO CODE" value="' . $promo_code . '" /> <span class="ml-16 tiny"><a href="#" id="apply_promo">apply code</a></span></p>';
-    $payment_field = "<p class='pt-16 pb-16'><img style='margin-bottom: 10px; width: 150px; vertical-align: middle' src='/view/image/square-payment-icons.png' /> <i style='font-size: 1.8rem; margin-left: 5px;' class='fab fa-bitcoin'></i><br /><span class='small'Estimated Total Not Including Tax or Shipping or any Promotional Codes.<br />Visa, Mastercard, American Express and Discover accepted and processed with Square.<br />Bitcoin is accepted via Coinbase or Square Cash App.<br />Cash (USD) is accepted on pickup only orders.<br />No checks.</span></p>";
+    $promo_field = '<p class="pt-8 pb-32"><input class="half-size-old" style="margin-bottom: 0;" type="text" id="promocode" name="promocode" placeholder="PROMO CODE" value="' . $promo_code . '" /> <span class="ml-16 tiny"><a href="#" id="apply_promo">apply code</a></span></p>';
+    $payment_field = "<p class='pt-16 pb-16'><img style='margin-bottom: 10px; width: 150px; vertical-align: middle' src='/view/image/square-payment-icons.png' /> <!-- <i style='font-size: 1.8rem; margin-left: 5px;' class='fab fa-bitcoin'></i> --><br /><span class='small'Estimated Total Not Including Tax or Shipping or any Promotional Codes.<br />Visa, Mastercard, American Express and Discover accepted and processed with Square.<br /><!-- Bitcoin is accepted via Coinbase or Square Cash App.<br />-->Cash (USD) is accepted on pickup only orders. No checks.<br /><b>You will be invoiced separately. There is no payment due at this time.</b></span></p>";
     $subject_VAL = $subject_PH;
     $formType = "RequestQuoteForm"; 
-    $formSizes = '<input class="half-size" type="text" id="contactsize" name="contactsize" value="' . urldecode($size) . ' ' . $frame_long . ' [CATALOG NUMBER ' . $catalog_no . ']" required />';
+    $estimated_cost_calc = "<span id='estimated_cost_format'>" . number_format($cost, 2) . " USD</span></h2>";
+    $estimated_cost = "<span id='estimated_cost' class='hidden'>" . $cost . "</span>";
+    $formSizes = '<h3 class="mt-32">$' . $estimated_cost_calc . '</h3><input class="half-size-old" type="text" id="contactsize" name="contactsize" value="' . urldecode($size) . ' ' . $frame_long . ' [CATALOG NUMBER ' . $catalog_no . ']" disabled="disabled" style="background-color: rgba(0,0,0,.02); border: 1px solid rgba(0,0,0,.03);" required />';
 
-    $estimated_cost = "<span id='estimated_cost' class='hidden'>" . $cost . "</span><h2><span id='estimated_cost_format'>" . number_format($cost, 2) . " USD</span></h2>";
 
 } else {
     // Just a regular contact form
     $formTitle = $this->page->title;
     $subTitle = null;
     $subject_PH = "PHOTOGRAPH TITLE OR SUBJECT";
-    $message_PH = "IN THE AREA BELOW PLEASE TELL US HOW WE CAN HELP YOU."; 
+    $message_PH = ""; 
     $button_label = "SEND MESSAGE";
     $promo_field = null;
     $payment_field = null;

@@ -28,7 +28,7 @@
             
     <div class="grid mt-16">
 
-    <div class="col-3">
+    <div class="col-4_sm-12">
             <!-- <p class="small blue" style="margin-bottom: -10px; margin-left: 5px;">$ USD</p> -->
             <p class="blue price">$<span id="price" class="price"><?= number_format($default_price, 2) ?></span></p><p class="frame_data price"></p>
             <input type="hidden" name="total_cost" id="total_cost" value="<?= $default_price ?>" />
@@ -42,7 +42,7 @@
         <?= $gallery_details ?>
     </div>
 
-        <article>
+        <article class="nopad">
             <div id="alt-imgs" class="grid">
             <?= $in_roomImg ?>
             <?= $in_roomImgAlt ?>

@@ -1,14 +1,15 @@
 <section id="release-notes">
     <div class="grid-center">
 
-        <div class="col-11">
+        <div class="col-11" style="position: relative">
 
-        <h1>RELEASE NOTES</h1>
+        <h1>RELEASE NOTES</h1> <a href="/contact"><button style="position: absolute; right: 0; top: 1rem;">CONTACT j.McCarthy</button></a>
 
-        <p class="pt-16">v1.4.8<br />Sep 42, 2020</p>
+        <p class="pt-16">v1.4.8<br />Sep 24, 2020</p>
         	<ul>
             <li>bugfix: fieldnotes index malforming HTML</li>
             <li>bugfix: breadcrumb in footer now links to colletion index again.</li>
+            <li>update: Checkout/Contact format layout.</li>
         	</ul> 
         </p>
 

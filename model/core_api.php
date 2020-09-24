@@ -2331,7 +2331,8 @@ class Core_Api extends Fieldnotes_Api
                 S.company
             FROM
                 supplier_materials AS SM
-                LEFT JOIN supplier AS S ON S.supplier_id = SM.supplier_id";
+                LEFT JOIN supplier AS S ON S.supplier_id = SM.supplier_id
+            WHERE SM.manual_entry != 'TRUE'";
         
             $result = $this->mysqli->query($sql);
 

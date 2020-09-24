@@ -120,6 +120,7 @@
                 </div>
 
                 <div class="teaser_container">
+                    <p>TEASER</p>
                     <label for="teaser">teaser</label>
                     <input class="mt-8" maxlength="250" type="text" id="teaser" name="teaser" placeholder="TEASER (eg, MAXLENGTH 133 CHARACTERS.)" value="<?= $res_teaser ?>" >
                 </div>

@@ -11,6 +11,7 @@
                     <div class="grid admin-header">
                         <div class="col">
                         <h2>Index of <b>Materials</b> (<?= $active_materials_count ?>)</h2>
+                        <p class="tiny">manual entry materials are hidden <a href="https://jmgalleriesusa/studio/reports-add?id=13">view SQL report</a></p>
                         </div>
                         <div class="col-1 add-icon">
                             <a href="/studio/materials-add"><i class="fas fa-plus-circle"></i></a>
