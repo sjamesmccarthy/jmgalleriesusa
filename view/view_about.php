@@ -4,7 +4,7 @@
         <div class="col-11">
 
                 <div class="grid-2_md-1">
-                    <div class="col" style="background-image: linear-gradient(to right, rgba(255,255,255,.1), rgba(255,255,255,1)), url(/view/image/profile_img.jpg); background-size: cover; border-top-left-radius: 2rem; border-bottom-left-radius: 2rem;">
+                    <div class="col" style="min-height: 350px; background-image: linear-gradient(to right, rgba(255,255,255,.1), rgba(255,255,255,1)), url(/view/image/profile_img_scripps.jpg); background-size: cover; background-position: right; border-top-left-radius: 2rem; border-bottom-left-radius: 2rem;">
                             <!-- <img class="bio-profile-pic" src="/view/image/profile_img.jpg" /> -->
                     </div>
                     <div class="col pl-16 mt-16 artist-statement">
@@ -124,11 +124,17 @@
                 <ul class="timeline">
                 <li class="timeline-history">
                     <h3>2020</h3>
-                    <p>It was the beginning of a new chapter in Southern California, or so it was supposed to have been. After a few months in transition, and because of unforeseen circumstances, the adventure ended as quickly as it had begun and j.McCarthy found himself back in Las Vegas. Not a week later, the global pandemic known as COVID-19 cancelled everything in 2020. <!-- (aka Coronavirus, aka a really severe Flu which attacked elderly and those with respiratory conditions) swept the world in haste, starting at ground-zero in Wuhan China. The virus quickly infected almost a million people and killing hundreds of thousands world-wide, but the economic shutdown and media-induced panic is what ultimately hurt more lives. Entire states, cities and countries were put on complete lock-down or shelter-in-place orders by their Government officials in fear of an unknown death-toll which the media was comparing to the Black Plague of 1346. The US economy came to a halt. Unemployment grew to over 30% in some States; numbers like this have not been seen since the Great Depression. That was March, April and May. By June, people still kept to themselves inside afraid to breath the air outside even though it's perfectly safe. Riots and protests ensued around the globe further hurting any economic recovery attempting to ignite. The only thing for certain right now is that we have a very long road back to normalcy. -->
+                    <p>It was the beginning of a new chapter in Southern California, or so it was supposed to have been. After a few months in transition, and because of unforeseen circumstances, the adventure ended as quickly as it had begun and j.McCarthy found himself back in Las Vegas.</p>
+                    
+                    <p>Not a week later, the global pandemic known as COVID-19 cancelled 2020. </p><!-- (aka Coronavirus, aka a really severe Flu which attacked elderly and those with respiratory conditions) swept the world in haste, starting at ground-zero in Wuhan China. The virus quickly infected almost a million people and killing hundreds of thousands world-wide, but the economic shutdown and media-induced panic is what ultimately hurt more lives. -->
+                    
+                    <P>Entire states, cities and countries were put on complete lock-down or shelter-in-place orders by their Government officials in fear of an unknown death-toll which the media was comparing to the Black Plague of 1346. The US economy came to a halt. Unemployment grew to over 30% in some States; numbers like this have not been seen since the Great Depression.</p>
+                    
+                    <!-- That was March, April and May. By June, people still kept to themselves inside afraid to breath the air outside even though it's perfectly safe. Riots and protests ensued around the globe further hurting any economic recovery attempting to ignite. The only thing for certain right now is that we have a very long road back to normalcy. -->
                     </p>
 
                     <p>
-                    In September, j.McCarthy relocated back to the Carson/Tahoe area.
+                  j.McCarthy decided to postpone all events for the year and use the time to refine his online gallery, curate his collection and enjoy the outdoors shooting more landscapes.
                     </p>
 
                 </li>

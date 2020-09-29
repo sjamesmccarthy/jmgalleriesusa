@@ -11,8 +11,7 @@
                 <li class="filter-all selected">All</li>
                 <li class="filter-gallery">Limited Edition</li>
                 <!-- <li class="filter-studio">Studio Edition</li> -->
-                <li class="filter-open">Giclée Prints & tinyViews&trade;</li>
-                <!-- <li class="filter-tinyviews">tinyViews&trade; Edition</li> -->
+                <li class="filter-open">tinyVIEWS<span style="font-size:.9rem; font-weight: 300;"><sup>&trade;</sup></span> Open Editions</li>
             </ul>
             <?php } ?>
         </div>

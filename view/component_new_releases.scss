@@ -4,7 +4,7 @@
 #new-releases {
 
     h4 {
-        text-transform: uppercase;
+        // text-transform: uppercase;
         font-size: 1.3rem;
         font-weight: 400;
     }
@@ -12,6 +12,10 @@
 
 .thumb img {
     width: 100%;
+}
+
+.thumb >p {
+    font-size: .9rem;
 }
 
 // .view-all {

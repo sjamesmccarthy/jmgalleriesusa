@@ -30,7 +30,7 @@
                 </div>
 
                 <div class="col-5_sm-12 breadcrumb copyright">
-                    <p><a href="/release-notes"><?= $this->config->copyright ?></a> | <a href="/privacy">Privacy Policy</a></p>
+                    <p><a href="/about"><?= $this->config->copyright ?></a> | <a href="/privacy">Privacy Policy</a></p>
                 </div>
 
         </div>

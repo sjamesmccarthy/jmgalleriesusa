@@ -10,7 +10,7 @@
         $thumb_new_releases_html .= '<div class="grid-4_sm-2 grid-4_md-3">';
         $thumb_new_releases_html .= '<div class="col-10" style="margin-bottom: 16px;">';
         $thumb_new_releases_html .= '<h2><a href="/new-releases/">NEW RELEASES</a></h2>';
-        $thumb_new_releases_html .= '<p>a collection of photography featuring newest work by photographer j.McCarthy.</p>';
+        $thumb_new_releases_html .= '<p>a collection of LIMITED EDITION photography featuring newest work by photographer j.McCarthy.</p>';
         $thumb_new_releases_html .= '</div>';
         $thumb_new_releases_html .= '<div class="view-all col-2-middle">';
         $thumb_new_releases_html .= '<a href="/new-releases">view all</a>';
@@ -42,7 +42,7 @@ if( !$new_releases['error']) {
             $available_sizes = $this->config->available_sizes_open; } 
             else { $data_filter_O = null; }
 
-        // if($v['as_gallery'] == 1) {$desc_editions = "<p>Edition of " . $this->config->limited_edition_max  . " plus 2 Artist Proofs</p>"; $available_sizes = "16x24, 20x30 24x36"; } else { $data_filter_G = null;  }
+        // if($v['as_gallery'] == 1) {$desc_editions = "<p>Limited Edition of " . $this->config->limited_edition_max  . " plus 2 Artist Proofs</p>"; $available_sizes = "16x24, 20x30 24x36"; } else { $data_filter_G = null;  }
         // if($v['as_studio'] == 1) {$desc_editions = "<p>tinyViews&trade; Edition only</p>"; $available_sizes = "16x24, 20x30 24x36"; } else { $data_filter_S = null; }
         // if($v['as_open'] == 1) { $desc_editions = "<p>tinyViews&trade; Edition only</p>"; $available_sizes = "4x6, 8x8, 8x10"; } else { $data_filter_O = null; }
         // if($v['as_studio'] == 1) {$desc_editions = "<p>Giclée, tinyViews&trade; Edition</p>"; $available_sizes = "16x24, 20x30 24x36"; } else { $data_filter_S = null; }

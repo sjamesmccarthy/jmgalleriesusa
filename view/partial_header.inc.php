@@ -5,12 +5,21 @@
 
         /* If this is a polarized fieldnote load a different image path */
         if ($this->routes->URI->page == "polarized_post") {
-            $og_image = "/view/image/fieldnotes/" . $this->page->image_path . '?' . uniqid();
+            if( file_exists($_SERVER["DOCUMENT_ROOT"] .  "/view/image/fieldnotes/" . $this->page->image_path) ) {
+                $og_image = "/view/image/fieldnotes/" . $this->page->image_path . '?' . uniqid();
+            } else {
+                $og_image = '/view/image/social_card_default.jpg?' . uniqid();
+            }
         } else {
-            $og_image = "/catalog/__image/" . $this->page->photo_path . ".jpg?" . uniqid();
+
+            if( file_exists($_SERVER["DOCUMENT_ROOT"] .  "/catalog/__image/" . $this->page->photo_path . ".jpg") ) {
+                $og_image = "/catalog/__image/" . $this->page->photo_path . ".jpg?" . uniqid();
+            } else {
+                $og_image = '/view/image/social_card_default.jpg?' . uniqid();
+            }
         }
     } else {
-        $og_image = "/view/image/logo_fullsize.png?" . uniqid();
+        $og_image = "/view/image/social_card_default.jpg?" . uniqid();
     }
 
     $title_formatted = $this->config->site_name . ' | ' . $this->page->title;

@@ -523,6 +523,14 @@ h5 { font-size: 20px; }
 
 h6 { font-size: 19.2px; font-weight: 400; }
 
+.font-light { font-weight: 300; }
+
+.font-semi-bold { font-weight: 600; }
+
+.font-extra-bold { font-weight: 800; }
+
+.font-black { font-weight: 900; }
+
 /* Shorthand */
 [hidden] { display: none; }
 
@@ -544,9 +552,13 @@ https://jmgalleriesusa.com
 SASS, https://sass-lang.com/
 */
 /* Structure */
+html, body { font-family: 'Raleway', sans-serif; }
+
 main { max-width: 1440px; margin: 1rem auto 0 auto; min-height: 80vh; }
 
 section, article { margin-top: 32px; padding: 0 .5rem; }
+
+ol li { list-style-type: decimal; margin-left: 4rem !important; }
 
 /* Structure: gridlex overrides */
 [class~="col"], [class*="col-"], [class*="col_"] { padding: .5rem; }
@@ -626,7 +638,7 @@ a:hover { color: #2574A9; }
 
 a:focus { background-color: transparent; outline: none; }
 
-h1 { text-transform: uppercase; color: #2574A9; }
+h1 { color: #2574A9; }
 
 h2, h3, h4, h5, h6 { color: #4a4a4a; line-height: 1.3; }
 
@@ -771,17 +783,17 @@ button a { color: #2574A9; }
 
 /* ********************** */
 /* component_most_popular */
-#most-popular h4 { text-transform: uppercase; font-size: 1rem; font-weight: 300; }
+#most-popular h4 { font-size: 1.2rem; font-weight: 300; }
 
 #most-popular .thin { font-weight: 300; }
 
-#most-popular p { font-size: 1rem; }
+#most-popular p { font-size: .8rem; }
 
-#most-popular .thumb img { width: 100%; border-bottom: 5px solid transparent; }
+#most-popular .thumb img { width: 100%; border-radius: 6px; }
 
-#most-popular .thumb img:hover { border-bottom: 5px solid #2574A9; }
+#most-popular .thumb img:hover { box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5); }
 
-#most-popular .filmstrip-thumb { max-width: 260px; border-bottom: 1px solid transparent; }
+#most-popular .filmstrip-thumb { max-width: 260px; border-radius: 6px; }
 
 @media (max-width: 64em), (max-width: 80em) { #most-popular .filmstrip-thumb { max-width: 220px; } }
 
@@ -819,19 +831,23 @@ button a { color: #2574A9; }
 
 /* ********************** */
 /* component_new-releases */
-#new-releases h4 { text-transform: uppercase; font-size: 1.3rem; font-weight: 400; }
+#new-releases h4 { font-size: 1.3rem; font-weight: 400; }
 
 .thumb img { width: 100%; }
+
+.thumb > p { font-size: .9rem; }
 
 .new-release-error { margin-top: 20px; padding-top: 20px; border-top: 1px solid #CCC; }
 
 /* ********************** */
 /* component_gallery_thumbs */
-#filmstrip h4 { text-transform: uppercase; font-size: 1.3rem; font-weight: 400; }
+#filmstrip h4 { font-size: 1.3rem; font-weight: 400; }
 
-.thumb img { width: 100%; border-bottom: 5px solid transparent; }
+.thumb img { width: 100%; border-radius: 6px; }
 
-.thumb img:hover { border-bottom: 5px solid #2574A9; }
+.thumb img:hover { box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5); }
+
+.thumb > p { font-size: .9rem; }
 
 .view-all { margin-bottom: 16px; text-align: right; padding-right: 8px !important; }
 
@@ -1064,7 +1080,7 @@ button a { color: #2574A9; }
 
 #footer .cookie_banner { position: fixed; bottom: 0; left: 0; width: 100%; background-color: #2574A9; padding: 20px; }
 
-#footer .cookie_banner > p { color: #FFF; display: inline-block; vertical-align: middle; padding-right: 20px; font-size: 1rem; }
+#footer .cookie_banner > p { color: #FFF; display: inline-block; vertical-align: middle; padding-right: 20px; font-size: .8rem; }
 
 #footer .cookie_banner > p > i.fas { font-size: 2rem; }
 
@@ -1132,13 +1148,13 @@ button a { color: #2574A9; }
 
 /* ********************** */
 /* view_catalog */
-#catalog h4 { text-transform: uppercase; font-size: 1.3rem; font-weight: 400; }
+#catalog h4 { font-size: 1.3rem; font-weight: 400; }
 
 .title { text-align: center; }
 
 .filter-editions-list { margin: 2rem 0; }
 
-.filter-editions-list li { display: inline-block; font-size: 1.4rem; padding: .5rem; width: 285px; /* 214px; */ color: #2574A9; }
+.filter-editions-list li { display: inline-block; font-size: 1.4rem; padding: .5rem; width: 300px; /* 214px; */ color: #2574A9; }
 
 .filter-editions-list li:not(:last-child) { margin-right: 10px; }
 
@@ -1216,7 +1232,7 @@ form #buysize, form #frame { border: none; border-bottom: 1px solid #e4e4e4; bor
 
 .top-photo { text-align: right; }
 
-.detail-h1 { padding: 0; margin-left: -5px; line-height: 1.3; text-transform: uppercase; font-weight: 300; }
+.detail-h1 { padding: 0; margin-left: -5px; line-height: 1.3; font-weight: 300; }
 
 .edition-title { color: rgba(0, 0, 0, 0.4); text-transform: initial; font-weight: 300; font-size: 1rem; }
 
@@ -1263,6 +1279,10 @@ form #buysize, form #frame { border: none; border-bottom: 1px solid #e4e4e4; bor
 .field-notes { font-size: 1.4rem; color: rgba(0, 0, 0, 0.8); display: none; }
 
 .in-room-img { width: 100%; border: none; }
+
+.btn-nudge { margin-left: 2rem; }
+
+@media (max-width: 64em), (max-width: 80em), (max-width: 64em) and (orientation: portrait) { .btn-nudge { margin-left: 0; } }
 
 /* ********************** */
 /* view_exhibits */

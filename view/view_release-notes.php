@@ -3,13 +3,25 @@
 
         <div class="col-11" style="position: relative">
 
-        <h1>RELEASE NOTES</h1> <a href="/contact"><button style="position: absolute; right: 0; top: 1rem;">CONTACT j.McCarthy</button></a>
+        <h1>RELEASE NOTES</h1> <a href="/contact"><button style="position: absolute; right: 0; top: 1rem;">REPORT A PROBLEM</button></a>
+
+        <p class="pt-16">v1.4.9<br />Sep 29, 2020</p>
+        	<ul>
+            <li>bugfix: dmin control user name now strtolower before check</li>
+            <li>added: Images are now either Limited or Open; no longer combined</li>
+        	</ul> 
+        </p>
 
         <p class="pt-16">v1.4.8<br />Sep 24, 2020</p>
         	<ul>
             <li>bugfix: fieldnotes index malforming HTML</li>
             <li>bugfix: breadcrumb in footer now links to colletion index again.</li>
             <li>update: Checkout/Contact format layout.</li>
+            <li>update: About page updated.</li>
+            <li>update: Release-Notes now has Rerport A Problem button and location moved to Privacy Policy.</li>
+            <li>update: Cookie Consent banner language updated.</li>
+            <li>update: Typography throughout the site.</li>
+            <li>update: Slimmed the ordering form on photo details pages.</li>
         	</ul> 
         </p>
 

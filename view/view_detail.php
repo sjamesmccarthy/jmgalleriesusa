@@ -28,17 +28,22 @@
             
     <div class="grid mt-16">
 
-    <div class="col-4_sm-12">
+    <div class="col-2_sm-12">
             <!-- <p class="small blue" style="margin-bottom: -10px; margin-left: 5px;">$ USD</p> -->
             <p class="blue price">$<span id="price" class="price"><?= number_format($default_price, 2) ?></span></p><p class="frame_data price"></p>
             <input type="hidden" name="total_cost" id="total_cost" value="<?= $default_price ?>" />
         </div>
 
        <?= $sizes_frames ?>
+
+       <div class="col-2_sm-12">
+        <?= $btn_link ?><button><?= $btn ?></button></a>
+       </div>
+
     </div>
 
-    <div class="mt-16 ml-16 mb-16">
-        <?= $btn_link ?><button><?= $btn ?></button></a>
+    <div class="">
+        <!-- <?= $btn_link ?><button><?= $btn ?></button></a> -->
         <?= $gallery_details ?>
     </div>
 
@@ -58,8 +63,9 @@
 </section>
 
 <!-- generated html from component file: component_most_popular -->
+<!-- removed 9/25/2020 -->
 <section id="you-may-like" class="filmstrip mt-0">
-    <?= $you_may_also_like_html ?>
+    <?php //$you_may_also_like_html ?>
 </section> 
 <!-- /generated html from component file -->
 
@@ -115,7 +121,8 @@
             // newprice = (nf.format(newprice_f));
             // $('#price').html('np ' + newprice_f);
 
-            $('.frame_data').html( '(+' + fp + ' ' + $("#frame option:selected").val() + ' Frame)');
+            $('.frame_data').html( '(+' + fp + ' for Frame)');
+            // $('.frame_data').html( '(+' + fp + ' ' + $("#frame option:selected").val() + ' Frame)');
             // $('#total_cost').val(newprice_f);
             // console.log('frame.changed(' + $('#total_cost').val() + ')');
 

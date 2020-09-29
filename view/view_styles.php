@@ -131,7 +131,7 @@
            
 
     <li>
-        <h3>Giclée Prints & tinyViews&trade; Edition</h3>
+        <h3>tinyVIEWS<span style="font-size:.9rem; font-weight: 300;"><sup>&trade;</sup></span> Open Editions</h3>
         <p>These editions are not considered collectible and are not numbered, may not be signed, and could also include a watermark. They are printed on premium photo paper with a large format inkjet printer and can be optionally Studio framed for an additional cost as shown below. An optional 2-ply white mat for additional cost is available, but this will increase frame size.</a></p>
 
     <div class="divTable w-100 mt-32">

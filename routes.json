@@ -358,7 +358,7 @@
         "template": "page",
         "page": "polarized",
         "component": "true",
-        "title": "Polarized, A Conversations For Photographers & Collectors"
+        "title": "Polarized: Field Notes by Photographer j.McCarthy"
     },
     "/polarized/[$1]": {
         "template": "page",

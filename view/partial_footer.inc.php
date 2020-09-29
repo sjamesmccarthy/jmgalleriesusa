@@ -12,7 +12,7 @@ foreach($catalog_names as $k => $v) {
 }
 
 if($this->routes->URI->page == 'detail') {
-    $bc_catalog = '<img class="breadcrumb-arrow" src="/view/image/icon_navarrow-right.svg" /> <a href="/galleries"/>Galleries</a> <img class="breadcrumb-arrow" src="/view/image/icon_navarrow-right.svg" /> <a href="' . $this->page->catalog_path . '"/>' . $this->page->title . '</a>';
+    $bc_catalog = '<img class="breadcrumb-arrow" src="/view/image/icon_navarrow-right.svg" /> <a href="/galleries"/>Galleries</a> <img class="breadcrumb-arrow" src="/view/image/icon_navarrow-right.svg" /> <a href="' . $this->page->catalog_path . '"/>' . $this->catalog_title . '</a>';
 } else if ($this->routes->URI->page == 'catalog' ) {
     $bc_catalog = '<img class="breadcrumb-arrow" src="/view/image/icon_navarrow-right.svg" /> <a href="/galleries"/>Galleries</a> ' . $bc_catalog;
 } else {
@@ -22,7 +22,7 @@ if($this->routes->URI->page == 'detail') {
 if(!isSet($_COOKIE['cookie_consent'])) {
     $cookie_consent = '<div class="cookie_banner">
     <p><i class="fas fa-cookie-bite"></i></p>
-    <p class="pt-8">jM Galleries uses Strictly Necessary, Functional and Performance Cookies as described in our <a href="/privacy">Privacy Policy.</a><br /><a href="//duckduckgo.com">i do not agree.</a></p>
+    <p class="pt-8">jM Galleries uses <a href="/privacy#p3">Strictly Necessary, Functional and Performance Cookies</a> as described in our Privacy Policy.<br /><a href="//duckduckgo.com">if you do not agree, click here.</a></p>
     <p class="pull-right"><button id="cookie_consent" class="button-inv">ACCEPT COOKIES</button>
     </div>';
 } 

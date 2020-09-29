@@ -20,16 +20,17 @@
     } else if( $catalog_meta[0]['path'] == 'all') {
 
         if($this->routes->URI->queryvals[1] == 'tinyviews') {
-            $catalog_title = 'SHOP';
-            $catalog_desc = 'Beautiful Giclée Prints & tinyViews&trade; / Open Edition Fine Art at Affordable Prices.';
+            $catalog_title = 'SHOP OPEN EDITIONS';
+            $catalog_desc = 'Beautiful tinyVIEWS<span style="font-size:.9rem; font-weight: 300;"><sup>&trade;</sup></span> Open Edition Fine Art at Affordable Prices.';
             $catalog_tabs_hidden = true;
         } 
         
         $catalog_photos = $this->api_Catalog_Category_Thumbs_All();
 
     } else {
-        $catalog_tabs_hidden = false;
-        $catalog_photos = $this->api_Catalog_Category_Filmstrip($catalog_meta[0]['catalog_collections_id'], 'ALL');
+        $catalog_tabs_hidden = true;
+        // $catalog_photos = $this->api_Catalog_Category_Filmstrip($catalog_meta[0]['catalog_collections_id'], 'ALL');
+        $catalog_photos = $this->api_Catalog_Category_Filmstrip($catalog_meta[0]['catalog_collections_id'], 'ALL','LE');
     }
 
         if( !$catalog_photos['error']) {
@@ -80,7 +81,7 @@
 
                 // if($v['as_gallery'] == 1) { 
                 //     $data_filter_G = 'f-gallery'; 
-                //     $desc_editions = "<p>Edition of " . $this->config->limited_edition_max  . " plus 2 Artist Proofs</p>"; 
+                //     $desc_editions = "<p>Limited Edition of " . $this->config->limited_edition_max  . " plus 2 Artist Proofs</p>"; 
                 //     $available_sizes = "16x24, 20x30 24x36"; } 
                 //     else { $data_filter_G = null;  }
 

@@ -22,7 +22,7 @@
             $thumb_html .= "</div>";
 
             /* Get FilmStrip of photos by Category */
-            $catalog_photos = $this->api_Catalog_Category_Filmstrip($value['catalog_collections_id'], 4);
+            $catalog_photos = $this->api_Catalog_Category_Filmstrip($value['catalog_collections_id'], 4, "LE");
 
             if(isSet($catalog_photos)) {
 

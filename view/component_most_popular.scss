@@ -7,8 +7,8 @@
     // padding-top: 20px;
 
     h4 {
-        text-transform: uppercase;
-        font-size: 1rem;
+        // text-transform: uppercase;
+        font-size: 1.2rem;
         font-weight: 300;
     }
 
@@ -17,22 +17,24 @@
     }
 
     p {
-        font-size: 1rem;
+        font-size: .8rem;
     }
     
     .thumb img {
     width: 100%;
-    border-bottom: 5px solid transparent;
+    border-radius: $border-radius;
+    // border-bottom: 5px solid transparent;
     &:hover {
-        // box-shadow: 0px 20px 25px 0px rgba(0, 0, 0, 0.3);
-        border-bottom: 5px solid $color-blue;
+        box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
+        // border-bottom: 5px solid $color-blue;
     }
     }
 
     .filmstrip-thumb {
 
         max-width: 260px;
-        border-bottom: 1px solid transparent;
+        border-radius: $border-radius;
+        // border-bottom: 1px solid transparent;
 
         @media (max-width: 64em), (max-width: 80em) {
             max-width: 220px;

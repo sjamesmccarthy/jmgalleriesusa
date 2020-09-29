@@ -33,7 +33,7 @@ if(isSet($this->routes->URI->queryvals)) {
     $this->page->title = "/r  <b>" . $res_name . "</b>";
     $formTypeAction = "update";
     $button_label="save report";
-    $button_state = "noshow";
+    $button_state = ""; //noshow
     // $button_archive_cancel = '<button class="btn-delete mt-32" id="archive" value="ARCHIVE">archive supplier</button>';
     $button_archive_cancel = '<a class="cancel-button" href="/studio/reports">cancel</a>';
     $id_field = '<input type="hidden" name="report_id" value="' . $res_report_id . '" />';

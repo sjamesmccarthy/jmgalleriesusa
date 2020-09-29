@@ -4,7 +4,7 @@
         <div class="col-8 __container">
 
             <!-- <h1>JOURNAL</h1> -->
-            <h4 class="subtitle blue">a Collection of Field-Notes by Photographer j.McCarthy</h4>
+            <h4 class="subtitle blue">a Collection of Field Notes by Photographer j.McCarthy</h4>
 
             <!-- START_CARDS -->
             <div style="display: block">

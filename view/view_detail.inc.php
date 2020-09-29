@@ -143,9 +143,9 @@
         $edition_desc = 'LIMITED EDITION';
         $edition_max  = ' OF ' . $this->config->limited_edition_max;
 
-        $btn = "BUY THIS LIMITED EDITION";
-        $btn_link = '<a href="/contact?photo=' . $photo_meta['file_name'] . '">';
-        $gallery_details = '<p class="col-12 mt-32"><!-- Limited Editions are either printed on ' . $edition_desc_material . ' mounted in a Premium Designer frame and protected with Tru Vue&reg; Museum Glass, or Lumachrome HD Acrylic without framing. -->If you have any questions about our <a href="/styles">styles, frames and editions</a>, or would like to talk with an art consultant, please <a href="/contact">contact us</a>.</p>';
+        $btn = "BUY ARTWORK";
+        $btn_link = '<a class="btn-nudge";" href="/contact?photo=' . $photo_meta['file_name'] . '">';
+        $gallery_details = '<p class="col-12"><!-- Limited Editions are either printed on ' . $edition_desc_material . ' mounted in a Premium Designer frame and protected with Tru Vue&reg; Museum Glass, or Lumachrome HD Acrylic without framing. -->If you have any questions about our Lumachrome HD Acrylic, Hahnemühle Photo Rag® Metallic Archival Paper, or <a href="/styles">styles, frames and editions</a>, please <a href="/contact">contact our art consultants</a>.</p>';
 
         $default_price = $le_price_array['16x24'];
 
@@ -168,7 +168,7 @@
                 <option value="Whiskey"' . $frame_disabled . '>FRAME: Premium Designer Whiskey (similar to a Medium Brown stain)</option>
                 <option value="Bourbon"' . $frame_disabled . '>FRAME: Premium Designer Bourbon (similar to a Light Brown stain)</option>
             </select>
-            <span class="tiny ml-16"><a href="/styles">More information about ' . $frame_info_link . '</a></span>
+            <!-- <span class="tiny ml-16"><a href="/styles">More information about ' . $frame_info_link . '</a></span> -->
         </div>
         <input type="hidden" name="edition" value="limited" />';
 
@@ -187,8 +187,8 @@
         $edition_desc_material_slash = null;
         $edition_max = null;
 
-        $btn = "Add To Cart +Checkout";
-        $btn_link = '<a href="/contact?photo=' . $photo_meta['file_name'] . '&open=true">';
+        $btn = "BUY ARTWORK";
+        $btn_link = '<a class="btn-nudge" href="/contact?photo=' . $photo_meta['file_name'] . '&open=true">';
 
         $default_price = $tv_price_array['11x14'];
 
@@ -215,7 +215,7 @@
         </div>
          <input type="hidden" name="edition" value="open" />';
 
-         $tinyViewFinePrint = '<div class="col-12 mt-16 mb-64 ml-8"><p>tinyViews&trade; Giclée Prints are available in standard framing sizes 5x7, 8x10 and 11x14 with a 1/2" white border ready for framing. Please read our <a target="_info" href="/styles">Frames, Editions and Pricing</a> page for more information about our Studio Frames for tinyViews&trade; Giclée Prints.' . $tv_img_disclaimer . '</p></div>';
+         $tinyViewFinePrint = '<div class="col-12 mb-64 ml-8"><p>tinyViews&trade; Giclée Prints are available in standard framing sizes 5x7, 8x10 and 11x14 with a 1/2" white border ready for framing. Please read our <a target="_info" href="/styles">Frames, Editions and Pricing</a> page for more information about our Studio Frames for tinyViews&trade; Giclée Prints.' . $tv_img_disclaimer . '</p></div>';
 
     }
 

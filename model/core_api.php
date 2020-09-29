@@ -123,16 +123,21 @@ class Core_Api extends Fieldnotes_Api
         return($data);
     }
 
-    public function api_Catalog_Category_Filmstrip($category_id, $limit) {
+    public function api_Catalog_Category_Filmstrip($category_id, $limit, $edition='ALL') {
         
-        if($category_id != "ALL") {
+        if($category_id != "ALL")  {
             $category = "cl.catalog_collections_id = " . $category_id
             . " AND cc.status = 'ACTIVE' "
             . " AND cp.status = 'ACTIVE' ";
-
-        } else {
+        }  else {
             $category = "cc.status = 'ACTIVE'"
             . " AND cp.status = 'ACTIVE' ";
+        }
+
+        if($edition == "LE") {
+            $category .= "AND cp.as_gallery = '1'";
+        } elseif($edition == "OE") {
+            $category .= "AND cp.as_open = '1'";
         }
 
         if($limit != "ALL") {
@@ -165,10 +170,7 @@ class Core_Api extends Fieldnotes_Api
         WHERE "
             . $category
             . $limit;
-            // . " ORDER BY cp.title ASC";
-
-            // $data['sql'] = $sql;
-
+        
             $result = $this->mysqli->query($sql);
 
             if ($result->num_rows > 0) {
@@ -247,6 +249,8 @@ class Core_Api extends Fieldnotes_Api
         WHERE
             PH.created > DATE_ADD(Now(), INTERVAL - 6 MONTH)
             AND PH.status = 'ACTIVE'
+            -- RESTRICT TO LIMITED EDITION
+            AND PH.as_gallery = '1'
         ORDER BY
             PH.created DESC
         LIMIT " . $limit;
@@ -586,7 +590,7 @@ class Core_Api extends Fieldnotes_Api
     public function api_Auth_User($username, $password) {
 
         $pin = strtoupper($_POST['p_1'] . $_POST['p_2'] . $_POST['p_3'] . $_POST['p_4'] . $_POST['p_5'] . $_POST['p_6']);
-        $hash_str = md5("[/" . $_POST['username'] . "+" . $pin . "/p]");
+        $hash_str = md5("[/" . strtolower($_POST['username']) . "+" . $pin . "/p]");
 
         if( $this->checkDBConnection(__FUNCTION__) == true) {
 

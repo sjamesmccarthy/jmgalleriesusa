@@ -4,7 +4,7 @@
 #catalog {
 
     h4 {
-        text-transform: uppercase;
+        // text-transform: uppercase;
         font-size: 1.3rem;
         font-weight: 400;
     }
@@ -38,7 +38,7 @@
     display: inline-block;
     font-size: 1.4rem;
     padding: .5rem;
-    width: 285px; /* 214px; */
+    width: 300px; /* 214px; */
     color: $color-blue;
 
         &:not(:last-child) {

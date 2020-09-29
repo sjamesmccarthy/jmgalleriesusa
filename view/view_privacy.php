@@ -15,7 +15,7 @@
 
     <li><H3>Table of Contents</h3></lil>
     
-            <ul class="toc mt-16">
+            <ol class="toc mt-16">
                 <li><a href="#p1">Information We Collect</a></li>
                 <li><a href="#p2">Website Analytics</a></li>
                 <li><a href="#p3">Cookie Settings: Targeting Cookies, Performance Cookies, Functional Cookies, Strictly Necessary Cookies</a></li>
@@ -23,8 +23,9 @@
                 <li><a href="#p5">Do We Sell Any Information To Outside Parties</a></li>
                 <li><a href="#p6">Children's Online Privacy Protection Act Compliance</a></li>
                 <li><a href="#p7">Data Retreival and Removal</a></li>
+                <li><a href="/release-notes">Software Release Notes</a></li>
                 <li><a href="#p8">Contacting Us</a></li>
-            </ul>
+            </ol>
 
         </li>
 
