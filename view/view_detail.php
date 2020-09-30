@@ -113,8 +113,14 @@
             || $("#frame option:selected").val() == "Whiskey" 
             || $("#frame option:selected").val() == "Bourbon" ){
 
-                console.log('Premium Designer Frame');
+                console.log('Premium Designer Frame INCLUDED');
                 $('.frame_data').html( '(+' + $("#frame option:selected").val() + ' Frame, Included)');
+                return false;
+        }
+
+        else  if($("#frame option:selected").val() == "ADDWITHACRYLIC") {
+                console.log('ADD TO ACRYLIC Premium Designer Frame');
+                $('.frame_data').html( '(+ Premium Frame Cost)');
                 return false;
         }
 

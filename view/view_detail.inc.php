@@ -117,7 +117,7 @@
         if ($photo_meta['desc'] == 'acrylic') {
             $edition_desc_material = 'Lumachrome HD Acrylic';
             $frame_disabled = 'disabled';
-            $frame_disabled_option = '<option value="FRAMELESS">No Frame Included With Acrylic</option><option value="ACRYLIC">+ Add Additional Frame (Please Specify Color In Order Form)</option>';
+            $frame_disabled_option = '<option value="FRAMELESS">No Frame Included With Acrylic</option><option value="ADDWITHACRYLIC">+ Add Additional Frame (Please Specify Color In Order Form)</option>';
             $frame_info_link = 'Premium Designer Frames pricing';
         } 
 
