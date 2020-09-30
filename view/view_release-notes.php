@@ -7,7 +7,8 @@
 
         <p class="pt-16">v1.4.9<br />Sep 29, 2020</p>
         	<ul>
-            <li>bugfix: dmin control user name now strtolower before check</li>
+            <li>bugfix: admin control user name now strtolower before check</li>
+            <li>bigfix: Corrected error adding frame sizes for limited & tinyViews.</li>
             <li>added: Images are now either Limited or Open; no longer combined</li>
         	</ul> 
         </p>

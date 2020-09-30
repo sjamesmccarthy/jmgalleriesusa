@@ -102,10 +102,18 @@
     $('#frame').on("change", function(e) {
         var fr = $("#frame option:selected").val();
 
-    /* add HTML span id:frame_data and if selected populate DOM element */
-    /* add update var url below with new pattern [ &frame=ASH-GRAY(+$40) ] $40 needs to reflect cost from $config obj */
+        // IF LIMITED EDITION 
+        if($("#frame option:selected").val() == "Black Vodka" 
+            || $("#frame option:selected").val() == "Whiskey" 
+            || $("#frame option:selected").val() == "Bourbon" ){
 
-        if($("#frame option:selected").val() == "Studio-Ash-Gray" || $("#frame option:selected").val() == "Studio-Snow-White") {
+                console.log('Premium Designer Frame');
+                $('.frame_data').html( '(+' + $("#frame option:selected").val() + ' Frame, Included)');
+                return false;
+        }
+
+        // ELSE IF OPEN EDITION
+        else if($("#frame option:selected").val() == "Studio-Ash-Gray" || $("#frame option:selected").val() == "Studio-Snow-White") {
             
             var print = parseFloat($("#buysize option:selected").attr("data-price"));
             var fp = parseFloat($("#buysize option:selected").attr("data-frameprice")); 
@@ -126,9 +134,13 @@
             // $('#total_cost').val(newprice_f);
             // console.log('frame.changed(' + $('#total_cost').val() + ')');
 
+        // ELSE PRINT-ONLY NO FRAME SELECTED
         } else {
             console.log('frame.changed(print-only)');
+            console.log( parseFloat($("#buysize option:selected").attr("data-price")) );
+
             var newprice = parseFloat($("#buysize option:selected").attr("data-price"));
+            newprice_f = parseFloat(newprice).toFixed(2);
              $('.frame_data').html('');
         }
 
