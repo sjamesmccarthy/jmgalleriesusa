@@ -111,13 +111,13 @@
 
         if ($photo_meta['desc'] == 'paper') {
             $edition_desc_material = 'Hahnemühle Photo Rag® Metallic Fine Art Paper';
-            $frame_disabled_option = '<option value="FRAMEINCLUDED">Select a Frame (Included In Price With Tru Vue® Museum Glass)</option>';
+            $frame_disabled_option = '<option value="FRAMEINCLUDED">Select a Frame (Included In Price With Tif($("#frame option:selected").val() == "Black Vodka" ru Vue® Museum Glass)</option>';
         } 
 
         if ($photo_meta['desc'] == 'acrylic') {
             $edition_desc_material = 'Lumachrome HD Acrylic';
             $frame_disabled = 'disabled';
-            $frame_disabled_option = '<option calue="FRAMELESS">No Frame Included With Acrylic</option><option value="ACRYLIC">+ Add Additional Frame (Please Specify Color In Order Form)</option>';
+            $frame_disabled_option = '<option value="FRAMELESS">No Frame Included With Acrylic</option><option value="ACRYLIC">+ Add Additional Frame (Please Specify Color In Order Form)</option>';
             $frame_info_link = 'Premium Designer Frames pricing';
         } 
 

@@ -89,8 +89,14 @@
             $('#frame').find('option').not(':first').attr("disabled", "disabled"); 
             console.log('5x7');
        } else {
+           console.log('ELSE-not 5x7');
+           console.log($("#frame option:selected").val());
             // $('#frame').find('option').not(':first').css("display", "block");
-            $('#frame').find('option').not(':first').removeAttr("disabled");
+            if($("#frame option:selected").val() == "FRAMELESS" || $("#frame option:selected").val() == "ACRYLIC" ) { 
+                    $('#frame').find('option').not(':first').attr("disabled");
+                } else {
+                    $('#frame').find('option').not(':first').removeAttr("disabled");
+                }
         }
 
         $("#frame").prop('selectedIndex', 0); 
