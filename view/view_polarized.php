@@ -7,12 +7,17 @@
             <h4 class="subtitle blue">a Collection of Field Notes by Photographer j.McCarthy</h4>
 
             <!-- START_CARDS -->
-            <div style="display: block">
+            <div style="
+                display: grid;
+                grid-template-columns: auto auto;
+                grid-gap: 1rem;">
+                
                 <?= $card_html ?>
+            
             </div>
             <!-- /START_CARDS -->
 
-            <div style="margin-bottom: 1rem; text-transform: uppercase; font-weight: 800;">Some older FIELD NOTES and other thoughts</div>
+            <div class="mt-32" style="margin-bottom: 1rem; text-transform: uppercase; font-weight: 800;">Some older Field Notes ... </div>
             <ul>
                 <?= $card_older_html ?>
             </ul>

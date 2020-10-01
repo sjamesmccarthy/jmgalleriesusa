@@ -1432,7 +1432,7 @@ form #buysize, form #frame { border: none; border-bottom: 1px solid #e4e4e4; bor
 
 .storycard .content__image--preview > img { flex: 2; height: 100%; }
 
-.storycard--background { position: relative; margin-bottom: 32px; color: #FFF; border-radius: 6px; position: relative; padding: 0; }
+.storycard--background { position: relative; color: #FFF; border-radius: 6px; position: relative; padding: 0; }
 
 .storycard--background h4 { font-weight: 600; font-size: 1.5rem; }
 
