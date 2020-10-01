@@ -10,6 +10,7 @@
             <li>bugfix: admin control user name now strtolower before check</li>
             <li>bigfix: Corrected error adding frame sizes for limited & tinyViews.</li>
             <li>added: Images are now either Limited or Open; no longer combined</li>
+            <li>added: Cross linking between Limited/tinyVIEWS Open Edition Catalog listings</li>
         	</ul> 
         </p>
 

@@ -1150,6 +1150,8 @@ button a { color: #2574A9; }
 /* view_catalog */
 #catalog h4 { font-size: 1.3rem; font-weight: 400; }
 
+#catalog .shop-tv-link { text-align: center; text-transform: uppercase; }
+
 .title { text-align: center; }
 
 .filter-editions-list { margin: 2rem 0; }

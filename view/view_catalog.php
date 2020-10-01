@@ -19,8 +19,13 @@
         <!-- generated html from component file -->
             <?= $thumb_html ?>
         <!-- /generated html from component file -->
-  
+
     </div>
+
+    <div>
+        <?= $tv_le_link; ?>
+    </div>
+
 </section>
 
 <script>

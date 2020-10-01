@@ -23,6 +23,7 @@
             $catalog_title = 'SHOP OPEN EDITIONS';
             $catalog_desc = 'Beautiful tinyVIEWS<span style="font-size:.9rem; font-weight: 300;"><sup>&trade;</sup></span> Open Edition Fine Art at Affordable Prices.';
             $catalog_tabs_hidden = true;
+            $tv_le_link = '<p class="shop-tv-link"><a href="/galleries">Browse <span style="text-transform: initial">j.McCarthy</span> Limited Editions</a></p>';
         } 
         
         $catalog_photos = $this->api_Catalog_Category_Thumbs_All();
@@ -31,6 +32,7 @@
         $catalog_tabs_hidden = true;
         // $catalog_photos = $this->api_Catalog_Category_Filmstrip($catalog_meta[0]['catalog_collections_id'], 'ALL');
         $catalog_photos = $this->api_Catalog_Category_Filmstrip($catalog_meta[0]['catalog_collections_id'], 'ALL','LE');
+        $tv_le_link = '<p class="shop-tv-link"><a href="/shop">Shop <span style="text-transform: lowercase">tiny</span>VIEWS<span style="font-size:.9rem; font-weight: 300;"><sup>&trade;</sup></span> Open Editions</a></p>';
     }
 
         if( !$catalog_photos['error']) {
@@ -40,7 +42,9 @@
                 $data_filter_G = 'f-gallery'; 
                 $edition_desc = str_replace("{limited_edition_max}", $this->config->limited_edition_max, $this->config->edition_description_limited);
                 $desc_editions = "<p>" . $edition_desc  . "</p>"; 
-                $available_sizes = $this->config->available_sizes_limited; } 
+                $available_sizes = $this->config->available_sizes_limited; 
+                
+                } 
                 else { $data_filter_G = null;  }
 
                 if($v['as_studio'] == 1) {
@@ -52,7 +56,7 @@
                 if($v['as_open'] == 1) { 
                 $data_filter_O = 'f-open';
                 $open_pricing_array = json_decode($this->config->tv_pricing, true);
-
+               
                 $i=0;
                 $iRand = rand(0,4);
                 foreach ($open_pricing_array as $opK => $opV) {
