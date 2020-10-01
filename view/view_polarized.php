@@ -1,16 +1,17 @@
 <section id="polarized_idx" class="pt-24">
     <div class="grid-noGutter-center">
 
-        <div class="col-8 __container">
+        <div class="col-10 __container">
 
             <!-- <h1>JOURNAL</h1> -->
-            <h4 class="subtitle blue">a Collection of Field Notes by Photographer j.McCarthy</h4>
+            <h4 class="subtitle blue center">a Collection of Field Notes by Photographer j.McCarthy</h4>
 
             <!-- START_CARDS -->
             <div style="
                 display: grid;
-                grid-template-columns: auto auto;
-                grid-gap: 1rem;">
+                grid-template-columns: 50% 50%;
+                grid-gap: 1rem;
+                margin-left: -1rem;">
                 
                 <?= $card_html ?>
             

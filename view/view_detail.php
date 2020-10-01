@@ -109,9 +109,7 @@
         var fr = $("#frame option:selected").val();
 
         // IF LIMITED EDITION 
-        if($("#frame option:selected").val() == "Black Vodka" 
-            || $("#frame option:selected").val() == "Whiskey" 
-            || $("#frame option:selected").val() == "Bourbon" ){
+        if($("#frame option:selected").val() == "Black Vodka" || $("#frame option:selected").val() == "Whiskey" || $("#frame option:selected").val() == "Bourbon" ){
 
                 console.log('Premium Designer Frame INCLUDED');
                 $('.frame_data').html( '(+' + $("#frame option:selected").val() + ' Frame, Included)');

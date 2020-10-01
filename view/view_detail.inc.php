@@ -111,7 +111,7 @@
 
         if ($photo_meta['desc'] == 'paper') {
             $edition_desc_material = 'Hahnemühle Photo Rag® Metallic Fine Art Paper';
-            $frame_disabled_option = '<option value="FRAMEINCLUDED">Select a Frame (Included In Price With Tif($("#frame option:selected").val() == "Black Vodka" ru Vue® Museum Glass)</option>';
+            $frame_disabled_option = '<option value="FRAMEINCLUDED">Select a Frame (Included In Price)</option>';
         } 
 
         if ($photo_meta['desc'] == 'acrylic') {

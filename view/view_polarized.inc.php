@@ -28,7 +28,7 @@ foreach ($fieldnotes_data as $key => $value) {
     }
 
     $read_time = $this->__readTime($value['count']);
-    $large_cards = 6;
+    $large_cards = 16;
     $value['byline'] = 'James McCarthy';
 
     /* Check for image */
@@ -82,10 +82,10 @@ foreach ($fieldnotes_data as $key => $value) {
                     $file_path = $imgV['path'];
                     $file_caption = $imgV['caption'];
 
-                    if ($j == $image_count) { $m_right = null; } else { $m_right = 'margin-right: 10px'; }
+                    if ($j == $image_count) { $m_right = null; } else { $m_right = 'margin-right: 10px;'; }
 
                     /* HTML for the images in the strip */
-                    $strip_html .= '<div id="imgT_' . $j . '" style="background-color: #000; flex: 1; overflow: hidden; width: 100%;' . $m_right . '" data-file="' . $j . '"><img style="min-height: 120px; max-height: 135px; border-radius: 6px;" src="/view/image/fieldnotes/' . $imgV['path'] . '" /></div>';
+                    $strip_html .= '<div id="imgT_' . $j . '" style="background-color: #000; flex: 1; overflow: hidden; width: 100%;' . $m_right . '" data-file="' . $j . '"><img style="min-height: 120px; max-height: 176px; border-radius: 6px;" src="/view/image/fieldnotes/' . $imgV['path'] . '" /></div>';
 
                     $image_large .= '<div id="img_' . $j . '_expanded" style="background-color: #000; min-height:300px; position: relative;"><img style="width: 100%;" src="/view/image/fieldnotes/' . $imgV['path'] . '" /><p id="caption_' . $j . '" style="padding: 1rem;">' . $imgV['caption'] . '</p></div>';
                     $j++;

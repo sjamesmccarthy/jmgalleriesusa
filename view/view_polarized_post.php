@@ -32,7 +32,7 @@
 <section id="polarized" class="pt-24">
     <div class="grid-noGutter-center">
 
-        <div class="col-8_md-10_sm-12 __container">
+        <div class="col-10_md-10_sm-12 __container">
 
             <p class="__container--toc"><a href="/polarized">&#8672;</a></p>
             <!-- <h1>Journal</h1> -->
@@ -75,7 +75,7 @@
 
             <div class="mt-32 --social-links">
 
-                <div style="display: inline-block; margin-right: 2rem;">
+                <div style="display: inline-block; margin-right: 2rem; margin-bottom: 1rem;">
                     <a class="response--icon-cheers" href="#"><i class="fas fa-glass-cheers"></i></a>
                     <p class="response--icon-label"><span class="repsonse--cheers-count"><?= $res_cheers ?></span> Cheers!</p>
                 </div>

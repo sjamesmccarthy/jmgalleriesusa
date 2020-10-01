@@ -7,7 +7,7 @@
                     <div class="col" style="min-height: 350px; background-image: linear-gradient(to right, rgba(255,255,255,.1), rgba(255,255,255,1)), url(/view/image/profile_img_scripps.jpg); background-size: cover; background-position: right; border-top-left-radius: 2rem; border-bottom-left-radius: 2rem;">
                             <!-- <img class="bio-profile-pic" src="/view/image/profile_img.jpg" /> -->
                     </div>
-                    <div class="col pl-16 mt-16 artist-statement">
+                    <div class="col mt-16 artist-statement">
                             <p class="name blue">j.McCarthy</p>
                             <p class="name-title">ARTIST STATEMENT</p>
                             <p class="name-statement blue">

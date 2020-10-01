@@ -1190,7 +1190,7 @@ fieldset { border: 0; padding-left: 0; }
 
 .name-statement { padding-top: 40px; line-height: 1.5; font-size: 1.3rem; }
 
-.artist-statement { box-sizing: border-box; padding-left: 64px !important; }
+.artist-statement { box-sizing: border-box; }
 
 .bio-profile-pic-overlay { position: absolute; right: -124px; top: 148px; border-radius: 260px; padding: 10px; background-color: #FFF; width: 240px; z-index: 1001; }
 
@@ -1198,7 +1198,7 @@ fieldset { border: 0; padding-left: 0; }
 
 .bio-copy { font-size: 1.6rem; }
 
-.timeline { width: 100%; margin: 2rem auto; padding-left: 100px; }
+.timeline { width: 100%; margin: 2rem auto; padding-left: 2rem; }
 
 .timeline-history > h3 { margin-left: -4rem; display: inline-block; background-color: #FFF; padding: 10px; }
 
@@ -1404,7 +1404,7 @@ form #buysize, form #frame { border: none; border-bottom: 1px solid #e4e4e4; bor
 
 @media (max-width: 64em) and (orientation: portrait), (max-width: 80em) and (orientation: portrait), (min-device-width: 375px) and (max-device-height: 812px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 3) { #polarized_idx .__container { flex-basis: 100%; max-width: 100%; } }
 
-#polarized_idx .__container .subtitle { padding-bottom: 4rem; }
+#polarized_idx .__container .subtitle { padding-bottom: 3rem; }
 
 @media (max-width: 64em) and (orientation: portrait), (max-width: 80em) and (orientation: portrait) { #polarized_idx .__container .subtitle { font-size: 1.8rem; font-weight: 600; text-align: center; word-wrap: break-word; padding-bottom: 2rem; } }
 
