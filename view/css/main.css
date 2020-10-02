@@ -1017,7 +1017,7 @@ button a { color: #2574A9; }
 
 #top-nav { z-index: 1001; max-width: 1440px; width: 100%; margin: 0; margin-bottom: 1rem; }
 
-#top-nav .active-moments, #top-nav .active-all, #top-nav .active-polarized, #top-nav .active-about { border-bottom: 3px solid #2574A9; padding-bottom: 40px; }
+#top-nav .active-moments, #top-nav .active-all, #top-nav .active-polarized, #top-nav .active-about, #top-nav .active-galleries { border-bottom: 3px solid #2574A9; padding-bottom: 40px; }
 
 .topnav-logo { text-align: center; }
 

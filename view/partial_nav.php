@@ -14,7 +14,7 @@
             <p class="topnav-subline">beta</p>
         </div>
         <div class="col-3_md-4-middle">
-            <p class="center heading"><a href="/galleries" class="<?= $moments ?>">THE WORK</a><br /><span class="font-light">LIMITED EDITIONS</span></p>
+            <p class="center heading"><a href="/galleries" class="<?= $galleries ?>">THE WORK</a><br /><span class="font-light">LIMITED EDITIONS</span></p>
         </div>
         <!-- <div class="col-3_md-hidden-middle">
             <p class="center heading"><a href="/moments" class="<?= $moments ?>">MOMENTS</a><br />NEWS & EVENTS</p>

@@ -51,7 +51,8 @@ foreach ($fieldnotes_data as $key => $value) {
                     <div class="content--preview" style="background-color: rgba(0,0,0,.4); height: 100%; min-height: 177px;">
                         <div style="padding: 2rem .1rem;">
                         <p class="--tag">' . strtoupper($value['type']) . '</p>
-                        <h4><a href="/polarized/' . $value['short_path'] . '">' . $value['title'] . '</a></h4>
+                        <h4 class="pb-32"><a href="/polarized/' . $value['short_path'] . '">' . $value['title'] . '</a></h4>
+                        <a style="color: #FFF; text-decoration: none;" href=""><p style="position: absolute; bottom: 1rem; border-top: 1px solid #CCC; font-weight: 600; text-transform: uppercase;"><!-- ' . date("D M j Y", strtotime($value['created'])) . '<br /> -->' . $read_time . '</p></a>
                         
                         <!-- <div class="mt-8" style="display: flex; position: relative;">
                                 <div style="width: 38px; margin-top: 2px;">
@@ -88,7 +89,7 @@ foreach ($fieldnotes_data as $key => $value) {
                     /* HTML for the images in the strip */
                     $strip_html .= '<div class="col' . $sm_hidden . '" id="imgT_' . $j . '" style="padding-left: 0; background-color: #000; flex: 1; overflow: hidden; width: 100%;' . $m_right . '" data-file="' . $j . '"><p class="center"><img style="min-height: 176px; max-height: 64px;" src="/view/image/fieldnotes/' . $imgV['path'] . '" /></p></div>';
 
-                    $image_large .= '<div id="img_' . $j . '_expanded" style="background-color: #000; min-height:300px; position: relative;"><img style="width: 100%;" src="/view/image/fieldnotes/' . $imgV['path'] . '" /><p id="caption_' . $j . '" style="padding: 1rem;">' . $imgV['caption'] . '</p></div>';
+                    $image_large .= '<div id="img_' . $j . '_expanded" style="background-color: #000; min-height:300px; position: relative;"><p id="caption_' . $j . '" style="padding: 1rem; position: absolute; background-color: rgba(0,0,0,.4); font-size: 1.3rem; font-weight: 200;">' . $imgV['caption'] . '</p><img style="width: 100%;" src="/view/image/fieldnotes/' . $imgV['path'] . '" /></div>';
                     $j++;
             }
 
