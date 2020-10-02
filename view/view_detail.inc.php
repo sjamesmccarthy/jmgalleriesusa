@@ -152,7 +152,7 @@
 
         $sizes_frames = '<div class="col-4_sm-12 select-wrapper"> <!-- style="width: 300px;  margin-right: 20px;" -->
             <label for="buysize"></label>
-            <select id="buysize" name="buysize">
+            <select id="buysize" name="buysize" style="padding-left: 0">
                 <option data-price="' . $le_price_array['16x24'] . '" value="60CM/16x24">SIZE: 60CM (approx. 16x24 inches)</option>
                 <option data-price="' . $le_price_array['20x30'] . '" value="76CM/20x30">SIZE: 76CM (approx. 20x30 inches)</option>
                 <option data-price="' . $le_price_array['24x36'] . '"value="91CM/24x36">SIZE: 91CM (approx. 24x36 inches)</option>
@@ -163,7 +163,7 @@
         
         <div class="col-4_sm-12 select-wrapper"> <!-- style="width: 300px; margin-right: 20px;" -->
             <label for="frame"></label>
-            <select id="frame" name="frame">
+            <select id="frame" name="frame" style="padding-left: 0;">
                 ' . $frame_disabled_option . '
                 <option value="Black Vodka"' . $frame_disabled . '>FRAME: Premium Designer Black Vodka (similar to a Dark Black stain)</option>
                 <option value="Whiskey"' . $frame_disabled . '>FRAME: Premium Designer Whiskey (similar to a Medium Brown stain)</option>
@@ -195,7 +195,7 @@
 
         $sizes_frames = '<div class="col-4_sm-12 select-wrapper"> <!-- style="max-width: 300px;  margin-right: 20px;" --> 
             <label for="buysize"></label>
-            <select id="buysize" name="buysize">
+            <select id="buysize" name="buysize" style="padding-left: 0;">
                 <option data-price="' . $tv_price_array['5x7'] . '" ' . 'data-frameprice="0" value="5x7">SIZE: 5x7</option>
                 ' . $tinyviewNotesOption . '
                 <option data-price="' . $tv_price_array['8x10'] . '" ' . 'data-frameprice="' . $studio_frames_pricing['8x10'] . '" value="8x10">SIZE: 8x10</option>
@@ -207,7 +207,7 @@
         <!-- style="width: 300px; margin-right: 20px; -->
         <div class="col-4_sm-12 select-wrapper">
             <label for="frame"></label>
-            <select id="frame" name="frame">
+            <select id="frame" name="frame" style="padding-left: 0;">
                 <option value="PRINT-ONLY">PRINT (or Giclée) ONLY - NO FRAME</option>
                 <option value="Studio-Ash-Gray">FRAME: Studio Ash Gray</option>
                 <option value="Studio-Snow-White">FRAME: Studio Snow White</option>

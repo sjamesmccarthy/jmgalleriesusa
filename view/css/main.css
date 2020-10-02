@@ -673,7 +673,7 @@ form .cancel-button { margin-left: 40px; }
 
 .width-auto { width: 10% !important; margin-left: 1rem; }
 
-input[type="text"], input[type="password"], textarea, select { position: relative; height: 50px; padding: 0 24px; margin-bottom: 10px; width: 100%; border: 1px solid #edecec; -webkit-appearance: none; -moz-appearance: none; background-color: rgba(255, 255, 255, 0.5); border-radius: 5px; font-family: inherit; font-size: 1.0rem; font-weight: 300; line-height: 1.8rem; outline: none; transition: border 0.3s cubic-bezier(0.215, 0.61, 0.355, 1); box-sizing: border-box; padding-left: 15px; }
+input[type="text"], input[type="password"], textarea, select { position: relative; height: 50px; padding: 0 24px; margin-bottom: 10px; width: 100%; border: 1px solid #edecec; -webkit-appearance: none; -moz-appearance: none; background-color: rgba(255, 255, 255, 0.5); border-radius: 5px; font-family: inherit; font-size: 1.0rem; font-weight: 300; line-height: 1.8rem; outline: none; transition: border 0.3s cubic-bezier(0.215, 0.61, 0.355, 1); box-sizing: border-box; }
 
 input[type="text"]:disabled, input[type="password"]:disabled, textarea:disabled, select:disabled { border: 1px solid rgba(0, 0, 0, 0.1); background-color: rgba(0, 0, 0, 0.2); }
 

@@ -14,7 +14,7 @@
 
     <div class="grid">
 
-        <div class="col-9">
+        <div class="col-9_sm-12">
             <h1 class="detail-h1"><?= $photo_meta['title'] ?></h1>
             <p class="edition-title"><?= $edition_desc ?> <?= $edition_max ?> <?= $edition_desc_material_slash ?></span></p>
         </div>
