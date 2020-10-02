@@ -1402,6 +1402,12 @@ form #buysize, form #frame { border: none; border-bottom: 1px solid #e4e4e4; bor
 
 #polarized_idx { padding: 0 32px; }
 
+#polarized_idx .rotate-for-more { display: none; }
+
+@media (max-width: 64em) and (orientation: portrait), (max-width: 80em) and (orientation: portrait), (min-device-width: 375px) and (max-device-height: 812px) { #polarized_idx .rotate-for-more { font-size: .7rem; display: block; position: absolute; top: 1rem; right: 1rem; } #polarized_idx .rotate-for-more > i { padding-left: .5rem; } }
+
+@media (max-width: 64em) and (orientation: landscape), (max-width: 80em) and (orientation: landscape), (min-device-width: 375px) and (max-device-height: 812px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 3) { #polarized_idx .rotate-for-more { display: none; } }
+
 @media (max-width: 64em) and (orientation: portrait), (max-width: 80em) and (orientation: portrait), (min-device-width: 375px) and (max-device-height: 812px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 3) { #polarized_idx .__container { flex-basis: 100%; max-width: 100%; } }
 
 #polarized_idx .__container .subtitle { padding-bottom: 3rem; }

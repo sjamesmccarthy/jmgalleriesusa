@@ -95,7 +95,7 @@ foreach ($fieldnotes_data as $key => $value) {
             $card_html .= '
                 <div class="col-6_sm-12 storycard--background" style="background-color: #000; grid-column: 1 / 3;">
                     <div style="border-radius: 6px; padding: .5rem 2rem .5rem 2rem; background-color: rgba(0, 0, 0, 0.5);padding-top: 1rem;">
-                        <p style="font-size: .7rem;">FILMSTRIP</p><h4 style="color: #FFFFFF;">' . $value['title']. '</h4><p style="display: none; font-size: .8rem;"><b>' . $value['byline'] . '</b> &mdash; ' . date("F d, Y", strtotime($value['created'])) . '</p>
+                        <p style="font-size: .7rem;">FILMSTRIP</p><h4 style="color: #FFFFFF;">' . $value['title']. '</h4><p style="display: none; font-size: .8rem;"><b>' . $value['byline'] . '</b> &mdash; ' . date("F d, Y", strtotime($value['created'])) . '</p><p class="rotate-for-more">ROTATE TO SEE MORE<i class="fas fa-undo"></i></p>
                     </div>
                     <div class="content--preview" style="display: flex; flex-wrap: wrap; justify-content: left;">                        
                     <!-- HTML for images -->' . $strip_html . 

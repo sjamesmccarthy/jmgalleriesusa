@@ -2,6 +2,35 @@
 
     padding: 0 32px;
     
+    .rotate-for-more {
+
+        display: none;
+        
+        @media (max-width: 64em) and (orientation: portrait),
+        (max-width: 80em) and (orientation: portrait),
+        (min-device-width: 375px) and (max-device-height: 812px)
+        {
+            font-size: .7rem;
+            display: block;
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+    
+            >i {
+                padding-left: .5rem;
+            }
+        }
+        
+        @media (max-width: 64em) and (orientation: landscape),
+        (max-width: 80em) and (orientation: landscape),
+        (min-device-width: 375px) and (max-device-height: 812px) 
+        and (orientation : landscape) and (-webkit-device-pixel-ratio: 3)
+        {
+           display: none;
+        }
+
+    }
+
     .__container {
 
         @media (max-width: 64em) and (orientation: portrait),
