@@ -1159,9 +1159,9 @@ button a { color: #2574A9; }
 
 /* ********************** */
 /* partial_newsletter */
-input[type="text"] { width: 40%; height: 35px; margin-bottom: 0; margin-left: 1rem; background-color: #FFF; padding-left: .5rem; }
+.newsletterinput { width: 40% !important; height: 35px !important; margin-bottom: 0 !important; margin-left: 1rem !important; background-color: #FFF !important; padding-left: .5rem !important; }
 
-button { height: 35px; vertical-align: middle; border-radius: 0; }
+.newsletter-button { height: 35px; vertical-align: middle; border-radius: 0; }
 
 .h3-sub { color: #FFF; font-weight: 400; font-size: 1.5rem; }
 

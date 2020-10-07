@@ -2,7 +2,7 @@
     if ($this->config->component_newsletter == "true") {
         ?>
 
-        <input type="text" class="newsletter-input" placeholder="JOIN OUR NEWSLETTER" /><button><i class="fas fa-arrow-right" style="vertical-align: middle; margin-top: -15px; position: relative;"></i></button>
+        <input type="text" class="newsletterinput" name="email_signup" id="email_signup" placeholder="JOIN OUR NEWSLETTER" /><button class="newsletter-button"><i class="fas fa-arrow-right" style="vertical-align: middle; margin-top: -15px; position: relative;"></i></button>
 
 <?php
     } ?>
