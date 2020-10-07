@@ -2,7 +2,7 @@
     <div class="grid-center">
 
         <div class="col-10_sm-12">
-            <h1>RELEASE NOTES</h1> 
+            <h1>RELEASE NOTES for website</h1> 
         </div>
 
         <div class="col-2_sm-12">
