@@ -1,6 +1,21 @@
 /* ********************** */
 /* partial_newsletter */
 
+input[type="text"] {
+    width: 40%;
+    height: 35px;
+    margin-bottom: 0;
+    margin-left: 1rem;
+    background-color: #FFF;
+    padding-left: .5rem;
+}
+
+button {
+    height: 35px;
+    vertical-align: middle;
+    border-radius: 0;
+}
+
 .h3-sub {
     color:#FFF;
     font-weight: 400;

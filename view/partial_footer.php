@@ -3,11 +3,6 @@
     <!-- <div class="thin-line"></div> -->
     
     <div class="pt-32 pb-32 footer-max-width">
-    
-        
-            <?php 
-                $this->getPartial('newsletter'); 
-            ?>
         
         <div class="grid nopad-left hidden">
 
@@ -25,12 +20,13 @@
 
          <div class="grid-center-noGutter">
 
-                <div class="col-7_sm-hidden_md-hidden breadcrumb">
+                <div class="col-7_sm-hidden_md-hidden breadcrumb" style="margin-top: 4px;">
                 <p><a href="/"><img class="breadcrumb-logo" src="/view/image/logo_fullsize.png" /></a> <?= $bc_catalog ?> <img class="breadcrumb-arrow" src="/view/image/icon_navarrow-right.svg" /><?= $this->page->title ?> </p>
                 </div>
 
                 <div class="col-5_sm-12 breadcrumb copyright">
                     <p><a href="/about"><?= $this->config->copyright ?></a> | <a href="/privacy">Privacy Policy</a></p>
+                    <?php  $this->getPartial('newsletter'); ?>
                 </div>
 
         </div>
