@@ -20,7 +20,7 @@
                             <p class="pt-8 ml-16">
                                 <a target="_new" class="mr-16" href="http://twitter.com/jmgalleriesusa"><i class="fab fa-twitter"></a></i> 
                                 <a target="_new" class="mr-16" href="http://linkedin.com/company/jmgalleriesusa"><i class="fab fa-linkedin"></a></i>
-                                <a target="_new" class="mr-16" href="/contact"><i class="fas fa-envelope"></i></a></i>
+                                <a class="mr-16" href="/contact"><i class="fas fa-envelope"></i></a></i>
                             </p>
                     </div>
 

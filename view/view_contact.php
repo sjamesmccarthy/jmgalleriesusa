@@ -9,7 +9,6 @@
             <p class="checkout-sub blue"><?= $formTitleSub ?></p>
             
             <?= $subNotice ?>
-        <!-- <p class="blue"><?= $subTitle ?></p> -->
 
         <form id="contactForm" action="/view/ajax_email_process.php" method="POST">
         <input type="hidden" id="formType" name="formType" value="<?= $formType ?>" />
@@ -19,7 +18,7 @@
         <fieldset class="form-main">
         <!-- <p> -->
         <!-- <label class="" for="name">YOUR NAME</label> -->
-        <h3>About You</h3>
+        <?= $order_about_you ?>
         <input class="half-size-old"type="text" id="contactname" name="contactname" placeholder="YOUR NAME (eg, John Smith)" value="<?= $name ?>" required>
         <!-- </p> -->
 
@@ -38,11 +37,11 @@
         <?= $estimated_cost ?>
         <?= $payment_field ?>
 
-        <div class="mt-16">
-        <?= $message_PH ?>
+        <div>
+        <?= $message_PH_label ?>
 
         <!-- <label class="" for="comments">TYPE YOUR MESSAGE HERE</label> -->
-        <textarea style="margin-top: 10px" id="comments" name="comments" placeholder="TYPE ANY ADDITIONAL INFORMATION HERE" rows="8"><?= $msg ?></textarea>
+        <textarea id="comments" name="comments" placeholder="<?= $message_PH ?>" rows="8"><?= $msg ?></textarea>
         </div>
         
         <!-- <?= $promo_field ?> -->

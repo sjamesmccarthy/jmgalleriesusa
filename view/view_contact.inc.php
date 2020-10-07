@@ -44,9 +44,11 @@ if(isSet($this->data->routePathQuery[0])) {
             $edition_text = "Limited Edition";
             if ($frame == 'FRAMELESS') {
                 $frame_long = 'Acrylic Print (without frame)';
+                $message_PH_frame = null;
             } else {
                 $frame = "Premium Designer (Specify Color In Notes Below)";
                 $frame_long = ' with a ' . $frame . ' frame';
+                $message_PH_frame = true;
             }
         }
 
@@ -56,11 +58,13 @@ if(isSet($this->data->routePathQuery[0])) {
     if ($this->config->component_notice == 'true') {
         $subNotice = '<p class="notice mb-16">' . $this->data_notices->WARNING['content'] . '</p>';
     }
+
+    $order_about_you = "<h3>About You</h3>";
     $subject_PH = "PURCHASE ORDER for " . strtoupper($photo);
 
     /* Shipping Information */
     // $message_PH = "IN THE BOX BELOW PLEASE TELL US THE FOLLOWING: <ul class='contact-ul mb-16'><li>Shipping Address (Provide Postal Code) or Pickup (Las Vegas, Nevada)</li><li>Phone Number, An art consultant will contact you within 24 hours to complete this order</li><li>Preferred Billing Method: Credit Card, Cash or BitCoin</li><li>And, any other questions you may have.</li></ul>";
-    $message_PH = 
+    $message_PH_label = 
         '<input type="hidden" name="edition" value ="' . $edition . '" />' .
         '<input type="hidden" name="title" value ="' . $photo . '" />' .
         '<input type="hidden" name="size" value ="' . $size . '" />' .
@@ -76,6 +80,11 @@ if(isSet($this->data->routePathQuery[0])) {
         '<p><input class="half-size-old" type="text" name="postalcode" placeholder="Postal Code (eg, 95474)" value="' . $postalcode . '"required/><p>' .
         '<p><input class="half-size-old" type="text" name="phone" placeholder="PHONE (eg, 951-708-1831)" value="' . $phone . '"required /><p>';
 
+    if($message_PH_frame != null) {
+        $message_PH = "Please specify your Premium Designer Frame color below as well as any additional shipping or billing information. More information on this can be found at https://jmgalleries.com/styles";
+    } else {
+        $message_PH = "Please specify any additional order information here. This would include your optional Premium Desinger Frame choice if selected, or any special shipping or billing information.";
+    }
 
     $button_label = "PLACE YOUR ORDER";
     $promo_field = '<p class="pt-8 pb-32"><input class="half-size-old" style="margin-bottom: 0;" type="text" id="promocode" name="promocode" placeholder="PROMO CODE" value="' . $promo_code . '" /> <span class="ml-16 tiny"><a href="#" id="apply_promo">apply code</a></span></p>';
@@ -92,8 +101,9 @@ if(isSet($this->data->routePathQuery[0])) {
     // Just a regular contact form
     $formTitle = strtoupper($this->page->title);
     $subTitle = null;
-    $subject_PH = "PHOTOGRAPH TITLE OR SUBJECT";
-    $message_PH = ""; 
+    $order_about_you = null;
+    $subject_PH = "IN A FEW WORDS, WHAT IS THIS MESSAGE ABOUT";
+    $message_PH = "PLEASE TELL US HOW WE MAY BE ABLE TO HELP YOU HERE."; 
     $button_label = "SEND MESSAGE";
     $promo_field = null;
     $payment_field = null;
