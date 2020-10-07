@@ -112,10 +112,12 @@
         if ($photo_meta['desc'] == 'paper') {
             $edition_desc_material = 'Hahnemühle Photo Rag® Metallic Fine Art Paper';
             $frame_disabled_option = '<option value="FRAMEINCLUDED">Select a Frame (Included In Price)</option>';
+            $edition_frame = 'and framed in one of our three Premium Designer Frames protected with Tru Vue&reg; Museum Glass.';
         } 
 
         if ($photo_meta['desc'] == 'acrylic') {
             $edition_desc_material = 'Lumachrome HD Acrylic';
+            $edition_frame = 'and float mounted without a frame. One of our Premium Designer Frames can be optionally added at an additional cost.';
             $frame_disabled = 'disabled';
             $frame_disabled_option = '<option value="FRAMELESS">No Frame Included With Acrylic</option><option value="ADDWITHACRYLIC">+ Add Additional Frame (Please Specify Color In Order Form)</option>';
             $frame_info_link = 'Premium Designer Frames pricing';
@@ -146,7 +148,7 @@
 
         $btn = "BUY ARTWORK";
         $btn_link = '<a class="btn-nudge";" href="/contact?photo=' . $photo_meta['file_name'] . '">';
-        $gallery_details = '<p class="col-12"><!-- Limited Editions are either printed on ' . $edition_desc_material . ' mounted in a Premium Designer frame and protected with Tru Vue&reg; Museum Glass, or Lumachrome HD Acrylic without framing. -->If you have any questions about our Lumachrome HD Acrylic, Hahnemühle Photo Rag® Metallic Archival Paper, or <a href="/styles">styles, frames and editions</a>, please <a href="/contact">contact our art consultants</a>.</p>';
+        $gallery_details = '<p class="col-12">This Limited Edition is printed on ' . $edition_desc_material . ' and available in ' . $this->config->available_sizes_limited . ' inches, ' . $edition_frame . ' If you have any questions about our ' . $edition_desc_material . ', or need more information about out <a href="/styles">styles, frames and editions</a>, please <a href="/contact">contact an art consultant</a>.</p>';
 
         $default_price = $le_price_array['16x24'];
 

@@ -13,11 +13,11 @@
 
         if(strtolower($value['title']) != 'new releases') {
 
-            $thumb_html .= '<div class="mb-16 col-10">';
+            $thumb_html .= '<div class="mb-16 col-10_sm-12">';
             $thumb_html .= '<h2><a href="/' . $value['path'] . '">' . strtoupper($value['title']) . '</a></h2>';
             $thumb_html .= '<p>' . $value['desc'] .  '</p>';
             $thumb_html .= '</div>';
-            $thumb_html .= '<div class="view-all col-2-middle">';
+            $thumb_html .= '<div class="view-all col-2-middle sm-hidden">';
             $thumb_html .= '<a href="/' . $value['path'] . '">view all</a>';
             $thumb_html .= "</div>";
 

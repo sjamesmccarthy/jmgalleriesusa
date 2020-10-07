@@ -17,8 +17,20 @@ fieldset {
     text-align: center;
 }
 
+.checkout-sub {
+    // margin-left: 2rem;
+    margin-bottom: 32px;
+    margin-top: -1rem;
+    font-weight: 600;
+    font-size: 1.3rem;
+}
+
 #contact {
     // margin-bottom: 400px;
+
+    h3 {
+        padding-bottom: .5rem;
+    }
 }
 
 #contactForm input[type="text"] {

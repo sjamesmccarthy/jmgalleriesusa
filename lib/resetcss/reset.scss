@@ -116,8 +116,39 @@ h1 {
 }
 
 h2 {
-    font-size: $base-fs *2.25;
+    font-size: $base-fs *1.25;
     font-weight: 800;
+
+         // xSmall devices (landscape phones, 320px and up)
+         @media (min-width: 320px) { 
+            //  background-color: pink;
+            font-size: $base-fs *1.25;
+         }
+     
+         // Small devices (landscape phones, 576px and up)
+         @media (min-width: 576px) { 
+            //  background-color: red;
+            font-size: $base-fs *1.5;
+         }
+     
+         // Medium devices (tablets, 768px and up)
+         @media (min-width: 767px) {
+            //  background-color: blue;
+            font-size: $base-fs *1.75;
+        }
+     
+         // Large devices (tablets (iPad Pro, 1112px and up)
+         @media (min-width: 1112px) {
+            //  background-color: gray;
+            font-size: $base-fs *2;
+         }
+     
+         // Extra large devices (large desktops, 1200px and up)
+         @media (min-width: 1200px) {
+            //  background-color: lightgreen;
+            font-size: $base-fs *2.25;
+         }
+
 }
 
 h3 {

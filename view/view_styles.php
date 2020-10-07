@@ -130,7 +130,7 @@
     </li>
            
 
-    <li>
+    <li style="border-top: 2px solid #CCC; padding-top: 2rem;">
         <h3>tinyVIEWS<span style="font-size:.9rem; font-weight: 300;"><sup>&trade;</sup></span> Open Editions</h3>
         <p>These editions are not considered collectible and are not numbered, may not be signed, and could also include a watermark. They are printed on premium photo paper with a large format inkjet printer and can be optionally Studio framed for an additional cost as shown below. An optional 2-ply white mat for additional cost is available, but this will increase frame size.</a></p>
 
@@ -185,11 +185,11 @@
                     <div class="divTableCell border-l border-b pl-8">8 x 10</div>
                     <div class="divTableCell border-l border-b border-r pl-8">$<?= $studio_frames_pricing['8x10']?></div>
                 </div>
-                <div class="divTableRow">
+                <!-- <div class="divTableRow">
                     <div class="divTableCell"></div>
                     <div class="divTableCell border-l border-b pl-8">12 x 12</div>
                     <div class="divTableCell border-l border-b border-r pl-8">$<?= $studio_frames_pricing['12x12']?></div>
-                </div>
+                </div> -->
                 <div class="divTableRow">
                     <div class="divTableCell border-b"></div>
                     <div class="divTableCell border-l border-b pl-8">11 x 14</div>

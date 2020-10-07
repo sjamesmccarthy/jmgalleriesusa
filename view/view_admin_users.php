@@ -36,7 +36,7 @@
 </section>
 
 <script>
-$(document).ready(function() {
+$(document).ready(function($) {
        
         $('.notification').delay(5000).slideUp("slow").fadeOut(3000);
 

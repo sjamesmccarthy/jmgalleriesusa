@@ -30,10 +30,72 @@
 .topnav-logo {
     text-align: center; 
     // padding-left: 30px;
+
+
+    // xSmall devices (landscape phones, 320px and up)
+    @media (min-width: 320px) { 
+        padding-top: 1rem;
+        // background-color: lightpink;
+    }
+
+    // Small devices (landscape phones, 576px and up)
+    @media (min-width: 376px) { 
+        padding-top: 1rem;
+        // background-color: gray;
+    }
+
+    // Medium devices (tablets, 768px and up)
+    @media (min-width: 767px) {
+        padding-top: 1rem;
+        // background-color: blue;
+    }
+
+    // Large devices (tablets (iPad Pro, 1112px and up)
+    @media (min-width: 1112px) {
+        padding-top: 1rem;
+        // background-color: orange;
+    }
+
+    // Extra large devices (large desktops, 1200px and up)
+    @media (min-width: 1200px) {
+        padding-top: 1rem;
+        // background-color: red;
+    }
+
 }
 
 .topnav-logo img {
-    width: 124px;
+    width: 150px;
+
+    // xSmall devices (landscape phones, 320px and up)
+    @media (min-width: 320px) { 
+        width: 150px;
+        // background-color: lightpink;
+    }
+
+    // Small devices (landscape phones, 576px and up)
+    @media (min-width: 376px) { 
+        width: 150px;
+        // background-color: gray;
+    }
+
+    // Medium devices (tablets, 768px and up)
+    @media (min-width: 767px) {
+        width: 150px;
+        // background-color: blue;
+    }
+
+    // Large devices (tablets (iPad Pro, 1112px and up)
+    @media (min-width: 1112px) {
+        width: 124px;
+        // background-color: orange;
+    }
+
+    // Extra large devices (large desktops, 1200px and up)
+    @media (min-width: 1200px) {
+        width: 124px;
+        // background-color: red;
+    }
 }
 
 .topnav-subline {
@@ -74,4 +136,143 @@
     font-family: lato, sans-serif; 
     padding: 20px; 
     text-align: center;
+}
+
+.nav-mobile-logo {
+    width: 82px; 
+    vertical-align: middle;
+    // filter: invert(1);
+}
+
+.nav-mobile {
+    position: relative;
+    text-align: center;
+
+     // xSmall devices (landscape phones, 320px and up)
+     @media (min-width: 320px) { 
+        
+        // background-color: lightpink;
+    }
+
+    // Small devices (landscape phones, 576px and up)
+    @media (min-width: 376px) { 
+        
+        // background-color: gray;
+    }
+
+    // Medium devices (tablets, 768px and up)
+    @media (min-width: 767px) {
+        
+        // background-color: blue;
+    }
+
+    // Large devices (tablets (iPad Pro, 1112px and up)
+    @media (min-width: 1112px) {
+        display: none;
+        // background-color: orange;
+    }
+
+    // Extra large devices (large desktops, 1200px and up)
+    @media (min-width: 1200px) {
+        display: none;
+        // background-color: red;
+    }
+
+}
+
+.nav-mobile-home {
+    display: block;
+    position: absolute;
+    right: 40%;
+    left: 40%;
+    top: 2rem;
+    font-size: 1.5rem;
+    color: #000;
+    margin: auto;
+    text-align: center;
+    z-index: 1020;
+
+    >p {
+        font-size: 1rem;
+        font-weight: 600;
+        text-align: center;
+        // margin-left: 5px;
+    }
+
+    &:hover {
+        cursor: pointer;
+    }
+
+    // xSmall devices (landscape phones, 320px and up)
+    @media (min-width: 320px) { 
+        
+        // background-color: lightpink;
+    }
+
+    // Small devices (landscape phones, 576px and up)
+    @media (min-width: 376px) { 
+        
+        // background-color: gray;
+    }
+
+    // Medium devices (tablets, 768px and up)
+    @media (min-width: 767px) {
+        
+        // background-color: blue;
+    }
+
+    // Large devices (tablets (iPad Pro, 1112px and up)
+    @media (min-width: 1112px) {
+        display: none;
+        // background-color: orange;
+    }
+
+    // Extra large devices (large desktops, 1200px and up)
+    @media (min-width: 1200px) {
+        display: none;
+        // background-color: red;
+    }
+
+}
+
+.nav-mobile-ul {
+    display: none; 
+    position: absolute; 
+    background-color: #000; 
+    color: #FFF; 
+    width: 100%; 
+    padding: 4rem 2rem 2rem 2rem; 
+    top: 0;
+    font-size: 1.5rem;
+    color: #CCC;
+    margin: auto;
+    text-align: center;
+    z-index: 1021;
+
+    >li {
+        padding: .5rem;
+        font-size: 1.3rem;
+
+        >a {
+            color: #FFF;
+        }
+
+        &.close {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+
+            &:hover {
+                color: #CCC;
+                cursor: pointer;
+                background-color: #000;
+            }
+        }
+
+        &:hover {
+            background-color: #CCC;
+            color: #000;
+            cursor: pointer;
+        }
+    }
 }

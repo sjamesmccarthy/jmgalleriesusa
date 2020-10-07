@@ -348,7 +348,7 @@ class Core_Api extends Fieldnotes_Api
        ORDER BY
            RAND()
            DESC
-       LIMIT 5";
+       LIMIT 6";
 
             $result = $this->mysqli->query($sql);
 
@@ -762,7 +762,7 @@ class Core_Api extends Fieldnotes_Api
             $this->hero_link  = $data[$index]['path'];
             $this->hero_image = $data[$index]['file_name'] . '.jpg'; 
             $this->hero_text = 'light';
-            $this->hero_position = 'middle';
+            $this->hero_position = 'top center';
 
     }
 

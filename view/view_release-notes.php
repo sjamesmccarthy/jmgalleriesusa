@@ -1,9 +1,15 @@
 <section id="release-notes">
     <div class="grid-center">
 
-        <div class="col-11" style="position: relative">
+        <div class="col-10_sm-12">
+            <h1>RELEASE NOTES</h1> 
+        </div>
 
-        <h1>RELEASE NOTES</h1> <a href="/contact"><button style="position: absolute; right: 0; top: 1rem;">REPORT A PROBLEM</button></a>
+        <div class="col-2_sm-12">
+        <a href="/contact"><button>REPORT A PROBLEM</button></a>
+        </div>
+
+        <div class="col-11" style="position: relative">
 
         <p class="pt-16">v1.4.9<br />Sep 29, 2020</p>
         	<ul>
@@ -11,6 +17,8 @@
             <li>bigfix: Corrected error adding frame sizes for limited & tinyViews.</li>
             <li>added: Images are now either Limited or Open; no longer combined</li>
             <li>added: Cross linking between Limited/tinyVIEWS Open Edition Catalog listings</li>
+            <li>updated: various styling for mobile.</li>
+            <li>bugfix: admin control tab STATUS removed, no such state for art.</li>
         	</ul> 
         </p>
 

@@ -5,10 +5,11 @@
 
         <div class="col-11">
 
-        <p class="blue"><?= $subTitle ?></p>
-        <h1 class="pb-16"><?= $formTitle ?></h1>
-
-        <?= $subNotice ?>
+            <h1><?= $formTitle ?></h1>
+            <p class="checkout-sub blue"><?= $formTitleSub ?></p>
+            
+            <?= $subNotice ?>
+        <!-- <p class="blue"><?= $subTitle ?></p> -->
 
         <form id="contactForm" action="/view/ajax_email_process.php" method="POST">
         <input type="hidden" id="formType" name="formType" value="<?= $formType ?>" />
@@ -18,6 +19,7 @@
         <fieldset class="form-main">
         <!-- <p> -->
         <!-- <label class="" for="name">YOUR NAME</label> -->
+        <h3>About You</h3>
         <input class="half-size-old"type="text" id="contactname" name="contactname" placeholder="YOUR NAME (eg, John Smith)" value="<?= $name ?>" required>
         <!-- </p> -->
 
@@ -28,12 +30,13 @@
 
         <p>
         <!-- <label class="" for="contactinfo">Email Address or Phone Number</label> -->
-        <input class="half-size-old" type="text" id="contactsubject" name="contactsubject" placeholder="<?= $subject_PH ?>" value="<?= $subject_VAL ?>" required>
+        <input class="half-size-old" type="text" id="contactsubject" name="contactsubject" placeholder="<?= $subject_PH ?>" value="<?= $subject_VAL ?>" <?= $subject_disabled ?> />
         </p>
 
         <?= $formSizes ?>
         <?= $promo_field ?>
         <?= $estimated_cost ?>
+        <?= $payment_field ?>
 
         <div class="mt-16">
         <?= $message_PH ?>
@@ -43,7 +46,7 @@
         </div>
         
         <!-- <?= $promo_field ?> -->
-        <?= $payment_field ?>
+        <?php // $payment_field ?>
 
         </fieldset>
 

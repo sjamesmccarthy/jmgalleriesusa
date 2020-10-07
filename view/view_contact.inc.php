@@ -29,7 +29,8 @@ if(isSet($this->data->routePathQuery[0])) {
         if(isSet($frame) AND $edition == 'tinyviews') {
             // if($frame != "PRINT-ONLY" && $cost <= 80) { $cost = $cost + 20;  $fc=20; }
             // if($frame != "PRINT-ONLY" && $cost >= 81) { $cost = $cost + 40; $fc=40; }
-
+            $edition = "<span style='text-transform: lowercase;'>tiny</span><span style='text-transform: uppercase;'>VIEWS</span><span style='font-size: .9rem;'><sup>&trade;</sup></span> Open";
+            $edition_text = 'tinyVIEWS Open Edition';
             if ($frame != "PRINT-ONLY") {
                 $frame = str_replace("$$", "$" . $fc, $frame);
                 $frame_long = ' with a ' . $frame . ' frame';
@@ -39,15 +40,19 @@ if(isSet($this->data->routePathQuery[0])) {
 
         } else {
 
-            if ($frame == 'ACRYLIC') {
+            $edition = "Limited";
+            $edition_text = "Limited Edition";
+            if ($frame == 'FRAMELESS') {
                 $frame_long = 'Acrylic Print (without frame)';
             } else {
+                $frame = "Premium Designer (Specify Color In Notes Below)";
                 $frame_long = ' with a ' . $frame . ' frame';
             }
         }
 
-    $formTitle = "CHECKOUT <span class='lowercase light'>for</span> <span class='light initialcaps'>" . $photo . "</span>";
-    $subTitle = "Thank you for your interest in collecting a j.McCarthy Limited Edition";
+    $formTitle = "CHECKOUT";
+    $subTitle = "Thank you for your interest in collecting a j.McCarthy photograph";
+    $formTitleSub = "<span class='light'>" . $subTitle . ",</span> <span class='light initialcaps'>" . $photo . " " . $edition . " Edition </span>";
     if ($this->config->component_notice == 'true') {
         $subNotice = '<p class="notice mb-16">' . $this->data_notices->WARNING['content'] . '</p>';
     }
@@ -63,7 +68,7 @@ if(isSet($this->data->routePathQuery[0])) {
         '<input type="hidden" name="framing" value ="' . $frame . '" />' .
         '<input type="hidden" name="catalog_id" value ="' . $catalog_no . '" />' .
         '<input type="hidden" name="invoice_no" value ="' . time() . '-' . $catalog_no . '" />' .
-        '<h3 class="">Ship To</h3' . 
+        '<h3 class="">Ship To</h3>' . 
         '<p><input class="half-size-old" type="text" name="address" placeholder="SHIPPING ADDRESS (eg, 123 Main St.)" value="' . $address . '" $required />' .
         '<input class="half-size-old" type="text" name="address_other" placeholder="SHIPPING ADDRESS SECOND LINE (eg, Suite, Apt)" value="' . $address_exxtra . '"/></p>' .
         '<p><input class="half-size-old" type="text" name="city" placeholder="CITY (eg, Las Vegas, Dallas, Barstow)" value="' . $city . '"required/>' .
@@ -74,17 +79,18 @@ if(isSet($this->data->routePathQuery[0])) {
 
     $button_label = "PLACE YOUR ORDER";
     $promo_field = '<p class="pt-8 pb-32"><input class="half-size-old" style="margin-bottom: 0;" type="text" id="promocode" name="promocode" placeholder="PROMO CODE" value="' . $promo_code . '" /> <span class="ml-16 tiny"><a href="#" id="apply_promo">apply code</a></span></p>';
-    $payment_field = "<p class='pt-16 pb-16'><img style='margin-bottom: 10px; width: 150px; vertical-align: middle' src='/view/image/square-payment-icons.png' /> <!-- <i style='font-size: 1.8rem; margin-left: 5px;' class='fab fa-bitcoin'></i> --><br /><span class='small'Estimated Total Not Including Tax or Shipping or any Promotional Codes.<br />Visa, Mastercard, American Express and Discover accepted and processed with Square.<br /><!-- Bitcoin is accepted via Coinbase or Square Cash App.<br />-->Cash (USD) is accepted on pickup only orders. No checks.<br /><b>You will be invoiced separately. There is no payment due at this time.</b></span></p>";
-    $subject_VAL = $subject_PH;
+    $payment_field = "<p class='pb-16'><img style='margin-bottom: 10px; width: 150px; vertical-align: middle' src='/view/image/square-payment-icons.png' /> <!-- <i style='font-size: 1.8rem; margin-left: 5px;' class='fab fa-bitcoin'></i> --><br /><span class='small'Estimated Total Not Including Tax or Shipping or any Promotional Codes.<br />Visa, Mastercard, American Express and Discover accepted and processed with Square. Shipping costs and tax, if applicable, will be included on final Invoice. <!-- Bitcoin is accepted via Coinbase or Square Cash App.<br />-->Cash (USD) is accepted on pickup only orders. No checks. <b>There is no payment due at this time. You will be invoiced separately through Square.</b></span></p>";
+    $subject_VAL = $subject_PH . ' ' . $edition_text;
+    $subject_disabled = 'disabled="disabled" style="background-color: rgba(0,0,0,.02); border: 1px solid rgba(0,0,0,.03); color: #000;"';
     $formType = "RequestQuoteForm"; 
     $estimated_cost_calc = "<span id='estimated_cost_format'>" . number_format($cost, 2) . " USD</span></h2>";
     $estimated_cost = "<span id='estimated_cost' class='hidden'>" . $cost . "</span>";
-    $formSizes = '<h3 class="mt-32">$' . $estimated_cost_calc . '</h3><input class="half-size-old" type="text" id="contactsize" name="contactsize" value="' . urldecode($size) . ' ' . $frame_long . ' [CATALOG NUMBER ' . $catalog_no . ']" disabled="disabled" style="background-color: rgba(0,0,0,.02); border: 1px solid rgba(0,0,0,.03);" required />';
+    $formSizes = '<h3 class="mt-32">$' . $estimated_cost_calc . '</h3><input class="half-size-old" type="text" id="contactsize" name="contactsize" value="' . urldecode($size) . ' ' . $frame_long . ' [CATALOG NUMBER ' . $catalog_no . ']" disabled="disabled" style="background-color: rgba(0,0,0,.02); border: 1px solid rgba(0,0,0,.03); color: #000;" required />';
 
 
 } else {
     // Just a regular contact form
-    $formTitle = $this->page->title;
+    $formTitle = strtoupper($this->page->title);
     $subTitle = null;
     $subject_PH = "PHOTOGRAPH TITLE OR SUBJECT";
     $message_PH = ""; 
@@ -92,6 +98,7 @@ if(isSet($this->data->routePathQuery[0])) {
     $promo_field = null;
     $payment_field = null;
     $subject_VAL = null;
+    $subject_disabled = null;
     $formType = "ContactForm";
     $subNotice = null;
 }

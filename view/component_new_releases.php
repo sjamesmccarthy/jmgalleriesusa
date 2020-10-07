@@ -2,17 +2,18 @@
 /* Dependency To */
 /* view_galleries.inc.php, The Homepage */
 /* component_gallery_thumbs.php, component_new_releases.php, view_catalog.inc.php */
+
 /* Fetch Just the New Releases filmstrip */
     $count =0;
     $new_releases = $this->api_Catalog_Get_New_Releases(4,4);
 
         $thumb_new_releases_html .= "<article id='new-releases'>";
         $thumb_new_releases_html .= '<div class="grid-4_sm-2 grid-4_md-3">';
-        $thumb_new_releases_html .= '<div class="col-10" style="margin-bottom: 16px;">';
+        $thumb_new_releases_html .= '<div class="col-10_sm-12" style="margin-bottom: 16px;">';
         $thumb_new_releases_html .= '<h2><a href="/new-releases/">NEW RELEASES</a></h2>';
         $thumb_new_releases_html .= '<p>a collection of LIMITED EDITION photography featuring newest work by photographer j.McCarthy.</p>';
         $thumb_new_releases_html .= '</div>';
-        $thumb_new_releases_html .= '<div class="view-all col-2-middle">';
+        $thumb_new_releases_html .= '<div class="view-all col-2-middle sm-hidden">';
         $thumb_new_releases_html .= '<a href="/new-releases">view all</a>';
         $thumb_new_releases_html .= "</div>";
 

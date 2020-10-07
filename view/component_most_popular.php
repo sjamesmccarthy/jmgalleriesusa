@@ -13,30 +13,28 @@
 
                 /* For Mobile */
                 /* On last two thumbnails add some css */
-                if($count == 2) {
-                    $grid_css = 'col sm-hidden';
-                } else if ($count == 3) {
-                    $grid_css = 'col sm-hidden md-hidden';
+                if($count >= 3) {
+                    $grid_css = 'col_sm-hidden';
+                // } else if ($count == 3) {
+                //     $grid_css = 'col ';
                 } else {
-                    $grid_css = 'col';
+                    $grid_css = 'col ';
                 }
 
                 $thumb_html .= '<div style="padding: 0 10px;" class="thumb overflow-hidden ' . $grid_css . '">';
                 $thumb_html .= '<a href="/' . $v['cate_path'] . "/" . $img_file . '"><img class="filmstrip-thumb" src="/catalog/__thumbnail/' .$img_file . '.jpg" /></a><h4 class="blue larger"><a href="/' . $v['cate_path'] . "/" . $img_file . '">' . $v['title'] . '</a></h4><p>' . $v['loc_place'] . '</p></div>';
 
-                if($count == 3) { $count = 0; } else { $count++; }
+                // if($count == 2) { $count = 0; } else { $count++; }
+                $count++;
             }
 
 $html = <<<END
-<article id="most-popular" class="mt-0">
+<article id="most-popular" class="mt-64">
     <div class="grid">
-        <div class="col-10" style="margin-bottom: 16px;">
+        <div class="col-12 center" style="margin-bottom: 16px;">
         <h2 class="blue thin">YOU MAY ALSO LIKE</h2>
-        <p>More popular photographs based on what others are viewing</p>
+        <p>More photographs based on what others are viewing</p>
         </div>
-    <div class="col-2-middle" style="margin-bottom: 16px; text-align: right;padding-right: 8px;">
-        <!-- <a href="/galleries">view all</a> -->
-    </div>
         $thumb_html
     </div>
 </article>

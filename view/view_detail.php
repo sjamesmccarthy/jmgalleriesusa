@@ -42,7 +42,7 @@
 
     </div>
 
-    <div class="">
+    <div class="mt-32">
         <!-- <?= $btn_link ?><button><?= $btn ?></button></a> -->
         <?= $gallery_details ?>
     </div>
@@ -64,8 +64,8 @@
 
 <!-- generated html from component file: component_most_popular -->
 <!-- removed 9/25/2020 -->
-<section id="you-may-like" class="filmstrip mt-0">
-    <?php //$you_may_also_like_html ?>
+<section id="you-may-like" class="filmstrip mt-64">
+    <?= $you_may_also_like_html ?>
 </section> 
 <!-- /generated html from component file -->
 

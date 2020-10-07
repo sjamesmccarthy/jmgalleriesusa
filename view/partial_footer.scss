@@ -79,6 +79,8 @@
 .footer-max-width {
     max-width: 102.8571em;
     margin: auto;
+    padding-left: 2rem;
+    padding-right: 2rem;
 }
 
 .footer-links {
@@ -184,19 +186,38 @@
 }
 
 .copyright {
+    
+    // xxSmall devices (landscape phones 319px and below)
+    text-align: center;
 
-    text-align: right;
-
-    @media (max-width: 64em) and (orientation: portrait),
-    (max-width: 80em) and (orientation: portrait) 
-    {
+    // xSmall devices (landscape phones, 320px and up)
+    @media (min-width: 320px) { 
         text-align: center;
+        // background-color: lightpink;
     }
 
-    @media (min-device-width: 375px) and (max-device-height: 812px) 
-        and (orientation : landscape)
-    {
+    // Small devices (landscape phones, 576px and up)
+    @media (min-width: 376px) { 
         text-align: center;
+        // background-color: gray;
+    }
+
+    // Medium devices (tablets, 768px and up)
+    @media (min-width: 767px) {
+        text-align: center;
+        // background-color: blue;
+    }
+
+    // Large devices (tablets (iPad Pro, 1112px and up)
+    @media (min-width: 1112px) {
+        text-align: right;
+        // background-color: orange;
+    }
+
+    // Extra large devices (large desktops, 1200px and up)
+    @media (min-width: 1200px) {
+        text-align: right;
+        // background-color: red;
     }
 
 }
