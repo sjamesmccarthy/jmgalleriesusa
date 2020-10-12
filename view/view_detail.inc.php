@@ -165,7 +165,7 @@
         
         <div class="col-4_sm-12 select-wrapper"> <!-- style="width: 300px; margin-right: 20px;" -->
             <label for="frame"></label>
-            <select id="frame" name="frame" style="padding-left: 0;">
+            <select id="frame" name="frame" style="padding-left: 0; margin-bottom:0;">
                 ' . $frame_disabled_option . '
                 <option value="Black Vodka"' . $frame_disabled . '>FRAME: Premium Designer Black Vodka (similar to a Dark Black stain)</option>
                 <option value="Whiskey"' . $frame_disabled . '>FRAME: Premium Designer Whiskey (similar to a Medium Brown stain)</option>
@@ -209,12 +209,12 @@
         <!-- style="width: 300px; margin-right: 20px; -->
         <div class="col-4_sm-12 select-wrapper">
             <label for="frame"></label>
-            <select id="frame" name="frame" style="padding-left: 0;">
+            <select id="frame" name="frame" style="padding-left: 0; margin-bottom: 0;">
                 <option value="PRINT-ONLY">PRINT (or Giclée) ONLY - NO FRAME</option>
                 <option value="Studio-Ash-Gray">FRAME: Studio Ash Gray</option>
                 <option value="Studio-Snow-White">FRAME: Studio Snow White</option>
             </select>
-            <span class="tiny ml-16"><a href="/styles">More information about frame styles and pricing</span>
+            <span class="tiny"><a href="/styles">More information about frame styles and pricing</span>
         </div>
          <input type="hidden" name="edition" value="open" />';
 
