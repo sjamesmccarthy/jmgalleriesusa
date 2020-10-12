@@ -67,36 +67,33 @@
 //     }
 // }
 
-.filter-editions-list { 
+// .filter-editions-list { 
  
-    margin: 2rem 0;
+//     margin: 2rem 0;
 
-    li {
-    display: inline-block;
-    font-size: 1.4rem;
-    padding: .5rem;
-    width: 300px; /* 214px; */
-    color: $color-blue;
+//     li {
+//     display: inline-block;
+//     font-size: 1.4rem;
+//     padding: .5rem;
+//     width: 300px;
+//     color: $color-blue;
 
-        &:not(:last-child) {
-            margin-right: 10px;
-        }
+//         &:not(:last-child) {
+//             margin-right: 10px;
+//         }
 
-        &:first-child {
-            // padding-right: 50px;
-            // border-right: 1px solid #AAA;
-        }
+//         &:first-child {
+//         }
 
-        &:hover {
-            cursor: pointer;
-            // font-weight: bold;
-            color: $color-black-dark;
-        }
+//         &:hover {
+//             cursor: pointer;
+//             color: $color-black-dark;
+//         }
         
-        &.selected {
-            font-weight: 700;
-            border-bottom: 3px solid $color-blue;
-        }
-    }
+//         &.selected {
+//             font-weight: 700;
+//             border-bottom: 3px solid $color-blue;
+//         }
+//     }
 
-}
+// }
