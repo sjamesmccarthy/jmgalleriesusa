@@ -475,7 +475,7 @@ SASS, https://sass-lang.com/
 
 .clear { display: block; clear: both; }
 
-html, body { margin: 0; padding: 0; font-size: 16px; font-weight: 300; line-height: 1.5; box-sizing: border-box; font-family: 'Roboto', sans-serif; -webkit-text-size-adjust: 100%; -webkit-font-smoothing: antialiased; color: #4a4a4a; box-sizing: border-box; }
+html, body { margin: 0; padding: 0; box-sizing: border-box; -webkit-text-size-adjust: 100%; -webkit-font-smoothing: antialiased; box-sizing: border-box; }
 
 ::-webkit-scrollbar { display: none; }
 
@@ -563,7 +563,27 @@ SASS, https://sass-lang.com/
 
 */
 /* Structure */
-html, body { font-family: 'Raleway', sans-serif; }
+body { background-color: #FFFFFF; color: #4a4a4a; font-family: "Raleway", sans-serif; font-size: 16px; font-weight: 300; line-height: 1.5; }
+
+body.dark-theme { background-color: #000; color: #FFFFFF; }
+
+body.dark-theme a { color: #2574A9; }
+
+body.dark-theme a:hover { color: #808080; }
+
+body.dark-theme h2, body.dark-theme h3, body.dark-theme h4, body.dark-theme h5, body.dark-theme h6 { color: #FFFFFF; }
+
+body.dark-theme .topnav--logo-img { -webkit-filter: invert(1); filter: invert(1); }
+
+body.dark-theme .detail-story, body.dark-theme .edition-title { color: #FFFFFF; }
+
+body.dark-theme input[type="text"], body.dark-theme input[type="password"], body.dark-theme textarea, body.dark-theme select { background-color: #000; color: #FFFFFF; }
+
+body.dark-theme form .select-wrapper:after { -webkit-filter: invert(1); filter: invert(1); }
+
+body.dark-theme input[type="text"]:disabled, body.dark-theme input[type="password"]:disabled, body.dark-theme textarea:disabled, body.dark-theme select:disabled { border: 1px solid #FFFFFF !important; color: #FFFFFF !important; }
+
+body.light-theme { background-color: #FFFFFF; color: #4a4a4a; }
 
 main { max-width: 1440px; margin: 1rem auto 0 auto; min-height: 80vh; }
 
@@ -840,7 +860,7 @@ button a { color: #2574A9; }
 
 .hero { position: relative; }
 
-.hero-text-container { position: absolute; width: 100%; bottom: 0; text-transform: uppercase; font-weight: 700; padding: 6rem 2rem 1rem 2rem; background: linear-gradient(rgba(117, 117, 119, 0) 0%, rgba(255, 255, 255, 0.85) 100%); }
+.hero-text-container { position: absolute; width: 100%; bottom: 0; text-transform: uppercase; font-weight: 700; padding: 6rem 2rem 1rem 2rem; background: linear-gradient(rgba(117, 117, 119, 0) 0%, rgba(255, 255, 255, 0.85) 100%); color: #FFFFFF; }
 
 .hero-text-container-bkg { background-color: rgba(0, 0, 0, 0.7); }
 
@@ -856,7 +876,7 @@ button a { color: #2574A9; }
 
 @media (min-width: 1200px) { .hero-text { font-size: 2.7rem; display: block; } }
 
-.hero-text > a { color: #FFF; }
+.hero-text > a { color: #FFF !important; }
 
 .hero-text-explore-link { color: #FFF; font-size: .5rem; font-weight: 100; line-height: 1.5; text-align: center; }
 
@@ -872,9 +892,9 @@ button a { color: #2574A9; }
 
 .hero-text-arrow { text-align: center; }
 
-.hero-text-explore-link > a { color: #FFF; font-size: 1.7em; font-weight: 400; }
+.hero-text-explore-link > a { color: #FFF !important; font-size: 1.7em; font-weight: 400; }
 
-.hero-text-container a:hover { color: rgba(255, 255, 255, 0.5); }
+.hero-text-container a:hover { color: #2574A9 !important; }
 
 .hero-down-arrow { margin-top: 16px; -webkit-filter: invert(1); filter: invert(1); width: 48px; }
 
@@ -1331,7 +1351,7 @@ fieldset { border: 0; padding-left: 0; }
 
 .name-statement { padding-top: 40px; line-height: 1.5; font-size: 1.3rem; }
 
-.artist-statement { box-sizing: border-box; }
+.artist-statement { box-sizing: border-box; padding: 2rem; }
 
 .bio-profile-pic-overlay { position: absolute; right: -124px; top: 148px; border-radius: 260px; padding: 10px; background-color: #FFF; width: 240px; z-index: 1001; }
 
@@ -1341,7 +1361,7 @@ fieldset { border: 0; padding-left: 0; }
 
 .timeline { width: 100%; margin: 2rem auto; padding-left: 2rem; }
 
-.timeline-history > h3 { margin-left: -4rem; display: inline-block; background-color: #FFF; padding: 10px; }
+.timeline-history > h3 { display: inline-block; padding: 10px; }
 
 .timeline-date { display: inline-block; font-size: 1.5rem; border-bottom: 1px solid #CCC; padding-bottom: 10px; }
 

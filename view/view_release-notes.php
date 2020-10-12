@@ -11,6 +11,12 @@
 
         <div class="col-11" style="position: relative">
 
+        <p class="pt-16">v1.5<br />Oct 12, 2020</p>
+        	<ul>
+            <li>Preview: Dark Mode (link in footer)</li>
+        	</ul> 
+        </p>
+
         <p class="pt-16">v1.4.9<br />Sep 29, 2020</p>
         	<ul>
             <li>bugfix: admin control user name now strtolower before check</li>

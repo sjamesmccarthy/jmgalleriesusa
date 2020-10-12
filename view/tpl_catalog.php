@@ -4,7 +4,8 @@
     <?php print $this->component('hero'); ?>
     
     <body>
-        
+    <!--  class="dark-theme" -->
+
         <?php print $this->component('notice'); ?>
 
             <main>

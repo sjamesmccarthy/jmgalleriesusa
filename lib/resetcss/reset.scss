@@ -1,16 +1,9 @@
 html, body {
     margin: 0;
     padding: 0;
-    font-size: $base-fs;
-    font-weight: $base-fw;
-    line-height: $base-lh;
     box-sizing: border-box;
-    // font-family: 'Lato', sans-serif;
-    font-family: 'Roboto', sans-serif;
     -webkit-text-size-adjust: 100%;
     -webkit-font-smoothing: antialiased;
-    color: $color-black;
-    // overflow-x: hidden;
     box-sizing: border-box;
 }
 
@@ -21,9 +14,6 @@ html, body {
 iframe, img, video {
     border: 0;
     border-style: none;
-    // border-radius: 4px;
-    // width: 100%;
-    // overflow: hidden;
 }
 
 table {

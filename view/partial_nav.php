@@ -10,7 +10,7 @@
                 <p class="center heading"><a href="/polarized" class="<?= $polarized ?>">FIELD NOTES</a><br /><span class="font-light">the JOURNAL</span></p>
             </div>
             <div class="col-2-middle md-hidden sm-hidden">
-                <p class="topnav-logo"><a href="/"><img src="/view/image/logo_fullsize.png" /></a></p>
+                <p class="topnav-logo"><a href="/"><img class="topnav--logo-img" src="/view/image/logo_fullsize.png" /></a></p>
                 <p class="topnav-subline">beta</p>
             </div>
             <div class="col-3-middle md-hidden sm-hidden">
