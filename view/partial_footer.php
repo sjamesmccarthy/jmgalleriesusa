@@ -25,7 +25,7 @@
                 </div>
 
                 <div class="col-5_sm-12 breadcrumb copyright">
-                    <p><a href="/about"><?= $this->config->copyright ?></a> | <a href="/privacy">Privacy Policy</a> | <a href="#" class="theme-toggle">Dark Toggle</a></p>
+                    <p><a href="/about"><?= $this->config->copyright ?></a> | <a href="/privacy">Privacy Policy</a> | <a class="theme-toggle"><i class="fas fa-adjust"></i></a></p>
                     <?php  $this->getPartial('newsletter'); ?>
                 </div>
 

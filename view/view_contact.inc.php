@@ -90,11 +90,12 @@ if(isSet($this->data->routePathQuery[0])) {
     $promo_field = '<p class="pt-8 pb-32"><input class="half-size-old" style="margin-bottom: 0;" type="text" id="promocode" name="promocode" placeholder="PROMO CODE" value="' . $promo_code . '" /> <span class="ml-16 tiny"><a href="#" id="apply_promo">apply code</a></span></p>';
     $payment_field = "<p class='pb-16'><img style='margin-bottom: 10px; width: 150px; vertical-align: middle' src='/view/image/square-payment-icons.png' /> <!-- <i style='font-size: 1.8rem; margin-left: 5px;' class='fab fa-bitcoin'></i> --><br /><span class='small'Estimated Total Not Including Tax or Shipping or any Promotional Codes.<br />Visa, Mastercard, American Express and Discover accepted and processed with Square. Shipping costs and tax, if applicable, will be included on final Invoice. <!-- Bitcoin is accepted via Coinbase or Square Cash App.<br />-->Cash (USD) is accepted on pickup only orders. No checks. <b>There is no payment due at this time. You will be invoiced separately through Square.</b></span></p>";
     $subject_VAL = $subject_PH . ' ' . $edition_text;
-    $subject_disabled = 'disabled="disabled" style="background-color: rgba(0,0,0,.02); border: 1px solid rgba(0,0,0,.03); color: #000;"';
+    $subject_disabled = 'disabled="disabled"';
+    $disabled_css = 'disabled-order';
     $formType = "RequestQuoteForm"; 
     $estimated_cost_calc = "<span id='estimated_cost_format'>" . number_format($cost, 2) . " USD</span></h2>";
     $estimated_cost = "<span id='estimated_cost' class='hidden'>" . $cost . "</span>";
-    $formSizes = '<h3 class="mt-32">$' . $estimated_cost_calc . '</h3><input class="half-size-old" type="text" id="contactsize" name="contactsize" value="' . urldecode($size) . ' ' . $frame_long . ' [CATALOG NUMBER ' . $catalog_no . ']" disabled="disabled" style="background-color: rgba(0,0,0,.02); border: 1px solid rgba(0,0,0,.03); color: #000;" required />';
+    $formSizes = '<h3 class="mt-32">$' . $estimated_cost_calc . '</h3><input class="half-size-old "' . $disabled_css . ' type="text" id="contactsize" name="contactsize" value="' . urldecode($size) . ' ' . $frame_long . ' [CATALOG NUMBER ' . $catalog_no . ']" disabled="disabled" required />';
 
 
 } else {

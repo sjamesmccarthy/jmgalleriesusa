@@ -48,6 +48,12 @@ fieldset {
     margin-left: 40px;
 }
 
-    .toUpper {
-        text-transform: uppercase;
-    }
+.toUpper {
+    text-transform: uppercase;
+}
+
+.disabled-order {
+    background-color: #e5e5e5; 
+    border: 1px solid rgba(0,0,0,.03); 
+    color: #000;
+}

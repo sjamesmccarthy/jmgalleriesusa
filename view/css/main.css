@@ -575,7 +575,11 @@ body.dark-theme .filter-editions-list li:hover { color: #808080; }
 
 body.dark-theme h2, body.dark-theme h3, body.dark-theme h4, body.dark-theme h5, body.dark-theme h6 { color: #FFFFFF; }
 
+body.dark-theme h2 a, body.dark-theme h3 a, body.dark-theme h4 a, body.dark-theme h5 a, body.dark-theme h6 a { color: #FFFFFF; }
+
 body.dark-theme .topnav--logo-img, body.dark-theme .nav-mobile-logo { -webkit-filter: invert(1); filter: invert(1); }
+
+body.dark-theme .nav-mobile-home > p { color: #FFFFFF; }
 
 body.dark-theme .detail-story, body.dark-theme .edition-title { color: #FFFFFF; }
 
@@ -583,7 +587,7 @@ body.dark-theme input[type="text"], body.dark-theme input[type="password"], body
 
 body.dark-theme form .select-wrapper:after { -webkit-filter: invert(1); filter: invert(1); }
 
-body.dark-theme input[type="text"]:disabled, body.dark-theme input[type="password"]:disabled, body.dark-theme textarea:disabled, body.dark-theme select:disabled { border: 1px solid #FFFFFF !important; color: #FFFFFF !important; }
+body.dark-theme input[type="text"]:disabled, body.dark-theme input[type="password"]:disabled, body.dark-theme textarea:disabled, body.dark-theme select:disabled { border: 1px solid #FFFFFF !important; color: #FFFFFF !important; opacity: 1; }
 
 body.dark-theme button { background-color: #2574A9; color: #FFFFFF; }
 
@@ -710,9 +714,9 @@ form .cancel-button { margin-left: 40px; }
 
 .width-auto { width: 10% !important; margin-left: 1rem; }
 
-input[type="text"], input[type="password"], textarea, select { position: relative; height: 50px; padding: 0 24px; width: 100%; border: 1px solid #edecec; -webkit-appearance: none; -moz-appearance: none; background-color: rgba(255, 255, 255, 0.5); margin-bottom: 2rem; font-family: inherit; font-size: 1.0rem; font-weight: 300; line-height: 1.8rem; outline: none; transition: border 0.3s cubic-bezier(0.215, 0.61, 0.355, 1); box-sizing: border-box; }
+input[type="text"], input[type="password"], textarea, select { position: relative; height: 50px; padding: 0 24px; width: 100%; border: 1px solid #edecec; -webkit-appearance: none; -moz-appearance: none; background-color: rgba(255, 255, 255, 0.5); margin-bottom: 2rem; border-radius: 0; font-family: inherit; font-size: 1.0rem; font-weight: 300; line-height: 1.8rem; outline: none; transition: border 0.3s cubic-bezier(0.215, 0.61, 0.355, 1); box-sizing: border-box; }
 
-input[type="text"]:disabled, input[type="password"]:disabled, textarea:disabled, select:disabled { border: 1px solid rgba(0, 0, 0, 0.1); background-color: rgba(0, 0, 0, 0.2); }
+input[type="text"]:disabled, input[type="password"]:disabled, textarea:disabled, select:disabled { border: #e5e5e5; background-color: #e5e5e5; color: #000000; }
 
 input.half-size[type="text"], input.half-size[type="password"], textarea.half-size, select.half-size { width: 49%; display: inline-block; }
 
@@ -720,7 +724,7 @@ input.half-size[type="text"]:nth-of-type(1), input.half-size[type="password"]:nt
 
 textarea { height: 250px; width: 100%; font-size: 1.2rem; line-height: 1.8; padding: 20px; }
 
-#form_response { background-color: rgba(130, 189, 94, 0.2); border: 1px solid #82bd5e; padding: 30px; border-radius: 3px; display: none; font-size: 1.5rem; text-align: center; color: green; }
+#form_response { background-color: rgba(130, 189, 94, 0.2); border: 1px solid #82bd5e; padding: 30px; display: none; font-size: 1.5rem; text-align: center; color: green; }
 
 .success { margin-bottom: 1rem; padding: 20px; background-color: #d4edda; color: #155724; text-align: center; }
 
@@ -868,7 +872,7 @@ button a { color: #2574A9; }
 
 /* ********************** */
 /* component_hero */
-#hero { height: 100vh; background: white; background-repeat: no-repeat; background-size: cover; background-position: top center; position: relative; margin-top: 0px; width: 100%; max-height: 1024px; }
+#hero { height: 70vh; background: white; background-repeat: no-repeat; background-size: cover; background-position: center; position: relative; margin-top: 0px; width: 100%; max-height: 1024px; }
 
 #hero-catalog { height: 200px; background: transparent; background-repeat: no-repeat; background-size: cover; background-position: center; position: relative; margin-top: 0px; width: 100%; }
 
@@ -1346,6 +1350,8 @@ fieldset { border: 0; padding-left: 0; }
 .contact-ul li { list-style: square; margin-left: 40px; }
 
 .toUpper { text-transform: uppercase; }
+
+.disabled-order { background-color: #e5e5e5; border: 1px solid rgba(0, 0, 0, 0.03); color: #000; }
 
 /* ********************** */
 /* view_about */
