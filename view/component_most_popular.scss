@@ -8,7 +8,7 @@
 
     h4 {
         // text-transform: uppercase;
-        font-size: .8rem;
+        font-size: .9rem;
         font-weight: 300;
 
         // xSmall devices (landscape phones, 320px and up)
@@ -32,13 +32,13 @@
             // Large devices (tablets (iPad Pro, 1112px and up)
             @media (min-width: 1112px) {
             //  background-color: gray;
-                font-size: 1.2rem;
+                font-size: .9rem;
             }
         
             // Extra large devices (large desktops, 1200px and up)
             @media (min-width: 1200px) {
             //  background-color: lightgreen;
-            font-size: 1.2rem;
+            font-size: .9rem;
             }
     }
 
@@ -70,13 +70,13 @@
             // Large devices (tablets (iPad Pro, 1112px and up)
             @media (min-width: 1112px) {
             //  background-color: gray;
-                font-size: 1rem;
+                font-size: .9rem;
             }
         
             // Extra large devices (large desktops, 1200px and up)
             @media (min-width: 1200px) {
             //  background-color: lightgreen;
-            font-size: 1rem;
+            font-size: .9rem;
             }
             
     }

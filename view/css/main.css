@@ -503,13 +503,13 @@ button, [type="button"], [type="reset"], [type="submit"] { -webkit-appearance: b
 
 pre, code { font-family: monospace, monospace; font-size: .9em; overflow-x: auto; white-space: pre-wrap; }
 
-a { background-color: transparent; text-decoration: none; }
+a { background-color: transparent; text-decoration: none; font-weight: 600; }
 
 b, strong { font-weight: 700; }
 
 small { font-size: 80%; }
 
-h1, h2, h3, h4, h5, h6 { margin: 0; font-weight: 300; }
+h1, h2, h3, h4, h5, h6 { margin: 0; font-weight: 400; }
 
 h1 { font-size: 48px; font-weight: 800; }
 
@@ -527,11 +527,11 @@ h2 { font-size: 20px; font-weight: 800; }
 
 h3 { font-size: 32px; font-weight: 800; }
 
-h4 { font-size: 28px; }
+h4 { font-size: 20.8px; }
 
-h5 { font-size: 20px; }
+h5 { font-size: 19.2px; }
 
-h6 { font-size: 19.2px; font-weight: 400; }
+h6 { font-size: 17.6px; font-weight: 400; }
 
 .font-light { font-weight: 300; }
 
@@ -685,6 +685,8 @@ h1 { color: #2574A9; }
 
 h2, h3, h4, h5, h6 { color: #4a4a4a; line-height: 1.3; }
 
+h2 > a { font-weight: 800; }
+
 h5 { line-height: 1.5; }
 
 h1.supersize { font-size: 4.5em; }
@@ -836,7 +838,7 @@ button a { color: #2574A9; }
 
 /* ********************** */
 /* component_most_popular */
-#most-popular h4 { font-size: .8rem; font-weight: 300; }
+#most-popular h4 { font-size: .9rem; font-weight: 300; }
 
 @media (min-width: 320px) { #most-popular h4 { font-size: .8rem; } }
 
@@ -844,9 +846,9 @@ button a { color: #2574A9; }
 
 @media (min-width: 767px) { #most-popular h4 { font-size: .8rem; } }
 
-@media (min-width: 1112px) { #most-popular h4 { font-size: 1.2rem; } }
+@media (min-width: 1112px) { #most-popular h4 { font-size: .9rem; } }
 
-@media (min-width: 1200px) { #most-popular h4 { font-size: 1.2rem; } }
+@media (min-width: 1200px) { #most-popular h4 { font-size: .9rem; } }
 
 #most-popular .thin { font-weight: 300; }
 
@@ -858,9 +860,9 @@ button a { color: #2574A9; }
 
 @media (min-width: 767px) { #most-popular p { font-size: .8rem; } }
 
-@media (min-width: 1112px) { #most-popular p { font-size: 1rem; } }
+@media (min-width: 1112px) { #most-popular p { font-size: .9rem; } }
 
-@media (min-width: 1200px) { #most-popular p { font-size: 1rem; } }
+@media (min-width: 1200px) { #most-popular p { font-size: .9rem; } }
 
 #most-popular .thumb img { width: 100%; border-radius: 6px; }
 
@@ -882,11 +884,13 @@ button a { color: #2574A9; }
 
 .hero { position: relative; }
 
-.hero-text-container { position: absolute; width: 100%; height: 100%; bottom: 0; text-transform: uppercase; font-weight: 700; padding: 6rem 2rem 1rem 2rem; color: #FFFFFF; }
+.hero-text-container { position: absolute; width: 100%; height: 100%; bottom: 0; text-transform: uppercase; padding: 6rem 2rem 1rem 2rem; color: #FFFFFF; }
 
 .hero-text-container-bkg { background-color: rgba(0, 0, 0, 0.7); }
 
 .hero-text { color: #FFF; font-weight: 800; line-height: 1.3; text-align: center; display: none; }
+
+.hero-text > a { font-weight: 800; }
 
 @media (min-width: 320px) { .hero-text { font-size: 1.25rem; } }
 
@@ -940,17 +944,17 @@ button a { color: #2574A9; }
 
 /* ********************** */
 /* component_gallery_thumbs */
-#filmstrip h4 { font-size: 1rem; font-weight: 400; }
+#filmstrip h4 { font-size: 1.1rem; font-weight: 400; }
 
-@media (min-width: 320px) { #filmstrip h4 { font-size: 1rem; } }
+@media (min-width: 320px) { #filmstrip h4 { font-size: 1.1rem; } }
 
 @media (min-width: 376px) { #filmstrip h4 { font-size: 1.2rem; } }
 
-@media (min-width: 767px) { #filmstrip h4 { font-size: 1.5rem; } }
+@media (min-width: 767px) { #filmstrip h4 { font-size: 1.3rem; } }
 
-@media (min-width: 1112px) { #filmstrip h4 { font-size: 1.5rem; } }
+@media (min-width: 1112px) { #filmstrip h4 { font-size: 1.3rem; } }
 
-@media (min-width: 1200px) { #filmstrip h4 { font-size: 1.5rem; } }
+@media (min-width: 1200px) { #filmstrip h4 { font-size: 1.3rem; } }
 
 .thumb img { width: 100%; border-radius: 6px; transition: all 1s ease; }
 
