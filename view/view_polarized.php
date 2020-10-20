@@ -1,10 +1,10 @@
-<section id="polarized_idx" class="pt-24">
+<section id="polarized_idx">
     <div class="grid-noGutter-center">
 
         <div class="col-10 __container">
 
             <!-- <h1>JOURNAL</h1> -->
-            <h4 class="subtitle blue center">a Collection of Field Notes by Photographer j.McCarthy</h4>
+            <h4 class="subtitle blue center pt-48">a Collection of Field Notes by Photographer j.McCarthy</h4>
 
             <!-- START_CARDS -->
             <div style="

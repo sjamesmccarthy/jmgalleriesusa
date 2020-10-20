@@ -229,7 +229,7 @@ class Core_Api extends Fieldnotes_Api
             $rand = " ORDER BY RAND() ";
         }
 
-        if( is_null($duration) ) { $duration = 4; }
+        if( is_null($duration) ) { $duration = 6; }
 
         /* Executes SQL and then assigns object to passed var */
         if( $this->checkDBConnection(__FUNCTION__) == true) {
@@ -247,9 +247,8 @@ class Core_Api extends Fieldnotes_Api
         	INNER JOIN catalog_collections AS CAT ON CAT.catalog_collections_id = PH.parent_collections_id
         	INNER JOIN catalog_collections_link AS CPL ON CPL.catalog_photo_id = PH.parent_collections_id
         WHERE
-            PH.created > DATE_ADD(Now(), INTERVAL - 6 MONTH)
+            PH.created > DATE_ADD(Now(), INTERVAL - " . $duration . " MONTH)
             AND PH.status = 'ACTIVE'
-            -- RESTRICT TO LIMITED EDITION
             AND PH.as_gallery = '1'
         ORDER BY
             PH.created DESC
@@ -483,9 +482,9 @@ class Core_Api extends Fieldnotes_Api
         if( $this->checkDBConnection(__FUNCTION__) == true) {
 
             if(is_null($catalog_path)) {
-                $sql = "SELECT * FROM catalog_collections WHERE type='collection' AND status='active'";
+                $sql = "SELECT * FROM catalog_collections WHERE type='collection' AND status='active' ORDER BY title ASC";
             } else {
-                $sql = "SELECT * FROM catalog_collections WHERE path ='" . $catalog_path . "' AND status='active'";
+                $sql = "SELECT * FROM catalog_collections WHERE path ='" . $catalog_path . "' AND status='active' ORDER BY title ASC";
             }
 
             $result = $this->mysqli->query($sql);
@@ -2654,6 +2653,9 @@ public function api_Admin_Get_Materials_By_Supplier($id) {
 
         /* extract Data Array */
         extract($_POST, EXTR_PREFIX_SAME, "dup");
+
+        $title = $this->mysqli->real_escape_string($_POST['title']);
+        $desc = $this->mysqli->real_escape_string($_POST['desc']);
 
         /* Insert into database */
         $sql = "UPDATE `jmgaller_iesusa`.`catalog_collections` 

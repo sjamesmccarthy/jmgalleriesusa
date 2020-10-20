@@ -16,18 +16,25 @@ if ($catalog == '') {
     $hero_result = $this->api_Hero_Get_Image();
 
     $html = <<< END
-        <div id="hero" data-url="$this->hero_image">
+        <div id="hero" data-url="$this->hero_image" style="box-shadow: 0px 20px 25px 0px rgba(0, 0, 0, 0.3);">
                 <div class="hero-text-container">
+                    <div style="position:absolute; bottom: 15%; width: 100%; left: 0;">
+                    <p class="topnav-logo">
+                        <img class="topnav--logo-img logo-white logo-large" src="/view/image/logo_fullsize.png">
+                    </p>
+
                     <p class="hero-text"><a href="$this->hero_link">$this->hero_title</a></p>
                     <p class="hero-text-explore-link"><a href="$this->hero_link">Explore This Collection</a></p>
                     <p class="hero-text-arrow"><a href="$this->hero_link"><img class="hero-down-arrow" src="/view/image/icon_down.svg" /></a></p>
+                    </div>
                 </div>
         </div>
 
+        <!-- linear-gradient(rgba(255,255,255,.5) 0%, rgba(117,117,119,0) 50%),  -->
     <script>
 
         $("#hero").each( function() { 
-            $(this).css("background-image", "linear-gradient(rgba(255,255,255,.5) 0%, rgba(117,117,119,0) 50%), url(/catalog/__image/" + $(this).data("url") +")" ); 
+            $(this).css("background-image", "url(/catalog/__image/" + $(this).data("url") +")" ); 
             $(this).css("background-postion", "$this->hero_position");
         });
 

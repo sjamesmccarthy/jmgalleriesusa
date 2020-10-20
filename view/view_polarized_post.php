@@ -34,9 +34,10 @@
 
         <div class="col-10_md-10_sm-12 __container">
 
-            <p class="__container--toc"><a href="/polarized">&#8672;</a></p>
+            <!-- <p class="__container--toc"><a href="/polarized">&#8672;</a></p> -->
             <!-- <h1>Journal</h1> -->
-            <p class="blue">&mdash; a Field Note by Photographer j.McCarthy</p>
+            <p class="blue pb-32"><a class="blue" href="/polarized">&mdash; a Field Note by Photographer j.McCarthy</a><br />
+            <span style="font-family: 'Roboto', sans-serif; font-size: .8rem; margin-left: 1rem;">Written <?= $res_date_written; ?></span></p>
 
             <h3><?= $res_title?></h3>
             

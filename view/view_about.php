@@ -17,10 +17,12 @@
                                 <img src="/view/image/signature_full-web.png" />
                             </p>
 
-                            <p class="pt-8 ml-16">
-                                <a target="_new" class="mr-16" href="http://twitter.com/jmgalleriesusa"><i class="fab fa-twitter"></a></i> 
-                                <a target="_new" class="mr-16" href="http://linkedin.com/company/jmgalleriesusa"><i class="fab fa-linkedin"></a></i>
-                                <a class="mr-16" href="/contact"><i class="fas fa-envelope"></i></a></i>
+                            <p class="pt-16 ml-16">
+                                <a target="_new" class="mr-16" href="http://twitter.com/jmgalleriesusa"><i class="fab fa-twitter"></i></a>
+                                <a target="_new" class="mr-16" href="http://linkedin.com/company/jmgalleriesusa"><i class="fab fa-linkedin"></i></a>
+                                <a target="_new" class="mr-16" href="http://instagram.com/jmgalleriesusa"><i class="fab fa-instagram"></i></a>
+                                <a class="mr-16" href="/polarized"><i class="fas fa-pen-alt"></i></a>
+                                <a class="mr-16" href="/contact"><i class="fas fa-envelope"></i></a>
                             </p>
                     </div>
 
@@ -140,8 +142,7 @@
                 </li>
             </ul>
 
-            <ul class="timeline">
-                <!-- <li class="timeline-date">2019</li> -->
+            <!-- <ul class="timeline">
                 <li class="timeline-history">                  
                     <p class="pt-8 ml-16">
                         <a target="_new" class="mr-16" href="http://twitter.com/jmgalleriesusa"><i class="fab fa-twitter"></a></i> 
@@ -149,7 +150,7 @@
                         <a target="_new" class="mr-16" href="/contact"><i class="fas fa-envelope"></i></a></i>
                     </p>
                 </li>
-            </ul>
+            </ul> -->
 
  
         </div>

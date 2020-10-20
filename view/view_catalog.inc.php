@@ -5,6 +5,7 @@
 
     $count=0;
     $catalog = ltrim($this->page->catalog_path, '/');
+    $new_release_data = array(100,3);  /* Also found in component_new_releases.php */
 
     /* Load all category meta data */
     $catalog_meta = $this->api_Catalog_Category_List($catalog);
@@ -16,7 +17,7 @@
 
     /* Get Thumbnails of photos for Category */
     if( $catalog_meta[0]['path'] == 'new-releases') {
-         $catalog_photos = $catalog_photos = $this->api_Catalog_Get_New_Releases(100, 4);
+         $catalog_photos = $catalog_photos = $this->api_Catalog_Get_New_Releases($new_release_data[0], $new_release_data[1]);
     } else if( $catalog_meta[0]['path'] == 'all') {
 
         if($this->routes->URI->queryvals[1] == 'tinyviews') {
@@ -70,7 +71,7 @@
                 }
 
                 // $desc_editions = "<p>" . $this->config->edition_description_open . "</p>"; 
-                $desc_editions = "<p style='display: inline-block; font-weight: 700; padding-right: 1rem;'>$" . $rPrice . " (" . $rSize . ")</p><p style='background-color: #D4E9D7; padding: 3px 6px; display: inline-block; font-size: 11px; color: #000; font-weight: 700; border-radius: 20px;'>PRINT ONLY SALE</p><!-- <p style='position: absolute; top: 1rem; right: 1rem;
+                $desc_editions = "<p style='font-weight: 700; padding-right: 1rem;'>$" . $rPrice . " (" . $rSize . ")</p><!-- <p style='margin-top: 1rem; background-color: #D4E9D7; padding: 3px 6px; display: inline-block; font-size: 11px; color: #000; font-weight: 700; border-radius: 20px;'>PRINT ONLY SALE</p> --><!-- <p style='position: absolute; top: 1rem; right: 1rem;
                 background-color: #000;
                 padding: 5px;
                 color: #FFF;
@@ -117,7 +118,7 @@
                     $grid_css = 'col';
                 } else if ($count == 3) {
                     $grid_css = 'col';
-                } else {
+            } else {
                     $grid_css = 'col';
                 }
                 
@@ -129,7 +130,7 @@
                 if($count == 3) { $count = 0; } else { $count++; }
             }
         } else {
-            $thumb_html = "<p>Somebody notify Captain Marvel, our photos have disappeared.</p><p style='margin-top: 20px; padding-top: 20px; border-top: 1px solid #CCC'>" . $catalog_photos['sql'] . "</p>";
+            $thumb_html = "<p>Somebody notify Captain Marvel, our photos have disappeared.</p><p style='margin-top: 20px; padding-top: 20px; border-top: 1px solid #CCC'>view_catalog.inc()</p>";
         }
     
 ?>

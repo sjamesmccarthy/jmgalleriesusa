@@ -1,15 +1,26 @@
+
 <section id="release-notes">
     <div class="grid-center">
 
-        <div class="col-10_sm-12">
-            <h1>RELEASE NOTES for website</h1> 
+        <div class="col-12_sm-12">
+            <h1>RELEASE NOTES, <?= $this->config->package_version ?></h1> 
+
         </div>
 
-        <div class="col-2_sm-12">
+        <div class="col_sm-12">
         <a href="/contact"><button>REPORT A PROBLEM</button></a>
         </div>
 
         <div class="col-11" style="position: relative">
+
+        <p class="pt-16">v1.5.1<br />Oct 20, 2020</p>
+        	<ul>
+            <li>bugfix: collection update in admin control now updating.</li>
+            <li>update: new release component now shows/hides based on results found within last 3 months.</li>
+            <li>update: css styling for thumbnails, simplification of top navigation, new homepage content overlay design.</li>
+            <li>update: about page social icons.</li>
+        	</ul> 
+        </p>
 
         <p class="pt-16">v1.5<br />Oct 12, 2020</p>
         	<ul>

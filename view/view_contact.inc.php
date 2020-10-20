@@ -52,7 +52,7 @@ if(isSet($this->data->routePathQuery[0])) {
             }
         }
 
-    $formTitle = "CHECKOUT";
+    $formTitle = "Checkout";
     $subTitle = "Thank you for your interest in collecting a j.McCarthy photograph";
     $formTitleSub = "<span class='light'>" . $subTitle . ",</span> <span class='light initialcaps'>" . $photo . " " . $edition . " Edition </span>";
     if ($this->config->component_notice == 'true') {
@@ -100,7 +100,7 @@ if(isSet($this->data->routePathQuery[0])) {
 
 } else {
     // Just a regular contact form
-    $formTitle = strtoupper($this->page->title);
+    $formTitle = $this->page->title;
     $subTitle = null;
     $order_about_you = null;
     $subject_PH = "IN A FEW WORDS, WHAT IS THIS MESSAGE ABOUT";
