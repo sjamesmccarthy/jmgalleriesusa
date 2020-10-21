@@ -20,7 +20,7 @@
 }
 .artist-statement {
     box-sizing: border-box;
-    padding: 2rem;
+    // padding: 2rem;
 }
 
 .bio-profile-pic-overlay {
@@ -57,7 +57,7 @@
 .timeline {
     width: 100%;
     margin: 2rem auto;
-    padding-left: 2rem;
+    // padding-left: 2rem;
 }
 
 .timeline-history >h3 {
@@ -77,10 +77,44 @@
 .timeline-history {
     display: inline-block;
     width: 100%;
-    border-left: 1px solid #CCC;
-    padding-left:  20px;
     vertical-align: top;
     margin-top: -25px;
+
+    // xSmall devices (landscape phones, 320px and up)
+    @media (min-width: 320px) { 
+        // border-left: 1px solid #CCC;
+        // padding-left:  20px;
+        // background-color: lightpink;
+    }
+
+    // Small devices (landscape phones, 576px and up)
+    @media (min-width: 376px) { 
+        // border-left: 1px solid #CCC;
+        // padding-left:  20px;
+        // background-color: gray;
+    }
+
+    // Medium devices (tablets, 768px and up)
+    @media (min-width: 767px) {
+        // border-left: 1px solid #CCC;
+        padding-left:  20px;
+        // background-color: blue;
+    }
+
+    // Large devices (tablets (iPad Pro, 1112px and up)
+    @media (min-width: 1112px) {
+        // border-left: 1px solid #CCC;
+        padding-left:  20px;
+        // background-color: orange;
+    }
+
+    // Extra large devices (large desktops, 1200px and up)
+    @media (min-width: 1200px) {
+        // border-left: 1px solid #CCC;
+        padding-left:  20px;
+        // background-color: red;
+    }
+
 }
 
 .timeline-history > p {

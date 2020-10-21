@@ -63,7 +63,7 @@ if( !$new_releases['error']) {
         }
         $thumb_new_releases_html .= '<div style="padding: 0 10px;" class="thumb overflow-hidden ' . $grid_css . '">';
         // $thumb_new_releases_html .= '<a href="/' . $value['catalog_path']  . $value['path'] . "/" . $img_file . '"><img src="/catalog/__thumbnail/' .$img_file . '.jpg" /></a><p>' . $value['title'] . '</p></div>';
-        $thumb_new_releases_html .= '<a href="/' . $v['catalog_path'] . '/' . $img_file . '"><img style="width: 100%;" src="/catalog/__thumbnail/' . $img_file . '.jpg" /></a></p><h4 class="pt-8 blue"><a href="/' . $v['catalog_path'] . '/' . $img_file . '">' . $v['title'] . '</a></h4><p>' . $v['loc_place'] . '</p><p>Sizes: ' . $available_sizes . '</p>' . $desc_editions . '</div>';
+        $thumb_new_releases_html .= '<a href="/' . $v['catalog_path'] . '/' . $img_file . '"><img style="width: 100%;" src="/catalog/__thumbnail/' . $img_file . '.jpg" /></a></p><h4 class="pt-8 blue"><a href="/' . $v['catalog_path'] . '/' . $img_file . '">' . $v['title'] . '</a></h4><p>' . $v['loc_place'] . '</p><!-- <p>Sizes: ' . $available_sizes . '</p>-->' . $desc_editions . '</div>';
 
         if($count == 3) { $count = 0; } else { $count++; }
     }

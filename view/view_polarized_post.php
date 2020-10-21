@@ -36,13 +36,13 @@
 
             <!-- <p class="__container--toc"><a href="/polarized">&#8672;</a></p> -->
             <!-- <h1>Journal</h1> -->
-            <p class="blue pb-32"><a class="blue" href="/polarized">&mdash; a Field Note by Photographer j.McCarthy</a><br />
-            <span style="font-family: 'Roboto', sans-serif; font-size: .8rem; margin-left: 1rem;">Written <?= $res_date_written; ?></span></p>
+            
+            <p class="__container--top_datetime">Published <?= $res_date_written; ?> in <a class="blue" href="/polarized">Field Notes</a></span></p>
 
             <h3><?= $res_title?></h3>
             
             <div>
-                <p style="font-family: 'roboto', sans-serif; font-size: 1.3rem;color: rgba(117,117,117);padding-top: .5rem;"><?= $res_teaser?></p>
+                <p style="font-family: 'roboto', sans-serif; font-size: 1.3rem;color: rgba(117,117,117);"><?= $res_teaser?></p>
             </div>
 
              <div class="mt-32 mb-16 hidden" style="display: flex; position: relative;">
@@ -93,7 +93,7 @@
             </div>
 
             <div>
-                <p class="__container--bottom_toc"><a href="/polarized">&#8672;</a></p>
+                <p class="__container--bottom_toc">&larr; Back To <a href="/polarized">Field Notes</a></p>
             </div>
 
         </div>

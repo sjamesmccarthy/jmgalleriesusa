@@ -4,7 +4,7 @@
         <div class="col-11">
 
                 <div class="grid-2_md-1">
-                    <div class="col" style="min-height: 350px; background-image: linear-gradient(to right, rgba(255,255,255,.1), rgba(255,255,255,1)), url(/view/image/profile_img_scripps.jpg); background-size: cover; background-position: right; border-top-left-radius: 2rem; border-bottom-left-radius: 2rem;">
+                    <div class="col" style="min-height: 350px; width: 80%; background-image: linear-gradient(to right, rgba(255,255,255,.1), rgba(255,255,255,1)), url(/view/image/profile_img_scripps.jpg); background-size: cover; background-position: right; border-top-left-radius: 2rem; border-bottom-left-radius: 2rem;">
                             <!-- <img class="bio-profile-pic" src="/view/image/profile_img.jpg" /> -->
                     </div>
                     <div class="col mt-16 artist-statement">
@@ -14,7 +14,7 @@
                             Creativity and art have always had a hidden crush on me, a self-taught explorer in the field of landscape and digital photography. Through purposeful paper choice, framing and composition, I aspire for my artwork to take you on a journey to a place you once remember or a place of new discovery and connect you with the human experience. 
                             </p>
                             <p class="pt-32">
-                                <img src="/view/image/signature_full-web.png" />
+                                <img class="signature" src="/view/image/signature_full-web.png" />
                             </p>
 
                             <p class="pt-16 ml-16">

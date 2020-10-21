@@ -34,6 +34,43 @@
 
     .__container {
 
+        .--card_layout {
+            display: grid;
+            grid-gap: 1rem;
+            margin-left: -1rem;
+
+             // xSmall devices (landscape phones, 320px and up)
+            @media (min-width: 320px) { 
+                grid-template-columns: 100%;
+                // background-color: lightpink;
+            }
+
+            // Small devices (landscape phones, 576px and up)
+            @media (min-width: 376px) { 
+                grid-template-columns: 50% 50%;
+                // background-color: gray;
+            }
+
+            // Medium devices (tablets, 768px and up)
+            @media (min-width: 767px) {
+                grid-template-columns: 33% 33% 33%;
+                // background-color: blue;
+            }
+
+            // Large devices (tablets (iPad Pro, 1112px and up)
+            @media (min-width: 1112px) {
+                grid-template-columns: 33% 33% 33%;
+                // background-color: orange;
+            }
+
+            // Extra large devices (large desktops, 1200px and up)
+            @media (min-width: 1200px) {
+                grid-template-columns: 33% 33% 33%;
+                // background-color: red;
+            }
+
+        }
+
         @media (max-width: 64em) and (orientation: portrait),
             (max-width: 80em) and (orientation: portrait),
             (min-device-width: 375px) and (max-device-height: 812px) 

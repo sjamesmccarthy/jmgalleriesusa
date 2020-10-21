@@ -24,12 +24,33 @@
             display: block;
         }
 
+        .__container--top_datetime {
+            // font-family: 'Roboto', sans-serif; 
+            font-size: 1rem; 
+            font-weight: 300;
+            color: $color-blue;
+            padding-bottom: 2rem;
+
+            a:hover {
+                color: $color-black;
+            }
+        }
+
         .__container--bottom_toc {
             margin-left: -5%;
-            font-size: 3rem;
+            font-size: 1rem;
             border-top: 1px solid #e4e4e4;
             padding-top: .5rem;
             margin-top: .5rem;
+            color: $color-blue;
+
+            a {
+                color: $color-blue;
+
+                &:hover {
+                    color: $color-black;
+                }
+            }
         }
     }
 }

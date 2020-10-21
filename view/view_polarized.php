@@ -7,11 +7,7 @@
             <h4 class="subtitle blue center pt-48">a Collection of Field Notes by Photographer j.McCarthy</h4>
 
             <!-- START_CARDS -->
-            <div style="
-                display: grid;
-                grid-template-columns: 50% 50%;
-                grid-gap: 1rem;
-                margin-left: -1rem;">
+            <div class="--card_layout">
                 
                 <?= $card_html ?>
             

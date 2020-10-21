@@ -29,7 +29,7 @@ $res_content = str_replace('<div><br></div>', '', $res_content);
 $res_content = str_replace('<p><br></p>', '', $res_content);
 
 /* format date */
-$res_date_written = date("l, F j, Y, g:i a", strtotime($res_created));
+$res_date_written = date("F j, Y", strtotime($res_created));
 
 /* Check for image */
 if ( file_exists($_SERVER['DOCUMENT_ROOT'] . "/view/image/fieldnotes/" . $res_image ) ) {
