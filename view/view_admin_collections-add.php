@@ -41,8 +41,8 @@
                 <select id="type" name="type">
                 <!-- $var > 2 ? true : false -->
                     <option value="collection" <?= ($res_type == "collection" ? "SELECTED" : ""); ?>>STATUS (collection)</option>
-                    <option value="virtual" <?= ($res_type == "virtual" ? "SELECTED" : ""); ?>>STATUS (sql)</option>
-                    <option value="virtual" <?= ($res_type == "sql" ? "SELECTED" : ""); ?>>STATUS (virtual)</option>
+                    <option value="virtual" <?= ($res_type == "virtual" ? "SELECTED" : ""); ?>>STATUS (virtual - sql based query)</option>
+                    <!-- <option value="virtual" <?= ($res_type == "sql" ? "SELECTED" : ""); ?>>STATUS (virtual)</option> -->
                 </select> 
                 </div>
             </div>

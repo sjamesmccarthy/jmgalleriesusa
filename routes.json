@@ -35,18 +35,6 @@
         "component": "true",
         "title": "[$1]"
     },
-    "/all": {
-        "template": "catalog",
-        "page": "catalog",
-        "component": "true",
-        "title": "All Photographs"
-    },
-    "/everything": {
-        "template": "catalog",
-        "page": "catalog",
-        "component": "true",
-        "title": "All Photographs"
-    },
     "/studio/signin": {
         "template": "page",
         "page": "admin_signin",
