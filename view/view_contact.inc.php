@@ -54,7 +54,8 @@ if(isSet($this->data->routePathQuery[0])) {
 
     $formTitle = "Checkout";
     $subTitle = "Thank you for your interest in collecting a j.McCarthy photograph";
-    $formTitleSub = "<span class='light'>" . $subTitle . ",</span> <span class='light initialcaps'>" . $photo . " " . $edition . " Edition </span>";
+    $formTitleSub = "<span class='light'>" . $subTitle;
+    //  . ",</span> <span class='light initialcaps'>" . $photo . " " . $edition . " Edition </span>";
     if ($this->config->component_notice == 'true') {
         $subNotice = '<p class="notice mb-16">' . $this->data_notices->WARNING['content'] . '</p>';
     }
@@ -72,7 +73,7 @@ if(isSet($this->data->routePathQuery[0])) {
         '<input type="hidden" name="framing" value ="' . $frame . '" />' .
         '<input type="hidden" name="catalog_id" value ="' . $catalog_no . '" />' .
         '<input type="hidden" name="invoice_no" value ="' . time() . '-' . $catalog_no . '" />' .
-        '<h3 class="">Ship To</h3>' . 
+        '<h3 class="pt-16">Ship To</h3>' . 
         '<p><input class="half-size-old" type="text" name="address" placeholder="SHIPPING ADDRESS (eg, 123 Main St.)" value="' . $address . '" $required />' .
         '<input class="half-size-old" type="text" name="address_other" placeholder="SHIPPING ADDRESS SECOND LINE (eg, Suite, Apt)" value="' . $address_exxtra . '"/></p>' .
         '<p><input class="half-size-old" type="text" name="city" placeholder="CITY (eg, Las Vegas, Dallas, Barstow)" value="' . $city . '"required/>' .
@@ -100,7 +101,8 @@ if(isSet($this->data->routePathQuery[0])) {
 
 } else {
     // Just a regular contact form
-    $formTitle = $this->page->title;
+    // $formTitle = $this->page->title;
+    $formTitle = "We'd Love To Hear From You";
     $subTitle = null;
     $order_about_you = null;
     $subject_PH = "IN A FEW WORDS, WHAT IS THIS MESSAGE ABOUT";
