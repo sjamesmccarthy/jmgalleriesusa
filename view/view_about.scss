@@ -1,6 +1,10 @@
 /* ********************** */
 /* view_about */
 
+#about {
+    padding: 0;
+    margin: 0;
+}
 .name-container {
     padding: 72px !important;
 }
@@ -16,14 +20,14 @@
 .name-statement {
     padding-top: 40px;
     line-height: 1.5;
-    font-size: 1.3rem;
+    font-size: 1.5rem;
 }
 .artist-statement {
     box-sizing: border-box;
     // padding: 2rem;
 }
 
-.bio-profile-pic-overlay {
+.bio-profile-pic-overlay-old {
     position: absolute;
     right: -124px;
     top: 148px;
@@ -34,7 +38,62 @@
     z-index: 1001;
 }
 
+.bio-profile-pic-bkg {
+    min-height: 719px; 
+    // background-image: url(/view/image/profile_1.jpg); 
+    background-size: cover; 
+    background-position: top left; 
+    border-radius: $border-radius;
+    border-top-left-radius:0; 
+    border-top-right-radius: 0;
+
+     // xSmall devices (landscape phones, 320px and up)
+     @media (min-width: 320px) { 
+        // background-image: url(/view/image/profile_1.jpg); 
+        // background-color: lightpink;
+        display: none;
+    }
+
+    // Small devices (landscape phones, 576px and up)
+    @media (min-width: 376px) { 
+        background-image: url(/view/image/profile_3.jpg); 
+        // background-color: gray;
+        display: block;
+    }
+
+    // Medium devices (tablets, 768px and up)
+    @media (min-width: 767px) {
+        background-image: url(/view/image/profile_2.jpg);
+        display: block; 
+        // background-color: blue;
+    }
+
+    // Large devices (tablets (iPad Pro, 1112px and up)
+    @media (min-width: 1112px) {
+        background-image: url(/view/image/profile_2.jpg); 
+        display: block;
+        // background-color: orange;
+    }
+
+    // Extra large devices (large desktops, 1200px and up)
+    @media (min-width: 1200px) {
+        background-image: url(/view/image/profile_1.jpg); 
+        display: block;
+        // background-color: red;
+    }
+
+}
+
 .bio-profile-pic {
+    border-radius: $border-radius;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    // height: auto;
+    width: 100%;
+    overflow: hidden;
+}
+
+.bio-profile-pic-old {
     border-radius: 0;
     background-color: #FFF;  
     width: 85%;
@@ -56,7 +115,7 @@
 
 .timeline {
     width: 100%;
-    margin: 2rem auto;
+    // margin: 2rem auto;
     // padding-left: 2rem;
 }
 
@@ -64,7 +123,7 @@
     // margin-left: -4rem;
     display: inline-block;
     // background-color: #FFF;
-    padding: 10px;
+    // padding: 10px 0;
 }
 
 .timeline-date {
@@ -78,7 +137,7 @@
     display: inline-block;
     width: 100%;
     vertical-align: top;
-    margin-top: -25px;
+    // margin-top: -25px;
 
     // xSmall devices (landscape phones, 320px and up)
     @media (min-width: 320px) { 
@@ -120,7 +179,7 @@
 .timeline-history > p {
     margin-top: 10px;
     margin-bottom: 10px;
-    font-size: 1.4rem;
+    font-size: 1.2rem;
 }
 
 .timeline-small {
@@ -131,4 +190,15 @@
     height: 100px;
     vertical-align: middle;
     display: table-cell;
+}
+
+.about--exhibits {
+    margin-left: 2rem;
+    margin-bottom: 1rem; 
+    
+    ul li {
+        list-style-type: square;
+        margin-left: 2rem;
+        margin-top: 1rem;
+    }
 }
