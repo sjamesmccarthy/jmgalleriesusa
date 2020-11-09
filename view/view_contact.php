@@ -67,11 +67,11 @@
 
         <h2 class="pt-32" style="line-height: 1">Read<br />My Field Notes</h2>
         <p class="pt-16">A weekly blog about art, photography, collecting and my photography adventures.</p>
-        <p class="pt-16 pb-16"><a href="/polarized">Read Now</a></p>
+        <p class="pt-16"><a href="/polarized">Read Now</a></p>
 
         <h2 class="pt-32" style="line-height: 1">Follow Me<br />on Social Media</h2>
         <p class="pt-16">
-            <a target="_new" class="mr-16 blue" style="font-size: 1.5rem" href="http://twitter.com/jmgalleriesusa"><i class="fab fa-twitter"></i></a>
+            <!-- <a target="_new" class="mr-16 blue" style="font-size: 1.5rem" href="http://twitter.com/jmgalleriesusa"><i class="fab fa-twitter"></i></a> -->
             <a target="_new" class="mr-16 blue" style="font-size: 1.5rem" href="http://linkedin.com/company/jmgalleriesusa"><i class="fab fa-linkedin"></i></a>
             <a target="_new" class="mr-16 blue" style="font-size: 1.5rem" href="http://instagram.com/jmgalleriesusa"><i class="fab fa-instagram"></i></a>
             <!-- <a class="mr-16" href="/polarized"><i class="fas fa-pen-alt"></i></a> -->

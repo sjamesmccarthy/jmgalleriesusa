@@ -663,7 +663,7 @@ blockquote { border-left: 3px solid #e4e4e4; padding-left: 1rem; margin: 2rem 4r
 
 .text-right { text-align: right; }
 
-.center { text-align: center; }
+.text-center, .center { text-align: center; }
 
 .noshow { display: none !important; }
 

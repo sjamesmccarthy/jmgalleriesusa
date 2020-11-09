@@ -11,13 +11,13 @@
 
                 <div class="grid">
                     <div class="col mt-32 artist-statement">
-                            <p class="name blue center">j.McCarthy</p>
-                            <p class="name-title center">ARTIST STATEMENT</p>
-                            <p class="name-statement blue">
-                            Creativity and art have always had a hidden crush on me, a self-taught explorer in the field of landscape and digital photography. Through purposeful paper choice, framing and composition, I aspire for my artwork to take you on a journey to a place you once remember or a place of new discovery and connect you with the human experience. 
-                            </p>
-                            <p class="pt-32 text-right">
+                            <!-- <p class="name center">j.McCarthy</p> -->
+                            <p class="pt-32 text-center">
                                 <img class="signature" src="/view/image/signature_full-web.png" />
+                            </p>
+                            <p class="name-title center" style="margin-top: -60px;font-weight: 600;font-size: .8rem;margin-left: 1rem;">ARTIST STATEMENT</p>
+                            <p class="name-statement pb-32">
+                            Creativity and art have always had a hidden crush on me, a self-taught explorer in the field of landscape and digital photography. Through purposeful paper choice, framing and composition, I aspire for my artwork to take you on a journey to a place you once remember or a place of new discovery and connect you with the human experience. 
                             </p>
 
                             <p class="pt-16 ml-16 noshow">
@@ -42,11 +42,11 @@
 
                 <h2 class="pt-32" style="line-height: 1">Read<br />My Field Notes</h2>
                 <p class="pt-16">A weekly blog about art, photography, collecting and my photography adventures.</p>
-                <p class="pt-16 pb-16"><a href="/polarized">Read Now</a></p>
+                <p class="pt-16"><a href="/polarized">Read Now</a></p>
 
                 <h2 class="pt-32" style="line-height: 1">Follow Me<br />on Social Media</h2>
                 <p class="pt-16">
-                    <a target="_new" class="mr-16 blue" style="font-size: 1.5rem" href="http://twitter.com/jmgalleriesusa"><i class="fab fa-twitter"></i></a>
+                    <!-- <a target="_new" class="mr-16 blue" style="font-size: 1.5rem" href="http://twitter.com/jmgalleriesusa"><i class="fab fa-twitter"></i></a> -->
                     <a target="_new" class="mr-16 blue" style="font-size: 1.5rem" href="http://linkedin.com/company/jmgalleriesusa"><i class="fab fa-linkedin"></i></a>
                     <a target="_new" class="mr-16 blue" style="font-size: 1.5rem" href="http://instagram.com/jmgalleriesusa"><i class="fab fa-instagram"></i></a>
                     <!-- <a class="mr-16" href="/polarized"><i class="fas fa-pen-alt"></i></a> -->
@@ -86,53 +86,24 @@
                 This began j.McCarthy's self-taught path in fine-art photography.
                 </p>
 
-                    </li>
-                </ul>
-
-                <ul class="timeline">
-                    <!-- <li class="timeline-date">2015<br />| <span class="timeline-small">thru</span><br />2017</li> -->
-                    <li class="timeline-history">
+                </li>
+                
+                <li class="timeline-history">
                         <h3>Career</h3>
                         <p>
                         After moving back to the Reno/Tahoe area in 2015, j.McCarthy met his better-half, Michele, who after seeing his work, inspired him to start publicly displaying and selling his photographs, as well as started hand-making his own frames out of Dark Walnut.
                         </p>
                 
-                        <div class="about--exhibits">
-                        <b>Exhibits (2016)</b>
-                        <ul>
-                            <li> 2016, Beer NV, Reno, Nevada<br />
-                            First public showing of artwork and commericial sale.</li>
-                            <li>2016, Brewery Arts Center, Carson City, Nevada<br />
-                            First public gallery showing.</li>
-                        </ul>
-                        </div>
-
                         <p>
-                        Over the summer of 2017, j.McCarthy relocated to a warmer climate, and as the infamous sign says: Welcome To Fabulous Las Vegas! Turning the page and beginning a new chapter was the start to opening new doors and finding new homes for his art. 
+                        Looking to escape the cold winters, over the summer of 2017, j.McCarthy relocated to a warmer climate. As the infamous sign says: Welcome To Fabulous Las Vegas! Beginning a new chapter farther south was the start to opening new doors, opportunities and finding new homes for his art. 
                        </p>
 
                        <p>
-                            Art Off The Walls, a first-Friday event in Temecula, California invited j.McCarthy to share his passion of landscape photography with the backwoods of San Diego, California.
+                        One of those doors was Art Off The Walls, a first-Friday event in Temecula, California. j.McCarthy was invited by Temecula Arts & Culture to share his passion of landscape photography with their commnunity as well as the backwoods of San Diego, California.
                         </p>
 
-                        <div class="about--exhibits">
-                        <b>Exhibits (2018,2019)</b>
-                        <ul>
-                            <li> 2018, Joe Maxx Coffee, Henderson & Las Vegas, Nevada<br />
-                            Over 40 pieces of fine-art on display between two locations.</li>
-                            <li> 2018, Boulder City Beer Festival<br />
-                            Exhibited "Happiest Time of Day", "Never Ending Story" and "Once Afloat".</li>
-                            <li> 2018, 2019, Art of The Walls, Temecula, California<br />
-                            Exhibited in outdoor show for local artists 6 times throughout 2018 and 2019.</li>
-                            <li> 2019, Temcula Public Library, Temecula, California<br />
-                            <a style="font-weight: 200" href="https://www.facebook.com/jmgalleriesusa/videos/631838797284255/UzpfSTQwNjIxMDk2MjkwNjU4NDoxMDI2MjMyOTA0MjM3NzE3/" target="_social">Video (@facebook): Exhibited 8 photographs from January 2019 through April 2019.</a></li>
-                            <li> 2019, City of Murrieta City Hall Art Project, Murrieta, California<br />
-                            Exhibited three pieces, "Flying Fortress", "Good Morning Murrieta" and "Temecula Grapes", at Wine Ranch Grill & Cellars.</li>
-                        </ul>
-                        </div>
-
                         <p>
-                        But 2018 and 2019 weren't all about exhibiting. Lots of "back of the studio" changes happened too, from the addition of new gear, including, Tamron G2 lenses, migration to an Apple workflow, Synology NAS backup solutions, framing equipment and suppliers, to the purchase of an Epson SureColor P800. j.McCarthy overhauled his entire workflow creating his own turn-key studio, as well as migrated his digital darkroom from Adobe's Lightroom to Phase One's Capture One Pro.
+                        But 2018 and 2019 weren't all about exhibiting. Lots of "back of the studio" changes happened too, from the addition of new gear, including, Tamron G2 lenses, migration to an Apple workflow, framing equipment and discovering local suppliers, to the purchase of an Epson Medium Format Printer. j.McCarthy overhauled his entire workflow creating an efficient home studio capable of turnkey fine-art production of medium sized prints.
                         </p>
 
                         <p>
@@ -145,8 +116,31 @@
                     </li>
 
                     <li class="timeline-history pt-16">
+                        <h3>Exhibits</h3>
+
+                        <div class="about--exhibits">
+                        <!-- <b>Exhibits (2016)</b> -->
+                        <ul>
+                            <li> 2016, Beer NV, Reno, Nevada<br />
+                            First public showing of artwork and commericial sale.</li>
+                            <li>2016, Brewery Arts Center, Carson City, Nevada<br />
+                            First public gallery showing.</li>
+                            <li> 2018, Joe Maxx Coffee, Henderson & Las Vegas, Nevada<br />
+                            Over 40 pieces of fine-art on display between two locations.</li>
+                            <li> 2018, Boulder City Beer Festival<br />
+                            Exhibited "Happiest Time of Day", "Never Ending Story" and "Once Afloat".</li>
+                            <li> 2018, 2019, Art of The Walls, Temecula, California<br />
+                            Exhibited in outdoor show for local artists 6 times throughout 2018 and 2019.</li>
+                            <li> 2019, Temcula Public Library, Temecula, California<br />
+                            <a style="font-weight: 200" href="https://www.facebook.com/jmgalleriesusa/videos/631838797284255/UzpfSTQwNjIxMDk2MjkwNjU4NDoxMDI2MjMyOTA0MjM3NzE3/" target="_social">Video (@facebook): Exhibited 8 photographs from January 2019 through April 2019.</a></li>
+                            <li> 2019, City of Murrieta City Hall Art Project, Murrieta, California<br />
+                            Exhibited three pieces, "Flying Fortress", "Good Morning Murrieta" and "Temecula Grapes", at Wine Ranch Grill & Cellars.</li>
+                        </ul>
+                        </div>
+                    </li>
+                    <li class="timeline-history pt-16">
                         <h3>Contact Me</h3>
-                        <p><a href="/contact">Email</a>, <a target="_social" href="https://twitter.com/jmgalleriesusa">Twitter</a>, <a target="_social" href="https://linkedin.com/company/jmgalleriesusa">LinkedIn</a> and <a target="_social" href="https://instagram.com/jmgalleriesusa">Instagram</a>.</p>
+                        <p><a href="/contact">Email</a>, <!-- <a target="_social" href="https://twitter.com/jmgalleriesusa">Twitter</a>, --><a target="_social" href="https://linkedin.com/company/jmgalleriesusa">LinkedIn</a> and <a target="_social" href="https://instagram.com/jmgalleriesusa">Instagram</a>.</p>
 
                     </li>
                 </ul>
