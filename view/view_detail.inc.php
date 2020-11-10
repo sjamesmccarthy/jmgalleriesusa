@@ -47,30 +47,30 @@
     $le_price_array = json_decode($this->config->le_pricing, true);
     $le_frames_pricing = json_decode($this->config->le_frames_pricing, true);
 
-    /* Determine if the "TinyViews photo exists */
-     if( file_exists($_SERVER['DOCUMENT_ROOT'] . "/catalog/__image/" . $photo_meta['file_name'] . '-tinyviews.jpg') && $photo_meta['as_gallery'] == "0" ) {
+    // /* Determine if the "TinyViews photo exists */
+    //  if( file_exists($_SERVER['DOCUMENT_ROOT'] . "/catalog/__image/" . $photo_meta['file_name'] . '-tinyviews.jpg') && $photo_meta['as_gallery'] == "0" ) {
 
-        $tinyviewImage = '<div class="col"><img class="in-room-img"  src="/catalog/__image/' . $photo_meta['file_name'] . '-tinyviews.jpg" /><!-- <div class="bx-buyart-btn"><a target="_shop" href="/shop">tinyViews&trade; Edition &mdash; Shop Now</a></div>--></div>';
-        $tinyviewSquareOption = '<option data-price="' . $tv_price_array['8x8'] . '" ' . 'data-frameprice="' . $studio_frames_pricing['8x8'] . '" value="8x8">SIZE: SQUARE 8x8</option>';
-        $tinyviewSquareOption .= '<!-- <option data-price="' . $tv_price_array['12x12'] . '" value="12x12">SIZE: SQUARE 12x12</option> -->';
-        $tv=1;
+    //     $tinyviewImage = '<div class="col"><img class="in-room-img"  src="/catalog/__image/' . $photo_meta['file_name'] . '-tinyviews.jpg" /><!-- <div class="bx-buyart-btn"><a target="_shop" href="/shop">tinyViews&trade; Edition &mdash; Shop Now</a></div>--></div>';
+    //     $tinyviewSquareOption = '<option data-price="' . $tv_price_array['8x8'] . '" ' . 'data-frameprice="' . $studio_frames_pricing['8x8'] . '" value="8x8">SIZE: SQUARE 8x8</option>';
+    //     $tinyviewSquareOption .= '<!-- <option data-price="' . $tv_price_array['12x12'] . '" value="12x12">SIZE: SQUARE 12x12</option> -->';
+    //     $tv=1;
        
-     } else {
-         $tinyviewImage = null;
-         $tv=0;
-         $tinyviewSquareOption = null;
-     }
+    //  } else {
+    //      $tinyviewImage = null;
+    //      $tv=0;
+    //      $tinyviewSquareOption = null;
+    //  }
 
-     if( file_exists($_SERVER['DOCUMENT_ROOT'] . "/catalog/__image/" . $photo_meta['file_name'] . '-tinyviews-notes.jpg') && $photo_meta['as_gallery'] == "0" ) {
+    //  if( file_exists($_SERVER['DOCUMENT_ROOT'] . "/catalog/__image/" . $photo_meta['file_name'] . '-tinyviews-notes.jpg') && $photo_meta['as_gallery'] == "0" && isSet($tv_price_array['5x7NC']) ) {
 
-        $tinyviewNotesImage = '<div class="col"><img class="in-room-img"  src="/catalog/__image/' . $photo_meta['file_name'] . '-tinyviews-notes.jpg" /><!-- <div class="bx-buyart-btn"><a target="_shop" href="/shop">tinyViews&trade; Edition &mdash; Shop Now</a></div>--></div>';
-        $tinyviewNotesOption = '<option data-price="' . $tv_price_array['5x7NC'] . '" value="NOTECARDS">SIZE: 5x7 NOTECARD/POSTCARD (Set of 3)</option>'; 
-        $tv=1;
-     } else {
-         $tinyviewNotesImage = null;
-         $tinyviewNotesOption = null;
-         $tv=0;
-     }
+    //     $tinyviewNotesImage = '<div class="col"><img class="in-room-img"  src="/catalog/__image/' . $photo_meta['file_name'] . '-tinyviews-notes.jpg" /><!-- <div class="bx-buyart-btn"><a target="_shop" href="/shop">tinyViews&trade; Edition &mdash; Shop Now</a></div>--></div>';
+    //     $tinyviewNotesOption = '<option data-price="' . $tv_price_array['5x7NC'] . '" value="NOTECARDS">SIZE: 5x7 NOTECARD/POSTCARD (Set of 3)</option>'; 
+    //     $tv=1;
+    //  } else {
+    //      $tinyviewNotesImage = null;
+    //      $tinyviewNotesOption = null;
+    //      $tv=0;
+    //  }
 
     /* Determine if the "VirtualRoom" photo exists */
     if( file_exists($_SERVER['DOCUMENT_ROOT'] . "/catalog/__image/" . $photo_meta['file_name'] . '-room.jpg') && $photo_meta['as_gallery'] == "0" ) {
@@ -82,13 +82,13 @@
     }
 
     /* Determine if the "VirtualRoom" photo exists */
-    if( file_exists($_SERVER['DOCUMENT_ROOT'] . "/catalog/__image/" . $photo_meta['file_name'] . '-room-alt.jpg') && $photo_meta['as_gallery'] == "0" ) {
-        $in_roomImgAlt = '<div class="col"><img class="in-room-img" src="/catalog/__image/' . $photo_meta['file_name'] . '-room-alt.jpg" /></div>';
-        $tv=1;
-    } else {
-        $in_roomImgAlt = null;
-        $tv=0;
-    }
+    // if( file_exists($_SERVER['DOCUMENT_ROOT'] . "/catalog/__image/" . $photo_meta['file_name'] . '-room-alt.jpg') && $photo_meta['as_gallery'] == "0" ) {
+    //     $in_roomImgAlt = '<div class="col"><img class="in-room-img" src="/catalog/__image/' . $photo_meta['file_name'] . '-room-alt.jpg" /></div>';
+    //     $tv=1;
+    // } else {
+    //     $in_roomImgAlt = null;
+    //     $tv=0;
+    // }
 
     if($tv == 1) {
          $tv_img_disclaimer = '*Frames, envelopes, stamps, plants and pens are not included with any tinyViews&trade; Edition.';
@@ -151,15 +151,21 @@
         $gallery_details = '<p class="col-12">This Limited Edition is printed on ' . $edition_desc_material . ' and available in ' . $this->config->available_sizes_limited . ' inches, ' . $edition_frame . ' If you have any questions about our ' . $edition_desc_material . ', or need more information about out <a href="/styles">styles, frames and editions</a>, please <a href="/contact">contact an art consultant</a>.</p>';
 
         $default_price = $le_price_array['16x24'];
+        $default_size = '16x24';
 
-        $sizes_frames = '<div class="col-4_sm-12 select-wrapper"> <!-- style="width: 300px;  margin-right: 20px;" -->
-            <label for="buysize"></label>
-            <select id="buysize" name="buysize" style="padding-left: 0">
-                <option data-price="' . $le_price_array['16x24'] . '" value="60CM/16x24">SIZE: 60CM (approx. 16x24 inches)</option>
-                <option data-price="' . $le_price_array['20x30'] . '" value="76CM/20x30">SIZE: 76CM (approx. 20x30 inches)</option>
-                <option data-price="' . $le_price_array['24x36'] . '"value="91CM/24x36">SIZE: 91CM (approx. 24x36 inches)</option>
-                <option data-price="' . $le_price_array['30x45'] . '"value="144CM/30x45">SIZE: 144CM (approx. 30x45 inches)</option>
-                <option data-price="' . $le_price_array['40x60'] . '"value="152CM/40x60">SIZE: 152CM (approx. 40x60 inches)</option>
+        $sizes_frames = '<div class="col-4_sm-12 select-wrapper">
+        <label for="buysize"></label>
+        <select id="buysize" name="buysize" style="padding-left: 0">';
+        
+        foreach ($le_price_array as $leK => $leV) {
+
+            if($leK == $default_size) { $default = 'SELECTED'; } else { $default = null; }
+
+            $sizes_frames_options .= '<option ' . $default . ' data-price="' . $leV . '" value="' . $leK . '">SIZE: ' . $leK . '</option>';
+
+        }
+
+        $sizes_frames .= $sizes_frames_options . '
             </select>
         </div>
         
@@ -194,19 +200,68 @@
         $btn_link = '<a class="btn-nudge" href="/contact?photo=' . $photo_meta['file_name'] . '&open=true">';
 
         $default_price = $tv_price_array['11x14'];
-
-        $sizes_frames = '<div class="col-4_sm-12 select-wrapper"> <!-- style="max-width: 300px;  margin-right: 20px;" --> 
-            <label for="buysize"></label>
-            <select id="buysize" name="buysize" style="padding-left: 0;">
-                <option data-price="' . $tv_price_array['5x7'] . '" ' . 'data-frameprice="0" value="5x7">SIZE: 5x7</option>
-                ' . $tinyviewNotesOption . '
-                <option data-price="' . $tv_price_array['8x10'] . '" ' . 'data-frameprice="' . $studio_frames_pricing['8x10'] . '" value="8x10">SIZE: 8x10</option>
-                <option SELECTED data-price="' . $tv_price_array['11x14'] . '" data-frameprice="' . $studio_frames_pricing['11x14'] . '" value="11x14">SIZE: 11x14 </option>
-                ' . $tinyviewSquareOption . '
-            </select>
-        </div>
+        $default_size = '11x14';
         
-        <!-- style="width: 300px; margin-right: 20px; -->
+        /* Loop through available_sizes */
+
+        $sizes_frames = '<div class="col-4_sm-12 select-wrapper">
+        <label for="buysize"></label>
+        <select id="buysize" name="buysize" style="padding-left: 0;">';
+
+        foreach ($tv_price_array as $tvK => $tvV) {
+
+            if($tvK == $default_size) { $default = 'SELECTED'; } else { $default = null; }
+
+            if($photo_meta['as_gallery'] == "0" && $tvK == "5x7NC") {
+
+                if( file_exists($_SERVER['DOCUMENT_ROOT'] . "/catalog/__image/" . $photo_meta['file_name'] . '-tinyviews-notes.jpg') ) {
+                    $tinyviewNotesImage = '<div class="col"><img class="in-room-img"  src="/catalog/__image/' . $photo_meta['file_name'] . '-tinyviews-notes.jpg" /></div>';
+                    $sizes_frames_options .= '<option ' . $default . 'data-price="' . $tv_price_array['5x7NC'] . '" value="NOTECARDS">SIZE: 5x7 NOTECARD/POSTCARD (Set of 3)</option>'; 
+                    $tv=1;
+                } else {
+                     $tinyviewNotesImage = null;
+                     $tinyviewNotesOption = null;
+                     $tv=0;
+                }
+
+            } else if ($photo_meta['as_gallery'] == "0" && $tvK == "8x8") {
+
+                /* Determine if the "TinyViews photo exists */
+                if( file_exists($_SERVER['DOCUMENT_ROOT'] . "/catalog/__image/" . $photo_meta['file_name'] . '-tinyviews.jpg') && $photo_meta['as_gallery'] == "0" ) {
+
+                    $tinyviewImage = '<div class="col"><img class="in-room-img"  src="/catalog/__image/' . $photo_meta['file_name'] . '-tinyviews.jpg" /></div>';
+                    $sizes_frames_options .= '<option ' . $default . ' data-price="' . $tv_price_array['8x8'] . '" ' . 'data-frameprice="' . $studio_frames_pricing['8x8'] . '" value="8x8">SIZE: SQUARE 8x8</option>';
+                    $tv=1;
+                
+                } else {
+                    $tinyviewImage = null;
+                    $tv=0;
+                    $tinyviewSquareOption = null;
+                }
+
+            } else if ($photo_meta['as_gallery'] == "0" && $tvK == "12x12") {
+
+                /* Determine if the "TinyViews photo exists */
+                if( file_exists($_SERVER['DOCUMENT_ROOT'] . "/catalog/__image/" . $photo_meta['file_name'] . '-tinyviews.jpg') && $photo_meta['as_gallery'] == "0" ) {
+
+                    $tinyviewImage = '<div class="col"><img class="in-room-img"  src="/catalog/__image/' . $photo_meta['file_name'] . '-tinyviews.jpg" /></div>';
+                    $sizes_frames_options .= '<option ' . $default . ' data-price="' . $tv_price_array['12x12'] . '" ' . 'data-frameprice="' . $studio_frames_pricing['12x12'] . '" value="12x12">SIZE: SQUARE 12x12</option>';
+                    $tv=1;
+                
+                } else {
+                    $tinyviewImage = null;
+                    $tv=0;
+                    $tinyviewSquareOption = null;
+                }
+
+            }
+             else {
+                $sizes_frames_options .= '<option ' . $default . ' data-price="' . $tvV . '" ' . 'data-frameprice="0" value="5x7">SIZE: ' . $tvK . '</option>';
+            } 
+
+        }
+
+        $sizes_frames .= $sizes_frames_options . '</select></div>' . '
         <div class="col-4_sm-12 select-wrapper">
             <label for="frame"></label>
             <select id="frame" name="frame" style="padding-left: 0; margin-bottom: 0;">
@@ -216,9 +271,9 @@
             </select>
             <span class="tiny"><a href="/styles">More information about frame styles and pricing</span>
         </div>
-         <input type="hidden" name="edition" value="open" />';
-
-         $tinyViewFinePrint = '<div class="col-12 mb-64 ml-8"><p>tinyViews&trade; Giclée Prints are available in standard framing sizes 5x7, 8x10 and 11x14 with a 1/2" white border ready for framing. Please read our <a target="_info" href="/styles">Frames, Editions and Pricing</a> page for more information about our Studio Frames for tinyViews&trade; Giclée Prints.' . $tv_img_disclaimer . '</p></div>';
+        <input type="hidden" name="edition" value="open" />';
+        
+        $tinyViewFinePrint = '<div class="col-12 mb-64 ml-8"><p>tinyViews&trade; Giclée Prints are available in standard framing sizes 5x7, 8x10 and 11x14 with a 1/2" white border ready for framing. Please read our <a target="_info" href="/styles">Frames, Editions and Pricing</a> page for more information about our Studio Frames for tinyViews&trade; Giclée Prints.' . $tv_img_disclaimer . '</p></div>';
 
     }
 

@@ -16,7 +16,7 @@
                                 <img class="signature" src="/view/image/signature_full-web.png" />
                             </p>
                             <p class="name-title center" style="margin-top: -60px;font-weight: 600;font-size: .8rem;margin-left: 1rem;">ARTIST STATEMENT</p>
-                            <p class="name-statement pb-32">
+                            <p class="name-statement pb-64">
                             Creativity and art have always had a hidden crush on me, a self-taught explorer in the field of landscape and digital photography. Through purposeful paper choice, framing and composition, I aspire for my artwork to take you on a journey to a place you once remember or a place of new discovery and connect you with the human experience. 
                             </p>
 
