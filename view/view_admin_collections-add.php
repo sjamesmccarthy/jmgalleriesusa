@@ -47,6 +47,11 @@
                 </div>
             </div>
 
+            <div class="half-size">
+                <label for="desc">CATALOG-CODE</label>
+                <input maxlength="255" type="text" id="catalog_code" name="catalog_code" placeholder="CATALOG CODE (eg, OWT, FFC, AAP, NR)" value="<?= $res_catalog_code ?>" required>
+            </div>
+
             <div class="clear">
                 <button class="mt-32" id="sendform" value="SEND"><?= $button_label ?></button>
                 <?= $button_archive_cancel ?>

@@ -19,6 +19,8 @@
         $this->data = $edit_data;
         extract($edit_data, EXTR_PREFIX_SAME, "dup");
 
+        $available_sizes = htmlspecialchars($available_sizes);
+
         if($as_gallery == "1") {
             $previous_edition = "as_gallery";
         } 
@@ -96,6 +98,7 @@
         $as_tinyview = 0;
         $as_gallery = 0;
         $print_media = "paper";
+        $available_sizes = "in_code";
         // $this->nav_label_catalog = "Adding Photo";
     }
 

@@ -18,10 +18,13 @@
     /* Build HTML for Open/tinyVIEWS Editions */
     foreach ($tv_price_array as $sfK => $sfV) {
 
-        if($sfK != '5x7NC') {
+        // Split out the matted size
+        $tvP= explode('|', $sfK);
+
+        if($tvP[0] != '5x7NC') {
             $tv_pricing_html .= '<div class="divTableRow">
             <div class="divTableCell"></div>
-            <div class="divTableCell border-l border-b pl-8">' . $sfK . '</div>
+            <div class="divTableCell border-l border-b pl-8">' . $tvP[0] . '</div>
             <div class="divTableCell border-l border-b border-r pl-8 pr-8">$' . $sfV .'</div>
             </div>';
         }

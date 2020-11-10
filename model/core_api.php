@@ -1468,6 +1468,8 @@ class Core_Api extends Fieldnotes_Api
 
         /* Insert into database */
         $story = $this->mysqli->real_escape_string($_POST['story']);
+        $available_sizes = $this->mysqli->real_escape_string($_POST['available_sizes']);
+
         if( !isSet($_POST['featured']) ) { $featured = '0'; }
 
         /* do a little fixing on edition type */
@@ -1507,6 +1509,7 @@ class Core_Api extends Fieldnotes_Api
         iso = '$iso',
         date_taken = '$date_taken',
         orientation = '$orientation',
+        available_sizes = '$available_sizes',
         tags = '$tags',
         created = '$created',
         status = '$status',
@@ -1560,6 +1563,8 @@ class Core_Api extends Fieldnotes_Api
         /* Insert into database */
         $story = $this->mysqli->real_escape_string($_POST['story']);
         $title = $this->mysqli->real_escape_string($_POST['title']);
+        $available_sizes = $this->mysqli->real_escape_string($_POST['available_sizes']);
+
         if( !isSet($_POST['featured']) ) { $featured = '0'; }
         if( !isSet($_POST['as_studio']) ) { $as_studio = '0'; }
 
@@ -1593,7 +1598,8 @@ class Core_Api extends Fieldnotes_Api
         `focal_length`, 
         `iso`, 
         `date_taken`, 
-        `orientation`, 
+        `orientation`,
+        `available_sizes,
         `tags`, 
         `created`, 
         `status`, 
@@ -1622,6 +1628,7 @@ class Core_Api extends Fieldnotes_Api
             '$iso', 
             '$date_taken', 
             '$orientation', 
+            '$available_sizes',
             '$tags', 
             '$created', 
             '$status', 
@@ -2569,7 +2576,8 @@ public function api_Admin_Get_Materials_By_Supplier($id) {
             c.path,
             c.desc,
             c.status,
-            c.type
+            c.type,
+            c.catalog_code
         FROM
             catalog_collections AS c
         WHERE c.catalog_collections_id = '" . $id . "'";
@@ -2630,8 +2638,8 @@ public function api_Admin_Get_Materials_By_Supplier($id) {
         extract($_POST, EXTR_PREFIX_SAME, "dup");
 
         /* Insert into database */
-        $sql = "INSERT INTO `jmgaller_iesusa`.`catalog_collections` (`artist_id`, `title`, `path`, `desc`, `status`, `type`) 
-        VALUES ('{$artist_id}', '{$title}', '{$path}', '{$desc}', '{$status}', '{$type}');";
+        $sql = "INSERT INTO `jmgaller_iesusa`.`catalog_collections` (`artist_id`, `title`, `path`, `desc`, `status`, `type`, `catalog_code`) 
+        VALUES ('{$artist_id}', '{$title}', '{$path}', '{$desc}', '{$status}', '{$type}', '{$catalog_code}');";
 
         $result = $this->mysqli->query($sql);
         $_POST['report_id'] = $this->mysqli->insert_id;
@@ -2663,7 +2671,8 @@ public function api_Admin_Get_Materials_By_Supplier($id) {
         `path` = '{$path}', 
         `desc` = '{$desc}', 
         `status` = '{$status}', 
-        `type` = '{$type}' 
+        `type` = '{$type}',
+        `catalog_code` = '{$catalog_code}'
         WHERE `catalog_collections_id` = '" . $catalog_collections_id ."'";
 
         $result = $this->mysqli->query($sql);

@@ -13,6 +13,14 @@
 
         <div class="col-11" style="position: relative">
 
+        <p class="pt-16">v1.5.2<br />Nov 10, 2020</p>
+        	<ul>
+            <li>update: change in admin control for pricing LE and TV editions.</li>
+            <li>update: removed facebook and twitter from social link block.</li>
+            <li>update: modified About page headline, artist statement formatting.</li>
+        	</ul> 
+        </p>
+
         <p class="pt-16">v1.5.1<br />Oct 20, 2020</p>
         	<ul>
             <li>bugfix: collection update in admin control now updating.</li>

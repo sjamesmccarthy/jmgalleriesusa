@@ -14,6 +14,14 @@ if(isSet($this->data->routePathQuery[0])) {
     // [8] edition
     // [9] catalog_no
     
+    // https://jmgalleries.com/contact
+    // ?photo=first-light
+    // &size=5x7
+    // &frame=PRINT-ONLY
+    // &cost=129.95
+    // &edition=tinyviews
+    // &catalog_no=MDT8OT
+
     foreach ($this->data->routePathQuery as $key => $value)
     {
         $query_str = explode("=", $value);

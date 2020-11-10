@@ -57,14 +57,17 @@
                 if($v['as_open'] == 1) { 
                 $data_filter_O = 'f-open';
                 $open_pricing_array = json_decode($this->config->tv_pricing, true);
-               
+
                 $i=0;
                 $iRand = rand(0,4);
                 foreach ($open_pricing_array as $opK => $opV) {
-                
+                    
                     if($i == $iRand) {
                         $rPrice = $opV;
-                        $rSize = $opK;
+                        
+                        $tvS = explode('|', $opK);
+                        if($tvS[1] == '0') { $tvS[1] = 'Misc'; }
+                        $rSize = $tvS[1];
                     }
 
                     $i++;

@@ -1,33 +1,11 @@
-{"5x7":"29.95","8x8":"49.95","8x10":"69.95","12x12":"79.95","11x14":"129.95","5x7NC":"24.95"}
+/* TV/open pricing */      
+{"5x7|8x10":"29.95","8x8|0":"49.95","8x10|11x14":"69.95","12x12|0":"79.95","11x14|16x20":"129.95","5x7NC|0":"24.95"}
 
-5x7, 8x8, 8x10, 11x14
+/* TV/studio frame pricing */
+{"8x8":"39.95","8x10":"49.95","12x12":"59.95","11x14":"69.95"}
 
-
-{"8x10":"69.95","11x14":"129.95"}
-
- $sizes_frames_OLD = '<div class="col-4_sm-12 select-wrapper"> <!-- style="max-width: 300px;  margin-right: 20px;" --> 
-                <label for="buysize"></label>
-                <select id="buysize" name="buysize" style="padding-left: 0;">
-                    <option data-price="' . $tv_price_array['5x7'] . '" ' . 'data-frameprice="0" value="5x7">SIZE: 5x7 (matted to 8x10)</option>
-                    ' . $tinyviewNotesOption . '
-                    <option data-price="' . $tv_price_array['8x10'] . '" ' . 'data-frameprice="' . $studio_frames_pricing['8x10'] . '" value="8x10">SIZE: 8x10 (matted to 11x14)</option>
-                    <option SELECTED data-price="' . $tv_price_array['11x14'] . '" data-frameprice="' . $studio_frames_pricing['11x14'] . '" value="11x14">SIZE: 11x14 (matted to 16x20)</option>
-                    ' . $tinyviewSquareOption . '
-                </select>
-            </div>
-            
-            <!-- style="width: 300px; margin-right: 20px; -->
-            <div class="col-4_sm-12 select-wrapper">
-                <label for="frame"></label>
-                <select id="frame" name="frame" style="padding-left: 0; margin-bottom: 0;">
-                    <option value="PRINT-ONLY">PRINT (or Giclée) ONLY - NO FRAME</option>
-                    <option value="Studio-Ash-Gray">FRAME: Studio Ash Gray</option>
-                    <option value="Studio-Snow-White">FRAME: Studio Snow White</option>
-                </select>
-                <span class="tiny"><a href="/styles">More information about frame styles and pricing</span>
-            </div>
-            <input type="hidden" name="edition" value="open" />';
-            
-
-/* LE */
+/* LE pricing */
 {"16x24": "1399.95","20x30": "1795.95","24x36": "2499.95","30x45": "3799.95","40x60": "6499.95"}            
+
+/* LE frame pricing */
+{"16x24":"350","20x30":"450","24x36":"550","30x45":"850","40x60":"950"}
