@@ -73,6 +73,7 @@ if(isSet($this->data->routePathQuery[0])) {
 
     /* Shipping Information */
     // $message_PH = "IN THE BOX BELOW PLEASE TELL US THE FOLLOWING: <ul class='contact-ul mb-16'><li>Shipping Address (Provide Postal Code) or Pickup (Las Vegas, Nevada)</li><li>Phone Number, An art consultant will contact you within 24 hours to complete this order</li><li>Preferred Billing Method: Credit Card, Cash or BitCoin</li><li>And, any other questions you may have.</li></ul>";
+    $message_H3 = "<h3 class='pt-32 pb-16'>Additional Order Information</h3>";
     $message_PH_label = 
         '<input type="hidden" name="edition" value ="' . $edition . '" />' .
         '<input type="hidden" name="title" value ="' . $photo . '" />' .
@@ -97,7 +98,7 @@ if(isSet($this->data->routePathQuery[0])) {
 
     $button_label = "PLACE YOUR ORDER";
     $promo_field = '<p class="pt-8 pb-32"><input class="half-size-old" style="margin-bottom: 0;" type="text" id="promocode" name="promocode" placeholder="PROMO CODE" value="' . $promo_code . '" /> <span class="ml-16 tiny"><a href="#" id="apply_promo">apply code</a></span></p>';
-    $payment_field = "<p class='pb-16'><img style='margin-bottom: 10px; width: 150px; vertical-align: middle' src='/view/image/square-payment-icons.png' /> <!-- <i style='font-size: 1.8rem; margin-left: 5px;' class='fab fa-bitcoin'></i> --><br /><span class='small'Estimated Total Not Including Tax or Shipping or any Promotional Codes.<br />Visa, Mastercard, American Express and Discover accepted and processed with Square. Shipping costs and tax, if applicable, will be included on final Invoice. <!-- Bitcoin is accepted via Coinbase or Square Cash App.<br />-->Cash (USD) is accepted on pickup only orders. No checks. <b>There is no payment due at this time. You will be invoiced separately through Square.</b></span></p>";
+    $payment_field = "<h3 class='mt-32'>Payment</h3><p class='pb-16'><img style='margin-bottom: 10px; width: 150px; vertical-align: middle' src='/view/image/square-payment-icons.png' /> <!-- <i style='font-size: 1.8rem; margin-left: 5px;' class='fab fa-bitcoin'></i> --><br /><span class='small'Estimated Total Not Including Tax or Shipping or any Promotional Codes.<br />Visa, Mastercard, American Express and Discover accepted and processed with Square. Shipping costs and tax, if applicable, will be included on final bill. <!-- Bitcoin is accepted via Coinbase or Square Cash App.<br />-->Cash (USD) is accepted on pickup only orders. No checks. <u>There is no payment due at this time.</u> You will be billed separately through Square.</span></p>";
     $subject_VAL = $subject_PH . ' ' . $edition_text;
     $subject_disabled = 'disabled="disabled"';
     $disabled_css = 'disabled-order';
@@ -105,6 +106,18 @@ if(isSet($this->data->routePathQuery[0])) {
     $estimated_cost_calc = "<span id='estimated_cost_format'>" . number_format($cost, 2) . " USD</span></h2>";
     $estimated_cost = "<span id='estimated_cost' class='hidden'>" . $cost . "</span>";
     $formSizes = '<h3 class="mt-32">$' . $estimated_cost_calc . '</h3><input class="half-size-old "' . $disabled_css . ' type="text" id="contactsize" name="contactsize" value="' . urldecode($size) . ' ' . $frame_long . ' [CATALOG NUMBER ' . $catalog_no . ']" disabled="disabled" required />';
+
+    $pay_SqPaymentForm = '<script type="text/javascript" src="https://js.squareupsandbox.com/v2/paymentform"></script>';
+    $pay_SqPaymentFormFields = '
+        <div id="form-container">
+            <div id="sq-card-number"></div>
+            <div id="sq-expiration-date"></div>
+            <div id="sq-cvv"></div>
+            <div id="sq-postal-code"></div>
+            <button id="sq-creditcard" 
+                onclick="onGetCardNonce(event)">Pay $1.00</button>
+        </div>';
+    $pay_sqPaymentFormJS = "";
 
 
 } else {

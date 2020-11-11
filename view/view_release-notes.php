@@ -16,8 +16,10 @@
         <p class="pt-16">v1.5.2<br />Nov 10, 2020</p>
         	<ul>
             <li>update: change in admin control for pricing LE and TV editions.</li>
+            <li>added: admin control for pricing LE and TV editions, specific pricing per photo.</li>
             <li>update: removed facebook and twitter from social link block.</li>
             <li>update: modified About page headline, artist statement formatting.</li>
+            <li>update: admin contol artwork inventory table now searchable by serial number.</li>
         	</ul> 
         </p>
 

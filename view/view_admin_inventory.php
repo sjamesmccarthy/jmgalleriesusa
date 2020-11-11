@@ -31,11 +31,13 @@
                         <thead>
                             <tr>
                                 <th>Title</th>
-                                <th>Series</th>
-                                <th>Edition</th>
-                                <th>Max Ed.</th>
+                                <!-- <th>Series</th> -->
+                                <!-- <th>Edition</th> -->
+                                <th>Size</th>
+                                <th>Media</th>
                                 <th>Location</th>
-                                <th>Value</th>
+                                <th>Serial No.</th>
+                                <!-- <th>Value</th> -->
                             </tr>
                         </thead>
                         <tbody></tbody>
@@ -69,11 +71,13 @@
                         return data;
                     } 
                 },
-                { data: 'series_num' },
-                { data: 'edition_num' },
-                { data: 'edition_num_max' },
+                // { data: 'series_num' },
+                // { data: 'edition_num' },
+                { data: 'print_size' },
+                { data: 'print_media'},
                 { data: 'location' },
-                { data: 'TOTAL_VALUE' }
+                { data: 'serial_num' },
+                // { data: 'TOTAL_VALUE' }
             ]
         } );
         

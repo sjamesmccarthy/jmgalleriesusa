@@ -154,19 +154,26 @@
         $btn_link = '<a class="btn-nudge";" href="/contact?photo=' . $photo_meta['file_name'] . '">';
         $gallery_details = '<p class="col-12">This Limited Edition is printed on ' . $edition_desc_material . ' and available in ' . $this->config->available_sizes_limited . ' inches, ' . $edition_frame . ' If you have any questions about our ' . $edition_desc_material . ', or need more information about out <a href="/styles">styles, frames and editions</a>, please <a href="/contact">contact an art consultant</a>.</p>';
 
-        $default_price = $le_price_array['16x24'];
-        $default_size = '16x24';
+        /* Picking a default value to show */
+        if($available_sizes != "in_code") { 
+            $le_price_array = json_decode($available_sizes, true);
+        } 
+
+        $price_count = sizeof($le_price_array);
+        
+        $i=1;
+        foreach($le_price_array as $k => $v) {
+            if($price_count == 1 || ($price_count >1 && $i == 2) ) {
+                $default_price = $v;
+                $default_size = $k;
+            }
+            $i++;
+        }
 
         $sizes_frames = '<div class="col-4_sm-12 select-wrapper">
         <label for="buysize"></label>
         <select id="buysize" name="buysize" style="padding-left: 0">';
         
-        if($available_sizes != "in_code") {
-            $le_price_array = json_decode($available_sizes, true);
-            $default_price = $le_price_array['16x24'];
-            $default_size = '16x24';
-        }
-
         foreach ($le_price_array as $leK => $leV) {
 
             if($leK == $default_size) { $default = 'SELECTED'; } else { $default = null; }
@@ -208,8 +215,26 @@
         $btn = "BUY ARTWORK";
         $btn_link = '<a class="btn-nudge" href="/contact?photo=' . $photo_meta['file_name'] . '&open=true">';
 
-        $default_price = $tv_price_array['8x10|11x14'];
-        $default_size = '8x10';
+
+        /* Picking a default value to show */
+        if($available_sizes != "in_code") { 
+            $tv_price_array = json_decode($available_sizes, true);
+        } 
+
+        $price_count = sizeof($tv_price_array);
+        
+        $i=1;
+        foreach($tv_price_array as $k => $v) {
+            if($price_count == 1 || ($price_count >1 && $i == 1) ) {
+                $tvP = explode('|', $k);
+                $default_price = $v;
+                $default_size = $tvP[0];
+            }
+            $i++;
+        }
+
+        // $default_price = $tv_price_array['8x10|11x14'];
+        // $default_size = '8x10';
         
         /* Loop through available_sizes */
 
@@ -267,7 +292,8 @@
 
             }
              else {
-                $sizes_frames_options .= '<option ' . $default . ' data-price="' . $tvV . '" ' . 'data-frameprice="0" value="' . $tvP[0] . '">SIZE: ' . $tvP[0] . ' (Matted to: ' . $tvP[1] . ')</option>';
+                $studio_fp = $studio_frames_pricing[$tvP[1]];
+                $sizes_frames_options .= '<option ' . $default . ' data-price="' . $tvV . '" ' . 'data-frameprice="' . $studio_fp . '" value="' . $tvP[0] . '">SIZE: ' . $tvP[0] . ' (Matted to: ' . $tvP[1] . ')</option>';
             } 
 
         }

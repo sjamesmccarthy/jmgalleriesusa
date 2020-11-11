@@ -51,20 +51,35 @@
                 if($v['as_studio'] == 1) {
                  $data_filter_S = 'f-studio'; 
                 $desc_editions = "<p>" . $this->config->edition_description_open . "</p>"; 
-                $available_sizes = $this->config->available_sizes_open; } 
+
+                if($v['available_sizes'] != "in_code") {
+                    $available_sizes = json_decode($v['available_sizes'], true); 
+                } else {
+                    $available_sizes = $this->config->available_sizes_open; 
+                }
+            
+            } 
                 else { $data_filter_S = null; }
 
                 if($v['as_open'] == 1) { 
                 $data_filter_O = 'f-open';
-                $open_pricing_array = json_decode($this->config->tv_pricing, true);
 
+                if($v['available_sizes'] != "in_code") {
+                    $open_pricing_array = json_decode($v['available_sizes'], true); 
+                    $r_seed = count($open_pricing_array) -1;
+                    // echo "FOUND @" . $v['title'] . "<br />";
+                    // echo $v['available_sizes'] . "<br />";
+                } else {
+                    $open_pricing_array = json_decode($this->config->tv_pricing, true);
+                    $r_seed = count($open_pricing_array) -1;
+                }
+                
                 $i=0;
-                $iRand = rand(0,4);
+                $iRand = rand(0,$r_seed);
                 foreach ($open_pricing_array as $opK => $opV) {
                     
                     if($i == $iRand) {
                         $rPrice = $opV;
-                        
                         $tvS = explode('|', $opK);
                         if($tvS[1] == '0') { $tvS[1] = 'Misc'; }
                         $rSize = $tvS[1];
@@ -84,6 +99,8 @@
                 font-size: 12px;
                 font-weight: 700;'>ADD TO CART +ORDER</p> -->"; 
                 $available_sizes = $this->config->available_sizes_open; 
+                $rSize = null;
+                $rPrice = null;
                 } 
                 else { $data_filter_O = null; }
 
@@ -126,7 +143,7 @@
                 }
                 
                 // <div style="overflow: hidden; height: 203px;" class="' . $grid_css . '">
-                $thumb_html .= '<div style="position: relative; padding: 0 10px; overflow: hidden; margin-bottom: 32px" class="thumb ' . $grid_css .  ' pb-16 filter-thumb-gallery '. $data_filters . '"><a href="/' . $v['catalog_path'] . '/' . $img_file . '"><img style="width: 100%;" src="/catalog/__thumbnail/' . $img_file . '.jpg" /></a></p><h4 class="pt-8 blue"><a href="/' . $v['catalog_path'] . '/' . $img_file . '">' . $v['title'] . '</a></h4><p>' . $v['loc_place'] . '</p><p>Sizes: ' . $available_sizes . '</p>' . $desc_editions . '</div>';
+                $thumb_html .= '<div style="position: relative; padding: 0 10px; overflow: hidden; margin-bottom: 32px" class="thumb ' . $grid_css .  ' pb-16 filter-thumb-gallery '. $data_filters . '"><a href="/' . $v['catalog_path'] . '/' . $img_file . '"><img style="width: 100%;" src="/catalog/__thumbnail/' . $img_file . '.jpg" /></a></p><h4 class="pt-8 blue"><a href="/' . $v['catalog_path'] . '/' . $img_file . '">' . $v['title'] . '</a></h4><p>' . $v['loc_place'] . '</p><!--<p>Sizes: ' . $available_sizes . '</p>-->' . $desc_editions . '</div>';
 
                 /* <!-- <p><a href="/' . $v['catalog_path'] . '/' . $img_file . '">' . $v['title'] . '</a>--><!-- <br />Exhibiting at Joe Maxx Coffee, Las Vegas --> */
                 

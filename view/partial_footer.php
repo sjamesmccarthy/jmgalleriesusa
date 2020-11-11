@@ -25,7 +25,7 @@
                 </div>
 
                 <div class="col-5_sm-12 breadcrumb copyright">
-                    <p><a href="/about">About j.McCarthy</a> | <a href="/polarized">Field Notes</a> |  <a href="/privacy"><?= $this->config->copyright ?></a> | <a class="theme-toggle"><i class="fas fa-adjust"></i></a></p>
+                    <p><a href="/about">About j.McCarthy</a> | <a href="/polarized">Field Notes</a> | <a href="/shop">tinyVIEWS&trade;</a> | <a href="/privacy"><?= $this->config->copyright ?></a> | <a class="theme-toggle"><i class="fas fa-adjust"></i></a></p>
                    <?php  $this->getPartial('newsletter'); ?>
                 </div>
 

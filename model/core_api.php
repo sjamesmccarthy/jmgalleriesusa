@@ -96,7 +96,8 @@ class Core_Api extends Fieldnotes_Api
                 cp.as_studio,
                 cp.as_open,
                 cat.title AS cat_title,
-                cat.path as catalog_path
+                cat.path as catalog_path, 
+                cp.available_sizes
             FROM
             	catalog_photo AS cp
             	INNER JOIN catalog_collections AS cat ON cat.catalog_collections_id = cp.parent_collections_id
@@ -1007,6 +1008,9 @@ class Core_Api extends Fieldnotes_Api
                 A.series_num,
                 A.edition_num,
                 A.edition_num_max,
+                A.serial_num,
+                A.print_size,
+                A.print_media,
                 L.location,
                 A.value AS TOTAL_VALUE
             FROM

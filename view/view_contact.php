@@ -1,5 +1,7 @@
 <script src="https://www.google.com/recaptcha/api.js?render=6LetD7YUAAAAAFX5cXupV3exd1YCSuYFY_az92Wh"></script>
 
+<?= $pay_SqPaymentForm ?>
+
 <section id="contact">
     <div class="grid-center">
 
@@ -35,17 +37,17 @@
         <?= $formSizes ?>
         <?= $promo_field ?>
         <?= $estimated_cost ?>
-        <?= $payment_field ?>
+        <!-- <?= $pay_SqPaymentFormFields ?> -->
 
         <div>
         <?= $message_PH_label ?>
 
         <!-- <label class="" for="comments">TYPE YOUR MESSAGE HERE</label> -->
-        <textarea id="comments" name="comments" placeholder="<?= $message_PH ?>" rows="18"><?= $msg ?></textarea>
+        <?= $message_H3 ?>
+        <textarea id="comments" name="comments" placeholder="<?= $message_PH ?>" rows="9"><?= $msg ?></textarea>
         </div>
         
-        <!-- <?= $promo_field ?> -->
-        <?php // $payment_field ?>
+        <?= $payment_field ?>
 
         </fieldset>
 
@@ -83,6 +85,8 @@
     </div>
 </section>
 
+<?= $pay_sqPaymentFormJS ?>
+  
 <script>
 
   jQuery(document).ready(function($){

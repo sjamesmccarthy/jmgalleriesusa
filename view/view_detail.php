@@ -127,13 +127,13 @@
             
             var print = parseFloat($("#buysize option:selected").attr("data-price"));
             var fp = parseFloat($("#buysize option:selected").attr("data-frameprice")); 
-            // console.log(fp);
+            console.log('FramePrice: ' + fp);
 
             var newprice = print + fp;
-            // console.log('newprice='+newprice);
+            console.log('newprice='+newprice);
 
             newprice_f = parseFloat(newprice).toFixed(2);
-            // console.log('newprice_f=' + newprice_f);
+            console.log('newprice_f=' + newprice_f);
 
             // var nf = new Intl.NumberFormat();
             // newprice = (nf.format(newprice_f));
@@ -142,7 +142,7 @@
             $('.frame_data').html( '(+' + fp + ' for Frame)');
             // $('.frame_data').html( '(+' + fp + ' ' + $("#frame option:selected").val() + ' Frame)');
             // $('#total_cost').val(newprice_f);
-            // console.log('frame.changed(' + $('#total_cost').val() + ')');
+            console.log('frame.changed(' + $('#total_cost').val() + ')');
 
         // ELSE PRINT-ONLY NO FRAME SELECTED
         } else {
