@@ -57,3 +57,31 @@ fieldset {
     border: 1px solid rgba(0,0,0,.03); 
     color: #000;
 }
+
+.pay-input-field {
+    border: 1px solid #CCC;
+}
+
+.shipping {
+
+    li {
+        margin-bottom: 1rem;
+    }
+}
+
+.hide-for-order {
+    display: none;
+}
+
+#amount_total {
+    display: none;
+}
+
+.promo-label {
+    display: none;
+    padding: 1rem;
+    background-color: $color-warning-background;
+    border-radius: 6px;
+    color: $color-warning;
+    margin-bottom: 2rem;
+}

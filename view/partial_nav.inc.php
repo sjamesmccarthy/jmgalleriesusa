@@ -1,7 +1,7 @@
 <?php
 
 
-    $nav_pages = array('all', 'polarized', 'moments', 'about', 'galleries');
+    $nav_pages = array('all', 'polarized', 'moments', 'about', 'galleries', 'product');
     $current_page = ltrim($this->page->catalog_path, '/');
 
     if($this->page->catalog_path == "/") {

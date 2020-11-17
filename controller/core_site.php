@@ -140,42 +140,59 @@ class Core_Site extends Core_Api
 
                 /* splitting the URI path by forward slash */
                 $URIx = explode('/', $this->routes->URI->path);
+                unset($URIx[0]);
 
-                if($URIx[1] == "polarized") {
+                switch($URIx[1]) {
+                    case "polarized":
+                        // API look up of post title
+                        $result = $this->api_Admin_Get_Fieldnotes_Item(null,$URIx[2]);
 
-                    // API look up of post title
-                    $result = $this->api_Admin_Get_Fieldnotes_Item(null,$URIx[2]);
+                        if(count($result) > 0) {
+                            /* Mutating the routes URI so the regEx can be found in the routes JSON object */
+                            $this->routes->URI->path = "/polarized/[$1]";
+                            $this->routes->URI->template = $this->routes->{'/polarized/[$1]'}['template'];
+                            $this->routes->URI->page = $this->routes->{'/polarized/[$1]'}['page'];
 
-                    if(count($result) > 0) {
-                         /* Mutating the routes URI so the regEx can be found in the routes JSON object */
-                        $this->routes->URI->path = "/polarized/[$1]";
-                        $this->routes->URI->template = $this->routes->{'/polarized/[$1]'}['template'];
-                        $this->routes->URI->page = $this->routes->{'/polarized/[$1]'}['page'];
+                            /* Adding data to the page index of the data object that is accessible in the templates and pages */
+                            $this->page->title = ucwords(str_ireplace("-", " ", $URIx[2]));
+                            $this->page->catalog_path = '/' . $URIx[1] . '/' . $URIx[2];
+                            $this->page->image_path = $result['image'];
+                            $this->page->fieldnotes_id = $result['fieldnotes_id'];
 
+                        } else {
+                            $pass_error_page = true;
+                        }
+                    break;
+
+                    case "photo":
+                        /* default for /photo/[$1]; */
+                        /* Mutating the routes URI so the regEx can be found in the routes JSON object */
+                        $this->routes->URI->path = "[$1]/[$2]";
+                        $this->routes->URI->template = $this->routes->{'[$1]/[$2]'}['template'];
+                        $this->routes->URI->page = $this->routes->{'[$1]/[$2]'}['page'];
+                
                         /* Adding data to the page index of the data object that is accessible in the templates and pages */
                         $this->page->title = ucwords(str_ireplace("-", " ", $URIx[2]));
-                        $this->page->catalog_path = '/' . $URIx[1] . '/' . $URIx[2];
-                        $this->page->image_path = $result['image'];
-                        $this->page->fieldnotes_id = $result['fieldnotes_id'];
+                        $this->page->catalog_path = '/' . $URIx[1];
+                        // $this->page->photo = $URIx[2];
+                        $this->page->photo_path = $URIx[2];
+                    break;
 
-                    } else {
-                        $pass_error_page = true;
-                    }
+                    case "product":
+                        /* Mutating the routes URI so the regEx can be found in the routes JSON object */
+                        $this->routes->URI->path = "/" . $URIx[1] . "/[$1]";
+                        $this->routes->URI->template = $this->routes->{"/" . $URIx[1] . '/[$1]'}['template'];
+                        $this->routes->URI->page = $this->routes->{"/" . $URIx[1] . '/[$1]'}['page'];
+                
+                        /* Adding data to the page index of the data object that is accessible in the templates and pages */
+                        $this->page->title = ucwords(str_ireplace("-", " ", $URIx[2]));
+                        $this->page->catalog_path = $URIx[1];
+                    break;
                     
-                } else {
-
-                    /* Mutating the routes URI so the regEx can be found in the routes JSON object */
-                    $this->routes->URI->path = "[$1]/[$2]";
-                    $this->routes->URI->template = $this->routes->{'[$1]/[$2]'}['template'];
-                    $this->routes->URI->page = $this->routes->{'[$1]/[$2]'}['page'];
-            
-                    /* Adding data to the page index of the data object that is accessible in the templates and pages */
-                    $this->page->title = ucwords(str_ireplace("-", " ", $URIx[2]));
-                    $this->page->catalog_path = '/' . $URIx[1];
-                    // $this->page->photo = $URIx[2];
-                    $this->page->photo_path = $URIx[2];
+                    default:
+                    break;
                 }
-
+                
             } else {
                 $pass_error_page = true;
             }

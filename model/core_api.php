@@ -3229,9 +3229,7 @@ public function api_Admin_Update_Settings() {
 
     }
 
-public function api_Insert_Order() {
-
-        // print "api_Insert_Order().start";
+public function api_Insert_Order($params) {
 
          /* extract Data Array */
         extract($_POST, EXTR_PREFIX_SAME, "dup");
@@ -3260,11 +3258,69 @@ public function api_Insert_Order() {
 
             /* Insert into product_order table */
             $promocode = strtoupper($promocode);
-             $sql_po = "
-               INSERT INTO `jmgaller_iesusa`.`product_order` 
-               (`product_customer_id`, `item`, `notes`, `quantity`, `price`, `tax`, `shipping`, `discount`, `invoice_number`) 
-               VALUES 
-               ('{$customer_id}', '{$item_pack}', '{$comments}', '1', '{$price}', '0', '0', '{$promocode}', '{$invoice_no}');";
+
+            if( $ship_UPS_value != '0' ) {
+                $shipping = 30;
+                $shipping_provider = 'UPS';
+            } else {
+                $shipping = 0;
+                $shipping_provider = 'USPS';
+            }
+
+            //  $sql_po = "
+            //    INSERT INTO `jmgaller_iesusa`.`product_order` 
+            //    (`product_customer_id`, `item`, `notes`, `quantity`, `price`, `tax`, `shipping`, `discount`, `invoice_number`) 
+            //    VALUES 
+            //    ('{$customer_id}', '{$item_pack}', '{$comments}', '1', '{$price}', '0', '0', '{$promocode}', '{$invoice_no}');";
+            $sql_po = "
+            INSERT INTO `jmgaller_iesusa`.`product_order` 
+                (
+                    `product_customer_id`, 
+                    `product_id`, 
+                    `item`, 
+                    `notes`, 
+                    `quantity`, 
+                    `price`, 
+                    `tax`, 
+                    `shipping`, 
+                    `shipping_provider`, 
+                    `promo`, 
+                    `promo_amount`, 
+                    `invoice_number`,
+                    `deposit`,
+                    `sq_payment_id`,
+                    `sq_last4`,
+                    `sq_amount_money`,
+                    `sq_status`,
+                    `sq_order_id`,
+                    `sq_receipt_number`,
+                    `sq_receipt_url`
+                ) 
+                VALUES 
+                (
+                    '{$customer_id}',
+                    '1',
+                    '{$item_pack}', 
+                    '{$comments}', 
+                    '1', 
+                    '{$price}', 
+                    '0', 
+                    '{$shipping}', 
+                    '{$shipping_provider}', 
+                    '{$promocode}', 
+                    '{$promo_amt}', 
+                    '{$invoice_no}',
+                    '{$deposit}',
+                    '{$params->payment->id}',
+                    '{$params->payment->card_details->card->last_4}',
+                    '{$params->payment->amount_money->amount}',
+                    '{$params->payment->status}',
+                    '{$params->payment->order_id}',
+                    '{$params->payment->receipt_number}',
+                    '{$params->payment->receipt_url}'
+                );
+
+            ";
 
             $data['sql_po'] = $sql_po;
             $result_po = $this->mysqli->query($sql_po);
@@ -3278,6 +3334,8 @@ public function api_Insert_Order() {
                 $this->log(array("key" => "api", "value" => "Failed To Process Order for " . $contactname, "type" => "failure"));
             }	
             
+        } else {
+            $this->console('NO-DB-CONNECTION');
         }
 
         return($data);
