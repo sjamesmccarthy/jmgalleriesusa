@@ -1,0 +1,50 @@
+/* Query to pass maybe */
+{
+  "title":"2021 Calendar",
+  "price":"19.99",
+  "currency":"USD",
+  "ship_tier":"1",
+  "quantity": "1",
+  "upc": "5FB31085B1B68",
+}
+
+
+/* for image column */
+{
+  "image_1": {
+    "title": "2021 Calendar",
+    "path": "19.99",
+    "alt": "USD",
+    "feature": "true"
+  },
+  "image_2": {
+    "title": "2021 Calendar",
+    "path": "19.99",
+    "alt": "USD",
+    "feature": "false"
+  },
+  "image_3": {
+    "title": "2021 Calendar",
+    "path": "19.99",
+    "alt": "USD",
+    "feature": "false"
+  }
+}
+
+
+/* TBL:product schema */
+[
+    {
+      "product_id": 1,
+      "artist_id": null,
+      "title": "fineart",
+      "desc": null,
+      "image": null,
+      "price": null,
+      "upc": null,
+      "ship_tier": "1",
+      "type": null,
+      "created": "2020-11-17 07:27:47",
+      "status": null
+    }
+  ]

@@ -98,6 +98,41 @@
         "component": "true",
         "title": "Signed Out of Your Studio"
     },
+    "/product/[$1]": {
+        "template": "page",
+        "page": "product",
+        "auth": "false",
+        "component": "true",
+        "title": "[$1]"
+    },
+    "/order-confirmation": {
+        "template": "page",
+        "page": "checkout_thankyou",
+        "auth": "false",
+        "component": "false",
+        "title": "Thank You for Your Order"
+    },
+    "/order-problem": {
+        "template": "page",
+        "page": "checkout_problem",
+        "auth": "false",
+        "component": "false",
+        "title": "Something Went Wrong"
+    },
+    "/checkout": {
+        "template": "page",
+        "page": "checkout_form",
+        "auth": "false",
+        "component": "true",
+        "title": "Checkout"
+    },
+    "/square-process": {
+        "template": "script",
+        "page": "ajax_square_process.php",
+        "auth": "true",
+        "component": "false",
+        "title": "Processing Collector Account Script"
+    },
     "/studio/api/update/collector-account": {
         "template": "script",
         "page": "ajax_collector_account_process.php",

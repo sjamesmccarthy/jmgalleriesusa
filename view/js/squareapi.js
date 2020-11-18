@@ -1,130 +1,229 @@
-<script type='text/javascript'>
-    const idempotency_key = uuidv4();
-    // Create and initialize a payment form object
-    const paymentForm = new SqPaymentForm({
-      // Initialize the payment form elements
-      
-      //TODO: Replace with your sandbox application ID
-      applicationId: "sandbox-sq0idb-uXVokdZzXSSR00D0kXxLMg",
-      inputClass: 'sq-input',
-      autoBuild: false,
-      // Customize the CSS for SqPaymentForm iframe elements
-      inputStyles: [{
-          fontSize: '16px',
-          lineHeight: '24px',
-          padding: '16px',
-          placeholderColor: '#a0a0a0',
-          backgroundColor: 'transparent',
-      }],
-      // Initialize the credit card placeholders
-      cardNumber: {
-          elementId: 'sq-card-number',
-          placeholder: 'Card Number'
-      },
-      cvv: {
-          elementId: 'sq-cvv',
-          placeholder: 'CVV'
-      },
-      expirationDate: {
-          elementId: 'sq-expiration-date',
-          placeholder: 'MM/YY'
-      },
-      postalCode: {
-          elementId: 'sq-postal-code',
-          placeholder: 'Postal'
-      },
-      // SqPaymentForm callback functions
-      callbacks: {
-          /*
-          * callback function: cardNonceResponseReceived
-          * Triggered when: SqPaymentForm completes a card nonce request
-          */
-          cardNonceResponseReceived: function (errors, nonce, cardData) {
-          if (errors) {
-              // Log errors from nonce generation to the browser developer console.
-              console.error('Encountered errors:');
-              errors.forEach(function (error) {
-                  console.error('  ' + error.message);
-              });
-              alert('Encountered errors, check browser developer console for more details');
-               setPayButtonDisableState(false)
-               return;
-          }
-            //  alert(`The generated nonce is:\n${nonce}`);
-            //  setPayButtonDisableState(false);
-             //TODO: Replace alert with code in step 2.1
-             fetch('process-payment', {
-              method: 'POST',
-              headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json'
-              },
-              body: JSON.stringify({
-                nonce: nonce,
-                idempotency_key: idempotency_key,
-                location_id: "REPLACE_WITH_LOCATION_ID"
-              })
-            })
-            .catch(err => {
-              alert('Network error: ' + err);
-            })
-            .then(response => {
-              if (!response.ok) {
-                return response.json().then(
-                  errorInfo => Promise.reject(errorInfo)); //UPDATE HERE
-              }
-              return response.json(); //UPDATE HERE
-            })
-            .then(data => {
-              console.log(data); //UPDATE HERE
-              alert('Payment complete successfully!\nCheck browser developer console for more details');
-              setPayButtonDisableState(false);
-            })
-            .catch(err => {
-              console.error(err);
-              //Generate a new idempotency key for next payment attempt
-              idempotency_key = uuidv4();
-              setPayButtonDisableState(false);
-              alert('Payment failed to complete!\nCheck browser developer console for more details');
-            });
+/**
+ * Define callback function for "sq-button"
+ * @param {*} event
+ */
 
-          }
-      }
-    });
-    
-     //TODO: paste code from step 1.1.5
-     // onGetCardNonce is triggered when the "Pay $1.00" button is clicked
-     function onGetCardNonce(event) {
+var applicationId = 'sandbox-sq0idb-uXVokdZzXSSR00D0kXxLMg';
+var locationId = 'L8NHKFJA0P2JE';
 
-    //Disable the pay button until the nonce is submitted
-    setPayButtonDisableState(true)
+function onGetCardNonce(event) {
 
     // Don't submit the form until SqPaymentForm returns with a nonce
     event.preventDefault();
+  
     // Request a nonce from the SqPaymentForm object
     paymentForm.requestCardNonce();
-}
-paymentForm.build();
-     
-     //Generate a random UUID as an idempotency key for the payment request
-     // length of idempotency_key should be less than 45
-     function uuidv4() {
-        return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
-          var r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);
-          return v.toString(16);
-        });
-     }
-
-     //Disable or enable the Pay button to prevent duplicate payment requests
-     function setPayButtonDisableState(newState) {
-        var payButton = document.getElementById("sq-creditcard");
-        payButton.disabled = newState;
-
-        //Redraw the payment button
-        var buttonContent = payButton.innerHTML;
-        payButton.innerHTML = buttonContent;
-     }
-
-
-    
-  </script>
+  }
+  
+  // Initializes the SqPaymentForm object by
+  // initializing various configuration fields and providing implementation for callback functions.
+  var paymentForm = new SqPaymentForm({
+    // Initialize the payment form elements
+    applicationId: applicationId,
+    locationId: locationId,
+    inputClass: 'pay-input-field',
+  
+    // Customize the CSS for SqPaymentForm iframe elements
+    inputStyles: [{
+      backgroundColor: 'transparent',
+      color: '#333333',
+      fontFamily: '"Helvetica Neue", "Helvetica", sans-serif',
+      fontSize: '16px',
+      fontWeight: '400',
+      placeholderColor: '#8594A7',
+      placeholderFontWeight: '400',
+      padding: '16px',
+      _webkitFontSmoothing: 'antialiased',
+      _mozOsxFontSmoothing: 'grayscale'
+    }],
+  
+    // Initialize Google Pay button ID
+    // googlePay: {
+    //   elementId: 'sq-google-pay'
+    // },
+  
+    // Initialize Apple Pay placeholder ID
+    // applePay: {
+    //   elementId: 'sq-apple-pay'
+    // },
+  
+    // Initialize Masterpass placeholder ID
+    // masterpass: {
+    //   elementId: 'sq-masterpass'
+    // },
+  
+    // Initialize the credit card placeholders
+    cardNumber: {
+      elementId: 'sq-card-number',
+      placeholder: '•••• •••• •••• ••••'
+    },
+    cvv: {
+      elementId: 'sq-cvv',
+      placeholder: 'CVV'
+    },
+    expirationDate: {
+      elementId: 'sq-expiration-date',
+      placeholder: 'MM/YY'
+    },
+    postalCode: {
+      elementId: 'sq-postal-code'
+    },
+  
+    // SqPaymentForm callback functions
+    callbacks: {
+  
+      /*
+       * callback function: methodsSupported
+       * Triggered when: the page is loaded.
+       */
+      methodsSupported: function (methods) {
+        if (!methods.masterpass && !methods.applePay && !methods.googlePay) {
+          var walletBox = document.getElementById('sq-walletbox');
+          walletBox.style.display = 'none';
+        } else {
+          var walletBox = document.getElementById('sq-walletbox');
+          walletBox.style.display = 'block';
+        }
+  
+        // Only show the button if Google Pay is enabled
+        if (methods.googlePay === true) {
+          var googlePayBtn = document.getElementById('sq-google-pay');
+          googlePayBtn.style.display = 'inline-block';
+        }
+  
+        // Only show the button if Apple Pay for Web is enabled
+        if (methods.applePay === true) {
+          var applePayBtn = document.getElementById('sq-apple-pay');
+          applePayBtn.style.display = 'inline-block';
+        }
+  
+        // Only show the button if Masterpass is enabled
+        if (methods.masterpass === true) {
+          var masterpassBtn = document.getElementById('sq-masterpass');
+          masterpassBtn.style.display = 'inline-block';
+        }
+      },
+  
+      /*
+       * callback function: createPaymentRequest
+       * Triggered when: a digital wallet payment button is clicked.
+       */
+      createPaymentRequest: function () {
+  
+        var paymentRequestJson = {
+          requestShippingAddress: false,
+          requestBillingInfo: true,
+          shippingContact: {
+            familyName: "CUSTOMER LAST NAME",
+            givenName: "CUSTOMER FIRST NAME",
+            email: "mycustomer@example.com",
+            country: "USA",
+            region: "CA",
+            city: "San Francisco",
+            addressLines: [
+              "1455 Market St #600"
+            ],
+            postalCode: "94103",
+            phone:"14255551212"
+          },
+          currencyCode: "USD",
+          countryCode: "US",
+          total: {
+            label: "MERCHANT NAME",
+            amount: "1.00",
+            pending: false
+          },
+          lineItems: [
+            {
+              label: "Subtotal",
+              amount: "1.00",
+              pending: false
+            }
+          ]
+        };
+  
+        return paymentRequestJson;
+      },
+  
+      /*
+       * callback function: validateShippingContact
+       * Triggered when: a shipping address is selected/changed in a digital
+       *                 wallet UI that supports address selection.
+       */
+      validateShippingContact: function (contact) {
+  
+        var validationErrorObj ;
+        /* ADD CODE TO SET validationErrorObj IF ERRORS ARE FOUND */
+        return validationErrorObj ;
+      },
+  
+      /*
+       * callback function: cardNonceResponseReceived
+       * Triggered when: SqPaymentForm completes a card nonce request
+       */
+      cardNonceResponseReceived: function(errors, nonce, cardData, billingContact, shippingContact) {
+        if (errors){
+          var error_html = "";
+          for (var i =0; i < errors.length; i++){
+            error_html += "<li> " + errors[i].message + " </li>";
+          }
+          document.getElementById("error").innerHTML = error_html;
+          document.getElementById('sq-creditcard').disabled = false;
+  
+          return;
+        }else{
+          document.getElementById("error").innerHTML = "";
+        }
+  
+        // Assign the nonce value to the hidden form field
+        document.getElementById('card-nonce').value = nonce;
+  
+        // POST the nonce form to the payment processing page
+        document.getElementById('nonce-form').submit();
+  
+      },
+  
+      /*
+       * callback function: unsupportedBrowserDetected
+       * Triggered when: the page loads and an unsupported browser is detected
+       */
+      unsupportedBrowserDetected: function() {
+        /* PROVIDE FEEDBACK TO SITE VISITORS */
+      },
+  
+      /*
+       * callback function: inputEventReceived
+       * Triggered when: visitors interact with SqPaymentForm iframe elements.
+       */
+      inputEventReceived: function(inputEvent) {
+        switch (inputEvent.eventType) {
+          case 'focusClassAdded':
+            /* HANDLE AS DESIRED */
+            break;
+          case 'focusClassRemoved':
+            /* HANDLE AS DESIRED */
+            break;
+          case 'errorClassAdded':
+            /* HANDLE AS DESIRED */
+            break;
+          case 'errorClassRemoved':
+            /* HANDLE AS DESIRED */
+            break;
+          case 'cardBrandChanged':
+            /* HANDLE AS DESIRED */
+            break;
+          case 'postalCodeChanged':
+            /* HANDLE AS DESIRED */
+            break;
+        }
+      },
+  
+      /*
+       * callback function: paymentFormLoaded
+       * Triggered when: SqPaymentForm is fully loaded
+       */
+      paymentFormLoaded: function() {
+        /* HANDLE AS DESIRED */
+      }
+    }
+  });

@@ -70,18 +70,18 @@ if ($recaptcha->score >= 0.5 || $core->env == "local") {
 			break;
 
 		case "RequestQuoteForm":
-            echo "ajax_email_process(RequestQuoteForm)" . __LINE__ . "\n";
-			$to = EMAIL_TO;
-			$subject = 'webform/' . $_POST['contactsubject'];
-			$header_from = "FROM: " . $_POST['contactname'] . " <'" . $_POST['contactemail'] . "'>";
-			$reply_to = $_POST['contactemail'];
-			$sendReply = '1';
-			$send_reply_subject = 'YOUR ORDER CONFIRMATION NUMBER: ' . $_POST['invoice_no'];
-			$send_reply_message = 'Thank you for your order. An art consultant will be in contact with you at, ' . $_POST['contactemail'] . ' within 48 hours to complete your order. This will include providing you with a final invoice through our payment center, Square.' . "\r\n\r\n" . "Thank you for your support!\r\nJames, jmGalleries, https://jmgalleriesusa.com\r\n951-708-1831 PST";
-			if(isSet($_POST['promocode'])) { $_POST['promocode'] = strtoupper($_POST['promocode']); }
-            $result = $core->api_Insert_Order();
-            echo "ajax_email_process(sql-return)\n\n";
-            echo $core->printp_r($result) . "\n\n";
+            // echo "ajax_email_process(RequestQuoteForm)" . __LINE__ . "\n";
+			// $to = EMAIL_TO;
+			// $subject = 'webform/' . $_POST['contactsubject'];
+			// $header_from = "FROM: " . $_POST['contactname'] . " <'" . $_POST['contactemail'] . "'>";
+			// $reply_to = $_POST['contactemail'];
+			// $sendReply = '1';
+			// $send_reply_subject = 'YOUR ORDER CONFIRMATION NUMBER: ' . $_POST['invoice_no'];
+			// $send_reply_message = 'Thank you for your order. An art consultant will be in contact with you at, ' . $_POST['contactemail'] . ' within 48 hours to complete your order. This will include providing you with a final invoice through our payment center, Square.' . "\r\n\r\n" . "Thank you for your support!\r\nJames, jmGalleries, https://jmgalleriesusa.com\r\n951-708-1831 PST";
+			// if(isSet($_POST['promocode'])) { $_POST['promocode'] = strtoupper($_POST['promocode']); }
+            // $result = $core->api_Insert_Order();
+            // echo "ajax_email_process(sql-return)\n\n";
+            // echo $core->printp_r($result) . "\n\n";
             break;
 
 		case "SubscribeForm":

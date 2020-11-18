@@ -302,7 +302,7 @@
         <div class="col-4_sm-12 select-wrapper">
             <label for="frame"></label>
             <select id="frame" name="frame" style="padding-left: 0; margin-bottom: 0;">
-                <option value="PRINT-ONLY">PRINT (or Giclée) ONLY - NO FRAME</option>
+                <option value="PRINT-ONLY-WITH-MATTE">PRINT (or Giclée) ONLY - NO FRAME, MATTE ONLY</option>
                 <option value="Studio-Ash-Gray">FRAME: Studio Ash Gray</option>
                 <option value="Studio-Snow-White">FRAME: Studio Snow White</option>
             </select>

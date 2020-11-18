@@ -15,9 +15,9 @@ require_once( $_SERVER["DOCUMENT_ROOT"] . '/model/core_api.php');
 require_once( $_SERVER["DOCUMENT_ROOT"] . '/controller/core_site.php');
 $core = new Core_Site();
 
-    // $core->printp_r($_POST);
+    // $core->console($_POST);
     $res_discount = strtoupper($_POST['promo']);
-    $res_price= $_POST['cost'];
+    $res_price= (float)$_POST['cost'];
 
      /* Math for total price */
     $promos_array = array($core->config->promo_seasonal, $core->config->promo_holiday, $core->config->promo_generic, $core->config->promo_collector, $core->config->promo_special);
@@ -34,17 +34,19 @@ $core = new Core_Site();
 
     foreach ($promo as $k => $v) {
         if($res_discount == $k) { 
-            $promo_discount = $v; 
+            $promo_discount = $v;
             
             if( strpos($promo_discount, '%') ) {
                 // this is percentage of
-                $n_percent = rtrim($promo_discount) / 100;
-                $get_precent_off = (int)$res_price * $n_percent;
-                $total_price = (int)$res_price + (int)$res_tax + (int)$res_shipping - $get_precent_off;
+                $n_percent = ( (int)rtrim($promo_discount, '\%') / 100);
+                $amt_discount = $res_price * $n_percent;
+                echo $amt_discount; exit;
+                // $total_price = (int)$res_price + (int)$res_tax + (int)$res_shipping - $get_precent_off;
+                $total_price = $res_price - $amt_discount;
                 $usd=null;
             } else {
                 $usd = '$';
-                $total_price = (int)$res_price + (int)$res_tax + (int)$res_shipping - (int)$promo_discount;
+                $total_price = $res_price - $promo_discount;
             }
 
             $promo_active = 1; 
@@ -58,7 +60,8 @@ $core = new Core_Site();
     }
 
     if(count($promo) == 1) {
-        print number_format($total_price, 0, '.', ',');
+        // print number_format($total_price, 0, '.', ',');
+        echo $total_price;
     } else {
         print "INVALID CODE";
     }
