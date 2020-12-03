@@ -25,7 +25,7 @@
     $data_html = $this->api_Admin_Get_Orders();
     $active_orders_count = count($data_html);
     $data_json = json_encode($data_html);
-
+    
     if(isSet($this->routes->URI->queryvals )) {
         $filter = $this->routes->URI->queryvals[1];
     } else {

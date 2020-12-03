@@ -24,7 +24,7 @@
             $catalog_title = 'SHOP OPEN EDITIONS';
             $catalog_desc = 'Beautiful tinyVIEWS<span style="font-size:.9rem; font-weight: 300;"><sup>&trade;</sup></span> Open Edition Fine Art at Affordable Prices.';
             $catalog_tabs_hidden = true;
-            $tv_le_link = '<p class="shop-tv-link"><a href="/galleries">Browse <span style="text-transform: initial">j.McCarthy</span> Limited Editions</a></p>';
+            $tv_le_link = '<p class="shop-tv-link"><a href="/galleries">Browse Limited Editions</a></p>';
         } 
         
         $catalog_photos = $this->api_Catalog_Category_Thumbs_All();
@@ -33,7 +33,7 @@
         $catalog_tabs_hidden = true;
         // $catalog_photos = $this->api_Catalog_Category_Filmstrip($catalog_meta[0]['catalog_collections_id'], 'ALL');
         $catalog_photos = $this->api_Catalog_Category_Filmstrip($catalog_meta[0]['catalog_collections_id'], 'ALL','LE');
-        $tv_le_link = '<p class="shop-tv-link"><a href="/shop">Shop <span style="text-transform: lowercase">tiny</span>VIEWS<span style="font-size:.9rem; font-weight: 300;"><sup>&trade;</sup></span> Open Editions</a></p>';
+        $tv_le_link = '<p class="shop-tv-link"><a href="/all?filter=tinyviews">Shop Open Editions</a></p>';
     }
 
         if( !$catalog_photos['error']) {

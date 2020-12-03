@@ -25,10 +25,10 @@ $core = new Core_Site();
 
     foreach ($promos_array as $key => $val) {
 
-            $promos_split = explode(":", $val);
-             if ($res_discount == $promos_split[0]) {
-                 $promo = array($promos_split[0] => $promos_split[1]);
-             } 
+        $promos_split = explode(":", $val);
+        if ($res_discount == $promos_split[0]) {
+            $promo = array($promos_split[0] => $promos_split[1]);
+        } 
 
     }
 
@@ -59,9 +59,20 @@ $core = new Core_Site();
         $total_price = (int)$res_price + (int)$res_tax + (int)$res_shipping;
     }
 
-    if(count($promo) == 1) {
-        // print number_format($total_price, 0, '.', ',');
-        echo $total_price;
+    if($total_price < 0 ) {
+        print "INVALID CODE -0";
     } else {
-        print "INVALID CODE";
+        if(count($promo) == 1) {
+            echo $total_price;
+        } else {
+            print "INVALID CODE 1";
+        }
     }
+    
+
+    // if(count($promo) == 1) {
+    //     // print number_format($total_price, 0, '.', ',');
+    //     echo $total_price;
+    // } else {
+    //     print "INVALID CODE";
+    // }

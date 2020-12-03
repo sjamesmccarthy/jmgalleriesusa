@@ -1,7 +1,7 @@
 <section id="about">
-    <div class="grid-center-noGutter">
+    <div class="grid-center">
 
-        <div class="col-11">
+        <div class="col-12 nopad">
 
                 <div class="grid">
                     <div class="col bio-profile-pic-bkg">

@@ -30,9 +30,9 @@
 </div>
 
 <section id="polarized" class="pt-24">
-    <div class="grid-noGutter-center">
+    <div class="grid-center">
 
-        <div class="col-10_md-10_sm-12 __container">
+        <div class="col-12_md-10_sm-12 __container">
 
             <!-- <p class="__container--toc"><a href="/polarized">&#8672;</a></p> -->
             <!-- <h1>Journal</h1> -->

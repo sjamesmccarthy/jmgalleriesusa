@@ -6,6 +6,8 @@ require $_SERVER['DOCUMENT_ROOT'] . '/vendor/autoload.php';
 
 $ship_USPS = 0;
 $ship_UPS = 0;
+$ship_UPS_value = null;
+$promo_amt = null;
 
 extract($_POST, EXTR_PREFIX_SAME, "dup");
 /* Double check the numbers */

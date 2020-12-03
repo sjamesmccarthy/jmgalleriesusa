@@ -32,9 +32,9 @@
 $html = <<<END
 <article id="most-popular" class="mt-64">
     <div class="grid">
-        <div class="col-12 center" style="margin-bottom: 16px;">
-        <h2 class="blue thin">YOU MAY ALSO LIKE</h2>
-        <p>More photographs based on what others are viewing</p>
+        <div class="col-12" style="margin-bottom: 16px;">
+        <h3 class="thin">YOU MAY ALSO LIKE</h3>
+        <p>More photographs based on what other collectors are viewing</p>
         </div>
         $thumb_html
     </div>

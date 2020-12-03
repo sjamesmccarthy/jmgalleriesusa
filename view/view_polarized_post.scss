@@ -8,7 +8,7 @@
     }
 
         div, p {
-            font-family: 'Source Serif Pro', serif;
+            // font-family: 'Source Serif Pro', serif;
             font-weight: 400;
         }
 
@@ -38,7 +38,7 @@
         }
 
         .__container--bottom_toc {
-            margin-left: -5%;
+            // margin-left: -5%;
             font-size: 1rem;
             border-top: 1px solid #e4e4e4;
             padding-top: .5rem;
@@ -137,8 +137,8 @@ blockquote {
 
 .image {
     position: relative;
-    margin-left: -12%;
-    width: 120%;
+    // margin-left: -12%;
+    // width: 120%;
 
         @media (max-width: 64em) and (orientation: portrait),
         (max-width: 80em) and (orientation: portrait) 

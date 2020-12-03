@@ -49,25 +49,27 @@ if(isSet($this->routes->URI->queryvals)) {
     foreach ($promos_array as $key => $val) {
 
             $promos_split = explode(":", $val);
-             if ($res_discount == $promos_split[0]) {
+             if ($res_promo == $promos_split[0]) {
                  $promo = array($promos_split[0] => $promos_split[1]);
              }
 
     }
 
     foreach ($promo as $k => $v) {
-        if($res_discount == $k) { 
+
+        if($res_promo == $k) { 
             $promo_discount = $v; 
             
             if( strpos($promo_discount, '%') ) {
                 // this is percentage of
                 $n_percent = rtrim($promo_discount) / 100;
-                $get_precent_off = (int)$res_price * $n_percent;
-                $total_price = (int)$res_price + (int)$res_tax + (int)$res_shipping - $get_precent_off;
+                $get_precent_off = (float)$res_price * $n_percent;
+                echo "percent off" . $get_precent_off . "<br >";
+                $total_price = ( (float)$res_price + (float)$res_tax + (float)$res_shipping - $get_precent_off) * $res_quantity;
                 $usd=null;
             } else {
                 $usd = '$';
-                $total_price = (int)$res_price + (int)$res_tax + (int)$res_shipping - (int)$promo_discount;
+                $total_price = ( (float)$res_price + (float)$res_tax + (float)$res_shipping - (float)$promo_discount) * $res_quantity;
             }
 
             $promo_active = 1; 
@@ -77,9 +79,15 @@ if(isSet($this->routes->URI->queryvals)) {
     if ($promo_active == 1) {
         $promo_discount = "(REFLECTS " . $res_discount . " PROMO " . $usd . $promo_discount . " OFF)";
     } else {
-        $total_price = (int)$res_price + (int)$res_tax + (int)$res_shipping;
+        $total_price = ( (float)$res_price + (float)$res_tax + (float)$res_shipping) * $res_quantity;
     }
     
+    if($res_invoiced != '') {
+        $invoiced_link = "PAID $" . number_format( ($res_sq_amount_money /100) , 2);
+    } else {
+        $invoiced_link = '<a target="_new" href="https://squareup.com/dashboard/invoices">Square</a>';
+    }
+
     if( isSet($res_received) AND isSet($res_invoiced) AND isSet($res_printed) AND isSet($res_packaged) AND isSet($res_shipped) ) {
         $button_label="order closed";
         $button_archive_cancel = NULL;

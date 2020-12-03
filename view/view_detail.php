@@ -1,5 +1,3 @@
-<script src="https://www.google.com/recaptcha/api.js?render=6LetD7YUAAAAAFX5cXupV3exd1YCSuYFY_az92Wh"></script>
-
 <section id="detail">
     <article>
        <?= $super_photo ?>
@@ -8,55 +6,67 @@
 
 <section>
     <article class="">
-    <form id="limited_ed_form" action="/contact" method="post">
-    <input type="hidden" id="g-recaptcha-response" name="g-recaptcha-response" />
+    <form id="limited_ed_form" action="/checkout" method="post">
+    <input type="hidden" name="formType" value="SquarePaymentForm_fineArt" />
+    <input type="hidden" name="product_id" value="<?= $product_id ?>" />
+    <?= $hidden_edition_type ?>
+    <input type="hidden" name="quantity" value="1" />
+    <input type="hidden" name="title" value="<?= $photo_meta['title'] ?>" />
+    <input type="hidden" name="img_type" value="<?= $edition_desc_material ?>" />
+
+    <input type="hidden" name="price" id="price" value="<?= $default_price ?>" />
+    <input type="hidden" name="frame_price" id="frame_price" value="<?= $frame_price_default ?>" />
+    <input type="hidden" name="matted_size" id="matted_size" value="<?= $matted_size_default ?>" />
+
     <?= $catalog_no_hidden ?>
 
-    <div class="grid">
+    <div class="grid mt-64">
 
-        <div class="col-9_sm-12">
+        <div class="col-7_sm-12 border-right">
             <h1 class="detail-h1"><?= $photo_meta['title'] ?></h1>
             <p class="edition-title"><?= $edition_desc ?> <?= $edition_max ?> <?= $edition_desc_material_slash ?></span></p>
-        </div>
+        <!-- </div>
         
-        <div class="col-12 mt-16">
-            <p class="detail-story"><?= $photo_meta['loc_place'] ?> in  <?= $photo_meta['loc_city'] ?>, <?= $photo_meta['loc_state'] ?> &mdash;
+        <div class="col-12 mt-16"> -->
+            <p class="mt-32 detail-story"><?= $photo_meta['loc_place'] ?> in  <?= $photo_meta['loc_city'] ?>, <?= $photo_meta['loc_state'] ?> &mdash;
             <?= $photo_meta['story'] ?></p>
+            <?= $gallery_details ?>
         </div>
 
-    </div>
-            
-    <div class="grid mt-16">
-
-    <div class="col-2_sm-12">
+    <!-- <div class="grid mt-16"> -->
+        <div class="col_sm-12"> <!--col-2_sm-12-->
             <!-- <p class="small blue" style="margin-bottom: -10px; margin-left: 5px;">$ USD</p> -->
-            <p class="blue price">$<span id="price" class="price"><?= number_format($default_price, 2) ?></span></p><p class="frame_data price"></p>
-            <input type="hidden" name="total_cost" id="total_cost" value="<?= $default_price ?>" />
-        </div>
+            <p class="blue price">$<span id="price_view" class="price"><?= number_format($default_price, 2) ?></span></p><p class="frame_data price"></p>
+        <!-- </div> -->
 
        <?= $sizes_frames ?>
 
-       <div class="col-2_sm-12">
-        <?= $btn_link ?><button><?= $btn ?></button></a>
+       
+       <!-- <div class="col-2_sm-12"> -->
+           <?= $btn_link ?><button><?= $btn ?></button></a>
+           <p class="mt-16"><a target="_infoTab" class="small underline normal-weight" href="/styles">Click here for sizing information</a></p>
+           <p class="mt-16 small ">Questions?<br /><a class="small underline normal-weight"target="_infoTab" href="/contact">Please contact us</a> to speak to an Art consultant.</p>
        </div>
+    <!-- </div> -->
 
     </div>
+            
 
     <div class="mt-32">
         <!-- <?= $btn_link ?><button><?= $btn ?></button></a> -->
-        <?= $gallery_details ?>
+        
     </div>
 
-        <article class="nopad">
+        <article class="nopad noshow">
             <div id="alt-imgs" class="grid">
             <?= $in_roomImg ?>
             <?= $in_roomImgAlt ?>
             <?= $tinyviewImage ?>
             <?= $tinyviewNotesImage ?>
+            <?= $tinyViewFinePrint ?>
             </div>
         </article>
 
-    <?= $tinyViewFinePrint ?>
 
     </form>
     </article>
@@ -82,6 +92,7 @@
 
         // Check Frame Options
         var ps = $("#buysize option:selected").val();
+        var ms = $("#buysize option:selected").attr("data-mattedsize");
 
         // Remove frame options from 5x7 and NOTECARDS
         if(ps == '5x7' || ps == 'NOTECARDS') { 
@@ -89,10 +100,10 @@
             $('#frame').find('option').not(':first').attr("disabled", "disabled"); 
             console.log('5x7');
        } else {
-           console.log('ELSE-not 5x7');
-           console.log($("#frame option:selected").val());
+           console.log('ImageSize: ' + ps + '/MattedSize: ' + ms);
+           $('#matted_size').val(ms);
             // $('#frame').find('option').not(':first').css("display", "block");
-            if($("#frame option:selected").val() == "FRAMELESS" || $("#frame option:selected").val() == "ACRYLIC" ) { 
+            if($("#frame option:selected").val() == "FRAMELESS" || $("#frame option:selected").val() == "ADDWITHACRYLIC" ) { 
                     $('#frame').find('option').not(':first').attr("disabled");
                 } else {
                     $('#frame').find('option').not(':first').removeAttr("disabled");
@@ -101,7 +112,8 @@
 
         $("#frame").prop('selectedIndex', 0); 
         $('.frame_data').html(''); 
-        $('#total_cost').val(p);
+        $('#price').val(p);
+        $('#price_view').html(nf.format(p));
 
     });
 
@@ -119,6 +131,7 @@
         else  if($("#frame option:selected").val() == "ADDWITHACRYLIC") {
                 console.log('ADD TO ACRYLIC Premium Designer Frame');
                 $('.frame_data').html( '(+ Premium Frame Cost)');
+                $('#frame_price').val('$');
                 return false;
         }
 
@@ -141,8 +154,10 @@
 
             $('.frame_data').html( '(+' + fp + ' for Frame)');
             // $('.frame_data').html( '(+' + fp + ' ' + $("#frame option:selected").val() + ' Frame)');
-            // $('#total_cost').val(newprice_f);
-            console.log('frame.changed(' + $('#total_cost').val() + ')');
+            // $('#price').val(newprice_f);
+
+            $('#frame_price').val(fp);
+            console.log('frame.changed(' + $('#price').val() + ')');
 
         // ELSE PRINT-ONLY NO FRAME SELECTED
         } else {
@@ -152,17 +167,18 @@
             var newprice = parseFloat($("#buysize option:selected").attr("data-price"));
             newprice_f = parseFloat(newprice).toFixed(2);
              $('.frame_data').html('');
+             $('#frame_price').val('PRINT-ONLY-WITH-MATTE');
         }
 
         // var nf = new Intl.NumberFormat();
         // var p = newprice_f;
-        // console.log('p=' + p);
-        $('#price').html(newprice_f);
-        $('#total_cost').val(newprice_f);
+        console.log('updating price.View(.price)=' + newprice_f);
+        $('#price_view').html(newprice_f);
+        $('#price').val(newprice_f);
 
     });
 
-      $('#limited_ed_form').submit(function() {
+      $('#limited_ed_form-o').submit(function() {
 
         // console.log('start.form.limited_ed_form.submission');
 
@@ -189,7 +205,8 @@
 
             //$("#buysize option:selected").attr("data-price")
 
-              var url = "/contact?photo=<?= $photo_meta['file_name'] ?>&size=" + $('#buysize').val() + "&frame=" + $('#frame').val() + "&cost=" + $('#total_cost').val() + "&edition=<?= $edition ?>" + "&catalog_no=<?= $catalog_no ?>";
+            //   var url = "/contact?photo=<?= $photo_meta['file_name'] ?>&size=" + $('#buysize').val() + "&frame=" + $('#frame').val() + "&cost=" + $('#price').val() + "&edition=<?= $edition ?>" + "&catalog_no=<?= $catalog_no ?>";
+                var url = '/checkout';
 
               grecaptcha.ready(function() {
 

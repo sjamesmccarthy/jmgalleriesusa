@@ -153,8 +153,11 @@ if(isSet($this->data->routePathQuery[0])) {
     $subject_VAL = $subject_PH . ' ' . $edition_text;
     $subject_disabled = 'disabled="disabled"';
     $disabled_css = 'disabled-order';
+    $subject = '<p>
+            <input type="hidden" id="contactsubject" name="contactsubject" value="web-order" />
+            </p>';
     // $formType = "RequestQuoteForm"; 
-    $formType = "SquarePaymentForm"; 
+    $formType = "SquarePaymentForm_fineArt"; 
 
     $estimated_cost_raw = $cost * 100;
     $estimated_cost_calc = "<span id='estimated_cost_format'>" . number_format($cost, 2) . "</span>";
@@ -209,6 +212,10 @@ if(isSet($this->data->routePathQuery[0])) {
     $payment_field = null;
     $subject_VAL = null;
     $subject_disabled = null;
+    $subject = '<p>
+            <!-- <label class="" for="contactinfo">Email Address or Phone Number</label> -->
+            <input class="half-size-old" type="text" id="contactsubject" name="contactsubject" placeholder="' . $subject_PH . '" value="' . $subject_VAL . '" />
+            </p>';
     $formType = "ContactForm";
     $subNotice = null;
 }

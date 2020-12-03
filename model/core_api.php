@@ -275,6 +275,74 @@ class Core_Api extends Fieldnotes_Api
         return($data);
     }
 
+    public function api_Product_Get_Item($uri_path, $id=null) {
+        
+        if(isSet($id)) {
+            $where = "product_id = '" . $id . "'";
+        } else {
+            $where = "uri_path = '" . $uri_path . "'";
+        }
+
+        /* Executes SQL and then assigns object to passed var */
+        if( $this->checkDBConnection(__FUNCTION__) == true) {
+
+            $sql = "SELECT
+                *
+            FROM
+                product
+            WHERE " . $where;
+    
+            $result = $this->mysqli->query($sql);
+
+            if ($result->num_rows > 0) {
+            
+                while($row = $result->fetch_assoc())
+		        {
+		            $data = $row;
+		        }
+                
+            } else {
+                
+                $data['error'] = "No Records Found";
+                $data['sql'] = $sql;
+            }	
+            
+        }
+
+        return($data);
+    }
+
+    public function api_Product_Get_All() {
+
+        /* Executes SQL and then assigns object to passed var */
+        if( $this->checkDBConnection(__FUNCTION__) == true) {
+
+            $sql = "SELECT
+                *
+            FROM
+                product
+            WHERE in_stock = 'true' AND status ='ACTIVE' and type != 'group'";
+    
+            $result = $this->mysqli->query($sql);
+
+            if ($result->num_rows > 0) {
+            
+                while($row = $result->fetch_assoc())
+		        {
+		            $data[] = $row;
+		        }
+                
+            } else {
+                
+                $data['error'] = "No Records Found";
+                $data['sql'] = $sql;
+            }	
+            
+        }
+
+        return($data);
+    }
+
     public function api_CollectorDash_Get_Portfolio($id) {
         
         /* Executes SQL and then assigns object to passed var */
@@ -2947,7 +3015,8 @@ public function api_Admin_Get_Materials_By_Supplier($id) {
             	pc.*
             FROM
             	product_order AS po
-            	INNER JOIN product_customer AS pc ON pc.product_customer_id = po.product_customer_id";
+                INNER JOIN product_customer AS pc ON pc.product_customer_id = po.product_customer_id
+                ORDER BY po.received DESC";
         
             $result = $this->mysqli->query($sql);
 
@@ -3234,13 +3303,32 @@ public function api_Insert_Order($params) {
          /* extract Data Array */
         extract($_POST, EXTR_PREFIX_SAME, "dup");
 
+        // result with non fA product
+        // {"edition":null,"title":"First Light","size":"5x7","framing":null,"catalog_id":"MDT8OT"}
+
+        // result with FA product 
+        // {"edition":"tinyviews","title":"daisies-for-our-lady","size":"12x18","framing":"SNOW-WHITE( $40)","catalog_id":"FFC45OT"}
+
+        if($formType == 'SquarePaymentForm_productOrder') {
+            $edition_type = 'product';
+            $framing = 'NA';
+            $size = 'NA';
+        } 
+
         $item_pack = json_encode(array(
-            "edition"=>$edition,
+            "edition"=>$edition_type,
             "title"=>$title,
             "size"=>$size,
-            "framing"=>$framing,
+            "framing"=>$frame,
             "catalog_id"=>$catalog_id
         ));
+
+        // if payment was square, mark invoiced
+        if(isSet($params->payment->id)) {
+            $invoiced = date("Y-m-d H:i:s");
+         } else {
+             $invoiced = null;
+         }
         
         /* Executes SQL and then assigns object to passed var */
         if( $this->checkDBConnection(__FUNCTION__) == true) {
@@ -3259,11 +3347,11 @@ public function api_Insert_Order($params) {
             /* Insert into product_order table */
             $promocode = strtoupper($promocode);
 
-            if( $ship_UPS_value != '0' ) {
+            if( $ship_UPS_value == '30' ) {
                 $shipping = 30;
                 $shipping_provider = 'UPS';
             } else {
-                $shipping = 0;
+                $shipping = null;
                 $shipping_provider = 'USPS';
             }
 
@@ -3288,6 +3376,7 @@ public function api_Insert_Order($params) {
                     `promo_amount`, 
                     `invoice_number`,
                     `deposit`,
+                    `invoiced`,
                     `sq_payment_id`,
                     `sq_last4`,
                     `sq_amount_money`,
@@ -3302,15 +3391,16 @@ public function api_Insert_Order($params) {
                     '1',
                     '{$item_pack}', 
                     '{$comments}', 
-                    '1', 
+                    '{$quantity}', 
                     '{$price}', 
-                    '0', 
+                    '', 
                     '{$shipping}', 
                     '{$shipping_provider}', 
                     '{$promocode}', 
                     '{$promo_amt}', 
-                    '{$invoice_no}',
+                    '{$order_no}',
                     '{$deposit}',
+                    '$invoiced',
                     '{$params->payment->id}',
                     '{$params->payment->card_details->card->last_4}',
                     '{$params->payment->amount_money->amount}',

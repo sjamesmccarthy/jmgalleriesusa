@@ -1,7 +1,7 @@
 <section id="polarized_idx">
-    <div class="grid-noGutter-center">
+    <div class="grid-center">
 
-        <div class="col-10 __container">
+        <div class="col-12_sm-12 __container">
 
             <!-- <h1>JOURNAL</h1> -->
             <h4 class="subtitle blue center pt-48">a Collection of Field Notes by Photographer j.McCarthy</h4>

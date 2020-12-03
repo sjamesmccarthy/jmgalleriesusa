@@ -1,0 +1,31 @@
+{
+  "USPS": {
+    "name":"USPS Shipping (no tracking)",
+    "abrv":"usps",
+    "tracking":"false",
+    "amount":"10"
+  },
+  "UPS": {
+    "name":"UPS Shipping (with tracking)",
+    "abrv":"ups",
+    "tracking":"true",
+    "amount":"30"
+  },
+  "FEDEX": {
+      "name":"FedEx Shipping (with tracking)",
+      "abrv":"fedex",
+      "tracking":"true",
+      "amount":"60"
+  }
+}
+
+
+
+{
+    "USPS": {
+        "name": "USPS Shipping (no tracking)",
+        "abrv": "usps",
+        "tracking": "false",
+        "amount": "10"
+    }
+}

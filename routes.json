@@ -415,13 +415,19 @@
         "component": "true",
         "title": "Styles, Editions & Pricing"
     },
+    "/shop": {
+        "template": "page",
+        "page": "shop",
+        "component": "true",
+        "title": "Gallery Store"
+    },
     "/books": {
         "template": "redirect",
         "page": "https://www.blurb.com/getting-started#//sell",
         "component": "false",
         "title": "Books & Polarized Quarterly"
     },
-    "/shop": {
+    "/open-editions": {
         "template": "redirect",
         "page": "/all?filter=tinyviews",
         "component": "false",

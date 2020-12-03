@@ -24,6 +24,7 @@
 
     <div>
         <?= $tv_le_link; ?>
+        <p class="shop-tv-link" style="text-transform: lowercase">or, <a href="/shop">Discover Other Fine-Art Products In Our Gallery Store</a></p>
     </div>
 
 </section>

@@ -7,7 +7,6 @@
     
     /* Load all photo meta data */
     $photo_meta = $this->api_Catalog_Photo('0',$this->page->photo_path);
-    // $this->console($photo_meta);
 
     /* API call to fetch parent collections id */
     $collection_detail = $this->api_Admin_Get_Collections_Item($photo_meta['parent_collections_id']);
@@ -117,14 +116,16 @@
             $edition_desc_material = 'Hahnemühle Photo Rag® Metallic Fine Art Paper';
             $frame_disabled_option = '<option value="FRAMEINCLUDED">Select a Frame (Included In Price)</option>';
             $edition_frame = 'and framed in one of our three Premium Designer Frames protected with Tru Vue&reg; Museum Glass.';
+            $frame_price_default = "FRAMEINCLUDED";
         } 
 
         if ($photo_meta['desc'] == 'acrylic') {
             $edition_desc_material = 'Lumachrome HD Acrylic';
-            $edition_frame = 'and float mounted without a frame. One of our Premium Designer Frames can be optionally added at an additional cost.';
+            $edition_frame = 'and is float mounted without a frame. One of our Premium Designer Frames can be optionally added for an additional cost.';
             $frame_disabled = 'disabled';
             $frame_disabled_option = '<option value="FRAMELESS">No Frame Included With Acrylic</option><option value="ADDWITHACRYLIC">+ Add Additional Frame (Please Specify Color In Order Form)</option>';
             $frame_info_link = 'Premium Designer Frames pricing';
+            $frame_price_default = "0";
         } 
 
         $edition_desc_material_slash = '/ ' . $edition_desc_material;
@@ -145,14 +146,17 @@
     if( $photo_meta['as_gallery'] == 1) {
         $ed_G = true;
         $edition = "limited";
+        $product_id = 1;
         $catalog_no = $catalog_code . $photo_meta['catalog_photo_id'] . "LE";
+        $matted_size_default ="0";
         
         $edition_desc = 'LIMITED EDITION';
         $edition_max  = ' OF ' . $this->config->limited_edition_max;
+        $hidden_edition_type = '<input type="hidden" name="edition_type" value="limited" />';
 
         $btn = "BUY ARTWORK";
-        $btn_link = '<a class="btn-nudge";" href="/contact?photo=' . $photo_meta['file_name'] . '">';
-        $gallery_details = '<p class="col-12">This Limited Edition is printed on ' . $edition_desc_material . ' and available in ' . $this->config->available_sizes_limited . ' inches, ' . $edition_frame . ' If you have any questions about our ' . $edition_desc_material . ', or need more information about out <a href="/styles">styles, frames and editions</a>, please <a href="/contact">contact an art consultant</a>.</p>';
+        $btn_link = '<a style="display:block;" class="mt-16" href="/contact?photo=' . $photo_meta['file_name'] . '">'; //class="btn-nudge"
+        $gallery_details = '<p class="mt-32">This Limited Edition is printed on ' . $edition_desc_material . ' and available in ' . $this->config->available_sizes_limited . ' inches ' . $edition_frame . '<!-- If you have any questions about our ' . $edition_desc_material . ', or need more information about out <a href="/styles">styles, frames and editions</a>, please <a href="/contact">contact an art consultant</a>.--></p>';
 
         /* Picking a default value to show */
         if($available_sizes != "in_code") { 
@@ -172,13 +176,13 @@
 
         $sizes_frames = '<div class="col-4_sm-12 select-wrapper">
         <label for="buysize"></label>
-        <select id="buysize" name="buysize" style="padding-left: 0">';
+        <select id="buysize" name="buysize" style="padding-left: 0; margin-bottom: 0;">';
         
         foreach ($le_price_array as $leK => $leV) {
 
             if($leK == $default_size) { $default = 'SELECTED'; } else { $default = null; }
 
-            $sizes_frames_options .= '<option ' . $default . ' data-price="' . $leV . '" value="' . $leK . '">SIZE: ' . $leK . '</option>';
+            $sizes_frames_options .= '<option ' . $default . ' data-price="' . $leV . '" data-mattedsize="0" value="' . $leK . '">SIZE: ' . $leK . '</option>';
 
         }
 
@@ -203,7 +207,11 @@
     if( $photo_meta['as_open'] == 1) {
         $ed_O = true;
         $edition = "tinyviews";
+        $product_id = 2;
+        $edition_desc_material = "Red River Polar Gloss 255 Premium Photo Paper";
         $catalog_no = $catalog_code . $photo_meta['catalog_photo_id'] . "OT";
+        $frame_price_default = "0";
+        $matted_size_default = "8x10";
 
         // if($ed_G === true || $ed_S === true) { $as_editions_tmp .= ", "; }
         // $as_editions_tmp .= "";
@@ -212,9 +220,11 @@
         $edition_desc_material_slash = null;
         $edition_max = null;
 
-        $btn = "BUY ARTWORK";
-        $btn_link = '<a class="btn-nudge" href="/contact?photo=' . $photo_meta['file_name'] . '&open=true">';
+        $hidden_edition_type = '<input type="hidden" name="edition_type" value="open" />';
 
+        $btn = "BUY ARTWORK";
+        $btn_link = '<a style="display:block;" class="mt-16" href="/contact?photo=' . $photo_meta['file_name'] . '&open=true">'; //class="btn-nudge"
+        $gallery_details = '<p class="mt-32">This Open Edition is printed on ' . $edition_desc_material . ' and available in ' . $this->config->available_sizes_open . ' inches (size includes matte). It can also be framed in an optional Studio Frame for additional cost.';
 
         /* Picking a default value to show */
         if($available_sizes != "in_code") { 
@@ -240,7 +250,7 @@
 
         $sizes_frames = '<div class="col-4_sm-12 select-wrapper">
         <label for="buysize"></label>
-        <select id="buysize" name="buysize" style="padding-left: 0;">';
+        <select id="buysize" name="buysize" style="padding-left: 0; margin-bottom: 0;">';
 
         foreach ($tv_price_array as $tvK => $tvV) {
 
@@ -293,7 +303,7 @@
             }
              else {
                 $studio_fp = $studio_frames_pricing[$tvP[1]];
-                $sizes_frames_options .= '<option ' . $default . ' data-price="' . $tvV . '" ' . 'data-frameprice="' . $studio_fp . '" value="' . $tvP[0] . '">SIZE: ' . $tvP[0] . ' (Matted to: ' . $tvP[1] . ')</option>';
+                $sizes_frames_options .= '<option ' . $default . ' data-price="' . $tvV . '" ' . 'data-frameprice="' . $studio_fp . '" value="' . $tvP[0] . '" data-mattedsize="' . $tvP[1] . '">SIZE: ' . $tvP[0] . ' (Matted to: ' . $tvP[1] . ')</option>';
             } 
 
         }
@@ -306,7 +316,7 @@
                 <option value="Studio-Ash-Gray">FRAME: Studio Ash Gray</option>
                 <option value="Studio-Snow-White">FRAME: Studio Snow White</option>
             </select>
-            <span class="tiny"><a href="/styles">More information about frame styles and pricing</span>
+           <!-- <span class="tiny"><a href="/styles">More information about frame styles and pricing</span> -->
         </div>
         <input type="hidden" name="edition" value="open" />';
         

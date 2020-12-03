@@ -12,9 +12,9 @@
         
                 <?php $this->getPartial('nav'); ?>
 
-                    <!-- <div style="min-height: 100vh;"> -->
+                    <div class="content_wrapper">
                         <?php $this->view() ?>
-                    <!-- </div> -->
+                    </div>
 
             </main>
 

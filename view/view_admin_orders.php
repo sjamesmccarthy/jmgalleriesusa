@@ -22,6 +22,7 @@
                                 <th>invoice</th>
                                 <th>received</th>
                                 <th>amount</th>
+                                <th>status</th>
                             </tr>
                         </thead>
                         <tbody></tbody>
@@ -38,6 +39,7 @@
         $('.notification').delay(5000).slideUp("slow").fadeOut(3000);
 
         $('#dataTable').DataTable( {
+            order: [[ 3, "desc" ]],
             processing: true,
             paging: false,
             pagingType: "numbers",
@@ -53,7 +55,7 @@
 
                         if(type === 'display'){
 
-                            data = item_obj.title.toUpperCase() + ', ' + item_obj.edition.toUpperCase() + ' edition';
+                            data = item_obj.title + ' (' + item_obj.edition + ')';
                         }  
                         return data;
                     } 
@@ -70,8 +72,17 @@
                 { data: 'price',
                         "render": function(data, type, row, meta){
                             if(type === 'display'){
-                                if(row.discount != '') { var promo = ' (-PROMO)'; } else { var promo = ''; }
-                                data = data + promo;
+                                if(row.promo != '') { var promo_used = '+'; } else { var promo_used = ''; }
+                                data = data + promo_used;
+                            }  
+                        return data;
+                    } 
+                },
+                { data: 'closed', 
+                        "render": function(data, type, row, meta){
+                            if(type === 'display'){
+                                if(row.closed == '1') { var status_label = 'CLOSED'; } else { var status_label = 'OPEN'; }
+                                data = status_label;
                             }  
                         return data;
                     } 

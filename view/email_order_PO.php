@@ -1,16 +1,18 @@
 <?php
 
+// $this->console($_POST);
+
 $date = date("F j, Y", time());
-$amount_total = $_POST['amount_total'] / 100;
+$amount_total = number_format( ($_POST['amount_total'] / 100), 2);
 $balance_due = ($_POST['price'] + $_POST['ship_UPS_value']) - $amount_total;
 $title = ucwords(  str_replace("-", " ", $_POST['title']) );
-$size = $_POST['size'] . "(image size)";
 
-if($_POST['ship_UPS_value'] == '30') {
-    $ship_type = 'Shipping Provider: UPS Ground (Your tracking number will be sent once your art has ben shipped)';
-} else {
-    $ship_type = 'Shipping Provider: USPS First Class (no tracking)';
-} 
+
+// if($_POST['ship_UPS_value'] == '30') {
+//     $ship_type = 'Shipping Provider: UPS Ground (Your tracking number will be sent once your art has ben shipped)';
+// } else {
+//     $ship_type = 'Shipping Provider: USPS First Class (no tracking)';
+// } 
 
 if($_POST['deposit'] == 'true') {
     $payment_html = "<br>= = = = =<br >$" .  $balance_due . " Balance Due (Will be invoiced later)<br>";
@@ -20,6 +22,12 @@ if($_POST['deposit'] == 'true') {
     $payment_html = null;
     $deposit_label = null;
     $frame_extra_line = null;
+}
+
+if($_POST['promocode'] != '') {
+    $insert_promo = "<p>promo-code: " . strtoupper($_POST['promocode']) . ' applied for $' . $_POST['promo_amt'] . "</p>";
+} else {
+    $insert_promo = null;
 }
 
 $tmpl = "
@@ -41,18 +49,15 @@ ul li {
 <h1>Thank you for your order.</h1>
 
 <br>
-<b>Order Number: </b> " . $_POST['invoice_no'] . "<br />
+<b>Order Number: </b> " . $_POST['order_no'] . "<br />
 <b>Ordered On: </b> " . $date . 
 "<br><br><hr><br><br>
 
-<h2 class='pb-16'>Art to be Shipped</h2>
+<h2 class='pb-16'>Order to be Shipped</h2>
 <ul>
 <li>
-<ul class='ml-32'><li>"
-. $title . "<br>"
-. $size . "<br>"
-. $_POST['framing'] 
-. $frame_extra_line .
+<ul class='ml-32'><li>(" . $_POST['quantity'] . ") "
+. $title .
 "</li></ul></li>
 
 <li>
@@ -65,7 +70,7 @@ ul li {
 <b>Shipment Notifcation:</b><br>"
 . $_POST['contactname'] . "<br>"
 . $_POST['contactemail'] . "<br>"
-. $ship_type .
+. $_POST['shipping_provider'] .
 "</li></ul></li>
 </ul>
 
@@ -74,9 +79,9 @@ ul li {
 <li>
 <ul class='ml-32'><li>
 <p>$"
-. $amount_total. " " . $deposit_label . " charged via Sqaure." 
+. $amount_total. " " . $deposit_label . " charged via Square on card *******" . $_POST['last_4']
 . $payment_html . "
-</p>
+</p>" . $insert_promo . "
 <br><br>
 </li></ul></li>
 </ul>
@@ -95,5 +100,7 @@ Carson City, NV 89701<br>
 951-708-1831<br>
 orders@jmgalleries.com</p>
 ";
+
+$tmpl_jmg = "Online order received for " . $_POST[contactname] . " from " . $_POST['city'] . ", " . $_POST[state] . " for $" . $amount_total . " purchasing " . $_POST['title'] . ".";
 
 ?>

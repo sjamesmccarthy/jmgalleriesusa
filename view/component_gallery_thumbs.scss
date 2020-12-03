@@ -3,15 +3,15 @@
 
 #filmstrip {
 
-    h4 {
+  h4 {
         // text-transform: uppercase;
-        font-size: 1.1rem;
+        font-size: 1rem;
         font-weight: 400;
 
             // xSmall devices (landscape phones, 320px and up)
             @media (min-width: 320px) { 
             //  background-color: pink;
-            font-size: 1.1rem;
+            font-size: 1rem;
             }
         
             // Small devices (landscape phones, 576px and up)
@@ -23,21 +23,21 @@
             // Medium devices (tablets, 768px and up)
             @media (min-width: 767px) {
             //  background-color: blue;
-            font-size: 1.3rem;
+            font-size: 1.5rem;
         }
         
             // Large devices (tablets (iPad Pro, 1112px and up)
             @media (min-width: 1112px) {
             //  background-color: gray;
-                font-size: 1.3rem;
+                font-size: 1.5rem;
             }
         
             // Extra large devices (large desktops, 1200px and up)
             @media (min-width: 1200px) {
             //  background-color: lightgreen;
-            font-size: 1.3rem;
+            font-size: 1.5rem;
             }
-
+            
     }
 }
 

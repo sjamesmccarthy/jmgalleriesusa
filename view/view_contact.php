@@ -27,10 +27,7 @@
             <input class="half-size-old" type="text" id="contactemail" name="contactemail" placeholder="YOUR EMAIL (eg, john.smith@ydomain.com)" value="<?= $email ?>" required>
             <!-- </p> -->
 
-            <p>
-            <!-- <label class="" for="contactinfo">Email Address or Phone Number</label> -->
-            <input class="half-size-old" type="text" id="contactsubject" name="contactsubject" placeholder="<?= $subject_PH ?>" value="<?= $subject_VAL ?>" <?= $subject_disabled ?> />
-            </p>
+            <?= $subject ?>
 
             <?= $formSizes ?>
             <?= $promo_field ?>
@@ -190,7 +187,7 @@
         var oldpriceV = parseFloat($('#estimated_cost').text());
         var oldprice = oldpriceV.toFixed(2);
         var newprice = ( parseFloat(oldprice) + parseFloat(shipping) );
-        var newpriceTrim = newprice.toFixed(2);
+        var newpriceTrim = newprice.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');
         $('#estimated_cost_format').html(newpriceTrim);
         $('#estimated_cost').html(newpriceTrim);
         $('#ship_UPS').attr("disabled",true);
@@ -211,7 +208,7 @@
         var oldprice = parseFloat($('#estimated_cost').text());
         // var oldprice = oldpriceV.toFixed(2);
         var newprice = ( parseFloat(oldprice) - parseFloat(shipping) );
-        var newpriceTrim = newprice.toFixed(2);
+        var newpriceTrim = newprice.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');
         $('#estimated_cost_format').html(newpriceTrim);
         $('#estimated_cost').html(newpriceTrim);
         $('#ship_UPS').attr("disabled",false);

@@ -76,7 +76,7 @@
                 <input class="half-size" type="text" name="item_title" placeholder="ITEM" value="<?= $item_info->title ?>" />
 
                 <label for="edition-style">Edition</label>
-                <input class="half-size" type="text" name="item_edition" placeholder="EDITION" value="<?= $item_info->edition ?>" />
+                <input class="half-size" type="text" name="item_edition" placeholder="EDITION" value="<?= strtoupper($item_info->edition) ?>" />
             </div> 
 
               <div>            
@@ -105,10 +105,14 @@
                 <input type="hidden" name="promocode" value="<?= $res_discount ?>" />
               <div>            
                 <label for="title">Promotional Discount</label>
-                <input class="half-size" type="text" id="discount" name="discount" placeholder="PROMOTIONAL DISCOUNT" value="<?= $res_discount ?>" />
+                <input class="half-size" type="text" id="promo" name="promo" placeholder="PROMOTIONAL DISCOUNT" value="<?= $res_promo ?>" />
+                <input class="half-size" type="text" id="promo_amount" name="promo_amount" placeholder="PROMOTIONAL DISCOUNT AMOUNT" value="<?= $res_promo_amount ?>" />
+            </div>
 
+            <div>
+                <p class="half-size text-right pr-16">TOTAL</p>
                 <label for="title"></label>
-                <input class="half-size bkg-green" type="text" name="total" value="$<?= $total_price ?> <?= $promo_discount ?>" disabled />
+                <input class="half-size bkg-green" type="text" name="total" value="$<?= number_format($total_price,2) ?> <?= $promo_discount ?>" disabled />
 
             </div> 
 
@@ -133,7 +137,7 @@
             <div>            
                  <p id="2_order_invoiced" class="half-size small mb-16 mt-16">
                      <input <?= ($res_invoiced != '' ? "CHECKED DISABLED" : ""); ?> type="checkbox" id="order_invoiced" name="order_invoiced" value="1" /> 
-                     <label for="order_invoiced" style="color: #000"> INVOICED | <a target="_new" href="https://squareup.com/dashboard/invoices">Square</a></label>
+                     <label for="order_invoiced" style="color: #000"> INVOICED | <?= $invoiced_link ?></label>
                 </p>
                 <input type="hidden" name="invoiced" value="<?= $res_invoiced ?>" />
                 <input class="half-size fake-disabled" type="text" name="invoiced" placeholder="PENDING" value="<?= $res_invoiced ?>" disabled/>
@@ -142,10 +146,10 @@
             <div>
                 <p id="3_order_printed" class="half-size small mb-16 mt-16">
                      <input <?= ($res_printed != '' ? "CHECKED disabled" : ""); ?> type="checkbox" id="order_printed" name="order_printed" value="1" /> 
-                     <label for="order_printed" style="color: #000"> PRINTED | <?= $collector_link ?> | <?= $inventory_link ?> </label>
+                     <label for="order_printed" style="color: #000"> PRINTED<br /><?= $collector_link ?> | <?= $inventory_link ?> </label>
                 </p>
                 <input type="hidden" name="printed" value="<?= $res_printed ?>" />
-                <input class="half-size fake-disabled" type="text" name="printed" placeholder="PENDING" value="<?= $res_printed ?>" disabled/>
+                <input class="half-size fake-disabled valign-top" type="text" name="printed" placeholder="PENDING" value="<?= $res_printed ?>" disabled/>
             </div>
             <div>
                  <p id="4_order_packaged" class="half-size small mb-16 mt-16">
@@ -158,7 +162,7 @@
             <div>
                  <p id="5_order_shipped" class="small half-size mb-16 mt-16">
                      <input <?= ($res_shipped != '' ? "CHECKED disabled" : ""); ?> type="checkbox" id="order_shipped" name="order_shipped" value="1" /> 
-                     <label for="order_shipped" style="color: #000"> SHIPPED</label>
+                     <label for="order_shipped" style="color: #000"> SHIPPED via <?= $res_shipping_provider ?></label>
                 </p>
                 <input type="hidden" name="shipped" value="<?= $res_shipped ?>" />
                  <input class="half-size <?= $disable_css ?>" type="text" name="tracking" placeholder="CARRIER +TRACKING" value="<?= $res_shipped ?><?= $res_tracking_number_formatted ?>" /> 

@@ -187,9 +187,21 @@ class Core_Site extends Core_Api
                         /* Adding data to the page index of the data object that is accessible in the templates and pages */
                         $this->page->title = ucwords(str_ireplace("-", " ", $URIx[2]));
                         $this->page->catalog_path = $URIx[1];
+                        $this->page->uri = $URIx[2];
                     break;
                     
                     default:
+                     /* default for /photo/[$1]; */
+                        /* Mutating the routes URI so the regEx can be found in the routes JSON object */
+                        $this->routes->URI->path = "[$1]/[$2]";
+                        $this->routes->URI->template = $this->routes->{'[$1]/[$2]'}['template'];
+                        $this->routes->URI->page = $this->routes->{'[$1]/[$2]'}['page'];
+                
+                        /* Adding data to the page index of the data object that is accessible in the templates and pages */
+                        $this->page->title = ucwords(str_ireplace("-", " ", $URIx[2]));
+                        $this->page->catalog_path = '/' . $URIx[1];
+                        // $this->page->photo = $URIx[2];
+                        $this->page->photo_path = $URIx[2];
                     break;
                 }
                 
@@ -444,13 +456,24 @@ class Core_Site extends Core_Api
                 unset($result['mysqli']);
             } 
 
-            echo "<div style='background-color: yellow; font-size: 1rem;'><p style='font-size: 1rem;'>>>>>> DEBUG INFO --start --env</p>";
-            echo "<p style='font-size: 1rem;'>>>>>> " . $this->env . " / " . date('l jS \of F Y h:i:s A') . "</p></div>";
+            echo "<script>
+            jQuery(document).ready(function($) { 
+                $('.debug_trigger').on('click', function() { 
+                    console.log('debug-window-toggle');
+                    $('#debug_container').toggle();
+                    window.scrollBy(0,100);
+                }); 
+            });
+            </script>";
+            echo "<div class='debug_trigger' style='background-color: yellow; font-size: 1rem;'>";
+            echo "<p style='font-size: 1rem;'>>>>>> " . $this->env . " CONSOLE --start | " . date('l jS \of F Y h:i:s A') . "</p> </div>";
+            echo "<div id='debug_container' style='display:none;'>";
             $this->console($result);
             if(isSet($_POST)) { $this->console($_POST); }
             if(isSet($_SESSION)) { $this->console($_SESSION); }
             if(isSet($_FILES)) { $this->console($_FILES); }
-            echo "<div style='background-color: yellow; font-size: 1rem;'><p style='font-size: 1rem;'>>>>>> DEBUG INFO --exit</p></div>";
+            echo "<div style='background-color: yellow; font-size: 1rem;'><p class='debug_trigger' style='font-size: 1rem;'>>>>>> CONSOLE --end</p></div>";
+            echo "</div>";
         }
     }
 }

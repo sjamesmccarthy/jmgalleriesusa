@@ -51,7 +51,7 @@
                 <!-- <li><a href="/about" class="<?= $about ?>">ABOUT j.McCarthy</a></li> -->
         </ul>
 
-        <div class="thin-line<?= $addToClass ?>"></div>
+        <!-- <div class="thin-line<?= $addToClass ?>"></div> -->
     <!-- </section> -->
 
 <script>
