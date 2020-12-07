@@ -116,12 +116,6 @@ if ($recaptcha->score >= 0.5 || $core->env == "local") {
 			$sendReply = '0';
 			break;
 	}
-	
-
-	// if(isSet($recaptcha)) {
-	// 	$message .= "\n\n" . "RECAPTCHA_RESPONSE: " . json_encode($recaptcha);
-    // }
-  
   	
     /* Encode the Form POST into a JSON array */
 	$message = json_encode($_POST);
