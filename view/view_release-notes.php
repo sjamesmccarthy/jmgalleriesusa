@@ -13,6 +13,13 @@
 
         <div class="col-11" style="position: relative">
 
+        <p class="pt-16">v1.6<br />Dec 07, 2020</p>
+        	<ul>
+            <li>update: font styling throughout site.</li>
+            <li>added: new Sqaure payment integration in new checkout form.</li>
+        	</ul> 
+        </p>
+
         <p class="pt-16">v1.5.2<br />Nov 10, 2020</p>
         	<ul>
             <li>update: change in admin control for pricing LE and TV editions.</li>
