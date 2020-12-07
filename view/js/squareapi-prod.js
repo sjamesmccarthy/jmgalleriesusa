@@ -3,8 +3,8 @@
  * @param {*} event
  */
 
-var applicationId = 'sandbox-sq0idb-uXVokdZzXSSR00D0kXxLMg';
-var locationId = 'L8NHKFJA0P2JE';
+var applicationId = 'sq0idp-ZitEmC8C6b_4l6LbwxCvQg';
+var locationId = 'RZE1NJJB1YG25';
 
 function onGetCardNonce(event) {
 

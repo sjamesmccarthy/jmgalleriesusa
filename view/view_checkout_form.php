@@ -1,5 +1,3 @@
-<script src="https://www.google.com/recaptcha/api.js?render=6LetD7YUAAAAAFX5cXupV3exd1YCSuYFY_az92Wh"></script>
-
 <section id="contact">
     <div class="grid-center">
 
@@ -12,20 +10,18 @@
 
             <form id="nonce-form" action="<?= $action_uri ?>" method="POST">
             <input type="hidden" id="formType" name="formType" value="<?= $formType ?>" />
-            <input type="hidden" id="g-recaptcha-response" name="g-recaptcha-response" />
             <input name="refer_IP" type="hidden" value="<?= $_SERVER['REMOTE_ADDR'] ?>" />
             
-            <!-- <input type="hidden" name="edition" value="product" /> -->
             <input type="hidden" name="title" value="<?= $order_title ?>" />
-            <input type="hidden" id="shipping_cost" name="shipping_cost" value="null" />
-            <input type="hidden" id="shipping_provider" name="shipping_provider" value="null" />
+            <input type="hidden" id="shipping_cost" name="shipping_cost" value="<?= $add_ship_cost ?>" />
+            <input type="hidden" id="shipping_provider" name="shipping_provider" value="<?= $add_shipping_provider ?>" />
             
             <?= $hidden_fields ?>
 
             <h3>About You</h3>
-            <input class="half-size-old"type="text" id="contactname" name="contactname" placeholder="YOUR NAME (eg, John Smith)" value="<?= $name ?>" required>
+            <input class="half-size-old"type="text" id="contactname" name="contactname" placeholder="YOUR NAME (eg, John Smith)" value="<?= $name ?>" >
 
-            <input class="half-size-old" type="text" id="contactemail" name="contactemail" placeholder="YOUR EMAIL (eg, john.smith@ydomain.com)" value="<?= $email ?>" required>
+            <input class="half-size-old" type="text" id="contactemail" name="contactemail" placeholder="YOUR EMAIL (eg, john.smith@ydomain.com)" value="<?= $email ?>" >
 
             <h3 class="mt-32 pb-0">Your Order for $<span id="estimated_cost_format"><?= $estimated_cost_calc ?></span> <span id="estimated_cost_format_strike" style="text-decoration: line-through; color: #e4e4e4;"><span></h3>
             <span id="estimated_cost" class="noshow"><?= $cost ?></span>
@@ -33,18 +29,22 @@
             <input type='hidden' id="price" name='price' value="<?= $cost ?>" />
             <input type='hidden' id="quantity" name='quantity' value="<?= $res_quantity ?>" />
             
-            <textarea style="border:0; border-left: 1px solid #e4e4e4; margin-left: 2rem; font-size: 1rem; height: 12rem; margin-top: 8px;"  id="contactsubject" name="contactsubject" disabled /><?= $order_subject ?></textarea>
+            <div style="border:0; border-left: 1px solid #e4e4e4; margin-left: 2rem; padding-left: 1rem; font-size: 1rem; height: 12rem; margin-top: 8px;">
+            <?= nl2br($order_subject) ?>   
+            </div>
+
+            <textarea style="display:none;"  id="contactsubject" name="contactsubject" disabled /><?= $order_subject ?></textarea>
 
             <p class="pt-8 pb-32 promo-container"><input class="half-size" style="margin-bottom: 0;" type="text" id="promocode" name="promocode" placeholder="PROMO CODE" value="<?= $promo_code ?>" /><input type="hidden" id="promo_amt" name="promo_amt" value="0" /><span class="ml-16 tiny promo-btn"><a href="#" id="apply_promo">apply code</a></span></p><p class="promo-label"><b>PROMO <span class="promo-name uppercase"></span> APPLIED</b></p>
 
             <div>
                 <h3 class="pt-16">Ship To</h3> 
-                <p><input class="half-size-old" type="text" name="address" placeholder="SHIPPING ADDRESS (eg, 123 Main St.)" value="<?= $address ?>" $required />
-                <input class="half-size-old" type="text" name="address_other" placeholder="SHIPPING ADDRESS SECOND LINE (eg, Suite, Apt)" value="<?= $address_exxtra ?>"/></p>
-                <p><input class="half-size-old" type="text" name="city" placeholder="CITY (eg, Las Vegas, Dallas, Barstow)" value="<?= $city ?>"required/>
-                <input class="half-size-old" type="text" name="state" placeholder="State (eg, NV, CA, NY, TX)" value="<?= $state ?>"required/></p>
-                <p><input class="half-size-old" type="text" name="postalcode" placeholder="Postal Code (eg, 95474)" value="<?= $postalcode ?>"required/><p>
-                <p><input class="half-size-old" type="text" name="phone" placeholder="PHONE (eg, 951-708-1831)" value="<?= $phone ?>"required /><p>
+                <p><input class="half-size-old" type="text" id="address" name="address" placeholder="SHIPPING ADDRESS (eg, 123 Main St.)" value="<?= $address ?>" $ />
+                <input class="half-size-old" type="text" id="address_other" name="address_other" placeholder="SHIPPING ADDRESS SECOND LINE (eg, Suite, Apt)" value="<?= $address_exxtra ?>"/></p>
+                <p><input class="half-size-old" type="text" id="city" name="city" placeholder="CITY (eg, Las Vegas, Dallas, Barstow)" value="<?= $city ?>"/>
+                <input class="half-size-old" type="text" id="state" name="state" placeholder="State (eg, NV, CA, NY, TX)" value="<?= $state ?>"/></p>
+                <p><input class="half-size-old" type="text" id="postalcode" name="postalcode" placeholder="Postal Code (eg, 95474)" value="<?= $postalcode ?>"/><p>
+                <p><input class="half-size-old" type="text" id="phone" name="phone" placeholder="PHONE (eg, 951-708-1831)" value="<?= $phone ?>" /><p>
                 
                 <ul class="shipping">
                     <?= $ship_rates_html ?>
@@ -61,7 +61,7 @@
 
 
             <button class="mt-32" id="sq-creditcard" 
-                    onclick="onGetCardNonce(event)" value="SEND"><?= $button_label ?></button>
+                    value="SEND"><?= $button_label ?></button>
 
             <div id="error"></div>
             <input type="hidden" id="card-nonce" name="nonce">
@@ -71,26 +71,7 @@
         </div>
 
         <div class="pl-32 col-3_sm-11">
-            <!-- <h1 style="line-height: 1">Staying Connected</h1>
-            <p class="pt-16">There are numerous ways to stay connected with j.McCarthy and jM Galleries from following on Instagram, LinkedIn, Twitter to subscribing to the monthly newsletter or reading our <a href="/polarized">Field Notes</a> blog.</p> -->
-            
-            <h2 class="pt-32" style="line-height: 1">Join<br />My Newsletter</h2>
-            <p class="pt-16 pb-16">Every month I will send you a new photograph to enjoy as well as a special offer for a tinyViews&trade; Edition and preview an upcoming Limited Edition.</p>
-            <input type="text" class="newsletterinput" name="email_signup" id="email_signup" placeholder="Your Email" /><button class="newsletter-button"><i class="fas fa-arrow-right" style="vertical-align: middle; margin-top: -15px; position: relative;"></i></button>
-
-            <h2 class="pt-32" style="line-height: 1">Read<br />My Field Notes</h2>
-            <p class="pt-16">A weekly blog about art, photography, collecting and my photography adventures.</p>
-            <p class="pt-16"><a href="/polarized">Read Now</a></p>
-
-            <h2 class="pt-32" style="line-height: 1">Follow Me<br />on Social Media</h2>
-            <p class="pt-16">
-                <!-- <a target="_new" class="mr-16 blue" style="font-size: 1.5rem" href="http://twitter.com/jmgalleriesusa"><i class="fab fa-twitter"></i></a> -->
-                <a target="_new" class="mr-16 blue" style="font-size: 1.5rem" href="http://linkedin.com/company/jmgalleriesusa"><i class="fab fa-linkedin"></i></a>
-                <a target="_new" class="mr-16 blue" style="font-size: 1.5rem" href="http://instagram.com/jmgalleriesusa"><i class="fab fa-instagram"></i></a>
-                <!-- <a class="mr-16" href="/polarized"><i class="fas fa-pen-alt"></i></a> -->
-                <!-- <a target="_new" class="mr-16" href="/signup"><i class="fas fa-envelope"></i></a> -->
-            </p>
-
+           <?php $this->getPartial('findus'); ?>
         </div>
 
     </div>
@@ -226,62 +207,63 @@
 
     });
 
-      $('#CheckOutForm').submit(function() {
+    $("input[type=text]").on("focus", function(e) {
+        var ele = ".e_" + $(this).attr("id");
+        console.log(ele);
+        $(ele).hide();
+    });
 
-        console.log('CheckOutForm.submit().');
+    $('#nonce-form').submit(function(e) {
+        console.log('formSubmit()');
+
+        var errors=0;
+        var contactname = $("input[name='contactname']").val();
+        var contactemail = $("input[name='contactemail']").val();
+        var contactsubject = $("textarea[name='contactsubject']").val();
+        var address = $("input[name='address']").val();
+        var city = $("input[name='city']").val();
+        var state = $("input[name='state']").val();
+        var postalcode = $("input[name='postalcode']").val();
+        var phone = $("input[name='phone']").val();
         
-        grecaptcha.execute('6LetD7YUAAAAAFX5cXupV3exd1YCSuYFY_az92Wh', {action: 'homepage'}).then(function(token) {
-              document.getElementById('g-recaptcha-response').value = token;
-              console.log('grecaptcha.ready');
-              console.log( document.getElementById('g-recaptcha-response') );
-        });
+        $(".error").remove();
 
-            event.preventDefault();
-            console.log('validating...');
-            
-            var name = $("#contactname").val();
-            var email = $("#contactemail").val();
-            var subject = $("#contactsubject").val();
-            var message = $("#message").val();
+        if (contactname.length < 1) {
+            $('#contactname').after('<span class="e_contactname error">This field is required</span>');
+            ++errors;
+        }
+        if (contactemail.length < 1) {
+            $('#contactemail').after('<span class="e_contactemail error">This field is required</span>');
+            ++errors;
+        }
+        if (address.length < 1) {
+            $('#address').after('<span class="e_address error">This field is required</span>');
+            ++errors;
+        }
+        if (city.length < 1) {
+            $('#city').after('<span class="e_city error">This field is required</span>');
+            ++errors;
+        }
+        if (state.length < 1) {
+            $('#state').after('<span class="e_state error">This field is required</span>');
+            ++errors;
+        }
+        if (postalcode.length < 1) {
+            $('#postalcode').after('<span class="e_postalcode error">This field is required</span>');
+            ++errors;
+        }
+        if (phone.length < 1) {
+            $('#phone').after('<span class="e_phone error">This field is required</span>');
+            ++errors;
+        }
 
-            if (name == '' || email == '' || subject == '') {
-              alert("Please Fill Required Fields To Send Message.");
-            //   return false;
-            } else {
-              console.log('validation PASS');
-            }
-
-            console.log('Sending... ' + $('#g-recaptcha-response').val());
-
-              var url = "/view/ajax_email_process.php";
-
-              grecaptcha.ready(function() {
-
-                  grecaptcha.execute('6LetD7YUAAAAAFX5cXupV3exd1YCSuYFY_az92Wh', {action: 'homepage'}).then(function(token) {
-                    $.ajax({
-                      type: "POST",
-                      url: url,
-                      data: $("#contactForm").serialize(),
-                      async: true,
-                      success: function(data)
-                      {
-                          
-                          var data_html = "Thank You For Your Order, an art consultant will be in touch in 48 hours.";
-                          $('.form-main').prop('disabled', true).css('opacity','.3');
-                          $('.form-main').slideUp('slow');
-                          $('#sendform').hide();
-                          $('#form_response').html(data_html).addClass('success').show();
-                          console.log(data);
-                      },
-                      error : function(request,error) {
-                          console.log("Request: "+JSON.stringify(request));
-                      }
-                    });
-                    
-                    return false;
-                  });
-              });
-        });
+        if(errors > 1) {
+            return false;
+        } else {
+            onGetCardNonce(event);
+        }
+        
+    });
 
   });
 

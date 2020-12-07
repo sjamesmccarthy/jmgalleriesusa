@@ -2,14 +2,14 @@
 
     padding: 0 32px;
 
-    #teaser >p {
+    #teaser >div, #teaser >p {
         font-size: 1.5rem;
         // padding-bottom: 1rem;
     }
 
         div, p {
             // font-family: 'Source Serif Pro', serif;
-            font-weight: 400;
+            font-weight: 200;
         }
 
     .__container {

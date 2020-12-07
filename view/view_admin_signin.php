@@ -2,13 +2,13 @@
   <div class="grid-2-center signin--container">
   
     <div class="col signin--area">
-      <h1 class="pl-16">HELLO. </h1>
+      <h1 class="pb-16">HELLO. </h1>
       <form action="/studio/auth" class="" autocomplete="off" method="post">
         <input type="hidden" name="state" value="auth" />
 
         <div>
         <label for="username">username</label>
-        <input placeholder="PLEASE SIGN-IN WITH YOUR USERNAME" type="text" id="username" name="username" value="<?= $username ?>" tabindex="1"></input>
+        <input style="margin-bottom: 0" placeholder="PLEASE SIGN-IN WITH YOUR USERNAME" type="text" id="username" name="username" value="<?= $username ?>" tabindex="1"></input>
         </div>
 
         <!-- <div>

@@ -3347,13 +3347,13 @@ public function api_Insert_Order($params) {
             /* Insert into product_order table */
             $promocode = strtoupper($promocode);
 
-            if( $ship_UPS_value == '30' ) {
-                $shipping = 30;
-                $shipping_provider = 'UPS';
-            } else {
-                $shipping = null;
-                $shipping_provider = 'USPS';
-            }
+            // if( $ship_UPS_value == '30' ) {
+            //     $shipping = 30;
+            //     $shipping_provider = 'UPS';
+            // } else {
+            //     $shipping = null;
+            //     $shipping_provider = 'USPS';
+            // }
 
             //  $sql_po = "
             //    INSERT INTO `jmgaller_iesusa`.`product_order` 
@@ -3394,7 +3394,7 @@ public function api_Insert_Order($params) {
                     '{$quantity}', 
                     '{$price}', 
                     '', 
-                    '{$shipping}', 
+                    '{$shipping_cost}', 
                     '{$shipping_provider}', 
                     '{$promocode}', 
                     '{$promo_amt}', 

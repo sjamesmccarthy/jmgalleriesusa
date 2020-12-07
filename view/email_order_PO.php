@@ -30,6 +30,12 @@ if($_POST['promocode'] != '') {
     $insert_promo = null;
 }
 
+if($_POST['address_other'] != '') {
+    $address_other = $_POST['address_other'] . "<br>";
+} else {
+    $address_other = null;
+}
+
 $tmpl = "
 <style>
 
@@ -64,7 +70,7 @@ ul li {
 <h3 class='pb-16 pt-32'>Shipping Address:</h3><ul class='ml-32'><li>"
 . $_POST['contactname'] . "<br>"
 . $_POST['address'] . "<br>"
-. $_POST['address_other'] . "<br>"
+. $address_other 
 . $_POST['city'] . "," . $_POST['state'] . " " . $_POST['postalcode'] .
 "<br><br>
 <b>Shipment Notifcation:</b><br>"

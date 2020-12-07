@@ -421,6 +421,18 @@
         "component": "true",
         "title": "Gallery Store"
     },
+    "/store": {
+        "template": "page",
+        "page": "shop",
+        "component": "true",
+        "title": "Gallery Store"
+    },
+    "/product": {
+        "template": "page",
+        "page": "shop",
+        "component": "true",
+        "title": "Gallery Store"
+    },
     "/books": {
         "template": "redirect",
         "page": "https://www.blurb.com/getting-started#//sell",

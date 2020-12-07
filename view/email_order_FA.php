@@ -50,7 +50,7 @@ if($_POST['deposit'] == 'true') {
     }
 } else {
     $payment_html = null;
-    $deposit_label = null;
+    $deposit_label = 'no deposit - open edition';
     $frame_extra_line = null;
 }
 
@@ -67,6 +67,13 @@ if($_POST['promocode'] != '') {
 if(isSet($_POST['matted_size'])) {
     $matted_size = " (matted to " . $_POST['matted_size'] . ")";
 }
+
+if($_POST['address_other'] != '') {
+    $address_other = $_POST['address_other'] . "<br>";
+} else {
+    $address_other = null;
+}
+
 $tmpl = "
 <style>
 
@@ -105,7 +112,7 @@ ul li {
 <h3 class='pb-16 pt-32'>Shipping Address:</h3><ul class='ml-32'><li>"
 . $_POST['contactname'] . "<br>"
 . $_POST['address'] . "<br>"
-. $_POST['address_other'] . "<br>"
+. $address_other 
 . $_POST['city'] . "," . $_POST['state'] . " " . $_POST['postalcode'] .
 "<br><br>
 <b>Shipment Notifcation:</b><br>"

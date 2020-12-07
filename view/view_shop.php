@@ -5,7 +5,7 @@
             <div class="hero-headline">
                 <h2>tinyViews<sup class="tiny">&trade;</sup> Notecards</h2>
                 <p>a simple way to say Hi with a Fine Art vibe.</p>
-                 <p class="hero-headline-btn"><a href="/product/">Shop</a></p>
+                 <button class="mt-32"><a href="/product/">Shop Notecards</a></button>
             </div>
         </div>
     </div>

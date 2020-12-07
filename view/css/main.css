@@ -1834,7 +1834,7 @@ p, div, blockquote, caption, figure, legend {
   margin: 0 0 0 0;
   padding: 0 0 0 0;
   font-size: 1.2rem;
-  font-weight: 400;
+  font-weight: 200;
   box-sizing: border-box; }
 
 button,
@@ -2207,6 +2207,7 @@ h1.supersize {
 form label {
   position: absolute;
   font-size: .8rem;
+  font-weight: 200;
   margin-top: -4px;
   background-color: #DDD;
   color: #4a4a4a;
@@ -2308,8 +2309,10 @@ textarea {
   text-align: center; }
 
 .error {
+  margin-top: -1rem;
+  display: block;
   margin-bottom: 1rem;
-  padding: 20px;
+  padding: 6px;
   background-color: #f5c6cb;
   color: #721c24;
   text-align: center; }
@@ -2403,7 +2406,8 @@ button {
   border: 0;
   min-width: 50px;
   letter-spacing: 1px;
-  padding: 12px;
+  padding: 0 16px;
+  height: 50px;
   box-sizing: border-box;
   text-transform: uppercase; }
 
@@ -2497,7 +2501,8 @@ button a {
 
 .divTableCell, .divTableHead {
   display: table-cell;
-  padding: 3px 0; }
+  padding: 3px 0;
+  font-size: 1rem; }
 
 .divTableHeading {
   background-color: #EEE;
@@ -3248,16 +3253,14 @@ button a {
 /* ********************** */
 /* partial_newsletter */
 .newsletterinput {
-  width: 80% !important;
-  height: 35px !important;
+  width: 75% !important;
   margin-bottom: 0 !important;
   background-color: #FFF !important;
-  padding-left: .5rem !important; }
+  padding-left: .5rem !important;
+  margin-right: 8px; }
 
 .newsletter-button {
-  height: 35px;
-  vertical-align: middle;
-  border-radius: 0; }
+  height: 51px; }
 
 .h3-sub {
   color: #FFF;
@@ -3353,6 +3356,7 @@ button a {
 .text-l {
   text-align: left !important; }
 
+/* styles are included from app.scss and reset.scss */
 /* ********************** */
 /* partial_footer */
 #footer {
@@ -3541,12 +3545,6 @@ fieldset {
   border-radius: 4px;
   text-transform: uppercase;
   text-align: center; }
-
-.checkout-sub {
-  margin-bottom: 32px;
-  margin-top: -1rem;
-  font-weight: 600;
-  font-size: 1.3rem; }
 
 #contact h3 {
   padding-bottom: 2rem; }
@@ -4215,9 +4213,6 @@ input.amazing-offer-error[type="text"] {
     list-style: square;
     margin-left: 1rem; }
 
-.content__area div, .content__area p {
-  font-size: 1.3rem; }
-
 .storycard {
   margin-bottom: 32px;
   position: relative;
@@ -4302,10 +4297,10 @@ input.amazing-offer-error[type="text"] {
 
 #polarized {
   padding: 0 32px; }
-  #polarized #teaser > p {
+  #polarized #teaser > div, #polarized #teaser > p {
     font-size: 1.5rem; }
   #polarized div, #polarized p {
-    font-weight: 400; }
+    font-weight: 200; }
   #polarized .__container h3 {
     font-size: 2.5rem;
     font-weight: 600;
@@ -4655,18 +4650,14 @@ blockquote {
     padding: 14rem 0 0 7rem; }
     .hero .hero-headline h2 {
       color: #FFFFFF; }
-    .hero .hero-headline-btn {
-      display: inline-block;
-      margin-top: 32px;
-      padding: .5rem;
-      border-radius: 14px;
-      background-color: #FFFFFF;
-      color: #4a4a4a;
-      text-transform: uppercase;
-      font-size: .9rem; }
-      .hero .hero-headline-btn a:hover {
+    .hero .hero-headline button {
+      background-color: #FFF;
+      border-radius: 40px; }
+      .hero .hero-headline button a {
+        color: #000; }
+      .hero .hero-headline button a:hover {
         color: #4a4a4a; }
-      .hero .hero-headline-btn:hover {
+      .hero .hero-headline button:hover {
         transform: scale(1.06);
         transition: opacity .3s, color .3s, background-color .3s, border-color .3s, transform .3s; }
 
@@ -4692,7 +4683,6 @@ blockquote {
 
 .checkout-sub {
   margin-bottom: 32px;
-  margin-top: -1rem;
   font-weight: 200;
   font-size: 1.3rem; }
 

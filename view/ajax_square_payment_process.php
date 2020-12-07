@@ -1,7 +1,13 @@
 <?php
 
-/* First process payment via Sqaure Payments API */
+/* include conf-env file */
+require_once( $_SERVER["DOCUMENT_ROOT"] . '/model/fieldnotes_api.php');
+require_once( $_SERVER["DOCUMENT_ROOT"] . '/model/core_api.php');
+require_once( $_SERVER["DOCUMENT_ROOT"] . '/controller/core_site.php');
+$core = new Core_Site();
+// $core->console($core->config_env->env[$core->env]['sq_application_id'],1);
 
+/* First load Square Payments API */
 require $_SERVER['DOCUMENT_ROOT'] . '/vendor/autoload.php';
 
 $ship_USPS = 0;
@@ -10,16 +16,10 @@ $ship_UPS_value = null;
 $promo_amt = null;
 
 extract($_POST, EXTR_PREFIX_SAME, "dup");
-/* Double check the numbers */
-// compare the <SPAN> numer with the POST number, if all is good process, if not redirect to problem with your purchase page
-// amount_total (cents);
-// price + shipUSPS + shipUPS - promo_amt = amount_total
 
 if(!isSet($deposit)) {
     $confirm_amount = ($price + $ship_USPS + $ship_UPS_value) - $promo_amt;
     $sq_amount = $amount_total;
-    // print "Calcd: " . $confirm_amount . "<br />";
-    // print "varPassAmt: " . $sq_amount;
 } else {
     // echo "DEPOSIT ONLY TRANSACTION";
 }
@@ -30,11 +30,13 @@ use Square\Exceptions\ApiException;
 use Square\SquareClient;
 
 // Pulled from the .env file and upper cased e.g. SANDBOX, PRODUCTION.
-$env = 'sandbox';
+// $env = 'sandbox';
+$env = $core->config_env->env[$core->env]['sq_env']; 
 
 // The access token to use in all Connect API requests.
 // Set your environment as *sandbox* if you're just testing things out.   
-$access_token =  'EAAAEK5b7Z0blLhzMRy9cVYYEa5hsXjIaaUhDxn4rt7Rz8X8Kg1LoByecB5aq34L';    
+// $access_token =  'EAAAEK5b7Z0blLhzMRy9cVYYEa5hsXjIaaUhDxn4rt7Rz8X8Kg1LoByecB5aq34L';    
+$access_token =  $core->config_env->env[$core->env]['sq_access_token'];    
 
 // Initialize the Square client.
 $client = new SquareClient([

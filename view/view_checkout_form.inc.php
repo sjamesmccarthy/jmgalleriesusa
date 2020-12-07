@@ -1,5 +1,4 @@
 <?php
-
 extract($_POST, EXTR_PREFIX_ALL, "res");
 
 /* Look up prodcut in database and check price */
@@ -119,7 +118,11 @@ switch($res_formType) {
 $res_ship_rates = json_decode($res_ship_rates,TRUE);
 $ship_methods = count((array)$res_ship_rates);
 
-if($ship_methods == 1) { $disabled = 'disabled'; } else { $disabled = null; }
+if($ship_methods == 1) { 
+    $disabled = 'disabled'; 
+} else { 
+    $disabled = null; 
+}
 
     foreach($res_ship_rates as $sK => $sV) {
 
@@ -133,10 +136,12 @@ if($ship_methods == 1) { $disabled = 'disabled'; } else { $disabled = null; }
                 $disabled = 'disabled';
                 $checked = 'checked';
                 $add_ship_cost = $sV['amount'];
+                $add_shipping_provider = $sV['name'];
             } else {
                 $disabled = null;
                 $checked = null;
                 $add_ship_cost = 0;
+                $add_shipping_provider = $sV['name'];
             }
 
             $ship_rates_html .= '<li>
@@ -170,7 +175,7 @@ if ($this->config->component_notice == 'true') {
 /* Initialize Sqaure payment fields */
 $pay_SqPaymentForm = '<script type="text/javascript" src="https://js.squareupsandbox.com/v2/paymentform"></script>';
 $pay_SqForm_CSS = '<link rel="stylesheet" type="text/css" href="/view/css/sq-payment-form.css?<?= time(); ?>">';
-$pay_SqPaymentForm_localjs = '<script type="text/javascript" src="/view/js/squareapi.js"></script>';
+$pay_SqPaymentForm_localjs = '<script type="text/javascript" src="/view/js/squareapi-' . $this->env . '.js"></script>';
 $pay_SqPaymentFormFields = '
     <input type="text" id="amount_total" name="amount_total" value="' . $estimated_cost_raw  . '" />
     <div id="sq-walletbox">

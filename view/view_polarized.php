@@ -1,10 +1,10 @@
-<section id="polarized_idx">
+<section id="polarized_idx" class="pt-24">
     <div class="grid-center">
 
         <div class="col-12_sm-12 __container">
 
-            <!-- <h1>JOURNAL</h1> -->
-            <h4 class="subtitle blue center pt-48">a Collection of Field Notes by Photographer j.McCarthy</h4>
+            <h1 class="">Polarized</h1>
+            <h4 class="subtitle blue">a Collection of Field Notes by Photographer j.McCarthy</h4>
 
             <!-- START_CARDS -->
             <div class="--card_layout">
@@ -14,10 +14,10 @@
             </div>
             <!-- /START_CARDS -->
 
-            <div class="mt-32" style="margin-bottom: 1rem; text-transform: uppercase; font-weight: 800;">Some older Field Notes ... </div>
+            <!-- <div class="mt-32" style="margin-bottom: 1rem; text-transform: uppercase; font-weight: 800;">Some older Field Notes ... </div>
             <ul>
                 <?= $card_older_html ?>
-            </ul>
+            </ul> -->
            
         </div>
 
