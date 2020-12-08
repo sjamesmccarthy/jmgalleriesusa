@@ -134,12 +134,41 @@ position: relative;
     line-height: 1.5;
     text-align: center;
     background-color: #FFF;
-    width: 25%;
     border-radius: 40px;
     margin: auto;
     padding: .5rem;
     margin-top: 1rem;
     
+    // xSmall devices (landscape phones, 320px and up)
+    @media (min-width: 320px) { 
+        //  background-color: pink;
+        width: 85%;
+    }
+
+    // Small devices (landscape phones, 576px and up)
+    @media (min-width: 576px) { 
+        //  background-color: red;
+        width: 50%;
+    }
+
+    // Medium devices (tablets, 768px and up)
+    @media (min-width: 767px) {
+        //  background-color: blue;
+        width: 45%;
+    }
+
+    // Large devices (tablets (iPad Pro, 1112px and up)
+    @media (min-width: 1112px) {
+        //  background-color: gray;
+        width: 45%;
+    }
+
+    // Extra large devices (large desktops, 1200px and up)
+    @media (min-width: 1200px) {
+        //  background-color: lightgreen;
+        width: 25%;
+    }
+
     >a {
         text-transform: uppercase;
         font-size: 1.5rem;
