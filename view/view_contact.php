@@ -19,12 +19,12 @@
                 <!-- <p> -->
                 <!-- <label class="" for="name">YOUR NAME</label> -->
                 <?= $order_about_you ?>
-                <input class="half-size-old"type="text" id="contactname" name="contactname" placeholder="YOUR NAME (eg, John Smith)" value="<?= $name ?>" required>
+                <input class="half-size-old"type="text" id="contactname" name="contactname" placeholder="YOUR NAME (eg, John Smith)" value="<?= $name ?>" >
                 <!-- </p> -->
 
                 <!-- <p> -->
                 <!-- <label class="" for="contactinfo">Email Address or Phone Number</label> -->
-                <input class="half-size-old" type="text" id="contactemail" name="contactemail" placeholder="YOUR EMAIL (eg, john.smith@ydomain.com)" value="<?= $email ?>" required>
+                <input class="half-size-old" type="text" id="contactemail" name="contactemail" placeholder="YOUR EMAIL (eg, john.smith@ydomain.com)" value="<?= $email ?>" >
                 <!-- </p> -->
 
                 <p>
@@ -73,6 +73,12 @@
         window.open('/signup', '_blank'); 
     })
 
+    $("input[type=text]").on("focus", function(e) {
+        var ele = ".e_" + $(this).attr("id");
+        console.log(ele);
+        $(ele).hide();
+    });
+
     $('#contactForm').submit(function() {
 
         console.log('start.form.contactForm.submission');
@@ -86,16 +92,31 @@
             event.preventDefault();
             console.log('validating...');
             
-            var name = $("#contactname").val();
+            var errors=0;
+            var name = $("#contactname").val(); 
             var email = $("#contactemail").val();
             var subject = $("#contactsubject").val();
             var message = $("#message").val();
 
-            if (name == '' || email == '' || subject == '') {
-              alert("Please Fill Required Fields To Send Message.");
-            //   return false;
+            $(".error").remove();
+
+            if (name.length < 1) {
+                $('#contactname').after('<span class="e_contactname error">This field is required</span>');
+                ++errors;
+            }
+            if (email.length < 1) {
+                $('#contactemail').after('<span class="e_contactemail error">This field is required</span>');
+                ++errors;
+            }
+            if (subject.length < 1) {
+                $('#contactsubject').after('<span class="e_contactsubject error">This field is required</span>');
+                ++errors;
+            }
+            
+            if(errors > 1) {
+                return false;
             } else {
-              console.log('validation PASS');
+                console.log('validation PASS');
             }
 
             console.log('Sending... ' + $('#g-recaptcha-response').val());
