@@ -3816,7 +3816,27 @@ form #buysize, form #frame {
 .border-right {
   border-right: 1px solid #e4e4e4;
   margin-right: .5rem; }
-
+  @media (min-width: 320px) {
+    .border-right {
+      border: 0; } }
+  @media (min-width: 576px) {
+    .border-right {
+      border-right: 0; } }
+  @media (min-width: 767px) and (orientation: landscape) {
+    .border-right {
+      border-right: 1px solid #e4e4e4; } }
+  @media (min-width: 767px) and (orientation: portrait) {
+    .border-right {
+      border-right: 0; } }
+  @media (min-width: 830px) and (orientation: portrait) {
+    .border-right {
+      border-right: 1px solid #e4e4e4; } }
+  @media (min-width: 1112px) {
+    .border-right {
+      border-right: 1px solid #e4e4e4; } }
+  @media (min-width: 1200px) {
+    .border-right {
+      border-right: 1px solid #e4e4e4; } }
 .lg-img img {
   width: 100%; }
 

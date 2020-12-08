@@ -89,6 +89,47 @@ form {
 .border-right {
     border-right: 1px solid #e4e4e4;
     margin-right: .5rem;
+
+     // xSmall devices (landscape phones, 320px and up)
+    @media (min-width: 320px) { 
+        // background-color: pink;
+        border: 0;
+    }
+
+    // Small devices (landscape phones, 576px and up)
+    @media (min-width: 576px) { 
+        // background-color: red;
+        border-right: 0;
+    }
+
+    // Medium devices (tablets, 768px and up)
+    @media (min-width: 767px)  and (orientation: landscape)  {
+        //  background-color: blue;
+        border-right: 1px solid #e4e4e4;
+    }
+
+    @media (min-width: 767px) and (orientation: portrait) {
+        //  background-color: blue;
+        border-right: 0;
+    }
+
+    @media (min-width: 830px) and (orientation: portrait) {
+        //  background-color: blue;
+        border-right: 1px solid #e4e4e4;
+    }
+
+    // Large devices (tablets (iPad Pro, 1112px and up)
+    @media (min-width: 1112px) {
+        //  background-color: gray;
+        border-right: 1px solid #e4e4e4;
+    }
+
+    // Extra large devices (large desktops, 1200px and up)
+    @media (min-width: 1200px) {
+        //  background-color: lightgreen;
+        border-right: 1px solid #e4e4e4;
+    }
+
 }
 
 .lg-img img {
