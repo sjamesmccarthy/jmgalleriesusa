@@ -3,6 +3,72 @@
     margin-top: 0;
     padding: 0 32px;
     
+    h1 {
+        text-align: left;
+
+        // xSmall devices (landscape phones, 320px and up)
+        @media (min-width: 320px) { 
+             text-align: center;
+        }
+
+        // Small devices (landscape phones, 576px and up)
+        @media (min-width: 376px) { 
+            text-align: center;
+        }
+
+        // Medium devices (tablets, 768px and up)
+        @media (min-width: 767px) {
+             text-align: left;
+        }
+
+        // Large devices (tablets (iPad Pro, 1112px and up)
+        @media (min-width: 1112px) {
+             text-align: left;
+        }
+
+        // Extra large devices (large desktops, 1200px and up)
+        @media (min-width: 1200px) {
+             text-align: left;
+        }
+
+    }
+
+    .tagline {
+        font-size: 1.5rem;
+        font-weight: 200;
+        text-align: left;
+        line-height: 1;
+        padding-top: 1rem;
+        padding-bottom: 2rem;
+        color: $color-blue;
+        
+        // xSmall devices (landscape phones, 320px and up)
+        @media (min-width: 320px) { 
+             text-align: center;
+        }
+
+        // Small devices (landscape phones, 576px and up)
+        @media (min-width: 376px) { 
+            text-align: center;
+        }
+
+        // Medium devices (tablets, 768px and up)
+        @media (min-width: 767px) {
+             text-align: left;
+        }
+
+        // Large devices (tablets (iPad Pro, 1112px and up)
+        @media (min-width: 1112px) {
+             text-align: left;
+        }
+
+        // Extra large devices (large desktops, 1200px and up)
+        @media (min-width: 1200px) {
+             text-align: left;
+        }
+
+    }
+
     .rotate-for-more {
 
         display: none;

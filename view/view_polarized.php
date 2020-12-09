@@ -3,8 +3,8 @@
 
         <div class="col-12_sm-12 __container">
 
-            <h1 class="">Polarized</h1>
-            <h4 class="subtitle blue">a Collection of Field Notes by Photographer j.McCarthy</h4>
+            <h1>Polarized</h1>
+            <p class="tagline">a Collection of Field Notes by Photographer j.McCarthy</p>
 
             <!-- START_CARDS -->
             <div class="--card_layout">

@@ -3,7 +3,7 @@
 <section id="contact">
     <div class="grid-center">
 
-        <div class="col-8_sm-11">
+        <div class="col-8_sm-11 pb-32">
 
             <div class="form-main">
             <h1><?= $formTitle ?></h1>
@@ -52,7 +52,7 @@
             <p style="border-radius: 6px;" id="form_response"> </p>
         </div>
 
-        <div class="pl-32 col-3_sm-11">
+        <div class="col-3_sm-11">
            
            <?php $this->getPartial('findus'); ?>
 

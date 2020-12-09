@@ -9,14 +9,14 @@
 
     foreach($catalog_names as $key=>$value) {
 
-            $thumb_html .= "<article id='filmstrip'>";
-            $thumb_html .= '<div class="grid-4_sm-2 grid-4_md-3">';
+            // $thumb_html .= "<article id='filmstrip'>";
+            $thumb_html .= '<div class="grid-4_sm-2 grid-4_md-3 mt-32">';
 
         if(strtolower($value['title']) != 'new releases') {
 
-            $thumb_html .= '<div class="mb-16 col-10_sm-12">';
+            $thumb_html .= '<div class="col-10_sm-12">';
             $thumb_html .= '<h2><a href="/' . $value['path'] . '">' . strtoupper($value['title']) . '</a></h2>';
-            $thumb_html .= '<p>' . $value['desc'] .  '</p>';
+            $thumb_html .= '<p class="sm-hidden">' . $value['desc'] .  '</p>';
             $thumb_html .= '</div>';
             $thumb_html .= '<div class="view-all col-2-middle sm-hidden">';
             $thumb_html .= '<a href="/' . $value['path'] . '">view all</a>';
@@ -61,7 +61,7 @@
                     $grid_css = 'col';
                 }
                 
-                $thumb_html .= '<div style="padding: 0 10px;" class="thumb overflow-hidden ' . $grid_css . '">';
+                $thumb_html .= '<div class="thumb overflow-hidden ' . $grid_css . '">';
                 // $thumb_html .= '<a href="' . $value['path'] . "/" . $img_file . '"><img src="/catalog/__thumbnail/' .$img_file . '.jpg" /></a><p class="blue larger">' . $v['title'] . '</p></div>';
                 
                 $thumb_html .= '<a href="/' . $v['catalog_path'] . '/' . $img_file . '"><img style="width: 100%;" src="/catalog/__thumbnail/' . $img_file . '.jpg" /></a></p><h4 class="pt-8 blue"><a href="' . $value['path'] . "/" . $img_file . '">' . $v['title'] . '</a></h4><p>' . $v['loc_place'] . '</p><!-- <p>Sizes: ' . $available_sizes . '</p>-->' . $desc_editions . '</div>';
@@ -75,7 +75,7 @@
         }
 
         $thumb_html .= "</div>";
-        $thumb_html .= "</article>";
+        // $thumb_html .= "</article>";
     }
 
 

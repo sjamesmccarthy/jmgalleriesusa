@@ -5,15 +5,15 @@
 
 /* Fetch Just the New Releases filmstrip */
     $count =0;
-    $new_release_data = array(100,3); /* Also found in view_catalog.inc.php */
+    $new_release_data = array(100,1); /* Also found in view_catalog.inc.php */
 
     $new_releases = $this->api_Catalog_Get_New_Releases($new_release_data[0], $new_release_data[1]);
 
-        $thumb_new_releases_html .= "<article id='new-releases'>";
+        // $thumb_new_releases_html .= "<article id='new-releases'>";
         $thumb_new_releases_html .= '<div class="grid-4_sm-2 grid-4_md-3">';
-        $thumb_new_releases_html .= '<div class="col-10_sm-12" style="margin-bottom: 16px;">';
+        $thumb_new_releases_html .= '<div class="col-10_sm-12">';
         $thumb_new_releases_html .= '<h2><a href="/new-releases/">NEW RELEASES</a></h2>';
-        $thumb_new_releases_html .= '<p>a collection of LIMITED EDITION photography featuring newest work by photographer j.McCarthy.</p>';
+        $thumb_new_releases_html .= '<p class="sm-hidden">a collection of LIMITED EDITION photography featuring newest work by photographer j.McCarthy.</p>';
         $thumb_new_releases_html .= '</div>';
         $thumb_new_releases_html .= '<div class="view-all col-2-middle sm-hidden">';
         $thumb_new_releases_html .= '<a href="/new-releases">view all</a>';
@@ -69,7 +69,7 @@ if( !$new_releases['error']) {
     }
     
     $thumb_new_releases_html .= "</div>";
-    $thumb_new_releases_html .= "</article>";
+    // $thumb_new_releases_html .= "</article>";
 
     return($thumb_new_releases_html);
 

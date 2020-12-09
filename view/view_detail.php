@@ -5,7 +5,7 @@
 </section>
 
 <section>
-    <article class="">
+    <!-- <article class=""> -->
     <form id="limited_ed_form" action="/checkout" method="post">
     <input type="hidden" name="formType" value="SquarePaymentForm_fineArt" />
     <input type="hidden" name="product_id" value="<?= $product_id ?>" />
@@ -56,20 +56,8 @@
         <!-- <?= $btn_link ?><button><?= $btn ?></button></a> -->
         
     </div>
-
-        <article class="nopad noshow">
-            <div id="alt-imgs" class="grid">
-            <?= $in_roomImg ?>
-            <?= $in_roomImgAlt ?>
-            <?= $tinyviewImage ?>
-            <?= $tinyviewNotesImage ?>
-            <?= $tinyViewFinePrint ?>
-            </div>
-        </article>
-
-
     </form>
-    </article>
+    <!-- </article> -->
 </section>
 
 <!-- generated html from component file: component_most_popular -->

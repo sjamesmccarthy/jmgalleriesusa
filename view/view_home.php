@@ -12,7 +12,7 @@
     <!-- /generated html from component file -->
 
     <!-- generated html from component file: All Other Catalogs  -->
-    <section id="filmstrips" class="mt-64">
+    <section id="filmstrips">
         <?= $thumb_html ?>
     </section>
     <!-- /generated html from component file -->

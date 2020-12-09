@@ -30,7 +30,7 @@
             }
 
 $html = <<<END
-<article id="most-popular" class="mt-64">
+<!-- <article id="most-popular" class="mt-64"> -->
     <div class="grid">
         <div class="col-12" style="margin-bottom: 16px;">
         <h3 class="thin">YOU MAY ALSO LIKE</h3>
@@ -38,7 +38,7 @@ $html = <<<END
         </div>
         $thumb_html
     </div>
-</article>
+<!-- </article> -->
 END;
 
 return($html);

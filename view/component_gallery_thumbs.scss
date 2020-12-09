@@ -1,7 +1,43 @@
 /* ********************** */
 /* component_gallery_thumbs */
 
-#filmstrip {
+#filmstrips {
+
+ h2 {
+    text-align: left;
+    
+     // xSmall devices (landscape phones, 320px and up)
+    @media (min-width: 320px) { 
+    //  background-color: pink;
+    text-align: center;
+    }
+
+    // Small devices (landscape phones, 576px and up)
+    @media (min-width: 376px) { 
+    //  background-color: red;
+    text-align: center;
+    }
+
+    // Medium devices (tablets, 768px and up)
+    @media (min-width: 767px) {
+    //  background-color: blue;
+    text-align: left;
+    }
+
+    // Large devices (tablets (iPad Pro, 1112px and up)
+    @media (min-width: 1112px) {
+    //  background-color: gray;
+    text-align: left;
+    }
+
+    // Extra large devices (large desktops, 1200px and up)
+    @media (min-width: 1200px) {
+    //  background-color: lightgreen;
+    text-align: left;
+    }
+
+
+ }
 
   h4 {
         // text-transform: uppercase;

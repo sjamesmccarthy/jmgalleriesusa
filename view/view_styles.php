@@ -1,8 +1,8 @@
-<section id="styles" class="pt-24"
+<section id="styles">
     <div class="grid-center">
         <div class="col-12_sm-12">
     
-            <!-- <h1>Sizing and Framing</h1> -->
+            <h1>Sizing and Framing</h1>
 
             <ul>
             
@@ -23,7 +23,7 @@
                 </div> -->
             </div>
             <div class="grid">
-            <div class="col-6">
+            <div class="col-6_sm-12">
                 <table>
                     <tr class="gray">
                         <th>Lumachrome HD Acrylic Small</th>
@@ -55,12 +55,12 @@
                     </tr>
 
                     <tr>
-                        <td colspan="2" class="tiny"><p class="small" style="margin-top: 175px">Measurements are approximate and may vary by 1/4"</p><p class="small">Frames for larger art require the 4 inch width moulding and a 3 inch wide matte, adding approximately 6 inches to height and width on all sides.</p></td>
+                        <td colspan="2" class="tiny"><p class="small">Measurements are approximate and may vary by 1/4"</p><p class="small">Frames for larger art require the 4 inch width moulding and a 3 inch wide matte, adding approximately 6 inches to height and width on all sides.</p></td>
                     </tr>
 
                 </table>
             </div>
-            <div class="col-6 pl-64" class="text-right">
+            <div class="col-6_sm-12" class="text-right">
 
                 <p class="moulding-thumb"><img class="moulding-thumb-img" src="/view/image/moulding-60645.jpg" /> </p>
                 <p class="moulding-thumb"><img class="moulding-thumb-img" src="/view/image/moulding-60610.jpg" /> </p>
