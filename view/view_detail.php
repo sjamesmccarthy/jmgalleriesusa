@@ -1,7 +1,7 @@
 <section id="detail">
-    <article>
+    <!-- <article> -->
        <?= $super_photo ?>
-    </article>
+    <!-- </article> -->
 </section>
 
 <section>

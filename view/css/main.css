@@ -3890,24 +3890,24 @@ form #buysize, form #frame {
 
 .img-container {
   padding: 0 !important;
-  box-shadow: 0px 20px 25px 0px rgba(0, 0, 0, 0.3); }
+  border-radius: 6px; }
 
 .portrait {
   background-color: black;
   display: block; }
   .portrait > p > img {
     width: 43%;
-    border-radius: 0;
     vertical-align: middle;
-    border-left: 5px solid rgba(255, 255, 255, 0.9);
-    border-right: 5px solid rgba(255, 255, 255, 0.9); }
+    box-shadow: 0px 20px 25px 0px rgba(0, 0, 0, 0.3); }
 
 .landscape {
   background-color: black;
   display: block; }
   .landscape > p > img {
     max-width: 100%;
-    vertical-align: middle; }
+    border-radius: 6px;
+    vertical-align: middle;
+    box-shadow: 0px 20px 25px 0px rgba(0, 0, 0, 0.3); }
     @media (max-width: 64em), (max-width: 80em), (max-width: 64em) and (orientation: portrait) {
       .landscape > p > img {
         border-radius: 0; } }
