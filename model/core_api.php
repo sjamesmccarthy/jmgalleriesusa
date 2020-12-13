@@ -304,6 +304,7 @@ class Core_Api extends Fieldnotes_Api
             } else {
                 
                 $data['error'] = "No Records Found";
+                $data['error_no'] = "0REC";
                 $data['sql'] = $sql;
             }	
             

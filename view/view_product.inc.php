@@ -7,6 +7,11 @@ $you_may_also_like_html = $this->component('most_popular');
 /* FETCH DETAILS FOR PRODUCT BEING VIEWED */
 $pg_data = $this->api_Product_Get_Item($this->page->uri);
 // $this->console($pg_data);
+
+if($pg_data['error_no'] == '0REC') {
+    header('location:/404');
+}
+
 extract($pg_data, EXTR_PREFIX_ALL, "res");
 
 /* FORM FIELDS: HIDDEN */

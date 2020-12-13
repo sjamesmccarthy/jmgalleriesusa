@@ -5,7 +5,7 @@
 
 /* Fetch Just the New Releases filmstrip */
     $count =0;
-    $new_release_data = array(100,1); /* Also found in view_catalog.inc.php */
+    $new_release_data = array(100,8); /* Also found in view_catalog.inc.php */
 
     $new_releases = $this->api_Catalog_Get_New_Releases($new_release_data[0], $new_release_data[1]);
 

@@ -2,11 +2,6 @@
 
     padding: 0 32px;
 
-    #teaser >div, #teaser >p {
-        font-size: 1.5rem;
-        // padding-bottom: 1rem;
-    }
-
         div, p {
             // font-family: 'Source Serif Pro', serif;
             font-weight: 200;
@@ -36,8 +31,10 @@
                 color: $color-black;
             }
         }
+    }
+}
 
-        .__container--bottom_toc {
+.__container--bottom_toc {
             // margin-left: -5%;
             font-size: 1rem;
             border-top: 1px solid #e4e4e4;
@@ -53,7 +50,10 @@
                 }
             }
         }
-    }
+
+.teaser div:first-child, .teaser >p {
+    font-size: 1.7rem;
+    padding-top: 1rem;
 }
 
 .avatar {
@@ -82,7 +82,7 @@ blockquote {
   margin-top: 8px;
 }
 
-.--social-links_a a {
+.--social-links a {
     color: $color-black;
     font-size: 1.5rem;
 

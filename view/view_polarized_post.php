@@ -30,75 +30,74 @@
 </div>
 
 <section id="polarized" class="pt-24">
-    <div class="grid-center">
-
+    <div class="grid">
         <div class="col-12_md-10_sm-12 __container">
-
-            <!-- <p class="__container--toc"><a href="/polarized">&#8672;</a></p> -->
-            <!-- <h1>Journal</h1> -->
-            
-            <p class="__container--top_datetime">Published <?= $res_date_written; ?> in <a class="blue" href="/polarized">Field Notes</a></span></p>
-
+            <p class="__container--top_datetime">Published <?= $res_date_written; ?> in <a class="blue" href="/polarized">Field Notes</a></p>
             <h3><?= $res_title?></h3>
             
-            <div>
-                <p style="font-family: 'roboto', sans-serif; font-size: 1.3rem;color: rgba(117,117,117);"><?= $res_teaser?></p>
-            </div>
+                <div>
+                    <p style="font-family: 'roboto', sans-serif; font-size: 1.3rem;color: rgba(117,117,117);"><?= $res_teaser?></p>
+                </div>
 
-             <div class="mt-32 mb-16 hidden" style="display: flex; position: relative;">
-                <div class="avatar">
-                    <img src="/view/image/avatar/jamesmccarthy_1.jpg" />
+                <div class="mt-32 mb-16 hidden" style="display: flex; position: relative;">
+
+                    <div class="avatar">
+                        <img src="/view/image/avatar/jamesmccarthy_1.jpg" />
+                    </div>
+
+                    <div class="byline" style="flex:5;">
+                        <b><?= $res_first_name ?> <?= $res_last_name ?></b><br />
+                        <?= $res_created  ?> &hybull; <?= $res_count ?>  Words, <?= $read_time ?>
+                    </div>
+
+                    <div class="byline--social mt-16">
+                        <p class="--follow">FOLLOW ON</p>
+                        <p class="mr-16"><a target="_social" href="https://twitter.com/jmgalleriesusa"><i class="fab fa-twitter"></i></a></p>
+                        <p><a target="_social" href="https://www.linkedin.com/in/jmccarthyusa/"><i class="fab fa-linkedin"></i></a></p>
+                    </div>
+
                 </div>
-                <div class="byline" style="flex:5;">
-                    <b><?= $res_first_name ?> <?= $res_last_name ?></b><br />
-                    <?= $res_created  ?> &hybull; <?= $res_count ?>  Words, <?= $read_time ?>
-                </div>
-                <div class="byline--social" mt-16">
-                    <p class="--follow">FOLLOW ON</p>
-                    <p class="mr-16"><a target="_social" href="https://twitter.com/jmgalleriesusa"><i class="fab fa-twitter"></i></a></p>
-                    <p><a target="_social" href="https://www.linkedin.com/in/jmccarthyusa/"><i class="fab fa-linkedin"></i></a></p>
-                </div>
-            </div>
 
                 <div class="content__area">
-                    
-                    <div id="teaser" class="mt-32 mb-32">
-                        <?= $res_content_leadin ?>
-                    </div><!- cl_teaser -->
 
-                    <?= $img_html ?>
+                    <div class="teaser" class="mt-32 mb-32">
+                        <?= $res_content_leadin ?>
+                    </div>
+
+                        <?= $img_html ?>
 
                     <div class="mt-32 mb-64">
                         <?= $res_content ?>
                     </div>
 
                 </div>
+        </div> <!-- __container -->
 
-            <div class="mt-32 --social-links">
+        <div class="grid">
+            <div class="col-12 mt-32 --social-links">
 
-                <div style="display: inline-block; margin-right: 2rem; margin-bottom: 1rem;">
-                    <a class="response--icon-cheers" href="#"><i class="fas fa-glass-cheers"></i></a>
-                    <p class="response--icon-label"><span class="repsonse--cheers-count"><?= $res_cheers ?></span> Cheers!</p>
-                </div>
+                    <div style="display: inline-block; margin-right: 2rem; margin-bottom: 1rem;">
+                        <a class="response--icon-cheers" href="#"><i class="fas fa-glass-cheers"></i></a>
+                        <p class="response--icon-label"><span class="repsonse--cheers-count"><?= $res_cheers ?></span> Cheers!</p>
+                    </div>
 
-                <div style="display: inline-block">
-                    <a class="response--icon response--icon-bubble" href=""><i class="fas fa-comment-alt"></i></a>
-                    <p class="response--icon--count response--icon-label"><?= $res_responses ?></p>
-                </div>
+                    <div style="display: inline-block">
+                        <a class="response--icon response--icon-bubble" href=""><i class="fas fa-comment-alt"></i></a>
+                        <p class="response--icon--count response--icon-label"><?= $res_responses ?></p>
+                    </div>
 
-                <div style="display: inline-block; float: right;">
+                    <div style="display: inline-block; float: right;">
                         <a target="_social" href="<?= $social_twitter ?>"><i class="fab fa-twitter"></i></a>
+                    </div>
+
                 </div>
-
+        
+                <div class="col-12 __container--bottom_toc">
+                    <p>&larr; Back To <a href="/polarized">Field Notes</a></p>
+                </div>
             </div>
-
-            <div>
-                <p class="__container--bottom_toc">&larr; Back To <a href="/polarized">Field Notes</a></p>
-            </div>
-
         </div>
-
-    </div>
+    </div> <!-- grid -->
 </section>
 
 <script>

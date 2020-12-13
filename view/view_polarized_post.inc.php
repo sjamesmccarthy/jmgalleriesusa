@@ -16,13 +16,17 @@ extract($fieldnotes_data, EXTR_PREFIX_ALL, "res");
 
 $content = explode('###', $res_content);
 $sections = count($content);
+// $this->console( $content,0 );
 
 if($sections == 2) {
     $res_content_leadin = $content[0];
+    $res_content_leadin = str_replace('div', 'p', $res_content_leadin, $count);
     $res_content = $content[1];
+    $res_content = preg_replace('/<span[^>]+\>/i', '', $res_content);
 } else {
     $res_content_leading = null;
     $res_content = $content[0];
+    $res_content = preg_replace('/<span[^>]+\>/i', '', $res_content);
 }
 
 $res_content = str_replace('<div><br></div>', '', $res_content);

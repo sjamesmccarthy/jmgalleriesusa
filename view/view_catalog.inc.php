@@ -5,7 +5,7 @@
 
     $count=0;
     $catalog = ltrim($this->page->catalog_path, '/');
-    $new_release_data = array(100,3);  /* Also found in component_new_releases.php */
+    $new_release_data = array(100,8);  /* Also found in component_new_releases.php */
 
     /* Load all category meta data */
     $catalog_meta = $this->api_Catalog_Category_List($catalog);
@@ -18,6 +18,7 @@
     /* Get Thumbnails of photos for Category */
     if( $catalog_meta[0]['path'] == 'new-releases') {
          $catalog_photos = $catalog_photos = $this->api_Catalog_Get_New_Releases($new_release_data[0], $new_release_data[1]);
+         $catalog_tabs_hidden = true;
     } else if( $catalog_meta[0]['path'] == 'all') {
 
         if($this->routes->URI->queryvals[1] == 'tinyviews') {
@@ -59,7 +60,7 @@
                 }
             
             } 
-                else { $data_filter_S = null; }
+            else { $data_filter_S = null; }
 
                 if($v['as_open'] == 1) { 
                 $data_filter_O = 'f-open';
@@ -138,7 +139,7 @@
                     $grid_css = 'col';
                 } else if ($count == 3) {
                     $grid_css = 'col';
-            } else {
+                } else {
                     $grid_css = 'col';
                 }
                 
@@ -149,8 +150,10 @@
                 
                 if($count == 3) { $count = 0; } else { $count++; }
             }
+
         } else {
-            $thumb_html = "<p>Somebody notify Captain Marvel, our photos have disappeared.</p><p style='margin-top: 20px; padding-top: 20px; border-top: 1px solid #CCC'>view_catalog.inc()</p>";
+            $thumb_html = "<div id='error' class='col-12'><p class='text-center tiny'>stark:+19008720101:begin_transmission</p><p class='text-center'>Somebody notify Captain Marvel. Thanos has turned our results to dust.</p>
+            <p class='text-center'>view_catalog.inc__" . __LINE__ . ".db(" . $catalog_photos['error'] . ")</p><p class='text-center tiny'>stark:+19008720101:end_transmission</p></div>";
         }
     
 ?>
