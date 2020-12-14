@@ -16,7 +16,7 @@
 
             $thumb_html .= '<div class="col-10_sm-12">';
             $thumb_html .= '<h2><a href="/' . $value['path'] . '">' . strtoupper($value['title']) . '</a></h2>';
-            $thumb_html .= '<p class="sm-hidden">' . $value['desc'] .  '</p>';
+            $thumb_html .= '<p class="light sm-hidden">' . $value['desc'] .  '</p>';
             $thumb_html .= '</div>';
             $thumb_html .= '<div class="view-all col-2-middle sm-hidden">';
             $thumb_html .= '<a href="/' . $value['path'] . '">view all</a>';

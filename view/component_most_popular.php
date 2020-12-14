@@ -34,7 +34,7 @@ $html = <<<END
     <div class="grid">
         <div class="col-12" style="margin-bottom: 16px;">
         <h3 class="thin">YOU MAY ALSO LIKE</h3>
-        <p>More photographs based on what other collectors are viewing</p>
+        <p class="light">Some More photographs based on what other collectors are viewing</p>
         </div>
         $thumb_html
     </div>

@@ -2,71 +2,34 @@
 
     margin-top: 0;
     padding: 0 32px;
+
+    // Large devices (tablets (iPad Pro, 1112px and up)
+    @media (min-width: 1112px) {
+        width: 80%;
+        margin: auto;
+    }
+
+    // Extra large devices (large desktops, 1200px and up)
+    @media (min-width: 1200px) {
+        width: 80%;
+        margin: auto;
+    }
     
     h1 {
-        text-align: left;
-
-        // xSmall devices (landscape phones, 320px and up)
-        @media (min-width: 320px) { 
-             text-align: center;
-        }
-
-        // Small devices (landscape phones, 576px and up)
-        @media (min-width: 376px) { 
-            text-align: center;
-        }
-
-        // Medium devices (tablets, 768px and up)
-        @media (min-width: 767px) {
-             text-align: left;
-        }
-
-        // Large devices (tablets (iPad Pro, 1112px and up)
-        @media (min-width: 1112px) {
-             text-align: left;
-        }
-
-        // Extra large devices (large desktops, 1200px and up)
-        @media (min-width: 1200px) {
-             text-align: left;
-        }
-
+        font-family: 'Source Serif Pro', serif;
+        text-align: center;
+        color: $color-black;
     }
 
     .tagline {
+        font-family: 'Source Serif Pro', serif;
         font-size: 1.5rem;
         font-weight: 200;
-        text-align: left;
+        text-align: center;
         line-height: 1;
-        padding-top: 1rem;
-        padding-bottom: 2rem;
-        color: $color-blue;
-        
-        // xSmall devices (landscape phones, 320px and up)
-        @media (min-width: 320px) { 
-             text-align: center;
-        }
-
-        // Small devices (landscape phones, 576px and up)
-        @media (min-width: 376px) { 
-            text-align: center;
-        }
-
-        // Medium devices (tablets, 768px and up)
-        @media (min-width: 767px) {
-             text-align: left;
-        }
-
-        // Large devices (tablets (iPad Pro, 1112px and up)
-        @media (min-width: 1112px) {
-             text-align: left;
-        }
-
-        // Extra large devices (large desktops, 1200px and up)
-        @media (min-width: 1200px) {
-             text-align: left;
-        }
-
+        padding-top: .5rem;
+        padding-bottom: 4rem;
+        color: #757575;
     }
 
     .rotate-for-more {

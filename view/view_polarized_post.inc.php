@@ -22,10 +22,12 @@ if($sections == 2) {
     $res_content_leadin = $content[0];
     $res_content_leadin = str_replace('div', 'p', $res_content_leadin, $count);
     $res_content = $content[1];
+    $res_content = str_replace('div', 'p', $res_content, $count);
     $res_content = preg_replace('/<span[^>]+\>/i', '', $res_content);
 } else {
     $res_content_leading = null;
     $res_content = $content[0];
+    $res_content = str_replace('div', 'p', $res_content, $count);
     $res_content = preg_replace('/<span[^>]+\>/i', '', $res_content);
 }
 
@@ -37,7 +39,7 @@ $res_date_written = date("F j, Y", strtotime($res_created));
 
 /* Check for image */
 if ( file_exists($_SERVER['DOCUMENT_ROOT'] . "/view/image/fieldnotes/" . $res_image ) ) {
-    $img_html .= '<div class="image">
+    $img_html .= '<div class="col image">
     <img src="/view/image/fieldnotes/' . $res_image . '" /><br />
     <span class="caption">' . $res_caption . '</span>
     </div>';

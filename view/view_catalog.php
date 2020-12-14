@@ -3,7 +3,7 @@
         
         <div class="col-12 title pb-32">
             <h2><?= strtoupper($catalog_title) ?></h2>
-            <p class="pt-8"><?= $catalog_desc ?></p>
+            <p class="light pt-8"><?= $catalog_desc ?></p>
             <?php 
                 if($catalog_tabs_hidden != true) {
             ?>
