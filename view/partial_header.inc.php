@@ -10,6 +10,14 @@
             } else {
                 $og_image = '/view/image/social_card_default.jpg?' . uniqid();
             }
+        } else if ($this->routes->URI->page == "shop") {
+
+            if( file_exists($_SERVER["DOCUMENT_ROOT"] .  "/view/image/social_card_gallerystore.jpg") ) {
+                $og_image = "/view/image/social_card_gallerystore.jpg?" . uniqid();
+            } else {
+                $og_image = '/view/image/social_card_default.jpg?' . uniqid();
+            }
+
         } else {
 
             if( file_exists($_SERVER["DOCUMENT_ROOT"] .  "/catalog/__image/" . $this->page->photo_path . ".jpg") ) {
@@ -18,6 +26,7 @@
                 $og_image = '/view/image/social_card_default.jpg?' . uniqid();
             }
         }
+
     } else {
         $og_image = "/view/image/social_card_default.jpg?" . uniqid();
     }

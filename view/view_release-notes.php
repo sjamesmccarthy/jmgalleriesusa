@@ -13,10 +13,16 @@
 
         <div class="col-11" style="position: relative">
 
+        <p class="pt-16">v1.7<br />Dec 21, 2020</p>
+        	<ul>
+            <li>added: new jM Gallery Store.</li>
+        	</ul> 
+        </p>
+
         <p class="pt-16">v1.6<br />Dec 07, 2020</p>
         	<ul>
             <li>update: font styling throughout site.</li>
-            <li>added: new Sqaure payment integration in new checkout form.</li>
+            <li>added: new Square payment integration in new checkout form.</li>
         	</ul> 
         </p>
 

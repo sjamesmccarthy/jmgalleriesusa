@@ -419,19 +419,19 @@
         "template": "page",
         "page": "shop",
         "component": "true",
-        "title": "Gallery Store"
+        "title": "jM Gallery Store"
     },
     "/store": {
         "template": "page",
         "page": "shop",
         "component": "true",
-        "title": "Gallery Store"
+        "title": "jM Gallery Store"
     },
     "/product": {
         "template": "page",
         "page": "shop",
         "component": "true",
-        "title": "Gallery Store"
+        "title": "jM Gallery Store"
     },
     "/books": {
         "template": "redirect",
