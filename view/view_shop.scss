@@ -4,6 +4,32 @@
     margin-bottom: 2rem;
     border-radius: $border-radius;
     
+
+    // xSmall devices (landscape phones, 320px and up)
+    @media (min-width: 320px) { 
+        display: none;
+    }
+
+    // Small devices (landscape phones, 576px and up)
+    @media (min-width: 376px) { 
+        display: none;
+    }
+
+    // Medium devices (tablets, 768px and up)
+    @media (min-width: 767px) {
+        display: block;
+    }
+
+    // Large devices (tablets (iPad Pro, 1112px and up)
+    @media (min-width: 1112px) {
+        display: block;
+    }
+
+    // Extra large devices (large desktops, 1200px and up)
+    @media (min-width: 1200px) {
+        display: block;
+    }
+
     .hero-inner {
         height: 520px;
         background-image: url('/view/image/shop-background.png');
@@ -36,27 +62,6 @@
                 transform: scale(1.06);
                 transition: opacity .3s, color .3s, background-color .3s, border-color .3s, transform .3s;
             }
-        }
-
-        &-btn {
-            // display: inline-block;
-            // margin-top: 32px;
-            // padding: 0 16px;
-            // height: 50px;
-            // border-radius: 14px;
-            // background-color: $color-white;
-            // color: $color-black;
-            // text-transform: uppercase;
-            // font-size: 100%;
-
-            // a:hover {
-            //     color: $color-black;
-            // }
-
-            // &:hover {
-            //     transform: scale(1.06);
-            //     transition: opacity .3s, color .3s, background-color .3s, border-color .3s, transform .3s;
-            // }
         }
 
     }

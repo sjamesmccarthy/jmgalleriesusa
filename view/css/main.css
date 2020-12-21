@@ -4777,6 +4777,21 @@ blockquote {
   height: 520px;
   margin-bottom: 2rem;
   border-radius: 6px; }
+  @media (min-width: 320px) {
+    .hero {
+      display: none; } }
+  @media (min-width: 376px) {
+    .hero {
+      display: none; } }
+  @media (min-width: 767px) {
+    .hero {
+      display: block; } }
+  @media (min-width: 1112px) {
+    .hero {
+      display: block; } }
+  @media (min-width: 1200px) {
+    .hero {
+      display: block; } }
   .hero .hero-inner {
     height: 520px;
     background-image: url("/view/image/shop-background.png");
