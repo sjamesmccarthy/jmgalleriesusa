@@ -322,7 +322,7 @@ class Core_Api extends Fieldnotes_Api
                 *
             FROM
                 product
-            WHERE in_stock = 'true' AND status ='ACTIVE' and type != 'group'";
+            WHERE in_stock = 'true' AND status ='ACTIVE' and type != 'group' ORDER BY price ASC";
     
             $result = $this->mysqli->query($sql);
 

@@ -29,6 +29,7 @@
         color: #498d53;
         font-size: .9rem;
         line-height: 1;
+        padding-bottom: 1rem;
     }
 
     .--strike {
@@ -59,7 +60,7 @@
     }
 
     .--desc {
-        padding: 2rem 0 0 0;
+        padding: 1rem 0 0 0;
         
         >p {
             font-size: inherit;
@@ -67,6 +68,7 @@
 
         >p:not(:last-child) {
             margin-bottom: 1rem;
+            margin-top: .5rem;
         }
     }
 
@@ -100,15 +102,19 @@
 
 .bx-wrapper .bx-pager.bx-default-pager a {
   text-indent: 0px !important;
-  color: #FFF !important;
+  color: $color-black !important;
   width: 20px !important;
   height: 20px !important;
   -moz-border-radius: 0px !important;
   -webkit-border-radius: 0px !important;
   border-radius: $border-radius !important;
+  background: transparent !important;
 }
 .bx-wrapper .bx-pager.bx-default-pager a:hover,
 .bx-wrapper .bx-pager.bx-default-pager a.active,
 .bx-wrapper .bx-pager.bx-default-pager a:focus {
-  background: $color-blue !important;
+//   background: $color-blue !important;
+    background: transparent !important;
+    color: $color-blue !important;
+    text-decoration: underline;
 }

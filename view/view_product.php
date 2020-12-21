@@ -10,14 +10,14 @@
         
         <?= $image_html ?>
         
-        <div class="col-6">
+        <div class="col-6_sm-12">
             <h1><?= $res_title ?></h1>
             <?= $price_html ?>
-
             <?= $options_quantity_html ?>
             
             <div class="--desc">
                 <p><?= $res_desc ?></p>
+                <?= $res_details_html ?>
             </div>
 
             <?= $free_ship ?>
@@ -46,13 +46,13 @@ $(document).ready(function($){
         responsive:true,
         slideWidth:600,
         mode:'fade',
-        // autoHover:true,
-        // auto:true,
-        // autoStart:true,
+        autoHover:true,
+        auto:false,
+        autoControls:true,
         // pause:3000,
         touchEnabled:true,
         hideControlOnEnd: true,
-        infiniteLoop: false,
+        infiniteLoop: true,
         pagerType: "full",
         pagerShortSeparator: "/",
         keyboardEnabled: "true"

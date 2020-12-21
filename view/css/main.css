@@ -1975,7 +1975,8 @@ body {
   font-family: "Source Sans Pro", sans-serif;
   font-size: 16px;
   font-weight: 400;
-  line-height: 1.7; }
+  line-height: 1.7;
+  letter-spacing: -0.5px; }
   body.dark-theme {
     background-color: #000;
     color: #FFFFFF; }
@@ -2114,6 +2115,9 @@ table.dataTable.row-border tbody th, table.dataTable.row-border tbody td, table.
 .valign-top {
   vertical-align: top; }
 
+.valign-mid {
+  vertical-align: middle; }
+
 /* ReCaptcha */
 .grecaptcha-badge {
   visibility: collapse !important; }
@@ -2147,6 +2151,12 @@ blockquote {
 
 .tiny {
   font-size: .7rem; }
+
+.normal {
+  font-size: 1rem !important; }
+
+.bold {
+  font-weight: 600 !important; }
 
 .small {
   font-size: .9rem; }
@@ -3818,8 +3828,9 @@ form #buysize, form #frame {
 
 .edition-title {
   text-transform: initial;
-  font-weight: 400;
-  font-size: 1rem; }
+  font-weight: 300;
+  font-size: 1rem;
+  line-height: 2.2; }
 
 .price {
   color: #2574A9;
@@ -4696,7 +4707,8 @@ blockquote {
 #product_detail .--savings {
   color: #498d53;
   font-size: .9rem;
-  line-height: 1; }
+  line-height: 1;
+  padding-bottom: 1rem; }
 
 #product_detail .--strike {
   color: #add3ed;
@@ -4722,11 +4734,12 @@ blockquote {
   color: green; }
 
 #product_detail .--desc {
-  padding: 2rem 0 0 0; }
+  padding: 1rem 0 0 0; }
   #product_detail .--desc > p {
     font-size: inherit; }
   #product_detail .--desc > p:not(:last-child) {
-    margin-bottom: 1rem; }
+    margin-bottom: 1rem;
+    margin-top: .5rem; }
 
 #product_detail .buy_btn {
   display: block;
@@ -4746,15 +4759,18 @@ blockquote {
 
 .bx-wrapper .bx-pager.bx-default-pager a {
   text-indent: 0px !important;
-  color: #FFF !important;
+  color: #4a4a4a !important;
   width: 20px !important;
   height: 20px !important;
-  border-radius: 6px !important; }
+  border-radius: 6px !important;
+  background: transparent !important; }
 
 .bx-wrapper .bx-pager.bx-default-pager a:hover,
 .bx-wrapper .bx-pager.bx-default-pager a.active,
 .bx-wrapper .bx-pager.bx-default-pager a:focus {
-  background: #2574A9 !important; }
+  background: transparent !important;
+  color: #2574A9 !important;
+  text-decoration: underline; }
 
 .hero {
   background: linear-gradient(to bottom, #1b2e54 0%, #2c4560 100%);

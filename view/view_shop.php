@@ -5,7 +5,8 @@
             <div class="hero-headline">
                 <h2>tinyViews<sup class="tiny">&trade;</sup> Notecards</h2>
                 <p>a simple way to say Hi with a Fine Art vibe.</p>
-                 <button class="mt-32"><a href="/product/">Shop Notecards</a></button>
+                 <!-- <button class="mt-32"><a href="/product/">Shop Notecards</a></button> -->
+                <p class="mt-16">Coming Early 2021</p>
             </div>
         </div>
     </div>
@@ -14,7 +15,7 @@
         
 
         <div class="col-12 title pb-32">
-            <h2>SHOP GALLERY STORE</h2>
+            <h2>jM GALLERY STORE</h2>
             <p>Browse fine art products designed and hand-made by j.McCarthy</p>
         </div>
 

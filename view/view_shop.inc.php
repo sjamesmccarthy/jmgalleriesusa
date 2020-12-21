@@ -3,29 +3,7 @@
 /* API call to fetch all products */
 $product_data = $this->api_Product_Get_All();
 
-/*
-[0] => Array
-        (
-            [product_id] => 2
-            [artist_id] => 1
-            [title] => Trim & Frame Calendar
-            [desc] => Start 2020 off right with a j.McCarthy Trim & Frame Calendar. Each month enjoy a new fine-art photograph printed on high quality photo paper. On the last day of the month simply trim off the calendar continue enjoying. You can hang them on the fridge with a small magnet or frame* them in any frame with a 5x5 opening. Each packet includes 12 months starting on January and ends  December. *Frame not included.
-            [image] => {"1":"trim-frame-calendar_1.jpg","2":"trim-frame-calendar_2.jpg","3":"trim-frame-calendar_3.jpg"}
-            [price] => 19.95
-            [taxable] => false
-            [upc] => 
-            [in_stock] => true
-            [quantity] => 2
-            [ship_tier] => {"USPS First Class":"0"}
-            [type] => single
-            [uri_path] => trim-frame-calendar
-            [created] => 2020-11-20 06:50:32
-            [status] => ACTIVE
-            [last_update] => 2020-11-30 10:12:18
-        )
-*/
-
-$tv_le_link = '<p class="shop-tv-link"><a href="/all?filter=tinyviews">Browse Open Editions</a></p>';
+$tv_le_link = '<p class="shop-tv-link"><a href="/all?filter=tinyviews">Browse Open Editions</a> / <a href="/galleries">Browse Limited Editions</a></p>';
 
 foreach($product_data as $k => $v) {
 
@@ -54,7 +32,8 @@ foreach($product_data as $k => $v) {
     if($v['on_sale'] != '') {
         $on_sale_amt = $v['price'] * $v['on_sale'];
         $on_sale_price = $v['price'] - round($on_sale_amt);
-        $on_sale_label = "<strike style='color:#adacb2'>$" . number_format( $v['price'],2) . "</strike><span style='color: #498d53'> (Save $" . number_format($on_sale_amt) . ")</span>";
+        $on_sale_percentage = ($v['on_sale'] * 100) . "%";
+        $on_sale_label = "<strike style='color:#adacb2'>$" . number_format( $v['price'],2) . "</strike><span style='color: #498d53'> (<!--Save $" . number_format($on_sale_amt) . "-->" . $on_sale_percentage . " off)</span>";
         $price_html = '<p style="display: inline-block; margin-right: .5rem;"><b>$' . number_format( $on_sale_price ) . '</b> ' . $on_sale_label;
     } else {
         $on_sale_price = null;
