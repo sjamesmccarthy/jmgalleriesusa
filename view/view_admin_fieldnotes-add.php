@@ -30,6 +30,7 @@
                     <select id="type" name="type" style="margin-bottom: 0">
                           <option value="article" <?= ($res_type == "article" ? "SELECTED" : ""); ?>>ARTICLE</option>
                           <option value="filmstrip" <?= ($res_type == "filmstrip" ? "SELECTED" : ""); ?>>FILMSTRIP</option>
+                          <option value="video" <?= ($res_type == "video" ? "SELECTED" : ""); ?>>VIDEO</option>
                     </select> 
                     </div>
                     <!-- <input type="hidden" id="type" name="type" placeholder="TYPE (eg, TEXT, FILMSTRIP)" value="text"> -->

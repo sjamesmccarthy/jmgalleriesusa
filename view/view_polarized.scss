@@ -153,6 +153,7 @@
     border-bottom: 1px solid #e4e4e4;
     padding-bottom: 2rem;
     
+
     h4 {
         font-weight: 600;
         font-size: 1.2rem;
@@ -205,8 +206,24 @@
           }
 }
 
+.content__filmstrip--preview {
+    border-radius: 6px; 
+    padding: .5rem 2rem .5rem 2rem; 
+    background-color: rgba(0, 0, 0, 0.5);
+    padding-top: 1rem;
+}
+
+.content__filmstrip--teaser >p {
+    border-radius: 6px; 
+    padding: 0 4rem 1rem 2rem; 
+    background-color: rgba(0, 0, 0, 0.5);
+    line-height: 1.2rem;
+    font-size: 1rem;
+}
+          
 .storycard--background {
     position: relative;
+    background-color: #000;
     // margin-bottom: 32px;
     color: #FFF;
     border-radius: $border-radius;
@@ -257,14 +274,7 @@
         }
     }
     
-    div[id*='imgT']:hover {
-        cursor: pointer;
-    }
 
-    .filmstrip--large-preview,
-    .filmstrip--large-preview div[id*='img_'] {
-        display: none;
-    }
 
     .close_filmstrip {
         cursor: pointer;

@@ -8,15 +8,19 @@ date: 8/28/19
 version: 1
 */
 
-/* Create an API call to get the Polarized listings */
+/* API call to get the Polarized listings*/
 $fieldnotes_data = $this->api_Admin_Get_Fieldnotes_Item($this->page->fieldnotes_id);
+extract($fieldnotes_data, EXTR_PREFIX_ALL, "res");
+
+/* API call to get Responses */
 $fieldsnotes_respsonses_data = $this->api_Admin_Get_Fieldnotes_Responses($this->page->fieldnotes_id);
 
-extract($fieldnotes_data, EXTR_PREFIX_ALL, "res");
+/* API call to get all images from fiedlnotes_images by ID */
+$image_data = $this->api_Admin_Get_FieldnotesImagesById($this->page->fieldnotes_id);
+$image_count = count($image_data);
 
 $content = explode('###', $res_content);
 $sections = count($content);
-// $this->console( $content,0 );
 
 if($sections == 2) {
     $res_content_leadin = $content[0];
@@ -38,13 +42,47 @@ $res_content = str_replace('<p><br></p>', '', $res_content);
 $res_date_written = date("F j, Y", strtotime($res_created));
 
 /* Check for image */
-if ( file_exists($_SERVER['DOCUMENT_ROOT'] . "/view/image/fieldnotes/" . $res_image ) ) {
-    $img_html .= '<div class="col image">
-    <img src="/view/image/fieldnotes/' . $res_image . '" /><br />
-    <span class="caption">' . $res_caption . '</span>
-    </div>';
+if($res_type == "article") {
+    if ( file_exists($_SERVER['DOCUMENT_ROOT'] . "/view/image/fieldnotes/" . $res_image ) ) {
+        $img_html = '<div class="col image filmstrip--carousel">
+        <img src="/view/image/fieldnotes/' . $res_image . '" /><br />
+        <span class="caption">' . $res_caption . '</span>
+        </div>';
+    }
+} else if($res_type == "video") {
+        $img_html = null;
+} else { 
+
+    /* FILMSTRIP LAYOUT THUMBNAILS */
+    $j=1;
+    foreach ($image_data as $imgK => $imgV) {
+
+        if($j == 1) { 
+            $show_large = 'display: block;'; 
+            $underline_thumb = 'border-bottom: 32px solid #000; padding-bottom: 0; margin-bottom: 0;';
+            $opacity_default = '1';
+        } else { 
+            $show_large = null; 
+            $underline_thumb = null;
+            $opacity_default = '.2';
+        }
+
+        if ($j == $image_count) { $m_right = null; } else { $m_right = null; }
+
+        $img_html .= '<div id="imgT_' . $j . '" data-file="' . $j . '" style="' . $underline_thumb . ' ' . $m_right . '" class="">';
+        $img_html .= '<img style="opacity: ' . $opacity_default . '; width: 25%; margin: auto;" src="/view/image/fieldnotes/' . $imgV['path'] . '" />';
+        $img_html .= '</div>';
+
+        $image_large .= '<div id="img_' . $j . '_expanded" style="' . $show_large . ' background-color: #000; min-height:300px; position: relative;"><p id="caption_' . $j . '" style=" padding: 2rem 1rem 1rem 2rem; color: #FFF; background-color: rgba(0,0,0,.4); font-size: 1.3rem; font-weight: 200;">' . $imgV['caption'] . '</p><img style="width: 100%;" src="/view/image/fieldnotes/' . $imgV['path'] . '" /></div>';
+        $j++;
+    }
+
+    $res_content = '<div id="filmstrip--preview" class="filmstrip--large-preview show">'
+                        . $image_large .                            
+                    '</div>';
 }
 
+/* Build Comments */
 if($res_cheers == 0) { $res_cheers = 'Clink! Be the first to '; }
  $resp_count = count($fieldsnotes_respsonses_data);
 

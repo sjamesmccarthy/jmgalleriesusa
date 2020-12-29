@@ -224,13 +224,13 @@ class Core_Api extends Fieldnotes_Api
         return($data);
     }
 
-    public function api_Catalog_Get_New_Releases($limit, $duration=null, $rand=null) {
+    public function api_Catalog_Get_New_Releases($limit=4, $duration=null, $rand=null) {
         
         if( !is_null($rand) ) {
             $rand = " ORDER BY RAND() ";
         }
 
-        if( is_null($duration) ) { $duration = 6; }
+        if( is_null($duration) ) { $duration = 12; }
 
         /* Executes SQL and then assigns object to passed var */
         if( $this->checkDBConnection(__FUNCTION__) == true) {

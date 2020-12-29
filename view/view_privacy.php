@@ -94,7 +94,17 @@
 
         <li><a name="p8"></a><h3>Contacing Us</h3>
 
-            <p>If there are any questions regarding this privacy policy you may <a href="/contact">contact us</a> through our online form or via email, security@jmgalleries.com.</p>
+            <p>If there are any questions regarding this privacy policy you may <a href="/contact">contact us</a> through our online form or via email, security[[@]]jmgalleries.com.</p>
+
+            <ul class="pb-16 ml-32">
+            <li>jM Galleries<br />
+            1894 E William St.<br />
+            Suite 4 PMB 178<br />
+            Carson City, Nevada 89701<br />
+            951-708-1831</li>
+            </ul>
+
+            <p>Send us a message through our online <a href="/contact">Contact Form<a></p>
         </li>
 
         </li>

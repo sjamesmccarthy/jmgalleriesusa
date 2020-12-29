@@ -361,3 +361,21 @@ blockquote {
         90% { transform: translate(1px, 2px) rotate(0deg); }
         100% { transform: translate(1px, -2px) rotate(-1deg); transform: scale(1.5); }
       }
+
+.filmstrip--large-preview,
+.filmstrip--large-preview div[id*='img_'] {
+    display: none;
+}
+
+div[id*='imgT'] {
+    display: inline;
+}
+
+div[id*='imgT'] >img:hover {
+    cursor: pointer;
+    opacity: 1 !important;
+}
+
+div[id*='imgT']:hover {
+    cursor: pointer;
+}

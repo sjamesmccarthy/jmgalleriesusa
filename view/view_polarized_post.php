@@ -1,4 +1,6 @@
 <script src="https://www.google.com/recaptcha/api.js?render=6LetD7YUAAAAAFX5cXupV3exd1YCSuYFY_az92Wh"></script>
+<!-- <link href="/view/css/jquery.desoslide.min.css?<?= time(); ?>" rel="stylesheet">
+<script src="/view/js/jquery.desoslide.min.js"></script> -->
 
 <div class="grid">
 <div class="col-3_sm-12 responses__container">
@@ -31,10 +33,13 @@
 
 <section id="polarized" class="pt-24">
    
-    <div class="grid">
+    <div class="grid-noGutter">
         <div class="col-12 __container">
+
+                <div class="col" style="margin: auto; width:80%;">
                 <p class="teaser-title"><?= $res_teaser?></p>
                 <h3 class="text-center"><?= $res_title?></h3>
+                </div>
                 
                 <div class="col content__area">
 
@@ -46,7 +51,7 @@
                         <?= $img_html ?>
                     <!-- </div> -->
 
-                    <div class="col pt-0">
+                    <div class="mt-16 pt-0">
                         <?= $res_content ?>
                     </div>
 
@@ -79,6 +84,39 @@
 
 <script>
 jQuery(document).ready(function($){
+
+$("div[id*='imgT']").on('click', function(e){
+    var ele = "imgT_" + $(this).attr("data-file");
+    console.log("clicked: " + ele );
+    $("div[id*='imgT_'] >img").css("opacity",".5");
+
+    if( $('.filmstrip--large-preview').is(':visible') ) { 
+        console.log(".filmstrip--preview visible");
+        $("div[id*='imgT']").css("border","none");
+        $('#content--teaser').hide();
+        $('#' + ele).css("border-bottom", "32px solid #000").css("padding-bottom","0").css("margin-bottom","0");
+        $('#' + ele + ' >img').css("opacity","1");
+    } else {
+        console.log(".filmstrip--preview hidden");
+        $("div[id*='imgT']").css("border","none");
+        $('#content--teaser').hide();
+        $(".filmstrip--large-preview").slideDown();
+    }
+
+    $('#content--teaser').hide();
+    $("div[id*='img_']").hide();
+    $(".filmstrip--large-preview").show();
+    $("div #img_" + $(this).attr("data-file") + "_expanded").show();
+});
+
+    // $('#slideshow').desoSlide({
+    //     thumbs: $('#slideshow_thumbs li a'),
+    //     auto: {
+    //         start: true
+    //     },
+    //     first: 3,
+    //     thumbEvent: 'click'
+    // });
 
     $('.--response-content-card-cancel').on("click", function(e) { 
         $('.--response-content-card-cta').hide();

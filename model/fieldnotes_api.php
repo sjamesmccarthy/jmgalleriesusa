@@ -203,7 +203,8 @@ public function api_Admin_Update_Fieldnotes() {
         } 
 
         if(!isset($featured)) { $featured ="0"; }
-
+        if($type == "video") { $words = 3; }
+        
         $sql = "
         UPDATE fieldnotes 
         SET 
@@ -302,7 +303,9 @@ public function api_Admin_Insert_Fieldnotes() {
         $title = $this->mysqli->real_escape_string($_POST['title']);
         $file_1_caption = $this->mysqli->real_escape_string($_POST['file_1_caption']);
         $content = $this->mysqli->real_escape_string($_POST['content']);
+
         if(!isset($featured)) { $featured ="0"; }
+        if($type == "video") { $words = 3; }
 
         if(isSet($_FILES['file_1']['name'])) {
             // $_FILES['file_1']['name'] = $short_path . '.jpg';
@@ -315,7 +318,8 @@ public function api_Admin_Insert_Fieldnotes() {
                 `title`, 
                 `image`, 
                 `caption`,
-                `content`, 
+                `content`,
+                `count`,
                 `teaser`,
                 `type`, 
                 `featured`,
@@ -328,6 +332,7 @@ public function api_Admin_Insert_Fieldnotes() {
                 '$img_path',
                 '$file_1_caption', 
                 REPLACE(\"$content\", \"\\r\\n\", \"\"), 
+                '$words',
                 '$teaser',
                 '$type', 
                 '$featured',

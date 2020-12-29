@@ -5,7 +5,7 @@
 
     $count=0;
     $catalog = ltrim($this->page->catalog_path, '/');
-    $new_release_data = array(100,8);  /* Also found in component_new_releases.php */
+    $new_release_data = array(100,12);  /* Also found in component_new_releases.php */
 
     /* Load all category meta data */
     $catalog_meta = $this->api_Catalog_Category_List($catalog);
@@ -25,7 +25,7 @@
             $catalog_title = 'SHOP OPEN EDITIONS';
             $catalog_desc = 'Beautiful tinyVIEWS<span style="font-size:.9rem; font-weight: 300;"><sup>&trade;</sup></span> Open Edition Fine Art at Affordable Prices.';
             $catalog_tabs_hidden = true;
-            $tv_le_link = '<p class="shop-tv-link"><a href="/galleries">Browse Limited Editions</a></p>';
+            $tv_le_link = '<p class="shop-tv-link"><a href="/shop">Shop The jM Gallery Store</a></p>';
         } 
         
         $catalog_photos = $this->api_Catalog_Category_Thumbs_All();
@@ -34,7 +34,7 @@
         $catalog_tabs_hidden = true;
         // $catalog_photos = $this->api_Catalog_Category_Filmstrip($catalog_meta[0]['catalog_collections_id'], 'ALL');
         $catalog_photos = $this->api_Catalog_Category_Filmstrip($catalog_meta[0]['catalog_collections_id'], 'ALL','LE');
-        $tv_le_link = '<p class="shop-tv-link"><a href="/all?filter=tinyviews">Shop Open Editions</a></p>';
+        $tv_le_link = '<p class="shop-tv-link"><a href="/all?filter=tinyviews">Back To THE WORK / LIMITED EDITIONS</a></p>';
     }
 
         if( !$catalog_photos['error']) {

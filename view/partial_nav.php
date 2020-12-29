@@ -4,12 +4,12 @@
             <?= $active ?>
             
             <div class="grid" style="width: 1440px; position: relative;">
-                <div class="col-5-middle md-hidden sm-hidden">
+                <!-- <div class="col-5-middle md-hidden sm-hidden">
                     <p class="center heading" ><a href="/all?filter=tinyviews" class="<?= $all ?>">tinyVIEWS<span style="font-size:.9rem; font-weight: 300;"><sup>&trade;</sup></span></a><br /><span class="font-light">OPEN EDITIONS</span></p>
-                </div>
-                <!-- <div class="col-3-middle md-hidden sm-hidden">
-                    <p class="center heading"><a href="/polarized" class="<?= $polarized ?>">FIELD NOTES</a><br /><span class="font-light">the JOURNAL</span></p>
                 </div> -->
+                <div class="col-5-middle md-hidden sm-hidden">
+                    <p class="center heading"><a href="/polarized" class="<?= $polarized ?>">POLARIZED</a><br /><span class="font-light">my FIELD NOTES</span></p>
+                </div>
                 <div class="col-2 md-hidden sm-hidden">
                     <p class="topnav-logo"><a href="/"><img class="topnav--logo-img" src="/view/image/logo_fullsize.png" /></a></p>
                 </div>

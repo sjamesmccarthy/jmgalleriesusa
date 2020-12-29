@@ -18,6 +18,8 @@ foreach ($fieldnotes_data as $key => $value) {
     $content = explode('###', $value['content']);
     $sections = count($content);
 
+    $value['title'] = mb_strimwidth($value['title'], 0, 65, "...");
+
     if($sections == 2) {
         $content_leadin = strip_tags($content[0]);
         $content_leadin_short = substr( $content_leadin, 0, strrpos( substr( $content_leadin, 0, 130), ' ' ) ) . '...';
@@ -27,7 +29,19 @@ foreach ($fieldnotes_data as $key => $value) {
         $content = nl2br($content[0]);
     }
 
-    $read_time = $this->__readTime($value['count']);
+    if($value['type'] == "video") {
+        $read_time = $value['count'] . " min watch</p><p style='position: absolute; right: 1rem;bottom: 0.8rem;'><i class=\"fab fa-youtube\"></i></p>";
+    } else {
+
+        if($value['type'] == "filmstrip") {
+            $read_time_label = '<p style="position: absolute; right: 1rem;bottom: 0.8rem;"><i class="fas fa-film"></i></p>';
+        } else {
+            $read_time_label = null;
+        }
+
+        $read_time = $this->__readTime($value['count']);
+    }
+
     $large_cards = 16;
     $value['byline'] = 'James McCarthy';
 
@@ -44,7 +58,7 @@ foreach ($fieldnotes_data as $key => $value) {
 
     if($i < $large_cards) {
 
-        if ($value['featured'] == "1") {
+        if ($value['type'] == "article" || $value['type'] == "video") {
             
             $card_html .= '
                 <div class="col-6_sm-12 storycard--background" style="background: rgba(0,0,0,1) url(/view/image/fieldnotes/' . $value['image'] . ') no-repeat center; background-size: cover; word-break: break-word;">
@@ -75,7 +89,7 @@ foreach ($fieldnotes_data as $key => $value) {
             /* API call to get all images from fiedlnotes_images by ID */
             $image_data = $this->api_Admin_Get_FieldnotesImagesById($value['fieldnotes_id']);
             $image_count = count($image_data);
-
+            
             $j=1;
             foreach ($image_data as $imgK => $imgV) {
 
@@ -83,25 +97,29 @@ foreach ($fieldnotes_data as $key => $value) {
                     $file_path = $imgV['path'];
                     $file_caption = $imgV['caption'];
 
-                    if ($j == $image_count) { $m_right = null; } else { $m_right = 'margin-right: 1rem;'; }
-                    if($j >= 3) { $sm_hidden = '_sm-hidden'; } else { $sm_hidden = null; }
+            /* changed $image_count to 2 */
+            if ($j == 2) { $m_right = null; } else { $m_right = 'margin-right: .5rem;'; }
+            if ($j >= 3) { $sm_hidden = '_sm-hidden'; } else { $sm_hidden = null; }
 
                     /* HTML for the images in the strip */
-                    $strip_html .= '<div class="col' . $sm_hidden . '" id="imgT_' . $j . '" style="padding-left: 0; background-color: #000; flex: 1; overflow: hidden; width: 100%;' . $m_right . '" data-file="' . $j . '"><p class="center"><img style="min-height: 176px; max-height: 64px;" src="/view/image/fieldnotes/' . $imgV['path'] . '" /></p></div>';
-
-                    $image_large .= '<div id="img_' . $j . '_expanded" style="background-color: #000; min-height:300px; position: relative;"><p id="caption_' . $j . '" style="padding: 1rem; position: absolute; background-color: rgba(0,0,0,.4); font-size: 1.3rem; font-weight: 200;">' . $imgV['caption'] . '</p><img style="width: 100%;" src="/view/image/fieldnotes/' . $imgV['path'] . '" /></div>';
+                    if ($j <= 2) {
+                    $strip_html .= '<div class="col' . $sm_hidden . '" style="padding-left: 0; background-color: #000; flex: 1; overflow: hidden; width: 100%;' . $m_right . '" data-file="' . $j . '"><p class="center"><img style="min-height: 176px; max-height: 64px;" src="/view/image/fieldnotes/' . $imgV['path'] . '" /></p></div>';
+                        
+                    // if ($j <= 2) {
+                    $image_large .= '<div id="img_' . $j . '_expanded_DISABLED" style="background-color: #000; min-height:300px; position: relative;"><p id="caption_' . $j . '" style="padding: 1rem; position: absolute; background-color: rgba(0,0,0,.4); font-size: 1.3rem; font-weight: 200;">' . $imgV['caption'] . '</p><img style="width: 100%;" src="/view/image/fieldnotes/' . $imgV['path'] . '" /></div>';
+                    } 
                     $j++;
             }
 
             $card_html .= '
-                <div class="col-6_sm-12 storycard--background" style="background-color: #000; grid-column: 1 / 4;">
-                    <div style="border-radius: 6px; padding: .5rem 2rem .5rem 2rem; background-color: rgba(0, 0, 0, 0.5);padding-top: 1rem;">
-                        <p style="font-size: .7rem;">FILMSTRIP</p><h4 style="color: #FFFFFF;">' . $value['title']. '</h4><p style="display: none; font-size: .8rem;"><b>' . $value['byline'] . '</b> &mdash; ' . date("F d, Y", strtotime($value['created'])) . '</p><p class="rotate-for-more">ROTATE TO SEE MORE<i class="fas fa-undo"></i></p>
+                <div class="col-6_sm-12 storycard--background">
+                    <div class="content__filmstrip--preview">
+                        <p style="font-size: .7rem;">FILMSTRIP</p><h4 style="color: #FFFFFF;"><a href="/polarized/' . $value['short_path'] . '">' . $value['title']. '</a></h4><p style="position: absolute; right: 1rem;bottom: 1rem;">' . $read_time_label . '</p>
                     </div>
-                    <div class="content--preview" style="display: flex; flex-wrap: wrap; justify-content: left;">                        
+                    <div class="content--preview" style="display: flex; flex-wrap: wrap; justify-content: left; padding-left: 0; padding-right: 0;">                        
                     <!-- HTML for images -->' . $strip_html . 
                     '</div>
-                    <div id="content--teaser"><p style="padding: .5rem 2rem .5rem 2rem;color:#FFF;">' . $value['teaser'] . '</p></div> 
+                    <div class="content__filmstrip--teaser"><p>' . $value['teaser'] . '</p></div> 
                     <!-- Large Preview of Image Selected -->
                     <div id="fimlstrip--preview_' . $j . '" class="filmstrip--large-preview">
                         <p data-filmstrip="' .$j . '" class="close_filmstrip" style="border-bottom-left-radius: 69px; background-color: rgba(255,255,255,.5); text-align: right;padding: 24px;position: absolute;top: 0;right: 0;color: #000;"><i style="position:absolute; top:13px;right:10px;" class="fas fa-times-circle" aria-hidden="true"></i></p>'
@@ -112,28 +130,7 @@ foreach ($fieldnotes_data as $key => $value) {
 
         } else {
 
-            $card_html .= '
-                    <div class="col-6_sm-12 storycard">
-                        <div class="content--preview">
-                            <p class="--tag">' . strtoupper($value['type']) . '</p>
-                            <h4><a href="/polarized/' . $value['short_path'] . '">' . $value['title'] . '</a></h4>
-                            <div class="--teaser">' . $content_leadin_short . '</div>
-                            
-                            <!-- <div class="" style="display: flex; position: relative; margin-top: 1rem;">
-                                <div style="width: 38px; margin-top: 2px;">
-                                    <img src="/view/image/avatar/jamesmccarthy_1.jpg" style="border-radius: 100px; width: 100%;"/>
-                                </div>
-                                <div class="" style="width: 100%; padding-left: .5rem;">
-                                    <p class="--byline"><b>' . $value['byline'] . '</b><br />
-                                    ' . date("F d, Y", strtotime($value['created'])) . ' - ' . $value['count'] . ' Words, ' . $read_time . '</p>
-                                </div>
-                            </div> -->
-                        </div>
-
-                       ' . '
-                        
-                    </div>
-            ';
+            $card_html .= 'COULD_NOT_PROCESS';
             
         }
 
