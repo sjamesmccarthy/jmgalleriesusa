@@ -3231,7 +3231,8 @@ button a {
   display: none; }
 
 .heading {
-  font-weight: 800; }
+  font-weight: 800;
+  line-height: 1.2; }
 
 /* FOR NOTICE */
 .notice-container {

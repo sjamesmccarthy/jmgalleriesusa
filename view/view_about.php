@@ -47,7 +47,7 @@
                 <h3>Early Life</h3>
 
                 <p>
-                Born in Concord, a small, historical, suburb outside Boston, Massachusetts, j.McCarthy explored the rich history of the makings of America during his youth.  He learned to appreciate the beauty and stories that are shared by the landscape around us. From as far East as Boston where America's freedom was founded when Paul Revere galloped over cobble-stone rock on his candle-lit "midnight ride" yelling, "The British are coming!" to as far-away West into the Gold Rush of the Sierra Nevada Mountains.
+                Born in Concord, a small, historical, suburb outside Boston, Massachusetts, j.McCarthy explored the rich history of the makings of America during his youth which taught him to appreciate the beauty and stories that are shared by the landscape around us.
                 </p>
                 
                 <p>
@@ -55,13 +55,13 @@
                 </p>
                
                 <p>
-                While on a northwest college road tour with his mother he was shooting a foggy dock on a lake somewhere in the boonedocks outside of Eugene, Oregon with a hand-me-down Minolta SLR 35mm camera that was given to him by his 8th grade Journalism teacher, Mrs. Anderson. This was the moment j.McCarthy heard his calling, inspiring him to pursue a career in Journalism.
-                <!-- , but didn't fall in love for another 18 years. -->
+                Then while on a northwest college road tour with his mother he was shooting a foggy dock on a small pond somewhere in the boonedocks outside of Eugene, Oregon with a Minolta SLR 35mm camera that was given to him by his 8th grade Journalism teacher. This was the moment j.McCarthy heard his calling, inspiring him to pursue a career in Journalism.
                 </p>
                     
                 <p>
-                As they say, "time flies" and "life happens". j.McCarthy graduated from the University of Nevada, Reno in 1994 with a Bachelors degree in Liberal Arts, was blessed with three beautiful daughters.</p>
-                <p>In 2012, he moved back to the Sacramento area where he was reunited with long time friend, and fellow fine-art photographer, <a href="http://steveroyjr.com/" target="_new">Steve Roy</a>. Steve inspired j.McCarthy to pick-up his camera, a Nikon 1 V1 at the time, and start looking through the lens again. It wasn't too long after when j.McCarthy took his desire to master fine-art photography to the next level and upgraded to his first <!-- a Nikon D5200.  Not a few months later, he graduated into the--> full-frame camera, the Nikon D600.</p>
+                Five years later j.McCarthy graduated from the University of Nevada, Reno with a Bachelors degree in English and soon after blessed with three beautiful daughters.</p>
+
+                <p>In 2012, he moved back to the Sacramento area where he was reunited with long time friend, and fellow fine-art photographer, <a href="http://steveroyjr.com/" target="_new">Steve Roy</a>. Steve inspired j.McCarthy to pick-up his camera, a Nikon 1 V1 at the time, and start looking through the lens again. It wasn't too long after when j.McCarthy took his desire to master fine-art photography to the next level.</p>
                 
                 <p>
                 This began j.McCarthy's self-taught path in fine-art photography.
@@ -72,7 +72,7 @@
                 <li class="timeline-history">
                         <h3>Career</h3>
                         <p>
-                        After moving back to the Reno/Tahoe area in 2015, j.McCarthy met his better-half, Michele, who after seeing his work, inspired him to start publicly displaying and selling his photographs, as well as started hand-making his own frames out of Dark Walnut.
+                        After moving back to the Reno/Tahoe area in 2015, j.McCarthy met his better-half, Michele, who after seeing his work, inspired him to start publicly displaying and selling his photographs, as well as started hand-making his own frames.
                         </p>
                 
                         <p>
@@ -84,14 +84,14 @@
                         </p>
 
                         <p>
-                        But 2018 and 2019 weren't all about exhibiting. Lots of "back of the studio" changes happened too, from the addition of new gear, including, Tamron G2 lenses, migration to an Apple workflow, framing equipment and discovering local suppliers, to the purchase of an Epson Medium Format Printer. j.McCarthy overhauled his entire workflow creating an efficient home studio capable of turnkey fine-art production of medium sized prints.
+                        But 2018 and 2019 weren't all about exhibiting. Lots of "back of the studio" changes happened too, from the addition of new gear, migration to an Apple workflow, framing equipment and discovering local suppliers, to the purchase of an Epson Medium Format Printer. j.McCarthy overhauled his entire workflow creating an efficient home studio capable of turnkey fine-art production of medium sized prints.
                         </p>
 
                         <p>
-                        The year 2020 was the beginning of a new chapter in Southern California, or so it was supposed to have been. After a few months in transition, and because of unforeseen circumstances, the adventure ended as quickly as it had begun and j.McCarthy found himself back in Las Vegas trapped in the global pandemic known as COVID-19. </p>
+                        The following New Year began a new chapter in Southern California, or so it was supposed to have been. The adventure took 180 turn and j.McCarthy found himself back in Las Vegas trapped in the global pandemic known as COVID-19 and because of the international and city-wide lockdowns, curfews and prohibition of public gatherings, j.McCarthy postponed all events for the year.</p>
 
                         <p>
-                        Due to the pandemic and the city-wide lockdowns, curfews and prohibition of public gatherings, j.McCarthy postponed all events for the year and decided to use the time to refine his online gallery, curate his collection and enjoy the outdoors shooting more landscapes.
+                         Finding the silver-lining in an otherwise weird 2020, j.McCarthy decided to use the time to refine his online gallery, curate his collection, enjoy the outdoors shooting more landscapes and relocate back to the State Capital of Nevada, Carson City.
                         </p>
 
                     </li>
@@ -119,11 +119,7 @@
                         </ul>
                         </div>
                     </li>
-                    <li class="timeline-history pt-16">
-                        <h3>Contact Me</h3>
-                        <p><a href="/contact">Email</a>, <!-- <a target="_social" href="https://twitter.com/jmgalleriesusa">Twitter</a>, --><a target="_social" href="https://linkedin.com/company/jmgalleriesusa">LinkedIn</a> and <a target="_social" href="https://instagram.com/jmgalleriesusa">Instagram</a>.</p>
-
-                    </li>
+                    
                 </ul>
                 </div>
 
@@ -135,17 +131,3 @@
     </div>
 
 </section>
-
-<script>
-
-  jQuery(document).ready(function($){
-    jQuery.noConflict();
-
-    $('#email_signup').on("click", function() {
-        // $(location).attr('href', '/signup', '_blank');
-        window.open('/signup', '_blank'); 
-    })
-
-});
-
-</script>

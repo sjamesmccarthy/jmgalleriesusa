@@ -19,6 +19,7 @@ if($this->routes->URI->page == 'detail') {
     $bc_catalog = null;
 }
 
+/* 
 if(!isSet($_COOKIE['cookie_consent'])) {
     $cookie_consent = '<div class="cookie_banner">
     <p><i class="fas fa-cookie-bite"></i></p>
@@ -26,5 +27,6 @@ if(!isSet($_COOKIE['cookie_consent'])) {
     <p class="pull-right"><button id="cookie_consent" class="button-inv">ACCEPT COOKIES</button>
     </div>';
 } 
+*/
 
 ?>

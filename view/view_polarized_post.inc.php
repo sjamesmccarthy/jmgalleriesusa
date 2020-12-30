@@ -64,7 +64,7 @@ if($res_type == "article") {
         } else { 
             $show_large = null; 
             $underline_thumb = null;
-            $opacity_default = '.2';
+            $opacity_default = '.8';
         }
 
         if ($j == $image_count) { $m_right = null; } else { $m_right = null; }

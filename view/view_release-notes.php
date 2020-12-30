@@ -13,6 +13,15 @@
 
         <div class="col-11" style="position: relative">
 
+        <p class="pt-16">v1.7.1<br />Dec 29, 2020</p>
+            <ul>
+            <li>update: about content.</li>
+            <li>update: contact information, social media links in contact-module.</li>
+            <li>update: navigation, added Polarized to main level and re-org footer links.</li>
+            <li>update: admin control: added Video to fieldnotes module.</li>
+            </ul> 
+        </p>
+
         <p class="pt-16">v1.7<br />Dec 21, 2020</p>
         	<ul>
             <li>added: new jM Gallery Store.</li>
