@@ -27,6 +27,13 @@
             $catalog_tabs_hidden = true;
             $tv_le_link = '<p class="shop-tv-link"><a href="/shop">Shop The jM Gallery Store</a></p>';
         } 
+
+        if($this->routes->URI->queryvals[1] == 'limited') {
+            $catalog_title = 'LIMITED EDITIONS';
+            $catalog_desc = 'a collection of LIMITED EDITION photography by jMcCarthy.';
+            $catalog_tabs_hidden = true;
+            $tv_le_link = '<p class="shop-tv-link"><a href="/galleries">Browse The Limited Edition Collections</a></p>';
+        } 
         
         $catalog_photos = $this->api_Catalog_Category_Thumbs_All();
 

@@ -11,7 +11,7 @@
                 <li class="filter-all selected">All</li>
                 <li class="filter-gallery">Limited Edition</li>
                 <!-- <li class="filter-studio">Studio Edition</li> -->
-                <li class="filter-open">tinyVIEWS<span style="font-size:.9rem; font-weight: 300;"><sup>&trade;</sup></span> Open Editions</li>
+                <li class="filter-open"><!--tinyVIEWS<span style="font-size:.9rem; font-weight: 300;"><sup>&trade;</sup></span>--> Open Edition</li>
             </ul>
             <?php } ?>
         </div>
@@ -37,6 +37,13 @@ jQuery(document).ready(function($){
         $('[class*="filter-open"]').addClass("selected");
         $('[class*="f-"]').hide();
         $('.f-open').show();
+        <?php } ?>
+
+        <?php if($_REQUEST['filter'] == "limited") { ?>
+        $('[class*="filter-"]').removeClass("selected");
+        $('[class*="filter-gallery"]').addClass("selected");
+        $('[class*="f-"]').hide();
+        $('.f-gallery').show();
         <?php } ?>
 
     $('.filter-all').click(function() {

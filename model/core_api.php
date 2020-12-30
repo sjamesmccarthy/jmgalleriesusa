@@ -406,6 +406,8 @@ class Core_Api extends Fieldnotes_Api
            PH.title,
            PH.file_name,
            PH.loc_place,
+           PH.as_gallery,
+           PH.as_open,
            CAT.path as cate_path
        FROM
            catalog_photo_views AS V

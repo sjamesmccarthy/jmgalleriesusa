@@ -29,7 +29,7 @@
             <input type='hidden' id="price" name='price' value="<?= $cost ?>" />
             <input type='hidden' id="quantity" name='quantity' value="<?= $res_quantity ?>" />
             
-            <div style="border:0; border-left: 1px solid #e4e4e4; margin-left: 2rem; padding-left: 1rem; font-size: 1rem; height: 12rem; margin-top: 8px;">
+            <div style="border:0; border-left: 1px solid #e4e4e4; margin-left: 2rem; padding-left: 1rem; font-size: 1rem; min-height: 12rem; margin-top: 8px;">
             <?= nl2br($order_subject) ?>   
             </div>
 

@@ -20,7 +20,7 @@ if ($catalog == '') {
 
             <p style="display: inline-block; font-size: 1rem; background-color: #FFF; padding: 16px;text-align: center;">
             <a href="/polarized">POLARIZED</a> /
-            <a href="/galleries">THE WORK</a>
+            <a href="/all">THE WORK</a>
         </div>
 
         <div id="hero" data-url="$this->hero_image" style="box-shadow: 0px 20px 25px 0px rgba(0, 0, 0, 0.3);">

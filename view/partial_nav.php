@@ -10,7 +10,7 @@
                     <p class="topnav-logo"><a href="/"><img class="topnav--logo-img" src="/view/image/logo_fullsize.png" /></a></p>
                 </div>
                 <div class="col-5-middle md-hidden sm-hidden">
-                    <p class="center heading"><a href="/galleries" class="<?= $galleries ?>">THE WORK</a><br /><span class="font-light">LIMITED EDITIONS</span></p>
+                    <p class="center heading"><a href="/all" class="<?= $galleries ?>">THE WORK</a><br /><span class="font-light"><a class="font-light" href="/all?filter=limited">LIMITED</a> / <a class="font-light" href="/all?filter=tinyviews">OPEN</a> Ed.</span></p>
                 </div>
                 
             </div>
@@ -28,8 +28,8 @@
             <li class="close"><i class="fas fa-times-circle"></i>
             </li>
             <li><a href="/">HOME</a></li>
-                <li><a href="/all?filter=tinyviews">tinyVIEWS OPEN EDITIONS</a></li>
                 <li><a href="/galleries">LIMITED EDITIONS</a></li>
+                <li><a href="/all?filter=tinyviews">tinyVIEWS OPEN EDITIONS</a></li>
                 <li><a href="/polarized">POLARIZED</a></li>
                 <li><a href="/shop">jM GALLERIES STORE</a></li>
         </ul>
