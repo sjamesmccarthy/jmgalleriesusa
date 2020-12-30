@@ -28,7 +28,7 @@
             <li class="close"><i class="fas fa-times-circle"></i>
             </li>
             <li><a href="/">HOME</a></li>
-                <li><a href="/galleries">LIMITED EDITIONS</a></li>
+                <li><a href="/all?filter=limited">LIMITED EDITIONS</a></li>
                 <li><a href="/all?filter=tinyviews">tinyVIEWS OPEN EDITIONS</a></li>
                 <li><a href="/polarized">POLARIZED</a></li>
                 <li><a href="/shop">jM GALLERIES STORE</a></li>
