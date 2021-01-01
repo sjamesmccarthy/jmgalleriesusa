@@ -1,11 +1,12 @@
 #polarized_idx {
 
-    margin-top: 0;
-    padding: 0 32px;
+    margin: 0;
+    padding: 0;
+    // padding: 0 32px;
 
     // Large devices (tablets (iPad Pro, 1112px and up)
     @media (min-width: 1112px) {
-        width: 80%;
+        width: 100%;
         margin: auto;
     }
 

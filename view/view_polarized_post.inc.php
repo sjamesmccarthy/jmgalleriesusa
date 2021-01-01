@@ -59,7 +59,7 @@ if($res_type == "article") {
 
         if($j == 1) { 
             $show_large = 'display: block;'; 
-            $underline_thumb = 'border-bottom: 32px solid #000; padding-bottom: 0; margin-bottom: 0;';
+            $underline_thumb = 'border-bottom: 25px solid rgba(0,0,0,.6); padding-bottom: 0; margin-bottom: 0;';
             $opacity_default = '1';
         } else { 
             $show_large = null; 
@@ -73,7 +73,7 @@ if($res_type == "article") {
         $img_html .= '<img style="opacity: ' . $opacity_default . '; width: 25%; margin: auto;" src="/view/image/fieldnotes/' . $imgV['path'] . '" />';
         $img_html .= '</div>';
 
-        $image_large .= '<div id="img_' . $j . '_expanded" style="' . $show_large . ' background-color: #000; min-height:300px; position: relative;"><p id="caption_' . $j . '" style=" padding: 2rem 1rem 1rem 2rem; color: #FFF; background-color: rgba(0,0,0,.4); font-size: 1.3rem; font-weight: 200;">' . $imgV['caption'] . '</p><img style="width: 100%;" src="/view/image/fieldnotes/' . $imgV['path'] . '" /></div>';
+        $image_large .= '<div id="img_' . $j . '_expanded" style="' . $show_large . ' min-height:300px; position: relative;"><p id="caption_' . $j . '" style="padding: 2rem 1rem 2rem 2rem; color: #FFF; background-color: rgba(0,0,0,.6); font-size: 1.3rem; font-weight: 200; margin-bottom:0;">' . $imgV['caption'] . '</p><img style="width: 100%;" src="/view/image/fieldnotes/' . $imgV['path'] . '" /></div>';
         $j++;
     }
 

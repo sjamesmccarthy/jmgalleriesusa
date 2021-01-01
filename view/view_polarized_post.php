@@ -94,7 +94,7 @@ $("div[id*='imgT']").on('click', function(e){
         console.log(".filmstrip--preview visible");
         $("div[id*='imgT']").css("border","none");
         $('#content--teaser').hide();
-        $('#' + ele).css("border-bottom", "32px solid #000").css("padding-bottom","0").css("margin-bottom","0");
+        $('#' + ele).css("border-bottom", "25px solid rgba(0,0,0,.6").css("padding-bottom","0").css("margin-bottom","0");
         $('#' + ele + ' >img').css("opacity","1");
     } else {
         console.log(".filmstrip--preview hidden");

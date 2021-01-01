@@ -3190,8 +3190,7 @@ button a {
   display: inline-block; }
   @media (min-width: 320px) {
     .topnav-logo img {
-      width: 150px;
-      display: none; } }
+      width: 150px; } }
   @media (min-width: 376px) {
     .topnav-logo img {
       width: 150px;
@@ -4252,11 +4251,11 @@ input.amazing-offer-error[type="text"] {
     margin-top: 10px; }
 
 #polarized_idx {
-  margin-top: 0;
-  padding: 0 32px; }
+  margin: 0;
+  padding: 0; }
   @media (min-width: 1112px) {
     #polarized_idx {
-      width: 80%;
+      width: 100%;
       margin: auto; } }
   @media (min-width: 1200px) {
     #polarized_idx {
@@ -4423,7 +4422,7 @@ input.amazing-offer-error[type="text"] {
 
 @media (min-width: 1112px) {
   #polarized {
-    width: 80%;
+    width: 100%;
     margin: auto; } }
 
 @media (min-width: 1200px) {
