@@ -11,14 +11,13 @@ version: 1
 
 /* Create an API call to get the Polarized listings */
 $fieldnotes_data = $this->api_Admin_Get_Fieldnotes("published");
+// extract($fieldnotes_data, EXTR_PREFIX_ALL, "res");
 
 $i=0;
 foreach ($fieldnotes_data as $key => $value) {
 
     $content = explode('###', $value['content']);
     $sections = count($content);
-
-    $value['title'] = mb_strimwidth($value['title'], 0, 65, "...");
 
     if($sections == 2) {
         $content_leadin = strip_tags($content[0]);
@@ -29,118 +28,102 @@ foreach ($fieldnotes_data as $key => $value) {
         $content = nl2br($content[0]);
     }
 
-    if($value['type'] == "video") {
-        $read_time = $value['count'] . " min watch</p><p style='position: absolute; right: 1rem;bottom: 0.8rem;'><i class=\"fab fa-youtube\"></i></p>";
-    } else {
+    $read_time = $this->__readTime($value['count']);
 
-        if($value['type'] == "filmstrip") {
-            $read_time_label = '<p style="position: absolute; right: 1rem;bottom: 0.8rem;"><i class="fas fa-film"></i></p>';
-        } else {
-            $read_time_label = null;
-        }
+    switch($value['type']) {
 
-        $read_time = $this->__readTime($value['count']);
+        case "article":
+            $read_time_label = $read_time;
+            $icon_type = 'fas fa-file-invoice';
+        break;
+
+        case "video":
+            $read_time_label = $value['count'] . ' MIN WATCH';
+            $icon_type = 'fab fa-youtube';
+        break;
+
+        case "filmstrip":
+            $read_time_label = $value['teaser'];
+            $icon_type = 'fas fa-film';
+        break;
+
+        default:
+        $read_time = $read_time;
+        $icon_type = 'invoice';
+        break;
     }
-
-    $large_cards = 16;
-    $value['byline'] = 'James McCarthy';
 
     /* Check for image */
     if ( file_exists($_SERVER['DOCUMENT_ROOT'] . "/view/image/fieldnotes/" . $value['image'] ) ) {
-        $img_html = 
-            '<div class="col sm-hidden content__image--preview">
-                <img src="/view/image/fieldnotes/' . $value['image'] . '" /><br />
-            </div>';
+        $img_html = '<img src="/view/image/fieldnotes/' . $value['image'] . '" /></a>';
+        $value['title'] = mb_strimwidth($value['title'], 0, 65, "...");
     } else {
-        $img_html = '<!-- err_code: no image found -->';
+        $img_html = null;
+        $value['title'] = mb_strimwidth($value['title'], 0, 105, "...");
     }
 
+    $card_html .= '<div class="card--wrapper">';
+    $card_html .= '<div class="card--content">';
+    $card_html .= '<div class="card--type">' . strtoupper($value['type']) . '</div>';
+    $card_html .= '<div class="card--byline">user_id: ' . $value['user_id'] . '</div>';
+    $card_html .= '<div class="card--title"><a href="/polarized/' . $value['short_path'] . '">' . $value['title'] . '</a></div>';
+    $card_html .= '<div class="card--readtime">' . $read_time_label . '</div>';
+    $card_html .= '</div>';
+    $card_html .= '<div class="card--image-wrapper" style="background: rgba(0,0,0,0) url(/view/image/fieldnotes/' . $value['image'] . ') no-repeat center; background-size: cover; word-break: break-word;">';
+    $card_html .= '<i class="' . $icon_type . ' card--image-icon"></i>';
+    $card_html .= '<a class="card--image"href="#">';
+    // $card_html .= $img_html;
+    $card_html .= '</div>';
+    $card_html .= '</div>';
 
-    if($i < $large_cards) {
-
-        if ($value['type'] == "article" || $value['type'] == "video") {
-            
-            $card_html .= '
-                <div class="col-6_sm-12 storycard--background" style="background: rgba(0,0,0,1) url(/view/image/fieldnotes/' . $value['image'] . ') no-repeat center; background-size: cover; word-break: break-word;">
-                    <div class="content--preview" style="background-color: rgba(0,0,0,.4); height: 100%; min-height: 177px;">
-                        <div style="padding: 2rem .1rem;">
-                        <p class="--tag">' . strtoupper($value['type']) . '</p>
-                        <h4 class="pb-32"><a href="/polarized/' . $value['short_path'] . '">' . $value['title'] . '</a></h4>
-                        <a style="color: #FFF; text-decoration: none;" href=""><p style="position: absolute; bottom: 1rem; border-top: 1px solid #CCC; font-weight: 600; text-transform: uppercase;"><!-- ' . date("D M j Y", strtotime($value['created'])) . '<br /> -->' . $read_time . '</p></a>
-                        
-                        <!-- <div class="mt-8" style="display: flex; position: relative;">
-                                <div style="width: 38px; margin-top: 2px;">
-                                    <img src="/view/image/avatar/jamesmccarthy_1.jpg" style="border-radius: 100px; width: 100%;"/>
-                                </div>
-                                <div class="--byline" style="width: 100%;">
-                                    <p class="--byline"><b>' . $value['byline'] . '</b><br />
-                                    ' . date("F d, Y", strtotime($value['created'])) . ' - ' . $value['count'] . ' Words, ' . $read_time . '</p>
-                                </div>
-                        </div> -->
-                    </div>
-                    </div> 
-                </div>
-        ';
-
-        } else if ($value['type'] == "filmstrip") {
-
-            $strip_html = null;
-
-            /* API call to get all images from fiedlnotes_images by ID */
-            $image_data = $this->api_Admin_Get_FieldnotesImagesById($value['fieldnotes_id']);
-            $image_count = count($image_data);
-            
-            $j=1;
-            foreach ($image_data as $imgK => $imgV) {
-
-                    /* variables to assign */
-                    $file_path = $imgV['path'];
-                    $file_caption = $imgV['caption'];
-
-            /* changed $image_count to 2 */
-            if ($j == 2) { $m_right = null; } else { $m_right = 'margin-right: .5rem;'; }
-            if ($j >= 3) { $sm_hidden = '_sm-hidden'; } else { $sm_hidden = null; }
-
-                    /* HTML for the images in the strip */
-                    if ($j <= 2) {
-                    $strip_html .= '<div class="col' . $sm_hidden . '" style="padding-left: 0; background-color: #000; flex: 1; overflow: hidden; width: 100%;' . $m_right . '" data-file="' . $j . '"><p class="center"><img style="min-height: 176px; max-height: 64px;" src="/view/image/fieldnotes/' . $imgV['path'] . '" /></p></div>';
-                        
-                    // if ($j <= 2) {
-                    $image_large .= '<div id="img_' . $j . '_expanded_DISABLED" style="background-color: #000; min-height:300px; position: relative;"><p id="caption_' . $j . '" style="padding: 1rem; position: absolute; background-color: rgba(0,0,0,.4); font-size: 1.3rem; font-weight: 200;">' . $imgV['caption'] . '</p><img style="width: 100%;" src="/view/image/fieldnotes/' . $imgV['path'] . '" /></div>';
-                    } 
-                    $j++;
-            }
-
-            $card_html .= '
-                <div class="col-6_sm-12 storycard--background">
-                    <div class="content__filmstrip--preview">
-                        <p style="font-size: .7rem;">FILMSTRIP</p><h4 style="color: #FFFFFF;"><a href="/polarized/' . $value['short_path'] . '">' . $value['title']. '</a></h4><p style="position: absolute; right: 1rem;bottom: 1rem;">' . $read_time_label . '</p>
-                    </div>
-                    <div class="content--preview" style="display: flex; flex-wrap: wrap; justify-content: left; padding-left: 0; padding-right: 0;">                        
-                    <!-- HTML for images -->' . $strip_html . 
-                    '</div>
-                    <div class="content__filmstrip--teaser"><p>' . $value['teaser'] . '</p></div> 
-                    <!-- Large Preview of Image Selected -->
-                    <div id="fimlstrip--preview_' . $j . '" class="filmstrip--large-preview">
-                        <p data-filmstrip="' .$j . '" class="close_filmstrip" style="border-bottom-left-radius: 69px; background-color: rgba(255,255,255,.5); text-align: right;padding: 24px;position: absolute;top: 0;right: 0;color: #000;"><i style="position:absolute; top:13px;right:10px;" class="fas fa-times-circle" aria-hidden="true"></i></p>'
-                        . $image_large .                            
-                    '</div>
-                </div>
-                ';
-
-        } else {
-
-            $card_html .= 'COULD_NOT_PROCESS';
-            
-        }
-
-    } else {
-        if($value['type'] != "filmstrip") {
-            $card_older_html .= '<li class="small"><a href="/polarized/' . $value['short_path'] . '">' . $value['title'] . '</a></li>';
-        }
-    }
-
-   $i++; 
 }
+/*
+<section>
+     
+     <div class="card--wrapper">
+          <div class="card--content">
+               <div class="card--type">ARTICLE</div>
+               <div class="card--byline">Written by j.McCarthy</div>
+               <div class="card--title">First Impressions of Nikon's Z5 Full Frame Mirrorless Camera After Using For 30 Days</div>
+               <div class="card--readtime">3 MIN READ</div>
+          </div>
+          <div class="card--image-wrapper">
+               <i class="fas fa-file-invoice card--image-icon"></i>
+               <a class="card--image"href="#">
+               <img src="https://unsplash.it/200/133/?heart" /></a>
+          </div>  
+     </div>    
+     
+          
+     <div class="card--wrapper">
+          <div class="card--content">
+               <div class="card--type">VIDEO</div>
+               <div class="card--byline">Written by j.McCarthy</div>
+               <div class="card--title">Video Review on Apache 3800 Weatherproof Case for Camera Gear</div>
+               <div class="card--readtime">3 MIN WATCH<!-- &middot; 4 CHEERS &middot; 10 RESPONSES--></div>
+          </div>
+          <div class="card--image-wrapper">
+               <i class="fab fa-youtube card--image-icon" aria-hidden="true"></i>
+               <a class="card--image"href="#">
+               <img src="https://unsplash.it/200/133/?video" /></a>
+          </div>
+     </div>     
+     
+     <div class="card--wrapper">
+          <div class="card--content">
+               <div class="card--type">FILMSTRIP</div>
+               <div class="card--byline">Written by j.McCarthy</div>
+               <div class="card--title">Hike To Bonsai Rock Lake Tahoe</div>
+               <div class="card--readtime">3 MIN READ</div>
+          </div>
+          <div class="card--image-wrapper">
+               <i class="fas fa-film card--image-icon" aria-hidden="true"></i>
+               <a class="card--image"href="#">
+               <img src="https://unsplash.it/3000/3000/?laketahoe" /></a>
+          </div>
+     </div>
+     
+</section>
+*/
 
 ?>

@@ -3,7 +3,7 @@
 <script src="/view/js/jquery.desoslide.min.js"></script> -->
 
 <div class="grid">
-<div class="col-3_sm-12 responses__container">
+<div class="col-3_md-6_sm-12 responses__container">
     <h3>Responses (<span class="resp_count"><?= $resp_count ?></span>)</h3>
     <p class="--close"><i class="fas fa-times"></i></p>
 
@@ -36,7 +36,7 @@
     <div class="grid-noGutter">
         <div class="col-12 __container">
 
-                <div class="col" style="margin: auto; width:80%;">
+                <div class="col" style="margin: auto; width:85%;">
                 <p class="teaser-title"><?= $res_teaser?></p>
                 <h3 class="text-center"><?= $res_title?></h3>
                 </div>
@@ -51,22 +51,24 @@
                         <?= $img_html ?>
                     <!-- </div> -->
 
-                    <div class="mt-16 pt-0">
+                    <div class="col mt-16 pt-0" style="padding:0">
                         <?= $res_content ?>
                     </div>
 
                     <div class="grid-noGutter --social-links">
-                        <div class="col-4_sm-12"> <!-- style="display: inline-block; margin-right: 2rem;" -->
-                            <a class="response--icon-cheers" href="#"><i class="fas fa-glass-cheers"></i></a>
-                            <p class="response--icon-label"><span class="repsonse--cheers-count"><?= $res_cheers ?></span> Cheers!</p>
+                        <div class="col-10_sm-12" style="padding: 0"> <!-- style="display: inline-block; margin-right: 2rem;" -->
+                            <div>
+                            <a class="response--icon response--icon-bubble" href=""><i class="fas fa-comment-alt"></i>
+                            <p class="response--icon--count response--icon-label" style="margin: 0; padding-left: 1rem;"><?= $res_responses ?></a></p>
+                            </div>
+
+                            <div>
+                            <a class="response--icon-cheers" href="#"><i class="fas fa-glass-cheers"></i>
+                            <p class="response--icon-label" style="margin: 0;padding-left: .7rem;"><span class="repsonse--cheers-count"><?= $res_cheers ?></span> Cheers!</a></p>
+                            </div>
                         </div>
 
-                        <div class="col-4_sm-12"> <!-- style="display: inline-block" -->
-                            <a class="response--icon response--icon-bubble" href=""><i class="fas fa-comment-alt"></i></a>
-                            <p class="response--icon--count response--icon-label"><?= $res_responses ?></p>
-                        </div>
-
-                        <div class="col-4_sm-hidden text-right"> <!-- style="display: inline-block; float: right;" -->
+                        <div class="col-2_sm-hidden text-right mt-16"> <!-- style="display: inline-block; float: right;" -->
                             <a target="_social" href="<?= $social_twitter ?>"><i class="fab fa-twitter twitter"></i></a>
                         </div>
                     </div>

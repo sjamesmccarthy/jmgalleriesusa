@@ -66,11 +66,10 @@
 }
 
 .__container--bottom_toc {
-            // margin-left: -5%;
             font-size: 1rem;
             border-top: 1px solid #e4e4e4;
-            padding-top: .5rem;
-            // margin-top: .5rem;
+            padding-top: 1rem;
+            padding-left: 0;
             color: $color-blue;
 
             a {
@@ -124,6 +123,7 @@ blockquote {
 .--social-links {
 
     margin-top: 2rem !important;
+    padding-bottom: 1rem;
 
     .twitter {
         font-size: 1rem;
@@ -131,7 +131,7 @@ blockquote {
 
     a {
         color: $color-black;
-        font-size: 1.5rem;
+        font-size: 1rem;
     
         &:hover {
             color: $color-blue;
@@ -317,6 +317,7 @@ blockquote {
 
         .--content {
             margin-top: 1rem;
+            font-size: 1rem;
         }
 
         .--content >p {
@@ -331,10 +332,9 @@ blockquote {
 
 .response--icon-label {
     display:inline-block; 
-    margin-left: .5rem; 
+    margin-left: 1rem; 
     font-size: 1rem;
     font-weight: 600;
-
 }
     .response--icon-cheers i,
     .response--icon-bubble i {
