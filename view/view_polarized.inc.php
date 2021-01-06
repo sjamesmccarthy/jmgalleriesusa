@@ -54,12 +54,14 @@ foreach ($fieldnotes_data as $key => $value) {
     }
 
     /* Check for image */
-    if ( file_exists($_SERVER['DOCUMENT_ROOT'] . "/view/image/fieldnotes/" . $value['image'] ) ) {
+    if ( is_file($_SERVER['DOCUMENT_ROOT'] . "/view/image/fieldnotes/" . $value['image'] ) ) {
         $img_html = '<img src="/view/image/fieldnotes/' . $value['image'] . '" /></a>';
         $value['title'] = mb_strimwidth($value['title'], 0, 65, "...");
+        $img_div = '1';
     } else {
         $img_html = null;
-        $value['title'] = mb_strimwidth($value['title'], 0, 105, "...");
+        $value['title'] = mb_strimwidth($value['title'], 0, 125, "...");
+        $img_div = '0';
     }
 
     $card_html .= '<div class="card--wrapper">';
@@ -69,61 +71,15 @@ foreach ($fieldnotes_data as $key => $value) {
     $card_html .= '<div class="card--title"><a href="/polarized/' . $value['short_path'] . '">' . $value['title'] . '</a></div>';
     $card_html .= '<div class="card--readtime">' . $read_time_label . '</div>';
     $card_html .= '</div>';
-    $card_html .= '<div class="card--image-wrapper" style="background: rgba(0,0,0,0) url(/view/image/fieldnotes/' . $value['image'] . ') no-repeat center; background-size: cover; word-break: break-word;">';
-    $card_html .= '<i class="' . $icon_type . ' card--image-icon"></i>';
-    $card_html .= '<a class="card--image"href="#">';
-    // $card_html .= $img_html;
-    $card_html .= '</div>';
+
+    if($img_div == '1') {
+        $card_html .= '<div class="card--image-wrapper" style="background: rgba(0,0,0,0) url(/view/image/fieldnotes/' . $value['image'] . ') no-repeat center; background-size: cover; word-break: break-word;">';
+        $card_html .= '<i class="' . $icon_type . ' card--image-icon"></i>';
+        $card_html .= '</div>';
+    }
+
     $card_html .= '</div>';
 
 }
-/*
-<section>
-     
-     <div class="card--wrapper">
-          <div class="card--content">
-               <div class="card--type">ARTICLE</div>
-               <div class="card--byline">Written by j.McCarthy</div>
-               <div class="card--title">First Impressions of Nikon's Z5 Full Frame Mirrorless Camera After Using For 30 Days</div>
-               <div class="card--readtime">3 MIN READ</div>
-          </div>
-          <div class="card--image-wrapper">
-               <i class="fas fa-file-invoice card--image-icon"></i>
-               <a class="card--image"href="#">
-               <img src="https://unsplash.it/200/133/?heart" /></a>
-          </div>  
-     </div>    
-     
-          
-     <div class="card--wrapper">
-          <div class="card--content">
-               <div class="card--type">VIDEO</div>
-               <div class="card--byline">Written by j.McCarthy</div>
-               <div class="card--title">Video Review on Apache 3800 Weatherproof Case for Camera Gear</div>
-               <div class="card--readtime">3 MIN WATCH<!-- &middot; 4 CHEERS &middot; 10 RESPONSES--></div>
-          </div>
-          <div class="card--image-wrapper">
-               <i class="fab fa-youtube card--image-icon" aria-hidden="true"></i>
-               <a class="card--image"href="#">
-               <img src="https://unsplash.it/200/133/?video" /></a>
-          </div>
-     </div>     
-     
-     <div class="card--wrapper">
-          <div class="card--content">
-               <div class="card--type">FILMSTRIP</div>
-               <div class="card--byline">Written by j.McCarthy</div>
-               <div class="card--title">Hike To Bonsai Rock Lake Tahoe</div>
-               <div class="card--readtime">3 MIN READ</div>
-          </div>
-          <div class="card--image-wrapper">
-               <i class="fas fa-film card--image-icon" aria-hidden="true"></i>
-               <a class="card--image"href="#">
-               <img src="https://unsplash.it/3000/3000/?laketahoe" /></a>
-          </div>
-     </div>
-     
-</section>
-*/
 
 ?>

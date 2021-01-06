@@ -379,3 +379,15 @@ div[id*='imgT'] >img:hover {
 div[id*='imgT']:hover {
     cursor: pointer;
 }
+
+.inline-image-right {
+    width: 240px; 
+    float: right; 
+    padding:4rem;
+}
+
+.inline-image-left {
+    width: 240px; 
+    float: left; 
+    padding:4rem;
+}

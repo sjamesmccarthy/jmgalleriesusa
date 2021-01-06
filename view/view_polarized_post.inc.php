@@ -43,7 +43,7 @@ $res_date_written = date("F j, Y", strtotime($res_created));
 
 /* Check for image */
 if($res_type == "article") {
-    if ( file_exists($_SERVER['DOCUMENT_ROOT'] . "/view/image/fieldnotes/" . $res_image ) ) {
+    if ( is_file($_SERVER['DOCUMENT_ROOT'] . "/view/image/fieldnotes/" . $res_image ) ) {
         $img_html = '<div class="col image filmstrip--carousel">
         <img src="/view/image/fieldnotes/' . $res_image . '" /><br />
         <span class="caption">' . $res_caption . '</span>

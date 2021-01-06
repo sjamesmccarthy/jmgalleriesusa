@@ -1,8 +1,8 @@
-        <div id="top-nav<?= $addToClass ?>" class="grid">
+        <div id="top-nav<?= $addToClass ?>">
 
             <?= $active ?>
             
-            <div class="grid" style="width: 1440px; position: relative;">
+            <div class="grid" style="position: relative;">
                 <div class="col-5-middle md-hidden sm-hidden">
                     <p class="center heading"><a href="/polarized" class="<?= $polarized ?>">POLARIZED</a><br /><span class="font-light">my FIELD NOTES</span></p>
                 </div>
