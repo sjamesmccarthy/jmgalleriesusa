@@ -51,12 +51,12 @@
                         <?= $img_html ?>
                     <!-- </div> -->
 
-                    <div class="col mt-16 pt-0" style="padding:0">
+                    <div class="col mt-16 pt-0">
                         <?= $res_content ?>
                     </div>
 
-                    <div class="grid-noGutter --social-links">
-                        <div class="col-10_sm-12" style="padding: 0"> <!-- style="display: inline-block; margin-right: 2rem;" -->
+                    <div class="grid --social-links">
+                        <div class="col-10_sm-12"> <!-- style="display: inline-block; margin-right: 2rem;" -->
                             <div>
                             <a class="response--icon response--icon-bubble" href=""><i class="fas fa-comment-alt"></i>
                             <p class="response--icon--count response--icon-label" style="margin: 0; padding-left: 1rem;"><?= $res_responses ?></a></p>
@@ -74,8 +74,7 @@
                     </div>
                 
                     <div class="col-12 __container--bottom_toc">
-                        <p class="__container--top_datetime">Published <?= $res_date_written; ?> in <a class="blue" href="/polarized">Field Notes</a></p>
-                        <!-- <p>&larr; Back To <a href="/polarized">Field Notes</a></p> -->
+                        <p class="__container--linkback">Published <?= $res_date_written; ?> in <a class="blue" href="/polarized">Field Notes</a></p>
                     </div>
 
                 </div>

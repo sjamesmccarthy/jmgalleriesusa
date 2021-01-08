@@ -58,31 +58,31 @@ if(isSet($this->routes->URI->queryvals)) {
         $show_image1_html = '<div class="show-image-container"><img src="/view/image/fieldnotes/' . $res_image . '" class="show-image" /></div>';
         $res_caption_file_1 = $res_caption;
     } else {
-        $show_image1_html = '<div class="image_filler"><h4 class="center">UPLOAD IMAGE<br />1050 x 619 pixels</h4></div>';
+        $show_image1_html = '<div class="image_filler"><img id="file_1_prev" /><h4 class="center">UPLOAD IMAGE<br />1050 x 619 pixels</h4></div>';
     }
 
     if(isSet($res_image_2)) {
         $show_image2_html = '<div class="show-image-container"><img src="/view/image/fieldnotes/' . $res_image_2 . '" class="show-image" /></div>';
     } else {
-        $show_image2_html = '<div class="image_filler"><h4 class="center">UPLOAD IMAGE<br />1050 x 619 pixels</h4></div>';
+        $show_image2_html = '<div class="image_filler"><img id="file_2_prev" /><h4 class="center">UPLOAD IMAGE<br />1050 x 619 pixels</h4></div>';
     }
 
     if(isSet($res_image_3)) {
         $show_image3_html = '<div class="show-image-container"><img src="/view/image/fieldnotes/' . $res_image_3 . '" class="show-image" /></div>';
     } else {
-        $show_image3_html = '<div class="image_filler"><h4 class="center">UPLOAD IMAGE<br />1050 x 619 pixels</h4></div>';
+        $show_image3_html = '<div class="image_filler"><img id="file_3_prev" /><h4 class="center">UPLOAD IMAGE<br />1050 x 619 pixels</h4></div>';
     }
 
     if(isSet($res_image_4)) {
         $show_image4_html = '<div class="show-image-container"><img src="/view/image/fieldnotes/' . $res_image_4 . '" class="show-image" /></div>';
     } else {
-        $show_image4_html = '<div class="image_filler"><h4 class="center">UPLOAD IMAGE<br />1050 x 619 pixels</h4></div>';
+        $show_image4_html = '<div class="image_filler"><img id="file_4_prev" /><h4 class="center">UPLOAD IMAGE<br />1050 x 619 pixels</h4></div>';
     }
 
     if(isSet($res_image_5)) {
         $show_image5_html = '<div class="show-image-container"><img src="/view/image/fieldnotes/' . $res_image_5 . '" class="show-image" /></div>';
     } else {
-        $show_image5_html = '<div class="image_filler"><h4 class="center">UPLOAD IMAGE<br />1050 x 619 pixels</h4></div>';
+        $show_image5_html = '<div class="image_filler"><img id="file_5_prev" /><h4 class="center">UPLOAD IMAGE<br />1050 x 619 pixels</h4></div>';
     }
 
     $this->page->title = "<b>Editing Field Note, ID " . $res_fieldnotes_id . "</b>";
@@ -105,11 +105,11 @@ if(isSet($this->routes->URI->queryvals)) {
     $button_archive_cancel = '<a class="cancel-button" href="/studio/fieldnotes">cancel</a>';
     // $date_field_hidden = 'noshow';
     $res_created = $mysql_ts = date('Y-m-d H:i:s');
-    $show_image1_html = '<div class="image_filler"><h4 class="center">UPLOAD IMAGE<br />1050 x 619 pixels</h4></div>';
-    $show_image2_html = '<div class="image_filler"><h4 class="center">UPLOAD IMAGE<br />1050 x 619 pixels</h4></div>';
-    $show_image3_html = '<div class="image_filler"><h4 class="center">UPLOAD IMAGE<br />1050 x 619 pixels</h4></div>';
-    $show_image4_html = '<div class="image_filler"><h4 class="center">UPLOAD IMAGE<br />1050 x 619 pixels</h4></div>';
-    $show_image5_html = '<div class="image_filler"><h4 class="center">UPLOAD IMAGE<br />1050 x 619 pixels</h4></div>';
+    $show_image1_html = '<div class="image_filler"><img id="file_1_prev" style="width: 100%;" /><!-- <h4 class="center">UPLOAD IMAGE<br />1050 x 619 pixels</h4> --></div>';
+    $show_image2_html = '<div class="image_filler"><img id="file_2_prev" style="width: 100%;" /><!-- <h4 class="center">UPLOAD IMAGE<br />1050 x 619 pixels</h4> --></div>';
+    $show_image3_html = '<div class="image_filler"><img id="file_3_prev" style="width: 100%;" /><!-- <h4 class="center">UPLOAD IMAGE<br />1050 x 619 pixels</h4> --></div>';
+    $show_image4_html = '<div class="image_filler"><img id="file_4_prev" style="width: 100%;" /><!-- <h4 class="center">UPLOAD IMAGE<br />1050 x 619 pixels</h4> --></div>';
+    $show_image5_html = '<div class="image_filler"><img id="file_5_prev" style="width: 100%;" /><!-- <h4 class="center">UPLOAD IMAGE<br />1050 x 619 pixels</h4> --></div>';
 }
 
 /* NAVIGATION LOAD */

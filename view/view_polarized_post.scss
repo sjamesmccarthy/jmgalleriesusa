@@ -50,6 +50,18 @@
             display: block;
         }
 
+        &--linkback {
+            font-size: 1rem;
+            font-weight: 300;
+            color: $color-blue;
+            text-align: center;
+            margin-top: 0;
+            
+             a:hover {
+                color: $color-black;
+            }
+
+        }
         .__container--top_datetime {
             // font-family: 'Roboto', sans-serif; 
             font-size: 1rem; 

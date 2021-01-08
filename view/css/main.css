@@ -4309,7 +4309,6 @@ input.amazing-offer-error[type="text"] {
 .card--content {
   flex-grow: 1;
   flex-shrink: 1;
-  flex-basis: auto;
   font-family: sans-serif;
   padding: 0 1rem 0 0;
   min-width: 60%; }
@@ -4337,7 +4336,8 @@ input.amazing-offer-error[type="text"] {
   height: 133px;
   width: 100%;
   border-radius: 6px;
-  overflow: hidden; }
+  overflow: hidden;
+  flex-basis: 500px; }
   .card--image-wrapper a > img {
     border-radius: 6px;
     vertical-align: middle;
@@ -4374,6 +4374,15 @@ input.amazing-offer-error[type="text"] {
   font-size: 2rem;
   margin-top: -2.5rem;
   display: block; }
+
+#polarized .__container--linkback {
+  font-size: 1rem;
+  font-weight: 300;
+  color: #2574A9;
+  text-align: center;
+  margin-top: 0; }
+  #polarized .__container--linkback a:hover {
+    color: #4a4a4a; }
 
 #polarized .__container .__container--top_datetime {
   font-size: 1rem;
@@ -5460,9 +5469,7 @@ table.dataTable tbody td.valign {
         color: #FFF; }
   .fieldnotes-add--container .image_filler {
     width: 100%;
-    height: 660px;
     background-color: #e4e4e4;
-    padding-top: 28%;
     border-top: 3px solid #000; }
   .fieldnotes-add--container #result {
     text-align: center; }

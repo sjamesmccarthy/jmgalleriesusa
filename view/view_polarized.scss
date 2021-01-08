@@ -81,7 +81,7 @@
      &--content {
           flex-grow: 1;
           flex-shrink: 1;
-          flex-basis: auto;
+        //   flex-basis: auto;
           font-family: sans-serif;
           padding: 0 1rem 0 0;
           min-width: 60%;
@@ -118,6 +118,7 @@
                width: 100%;
                border-radius: $border-radius;
                overflow: hidden;
+               flex-basis: 500px;
 
                a >img {
                     border-radius: 6px;

@@ -59,7 +59,7 @@
                             <?= $show_image1_html ?>
                             <div class="file__upload-container">
                             <i class="fas fa-file-upload file__upload-icon"> 1</i>
-                            <input class="input-upload" type="file" id="file_1" name="file_1" aria-label="Choose Main Photo"><br /><?= $image_info ?>
+                            <input class="input-upload" type="file" id="file_1" name="file_1" aria-label="Choose Main Photo" onchange="document.getElementById('file_1_prev').src = window.URL.createObjectURL(this.files[0])" /><br /><?= $image_info ?>
                             <input type="hidden" id="file_1_path" name="file_1_path" value="<?= $res_image ?>">
                         </div>
                         </div>
@@ -72,7 +72,7 @@
                             <?= $show_image2_html ?>
                             <div class="file__upload-container">
                             <i class="fas fa-file-upload file__upload-icon"> 2</i>
-                            <input class="input-upload" type="file" id="file_2" name="file_2" aria-label="Choose Main Photo"><br /><?= $image_info ?>
+                            <input class="input-upload" type="file" id="file_2" name="file_2" aria-label="Choose Main Photo" onchange="document.getElementById('file_2_prev').src = window.URL.createObjectURL(this.files[0])"><br /><?= $image_info ?>
                             <input type="hidden" id="file_2_path" name="file_2_path" value="<?= $res_image_2 ?>">
                         </div>
                         </div>
@@ -85,7 +85,7 @@
                             <?= $show_image3_html ?>
                             <div class="file__upload-container">
                             <i class="fas fa-file-upload file__upload-icon"> 3</i>
-                            <input class="input-upload" type="file" id="file_3" name="file_3" aria-label="Choose Main Photo"><br /><?= $image_info ?>
+                            <input class="input-upload" type="file" id="file_3" name="file_3" aria-label="Choose Main Photo" onchange="document.getElementById('file_3_prev').src = window.URL.createObjectURL(this.files[0])"><br /><?= $image_info ?>
                             <input type="hidden" id="file_3_path" name="file_3_path" value="<?= $res_image_3 ?>">
                             </div>
                         </div>
@@ -98,7 +98,7 @@
                             <?= $show_image4_html ?>
                             <div class="file__upload-container">
                             <i class="fas fa-file-upload file__upload-icon"> 4</i>
-                            <input class="input-upload" type="file" id="file_4" name="file_4" aria-label="Choose Main Photo"><br /><?= $image_info ?>
+                            <input class="input-upload" type="file" id="file_4" name="file_4" aria-label="Choose Main Photo" onchange="document.getElementById('file_4_prev').src = window.URL.createObjectURL(this.files[0])"><br /><?= $image_info ?>
                             <input type="hidden" id="file_4_path" name="file_4_path" value="<?= $res_image_4 ?>">
                         </div>
                         </div>
@@ -111,7 +111,7 @@
                             <?= $show_image5_html ?>
                             <div class="file__upload-container">
                             <i class="fas fa-file-upload file__upload-icon"> 5</i>
-                            <input class="input-upload" type="file" id="file_5" name="file_5" aria-label="Choose Main Photo"><br /><?= $image_info ?>
+                            <input class="input-upload" type="file" id="file_5" name="file_5" aria-label="Choose Main Photo" onchange="document.getElementById('file_5_prev').src = window.URL.createObjectURL(this.files[0])"><br /><?= $image_info ?>
                             <input type="hidden" id="file_5_path" name="file_5_path" value="<?= $res_image_5 ?>">
                         </div>
                         </div>
@@ -183,6 +183,11 @@
 </section>
 
 <script>
+
+function preview() {
+    frame.src=URL.createObjectURL(event.target.files[0]);
+}
+
 jQuery(document).ready(function($){
 
     /* onPageLoad check to see if it's a filmstrip */
