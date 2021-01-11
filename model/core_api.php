@@ -866,6 +866,7 @@ class Core_Api extends Fieldnotes_Api
 
             $sql = "SELECT
                 CV.count,
+                CP.catalog_photo_id,
                 CP.title,
                 CP.file_name,
                 CP.as_gallery,

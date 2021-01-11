@@ -36,7 +36,11 @@
     <div class="grid-noGutter">
         <div class="col-12 __container">
 
+                <!-- <p class="small pb-32"><a class="blue" href="/polarized">&#8592; Back To Polarized</a></p> -->
+
                 <div class="col" style="margin: auto; width:85%;">
+
+
                 <p class="teaser-title"><?= $res_teaser?></p>
                 <h3 class="text-center"><?= $res_title?></h3>
                 </div>
@@ -51,7 +55,7 @@
                         <?= $img_html ?>
                     <!-- </div> -->
 
-                    <div class="col mt-16 pt-0">
+                    <div class="col">
                         <?= $res_content ?>
                     </div>
 
@@ -89,13 +93,13 @@ jQuery(document).ready(function($){
 $("div[id*='imgT']").on('click', function(e){
     var ele = "imgT_" + $(this).attr("data-file");
     console.log("clicked: " + ele );
-    $("div[id*='imgT_'] >img").css("opacity",".5");
+    $("div[id*='imgT_'] >img").css("opacity",".2");
 
     if( $('.filmstrip--large-preview').is(':visible') ) { 
         console.log(".filmstrip--preview visible");
         $("div[id*='imgT']").css("border","none");
         $('#content--teaser').hide();
-        $('#' + ele).css("border-bottom", "25px solid rgba(0,0,0,.6").css("padding-bottom","0").css("margin-bottom","0");
+        // $('#' + ele).css("border-bottom", "25px solid rgba(0,0,0,.6").css("padding-bottom","0").css("margin-bottom","0");
         $('#' + ele + ' >img').css("opacity","1");
     } else {
         console.log(".filmstrip--preview hidden");

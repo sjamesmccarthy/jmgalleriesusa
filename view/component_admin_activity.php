@@ -42,10 +42,10 @@ foreach($activity_data as $key=>$val) {
 
     $date = date("F j, Y h:i:s A", strtotime($val['created']));
 
-    $result_html .= '<li class="item ' . $typeClass . '">';
-    $result_html .= '<b>' . $date . '</b><br />';
-    $result_html .= '[' . $val['type'] . '] ' . $val['value'];
-    $result_html .= '</li>';
+    $result_html .= '<li class="item ' . $typeClass . '"><div>';
+    $result_html .= '<p class="small"><b>' . $date . '</b></p>';
+    $result_html .= '<p class="small">[' . $val['type'] . '] ' . $val['value'] . '</p>';
+    $result_html .= '</div></li>';
 
 }
 

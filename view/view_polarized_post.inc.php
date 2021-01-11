@@ -54,32 +54,52 @@ if($res_type == "article") {
 } else { 
 
     /* FILMSTRIP LAYOUT THUMBNAILS */
+    // $img_html = '<div class="grid image filmstrip--carousel">';
     $j=1;
     foreach ($image_data as $imgK => $imgV) {
 
-        if($j == 1) { 
-            $show_large = 'display: block;'; 
-            $underline_thumb = 'border-bottom: 25px solid rgba(0,0,0,.6); padding-bottom: 0; margin-bottom: 0;';
-            $opacity_default = '1';
-        } else { 
-            $show_large = null; 
-            $underline_thumb = null;
-            $opacity_default = '.8';
-        }
+           $img_html .= '
+    <div id="img_' . $j . '_wrapper" class="grid">
+        
+        <div class="col-12_sm-12" style="position: relative;">
+            <img id="img_' . $j . '_photo" style="width: 100%; border-radius: 6px;" src="/view/image/fieldnotes/' . $imgV['path'] . '" />
+        </div>
 
-        if ($j == $image_count) { $m_right = null; } else { $m_right = null; }
+        <div class="col-12_sm-12" id="img_' . $j . '_caption" style="display: block; position: relative;">
+            <!-- <p style="margin-top: 0; font-size: 3rem;">' . $j . '</p> -->
 
-        $img_html .= '<div id="imgT_' . $j . '" data-file="' . $j . '" style="' . $underline_thumb . ' ' . $m_right . '" class="">';
-        $img_html .= '<img style="opacity: ' . $opacity_default . '; width: 25%; margin: auto;" src="/view/image/fieldnotes/' . $imgV['path'] . '" />';
-        $img_html .= '</div>';
+            <p style="padding: 0rem 0 1rem 0; font-size: 1.2rem; margin-bottom:0; margin-top: 5px;"><span style="font-size: 1.25rem; font-weight: 800;">' . $j . '</span> / ' . $imgV['caption'] . '</p>
+        </div>
+        
+    </div>';
 
-        $image_large .= '<div id="img_' . $j . '_expanded" style="' . $show_large . ' min-height:300px; position: relative;"><p id="caption_' . $j . '" style="padding: 2rem 1rem 2rem 2rem; color: #FFF; background-color: rgba(0,0,0,.6); font-size: 1.3rem; font-weight: 200; margin-bottom:0;">' . $imgV['caption'] . '</p><img style="width: 100%;" src="/view/image/fieldnotes/' . $imgV['path'] . '" /></div>';
+    //     if($j == 1) { 
+    //         $show_large = 'display: block;'; 
+    //         $underline_thumb = 'padding-bottom: 0; margin-bottom: 0;'; /* border-bottom: 25px solid rgba(0,0,0,.6); */
+    //         $opacity_default = '1';
+    //     } else { 
+    //         $show_large = null; 
+    //         $underline_thumb = null;
+    //         $opacity_default = '.2';
+    //     }
+
+    //     if ($j == $image_count) { $m_right = null; } else { $m_right = null; }
+
+    //     $img_html .= '<div id="imgT_' . $j . '" class="col_sm-6" data-file="' . $j . '" style="' . $underline_thumb . ' ' . $m_right . '">';
+    //     $img_html .= '<img style="opacity: ' . $opacity_default . '; margin: auto; margin-right: 8px;" src="/view/image/fieldnotes/' . $imgV['path'] . '" />';
+    //     $img_html .= '</div>';
+
+    //     $image_large .= '<div id="img_' . $j . '_expanded" style="' . $show_large . ' min-height:300px; position: relative;"><p id="caption_' . $j . '" style="padding: 0rem 0 2rem 0; font-size: 1rem; margin-bottom:0; margin-top: 5px;">' . $imgV['caption'] . '</p><img style="width: 100%; border-radius: 6px;" src="/view/image/fieldnotes/' . $imgV['path'] . '" /></div>'; /* color: #FFF; background-color: rgba(0,0,0,.6);  */
+
         $j++;
     }
 
-    $res_content = '<div id="filmstrip--preview" class="filmstrip--large-preview show">'
-                        . $image_large .                            
-                    '</div>';
+    // $res_content = '<div id="filmstrip--preview" class="filmstrip--large-preview show">
+    //                     <p style="font-size: 1.5rem; font-weight: 600; padding:0; margin: 0;">And, so the story goes ...</p>'
+    //                     . $image_large .                            
+    //                 '</div>';
+    
+    // $img_html .= '</div>';
 }
 
 /* Build Comments */
