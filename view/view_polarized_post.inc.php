@@ -59,7 +59,7 @@ if($res_type == "article") {
     foreach ($image_data as $imgK => $imgV) {
 
            $img_html .= '
-    <div id="img_' . $j . '_wrapper" class="grid">
+    <div id="img_' . $j . '_wrapper" class="grid>
         
         <div class="col-12_sm-12" style="position: relative;">
             <img id="img_' . $j . '_photo" style="width: 100%; border-radius: 6px;" src="/view/image/fieldnotes/' . $imgV['path'] . '" />

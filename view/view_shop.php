@@ -1,6 +1,6 @@
 <section id="catalog">
     
-    <div class="hero">
+    <div class="hero" style="margin: 3rem .5rem 2rem .5rem;"> 
         <div class="hero-inner">
             <div class="hero-headline">
                 <h2>tinyViews<sup class="tiny">&trade;</sup> Notecards</h2>
@@ -11,7 +11,7 @@
         </div>
     </div>
 
-    <div class="grid-4_sm-2 grid-4_md-3">
+    <div class="grid-4_sm-2 grid-4_md-3" style="margin: 0">
         
 
         <div class="col-12 title pb-32">
