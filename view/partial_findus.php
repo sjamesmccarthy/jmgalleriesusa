@@ -7,7 +7,7 @@
     <p class="pt-16">A weekly blog about art, photography, collecting and my photography adventures.</p>
     <p class="pt-16"><a class="blue" href="/polarized">Read Now</a></p>
 
-    <h2 class="pt-32" style="line-height: 1">Follow Me<br />on Social Media</h2>
+    <h2 class="pt-32" style="line-height: 1">Follow<br />My Social Media</h2>
     <p class="pt-16">
     <a target="_new" class="mr-16 blue" style="font-size: 1.5rem" href="http://twitter.com/jmgalleriesusa"><i class="fab fa-twitter"></i></a>
     <a target="_new" class="mr-16 blue" style="font-size: 1.5rem" href="http://linkedin.com/company/jmgalleriesusa"><i class="fab fa-linkedin"></i></a>
@@ -19,7 +19,7 @@
     <p class="pt-16 pb-16">
     jM Galleries<br />
     1894 E William St.<br />
-    Suite 4 PMB 178<br />
+    Suite 4-178<br />
     Carson City, Nevada 89701<br />
     951-708-1831
     </p>

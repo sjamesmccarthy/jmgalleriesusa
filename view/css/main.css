@@ -3715,22 +3715,28 @@ fieldset {
   box-shadow: 0px 20px 25px 0px rgba(0, 0, 0, 0.3); }
   @media (min-width: 320px) {
     .bio-profile-pic-bkg {
-      display: none; } }
+      background-image: url(/view/image/profile_2.jpg);
+      min-height: 250px;
+      display: block; } }
   @media (min-width: 376px) {
     .bio-profile-pic-bkg {
-      background-image: url(/view/image/profile_3.jpg);
+      background-image: url(/view/image/profile_2.jpg);
+      min-height: 450px;
       display: block; } }
   @media (min-width: 767px) {
     .bio-profile-pic-bkg {
-      background-image: url(/view/image/profile_2.jpg);
+      background-image: url(/view/image/profile_1.jpg);
+      min-height: 450px;
       display: block; } }
   @media (min-width: 1112px) {
     .bio-profile-pic-bkg {
-      background-image: url(/view/image/profile_2.jpg);
+      background-image: url(/view/image/profile_1.jpg);
+      min-height: 450px;
       display: block; } }
   @media (min-width: 1200px) {
     .bio-profile-pic-bkg {
       background-image: url(/view/image/profile_1.jpg);
+      min-height: 450px;
       display: block; } }
 .bio-profile-pic {
   border-radius: 6px;
@@ -3841,13 +3847,43 @@ form #buysize, form #frame {
   margin-left: -5px;
   line-height: 1;
   font-weight: 300; }
-
+  @media (min-width: 320px) {
+    .detail-h1 {
+      text-align: center; } }
+  @media (min-width: 576px) {
+    .detail-h1 {
+      border-right: 0;
+      text-align: center; } }
+  @media (min-width: 767px) {
+    .detail-h1 {
+      text-align: left; } }
+  @media (min-width: 1112px) {
+    .detail-h1 {
+      text-align: left; } }
+  @media (min-width: 1200px) {
+    .detail-h1 {
+      text-align: left; } }
 .edition-title {
   text-transform: initial;
   font-weight: 300;
   font-size: 1rem;
   line-height: 2.2; }
-
+  @media (min-width: 320px) {
+    .edition-title {
+      text-align: center; } }
+  @media (min-width: 576px) {
+    .edition-title {
+      border-right: 0;
+      text-align: center; } }
+  @media (min-width: 767px) {
+    .edition-title {
+      text-align: left; } }
+  @media (min-width: 1112px) {
+    .edition-title {
+      text-align: left; } }
+  @media (min-width: 1200px) {
+    .edition-title {
+      text-align: left; } }
 .price {
   color: #2574A9;
   font-size: 2rem; }
@@ -3931,8 +3967,7 @@ form #buysize, form #frame {
   width: 500px; }
 
 .img-container {
-  padding: 0 !important;
-  border-radius: 6px; }
+  padding: 0 !important; }
 
 .portrait {
   background-color: black;
@@ -3941,7 +3976,9 @@ form #buysize, form #frame {
     width: 43%;
     vertical-align: middle;
     box-shadow: 0px 20px 25px 0px rgba(0, 0, 0, 0.3); }
-
+  @media (max-width: 64em), (max-width: 80em), (max-width: 64em) and (orientation: portrait) {
+    .portrait {
+      border-radius: 0; } }
 .landscape {
   background-color: black;
   display: block; }

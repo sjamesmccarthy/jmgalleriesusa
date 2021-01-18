@@ -20,9 +20,9 @@
 
     <?= $catalog_no_hidden ?>
 
-    <div class="grid mt-64">
+    <div class="grid mt-32">
 
-        <div class="col-7_md-8_sm-12 border-right">
+        <div class="col-8_md-8_sm-12 border-right">
             <h1 class="detail-h1"><?= $photo_meta['title'] ?></h1>
             <p class="edition-title"><?= $edition_desc ?> <?= $edition_max ?> <?= $edition_desc_material_slash ?></span></p>
         <!-- </div>

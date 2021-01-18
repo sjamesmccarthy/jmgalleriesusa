@@ -26,16 +26,77 @@ form {
     padding: 0; 
     margin-left: -5px; 
     line-height: 1;
-    // text-transform: uppercase;
     font-weight: 300;
+
+    // xSmall devices (landscape phones, 320px and up)
+    @media (min-width: 320px) { 
+        // background-color: pink;
+       text-align: center;
+    }
+
+    // Small devices (landscape phones, 576px and up)
+    @media (min-width: 576px) { 
+        // background-color: red;
+        border-right: 0;
+        text-align: center;
+    }
+
+    // Medium devices (tablets, 768px and up)
+    @media (min-width: 767px) {
+        //  background-color: blue;
+        text-align: left;
+    }
+
+    // Large devices (tablets (iPad Pro, 1112px and up)
+    @media (min-width: 1112px) {
+        //  background-color: gray;
+        text-align: left;
+    }
+
+    // Extra large devices (large desktops, 1200px and up)
+    @media (min-width: 1200px) {
+        //  background-color: lightgreen;
+        text-align: left;
+    }
+
 }
 
 .edition-title {
-    // color: rgba(0,0,0,.4); 
     text-transform: initial;
     font-weight: 300;
     font-size: 1rem;
     line-height: 2.2;
+
+    // xSmall devices (landscape phones, 320px and up)
+    @media (min-width: 320px) { 
+        // background-color: pink;
+       text-align: center;
+    }
+
+    // Small devices (landscape phones, 576px and up)
+    @media (min-width: 576px) { 
+        // background-color: red;
+        border-right: 0;
+        text-align: center;
+    }
+
+    // Medium devices (tablets, 768px and up)
+    @media (min-width: 767px) {
+        //  background-color: blue;
+        text-align: left;
+    }
+
+    // Large devices (tablets (iPad Pro, 1112px and up)
+    @media (min-width: 1112px) {
+        //  background-color: gray;
+        text-align: left;
+    }
+
+    // Extra large devices (large desktops, 1200px and up)
+    @media (min-width: 1200px) {
+        //  background-color: lightgreen;
+        text-align: left;
+    }
 }
 
 .price {
@@ -169,8 +230,7 @@ form {
 
 .img-container {
     padding: 0 !important;
-    border-radius: $border-radius;
-    
+    // border-radius: $border-radius;
 }
 
 .portrait {
@@ -184,6 +244,11 @@ form {
         // border-left: 5px solid rgba(255,255,255,.9);
         // border-right: 5px solid rgba(255,255,255,.9);
         box-shadow: 0px 20px 25px 0px rgba(0,0,0,.3);
+    }
+
+    @media (max-width: 64em), (max-width: 80em), 
+        (max-width: 64em) and (orientation: portrait) {
+        border-radius: 0;
     }
 }
 
