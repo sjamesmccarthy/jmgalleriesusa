@@ -1,0 +1,10 @@
+{
+  "editor.default_syntax" : "php",
+  "php.validate" : "onSave",
+  "workspace.art_style" : 1,
+  "workspace.color" : 8,
+  "workspace.preview_append_paths" : false,
+  "workspace.preview_root" : ".",
+  "workspace.preview_type" : "custom",
+  "workspace.preview_url" : "https:\/\/jmgalleriesusa"
+}

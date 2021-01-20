@@ -37,6 +37,7 @@ class Core_Api extends Fieldnotes_Api
     public function getVersion() {
         $ver = $this->mysqli->server_info;
         return($ver);
+        $example = "hello";
     }
 
     public function api_Catalog_Category_Thumbs__Legacy($catalog_path) {

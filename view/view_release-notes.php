@@ -13,6 +13,15 @@
 
         <div class="col-11" style="position: relative">
 
+        <p class="pt-16">v1.7.2<br />Jan 20, 2021</p>
+            <ul>
+            <li>update: pricing and styles.</li>
+            <li>update: style clean up in shop.</li>
+            <li>update: style clean up in Polarized.</li>
+            <li>update: tablet (iPad) style update.</li>
+            </ul> 
+        </p>
+        
         <p class="pt-16">v1.7.1<br />Dec 30, 2020</p>
             <ul>
             <li>update: about content.</li>

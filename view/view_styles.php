@@ -1,5 +1,5 @@
 <section id="styles">
-    <div class="grid-center">
+    <div class="grid-center-noGutter">
         <div class="col-12_sm-12">
     
             <h1>Sizing and Framing</h1>
@@ -7,7 +7,7 @@
             <ul>
             
             <li>
-                <h2>Limited Edition Sizing</h2>
+                <!-- <h2>Limited Edition Sizing</h2> -->
                 <p>
                 Limited Edition fine-art is considered highly collectible and are part of a limited numbered series of <?= $this->config->limited_edition_max ?>, signed by j.McCarthy and includes a Certificate of Authenticity that is recorded in the jM Galleries Digital Artwork Archives. Once the last edition number is sold, no more editions in that series will be available. The only way to purchase a sold-out edition would be through another collector.<p>
 
@@ -22,45 +22,59 @@
                     </div>
                 </div> -->
             </div>
-            <div class="grid">
-            <div class="col-6_sm-12">
+            <div class="grid-noGutter">
+            <div class="col-6_md-12">
                 <table>
                     <tr class="gray">
-                        <th>Lumachrome HD Acrylic Small</th>
+                        <th>Lumachrome HD Acrylic/Silverada Metallic Canvas Small</th>
                         <th class="right">16x24</th>
                     </tr>
                     <tr>
-                        <td class="left">Acrylic Mount</td>
+                        <td class="left">Float Mount (back)</td>
                         <td class="tright">16x24</td>
                     </tr>
                     <tr>
-                        <td class="left">Small Black Matte Without Liner Framed</td>
-                        <td class="tright">24x32</td>
+                        <td class="left">Framed with Small Black Matte Without Liner</td>
+                        <td class="tright">30x38</td>
                     </tr>
-
                 </table>
 
                 <table>
                     <tr class="gray">
-                        <th>Lumachrome HD Acrylic Medium</th>
+                        <th>Lumachrome HD Acrylic/Silverada Metallic Canvas Medium</th>
                         <th class="right">20x30</th>
                     </tr>
                     <tr>
-                        <td class="left">Acrylic Mount</td>
+                        <td class="left">Float Mount (back)</td>
                         <td class="tright">20x30</td>
                     </tr>
                     <tr>
-                        <td class="left">Small Black Matte Without Liner Framed</td>
-                        <td class="tright">28x38</td>
+                        <td class="left">Framed with Small Black Matte Without Liner</td>
+                        <td class="tright">34x44</td>
+                    </tr>
+                </table>
+                
+                <table>
+                    <tr class="gray">
+                        <th>Lumachrome HD Acrylic/Silverada Metallic Canvas Large</th>
+                        <th class="right">24x36</th>
+                    </tr>
+                    <tr>
+                        <td class="left">Float Mount (back)</td>
+                        <td class="tright">24x36</td>
+                    </tr>
+                    <tr>
+                        <td class="left">Framed with Small Black Matte Without Liner</td>
+                        <td class="tright">38x50</td>
                     </tr>
 
                     <tr>
-                        <td colspan="2" class="tiny"><p class="small">Measurements are approximate and may vary by 1/4"</p><p class="small">Frames for larger art require the 4 inch width moulding and a 3 inch wide matte, adding approximately 6 inches to height and width on all sides.</p></td>
+                        <td colspan="2" class="tiny"><p class="small">Measurements are approximate and may vary by 1/4". Frame moulding's will add an approximate 4 inches width on each side.</p><p class="small">Including an optional liner will increase the overall size of the artwork.</p></td>
                     </tr>
-
                 </table>
+                
             </div>
-            <div class="col-6_sm-12" class="text-right">
+            <div class="col-6_md-12 text-right">
 
                 <p class="moulding-thumb"><img class="moulding-thumb-img" src="/view/image/moulding-60645.jpg" /> </p>
                 <p class="moulding-thumb"><img class="moulding-thumb-img" src="/view/image/moulding-60610.jpg" /> </p>
@@ -160,6 +174,8 @@
                     <tr>
                         <td colspan="2" class="tiny">Measurements are approximate and may vary by 1/4"<br />Studio Frame photos coming soon.</td>
                     </tr>
+                    
+                    <!-- TODO: add images of STUDIO Frames -->
                 </table>
 
 

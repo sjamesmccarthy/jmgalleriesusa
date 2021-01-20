@@ -119,6 +119,15 @@
             $frame_price_default = "FRAMEINCLUDED";
         } 
 
+        if ($photo_meta['desc'] == 'canvas') {
+            $edition_desc_material = 'Silverada Metallic Canvas';
+            $edition_frame = 'and is float mounted without a frame. One of our Premium Designer Frames can be optionally added for an additional cost.';
+            $frame_disabled = 'disabled';
+            $frame_disabled_option = '<option value="FRAMELESS">No Frame Included With Canvas</option><option value="ADDWITHACRYLIC">+ Add Additional Frame (Please Specify Color In Order Form)</option>';
+            $frame_info_link = 'Premium Designer Frames pricing';
+            $frame_price_default = "0";
+        } 
+        
         if ($photo_meta['desc'] == 'acrylic') {
             $edition_desc_material = 'Lumachrome HD Acrylic';
             $edition_frame = 'and is float mounted without a frame. One of our Premium Designer Frames can be optionally added for an additional cost.';
@@ -156,7 +165,7 @@
 
         $btn = "BUY ARTWORK";
         $btn_link = '<a style="display:block;" class="mt-16" href="/contact?photo=' . $photo_meta['file_name'] . '">'; //class="btn-nudge"
-        $gallery_details = '<p class="mt-32">This Limited Edition is printed on ' . $edition_desc_material . ' and available in ' . $this->config->available_sizes_limited . ' inches ' . $edition_frame . '<!-- If you have any questions about our ' . $edition_desc_material . ', or need more information about out <a href="/styles">styles, frames and editions</a>, please <a href="/contact">contact an art consultant</a>.--></p>';
+        $gallery_details = '<p class="mt-32">This Limited Edition is printed on ' . $edition_desc_material . ' and available in ' . $this->config->available_sizes_limited . ' inches (larger sizes available on special order, <a href="/contact">contact an art consultant</a>) ' . $edition_frame . '<!-- If you have any questions about our ' . $edition_desc_material . ', or need more information about out <a href="/styles">styles, frames and editions</a>, please <a href="/contact">contact an art consultant</a>.--></p>';
 
         /* Picking a default value to show */
         if($available_sizes != "in_code") { 

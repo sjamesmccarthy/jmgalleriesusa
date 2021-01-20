@@ -2,7 +2,6 @@
 
     margin: 0;
     padding: 0;
-    // padding: 0 .5rem;
 
     // Large devices (tablets (iPad Pro, 1112px and up)
     @media (min-width: 1112px) {
@@ -15,7 +14,7 @@
         width: 80%;
         margin: auto;
     }
-    
+
     h1 {
         font-family: 'Source Serif Pro', serif;
         text-align: center;
@@ -36,103 +35,100 @@
     .rotate-for-more {
 
         display: none;
-        
+
         @media (max-width: 64em) and (orientation: portrait),
         (max-width: 80em) and (orientation: portrait),
-        (min-device-width: 375px) and (max-device-height: 812px)
-        {
+        (min-device-width: 375px) and (max-device-height: 812px) {
             font-size: .7rem;
             display: block;
             position: absolute;
             top: 1rem;
             right: 1rem;
-    
+
             >i {
                 padding-left: .5rem;
             }
         }
-        
+
         @media (max-width: 64em) and (orientation: landscape),
         (max-width: 80em) and (orientation: landscape),
-        (min-device-width: 375px) and (max-device-height: 812px) 
-        and (orientation : landscape) and (-webkit-device-pixel-ratio: 3)
-        {
-           display: none;
+        (min-device-width: 375px) and (max-device-height: 812px) and (orientation : landscape) and (-webkit-device-pixel-ratio: 3) {
+            display: none;
         }
 
     }
 
-    
+
 }
 
 /* New simple cards v2, rectangular */
 .card {
-     
-     &--wrapper {
-          display: flex;
-          margin: 0;
-          border-bottom: 1px solid #e4e4e4;
-        //   max-width: 600px;
-          padding-bottom: 1rem;
-          margin: auto auto 1rem auto;
-          line-height: 1.2;
-     }
-     
-     &--content {
-          flex-grow: 1;
-          flex-shrink: 1;
-        //   flex-basis: auto;
-          font-family: sans-serif;
-          padding: 0 1rem 0 0;
-          min-width: 60%;
-     }
-     
-     &--type {
-         font-size: .8rem; 
-     }
-     
-     &--byline {
-          font-size: .8rem;
-          display: none;
-     }
-     
-     &--title {
-          font-weight: 800;
-          margin: .5rem 0;
-     }
-     
-     &--readtime {
-          font-size: .8rem;
-          width: 100%;
-        //   padding-top: .5rem;
-          margin-top: 1rem;
-          line-height: 1.7;
-     }
-     
-     &--image {
-          
-          &-wrapper {
-               position: relative;
-               display: block;
-               height: 133px;
-               width: 100%;
-               border-radius: $border-radius;
-               overflow: hidden;
-               flex-basis: 500px;
 
-               a >img {
-                    border-radius: 6px;
-                    vertical-align: middle;
-                    // height: 133px;
-                    width: 100%;
-               }
-          }
-          
-          &-icon {
-               position: absolute;
-               right: 1rem;
-               bottom: 1rem;
-               color: #FFF;
-          }
-     }
+    &--wrapper {
+        display: flex;
+        margin: 0;
+        border-bottom: 1px solid #e4e4e4;
+        //   max-width: 600px;
+        padding-bottom: 1rem;
+        margin: auto auto 1rem auto;
+        line-height: 1.2;
+    }
+
+    &--content {
+        flex-grow: 1;
+        flex-shrink: 1;
+        //   flex-basis: auto;
+        font-family: sans-serif;
+        padding: 0 1rem 0 0;
+        min-width: 60%;
+    }
+
+    &--type {
+        font-size: .8rem;
+    }
+
+    &--byline {
+        font-size: .8rem;
+        display: none;
+    }
+
+    &--title {
+        font-weight: 800;
+        margin: .5rem 0;
+    }
+
+    &--readtime {
+        font-size: .8rem;
+        width: 100%;
+        //   padding-top: .5rem;
+        margin-top: 1rem;
+        line-height: 1.7;
+    }
+
+    &--image {
+
+        &-wrapper {
+            position: relative;
+            display: block;
+            height: 133px;
+            width: 100%;
+            border-radius: $border-radius;
+            overflow: hidden;
+            flex-basis: 500px;
+
+            a>img {
+                border-radius: 6px;
+                vertical-align: middle;
+                // height: 133px;
+                width: 100%;
+            }
+        }
+
+        &-icon {
+            position: absolute;
+            right: 1rem;
+            bottom: 1rem;
+            color: #FFF;
+        }
+    }
 }

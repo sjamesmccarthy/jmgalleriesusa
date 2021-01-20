@@ -1,0 +1,11 @@
+{
+  "identifier" : "97296FDB-CA41-4969-A084-0A0AB11BD819",
+  "ignoredFilePatterns" : [
+    "view\/.config.codekit3"
+  ],
+  "localPath" : ".",
+  "remotePath" : "\/home2\/jmgalleries\/public_html",
+  "remoteURL" : "https:\/\/jmgalleriesusa\/",
+  "server" : "jmgalleriesusa",
+  "usesPublishing" : true
+}
