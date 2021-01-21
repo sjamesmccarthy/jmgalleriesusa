@@ -176,7 +176,7 @@
         
         $i=1;
         foreach($le_price_array as $k => $v) {
-            if($price_count == 1 || ($price_count >1 && $i == 2) ) {
+            if($price_count == 1 || ($price_count >1 && $i == 1) ) {
                 $default_price = $v;
                 $default_size = $k;
             }
@@ -188,7 +188,7 @@
         <select id="buysize" name="buysize" style="padding-left: 0; margin-bottom: 0;">';
         
         foreach ($le_price_array as $leK => $leV) {
-
+            
             if($leK == $default_size) { $default = 'SELECTED'; } else { $default = null; }
 
             $sizes_frames_options .= '<option ' . $default . ' data-price="' . $leV . '" data-mattedsize="0" value="' . $leK . '">SIZE: ' . $leK . '</option>';
