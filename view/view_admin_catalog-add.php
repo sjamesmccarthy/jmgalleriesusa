@@ -157,6 +157,7 @@
                 <select id="orientation" name="orientation">
                     <option value="landscape" <?= ($orientation == "landscape" ? "SELECTED" : ""); ?>>Landscape</option>
                     <option value="portrait" <?= ($orientation == "portrait" ? "SELECTED" : ""); ?>>Portrait</option>
+                    <option value="square" <?= ($orientation == "square" ? "SELECTED" : ""); ?>>Square</option>
                 </select> 
                 </div>
                 <div class="half-size">
@@ -167,6 +168,7 @@
             <div>
                 <div class="select-wrapper half-size">
                 <select id="camera" name="camera">
+                    <option value="Nikon Z5" <?= ($camera == "Nikon Z5" ? "SELECTED" : ""); ?>>Nikon Z5</option>
                     <option value="Nikon D810" <?= ($camera == "Nikon D810" ? "SELECTED" : ""); ?>>Nikon D810</option>
                     <option value="Nikon D600" <?= ($camera == "Nikon D600" ? "SELECTED" : ""); ?>>Nikon D600</option>
                     <option value="Nikon D5200" <?= ($camera == "Nikon D5200" ? "SELECTED" : ""); ?>>Nikon D5200</option>
@@ -177,6 +179,8 @@
                 <div class="select-wrapper half-size">
                 <select id="lens_model" name="lens_model">
                     <option value="">LENS</option>
+                    <option value="Nikkor Z 24-200" <?= ($lens_model == "Nikkor Z 24-200" ? "SELECTED" : ""); ?>>Nikkor Z 24-200</option>
+                    <option value="Nikkor Z 24-50" <?= ($lens_model == "Nikkor Z 24-50" ? "SELECTED" : ""); ?>>Nikkor Z 24-50</option>
                     <option value="Tamron SP 85mm F/1.8 Di VC USD" <?= ($lens_model == "Tamron SP 85mm F/1.8 Di VC USD" ? "SELECTED" : ""); ?>>Tamron SP 85mm F/1.8 Di VC USD</option>
                     <option value="Tamron SP 15-30mm f/2.8 Di VC USD G2" <?= ($lens_model == "Tamron SP 15-30mm f/2.8 Di VC USD G2" ? "SELECTED" : ""); ?>>Tamron SP 15-30mm f/2.8 Di VC USD G2</option>
                     <option value="Tamron SP 24-70mm f/2.8 Di VC USD G2" <?= ($lens_model == "Tamron SP 24-70mm f/2.8 Di VC USD G2" ? "SELECTED" : ""); ?>>Tamron SP 24-70mm f/2.8 Di VC USD G2</option>
@@ -193,11 +197,11 @@
             <div>
 
             <div>
-                <input class="half-size" type="text" id="aperture" name="aperture" placeholder="APERTURE" value="<?= $aperture ?>">
-                <input class="half-size" type="text" id="shutter" name="shutter" placeholder="SHUTTER" value="<?= $shutter ?>">
+                <input class="half-size" type="text" id="aperture" name="aperture" placeholder="APERTURE (eg, 6)" value="<?= $aperture ?>">
+                <input class="half-size" type="text" id="shutter" name="shutter" placeholder="SHUTTER (eg, 1/125)" value="<?= $shutter ?>">
             </div>
             <div>
-                <input class="half-size" type="text" id="focal_length" name="focal_length" placeholder="FOCAL LENGTH" value="<?= $focal_length ?>">
+                <input class="half-size" type="text" id="focal_length" name="focal_length" placeholder="FOCAL LENGTH (eg, 70)" value="<?= $focal_length ?>">
                 <input class="half-size" type="text" id="iso" name="iso" placeholder="ISO" value="<?= $iso ?>">
             </div>
 

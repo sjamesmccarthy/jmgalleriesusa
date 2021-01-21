@@ -13,13 +13,13 @@
     $navigation_html = $this->component('admin_navigation');
 
     /* Get any notifications of errors */
-    if($_SESSION['error'] == "200" && $_SESSION['notification_msg'] != '') {
+    if($_SESSION['error'] == "200" && $_SESSION['notify_msg'] != '') {
         $notification_state = "show";
         $notification_msg = "<p class='heading'>success</p><p>" .  $_SESSION['notify_msg'] . " Has Been Updated</p>";
         $_SESSION['error'] = null;
         $_SESSION['notify_msg'] = null;
-    }
-
+    } 
+    
     /* API - LIST OF PHOTOS IN CATALOG */
     $data_html = $this->api_Admin_Get_Photo_Catalog();
     $active_photos_count = array_count_values(array_column($data_html, 'status'))['ACTIVE'];

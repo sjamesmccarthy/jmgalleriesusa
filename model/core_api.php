@@ -1676,7 +1676,7 @@ class Core_Api extends Fieldnotes_Api
         `iso`, 
         `date_taken`, 
         `orientation`,
-        `available_sizes,
+        `available_sizes`,
         `tags`, 
         `created`, 
         `status`, 

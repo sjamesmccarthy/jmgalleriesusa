@@ -50,31 +50,6 @@
     $le_price_array = json_decode($this->config->le_pricing, true);
     $le_frames_pricing = json_decode($this->config->le_frames_pricing, true);
 
-    // /* Determine if the "TinyViews photo exists */
-    //  if( file_exists($_SERVER['DOCUMENT_ROOT'] . "/catalog/__image/" . $photo_meta['file_name'] . '-tinyviews.jpg') && $photo_meta['as_gallery'] == "0" ) {
-
-    //     $tinyviewImage = '<div class="col"><img class="in-room-img"  src="/catalog/__image/' . $photo_meta['file_name'] . '-tinyviews.jpg" /><!-- <div class="bx-buyart-btn"><a target="_shop" href="/shop">tinyViews&trade; Edition &mdash; Shop Now</a></div>--></div>';
-    //     $tinyviewSquareOption = '<option data-price="' . $tv_price_array['8x8'] . '" ' . 'data-frameprice="' . $studio_frames_pricing['8x8'] . '" value="8x8">SIZE: SQUARE 8x8</option>';
-    //     $tinyviewSquareOption .= '<!-- <option data-price="' . $tv_price_array['12x12'] . '" value="12x12">SIZE: SQUARE 12x12</option> -->';
-    //     $tv=1;
-       
-    //  } else {
-    //      $tinyviewImage = null;
-    //      $tv=0;
-    //      $tinyviewSquareOption = null;
-    //  }
-
-    //  if( file_exists($_SERVER['DOCUMENT_ROOT'] . "/catalog/__image/" . $photo_meta['file_name'] . '-tinyviews-notes.jpg') && $photo_meta['as_gallery'] == "0" && isSet($tv_price_array['5x7NC']) ) {
-
-    //     $tinyviewNotesImage = '<div class="col"><img class="in-room-img"  src="/catalog/__image/' . $photo_meta['file_name'] . '-tinyviews-notes.jpg" /><!-- <div class="bx-buyart-btn"><a target="_shop" href="/shop">tinyViews&trade; Edition &mdash; Shop Now</a></div>--></div>';
-    //     $tinyviewNotesOption = '<option data-price="' . $tv_price_array['5x7NC'] . '" value="NOTECARDS">SIZE: 5x7 NOTECARD/POSTCARD (Set of 3)</option>'; 
-    //     $tv=1;
-    //  } else {
-    //      $tinyviewNotesImage = null;
-    //      $tinyviewNotesOption = null;
-    //      $tv=0;
-    //  }
-
     /* Determine if the "VirtualRoom" photo exists */
     if( file_exists($_SERVER['DOCUMENT_ROOT'] . "/catalog/__image/" . $photo_meta['file_name'] . '-room.jpg') && $photo_meta['as_gallery'] == "0" ) {
         $in_roomImg = '<div class="col"><img class="in-room-img" src="/catalog/__image/' . $photo_meta['file_name'] . '-room.jpg" /></div>';
@@ -83,15 +58,6 @@
         $in_roomImg = null;
         $tv=0;
     }
-
-    /* Determine if the "VirtualRoom" photo exists */
-    // if( file_exists($_SERVER['DOCUMENT_ROOT'] . "/catalog/__image/" . $photo_meta['file_name'] . '-room-alt.jpg') && $photo_meta['as_gallery'] == "0" ) {
-    //     $in_roomImgAlt = '<div class="col"><img class="in-room-img" src="/catalog/__image/' . $photo_meta['file_name'] . '-room-alt.jpg" /></div>';
-    //     $tv=1;
-    // } else {
-    //     $in_roomImgAlt = null;
-    //     $tv=0;
-    // }
 
     if($tv == 1) {
          $tv_img_disclaimer = '*Frames, envelopes, stamps, plants and pens are not included with any tinyViews&trade; Edition.';
@@ -163,15 +129,16 @@
         $edition_max  = ' OF ' . $this->config->limited_edition_max;
         $hidden_edition_type = '<input type="hidden" name="edition_type" value="limited" />';
 
-        $btn = "BUY ARTWORK";
-        $btn_link = '<a style="display:block;" class="mt-16" href="/contact?photo=' . $photo_meta['file_name'] . '">'; //class="btn-nudge"
-        $gallery_details = '<p class="mt-32">This Limited Edition is printed on ' . $edition_desc_material . ' and available in ' . $this->config->available_sizes_limited . ' inches (larger sizes available on special order, <a href="/contact">contact an art consultant</a>) ' . $edition_frame . '<!-- If you have any questions about our ' . $edition_desc_material . ', or need more information about out <a href="/styles">styles, frames and editions</a>, please <a href="/contact">contact an art consultant</a>.--></p>';
-
         /* Picking a default value to show */
         if($available_sizes != "in_code") { 
             $le_price_array = json_decode($available_sizes, true);
         } 
+       
+        foreach ($le_price_array as $paK => $paV) {
+            $pricing_long .= $paK . " ";
+        }
 
+        $pricing_long = preg_replace('#\s+#',', ',trim($pricing_long));
         $price_count = sizeof($le_price_array);
         
         $i=1;
@@ -182,6 +149,10 @@
             }
             $i++;
         }
+        
+        $btn = "BUY ARTWORK";
+        $btn_link = '<a style="display:block;" class="mt-16" href="/contact?photo=' . $photo_meta['file_name'] . '">'; //class="btn-nudge"
+        $gallery_details = '<p class="mt-32">This Limited Edition is printed on ' . $edition_desc_material . ' and available in ' . $pricing_long . ' inches (larger sizes available on special order, <a href="/contact">contact an art consultant</a>) ' . $edition_frame . '<!-- If you have any questions about our ' . $edition_desc_material . ', or need more information about out <a href="/styles">styles, frames and editions</a>, please <a href="/contact">contact an art consultant</a>.--></p>';
 
         $sizes_frames = '<div class="col-4_sm-12 select-wrapper">
         <label for="buysize"></label>
@@ -339,6 +310,11 @@
     /* Photo orientation */
     if($photo_meta['orientation'] == "portrait") {
         $img_w = '64%';
+        $grid = '-11';
+        $col_left = 'col-6';
+        $col_right = 'col-5';
+    } else if ($photo_meta['orientation'] == "square") {
+        $img_w = '100%';
         $grid = '-11';
         $col_left = 'col-6';
         $col_right = 'col-5';
