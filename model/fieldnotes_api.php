@@ -93,6 +93,7 @@ public function api_Admin_Get_Fieldnotes($status=null) {
             f.content,
             f.caption,
             f.teaser,
+            f.tags,
             f.count,
             f.cheers,
             f.type,
@@ -605,7 +606,7 @@ public function x__uploadFile($fileTypes=array("jpeg"), $ext="jpg") {
             $url = '<img src="' . $url . '"';
             foreach ( $atts as $key => $val )
                 $url .= ' ' . $key . '="' . $val . '"';
-            $url .= ' />';
+            $url .= ' alt="avatar" />';
         }
     
         return $url;

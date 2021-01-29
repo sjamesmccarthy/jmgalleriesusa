@@ -32,17 +32,18 @@
 
 
         p {
-            // font-family: 'Source Serif Pro', serif;
+            font-family: 'Source Serif Pro', serif;
             // font-weight: 200;
         }
 
     .__container {
 
-        h3 {
+        h1 {
             font-family: 'Source Serif Pro', serif;
             font-size: 2.5rem;
             font-weight: 600;
             line-height: 1.3;
+            color: $color-black;
         }
         .__container--toc {
             font-size: 2rem;
@@ -54,8 +55,8 @@
             font-size: 1rem;
             font-weight: 300;
             color: $color-blue;
-            text-align: center;
-            margin-top: .5rem;
+            text-align: left;
+            margin-top: 1rem;
             
              a:hover {
                 color: $color-black;
@@ -74,15 +75,34 @@
                 color: $color-black;
             }
         }
+        
     }
+}
+
+.__container--tags {
+  display: inline-block;
+  margin-top: 1rem !important;
+  margin-bottom: 0 !important;
+  margin-right: .5rem !important;
+  padding: 4px 8px;
+  background-color: $color-light-light-gray;
+  color: $color-black;
+  font-family: $font-family;
+  font-weight: 300;   
+  font-size: .9rem;
+  border-radius: $border-radius;
+}
+
+.__container--tags:first-child {
+  margin-left: 0;
 }
 
 .__container--bottom_toc {
             width: 98%;
-            margin: 0 auto 0 auto;
+            // margin: 0 auto 0 auto;
             font-size: 1rem;
-            border-top: 1px solid #e4e4e4;
-            text-align: center;
+            // border-top: 1px solid #e4e4e4;
+            text-align: left;
             color: $color-blue;
 
             a {
@@ -120,8 +140,8 @@
 }
 
 blockquote {
-    font-family: Roboto, sans-serif;
-    font-size: 1.3rem;
+    // font-family: Roboto, sans-serif;
+    font-size: 1.75rem;
 }
 
 .byline {
@@ -338,22 +358,30 @@ blockquote {
             margin-bottom: 1rem;
         }
 
-    .response--icon {
-        font-size: 1.5rem;
-        line-height: 1;
-    }
-
 .response--icon-label {
     display:inline-block; 
-    margin-left: 1rem; 
+    margin-left: .5rem !important;
+    margin-right: 2rem !important; 
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
     font-size: 1rem;
-    font-weight: 600;
+    font-weight: 300;
+    font-family: $font-family !important;
+    color: $color-black;
 }
-    .response--icon-cheers i,
-    .response--icon-bubble i {
-        font-size: 1rem;
+
+.repsonse--count {
+  color: $color-black;
+  font-size: 1rem;
+  font-weight: 300;
+}
+
+.response--icon-cheers i,
+.response--icon-bubble i {
+        vertical-align: middle;
+        font-size: 1.5rem;
         transition: transform .2s;
-        color: $color-black;
+        color: $color-gray;
 
         &:hover { 
             animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;

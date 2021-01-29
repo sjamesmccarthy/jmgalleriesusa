@@ -91,7 +91,7 @@ $image_html = '<div class="col-6_sm-12"><div style="max-width:85%; margin: auto;
 <div class="slider">';
 
     foreach($res_image as $iK => $iV) {  
-        $image_html .= '<div><img src="/view/image/product/' . $iV . '" /></div>';
+        $image_html .= '<div><img src="/view/image/product/' . $iV . '" alt="' . $iV . '" /></div>';
     }
 
 $image_html .= "</div></div></div>";

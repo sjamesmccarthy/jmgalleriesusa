@@ -1,5 +1,7 @@
       
     <!-- generated html from component file: New Releases -->
+    <h1 class="noshow">GALLERIES</h1>
+        
     <section id="new-release-film-strip" class="filmstrip">
         <?= $thumb_new_releases_html ?>
     </section>

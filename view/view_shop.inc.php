@@ -53,7 +53,7 @@ foreach($product_data as $k => $v) {
         $grid_css = 'col';
     }
 
-    $thumb_html .= '<div style="position: relative; overflow: hidden; margin-bottom: 32px" class="thumb ' . $grid_css .  ' pb-16 filter-thumb-gallery '. $data_filters . '"><a href="/product/' . $v['uri_path'] . '"><img style="width: 100%;" src="/view/image/product/' . $img_file . '" /></a></p><h4 class="pt-8"><a href="/product/' . $v['uri_path'] . '">' . $v['title'] . '</a></h4>' . $desc_short . $price_html . $only_one . '</p>' . $free_ship . '</div>';
+    $thumb_html .= '<div style="position: relative; overflow: hidden; margin-bottom: 32px" class="thumb ' . $grid_css .  ' pb-16 filter-thumb-gallery '. $data_filters . '"><a href="/product/' . $v['uri_path'] . '"><img style="width: 100%;" src="/view/image/product/' . $img_file . '" alt="' . $img_file . '" /></a></p><h4 class="pt-8"><a href="/product/' . $v['uri_path'] . '">' . $v['title'] . '</a></h4>' . $desc_short . $price_html . $only_one . '</p>' . $free_ship . '</div>';
 
 }
 

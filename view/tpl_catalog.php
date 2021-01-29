@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-
+<html lang="en">
+    
     <?php $this->getPartial('header'); ?>
     <?php print $this->component('hero'); ?>
     

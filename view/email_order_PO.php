@@ -48,7 +48,7 @@ ul li {
 <span class='noshow'>
 <br>
 <p style='text-align: left;'>
-<img src='https://jmgalleries.com/view/image/logo_fullsize.png' style='width: 8%' />
+<img src='https://jmgalleries.com/view/image/logo_fullsize.png' style='width: 8%' alt='jm galleries logo' />
 </p>
 </span>
 

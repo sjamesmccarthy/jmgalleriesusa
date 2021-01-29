@@ -10,16 +10,6 @@
                         <p class="--tag">' . strtoupper($value['type']) . '</p>
                         <h4 class="pb-32"><a href="/polarized/' . $value['short_path'] . '">' . $value['title'] . '</a></h4>
                         <a style="color: #FFF; text-decoration: none;" href=""><p style="position: absolute; bottom: 1rem; border-top: 1px solid #CCC; font-weight: 600; text-transform: uppercase;"><!-- ' . date("D M j Y", strtotime($value['created'])) . '<br /> -->' . $read_time . '</p></a>
-                        
-                        <!-- <div class="mt-8" style="display: flex; position: relative;">
-                                <div style="width: 38px; margin-top: 2px;">
-                                    <img src="/view/image/avatar/jamesmccarthy_1.jpg" style="border-radius: 100px; width: 100%;"/>
-                                </div>
-                                <div class="--byline" style="width: 100%;">
-                                    <p class="--byline"><b>' . $value['byline'] . '</b><br />
-                                    ' . date("F d, Y", strtotime($value['created'])) . ' - ' . $value['count'] . ' Words, ' . $read_time . '</p>
-                                </div>
-                        </div> -->
                     </div>
                     </div> 
                 </div>

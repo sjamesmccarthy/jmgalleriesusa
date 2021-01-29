@@ -35,7 +35,7 @@ foreach ($fieldnotes_data as $key => $value) {
     if ( file_exists($_SERVER['DOCUMENT_ROOT'] . "/view/image/fieldnotes/" . $value['image'] ) ) {
         $img_html = 
             '<div class="col sm-hidden content__image--preview">
-                <img src="/view/image/fieldnotes/' . $value['image'] . '" /><br />
+                <img src="/view/image/fieldnotes/' . $value['image'] . '" alt="' . $value['image'] . '" /><br />
             </div>';
     } else {
         $img_html = '<!-- err_code: no image found -->';
@@ -55,7 +55,7 @@ foreach ($fieldnotes_data as $key => $value) {
                         
                         <div class="mt-8" style="display: flex; position: relative;">
                                 <div style="width: 38px; margin-top: 2px;">
-                                    <img src="/view/image/avatar/jamesmccarthy_1.jpg" style="border-radius: 100px; width: 100%;"/>
+                                    <img src="/view/image/avatar/jamesmccarthy_1.jpg" style="border-radius: 100px; width: 100%;" alt="j mccarthy profile image" />
                                 </div>
                                 <div class="--byline" style="width: 100%;">
                                     <p class="--byline"><b>' . $value['byline'] . '</b><br />
@@ -85,9 +85,9 @@ foreach ($fieldnotes_data as $key => $value) {
                     if ($j == $image_count) { $m_right = null; } else { $m_right = 'margin-right: 10px'; }
 
                     /* HTML for the images in the strip */
-                    $strip_html .= '<div id="imgT_' . $j . '" style="background-color: #000; flex: 1; overflow: hidden; width: 100%;' . $m_right . '" data-file="' . $j . '"><img style="min-height: 120px; max-height: 135px; border-radius: 6px;" src="/view/image/fieldnotes/' . $imgV['path'] . '" /></div>';
+                    $strip_html .= '<div id="imgT_' . $j . '" style="background-color: #000; flex: 1; overflow: hidden; width: 100%;' . $m_right . '" data-file="' . $j . '"><img style="min-height: 120px; max-height: 135px; border-radius: 6px;" src="/view/image/fieldnotes/' . $imgV['path'] . '" alt="' . $imgV['path'] . '" /></div>';
 
-                    $image_large .= '<div id="img_' . $j . '_expanded" style="background-color: #000; min-height:300px; position: relative;"><img style="width: 100%;" src="/view/image/fieldnotes/' . $imgV['path'] . '" /><p id="caption_' . $j . '" style="padding: 1rem;">' . $imgV['caption'] . '</p></div>';
+                    $image_large .= '<div id="img_' . $j . '_expanded" style="background-color: #000; min-height:300px; position: relative;"><img style="width: 100%;" src="/view/image/fieldnotes/' . $imgV['path'] . '" alt="' . $imgV['path'] . '" /><p id="caption_' . $j . '" style="padding: 1rem;">' . $imgV['caption'] . '</p></div>';
                     $j++;
             }
 
@@ -119,7 +119,7 @@ foreach ($fieldnotes_data as $key => $value) {
                             
                             <div class="" style="display: flex; position: relative; margin-top: 1rem;">
                                 <div style="width: 38px; margin-top: 2px;">
-                                    <img src="/view/image/avatar/jamesmccarthy_1.jpg" style="border-radius: 100px; width: 100%;"/>
+                                    <img src="/view/image/avatar/jamesmccarthy_1.jpg" style="border-radius: 100px; width: 100%;" alt="j mccarthy profile image" />
                                 </div>
                                 <div class="" style="width: 100%; padding-left: .5rem;">
                                     <p class="--byline"><b>' . $value['byline'] . '</b><br />

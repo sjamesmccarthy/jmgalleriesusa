@@ -4,15 +4,18 @@
 
         <div class="col-12_sm-12">
             <h1>RELEASE NOTES, <?= $this->config->package_version ?></h1> 
-
-        </div>
-
-        <div class="col_sm-12">
-        <a href="/contact"><button>REPORT A PROBLEM</button></a>
         </div>
 
         <div class="col-11" style="position: relative">
 
+        <p class="pt-16">v1.7.3<br />Jan 29, 2021</p>
+            <ul>
+            <li>update: SEO updates</li>
+            <li>update: Field notes Filmstrip layout adjustments</li>
+            <li>update: admin control: live img preview when adding new photo</li>
+            </ul> 
+        </p>
+        
         <p class="pt-16">v1.7.2<br />Jan 20, 2021</p>
             <ul>
             <li>update: pricing and styles.</li>

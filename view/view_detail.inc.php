@@ -52,7 +52,7 @@
 
     /* Determine if the "VirtualRoom" photo exists */
     if( file_exists($_SERVER['DOCUMENT_ROOT'] . "/catalog/__image/" . $photo_meta['file_name'] . '-room.jpg') && $photo_meta['as_gallery'] == "0" ) {
-        $in_roomImg = '<div class="col"><img class="in-room-img" src="/catalog/__image/' . $photo_meta['file_name'] . '-room.jpg" /></div>';
+        $in_roomImg = '<div class="col"><img class="in-room-img" src="/catalog/__image/' . $photo_meta['file_name'] . '-room.jpg" alt="' . $photo_meta['file-name'] . '" /></div>';
         $tv=1;
     } else {
         $in_roomImg = null;
@@ -68,7 +68,7 @@
     $super_photo = ' 
     <div class="img-container col-12 mb-32 ' . $photo_meta['orientation'] . '">
         <p style="text-align: center">
-        <img src="/catalog/__image/' . $photo_meta['file_name'] . '.jpg" />
+        <img src="/catalog/__image/' . $photo_meta['file_name'] . '.jpg" alt="' . $photo_meta['file_name'] . '" />
         </p>
     </div>';
 
@@ -241,7 +241,7 @@
             if($photo_meta['as_gallery'] == "0" && $tvP[0] == "5x7NC") {
 
                 if( file_exists($_SERVER['DOCUMENT_ROOT'] . "/catalog/__image/" . $photo_meta['file_name'] . '-tinyviews-notes.jpg') ) {
-                    $tinyviewNotesImage = '<div class="col"><img class="in-room-img"  src="/catalog/__image/' . $photo_meta['file_name'] . '-tinyviews-notes.jpg" /></div>';
+                    $tinyviewNotesImage = '<div class="col"><img class="in-room-img"  src="/catalog/__image/' . $photo_meta['file_name'] . '-tinyviews-notes.jpg" alt="' . $photo_meta['file_name'] . '" /></div>';
                     $sizes_frames_options .= '<option ' . $default . 'data-price="' . $tvV . '" value="NOTECARDS">SIZE: 5x7 NOTECARD/POSTCARD (Set of 3)</option>'; 
                     $tv=1;
                 } else {
@@ -255,7 +255,7 @@
                 /* Determine if the "TinyViews photo exists */
                 if( file_exists($_SERVER['DOCUMENT_ROOT'] . "/catalog/__image/" . $photo_meta['file_name'] . '-tinyviews.jpg') && $photo_meta['as_gallery'] == "0" ) {
 
-                    $tinyviewImage = '<div class="col"><img class="in-room-img"  src="/catalog/__image/' . $photo_meta['file_name'] . '-tinyviews.jpg" /></div>';
+                    $tinyviewImage = '<div class="col"><img class="in-room-img"  src="/catalog/__image/' . $photo_meta['file_name'] . '-tinyviews.jpg" alt="' . $photo_meta['file_name'] . '" /></div>';
                     $sizes_frames_options .= '<option ' . $default . ' data-price="' . $tvV . '" ' . 'data-frameprice="' . $studio_frames_pricing['8x8'] . '" value="8x8">SIZE: SQUARE 8x8</option>';
                     $tv=1;
                 
@@ -270,7 +270,7 @@
                 /* Determine if the "TinyViews photo exists */
                 if( file_exists($_SERVER['DOCUMENT_ROOT'] . "/catalog/__image/" . $photo_meta['file_name'] . '-tinyviews.jpg') && $photo_meta['as_gallery'] == "0" ) {
 
-                    $tinyviewImage = '<div class="col"><img class="in-room-img"  src="/catalog/__image/' . $photo_meta['file_name'] . '-tinyviews.jpg" /></div>';
+                    $tinyviewImage = '<div class="col"><img class="in-room-img"  src="/catalog/__image/' . $photo_meta['file_name'] . '-tinyviews.jpg" alt="' . $photo_meta['file_name'] . '" /></div>';
                     $sizes_frames_options .= '<option ' . $default . ' data-price="' . $tvV . '" ' . 'data-frameprice="' . $studio_frames_pricing['12x12'] . '" value="12x12">SIZE: SQUARE 12x12</option>';
                     $tv=1;
                 

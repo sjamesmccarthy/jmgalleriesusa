@@ -1,9 +1,12 @@
 <head>
     <meta charset="utf-8">
+    <meta name="language" content="English">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, minimum-scale=1">
     
     <title><?= $title_formatted ?></title>
     
+    <meta name='title' content='<?= $this->page->title ?> by j.McCarthy'/>
+    <meta name='description' content='jM Galleries, Fine Art Photography of People, Landscapes, Waterfalls, Oceans, Mountains and Deserts. <?= $this->page->title ?>' />
     <meta version="<?= $this->config->package_version ?>" />
     <meta site_name="<?= $this->config->site_name ?>" />
     <meta copyright="<?= $this->config->copyright ?>" />
@@ -46,5 +49,8 @@
 
     <!-- css from routing file -->
     <?= $header_css ?>
+    
+    <!-- mailchimp integration -->
+    <script id="mcjs">!function(c,h,i,m,p){m=c.createElement(h),p=c.getElementsByTagName(h)[0],m.async=1,m.src=i,p.parentNode.insertBefore(m,p)}(document,"script","https://chimpstatic.com/mcjs-connected/js/users/7fe25703399796912d1b5d6f8/1c9fb598be3b08f4fea525e46.js");</script>
 
 </head>

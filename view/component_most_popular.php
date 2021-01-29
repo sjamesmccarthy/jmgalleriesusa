@@ -27,7 +27,7 @@
                 }
 
                 $thumb_html .= '<div style="padding: 0 10px;" class="thumb overflow-hidden ' . $grid_css . '">';
-                $thumb_html .= '<a href="/' . $v['cate_path'] . "/" . $img_file . '"><img style="width: 100%" src="/catalog/__thumbnail/' .$img_file . '.jpg" /></a><h6 class="blue larger"><a href="/' . $v['cate_path'] . "/" . $img_file . '">' . $v['title'] . '</a></h6><!--<p class="tiny">' . $v['loc_place'] . '</p>--><p class="tiny">' . $edition_html. '</p></div>';
+                $thumb_html .= '<a href="/' . $v['cate_path'] . "/" . $img_file . '"><img style="width: 100%" src="/catalog/__thumbnail/' .$img_file . '.jpg" alt="' . $img_file . '" /></a><h6 class="blue larger"><a href="/' . $v['cate_path'] . "/" . $img_file . '">' . $v['title'] . '</a></h6><!--<p class="tiny">' . $v['loc_place'] . '</p>--><p class="tiny">' . $edition_html. '</p></div>';
 
                 $count++;
             }

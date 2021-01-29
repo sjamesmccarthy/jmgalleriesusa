@@ -29,7 +29,7 @@
         if($v['frame_size'] != '') { $add_frame_meta = ', (' . $v['frame_size'] . ' framed)'; } else { $add_frame_meta = null; }
 
         $thumb_html .= '<div class="col-card card-border ' . $grid_css . '">';
-        $thumb_html .= '<img class="filmstrip-thumb" src="/catalog/__thumbnail/' .$img_file . '.jpg" /><h6>' . $v['title'] . ' #' . $v['edition_num'] . '/' .  $v['edition_num_max'] .'</h6>';
+        $thumb_html .= '<img class="filmstrip-thumb" src="/catalog/__thumbnail/' .$img_file . '.jpg" alt="' . $img_file . '" /><h6>' . $v['title'] . ' #' . $v['edition_num'] . '/' .  $v['edition_num_max'] .'</h6>';
         $thumb_html .= '<p>Purchased ' . date("F jS, Y", strtotime($v['purchase_date'])) . '</p>';
         $thumb_html .= '<p>Serial No. ' . $v['serial_num'] . '</p>';
         $thumb_html .= $reg_num;
@@ -65,7 +65,7 @@
                 $img = '_alt_last';
             }
             
-            $thumb_html .='<div class="col-card type-promo card-border"><img class="filmstrip-thumb" src="/catalog/__thumbnail/image_filler' . $img . '.jpg"><p class="mb-16">Your Next (No. ' . $number . ') Limited Edition Art</p><p>Use promo-code: ' . $pcode . ' and</p><p>receive <b>' . $poffer . ' your ' . $number_long . '</p><p>fine art limited-edition purchase</b></p><p></p><p class="more-detail mt-16"><a target="_shop" href="/galleries">Browse The Catalog</a></p></div>'; 
+            $thumb_html .='<div class="col-card type-promo card-border"><img class="filmstrip-thumb" src="/catalog/__thumbnail/image_filler' . $img . '.jpg" alt="image-filler" /><p class="mb-16">Your Next (No. ' . $number . ') Limited Edition Art</p><p>Use promo-code: ' . $pcode . ' and</p><p>receive <b>' . $poffer . ' your ' . $number_long . '</p><p>fine art limited-edition purchase</b></p><p></p><p class="more-detail mt-16"><a target="_shop" href="/galleries">Browse The Catalog</a></p></div>'; 
     }
 
 $html = <<<END

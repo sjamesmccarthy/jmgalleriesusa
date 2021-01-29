@@ -15,7 +15,7 @@
         
 
         <div class="col-12 title pb-32">
-            <h2>jM GALLERY STORE</h2>
+            <h1>jM GALLERY STORE</h1>
             <p>Browse fine art products designed and hand-made by j.McCarthy</p>
         </div>
 

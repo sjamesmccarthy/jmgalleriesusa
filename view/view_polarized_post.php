@@ -19,10 +19,10 @@
                     <button>Respond</button>
                     <p style="display: inline-block; float: right; margin-top: .4rem; font-size: .9rem;"><a class="--response-content-card-cancel" href="#">cancel</a></p>
                 </div>
-        </form>
+        </form> 
         </div>
-    </div>
-
+    </div> 
+  
     <!-- responses pulled from database -->
     <div class="responses">
         <?= $fieldsnotes_respsonses_html ?>
@@ -35,54 +35,48 @@
    
     <div class="grid-noGutter">
         <div class="col-12 __container">
-
-                <!-- <p class="small pb-32"><a class="blue" href="/polarized">&#8592; Back To Polarized</a></p> -->
-
-                <div class="col" style="margin: auto; width:85%;">
-
-
+            
+            <div class="col" style="margin: auto; width:85%;">
                 <p class="teaser-title"><?= $res_teaser?></p>
-                <h3 class="text-center"><?= $res_title?></h3>
+                <h1 class="text-center"><?= $res_title?></h1>
+            </div>
+                
+            <div class="col content__area">
+
+                <div class="col teaser">
+                    <?= $res_content_leadin ?>
                 </div>
                 
-                <div class="col content__area">
+                <?= $img_html ?>
 
-                    <div class="col teaser">
-                        <?= $res_content_leadin ?>
+                <div class="col">
+                    <?= $res_content ?>
+                </div>
+            
+                <!-- start cheers, comments -->
+                <div class="col-12 __container--bottom_toc">
+                    
+                    <div>
+                        <a class="response--icon-cheers" href="#"><i class="fas fa-glass-cheers"></i>
+                        <p class="response--icon-label""><span class="repsonse--cheers-count repsonse--count"><?= $res_cheers ?></span></a></p>
+
+                        <a class="response--icon response--icon-bubble" href="#"><i class="fas fa-comment-alt"></i>
+                        <p class="response--icon--count response--icon-label"><span class="repsonse--icon-count repsonse--count"><?= $res_responses ?></span></a></p>
+                    </div>
+                        
+                    <div>
+                        <?= $tags_html ?>
                     </div>
                     
-                    <!-- <div class="col"> -->
-                        <?= $img_html ?>
-                    <!-- </div> -->
-
-                    <div class="col">
-                        <?= $res_content ?>
-                    </div>
-
-                    <div class="grid --social-links">
-                        <div class="col-10_sm-12"> <!-- style="display: inline-block; margin-right: 2rem;" -->
-                            <div>
-                            <a class="response--icon response--icon-bubble" href=""><i class="fas fa-comment-alt"></i>
-                            <p class="response--icon--count response--icon-label" style="margin: 0; padding-left: 1rem;"><?= $res_responses ?></a></p>
-                            </div>
-
-                            <div>
-                            <a class="response--icon-cheers" href="#"><i class="fas fa-glass-cheers"></i>
-                            <p class="response--icon-label" style="margin: 0;padding-left: .7rem;"><span class="repsonse--cheers-count"><?= $res_cheers ?></span> Cheers!</a></p>
-                            </div>
-                        </div>
-
-                        <div class="col-2_sm-hidden text-right mt-16"> <!-- style="display: inline-block; float: right;" -->
-                            <a target="_social" href="<?= $social_twitter ?>"><i class="fab fa-twitter twitter"></i></a>
-                        </div>
-                    </div>
-                
-                    <div class="col-12 __container--bottom_toc">
+                    <div>
                         <p class="__container--linkback">Published <?= $res_date_written; ?> in <a class="blue" href="/polarized">Field Notes</a></p>
                     </div>
-
+                    
                 </div>
-        </div> <!-- __container -->
+                <!-- /cheers, comments -->
+            </div>
+                
+        </div>
     </div>
 
 </section>
@@ -216,7 +210,7 @@ grecaptcha.execute('6LetD7YUAAAAAFX5cXupV3exd1YCSuYFY_az92Wh', {action: 'homepag
 
                 $( ".responses" ).prepend( data );
                 $('.resp_count').html( resp_count );
-                $('.response--icon--count').html( resp_count + ' Responses');
+                $('.response--icon--count').html( resp_count);
                 $('.no_resp_yet').hide();
                 $('.--response-content-container').hide();
               },

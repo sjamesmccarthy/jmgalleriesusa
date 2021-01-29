@@ -13,7 +13,7 @@
                     <div class="col mt-32 artist-statement">
                             <!-- <p class="name center">j.McCarthy</p> -->
                             <p class="text-center">
-                                <img class="signature" src="/view/image/signature_full-web.png" />
+                                <img class="signature" src="/view/image/signature_full-web.png" alt="j mccarthy signature" />
                             </p>
                             <p class="name-title center" style="margin-top: -60px;font-weight: 600;font-size: .8rem;margin-left: 1rem;">ARTIST STATEMENT</p>
                             <p class="name-statement pb-64">

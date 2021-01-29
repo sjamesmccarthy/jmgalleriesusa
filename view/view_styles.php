@@ -14,7 +14,7 @@
             <div class="col-6_md-12">
                 <table>
                     <tr class="gray">
-                        <th>Lumachrome HD Acrylic/Silverada Metallic Canvas Small</th>
+                        <th>Lumachrome HD Acrylic/Silverada Metallic Canvas</th>
                         <th class="right">16x24</th>
                     </tr>
                     <tr>
@@ -29,7 +29,7 @@
 
                 <table>
                     <tr class="gray">
-                        <th>Lumachrome HD Acrylic/Silverada Metallic Canvas Medium</th>
+                        <th>Lumachrome HD Acrylic/Silverada Metallic Canvas</th>
                         <th class="right">20x30</th>
                     </tr>
                     <tr>
@@ -44,7 +44,7 @@
                 
                 <table>
                     <tr class="gray">
-                        <th>Lumachrome HD Acrylic/Silverada Metallic Canvas Large</th>
+                        <th>Lumachrome HD Acrylic/Silverada Metallic Canvas</th>
                         <th class="right">24x36</th>
                     </tr>
                     <tr>
@@ -61,12 +61,57 @@
                     </tr>
                 </table>
                 
+                <table>
+                    <tr class="gray">
+                        <th>Lumachrome HD Acrylic/Silverada Metallic Canvas</th>
+                        <th class="right">12x12</th>
+                    </tr>
+                    <tr>
+                        <td class="left">Float Mount (back)</td>
+                        <td class="tright">12x12</td>
+                    </tr>
+                    <!-- <tr>
+                        <td class="left">Framed with Small Black Matte Without Liner</td>
+                        <td class="tright">38x50</td>
+                    </tr> -->
+                </table>
+                
+                <table>
+                    <tr class="gray">
+                        <th>Lumachrome HD Acrylic/Silverada Metallic Canvas</th>
+                        <th class="right">16x16</th>
+                    </tr>
+                    <tr>
+                        <td class="left">Float Mount (back)</td>
+                        <td class="tright">16x16</td>
+                    </tr>
+                    <!-- <tr>
+                        <td class="left">Framed with Small Black Matte Without Liner</td>
+                        <td class="tright">38x50</td>
+                    </tr> -->
+                </table>
+                
+                <table>
+                    <tr class="gray">
+                        <th>Lumachrome HD Acrylic/Silverada Metallic Canvas</th>
+                        <th class="right">24x24</th>
+                    </tr>
+                    <tr>
+                        <td class="left">Float Mount (back)</td>
+                        <td class="tright">124x24</td>
+                    </tr>
+                    <!-- <tr>
+                        <td class="left">Framed with Small Black Matte Without Liner</td>
+                        <td class="tright">38x50</td>
+                    </tr> -->
+                </table>
+                
             </div>
             <div class="col-6_md-12 text-right">
 
-                <p class="moulding-thumb"><img class="moulding-thumb-img" src="/view/image/moulding-60645.jpg" /> </p>
-                <p class="moulding-thumb"><img class="moulding-thumb-img" src="/view/image/moulding-60610.jpg" /> </p>
-                <p class="moulding-thumb"><img class="moulding-thumb-img" src="/view/image/moulding-60683.jpg" /> </p>
+                <p class="moulding-thumb"><img class="moulding-thumb-img" src="/view/image/moulding-60645.jpg" alt="moulding" /> </p>
+                <p class="moulding-thumb"><img class="moulding-thumb-img" src="/view/image/moulding-60610.jpg" alt="moulding" /> </p>
+                <p class="moulding-thumb"><img class="moulding-thumb-img" src="/view/image/moulding-60683.jpg" alt="moulding" /> </p>
             </div>
             </div>
 

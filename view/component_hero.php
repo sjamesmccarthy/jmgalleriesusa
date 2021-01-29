@@ -28,7 +28,7 @@ if ($catalog == '') {
                     <div style="position:absolute; bottom: 15%; width: 100%; left: 0;">
 
                     <p class="topnav-logo">
-                        <img class="topnav--logo-img logo-white logo-large" src="/view/image/logo_fullsize.png">
+                        <img class="topnav--logo-img logo-white logo-large" src="/view/image/logo_fullsize.png" alt="jm Galleries logo" \>
                     </p>
 
                     <p class="hero-text"><a href="$this->hero_link">$this->hero_title</a></p>

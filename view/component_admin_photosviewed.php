@@ -21,7 +21,7 @@ foreach($photosviewed_data as $key=>$val) {
 
     $result_html .= '<li class="item">';
     $result_html .= '<div class="photo">';
-    $result_html .= '<p><img src="/catalog/__thumbnail/' . $val['file_name'] . '.jpg" /></p>';
+    $result_html .= '<p><img src="/catalog/__thumbnail/' . $val['file_name'] . '.jpg"  alt="' . $val['file_name'] . '" /></p>';
     $result_html .= '</div>';
     $result_html .= '<div class="detail">';
     $result_html .= '<p><b>' . $val['title'] . ' (id' . $val['catalog_photo_id'] . ')</b></p>';

@@ -5,6 +5,7 @@ description: returns the last 4 blog posts from medium
 css: component_polarized.scss
 created: jmccarthy
 date: 8/28/19
+update: Fri, 29 Jan 2021
 version: 1
 */
 
@@ -41,11 +42,20 @@ $res_content = str_replace('<p><br></p>', '', $res_content);
 /* format date */
 $res_date_written = date("F j, Y", strtotime($res_created));
 
+/* format tags */
+$tag_array = explode(',', $res_tags);
+
+if(count($tag_array) > 1 ) {
+    foreach($tag_array as $tK => $tV) {
+        $tags_html .= '<p class="__container--tags">' . $tV . '</p>';    
+    }
+}
+
 /* Check for image */
 if($res_type == "article") {
     if ( is_file($_SERVER['DOCUMENT_ROOT'] . "/view/image/fieldnotes/" . $res_image ) ) {
         $img_html = '<div class="col image filmstrip--carousel">
-        <img src="/view/image/fieldnotes/' . $res_image . '" /><br />
+        <img src="/view/image/fieldnotes/' . $res_image . '"  alt="' . $res_image . '" /><br />
         <span class="caption">' . $res_caption . '</span>
         </div>';
     }
@@ -54,57 +64,32 @@ if($res_type == "article") {
 } else { 
 
     /* FILMSTRIP LAYOUT THUMBNAILS */
-    // $img_html = '<div class="grid image filmstrip--carousel">';
     $j=1;
     foreach ($image_data as $imgK => $imgV) {
 
-           $img_html .= '
-    <div id="img_' . $j . '_wrapper" class="grid>
-        
-        <div class="col-12_sm-12" style="position: relative;">
-            <img id="img_' . $j . '_photo" style="width: 100%; border-radius: 6px;" src="/view/image/fieldnotes/' . $imgV['path'] . '" />
-        </div>
-
-        <div class="col-12_sm-12" id="img_' . $j . '_caption" style="display: block; position: relative;">
-            <!-- <p style="margin-top: 0; font-size: 3rem;">' . $j . '</p> -->
-
-            <p style="padding: 0rem 0 1rem 0; font-size: 1.2rem; margin-bottom:0; margin-top: 5px;"><span style="font-size: 1.25rem; font-weight: 800;">' . $j . '</span> / ' . $imgV['caption'] . '</p>
-        </div>
-        
-    </div>';
-
-    //     if($j == 1) { 
-    //         $show_large = 'display: block;'; 
-    //         $underline_thumb = 'padding-bottom: 0; margin-bottom: 0;'; /* border-bottom: 25px solid rgba(0,0,0,.6); */
-    //         $opacity_default = '1';
-    //     } else { 
-    //         $show_large = null; 
-    //         $underline_thumb = null;
-    //         $opacity_default = '.2';
-    //     }
-
-    //     if ($j == $image_count) { $m_right = null; } else { $m_right = null; }
-
-    //     $img_html .= '<div id="imgT_' . $j . '" class="col_sm-6" data-file="' . $j . '" style="' . $underline_thumb . ' ' . $m_right . '">';
-    //     $img_html .= '<img style="opacity: ' . $opacity_default . '; margin: auto; margin-right: 8px;" src="/view/image/fieldnotes/' . $imgV['path'] . '" />';
-    //     $img_html .= '</div>';
-
-    //     $image_large .= '<div id="img_' . $j . '_expanded" style="' . $show_large . ' min-height:300px; position: relative;"><p id="caption_' . $j . '" style="padding: 0rem 0 2rem 0; font-size: 1rem; margin-bottom:0; margin-top: 5px;">' . $imgV['caption'] . '</p><img style="width: 100%; border-radius: 6px;" src="/view/image/fieldnotes/' . $imgV['path'] . '" /></div>'; /* color: #FFF; background-color: rgba(0,0,0,.6);  */
-
+           $res_content .= '
+                <div id="img_' . $j . '_wrapper" class="grid">
+                    
+                    <div class="col-12_sm-12" style="position: relative;">
+                        <img id="img_' . $j . '_photo" style="width: 100%; border-radius: 6px;" src="/view/image/fieldnotes/' . $imgV['path'] . '" alt="' . $imgV['path'] . '" />
+                    </div>
+            
+                    <div class="col-12_sm-12" id="img_' . $j . '_caption" style="display: block; position: relative;">
+                        <p style="padding: 0rem 0 1rem 0; font-size: 1.2rem; margin-bottom:0; margin-top: 5px;"><span style="font-size: 1.25rem; font-weight: 800;">' . $j . '</span> / ' . $imgV['caption'] . '</p>
+                    </div>
+                    
+                </div>';
         $j++;
     }
-
-    // $res_content = '<div id="filmstrip--preview" class="filmstrip--large-preview show">
-    //                     <p style="font-size: 1.5rem; font-weight: 600; padding:0; margin: 0;">And, so the story goes ...</p>'
-    //                     . $image_large .                            
-    //                 '</div>';
-    
-    // $img_html .= '</div>';
 }
 
 /* Build Comments */
-if($res_cheers == 0) { $res_cheers = 'Clink! Be the first to '; }
- $resp_count = count($fieldsnotes_respsonses_data);
+if($res_cheers == 0) { 
+    // $res_cheers = 'Clink! Be the first to '; 
+    $res_cheers = null; 
+}
+
+$resp_count = count($fieldsnotes_respsonses_data);
 
 if( count($fieldsnotes_respsonses_data) >= 1) {
 
@@ -128,16 +113,16 @@ if( count($fieldsnotes_respsonses_data) >= 1) {
         </div>';
     }
 
-    $res_responses = count($fieldsnotes_respsonses_data) . " Responses";
+    $res_responses = count($fieldsnotes_respsonses_data);
 } else {
     $fieldsnotes_respsonses_html = ' <div class="--response-data-card">
     <p class="no_resp_yet" style="text-align: center; padding-top: 5%">
-        No responses yet.<br />Be the first to leave one.
+        <!-- No responses yet.<br />Be the first to leave one. -->
     </p>
     </div>
     ';
 
-    $res_responses = "No responses yet, be the first to leave one.";
+    // $res_responses = "No responses yet, be the first to leave one.";
 
 }
 
@@ -167,7 +152,7 @@ function get_gravatar( $email, $s = 80, $d = 'mp', $r = 'g', $img = true, $atts 
         $url = '<img src="' . $url . '"';
         foreach ( $atts as $key => $val )
             $url .= ' ' . $key . '="' . $val . '"';
-        $url .= ' />';
+        $url .= ' alt="avatar" />';
     }
 
     return $url;

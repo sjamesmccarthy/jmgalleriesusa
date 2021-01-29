@@ -1,3 +1,5 @@
+    <h1 class="noshow">jM Galleries</h1>
+    
     <!-- generated html from component file: component_polarized -->
     <section id="polarized">
         <?= $polarized_html ?>

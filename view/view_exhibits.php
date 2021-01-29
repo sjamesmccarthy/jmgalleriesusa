@@ -23,7 +23,7 @@
             </li> -->
 
             <li>
-             <p class="left pr-20 exhibit-icon-height"><img class="exhibit-icon" src="/view/image/exhibit_icon_stoneyhead.jpg" /></p>
+             <p class="left pr-20 exhibit-icon-height"><img class="exhibit-icon" src="/view/image/exhibit_icon_stoneyhead.jpg" alt="exhibit icon" /></p>
                 <div>
                 <h5>STONEYHEAD BREWING CO. RENO</h5 >
                     <p class="exhibit-desc">

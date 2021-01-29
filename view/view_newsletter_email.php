@@ -20,7 +20,7 @@
                 <p class="amazing-offer-center">
                   <img class="amazing-offer-image" style="width: <?= $imageWidth ?>" src="/catalog/__image/<?= $amazingOfferFileName ?>" alt="Amazing Offer Email Photo" />
                 </p>
-                <img style="position: absolute; bottom: 30px; right: 30px; <?= $amazingOfferSigInvert ?>" src="/view/image/signature_full-web.png" />
+                <img style="position: absolute; bottom: 30px; right: 30px; <?= $amazingOfferSigInvert ?>" src="/view/image/signature_full-web.png" alt="jm signature full" />
               </div>
               
               <p class="amazing-offer-blurb amazing-offer-center pt-32">

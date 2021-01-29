@@ -35,9 +35,9 @@ $html = <<< END
             
             <div class="amazing-offer-photo mt-32">
             <p class="amazing-offer-center">
-                <img style="width: 100%" src="/view/image/collector_artist-proof.jpg" alt="Artist Proof Collector Exclusive" />
+                <img style="width: 100%" src="/view/image/collector_artist-proof.jpg" alt="Artist Proof Collector Exclusive" alt="collector artist proof" />
             </p>
-            <img style="width: 10%; opacity: .5; position: absolute; bottom: 30px; right: 30px; {$res_amazingOfferSigInvert}" src="/view/image/logo_fullsize.png" />
+            <img style="width: 10%; opacity: .5; position: absolute; bottom: 30px; right: 30px; {$res_amazingOfferSigInvert}" src="/view/image/logo_fullsize.png" alt="jm Galleries logo" />
             {$order_link}<button class="button-inv" style="position: absolute;right: 200px;bottom: 65px;">ORDER THIS COLLECTOR EXCLUSIVE</button></a>
           </div>
       

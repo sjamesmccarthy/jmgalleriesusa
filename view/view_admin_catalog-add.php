@@ -60,17 +60,19 @@
 
             <div style="margin-bottom: 10px;">
                 <div class="file half-size">
+                <img id="file_1_prev" style="width: 100%;" />
                 <p>Image: __image/<?= $file_name ?></p>
-                <img class="photopreview <?= $display_show ?>" src="/catalog/__image/<?= $file_name ?>.jpg?<?= date(); ?>" />
-                <input class="input-upload" type="file" id="file_1" name="file_1" aria-label="Choose Main Photo">
+                <img class="photopreview <?= $display_show ?>" src="/catalog/__image/<?= $file_name ?>.jpg?<?= date(); ?>" alt="<?= $file_name ?>" />
+                <input class="input-upload" type="file" id="file_1" name="file_1" onchange="document.getElementById('file_1_prev').src = window.URL.createObjectURL(this.files[0])" aria-label="Choose Main Photo">
                 <input type="hidden" id="file_1_path" name="file_1_path" value="/catalog/__image/">
                 <!-- <span class="file-custom file-custom-main"></span> -->
                 </div>
 
                 <div class="half-size file file-thumb">
+                <img id="file_2_prev" style="width: 100%;" />
                 <p>Thumbnail: __thumbnail/<?= $file_name ?></p>
-                <img class="photopreview photopreviewthumb <?= $display_show ?>" src="/catalog/__thumbnail/<?= $file_name ?>.jpg?<?= date(); ?>" />
-                <input class="input-upload"  type="file" id="file_2" name="file_2" aria-label="Choose Main Photo">
+                <img class="photopreview photopreviewthumb <?= $display_show ?>" src="/catalog/__thumbnail/<?= $file_name ?>.jpg?<?= date(); ?>" alt="<?= file_name ?>" />
+                <input class="input-upload"  type="file" id="file_2" name="file_2" onchange="document.getElementById('file_2_prev').src = window.URL.createObjectURL(this.files[0])" aria-label="Choose Main Photo">
                 <input type="hidden" id="file_2_path" name="file_2_path" value="/catalog/__thumbnail/">
                 <!-- <span class="file-custom file-custom-thumbnail"></span> -->
                 </div>
@@ -120,8 +122,18 @@
             </div>
 
             <div>
-                <input class="half-size" type="text" id="desc" name="desc" placeholder="DESCRIPTION OF MATERIAL (eg, paper or acrylic)" value="<?= $desc ?>" required>
-                <input class="half-size" type="text" id="available_sizes" name="available_sizes" placeholder="AVAILABLE SIZES (in_code = default, otherwise use JSON)" value="<?= $available_sizes ?>" required>
+                <div class="select-wrapper half-size">
+                    <select id="desc" name="desc">
+                        <option value="acrylic" <?= ($desc == "acrylic" ? "SELECTED" : ""); ?>>Acrylic</option>
+                        <option value="canvas" <?= ($desc == "canvas" ? "SELECTED" : ""); ?>>Canvas</option>
+                        <option value="paper" <?= ($desc == "paper" ? "SELECTED" : ""); ?>>Paper</option>
+                    </select> 
+                </div>
+                    
+                <div class="half-size" >
+                    <!-- <input class="half-size" type="text" id="desc" name="desc" placeholder="DESCRIPTION OF MATERIAL (eg, paper or acrylic)" value="<?= $desc ?>" required> -->
+                    <input type="text" id="available_sizes" name="available_sizes" placeholder="AVAILABLE SIZES (in_code = default, otherwise use JSON)" value="<?= $available_sizes ?>" required>
+                </div>
             </div>
 
             <div>
@@ -174,6 +186,8 @@
                     <option value="Nikon D5200" <?= ($camera == "Nikon D5200" ? "SELECTED" : ""); ?>>Nikon D5200</option>
                     <option value="Nikon 1 V1" <?= ($camera == "Nikon 1 V1" ? "SELECTED" : ""); ?>>Nikon 1 V1</option>
                     <option value="Ricoh GR II" <?= ($camera == "Ricoh GR II" ? "SELECTED" : ""); ?>>Ricoh GR II</option>
+                    <option value="(FILM) Rolleicord" <?= ($camera == "(FILM) Rolleicord" ? "SELECTED" : ""); ?>>(FILM) Rolleicord</option>
+                    <option value="(FILM) Nikon FG" <?= ($camera == "(FILM) Nikon FG" ? "SELECTED" : ""); ?>>(FILM) Nikon FG</option>
                 </select> 
                 </div>
                 <div class="select-wrapper half-size">
@@ -192,6 +206,8 @@
                     <option value="Nikon AF-S Nikkor 55-300 f/4.5-5.6 ED VR" <?= ($lens_model == "Nikon AF-S Nikkor 55-300 f/4.5-5.6 ED VR" ? "SELECTED" : ""); ?>>Nikon AF-S Nikkor 55-300 f/4.5-5.6 ED VR</option>
                     <option value="Nikon AF-S Nikkor 50mm 1.8G" <?= ($lens_model == "Nikon AF-S Nikkor 50mm 1.8G" ? "SELECTED" : ""); ?>>Nikon AF-S Nikkor 50mm 1.8G</option>
                     <option value="Rokinon 14mm f/2.8 ED UMC" <?= ($lens_model == "Rokinon 14mm f/2.8 ED UMC" ? "SELECTED" : ""); ?>>Rokinon 14mm f/2.8 ED UMC</option>
+                    <option value="Nikkor Series E 50mm" <?= ($lens_model == "Nikkor Series E 50mm" ? "SELECTED" : ""); ?>>Nikkor Series E 50mm</option>
+                    <option value="Rolleicord Zeiss Triotar" <?= ($lens_model == "Rolleicord Zeiss Triotar" ? "SELECTED" : ""); ?>>Rolleicord Zeiss Triotar</option>
                 </select>
                 </div>
             <div>
@@ -217,6 +233,12 @@
 </section>
 
 <script>
+
+function preview() {
+    frame.src=URL.createObjectURL(event.target.files[0]);
+}
+
+
 jQuery(document).ready(function($){
 
     $('.close-x').on("click", function() {

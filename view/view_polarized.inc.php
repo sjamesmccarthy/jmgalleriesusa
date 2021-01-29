@@ -55,7 +55,7 @@ foreach ($fieldnotes_data as $key => $value) {
 
     /* Check for image */
     if ( is_file($_SERVER['DOCUMENT_ROOT'] . "/view/image/fieldnotes/" . $value['image'] ) ) {
-        $img_html = '<img src="/view/image/fieldnotes/' . $value['image'] . '" /></a>';
+        $img_html = '<img src="/view/image/fieldnotes/' . $value['image'] . '" alt="' . $value['image'] . '" /></a>';
         $value['title'] = mb_strimwidth($value['title'], 0, 65, "...");
         $img_div = '1';
     } else {

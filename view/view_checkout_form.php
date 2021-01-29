@@ -52,7 +52,7 @@
 
             </div>
             
-            <h3 class='mt-32'>Payment</h3><p class='pb-16'><img style='margin-bottom: 10px; width: 150px; vertical-align: middle' src='/view/image/square-payment-icons.png' /> <!-- <i style='font-size: 1.8rem; margin-left: 5px;' class='fab fa-bitcoin'></i> --><br /><span class='small'Estimated Total Not Including Tax or Shipping or any Promotional Codes.<br />Visa, Mastercard, American Express and Discover accepted and processed with Square. <!-- Shipping costs and tax, if applicable, will be included on final bill. Bitcoin is accepted via Coinbase or Square Cash App.<br /> Cash (USD) is accepted on pickup only orders. No checks. <u>There is no payment due at this time.</u> You will be billed separately through Square.--></span></p>
+            <h3 class='mt-32'>Payment</h3><p class='pb-16'><img style='margin-bottom: 10px; width: 150px; vertical-align: middle' src='/view/image/square-payment-icons.png' alt="square payment icon" /> <!-- <i style='font-size: 1.8rem; margin-left: 5px;' class='fab fa-bitcoin'></i> --><br /><span class='small'Estimated Total Not Including Tax or Shipping or any Promotional Codes.<br />Visa, Mastercard, American Express and Discover accepted and processed with Square. <!-- Shipping costs and tax, if applicable, will be included on final bill. Bitcoin is accepted via Coinbase or Square Cash App.<br /> Cash (USD) is accepted on pickup only orders. No checks. <u>There is no payment due at this time.</u> You will be billed separately through Square.--></span></p>
 
             <?= $pay_SqPaymentForm ?>
             <?= $pay_SqForm_CSS ?>

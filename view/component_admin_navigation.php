@@ -51,7 +51,7 @@ if(is_null($this->nav_label)) { $this->nav_label = "Adding Photo"; }
 /* GENERATE HTML BLOCK */
 $html = <<< END
 <div class="menu-icon--container">
-    <p class="menu-icon"><i class="fas fa-adjust"></i></p>
+    <p class="menu-icon"><i class="fas fa-bars"></i></p>
     <p class="tiny center blue">MENU</p>
 </div>
 
@@ -60,7 +60,7 @@ $html = <<< END
             <div class="toolbox mb-32">
             
             <div class="profile--image">
-                <img src="/view/image/avatar/$avatar" />
+                <img src="/view/image/avatar/$avatar" alt="avatar" />
             </div>
             
             <div class="profile--name border--bottom">
