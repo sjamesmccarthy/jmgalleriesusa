@@ -84,7 +84,7 @@ position: relative;
     font-weight: 800;
     line-height: 1.3;
     text-align: center;
-    display: none;
+    display: block;
 
         > a {
             font-weight: 800;
@@ -177,6 +177,12 @@ position: relative;
         &:hover {
             color: $color-black;
         }
+        
+        // xSmall devices (landscape phones, 320px and up)
+       @media only screen and (min-width : 320px) and (max-width : 480px) {
+            font-size: .9rem;
+        }
+        
     }
 
     &:hover {

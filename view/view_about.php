@@ -1,6 +1,8 @@
 <section id="about">
     <div class="grid-center">
-
+    
+    <h1 class="noshow">About j.McCarthy, Photographer</h1>
+    
         <div class="col-12 nopad">
 
                 <div class="grid">

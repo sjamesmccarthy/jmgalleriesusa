@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+User-agent: Googlebot-Image
+Disallow: /catalog
+
+Sitemap: https://jmgalleries.com/sitemap.xml

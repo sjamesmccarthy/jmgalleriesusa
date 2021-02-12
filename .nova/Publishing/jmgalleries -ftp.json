@@ -1,5 +1,8 @@
 {
   "identifier" : "F43AB95B-A5EA-4ACC-BBF8-E0F119D28531",
+  "ignoredFilePatterns" : [
+    "view\/.config.codekit3"
+  ],
   "remotePath" : "\/public_html",
   "server" : "jmgalleries \/ftp",
   "usesPublishing" : true
