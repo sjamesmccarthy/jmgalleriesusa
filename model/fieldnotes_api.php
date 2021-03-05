@@ -131,6 +131,8 @@ public function api_Admin_Get_Fieldnotes($status=null) {
 
  public function api_Admin_Get_Fieldnotes_Tags($id) {
 
+ // $this->console($id);
+ 
         /* Executes SQL and then assigns object to passed var */
         if( $this->checkDBConnection(__FUNCTION__) == true) {
 
@@ -139,6 +141,8 @@ public function api_Admin_Get_Fieldnotes($status=null) {
         FROM
             fieldnotes_tags as ft
         WHERE ft.fieldnotes_id = '" . $id . "'";
+ 
+ // $this->console($sql);
         
         $result = $this->mysqli->query($sql);
 

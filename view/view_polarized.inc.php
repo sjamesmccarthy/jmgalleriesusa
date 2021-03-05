@@ -43,7 +43,8 @@ foreach ($fieldnotes_data as $key => $value) {
         break;
 
         case "filmstrip":
-            $read_time_label = $value['teaser'];
+            $read_time_label = 'Scroll At Your Own Pace';
+            // $read_time_label = $value['teaser'];
             $icon_type = 'fas fa-film';
         break;
 
@@ -56,7 +57,7 @@ foreach ($fieldnotes_data as $key => $value) {
     /* Check for image */
     if ( is_file($_SERVER['DOCUMENT_ROOT'] . "/view/image/fieldnotes/" . $value['image'] ) ) {
         $img_html = '<img src="/view/image/fieldnotes/' . $value['image'] . '" alt="' . $value['image'] . '" /></a>';
-        $value['title'] = mb_strimwidth($value['title'], 0, 65, "...");
+        $value['title'] = mb_strimwidth($value['title'], 0, 80, "...");
         $img_div = '1';
     } else {
         $img_html = null;
@@ -69,6 +70,7 @@ foreach ($fieldnotes_data as $key => $value) {
     $card_html .= '<div class="card--type">' . strtoupper($value['type']) . '</div>';
     $card_html .= '<div class="card--byline">user_id: ' . $value['user_id'] . '</div>';
     $card_html .= '<div class="card--title"><a href="/polarized/' . $value['short_path'] . '">' . $value['title'] . '</a></div>';
+    $card_html .= '<div class="card--teaser">' . $value['teaser'] . '</div>';
     $card_html .= '<div class="card--readtime">' . $read_time_label . '</div>';
     $card_html .= '</div>';
 

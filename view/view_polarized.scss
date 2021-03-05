@@ -67,7 +67,7 @@
     &--wrapper {
         display: flex;
         margin: 0;
-        border-bottom: 1px solid #e4e4e4;
+        border-bottom: 1px dashed  #e4e4e4;
         //   max-width: 600px;
         padding-bottom: 1rem;
         margin: auto auto 1rem auto;
@@ -80,7 +80,7 @@
         //   flex-basis: auto;
         font-family: sans-serif;
         padding: 0 1rem 0 0;
-        min-width: 60%;
+        min-width: 65%;
     }
 
     &--type {
@@ -97,6 +97,10 @@
         margin: .5rem 0;
     }
 
+    &--teaser {
+        font-size: 1rem;    
+    }
+    
     &--readtime {
         font-size: .8rem;
         width: 100%;

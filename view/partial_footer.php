@@ -26,7 +26,9 @@
 
                 <div class="col-5_sm-12 breadcrumb copyright">
                     <p><a href="/about">About j.McCarthy</a> <!-- / <a href="/all?filter=tinyviews">Open Editions</a> -->/ <a href="/shop">jM Gallery Store</a> / <a href="/privacy"><?= $this->config->copyright ?></a><!-- <a style="font-size:.8rem; margin-left: 1rem;" class="theme-toggle"><i class="fas fa-adjust"></i></a> --></p>
-                   <?php  $this->getPartial('newsletter'); ?>
+                   <?php  
+                     // $this->getPartial('newsletter'); 
+                   ?>
                 </div>
 
         </div>

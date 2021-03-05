@@ -72,10 +72,14 @@
                         <p class="__container--linkback">Published <?= $res_date_written; ?> in <a class="blue" href="/polarized">Field Notes</a></p>
                     </div>
                     
+                    <div class="newsletter-section-fn">
+                        <h3>SUBSCRIBE TO MY MONTHLY NEWSLETTER</h3>
+                        <?php $this->getPartial('newsletter'); ?>
+                    </div>
+                    
                 </div>
                 <!-- /cheers, comments -->
             </div>
-                
         </div>
     </div>
 

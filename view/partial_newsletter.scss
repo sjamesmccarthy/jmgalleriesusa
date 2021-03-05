@@ -1,6 +1,41 @@
 /* ********************** */
 /* partial_newsletter */
 
+.newsletter-section-fn {
+    padding-top: 2rem;
+    
+    h3 {
+        padding-bottom: .5rem;    
+
+        // xSmall devices (landscape phones, 320px and up)
+        @media (min-width: 320px) { 
+            font-size: 1rem;
+        }
+    
+        // Small devices (landscape phones, 576px and up)
+        @media (min-width: 376px) { 
+           font-size: 1rem;
+        }
+    
+        // Medium devices (tablets, 768px and up)
+        @media (min-width: 767px) {
+            font-size: 1.5rem;
+        }
+    
+        // Large devices (tablets (iPad Pro, 1112px and up)
+        @media (min-width: 1112px) {
+            font-size: 1.5rem;
+        }
+    
+        // Extra large devices (large desktops, 1200px and up)
+        @media (min-width: 1200px) {
+            font-size: 1.5rem;
+        }
+        
+    }
+    
+}
+
 .newsletterinput {
     width: 75% !important;
     // height: 35px !important;
@@ -55,63 +90,62 @@ height: 51px;
     font-size: 1.0rem;
 }
 
-#mc_embed_signup {
-    background-color: none;
-    padding: 0 !important;
+// #mc_embed_signup {
+//     background-color: none;
+//     padding: 0 !important;
+// 
+//     input {
+//         position: relative;
+//         height: 50px;
+//         padding: 0 24px;
+//         width: 80%;
+//         border: none;
+//         -webkit-appearance: none;
+//         -moz-appearance: none;
+//         // background-color: rgba(0, 0, 0, .05);
+//         border-radius: 5px;
+//         font-family: inherit;
+//         font-size: 1.0rem;
+//         font-weight: 300;
+//         line-height: 1.8rem;
+//         outline: none;
+//         transition: border 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+//         box-sizing: border-box;
+//         padding-left: 15px;
+//         margin-bottom: 1rem;
+// 
+//         @media (max-width: 64em) and (orientation: portrait),
+//         (max-width: 80em) and (orientation: portrait) 
+//         {
+//            width: 80%;
+//         }
+// 
+//         @media (min-device-width: 375px) and (max-device-height: 812px) 
+//             and (orientation : landscape) and (-webkit-device-pixel-ratio: 3)
+//         {
+//            width: 80%;
+//         }
+// 
+//     }
+//     
+//     .mc-inline {
+//         display: inline-block;
+//     }
+// 
+//     label {
+//             position: absolute;
+//             font-size: .8rem;
+//             margin-top: -4px;
+//             background-color: #DDD;
+//             padding: 0 5px;
+//             color: $color-black;
+//             border-radius: 0 $border-radius $border-radius 0;
+//     }
+// }
 
-    input {
-        position: relative;
-        height: 50px;
-        padding: 0 24px;
-        width: 80%;
-        border: none;
-        -webkit-appearance: none;
-        -moz-appearance: none;
-        // background-color: rgba(0, 0, 0, .05);
-        border-radius: 5px;
-        font-family: inherit;
-        font-size: 1.0rem;
-        font-weight: 300;
-        line-height: 1.8rem;
-        outline: none;
-        transition: border 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
-        box-sizing: border-box;
-        padding-left: 15px;
-        margin-bottom: 1rem;
-
-        @media (max-width: 64em) and (orientation: portrait),
-        (max-width: 80em) and (orientation: portrait) 
-        {
-           width: 80%;
-        }
-
-        @media (min-device-width: 375px) and (max-device-height: 812px) 
-            and (orientation : landscape) and (-webkit-device-pixel-ratio: 3)
-        {
-           width: 80%;
-        }
-
-    }
-    
-    .mc-inline {
-        // display: inline-block;
-    }
-
-    label {
-            position: absolute;
-            font-size: .8rem;
-            margin-top: -4px;
-            background-color: #DDD;
-            padding: 0 5px;
-            color: $color-black;
-            border-radius: 0 $border-radius $border-radius 0;
-    }
-
-}
-
-.mc_embed_signup {
-    padding: 0 !important;
-}
+// .mc_embed_signup {
+//     padding: 0 !important;
+// }
 
 .form-icon {
     position: absolute;

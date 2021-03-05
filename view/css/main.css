@@ -1833,7 +1833,7 @@ ol, ul, li, dl, dt, dd {
 p, div, blockquote, caption, figure, legend {
   margin: 0 0 0 0;
   padding: 0 0 0 0;
-  font-size: 1.25rem;
+  font-size: 1.2rem;
   font-weight: 400;
   box-sizing: border-box; }
 
@@ -2134,7 +2134,7 @@ table.dataTable.row-border tbody th, table.dataTable.row-border tbody td, table.
 blockquote {
   font-weight: 300;
   padding-left: 1rem;
-  margin: 2rem 4rem; }
+  margin: 2rem 2rem; }
 
 .underline {
   text-decoration: underline; }
@@ -2291,7 +2291,7 @@ form .cancel-button {
   width: 10% !important;
   margin-left: 1rem; }
 
-input[type="text"], input[type="password"], textarea, select {
+input[type="text"], input[type="email"], input[type="password"], textarea, select {
   position: relative;
   height: 50px;
   padding: 0 24px;
@@ -2309,14 +2309,14 @@ input[type="text"], input[type="password"], textarea, select {
   outline: none;
   transition: border 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
   box-sizing: border-box; }
-  input[type="text"]:disabled, input[type="password"]:disabled, textarea:disabled, select:disabled {
+  input[type="text"]:disabled, input[type="email"]:disabled, input[type="password"]:disabled, textarea:disabled, select:disabled {
     background-color: #FFF;
     color: #000000;
     opacity: 1; }
-  input.half-size[type="text"], input.half-size[type="password"], textarea.half-size, select.half-size {
+  input[type="text"].half-size, input[type="email"].half-size, input[type="password"].half-size, textarea.half-size, select.half-size {
     width: 49%;
     display: inline-block; }
-  input.half-size[type="text"]:nth-of-type(1), input.half-size[type="password"]:nth-of-type(1), textarea.half-size:nth-of-type(1), select.half-size:nth-of-type(1) {
+  input[type="text"].half-size:nth-of-type(1), input[type="email"].half-size:nth-of-type(1), input[type="password"].half-size:nth-of-type(1), textarea.half-size:nth-of-type(1), select.half-size:nth-of-type(1) {
     margin-left: 0; }
 
 textarea {
@@ -3292,7 +3292,7 @@ button a {
 .nav-mobile-ul {
   display: none;
   position: absolute;
-  background-color: #000;
+  background-color: rgba(0, 0, 0, 0.8);
   color: #FFF;
   width: 100%;
   padding: 4rem 2rem 2rem 2rem;
@@ -3322,6 +3322,25 @@ button a {
 
 /* ********************** */
 /* partial_newsletter */
+.newsletter-section-fn {
+  padding-top: 2rem; }
+  .newsletter-section-fn h3 {
+    padding-bottom: .5rem; }
+    @media (min-width: 320px) {
+      .newsletter-section-fn h3 {
+        font-size: 1rem; } }
+    @media (min-width: 376px) {
+      .newsletter-section-fn h3 {
+        font-size: 1rem; } }
+    @media (min-width: 767px) {
+      .newsletter-section-fn h3 {
+        font-size: 1.5rem; } }
+    @media (min-width: 1112px) {
+      .newsletter-section-fn h3 {
+        font-size: 1.5rem; } }
+    @media (min-width: 1200px) {
+      .newsletter-section-fn h3 {
+        font-size: 1.5rem; } }
 .newsletterinput {
   width: 75% !important;
   margin-bottom: 0 !important;
@@ -3355,45 +3374,6 @@ button a {
 
 .normal {
   font-size: 1.0rem; }
-
-#mc_embed_signup {
-  background-color: none;
-  padding: 0 !important; }
-  #mc_embed_signup input {
-    position: relative;
-    height: 50px;
-    padding: 0 24px;
-    width: 80%;
-    border: none;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    border-radius: 5px;
-    font-family: inherit;
-    font-size: 1.0rem;
-    font-weight: 300;
-    line-height: 1.8rem;
-    outline: none;
-    transition: border 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
-    box-sizing: border-box;
-    padding-left: 15px;
-    margin-bottom: 1rem; }
-    @media (max-width: 64em) and (orientation: portrait), (max-width: 80em) and (orientation: portrait) {
-      #mc_embed_signup input {
-        width: 80%; } }
-    @media (min-device-width: 375px) and (max-device-height: 812px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 3) {
-      #mc_embed_signup input {
-        width: 80%; } }
-  #mc_embed_signup label {
-    position: absolute;
-    font-size: .8rem;
-    margin-top: -4px;
-    background-color: #DDD;
-    padding: 0 5px;
-    color: #4a4a4a;
-    border-radius: 0 6px 6px 0; }
-
-.mc_embed_signup {
-  padding: 0 !important; }
 
 .form-icon {
   position: absolute;
@@ -4143,7 +4123,7 @@ form #buysize, form #frame {
 /* view_newsletter_email */
 /* Amazing Offer */
 .amazing-offer-error,
-input.amazing-offer-error[type="text"] {
+input[type="text"].amazing-offer-error {
   background-color: rgba(255, 0, 0, 0.1) !important;
   border-width: thin;
   border-style: solid;
@@ -4356,7 +4336,7 @@ input.amazing-offer-error[type="text"] {
 .card--wrapper {
   display: flex;
   margin: 0;
-  border-bottom: 1px solid #e4e4e4;
+  border-bottom: 1px dashed  #e4e4e4;
   padding-bottom: 1rem;
   margin: auto auto 1rem auto;
   line-height: 1.2; }
@@ -4366,7 +4346,7 @@ input.amazing-offer-error[type="text"] {
   flex-shrink: 1;
   font-family: sans-serif;
   padding: 0 1rem 0 0;
-  min-width: 60%; }
+  min-width: 65%; }
 
 .card--type {
   font-size: .8rem; }
@@ -4378,6 +4358,9 @@ input.amazing-offer-error[type="text"] {
 .card--title {
   font-weight: 800;
   margin: .5rem 0; }
+
+.card--teaser {
+  font-size: 1rem; }
 
 .card--readtime {
   font-size: .8rem;
@@ -4420,15 +4403,20 @@ input.amazing-offer-error[type="text"] {
     margin: auto; } }
 
 #polarized p {
-  font-family: 'Source Serif Pro', serif; }
-
+  font-family: 'Source Serif Pro', serif;
+  font-size: 1.2rem; }
+  @media (min-width: 320px) and (max-width: 414px) {
+    #polarized p {
+      font-size: 1rem; } }
 #polarized .__container h1 {
   font-family: 'Source Serif Pro', serif;
   font-size: 2.5rem;
   font-weight: 600;
   line-height: 1.3;
   color: #4a4a4a; }
-
+  @media (min-width: 320px) and (max-width: 414px) {
+    #polarized .__container h1 {
+      font-size: 2rem; } }
 #polarized .__container .__container--toc {
   font-size: 2rem;
   margin-top: -2.5rem;
@@ -4457,12 +4445,12 @@ input.amazing-offer-error[type="text"] {
   margin-top: 1rem !important;
   margin-bottom: 0 !important;
   margin-right: .5rem !important;
-  padding: 4px 8px;
+  padding: 3px 6px;
   background-color: #f2f2f2;
   color: #4a4a4a;
   font-family: "Source Sans Pro", sans-serif;
-  font-weight: 300;
-  font-size: .9rem;
+  font-weight: 400;
+  font-size: .6rem !important;
   border-radius: 6px; }
 
 .__container--tags:first-child {
@@ -4480,10 +4468,9 @@ input.amazing-offer-error[type="text"] {
 
 .teaser-title {
   font-family: 'Source Serif Pro', serif;
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   text-align: center;
-  color: #757575;
-  text-align: center; }
+  color: #757575; }
 
 .teaser, .teaser > p {
   padding-bottom: 0; }
@@ -4496,8 +4483,24 @@ input.amazing-offer-error[type="text"] {
     border-radius: 100px; }
 
 blockquote {
-  font-size: 1.75rem; }
-
+  font-size: 1.75rem;
+  line-height: 1.5;
+  border-left: 1px solid #e4e4e4; }
+  @media (min-width: 320px) {
+    blockquote {
+      font-size: 1.25rem; } }
+  @media (min-width: 376px) {
+    blockquote {
+      font-size: 1.25rem; } }
+  @media (min-width: 767px) {
+    blockquote {
+      font-size: 1.75rem; } }
+  @media (min-width: 1112px) {
+    blockquote {
+      font-size: 1.75rem; } }
+  @media (min-width: 1200px) {
+    blockquote {
+      font-size: 1.75rem; } }
 .byline {
   width: 100%;
   font-family: 'lato', sans-serif !important;
@@ -4534,10 +4537,27 @@ blockquote {
 .content__area ul {
   margin-left: 2rem; }
   .content__area ul li {
-    list-style-type: square; }
-
+    list-style-type: square;
+    font-family: 'Source Serif Pro', serif;
+    font-size: 1.2rem;
+    margin-bottom: .5rem; }
+    @media (min-width: 320px) {
+      .content__area ul li {
+        font-size: 1rem; } }
+    @media (min-width: 376px) {
+      .content__area ul li {
+        font-size: 1rem; } }
+    @media (min-width: 767px) {
+      .content__area ul li {
+        font-size: 1.2rem; } }
+    @media (min-width: 1112px) {
+      .content__area ul li {
+        font-size: 1.2rem; } }
+    @media (min-width: 1200px) {
+      .content__area ul li {
+        font-size: 1.2rem; } }
 .content__area p {
-  margin: .5rem 0; }
+  margin: 1rem 0; }
 
 .image {
   position: relative; }
@@ -4976,8 +4996,6 @@ div[id*='imgT']:hover {
     .form_pincode input::-moz-placeholder {
       text-align: center; }
     .form_pincode input:-ms-input-placeholder {
-      text-align: center; }
-    .form_pincode input::-ms-input-placeholder {
       text-align: center; }
     .form_pincode input::placeholder {
       text-align: center; }

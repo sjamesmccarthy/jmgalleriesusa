@@ -20,6 +20,9 @@ $fieldsnotes_respsonses_data = $this->api_Admin_Get_Fieldnotes_Responses($this->
 $image_data = $this->api_Admin_Get_FieldnotesImagesById($this->page->fieldnotes_id);
 $image_count = count($image_data);
 
+/* API call to fetch tags */
+$tags_data = $this->api_Admin_Get_Fieldnotes_Tags($this->page->fieldnotes_id);
+
 $content = explode('###', $res_content);
 $sections = count($content);
 
@@ -43,11 +46,11 @@ $res_content = str_replace('<p><br></p>', '', $res_content);
 $res_date_written = date("F j, Y", strtotime($res_created));
 
 /* format tags */
-$tag_array = explode(',', $res_tags);
+// $tag_array = explode(',', $tags_data);
 
-if(count($tag_array) > 1 ) {
-    foreach($tag_array as $tK => $tV) {
-        $tags_html .= '<p class="__container--tags">' . $tV . '</p>';    
+if(count($tags_data) > 1 ) {
+    foreach($tags_data as $tK => $tV) {
+        $tags_html .= '<p class="__container--tags">' . $tV['tag'] . '</p>';    
     }
 }
 
@@ -75,7 +78,7 @@ if($res_type == "article") {
                     </div>
             
                     <div class="col-12_sm-12" id="img_' . $j . '_caption" style="display: block; position: relative;">
-                        <p style="padding: 0rem 0 1rem 0; font-size: 1.2rem; margin-bottom:0; margin-top: 5px;"><span style="font-size: 1.25rem; font-weight: 800;">' . $j . '</span> / ' . $imgV['caption'] . '</p>
+                        <p style="padding: 0rem 0 1rem 0; font-size: 1rem; margin-bottom:0; margin-top: 5px;"><span style="font-size: 1.25rem; font-weight: 800;">' . $j . '</span> / ' . $imgV['caption'] . '</p>
                     </div>
                     
                 </div>';

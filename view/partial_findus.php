@@ -2,6 +2,8 @@
     <h2 style="line-height: 1">Join<br />My Newsletter</h2>
     <p class="pt-16 pb-16">Every month I will send you a new photograph to enjoy as well as a special offer for a tinyViews&trade; Edition and preview an upcoming Limited Edition.</p>
     <p><a class="blue" target="_new" href="https://mailchi.mp/677ca5e417ef/new-release-newsletter">Subscribe</a></p>
+    
+    <?php $this->getPartial('newsletter'); ?>
 
     <h2 class="pt-32" style="line-height: 1">Read<br />My Field Notes</h2>
     <p class="pt-16">A weekly blog about art, photography, collecting and my photography adventures.</p>

@@ -8,6 +8,14 @@
 
         <div class="col-11" style="position: relative">
 
+        <p class="pt-16">v1.7.4<br />Mar 04, 2021</p>
+            <ul>
+            <li>update: tags in field notes now appear</li>
+            <li>update: minor CSS fixes for field notes</li>
+            <li>update: admin control: live img preview when updating photo and when adding a field note</li>
+            </ul> 
+        </p>
+        
         <p class="pt-16">v1.7.3<br />Jan 29, 2021</p>
             <ul>
             <li>update: SEO updates</li>
