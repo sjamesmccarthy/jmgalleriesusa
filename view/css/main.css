@@ -2997,7 +2997,7 @@ button a {
   border-radius: 6px 6px 0 0;
   padding: 0;
   margin-top: 0;
-  max-height: 1000px;
+  max-height: 85vh;
   overflow: scroll; }
   .photosviewed--container .table--box {
     padding: 20px;
@@ -3021,7 +3021,7 @@ button a {
 .activity--container {
   background-color: rgba(0, 0, 0, 0.05);
   border-radius: 6px 6px 0 0;
-  max-height: 1000px;
+  max-height: 85vh;
   overflow: scroll;
   padding: 0;
   margin-top: 0; }

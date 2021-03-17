@@ -23,6 +23,7 @@ $image_count = count($image_data);
 /* API call to fetch tags */
 $tags_data = $this->api_Admin_Get_Fieldnotes_Tags($this->page->fieldnotes_id);
 
+
 $content = explode('###', $res_content);
 $sections = count($content);
 
@@ -41,6 +42,12 @@ if($sections == 2) {
 
 $res_content = str_replace('<div><br></div>', '', $res_content);
 $res_content = str_replace('<p><br></p>', '', $res_content);
+
+$res_content = str_replace('<a', '<a target="_blank" ', $res_content);
+
+$res_content = preg_replace('@\[(http|https?://([-\w\.]+[-\w])+(:\d+)?(/([\w/_\.#-]*(\?\S+)?[^\.\s])?)?)\]@', '<a target="_blank"  href="$1">$1</a>', $res_content);
+$res_content = str_replace('[','',$res_content);
+$res_content = str_replace(']','',$res_content);
 
 /* format date */
 $res_date_written = date("F j, Y", strtotime($res_created));

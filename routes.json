@@ -36,7 +36,7 @@
         "title": "[$1]"
     },
     "/studio/signin": {
-        "template": "page",
+        "template": "admin",
         "page": "admin_signin",
         "auth": "true",
         "component": "true",
@@ -50,7 +50,7 @@
         "title": "Sign In To Your Collector Dashboard"
     },
     "/studio/manage": {
-        "template": "page",
+        "template": "admin",
         "page": "admin_manage",
         "auth": "true",
         "component": "true",
@@ -64,28 +64,28 @@
         "title": "Mangaing Your Collection"
     },
     "/studio/catalog": {
-        "template": "page",
+        "template": "admin",
         "page": "admin_catalog",
         "auth": "true",
         "component": "true",
         "title": "Catalog of Online Photos"
     },
     "/studio/catalog-add": {
-        "template": "page",
+        "template": "admin",
         "page": "admin_catalog-add",
         "auth": "true",
         "component": "true",
         "title": "Add Photo To Online Catalog"
     },
     "/studio/auth": {
-        "template": "page",
+        "template": "admin",
         "page": "admin_auth",
         "auth": "true",
         "component": "true",
         "title": "Authorizing"
     },
     "/studio/signout": {
-        "template": "page",
+        "template": "admin",
         "page": "admin_signedout",
         "auth": "true",
         "component": "true",
@@ -218,84 +218,84 @@
         "title": "Processing Order Script"
     },
     "/studio/inventory": {
-        "template": "page",
+        "template": "admin",
         "page": "admin_inventory",
         "auth": "true",
         "component": "true",
         "title": "Inventory of Art"
     },
     "/studio/inventory-add": {
-        "template": "page",
+        "template": "admin",
         "page": "admin_inventory-add",
         "auth": "true",
         "component": "true",
         "title": "Adding Artwork To Your Inventory"
     },
     "/studio/suppliers": {
-        "template": "page",
+        "template": "admin",
         "page": "admin_suppliers",
         "auth": "true",
         "component": "true",
         "title": "Inventory of Suppliers"
     },
     "/studio/orders": {
-        "template": "page",
+        "template": "admin",
         "page": "admin_orders",
         "auth": "true",
         "component": "true",
         "title": "Orders"
     },
     "/studio/orders-add": {
-        "template": "page",
+        "template": "admin",
         "page": "admin_orders-add",
         "auth": "true",
         "component": "true",
         "title": "Editing Order"
     },
     "/studio/suppliers-add": {
-        "template": "page",
+        "template": "admin",
         "page": "admin_suppliers-add",
         "auth": "true",
         "component": "true",
         "title": "Adding New Supplier"
     },
     "/studio/materials": {
-        "template": "page",
+        "template": "admin",
         "page": "admin_materials",
         "auth": "true",
         "component": "true",
         "title": "Inventory of Materials"
     },
     "/studio/materials-add": {
-        "template": "page",
+        "template": "admin",
         "page": "admin_materials-add",
         "auth": "true",
         "component": "true",
         "title": "Adding New Materials"
     },
     "/studio/reports": {
-        "template": "page",
+        "template": "admin",
         "page": "admin_reports",
         "auth": "true",
         "component": "true",
         "title": "Reports"
     },
     "/studio/reports-add": {
-        "template": "page",
+        "template": "admin",
         "page": "admin_reports-add",
         "auth": "true",
         "component": "true",
         "title": "Adding New Report SQL Mark"
     },
     "/studio/fieldnotes": {
-        "template": "page",
+        "template": "admin",
         "page": "admin_fieldnotes",
         "auth": "true",
         "component": "true",
         "title": "Field Notes"
     },
     "/studio/fieldnotes-add": {
-        "template": "page",
+        "template": "admin",
         "page": "admin_fieldnotes-add",
         "auth": "true",
         "component": "true",
@@ -305,49 +305,49 @@
         }
     },
     "/studio/collections": {
-        "template": "page",
+        "template": "admin",
         "page": "admin_collections",
         "auth": "true",
         "component": "true",
         "title": "Collections"
     },
     "/studio/collections-add": {
-        "template": "page",
+        "template": "admin",
         "page": "admin_collections-add",
         "auth": "true",
         "component": "true",
         "title": "Adding New Collection"
     },
     "/studio/users": {
-        "template": "page",
+        "template": "admin",
         "page": "admin_users",
         "auth": "true",
         "component": "true",
         "title": "Users"
     },
     "/studio/users-add": {
-        "template": "page",
+        "template": "admin",
         "page": "admin_users-add",
         "auth": "true",
         "component": "true",
         "title": "Adding New User"
     },
     "/studio/collectors": {
-        "template": "page",
+        "template": "admin",
         "page": "admin_collectors",
         "auth": "true",
         "component": "true",
         "title": "Collectors"
     },
     "/studio/collectors-add": {
-        "template": "page",
+        "template": "admin",
         "page": "admin_collectors-add",
         "auth": "true",
         "component": "true",
         "title": "Adding New Collector Profile"
     },
     "/studio/settings": {
-        "template": "page",
+        "template": "admin",
         "page": "admin_settings",
         "auth": "true",
         "component": "true",

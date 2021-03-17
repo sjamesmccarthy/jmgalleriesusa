@@ -7,7 +7,9 @@
     } else {
         header('location:/studio/signin');
     }
-
+    
+    $today = date("F j, Y, g:i a");
+    
     /* NAVIGATION */
     $navigation_html = $this->component('admin_navigation');
 
