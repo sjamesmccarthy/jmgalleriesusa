@@ -5720,6 +5720,8 @@ table.dataTable tbody td.valign {
     position: relative; }
     .fieldnotes-add--container .admin-header h2 {
       font-weight: 300; }
+  .fieldnotes-add--container #content_area {
+    position: relative; }
   .fieldnotes-add--container .teaser_container {
     margin-top: 1rem; }
   .fieldnotes-add--container .show-image-container {
@@ -5787,9 +5789,29 @@ table.dataTable tbody td.valign {
       vertical-align: middle;
       padding-left: 1rem;
       color: #FFF; }
+    .fieldnotes-add--container form textarea {
+      overflow-y: scroll;
+      min-height: 750px;
+      font-size: 1rem;
+      -moz-tab-size: 4;
+        -o-tab-size: 4;
+           tab-size: 4; }
     .fieldnotes-add--container form #content {
       border-top-right-radius: 0;
       border-top-left-radius: 0; }
+  .fieldnotes-add--container .content_preview {
+    display: none;
+    width: 100%;
+    position: absolute;
+    top: 3rem;
+    border-top: 10px solid #000;
+    border-bottom: 10px solid #000;
+    padding: 1rem;
+    background-color: #FFF;
+    min-height: 720px;
+    z-index: 5; }
+  .fieldnotes-add--container .btn-content_preview:hover {
+    cursor: pointer; }
 
 .collectors--container {
   background-color: rgba(0, 0, 0, 0.05);

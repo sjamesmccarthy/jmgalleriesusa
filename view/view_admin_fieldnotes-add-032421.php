@@ -128,12 +128,21 @@
 
                 <div id="content_area" class="mt-16">
             
-                    <p style="display: inline-block;">CONTENT</p>
-                    <p style="display: inline-block; float: right;"><i class="far fa-window-restore btn-content_preview"></i></p>
-                    <textarea name="content" id="content" class="content_html"><?= $res_content ?></textarea>
-                    
-                    <div class="content_preview content__area"></div>
-                    
+                    <p>CONTENT</p>
+
+                    <div class="fn__editor">
+                        <div class="actions fn__editor_tools">
+                            <button data-action="bold"><i data-action="bold" class="fas fa-bold"></i></button><button data-action="italic"><i data-action="italic" class="fas fa-italic"></i></button><button data-action="underline"><i data-action="underline" class="fas fa-underline"></i></button><!-- <button data-action="justifyLeft"><i data-action="justifyLeft" class="fas fa-align-left"></i></button><button data-action="justifyCenter"><i data-action="justifyCenter" class="fas fa-align-center"></i></button><button data-action="justifyRight"><i data-action="justifyRight" class="fas fa-align-right"></i></button> --><!-- <button data-action="h1"><i data-action="h1" class="fas fa-heading"></i>1</button><button data-action="h2"><i data-action="h2" class="fas fa-heading"></i>2</button> --><button data-action="insertUnorderedList"><i data-action="insertUnorderedList" class="fas fa-list-ul"></i></button><button data-action="indent"><i data-action="indent" class="fas fa-indent"></i></button><button data-action="outdent"><i data-action="outdent" class="fas fa-outdent"></i></button><button data-action="blockquote"><i data-action="blockquote" class="fas fa-quote-right"></i></button><!--<button data-action="insertImage"><i data-action="insertImage" class="fas fa-image"></i></button>--><button data-action="createLink"><i data-action="createLink" class="fas fa-link"></i></button><!-- <button data-action="unLink"><i data-action="unLink" class="fas fa-unlink"></i></button> --><button data-action="p"><i data-action="p" class="fas fa-paragraph"></i></button><button data-action="stripHTML"><i data-action="stripHTML" class="fas fa-eraser"></i></button><!--<button data-action="save"><i data-action="save" class="fas fa-save"></i></button>--><button data-action="code"><i data-action="code" class="fas fa-code"></i></button>
+                        </div>
+
+                        <!-- <div class="fn__editor_tools --preview">
+                        </div> -->
+
+                    </div>
+
+                    <div class="content_html" contenteditable="true"><?= $res_content ?></div>
+                    <div class="raw_edit_container"><p style="display: inline-block">HTML CODE VIEW</p><p class="right mb-8 raw_close"><i class="fas fa-times-circle"></i></p><textarea name="content" id="content" class="content_raw"></textarea></div> 
+
                 </div>
 
 
@@ -211,12 +220,6 @@ jQuery(document).ready(function($){
         $('.add-imgs').toggle();
     });
 
-    $('.btn-content_preview').on("click", function(e) {
-        console.log('preview clicked');
-        $('.content_preview').html( $('.content_html').val() );
-        $('.content_preview').toggle();
-    });
-    
     counter = function() {
         
         var maxWordCount = 700;
@@ -304,7 +307,7 @@ jQuery(document).ready(function($){
     $('#sendform').on("click", function(e) {
         
         /* Export HTML from WYSIWYG editor DIV to textarea */
-        // $('.content_raw').val( $('.content_html').html() );
+        $('.content_raw').val( $('.content_html').html() );
 
         $(":input[required]").each(function () {                     
         

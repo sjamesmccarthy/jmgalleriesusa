@@ -210,13 +210,14 @@ public function api_Admin_Update_Fieldnotes() {
         if(!isset($featured)) { $featured ="0"; }
         if($type == "video") { $words = 3; }
         
+        // REPLACE(\"$content\", \"\\r\\n\", \"\")
         $sql = "
         UPDATE fieldnotes 
         SET 
             title = '$title',
             short_path = '$short_path',
             teaser = '$teaser',
-            content = REPLACE(\"$content\", \"\\r\\n\", \"\"),
+            content = '$content',
             type = '$type',
             count = '$words',
             image = '$img_path',
@@ -317,6 +318,7 @@ public function api_Admin_Insert_Fieldnotes() {
             $img_path = $short_path . '_file_1.jpg';
         }
 
+        //REPLACE(\"$content\", \"\\r\\n\", \"\"), 
          $sql = "
             INSERT INTO `jmgaller_iesusa`.`fieldnotes` (
                 `user_id`, 
@@ -336,7 +338,7 @@ public function api_Admin_Insert_Fieldnotes() {
                 '$title', 
                 '$img_path',
                 '$file_1_caption', 
-                REPLACE(\"$content\", \"\\r\\n\", \"\"), 
+                '$content',
                 '$words',
                 '$teaser',
                 '$type', 

@@ -8,6 +8,13 @@
 
         <div class="col-11" style="position: relative">
 
+        <p class="pt-16">v1.7.5<br />Mar 24, 2021</p>
+            <ul>
+            <li>update: misc CSS changes in admin area and throughout the site.</li>
+            <li>update: admin control: removed WYSIWYG editor and added new "preview" instead.</li>
+            </ul> 
+        </p>
+        
         <p class="pt-16">v1.7.4<br />Mar 04, 2021</p>
             <ul>
             <li>update: tags in field notes now appear</li>
