@@ -5770,6 +5770,8 @@ table.dataTable tbody td.valign {
       .fieldnotes-add--container .file .files_nav .files_nav--invert {
         background-color: #000;
         color: #FFF; }
+  .fieldnotes-add--container .file_caption {
+    min-height: 150px; }
   .fieldnotes-add--container .image_filler {
     width: 100%;
     background-color: #e4e4e4;
@@ -5808,7 +5810,8 @@ table.dataTable tbody td.valign {
     border-bottom: 10px solid #000;
     padding: 1rem;
     background-color: #FFF;
-    min-height: 720px;
+    max-height: 740px;
+    overflow-x: scroll;
     z-index: 5; }
   .fieldnotes-add--container .btn-content_preview:hover {
     cursor: pointer; }

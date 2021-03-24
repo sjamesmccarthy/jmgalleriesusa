@@ -63,7 +63,7 @@
                             <input type="hidden" id="file_1_path" name="file_1_path" value="<?= $res_image ?>">
                         </div>
                         </div>
-                        <textarea name="file_1_caption" placeholder="TYPE A SHORT CAPTION NO LONGER THAN 1 LINE FOR THIS IMAGE."><?= $res_caption_file_1 ?></textarea>
+                        <textarea name="file_1_caption" class="file_caption" placeholder="TYPE A SHORT CAPTION NO LONGER THAN 1 LINE FOR THIS IMAGE."><?= $res_caption_file_1 ?></textarea>
                     </div>
 
                    <!-- File_2 -->
@@ -76,7 +76,7 @@
                             <input type="hidden" id="file_2_path" name="file_2_path" value="<?= $res_image_2 ?>">
                         </div>
                         </div>
-                        <textarea name="file_2_caption" placeholder="TYPE A SHORT CAPTION NO LONGER THAN 1 LINE FOR THIS IMAGE."><?= $res_caption_file_2 ?></textarea>
+                        <textarea name="file_2_caption" class="file_caption" placeholder="TYPE A SHORT CAPTION NO LONGER THAN 1 LINE FOR THIS IMAGE."><?= $res_caption_file_2 ?></textarea>
                     </div>
 
                     <!-- File_3 -->
@@ -89,7 +89,7 @@
                             <input type="hidden" id="file_3_path" name="file_3_path" value="<?= $res_image_3 ?>">
                             </div>
                         </div>
-                        <textarea name="file_3_caption" placeholder="TYPE A SHORT CAPTION NO LONGER THAN 1 LINE FOR THIS IMAGE."><?= $res_caption_file_3 ?></textarea>
+                        <textarea name="file_3_caption" class="file_caption" placeholder="TYPE A SHORT CAPTION NO LONGER THAN 1 LINE FOR THIS IMAGE."><?= $res_caption_file_3 ?></textarea>
                     </div>
 
                     <!-- File_4 -->
@@ -102,7 +102,7 @@
                             <input type="hidden" id="file_4_path" name="file_4_path" value="<?= $res_image_4 ?>">
                         </div>
                         </div>
-                        <textarea name="file_4_caption" placeholder="TYPE A SHORT CAPTION NO LONGER THAN 1 LINE FOR THIS IMAGE."><?= $res_caption_file_4 ?></textarea>
+                        <textarea name="file_4_caption" class="file_caption" placeholder="TYPE A SHORT CAPTION NO LONGER THAN 1 LINE FOR THIS IMAGE."><?= $res_caption_file_4 ?></textarea>
                     </div>
 
                     <!-- File_5 -->
@@ -115,7 +115,7 @@
                             <input type="hidden" id="file_5_path" name="file_5_path" value="<?= $res_image_5 ?>">
                         </div>
                         </div>
-                        <textarea name="file_5_caption" placeholder="TYPE A SHORT CAPTION NO LONGER THAN 1 LINE FOR THIS IMAGE."><?= $res_caption_file_5 ?></textarea>
+                        <textarea name="file_5_caption" class="file_caption" placeholder="TYPE A SHORT CAPTION NO LONGER THAN 1 LINE FOR THIS IMAGE."><?= $res_caption_file_5 ?></textarea>
                     </div>
 
                 </div>
