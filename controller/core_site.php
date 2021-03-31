@@ -56,6 +56,7 @@ class Core_Site extends Core_Api
 
         if (!isset($_SESSION['uid'])) {
             session_start();
+            session_gc();
             $this->session_started = array(session_id(), $_SESSION);
         }
     
