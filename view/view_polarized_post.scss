@@ -237,14 +237,14 @@ blockquote {
 }
 .content__area {
 
-        ul {
+        ul, ol {
             margin-left: 2rem;
 
             li {
                 list-style-type: square;
                 font-family: 'Source Serif Pro', serif;
                 font-size: 1.2rem;
-                margin-bottom: .5rem;
+                margin-bottom: 2rem;
                 
                 // xSmall devices (landscape phones, 320px and up)
                 @media (min-width: 320px) { 
@@ -272,6 +272,10 @@ blockquote {
                 }
                 
             }
+        }
+        
+        ol li {
+          list-style-type: decimal;
         }
 
         p {

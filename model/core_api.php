@@ -807,11 +807,13 @@ class Core_Api extends Fieldnotes_Api
         	INNER JOIN catalog_collections AS CAT ON CAT.catalog_collections_id = PH.parent_collections_id
         	LEFT JOIN catalog_photo_views AS PV ON PH.catalog_photo_id = PV.catalog_photo_id
         WHERE
-        	featured = '1'
+        	-- PH.featured = '1' and 
+            PH.orientation = 'landscape' AND
+            PH.status = 'ACTIVE'
         ORDER BY
         	RAND()
         	DESC
-        LIMIT 4";
+        -- LIMIT 4";
 
             $result = $this->mysqli->query($sql);
 

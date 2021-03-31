@@ -4705,28 +4705,31 @@ blockquote {
       .byline--social > p > a:hover {
         color: #2574A9; }
 
-.content__area ul {
+.content__area ul, .content__area ol {
   margin-left: 2rem; }
-  .content__area ul li {
+  .content__area ul li, .content__area ol li {
     list-style-type: square;
     font-family: 'Source Serif Pro', serif;
     font-size: 1.2rem;
-    margin-bottom: .5rem; }
+    margin-bottom: 2rem; }
     @media (min-width: 320px) {
-      .content__area ul li {
+      .content__area ul li, .content__area ol li {
         font-size: 1rem; } }
     @media (min-width: 376px) {
-      .content__area ul li {
+      .content__area ul li, .content__area ol li {
         font-size: 1rem; } }
     @media (min-width: 767px) {
-      .content__area ul li {
+      .content__area ul li, .content__area ol li {
         font-size: 1.2rem; } }
     @media (min-width: 1112px) {
-      .content__area ul li {
+      .content__area ul li, .content__area ol li {
         font-size: 1.2rem; } }
     @media (min-width: 1200px) {
-      .content__area ul li {
+      .content__area ul li, .content__area ol li {
         font-size: 1.2rem; } }
+.content__area ol li {
+  list-style-type: decimal; }
+
 .content__area p {
   margin: 1rem 0; }
 
