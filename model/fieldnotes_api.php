@@ -556,6 +556,10 @@ public function x__uploadFile($fileTypes=array("jpeg"), $ext="jpg") {
 
     public function api_Admin_Insert_Fieldnotes_Responses() {
 
+        if(!$_POST) {
+            die('failed-unauthorized-access');
+        }
+        
          /* Executes SQL and then assigns object to passed var */
          if( $this->checkDBConnection(__FUNCTION__) == true) {
 

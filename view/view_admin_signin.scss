@@ -1,24 +1,54 @@
 #login {
-    margin-top: 30vh;    
+    margin-top: 30vh;
 }
 
-.signin--container {
+#login .signin--container {
 
     .signin--area {
         max-width: 35%;
 
-         @media (max-width: 64em) and (orientation: portrait),
-            (max-width: 80em) and (orientation: portrait) 
-            {
-               max-width:100%;
-            }
+    // xSmall devices (landscape phones, 320px and up)
+    @media (min-width: 320px) { 
+        max-width: 60%;
+        // background-color: yellow;
+    }
+    
+    // Small devices (landscape phones, 576px and up)
+    @media (min-width: 375px) { 
+        max-width: 100%;
+        // background-color: blue;
+    }
+    
+    // Medium devices (tablets, 768px and up)
+    @media (min-width: 767px) {
+        max-width: 50%;
+        // background-color: green;
+    }
+    
+    // Large devices (tablets (iPad Pro, 1112px and up)
+    @media (min-width: 1112px) {
+        max-width: 35%;
+        // background-color: red;
+    }
+    
+    // Extra large devices (large desktops, 1200px and up)
+    @media (min-width: 1200px) {
+        max-width: 35%;
+        // background-color: purple;
+    }
 
-        @media (max-width: 64em) and (orientation: landscape),
-            (max-width: 80em) and (orientation: landscape),
-            (device-width: 768px) and (orientation: portrait)
-                {
-                    max-width: 50%;
-                }
+//          @media (max-width: 64em) and (orientation: portrait),
+//             (max-width: 80em) and (orientation: portrait) 
+//             {
+//                max-width:100%;
+//             }
+// 
+//         @media (max-width: 64em) and (orientation: landscape),
+//             (max-width: 80em) and (orientation: landscape),
+//             (device-width: 768px) and (orientation: portrait)
+//                 {
+//                     max-width: 50%;
+//                 }
     }
     
     // label {

@@ -8,7 +8,7 @@
 
              <div class="pt-40 pb-40">
                  <!-- <p><?= $today ?></p> -->
-                 <h1 style="font-weight: 400">Hello <?= $first_name ?>,  here is your dashboard.</h1>
+                 <h1 style="font-weight: 400">Hello <?= $first_name ?>,  here is your studio.</h1>
              </div>
              
 

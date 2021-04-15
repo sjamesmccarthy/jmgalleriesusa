@@ -3,7 +3,7 @@
     height: 520px;
     margin-bottom: 2rem;
     border-radius: $border-radius;
-    
+    display: none !important;
 
     // xSmall devices (landscape phones, 320px and up)
     @media (min-width: 320px) { 

@@ -72,7 +72,7 @@
         
         </li>
         
-        <li><a name="p5"></a><h3>Do We Sell Any Infomrmation To Third Parties</h3>
+        <li><a name="p5"></a><h3>Do We Sell Any Information To Third Parties</h3>
 
             <p>Absolutely Not. We do not sell, trade, or otherwise transfer any of your personally identifiable information to outside third parties. However, this DOES NOT INCLUDE trusted third parties who assist us in operating our website, conducting our business, or servicing you, so long as those parties agree to keep this information confidential. We may also release your information in order to comply with the law, enforce our site policies, or protect ours or others rights, property, or safety. Non-personally identifiable visitor information may be provided to other parties for marketing, advertising, or other uses.
             </p>
@@ -88,23 +88,23 @@
 
         <li><a name="p7"></a><h3>Data Retrieval and Removal</h3>
 
-            <p>In compliance with GDPR (2018) and CCPA (2020) you're entitled to view the processing data we have collected on you. In order to provide you information, we have to make sure you are who you say you are. This will involve e-mail verification, order verification and/or other ID proof. This is meant to protect you as our customer. To begin your data retreival please <a href="/contact">contact us</a> with your request.
+            <p>In compliance with GDPR (2018) and CCPA (2020) you're entitled to view the processing data we have collected on you. In order to provide you information, we have to make sure you are who you say you are. This will involve e-mail verification, order verification and/or other ID proof. This is meant to protect you as our customer. To begin your data retrieval please <a href="/contact">contact us</a> with your request.
             </p>
         </li>
 
-        <li><a name="p8"></a><h3>Contacing Us</h3>
+        <li><a name="p8"></a><h3>Contacting Us</h3>
 
-            <p>If there are any questions regarding this privacy policy you may <a href="/contact">contact us</a> through our online form or via email, security[[@]]jmgalleries.com.</p>
+            <p>If there are any questions regarding this privacy policy you may <a href="/contact">contact us</a> through our online form.</p>
 
-            <ul class="pb-16 ml-32">
+            <!-- <ul class="pb-16 ml-32">
             <li>jM Galleries<br />
             1894 E William St.<br />
             Suite 4 PMB 178<br />
             Carson City, Nevada 89701<br />
             951-708-1831</li>
-            </ul>
+            </ul> -->
 
-            <p>Send us a message through our online <a href="/contact">Contact Form<a></p>
+            <!-- <p>Send us a message through our online <a href="/contact">Contact Form<a></p> -->
         </li>
 
         </li>
