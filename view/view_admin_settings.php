@@ -354,7 +354,7 @@
                     </div>
                         
                     <div class="col-12">
-                        <p class="small"> file://.user.ini file on server</p>
+                        <p class="small" style="color: red;"> file://.user.ini file on server</p>
                     </div>
 
                     <div class="divTable w-100 pb-32">

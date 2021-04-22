@@ -474,7 +474,7 @@ class Core_Api extends Fieldnotes_Api
             } else {
             
 
-                $_SESSION['404_msg'] = '<p>No Photo Was Found By This Name (e_code: ' . __FUNCTION__ . '[' . $file_name . '])</p>';
+                // $_SESSION['404_msg'] = '<p>No Photo Was Found By This Name (e_code: ' . __FUNCTION__ . '[' . $file_name . '])</p>';
                 // $this->log(array("key" => "api", "value" => "Failed Update Catalog Photo " . $_POST['title'] . " (" . $_POST['catalog_photo_id'] . ") " . $sql, "type" => "failure"));
 
                 /* This should go to a custom photo not found page */

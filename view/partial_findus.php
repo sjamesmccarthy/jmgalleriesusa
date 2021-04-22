@@ -15,9 +15,9 @@
     <p class="pt-16">
     <!-- <a target="_new" class="mr-16 blue" style="font-size: 1.5rem" href="http://vlog.jmgalleries.com"><i class="fab fa-youtube"></i></a> -->
     <a target="_new" class="mr-16 blue" style="font-size: 1.5rem" href="http://twitter.com/jmgalleriesusa"><i class="fab fa-twitter"></i></a>
-    <a target="_new" class="mr-16 blue" style="font-size: 1.5rem" href="http://facebook.com/jmgalleriesusa"><i class="fab fa-facebook"></i></a>
+    <!-- <a target="_new" class="mr-16 blue" style="font-size: 1.5rem" href="http://facebook.com/jmgalleriesusa"><i class="fab fa-facebook"></i></a> -->
     <a target="_new" class="mr-16 blue" style="font-size: 1.5rem" href="http://linkedin.com/company/jmgalleriesusa"><i class="fab fa-linkedin"></i></a>
-    <a target="_new" class="mr-16 blue" style="font-size: 1.5rem" href="http://instagram.com/jmgalleriesusa"><i class="fab fa-instagram"></i></a>
+    <!-- <a target="_new" class="mr-16 blue" style="font-size: 1.5rem" href="http://instagram.com/jmgalleriesusa"><i class="fab fa-instagram"></i></a> -->
     <!-- <a target="_new" class="mr-16 blue" style="font-size: 1.5rem" href="https://medium.com/jmgalleriesusa"><i class="fab fa-medium"></i></a> -->
     </p>
     

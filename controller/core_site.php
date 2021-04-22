@@ -27,7 +27,7 @@ class Core_Site extends Core_Api
         $this->getJSON('routes.json','routes');
 
         /* Initialize the Session */
-        $this->initSession('jmGalleriesPublicSession');
+        $this->initSession();
 
         /* Start the database */
         $this->startDB();
@@ -39,7 +39,7 @@ class Core_Site extends Core_Api
     
     public function getEnv() {
 
-        /* Check for enviroment in URI based on domain extension */
+        /* Check for environment in URI based on domain extension */
         $uri = explode('.', $_SERVER['SERVER_NAME']);
 
         if(!isSet($uri[1]) || $uri[1] == 'local') { $this->env = 'local'; } else { $this->env = "prod"; }
@@ -49,15 +49,31 @@ class Core_Site extends Core_Api
 
     }
 
-    public function initSession($name='defaultSession') {
-
-        // This is now handled in the php.ini file at document root
-        // $session_expires = $this->config->session['expires_1w'];
+    public function initSession() {
 
         if (!isset($_SESSION['uid'])) {
+            
+            $route_check = explode("/", $_SERVER[REQUEST_URI]);
+            
+            if($route_check[1] == 'studio') {
+                $sess_type = 'ADMIN';
+                $lifetime = 0; /* 1 Day = 86400 */
+                session_set_cookie_params($lifetime,'/studio');
+            } else {
+                $sess_type = 'USER';
+                $lifetime = 0; /* until browser is closed */
+                session_set_cookie_params($lifetime,'/');
+            }
+        
+            session_save_path($this->config_env->env[$this->env]['session_save_path']);
             session_start();
-            // session_gc();
-            $this->session_started = array(session_id(), $_SESSION);
+            session_gc();
+
+            $this->system->ip = $_SERVER['REMOTE_ADDR'];
+            $_SESSION['__SYSTEM']['USERAGENT'] = $_SERVER['HTTP_USER_AGENT'];
+            $_SESSION['__SYSTEM']['SESS_TYPE'] = $sess_type;
+        } else {
+            $this->console($_SESSION,1);
         }
     
     }
@@ -66,6 +82,7 @@ class Core_Site extends Core_Api
 
         if( !isset($_SESSION['uid']) ) {
             $_SESSION['error'] = 'timeout';
+            // $this->console($_SESSION,1);
             return false;
         } else {
             return true;
@@ -470,8 +487,9 @@ class Core_Site extends Core_Api
             echo "<p style='font-size: 1rem;'>>>>>> " . $this->env . " CONSOLE --start | " . date('l jS \of F Y h:i:s A') . "</p> </div>";
             echo "<div id='debug_container' style='display:none;'>";
             $this->console($result);
-            if(isSet($_POST)) { $this->console($_POST); }
             if(isSet($_SESSION)) { $this->console($_SESSION); }
+            echo "<hr />";
+            if(isSet($_POST)) { $this->console($_POST); }
             if(isSet($_FILES)) { $this->console($_FILES); }
             echo "<div style='background-color: yellow; font-size: 1rem;'><p class='debug_trigger' style='font-size: 1rem;'>>>>>> CONSOLE --end</p></div>";
             echo "</div>";

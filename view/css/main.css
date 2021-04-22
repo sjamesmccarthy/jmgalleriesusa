@@ -3033,7 +3033,7 @@ input[type=text], input[type=email], input[type=password], textarea, select {
 }
 input[type=text]:disabled, input[type=email]:disabled, input[type=password]:disabled, textarea:disabled, select:disabled {
   background-color: #FFF;
-  color: #000000;
+  color: lightgray;
   opacity: 1;
 }
 input[type=text].half-size, input[type=email].half-size, input[type=password].half-size, textarea.half-size, select.half-size {
@@ -4671,7 +4671,6 @@ button a {
 /* ********************** */
 /* view_e404 */
 .page-not-found-container {
-  min-height: 300px;
   text-align: center;
 }
 .page-not-found-container .e404 {
@@ -6467,9 +6466,6 @@ div[id*=imgT]:hover {
   margin-top: 30vh;
 }
 
-#login .signin--container .signin--area {
-  max-width: 35%;
-}
 @media (min-width: 320px) {
   #login .signin--container .signin--area {
     max-width: 60%;
@@ -6487,12 +6483,16 @@ div[id*=imgT]:hover {
 }
 @media (min-width: 1112px) {
   #login .signin--container .signin--area {
-    max-width: 35%;
+    max-width: 40%;
+  }
+  #login .signin--container .signin--area .form_pincode input {
+    border-radius: 0;
+    padding: 0;
   }
 }
 @media (min-width: 1200px) {
   #login .signin--container .signin--area {
-    max-width: 35%;
+    max-width: 40%;
   }
 }
 #login .signin--container .make-wide {

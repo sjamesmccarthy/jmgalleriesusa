@@ -9,852 +9,912 @@
 
 <url>
   <loc>https://jmgalleries.com/</loc>
-  <lastmod>2021-03-01T23:51:06+00:00</lastmod>
+  <lastmod>2021-04-17T16:39:21+00:00</lastmod>
   <priority>1.00</priority>
 </url>
 <url>
   <loc>https://jmgalleries.com/polarized</loc>
-  <lastmod>2021-03-01T23:51:06+00:00</lastmod>
+  <lastmod>2021-04-17T16:39:21+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://jmgalleries.com/all</loc>
-  <lastmod>2021-03-01T23:51:06+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://jmgalleries.com/mountains-deserts-trees</loc>
-  <lastmod>2021-03-01T23:51:06+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://jmgalleries.com/galleries</loc>
-  <lastmod>2021-03-01T23:51:06+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://jmgalleries.com/all?filter=tinyviews</loc>
-  <lastmod>2021-03-01T23:51:06+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://jmgalleries.com/all?filter=limited</loc>
-  <lastmod>2021-03-01T23:51:06+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://jmgalleries.com/shop</loc>
-  <lastmod>2021-03-01T23:51:06+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://jmgalleries.com/new-releases/</loc>
-  <lastmod>2021-03-01T23:51:06+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://jmgalleries.com/new-releases</loc>
-  <lastmod>2021-03-01T23:51:06+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://jmgalleries.com/mountains-deserts-trees/the-maple</loc>
-  <lastmod>2021-03-01T23:51:06+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://jmgalleries.com/oceans-lakes-waterfalls/imperial-surfer</loc>
-  <lastmod>2021-03-01T23:51:06+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://jmgalleries.com/oceans-lakes-waterfalls/shadows-of-tahoe</loc>
-  <lastmod>2021-03-01T23:51:06+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://jmgalleries.com/abstract-architecture-people/umbrella-man</loc>
-  <lastmod>2021-03-01T23:51:06+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://jmgalleries.com/abstract-architecture-people</loc>
-  <lastmod>2021-03-01T23:51:06+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://jmgalleries.com/abstract-architecture-people/flying-fortress</loc>
-  <lastmod>2021-03-01T23:51:06+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://jmgalleries.com/abstract-architecture-people/happy-hour-club</loc>
-  <lastmod>2021-03-01T23:51:06+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://jmgalleries.com/abstract-architecture-people/hollywoods-entsle</loc>
-  <lastmod>2021-03-01T23:51:06+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://jmgalleries.com/flowers-fields-clouds</loc>
-  <lastmod>2021-03-01T23:51:06+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://jmgalleries.com/flowers-fields-clouds/winemaker-walkabout</loc>
-  <lastmod>2021-03-01T23:51:06+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://jmgalleries.com/flowers-fields-clouds/sweet-and-saltier-dreams</loc>
-  <lastmod>2021-03-01T23:51:06+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://jmgalleries.com/flowers-fields-clouds/daisies-for-our-lady</loc>
-  <lastmod>2021-03-01T23:51:06+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://jmgalleries.com/flowers-fields-clouds/dream-catchers</loc>
-  <lastmod>2021-03-01T23:51:06+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://jmgalleries.com/mountains-deserts-trees/serendipity</loc>
-  <lastmod>2021-03-01T23:51:06+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://jmgalleries.com/mountains-deserts-trees/emigrants-fog</loc>
-  <lastmod>2021-03-01T23:51:06+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://jmgalleries.com/mountains-deserts-trees/rainbow-bridge</loc>
-  <lastmod>2021-03-01T23:51:06+00:00</lastmod>
+  <lastmod>2021-04-17T16:39:21+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://jmgalleries.com/oceans-lakes-waterfalls</loc>
-  <lastmod>2021-03-01T23:51:06+00:00</lastmod>
+  <lastmod>2021-04-17T16:39:21+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://jmgalleries.com/galleries</loc>
+  <lastmod>2021-04-17T16:39:21+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://jmgalleries.com/all?filter=tinyviews</loc>
+  <lastmod>2021-04-17T16:39:21+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://jmgalleries.com/all?filter=limited</loc>
+  <lastmod>2021-04-17T16:39:21+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://jmgalleries.com/shop</loc>
+  <lastmod>2021-04-17T16:39:21+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://jmgalleries.com/new-releases/</loc>
+  <lastmod>2021-04-17T16:39:21+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://jmgalleries.com/new-releases</loc>
+  <lastmod>2021-04-17T16:39:21+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://jmgalleries.com/mountains-deserts-trees/antelope-canyon-falls</loc>
+  <lastmod>2021-04-17T16:39:21+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://jmgalleries.com/mountains-deserts-trees/the-maple</loc>
+  <lastmod>2021-04-17T16:39:21+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://jmgalleries.com/oceans-lakes-waterfalls/imperial-surfer</loc>
+  <lastmod>2021-04-17T16:39:21+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://jmgalleries.com/oceans-lakes-waterfalls/shadows-of-tahoe</loc>
+  <lastmod>2021-04-17T16:39:21+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://jmgalleries.com/abstract-architecture-people</loc>
+  <lastmod>2021-04-17T16:39:21+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://jmgalleries.com/abstract-architecture-people/flying-fortress</loc>
+  <lastmod>2021-04-17T16:39:21+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://jmgalleries.com/abstract-architecture-people/the-good-life</loc>
+  <lastmod>2021-04-17T16:39:21+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://jmgalleries.com/abstract-architecture-people/once-afloat</loc>
+  <lastmod>2021-04-17T16:39:21+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://jmgalleries.com/abstract-architecture-people/happy-hour-club</loc>
+  <lastmod>2021-04-17T16:39:21+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://jmgalleries.com/flowers-fields-clouds</loc>
+  <lastmod>2021-04-17T16:39:21+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://jmgalleries.com/flowers-fields-clouds/daisies-for-our-lady</loc>
+  <lastmod>2021-04-17T16:39:21+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://jmgalleries.com/flowers-fields-clouds/sweet-and-saltier-dreams</loc>
+  <lastmod>2021-04-17T16:39:21+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://jmgalleries.com/flowers-fields-clouds/dream-catchers</loc>
+  <lastmod>2021-04-17T16:39:21+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://jmgalleries.com/flowers-fields-clouds/winemaker-walkabout</loc>
+  <lastmod>2021-04-17T16:39:21+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://jmgalleries.com/mountains-deserts-trees</loc>
+  <lastmod>2021-04-17T16:39:21+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://jmgalleries.com/mountains-deserts-trees/white-slumber</loc>
+  <lastmod>2021-04-17T16:39:21+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://jmgalleries.com/mountains-deserts-trees/rainbow-bridge</loc>
+  <lastmod>2021-04-17T16:39:21+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://jmgalleries.com/mountains-deserts-trees/layers-of-tahoe</loc>
+  <lastmod>2021-04-17T16:39:21+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://jmgalleries.com/oceans-lakes-waterfalls/emerald-thoughts</loc>
-  <lastmod>2021-03-01T23:51:06+00:00</lastmod>
+  <lastmod>2021-04-17T16:39:21+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://jmgalleries.com/oceans-lakes-waterfalls/elysium</loc>
+  <lastmod>2021-04-17T16:39:21+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://jmgalleries.com/oceans-lakes-waterfalls/alongside-you</loc>
+  <lastmod>2021-04-17T16:39:21+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://jmgalleries.com/oceans-lakes-waterfalls/sweet-and-saltier-dreams</loc>
-  <lastmod>2021-03-01T23:51:06+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://jmgalleries.com/oceans-lakes-waterfalls/never-ending-story</loc>
-  <lastmod>2021-03-01T23:51:06+00:00</lastmod>
+  <lastmod>2021-04-17T16:39:21+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://jmgalleries.com/styles</loc>
-  <lastmod>2021-03-01T23:51:06+00:00</lastmod>
+  <lastmod>2021-04-17T16:39:21+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://jmgalleries.com/contact</loc>
-  <lastmod>2021-03-01T23:51:06+00:00</lastmod>
+  <lastmod>2021-04-17T16:39:21+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://jmgalleries.com/about</loc>
-  <lastmod>2021-03-01T23:51:06+00:00</lastmod>
+  <lastmod>2021-04-17T16:39:21+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://jmgalleries.com/privacy</loc>
-  <lastmod>2021-03-01T23:51:06+00:00</lastmod>
+  <lastmod>2021-04-17T16:39:21+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
+  <loc>https://jmgalleries.com/polarized/5-things-to-remember-when-showing-at-art-events</loc>
+  <lastmod>2021-04-17T16:39:21+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://jmgalleries.com/polarized/four-photos-for-film</loc>
+  <lastmod>2021-04-17T16:39:21+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://jmgalleries.com/polarized/the-peak-design-clutch-two-minute-demo</loc>
+  <lastmod>2021-04-17T16:39:21+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://jmgalleries.com/polarized/have-fun-and-keep-it-simple</loc>
+  <lastmod>2021-04-17T16:39:21+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://jmgalleries.com/polarized/5-things-to-think-about-shooting-landscape</loc>
+  <lastmod>2021-04-17T16:39:21+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://jmgalleries.com/polarized/virginia-city-tree-car-photo-trip-vlog03</loc>
+  <lastmod>2021-04-17T16:39:21+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://jmgalleries.com/polarized/oh-crop-finding-the-simplicity-in-photos</loc>
+  <lastmod>2021-04-17T16:39:21+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://jmgalleries.com/polarized/vlog02-finding-a-creative-worklife-balance</loc>
+  <lastmod>2021-04-17T16:39:21+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://jmgalleries.com/polarized/life-begins-at-the-end-of-your-comfort-zone</loc>
+  <lastmod>2021-04-17T16:39:21+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://jmgalleries.com/polarized/my-not-so-top-secret-projects</loc>
+  <lastmod>2021-04-17T16:39:21+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
   <loc>https://jmgalleries.com/polarized/when-life-gets-blurry-adjust-your-focus</loc>
-  <lastmod>2021-03-01T23:51:06+00:00</lastmod>
+  <lastmod>2021-04-17T16:39:21+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jmgalleries.com/polarized/vlog-01-washoe-valley</loc>
-  <lastmod>2021-03-01T23:51:06+00:00</lastmod>
+  <lastmod>2021-04-17T16:39:21+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jmgalleries.com/polarized/i-can-freeze-time</loc>
-  <lastmod>2021-03-01T23:51:06+00:00</lastmod>
+  <lastmod>2021-04-17T16:39:21+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jmgalleries.com/polarized/thoughts-about-why-people-collect-art</loc>
-  <lastmod>2021-03-01T23:51:06+00:00</lastmod>
+  <lastmod>2021-04-17T16:39:21+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jmgalleries.com/polarized/twenty-twenty-in-four-frames</loc>
-  <lastmod>2021-03-01T23:51:06+00:00</lastmod>
+  <lastmod>2021-04-17T16:39:21+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jmgalleries.com/polarized/five-guiding-principals-to-my-art</loc>
-  <lastmod>2021-03-01T23:51:06+00:00</lastmod>
+  <lastmod>2021-04-17T16:39:21+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jmgalleries.com/polarized/camera-gear-for-about-the-town-trips</loc>
-  <lastmod>2021-03-01T23:51:06+00:00</lastmod>
+  <lastmod>2021-04-17T16:39:21+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jmgalleries.com/polarized/first-impressions-of-nikon-z5</loc>
-  <lastmod>2021-03-01T23:51:06+00:00</lastmod>
+  <lastmod>2021-04-17T16:39:21+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jmgalleries.com/polarized/the-everyday-collection</loc>
-  <lastmod>2021-03-01T23:51:06+00:00</lastmod>
+  <lastmod>2021-04-17T16:39:21+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jmgalleries.com/polarized/hike-to-bonsai-rock-lake-tahoe</loc>
-  <lastmod>2021-03-01T23:51:06+00:00</lastmod>
+  <lastmod>2021-04-17T16:39:21+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jmgalleries.com/polarized/five-secrets-to-better-sharper-photos</loc>
-  <lastmod>2021-03-01T23:51:06+00:00</lastmod>
+  <lastmod>2021-04-17T16:39:21+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jmgalleries.com/polarized/how-to-give-your-photography-bucketlist-more-value-with-a-fresh-perspective</loc>
-  <lastmod>2021-03-01T23:51:06+00:00</lastmod>
+  <lastmod>2021-04-17T16:39:21+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jmgalleries.com/polarized/the-imminent-death-of-the-dslr</loc>
-  <lastmod>2021-03-01T23:51:06+00:00</lastmod>
+  <lastmod>2021-04-17T16:39:21+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jmgalleries.com/polarized/when-does-a-photograph-become-fineart</loc>
-  <lastmod>2021-03-01T23:51:06+00:00</lastmod>
+  <lastmod>2021-04-17T16:39:21+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jmgalleries.com/polarized/vivian-maier-perhaps-the-most-remarkable-street-photographer</loc>
-  <lastmod>2021-03-01T23:51:06+00:00</lastmod>
+  <lastmod>2021-04-17T16:39:21+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jmgalleries.com/polarized/safeguarding-your-workflow</loc>
-  <lastmod>2021-03-01T23:51:06+00:00</lastmod>
+  <lastmod>2021-04-17T16:39:21+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jmgalleries.com/polarized/aspect-ratio-standard-frame-sizes</loc>
-  <lastmod>2021-03-01T23:51:06+00:00</lastmod>
+  <lastmod>2021-04-17T16:39:21+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jmgalleries.com/polarized/being-a-fineart-photographer</loc>
-  <lastmod>2021-03-01T23:51:06+00:00</lastmod>
+  <lastmod>2021-04-17T16:39:21+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jmgalleries.com/polarized/what-gear-to-take-with-you-on-your-next-outdoor-photography-adventure</loc>
-  <lastmod>2021-03-01T23:51:06+00:00</lastmod>
+  <lastmod>2021-04-17T16:39:21+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jmgalleries.com/polarized/four-tips-for-street-photography</loc>
-  <lastmod>2021-03-01T23:51:06+00:00</lastmod>
+  <lastmod>2021-04-17T16:39:21+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jmgalleries.com/polarized/alfred-stieglitz-american-photographer</loc>
-  <lastmod>2021-03-01T23:51:06+00:00</lastmod>
+  <lastmod>2021-04-17T16:39:21+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jmgalleries.com/polarized/video-review-apache-3800-weatherproof-case</loc>
-  <lastmod>2021-03-01T23:51:06+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://jmgalleries.com/oceans-lakes-waterfalls/alongside-you</loc>
-  <lastmod>2021-03-01T23:51:06+00:00</lastmod>
+  <lastmod>2021-04-17T16:39:21+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jmgalleries.com/oceans-lakes-waterfalls/amnesia</loc>
-  <lastmod>2021-03-01T23:51:06+00:00</lastmod>
+  <lastmod>2021-04-17T16:39:21+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jmgalleries.com/flowers-fields-clouds/blades-of-balboa</loc>
-  <lastmod>2021-03-01T23:51:06+00:00</lastmod>
+  <lastmod>2021-04-17T16:39:21+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jmgalleries.com/oceans-lakes-waterfalls/bodega-trailhead</loc>
-  <lastmod>2021-03-01T23:51:06+00:00</lastmod>
+  <lastmod>2021-04-17T16:39:21+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jmgalleries.com/oceans-lakes-waterfalls/bonsai-zen</loc>
-  <lastmod>2021-03-01T23:51:06+00:00</lastmod>
+  <lastmod>2021-04-17T16:39:21+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jmgalleries.com/abstract-architecture-people/coit-on-high-hill</loc>
-  <lastmod>2021-03-01T23:51:06+00:00</lastmod>
+  <lastmod>2021-04-17T16:39:21+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://jmgalleries.com/oceans-lakes-waterfalls/elysium</loc>
-  <lastmod>2021-03-01T23:51:06+00:00</lastmod>
+  <loc>https://jmgalleries.com/mountains-deserts-trees/emigrants-fog</loc>
+  <lastmod>2021-04-17T16:39:21+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jmgalleries.com/abstract-architecture-people/facade-to-the-sky</loc>
-  <lastmod>2021-03-01T23:51:06+00:00</lastmod>
+  <lastmod>2021-04-17T16:39:21+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jmgalleries.com/mountains-deserts-trees/first-light</loc>
-  <lastmod>2021-03-01T23:51:06+00:00</lastmod>
+  <lastmod>2021-04-17T16:39:21+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jmgalleries.com/abstract-architecture-people/from-another-time</loc>
-  <lastmod>2021-03-01T23:51:06+00:00</lastmod>
+  <lastmod>2021-04-17T16:39:21+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jmgalleries.com/mountains-deserts-trees/ginormous-marble</loc>
-  <lastmod>2021-03-01T23:51:06+00:00</lastmod>
+  <lastmod>2021-04-17T16:39:21+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jmgalleries.com/abstract-architecture-people/golden-allure</loc>
-  <lastmod>2021-03-01T23:51:06+00:00</lastmod>
+  <lastmod>2021-04-17T16:39:21+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jmgalleries.com/flowers-fields-clouds/gourd-gathering</loc>
-  <lastmod>2021-03-01T23:51:06+00:00</lastmod>
+  <lastmod>2021-04-17T16:39:21+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://jmgalleries.com/abstract-architecture-people/hollywoods-entsle</loc>
+  <lastmod>2021-04-17T16:39:21+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jmgalleries.com/oceans-lakes-waterfalls/horizontal-limits</loc>
-  <lastmod>2021-03-01T23:51:06+00:00</lastmod>
+  <lastmod>2021-04-17T16:39:21+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jmgalleries.com/mountains-deserts-trees/keep-tahoe-cold</loc>
-  <lastmod>2021-03-01T23:51:06+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://jmgalleries.com/mountains-deserts-trees/layers-of-tahoe</loc>
-  <lastmod>2021-03-01T23:51:06+00:00</lastmod>
+  <lastmod>2021-04-17T16:39:21+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jmgalleries.com/mountains-deserts-trees/lost-trail</loc>
-  <lastmod>2021-03-01T23:51:06+00:00</lastmod>
+  <lastmod>2021-04-17T16:39:21+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jmgalleries.com/oceans-lakes-waterfalls/natural-beauty</loc>
-  <lastmod>2021-03-01T23:51:06+00:00</lastmod>
+  <lastmod>2021-04-17T16:39:21+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://jmgalleries.com/oceans-lakes-waterfalls/never-ending-story</loc>
+  <lastmod>2021-04-17T16:39:21+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jmgalleries.com/flowers-fields-clouds/on-the-way-to-cabernet</loc>
-  <lastmod>2021-03-01T23:51:06+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://jmgalleries.com/abstract-architecture-people/once-afloat</loc>
-  <lastmod>2021-03-01T23:51:06+00:00</lastmod>
+  <lastmod>2021-04-17T16:39:21+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jmgalleries.com/flowers-fields-clouds/past-life</loc>
-  <lastmod>2021-03-01T23:51:06+00:00</lastmod>
+  <lastmod>2021-04-17T16:39:21+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jmgalleries.com/abstract-architecture-people/peace</loc>
-  <lastmod>2021-03-01T23:51:06+00:00</lastmod>
+  <lastmod>2021-04-17T16:39:21+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jmgalleries.com/abstract-architecture-people/pedi-cab</loc>
-  <lastmod>2021-03-01T23:51:06+00:00</lastmod>
+  <lastmod>2021-04-17T16:39:21+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jmgalleries.com/mountains-deserts-trees/rays-of-light</loc>
-  <lastmod>2021-03-01T23:51:06+00:00</lastmod>
+  <lastmod>2021-04-17T16:39:21+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jmgalleries.com/oceans-lakes-waterfalls/reflections</loc>
-  <lastmod>2021-03-01T23:51:06+00:00</lastmod>
+  <lastmod>2021-04-17T16:39:21+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jmgalleries.com/flowers-fields-clouds/remember-when</loc>
-  <lastmod>2021-03-01T23:51:06+00:00</lastmod>
+  <lastmod>2021-04-17T16:39:21+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jmgalleries.com/abstract-architecture-people/rotonda-del-palazzo</loc>
-  <lastmod>2021-03-01T23:51:06+00:00</lastmod>
+  <lastmod>2021-04-17T16:39:21+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jmgalleries.com/oceans-lakes-waterfalls/run-aground</loc>
-  <lastmod>2021-03-01T23:51:06+00:00</lastmod>
+  <lastmod>2021-04-17T16:39:21+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://jmgalleries.com/mountains-deserts-trees/serendipity</loc>
+  <lastmod>2021-04-17T16:39:21+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jmgalleries.com/mountains-deserts-trees/snowy-pines</loc>
-  <lastmod>2021-03-01T23:51:06+00:00</lastmod>
+  <lastmod>2021-04-17T16:39:21+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jmgalleries.com/oceans-lakes-waterfalls/standstill</loc>
-  <lastmod>2021-03-01T23:51:06+00:00</lastmod>
+  <lastmod>2021-04-17T16:39:21+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jmgalleries.com/oceans-lakes-waterfalls/steps-in-the-sand</loc>
-  <lastmod>2021-03-01T23:51:06+00:00</lastmod>
+  <lastmod>2021-04-17T16:39:21+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jmgalleries.com/oceans-lakes-waterfalls/stone-garden</loc>
-  <lastmod>2021-03-01T23:51:06+00:00</lastmod>
+  <lastmod>2021-04-17T16:39:21+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jmgalleries.com/abstract-architecture-people/stoned-lovers</loc>
-  <lastmod>2021-03-01T23:51:06+00:00</lastmod>
+  <lastmod>2021-04-17T16:39:21+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jmgalleries.com/flowers-fields-clouds/sunflower-smiles</loc>
-  <lastmod>2021-03-01T23:51:06+00:00</lastmod>
+  <lastmod>2021-04-17T16:39:21+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://jmgalleries.com/abstract-architecture-people/the-good-life</loc>
-  <lastmod>2021-03-01T23:51:06+00:00</lastmod>
+  <loc>https://jmgalleries.com/abstract-architecture-people/umbrella-man</loc>
+  <lastmod>2021-04-17T16:39:21+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jmgalleries.com/mountains-deserts-trees/wandering</loc>
-  <lastmod>2021-03-01T23:51:06+00:00</lastmod>
+  <lastmod>2021-04-17T16:39:21+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jmgalleries.com/mountains-deserts-trees/watkins-window</loc>
-  <lastmod>2021-03-01T23:51:06+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://jmgalleries.com/mountains-deserts-trees/white-slumber</loc>
-  <lastmod>2021-03-01T23:51:06+00:00</lastmod>
+  <lastmod>2021-04-17T16:39:21+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jmgalleries.com/abstract-architecture-people/window-to-war</loc>
-  <lastmod>2021-03-01T23:51:06+00:00</lastmod>
+  <lastmod>2021-04-17T16:39:21+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jmgalleries.com/mountains-deserts-trees/alongside-you</loc>
-  <lastmod>2021-03-01T23:51:06+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://jmgalleries.com/mountains-deserts-trees/shadows-of-tahoe</loc>
-  <lastmod>2021-03-01T23:51:06+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://jmgalleries.com/abstract-architecture-people/sweet-and-saltier-dreams</loc>
-  <lastmod>2021-03-01T23:51:06+00:00</lastmod>
+  <lastmod>2021-04-17T16:39:21+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jmgalleries.com/product/trim-and-frame-calendar</loc>
-  <lastmod>2021-03-01T23:51:06+00:00</lastmod>
+  <lastmod>2021-04-17T16:39:21+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jmgalleries.com/product/tinyviews-stoned-lovers</loc>
-  <lastmod>2021-03-01T23:51:06+00:00</lastmod>
+  <lastmod>2021-04-17T16:39:21+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jmgalleries.com/product/tinyviews-hanging-grapes</loc>
-  <lastmod>2021-03-01T23:51:06+00:00</lastmod>
+  <lastmod>2021-04-17T16:39:21+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jmgalleries.com/product/matted-print-america</loc>
-  <lastmod>2021-03-01T23:51:06+00:00</lastmod>
+  <lastmod>2021-04-17T16:39:21+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jmgalleries.com/product/matted-print-port-of-sf</loc>
-  <lastmod>2021-03-01T23:51:06+00:00</lastmod>
+  <lastmod>2021-04-17T16:39:21+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jmgalleries.com/product/metal-remind-me</loc>
-  <lastmod>2021-03-01T23:51:06+00:00</lastmod>
+  <lastmod>2021-04-17T16:39:21+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jmgalleries.com/product/wood-lighthouse</loc>
-  <lastmod>2021-03-01T23:51:06+00:00</lastmod>
+  <lastmod>2021-04-17T16:39:21+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jmgalleries.com/product/matted-print-snowy-trees</loc>
-  <lastmod>2021-03-01T23:51:06+00:00</lastmod>
+  <lastmod>2021-04-17T16:39:21+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jmgalleries.com/product/matted-print-cypress</loc>
-  <lastmod>2021-03-01T23:51:06+00:00</lastmod>
+  <lastmod>2021-04-17T16:39:21+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jmgalleries.com/product/framed-old-boat</loc>
-  <lastmod>2021-03-01T23:51:06+00:00</lastmod>
+  <lastmod>2021-04-17T16:39:21+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jmgalleries.com/product/float-mounted-vineyard</loc>
-  <lastmod>2021-03-01T23:51:06+00:00</lastmod>
+  <lastmod>2021-04-17T16:39:21+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jmgalleries.com/product/float-mounted-grapes</loc>
-  <lastmod>2021-03-01T23:51:06+00:00</lastmod>
+  <lastmod>2021-04-17T16:39:21+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jmgalleries.com/product/float-mounted-antelope</loc>
-  <lastmod>2021-03-01T23:51:06+00:00</lastmod>
+  <lastmod>2021-04-17T16:39:21+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jmgalleries.com/product/framed-snowy-bark</loc>
-  <lastmod>2021-03-01T23:51:06+00:00</lastmod>
+  <lastmod>2021-04-17T16:39:21+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jmgalleries.com/product/framed-happy-hour</loc>
-  <lastmod>2021-03-01T23:51:06+00:00</lastmod>
+  <lastmod>2021-04-17T16:39:21+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jmgalleries.com/product/watkins-window-framed-limited-edition</loc>
-  <lastmod>2021-03-01T23:51:06+00:00</lastmod>
+  <lastmod>2021-04-17T16:39:21+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://jmgalleries.com/contact?photo=antelope-canyon-falls</loc>
+  <lastmod>2021-04-17T16:39:21+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jmgalleries.com/contact?photo=the-maple</loc>
-  <lastmod>2021-03-01T23:51:06+00:00</lastmod>
+  <lastmod>2021-04-17T16:39:21+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jmgalleries.com/contact?photo=imperial-surfer</loc>
-  <lastmod>2021-03-01T23:51:06+00:00</lastmod>
+  <lastmod>2021-04-17T16:39:21+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jmgalleries.com/contact?photo=shadows-of-tahoe</loc>
-  <lastmod>2021-03-01T23:51:06+00:00</lastmod>
+  <lastmod>2021-04-17T16:39:21+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://jmgalleries.com/contact?photo=umbrella-man</loc>
-  <lastmod>2021-03-01T23:51:06+00:00</lastmod>
+  <loc>https://jmgalleries.com/abstract-architecture-people/sweet-and-saltier-dreams</loc>
+  <lastmod>2021-04-17T16:39:21+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jmgalleries.com/contact?photo=flying-fortress</loc>
-  <lastmod>2021-03-01T23:51:06+00:00</lastmod>
+  <lastmod>2021-04-17T16:39:21+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://jmgalleries.com/contact?photo=the-good-life</loc>
+  <lastmod>2021-04-17T16:39:21+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://jmgalleries.com/contact?photo=once-afloat</loc>
+  <lastmod>2021-04-17T16:39:21+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jmgalleries.com/contact?photo=happy-hour-club</loc>
-  <lastmod>2021-03-01T23:51:06+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://jmgalleries.com/contact?photo=hollywoods-entsle</loc>
-  <lastmod>2021-03-01T23:51:06+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://jmgalleries.com/contact?photo=winemaker-walkabout</loc>
-  <lastmod>2021-03-01T23:51:06+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://jmgalleries.com/contact?photo=sweet-and-saltier-dreams</loc>
-  <lastmod>2021-03-01T23:51:06+00:00</lastmod>
+  <lastmod>2021-04-17T16:39:21+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jmgalleries.com/contact?photo=daisies-for-our-lady</loc>
-  <lastmod>2021-03-01T23:51:06+00:00</lastmod>
+  <lastmod>2021-04-17T16:39:21+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://jmgalleries.com/contact?photo=sweet-and-saltier-dreams</loc>
+  <lastmod>2021-04-17T16:39:21+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jmgalleries.com/contact?photo=dream-catchers</loc>
-  <lastmod>2021-03-01T23:51:06+00:00</lastmod>
+  <lastmod>2021-04-17T16:39:21+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://jmgalleries.com/contact?photo=serendipity</loc>
-  <lastmod>2021-03-01T23:51:06+00:00</lastmod>
+  <loc>https://jmgalleries.com/contact?photo=winemaker-walkabout</loc>
+  <lastmod>2021-04-17T16:39:21+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://jmgalleries.com/contact?photo=emigrants-fog</loc>
-  <lastmod>2021-03-01T23:51:06+00:00</lastmod>
+  <loc>https://jmgalleries.com/mountains-deserts-trees/shadows-of-tahoe</loc>
+  <lastmod>2021-04-17T16:39:21+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://jmgalleries.com/contact?photo=white-slumber</loc>
+  <lastmod>2021-04-17T16:39:21+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jmgalleries.com/contact?photo=rainbow-bridge</loc>
-  <lastmod>2021-03-01T23:51:06+00:00</lastmod>
+  <lastmod>2021-04-17T16:39:21+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://jmgalleries.com/contact?photo=layers-of-tahoe</loc>
+  <lastmod>2021-04-17T16:39:21+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jmgalleries.com/contact?photo=emerald-thoughts</loc>
-  <lastmod>2021-03-01T23:51:06+00:00</lastmod>
+  <lastmod>2021-04-17T16:39:21+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://jmgalleries.com/contact?photo=never-ending-story</loc>
-  <lastmod>2021-03-01T23:51:06+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://jmgalleries.com/release-notes</loc>
-  <lastmod>2021-03-01T23:51:06+00:00</lastmod>
+  <loc>https://jmgalleries.com/contact?photo=elysium</loc>
+  <lastmod>2021-04-17T16:39:21+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jmgalleries.com/contact?photo=alongside-you</loc>
-  <lastmod>2021-03-01T23:51:06+00:00</lastmod>
-  <priority>0.51</priority>
+  <lastmod>2021-04-17T16:39:21+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://jmgalleries.com/release-notes</loc>
+  <lastmod>2021-04-17T16:39:21+00:00</lastmod>
+  <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jmgalleries.com/contact?photo=amnesia</loc>
-  <lastmod>2021-03-01T23:51:06+00:00</lastmod>
+  <lastmod>2021-04-17T16:39:21+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://jmgalleries.com/contact?photo=blades-of-balboa&amp;open=true</loc>
-  <lastmod>2021-03-01T23:51:06+00:00</lastmod>
+  <lastmod>2021-04-17T16:39:21+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://jmgalleries.com/contact?photo=bodega-trailhead</loc>
-  <lastmod>2021-03-01T23:51:06+00:00</lastmod>
+  <lastmod>2021-04-17T16:39:21+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://jmgalleries.com/contact?photo=bonsai-zen</loc>
-  <lastmod>2021-03-01T23:51:06+00:00</lastmod>
+  <lastmod>2021-04-17T16:39:21+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://jmgalleries.com/contact?photo=coit-on-high-hill</loc>
-  <lastmod>2021-03-01T23:51:06+00:00</lastmod>
+  <lastmod>2021-04-17T16:39:21+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
-  <loc>https://jmgalleries.com/contact?photo=elysium</loc>
-  <lastmod>2021-03-01T23:51:06+00:00</lastmod>
+  <loc>https://jmgalleries.com/contact?photo=emigrants-fog</loc>
+  <lastmod>2021-04-17T16:39:21+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://jmgalleries.com/contact?photo=facade-to-the-sky&amp;open=true</loc>
-  <lastmod>2021-03-01T23:51:06+00:00</lastmod>
+  <lastmod>2021-04-17T16:39:21+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://jmgalleries.com/contact?photo=first-light&amp;open=true</loc>
-  <lastmod>2021-03-01T23:51:06+00:00</lastmod>
+  <lastmod>2021-04-17T16:39:21+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://jmgalleries.com/contact?photo=from-another-time&amp;open=true</loc>
-  <lastmod>2021-03-01T23:51:06+00:00</lastmod>
+  <lastmod>2021-04-17T16:39:21+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://jmgalleries.com/contact?photo=ginormous-marble</loc>
-  <lastmod>2021-03-01T23:51:06+00:00</lastmod>
+  <lastmod>2021-04-17T16:39:21+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://jmgalleries.com/contact?photo=golden-allure</loc>
-  <lastmod>2021-03-01T23:51:06+00:00</lastmod>
+  <lastmod>2021-04-17T16:39:21+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://jmgalleries.com/contact?photo=gourd-gathering&amp;open=true</loc>
-  <lastmod>2021-03-01T23:51:06+00:00</lastmod>
+  <lastmod>2021-04-17T16:39:21+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://jmgalleries.com/contact?photo=hollywoods-entsle</loc>
+  <lastmod>2021-04-17T16:39:21+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://jmgalleries.com/contact?photo=horizontal-limits&amp;open=true</loc>
-  <lastmod>2021-03-01T23:51:06+00:00</lastmod>
+  <lastmod>2021-04-17T16:39:21+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://jmgalleries.com/contact?photo=keep-tahoe-cold&amp;open=true</loc>
-  <lastmod>2021-03-01T23:51:06+00:00</lastmod>
-  <priority>0.51</priority>
-</url>
-<url>
-  <loc>https://jmgalleries.com/contact?photo=layers-of-tahoe</loc>
-  <lastmod>2021-03-01T23:51:06+00:00</lastmod>
+  <lastmod>2021-04-17T16:39:21+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://jmgalleries.com/contact?photo=lost-trail&amp;open=true</loc>
-  <lastmod>2021-03-01T23:51:06+00:00</lastmod>
+  <lastmod>2021-04-17T16:39:21+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://jmgalleries.com/contact?photo=natural-beauty&amp;open=true</loc>
-  <lastmod>2021-03-01T23:51:06+00:00</lastmod>
+  <lastmod>2021-04-17T16:39:21+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://jmgalleries.com/contact?photo=never-ending-story</loc>
+  <lastmod>2021-04-17T16:39:21+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://jmgalleries.com/contact?photo=on-the-way-to-cabernet&amp;open=true</loc>
-  <lastmod>2021-03-01T23:51:06+00:00</lastmod>
-  <priority>0.51</priority>
-</url>
-<url>
-  <loc>https://jmgalleries.com/contact?photo=once-afloat</loc>
-  <lastmod>2021-03-01T23:51:06+00:00</lastmod>
+  <lastmod>2021-04-17T16:39:21+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://jmgalleries.com/contact?photo=past-life&amp;open=true</loc>
-  <lastmod>2021-03-01T23:51:06+00:00</lastmod>
+  <lastmod>2021-04-17T16:39:21+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://jmgalleries.com/contact?photo=peace&amp;open=true</loc>
-  <lastmod>2021-03-01T23:51:06+00:00</lastmod>
+  <lastmod>2021-04-17T16:39:21+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://jmgalleries.com/contact?photo=pedi-cab&amp;open=true</loc>
-  <lastmod>2021-03-01T23:51:06+00:00</lastmod>
+  <lastmod>2021-04-17T16:39:21+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://jmgalleries.com/contact?photo=rays-of-light</loc>
-  <lastmod>2021-03-01T23:51:06+00:00</lastmod>
+  <lastmod>2021-04-17T16:39:21+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://jmgalleries.com/contact?photo=reflections&amp;open=true</loc>
-  <lastmod>2021-03-01T23:51:06+00:00</lastmod>
+  <lastmod>2021-04-17T16:39:21+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://jmgalleries.com/contact?photo=remember-when&amp;open=true</loc>
-  <lastmod>2021-03-01T23:51:06+00:00</lastmod>
+  <lastmod>2021-04-17T16:39:21+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://jmgalleries.com/contact?photo=rotonda-del-palazzo&amp;open=true</loc>
-  <lastmod>2021-03-01T23:51:06+00:00</lastmod>
+  <lastmod>2021-04-17T16:39:21+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://jmgalleries.com/contact?photo=run-aground&amp;open=true</loc>
-  <lastmod>2021-03-01T23:51:06+00:00</lastmod>
+  <lastmod>2021-04-17T16:39:21+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://jmgalleries.com/contact?photo=serendipity</loc>
+  <lastmod>2021-04-17T16:39:21+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://jmgalleries.com/contact?photo=snowy-pines</loc>
-  <lastmod>2021-03-01T23:51:06+00:00</lastmod>
+  <lastmod>2021-04-17T16:39:21+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://jmgalleries.com/contact?photo=standstill&amp;open=true</loc>
-  <lastmod>2021-03-01T23:51:06+00:00</lastmod>
+  <lastmod>2021-04-17T16:39:21+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://jmgalleries.com/contact?photo=steps-in-the-sand&amp;open=true</loc>
-  <lastmod>2021-03-01T23:51:06+00:00</lastmod>
+  <lastmod>2021-04-17T16:39:21+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://jmgalleries.com/contact?photo=stone-garden&amp;open=true</loc>
-  <lastmod>2021-03-01T23:51:06+00:00</lastmod>
+  <lastmod>2021-04-17T16:39:21+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://jmgalleries.com/contact?photo=stoned-lovers&amp;open=true</loc>
-  <lastmod>2021-03-01T23:51:06+00:00</lastmod>
+  <lastmod>2021-04-17T16:39:21+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://jmgalleries.com/contact?photo=sunflower-smiles&amp;open=true</loc>
-  <lastmod>2021-03-01T23:51:06+00:00</lastmod>
+  <lastmod>2021-04-17T16:39:21+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
-  <loc>https://jmgalleries.com/contact?photo=the-good-life</loc>
-  <lastmod>2021-03-01T23:51:06+00:00</lastmod>
+  <loc>https://jmgalleries.com/contact?photo=umbrella-man</loc>
+  <lastmod>2021-04-17T16:39:21+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://jmgalleries.com/contact?photo=wandering</loc>
-  <lastmod>2021-03-01T23:51:06+00:00</lastmod>
+  <lastmod>2021-04-17T16:39:21+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://jmgalleries.com/contact?photo=watkins-window</loc>
-  <lastmod>2021-03-01T23:51:06+00:00</lastmod>
-  <priority>0.51</priority>
-</url>
-<url>
-  <loc>https://jmgalleries.com/contact?photo=white-slumber</loc>
-  <lastmod>2021-03-01T23:51:06+00:00</lastmod>
+  <lastmod>2021-04-17T16:39:21+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://jmgalleries.com/contact?photo=window-to-war&amp;open=true</loc>
-  <lastmod>2021-03-01T23:51:06+00:00</lastmod>
+  <lastmod>2021-04-17T16:39:21+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 

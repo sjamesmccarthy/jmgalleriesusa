@@ -19,6 +19,10 @@
                 <?php $this->getPartial('footer'); ?>
     </body>
     
-    <?php $this->getPartial('analytics'); ?>
+    <?php 
+        
+        $this->getPartial('analytics_studio-admin'); 
+        
+    ?>
 
 </html>

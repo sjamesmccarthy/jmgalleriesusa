@@ -36,8 +36,8 @@ $html = <<<END
 <!-- <article id="most-popular" class="mt-64"> -->
     <div class="grid">
         <div class="col-12" style="margin-bottom: 16px;">
-        <h3 class="thin">YOU MAY ALSO LIKE</h3>
-        <p class="light">Some more photographs based on what other collectors are viewing</p>
+        <!-- <h3 class="thin">YOU MAY ALSO LIKE</h3> -->
+        <p class="uppercase text-center">&mdash; Some more photographs based on what other collectors are viewing &mdash;</p>
         </div>
         $thumb_html
     </div>

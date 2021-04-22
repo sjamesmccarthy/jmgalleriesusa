@@ -1,13 +1,12 @@
 <?php
 
     $auth = $this->api_Auth_User($_REQUEST['username'], $_REQUEST['password']);
-
+    
     if($auth['result'] == '200') {
 
         /* Log the visit */
         $this->api_Admin_Auth_Log_Signin($auth['user_id']);
-
-    
+        
         switch($_SESSION['dashboard']) {
             
             case "ARTIST":

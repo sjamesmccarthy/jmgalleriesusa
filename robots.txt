@@ -1,8 +1,117 @@
+#
+#
+#              _____
+#             |     |
+#             | | | |
+#             |_____|
+#       ____ ___|_|___ ____
+#      ()___)         ()___)
+#      // /|           |\ \\
+#     // / |           | \ \\
+#    (___) |___________| (___)
+#    (___)   (_______)   (___)
+#    (___)     (___)     (___)
+#    (___)      |_|      (___)
+#    (___)  ___/___\___   | |
+#     | |  |           |  | |
+#     | |  |___________| /___\ 
+#    /___\  |||     ||| //   \\
+#   //   \\ |||     ||| \\   //
+#   \\   // |||     |||  \\ //
+#    \\ // ()__)   (__()
+#          ///       \\\ 
+#         ///         \\\ 
+#       _///___     ___\\\_
+#      |_______|   |_______|
+#
+#
+
+# ALL 
+
 User-agent: *
 Allow: /
 Disallow: /view/ajax_*
+Disallow: /studio
 
+# DUCK DUCK GO
+User-agent: DuckDuckBot
+Disallow: /view/ajax_*
+Disallow: /studio/
+Disallow: /catalog/
+
+# BING/MICROSOFT
+User-agent: bingbot
+Crawl-delay: 10
+Disallow: /view/ajax_*
+Disallow: /studio/
+Disallow: /catalog/
+
+User-Agent: msnbot
+Crawl-Delay: 10
+Disallow: /view/ajax_*
+Disallow: /studio/
+Disallow: /catalog/
+
+# GOOGLE 
 User-agent: Googlebot-Image
-Disallow: /catalog
+Disallow: /catalog/
+
+User-agent: Googlebot
+Disallow: /view/ajax_*
+Disallow: /studio/
+Disallow: /catalog/
+
+User-agent: AdsBot-Google
+Disallow: /
+Disallow: /view/ajax_*
+Disallow: /studio/
+Disallow: /catalog/
+
+User-agent: AdsBot-Google
+Disallow: /
+Disallow: /view/ajax_*
+Disallow: /studio/
+Disallow: /catalog/
+
+# MISC BOTS
+
+User-agent: MauiBot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
+
+User-agent: SEMrushBot
+Disallow: /
+
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: MJ12Bot
+Disallow: /
+
+User-agent: AspiegelBot
+Disallow: /
+
+User-agent: ia_archiver
+Disallow: /
+
+User-agent: facebot
+Disallow: /
+
+User-agent: facebot
+Disallow: /
+
+User-agent: YandexBot
+Disallow: /
+
+User-agent: Baiduspider
+Disallow: /
+
+User-agent: PetalBot
+Disallow: /
+
+User-agent: Slurp
+Disallow: /
 
 Sitemap: https://jmgalleries.com/sitemap.xml

@@ -2,7 +2,7 @@
     "/404": {
             "template": "page",
             "page": "404",
-            "component": "false",
+            "component": "true",
             "title": "We are programmers not poets : e_404"
         },
     "/": {

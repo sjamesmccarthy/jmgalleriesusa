@@ -15,6 +15,6 @@
     }
     
     /* Reset session error */
-    $_SESSION['error'] = 'ready';
+    // $_SESSION['error'] = 'null';
 
 ?>

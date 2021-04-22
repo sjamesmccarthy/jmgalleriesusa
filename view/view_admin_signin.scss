@@ -5,7 +5,7 @@
 #login .signin--container {
 
     .signin--area {
-        max-width: 35%;
+        // max-width: 45%;
 
     // xSmall devices (landscape phones, 320px and up)
     @media (min-width: 320px) { 
@@ -27,13 +27,18 @@
     
     // Large devices (tablets (iPad Pro, 1112px and up)
     @media (min-width: 1112px) {
-        max-width: 35%;
+        max-width: 40%;
+        
+        .form_pincode input {
+            border-radius: 0;
+            padding: 0;
+        }
         // background-color: red;
     }
     
     // Extra large devices (large desktops, 1200px and up)
     @media (min-width: 1200px) {
-        max-width: 35%;
+        max-width: 40%;
         // background-color: purple;
     }
 
