@@ -11,13 +11,13 @@
             
             case "ARTIST":
             $_SESSION['data'] = $session_data = json_encode($auth);
-            $_SESSION['useragent'] = $_SERVER['HTTP_USER_AGENT'];
+            // $_SESSION['useragent'] = $_SERVER['HTTP_USER_AGENT'];
             header('location:/studio/manage');
             break;
 
             case "COLLECTOR":
             $_SESSION['data'] = $session_data = json_encode($auth);
-            $_SESSION['useragent'] = $_SERVER['HTTP_USER_AGENT'];
+            // $_SESSION['useragent'] = $_SERVER['HTTP_USER_AGENT'];
             header('location:/d/collector');
             exit;
 

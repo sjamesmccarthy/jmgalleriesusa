@@ -352,10 +352,6 @@
                     <div class="col right">
                         <a name="session" href="#top"><i class="fas fa-arrow-circle-up"></i></a> 
                     </div>
-                        
-                    <div class="col-12">
-                        <p class="small" style="color: red;"> file://.user.ini file on server</p>
-                    </div>
 
                     <div class="divTable w-100 pb-32">
 
@@ -364,39 +360,39 @@
                              <div class="divTableCell thead pl-8"></div>
                         </div>
 
-                        <div class="divTableRow">
+                        <!-- <div class="divTableRow">
                             <div class="divTableCell">session.auto_start</div>
                             <div class="divTableCell">
                                 <input class="w-100" type="hidden" name="session_auto_start" value="Off" />
                                 <input class="w-100" type="text" name="session_auto_start" value="Off" disabled />
                             </div>
-                        </div>
+                        </div> -->
                         <div class="divTableRow">
                             <div class="divTableCell">session.save_path</div>
                             <div class="divTableCell">
-                                <input class="w-100" type="hidden" name="session_save_path" value="/home2/jmgalleries/public_html/.sessions" />
-                                <input class="w-100" type="text" name="session_save_path" value="/home2/jmgalleries/public_html/.sessions" disabled />
+                                <input class="w-100" type="hidden" name="session_save_path" value="<?= $session_save_path ?>" />
+                                <input class="w-100" type="text" name="session_save_path" value="<?= $session_save_path ?>" disabled />
                             </div>
                         </div>
                         <div class="divTableRow">
                             <div class="divTableCell">session.cookie_lifetime</div>
                             <div class="divTableCell">
-                                <input class="w-100" type="hidden" name="session_cookie_lifetime" value="86400" />
-                                <input class="w-100" type="text" name="session_cookie_lifetime" value="86400" disabled />
+                                <input class="w-100" type="hidden" name="session_cookie_lifetime" value="<?= $session_cookie_lifetime ?>" />
+                                <input class="w-100" type="text" name="session_cookie_lifetime" value="<?= $session_cookie_lifetime ?>" disabled />
                             </div>
                         </div>
                         <div class="divTableRow">
                             <div class="divTableCell">session.gc_maxlifetime</div>
                             <div class="divTableCell">
-                                 <input class="w-100" type="hidden" name="session_gc_maxlifetime" value="86400" />
-                                 <input class="w-100" type="text" name="session_gc_maxlifetime" value="86400" disabled/>
+                                 <input class="w-100" type="hidden" name="session_gc_maxlifetime" value="<?= $session_gc_maxlifetime ?>" />
+                                 <input class="w-100" type="text" name="session_gc_maxlifetime" value="<?= $session_gc_maxlifetime ?>" disabled/>
                             </div>
                         </div>
                         <div class="divTableRow">
                             <div class="divTableCell">session.cache_expire</div>
                             <div class="divTableCell">
-                                 <input class="w-100" type="hidden" name="session_cache_expire" value="180" />
-                                 <input class="w-100" type="text" name="session_cache_expire" value="180" disabled/>
+                                 <input class="w-100" type="hidden" name="session_cache_expire" value="<?= $session_cache_expire ?>" />
+                                 <input class="w-100" type="text" name="session_cache_expire" value="<?= $session_cache_expire ?>" disabled/>
                             </div>
                         </div>
                                 

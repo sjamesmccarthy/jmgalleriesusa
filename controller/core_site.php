@@ -57,11 +57,11 @@ class Core_Site extends Core_Api
             
             if($route_check[1] == 'studio') {
                 $sess_type = 'ADMIN';
-                $lifetime = 0; /* 1 Day = 86400 */
+                $lifetime = $this->config->session_cookie_lifetime; /* 1 Day = 86400 */
                 session_set_cookie_params($lifetime,'/studio');
             } else {
                 $sess_type = 'USER';
-                $lifetime = 0; /* until browser is closed */
+                $lifetime = $this->config->session_cookie_lifetime; /* until browser is closed */
                 session_set_cookie_params($lifetime,'/');
             }
         
