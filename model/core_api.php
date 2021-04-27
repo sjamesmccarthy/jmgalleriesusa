@@ -478,6 +478,7 @@ class Core_Api extends Fieldnotes_Api
                 // $this->log(array("key" => "api", "value" => "Failed Update Catalog Photo " . $_POST['title'] . " (" . $_POST['catalog_photo_id'] . ") " . $sql, "type" => "failure"));
 
                 /* This should go to a custom photo not found page */
+                $this->record_404($_SERVER['REQUEST_URI']);
                 header('location: /404');
             }	
             

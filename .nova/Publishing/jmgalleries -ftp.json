@@ -1,7 +1,15 @@
 {
   "identifier" : "F43AB95B-A5EA-4ACC-BBF8-E0F119D28531",
   "ignoredFilePatterns" : [
-    "view\/.config.codekit3"
+    "view\/.config.codekit3",
+    "_htaccess",
+    ".htaccess-server",
+    ".user.ini-server",
+    ".gitignore",
+    ".htaccess",
+    ".sessions",
+    ".nova",
+    "config_env.json"
   ],
   "remotePath" : "\/public_html",
   "server" : "jmgalleries \/ftp",

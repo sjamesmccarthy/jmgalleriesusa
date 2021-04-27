@@ -2,6 +2,7 @@
 
 .vscode/*
 .nova/*
+.nova/Publishing/*
 _archive/*
 .sessions/*
 

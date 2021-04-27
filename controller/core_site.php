@@ -229,7 +229,9 @@ class Core_Site extends Core_Api
 
             if($pass_error_page == true) {
                 
-                /* splitting the URI path by forward slash */
+                $this->record_404($_SERVER['REQUEST_URI']);
+                /* splitting the URI path by forward slash  *
+                /
                 $URIx = explode('/', $this->routes->URI->path);
 
                 /* Error 404, page URI not found. Simply rewrite the URI as /404 */
@@ -237,7 +239,6 @@ class Core_Site extends Core_Api
                 $this->page->title = $this->routes->{$this->routes->URI->path}['title'];
                 $this->routes->URI->requested_path = $URIx;
                 $this->page->catalog_path = '404';
-                /* Log error */
             } 
 
             /* Parse query string */
@@ -259,12 +260,6 @@ class Core_Site extends Core_Api
     }
 
     public function render() {
-
-        /* Assign variables to be used in page content */
-        /* when commented primarily breaks navigation */
-        // foreach($this->page as $k => $v) {
-            // $this->$k = $v;
-        // }
 
         /* start buffering the page */
         ob_start();
@@ -494,6 +489,18 @@ class Core_Site extends Core_Api
             echo "<div style='background-color: yellow; font-size: 1rem;'><p class='debug_trigger' style='font-size: 1rem;'>>>>>> CONSOLE --end</p></div>";
             echo "</div>";
         }
+    }
+    
+    public function record_404($error) {
+        
+        $to = 'system-404@jmgalleries.com';
+        $header_from = "FROM: SysAdmin-jM Galleries <'system-core@jmgalleries.com'>";
+        $reply_to = 'system-core@jmgalleries.com';
+        $subject = '404 ' . $error;
+        $message = "The following page could not be found.\n\n{\nURI: " . $error ."\nSERVER_IP: " . $_SERVER['REMOTE_ADDR'] . "\nREFERR_URI: " . $_SERVER['HTTP_REFERER'] . "\n}";
+        $headers =  $header_from . "\r\n" . 'Reply-To: ' . $reply_to . "\r\n" . 'X-Mailer: PHP/' . phpversion() . '/SysAdmin-jM Galleries';
+        mail($to, $subject, $message, $headers);
+        
     }
 }
 ?>

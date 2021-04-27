@@ -35,7 +35,7 @@
 position: relative;
 }
 
-.hero-text-container {
+.hero-container {
 
     position: absolute;
     width: 100%;
@@ -74,8 +74,14 @@ position: relative;
 
 }
 
-.hero-text-container-bkg {
-    background-color: rgba(0,0,0,.7);
+.hero-text-container {
+    // background-color: rgba(0,0,0,.2);
+    background: linear-gradient(rgba(117, 117, 119,0) 0%, rgba(0,0,0,1) 100%);
+    position:absolute; 
+    bottom: 0; 
+    width: 100%; 
+    left: 0;
+    padding: 2rem 1rem;;
 }
 
 .hero-text {
@@ -99,7 +105,7 @@ position: relative;
          // Small devices (landscape phones, 576px and up)
          @media (min-width: 376px) { 
             //  background-color: red;
-             font-size: 1.5rem;
+             font-size: 1.25rem;
              display: block;
          }
      
@@ -264,5 +270,52 @@ position: relative;
     &:hover {
         cursor: pointer;
         opacity: .7;
+    }
+}
+
+.sub-nav-border {
+   border-top: .1px solid #FFF;
+   width: 40%;
+   margin: 10px auto; 
+}
+
+.sub-nav-items {
+    text-align: center;
+    text-transform: initial;
+    line-height: 1;
+    
+    >a {
+        color: $color-white;
+        
+        // xSmall devices (landscape phones, 320px and up)
+        @media (min-width: 320px) { 
+            font-size: .7rem;
+            // background-color: lightpink;
+        }
+    
+        // Small devices (landscape phones, 576px and up)
+        @media (min-width: 376px) { 
+            font-size: .9rem;
+            // background-color: gray;
+        }
+    
+        // Medium devices (tablets, 768px and up)
+        @media (min-width: 767px) {
+            font-size: 1.25rem;
+            // background-color: blue;
+        }
+    
+        // Large devices (tablets (iPad Pro, 1112px and up)
+        @media (min-width: 1112px) {
+            font-size: 1.25rem;
+            // background-color: orange;
+        }
+    
+        // Extra large devices (large desktops, 1200px and up)
+        @media (min-width: 1200px) {
+            font-size: 1.25rem;
+            // background-color: red;
+        }
+        
     }
 }

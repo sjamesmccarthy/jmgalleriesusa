@@ -14,13 +14,13 @@
                 <div class="grid">
                     <div class="col mt-32 artist-statement">
                             <!-- <p class="name center">j.McCarthy</p> -->
-                            <p class="text-center">
+                            <!--  <p class="text-center">
                                 <img class="signature" src="/view/image/signature_full-web.png" alt="j mccarthy signature" />
-                            </p>
-                            <p class="name-title center" style="margin-top: -60px;font-weight: 600;font-size: .8rem;margin-left: 1rem;">ARTIST STATEMENT</p>
-                            <p class="name-statement pb-64">
+                            </p> -->
+                            <!-- <p class="name-title center" style=font-weight: 600;margin-left: 1rem;">ARTIST STATEMENT</p> -->
+                            <!-- <p class="name-statement pb-32">
                             Creativity and art have always had a hidden crush on me, a self-taught explorer in the field of landscape and digital photography. Through purposeful paper choice, framing and composition, I aspire for my artwork to take you on a journey to a place you once remember or a place of new discovery and connect you with the human experience. 
-                            </p>
+                            </p> -->
 
                             <p class="pt-16 ml-16 noshow">
                                 <a target="_new" class="mr-16" href="http://twitter.com/jmgalleriesusa"><i class="fab fa-twitter"></i></a>
@@ -46,6 +46,12 @@
                 <li 
                     class="timeline-history pb-32">
                 
+                <h3>Artist Statement</h3>
+                
+                <p class="name-statement pb-32">
+                    Creativity and art have always had a hidden crush on me, a self-taught explorer in the field of landscape and digital photography. Through purposeful paper choice, framing and composition, I aspire for my artwork to take you on a journey to a place you once remember or a place of new discovery and connect you with the human experience. 
+                </p>
+                    
                 <h3>Early Life</h3>
 
                 <p>

@@ -8,13 +8,15 @@
 
         <div class="col-11" style="position: relative">
 
-        <p class="pt-16">v1.7.6<br />April 24, 2021</p>
+        <p class="pt-16">v1.7.6<br />April 27, 2021</p>
             <ul>
             <li>update: user/admin sessions now handled by life of browser</li>
             <li>update: updated find us social icons and layout.</li>
             <li>update: 404 Page now shows links to major headings.</li>
             <li>update: robots.txt expanded.</li>
             <li>update: config file updated to match new session handling methods.</li>
+            <li>added: 404 error capture in oder to improve routes and redirects with analytics</li>
+            <li>update: mobile CSS styles and changed logo</li>
             </ul> 
         </p>
         

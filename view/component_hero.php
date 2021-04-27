@@ -16,29 +16,36 @@ if ($catalog == '') {
     $hero_result = $this->api_Hero_Get_Image();
 
     $html = <<< END
-        <div style="text-align: center;">
-
+        <div class="noshow" style="text-align: center;">
             <p style="display: inline-block; font-size: 1rem; background-color: #FFF; padding: 16px;text-align: center;">
             <a href="/polarized">POLARIZED</a> /
             <a href="/all">THE WORK</a>
         </div>
 
         <div id="hero" data-url="$this->hero_image" style="box-shadow: 0px 20px 25px 0px rgba(0, 0, 0, 0.3);">
-                <div class="hero-text-container">
-                    <div style="position:absolute; bottom: 25%; width: 100%; left: 0;">
+                
+                <div class="hero-container">
+                    <div class="hero-text-container">
 
                     <p class="topnav-logo">
-                        <img style="margin-left: 10px;" class="topnav--logo-img logo-white logo-large" src="/view/image/logo_fullsize.png" alt="jm Galleries logo" \>
+                        <!-- logo_fullsize.png, style="margin-left: 10px;" -->
+                        <img class="topnav--logo-img logo-white logo-large" src="/view/image/signature_full-web.png" alt="jm Galleries logo" \>
                     </p>
 
                     <p class="hero-text"><a href="$this->hero_link">$this->hero_title</a></p>
-                    <p class="hero-text-explore-link-btn"><a href="$this->hero_link">Explore This Collection</a></p>
+                    <!-- <p class="hero-text-explore-link-btn"><a href="$this->hero_link">Explore This Collection</a></p> -->
                     <!-- <p class="hero-text-arrow"><a href="$this->hero_link"><img class="hero-down-arrow" src="/view/image/icon_down.svg" /></a></p> -->
+                    
+                    <p class="sub-nav-border"></p>
+                    
+                    <p class="sub-nav-items">
+                        <a  href="/polarized">Read My Field Notes </a> /  <a href="https://vlog.jmgalleries.com">Watch My vlog @YouTube</a>
+                    </p>
+                    
                     </div>
                 </div>
         </div>
-
-        <!-- linear-gradient(rgba(255,255,255,.5) 0%, rgba(117,117,119,0) 50%),  -->
+        
     <script>
 
         $("#hero").each( function() { 
@@ -48,12 +55,6 @@ if ($catalog == '') {
 
     </script>
     END;
-} else {
-    $html = <<< END
-        <!-- <div id="hero-catalog">
-        </div> -->
-    END;
-
 }
 
 return($html);

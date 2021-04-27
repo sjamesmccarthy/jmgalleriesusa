@@ -12,13 +12,13 @@
         // $thumb_new_releases_html .= "<article id='new-releases'>";
         $thumb_new_releases_html .= '<div class="grid-4_sm-2 grid-4_md-3">';
         $thumb_new_releases_html .= '<div class="col-10_sm-12">';
-        $thumb_new_releases_html .= '<h2><a href="/new-releases/">NEW RELEASES</a></h2>';
-        $thumb_new_releases_html .= '<p class="light sm-hidden">a collection of photography featuring newest work by photographer j.McCarthy.</p>';
+        $thumb_new_releases_html .= '<h2 class="h2-newrelease"><a href="/new-releases/">NEW RELEASES</a></h2>';
+        $thumb_new_releases_html .= '<p class="light sm-hidden">a collection of photography featuring my newest work.</p>';
         $thumb_new_releases_html .= '</div>';
         $thumb_new_releases_html .= '<div class="view-all col-2-middle sm-hidden">';
         $thumb_new_releases_html .= '<a href="/new-releases">view all</a>';
         $thumb_new_releases_html .= "</div>";
-
+        // $thumb_new_releases_html .= "</article>";
     
 if( !$new_releases['error']) {
     foreach($new_releases as $k => $v) {

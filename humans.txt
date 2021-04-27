@@ -1,0 +1,15 @@
+/* SITE */
+
+Site name:  jM Galleries
+Site URL:   https://jmgalleries.com/
+Web design: James McCarthy
+About:      https://jmccarthyusa.com
+Twitter:    https://twitter.com/jmgalleriesusa
+LinkedIn:   https://linkedin.com/company/jmgalleriesusa
+Contact:    https://jmgalleries.com/contact/
+Location:   USA
+Built with: PHP, HTML, CSS, JavaScript, JSON, SQL
+Libraries:  jQuery, fontawesome, datatables, google fonts
+Software:   Adobe Lightroom & Photoshop, Affinity Designer & Photo, Sketch
+IDE:        Nova, previously VS Code
+Launched:   2013
