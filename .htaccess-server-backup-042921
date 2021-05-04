@@ -1,0 +1,78 @@
+RewriteEngine On
+RewriteCond %{HTTP_USER_AGENT} SiteLockSpider|TkBot|Mb2345Browser|LieBaoFast|zh-CN|MicroMessenger|zh_CN|Kinza|Datanyze|serpstatbot|spaziodati|OPPO\sA33|AspiegelBot|aspiegel|PetalBot [NC]
+RewriteRule ^ - [F,L]
+
+RewriteCond %{HTTPS} off
+RewriteCond %{REQUEST_URI} !^/\.well-known/acme-challenge/[0-9a-zA-Z_-]+$
+RewriteCond %{REQUEST_URI} !^/\.well-known/cpanel-dcv/[0-9a-zA-Z_-]+$
+RewriteCond %{REQUEST_URI} !^/\.well-known/pki-validation/(?:\ Ballot169)?
+RewriteCond %{REQUEST_URI} !^/\.well-known/pki-validation/[A-F0-9]{32}\.txt(?:\ Comodo\ DCV)?$
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_URI} !^/\.well-known/acme-challenge/[0-9a-zA-Z_-]+$
+RewriteCond %{REQUEST_URI} !^/\.well-known/cpanel-dcv/[0-9a-zA-Z_-]+$
+RewriteCond %{REQUEST_URI} !^/\.well-known/pki-validation/(?:\ Ballot169)?
+RewriteCond %{REQUEST_URI} !^/\.well-known/pki-validation/[A-F0-9]{32}\.txt(?:\ Comodo\ DCV)?$
+RewriteRule ^(.*)$ index.php [QSA,L]
+RewriteCond %{HTTP_HOST} ^qr\.jmgalleries\.com$ [OR]
+RewriteCond %{HTTP_HOST} ^www\.qr\.jmgalleries\.com$
+
+Redirect 301 /landscapes https://jmgalleries.com/all
+Redirect 301 /black-and-white https://jmgalleries.com/all
+Redirect 301 /cities-and-structures https://jmgalleries.com/all
+Redirect 301 /blog https://jmgalleries.com/fieldnotes
+Redirect 301 /polarized https://jmgalleries.com/fieldnotes
+Redirect 301 /polarized/(.*) https://jmgalleries.com/fieldnotes/$1
+Redirect 301 /landscapes/photo/stone-garden https://jmgalleries.com/oceans-lakes-waterfalls/stone-garden
+Redirect 301 /landscapes/photo/keeping-tahoe-cold https://jmgalleries.com/mountains-deserts-trees/keep-tahoe-cold
+Redirect 301 /black-and-white/photo/friends-forever https://jmgalleries.com/all
+Redirect 301 /cities-and-structures/photo/bixby-star https://jmgalleries.com/all
+Redirect 301 /daisies-for-our-lady https://jmgalleries.com/flowers-fields-clouds/daisies-for-our-lady
+Redirect 301 /happy-hour-club https://jmgalleries.com/abstract-architecture-people/happy-hour-club
+Redirect 301 /coit-on-high-hill https://jmgalleries.com/abstract-architecture-people/coit-on-high-hill
+
+RedirectMatch 403 favicon.ico
+RedirectMatch 403 ads.txt
+RedirectMatch 403 /shop/wp-includes
+RedirectMatch 403 /wordpress
+RedirectMatch 403 /website
+RedirectMatch 403 /v1
+RedirectMatch 403 /v2
+RedirectMatch 403 /new-site
+RedirectMatch 403 /old-site
+RedirectMatch 403 /web
+RedirectMatch 403 /dev
+RedirectMatch 403 /cms
+RedirectMatch 403 /site
+RedirectMatch 403 /test
+RedirectMatch 403 /main
+RedirectMatch 403 /demo
+RedirectMatch 403 /includes
+RedirectMatch 403 /sql
+RedirectMatch 403 /mariadb
+RedirectMatch 403 /db
+RedirectMatch 403 /mysql_backups
+RedirectMatch 403 /mysql_dumps
+RedirectMatch 403 /db_dumps
+RedirectMatch 403 /backup
+RedirectMatch 403 /saved
+RedirectMatch 403 /database
+RedirectMatch 403 /wallet
+RedirectMatch 403 /.bitcoin
+RedirectMatch 403 /bitcoin
+RedirectMatch 403 /wp
+RedirectMatch 403 /wp1
+RedirectMatch 403 /wp2
+RedirectMatch 403 /2018
+RedirectMatch 403 /2019
+RedirectMatch 403 /2020
+RedirectMatch 403 /2021
+RedirectMatch 403 /vendor/phpunit/phpunit/phpunit.xml
+
+# php -- BEGIN cPanel-generated handler, do not edit
+# Set the “ea-php74” package as the default “PHP” programming language.
+<IfModule mime_module>
+  AddHandler application/x-httpd-ea-php74 .php .php7 .phtml
+</IfModule>
+# php -- END cPanel-generated handler, do not edit

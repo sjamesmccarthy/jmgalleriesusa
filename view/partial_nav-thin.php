@@ -5,6 +5,6 @@
 <p style="display: inline-block; font-size: 1rem; background-color: #FFF; padding: 16px;text-align: center;">
 <a href="/galleries">LIMITED EDITIONS</a> / 
 <a href="/all?filter=tinyviews">OPEN EDITIONS</a> / 
-<a href="/polarized">POLARIZED</a> / 
+<a href="/fieldnotes">POLARIZED</a> / 
 <a href="/shop">jM GALLERY STORE</a></p>
 </div>

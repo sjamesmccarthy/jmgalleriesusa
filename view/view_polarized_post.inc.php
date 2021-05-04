@@ -52,6 +52,17 @@ $res_content = str_replace(']','',$res_content);
 /* format date */
 $res_date_written = date("F j, Y", strtotime($res_created));
 
+/* Split headline to 6 words per line */
+$res_title_arr = explode(' ', $res_title);
+if (empty($res_title) == false) {
+    $res_title_tmp = array_chunk($res_title_arr, '6');
+}
+$res_title = implode(' ', $res_title_tmp[0]);
+$res_title .= '<br />' . implode(' ', $res_title_tmp[1]);
+$res_title .= '<br />' . implode(' ', $res_title_tmp[2]);
+
+// $this->console($res_title_tmp);
+
 /* format tags */
 // $tag_array = explode(',', $tags_data);
 
@@ -71,6 +82,7 @@ if($res_type == "article") {
     }
 } else if($res_type == "video") {
         $img_html = null;
+        $res_teaser = "";
 } else { 
 
     /* FILMSTRIP LAYOUT THUMBNAILS */
@@ -140,8 +152,8 @@ $read_time = $this->__readTime($res_count);
 $res_created = date("F d, Y", strtotime($res_created));
 
 /* Create social links */
-$social_twitter = 'http://twitter.com/share?text=' . urlencode($res_title) . '&url=' . 'https://jmgalleries.com/polarized/' . $res_short_path . '&hashtags=jmgalleriesusa';
-$social_linkedin = 'https://www.linkedin.com/sharing/share-offsite/?url=' . 'https://jmgalleries.com/polarized/' . $res_short_path . '&hashtags=jmgalleriesusa';
+$social_twitter = 'http://twitter.com/share?text=' . urlencode($res_title) . '&url=' . 'https://jmgalleries.com/fieldnotes/' . $res_short_path . '&hashtags=jmgalleriesusa';
+$social_linkedin = 'https://www.linkedin.com/sharing/share-offsite/?url=' . 'https://jmgalleries.com/fieldnotes/' . $res_short_path . '&hashtags=jmgalleriesusa';
 
 function get_gravatar( $email, $s = 80, $d = 'mp', $r = 'g', $img = true, $atts = array() ) {
     $url = 'https://www.gravatar.com/avatar/';

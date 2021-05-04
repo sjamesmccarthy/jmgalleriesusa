@@ -18,7 +18,7 @@ if ($catalog == '') {
     $html = <<< END
         <div class="noshow" style="text-align: center;">
             <p style="display: inline-block; font-size: 1rem; background-color: #FFF; padding: 16px;text-align: center;">
-            <a href="/polarized">POLARIZED</a> /
+            <a href="/fieldnotes">POLARIZED</a> /
             <a href="/all">THE WORK</a>
         </div>
 
@@ -39,7 +39,7 @@ if ($catalog == '') {
                     <p class="sub-nav-border"></p>
                     
                     <p class="sub-nav-items">
-                        <a  href="/polarized">Read My Field Notes </a> /  <a href="https://vlog.jmgalleries.com">Watch My vlog @YouTube</a>
+                        <a  href="/fieldnotes">Read My Field Notes </a> /  <a href="https://vlog.jmgalleries.com">Watch My vlog @YouTube</a>
                     </p>
                     
                     </div>

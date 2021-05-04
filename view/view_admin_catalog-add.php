@@ -60,20 +60,20 @@
 
             <div style="margin-bottom: 10px;">
                 <div class="file half-size">
-                <img id="file_1_prev" style="width: 100%;" />
-                <p>Image: __image/<?= $file_name ?></p>
-                <img class="photopreview <?= $display_show ?>" src="/catalog/__image/<?= $file_name ?>.jpg?<?= date(); ?>" alt="<?= $file_name ?>" />
                 <input class="input-upload" type="file" id="file_1" name="file_1" onchange="document.getElementById('file_1_prev').src = window.URL.createObjectURL(this.files[0])" aria-label="Choose Main Photo">
                 <input type="hidden" id="file_1_path" name="file_1_path" value="/catalog/__image/">
+                <p>Image: __image/<?= $file_name ?></p>
+                <img id="file_1_prev" style="width: 100%;" />
+                <img class="photopreview <?= $display_show ?>" src="/catalog/__image/<?= $file_name ?>.jpg?<?= date(); ?>" alt="<?= $file_name ?>" />
                 <!-- <span class="file-custom file-custom-main"></span> -->
                 </div>
 
                 <div class="half-size file file-thumb">
-                <img id="file_2_prev" style="width: 100%;" />
-                <p>Thumbnail: __thumbnail/<?= $file_name ?></p>
-                <img class="photopreview photopreviewthumb <?= $display_show ?>" src="/catalog/__thumbnail/<?= $file_name ?>.jpg?<?= date(); ?>" alt="<?= file_name ?>" />
                 <input class="input-upload"  type="file" id="file_2" name="file_2" onchange="document.getElementById('file_2_prev').src = window.URL.createObjectURL(this.files[0])" aria-label="Choose Main Photo">
                 <input type="hidden" id="file_2_path" name="file_2_path" value="/catalog/__thumbnail/">
+                <p>Thumbnail: __thumbnail/<?= $file_name ?></p>
+                <img id="file_2_prev" style="width: 100%;" />
+                <img class="photopreview photopreviewthumb <?= $display_show ?>" src="/catalog/__thumbnail/<?= $file_name ?>.jpg?<?= date(); ?>" alt="<?= file_name ?>" />
                 <!-- <span class="file-custom file-custom-thumbnail"></span> -->
                 </div>
             </div>

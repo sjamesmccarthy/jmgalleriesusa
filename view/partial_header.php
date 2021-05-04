@@ -46,7 +46,7 @@
     <?= $header_js ?>
 
     <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css"/>
-    <link rel="stylesheet" type="text/css" href="/view/css/main.css?<?= time(); ?>">
+    <link rel="stylesheet" type="text/css" href="/view/css/styles.css?<?= time(); ?>">
 
     <!-- css from routing file -->
     <?= $header_css ?>

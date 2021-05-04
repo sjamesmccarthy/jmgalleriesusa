@@ -8,6 +8,7 @@
     $new_release_data = array(100,12);  /* Also found in component_new_releases.php */
 
     /* Load all category meta data */
+    // $this->console($catalog);
     $catalog_meta = $this->api_Catalog_Category_List($catalog);
 
     /* Need to assign it locally since none of the API calls assign to global data store */
@@ -19,7 +20,7 @@
     if( $catalog_meta[0]['path'] == 'new-releases') {
          $catalog_photos = $catalog_photos = $this->api_Catalog_Get_New_Releases($new_release_data[0], $new_release_data[1]);
          $catalog_tabs_hidden = true;
-    } else if( $catalog_meta[0]['path'] == 'all') {
+    } else if( $catalog_meta[0]['path'] == 'thework') {
 
         if($this->routes->URI->queryvals[1] == 'tinyviews') {
             $catalog_title = 'SHOP OPEN EDITIONS';
@@ -84,12 +85,13 @@
                 
                 $i=0;
                 $iRand = rand(0,$r_seed);
+                // $this->console($open_pricing_array);
                 foreach ($open_pricing_array as $opK => $opV) {
                     
                     if($i == $iRand) {
                         $rPrice = $opV;
                         $tvS = explode('|', $opK);
-                        if($tvS[1] == '0') { $tvS[1] = 'Misc'; }
+                        if($tvS[1] == '0') { $tvS[1] = $tvS[0]; }
                         $rSize = $tvS[1];
                     }
 

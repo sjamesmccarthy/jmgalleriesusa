@@ -28,7 +28,7 @@
         text-align: center;
         line-height: 1;
         padding-top: .5rem;
-        padding-bottom: 4rem;
+        padding-bottom: 2rem;
         color: #757575;
     }
 
@@ -98,7 +98,39 @@
     }
 
     &--teaser {
-        font-size: 1rem;    
+        font-size: 1rem;  
+        display: block;  
+        
+        // xSmall devices (landscape phones, 320px and up)
+        @media (min-width: 320px) { 
+            display: none;
+        }
+    
+        // Small devices (landscape phones, 576px and up)
+        @media (min-width: 376px) { 
+           display: none;
+        }
+        
+        // Small devices (landscape phones, 576px and up)
+        @media (min-width: 376px) and (orientation: landscape){ 
+           display: block;
+           font-size: .9rem;
+        }
+    
+        // Medium devices (tablets, 768px and up)
+        @media (min-width: 767px) {
+            display: block;
+        }
+    
+        // Large devices (tablets (iPad Pro, 1112px and up)
+        @media (min-width: 1112px) {
+            display: block;
+        }
+    
+        // Extra large devices (large desktops, 1200px and up)
+        @media (min-width: 1200px) {
+            display: block;
+        }
     }
     
     &--readtime {
@@ -135,4 +167,8 @@
             color: #FFF;
         }
     }
+}
+
+#polarized_idx .newsletterinput {
+      width: 83% !important;
 }

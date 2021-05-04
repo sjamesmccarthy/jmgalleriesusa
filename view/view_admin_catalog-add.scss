@@ -41,13 +41,14 @@
 
         .photopreview {
             width: 100%;
-            margin-top: 1rem;
+            // margin-top: 1rem;
             display: none;
         }
 
         .photopreviewthumb {
             // width: initial;
-            width: 75%;
+            // width: 75%;
+            width: 93%;
         }
 
         .photopreviewshow {
@@ -64,14 +65,24 @@
         
         .file {
             position: relative;
-            height: 50px;
+            // height: 50px;
             background-color: transparent;
             margin-bottom: 1rem;
+            
+            .photopreview {
+                box-sizing: border-box;
+                // border: 10px solid transparent;
+            }
         }
 
         .file-thumb {
             vertical-align: top;
             background-color: transparent;
+            
+            .photopreviewthumb {
+                box-sizing: border-box;
+                border: 32px solid #e4e4e4;
+            }
         }
 
         .input-upload {

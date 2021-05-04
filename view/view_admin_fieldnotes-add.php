@@ -37,7 +37,7 @@
                 </div>
 
                 <div>
-                    <p class="one-thirds right small">https://jmgalleriesusa.com/polarized/</p>
+                    <p class="one-thirds right small">https://jmgalleries.com/fieldnotes/</p>
                     <label for="title">SHORT-URL-PATH</label>
                     <input class="two-thirds" maxlength="40" class="half-size ml-16" type="text" id="short_path" name="short_path" placeholder="SHORT-URL-PATH (eg, when-does-a-photograph-become-fineart)" value="<?= $res_short_path ?>" required>
                 </div>

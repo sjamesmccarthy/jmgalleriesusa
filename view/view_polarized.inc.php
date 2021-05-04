@@ -24,28 +24,31 @@ foreach ($fieldnotes_data as $key => $value) {
         $content_leadin_short = substr( $content_leadin, 0, strrpos( substr( $content_leadin, 0, 130), ' ' ) ) . '...';
         $content = nl2br($content[1]);
     } else {
-        $content_leadin_short = null;
+        $content_leadin_short = $value['teaser']; /* null */
         $content = nl2br($content[0]);
     }
 
-    $read_time = $this->__readTime($value['count']);
-
+    $read_time = $this->__readTime($value['count']);;
+    
     switch($value['type']) {
 
         case "article":
             $read_time_label = $read_time;
             $icon_type = 'fas fa-file-invoice';
+            $value['teaser'] = $content_snip;
         break;
 
         case "video":
             $read_time_label = $value['count'] . ' MIN WATCH';
             $icon_type = 'fab fa-youtube';
+            $content_leadin_short = $value['teaser'];
         break;
 
         case "filmstrip":
             $read_time_label = 'Scroll At Your Own Pace';
             // $read_time_label = $value['teaser'];
             $icon_type = 'fas fa-film';
+            $content_leadin_short = $value['teaser'];
         break;
 
         default:
@@ -69,8 +72,8 @@ foreach ($fieldnotes_data as $key => $value) {
     $card_html .= '<div class="card--content">';
     $card_html .= '<div class="card--type">' . strtoupper($value['type']) . '</div>';
     $card_html .= '<div class="card--byline">user_id: ' . $value['user_id'] . '</div>';
-    $card_html .= '<div class="card--title"><a href="/polarized/' . $value['short_path'] . '">' . $value['title'] . '</a></div>';
-    $card_html .= '<div class="card--teaser">' . $value['teaser'] . '</div>';
+    $card_html .= '<div class="card--title"><a href="/fieldnotes/' . $value['short_path'] . '">' . $value['title'] . '</a></div>';
+    $card_html .= '<div class="card--teaser">' . $content_leadin_short . '</div>';
     $card_html .= '<div class="card--readtime">' . $read_time_label . '</div>';
     $card_html .= '</div>';
 

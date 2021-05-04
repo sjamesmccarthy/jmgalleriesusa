@@ -9,7 +9,10 @@
     ".htaccess",
     ".sessions",
     ".nova",
-    "config_env.json"
+    "config_env.json",
+    "view\/_old",
+    ".htaccess-server-backup-042921",
+    ".htaccess-server-backup-043021"
   ],
   "remotePath" : "\/public_html",
   "server" : "jmgalleries \/ftp",

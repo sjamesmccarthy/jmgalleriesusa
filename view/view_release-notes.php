@@ -17,6 +17,7 @@
             <li>update: config file updated to match new session handling methods.</li>
             <li>added: 404 error capture in oder to improve routes and redirects with analytics</li>
             <li>update: mobile CSS styles and changed logo</li>
+            <li>update: Polarized layout updates</li>
             </ul> 
         </p>
         

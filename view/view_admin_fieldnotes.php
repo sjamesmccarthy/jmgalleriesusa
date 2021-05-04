@@ -61,7 +61,7 @@
                 { data: 'created'},
                 { data: 'status'}
             ],
-            "order": [[ 2, "desc" ]],
+            "order": [[ 3, "desc" ]],
             "columnDefs": [
                 { "width": "45%", "targets": 0 }
               ]

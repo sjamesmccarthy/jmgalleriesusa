@@ -8,7 +8,7 @@
     "/": {
         "template" : "catalog",
         "page" : "home",
-        "title" : "Welcome To jM Galleries",
+        "title" : "Welcome",
         "component": "true"
     },
     "[$1]/[$2]": {
@@ -383,13 +383,13 @@
         "component": "true",
         "title": "Exhibits in Nevada & California"
     },
-    "/polarized": {
+    "/fieldnotes": {
         "template": "page",
         "page": "polarized",
         "component": "true",
-        "title": "Polarized: Field Notes by Photographer j.McCarthy"
+        "title": "Field Notes by Photographer j.McCarthy"
     },
-    "/polarized/[$1]": {
+    "/fieldnotes/[$1]": {
         "template": "page",
         "page": "polarized_post",
         "component": "true",
@@ -439,15 +439,21 @@
         "component": "false",
         "title": "Books & Polarized Quarterly"
     },
+    "/limited-editions": {
+        "template": "redirect",
+        "page": "/thework?filter=limited",
+        "component": "false",
+        "title": "Shop tinyViews, Wall Mounted Prints and Books"
+    },
     "/open-editions": {
         "template": "redirect",
-        "page": "/all?filter=tinyviews",
+        "page": "/thework?filter=tinyviews",
         "component": "false",
         "title": "Shop tinyViews, Wall Mounted Prints and Books"
     },
     "/tinyviews": {
         "template": "redirect",
-        "page": "/all?filter=tinyviews",
+        "page": "/thework?filter=tinyviews",
         "component": "false",
         "title": "Shop tinyViews, Wall Mounted Prints and Books"
     },

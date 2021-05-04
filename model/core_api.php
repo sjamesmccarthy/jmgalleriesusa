@@ -420,7 +420,7 @@ class Core_Api extends Fieldnotes_Api
        ORDER BY
            RAND()
            DESC
-       LIMIT 6";
+       LIMIT 4";
 
             $result = $this->mysqli->query($sql);
 
@@ -561,6 +561,7 @@ class Core_Api extends Fieldnotes_Api
                 $sql = "SELECT * FROM catalog_collections WHERE path ='" . $catalog_path . "' AND status='active' ORDER BY title ASC";
             }
 
+            // $this->console($sql);
             $result = $this->mysqli->query($sql);
 
             if ($result->num_rows > 0) {

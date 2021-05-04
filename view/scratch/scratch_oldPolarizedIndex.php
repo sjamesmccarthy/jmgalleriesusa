@@ -8,7 +8,7 @@
                     <div class="content--preview" style="background-color: rgba(0,0,0,.4); height: 100%; min-height: 177px;">
                         <div style="padding: 2rem .1rem;">
                         <p class="--tag">' . strtoupper($value['type']) . '</p>
-                        <h4 class="pb-32"><a href="/polarized/' . $value['short_path'] . '">' . $value['title'] . '</a></h4>
+                        <h4 class="pb-32"><a href="/fieldnotes/' . $value['short_path'] . '">' . $value['title'] . '</a></h4>
                         <a style="color: #FFF; text-decoration: none;" href=""><p style="position: absolute; bottom: 1rem; border-top: 1px solid #CCC; font-weight: 600; text-transform: uppercase;"><!-- ' . date("D M j Y", strtotime($value['created'])) . '<br /> -->' . $read_time . '</p></a>
                     </div>
                     </div> 
@@ -47,7 +47,7 @@
             $card_html .= '
                 <div class="col-6_sm-12 storycard--background">
                     <div class="content__filmstrip--preview">
-                        <p style="font-size: .7rem;">FILMSTRIP</p><h4 style="color: #FFFFFF;"><a href="/polarized/' . $value['short_path'] . '">' . $value['title']. '</a></h4><p style="position: absolute; right: 1rem;bottom: 1rem;">' . $read_time_label . '</p>
+                        <p style="font-size: .7rem;">FILMSTRIP</p><h4 style="color: #FFFFFF;"><a href="/fieldnotes/' . $value['short_path'] . '">' . $value['title']. '</a></h4><p style="position: absolute; right: 1rem;bottom: 1rem;">' . $read_time_label . '</p>
                     </div>
                     <div class="content--preview" style="display: flex; flex-wrap: wrap; justify-content: left; padding-left: 0; padding-right: 0;">                        
                     <!-- HTML for images -->' . $strip_html . 
@@ -69,7 +69,7 @@
 
     } else {
         if($value['type'] != "filmstrip") {
-            $card_older_html .= '<li class="small"><a href="/polarized/' . $value['short_path'] . '">' . $value['title'] . '</a></li>';
+            $card_older_html .= '<li class="small"><a href="/fieldnotes/' . $value['short_path'] . '">' . $value['title'] . '</a></li>';
         }
     }
 

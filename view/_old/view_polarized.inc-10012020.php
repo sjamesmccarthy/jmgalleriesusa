@@ -51,7 +51,7 @@ foreach ($fieldnotes_data as $key => $value) {
                     <div class="content--preview">
                         <div style="padding: 2rem .1rem;">
                         <p class="--tag">' . strtoupper($value['type']) . '</p>
-                        <h4><a href="/polarized/' . $value['short_path'] . '">' . $value['title'] . '</a></h4>
+                        <h4><a href="/fieldnotes/' . $value['short_path'] . '">' . $value['title'] . '</a></h4>
                         
                         <div class="mt-8" style="display: flex; position: relative;">
                                 <div style="width: 38px; margin-top: 2px;">
@@ -114,7 +114,7 @@ foreach ($fieldnotes_data as $key => $value) {
                     <div class="col-6_sm-12 storycard">
                         <div class="content--preview">
                             <p class="--tag">' . strtoupper($value['type']) . '</p>
-                            <h4><a href="/polarized/' . $value['short_path'] . '">' . $value['title'] . '</a></h4>
+                            <h4><a href="/fieldnotes/' . $value['short_path'] . '">' . $value['title'] . '</a></h4>
                             <div class="--teaser">' . $content_leadin_short . '</div>
                             
                             <div class="" style="display: flex; position: relative; margin-top: 1rem;">
@@ -137,7 +137,7 @@ foreach ($fieldnotes_data as $key => $value) {
 
     } else {
         if($value['type'] != "filmstrip") {
-            $card_older_html .= '<li class="small"><a href="/polarized/' . $value['short_path'] . '">' . $value['title'] . '</a></li>';
+            $card_older_html .= '<li class="small"><a href="/fieldnotes/' . $value['short_path'] . '">' . $value['title'] . '</a></li>';
         }
     }
 

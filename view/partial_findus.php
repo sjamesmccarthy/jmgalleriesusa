@@ -8,7 +8,7 @@
     <?php    if ($this->routes->URI->page != "polarized") { ?>
         <h2 class="pt-32" style="line-height: 1">Read<br />My Field Notes</h2>
         <p class="pt-16">A weekly blog about art, photography, collecting and my photography adventures.</p>
-        <p class="pt-16"><a class="blue" href="/polarized">Read Now</a></p>
+        <p class="pt-16"><a class="blue" href="/fieldnotes">Read Now</a></p>
     <?php } ?>
     
     <h2 class="pt-32" style="line-height: 1">Follow<br />My Social Media</h2>

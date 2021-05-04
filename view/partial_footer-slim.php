@@ -27,7 +27,7 @@
                 <div class="col-9_xs-3 mt-32">
                         <a href="/galleries">Galleries</a> | 
                         <a target="_new" href="/shop">TinyViews&trade; Store</a> | 
-                        <a target="_shop" href="/polarized">Polarized Quarterly</a> | 
+                        <a target="_shop" href="/fieldnotes">Polarized Quarterly</a> | 
                         <a target="_new" href="/thestudio">Portraits, Events & Headshots</a> | 
                         <a href="/moments">Moments, News & Events</a> |
                         <a href="/about">About</a> |

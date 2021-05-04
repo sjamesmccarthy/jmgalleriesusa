@@ -161,15 +161,15 @@ class Core_Site extends Core_Api
                 unset($URIx[0]);
 
                 switch($URIx[1]) {
-                    case "polarized":
+                    case "fieldnotes":
                         // API look up of post title
                         $result = $this->api_Admin_Get_Fieldnotes_Item(null,$URIx[2]);
 
                         if(count($result) > 0) {
                             /* Mutating the routes URI so the regEx can be found in the routes JSON object */
-                            $this->routes->URI->path = "/polarized/[$1]";
-                            $this->routes->URI->template = $this->routes->{'/polarized/[$1]'}['template'];
-                            $this->routes->URI->page = $this->routes->{'/polarized/[$1]'}['page'];
+                            $this->routes->URI->path = "/fieldnotes/[$1]";
+                            $this->routes->URI->template = $this->routes->{'/fieldnotes/[$1]'}['template'];
+                            $this->routes->URI->page = $this->routes->{'/fieldnotes/[$1]'}['page'];
 
                             /* Adding data to the page index of the data object that is accessible in the templates and pages */
                             $this->page->title = ucwords(str_ireplace("-", " ", $URIx[2]));

@@ -26,13 +26,21 @@ form {
     padding: 0; 
     margin-left: -5px; 
     line-height: 1;
-    font-weight: 300;
+    font-weight: 800;
+    text-transform: uppercase;
 
     // xSmall devices (landscape phones, 320px and up)
     @media (min-width: 320px) { 
         // background-color: pink;
        text-align: center;
-       font-size: 2.5rem;
+       font-size: 1.75rem;
+    }
+
+    // Small devices (landscape phones, 576px and up)
+    @media (min-width: 375px) { 
+    //  background-color: red;
+        text-align: center;
+       font-size: 2rem;
     }
 
     // Small devices (landscape phones, 576px and up)

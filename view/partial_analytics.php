@@ -1,6 +1,6 @@
 <?php
-  $ips = explode('||', $this->config->package_blacklist);
-  if (!in_array($this->system->ip, $ips)) {
+  // $ips = explode('||', $this->config->package_blacklist);
+  // if (!in_array($this->system->ip, $ips)) {
 ?>
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -14,5 +14,5 @@
 </script>
 
 <?php 
-  }
+  // }
 ?>

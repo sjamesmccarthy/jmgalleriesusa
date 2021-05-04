@@ -36,50 +36,54 @@
     <div class="grid-noGutter">
         <div class="col-12 __container">
             
-            <div class="col" style="margin: auto; width:85%;">
+            <div class="col" style="margin: auto; width:90%;">
+                <h1><?= $res_title?></h1>
                 <p class="teaser-title"><?= $res_teaser?></p>
-                <h1 class="text-center"><?= $res_title?></h1>
             </div>
                 
             <div class="col content__area">
-
-                <div class="col teaser">
-                    <?= $res_content_leadin ?>
-                </div>
                 
                 <?= $img_html ?>
 
-                <div class="col">
-                    <?= $res_content ?>
-                </div>
-            
-                <!-- start cheers, comments -->
-                <div class="col-12 __container--bottom_toc">
-                    
-                    <div>
-                        <a class="response--icon-cheers" href="#"><i class="fas fa-glass-cheers"></i>
-                        <p class="response--icon-label""><span class="repsonse--cheers-count repsonse--count"><?= $res_cheers ?></span></a></p>
-
-                        <a class="response--icon response--icon-bubble" href="#"><i class="fas fa-comment-alt"></i>
-                        <p class="response--icon--count response--icon-label"><span class="repsonse--icon-count repsonse--count"><?= $res_responses ?></span></a></p>
+                <div class="content__area--wrapper">
+                    <div class="col teaser">
+                        <?= $res_content_leadin ?>
                     </div>
+    
+                    <div class="col">
+                        <?= $res_content ?>
+                    </div>
+                
+                    <!-- start cheers, comments -->
+                    <div class="col-12 __container--bottom_toc">
                         
-                    <div>
-                        <?= $tags_html ?>
+                        <div>
+                            <a class="response--icon-cheers" href="#"><i class="fas fa-glass-cheers"></i>
+                            <p class="response--icon-label""><span class="repsonse--cheers-count repsonse--count"><?= $res_cheers ?></span></a></p>
+    
+                            <a class="response--icon response--icon-bubble" href="#"><i class="fas fa-comment-alt"></i>
+                            <p class="response--icon--count response--icon-label"><span class="repsonse--icon-count repsonse--count"><?= $res_responses ?></span></a></p>
+                        </div>
+                            
+                        <div>
+                            <?= $tags_html ?>
+                        </div>
+                        
+                        <div>
+                            <p class="__container--linkback">Published <?= $res_date_written; ?> in <a class="blue" href="/fieldnotes">Field Notes</a></p>
+                        </div>
+                        
+                        <div class="newsletter-section-fn">
+                            <h3>SUBSCRIBE TO MY MONTHLY NEWSLETTER</h3>
+                            <?php $this->getPartial('newsletter'); ?>
+                        </div>
+                        
                     </div>
-                    
-                    <div>
-                        <p class="__container--linkback">Published <?= $res_date_written; ?> in <a class="blue" href="/polarized">Field Notes</a></p>
-                    </div>
-                    
-                    <div class="newsletter-section-fn">
-                        <h3>SUBSCRIBE TO MY MONTHLY NEWSLETTER</h3>
-                        <?php $this->getPartial('newsletter'); ?>
-                    </div>
-                    
+                    <!-- /cheers, comments -->
                 </div>
-                <!-- /cheers, comments -->
+                <!-- /content__area--wrapper -->  
             </div>
+            <!-- /__content_area -->
         </div>
     </div>
 
