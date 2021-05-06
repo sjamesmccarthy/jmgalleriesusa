@@ -41,52 +41,52 @@ Redirect 301 /thework/photo/lost-trail /mountains-deserts-trees/lost-trail
 RedirectMatch 403 favicon.ico
 RedirectMatch 403 ads.txt
 RedirectMatch 403 readme.html
-RedirectMatch 403 /shop/wp-includes
-RedirectMatch 403 /wordpress
-RedirectMatch 403 /website
-RedirectMatch 403 /v1
-RedirectMatch 403 /v2
-RedirectMatch 403 /new-site
-RedirectMatch 403 /old-site
-RedirectMatch 403 /web
-RedirectMatch 403 /dev
-RedirectMatch 403 /cms
-RedirectMatch 403 /site
-RedirectMatch 403 /test
-RedirectMatch 403 /main
-RedirectMatch 403 /demo
-RedirectMatch 403 /includes
-RedirectMatch 403 /sql
-RedirectMatch 403 /mariadb
-RedirectMatch 403 /db
-RedirectMatch 403 /mysql_backups
-RedirectMatch 403 /mysql_dumps
-RedirectMatch 403 /db_dumps
-RedirectMatch 403 /backup
-RedirectMatch 403 /saved
-RedirectMatch 403 /database
-RedirectMatch 403 /wallet
-RedirectMatch 403 /.bitcoin
-RedirectMatch 403 /bitcoin
-RedirectMatch 403 /wp
-RedirectMatch 403 /wp1
-RedirectMatch 403 /wp2
-RedirectMatch 403 /old-wp
-RedirectMatch 403 /2018
-RedirectMatch 403 /2019
-RedirectMatch 403 /2020
-RedirectMatch 403 /2021
+RedirectMatch 403 /shop/wp-includes$
+RedirectMatch 403 /wordpress$
+RedirectMatch 403 /website$
+RedirectMatch 403 /v1$
+RedirectMatch 403 /v2$
+RedirectMatch 403 /new-site$
+RedirectMatch 403 /old-site$
+RedirectMatch 403 /web$
+RedirectMatch 403 /dev$
+RedirectMatch 403 /cms$
+RedirectMatch 403 /site$
+RedirectMatch 403 /test$
+RedirectMatch 403 /main$
+RedirectMatch 403 /demo$
+RedirectMatch 403 /includes$
+RedirectMatch 403 /sql$
+RedirectMatch 403 /mariadb$
+RedirectMatch 403 /db$
+RedirectMatch 403 /mysql_backups$
+RedirectMatch 403 /mysql_dumps$
+RedirectMatch 403 /db_dumps$
+RedirectMatch 403 /backup$
+RedirectMatch 403 /saved$
+RedirectMatch 403 /database$
+RedirectMatch 403 /wallet$
+RedirectMatch 403 /.bitcoin$
+RedirectMatch 403 /bitcoin$
+RedirectMatch 403 /wp$
+RedirectMatch 403 /wp1$
+RedirectMatch 403 /wp2$
+RedirectMatch 403 /old-wp$
+RedirectMatch 403 /2018$
+RedirectMatch 403 /2019$
+RedirectMatch 403 /2020$
+RedirectMatch 403 /2021$
 RedirectMatch 403 /vendor/phpunit/phpunit/phpunit.xml
-RedirectMatch 403 /catalog/Adminhtml_category
+RedirectMatch 403 /catalog/Adminhtml_category$
 RedirectMatch 403 /plugins/content/apismtp/apismtp.php.suspected?test=hello
-RedirectMatch 403 /plugins
-RedirectMatch 403 /install
-RedirectMatch 403 /bak
-RedirectMatch 403 /temp
-RedirectMatch 403 /tmp
-RedirectMatch 403 /old
-RedirectMatch 403 /new
-RedirectMatch 403 /home
+RedirectMatch 403 /plugins$
+RedirectMatch 403 /install$
+RedirectMatch 403 /bak$
+RedirectMatch 403 /temp$
+RedirectMatch 403 /tmp$
+RedirectMatch 403 /old$
+RedirectMatch 403 /new$
+RedirectMatch 403 /home$
 RedirectMatch 403 /.well-known/security.txt
 
 #Facebook IPs
@@ -108,3 +108,11 @@ Deny from 185.60.216.0/22
 Deny from 185.89.216.0/22
 Deny from 199.201.64.0/22
 Deny from 204.15.20.0/22
+
+
+# php -- BEGIN cPanel-generated handler, do not edit
+# Set the “ea-php74” package as the default “PHP” programming language.
+<IfModule mime_module>
+  AddHandler application/x-httpd-ea-php74 .php .php7 .phtml
+</IfModule>
+# php -- END cPanel-generated handler, do not edit

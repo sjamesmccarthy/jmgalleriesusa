@@ -15,7 +15,11 @@ $fieldnotes_data = $this->api_Admin_Get_Fieldnotes("published");
 
 $i=0;
 foreach ($fieldnotes_data as $key => $value) {
-
+    
+    $data_filter_N = null;
+    $data_filter_Y = null;
+    $data_filter_F = null;
+    
     $content = explode('###', $value['content']);
     $sections = count($content);
 
@@ -36,12 +40,15 @@ foreach ($fieldnotes_data as $key => $value) {
             $read_time_label = $read_time;
             $icon_type = 'fas fa-file-invoice';
             $value['teaser'] = $content_snip;
+            $data_filter_N = 'f-notes'; 
         break;
 
         case "video":
-            $read_time_label = $value['count'] . ' MIN WATCH';
+            // $read_time_label = $value['count'] . ' MIN WATCH';
+            $read_time_label = 'A FEW MIN WATCH';
             $icon_type = 'fab fa-youtube';
             $content_leadin_short = $value['teaser'];
+            $data_filter_Y = 'f-youtube'; 
         break;
 
         case "filmstrip":
@@ -49,6 +56,7 @@ foreach ($fieldnotes_data as $key => $value) {
             // $read_time_label = $value['teaser'];
             $icon_type = 'fas fa-film';
             $content_leadin_short = $value['teaser'];
+            $data_filter_F = 'f-filmstrips'; 
         break;
 
         default:
@@ -57,6 +65,8 @@ foreach ($fieldnotes_data as $key => $value) {
         break;
     }
 
+    $data_filters = "$data_filter_N $data_filter_Y $data_filter_F";
+    
     /* Check for image */
     if ( is_file($_SERVER['DOCUMENT_ROOT'] . "/view/image/fieldnotes/" . $value['image'] ) ) {
         $img_html = '<img src="/view/image/fieldnotes/' . $value['image'] . '" alt="' . $value['image'] . '" /></a>';
@@ -68,7 +78,7 @@ foreach ($fieldnotes_data as $key => $value) {
         $img_div = '0';
     }
 
-    $card_html .= '<div class="card--wrapper">';
+    $card_html .= '<div class="card--wrapper ' . $data_filters . '">';
     $card_html .= '<div class="card--content">';
     $card_html .= '<div class="card--type">' . strtoupper($value['type']) . '</div>';
     $card_html .= '<div class="card--byline">user_id: ' . $value['user_id'] . '</div>';

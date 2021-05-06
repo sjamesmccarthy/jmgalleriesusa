@@ -3362,14 +3362,16 @@ button a {
 }
 
 .filter-editions-list {
-  margin: 2rem 0;
+  margin: 0 auto 2rem auto;
+  display: block;
 }
 .filter-editions-list li {
   display: inline-block;
   font-size: 1.4rem;
   padding: 0.5rem;
-  width: 300px;
+  width: 200px;
   color: #2574A9;
+  text-align: center;
 }
 .filter-editions-list li:not(:last-child) {
   margin-right: 10px;
@@ -5982,7 +5984,7 @@ input[type=text].amazing-offer-error {
 }
 
 #polarized_idx .newsletterinput {
-  width: 83% !important;
+  width: 66% !important;
 }
 
 @media (min-width: 767px) {
