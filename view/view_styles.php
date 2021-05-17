@@ -1,50 +1,93 @@
 <section id="styles">
-    <div class="grid-center-noGutter">
-        <div class="col-12_sm-12">
+    <div class="grid-center">
+        <div class="col-12">
     
-            <h1>Sizing and Framing</h1>
-
-            <ul>
-            
-            <li>
+            <div class="grid">
+            <h1>Limited Edition Frame Sizing & Pricing</h1>
+                <p class="pt-16">
+                Limited Edition fine-art is considered highly collectible and are part of a limited numbered series of <?= $this->config->limited_edition_max ?>.<br />Each Limited Edition is signed by j.McCarthy and includes a Certificate of Authenticity that is recorded in the jM Galleries Digital Artwork Archives.</p> 
+                
                 <p>
-                Limited Edition fine-art is considered highly collectible and are part of a limited numbered series of <?= $this->config->limited_edition_max ?>, signed by j.McCarthy and includes a Certificate of Authenticity that is recorded in the jM Galleries Digital Artwork Archives. Once the last edition number is sold, no more editions in that series will be available. The only way to purchase a sold-out edition would be through another collector.<p>
+                Once the last edition number is sold, no more editions in that series will be available.<br />The only way to purchase a sold-out edition would be through another collector.<p>
             </div>
-            <div class="grid-noGutter">
+        </div>    
+            <div class="grid">
             <div class="col-6_md-12">
                 <table>
                     <tr class="gray">
-                        <th>Lumachrome HD Acrylic/Silverada Metallic Canvas</th>
-                        <th class="right">16x24</th>
+                        <th>Image Size (16x24)</th>
+                        <th class="right">Total Size</th>
+                        <!-- <th class="right">Price</th> -->
                     </tr>
                     <tr>
-                        <td class="left">Float Mount (back)</td>
+                        <td class="left">Print Only / Standard Float Mount (Canvas, Acrylic only)</td>
                         <td class="tright">16x24</td>
+                        <!-- <td class="tright">$0</td> -->
                     </tr>
                     <tr>
-                        <td class="left">Framed with Small Black Matte Without Liner</td>
-                        <td class="tright">30x38</td>
+                        <td class="left">Framed with 2 3/4" moulding and protected with Tru Vue&reg; Museum Glass.</td>
+                        <td class="tright">20x29</td>
+                        <!-- <td class="tright">$200</td> -->
                     </tr>
                 </table>
 
                 <table>
                     <tr class="gray">
-                        <th>Lumachrome HD Acrylic/Silverada Metallic Canvas</th>
-                        <th class="right">20x30</th>
+                        <th>Image Size (20x30)</th>
+                        <th class="right">Total Size</th>
+                        <!-- <th class="right">Price</th> -->
                     </tr>
                     <tr>
-                        <td class="left">Float Mount (back)</td>
+                        <td class="left">Print Only / Standard Float Mount (Canvas, Acrylic only)</td>
                         <td class="tright">20x30</td>
+                        <!-- <td class="tright">$0</td> -->
                     </tr>
                     <tr>
-                        <td class="left">Framed with Small Black Matte Without Liner</td>
-                        <td class="tright">34x44</td>
+                        <td class="left">Framed with 2 3/4" moulding and protected with Tru Vue&reg; Museum Glass.</td>
+                        <td class="tright">25x35</td>
+                        <!-- <td class="tright">$300</td> -->
                     </tr>
                 </table>
                 
                 <table>
                     <tr class="gray">
-                        <th>Lumachrome HD Acrylic/Silverada Metallic Canvas</th>
+                        <th>Image Size (24x36)</th>
+                        <th class="right">Total Size</th>
+                        <!-- <th class="right">Price</th> -->
+                    </tr>
+                    <tr>
+                        <td class="left">Print Only / Standard Float Mount (Canvas, Acrylic only)</td>
+                        <td class="tright">24x36</td>
+                        <!-- <td class="tright">$0</td> -->
+                    </tr>
+                    <tr>
+                        <td class="left">Framed 4" moulding and protected with Tru Vue&reg; Museum Glass.</td>
+                        <td class="tright">32x44</td>
+                        <!-- <td class="tright">$450</td> -->
+                    </tr>
+                </table>
+                
+                <table>
+                    <tr class="gray">
+                        <th>Image Size (30x45)</th>
+                        <th class="right">Total Size</th>
+                        <!-- <th class="right">Price</th> -->
+                    </tr>
+                    <tr>
+                        <td class="left">Print Only / Standard Float Mount (Canvas, Acrylic only)</td>
+                        <td class="tright">30x45</td>
+                        <!-- <td class="tright">$0</td> -->
+                    </tr>
+                    <tr>
+                        <td class="left">Framed with 4" moulding and protected with Tru Vue&reg; Museum Glass.</td>
+                        <td class="tright">38x53</td>
+                        <!-- <td class="tright">$650</td> -->
+                    </tr>
+                </table>
+                
+                <!-- <table>
+                    <tr class="gray">
+                        <th>Image Size</th>
                         <th class="right">24x36</th>
                     </tr>
                     <tr>
@@ -59,52 +102,41 @@
                     <tr>
                         <td colspan="2" class="tiny"><p class="small">Measurements are approximate and may vary by 1/4". Frame moulding's will add an approximate 4 inches width on each side; including an optional liner will also increase the overall size of the artwork.</p></td>
                     </tr>
-                </table>
+                </table> -->
                 
-                <table>
+                <!-- <table>
                     <tr class="gray">
-                        <th>Lumachrome HD Acrylic/Silverada Metallic Canvas</th>
+                        <th>Image Size</th>
                         <th class="right">12x12</th>
                     </tr>
                     <tr>
                         <td class="left">Float Mount (back)</td>
                         <td class="tright">12x12</td>
                     </tr>
-                    <!-- <tr>
-                        <td class="left">Framed with Small Black Matte Without Liner</td>
-                        <td class="tright">38x50</td>
-                    </tr> -->
                 </table>
                 
                 <table>
                     <tr class="gray">
-                        <th>Lumachrome HD Acrylic/Silverada Metallic Canvas</th>
+                        <th>Image Size</th>
                         <th class="right">16x16</th>
                     </tr>
                     <tr>
                         <td class="left">Float Mount (back)</td>
                         <td class="tright">16x16</td>
                     </tr>
-                    <!-- <tr>
-                        <td class="left">Framed with Small Black Matte Without Liner</td>
-                        <td class="tright">38x50</td>
-                    </tr> -->
                 </table>
                 
                 <table>
                     <tr class="gray">
-                        <th>Lumachrome HD Acrylic/Silverada Metallic Canvas</th>
+                        <th>Image Size</th>
                         <th class="right">24x24</th>
                     </tr>
                     <tr>
                         <td class="left">Float Mount (back)</td>
                         <td class="tright">124x24</td>
                     </tr>
-                    <!-- <tr>
-                        <td class="left">Framed with Small Black Matte Without Liner</td>
-                        <td class="tright">38x50</td>
-                    </tr> -->
-                </table>
+  
+                </table> -->
                 
             </div>
             <div class="col-6_md-12 text-right">
@@ -124,8 +156,8 @@
 
                  <table>
                     <tr class="gray">
-                        <th>Premium Photo Paper Small</th>
-                        <th class="right">5x7</th>
+                        <th>Premium Photo Paper Small (Image Size 5x7)</th>
+                        <th class="right">Total Size</th>
                     </tr>
                     <tr>
                         <td class="left">Small Black Matte</td>
@@ -135,23 +167,23 @@
 
                  <table>
                     <tr class="gray">
-                        <th>Premium Photo Paper Medium</th>
-                        <th class="right">8x10</th>
+                        <th>Premium Photo Paper Medium (Image Size 8x10)</th>
+                        <th class="right">Total Size</th>
                     </tr>
                     <tr>
                         <td class="left">Small Black Matte</td>
                         <td class="tright">11x14</td>
                     </tr>
-                    <tr>
+                    <!-- <tr>
                         <td class="left">Small Black Matte with Studio Frame</td>
                         <td class="tright">13x16</td>
-                    </tr>
+                    </tr> -->
                 </table>
 
-                <table>
+                <!-- <table>
                     <tr class="gray">
-                        <th>Premium Photo Paper Large</th>
-                        <th class="right">11x14</th>
+                        <th>Premium Photo Paper Large (Image Size 11x14)</th>
+                        <th class="right"></th>
                     </tr>
                     <tr>
                         <td class="left">Small Black Matte</td>
@@ -165,7 +197,12 @@
                     <tr>
                         <td colspan="2" class="tiny">Measurements are approximate and may vary by 1/4"<br />Studio Frame photos coming soon.</td>
                     </tr>
-                    <!-- TODO: add images of STUDIO Frames -->
+                </table> -->
+                
+                <table>
+                    <tr>
+                        <td colspan="2" class="tiny">When available, Open Editions may optionally be framed in a Studio Frame. Studio Frames are 3/4" moulding painted Ash Gray or Snow White. Prices start at $49.95. After framing total size will increase the height and width approximately 1 1/2" inches.</td>
+                    </tr>
                 </table>
 
                 </li>

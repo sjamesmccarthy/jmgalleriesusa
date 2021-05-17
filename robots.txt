@@ -32,6 +32,12 @@ User-agent: *
 Allow: /
 Disallow: /view/ajax_*
 Disallow: /studio
+Disallow: *.jpg
+Disallow: *.jpeg
+Disallow: *.png
+Disallow: *.php
+Disallow: *.css
+Disallow: *.html
 
 # DUCK DUCK GO
 User-agent: DuckDuckBot
@@ -51,6 +57,16 @@ Crawl-Delay: 10
 Disallow: /view/ajax_*
 Disallow: /studio/
 Disallow: /catalog/
+Disallow: *.jpg
+
+User-agent: msnbot-media 
+Disallow: /
+
+User-agent: msnbot-news 
+Disallow: /
+
+User-agent: msnbot-products 
+Disallow: /
 
 # GOOGLE 
 User-agent: Googlebot-Image

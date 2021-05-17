@@ -28,7 +28,7 @@ $hidden_felds .= "<input type='hidden' name='edition_type' value='product' />";
         $on_sale_price = $res_price - round($on_sale_amt);
         $on_sale_percentage = ($res_on_sale * 100) . "%";
         $on_sale_label = "<span class='--strike'><strike>$" . number_format( $res_price,2) . "</strike></span><p class='--savings'>You Save $" . number_format($on_sale_amt) . " (" . $on_sale_percentage . " off)</p>";
-        $price_html = '<p class="--price">$' . number_format( $on_sale_price ) . ' ' . $on_sale_label;
+        $price_html = '<p class="--price">$' . number_format( $on_sale_price,2 ) . ' ' . $on_sale_label;
     } else {
         $on_sale_price = null;
         $on_sale_label = null;

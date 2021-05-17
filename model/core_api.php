@@ -809,7 +809,7 @@ class Core_Api extends Fieldnotes_Api
         	INNER JOIN catalog_collections AS CAT ON CAT.catalog_collections_id = PH.parent_collections_id
         	LEFT JOIN catalog_photo_views AS PV ON PH.catalog_photo_id = PV.catalog_photo_id
         WHERE
-        	-- PH.featured = '1' and 
+        	PH.featured = '1' AND
             PH.orientation = 'landscape' AND
             PH.status = 'ACTIVE'
         ORDER BY
@@ -1089,10 +1089,12 @@ class Core_Api extends Fieldnotes_Api
                 A.print_size,
                 A.print_media,
                 L.location,
+                C.acquired_from,
                 A.value AS TOTAL_VALUE
             FROM
                 art as A
-                INNER JOIN art_locations as L on A.art_location_id = L.art_location_id";
+                INNER JOIN art_locations as L on A.art_location_id = L.art_location_id 
+                LEFT JOIN certificate as C on A.art_id = C.art_id";
         
             $result = $this->mysqli->query($sql);
 
@@ -1106,7 +1108,7 @@ class Core_Api extends Fieldnotes_Api
             } 
             
         }
-
+        
         return($data);
 
     }
@@ -1603,6 +1605,10 @@ class Core_Api extends Fieldnotes_Api
 
         $result = $this->mysqli->query($sql);
         
+       if($this->mysqli->affected_rows == 0) {
+        $result=0;   
+       }
+        
         /* DELETE ALL catalog_collection_link records for this ID */
         $sql_d = "DELETE FROM catalog_collections_link WHERE catalog_photo_id = '" . $catalog_photo_id . "'";
         $result_d = $this->mysqli->query($sql_d);
@@ -1624,14 +1630,19 @@ class Core_Api extends Fieldnotes_Api
 
         /* Check to see if files have been uploaded */
         $this->uploadFile(array("jpg","jpeg"), "jpg");
-
+        
+        /* If file-name changes then image file names need to be updated too */
+        // file_1_path, file_2_path {not writing file name in hidden input}
+        // rename ("/folder/file.ext", "/folder/newfile.ext");
+        
         if($result == 1) {
             $_SESSION['error'] = '200';
             $_SESSION['notify_msg'] = $_POST['title'];
             $this->log(array("key" => "api", "value" => "Updated Catalog Photo " . $_POST['title'] . " (" . $_POST['catalog_photo_id'] . ") ", "type" => "success"));
         } else {
-            $_SESSION['error'] = '501';
-            $this->log(array("key" => "api", "value" => "Failed Update Catalog Photo " . $_POST['title'] . " (" . $_POST['catalog_photo_id'] . ") " . $sql, "type" => "failure"));
+            $_SESSION['error'] = '400';
+            $_SESSION['notify_msg'] = 'SQL WARNING - ' . $_POST['title'] . ' - NOT UPDATED';
+            $this->log(array("key" => "api", "value" => "Failed Update Catalog Photo " . $_POST['title'] . " (" . $_POST['catalog_photo_id'] . ") " . 'SQL Warning', "type" => "failure"));
         }
 
     }

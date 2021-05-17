@@ -37,7 +37,9 @@
     jQuery(document).ready(function($){
         
         setTimeout(function() {
-           $('.filter-youtube').trigger("click");
+            <?php if(!isSet($_REQUEST['filter'])) { ?>
+               $('.filter-youtube').trigger("click");
+           <?php } ?>
          }, 10);
        
     

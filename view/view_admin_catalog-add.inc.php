@@ -57,7 +57,7 @@
         $display_show = 'photopreviewshow';
         $formType = "update";
         $button_label="update photo " . $edit_file_name;
-        $button_archive_cancel = '<button class="btn-delete mt-32 pull-right" id="archive" value="ARCHIVE">archive photo</button>';
+        $button_archive_cancel = '<button class="btn-delete mt-32 pull-right w-20" id="archive" value="ARCHIVE">archive photo</button>';
         $id_field = '<input type="hidden" name="catalog_photo_id" value="' . $catalog_photo_id . '" />';
         $file_1_hidden = '<input type="hidden" name="file_1_hidden" value="' . $file_name . '.jpg" />';
         $file_2_hidden = '<input type="hidden" name="file_2_hidden" value="' . $file_name . '-thumb.jpg" />';

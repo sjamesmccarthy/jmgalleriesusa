@@ -34,10 +34,11 @@
                                 <!-- <th>Series</th> -->
                                 <!-- <th>Edition</th> -->
                                 <th>Size</th>
-                                <th>Media</th>
+                                <!-- <th>Media</th> -->
                                 <th>Location</th>
-                                <th>Serial No.</th>
-                                <!-- <th>Value</th> -->
+                                <!-- <th>Serial No.</th> -->
+                                <th>Value</th>
+                                <th>Acquired At</th>
                             </tr>
                         </thead>
                         <tbody></tbody>
@@ -74,10 +75,11 @@
                 // { data: 'series_num' },
                 // { data: 'edition_num' },
                 { data: 'print_size' },
-                { data: 'print_media'},
+                // { data: 'print_media'},
                 { data: 'location' },
-                { data: 'serial_num' },
-                // { data: 'TOTAL_VALUE' }
+                // { data: 'serial_num' },
+                { data: 'TOTAL_VALUE' },
+                { data: 'acquired_from' }
             ]
         } );
         

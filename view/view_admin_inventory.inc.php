@@ -22,6 +22,7 @@
 
     /* API - LIST OF PHOTOS IN CATALOG */
     $data_html = $this->api_Admin_Get_Inventory();
+    // $this->console($data_html,1);
     // $active_inventory_count = array_count_values(array_column($data_html, 'status'))['ACTIVE'];
     $active_inventory_count = count($data_html);
     $data_json = json_encode($data_html);

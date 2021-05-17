@@ -12,11 +12,11 @@
                 }
 
                 if($v['as_gallery'] == '1') {
-                    $edition_html = 'Limited Edition';
+                    $edition_html = $this->config->edition_description_limited;
                 }
 
                 if($v['as_open'] == '1') {
-                    $edition_html = 'Open Edition';
+                    $edition_html = $this->config->edition_description_open;
                 }
 
                 /* For Mobile, On last two thumbnails add some css */
@@ -36,7 +36,7 @@ $html = <<<END
 <!-- <article id="most-popular" class="mt-64"> -->
     <div class="grid">
         <div class="col-12" style="margin-bottom: 16px;">
-        <h4 class="thin-400">YOU MAY ALSO LIKE</h4>
+        <h4 class="most-popular-heading">You might also like</h4>
         <!-- <p class="uppercase text-center">&mdash; YOU MAY ALSO LIKE &mdash;</p>-->
         </div>
         $thumb_html

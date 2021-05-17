@@ -43,7 +43,7 @@ switch($res_formType) {
             $item_framing = "\nand framed in an optional* Premium Designer frame.";
             $res_frame_price = 0;
             $add_frame_note_content = "*An art consultant will be contacting you in regards to your request for an optional Premium Designer frame. Once your framing needs are determined an additional bill for the extra framing will be created and emailed to you.";
-            $add_frame_note = "\n\n" . $add_frame_note_content;
+            $add_frame_note = "\n" . $add_frame_note_content;
             $sq_extraBilling = "<div class='tiny'><b>IMPORTANT NOTE:</b><p class='tiny pb-16 blue'>Once your framing needs are determined an additional bill for the extra framing will be created and emailed to you.</p></div>";
         } else {
             $add_frame_note = null;
@@ -174,7 +174,7 @@ if ($this->config->component_notice == 'true') {
 
 /* Initialize Sqaure payment fields */
 $pay_SqPaymentForm = '<script type="text/javascript" src="https://js.squareupsandbox.com/v2/paymentform"></script>';
-$pay_SqForm_CSS = '<link rel="stylesheet" type="text/css" href="/view/css/sq-payment-form.css?<?= time(); ?>">';
+// $pay_SqForm_CSS = '<link rel="stylesheet" type="text/css" href="/view/css/sq-payment-form.css?' . time() . '">';
 $pay_SqPaymentForm_localjs = '<script type="text/javascript" src="/view/js/squareapi-' . $this->env . '.js"></script>';
 $pay_SqPaymentFormFields = '
     <input type="text" id="amount_total" name="amount_total" value="' . $estimated_cost_raw  . '" />

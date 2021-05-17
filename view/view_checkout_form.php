@@ -31,6 +31,7 @@
             
             <div style="border:0; border-left: 1px solid #e4e4e4; margin-left: 2rem; padding-left: 1rem; font-size: 1rem; min-height: 12rem; margin-top: 8px;">
             <?= nl2br($order_subject) ?>   
+            <p class="tiny pt-32 pb-32">Note: Shipping Costs May Have Been Added To Above Total</p>
             </div>
 
             <textarea style="display:none;"  id="contactsubject" name="contactsubject" disabled /><?= $order_subject ?></textarea>
@@ -226,34 +227,34 @@
         var postalcode = $("input[name='postalcode']").val();
         var phone = $("input[name='phone']").val();
         
-        $(".error").remove();
+        $(".error-form-validation").remove();
 
         if (contactname.length < 1) {
-            $('#contactname').after('<span class="e_contactname error">This field is required</span>');
+            $('#contactname').after('<span class="e_contactname error-form-validation">This field is required</span>');
             ++errors;
         }
         if (contactemail.length < 1) {
-            $('#contactemail').after('<span class="e_contactemail error">This field is required</span>');
+            $('#contactemail').after('<span class="e_contactemail error-form-validation">This field is required</span>');
             ++errors;
         }
         if (address.length < 1) {
-            $('#address').after('<span class="e_address error">This field is required</span>');
+            $('#address').after('<span class="e_address error-form-validation">This field is required</span>');
             ++errors;
         }
         if (city.length < 1) {
-            $('#city').after('<span class="e_city error">This field is required</span>');
+            $('#city').after('<span class="e_city error-form-validation">This field is required</span>');
             ++errors;
         }
         if (state.length < 1) {
-            $('#state').after('<span class="e_state error">This field is required</span>');
+            $('#state').after('<span class="e_state error-form-validation">This field is required</span>');
             ++errors;
         }
         if (postalcode.length < 1) {
-            $('#postalcode').after('<span class="e_postalcode error">This field is required</span>');
+            $('#postalcode').after('<span class="e_postalcode error-form-validation">This field is required</span>');
             ++errors;
         }
         if (phone.length < 1) {
-            $('#phone').after('<span class="e_phone error">This field is required</span>');
+            $('#phone').after('<span class="e_phone error-form-validation">This field is required</span>');
             ++errors;
         }
 

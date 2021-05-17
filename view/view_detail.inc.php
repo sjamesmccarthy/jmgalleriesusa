@@ -80,9 +80,13 @@
 
         if ($photo_meta['desc'] == 'paper') {
             $edition_desc_material = 'Hahnemühle Photo Rag® Metallic Fine Art Paper';
-            $frame_disabled_option = '<option value="FRAMEINCLUDED">Select a Frame (Included In Price)</option>';
+            // $frame_disabled_option = '<option value="FRAMEINCLUDED">Select a Frame (Included In Price)</option>';
             $edition_frame = 'and framed in one of our three Premium Designer Frames protected with Tru Vue&reg; Museum Glass.';
-            $frame_price_default = "FRAMEINCLUDED";
+            // $frame_price_default = "FRAMEINCLUDED";
+            $frame_price_default = "0";
+            $frame_disabled = 'disabled';
+            $frame_disabled_option = '<option value="FRAMELESS">Add Optional Frame</option><option value="ADDWITHACRYLIC">+ Add Additional Frame (Please Specify Color In Order Form)</option>';
+            $frame_info_link = 'Premium Designer Frames pricing';
         } 
 
         if ($photo_meta['desc'] == 'canvas') {
@@ -103,7 +107,8 @@
             $frame_price_default = "0";
         } 
 
-        $edition_desc_material_slash = '/ ' . $edition_desc_material;
+        // $edition_desc_material_slash = '/ ' . $edition_desc_material;
+        $edition_desc_material_slash = null;
     } else {
 
         if ($photo_meta['as_open'] != 1) {
@@ -125,7 +130,7 @@
         $catalog_no = $catalog_code . $photo_meta['catalog_photo_id'] . "LE";
         $matted_size_default ="0";
         
-        $edition_desc = 'LIMITED EDITION';
+        $edition_desc = $this->config->edition_description_limited;
         $edition_max  = ' OF ' . $this->config->limited_edition_max;
         $hidden_edition_type = '<input type="hidden" name="edition_type" value="limited" />';
 
@@ -292,9 +297,9 @@
         <div class="col-4_sm-12 select-wrapper">
             <label for="frame"></label>
             <select id="frame" name="frame" style="padding-left: 0; margin-bottom: 0;">
-                <option value="PRINT-ONLY-WITH-MATTE">PRINT (or Giclée) ONLY - NO FRAME, MATTE ONLY</option>
-                <option value="Studio-Ash-Gray">FRAME: Studio Ash Gray</option>
-                <option value="Studio-Snow-White">FRAME: Studio Snow White</option>
+                <option value="PRINT-ONLY-WITH-MATTE">MATTED PRINT ONLY - NO FRAME</option>
+                <option value="Studio-Ash-Gray">ADD STUDIO FRAME +Ash Gray</option>
+                <option value="Studio-Snow-White">ADD STUDIO FRAME +Snow White</option>
             </select>
            <!-- <span class="tiny"><a href="/styles">More information about frame styles and pricing</span> -->
         </div>

@@ -53,7 +53,7 @@
             </div>
 
             <div class="clear">
-                <button class="mt-32" id="sendform" value="SEND"><?= $button_label ?></button>
+                <button class="mt-32 w-50" id="sendform" value="SEND"><?= $button_label ?></button>
                 <?= $button_archive_cancel ?>
             </div>
 

@@ -98,18 +98,18 @@
             var subject = $("#contactsubject").val();
             var message = $("#message").val();
 
-            $(".error").remove();
+            $(".error-form-validation").remove();
 
             if (name.length < 1) {
-                $('#contactname').after('<span class="e_contactname error">This field is required</span>');
+                $('#contactname').after('<span class="e_contactname error-form-validation">This field is required</span>');
                 ++errors;
             }
             if (email.length < 1) {
-                $('#contactemail').after('<span class="e_contactemail error">This field is required</span>');
+                $('#contactemail').after('<span class="e_contactemail error-form-validation">This field is required</span>');
                 ++errors;
             }
             if (subject.length < 1) {
-                $('#contactsubject').after('<span class="e_contactsubject error">This field is required</span>');
+                $('#contactsubject').after('<span class="e_contactsubject error-form-validation">This field is required</span>');
                 ++errors;
             }
             

@@ -14,8 +14,15 @@
 
     /* Get any notifications of errors */
     if($_SESSION['error'] == "200" && $_SESSION['notify_msg'] != '') {
-        $notification_state = "show";
+        $notification_state = "show success";
         $notification_msg = "<p class='heading'>success</p><p>" .  $_SESSION['notify_msg'] . " Has Been Updated</p>";
+        $_SESSION['error'] = null;
+        $_SESSION['notify_msg'] = null;
+    } 
+    
+    if($_SESSION['error'] == "400" && $_SESSION['notify_msg'] != '') {
+        $notification_state = "show error";
+        $notification_msg = "<p class='heading'>FAILURE</p><p>" .  $_SESSION['notify_msg'] . "</p>";
         $_SESSION['error'] = null;
         $_SESSION['notify_msg'] = null;
     } 

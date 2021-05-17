@@ -12,6 +12,9 @@
                         <div class="col pb-0">
                         <h2>Index of <b>Orders</b> (<?= $active_orders_count ?>)</h2>
                         </div>
+                        <div class="col-1 add-icon">
+                            <a href="/studio/orders-add"><i class="fas fa-plus-circle"></i></a>
+                        </div>
                     </div>
 
                     <table id="dataTable" class="display">

@@ -221,7 +221,7 @@
                 <input class="half-size" type="text" id="iso" name="iso" placeholder="ISO" value="<?= $iso ?>">
             </div>
 
-            <button class="mt-32" id="sendform" value="SEND"><?= $button_label ?></button>
+            <button class="mt-32 w-50" id="sendform" value="SEND"><?= $button_label ?></button>
             <?= $button_archive_cancel ?>
             </form>
 

@@ -6,7 +6,7 @@
     
         <div class="col catalog--container">
 
-            <div class="notification success <?= $notification_state ?>"><?= $notification_msg ?></div>
+            <div class="notification <?= $notification_state ?>"><?= $notification_msg ?></div>
 
                     <div class="grid admin-header">
                         <div class="col">

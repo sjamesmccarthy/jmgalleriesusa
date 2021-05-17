@@ -24,7 +24,7 @@
 
         <div class="col-8_md-8_sm-12 border-right">
             <h1 class="detail-h1"><?= $photo_meta['title'] ?></h1>
-            <p class="edition-title"><?= $edition_desc ?> <?= $edition_max ?> <?= $edition_desc_material_slash ?></span></p>
+            <p class="edition-title"><?= $edition_desc ?> <!-- <?= $edition_max ?>  <?= $edition_desc_material_slash ?> --></span></p>
         <!-- </div>
         
         <div class="col-12 mt-16"> -->
@@ -36,7 +36,7 @@
     <!-- <div class="grid mt-16"> -->
         <div class="col"> <!--col-2_sm-12-->
             <!-- <p class="small blue" style="margin-bottom: -10px; margin-left: 5px;">$ USD</p> -->
-            <p class="blue price">$<span id="price_view" class="price"><?= number_format($default_price, 2) ?></span></p><p class="frame_data price"></p>
+            <p class="blue price">$<span id="price_view" class="price"><?= number_format($default_price, 0) ?></span></p><p class="frame_data price"></p>
         <!-- </div> -->
 
        <?= $sizes_frames ?>
@@ -82,8 +82,8 @@
         var ps = $("#buysize option:selected").val();
         var ms = $("#buysize option:selected").attr("data-mattedsize");
 
-        // Remove frame options from 5x7 and NOTECARDS
-        if(ps == '5x7' || ps == 'NOTECARDS') { 
+        // Remove frame options from NOTECARDS (previously also 5x7 ps == '5x7' ||)
+        if(ps == 'NOTECARDS') { 
             // $('#frame').find('option').not(':first').css("display", "none"); 
             $('#frame').find('option').not(':first').attr("disabled", "disabled"); 
             console.log('5x7');

@@ -153,7 +153,7 @@
                 <p class="material-add"><i class="fas fa-plus-circle"></i></p> 
             </div>
 
-            <button class="mt-32" id="sendform" value="SEND"><?= $button_label ?></button>
+            <button class="mt-32 w-50" id="sendform" value="SEND"><?= $button_label ?></button>
             <?= $button_archive_cancel ?>
             </form>
 

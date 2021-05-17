@@ -88,7 +88,7 @@
                             </div>
                         </div>
                         <div class="divTableRow">
-                            <div class="divTableCell">edition_description_limited (label for Filmstrip &Details)</div>
+                            <div class="divTableCell">edition_description_limited (label for Filmstrip &Details)<br />{limited_edition_max}</div>
                             <div class="divTableCell">
                                  <input class="w-100" type="text" name="edition_description_limited" value="<?= $edition_description_limited ?>" />
                             </div>

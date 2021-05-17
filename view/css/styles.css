@@ -2305,6 +2305,7 @@ SASS, https://sass-lang.com/
   border-radius: 6px;
   margin-bottom: 2rem;
   padding: 2rem;
+  margin: 1rem;
 }
 .notification.success {
   background-color: #d4edda;
@@ -3078,7 +3079,7 @@ textarea {
   text-align: center;
 }
 
-.error {
+.error-form-validation {
   margin-top: -1rem;
   display: block;
   margin-bottom: 1rem;
@@ -3183,17 +3184,25 @@ textarea {
 
 button {
   display: inline-block;
-  padding: 10px;
+  min-width: 50px;
+  width: 100%;
   background-color: #d7eaf6;
   color: #2574a9;
   border-radius: 6px;
   border: 0;
-  min-width: 50px;
   letter-spacing: 1px;
   padding: 0 16px;
   height: 50px;
   box-sizing: border-box;
   text-transform: uppercase;
+}
+
+.w-20 {
+  width: 20%;
+}
+
+.w-50 {
+  width: 50%;
 }
 
 button:hover, .btn_small:hover {
@@ -3469,10 +3478,14 @@ button a {
   }
 }
 
+.most-popular-heading {
+  font-weight: 600;
+}
+
 /* ********************** */
 /* component_hero */
 #hero {
-  height: 520px;
+  height: 750px;
   background: white;
   background-repeat: no-repeat;
   background-size: cover;
@@ -3482,6 +3495,31 @@ button a {
   width: 100%;
   max-height: 1024px;
   margin-bottom: 4rem;
+}
+@media (min-width: 320px) {
+  #hero {
+    height: 450px;
+  }
+}
+@media (min-width: 576px) {
+  #hero {
+    height: 450px;
+  }
+}
+@media (min-width: 768px) {
+  #hero {
+    height: 750px;
+  }
+}
+@media (min-width: 1112px) {
+  #hero {
+    height: 750px;
+  }
+}
+@media (min-width: 1200px) {
+  #hero {
+    height: 750px;
+  }
 }
 
 #hero-catalog {
@@ -5226,7 +5264,6 @@ form #buysize, form #frame {
 
 .detail-h1 {
   padding: 0;
-  margin-left: -5px;
   line-height: 1;
   font-weight: 800;
   text-transform: uppercase;
@@ -5612,6 +5649,7 @@ form #buysize, form #frame {
 #styles table tr, #styles table th {
   vertical-align: top;
   padding: 0.5rem;
+  width: 75%;
 }
 #styles table tr.gray, #styles table th.gray {
   background-color: #e4e4e4;
@@ -5635,200 +5673,6 @@ form #buysize, form #frame {
 }
 
 /*subsection UL override*/
-/* ********************** */
-/* view_newsletter_email */
-/* Amazing Offer */
-.amazing-offer-error,
-input[type=text].amazing-offer-error {
-  background-color: rgba(255, 0, 0, 0.1) !important;
-  border-width: thin;
-  border-style: solid;
-  border-color: rgba(255, 0, 0, 0.2);
-  border: 1px solid rgba(255, 0, 0, 0.2);
-  border-radius: 5px;
-  margin-bottom: 10px;
-}
-
-.amazing-offer-container {
-  width: 76%;
-  /* padding-top: 40px; */
-  margin: auto;
-}
-
-.amazing-offer-center {
-  text-align: center !important;
-}
-
-.amazing-offer-morebold {
-  font-weight: 800;
-}
-
-.amazing-offer-logo {
-  margin-top: 0;
-  margin-left: 5px;
-  margin-right: 5px;
-  height: 60px;
-}
-
-.amazing-offer-h1 {
-  /* text-transform: capitalize !important; */
-  font-size: 42px;
-  font-weight: 400;
-  margin-top: 60px;
-  margin-bottom: 10px;
-  line-height: 0.7em;
-  text-align: center;
-}
-
-.amazing-offer-h2 {
-  text-transform: capitalize !important;
-  padding: 20px 0 0 0;
-  font-size: 2.5em;
-  font-weight: 900;
-  margin-bottom: 10px;
-  line-height: 1.2em;
-  text-align: center;
-}
-
-.amazing-offer-small {
-  font-size: 1rem;
-  font-weight: 400;
-}
-
-.amazing-offer-presents {
-  text-align: center;
-  margin-bottom: 20px;
-  margin-top: 60px;
-  width: 200px;
-}
-
-.amazing-offer-strike {
-  position: absolute;
-  margin-top: 0;
-  margin-left: 0;
-  text-decoration: line-through;
-  font-size: 0.5em;
-  color: #A9A9A9;
-}
-
-.amazing-offer-photo {
-  position: relative;
-}
-
-.amazing-offer-watermark {
-  position: absolute;
-  bottom: 40px;
-  right: 150px;
-  width: 40px;
-}
-
-.amazing-offer-heading {
-  text-align: center;
-  font-weight: 200 !important;
-}
-
-.amazing-offer-title {
-  font-weight: 400;
-  font-size: 1rem;
-  text-align: center;
-  padding: 20px 0 0 0;
-  line-height: 1.3em;
-  margin-top: 40px;
-}
-
-.amazing-offer-title-light {
-  font-weight: 200;
-  font-size: 1.3rem;
-  text-align: center;
-  padding: 20px 0 40px 0;
-}
-
-.amazing-offer-image {
-  padding: 20px;
-  border: 2px solid #A9A9A9;
-  box-sizing: border-box;
-}
-
-.amazing-offer-caption {
-  margin-top: 30px;
-  text-align: left;
-  font-size: 1.5rem;
-  line-height: 1.6em;
-  font-weight: 300;
-}
-
-.amazing-offer-blurb {
-  position: relative;
-  font-size: 1.5rem;
-  line-height: 1.5;
-  text-align: left;
-  font-weight: 300;
-  clear: both;
-}
-
-.amazing-offer-blurb-desc {
-  margin-top: 20px;
-  font-size: 1.1rem;
-  font-weight: 400;
-  line-height: 1.5em;
-  text-align: left;
-}
-
-.amazing-offer-blurb-smaller {
-  font-size: 1.2rem;
-  line-height: 1.5em;
-  font-weight: 300;
-  margin-top: 30px;
-}
-
-.amazing-offer-blurb-smaller a {
-  color: #AAAAAA;
-}
-
-.amazing-offer-padding {
-  padding: 20px;
-  /* margin-top: 30px; */
-}
-
-.amazing-offer-expires {
-  font-weight: 100;
-  font-size: 0.5rem;
-  text-align: left;
-  /* font-size: 1rem; */
-  /* margin-top: 60px; */
-  /* border-top: 1px solid #A9A9A9; */
-  /* padding-top: 10px; */
-}
-
-.amazing-offer-button {
-  margin-top: 20px;
-  margin-bottom: 20px;
-  padding: 20px;
-  font-size: 1.2rem;
-  background-color: #2baadf;
-  color: #FFFFFF;
-  cursor: pointer;
-  border: none;
-  border-radius: 6px;
-}
-
-.amazing-offer-button:hover {
-  margin-top: 20px;
-  margin-bottom: 20px;
-  padding: 20px;
-  font-size: 1.2rem;
-  font-weight: 900;
-  background-color: rgba(43, 170, 223, 0.5);
-  color: #000;
-}
-
-.amazing-offer-form-response {
-  text-align: center;
-  margin-top: 60px;
-  clear: both;
-}
-
-/*amazing-offer*/
 #release-notes ul {
   list-style: square;
 }
@@ -5984,7 +5828,7 @@ input[type=text].amazing-offer-error {
 }
 
 #polarized_idx .newsletterinput {
-  width: 66% !important;
+  width: 60% !important;
 }
 
 @media (min-width: 767px) {
@@ -6864,7 +6708,7 @@ div[id*=imgT]:hover {
 .catalogidx--container .catalog--container {
   background-color: rgba(0, 0, 0, 0.05);
   border-radius: 6px;
-  margin: 0;
+  margin: 1.7rem 0;
   padding: 0;
 }
 .catalogidx--container .catalog--container .admin-header {
@@ -6881,7 +6725,7 @@ div[id*=imgT]:hover {
 .catalog-add--container {
   background-color: rgba(0, 0, 0, 0.02);
   border-radius: 6px;
-  margin: 0;
+  margin: 1.7rem 0;
   padding: 0;
 }
 .catalog-add--container .admin-header {
@@ -6970,7 +6814,7 @@ div[id*=imgT]:hover {
 .inventory--container {
   background-color: rgba(0, 0, 0, 0.05);
   border-radius: 6px;
-  margin: 0;
+  margin: 1.7rem 0;
   padding: 0;
 }
 .inventory--container .admin-header {
@@ -6987,7 +6831,7 @@ div[id*=imgT]:hover {
 .inventory-add--container {
   background-color: rgba(0, 0, 0, 0.02);
   border-radius: 6px;
-  margin: 0;
+  margin: 1.7rem 0;
   padding: 0;
 }
 .inventory-add--container .admin-header {
@@ -7124,7 +6968,7 @@ div[id*=imgT]:hover {
 .suppliers-add--container {
   background-color: rgba(0, 0, 0, 0.02);
   border-radius: 6px;
-  margin: 0;
+  margin: 1.7rem 0;
   padding: 0;
 }
 .suppliers-add--container .admin-header {
@@ -7211,7 +7055,7 @@ div[id*=imgT]:hover {
 .materials--container {
   background-color: rgba(0, 0, 0, 0.05);
   border-radius: 6px;
-  margin: 0;
+  margin: 1.7rem 0;
   padding: 0;
 }
 .materials--container .admin-header {
@@ -7238,7 +7082,7 @@ div[id*=imgT]:hover {
 .materials-add--container {
   background-color: rgba(0, 0, 0, 0.02);
   border-radius: 6px;
-  margin: 0;
+  margin: 1.7rem 0;
   padding: 0;
 }
 .materials-add--container .admin-header {
@@ -7323,7 +7167,7 @@ div[id*=imgT]:hover {
 .reportsidx--container {
   background-color: rgba(0, 0, 0, 0.05);
   border-radius: 6px;
-  margin: 0;
+  margin: 1.7rem 0;
   padding: 0;
 }
 .reportsidx--container .admin-header {
@@ -7372,7 +7216,7 @@ table.dataTable tbody td.valign {
 }
 .reports-add--container .admin-header {
   background-color: rgba(0, 0, 0, 0.08);
-  margin: 0;
+  margin: 1.7rem 0;
   border-radius: 6px 6px 0 0;
   padding: 0.5rem 0 0 0.5rem;
   margin-bottom: 1rem;
@@ -7450,7 +7294,7 @@ table.dataTable tbody td.valign {
 .fieldnotesidx--container {
   background-color: rgba(0, 0, 0, 0.05);
   border-radius: 6px;
-  margin: 0;
+  margin: 1.7rem 0;
   padding: 0;
 }
 .fieldnotesidx--container .admin-header {
@@ -7481,7 +7325,7 @@ table.dataTable tbody td.valign {
 .fieldnotes-add--container {
   background-color: rgba(0, 0, 0, 0.02);
   border-radius: 6px;
-  margin: 0;
+  margin: 1.7rem 0;
   padding: 0;
 }
 .fieldnotes-add--container .add-imgs {
@@ -7747,7 +7591,7 @@ table.dataTable tbody td.valign {
 .users--container {
   background-color: rgba(0, 0, 0, 0.05);
   border-radius: 6px;
-  margin: 0;
+  margin: 1.7rem 0;
   padding: 0;
 }
 .users--container .admin-header {
@@ -7772,7 +7616,7 @@ table.dataTable tbody td.valign {
 .users-add--container {
   background-color: rgba(0, 0, 0, 0.02);
   border-radius: 6px;
-  margin: 0;
+  margin: 1.7rem 0;
   padding: 0;
 }
 .users-add--container .admin-header {
@@ -7878,7 +7722,7 @@ table.dataTable tbody td.valign {
 .collections--container {
   background-color: rgba(0, 0, 0, 0.05);
   border-radius: 6px;
-  margin: 0;
+  margin: 1.7rem 0;
   padding: 0;
 }
 .collections--container .admin-header {
@@ -7909,7 +7753,7 @@ table.dataTable tbody td.valign {
 .collections-add--container {
   background-color: rgba(0, 0, 0, 0.02);
   border-radius: 6px;
-  margin: 0;
+  margin: 1.7rem 0;
   padding: 0;
 }
 .collections-add--container .admin-header {
@@ -7994,7 +7838,7 @@ table.dataTable tbody td.valign {
 .orders--container {
   background-color: rgba(0, 0, 0, 0.05);
   border-radius: 6px;
-  margin: 0;
+  margin: 1.7rem 0;
   padding: 0;
 }
 .orders--container .admin-header {
@@ -8015,7 +7859,7 @@ table.dataTable tbody td.valign {
 .orders-add--container {
   background-color: rgba(0, 0, 0, 0.02);
   border-radius: 6px;
-  margin: 0;
+  margin: 1.7rem 0;
   padding: 0;
 }
 .orders-add--container .admin-header {
@@ -8040,7 +7884,7 @@ table.dataTable tbody td.valign {
 .settings--container {
   background-color: rgba(0, 0, 0, 0.02);
   border-radius: 6px;
-  margin: 0;
+  margin: 1.7rem 0;
   padding: 0;
 }
 .settings--container .admin-header {
