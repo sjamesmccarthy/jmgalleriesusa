@@ -6,14 +6,13 @@
     
         <div class="col inventory--container">
 
-            <div class="notification success <?= $notification_state ?>"><?= $notification_msg ?></div>
+            <div class="notification <?= $notification_state ?>"><?= $notification_msg ?></div>
 
                     <div class="grid admin-header">
                         <div class="col pb-0">
                         <h2>Index of <b>Inventory</b> (<?= $active_inventory_count ?>)</h2>
                         
                             <div class="tabs"> 
-                                <!-- <div class="tab-ACTIVE <?= $active_filter ?>" ><a href="?filter=ACTIVE">ACTIVE</a></div> -->
                                 <div class="tab-STUDIO" ><a href="?filter=STUDIO">STUDIO</a></div>
                                 <div class="tab-HC" ><a href="?filter=HC">HOME COLLECTION</a></div>
                                 <div class="tab-DONATED" ><a href="?filter=DONATED">DONATED</a></div>

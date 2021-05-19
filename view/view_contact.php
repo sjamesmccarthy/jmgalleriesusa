@@ -3,6 +3,12 @@
 <section id="contact">
     <div class="grid-center">
 
+<div class="col-3_sm-11">
+   
+   <?php $this->getPartial('findus'); ?>
+
+</div>
+
         <div class="col-8_sm-11 pb-32">
 
             <div class="form-main">
@@ -37,7 +43,7 @@
 
                     <div class="<?= $hide_for_order ?>">
                     <?= $message_H3 ?>
-                    <textarea id="comments" name="comments" placeholder="<?= $message_PH ?>" rows="9"><?= $msg ?></textarea>
+                    <textarea id="comments" name="comments" placeholder="<?= $message_PH ?>" rows="30"><?= $msg ?></textarea>
                     </div>
 
                 </div>
@@ -51,13 +57,6 @@
 
             <p style="border-radius: 6px;" id="form_response"> </p>
         </div>
-
-        <div class="col-3_sm-11">
-           
-           <?php $this->getPartial('findus'); ?>
-
-        </div>
-
     </div>
 </section>
 

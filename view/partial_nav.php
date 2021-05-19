@@ -25,6 +25,12 @@
         </div>
         </div>
 
+        <div class="grid">
+        <div class="col nav-mobile-menu">
+            <p class="small text-right"><i class="fas fa-ellipsis-v"></i></p>
+        </div>
+        </div>
+
         <ul class="nav-mobile-ul">
             <li class="close"><i class="fas fa-times-circle"></i>
             </li>
@@ -44,7 +50,7 @@
   jQuery(document).ready(function($){
     jQuery.noConflict();
 
-    $('.nav-mobile, .nav-mobile-home').on("click", function () {
+    $('.nav-mobile, .nav-mobile-home, .nav-mobile-menu').on("click", function () {
         $('.nav-mobile-ul').toggle();
     });
 

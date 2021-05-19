@@ -96,10 +96,7 @@
                         </p>
 
                         <p>
-                        The following New Year began a new chapter in Southern California, or so it was supposed to have been. The adventure took 180 turn and j.McCarthy found himself back in Las Vegas trapped in the global pandemic known as COVID-19 and because of the international and city-wide lockdowns, curfews and prohibition of public gatherings, j.McCarthy postponed all events for the year.</p>
-
-                        <p>
-                         Finding the silver-lining in an otherwise weird 2020, j.McCarthy decided to use the time to refine his online gallery, curate his collection, enjoy the outdoors shooting more landscapes and relocate back to the State Capital of Nevada, Carson City.
+                        The following New Year began a new chapter in Southern California, or so it was supposed to have been. The adventure took a 180 turn and j.McCarthy found himself back in Las Vegas trapped in the global pandemic known as COVID-19. Finding the silver-lining in an otherwise weird 2020, j.McCarthy decided to use the time to refine his online gallery, curate his collection, enjoy the outdoors shooting more landscapes and relocate back to the State Capital of Nevada, Carson City. Due to the strict mandates by the CDC and local governments, he also postponed all events, exhibits and showings for the next 18 months. 
                         </p>
 
                     </li>
@@ -124,6 +121,17 @@
                             <a style="font-weight: 200" href="https://www.facebook.com/jmgalleriesusa/videos/631838797284255/UzpfSTQwNjIxMDk2MjkwNjU4NDoxMDI2MjMyOTA0MjM3NzE3/" target="_social">Video (@facebook): Exhibited 8 photographs from January 2019 through April 2019.</a></li>
                             <li> 2019, City of Murrieta City Hall Art Project, Murrieta, California<br />
                             Exhibited three pieces, "Flying Fortress", "Good Morning Murrieta" and "Temecula Grapes", at Wine Ranch Grill & Cellars.</li>
+                        </ul>
+                        </div>
+                    </li>
+                    
+                    <li class="timeline-history pt-16">
+                        <h3>Portraits, Weddings & Events</h3>
+
+                        <div class="about--exhibits">
+                        <ul>
+                            <li>Visit my Portraits, Weddings & Events <a href="https://jmportraits.com" target="_new">portfolio.</a></li>
+                            <li>To book a session, wedding or event drop me a note <a href="/contact">here</a> or call me at 951-708-1831.</li>
                         </ul>
                         </div>
                     </li>

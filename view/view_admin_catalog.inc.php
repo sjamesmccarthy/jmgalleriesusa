@@ -32,4 +32,12 @@
     $active_photos_count = array_count_values(array_column($data_html, 'status'))['ACTIVE'];
     $data_json = json_encode($data_html);
 
+    if(isSet($this->routes->URI->queryvals )) {
+        $filter = $this->routes->URI->queryvals[1];
+        $active_filter = null;
+    } else {
+        $filter = 'ACTIVE';
+        $active_filter = 'active';
+    }
+    
 ?>

@@ -31,6 +31,44 @@
     }
 }
 
+.nav-mobile-menu {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    color: $color-white;  
+    
+    // xSmall devices (landscape phones, 320px and up)
+     @media (min-width: 320px) { 
+        display: block;
+        // background-color: lightpink;
+    }
+
+    // Small devices (landscape phones, 576px and up)
+    @media (min-width: 376px) { 
+        display: block;
+        // background-color: gray;
+    }
+
+    // Medium devices (tablets, 768px and up)
+    @media (min-width: 767px) {
+        display: none;
+        // background-color: blue;
+    }
+
+    // Large devices (tablets (iPad Pro, 1112px and up)
+    @media (min-width: 1112px) {
+        display: none;
+        // background-color: orange;
+    }
+
+    // Extra large devices (large desktops, 1200px and up)
+    @media (min-width: 1200px) {
+        display: none;
+        // background-color: red;
+    }
+      
+}
+
 .topnav-logo {
     text-align: center; 
 // 
@@ -201,6 +239,7 @@
 .nav-mobile-logo {
     width: 135px; 
     vertical-align: middle;
+    margin-top: -2rem;
     // filter: invert(1);
 }
 
@@ -242,7 +281,7 @@
 }
 
 .nav-mobile-home {
-    display: block;
+    // display: block;
     position: absolute;
     right: 40%;
     left: 40%;
@@ -339,6 +378,7 @@
     width: 100%; 
     padding: 4rem 2rem 2rem 2rem; 
     top: 0;
+    left: 0;
     font-size: 1.5rem;
     color: #CCC;
     margin: auto;

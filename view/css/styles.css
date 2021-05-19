@@ -3355,6 +3355,7 @@ button a {
   text-align: center;
   font-size: 0.9rem;
   text-transform: uppercase;
+  border-bottom: 5px solid transparent;
 }
 .tabs > div:hover:not(:last-child) {
   border-bottom: 5px solid #4a4a4a;
@@ -4282,6 +4283,38 @@ button a {
   padding-bottom: 40px;
 }
 
+.nav-mobile-menu {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  color: #FFFFFF;
+}
+@media (min-width: 320px) {
+  .nav-mobile-menu {
+    display: block;
+  }
+}
+@media (min-width: 376px) {
+  .nav-mobile-menu {
+    display: block;
+  }
+}
+@media (min-width: 767px) {
+  .nav-mobile-menu {
+    display: none;
+  }
+}
+@media (min-width: 1112px) {
+  .nav-mobile-menu {
+    display: none;
+  }
+}
+@media (min-width: 1200px) {
+  .nav-mobile-menu {
+    display: none;
+  }
+}
+
 .topnav-logo {
   text-align: center;
 }
@@ -4430,6 +4463,7 @@ button a {
 .nav-mobile-logo {
   width: 135px;
   vertical-align: middle;
+  margin-top: -2rem;
 }
 
 .nav-mobile {
@@ -4453,7 +4487,6 @@ button a {
 }
 
 .nav-mobile-home {
-  display: block;
   position: absolute;
   right: 40%;
   left: 40%;
@@ -4518,6 +4551,7 @@ button a {
   width: 100%;
   padding: 4rem 2rem 2rem 2rem;
   top: 0;
+  left: 0;
   font-size: 1.5rem;
   color: #CCC;
   margin: auto;
@@ -5007,7 +5041,7 @@ fieldset {
 }
 
 #contactForm textarea {
-  height: 200px;
+  min-height: 400px;
   padding-top: 30px;
   border-right: 1px solid #e4e4e4;
 }
@@ -6715,8 +6749,7 @@ div[id*=imgT]:hover {
   background-color: rgba(0, 0, 0, 0.08);
   margin: 0;
   border-radius: 6px 6px 0 0;
-  padding: 1rem;
-  margin-bottom: 1rem;
+  padding: 1rem 1rem 0 1rem;
 }
 .catalogidx--container .catalog--container h2 {
   font-weight: 300;
