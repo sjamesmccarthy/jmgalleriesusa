@@ -478,7 +478,7 @@ class Core_Site extends Core_Api
                 }); 
             });
             </script>";
-            echo "<div class='debug_trigger' style='background-color: yellow; font-size: 1rem;'>";
+            echo "<div class='debug_trigger' style='background-color: yellow; font-size: 1rem; padding: 2rem;'>";
             echo "<p style='font-size: 1rem;'>>>>>> " . $this->env . " CONSOLE --start | " . date('l jS \of F Y h:i:s A') . "</p> </div>";
             echo "<div id='debug_container' style='display:none;'>";
             $this->console($result);
