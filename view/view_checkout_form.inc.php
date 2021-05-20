@@ -40,7 +40,7 @@ switch($res_formType) {
         $subtitle = 'Thank you for your interest in a j.McCarthy Fine Art Photograph';
 
         if($res_frame == "ADDWITHACRYLIC") {
-            $item_framing = "\nand framed in an optional* Premium Designer frame.";
+            $item_framing = "\n+ADD FRAME optional* Premium Designer frame.";
             $res_frame_price = 0;
             $add_frame_note_content = "*An art consultant will be contacting you in regards to your request for an optional Premium Designer frame. Once your framing needs are determined an additional bill for the extra framing will be created and emailed to you.";
             $add_frame_note = "\n" . $add_frame_note_content;

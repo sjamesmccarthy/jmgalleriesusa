@@ -118,7 +118,7 @@
 
         else  if($("#frame option:selected").val() == "ADDWITHACRYLIC") {
                 console.log('ADD TO ACRYLIC Premium Designer Frame');
-                $('.frame_data').html( '(+ Premium Frame Cost)');
+                $('.frame_data').html( '(+ Optional Premium Frame Cost)');
                 $('#frame_price').val('$');
                 return false;
         }
@@ -140,7 +140,7 @@
             // newprice = (nf.format(newprice_f));
             // $('#price').html('np ' + newprice_f);
 
-            $('.frame_data').html( '(+' + fp + ' for Frame)');
+            $('.frame_data').html( '(+' + fp + ' for Studio Frame)');
             // $('.frame_data').html( '(+' + fp + ' ' + $("#frame option:selected").val() + ' Frame)');
             // $('#price').val(newprice_f);
 
