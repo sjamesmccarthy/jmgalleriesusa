@@ -159,22 +159,26 @@
         $btn_link = '<a style="display:block;" class="mt-16" href="/contact?photo=' . $photo_meta['file_name'] . '">'; //class="btn-nudge"
         $gallery_details = '<p class="mt-32">This Limited Edition is printed on ' . $edition_desc_material . ' and available in ' . $pricing_long . ' inches (larger sizes available on special order, <a href="/contact">contact an art consultant</a>) ' . $edition_frame . '<!-- If you have any questions about our ' . $edition_desc_material . ', or need more information about out <a href="/styles">styles, frames and editions</a>, please <a href="/contact">contact an art consultant</a>.--></p>';
 
-        $sizes_frames = '<div class="col-4_sm-12 select-wrapper">
+        /* PRICING SELECT */
+        $sizes_pricing = '<div class="col-4_sm-12 select-wrapper">
         <label for="buysize"></label>
         <select id="buysize" name="buysize" style="padding-left: 0; margin-bottom: 0;">';
         
-        foreach ($le_price_array as $leK => $leV) {
-            
-            if($leK == $default_size) { $default = 'SELECTED'; } else { $default = null; }
+            foreach ($le_price_array as $leK => $leV) {
+                
+                if($leK == $default_size) { $default = 'SELECTED'; } else { $default = null; }
+    
+                $sizes_pricing .= '<option ' . $default . ' data-price="' . $leV . '" data-mattedsize="0" value="' . $leK . '">SIZE: ' . $leK . '</option>';
+    
+            }
 
-            $sizes_frames_options .= '<option ' . $default . ' data-price="' . $leV . '" data-mattedsize="0" value="' . $leK . '">SIZE: ' . $leK . '</option>';
-
-        }
-
-        $sizes_frames .= $sizes_frames_options . '
-            </select>
-        </div>
-        
+        $sizes_pricing .= '
+        </select>
+        </div>';
+    
+        /* FRAME SELECT */
+        /* Currently does not loop through {le_frames_pricing} in settings */    
+        $sizes_frames .= '
         <div class="col-4_sm-12 select-wrapper"> 
             <label for="frame"></label>
             <select id="frame" name="frame" style="padding-left: 0; margin-bottom:0;">
@@ -232,8 +236,7 @@
         // $default_size = '8x10';
         
         /* Loop through available_sizes */
-
-        $sizes_frames = '<div class="col-4_sm-12 select-wrapper">
+        $sizes_pricing = '<div class="col-4_sm-12 select-wrapper">
         <label for="buysize"></label>
         <select id="buysize" name="buysize" style="padding-left: 0; margin-bottom: 0;">';
 
@@ -247,7 +250,7 @@
 
                 if( file_exists($_SERVER['DOCUMENT_ROOT'] . "/catalog/__image/" . $photo_meta['file_name'] . '-tinyviews-notes.jpg') ) {
                     $tinyviewNotesImage = '<div class="col"><img class="in-room-img"  src="/catalog/__image/' . $photo_meta['file_name'] . '-tinyviews-notes.jpg" alt="' . $photo_meta['file_name'] . '" /></div>';
-                    $sizes_frames_options .= '<option ' . $default . 'data-price="' . $tvV . '" value="NOTECARDS">SIZE: 5x7 NOTECARD/POSTCARD (Set of 3)</option>'; 
+                    $sizes_pricing .= '<option ' . $default . 'data-price="' . $tvV . '" value="NOTECARDS">SIZE: 5x7 NOTECARD/POSTCARD (Set of 3)</option>'; 
                     $tv=1;
                 } else {
                      $tinyviewNotesImage = null;
@@ -261,7 +264,7 @@
                 if( file_exists($_SERVER['DOCUMENT_ROOT'] . "/catalog/__image/" . $photo_meta['file_name'] . '-tinyviews.jpg') && $photo_meta['as_gallery'] == "0" ) {
 
                     $tinyviewImage = '<div class="col"><img class="in-room-img"  src="/catalog/__image/' . $photo_meta['file_name'] . '-tinyviews.jpg" alt="' . $photo_meta['file_name'] . '" /></div>';
-                    $sizes_frames_options .= '<option ' . $default . ' data-price="' . $tvV . '" ' . 'data-frameprice="' . $studio_frames_pricing['8x8'] . '" value="8x8">SIZE: SQUARE 8x8</option>';
+                    $sizes_pricing .= '<option ' . $default . ' data-price="' . $tvV . '" ' . 'data-frameprice="' . $studio_frames_pricing['8x8'] . '" value="8x8">SIZE: SQUARE 8x8</option>';
                     $tv=1;
                 
                 } else {
@@ -276,7 +279,7 @@
                 if( file_exists($_SERVER['DOCUMENT_ROOT'] . "/catalog/__image/" . $photo_meta['file_name'] . '-tinyviews.jpg') && $photo_meta['as_gallery'] == "0" ) {
 
                     $tinyviewImage = '<div class="col"><img class="in-room-img"  src="/catalog/__image/' . $photo_meta['file_name'] . '-tinyviews.jpg" alt="' . $photo_meta['file_name'] . '" /></div>';
-                    $sizes_frames_options .= '<option ' . $default . ' data-price="' . $tvV . '" ' . 'data-frameprice="' . $studio_frames_pricing['12x12'] . '" value="12x12">SIZE: SQUARE 12x12</option>';
+                    $sizes_pricing .= '<option ' . $default . ' data-price="' . $tvV . '" ' . 'data-frameprice="' . $studio_frames_pricing['12x12'] . '" value="12x12">SIZE: SQUARE 12x12</option>';
                     $tv=1;
                 
                 } else {
@@ -288,12 +291,15 @@
             }
              else {
                 $studio_fp = $studio_frames_pricing[$tvP[1]];
-                $sizes_frames_options .= '<option ' . $default . ' data-price="' . $tvV . '" ' . 'data-frameprice="' . $studio_fp . '" value="' . $tvP[0] . '" data-mattedsize="' . $tvP[1] . '">SIZE: ' . $tvP[0] . ' (Matted to: ' . $tvP[1] . ')</option>';
+                $sizes_pricing .= '<option ' . $default . ' data-price="' . $tvV . '" ' . 'data-frameprice="' . $studio_fp . '" value="' . $tvP[0] . '" data-mattedsize="' . $tvP[1] . '">SIZE: ' . $tvP[0] . ' (Matted to: ' . $tvP[1] . ')</option>';
             } 
 
         }
 
-        $sizes_frames .= $sizes_frames_options . '</select></div>' . '
+        $sizes_pricing .= '</select></div>';
+        
+        /* FRAMES pricing */
+        $sizes_frames .= '
         <div class="col-4_sm-12 select-wrapper">
             <label for="frame"></label>
             <select id="frame" name="frame" style="padding-left: 0; margin-bottom: 0;">

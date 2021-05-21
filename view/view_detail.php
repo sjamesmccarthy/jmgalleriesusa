@@ -39,6 +39,7 @@
             <p class="blue price">$<span id="price_view" class="price"><?= number_format($default_price, 0) ?></span></p><p class="frame_data price"></p>
         <!-- </div> -->
 
+       <?= $sizes_pricing ?>
        <?= $sizes_frames ?>
 
        
