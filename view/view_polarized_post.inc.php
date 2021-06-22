@@ -57,10 +57,9 @@ $res_title_arr = explode(' ', $res_title);
 if (empty($res_title) == false) {
     $res_title_tmp = array_chunk($res_title_arr, '6');
 }
-$res_title = implode(' ', $res_title_tmp[0]);
-$res_title .= '<br />' . implode(' ', $res_title_tmp[1]);
-$res_title .= '<br />' . implode(' ', $res_title_tmp[2]);
-
+// $res_title = implode(' ', $res_title_tmp[0]);
+// $res_title .= '<br />' . implode(' ', $res_title_tmp[1]);
+// $res_title .= '<br />' . implode(' ', $res_title_tmp[2]);
 // $this->console($res_title_tmp);
 
 /* format tags */

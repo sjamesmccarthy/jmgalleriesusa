@@ -90,15 +90,9 @@ Redirect 301 /galleries/abstract-architecture-people/happy-hour-club /abstract-a
 Redirect 301 /oceans-lakes-waterfalls/photo/reflections /oceans-lakes-waterfalls/reflections
 Redirect 301 /galleries/oceans-lakes-waterfalls/reflections /oceans-lakes-waterfalls/reflections
 Redirect 301 /README.md /humans.txt
-Redirect 301 /readme.php /humans.txt
 Redirect 301 /RELEASE_NOTES.txt /release-notes
-Redirect 301 /license.php /release-notes
 Redirect 301 /CHANGELOG.txt /release-notes
 Redirect 301 /feed /thework
-Redirect 301 /error.php /thework
-Redirect 301 /403.php /thework
-Redirect 301 /404.php /thework
-Redirect 301 /lndex.php /thework
 Redirect 301 /on-the-way-to-cabernet /flowers-fields-clouds/winemaker-walkabout
 Redirect 301 /winemaker-walkabout /flowers-fields-clouds/winemaker-walkabout
 Redirect 301 /gourd-gathering /flowers-fields-clouds/gourd-gathering
@@ -126,10 +120,6 @@ Redirect 301 /galleries/oceans-lakes-waterfalls/shadows-of-tahoe /oceans-lakes-w
 Redirect 301 /galleries/oceans-lakes-waterfalls/spire /oceans-lakes-waterfalls/spire
 Redirect 301 /galleries/abstract-architecture-people/flying-fortress /abstract-architecture-people/flying-fortress
 Redirect 301 /layers-of-tahoe /mountains-deserts-trees/layers-of-tahoe
-Redirect 301 /galleries/mountains-deserts-trees/the-maple /mountains-deserts-trees/the-maple
-Redirect 301 /emerald-thoughts /oceans-lakes-waterfalls/emerald-thoughts
-Redirect 301 /galleries/abstract-architecture-people/the-good-life /abstract-architecture-people/the-good-life
-Redirect 301 /thework/photo/kirbys-cove /thework
 
 RedirectMatch 403 /favicon.ico$
 RedirectMatch 403 /ads.txt$
@@ -160,14 +150,10 @@ RedirectMatch 403 /.local$
 RedirectMatch 403 /.remote$
 RedirectMatch 403 /includes/$
 RedirectMatch 403 /sql/$
-RedirectMatch 403 /sql.php$
 RedirectMatch 403 /mariadb$
 RedirectMatch 403 /db/$
 RedirectMatch 403 /mysql_backups/$
 RedirectMatch 403 /mysql_dumps/$
-RedirectMatch 403 /mysqladmin/$
-RedirectMatch 403 /phpMyAdmin/$
-RedirectMatch 403 /myadmin/$
 RedirectMatch 403 /db_dumps/$
 RedirectMatch 403 /backup/*
 RedirectMatch 403 /Backup/*
@@ -193,7 +179,6 @@ RedirectMatch 403 /2019/*
 RedirectMatch 403 /2020/*
 RedirectMatch 403 /2021/*
 RedirectMatch 403 /vendor/phpunit/*
-RedirectMatch 403 /lib/phpunit/$
 RedirectMatch 403 /catalog/Adminhtml_category$
 RedirectMatch 403 /plugins/content/apismtp/apismtp.php.suspected?test=hello
 RedirectMatch 403 /plugins/$
@@ -227,7 +212,6 @@ RedirectMatch 403 /.remote-sync.json$
 RedirectMatch 403 /sftp-config.json$
 RedirectMatch 403 /.git/*
 RedirectMatch 403 /.ftpconfig$
-RedirectMatch 403 /conf.php$
 RedirectMatch 403 /shop/wp-includes/$
 RedirectMatch 403 /SypexDumper/*
 RedirectMatch 403 /payments.*
@@ -245,9 +229,6 @@ RedirectMatch 403 /xxxss$
 RedirectMatch 403 /1.10.21/js/jquery.dataTables.min.js$
 RedirectMatch 403 /1.10.21/css/jquery.dataTables.min.css$
 RedirectMatch 403 /install.php$
-RedirectMatch 403 /sxd/$
-RedirectMatch 403 /setup.php$
-RedirectMatch 403 /archive.zip$
 
 #Facebook IPs
 Deny from 31.13
@@ -279,6 +260,10 @@ Deny from 103.37.3.58
 Deny from 212.237.121.219
 Deny from 212.237.120.155
 Deny from 178.236.248.7
-Deny from 159.89.190.105
-Deny from 45.129.137.249
-Deny from 185.25.48.248
+
+# php -- BEGIN cPanel-generated handler, do not edit
+# Set the “ea-php74” package as the default “PHP” programming language.
+<IfModule mime_module>
+  AddHandler application/x-httpd-ea-php74 .php .php7 .phtml
+</IfModule>
+# php -- END cPanel-generated handler, do not edit

@@ -36,7 +36,7 @@
     <div class="grid-noGutter">
         <div class="col-12 __container">
             
-            <div class="col" style="margin: auto; width:90%;">
+            <div class="col title-container pb-16">
                 <h1><?= $res_title?></h1>
                 <p class="teaser-title"><?= $res_teaser?></p>
             </div>

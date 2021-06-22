@@ -3486,7 +3486,6 @@ button a {
 /* ********************** */
 /* component_hero */
 #hero {
-  height: 750px;
   background: white;
   background-repeat: no-repeat;
   background-size: cover;
@@ -3495,11 +3494,11 @@ button a {
   margin-top: 0px;
   width: 100%;
   max-height: 1024px;
-  margin-bottom: 4rem;
+  margin-bottom: 2rem;
 }
 @media (min-width: 320px) {
   #hero {
-    height: 450px;
+    height: 65vh;
   }
 }
 @media (min-width: 576px) {
@@ -3509,17 +3508,17 @@ button a {
 }
 @media (min-width: 768px) {
   #hero {
-    height: 750px;
+    height: 75vh;
   }
 }
 @media (min-width: 1112px) {
   #hero {
-    height: 750px;
+    height: 75vh;
   }
 }
 @media (min-width: 1200px) {
   #hero {
-    height: 750px;
+    height: 75vh;
   }
 }
 
@@ -3553,9 +3552,8 @@ button a {
   color: #FFFFFF;
 }
 .hero-text-container {
-  background: linear-gradient(rgba(117, 117, 119, 0) 0%, black 100%);
   position: absolute;
-  bottom: 0;
+  bottom: 2rem;
   width: 100%;
   left: 0;
   padding: 2rem 1rem;
@@ -5904,7 +5902,7 @@ form #buysize, form #frame {
   font-weight: 600;
   line-height: 1.3;
   color: #4a4a4a;
-  text-align: center;
+  text-align: left;
 }
 @media (min-width: 320px) and (max-width: 414px) {
   #polarized .__container h1 {
@@ -5968,10 +5966,15 @@ form #buysize, form #frame {
   color: #4a4a4a;
 }
 
+.title-container {
+  width: 90%;
+  margin: auto;
+}
+
 .teaser-title {
   font-family: "Source Serif Pro", serif;
-  font-size: 1.2rem;
-  text-align: center;
+  font-size: 1.4rem !important;
+  text-align: left;
   color: #808080;
   padding-top: 0.5rem;
 }
@@ -7386,7 +7389,7 @@ table.dataTable tbody td.valign {
 }
 .fieldnotes-add--container .show-image-container {
   text-align: center;
-  height: 660px;
+  max-height: 660px;
   overflow: hidden;
 }
 .fieldnotes-add--container .show-image {

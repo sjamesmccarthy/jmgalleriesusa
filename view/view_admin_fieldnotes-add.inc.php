@@ -43,7 +43,11 @@ if(isSet($this->routes->URI->queryvals)) {
             $i++;
         }
     } else {
-        $res_image = null;
+        // $res_image = null;
+        // $res_image = $res_image;
+        if ( file_exists($_SERVER["DOCUMENT_ROOT"] . "/view/image/fieldnotes/" . $res_image) ) {
+            $imgsLoaded = 1; 
+        } 
     }
 
     $tags_data = $this->api_Admin_Get_Fieldnotes_Tags($edit_id);
