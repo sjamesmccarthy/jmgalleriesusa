@@ -25,14 +25,15 @@ foreach ($fieldnotes_data as $key => $value) {
 
     if($sections == 2) {
         $content_leadin = strip_tags($content[0]);
-        $content_leadin_short = substr( $content_leadin, 0, strrpos( substr( $content_leadin, 0, 130), ' ' ) ) . '...';
+        $content_leadin_short = substr( $content_leadin, 0, strrpos( substr( $content_leadin, 0, 150), ' ' ) ) . '...';
         $content = nl2br($content[1]);
     } else {
         $content_leadin_short = $value['teaser']; /* null */
         $content = nl2br($content[0]);
     }
 
-    $read_time = $this->__readTime($value['count']);;
+    $read_time = $this->__readTime($value['count']);
+    $published_date =strtoupper ( date("M j", strtotime($value['created'])) );
     
     switch($value['type']) {
 
@@ -47,7 +48,8 @@ foreach ($fieldnotes_data as $key => $value) {
             // $read_time_label = $value['count'] . ' MIN WATCH';
             $read_time_label = 'A FEW MIN WATCH';
             $icon_type = 'fab fa-youtube';
-            $content_leadin_short = $value['teaser'];
+            // $content_leadin_short = $value['teaser'];
+            $content_leadin_short = substr( $value['teaser'], 0, strrpos( substr( $value['teaser'], 0, 150), ' ' ) ) . '...';
             $data_filter_Y = 'f-youtube'; 
         break;
 
@@ -55,7 +57,8 @@ foreach ($fieldnotes_data as $key => $value) {
             $read_time_label = 'Scroll At Your Own Pace';
             // $read_time_label = $value['teaser'];
             $icon_type = 'fas fa-film';
-            $content_leadin_short = $value['teaser'];
+            // $content_leadin_short = $value['teaser'];
+            $content_leadin_short = substr( $value['teaser'], 0, strrpos( substr( $value['teaser'], 0, 150), ' ' ) ) . '...';
             $data_filter_F = 'f-filmstrips'; 
         break;
 
@@ -84,7 +87,7 @@ foreach ($fieldnotes_data as $key => $value) {
     $card_html .= '<div class="card--byline">user_id: ' . $value['user_id'] . '</div>';
     $card_html .= '<div class="card--title"><a href="/fieldnotes/' . $value['short_path'] . '">' . $value['title'] . '</a></div>';
     $card_html .= '<div class="card--teaser">' . $content_leadin_short . '</div>';
-    $card_html .= '<div class="card--readtime">' . $read_time_label . '</div>';
+    $card_html .= '<!-- <div class="card--readtime">' . $published_date . ' · ' .strtoupper( $read_time_label ) . '</div> -->';
     $card_html .= '</div>';
 
     if($img_div == '1') {

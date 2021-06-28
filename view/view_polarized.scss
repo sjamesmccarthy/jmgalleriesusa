@@ -12,10 +12,11 @@
     // Extra large devices (large desktops, 1200px and up)
     @media (min-width: 1200px) {
         width: 80%;
-        margin: auto;
+        margin: auto; 
     }
 
     h1 {
+        font-family: 'Source Serif Pro', serif;
         font-family: 'Source Serif Pro', serif;
         text-align: center;
         color: $color-black;
@@ -67,7 +68,7 @@
     &--wrapper {
         display: flex;
         margin: 0;
-        border-bottom: 1px dashed  #e4e4e4;
+        border-bottom: 1px dotted #e4e4e4;
         //   max-width: 600px;
         padding-bottom: 1rem;
         margin: auto auto 1rem auto;
@@ -80,11 +81,15 @@
         //   flex-basis: auto;
         font-family: sans-serif;
         padding: 0 1rem 0 0;
-        min-width: 65%;
+        // min-width: 65%;
+        // width: 500px;
+        flex-basis: 550px;
     }
 
     &--type {
         font-size: .8rem;
+        border-bottom: 1px solid #DDD;
+        display: initial;
     }
 
     &--byline {
@@ -93,6 +98,12 @@
     }
 
     &--title {
+        
+        // a {
+        //     font-family: 'Raleway', sans-serif;
+        // }
+        
+        font-size: 1.4rem;
         font-weight: 800;
         margin: .5rem 0;
     }
@@ -114,7 +125,7 @@
         // Small devices (landscape phones, 576px and up)
         @media (min-width: 376px) and (orientation: landscape){ 
            display: block;
-           font-size: .9rem;
+           font-size: 1rem;
         }
     
         // Medium devices (tablets, 768px and up)
@@ -148,9 +159,9 @@
             display: block;
             height: 133px;
             width: 100%;
-            border-radius: $border-radius;
+            // border-radius: $border-radius;
             overflow: hidden;
-            flex-basis: 500px;
+            flex-basis: 300px;
 
             a>img {
                 border-radius: 6px;
@@ -164,7 +175,8 @@
             position: absolute;
             right: 1rem;
             bottom: 1rem;
-            color: #FFF;
+            color: rgba(255,255,255,.8);
+            font-size: 1.7rem;
         }
     }
 }

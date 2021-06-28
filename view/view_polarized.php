@@ -38,7 +38,7 @@
         
         setTimeout(function() {
             <?php if(!isSet($_REQUEST['filter'])) { ?>
-               $('.filter-youtube').trigger("click");
+               $('.filter-all').trigger("click");
            <?php } ?>
          }, 10);
        

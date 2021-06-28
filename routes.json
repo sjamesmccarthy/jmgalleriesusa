@@ -23,11 +23,23 @@
         "component": "true",
         "title": "[$1]"
     },
+    "/thework": {
+        "template": "catalog",
+        "page": "catalog",
+        "component": "true",
+        "title": "The Work"
+    },
     "/galleries": {
         "template": "catalog",
         "page": "galleries",
         "component": "true",
-        "title": "Galleries"
+        "title": "Collections"
+    },
+    "/collections": {
+        "template": "catalog",
+        "page": "galleries",
+        "component": "true",
+        "title": "Collections"
     },
     "/photo/[$1]": {
         "template": "page",

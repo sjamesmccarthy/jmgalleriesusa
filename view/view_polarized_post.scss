@@ -35,11 +35,13 @@
       padding-bottom: 1rem;
       margin-bottom: 0;
       border-bottom: 1px solid $color-light-gray;
+      line-height: 1.6;
     }
     
         p {
             font-family: 'Source Serif Pro', serif;
             font-size: 1.2rem;
+            line-height: 1.5;
             
             // Small devices (phones, 320px to 414px)
             @media (min-width: 320px) and (max-width: 414px) { 
@@ -143,7 +145,8 @@
     font-size: 1.4rem !important; 
     text-align: left; 
     color: $color-gray;
-    padding-top: .5rem;;
+    padding-top: .5rem;
+    line-height: 1;
 }
 
 .teaser, .teaser >p {
@@ -262,7 +265,8 @@ blockquote {
                 list-style-type: square;
                 font-family: 'Source Serif Pro', serif;
                 font-size: 1.2rem;
-                margin-bottom: 2rem;
+                line-height: 1.4;
+                margin-bottom: 1rem;
                 
                 // xSmall devices (landscape phones, 320px and up)
                 @media (min-width: 320px) { 

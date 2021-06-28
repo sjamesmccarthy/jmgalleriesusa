@@ -2599,10 +2599,13 @@ SASS, https://sass-lang.com/
 
 */
 /* Structure */
+*, html {
+  font-family: "Source Sans Pro", sans-serif;
+}
+
 body {
   background-color: #FFFFFF;
   color: #4a4a4a;
-  font-family: "Source Sans Pro", sans-serif;
   font-size: 16px;
   font-weight: 400;
   line-height: 1.8;
@@ -5732,6 +5735,7 @@ form #buysize, form #frame {
 }
 #polarized_idx h1 {
   font-family: "Source Serif Pro", serif;
+  font-family: "Source Serif Pro", serif;
   text-align: center;
   color: #4a4a4a;
 }
@@ -5771,7 +5775,7 @@ form #buysize, form #frame {
   display: -webkit-flex;
   display: flex;
   margin: 0;
-  border-bottom: 1px dashed #e4e4e4;
+  border-bottom: 1px dotted #e4e4e4;
   padding-bottom: 1rem;
   margin: auto auto 1rem auto;
   line-height: 1.2;
@@ -5783,16 +5787,20 @@ form #buysize, form #frame {
           flex-shrink: 1;
   font-family: sans-serif;
   padding: 0 1rem 0 0;
-  min-width: 65%;
+  -webkit-flex-basis: 550px;
+          flex-basis: 550px;
 }
 .card--type {
   font-size: 0.8rem;
+  border-bottom: 1px solid #DDD;
+  display: initial;
 }
 .card--byline {
   font-size: 0.8rem;
   display: none;
 }
 .card--title {
+  font-size: 1.4rem;
   font-weight: 800;
   margin: 0.5rem 0;
 }
@@ -5813,7 +5821,7 @@ form #buysize, form #frame {
 @media (min-width: 376px) and (orientation: landscape) {
   .card--teaser {
     display: block;
-    font-size: 0.9rem;
+    font-size: 1rem;
   }
 }
 @media (min-width: 767px) {
@@ -5842,10 +5850,9 @@ form #buysize, form #frame {
   display: block;
   height: 133px;
   width: 100%;
-  border-radius: 6px;
   overflow: hidden;
-  -webkit-flex-basis: 500px;
-          flex-basis: 500px;
+  -webkit-flex-basis: 300px;
+          flex-basis: 300px;
 }
 .card--image-wrapper a > img {
   border-radius: 6px;
@@ -5856,7 +5863,8 @@ form #buysize, form #frame {
   position: absolute;
   right: 1rem;
   bottom: 1rem;
-  color: #FFF;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 1.7rem;
 }
 
 #polarized_idx .newsletterinput {
@@ -5886,10 +5894,12 @@ form #buysize, form #frame {
   padding-bottom: 1rem;
   margin-bottom: 0;
   border-bottom: 1px solid #D3D3D3;
+  line-height: 1.6;
 }
 #polarized p {
   font-family: "Source Serif Pro", serif;
   font-size: 1.2rem;
+  line-height: 1.5;
 }
 @media (min-width: 320px) and (max-width: 414px) {
   #polarized p {
@@ -5977,6 +5987,7 @@ form #buysize, form #frame {
   text-align: left;
   color: #808080;
   padding-top: 0.5rem;
+  line-height: 1;
 }
 
 .teaser, .teaser > p {
@@ -6074,7 +6085,8 @@ blockquote {
   list-style-type: square;
   font-family: "Source Serif Pro", serif;
   font-size: 1.2rem;
-  margin-bottom: 2rem;
+  line-height: 1.4;
+  margin-bottom: 1rem;
 }
 @media (min-width: 320px) {
   .content__area ul li, .content__area ol li {

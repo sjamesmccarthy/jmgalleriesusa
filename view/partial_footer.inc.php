@@ -12,9 +12,11 @@ foreach($catalog_names as $k => $v) {
 }
 
 if($this->routes->URI->page == 'detail') {
-    $bc_catalog = '<img class="breadcrumb-arrow" src="/view/image/icon_navarrow-right.svg" alt="right-arrow" /> <a href="/galleries"/>The Work</a> <img class="breadcrumb-arrow" src="/view/image/icon_navarrow-right.svg" alt="breadcrumb-icon" /> <a href="' . $this->page->catalog_path . '"/>' . $this->catalog_title . '</a>';
+    $bc_catalog = '<img class="breadcrumb-arrow" src="/view/image/icon_navarrow-right.svg" alt="right-arrow" /> <a href="/collections"/>Collections</a> <img class="breadcrumb-arrow" src="/view/image/icon_navarrow-right.svg" alt="breadcrumb-icon" /> <a href="' . $this->page->catalog_path . '"/>' . $this->catalog_title . '</a>';
+    
 } else if ($this->routes->URI->page == 'catalog' ) {
-    $bc_catalog = '<img class="breadcrumb-arrow" src="/view/image/icon_navarrow-right.svg" alt="breadcrumb icon" /> <a href="/galleries"/>The Work</a> ' . $bc_catalog;
+    $bc_catalog = '<img class="breadcrumb-arrow" src="/view/image/icon_navarrow-right.svg" alt="breadcrumb icon" /> <a href="/collections"/>Collections</a>';
+    // $bc_catalog;
 } else {
     $bc_catalog = null;
 }
