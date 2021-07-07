@@ -251,6 +251,7 @@ public function api_Admin_Update_Fieldnotes() {
         } 
 
         /* Fieldnotes_images and captions */
+        
         $i=1;
         foreach ($_FILES as $key => $val) {
             
@@ -271,7 +272,7 @@ public function api_Admin_Update_Fieldnotes() {
 
             } else {
 
-                /* UPDATE captions for all images */
+                /* UPDATE captions for all images, $_POST array is extracted at top of function */
                 if(${"file_" . $i . "_path"} != "" ) {
                     $sql_cap_u = "UPDATE `jmgaller_iesusa`.`fieldnotes_images` SET `caption` = '" . $this->mysqli->real_escape_string(${"file_" . $i . "_caption"}) . "' WHERE `fieldnotes_id` = '" . $fieldnotes_id . "' AND `path`='" . ${"file_" . $i . "_path"} . "'";
                     $result_cap_u = $this->mysqli->query($sql_cap_u);
