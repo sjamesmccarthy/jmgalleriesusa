@@ -273,8 +273,14 @@ public function api_Admin_Update_Fieldnotes() {
 
                 /* UPDATE captions for all images */
                 if(${"file_" . $i . "_path"} != "" ) {
-                    $sql_cap_u = "UPDATE `jmgaller_iesusa`.`fieldnotes_images` SET `caption` = '" . ${"file_" . $i . "_caption"} . "' WHERE `fieldnotes_id` = '" . $fieldnotes_id . "' AND `path`='" . ${"file_" . $i . "_path"} . "'";
+                    $sql_cap_u = "UPDATE `jmgaller_iesusa`.`fieldnotes_images` SET `caption` = '" . $this->mysqli->real_escape_string(${"file_" . $i . "_caption"}) . "' WHERE `fieldnotes_id` = '" . $fieldnotes_id . "' AND `path`='" . ${"file_" . $i . "_path"} . "'";
                     $result_cap_u = $this->mysqli->query($sql_cap_u);
+                   
+                    if ($result_cap_u === false) {
+                        $this->log(array("key" => "api_FieldNotes", "value" => "Failed FieldNotes " . $_POST['title'] . " (" . $_POST['fieldnotes_id'] . ")[img:" . $i . "] Caption Failed To Update / " .  $this->mysqli->real_escape_string($sql_cap_u), "type" => "failure"));
+                    } else {
+                        $this->log(array("key" => "api_FieldNotes", "value" => "FieldNotes " . $_POST['title'] . " (" . $_POST['fieldnotes_id'] . ")[img:" . $i . "] Caption Updated", "type" => "success"));
+                    }
                 }
 
             }
