@@ -45,11 +45,12 @@
                 <div class="add-imgs"><i class="far fa-images"></i></div>
                  <div class="file mt-16">
                     <ul class="files_nav">
-                        <li data-file="file_1" class="files_nav--invert"><i class="far fa-images"></i></li> 
-                        <li data-file="file_2" class="files_nav--filmstrip hidden"><i class="far fa-images"></i></li>
-                        <li data-file="file_3" class="files_nav--filmstrip hidden"><i class="far fa-images"></i></li>
-                        <li data-file="file_4" class="files_nav--filmstrip hidden"><i class="far fa-images"></i></li>
-                        <!-- <li data-file="file_5" class="files_nav--filmstrip hidden"><i class="far fa-images"></i></li> -->
+                        <li data-file="file_1" class="files_nav--invert"><i class="far fa-images"> 1</i></li> <!-- files_nav--invert -->
+                        <li data-file="file_2" class="files_nav--filmstrip hidden"><i class="far fa-images"> 2</i></li>
+                        <li data-file="file_3" class="files_nav--filmstrip hidden"><i class="far fa-images"> 3</i></li>
+                        <li data-file="file_4" class="files_nav--filmstrip hidden"><i class="far fa-images"> 4</i></li>
+                        <li data-file="file_5" class="files_nav--filmstrip hidden"><i class="far fa-images"> 5</i></li>
+                        <li data-file="file_6" class="files_nav--filmstrip hidden"><i class="far fa-images"> 6</i></li>
                     </ul>
                     <div class="skip-imgs"><i class="far fa-eye-slash"></i></div>
 
@@ -116,6 +117,19 @@
                         </div>
                         </div>
                         <textarea name="file_5_caption" class="file_caption" placeholder="TYPE A SHORT CAPTION NO LONGER THAN 1 LINE FOR THIS IMAGE."><?= $res_caption_file_5 ?></textarea>
+                    </div>
+                    
+                    <!-- File_6 -->
+                    <div class="file_block--input file_6">
+                        <div>
+                            <?= $show_image6_html ?>
+                            <div class="file__upload-container">
+                            <i class="fas fa-file-upload file__upload-icon"> 6</i>
+                            <input class="input-upload" type="file" id="file_6" name="file_6" aria-label="Choose Main Photo" onchange="document.getElementById('file_6_prev').src = window.URL.createObjectURL(this.files[0])"><br /><?= $image_info ?>
+                            <input type="hidden" id="file_6_path" name="file_6_path" value="<?= $res_image_6 ?>">
+                        </div>
+                        </div>
+                        <textarea name="file_6_caption" class="file_caption" placeholder="TYPE A SHORT CAPTION NO LONGER THAN 1 LINE FOR THIS IMAGE."><?= $res_caption_file_6 ?></textarea>
                     </div>
 
                 </div>
@@ -287,7 +301,9 @@ jQuery(document).ready(function($){
 
     $('.files_nav li').on('click', function(e) {
         var tab = $(this).data('file');
+        $('.files_nav li').removeClass("files_nav--invert");
         $('.file_block--input').hide();
+        $(this).addClass('files_nav--invert');
         $('.' + tab).show();
     });
 
@@ -303,6 +319,7 @@ jQuery(document).ready(function($){
 
     $('#sendform').on("click", function(e) {
         
+        console.log('sendform()');
         /* Export HTML from WYSIWYG editor DIV to textarea */
         // $('.content_raw').val( $('.content_html').html() );
 
@@ -311,7 +328,10 @@ jQuery(document).ready(function($){
             var myForm = $('#fieldnotesadd');
             if (!myForm[0].checkValidity()) {                
                 myForm.submit();     
-            } 
+            } else {
+                console.log('sendform.failed()');
+                return false;
+            }
 
         });
 

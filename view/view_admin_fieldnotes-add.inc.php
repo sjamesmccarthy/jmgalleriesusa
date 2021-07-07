@@ -88,6 +88,12 @@ if(isSet($this->routes->URI->queryvals)) {
     } else {
         $show_image5_html = '<div class="image_filler"><img id="file_5_prev" alt="file_5_preview" /><h4 class="center">UPLOAD IMAGE<br />1050 x 619 pixels</h4></div>';
     }
+    
+    if(isSet($res_image_6)) {
+        $show_image6_html = '<div class="show-image-container"><img src="/view/image/fieldnotes/' . $res_image_6 . '" class="show-image" alt="' . $res_image_6 . '" /></div>';
+    } else {
+        $show_image6_html = '<div class="image_filler"><img id="file_56_prev" alt="file_6_preview" /><h4 class="center">UPLOAD IMAGE<br />1050 x 619 pixels</h4></div>';
+    }
 
     $this->page->title = "<b>Editing Field Note, ID " . $res_fieldnotes_id . "</b>";
     $formTypeAction = "update";
@@ -100,6 +106,7 @@ if(isSet($this->routes->URI->queryvals)) {
     $image_info = "<span class='file--image_info'>CURRENT IMAGE FILE /view/image/fieldnotes/" . $res_image . "</span>";
 
 } else {
+
     $formTypeAction = "insert";
     $button_label = "add new field note";
     $file_1_hidden = null; 
@@ -114,6 +121,7 @@ if(isSet($this->routes->URI->queryvals)) {
     $show_image3_html = '<div class="image_filler"><img id="file_3_prev" style="width: 100%;" /><!-- <h4 class="center">UPLOAD IMAGE<br />1050 x 619 pixels</h4> --></div>';
     $show_image4_html = '<div class="image_filler"><img id="file_4_prev" style="width: 100%;" /><!-- <h4 class="center">UPLOAD IMAGE<br />1050 x 619 pixels</h4> --></div>';
     $show_image5_html = '<div class="image_filler"><img id="file_5_prev" style="width: 100%;" /><!-- <h4 class="center">UPLOAD IMAGE<br />1050 x 619 pixels</h4> --></div>';
+    $show_image6_html = '<div class="image_filler"><img id="file_6_prev" style="width: 100%;" /><!-- <h4 class="center">UPLOAD IMAGE<br />1050 x 619 pixels</h4> --></div>';
 }
 
 /* NAVIGATION LOAD */

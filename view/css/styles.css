@@ -7424,7 +7424,7 @@ table.dataTable tbody td.valign {
 .fieldnotes-add--container .file .taller {
   height: 150px !important;
 }
-.fieldnotes-add--container .file .file_2, .fieldnotes-add--container .file .file_3, .fieldnotes-add--container .file .file_4, .fieldnotes-add--container .file .file_5 {
+.fieldnotes-add--container .file .file_2, .fieldnotes-add--container .file .file_3, .fieldnotes-add--container .file .file_4, .fieldnotes-add--container .file .file_5, .fieldnotes-add--container .file .file_6 {
   display: none;
 }
 .fieldnotes-add--container .file .file__upload-container {
@@ -7458,7 +7458,7 @@ table.dataTable tbody td.valign {
   cursor: pointer;
 }
 .fieldnotes-add--container .file .files_nav .files_nav--invert {
-  background-color: #000;
+  background-color: #000 !important;
   color: #FFF;
 }
 .fieldnotes-add--container .file_caption {

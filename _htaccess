@@ -18,6 +18,7 @@ RewriteRule ^(.*)$ index.php [QSA,L]
 RewriteCond %{HTTP_HOST} ^qr\.jmgalleries\.com$ [OR]
 RewriteCond %{HTTP_HOST} ^www\.qr\.jmgalleries\.com$
 
+
 Redirect 301 /rotonda-del-palazzo /thework
 Redirect 301 /laketahoe-landscapes /thework
 Redirect 301 /Jmgalleries /thework
@@ -130,124 +131,6 @@ Redirect 301 /galleries/mountains-deserts-trees/the-maple /mountains-deserts-tre
 Redirect 301 /emerald-thoughts /oceans-lakes-waterfalls/emerald-thoughts
 Redirect 301 /galleries/abstract-architecture-people/the-good-life /abstract-architecture-people/the-good-life
 Redirect 301 /thework/photo/kirbys-cove /thework
-
-RedirectMatch 403 /favicon.ico$
-RedirectMatch 403 /ads.txt$
-RedirectMatch 403 /readme.html$
-RedirectMatch 403 /shop/wp-includes$
-RedirectMatch 403 /.vscode/*
-RedirectMatch 403 /data/*
-RedirectMatch 403 /admin/*
-RedirectMatch 403 /website/*
-RedirectMatch 403 /telescope/*
-RedirectMatch 403 /v1/$
-RedirectMatch 403 /v2/$
-redirectMatch 403 /v2/_catalog$
-RedirectMatch 403 /new-site/$
-RedirectMatch 403 /old-site/$
-RedirectMatch 403 /web/*
-RedirectMatch 403 /dev/$
-RedirectMatch 403 /cms/*
-RedirectMatch 403 /site/*
-RedirectMatch 403 /test/*
-RedirectMatch 403 /main/*
-RedirectMatch 403 /news/*
-RedirectMatch 403 /demo/$
-RedirectMatch 403 /demo$
-RedirectMatch 403 /demo/js/common.js$
-RedirectMatch 403 /.production$
-RedirectMatch 403 /.local$
-RedirectMatch 403 /.remote$
-RedirectMatch 403 /includes/$
-RedirectMatch 403 /sql/$
-RedirectMatch 403 /sql.php$
-RedirectMatch 403 /mariadb$
-RedirectMatch 403 /db/$
-RedirectMatch 403 /mysql_backups/$
-RedirectMatch 403 /mysql_dumps/$
-RedirectMatch 403 /mysqladmin/$
-RedirectMatch 403 /phpMyAdmin/$
-RedirectMatch 403 /myadmin/$
-RedirectMatch 403 /db_dumps/$
-RedirectMatch 403 /backup/*
-RedirectMatch 403 /Backup/*
-RedirectMatch 403 /BACKUP/*
-RedirectMatch 403 /dump/*
-RedirectMatch 403 /dumper/*
-RedirectMatch 403 /saved/$
-RedirectMatch 403 /database/$
-RedirectMatch 403 /wallet/$
-RedirectMatch 403 /.bitcoin/$
-RedirectMatch 403 /bitcoin/$
-RedirectMatch 403 /wp/*
-RedirectMatch 403 /WP/*
-RedirectMatch 403 /wp1/*
-RedirectMatch 403 /wp2/*
-RedirectMatch 403 /wordpress/*
-RedirectMatch 403 /WordPress/*
-RedirectMatch 403 /WORDPRESS/*
-RedirectMatch 403 /old-wp$
-RedirectMatch 403 /old-wp/$
-RedirectMatch 403 /2018/*
-RedirectMatch 403 /2019/*
-RedirectMatch 403 /2020/*
-RedirectMatch 403 /2021/*
-RedirectMatch 403 /vendor/phpunit/*
-RedirectMatch 403 /lib/phpunit/$
-RedirectMatch 403 /catalog/Adminhtml_category$
-RedirectMatch 403 /plugins/content/apismtp/apismtp.php.suspected?test=hello
-RedirectMatch 403 /plugins/$
-RedirectMatch 403 /install/$
-RedirectMatch 403 /magento_version$
-RedirectMatch 403 /bak/$
-RedirectMatch 403 /bk/$
-RedirectMatch 403 /temp/$
-RedirectMatch 403 /tmp/$
-RedirectMatch 403 /old/$
-RedirectMatch 403 /old$
-RedirectMatch 403 /Old$
-RedirectMatch 403 /new/$
-RedirectMatch 403 /new$
-RedirectMatch 403 /home/$
-RedirectMatch 403 /home$
-RedirectMatch 403 /.well-known/security.txt
-RedirectMatch 403 /asset-manifest.json$
-RedirectMatch 403 /feed/$
-RedirectMatch 403 /feeds/$
-RedirectMatch 403 /rss.xml$
-RedirectMatch 403 /index.rdf$
-RedirectMatch 403 /index.xml$
-RedirectMatch 403 /index.rss$
-RedirectMatch 403 /xmlrpc.php?rsd$
-RedirectMatch 403 /sito/*
-RedirectMatch 403 /cms/wp-includes/wlwmanifest.xml$
-RedirectMatch 403 /ftpsync.settings$
-RedirectMatch 403 /deployment-config.json$
-RedirectMatch 403 /.remote-sync.json$
-RedirectMatch 403 /sftp-config.json$
-RedirectMatch 403 /.git/*
-RedirectMatch 403 /.ftpconfig$
-RedirectMatch 403 /conf.php$
-RedirectMatch 403 /shop/wp-includes/$
-RedirectMatch 403 /SypexDumper/*
-RedirectMatch 403 /payments.*
-RedirectMatch 403 /install/js/install.js$
-RedirectMatch 403 /css/album.css$
-RedirectMatch 403 /view/js/jquery.desoslide.min.js$
-RedirectMatch 403 /js/css.js$
-RedirectMatch 403 /js/locale.js$
-RedirectMatch 403 /js/navi.js$
-redirectMatch 403 /js/eccube.js$
-RedirectMatch 403 /js/js.js$
-RedirectMatch 403 /CHANGELOG.txt$
-RedirectMatch 403 /INSTALL.txt$
-RedirectMatch 403 /xxxss$
-RedirectMatch 403 /1.10.21/js/jquery.dataTables.min.js$
-RedirectMatch 403 /1.10.21/css/jquery.dataTables.min.css$
-RedirectMatch 403 /install.php$
-RedirectMatch 403 /sxd/$
-RedirectMatch 403 /setup.php$
-RedirectMatch 403 /archive.zip$
 
 #Facebook IPs
 Deny from 31.13

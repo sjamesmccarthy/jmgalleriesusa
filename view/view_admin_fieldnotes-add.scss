@@ -69,7 +69,7 @@
             height: 150px !important;
         }
 
-        .file_2, .file_3, .file_4, .file_5 {
+        .file_2, .file_3, .file_4, .file_5, .file_6 {
             display: none;
         }
 
@@ -115,7 +115,7 @@
             }
 
             .files_nav--invert {
-                background-color: #000;
+                background-color: #000 !important;
                 color: #FFF;
             }
         }

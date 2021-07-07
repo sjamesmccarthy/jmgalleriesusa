@@ -493,13 +493,16 @@ class Core_Site extends Core_Api
     
     public function record_404($error) {
         
-        $to = 'system-404@jmgalleries.com';
-        $header_from = "FROM: SysAdmin-jM Galleries <'system-core@jmgalleries.com'>";
-        $reply_to = 'system-core@jmgalleries.com';
-        $subject = '404 ' . $error;
-        $message = "The following page could not be found.\n\n{\nURI: " . $error ."\nSERVER_IP: " . $_SERVER['REMOTE_ADDR'] . "\nREFERR_URI: " . $_SERVER['HTTP_REFERER'] . "\n}";
-        $headers =  $header_from . "\r\n" . 'Reply-To: ' . $reply_to . "\r\n" . 'X-Mailer: PHP/' . phpversion() . '/SysAdmin-jM Galleries';
-        mail($to, $subject, $message, $headers);
+        // Commented out on 7/7/2021
+        // Receiving too much email 
+        
+        // $to = 'system-404@jmgalleries.com';
+        // $header_from = "FROM: SysAdmin-jM Galleries <'system-core@jmgalleries.com'>";
+        // $reply_to = 'system-core@jmgalleries.com';
+        // $subject = '404 ' . $error;
+        // $message = "The following page could not be found.\n\n{\nURI: " . $error ."\nSERVER_IP: " . $_SERVER['REMOTE_ADDR'] . "\nREFERR_URI: " . $_SERVER['HTTP_REFERER'] . "\n}";
+        // $headers =  $header_from . "\r\n" . 'Reply-To: ' . $reply_to . "\r\n" . 'X-Mailer: PHP/' . phpversion() . '/SysAdmin-jM Galleries';
+        // mail($to, $subject, $message, $headers);
         
     }
 }
