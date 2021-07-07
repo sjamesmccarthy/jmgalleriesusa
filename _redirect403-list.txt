@@ -1,114 +1,104 @@
-RedirectMatch 403 "/favicon.ico$"
-RedirectMatch 403 "/ads.txt$"
-RedirectMatch 403 "/readme.html$"
-RedirectMatch 403 "/shop/wp-includes$"
-RedirectMatch 403 "/.vscode/*"
-RedirectMatch 403 "/data/*"
-RedirectMatch 403 "/admin/*"
-RedirectMatch 403 "/website/*"
-RedirectMatch 403 "/telescope/*"
-RedirectMatch 403 "/v1/$"
-RedirectMatch 403 "/v2/$"
-redirectMatch 403 "/v2/_catalog$"
-RedirectMatch 403 "/new-site/$"
-RedirectMatch 403 "/old-site/$"
-RedirectMatch 403 "/web/*"
-RedirectMatch 403 "/dev/$"
-RedirectMatch 403 "/cms/*"
-RedirectMatch 403 "/site/*"
-
-RedirectMatch 403 "/sql.php$"
-RedirectMatch 403 "/mariadb$"
-RedirectMatch 403 "/db/$"
-RedirectMatch 403 "/mysql_backups/$"
-RedirectMatch 403 "/mysql_dumps/$"
-RedirectMatch 403 "/mysqladmin/$"
-RedirectMatch 403 "/phpMyAdmin/$"
-RedirectMatch 403 "/myadmin/$"
-RedirectMatch 403 "/db_dumps/$"
-RedirectMatch 403 "/backup/*"
-RedirectMatch 403 "/Backup/*"
-
-RedirectMatch 403 "/BACKUP/*"
-RedirectMatch 403 "/dump/*"
-RedirectMatch 403 "/dumper/*"
-RedirectMatch 403 "/saved/$"
-RedirectMatch 403 "/database/$"
-RedirectMatch 403 "/wallet/$"
-RedirectMatch 403 "/.bitcoin/$"
-RedirectMatch 403 "/bitcoin/$"
-RedirectMatch 403 "/wp/*"
-RedirectMatch 403 "/WP/*"
-RedirectMatch 403 "/wp1/*"
-
-RedirectMatch 403 "/wp2/*"
-RedirectMatch 403 "/wordpress/*"
-RedirectMatch 403 "/WordPress/*"
-RedirectMatch 403 "/WORDPRESS/*"
-RedirectMatch 403 "/old-wp$"
-RedirectMatch 403 "/old-wp/$"
-RedirectMatch 403 "/2018/*"
-RedirectMatch 403 "/2019/*"
-RedirectMatch 403 "/2020/*"
-RedirectMatch 403 "/2021/*"
-RedirectMatch 403 "/vendor/phpunit/*"
-
-RedirectMatch 403 "/lib/phpunit/$"
-RedirectMatch 403 "/catalog/Adminhtml_category$"
-RedirectMatch 403 "/plugins/content/apismtp/apismtp.php.suspected?test=hello$"
-RedirectMatch 403 "/plugins/$"
-RedirectMatch 403 "/install/$"
-RedirectMatch 403 "/magento_version$"
-RedirectMatch 403 "/bak/$"
-RedirectMatch 403 "/bk/$"
-RedirectMatch 403 "/temp/$"
-RedirectMatch 403 "/tmp/$"
-RedirectMatch 403 "/old/$"
-
-RedirectMatch 403 "/old$"
-RedirectMatch 403 "/Old$"
-RedirectMatch 403 "/new/$"
-RedirectMatch 403 "/new$"
-RedirectMatch 403 "/home/$"
-RedirectMatch 403 "/home$"
-RedirectMatch 403 "/.well-known/security.txt$"
-RedirectMatch 403 "/asset-manifest.json$"
-RedirectMatch 403 "/feed/$"
-RedirectMatch 403 "/feeds/$"
-RedirectMatch 403 "/rss.xml$"
-
-RedirectMatch 403 "/index.rdf$"
-RedirectMatch 403 "/index.xml$"
-RedirectMatch 403 "/index.rss$"
-RedirectMatch 403 "/xmlrpc.php?rsd$"
-RedirectMatch 403 "/sito/*"
-RedirectMatch 403 "/cms/wp-includes/wlwmanifest.xml$"
-RedirectMatch 403 "/ftpsync.settings$"
-RedirectMatch 403 "/deployment-config.json$"
-RedirectMatch 403 "/.remote-sync.json$"
-RedirectMatch 403 "/sftp-config.json$"
-RedirectMatch 403 "/.git/*"
-
-RedirectMatch 403 "/.ftpconfig$"
-RedirectMatch 403 "/conf.php$"
-RedirectMatch 403 "/shop/wp-includes/$"
-RedirectMatch 403 "/SypexDumper/*"
-RedirectMatch 403 "/payments.*
-RedirectMatch 403 "/install/js/install.js$"
-RedirectMatch 403 "/css/album.css$"
-RedirectMatch 403 "/view/js/jquery.desoslide.min.js$"
-RedirectMatch 403 "/js/css.js$"
-RedirectMatch 403 "/js/locale.js$"
-RedirectMatch 403 "/js/navi.js$"
-
-redirectMatch 403 "/js/eccube.js$"
-RedirectMatch 403 "/js/js.js$"
-RedirectMatch 403 "/CHANGELOG.txt$"
-RedirectMatch 403 "/INSTALL.txt$"
-RedirectMatch 403 "/xxxss$"
-RedirectMatch 403 "/1.10.21/js/jquery.dataTables.min.js$"
-RedirectMatch 403 "/1.10.21/css/jquery.dataTables.min.css$"
-RedirectMatch 403 "/install.php$"
-RedirectMatch 403 "/sxd/$"
-RedirectMatch 403 "/setup.php$"
-RedirectMatch 403 "/archive.zip$"
+Redirect 301 "/readme.html" /thework
+Redirect 301 "/shop/wp-includes" /thework
+Redirect 301 "/.vscode" /thework
+Redirect 301 "/data" /thework
+Redirect 301 "/admin" /thework
+Redirect 301 "/website" /thework
+Redirect 301 "/telescope" /thework
+Redirect 301 "/v1" /thework
+Redirect 301 "/v2" /thework
+Redirect 301 "/v2/_catalog" /thework
+Redirect 301 "/new-site" /thework
+Redirect 301 "/old-site" /thework
+Redirect 301 "/web" /thework
+Redirect 301 "/dev" /thework
+Redirect 301 "/cms" /thework
+Redirect 301 "/site" /thework
+Redirect 301 "/sql.php" /thework
+Redirect 301 "/mariadb" /thework
+Redirect 301 "/db" /thework
+Redirect 301 "/mysql_backups" /thework
+Redirect 301 "/mysql_dumps" /thework
+Redirect 301 "/mysqladmin" /thework
+Redirect 301 "/phpMyAdmin" /thework
+Redirect 301 "/myadmin" /thework
+Redirect 301 "/db_dumps" /thework
+Redirect 301 "/backup" /thework
+Redirect 301 "/Backup" /thework
+Redirect 301 "/BACKUP" /thework
+Redirect 301 "/dump" /thework
+Redirect 301 "/dumper" /thework
+Redirect 301 "/saved" /thework
+Redirect 301 "/database" /thework
+Redirect 301 "/wallet" /thework
+Redirect 301 "/.bitcoin" /thework
+Redirect 301 "/bitcoin" /thework
+Redirect 301 "/wp" /thework
+Redirect 301 "/WP" /thework
+Redirect 301 "/wp1" /thework
+Redirect 301 "/wp2" /thework
+Redirect 301 "/wordpress" /thework
+Redirect 301 "/WordPress" /thework
+Redirect 301 "/WORDPRESS" /thework
+Redirect 301 "/old-wp" /thework
+Redirect 301 "/old-wp" /thework
+Redirect 301 "/2018" /thework
+Redirect 301 "/2019" /thework
+Redirect 301 "/2020" /thework
+Redirect 301 "/2021" /thework
+Redirect 301 "/vendor/phpunit" /thework
+Redirect 301 "/lib/phpunit" /thework
+Redirect 301 "/catalog/Adminhtml_category" /thework
+Redirect 301 "/plugins/content/apismtp/apismtp.php.suspected?test=hello" /thework
+Redirect 301 "/plugins" /thework
+Redirect 301 "/install" /thework
+Redirect 301 "/magento_version" /thework
+Redirect 301 "/bak" /thework
+Redirect 301 "/bk" /thework
+Redirect 301 "/temp" /thework
+Redirect 301 "/tmp" /thework
+Redirect 301 "/old" /thework
+Redirect 301 "/old" /thework
+Redirect 301 "/Old" /thework
+Redirect 301 "/new" /thework
+Redirect 301 "/new" /thework
+Redirect 301 "/home" /thework
+Redirect 301 "/home" /thework
+Redirect 301 "/.well-known/security.txt" /thework
+Redirect 301 "/asset-manifest.json" /thework
+Redirect 301 "/feed" /thework
+Redirect 301 "/feeds" /thework
+Redirect 301 "/rss.xml" /thework
+Redirect 301 "/index.rdf" /thework
+Redirect 301 "/index.xml" /thework
+Redirect 301 "/index.rss" /thework
+Redirect 301 "/xmlrpc.php?rsd" /thework
+Redirect 301 "/sito" /thework
+Redirect 301 "/cms/wp-includes/wlwmanifest.xml" /thework
+Redirect 301 "/ftpsync.settings" /thework
+Redirect 301 "/deployment-config.json" /thework
+Redirect 301 "/.remote-sync.json" /thework
+Redirect 301 "/sftp-config.json" /thework
+Redirect 301 "/.git" /thework
+Redirect 301 "/.ftpconfig" /thework
+Redirect 301 "/conf.php" /thework
+Redirect 301 "/shop/wp-includes" /thework
+Redirect 301 "/SypexDumper" /thework
+Redirect 301 "/payments." /thework
+Redirect 301 "/install/js/install.js" /thework
+Redirect 301 "/css/album.css" /thework
+Redirect 301 "/view/js/jquery.desoslide.min.js" /thework
+Redirect 301 "/js/css.js" /thework
+Redirect 301 "/js/locale.js" /thework
+Redirect 301 "/js/navi.js" /thework
+Redirect 301 "/js/eccube.js" /thework
+Redirect 301 "/js/js.js" /thework
+Redirect 301 "/CHANGELOG.txt" /thework
+Redirect 301 "/INSTALL.txt" /thework
+Redirect 301 "/xxxss" /thework
+Redirect 301 "/1.10.21/js/jquery.dataTables.min.js" /thework
+Redirect 301 "/1.10.21/css/jquery.dataTables.min.css" /thework
+Redirect 301 "/install.php" /thework
+Redirect 301 "/sxd" /thework
+Redirect 301 "/setup.php" /thework
+Redirect 301 "/archive.zip" /thework
