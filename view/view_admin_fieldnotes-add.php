@@ -286,7 +286,9 @@ jQuery(document).ready(function($){
         var idx = $("#type").prop('selectedIndex');
         if(idx == 1) {
             $('.files_nav--filmstrip').removeClass('hidden');
-            $('#content_area').hide();
+            $('.file').toggle();
+            $('.add-imgs').toggle();
+            $('#content_area, #result').hide();
             // $('.teaser_container').show();
             $('.file_block--input textarea[name *= "caption"]').addClass('taller');
             $('.file_block--input textarea[name *= "caption"]').attr('placeholder',"TYPE A SHORT DESCRIPTION ABOUT THIS PHOTO, SLIGHTLY LONGER THAN A CAPTION.");
@@ -295,6 +297,8 @@ jQuery(document).ready(function($){
             $('.file_block--input textarea[name *= "caption"]').removeClass('taller');
             // $('.teaser_container').hide();
             $('#content_area').show();
+            $('.file').hide();
+            $('.add-imgs').show();
             $('.file_block--input textarea[name *= "caption"]').attr('placeholder',"TYPE A SHORT CAPTION NO LONGER THAN 1 LINE FOR THIS IMAGE.");
         }
     });
