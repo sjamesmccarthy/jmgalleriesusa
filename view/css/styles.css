@@ -4622,11 +4622,11 @@ button a {
 }
 
 .newsletterinput {
-  width: 48% !important;
   margin-bottom: 0 !important;
   background-color: #FFF !important;
   padding-left: 0.5rem !important;
   margin-right: 8px;
+  width: 65% !important;
 }
 
 .newsletter-button {
@@ -5103,6 +5103,10 @@ fieldset {
 
 .name-title {
   font-size: 1rem;
+}
+
+.name-statement {
+  font-size: 1.3rem !important;
 }
 
 .artist-statement {
@@ -5735,7 +5739,6 @@ form #buysize, form #frame {
 }
 #polarized_idx h1 {
   font-family: "Source Serif Pro", serif;
-  font-family: "Source Serif Pro", serif;
   text-align: center;
   color: #4a4a4a;
 }
@@ -5868,7 +5871,12 @@ form #buysize, form #frame {
 }
 
 #polarized_idx .newsletterinput {
-  width: 60% !important;
+  width: 85%;
+}
+@media screen and (min-width: 320px) and (max-width: 767px) {
+  #polarized_idx .newsletterinput {
+    width: 60%;
+  }
 }
 
 @media (min-width: 767px) {
@@ -6600,6 +6608,63 @@ div[id*=imgT]:hover {
   margin-bottom: 32px;
   font-weight: 200;
   font-size: 1.3rem;
+}
+
+#now h3, #now p {
+  font-family: "Source Serif Pro", serif;
+}
+#now h3 {
+  margin-top: 2rem;
+}
+#now p {
+  margin-top: 4px;
+  margin-left: 1rem;
+  border-left: 1px solid #a9a9a9;
+  padding-left: 1rem;
+}
+#now .nosiderule {
+  border-left: none;
+  padding-left: 0;
+}
+#now .nomar-top {
+  margin-top: 0;
+}
+#now .update--hide {
+  dispaly: none;
+}
+#now .update--color-green {
+  color: green;
+}
+#now .update--color-orange {
+  color: orange;
+}
+#now .update--color-purple {
+  color: blueviolet;
+}
+#now .update--label {
+  background-color: green;
+  color: white;
+  padding: 5px;
+  margin-right: 5px;
+  border-radius: 6px;
+  font-size: 9px;
+}
+#now .update--label-color-green {
+  cobackground-color: green;
+}
+#now .update--label-color-orange {
+  background-color: orange;
+}
+#now .update--label-color-purple {
+  background-color: blueviolet;
+}
+#now strike {
+  color: #CCC;
+  font-weight: 200;
+}
+
+.newsletterinput {
+  width: 80% !important;
 }
 
 .admin--section .admin--main_container {

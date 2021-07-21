@@ -14,7 +14,7 @@
             
         </div>
 
-        <div class="col-10_sm-12" style="margin: auto;">
+        <div class="col-12_sm-12" style="margin: auto;">
             <!-- col-8_sm-12 when including FINDUS below -->
                 <?= $card_html ?>
         </div>
@@ -25,8 +25,8 @@
                 ?>
         </div> -->
         
-        <div class="col-10_sm-12 newsletter-section-fn" style="margin: auto;">
-            <h3>SUBSCRIBE TO MY MONTHLY NEWSLETTER</h3>
+        <div class="col-12_sm-12 newsletter-section-fn" style="margin: auto;">
+            <h3>SIGN UP FOR MY FIRST FRIDAY  EMAIL</h3>
             <?php $this->getPartial('newsletter'); ?>
         </div>
            

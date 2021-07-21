@@ -3,13 +3,13 @@
 <section id="contact">
     <div class="grid-center">
 
-<div class="col-3_sm-11">
+<div class="col-4 sm-hidden" style="border-right: 1px solid #CCC; padding-right: 1rem;">
    
    <?php $this->getPartial('findus'); ?>
 
 </div>
 
-        <div class="col-8_sm-11 pb-32">
+        <div class="col-8_sm-11 pb-32 pl-32">
 
             <div class="form-main">
             <h1><?= $formTitle ?></h1>

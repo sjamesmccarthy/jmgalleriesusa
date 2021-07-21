@@ -1,6 +1,6 @@
 <div id="findus">
-    <h2 style="line-height: 1">Join<br />My Newsletter</h2>
-    <p class="pt-16 pb-16">And get early access to my monthly New Release Photograph.</p>
+    <h2 style="line-height: 1">Read<br />My Email</h2>
+    <p class="pt-16 pb-16">Sign up for my First Friday email.</p>
     <!-- <p><a class="blue" target="_new" href="https://mailchi.mp/677ca5e417ef/new-release-newsletter">Subscribe</a></p> -->
     
     <?php $this->getPartial('newsletter'); ?>
@@ -11,18 +11,18 @@
         <p class="pt-16"><a class="blue" href="/fieldnotes">Read Now</a></p>
     <?php } ?>
     
-    <h2 class="pt-32" style="line-height: 1">Follow<br />My Social Media</h2>
+    <h2 class="pt-32" style="line-height: 1">Follow me<br />Twitter and  YouTube</h2>
     <p class="pt-16">
-    <!-- <a target="_new" class="mr-16 blue" style="font-size: 1.5rem" href="http://vlog.jmgalleries.com"><i class="fab fa-youtube"></i></a> -->
     <a target="_new" class="mr-16 blue" style="font-size: 1.5rem" href="http://twitter.com/jmgalleriesusa"><i class="fab fa-twitter"></i></a>
     <!-- <a target="_new" class="mr-16 blue" style="font-size: 1.5rem" href="http://facebook.com/jmgalleriesusa"><i class="fab fa-facebook"></i></a> -->
-    <a target="_new" class="mr-16 blue" style="font-size: 1.5rem" href="http://linkedin.com/company/jmgalleriesusa"><i class="fab fa-linkedin"></i></a>
+    <!-- <a target="_new" class="mr-16 blue" style="font-size: 1.5rem" href="http://linkedin.com/company/jmgalleriesusa"><i class="fab fa-linkedin"></i></a> -->
+    <a target="_new" class="mr-16 blue" style="font-size: 1.5rem" href="http://vlog.jmgalleries.com"><i class="fab fa-youtube"></i></a>
     <!-- <a target="_new" class="mr-16 blue" style="font-size: 1.5rem" href="http://instagram.com/jmgalleriesusa"><i class="fab fa-instagram"></i></a> -->
     <!-- <a target="_new" class="mr-16 blue" style="font-size: 1.5rem" href="https://medium.com/jmgalleriesusa"><i class="fab fa-medium"></i></a> -->
     </p>
     
-    <h2 class="pt-32" style="line-height: 1">Watch<br />My YouTube</h2>
-   <p class="pt-16"><a class="blue" target="_social" href="https://vlog.jmgalleries.com">Play Now</a></p>
+   <!-- <h2 class="pt-32" style="line-height: 1">Watch<br />My YouTube</h2> -->
+   <!-- <p class="pt-16"><a class="blue" target="_social" href="https://vlog.jmgalleries.com">Play Now</a></p> -->
 
     <h2 class="pt-32" style="line-height: 1">Contact<br />Information</h2>
     <p class="pt-16 pb-16">

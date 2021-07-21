@@ -74,7 +74,7 @@
                         </div>
                         
                         <div class="newsletter-section-fn">
-                            <h3>SUBSCRIBE TO MY MONTHLY NEWSLETTER</h3>
+                            <h3>SIGN UP FOR MY FIRST FRIDAY EMAIL</h3>
                             <?php $this->getPartial('newsletter'); ?>
                         </div>
                         

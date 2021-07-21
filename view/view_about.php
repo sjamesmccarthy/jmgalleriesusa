@@ -48,11 +48,14 @@
                 
                 <h3>Artist Statement</h3>
                 
-                <p class="name-statement pb-32">
+                <p class="name-statement pb-16">
                     Creativity and art have always had a hidden crush on me, a self-taught explorer in the field of landscape and digital photography. Through purposeful paper choice, framing and composition, I aspire for my artwork to take you on a journey to a place you once remember or a place of new discovery and connect you with the human experience. 
                 </p>
                     
-                <h3>Early Life</h3>
+                <h3>What Am I Doing Now?</h3>
+                <p class="pb-16" style="margin-top: 0; border-bottom: 1px solid #a9a9a9">Check out my <a href="/now">Now</a> page and be in the know.</p>
+                
+                <h3 class="pt-32">Early Life</h3>
 
                 <p>
                 Born in Concord, a small, historical, suburb outside Boston, Massachusetts, j.McCarthy explored the rich history of the makings of America during his youth which taught him to appreciate the beauty and stories that are shared by the landscape around us.

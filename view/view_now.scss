@@ -1,0 +1,76 @@
+#now {
+
+    h3, p {
+    font-family: 'Source Serif Pro', serif;
+    }
+    
+    h3 {
+        margin-top: 2rem;
+    }
+    
+    p {
+        margin-top: 4px;
+        margin-left: 1rem;
+        border-left: 1px solid #a9a9a9;
+        padding-left: 1rem;;
+    }
+    
+    .nosiderule {
+        border-left: none;
+        padding-left: 0;
+    }
+    
+    .nomar-top {
+        margin-top: 0;
+    }
+    
+    .update {
+        
+        &--hide {
+            dispaly: none;
+        }
+        
+        &--color-green {
+            color: green;
+        }
+        
+        &--color-orange {
+            color: orange;
+        }
+        
+        &--color-purple {
+            color: blueviolet;
+        }
+        
+        &--label {
+            background-color: green;
+            color: white;
+            padding: 5px;
+            margin-right: 5px;
+            border-radius: $border-radius;
+            font-size: 9px;
+            
+            &-color-green {
+                cobackground-color: green;
+            }
+            
+            &-color-orange {
+                background-color: orange;
+            }
+            
+            &-color-purple {
+                background-color: blueviolet;
+            }
+            
+        }
+    }
+    
+    strike {
+        color: #CCC;
+        font-weight: 200;
+    }
+}
+
+.newsletterinput {
+    width: 80% !important;
+}
