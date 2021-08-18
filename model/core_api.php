@@ -1764,11 +1764,14 @@ class Core_Api extends Fieldnotes_Api
     }
 
     public function api_Admin_Update_Inventory_Location() {
-
+        
         /* extract Data Array */
         extract($_POST, EXTR_PREFIX_SAME, "dup");
         $date = date("Y-m-d H:i:s");
-
+        
+        /* There doesn't seem to be a default value set for new art */
+        if($art_location == 0) { $art_location = 1; }
+        
             $sql_check = "SELECT * FROM art_locations_history WHERE art_id='" . $art_id . "'";
             $result_check = $this->mysqli->query($sql_check);
 
@@ -1802,13 +1805,13 @@ class Core_Api extends Fieldnotes_Api
                 `date_ended`='$date'
             WHERE 
                 art_id='" . $art_id . "' AND art_location_id='" . $state_location_id . "'";
-
+                
             $result_u = $this->mysqli->query($sql_u);
         } 
 
         /* Insert into database */
         if(!isSet($_POST['state_location_id']) || $state_location_id != $art_location) {
-
+        
             $sql = "
             INSERT INTO `art_locations_history` 
             (
@@ -1962,6 +1965,9 @@ class Core_Api extends Fieldnotes_Api
 
         /* extract Data Array */
         extract($_POST, EXTR_PREFIX_SAME, "dup");
+        
+        /* There doesn't seem to be a default value set for new art */
+        if($art_location == 0) { $art_location = 1; }
         
         /* Insert into database */
         $title = $this->mysqli->real_escape_string($_POST['title']);

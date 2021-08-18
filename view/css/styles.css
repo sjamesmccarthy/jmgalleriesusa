@@ -4591,6 +4591,7 @@ button a {
 /* partial_newsletter */
 .newsletter-section-fn {
   padding-top: 2rem;
+  text-align: center;
 }
 .newsletter-section-fn h3 {
   padding-bottom: 0.5rem;
@@ -4631,6 +4632,10 @@ button a {
 
 .newsletter-button {
   height: 51px;
+}
+
+.newsletter-button:hover a {
+  color: #FFFFFF;
 }
 
 .h3-sub {
@@ -6124,6 +6129,9 @@ blockquote {
 .content__area ol li {
   list-style-type: decimal;
 }
+.content__area ul li {
+  margin-left: 4rem;
+}
 .content__area p {
   margin: 1rem 0;
 }
@@ -6418,6 +6426,10 @@ div[id*=imgT]:hover {
 
 #polarized .newsletterinput {
   width: 83% !important;
+}
+
+.newsletter-button a:hover {
+  color: #FFFFFF;
 }
 
 #product_detail h1 {
@@ -7527,7 +7539,7 @@ table.dataTable tbody td.valign {
   color: #FFF;
 }
 .fieldnotes-add--container .file_caption {
-  min-height: 150px;
+  min-height: 64px;
 }
 .fieldnotes-add--container .image_filler {
   width: 100%;

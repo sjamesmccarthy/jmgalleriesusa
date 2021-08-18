@@ -180,6 +180,7 @@
             <div>
                 <div class="select-wrapper half-size">
                 <select id="camera" name="camera">
+                    <option value="Nikon Z6 II" <?= ($camera == "Nikon Z6 II" ? "SELECTED" : ""); ?>>Nikon Z6 II</option>
                     <option value="Nikon Z5" <?= ($camera == "Nikon Z5" ? "SELECTED" : ""); ?>>Nikon Z5</option>
                     <option value="Nikon D810" <?= ($camera == "Nikon D810" ? "SELECTED" : ""); ?>>Nikon D810</option>
                     <option value="Nikon D600" <?= ($camera == "Nikon D600" ? "SELECTED" : ""); ?>>Nikon D600</option>
@@ -188,6 +189,7 @@
                     <option value="Ricoh GR II" <?= ($camera == "Ricoh GR II" ? "SELECTED" : ""); ?>>Ricoh GR II</option>
                     <option value="(FILM) Rolleicord" <?= ($camera == "(FILM) Rolleicord" ? "SELECTED" : ""); ?>>(FILM) Rolleicord</option>
                     <option value="(FILM) Nikon FG" <?= ($camera == "(FILM) Nikon FG" ? "SELECTED" : ""); ?>>(FILM) Nikon FG</option>
+                    <option value="Other" <?= ($camera == "Other" ? "SELECTED" : ""); ?>>Other</option>
                 </select> 
                 </div>
                 <div class="select-wrapper half-size">

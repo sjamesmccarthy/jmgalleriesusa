@@ -8,7 +8,7 @@
             <ul class="filter-editions-list">
                 <li class="filter-all selected">All</li>
                 <li class="filter-notes">Articles</li>
-                <li class="filter-youtube">Videos</li>
+                <li class="filter-youtube">Videos (<a target="_youtube" href="https://vlog.jmgalleries.com">@YouTube</a>)</li>
                 <li class="filter-filmstrips">Filmstrips</li>
             </ul>
             
@@ -26,7 +26,7 @@
         </div> -->
         
         <div class="col-12_sm-12 newsletter-section-fn" style="margin: auto;">
-            <h3>SIGN UP FOR MY FIRST FRIDAY  EMAIL</h3>
+            <h3>Sign Up For My First Friday Newsletter</h3>
             <?php $this->getPartial('newsletter'); ?>
         </div>
            

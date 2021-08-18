@@ -299,6 +299,10 @@ blockquote {
         ol li {
           list-style-type: decimal;
         }
+        
+        ul li {
+          margin-left: 4rem;
+        }
 
         p {
             margin: 1rem 0;
@@ -527,4 +531,8 @@ div[id*='imgT']:hover {
 
 #polarized .newsletterinput {
   width: 83% !important;
+}
+
+.newsletter-button a:hover {
+  color: $color-white;
 }

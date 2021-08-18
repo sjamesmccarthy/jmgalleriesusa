@@ -62,6 +62,8 @@
                             <i class="fas fa-file-upload file__upload-icon"> 1</i>
                             <input class="input-upload" type="file" id="file_1" name="file_1" aria-label="Choose Main Photo" onchange="document.getElementById('file_1_prev').src = window.URL.createObjectURL(this.files[0])" /><br /><?= $image_info ?>
                             <input type="hidden" id="file_1_path" name="file_1_path" value="<?= $res_image ?>">
+                            <a style="color: #a9a9a9" href="">DELETE</a>
+                            <!-- only show if file exists -->
                         </div>
                         </div>
                         <textarea name="file_1_caption" class="file_caption" placeholder="TYPE A SHORT CAPTION NO LONGER THAN 1 LINE FOR THIS IMAGE."><?= $res_caption_file_1 ?></textarea>
@@ -206,8 +208,9 @@ jQuery(document).ready(function($){
     }
 
     <?php if($imgsLoaded != 1) { ?>
-        $('.file').hide();
-        $('.add-imgs').show();
+        $('.file').show();
+        $('.add-imgs').hide();
+        /* reversed these two options to show file area on load */
     <?php } else  { ?>
         $('.file').show();
         $('.add-imgs').hide();
@@ -286,8 +289,10 @@ jQuery(document).ready(function($){
         var idx = $("#type").prop('selectedIndex');
         if(idx == 1) {
             $('.files_nav--filmstrip').removeClass('hidden');
-            $('.file').toggle();
-            $('.add-imgs').toggle();
+            $('.file').show();
+            $('.add-imgs').hide();
+            /* unset [toggle] on these last to options when I changed to show on page load */
+            
             $('#content_area, #result').hide();
             // $('.teaser_container').show();
             $('.file_block--input textarea[name *= "caption"]').addClass('taller');
@@ -297,8 +302,9 @@ jQuery(document).ready(function($){
             $('.file_block--input textarea[name *= "caption"]').removeClass('taller');
             // $('.teaser_container').hide();
             $('#content_area').show();
-            $('.file').hide();
-            $('.add-imgs').show();
+            $('.file').show();
+            $('.add-imgs').hide();
+            /* reversed these last to options when I changed to show on page load */
             $('.file_block--input textarea[name *= "caption"]').attr('placeholder',"TYPE A SHORT CAPTION NO LONGER THAN 1 LINE FOR THIS IMAGE.");
         }
     });

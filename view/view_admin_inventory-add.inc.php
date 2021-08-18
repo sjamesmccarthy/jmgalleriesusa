@@ -180,7 +180,7 @@ if(count($this->data->routePathQuery) > 2) {
     }
         $this->page->title = "Editing Art: <b>" . $title . "</b> (" . $art_id . ")";
         $formTypeAction = "update";
-        $button_label="update artwork: " . $title;
+        $button_label="update artwork";
         $button_archive_cancel = '<a class="cancel-button" href="/studio/inventory">cancel</a>';
         $id_field = '<input type="hidden" name="art_id" value="' . $art_id . '" />';
         $hidden_remove_manual_suppliers = '<input type="hidden" name="hidden_remove_manual_suppliers" id="hidden_remove_manual_suppliers" />';

@@ -489,10 +489,10 @@
         "title": "Shop tinyViews, Wall Mounted Prints and Books"
     },
     "/newsletter": {
-        "template": "page",
-        "page": "newsletter_email",
-        "component": "true",
-        "title": "Once A Month Email"
+        "template": "redirect",
+        "page": "/fieldnotes",
+        "component": "false",
+        "title": "First Friday Email"
     },
     "/d/collector/amazing-offer": {
         "template": "page",

@@ -3,6 +3,7 @@
 
 .newsletter-section-fn {
     padding-top: 2rem;
+    text-align: center;
     
     h3 {
         padding-bottom: .5rem;    
@@ -51,6 +52,10 @@
 height: 51px;
     // vertical-align: middle;
     // border-radius: 0;
+}
+
+.newsletter-button:hover a {
+    color: $color-white;;
 }
 
 .h3-sub {
