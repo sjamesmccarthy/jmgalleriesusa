@@ -7047,7 +7047,7 @@ div[id*=imgT]:hover {
   padding: 1rem;
 }
 .inventory-add--container form .coa_list {
-  padding: 40px;
+  padding: 0 40px 20px 40px;
   color: #856404;
   border-radius: 6px;
 }
@@ -7061,6 +7061,13 @@ div[id*=imgT]:hover {
 }
 .inventory-add--container form .coa_list_found {
   color: #383d41;
+}
+.inventory-add--container .disabled-hidden {
+  display: none;
+}
+.inventory-add--container .disabled-button-sold {
+  background-color: #CCC;
+  color: #FFF;
 }
 
 .supplier--container {

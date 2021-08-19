@@ -131,7 +131,7 @@
         padding: 1rem;
         
         .coa_list {
-            padding: 40px;
+            padding: 0 40px 20px 40px;
             // background-color: $color-warning-background;
             color: $color-warning;
             border-radius: $border-radius;
@@ -155,5 +155,14 @@
        
 
     }
+
+.disabled-hidden {
+    display: none;
+}
+
+.disabled-button-sold {
+    background-color: #CCC;
+    color: #FFF;    
+}
 
 }

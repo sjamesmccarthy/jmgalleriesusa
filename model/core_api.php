@@ -1366,7 +1366,7 @@ class Core_Api extends Fieldnotes_Api
 
             if( $all = '' ) { $addToSQL = " AND type = 'PUBLIC'"; }
 
-            $sql = "select art_location_id, location, type from art_locations WHERE status = 'ACTIVE'" . $addToSQL;
+            $sql = "select art_location_id, location, type, status from art_locations WHERE status = 'ACTIVE' OR status = 'DISABLED' " . $addToSQL;
             $result = $this->mysqli->query($sql);
 
             if ($result->num_rows > 0) {
@@ -1919,7 +1919,7 @@ class Core_Api extends Fieldnotes_Api
 
         /* extract Data Array */
         extract($_POST, EXTR_PREFIX_SAME, "dup");
-
+        
         /* Insert into database */
         $notes = $this->mysqli->real_escape_string($_POST['notes']);
         if(empty($_POST['value'])) { $value = '0.00'; }
@@ -1950,6 +1950,8 @@ class Core_Api extends Fieldnotes_Api
 
         $result = $this->mysqli->query($sql);
 
+        // $this->console("SQL:" . $sql,1);
+        
         if($result == 1) {
             $_SESSION['error'] = '200';
             $_SESSION['notify_msg'] = $_POST['title'];

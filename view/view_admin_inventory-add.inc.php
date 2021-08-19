@@ -72,8 +72,20 @@ if(count($this->data->routePathQuery) > 2) {
 
         /* Fetch locations history data */
         $locationsHistory_data = $this->api_Admin_Get_Locations_History($edit_id);
-        
 
+        if($art_location_id == "3" || $art_location_id == "11" || $art_location_id == "9" || $art_location_id == "8") {
+            // 3 = Sold (Collector) : 11 = Sold (non-collector)
+            $btn_readonly = 'disabled';
+            $disabled_hidden = 'disabled-hidden';
+            $disabled_button_class = 'disabled-button-sold';
+            $button_disabled_label = 'THIS RECORD CAN NO LONGER BE EDITED';
+        } else {
+            $btn_readonly = null;
+            $disabled_hidden = '';
+            $disabled_button_class = '';
+            $button_disabled_label = 'UPDATE ARTWORK';
+        }
+        
         if( count($locationsHistory_data) > 0) {
 
             foreach( $locationsHistory_data as $key_lh => $val_lh) {
@@ -92,9 +104,9 @@ if(count($this->data->routePathQuery) > 2) {
         } 
 
         $edit_data['coa'] = $this->api_Admin_Get_Inventory_COA($edit_id);
-        extract($edit_data['coa'][0], EXTR_PREFIX_SAME, "dup");
 
         if( count($edit_data['coa']) > 0) {
+        extract($edit_data['coa'][0], EXTR_PREFIX_SAME, "dup");
 
             foreach( $edit_data['coa'] as $key => $val) {
                 $coa_html = "<div class='coa_list coa_list_found'><p class='coa-icon'><i class='fas fa-award'></i></p><p>" . $val['coa_first_name'] . " " . $val['coa_last_name'] . "<br />Certificate of Authenticity issued on " . date("F d, Y", strtotime($val['coa_purchase_date'])) . "</p></div>";
@@ -108,6 +120,7 @@ if(count($this->data->routePathQuery) > 2) {
         $costs_data = $this->api_Admin_Get_Inventory_Item_Costs($edit_id);
         
         if($this->api['table'] == 'art_costs') {
+            
             $art_costs_supplier_id = null;
             $legacy_exp_field = '<input type="hidden" name="legacy_exp" value="' . $art_id . '" />';
             // $art_costs_supplier_id = 18;
@@ -117,9 +130,9 @@ if(count($this->data->routePathQuery) > 2) {
                 foreach( $costs_data as $row => $vals ) {  
                     foreach( $costs_data[0] as $key => $val) {
                         $x++;
-                        $costs_html .= '<div class="supplier_materials"><div class="AUTO_GENERATED-- manual-entry material_expense_supplier-' . $x . '-manual-entry half-size show"><label for="material-expense">MATERIAL EXPENSE</label>
+                        $costs_html .= '<div class="supplier_materials"><div class="AUTO_GENERATED-- manual-entry material_expense_supplier-' . $x . '-manual-entry two-thirds show"><label for="material-expense">MATERIAL EXPENSE (tbl: art_costs)</label>
                         <input type="hidden" id="hidden-material_expense_supplierid_manual-entry" name="hidden-material_expense_supplierid_manual-entry[]" placeholder="MANUAL ENTRY" value="' . $art_costs_supplier_id . '">
-                        <input type="text" id="material_expense_supplier-' . $x . '_manual-entry" name="material_expense_supplier_manual-entry[]" placeholder="MANUAL ENTRY" value="' . ucwords('legacy ' . $key) . '"></div><label class="ml-1" for="material-quantity">QUANTITY</label> <input data-exp="' . $x . '" class="width-auto material_quan" type="text" id="material_quantity-' . $x . '" name="material_quantity_manual-entry[]" placeholder="QUANTITY" value="1" ><label class="ml-1" for="material-cost">COST</label><input data-exp="' . $x . '" class="width-auto material_quan" type="text" id="material_cost-' . $x . '" name="material_cost_manual-entry[]" placeholder="" value="' . $val . '" ><span class="remove-add"><i data-exp="' . $x . '" class="fas fa-times"></i></span></div>';
+                        <input type="text" id="material_expense_supplier-' . $x . '_manual-entry" name="material_expense_supplier_manual-entry[]" placeholder="MANUAL ENTRY" value="' . ucwords('legacy ' . $key) . '" ' . $btn_readonly . '></div><label class="ml-1" for="material-quantity">QUANTITY</label> <input data-exp="' . $x . '" class="width-auto material_quan" type="text" id="material_quantity-' . $x . '" name="material_quantity_manual-entry[]" placeholder="QUANTITY" value="1" ' . $btn_readonly . ' ><label class="ml-1" for="material-cost">COST</label><input data-exp="' . $x . '" class="width-auto material_quan" type="text" id="material_cost-' . $x . '" name="material_cost_manual-entry[]" placeholder="" value="' . $val . ' " ' . $btn_readonly . '><span class="remove-add ' . $disabled_hidden .  '"><i data-exp="' . $x . '" class="fas fa-times"></i></span></div>';
                     } 
                 }
 
@@ -135,19 +148,20 @@ if(count($this->data->routePathQuery) > 2) {
 
             $calcd_cost_html = $val_sc['calcd_cost'] + $calcd_cost_html;
 
+            
             if($val_sc['manual_entry'] == "TRUE") {
 
                 // REMOVED calcd_cost to cost --check sql and API(api_Admin_Get_Inventory_Item_Costs)
-                $manual_entries = '<div class="supplier_materials"><div class="AUTO_GENERATED-- manual-entry material_expense_supplier-' . $x . '-manual-entry half-size show"><label for="material-expense">MATERIAL EXPENSE</label>
+                $manual_entries = '<div class="supplier_materials"><div class="AUTO_GENERATED-- manual-entry material_expense_supplier-' . $x . '-manual-entry two-thirds  show"><label for="material-expense">MATERIAL EXPENSE (tbl: art_costs_supplier)</label>
                 <input type="hidden" id="hidden-material_expense_supplierid_manual-entry" name="hidden-material_expense_supplierid_manual-entry[]" placeholder="MANUAL ENTRY" value="' . $val_sc['supplier_materials_id'] . '">
-                <input type="text" id="material_expense_supplier-' . $x . '_manual-entry" name="material_expense_supplier_manual-entry[]" placeholder="MANUAL ENTRY" value="' . ucwords($val_sc['material_desc']) . '"></div><label class="ml-1" for="material-quantity">QUANTITY</label> <input data-exp="' . $x . '" class="width-auto material_quan" type="text" id="material_quantity-' . $x . '" name="material_quantity_manual-entry[]" placeholder="QUANTITY" value="' . $val_sc['material_used'] . '" ><label class="ml-1" for="material-cost">COST</label><input data-exp="' . $x . '" class="width-auto material_quan" type="text" id="material_cost-' . $x . '" name="material_cost_manual-entry[]" placeholder="" value="' . $val_sc['cost'] . '" ><span class="remove-add" data-supid="' . $x . '"><i data-exp="' . $x . '" class="fas fa-times"></i></span></div>'; 
+                <input type="text" id="material_expense_supplier-' . $x . '_manual-entry" name="material_expense_supplier_manual-entry[]" placeholder="MANUAL ENTRY" value="' . ucwords($val_sc['material_desc']) . '" ' . $btn_readonly . '></div><label class="ml-1" for="material-quantity">QUANTITY</label> <input data-exp="' . $x . '" class="width-auto material_quan" type="text" id="material_quantity-' . $x . '" name="material_quantity_manual-entry[]" placeholder="QUANTITY" value="' . $val_sc['material_used'] . '" ' . $btn_readonly . '><label class="ml-1" for="material-cost">COST</label><input data-exp="' . $x . '" class="width-auto material_quan" type="text" id="material_cost-' . $x . '" name="material_cost_manual-entry[]" placeholder="" value="' . $val_sc['cost'] . '" ' . $btn_readonly . '><span class="remove-add ' . $disabled_hidden . '" data-supid="' . $x . '"><i data-exp="' . $x . '" class="fas fa-times"></i></span></div>'; 
 
             } else { 
 
                 /* MODIFIED THIS on 1/22/20 by adding "id" to the _name_ in select element */
-                $costs_html .= '<div class="supplier_materials"><div class="material_expense_supplier-' . $x . '-container material_expense_supplier_container select-wrapper half-size">';
-                $costs_html .= '<label for="material-expense">MATERIAL EXPENSE</label>';
-                $costs_html .= "<select id='material_expense_supplierid-" . $x . "' name='material_expense_supplier_id[]' attr=" . $x . " >";
+                $costs_html .= '<div class="supplier_materials"><div class="material_expense_supplier-' . $x . '-container material_expense_supplier_container select-wrapper two-thirds">';
+                $costs_html .= '<label for="material-expense">MATERIAL EXPENSE (else)</label>';
+                $costs_html .= "<select id='material_expense_supplierid-" . $x . "' name='material_expense_supplier_id[]' attr=" . $x . " ' . $btn_readonly . '>";
                 
                 foreach( $supplier_materials_data as $key_a => $val_a) {
                 
@@ -166,9 +180,9 @@ if(count($this->data->routePathQuery) > 2) {
                 $costs_html .= "</div>";
                 
                 $costs_html .= '<label class="ml-1" for="material-quantity">QUANTITY</label>';
-                $costs_html .= '<input  data-exp="' . $x . '" class="width-auto material_quan" type="text" id="material_quantity-' . $x . '" name="material_quantity[]" placeholder="QUANTITY" value="' . $val_sc['material_used'] . '">';
+                $costs_html .= '<input  data-exp="' . $x . '" class="width-auto material_quan" type="text" id="material_quantity-' . $x . '" name="material_quantity[]" placeholder="QUANTITY" value="' . $val_sc['material_used'] . '"' . $btn_readonly . '>';
                 $costs_html .= '<label for="material-cost">COST</label>';
-                $costs_html .= '<input  data-exp="' . $x . '" class="width-auto material_quan" type="text" id="material_cost-' . $x . '" name="material_cost[]" placeholder="" value="' . $val_sc['cost'] . '" ><span class="remove-add"><i data-exp="' . $x . '" class="fas fa-times"></i></span></div>';
+                $costs_html .= '<input  data-exp="' . $x . '" class="width-auto material_quan" type="text" id="material_cost-' . $x . '" name="material_cost[]" placeholder="" value="' . $val_sc['cost'] . '"  ' . $btn_readonly . '><span class="remove-add ' . $disabled_hidden . '"><i data-exp="' . $x . '" class="fas fa-times"></i></span></div>';
             }
                 
             $costs_html .= $manual_entries;
@@ -180,8 +194,8 @@ if(count($this->data->routePathQuery) > 2) {
     }
         $this->page->title = "Editing Art: <b>" . $title . "</b> (" . $art_id . ")";
         $formTypeAction = "update";
-        $button_label="update artwork";
-        $button_archive_cancel = '<a class="cancel-button" href="/studio/inventory">cancel</a>';
+        $button_label= $button_disabled_label;
+        $button_archive_cancel = '<a class="cancel-button" href="/studio/inventory">CANCEL</a>';
         $id_field = '<input type="hidden" name="art_id" value="' . $art_id . '" />';
         $hidden_remove_manual_suppliers = '<input type="hidden" name="hidden_remove_manual_suppliers" id="hidden_remove_manual_suppliers" />';
         $this->nav_label_inventory = "Updating Artwork";
@@ -217,10 +231,28 @@ if(count($this->data->routePathQuery) > 2) {
             $selected = "SELECTED"; 
             $loc_idx = $i;
             $hidden_location_id = '<input type="hidden" name="state_location_id" id="state_location_id" value="' . $edit_data['art_location_id'] . '">';
+            
+            // if($val_loc['status'] == 'DISABLED') { 
+            //     $disabled_location_hidden = '<input type="hidden" name="art_location" value="' . $edit_data['art_location_id'] . '" />';
+            // }
         } 
-        else { $selected = null; }
-
-        $location_html .= '<option ' . $selected . ' value="' . $val_loc['art_location_id'] . '">' . $val_loc['location'] . '</option>';
+        else { $selected = null; $btn_disabled = null; }
+        
+        if($val_loc['status'] == 'DISABLED') { 
+            $disabled_label = '(DISABLED)'; 
+            
+            if($val_loc['art_location_id'] != $edit_data['art_location_id']) { 
+                $disable_attr = 'disabled'; 
+            } else {
+                $disable_attr = null;
+            }
+            
+        } else { 
+            $disabled_label = null; 
+            $disable_attr=null;
+        }
+        
+        $location_html .= '<option ' . $selected . ' value="' . $val_loc['art_location_id'] . '" ' . $disable_attr . '>' . $disabled_label . ' ' . $val_loc['location']  . '</option>';
         $i++;
     }
 

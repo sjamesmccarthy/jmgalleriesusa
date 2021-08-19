@@ -28,7 +28,7 @@
             <div>
                 <div class="select-wrapper half-size">
                     <label for="location">CURRENT LOCATION</label>
-                    <select id="art_location" name="art_location">
+                    <select id="art_location" name="art_location" <?= $btn_readonly ?>>
                     <option value="0">Current Location ...</option>
                     <?= $location_html ?>
                     </select>
@@ -38,7 +38,7 @@
                 </div>
                 <div class="select-wrapper half-size vtop">
                     <label for="collector">COLLECTOR</label>
-                    <select id="collector" name="collector">
+                    <select id="collector" name="collector" <?= $btn_readonly ?>>
                     <option value="0">No Collector for this piece</option>
                     <!-- <option value="0">(no collector for this piece)</option> -->
                     <optgroup label="--- COLLECTORS">
@@ -50,22 +50,22 @@
 
             <div>
                 <label for="title">TITLE</label>
-                <input class="half-size" maxlength="255" type="text" id="title" name="title" placeholder="TITLE" value="<?= $title ?>" required>
+                <input class="half-size" maxlength="255" type="text" id="title" name="title" placeholder="TITLE" value="<?= $title ?>" <?= $btn_readonly ?> required>
                 <label for="edition-style">EDITION-STYLE</label>
-                <input class="half-size" maxlength="255" type="text" id="edition_style" name="edition_style" placeholder="EDITION STYLE (eg. Gallery, Studio, Open)" value="<?= $edition_style ?>" required>
+                <input class="half-size" maxlength="255" type="text" id="edition_style" name="edition_style" placeholder="EDITION STYLE (eg. Gallery, Studio, Open)" value="<?= $edition_style ?>" <?= $btn_readonly ?> required>
             </div>
 
             <div>
                 <label for="artist_proof">ARTIST PROOF</label>
-                <input class="half-size"  type="text" id="artist_proof" name="artist_proof" placeholder="ARTIST PROOF (eg, AP1)" value="<?= $artist_proof ?>" required>
+                <input class="half-size"  type="text" id="artist_proof" name="artist_proof" placeholder="ARTIST PROOF (eg, AP1)" value="<?= $artist_proof ?>" <?= $btn_readonly ?>>
                 <label for="series_num">SERIES NUM</label>
-                <input class="half-size" type="text" id="series_num" name="series_num" placeholder="SERIES NUMBER (eg 1, 2019)" value="<?= $series_num ?>">
+                <input class="half-size" type="text" id="series_num" name="series_num" placeholder="SERIES NUMBER (eg 1, 2019)" value="<?= $series_num ?> " <?= $btn_readonly ?>>
             </div>
             <div>
                 <label for="edition_num">EDITION NUM</label>
-                <input class="half-size" type="text" id="edition_num" name="edition_num" placeholder="EDITION NO." value="<?= $edition_num ?>" >
+                <input class="half-size" type="text" id="edition_num" name="edition_num" placeholder="EDITION NO." value="<?= $edition_num ?>" <?= $btn_readonly ?>>
                 <label for="edition_num_max">EDITION NUM MAX</label>
-                <input class="half-size" type="text" id="edition_num_max" name="edition_num_max" placeholder="EDITION NO. MAX" value="<?= $edition_num_max ?>" >
+                <input class="half-size" type="text" id="edition_num_max" name="edition_num_max" placeholder="EDITION NO. MAX" value="<?= $edition_num_max ?>" <?= $btn_readonly ?>>
             </div>
 
             <div>
@@ -73,33 +73,33 @@
 
                 <div>
                     <label for="print_size">PRINT SIZE</label>
-                    <input class="half-size" type="text" id="print_size" name="print_size" placeholder="PRINT SIZE (eg, 16x24, 24x36)" value="<?= $print_size ?>" required>
+                    <input class="half-size" type="text" id="print_size" name="print_size" placeholder="PRINT SIZE (eg, 16x24, 24x36)" value="<?= $print_size ?>" <?= $btn_readonly ?> required>
                     <label for="print_media">PRINT MEDIA</label>
-                    <input class="half-size" type="text" id="print_media" name="print_media" placeholder="PRINT MEDIA (eg, Paper, Acrylic)" value="<?= $print_media ?>" required>
+                    <input class="half-size" type="text" id="print_media" name="print_media" placeholder="PRINT MEDIA (eg, Paper, Acrylic)" value="<?= $print_media ?>" <?= $btn_readonly ?> required>
                 </div>
 
                 <div>
                     <label for="frame_size">FRAME SIZE</label>
-                    <input class="half-size" type="text" id="frame_size" name="frame_size" placeholder="FRAME SIZE (eg, 18x26, 28x40)" value="<?= $frame_size ?>" >
+                    <input class="half-size" type="text" id="frame_size" name="frame_size" placeholder="FRAME SIZE (eg, 18x26, 28x40)" value="<?= $frame_size ?>" <?= $btn_readonly ?> >
                     <label for="frame_material">FRAME MATERIAL</label>
-                    <input class="half-size" type="text" id="frame_material" name="frame_material" placeholder="FRAME MATERIAL (eg, Bass 530, Inset Wood/Metal)" value="<?= $frame_material ?>" >
+                    <input class="half-size" type="text" id="frame_material" name="frame_material" placeholder="FRAME MATERIAL (eg, Bass 530, Inset Wood/Metal)" value="<?= $frame_material ?>" <?= $btn_readonly ?> >
                 </div>
 
                 <div>
                     <label for="frame_desc">FRAME DESC</label>
-                    <input type="text" id="frame_desc" name="frame_desc" placeholder="FRAME DESC (eg, PAINTED ASH, STAINED NATURAL)" value="<?= $frame_desc ?>" >
+                    <input type="text" id="frame_desc" name="frame_desc" placeholder="FRAME DESC (eg, PAINTED ASH, STAINED NATURAL)" value="<?= $frame_desc ?>" <?= $btn_readonly ?> >
                 </div>
 
                 <div>
                     <label for="list_price">LIST PRICE</label>
-                    <input class="half-size" type="text" id="listed" name="listed" placeholder="LIST PRICE (eg, $240)" value="<?= $listed ?>">
+                    <input class="half-size" type="text" id="listed" name="listed" placeholder="LIST PRICE (eg, $240)" value="<?= $listed ?>" <?= $btn_readonly ?>>
                     <label for="value">VALUE/SOLD FOR</label>
-                    <input class="half-size" type="text" id="value" name="value" placeholder="VALUE or SOLD PRICE (eg, $220)" value="<?= $value ?>">
+                    <input class="half-size" type="text" id="value" name="value" placeholder="VALUE or SOLD PRICE (eg, $220)" value="<?= $value ?>" <?= $btn_readonly ?>>
                 </div>
 
                  <div>
                 <h6>Notes</h6>
-                    <textarea id="notes" name="notes"><?= $notes ?></textarea>
+                    <textarea id="notes" name="notes" <?= $btn_readonly ?>><?= $notes ?></textarea>
                 </div>
 
             </div>
@@ -110,24 +110,24 @@
 
             <div>
                 <label for="serial_num">SERIAL NUM</label>
-                <input class="half-size" type="text" id="serial_num" name="serial_num" placeholder="SERIAL NO. (eg, 251387)" value="<?= $serial_num ?>">
+                <input class="half-size" type="text" id="serial_num" name="serial_num" placeholder="SERIAL NO. (eg, 251387)" value="<?= $serial_num ?>" <?= $btn_readonly ?>>
                 <label style="display:inline-block;" for="reg_num">REG NUM (Validation Hash =  <?= $validation_hash ?>)</label>
-                <input class="half-size" type="text" id="reg_num" name="reg_num" placeholder="Artwork Reg No. (eg, 1569069144 aka Born On Date)" value="<?= $reg_num ?>">
+                <input class="half-size" type="text" id="reg_num" name="reg_num" placeholder="Artwork Reg No. (eg, 1569069144 aka Born On Date)" value="<?= $reg_num ?>" <?= $btn_readonly ?>>
             </div>
             
             <div>
                 <label style="display:inline-block;" for="negative_file">NEGATIVE FILE (also used as adler32[secret])</label>
-                 <input class="half-size" type="text" id="negative_file" name="negative_file" placeholder="NEGATIVE FILE (eg, PRETTY_PHOTO.jpg)" value="<?= $negative_file ?>" required>
+                 <input class="half-size" type="text" id="negative_file" name="negative_file" placeholder="NEGATIVE FILE (eg, PRETTY_PHOTO.jpg)" value="<?= $negative_file ?>" <?= $btn_readonly ?> required>
                  <label for="born_date">BORN ON</label>
-                 <input class="half-size" type="text" id="born_date" name="born_date" placeholder="BORN ON DATE (eg, 2019-12-14 02:23:10)" value="<?= $born_date ?>" required>
+                 <input class="half-size" type="text" id="born_date" name="born_date" placeholder="BORN ON DATE (eg, 2019-12-14 02:23:10)" value="<?= $born_date ?>" <?= $btn_readonly ?> required>
             </div>
 
             <!-- $show_collector_meta -->
             <div id="collector_meta">
                 <label for="title">Acquired From & Condition Notes</label>
-                <input class="half-size" maxlength="255" type="text" id="acquired_from" name="acquired_from" placeholder="Acquired From and Condition Notes" value="<?= $acquired_from ?>">
+                <input class="half-size" maxlength="255" type="text" id="acquired_from" name="acquired_from" placeholder="Acquired From and Condition Notes" value="<?= $acquired_from ?>" <?= $btn_readonly ?>>
                 <label for="title">Acquired on Date</label>
-                <input class="half-size" maxlength="255" type="text" id="acquired_date" name="acquired_date" placeholder="Acquired on Date" value="<?= $purchase_date ?>">
+                <input class="half-size" maxlength="255" type="text" id="acquired_date" name="acquired_date" placeholder="Acquired on Date" value="<?= $purchase_date ?>" <?= $btn_readonly ?>>
             </div>
 
             <div id="collector_meta">
@@ -150,10 +150,10 @@
                 
                 <h6>Material Expenses</h6>
                 <?= $costs_html ?>
-                <p class="material-add"><i class="fas fa-plus-circle"></i></p> 
+                <p class="material-add <?= $disabled_hidden ?>"><i class="fas fa-plus-circle"></i></p> 
             </div>
 
-            <button class="mt-32 w-50" id="sendform" value="SEND"><?= $button_label ?></button>
+            <button class="mt-32 w-50 <?= $disabled_button_class ?>" id="sendform" value="SEND" <?= $btn_readonly ?>><?= $button_label ?></button>
             <?= $button_archive_cancel ?>
             </form>
 
@@ -268,7 +268,7 @@ jQuery(document).ready(function($){
 		e.preventDefault();
 		if(x < max_fields){ //max input box allowed
 			x++; //text box increment
-			$(wrapper).append('<div class="supplier_materials"><!-- manual entry container --><div class="material_supplier-' + x + '-container-manual-entry hide"><label for="material-expense">MATERIAL EXPENSE</label><div class="manual-entry material_expense_supplier-' + x + '-manual-entry half-size"><input type="hidden" id="hidden-material_expense_supplierid-' + x + '-manual-entry" name="hidden-material_expense_supplierid_manual-entry[]" value="0"><input type="text" id="material_expense_supplier' + x + '-manual-entry" name="material_expense_supplier_manual-entry[]" placeholder="MANUAL ENTRY" value=""></div><label class="ml-1" for="material-quantity">QUANTITY</label><input data-exp="' + x + '" class="width-auto material_quan" type="text" id="material_quantity-' + x + '-manual-entry" name="material_quantity_manual-entry[]" placeholder="QUANTITY" value="0"><label class="ml-1" for="material-cost">COST</label><input data-exp="' + x + '" class="width-auto material_quan" type="text" id="material_cost-' + x + '-manual-entry" name="material_cost_manual-entry[]" placeholder="" value="0.00" ><span class="remove-add" data-supid="' + x + '"><i data-exp="' + x + '" class="fas fa-times"></i></span></div><!-- /manual entry container --><!-- supplier row --><div class="material-supplier-' + x + '-container"><div class="material_expense_supplier-' + x + '-container material_expense_supplier_container select-wrapper half-size"><label for="material-expense">MATERIAL EXPENSE</label><select id="material_expense_supplierid-' + x + '" name="material_expense_supplier_id[]" data-exp="' + x + '"><option value="-">SELECT A MATERIAL EXPENSE</option><?= $materials_html ?></select></div> <label class="ml-1" for="material-quantity">QUANTITY</label><input data-exp="' + x + '" class="width-auto material_quan" type="text" id="material_quantity-' + x + '" name="material_quantity[]" placeholder="QUANTITY" value=""><label for="material-cost" class="ml-1">COST</label><input data-exp="' + x + '" class="width-auto material_quan" type="text" id="material_cost-' + x + '" name="material_cost[]" placeholder="" value="" ><span class="remove-add"><i data-exp="' + x + '" class="fas fa-times"></i></span></div><!-- /supplier row --></div>'); 
+			$(wrapper).append('<div class="supplier_materials"><!-- manual entry container --><div class="material_supplier-' + x + '-container-manual-entry hide"><label for="material-expense">MATERIAL EXPENSE</label><div class="manual-entry material_expense_supplier-' + x + '-manual-entry two-thirds"><input type="hidden" id="hidden-material_expense_supplierid-' + x + '-manual-entry" name="hidden-material_expense_supplierid_manual-entry[]" value="0"><input type="text" id="material_expense_supplier' + x + '-manual-entry" name="material_expense_supplier_manual-entry[]" placeholder="MANUAL ENTRY" value=""></div><label class="ml-1" for="material-quantity">QUANTITY</label><input data-exp="' + x + '" class="width-auto material_quan" type="text" id="material_quantity-' + x + '-manual-entry" name="material_quantity_manual-entry[]" placeholder="QUANTITY" value="0"><label class="ml-1" for="material-cost">COST</label><input data-exp="' + x + '" class="width-auto material_quan" type="text" id="material_cost-' + x + '-manual-entry" name="material_cost_manual-entry[]" placeholder="" value="0.00" ><span class="remove-add" data-supid="' + x + '"><i data-exp="' + x + '" class="fas fa-times"></i></span></div><!-- /manual entry container --><!-- supplier row --><div class="material-supplier-' + x + '-container"><div class="material_expense_supplier-' + x + '-container material_expense_supplier_container select-wrapper two-thirds"><label for="material-expense">MATERIAL EXPENSE</label><select id="material_expense_supplierid-' + x + '" name="material_expense_supplier_id[]" data-exp="' + x + '"><option value="-">SELECT A MATERIAL EXPENSE</option><?= $materials_html ?></select></div> <label class="ml-1" for="material-quantity">QUANTITY</label><input data-exp="' + x + '" class="width-auto material_quan" type="text" id="material_quantity-' + x + '" name="material_quantity[]" placeholder="QUANTITY" value=""><label for="material-cost" class="ml-1">COST</label><input data-exp="' + x + '" class="width-auto material_quan" type="text" id="material_cost-' + x + '" name="material_cost[]" placeholder="" value="" ><span class="remove-add"><i data-exp="' + x + '" class="fas fa-times"></i></span></div><!-- /supplier row --></div>'); 
 		}
     });
     
