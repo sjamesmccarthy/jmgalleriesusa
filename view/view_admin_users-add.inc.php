@@ -30,7 +30,7 @@ if(isSet($this->routes->URI->queryvals)) {
     $user_roles = $this->api_Admin_Get_RolesByUser($edit_id);
     $user_apps = $this->api_Admin_Get_AppsByUser($edit_id);
 
-    if($res_type == "ARTIST") {
+    if($res_type == "ARTIST" || $res_type == "ADMIN") {
         $type_id = $id_field = '<input type="hidden" name="artist_id" value="' . $res_artist_id . '" />';
         $ac_id = $res_artist_id;
     } else {

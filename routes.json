@@ -66,14 +66,14 @@
         "page": "admin_manage",
         "auth": "true",
         "component": "true",
-        "title": "Mangaing Your Studio"
+        "title": "Managing Your Studio"
     },
     "/d/collector": {
         "template": "page",
         "page": "collector_dashboard",
         "auth": "true",
         "component": "true",
-        "title": "Mangaing Your Collection"
+        "title": "Managing Your Collection"
     },
     "/studio/catalog": {
         "template": "admin",
