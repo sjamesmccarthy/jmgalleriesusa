@@ -143,7 +143,7 @@
             <?php ?>
             <div id="pl-summary" style="border-top: 1px solid #e4e4e4;">
                 <h6 class="mt-16">P/L Summary</h6>
-                <p>Total Costs = <?= $calcd_cost_html ?> / Total Value = <?= $value ?> / <u>PL =<?= $value - $calcd_cost_html; ?></u></p>
+                <p>Total Costs = <?= $calcd_cost_html ?> / Total Value = <?= $value ?> / <u>PL =<?= number_format( ($value - $calcd_cost_html), 2,'.',''); ?></u></p>
             </div>
 
             <div id="supplier_materials_wrapper" class="mt-32">

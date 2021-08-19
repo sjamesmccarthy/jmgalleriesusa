@@ -66,7 +66,7 @@ if(count($this->data->routePathQuery) > 2) {
     if(isSet($this->routes->URI->queryvals)) {
         
         $edit_id = $this->routes->URI->queryvals[1];
-
+        
         $edit_data = $this->api_Admin_Get_Inventory_Item($edit_id);
         extract($edit_data, EXTR_PREFIX_SAME, "dup");
 
@@ -131,6 +131,8 @@ if(count($this->data->routePathQuery) > 2) {
                 $x=1;
                 foreach( $costs_data as $row => $vals ) {  
                     foreach( $costs_data[0] as $key => $val) {
+                        $calcd_cost_html = $val + $calcd_cost_html;
+
                         $x++;
                         $costs_html .= '<div class="supplier_materials"><div class="AUTO_GENERATED-- manual-entry material_expense_supplier-' . $x . '-manual-entry two-thirds show"><label for="material-expense">MATERIAL EXPENSE (tbl: art_costs)</label>
                         <input type="hidden" id="hidden-material_expense_supplierid_manual-entry" name="hidden-material_expense_supplierid_manual-entry[]" placeholder="MANUAL ENTRY" value="' . $art_costs_supplier_id . '">
@@ -147,10 +149,9 @@ if(count($this->data->routePathQuery) > 2) {
         
         // outer loop for the cost_data
         foreach( $costs_data as $key_sc => $val_sc) {
-
+            
             $calcd_cost_html = $val_sc['calcd_cost'] + $calcd_cost_html;
 
-            
             if($val_sc['manual_entry'] == "TRUE") {
 
                 // REMOVED calcd_cost to cost --check sql and API(api_Admin_Get_Inventory_Item_Costs)
