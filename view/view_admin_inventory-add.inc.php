@@ -79,11 +79,13 @@ if(count($this->data->routePathQuery) > 2) {
             $disabled_hidden = 'disabled-hidden';
             $disabled_button_class = 'disabled-button-sold';
             $button_disabled_label = 'THIS RECORD CAN NO LONGER BE EDITED';
+            $title_state = 'Sold';
         } else {
             $btn_readonly = null;
             $disabled_hidden = '';
             $disabled_button_class = '';
             $button_disabled_label = 'UPDATE ARTWORK';
+            $title_state = 'Editing';
         }
         
         if( count($locationsHistory_data) > 0) {
@@ -192,7 +194,7 @@ if(count($this->data->routePathQuery) > 2) {
             $manual_entries = null;
         }
     }
-        $this->page->title = "Editing Art: <b>" . $title . "</b> (" . $art_id . ")";
+        $this->page->title = $title_state . " Art: <b>" . $title . "</b> (" . $art_id . ")";
         $formTypeAction = "update";
         $button_label= $button_disabled_label;
         $button_archive_cancel = '<a class="cancel-button" href="/studio/inventory">CANCEL</a>';
