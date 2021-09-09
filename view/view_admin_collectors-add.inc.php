@@ -48,7 +48,7 @@ if(isSet($this->routes->URI->queryvals)) {
        
                 <h4>Artwork Purchases (' . $artwork_count . ')</h4>
                     
-                <table id="dataTableArtwork" class="display mt-16">
+                <table id="dataTableArtwork" class="display mt-16" style="width: 100% !important;">
                 <thead>
                     <tr>
                         <th>title</th>

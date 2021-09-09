@@ -3556,7 +3556,7 @@ button a {
 }
 .hero-text-container {
   position: absolute;
-  bottom: 2rem;
+  bottom: 40%;
   width: 100%;
   left: 0;
   padding: 2rem 1rem;
@@ -3766,17 +3766,17 @@ button a {
 }
 @media (min-width: 767px) {
   .h2-newrelease {
-    text-align: left;
+    text-align: center;
   }
 }
 @media (min-width: 1112px) {
   .h2-newrelease {
-    text-align: left;
+    text-align: center;
   }
 }
 @media (min-width: 1200px) {
   .h2-newrelease {
-    text-align: left;
+    text-align: center;
   }
 }
 
@@ -3833,17 +3833,17 @@ button a {
 }
 @media (min-width: 767px) {
   #filmstrips h2 {
-    text-align: left;
+    text-align: center;
   }
 }
 @media (min-width: 1112px) {
   #filmstrips h2 {
-    text-align: left;
+    text-align: center;
   }
 }
 @media (min-width: 1200px) {
   #filmstrips h2 {
-    text-align: left;
+    text-align: center;
   }
 }
 #filmstrips h4 {
@@ -6876,7 +6876,7 @@ div[id*=imgT]:hover {
   text-decoration: underline;
 }
 .catalog-add--container form #collections-tag {
-  min-height: 100px;
+  min-height: 150px;
   padding: 15px;
   display: none;
   overflow-y: scroll;
@@ -7605,14 +7605,14 @@ table.dataTable tbody td.valign {
 .collectors--container {
   background-color: rgba(0, 0, 0, 0.05);
   border-radius: 6px;
-  margin: 0;
+  margin: 1.7rem 0;
   padding: 0;
 }
 .collectors--container .admin-header {
   background-color: rgba(0, 0, 0, 0.08);
   margin: 0;
   border-radius: 6px 6px 0 0;
-  padding: 1rem;
+  padding: 1rem 0 0 0;
   margin-bottom: 1rem;
 }
 .collectors--container h2 {
@@ -7622,7 +7622,7 @@ table.dataTable tbody td.valign {
 .collectors-add--container {
   background-color: rgba(0, 0, 0, 0.02);
   border-radius: 6px;
-  margin: 0;
+  margin: 1.7rem 0;
   padding: 0;
 }
 .collectors-add--container .admin-header {

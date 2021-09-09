@@ -1,10 +1,10 @@
 <section class="admin--collectors-add">
-    <div class="grid-12">
+    <div class="grid">
        
         <!-- insert navigation component -->
         <?= $navigation_html ?>
     
-        <div class="col-9 collectors-add--container">
+        <div class="col collectors-add--container">
 
             <div class="admin-header">
                 <h2><?= $this->page->title ?></h2>
@@ -65,7 +65,7 @@
             </div>
 
             <?= $purchases ?>
-
+            
             <!-- <section id="pending">
                     <h4>Pending Orders (<?= $active_materials_count ?>)</h4>
                     <p>No Pending Orders Found</p>
@@ -77,8 +77,10 @@
             </section> -->
 
 
-            <div class="clear">
+            <div class="clear half-size">
                 <button class="mt-32" id="sendform" value="SEND"><?= $button_label ?></button>
+            </div>
+            <div class="half-size">
                 <?= $button_archive_cancel ?>
             </div>
 
@@ -114,6 +116,7 @@ jQuery(document).ready(function($){
             paging: false,
             pagingType: "numbers",
             searching: false,
+            autoWidth: true,
             // oSearch: {"sSearch": "<?= $filter ?>"},
             data: <?= $data_json ?>,
             columns: [

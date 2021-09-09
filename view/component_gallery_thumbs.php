@@ -10,20 +10,20 @@
     foreach($catalog_names as $key=>$value) {
 
             // $thumb_html .= "<article id='filmstrip'>";
-            $thumb_html .= '<div class="grid-4_sm-2 grid-4_md-3 mt-32">';
+            $thumb_html .= '<div class="grid-4_sm-2 grid-4_md-3 mt-64"><!-- mt-32 -->';
 
         if(strtolower($value['title']) != 'new releases') {
 
-            $thumb_html .= '<div class="col-10_sm-12">';
+            $thumb_html .= '<div class="col-12_sm-12 text-center mb-16"><!-- col-10_sm-12 -->';
             $thumb_html .= '<h2><a href="/' . $value['path'] . '">' . strtoupper($value['title']) . '</a></h2>';
             $thumb_html .= '<p class="light sm-hidden">' . $value['desc'] .  '</p>';
             $thumb_html .= '</div>';
-            $thumb_html .= '<div class="view-all col-2-middle sm-hidden">';
+            $thumb_html .= '<div class="view-all col-2-middle sm-hidden hidden">';
             $thumb_html .= '<a href="/' . $value['path'] . '">view all</a>';
             $thumb_html .= "</div>";
 
             /* Get FilmStrip of photos by Category */
-            $catalog_photos = $this->api_Catalog_Category_Filmstrip($value['catalog_collections_id'], 4, "LE");
+            $catalog_photos = $this->api_Catalog_Category_Filmstrip($value['catalog_collections_id'], 8, "ALL"); // LE
 
             if(isSet($catalog_photos)) {
 

@@ -5,17 +5,17 @@
 
 /* Fetch Just the New Releases filmstrip */
     $count =0;
-    $new_release_data = array(4,12); /* Also found in view_catalog.inc.php */
+    $new_release_data = array(8 ,12); /* Also found in view_catalog.inc.php */
 
     $new_releases = $this->api_Catalog_Get_New_Releases($new_release_data[0], $new_release_data[1]);
 
         // $thumb_new_releases_html .= "<article id='new-releases'>";
-        $thumb_new_releases_html .= '<div class="grid-4_sm-2 grid-4_md-3">';
-        $thumb_new_releases_html .= '<div class="col-10_sm-12">';
+        $thumb_new_releases_html .= '<div class="grid-4_sm-2 grid-4_md-3 mt-64">';
+        $thumb_new_releases_html .= '<div class="col-12_sm-12 text-center mb-16"><!-- col-10_sm-12-->'; 
         $thumb_new_releases_html .= '<h2 class="h2-newrelease"><a href="/new-releases/">NEW RELEASES</a></h2>';
         $thumb_new_releases_html .= '<p class="light sm-hidden">a collection of photography featuring my newest work.</p>';
         $thumb_new_releases_html .= '</div>';
-        $thumb_new_releases_html .= '<div class="view-all col-2-middle sm-hidden">';
+        $thumb_new_releases_html .= '<div class="view-all col-2-middle sm-hidden hidden">';
         $thumb_new_releases_html .= '<a href="/new-releases">view all</a>';
         $thumb_new_releases_html .= "</div>";
         // $thumb_new_releases_html .= "</article>";

@@ -1,6 +1,5 @@
 User-agent: *
 Disallow: /view/ajax_*
 Disallow: /studio/
-Disallow: /catalog/
 
 Sitemap: https://jmgalleries.com/sitemap.xml

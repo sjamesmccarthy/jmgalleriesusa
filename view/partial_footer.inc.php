@@ -9,6 +9,9 @@ if($this->env == "local") {
 
 foreach($catalog_names as $k => $v) {
     $collections_html .= '<li><a href="/' . $v['path'] . '">' . $v['title'] . '</a></li>';
+    if($v['path'] == substr($this->page->catalog_path,1)) {
+        $this->catalog_title = $v['title'];
+    }
 }
 
 if($this->routes->URI->page == 'detail') {
@@ -30,6 +33,5 @@ if(!isSet($_COOKIE['cookie_consent'])) {
     </div>';
 } 
 */
-
 
 ?>

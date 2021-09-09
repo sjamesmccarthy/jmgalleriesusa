@@ -102,10 +102,20 @@ class Core_Site extends Core_Api
             /* Check for root level or trim slashes */
             if($this->routes->URI->path != '/') {
                 $this->routes->URI->path = rtrim($this->routes->URI->path, '/');
+                
+                // print $this->routes->URI->path;
+                // exit;
+                
+            } else {
+                // print $this->routes->URI->path;
             }
 
             /* Match the [path] of URI to the routes.json */
             if (property_exists($this->routes, $this->routes->URI->path) == true) {
+                
+                // print "preg_match_TRUE<br />" . $this->routes->URI->path;
+                // exit;
+                
                 /* Direct route match URI === route path */
                 $this->routes->URI->match = 'true';
                 $this->page->title = $this->routes->{$this->routes->URI->path}['title'];
@@ -132,10 +142,10 @@ class Core_Site extends Core_Api
             /* Add else if which checks for 1 wildcard string and then checks database for that collection */
             /* Problem: this could catch single path URIs and send 404 */
             } else if (preg_match_all("/^\/[^\/]+\/$/m", $this->routes->URI->path . '/') == true) {
-                
+                                
                 /* splitting the URI path by forward slash */
                 $URIx = explode('/', $this->routes->URI->path);
-
+                
                 /* API look up of collection, if found load, else $pass_error_page = true */
                 $check_collection = $this->api_Admin_Get_LookUpCollectionByName($URIx[1]);
 
@@ -155,7 +165,7 @@ class Core_Site extends Core_Api
 
             /* Two wild card paths in URI */
             } else if (preg_match_all("/^\/[^\/]+\/[^\/]+\/$/m", $this->routes->URI->path . '/') == true) {
-
+                
                 /* splitting the URI path by forward slash */
                 $URIx = explode('/', $this->routes->URI->path);
                 unset($URIx[0]);

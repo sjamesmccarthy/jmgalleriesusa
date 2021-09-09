@@ -75,6 +75,12 @@
         "component": "true",
         "title": "Managing Your Collection"
     },
+    "/studio/collectordash": {
+           "template": "redirect",
+           "page": "/d/collector",
+           "component": "false",
+           "title": "redirecting to Collector Portal"
+    },
     "/studio/catalog": {
         "template": "admin",
         "page": "admin_catalog",
@@ -450,12 +456,6 @@
         "page": "shop",
         "component": "true",
         "title": "jM Gallery Store"
-    },
-    "/books": {
-        "template": "redirect",
-        "page": "https://www.blurb.com/getting-started#//sell",
-        "component": "false",
-        "title": "Books & Polarized Quarterly"
     },
     "/limited-editions": {
         "template": "redirect",

@@ -1605,9 +1605,9 @@ class Core_Api extends Fieldnotes_Api
 
         $result = $this->mysqli->query($sql);
         
-       if($this->mysqli->affected_rows == 0) {
-        $result=0;   
-       }
+       // if($this->mysqli->affected_rows == 0) {
+       //  $result=0;   
+       // } else { $result=1; }
         
         /* DELETE ALL catalog_collection_link records for this ID */
         $sql_d = "DELETE FROM catalog_collections_link WHERE catalog_photo_id = '" . $catalog_photo_id . "'";

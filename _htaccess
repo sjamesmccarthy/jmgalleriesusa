@@ -18,6 +18,7 @@ RewriteRule ^(.*)$ index.php [QSA,L]
 RewriteCond %{HTTP_HOST} ^qr\.jmgalleries\.com$ [OR]
 RewriteCond %{HTTP_HOST} ^www\.qr\.jmgalleries\.com$
 
+
 # ####################################################################
 # VALID REDIRECTS 
 # ####################################################################
@@ -34,7 +35,6 @@ Redirect 301 /portraits-events-headshots https://jmportraits.com
 Redirect 301 /info.php /thework
 Redirect 301 /all /thework
 Redirect 301 /landscapes /thework
-Redirect 301 /black-and-white /thework
 Redirect 301 /cities-and-structures /thework
 Redirect 301 /thework/photo/bixby-star /thework
 Redirect 301 /blog /fieldnotes
@@ -250,25 +250,25 @@ Redirect 301 "/archive.zip" /thework
 # FACEBOOK IPs
 # ####################################################################
 
-Deny from 31.13
-Deny from 45.64
-Deny from 66.220
-Deny from 69.63
-Deny from 69.171
-Deny from 74.11
-Deny from 102.132
-Deny from 103.4
-Deny from 129.13
-Deny from 147.75
-Deny from 157.240
-Deny from 173.252
-Deny from 179.60
-Deny from 185.60
-Deny from 185.89
-Deny from 199.201
-Deny from 204.15
-Deny from 66.220
-Deny from 69.171
+#Deny from 31.13
+#Deny from 45.64
+#Deny from 66.220
+#Deny from 69.63
+#Deny from 69.171
+#Deny from 74.11
+#Deny from 102.132
+#Deny from 103.4
+#Deny from 129.13
+#Deny from 147.75
+#Deny from 157.240
+#Deny from 173.252
+#Deny from 179.60
+#Deny from 185.60
+#Deny from 185.89
+#Deny from 199.201
+#Deny from 204.15
+#Deny from 66.220
+#Deny from 69.171
 
 # ####################################################################
 # BAD ACTOR IPs 
@@ -285,3 +285,4 @@ Deny from 178.236.248.7
 Deny from 159.89.190.105
 Deny from 45.129.137.249
 Deny from 185.25.48.248
+Deny from 109.169.87.34

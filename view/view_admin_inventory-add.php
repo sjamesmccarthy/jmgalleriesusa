@@ -52,14 +52,14 @@
                 <label for="title">TITLE</label>
                 <input class="half-size" maxlength="255" type="text" id="title" name="title" placeholder="TITLE" value="<?= $title ?>" <?= $btn_readonly ?> required>
                 <label for="edition-style">EDITION-STYLE</label>
-                <input class="half-size" maxlength="255" type="text" id="edition_style" name="edition_style" placeholder="EDITION STYLE (eg. Gallery, Studio, Open)" value="<?= $edition_style ?>" <?= $btn_readonly ?> required>
+                <input class="half-size" maxlength="255" type="text" id="edition_style" name="edition_style" placeholder="EDITION STYLE (eg. LIMITED, OPEN, STUDIO)" value="<?= $edition_style ?>" <?= $btn_readonly ?> required>
             </div>
 
             <div>
                 <label for="artist_proof">ARTIST PROOF</label>
                 <input class="half-size"  type="text" id="artist_proof" name="artist_proof" placeholder="ARTIST PROOF (eg, AP1)" value="<?= $artist_proof ?>" <?= $btn_readonly ?>>
                 <label for="series_num">SERIES NUM</label>
-                <input class="half-size" type="text" id="series_num" name="series_num" placeholder="SERIES NUMBER (eg 1, 2019)" value="<?= $series_num ?> " <?= $btn_readonly ?>>
+                <input class="half-size" type="text" id="series_num" name="series_num" placeholder="SERIES NUMBER (eg 1, 2019)" value="<?= $series_num ?>" <?= $btn_readonly ?>>
             </div>
             <div>
                 <label for="edition_num">EDITION NUM</label>
@@ -111,7 +111,7 @@
             <div>
                 <label for="serial_num">SERIAL NUM</label>
                 <input class="half-size" type="text" id="serial_num" name="serial_num" placeholder="SERIAL NO. (eg, 251387)" value="<?= $serial_num ?>" <?= $btn_readonly ?>>
-                <label style="display:inline-block;" for="reg_num">REG NUM (Validation Hash =  <?= $validation_hash ?>)</label>
+                <label style="display:inline-block; margin-left: 0 !important;" for="reg_num">REG NUM (Validation Hash =  <?= $validation_hash ?>)</label>
                 <input class="half-size" type="text" id="reg_num" name="reg_num" placeholder="Artwork Reg No. (eg, 1569069144 aka Born On Date)" value="<?= $reg_num ?>" <?= $btn_readonly ?>>
             </div>
             

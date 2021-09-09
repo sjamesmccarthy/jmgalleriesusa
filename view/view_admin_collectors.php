@@ -1,15 +1,15 @@
 <section class="collectorsidx--container">
-    <div class="grid-12">
+    <div class="grid">
        
         <!-- insert navigation component -->
         <?= $navigation_html ?>
     
-        <div class="col-9 collectors--container">
+        <div class="col collectors--container">
 
-            <div class="notification success <?= $notification_state ?>"><?= $notification_msg ?></div>
+            <div class="notification <?= $notification_state ?>"><?= $notification_msg ?></div>
 
                     <div class="grid admin-header">
-                        <div class="col">
+                        <div class="col pb-0">
                         <h2>Index of <b>Collector</b> Profiles(<?= $active_collectors_count ?>)</h2>
                         </div>
                         <div class="col-1 add-icon">
