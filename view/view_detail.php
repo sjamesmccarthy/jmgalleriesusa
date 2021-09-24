@@ -36,7 +36,7 @@
     <!-- <div class="grid mt-16"> -->
         <div class="col"> <!--col-2_sm-12-->
             <!-- <p class="small blue" style="margin-bottom: -10px; margin-left: 5px;">$ USD</p> -->
-            <p class="blue price">$<span id="price_view" class="price"><?= number_format($default_price, 0) ?></span></p><p class="frame_data price"></p>
+            <p class="blue price">$<span id="price_view" class="price"><?= number_format($default_price, 2) ?></span></p><p class="frame_data price"></p>
         <!-- </div> -->
 
        <?= $sizes_pricing ?>
