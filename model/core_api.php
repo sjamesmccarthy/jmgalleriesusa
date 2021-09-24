@@ -496,7 +496,8 @@ class Core_Api extends Fieldnotes_Api
             $sql = "SELECT
             cl.catalog_photo_id,
             cl.catalog_collections_id,
-            cc.title
+            cc.title,
+            cc.catalog_code
         FROM
             catalog_collections_link as cl
             inner join catalog_collections as cc on cc.catalog_collections_id = cl.catalog_collections_id
@@ -1317,7 +1318,7 @@ class Core_Api extends Fieldnotes_Api
         /* Executes SQL and then assigns object to passed var */
         if( $this->checkDBConnection(__FUNCTION__) == true) {
 
-            $sql = "select catalog_collections_id, title, type from catalog_collections WHERE type='collection' AND status = 'active'";
+            $sql = "select catalog_collections_id, title, type, catalog_code from catalog_collections WHERE type='collection' AND status = 'active'";
             $result = $this->mysqli->query($sql);
 
             if ($result->num_rows > 0) {
@@ -1601,13 +1602,14 @@ class Core_Api extends Fieldnotes_Api
         as_open = '$as_open',
         featured = '$featured',
         `desc` = '$desc'
-        WHERE catalog_photo_id = '$catalog_photo_id' AND file_name = '$file_name'";
+        WHERE catalog_photo_id = '$catalog_photo_id'";
 
         $result = $this->mysqli->query($sql);
+        // removed this sql AND file_name = '$file_name'
         
-       // if($this->mysqli->affected_rows == 0) {
-       //  $result=0;   
-       // } else { $result=1; }
+        // if($this->mysqli->affected_rows == 0) {
+        //  $result=0;   
+        // } else { $result=1; }
         
         /* DELETE ALL catalog_collection_link records for this ID */
         $sql_d = "DELETE FROM catalog_collections_link WHERE catalog_photo_id = '" . $catalog_photo_id . "'";
@@ -1619,15 +1621,15 @@ class Core_Api extends Fieldnotes_Api
         }
         
         array_push($collections_tags, $parent_collections_id);
-
+        
         foreach($collections_tags as $key => $value) {
-
+        
             $sql_ci = "INSERT INTO catalog_collections_link (catalog_photo_id,catalog_collections_id,artist_id)
                 VALUES('" . $catalog_photo_id . "','" . $value . "','" . $artist_id . "')";
             $result_ci = $this->mysqli->query($sql_ci);
-
+        
         }
-
+        
         /* Check to see if files have been uploaded */
         $this->uploadFile(array("jpg","jpeg"), "jpg");
         
@@ -1808,7 +1810,7 @@ class Core_Api extends Fieldnotes_Api
                 
             $result_u = $this->mysqli->query($sql_u);
         } 
-
+        
         /* Insert into database */
         if(!isSet($_POST['state_location_id']) || $state_location_id != $art_location) {
         

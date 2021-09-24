@@ -36,10 +36,11 @@
     <!-- <div class="grid mt-16"> -->
         <div class="col"> <!--col-2_sm-12-->
             <!-- <p class="small blue" style="margin-bottom: -10px; margin-left: 5px;">$ USD</p> -->
-            <p class="blue price">$<span id="price_view" class="price"><?= number_format($default_price, 0) ?></span></p><p class="frame_data price"></p>
+            <p class="blue price">$<span id="price_view" class="price"><?= number_format($default_price, 2) ?></span></p><p class="frame_data price"></p>
         <!-- </div> -->
 
        <?= $sizes_pricing ?>
+       
        <?= $sizes_frames ?>
 
        
@@ -89,7 +90,7 @@
             $('#frame').find('option').not(':first').attr("disabled", "disabled"); 
             console.log('5x7');
        } else {
-           console.log('ImageSize: ' + ps + '/MattedSize: ' + ms);
+           // console.log('ImageSize: ' + ps + '/MattedSize: ' + ms);
            $('#matted_size').val(ms);
             // $('#frame').find('option').not(':first').css("display", "block");
             if($("#frame option:selected").val() == "FRAMELESS" || $("#frame option:selected").val() == "ADDWITHACRYLIC" ) { 
@@ -102,8 +103,11 @@
         $("#frame").prop('selectedIndex', 0); 
         $('.frame_data').html(''); 
         $('#price').val(p);
-        $('#price_view').html(nf.format(p));
-
+        // $('#price_view').html(nf.format(p));
+        $('#price_view').html(new Intl.NumberFormat('en-US').format(p));
+        // console.log('updating price.View(.price)=' + nf.format(p));
+        console.log(new Intl.NumberFormat('en-US').format(p));
+        
     });
 
     $('#frame').on("change", function(e) {
@@ -161,6 +165,7 @@
 
         // var nf = new Intl.NumberFormat();
         // var p = newprice_f;
+        
         console.log('updating price.View(.price)=' + newprice_f);
         $('#price_view').html(newprice_f);
         $('#price').val(newprice_f);

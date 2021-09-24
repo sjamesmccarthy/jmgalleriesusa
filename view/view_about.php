@@ -6,7 +6,7 @@
         <div class="col-12 nopad">
 
                 <div class="grid">
-                    <div class="col bio-profile-pic-bkg">
+                    <div class="col bio-profile-pic-bkg"">
                             <!-- <img class="bio-profile-pic" src="/view/image/profile_1.jpg" /> -->
                     </div>
                 </div>

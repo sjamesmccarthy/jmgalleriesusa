@@ -70,7 +70,7 @@ form {
 }
 
 .edition-title {
-    text-transform: initial;
+    text-transform: uppercase;
     font-weight: 300;
     font-size: 1rem;
     line-height: 2.2;
@@ -87,24 +87,28 @@ form {
         // background-color: red;
         border-right: 0;
         text-align: center;
+        font-size: 1rem;
     }
 
     // Medium devices (tablets, 768px and up)
     @media (min-width: 767px) {
         //  background-color: blue;
         text-align: left;
+        font-size: 1rem;
     }
 
     // Large devices (tablets (iPad Pro, 1112px and up)
     @media (min-width: 1112px) {
         //  background-color: gray;
         text-align: left;
+        font-size: 1rem;
     }
 
     // Extra large devices (large desktops, 1200px and up)
     @media (min-width: 1200px) {
         //  background-color: lightgreen;
         text-align: left;
+        font-size: 1rem;
     }
 }
 
@@ -244,13 +248,16 @@ form {
 
 .portrait {
 
-    background-color:rgba(0,0,0, 1);
+    background-color:rgba(0,0,0,.04);
     display: block;
-     
+    // border-radius: $border-radius;
+    
       >p >img {
         width: 43%;
         vertical-align: middle;
         box-shadow: 0px 20px 25px 0px rgba(0,0,0,.3);
+        border: 40px solid #FFF;
+        box-sizing: border-box;
     }
 
     @media (max-width: 64em), (max-width: 80em), 
@@ -268,6 +275,8 @@ form {
         width: 65%;
         vertical-align: middle;
         box-shadow: 0px 20px 25px 0px rgba(0,0,0,.3);
+        box-sizing: border-box;
+        border: 40px solid #FFF;
         
         @media (max-width: 64em), (max-width: 80em), 
         (max-width: 64em) and (orientation: portrait) {
@@ -290,9 +299,11 @@ form {
     >p >img {
         max-width: 100%;
         // border-radius: 0 0 20px 20px;
-        border-radius: $border-radius;
+        // border-radius: $border-radius;
         vertical-align: middle;
         box-shadow: 0px 20px 25px 0px rgba(0,0,0,.3);
+        border: 40px solid #FFF;
+        box-sizing: border-box;
 
         @media (max-width: 64em), (max-width: 80em), 
             (max-width: 64em) and (orientation: portrait) {

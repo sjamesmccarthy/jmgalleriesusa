@@ -32,9 +32,6 @@
                     <option value="0">Current Location ...</option>
                     <?= $location_html ?>
                     </select>
-                    
-                    <?= $location_history ?>
-
                 </div>
                 <div class="select-wrapper half-size vtop">
                     <label for="collector">COLLECTOR</label>
@@ -47,7 +44,11 @@
                     </select>
                 </div>
             </div>
-
+            
+            <div>
+                <?= $location_history ?>
+            </div>
+            
             <div>
                 <label for="title">TITLE</label>
                 <input class="half-size" maxlength="255" type="text" id="title" name="title" placeholder="TITLE" value="<?= $title ?>" <?= $btn_readonly ?> required>

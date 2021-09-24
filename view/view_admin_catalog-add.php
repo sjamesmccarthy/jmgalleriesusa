@@ -7,7 +7,7 @@
         <div class="col catalog-add--container">
 
             <div class="admin-header">
-                <h2><?= $page_title ?></h2>
+                <h2> <?= $page_title ?></h2>
                 <p class="close-x"><i class="fas fa-times-circle"></i></p>
             </div>
 
@@ -43,7 +43,8 @@
                 <select id="status" name="status">
                 <!-- $var > 2 ? true : false -->
                     <option value="ACTIVE" <?= ($status == "ACTIVE" ? "SELECTED" : ""); ?>>STATUS (ACTIVE)</option>
-                    <option value="DISABLED" <?= ($status != "ACTIVE" ? "SELECTED" : ""); ?>>STATUS (DISABLED)</option>
+                    <option value="DISABLED" <?= ($status == "DISABLED" ? "SELECTED" : ""); ?>>STATUS (DISABLED)</option>
+                    <option value="RETIRED" <?= ($status == "RETIRED" ? "SELECTED" : ""); ?>>STATUS (RETIRED)</option>
                 </select> 
                  <p id="make-featured" class="small mb-16 mt-16">
                      <input <?= ($featured == "1" ? "CHECKED" : ""); ?> type="checkbox" id="featured" name="featured" value="1" /> 

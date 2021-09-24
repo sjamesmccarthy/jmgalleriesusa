@@ -10,15 +10,17 @@
 
                     <div class="grid admin-header">
                         <div class="col pb-0">
-                            <h2>Catalog of <b>Active Online Photos</b> (<?= $active_photos_count ?>)</h2>
+                            <h2>Catalog of <b>Online Photos</b> (<span class="current_recs"><?= $active_photos_count ?></span>/<?= $total_photos_count ?>)</h2>
                             
                             <div class="tabs"> 
                                 <div class="tab-STUDIO" ><a href="?filter=ACTIVE">ACTIVE</a></div>
                                 <div class="tab-HC" ><a href="?filter=DISABLED">DISABLED</a></div>
-                                <div class="tab-DONATED" ><a href="javascript: $('#dataTable').DataTable().order([3, 'asc']).draw();">LIMITED Ed.</a></div>
-                                <div class="tab-COLLECTOR" ><a href="javascript: $('#dataTable').DataTable().order([3, 'desc']).draw();">OPEN Ed.</a></div>
-                                <div class="tab-TINYVIEWS" ><a href="javascript: $('#dataTable').DataTable().order([0, 'desc']).draw();">FEAT. HERO</a></div>
-                                <div class="tab-INVENTORY" ><a href="/studio/catalog"><i class="fas fa-times-circle"></i></a></div>
+                                <div class="tab-HC" ><a href="?filter=RETIRED">RETIRED</a></div>
+                                <div style="min-width: 10px">|</div>
+                                <div class="tab-DONATED" ><a style="text-transform: lowercase;" href="javascript: $('#dataTable').DataTable().order([3, 'asc']).draw();">^LIMITED</a></div>
+                                <div class="tab-COLLECTOR" ><a style="text-transform: lowercase;" href="javascript: $('#dataTable').DataTable().order([3, 'desc']).draw();">^OPEN</a></div>
+                                <div class="tab-TINYVIEWS" ><a style="text-transform: lowercase;" href="javascript: $('#dataTable').DataTable().order([0, 'desc']).draw();">^HERO</a></div>
+                                <div class="tab-INVENTORY" ><a style="text-transform: lowercase;" href="/studio/catalog"><i class="fas fa-times-circle"></i></a></div>
                             </div>
                         </div>
                         <div class="col-1 add-icon"><a href="/studio/catalog-add"><i class="fas fa-plus-circle"></i></a></div>
@@ -47,6 +49,10 @@
 <script>
     jQuery(document).ready(function($){
        
+       $(document).on('keyup','input[type=search]',function(){
+           updateCount();
+       });
+           
         $('.tab-<?= $filter ?>').addClass('active');
         
         $('.notification').delay(5000).slideUp("slow").fadeOut(3000);
@@ -75,7 +81,7 @@
                             if(row.category == "Mountains, Deserts & Trees") { var cate_code = 'MDT'; }
                             if(row.as_open == '1') { var ed = 'OT'; } else { var ed = 'LE'; }
                             if(row.featured     == '1') { var feat = '<i class="fas fa-asterisk"></i>'; } else { var feat = ''; }
-                            data = ' <a href="/studio/catalog-add?id=' + row.catalog_photo_id + '">' + data + ' ' + '(' + cate_code + row.catalog_photo_id + ed + ')</a>';
+                            data = ' <a href="/studio/catalog-add?id=' + row.catalog_photo_id + '">' + data + ' ' + '</a><br><span style="font-size: .8rem;">' + cate_code + row.catalog_photo_id + ed + '_' + data.replace(/\s+/g, '-').toUpperCase() + '</span>';
                         }  
                         return data;
                     } 
@@ -108,5 +114,12 @@
              ]
         } );
         
+        function updateCount() {
+            var info = $('#dataTable').DataTable().page.info();
+            $('.current_recs').html(info.recordsDisplay);
+            console.log( info.recordsDisplay );
+        }
+        
+        updateCount();
     });
 </script>

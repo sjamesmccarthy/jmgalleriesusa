@@ -8,7 +8,5 @@
     <!-- /generated html from component file -->
 
     <!-- generated html from component file: All Other Catalogs  -->
-    <section id="filmstrips" class="filmstrip">
-        <?= $thumb_html ?>
-    </section>
+    <?= $thumb_html ?>
     <!-- /generated html from component file -->

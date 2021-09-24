@@ -10,7 +10,8 @@
 
      // Fetch all linked collections
     $category_data = $this->api_Admin_Get_Catalog_Categories();
-
+    // print_r($category_data);
+    
     /* CHECK TO SEE IF THIS IS AN EDIT OR ADD NEW */
     if(isSet($this->routes->URI->queryvals)) {
         $edit_id = $this->routes->URI->queryvals[1];
@@ -23,23 +24,30 @@
 
         if($as_gallery == "1") {
             $previous_edition = "as_gallery";
+            $edition_label = "LE";
         } 
 
         if($as_studio == "1") {
             $previous_edition = "as_studio";
+            $edition_label = "LE";
         } 
 
         if($as_open == "1") {
             $previous_edition = "as_open";
+            $edition_label = "OT";
         } 
 
         $collections_data = $this->api_Admin_Get_CollectionsByPhoto($catalog_photo_id, $parent_collections_id);
         if(!isSet($collections_data)) { $collections_html= '<i style="padding-right: 5px;" class="fas fa-link"></i> link other collections'; }
-
+        
         foreach($category_data as $key_tag => $value_tag) {
 
+            if($value_tag['catalog_collections_id'] === $parent_collections_id) { 
+                 $collection_code = $value_tag['catalog_code'];
+            } 
+            
             foreach($collections_data as $key => $value) {
-               
+ 
                     if($value_tag['catalog_collections_id'] == $value['catalog_collections_id']) {      
                         $collections_html .= '<i style="padding-right: 5px;" class="fas fa-link"></i>' . $value['title'] . '<br />';
                         $col_sel = 'SELECTED';
@@ -50,10 +58,12 @@
             if($value_tag['catalog_collections_id'] != $edit_data['parent_collections_id']) {
                 $collections_tag_options .= '<option ' . $col_sel . ' value="' . $value_tag['catalog_collections_id'] . '">' . $value_tag['title'] . '</option>';
                 $col_sel = null;
+                
             }
+            
         }
 
-        $page_title = "Editing <b>" . $title . "</b> (" . $catalog_photo_id . ")";
+        $page_title = "Editing <b>" . $collection_code .  $catalog_photo_id .  $edition_label . "_" . str_replace(" ", "-", strtoupper($title));
         $display_show = 'photopreviewshow';
         $formType = "update";
         $button_label="update photo " . $edit_file_name;
@@ -110,7 +120,7 @@
     foreach($category_data as $key => $value) {
 
         if($value['catalog_collections_id'] === $parent_collections_id) { 
-            $selected = "SELECTED"; } 
+            $selected = "SELECTED"; }
         else { $selected = null; }
 
         if($value['type'] != strtoupper('collection')) {

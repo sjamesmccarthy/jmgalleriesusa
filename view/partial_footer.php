@@ -2,7 +2,7 @@
     
     <!-- <div class="thin-line"></div> -->
     
-    <div class="pt-32 pb-32 footer-max-width">
+    <div class="pb-32 footer-max-width">
         
         <div class="grid nopad-left hidden">
 
@@ -25,7 +25,7 @@
                 </div>
 
                 <div class="col-5_sm-12 breadcrumb copyright">
-                    <p><a href="/about">About j.McCarthy</a> <!-- / <a href="/all?filter=tinyviews">Open Editions</a> -->/ <a href="/shop">jM Gallery Store</a> / <a href="/privacy"><?= $this->config->copyright ?></a><!-- <a style="font-size:.8rem; margin-left: 1rem;" class="theme-toggle"><i class="fas fa-adjust"></i></a> --></p>
+                    <p><a href="/about">About j.McCarthy</a> <!-- / <a href="/all?filter=tinyviews">Open Editions</a> -->/ <a href="/shop">Shop</a> / <a href="/fieldnotes">Field Notes</a> / <a href="/thework">The Work</a> / <a target="_youtube" href="//vlog.jmgalleries.com">YouTube</a> / <a href="/privacy"><?= $this->config->copyright ?></a><!-- <a style="font-size:.8rem; margin-left: 1rem;" class="theme-toggle"><i class="fas fa-adjust"></i></a> --></p>
                    <?php  
                      // $this->getPartial('newsletter'); 
                    ?>

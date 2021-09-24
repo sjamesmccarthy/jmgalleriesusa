@@ -5,12 +5,12 @@
 
 /* Fetch Just the New Releases filmstrip */
     $count =0;
-    $new_release_data = array(8 ,12); /* Also found in view_catalog.inc.php */
+    $new_release_data = array(4,12); /* Also found in view_catalog.inc.php */
 
     $new_releases = $this->api_Catalog_Get_New_Releases($new_release_data[0], $new_release_data[1]);
 
         // $thumb_new_releases_html .= "<article id='new-releases'>";
-        $thumb_new_releases_html .= '<div class="grid-4_sm-2 grid-4_md-3 mt-64">';
+        $thumb_new_releases_html .= '<div class="grid-4_sm-2 grid-4_md-3">';
         $thumb_new_releases_html .= '<div class="col-12_sm-12 text-center mb-16"><!-- col-10_sm-12-->'; 
         $thumb_new_releases_html .= '<h2 class="h2-newrelease"><a href="/new-releases/">NEW RELEASES</a></h2>';
         $thumb_new_releases_html .= '<p class="light sm-hidden">a collection of photography featuring my newest work.</p>';
@@ -61,9 +61,9 @@ if( !$new_releases['error']) {
         } else {
             $grid_css = 'col';
         }
-        $thumb_new_releases_html .= '<div style="padding: 0 10px;" class="thumb overflow-hidden ' . $grid_css . '">';
+        $thumb_new_releases_html .= '<div style="" class="thumb overflow-hidden ' . $grid_css . '">';
         // $thumb_new_releases_html .= '<a href="/' . $value['catalog_path']  . $value['path'] . "/" . $img_file . '"><img src="/catalog/__thumbnail/' .$img_file . '.jpg" /></a><p>' . $value['title'] . '</p></div>';
-        $thumb_new_releases_html .= '<a href="/' . $v['catalog_path'] . '/' . $img_file . '"><img style="width: 100%;" src="/catalog/__thumbnail/' . $img_file . '.jpg" alt="' . $img_file . '" /></a></p><h4 class="pt-8 blue"><a href="/' . $v['catalog_path'] . '/' . $img_file . '">' . $v['title'] . '</a></h4><!-- <p>' . $v['loc_place'] . '</p> --><!-- <p>Sizes: ' . $available_sizes . '</p>-->' . $desc_editions . '</div>';
+        $thumb_new_releases_html .= '<a href="/' . $v['catalog_path'] . '/' . $img_file . '"><img style="width: 100%;" src="/catalog/__thumbnail/' . $img_file . '.jpg" alt="' . $img_file . '" /></a></p><!--<h4 class="pt-8 blue"><a href="/' . $v['catalog_path'] . '/' . $img_file . '">' . $v['title'] . '</a></h4>--><!-- <p>' . $v['loc_place'] . '</p> --><!-- <p>Sizes: ' . $available_sizes . '</p>--><!--' . $desc_editions . '--></div>';
 
         if($count == 3) { $count = 0; } else { $count++; }
     }

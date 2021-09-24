@@ -42,13 +42,14 @@ font-size: 1.3rem !important;
 .bio-profile-pic-bkg {
     min-height: 450px; 
     background-size: cover; 
-    background-position: center; 
+    background-position: 8px 665px; 
     border-radius: $border-radius;
     box-shadow: 0px 20px 25px 0px rgba(0, 0, 0, 0.3);
 
      // xSmall devices (landscape phones, 320px and up)
      @media (min-width: 320px) { 
         background-image: url(/view/image/profile_2.jpg); 
+        background-position: center;
         // background-color: lightpink;
         min-height: 250px;
         display: block;
@@ -56,7 +57,8 @@ font-size: 1.3rem !important;
 
     // Small devices (landscape phones, 576px and up)
     @media (min-width: 376px) { 
-        background-image: url(/view/image/profile_2.jpg); 
+        background-image: url(/view/image/profile_4.jpg); 
+        background-position: center;
         // background-color: gray;
         min-height: 450px; 
         display: block;
@@ -64,7 +66,8 @@ font-size: 1.3rem !important;
 
     // Medium devices (tablets, 768px and up)
     @media (min-width: 767px) {
-        background-image: url(/view/image/profile_1.jpg);
+        background-image: url(/view/image/profile_4.jpg);
+        background-position: 8px 565px; 
         min-height: 450px; 
         display: block; 
         // background-color: blue;
@@ -72,7 +75,8 @@ font-size: 1.3rem !important;
 
     // Large devices (tablets (iPad Pro, 1112px and up)
     @media (min-width: 1112px) {
-        background-image: url(/view/image/profile_1.jpg); 
+        background-image: url(/view/image/profile_4.jpg); 
+        background-position: 8px 665px; 
         min-height: 450px; 
         display: block;
         // background-color: orange;
@@ -80,8 +84,8 @@ font-size: 1.3rem !important;
 
     // Extra large devices (large desktops, 1200px and up)
     @media (min-width: 1200px) {
-        background-image: url(/view/image/profile_1.jpg); 
-        min-height: 450px; 
+        background-image: url(/view/image/profile_4.jpg); 
+        min-height: 650px; 
         display: block;
         // background-color: red;
     }

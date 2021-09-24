@@ -20,18 +20,19 @@
     if( $catalog_meta[0]['path'] == 'new-releases') {
          $catalog_photos = $catalog_photos = $this->api_Catalog_Get_New_Releases($new_release_data[0], $new_release_data[1]);
          $catalog_tabs_hidden = true;
+         $catalog_le_desc = '&mdash; limited edition';
     } else if( $catalog_meta[0]['path'] == 'thework') {
 
         if($this->routes->URI->queryvals[1] == 'tinyviews') {
-            $catalog_title = 'SHOP OPEN EDITIONS';
-            $catalog_desc = 'Beautiful tinyVIEWS<span style="font-size:.9rem; font-weight: 300;"><sup>&trade;</sup></span> Open Edition Fine Art at Affordable Prices.';
+            $catalog_title = 'OPEN EDITIONS';
+            $catalog_desc = 'Beautiful tinyVIEWS<span style="font-size:.9rem; font-weight: 300;"><sup>&trade;</sup></span> Open Edition Fine Art at Affordable Prices';
             $catalog_tabs_hidden = true;
             $tv_le_link = '<p class="shop-tv-link"><a href="/shop">Shop The jM Gallery Store</a></p>';
         } 
 
         if($this->routes->URI->queryvals[1] == 'limited') {
             $catalog_title = 'LIMITED EDITIONS';
-            $catalog_desc = 'a collection of LIMITED EDITION photography by jMcCarthy.';
+            $catalog_desc = 'a collection of LIMITED EDITION photography by jMcCarthy';
             $catalog_tabs_hidden = true;
             $tv_le_link = '<p class="shop-tv-link"><a href="/galleries">Browse The Limited Edition Collections</a></p>';
         } 
@@ -40,6 +41,7 @@
 
     } else {
         $catalog_tabs_hidden = true;
+        $catalog_le_desc = '&mdash; limited edition';
         // $catalog_photos = $this->api_Catalog_Category_Filmstrip($catalog_meta[0]['catalog_collections_id'], 'ALL');
         $catalog_photos = $this->api_Catalog_Category_Filmstrip($catalog_meta[0]['catalog_collections_id'], 'ALL','LE');
         $tv_le_link = '<p class="shop-tv-link"><a href="/thework?filter=limited">Back To THE WORK &mdash; LIMITED EDITIONS</a></p>';
@@ -99,15 +101,7 @@
                 }
 
                 // $desc_editions = "<p>" . $this->config->edition_description_open . "</p>"; 
-                $desc_editions = "<p style='font-weight: 700; padding-right: 1rem;'>$" . $rPrice . " (" . $rSize . ")</p><!-- <p style='margin-top: 1rem; background-color: #D4E9D7; padding: 3px 6px; display: inline-block; font-size: 11px; color: #000; font-weight: 700; border-radius: 20px;'>PRINT ONLY SALE</p> --><!-- <p style='position: absolute; top: 1rem; right: 1rem;
-                background-color: #000;
-                padding: 5px;
-                color: #FFF;
-                border-radius: 6px;
-                width: 140px;
-                text-align: center;
-                font-size: 12px;
-                font-weight: 700;'>ADD TO CART +ORDER</p> -->"; 
+                $desc_editions = "<p style='font-weight: 700; padding-right: 1rem;'>$" . $rPrice . " (" . $rSize . ")</p>"; 
                 $available_sizes = $this->config->available_sizes_open; 
                 $rSize = null;
                 $rPrice = null;
@@ -153,7 +147,7 @@
                 }
                 
                 // <div style="overflow: hidden; height: 203px;" class="' . $grid_css . '">
-                $thumb_html .= '<div style="position: relative; padding: 0 10px; overflow: hidden; margin-bottom: 32px" class="thumb ' . $grid_css .  ' pb-16 filter-thumb-gallery '. $data_filters . '"><a href="/' . $v['catalog_path'] . '/' . $img_file . '"><img style="width: 100%;" src="/catalog/__thumbnail/' . $img_file . '.jpg" alt="' . $img_file . '" /></a></p><h4 class="pt-8 blue"><a href="/' . $v['catalog_path'] . '/' . $img_file . '">' . $v['title'] . '</a></h4><!-- <p>' . $v['loc_place'] . '</p> --><!--<p>Sizes: ' . $available_sizes . '</p>-->' . $desc_editions . '</div>';
+                $thumb_html .= '<div style="position: relative; padding: 0 10px; overflow: hidden; margin-bottom: 32px" class="thumb ' . $grid_css .  ' pb-16 filter-thumb-gallery '. $data_filters . '"><a href="/' . $v['catalog_path'] . '/' . $img_file . '"><img style="width: 100%;" src="/catalog/__thumbnail/' . $img_file . '.jpg" alt="' . $img_file . '" /></a></p><!--<h4 class="pt-8 blue"><a href="/' . $v['catalog_path'] . '/' . $img_file . '">' . $v['title'] . '</a></h4>--><!-- <p>' . $v['loc_place'] . '</p> --><!--<p>Sizes: ' . $available_sizes . '</p>--> <!-- ' . $desc_editions . ' --></div>';
 
                 /* <!-- <p><a href="/' . $v['catalog_path'] . '/' . $img_file . '">' . $v['title'] . '</a>--><!-- <br />Exhibiting at Joe Maxx Coffee, Las Vegas --> */
                 

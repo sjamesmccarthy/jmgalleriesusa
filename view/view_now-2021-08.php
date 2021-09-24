@@ -33,7 +33,7 @@
                     
                 <h3>Backyard ...</h3>
                     <p>
-                    The month of July was extremely slow going because of, yep, you guessed it, the smoke. Working outside in 95 degree weather is tough enough, but add an unhealthy AQI of 160+ and it's just down-right miserable, so Michele and I took a break. Hopefully this month will improve and we will be able to enjoy our new paver patio before winter. As progress is made pics will come, or links to pics will come. Fingers crossed AQI improves and those wildfires buring nearby us (Dixie, Tammarack and River) are finally contained. 
+                    The month of July was extremely slow going because of, yep, you guessed it, the smoke. Working outside in 95 degree weather is tough enough, but add an unhealthy AQI of 160+ and it's just down-right miserable, so Michele and I took a break. Hopefully this month will improve and we will be able to enjoy our new paver patio before winter. As progress is made pics will come, or links to pics will come. Fingers crossed AQI improves and those wildfires burning nearby us (Dixie, Tammarack and River) are finally contained. 
                     </p>
                     
                 <h3>Baseball ...</h3>

@@ -10,10 +10,11 @@
     foreach($catalog_names as $key=>$value) {
 
             // $thumb_html .= "<article id='filmstrip'>";
-            $thumb_html .= '<div class="grid-4_sm-2 grid-4_md-3 mt-64"><!-- mt-32 -->';
+            $thumb_html .= '<section id="filmstrip-' . strtoupper($value['path']) . '">';
+            $thumb_html .= '<div class="grid-4_sm-2 grid-4_md-3"><!-- mt-32  mt-64-->';
 
         if(strtolower($value['title']) != 'new releases') {
-
+            
             $thumb_html .= '<div class="col-12_sm-12 text-center mb-16"><!-- col-10_sm-12 -->';
             $thumb_html .= '<h2><a href="/' . $value['path'] . '">' . strtoupper($value['title']) . '</a></h2>';
             $thumb_html .= '<p class="light sm-hidden">' . $value['desc'] .  '</p>';
@@ -64,7 +65,7 @@
                 $thumb_html .= '<div class="thumb overflow-hidden ' . $grid_css . '">';
                 // $thumb_html .= '<a href="' . $value['path'] . "/" . $img_file . '"><img src="/catalog/__thumbnail/' .$img_file . '.jpg" /></a><p class="blue larger">' . $v['title'] . '</p></div>';
                 
-                $thumb_html .= '<a href="/' . $v['catalog_path'] . '/' . $img_file . '"><img style="width: 100%;" src="/catalog/__thumbnail/' . $img_file . '.jpg" alt="' . $img_file . '" /></a></p><h4 class="pt-8 blue"><a href="' . $value['path'] . "/" . $img_file . '">' . $v['title'] . '</a></h4><!-- <p>' . $v['loc_place'] . '</p> --><!-- <p>Sizes: ' . $available_sizes . '</p>-->' . $desc_editions . '</div>';
+                $thumb_html .= '<a href="/' . $v['catalog_path'] . '/' . $img_file . '"><img style="width: 100%;" src="/catalog/__thumbnail/' . $img_file . '.jpg" alt="' . $img_file . '" /></a></p><!--<h4 class="pt-8 blue"><a href="' . $value['path'] . "/" . $img_file . '">' . $v['title'] . '</a></h4>--><!-- <p>' . $v['loc_place'] . '</p> --><!-- <p>Sizes: ' . $available_sizes . '</p>--><!--' . $desc_editions . '--></div>';
 
                 if($count == 3) { $count = 0; } else { $count++; }
             }
@@ -75,6 +76,7 @@
         }
 
         $thumb_html .= "</div>";
+        $thumb_html .= "</section>";
         // $thumb_html .= "</article>";
     }
 

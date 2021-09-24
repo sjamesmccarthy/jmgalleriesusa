@@ -93,12 +93,12 @@ if(count($this->data->routePathQuery) > 2) {
             foreach( $locationsHistory_data as $key_lh => $val_lh) {
 
                 if(isSet($val_lh['date_ended'])) {
-                    $location_history_html .= "- " . strtoupper($val_lh['location']) . " from " . date("F d, Y", strtotime($val_lh['date_started'])) . " to " . date("F d, Y", strtotime($val_lh['date_ended'])) . "<br />";
+                    $location_history_html .= "<p>" .  date("m/d/Y", strtotime($val_lh['date_started'])) . " thru " . date("m/d/Y", strtotime($val_lh['date_ended'])) . " @" . strtoupper($val_lh['location']) . "</p>";
                 } else {
                     if($val_lh['location'] == "COLLECTOR") {
                         // $val_lh['location'] = $val_lh['location'] . ' (' . $val_lh['last_name'] . ')';
                     }
-                    $location_history_html .= "@" . $val_lh['location'] . " &mdash; " . date("F d, Y", strtotime($val_lh['date_started'])) . "<br />";
+                    $location_history_html .= "<p><b>Currently @" . $val_lh['location'] . " as of " . date("F d, Y", strtotime($val_lh['date_started'])) . "</b></p>";
                 } 
             }
 

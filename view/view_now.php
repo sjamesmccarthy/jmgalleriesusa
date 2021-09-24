@@ -28,6 +28,7 @@
                     
                 <h3>Reading ...</h3>
                     <p>
+                    <span class="update--label update--label-color-orange">Sun, 19 Sep 2021</span><span class="update--color-orange">Finished! I think my biggest problem with this book was that I felt like it was written for a movie and not a book. There were some really good parts, but 65% of it I felt was too similar to the first book with poor character evolution. The ending-ending could have been completely left out and I would have been satisfied as a reader, but it was perfect setup for a third-movie. I am mostly disappointed in reading this sequel.</span> 
                     Argh, I am still reading the sequel to "Ready, Player One" titled "Ready, Player Two" which I started it back in January. I didn't make any progress and hope to finish by the end of the year and officially make it the ONLY book I read in 2021. That's terrible isn't it. I did download a sample of Walter Issacson's Steve Jobs biography and hope to get started sometime soon after I finish RP2. 
                     </p>
                     
@@ -38,7 +39,7 @@
                     
                 <h3>Baseball ...</h3>
                     <p>
-                    Yep, the season is over for us. Hopefully I will come read these words in a month and be wrong, but I don't think I will. 10 games behind now since the All-Star break when we had a 3.5 game lead in first-place. Good grief; that's baseball.
+                    Yep, the season is over for us. <span class="update--label update--label-color-orange">Sun, 19 Sep 2021</span><span class="update--color-orange">We may be wild-card opportunists, but I just don't see this version of the team (once again mostly pitching) post-season worthy. This seasons Red Sox collapse is a direct result of poor pitching management. I think it's time for Dave Bush to find a new team.</span>  Hopefully I will come read these words in a month and be wrong, but I don't think I will. 10 games behind now since the All-Star break when we had a 3.5 game lead in first-place. Good grief; that's baseball.
                     </p>
                 
                 <p class="mt-32 nosiderule text-center">Created on Wed, 8 Sep 2021

@@ -25,6 +25,7 @@
     // $this->console($data_html,1);
     // $active_inventory_count = array_count_values(array_column($data_html, 'status'))['ACTIVE'];
     $active_inventory_count = count($data_html);
+    $total_inventory_count = $this->mysqli->affected_rows;
     $data_json = json_encode($data_html);
 
     if(isSet($this->routes->URI->queryvals )) {
