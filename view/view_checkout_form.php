@@ -15,6 +15,7 @@
             <input type="hidden" name="title" value="<?= $order_title ?>" />
             <input type="hidden" id="shipping_cost" name="shipping_cost" value="<?= $add_ship_cost ?>" />
             <input type="hidden" id="shipping_provider" name="shipping_provider" value="<?= $add_shipping_provider ?>" />
+            <input type="hidden" id="amount_total" name="amount_total" value="' . <?= $estimated_cost_raw ?> . '" />
             
             <?= $hidden_fields ?>
 
@@ -55,11 +56,7 @@
             
             <h3 class='mt-32'>Payment</h3><p class='pb-16'><img style='margin-bottom: 10px; width: 150px; vertical-align: middle' src='/view/image/square-payment-icons.png' alt="square payment icon" /> <!-- <i style='font-size: 1.8rem; margin-left: 5px;' class='fab fa-bitcoin'></i> --><br /><span class='small'Estimated Total Not Including Tax or Shipping or any Promotional Codes.<br />Visa, Mastercard, American Express and Discover accepted and processed with Square. <!-- Shipping costs and tax, if applicable, will be included on final bill. Bitcoin is accepted via Coinbase or Square Cash App.<br /> Cash (USD) is accepted on pickup only orders. No checks. <u>There is no payment due at this time.</u> You will be billed separately through Square.--></span></p>
 
-            <?= $pay_SqPaymentForm ?>
-            <?= $pay_SqForm_CSS ?>
-            <?= $pay_SqPaymentForm_localjs ?>
-            <?= $pay_SqPaymentFormFields ?>
-
+            <div class='pl-16 pb-16 pt-16 pr-16 mt-8 notice-WARNING'><p style='line-height: 1.3'>NOTICE: Our payment processing is currently under going maintenance so an art consultant will be in contact with you regarding payment. No cards will be charged at this time. We apologize for the inconvenience.</p></div>
 
             <button class="mt-32" id="sq-creditcard" 
                     value="SEND"><?= $button_label ?></button>
@@ -71,7 +68,7 @@
             <p id="form_response"> </p>
         </div>
 
-        <div class="pl-32 col-3_sm-11">
+        <div class="pl-32 col-3_sm-hidden">
            <?php $this->getPartial('findus'); ?>
         </div>
 
@@ -87,17 +84,29 @@
 
      $('.ship').click(function() {
         $('.ship').not(this).prop('checked', false);
+        
         var shipping = $(this).val();
         var shipping_provider = $(this).attr('id');
         var shipping_provider_name = $(this).attr('data-shipper');
         console.log( shipping_provider + '=' + shipping );
         
-        /* Update costs and hidden fields */
-        var oldprice = parseFloat( parseFloat( $('#estimated_cost').html() ) );
-        var newprice = parseFloat(oldprice.toFixed(2)) + parseFloat( shipping );
-        var newpriceTrim = newprice.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');
-        var newpriceCents = newprice * parseFloat(100);
-        console.log("oldprice:" + oldprice + "/" + "newprice:" + newprice + "/shipCost: " + $(this).val() );
+        if($(this).prop("checked") == true){
+          console.log("Checkbox is checked.");
+          /* Update costs and hidden fields */
+          var oldprice = parseFloat( parseFloat( $('#estimated_cost').html() ) );
+          var newprice = parseFloat(oldprice.toFixed(2)) + parseFloat( shipping );
+          var newpriceTrim = newprice.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');
+          var newpriceCents = newprice * parseFloat(100);
+          console.log("oldprice:" + oldprice + "/" + "newprice:" + newprice + "/shipCost: " + $(this).val() );
+        } else {
+          console.log("Checkbox is unchecked.");
+          /* Update costs and hidden fields */
+          var oldprice = parseFloat( parseFloat( $('#estimated_cost').html() ) );
+          var newprice = parseFloat(oldprice.toFixed(2));
+          var newpriceTrim = newprice.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');
+          var newpriceCents = newprice * parseFloat(100);
+          console.log("oldprice:" + oldprice + "/" + "newprice:" + newprice + "/shipCost: " + $(this).val() );
+        }
         
         $('#shipping_provider').val(shipping_provider_name);
         $('#shipping_cost').val(shipping);
@@ -108,6 +117,7 @@
             $('#amount_total').val(newpriceCents.toFixed(0));
             $('#sq-creditcard span#estimated_cost_format_btn').html( newpriceTrim );
         <?php } else { ?>
+            // $('#amount_total').val('10000');
             $('#amount_total').val('10000');
             var b = parseFloat( $('#amount_total').val() / 100 );
             var bdec = b.toFixed(2);
@@ -258,6 +268,13 @@
             ++errors;
         }
 
+        if ($('.ship:checked').length > 0) {  
+          console.log('SHIPPING PICKED');
+        } else {
+          $('.shipping').after('<span class="e_phone error-form-validation">Please select a shipping method</span>');
+          ++errors;
+        }
+    
         if(errors > 1) {
             return false;
         } else {

@@ -3357,7 +3357,7 @@ public function api_Insert_Order($params) {
         if(isSet($params->payment->id)) {
             $invoiced = date("Y-m-d H:i:s");
          } else {
-             $invoiced = null;
+             $invoiced = '1970-01-01 00:00:01';
          }
         
         /* Executes SQL and then assigns object to passed var */
@@ -3432,7 +3432,7 @@ public function api_Insert_Order($params) {
                     '{$deposit}',
                     '$invoiced',
                     '{$params->payment->id}',
-                    '{$params->payment->card_details->card->last_4}',
+                    '0000',
                     '{$params->payment->amount_money->amount}',
                     '{$params->payment->status}',
                     '{$params->payment->order_id}',
@@ -3442,14 +3442,16 @@ public function api_Insert_Order($params) {
 
             ";
 
+            // {$params->payment->card_details->card->last_4}
+            
             $data['sql_po'] = $sql_po;
             $result_po = $this->mysqli->query($sql_po);
-
-            if ($result == TRUE) {
+            
+            if ($result == TRUE && $result_po == TRUE) {
                 $data['result'] = '200';
                  $this->log(array("key" => "api", "value" => "Order Processed for" . $contactname, "type" => "success"));
             } else {
-                $data['error'] = "SQL UPDATE FAILED " . $photo_id;
+                $data['error'] = "SQL UPDATE FAILED ";
                 $data['sql'] = $sql;
                 $this->log(array("key" => "api", "value" => "Failed To Process Order for " . $contactname, "type" => "failure"));
             }	

@@ -3,8 +3,9 @@
 // $this->console($_POST);
     
 $date = date("F j, Y", time());
-$amount_total = number_format( ($_POST['amount_total'] / 100), 2);
-$balance_due = ($_POST['price'] + $_POST['ship_UPS_value']) - $amount_total;
+// $amount_total = number_format( ($_POST['amount_total'] / 100), 2);
+$amount_total = 0;
+$balance_due = ($_POST['price'] + $_POST['shipping_cost']) - $amount_total;
 
 switch($_POST['edition_type']) {
 
@@ -127,8 +128,9 @@ ul li {
 <li>
 <ul class='ml-32'><li>
 <p>$"
-. $amount_total. " " . $deposit_label . " charged via Square on card *******" . $_POST['last_4']
+. $amount_total. " " . $deposit_label . " pending via Square on card *******" . $_POST['last_4']
 . $payment_html . "
+<div class='pl-16 pb-16 pt-16 pr-16 mt-8 notice-WARNING'><p style='line-height: 1.3'>NOTICE: Our payment processing is currently under going maintenance so an art consultant will be in contact with you regarding payment and shipping options. We apologize for the inconvenience.</p></div>
 </p>" . $insert_promo . "
 </p>
 <br><br>
@@ -138,8 +140,6 @@ ul li {
 <hr>
 <h3 class='pb-16'>Questions:</h3>
 <p>If you have any questions about your order, pelase reply to this message or call 951-708-1831.</p>
-
-<p>COVID-19 Note: Your delivery date reflects no-contact safeguards put in place to protect employees, delivery partners, and customers. We appreciate your patience. We appologize for an delays this may create.</p>
 
 <p class='pt-16'>---<br>
 jM Galleries<br>
