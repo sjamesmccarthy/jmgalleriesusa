@@ -11,7 +11,7 @@
         <p class="pt-16"><a class="blue" href="/fieldnotes">Read Now</a></p>
     <?php } ?>
     
-    <h2 class="pt-32" style="line-height: 1">Follow me<br />Twitter and  YouTube</h2>
+    <h2 class="pt-32" style="line-height: 1">Follow me<br />Twitter &  YouTube</h2>
     <p class="pt-16">
     <a target="_new" class="mr-16 blue" style="font-size: 1.5rem" href="http://twitter.com/jmgalleriesusa"><i class="fab fa-twitter"></i></a>
     <!-- <a target="_new" class="mr-16 blue" style="font-size: 1.5rem" href="http://facebook.com/jmgalleriesusa"><i class="fab fa-facebook"></i></a> -->
