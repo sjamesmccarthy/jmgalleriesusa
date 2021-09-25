@@ -3,12 +3,6 @@
 <section id="contact">
     <div class="grid-center">
 
-<div class="col-4 sm-hidden" style="border-right: 1px solid #CCC; padding-right: 1rem;">
-   
-   <?php $this->getPartial('findus'); ?>
-
-</div>
-
         <div class="col-8_sm-11 pb-32 pl-32">
 
             <div class="form-main">
@@ -57,10 +51,15 @@
 
             <p style="border-radius: 6px;" id="form_response"> </p>
         </div>
+        
+        <div class="col-4 sm-hidden">
+           
+           <?php $this->getPartial('findus'); ?>
+        
+        </div>
+        
     </div>
 </section>
-
-<?= $pay_sqPaymentFormJS ?>
   
 <script>
 

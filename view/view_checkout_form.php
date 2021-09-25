@@ -68,7 +68,7 @@
             <p id="form_response"> </p>
         </div>
 
-        <div class="pl-32 col-3_sm-hidden">
+        <div class="pl-32 col-4_sm-hidden">
            <?php $this->getPartial('findus'); ?>
         </div>
 

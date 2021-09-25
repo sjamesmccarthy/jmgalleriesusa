@@ -147,7 +147,7 @@
                 }
                 
                 // <div style="overflow: hidden; height: 203px;" class="' . $grid_css . '">
-                $thumb_html .= '<div style="position: relative; padding: 0 10px; overflow: hidden; margin-bottom: 32px" class="thumb ' . $grid_css .  ' pb-16 filter-thumb-gallery '. $data_filters . '"><a href="/' . $v['catalog_path'] . '/' . $img_file . '"><img style="width: 100%;" src="/catalog/__thumbnail/' . $img_file . '.jpg" alt="' . $img_file . '" /></a></p><!--<h4 class="pt-8 blue"><a href="/' . $v['catalog_path'] . '/' . $img_file . '">' . $v['title'] . '</a></h4>--><!-- <p>' . $v['loc_place'] . '</p> --><!--<p>Sizes: ' . $available_sizes . '</p>--> <!-- ' . $desc_editions . ' --></div>';
+                $thumb_html .= '<div style="position: relative; padding: 0 10px; overflow: hidden;" class="thumb ' . $grid_css .  ' pb-16 filter-thumb-gallery '. $data_filters . '"><a href="/' . $v['catalog_path'] . '/' . $img_file . '"><img style="width: 100%;" src="/catalog/__thumbnail/' . $img_file . '.jpg" alt="' . $img_file . '" /></a></p><!--<h4 class="pt-8 blue"><a href="/' . $v['catalog_path'] . '/' . $img_file . '">' . $v['title'] . '</a></h4>--><!-- <p>' . $v['loc_place'] . '</p> --><!--<p>Sizes: ' . $available_sizes . '</p>--> <!-- ' . $desc_editions . ' --></div>';
 
                 /* <!-- <p><a href="/' . $v['catalog_path'] . '/' . $img_file . '">' . $v['title'] . '</a>--><!-- <br />Exhibiting at Joe Maxx Coffee, Las Vegas --> */
                 
