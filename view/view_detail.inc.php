@@ -156,8 +156,8 @@
         }
         
         $btn = "BUY ARTWORK";
-        $btn_link = '<a style="display:block;" class="mt-16" href="/contact?photo=' . $photo_meta['file_name'] . '">'; //class="btn-nudge"
-        $gallery_details = '<p class="mt-32">This Limited Edition is printed on ' . $edition_desc_material . ' and available in ' . $pricing_long . ' inches (larger sizes available on special order, <a href="/contact">contact an art consultant</a>) ' . $edition_frame . '<!-- If you have any questions about our ' . $edition_desc_material . ', or need more information about out <a href="/styles">styles, frames and editions</a>, please <a href="/contact">contact an art consultant</a>.--></p>';
+        $btn_link = '<a style="display:block;" href="/contact?photo=' . $photo_meta['file_name'] . '">'; //class="btn-nudge"
+        $gallery_details = 'This Limited Edition is printed on ' . $edition_desc_material . ' and available in ' . $pricing_long . ' inches (larger sizes available on special order, <a href="/contact">contact an art consultant</a>) ' . $edition_frame . '<!-- If you have any questions about our ' . $edition_desc_material . ', or need more information about out <a href="/styles">styles, frames and editions</a>, please <a href="/contact">contact an art consultant</a>.-->';
 
         /* PRICING SELECT */
         $sizes_pricing = '<div class="col-4_sm-12 select-wrapper">

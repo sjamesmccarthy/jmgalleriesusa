@@ -22,42 +22,32 @@
 
     <div class="grid mt-32">
 
-        <div class="col-9_md-9_sm-12 border-right">
+        <div class="col-9_md-9_sm-12" style="position:relative;">
             <h1 class="detail-h1"><?= $photo_meta['title'] ?></h1>
             <p class="edition-title"><?= $edition_desc ?> <!-- <?= $edition_max ?>  <?= $edition_desc_material_slash ?> --></span></p>
-        <!-- </div>
-        
-        <div class="col-12 mt-16"> -->
+
             <p class="mt-32 detail-story"><?= $photo_meta['loc_place'] ?> in  <?= $photo_meta['loc_city'] ?>, <?= $photo_meta['loc_state'] ?> &mdash;
             <?= $photo_meta['story'] ?></p>
-            <?= $gallery_details ?>
+            
+            <p class="pb-16 pt-16">
+              <?= $gallery_details ?>
+            </p>
         </div>
 
-    <!-- <div class="grid mt-16"> -->
-        <div class="col"> <!--col-2_sm-12-->
-            <!-- <p class="small blue" style="margin-bottom: -10px; margin-left: 5px;">$ USD</p> -->
-            <p class="blue price">$<span id="price_view" class="price"><?= number_format($default_price, 0) ?></span></p><p class="frame_data price"></p>
-        <!-- </div> -->
-
-       <?= $sizes_pricing ?>
-       
-       <?= $sizes_frames ?>
-
-       
-       <!-- <div class="col-2_sm-12"> -->
-           <?= $btn_link ?><button><?= $btn ?></button></a>
-           <p class="mt-16"><a target="_infoTab" class="small underline normal-weight" href="/styles">Click here for sizing information</a></p>
-           <p class="mt-16 small ">Questions?<br /><a class="small underline normal-weight"target="_infoTab" href="/contact">Please contact us</a> to speak to an Art consultant.</p>
-       </div>
-    <!-- </div> -->
+      <div class="col pt-0">
+      <?= $btn_link ?><button><?= $btn ?></button></a>
+        <!-- <p class="small blue" style="margin-bottom: -10px; margin-left: 5px;">USD</p> -->
+        <p class="blue price pt-32">$<span id="price_view" class="price"><?= number_format($default_price, 0) ?></span></p><p class="frame_data price"></p>
+      
+      <?= $sizes_pricing ?>
+      <?= $sizes_frames ?>
+      
+      <p class="mt-16 ml-8"><a target="_infoTab" class="small underline normal-weight" href="/styles">Click here for sizing information</a></p>
+      <p class="mt-16 ml-8 small">Questions?<br /><a class="small underline normal-weight"target="_infoTab" href="/contact">Please contact us</a> to speak to an Art consultant</p>
+      </div>
 
     </div>
-            
-
-    <div class="mt-32">
-        <!-- <?= $btn_link ?><button><?= $btn ?></button></a> -->
-        
-    </div>
+    
     </form>
     <!-- </article> -->
 </section>
