@@ -58,7 +58,8 @@ if ($catalog == '') {
 
         $("#hero").each( function() { 
             $(this).css("background-image", "url(/catalog/__image/" + $(this).data("url") +")" ); 
-            $(this).css("background-postion", "$this->hero_position");
+            $(this).css("background-color", "#000");
+            $(this).css("background-position", "center top");
         });
 
     </script>

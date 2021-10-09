@@ -25,7 +25,7 @@
                 </div>
 
                 <div class="col-5_sm-12 breadcrumb copyright">
-                    <p><a href="/about">About j.McCarthy</a> <!-- / <a href="/all?filter=tinyviews">Open Editions</a> -->/ <a href="/shop">Shop</a> / <a href="/fieldnotes">Field Notes</a> / <a href="/thework">The Work</a> / <a target="_youtube" href="//vlog.jmgalleries.com">YouTube</a> / <a href="/privacy"><?= $this->config->copyright ?></a><!-- <a style="font-size:.8rem; margin-left: 1rem;" class="theme-toggle"><i class="fas fa-adjust"></i></a> --></p>
+                    <p><a href="/about">About j.McCarthy</a> <!-- / <a href="/all?filter=tinyviews">Open Editions</a> -->/ <a href="/shop">Shop</a> / <a href="/fieldnotes">Field Notes</a> / <a href="/thework">The Work</a> / <a target="_youtube" href="//vlog.jmgalleries.com">YouTube</a> / <a href="/privacy"><?= $this->config->copyright ?></a><a style="font-size:.8rem; margin-left: 1rem;" class="theme-toggle"><i class="fas fa-adjust"></i></a></p>
                    <?php  
                      // $this->getPartial('newsletter'); 
                    ?>
@@ -66,7 +66,7 @@ function getCookie(cname) {
   return "";
 }
 
-/*
+
 jQuery(document).ready(function($){
 
 // Select the button
@@ -136,5 +136,5 @@ function getCookie(cname) {
   }
   return "";
 }
-*/
+
 </script>

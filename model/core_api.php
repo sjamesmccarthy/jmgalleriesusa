@@ -839,7 +839,7 @@ class Core_Api extends Fieldnotes_Api
             $this->hero_link  = $data[$index]['path'];
             $this->hero_image = $data[$index]['file_name'] . '.jpg'; 
             $this->hero_text = 'light';
-            $this->hero_position = 'top center';
+            $this->hero_position = 'top';
 
     }
 

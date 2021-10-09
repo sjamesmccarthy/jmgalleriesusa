@@ -7,7 +7,7 @@
     background: rgb(255,255,255);
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: center;
+    // background-position: top;
     position: relative;
     margin-top: 0px;
     width: 100%;
@@ -28,19 +28,19 @@
      // Medium devices (tablets, 768px and up)
      @media (min-width: 768px) {
         // height: 750px;
-        height: 75vh;
+        height: 100vh;
      }
    
      // Large devices (tablets (iPad Pro, 1112px and up)
      @media (min-width: 1112px) {
       // height: 750px;  
-      height: 75vh;   
+      height: 100vh;   
      }
    
      // Extra large devices (large desktops, 1200px and up)
      @media (min-width: 1200px) {
          // height: 750px;
-         height: 75vh;
+         height: 100vh;
      }
   
 }

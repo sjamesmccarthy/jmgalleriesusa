@@ -253,15 +253,36 @@ form {
     // border-radius: $border-radius;
     
       >p >img {
-        width: 43%; //43%
+        width: 45%;
         vertical-align: middle;
         box-shadow: 0px 20px 25px 0px rgba(0,0,0,.3);
         border: 40px solid #FFF;
         box-sizing: border-box;
         
-        @media (max-width: 64em), (max-width: 80em), 
-            (max-width: 64em) and (orientation: portrait) {
+        /* iPad, desktop */
+        @media (max-width: 1200px) and (min-width: 768px) {
+            width: 45%;
+        }
+        
+        @media (max-width: 1200px) and (min-width: 768px) and (orientation: portrait) {
+            width: 65%;
+        }
+        
+        /* Surface Duo */
+        @media (max-width: 767px) and (min-width: 540px) {
+            width: 53%;
+        }
+        
+        /* iPhone 6/7/8 Plus, Pixel 2 XL, Pixel 2 */
+        @media (max-width: 539px) and (min-width: 376px) {
+            width:73%;
+        
+        }
+        
+        /* iPhone X, iPhone 6/7/8, Galaxy S5, Moto G4, Galaxy Fold */
+        @media (max-width: 375px) and (min-width: 240px) {
             width: 73%;
+        
         }
         
     }

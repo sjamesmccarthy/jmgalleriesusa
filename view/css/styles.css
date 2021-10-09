@@ -1989,9 +1989,9 @@ body {
         color: #808080; }
     body.dark-theme .filter-editions-list li:hover {
       color: #808080; }
-    body.dark-theme h2, body.dark-theme h3, body.dark-theme h4, body.dark-theme h5, body.dark-theme h6 {
+    body.dark-theme h1, body.dark-theme h2, body.dark-theme h3, body.dark-theme h4, body.dark-theme h5, body.dark-theme h6 {
       color: #FFFFFF; }
-      body.dark-theme h2 a, body.dark-theme h3 a, body.dark-theme h4 a, body.dark-theme h5 a, body.dark-theme h6 a {
+      body.dark-theme h1 a, body.dark-theme h2 a, body.dark-theme h3 a, body.dark-theme h4 a, body.dark-theme h5 a, body.dark-theme h6 a {
         color: #FFFFFF; }
     body.dark-theme .topnav--logo-img,
     body.dark-theme .nav-mobile-logo {
@@ -2023,6 +2023,8 @@ body {
     body.dark-theme .signature {
       -webkit-filter: invert(1);
               filter: invert(1); }
+    body.dark-theme .thumb img {
+      border-color: rgba(233, 233, 233, 0.2); }
   body.light-theme {
     background-color: #FFFFFF;
     color: #4a4a4a; }
@@ -2680,7 +2682,6 @@ button a {
   background: white;
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: center;
   position: relative;
   margin-top: 0px;
   width: 100%;
@@ -2694,13 +2695,13 @@ button a {
       height: 450px; } }
   @media (min-width: 768px) {
     #hero {
-      height: 75vh; } }
+      height: 100vh; } }
   @media (min-width: 1112px) {
     #hero {
-      height: 75vh; } }
+      height: 100vh; } }
   @media (min-width: 1200px) {
     #hero {
-      height: 75vh; } }
+      height: 100vh; } }
 #hero-catalog {
   height: 200px;
   background: transparent;
@@ -4175,12 +4176,28 @@ form #buysize, form #frame {
   background-color: rgba(0, 0, 0, 0.04);
   display: block; }
   .portrait > p > img {
-    width: 43%;
+    width: 45%;
     vertical-align: middle;
     box-shadow: 0px 20px 25px 0px rgba(0, 0, 0, 0.3);
     border: 40px solid #FFF;
-    box-sizing: border-box; }
-    @media (max-width: 64em), (max-width: 80em), (max-width: 64em) and (orientation: portrait) {
+    box-sizing: border-box;
+    /* iPad, desktop */
+    /* Surface Duo */
+    /* iPhone 6/7/8 Plus, Pixel 2 XL, Pixel 2 */
+    /* iPhone X, iPhone 6/7/8, Galaxy S5, Moto G4, Galaxy Fold */ }
+    @media (max-width: 1200px) and (min-width: 768px) {
+      .portrait > p > img {
+        width: 45%; } }
+    @media (max-width: 1200px) and (min-width: 768px) and (orientation: portrait) {
+      .portrait > p > img {
+        width: 65%; } }
+    @media (max-width: 767px) and (min-width: 540px) {
+      .portrait > p > img {
+        width: 53%; } }
+    @media (max-width: 539px) and (min-width: 376px) {
+      .portrait > p > img {
+        width: 73%; } }
+    @media (max-width: 375px) and (min-width: 240px) {
       .portrait > p > img {
         width: 73%; } }
   @media (max-width: 64em), (max-width: 80em), (max-width: 64em) and (orientation: portrait) {
