@@ -29,21 +29,20 @@
             <p class="mt-32 detail-story"><?= $photo_meta['loc_place'] ?> in  <?= $photo_meta['loc_city'] ?>, <?= $photo_meta['loc_state'] ?> &mdash;
             <?= $photo_meta['story'] ?></p>
             
-            <p class="pb-16 pt-16">
-              <?= $gallery_details ?>
-            </p>
+            <?= $gallery_details ?>
         </div>
 
       <div class="col pt-0">
       <?= $btn_link ?><button><?= $btn ?></button></a>
         <!-- <p class="small blue" style="margin-bottom: -10px; margin-left: 5px;">USD</p> -->
-        <p class="blue price pt-32">$<span id="price_view" class="price"><?= number_format($default_price, 0) ?></span></p><p class="frame_data price"></p>
+        <p class="blue price pt-32">$<span id="price_view" class="price"><?= number_format($default_price, 0) ?></span></p>
+        <p class="frame_data blue text-center pb-16"></p>
       
       <?= $sizes_pricing ?>
       <?= $sizes_frames ?>
       
-      <p class="mt-16 ml-8"><a target="_infoTab" class="small underline normal-weight" href="/styles">Click here for sizing information</a></p>
-      <p class="mt-16 ml-8 small">Questions?<br /><a class="small underline normal-weight"target="_infoTab" href="/contact">Please contact us</a> to speak to an Art consultant</p>
+      <p class="mt-32 ml-8 small text-center">Questions?<br /><a class="small underline normal-weight"target="_infoTab" href="/contact">Contact an Art consultant</a></p>
+      <p class="ml-8 text-center"><a target="_infoTab" class="small underline normal-weight" href="/styles">Click here for sizing information</a></p>
       </div>
 
     </div>

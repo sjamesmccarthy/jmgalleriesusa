@@ -64,7 +64,8 @@
                     <span class="update--label update--label-color-purple">Thu, 31 Jul 2021 </span> <span class="update--color-purple">Once again I am pressing pause on the hopes of being at an event any time in the remainder of 2021 and maybe even first half of 2022 now that our Progressive Liberal Government and Government influenced mainstream media is once again requiring masks for everyone regardless of vaccination status. I don't understand why the People expect and WANT the government to babysit them.</span>
                     </p>
                 
-                <p class="mt-32 nosiderule text-center">Created on  Tue, 13  Jul 2021
+                <p class="mt-32 nosiderule text-center">Created on  Tue, 13  Jul 2020.1
+                    <br />Previously on /now: <a href="/now/2021/july">July</a> | <a href="/now/2021/august">August</a> | <a href="/now/2021/august">September</a>
                     <br />
                     <a target="_new" class="mr-16 blue" style="font-size: 1.5rem" href="http://twitter.com/jmgalleriesusa"><i class="fab fa-twitter"></i></a>
                 </p>

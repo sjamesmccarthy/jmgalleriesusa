@@ -1981,7 +1981,7 @@ body {
   line-height: 1.8;
   letter-spacing: -0.3px; }
   body.dark-theme {
-    background-color: #000;
+    background-color: #222222;
     color: #FFFFFF; }
     body.dark-theme a {
       color: #2574A9; }
@@ -2005,7 +2005,7 @@ body {
     body.dark-theme .detail-story, body.dark-theme .edition-title {
       color: #FFFFFF; }
     body.dark-theme input[type="text"], body.dark-theme input[type="password"], body.dark-theme textarea, body.dark-theme select {
-      background-color: #000;
+      background-color: #222222;
       color: #FFFFFF; }
     body.dark-theme form .select-wrapper:after {
       -webkit-filter: invert(1);
@@ -2020,11 +2020,19 @@ body {
       body.dark-theme button:hover {
         background-color: #d7eaf6;
         color: #000; }
+      body.dark-theme button a {
+        color: #000; }
     body.dark-theme .signature {
       -webkit-filter: invert(1);
               filter: invert(1); }
     body.dark-theme .thumb img {
       border-color: rgba(233, 233, 233, 0.2); }
+    body.dark-theme .portrait {
+      background-color: rgba(255, 255, 255, 0.1); }
+    body.dark-theme .checkout-sub, body.dark-theme label, body.dark-theme #polarized .__container h1, body.dark-theme #polarized .__container p {
+      color: #FFF !important; }
+    body.dark-theme #polarized_idx .tagline {
+      color: #FFF; }
   body.light-theme {
     background-color: #FFFFFF;
     color: #4a4a4a; }
@@ -2310,6 +2318,9 @@ input[type="text"], input[type="email"], input[type="password"], textarea, selec
   padding: 0 12px;
   width: 100%;
   border: 1px solid #edecec;
+  border-left: 0;
+  border-right: 0 !important;
+  border-top: 0;
   -webkit-appearance: none;
   -moz-appearance: none;
   background-color: rgba(255, 255, 255, 0.5);
@@ -2726,7 +2737,6 @@ button a {
   bottom: 0;
   text-transform: uppercase;
   padding: 6rem 2rem 1rem 2rem;
-  background-color: rgba(0, 0, 0, 0.1);
   color: #FFFFFF; }
 
 .hero-text-container {
@@ -4088,7 +4098,8 @@ form #buysize, form #frame {
       font-size: 1rem; } }
 .price {
   color: #2574A9;
-  font-size: 2rem; }
+  font-size: 2rem;
+  text-align: center; }
 
 .edition-extra {
   display: inline-block; }

@@ -9,40 +9,37 @@
                     </p>
                     <p class="nosiderule text-center"><a target="_new" href="/fieldnotes">my Fieldnotes</a> | <a target="_new" href="//vlog.jmgalleries.com">my YouTube</a></p>
                     
-                <h3>Lip Smakin' Good BBQ Ribs!</strike></h3>
+                <h3>BOO! It's October.</strike></h3>
                     <p>
-                    Labor Day weekend kicked off with the Nugget's Best In The West rib Cook-off in Sparks. It has been 5 years since I last attended this event and wow how it has grown. Although the number of Master BBQers smokin'  ribs was about what I remembered, the art and craft vendors easily tripled in number. Ate some great ribs and even took a full slab home for dinner from what we enjoyed most: Brother's BBQ from Reno. 
-                    <br/><br />
-                    September has also started out with much better air quality, averaging out at around mid 100 lately. However the Caldor fire erupted last week and headed straight for South Lake Tahoe. All of the South Lake was evacuated and that side of Lake Tahoe was basically closed to everyone except those fighting the fires. I haven't yet read about the damage specific to SL but the Caldor fire itself has destroyed over 1,000 structures and as of 9/7 48% contained. 
-                    </p>
-                    
+                   October has come fast this year, and so have the cooler temps. Mornings have already been dropping into the 30s and highs hovering around mid 70s lately with an occasional mid-80s now and then. The upside of the earlier and cooler weather is that the fires are all pretty much subsiding and the air quality is finally back to normal for the first time since July making much more enjoyable to do outdoor activities again. 
+                   <br /><br />
+                   <b>Let It Snow!</b><br />
+                   <span class="update--label update--label-color-purple">Mon, 11 Oct 2021</span> <span class="update--color-purple">
+                   October 11 marks the first day, albeit light flurries, that it snowed in Carson City for 2020.1</span>
+                   </p>
                     
                 <h3>Photography, YouTube and Fine-Art ...</h3>
                     <p>
-                    last month, I kicked off a new playlist on my YouTube channel called "Thoughts While Drinking Coffee...". They started out as  short, 3 minutes or less, videos of me talking about photography things, but have been averaging closer to 4-6 minutes lately. I guess I am feeling more talkative. The most recent topic I jabbered on was NFTs.  <a target="_new" href="https://vlog.jmgalleries.com">Check them out on YouTube</a>.  Also, you can help by subscribing!
-                    <br /><br />
-                    I'm still not accepting pre-orders for my first photo-book, Untitled. This is mostly because of time and I also decided to switch back to Capture One 21. It wasn't a difficult migration back but for some odd reason I didn't keep any of the catalog files and squirreled me into a project I really didn't think I needed to work on: backup strategy. About a week later, I had a new backup strategy in place using Arq7 for MacOS, my Synology Raid 1, a few external hard drives and Google Cloud Storage (Archival class). I think I will probably write a field note about this so keep coming back. Also, f  ollow me on <a target="_new" href="https://twitter.com/jmgalleriesusa">Twitter</a> or <a target="_new" href="https://vlog.jmgalleries.com">YouTube</a> to stay up to date on when that exciting bit of news will officially drop.
-                    <br /><br />
-                    Otherwise I also started a monthly giveaway through my <a href="/fieldnotes/first-friday-new-release-email-give-away">First Friday New Release Email</a> and one lucky subscriber from Las Vegas has won  an 8x10 print matted to 11x14 of my new release, <a target="_new" href="https://jmgalleries.com/oceans-lakes-waterfalls/big-sky">Big Sky</a>. To be part of this, all you have to do is subscribe to the once-a-month email and be a USA resident to be eligible. 
+                    Recently I updated <a href="/">jmgalleries.com</a> with a dark mode. It's nice to look at a dark contrast against some of the photos when you want. It was a feature I worked on maybe last year, but for some reason didn't push it live. Now it's live for everyone to enjoy and play with. 
                     </p>
                     
                 <h3>Reading ...</h3>
                     <p>
-                    <span class="update--label update--label-color-orange">Sun, 19 Sep 2021</span><span class="update--color-orange">Finished! I think my biggest problem with this book was that I felt like it was written for a movie and not a book. There were some really good parts, but 65% of it I felt was too similar to the first book with poor character evolution. The ending-ending could have been completely left out and I would have been satisfied as a reader, but it was perfect setup for a third-movie. I am mostly disappointed in reading this sequel.</span> 
-                    Argh, I am still reading the sequel to "Ready, Player One" titled "Ready, Player Two" which I started it back in January. I didn't make any progress and hope to finish by the end of the year and officially make it the ONLY book I read in 2021. That's terrible isn't it. I did download a sample of Walter Issacson's Steve Jobs biography and hope to get started sometime soon after I finish RP2. 
+                    Since finishing Ready Player Two I decided I wasn't going to commit to another book for 2020.1 and instead just keep on flipping the pages of Daily Routines. Maybe I will pick up something small, but the rest of 2020.1 is going to be busy and I'm just not sure how much time I will be able to dedicate to reading. 
                     </p>
                     
                 <h3>Backyard ...</h3>
                     <p>
-                    It's begun! Finally, we finished the first phase of our backyard patio project and it looks fabulous! Over the weekend we started the second phase, hoping to complete the backyard paver project before the winter cold. How many phases are there? 4 I think.
+                    Almost done with the first phase! and just in time for winter; LOL. The fire-pit area will still get some use through the cold days, but looking forward to using it all next spring. It certainly was a lot of work (and weekends) getting it to where it is but it looks fabulous and will be amazing to use. 
                     </p>
                     
                 <h3>Baseball ...</h3>
                     <p>
-                    Yep, the season is over for us. <span class="update--label update--label-color-orange">Sun, 19 Sep 2021</span><span class="update--color-orange">We may be wild-card opportunists, but I just don't see this version of the team (once again mostly pitching) post-season worthy. This seasons Red Sox collapse is a direct result of poor pitching management. I think it's time for Dave Bush to find a new team.</span>  Hopefully I will come read these words in a month and be wrong, but I don't think I will. 10 games behind now since the All-Star break when we had a 3.5 game lead in first-place. Good grief; that's baseball.
+                       I can't believe that we actually beat the Yankees in the wild-card one and done tie-breaker game and just clobbered the Rays in Game 2 of the ALDS, 14-6 with 5 Homers in a playoff game. Now the series is heading back to Fenway and tied up at 1-1.  <span class="update--label update--label-color-purple">Mon, 11 Oct 2021</span> <span class="update--color-purple">Red Sox do it again in Game 3 and beat the Rays 6-4. One more WIN and we take the ALDS!</span> Hopefully we will be able to edge them out this year. <span class="update--label update--label-color-orange">Mon, 11 Oct 2021</span><span class="update--color-orange">KABOOM! We beat the Tampa Bay Rays 6-5. It was a close, back to back bash but my Red Sox landed the last punch and are heading to Houston to face the Astros in the 2021 ALCS on October 15!</span> 
                     </p>
                 
-                <p class="mt-32 nosiderule text-center">Created on Wed, 8 Sep 2021
+                <p class="mt-32 nosiderule text-center">Created on Sat, 9 Oct 2020.1
+                <br />Previously on /now: <a href="/now/2021/july">July</a> | <a href="/now/2021/august">August</a> | <a href="/now/2021/august">September</a>
                     <br />
                     <a target="_new" class="mr-16 blue" style="font-size: 1.5rem" href="http://twitter.com/jmgalleriesusa"><i class="fab fa-twitter"></i></a>
                 </p>

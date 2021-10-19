@@ -157,12 +157,12 @@
         
         $btn = "BUY ARTWORK";
         $btn_link = '<a style="display:block;" href="/contact?photo=' . $photo_meta['file_name'] . '">'; //class="btn-nudge"
-        $gallery_details = 'This Limited Edition is printed on ' . $edition_desc_material . ' and available in ' . $pricing_long . ' inches (larger sizes available on special order, <a href="/contact">contact an art consultant</a>) ' . $edition_frame . '<!-- If you have any questions about our ' . $edition_desc_material . ', or need more information about out <a href="/styles">styles, frames and editions</a>, please <a href="/contact">contact an art consultant</a>.-->';
+        $gallery_details = '<p class="pb-16 pt-16">This Limited Edition is printed on ' . $edition_desc_material . ' and available in ' . $pricing_long . ' inches (larger sizes available on special order, <a href="/contact">contact an art consultant</a>) ' . $edition_frame . '<!-- If you have any questions about our ' . $edition_desc_material . ', or need more information about out <a href="/styles">styles, frames and editions</a>, please <a href="/contact">contact an art consultant</a>.--></p>';
 
         /* PRICING SELECT */
         $sizes_pricing = '<div class="col-4_sm-12 select-wrapper">
         <label for="buysize"></label>
-        <select id="buysize" name="buysize" style="padding-left: 0; margin-bottom: 0;">';
+        <select id="buysize" name="buysize" style="padding-left: 10px; margin-bottom: 0;">';
         
             foreach ($le_price_array as $leK => $leV) {
                 
@@ -181,7 +181,7 @@
         $sizes_frames .= '
         <div class="col-4_sm-12 select-wrapper"> 
             <label for="frame"></label>
-            <select id="frame" name="frame" style="padding-left: 0; margin-bottom:0;">
+            <select id="frame" name="frame" style="padding-left: 10px; margin-bottom:0;">
                 ' . $frame_disabled_option . '
                 <option value="Black Vodka"' . $frame_disabled . '>FRAME: Premium Designer Black Vodka (similar to a Dark Black stain)</option>
                 <option value="Whiskey"' . $frame_disabled . '>FRAME: Premium Designer Whiskey (similar to a Medium Brown stain)</option>
@@ -238,7 +238,7 @@
         /* Loop through available_sizes */
         $sizes_pricing = '<div class="col-4_sm-12 select-wrapper">
         <label for="buysize"></label>
-        <select id="buysize" name="buysize" style="padding-left: 0; margin-bottom: 0;">';
+        <select id="buysize" name="buysize" style="padding-left: 10px; margin-bottom: 0;">';
 
         foreach ($tv_price_array as $tvK => $tvV) {    
 
@@ -302,7 +302,7 @@
         $sizes_frames .= '
         <div class="col-4_sm-12 select-wrapper">
             <label for="frame"></label>
-            <select id="frame" name="frame" style="padding-left: 0; margin-bottom: 0;">
+            <select id="frame" name="frame" style="padding-left: 10px; margin-bottom: 0;">
                 <option value="PRINT-ONLY-WITH-MATTE">MATTED PRINT ONLY - NO FRAME</option>
                 <option value="Studio-Ash-Gray">+ ADD STUDIO FRAME (Ash Gray)</option>
                 <option value="Studio-Snow-White">+ ADD STUDIO FRAME (Snow White)</option>

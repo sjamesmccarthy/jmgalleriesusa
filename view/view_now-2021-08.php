@@ -42,6 +42,7 @@
                     </p>
                 
                 <p class="mt-32 nosiderule text-center">Created on  Sun, 08  Aug 2021
+                    <br />Previously on /now: <a href="/now/2021/july">July</a> | <a href="/now/2021/august">August</a> | <a href="/now/2021/august">September</a>
                     <br />
                     <a target="_new" class="mr-16 blue" style="font-size: 1.5rem" href="http://twitter.com/jmgalleriesusa"><i class="fab fa-twitter"></i></a>
                 </p>

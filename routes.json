@@ -383,6 +383,24 @@
         "component": "false",
         "title": "What Am I Doing Now?"
     },
+    "/now/2021/july": {
+        "template": "page",
+        "page": "now-2021-07",
+        "component": "false",
+        "title": "What Am I Doing Now?"
+    },
+    "/now/2021/august": {
+        "template": "page",
+        "page": "now-2021-08",
+        "component": "false",
+        "title": "What Am I Doing Now?"
+    },
+    "/now/2021/september": {
+        "template": "page",
+        "page": "now-2021-09",
+        "component": "false",
+        "title": "What Am I Doing Now?"
+    },
     "/release-notes": {
         "template": "page",
         "page": "release-notes",
