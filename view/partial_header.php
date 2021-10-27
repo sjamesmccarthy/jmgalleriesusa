@@ -11,6 +11,7 @@
     <meta site_name="<?= $this->config->site_name ?>" />
     <meta copyright="<?= $this->config->copyright ?>" />
     <link rel="author" href="humans.txt">
+    <meta name='dmca-site-verification' content='MjZuTEwyNWlGMlZoazhOWUxEOHJqUT090' />
 
     <meta property="og:title" content="<?= $this->page->title ?> by j.McCarthy" />
     <meta property="og:url" content="https:<?= $this->routes->URI->url ?>" />

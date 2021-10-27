@@ -29,7 +29,7 @@ class Core_Api extends Fieldnotes_Api
     }
 
 	public function closeDB() {
-
+        
 		/* close connection */
 		$this->mysqli->close();
     }
@@ -1098,7 +1098,7 @@ class Core_Api extends Fieldnotes_Api
                 LEFT JOIN certificate as C on A.art_id = C.art_id";
         
             $result = $this->mysqli->query($sql);
-
+                  
             if ($result->num_rows > 0) {
             
                 while($row = $result->fetch_assoc())
@@ -1365,7 +1365,7 @@ class Core_Api extends Fieldnotes_Api
         /* Executes SQL and then assigns object to passed var */
         if( $this->checkDBConnection(__FUNCTION__) == true) {
 
-            if( $all = '' ) { $addToSQL = " AND type = 'PUBLIC'"; }
+            if( $all = '' ) { $addToSQL = " AND type = 'PUBLIC'"; } else { $addToSQL = ''; }
 
             $sql = "select art_location_id, location, type, status from art_locations WHERE status = 'ACTIVE' OR status = 'DISABLED' " . $addToSQL;
             $result = $this->mysqli->query($sql);
@@ -1510,26 +1510,24 @@ class Core_Api extends Fieldnotes_Api
 
         /* Executes SQL and then assigns object to passed var */
         if( $this->checkDBConnection(__FUNCTION__) == true) {
-
+            
+            $this->mysqli->free;
+            
             $sql = "SELECT
                 ALH.*,
                 AL.location,
                 A.art_id,
                 A.title
-                -- CERT.collector_id,
-                -- COL.last_name
             FROM
                 art_locations_history AS ALH
                 INNER JOIN art AS A ON A.art_id = ALH.art_id
                 INNER JOIN art_locations AS AL ON ALH.art_location_id = AL.art_location_id
-                -- RIGHT JOIN certificate AS CERT ON CERT.art_id = ALH.art_id
-                -- RIGHT JOIN collector AS COL ON COL.collector_id = CERT.collector_id
             WHERE
                 ALH.art_id='" . $art_id . "' ORDER BY ALH.date_started";
     
             $result = $this->mysqli->query($sql);
             
-            if ($result->num_rows > 0) {
+            if ($result) {
             
                 while($row = $result->fetch_assoc())
 		        {
@@ -1538,8 +1536,9 @@ class Core_Api extends Fieldnotes_Api
                 
             } 
             
+            $this->mysqli->close;
         }
-
+        
         return($data);
 
     }

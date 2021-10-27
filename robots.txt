@@ -1,4 +1,5 @@
 User-agent: *
+Disallow: /catalog/__image/
 Disallow: /view/ajax_*
 Disallow: /studio/
 

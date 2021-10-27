@@ -13,6 +13,9 @@ class Core_Site extends Core_Api
     public function __construct() {
 
         date_default_timezone_set('America/Los_Angeles');
+        $this->system = (object)[];
+        $this->page = (object)[];
+        $this->data = (object)[];
 
         /* Import the config file */
         $this->getJSON('config.json','config');
@@ -50,10 +53,10 @@ class Core_Site extends Core_Api
     }
 
     public function initSession() {
-
+    
         if (!isset($_SESSION['uid'])) {
             
-            $route_check = explode("/", $_SERVER[REQUEST_URI]);
+            $route_check = explode("/", $_SERVER['REQUEST_URI']);
             
             if($route_check[1] == 'studio') {
                 $sess_type = 'ADMIN';

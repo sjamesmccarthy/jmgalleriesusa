@@ -21,7 +21,7 @@
         } else {
 
             if( file_exists($_SERVER["DOCUMENT_ROOT"] .  "/catalog/__image/" . $this->page->photo_path . ".jpg") ) {
-                $og_image = "/catalog/__image/" . $this->page->photo_path . ".jpg?" . uniqid();
+                $og_image = "/catalog/__thumbnail/" . $this->page->photo_path . ".jpg?" . uniqid();
             } else {
                 $og_image = '/view/image/social_card_default.jpg?' . uniqid();
             }

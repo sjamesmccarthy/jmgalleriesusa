@@ -72,6 +72,11 @@ if(count($this->data->routePathQuery) > 2) {
 
         /* Fetch locations history data */
         $locationsHistory_data = $this->api_Admin_Get_Locations_History($edit_id);
+        
+        // print "Hello / ";
+        // print_r($locationsHistory_data);
+        // exit;
+        
 
         if($art_location_id == "3" || $art_location_id == "11" || $art_location_id == "9" || $art_location_id == "8") {
             // 3 = Sold (Collector) : 11 = Sold (non-collector)

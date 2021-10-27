@@ -8,6 +8,8 @@
         header('location:/studio/signin');
     }
 
+    $category_html = null;
+    
      // Fetch all linked collections
     $category_data = $this->api_Admin_Get_Catalog_Categories();
     // print_r($category_data);
