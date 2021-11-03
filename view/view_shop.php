@@ -14,9 +14,17 @@
     <div class="grid-4_sm-2 grid-4_md-3" style="margin: 0">
         
 
-        <div class="col-12 title pb-32">
+        <div class="col-12 title">
             <h1>jM GALLERY STORE</h1>
-            <p>Browse fine art products designed and hand-made by j.McCarthy</p>
+            <p class="light sub-title pt-8">Browse fine art products designed and hand-made by j.McCarthy</p>
+            
+            <ul class="filter-editions-list pt-32">
+                <li class="filter-all selected">All</li>
+                <!-- <li class="filter-gallery">Limited Edition</li> -->
+                <!-- <li class="filter-studio">Studio Edition</li> -->
+                <li class="filter-open"><a href="/open-editions">Open Editions</a></li>
+                <!-- tinyVIEWS<span style="font-size:.9rem; font-weight: 300;"><sup>&trade;</sup></span>  -->
+            </ul>
         </div>
 
 

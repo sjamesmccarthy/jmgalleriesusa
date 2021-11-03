@@ -3,7 +3,7 @@
 /* API call to fetch all products */
 $product_data = $this->api_Product_Get_All();
 
-$tv_le_link = '<p class="shop-tv-link"><a href="/all?filter=tinyviews">Browse Open Editions</a> / <a href="/galleries">Browse Limited Editions</a></p>';
+$tv_le_link = '<!-- <p class="shop-tv-link"><a href="/all?filter=tinyviews">Browse Open Editions</a> / <a href="/galleries">Browse Limited Editions</a></p> -->';
 
 foreach($product_data as $k => $v) {
 

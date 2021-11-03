@@ -69,7 +69,7 @@ switch($res_formType) {
                 $frame_style = null; 
             }
 
-            if($res_frame != "PRINT-ONLY-WITH-MATTE") {
+            if($res_frame != "PRINT-ONLY") {
                 $item_framing = "\nFramed in a " . $res_frame . $frame_style . ' frame' . $frame_forgot_not;
             }
         }

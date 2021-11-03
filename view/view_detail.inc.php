@@ -99,7 +99,7 @@
         } 
         
         if ($photo_meta['desc'] == 'acrylic') {
-            $edition_desc_material = 'Lumachrome HD Acrylic';
+            $edition_desc_material = 'HD Acrylic';
             $edition_frame = 'and is float mounted without a frame. One of our Premium Designer Frames can be optionally added for an additional cost.';
             $frame_disabled = 'disabled';
             $frame_disabled_option = '<option value="FRAMELESS">No Frame Included With Acrylic</option><option value="ADDWITHACRYLIC">+ Add Additional Frame (Please Specify Color In Order Form)</option>';
@@ -113,7 +113,7 @@
 
         if ($photo_meta['as_open'] != 1) {
             $edition_desc_material_slash = '/ ' . 'Collectors Choice of Fine Art Paper or Acrylic';
-            $edition_desc_material = 'Hahnemühle Photo Rag® Metallic Fine Art Paper (including frame) or Lumachrome HD Acrylic (frame additional)';
+            $edition_desc_material = 'HD Acrylic';
             $frame_info_link = 'the Premium Designer Frames';
         } else {
             $edition_desc_material_slash = null;
@@ -157,7 +157,7 @@
         
         $btn = "BUY ARTWORK";
         $btn_link = '<a style="display:block;" href="/contact?photo=' . $photo_meta['file_name'] . '">'; //class="btn-nudge"
-        $gallery_details = '<p class="pb-16 pt-16">This Limited Edition is printed on ' . $edition_desc_material . ' and available in ' . $pricing_long . ' inches (larger sizes available on special order, <a href="/contact">contact an art consultant</a>) ' . $edition_frame . '<!-- If you have any questions about our ' . $edition_desc_material . ', or need more information about out <a href="/styles">styles, frames and editions</a>, please <a href="/contact">contact an art consultant</a>.--></p>';
+        $gallery_details = '<p class="pb-16 pt-16">This Limited Edition is printed on ' . $edition_desc_material . ' and available sizes include: ' . $pricing_long . ' inches, <!-- (larger sizes available on special order, <a href="/contact">contact an art consultant</a>) -->' . $edition_frame . '<!-- If you have any questions about our ' . $edition_desc_material . ', or need more information about out <a href="/styles">styles, frames and editions</a>, please <a href="/contact">contact an art consultant</a>.--></p>';
 
         /* PRICING SELECT */
         $sizes_pricing = '<div class="col-4_sm-12 select-wrapper">
@@ -197,10 +197,11 @@
         $ed_O = true;
         $edition = "tinyviews";
         $product_id = 2;
-        $edition_desc_material = "Red River Polar Gloss 255 Premium Photo Paper";
+        $edition_desc_material = "Hahnemühle Photo Rag® Metallic Fine Art Paper";
         $catalog_no = $catalog_code . $photo_meta['catalog_photo_id'] . "OT";
         $frame_price_default = "0";
-        $matted_size_default = "8x10";
+        // $matted_size_default = "8x10";
+        $matted_size_default = "0";
 
         // if($ed_G === true || $ed_S === true) { $as_editions_tmp .= ", "; }
         // $as_editions_tmp .= "";
@@ -213,7 +214,7 @@
 
         $btn = "BUY ARTWORK";
         $btn_link = '<a style="display:block;" class="mt-16" href="/contact?photo=' . $photo_meta['file_name'] . '&open=true">'; //class="btn-nudge"
-        $gallery_details = '<p class="mt-32">This Open Edition is printed on ' . $edition_desc_material . ' and available in ' . $this->config->available_sizes_open . ' inches (size includes matte). It can also be framed in an optional Studio Frame for additional cost.';
+        $gallery_details = '<p class="mt-32">This Open Edition is printed on ' . $edition_desc_material . ' and available in sizes of: ' . $this->config->available_sizes_open . ' inches (print only, may include 1/2 inch white border). It can also be framed in an optional Studio Frame for additional cost.';
 
         /* Picking a default value to show */
         if($available_sizes != "in_code") { 
@@ -271,6 +272,8 @@
                     $tinyviewImage = null;
                     $tv=0;
                     $tinyviewSquareOption = null;
+                    $sizes_pricing .= '<option ' . $default . ' data-price="' . $tvV . '" ' . 'data-frameprice="' . $studio_frames_pricing['8x8'] . '" value="8x8">SIZE: 8x8</option>';
+                    $tv=1;
                 }
 
             } else if ($photo_meta['as_gallery'] == "0" && $tvP[0] == "12x12") {
@@ -290,8 +293,9 @@
 
             }
              else {
-                $studio_fp = $studio_frames_pricing[$tvP[1]];
-                $sizes_pricing .= '<option ' . $default . ' data-price="' . $tvV . '" ' . 'data-frameprice="' . $studio_fp . '" value="' . $tvP[0] . '" data-mattedsize="' . $tvP[1] . '">SIZE: ' . $tvP[0] . ' (Matted to: ' . $tvP[1] . ')</option>';
+                $studio_fp = $studio_frames_pricing[$tvP[0]]; /* Changed from 1, may had to do with the Mats */
+                
+                $sizes_pricing .= '<option ' . $default . ' data-price="' . $tvV . '" ' . 'data-frameprice="' . $studio_fp . '" value="' . $tvP[0] . '" data-mattedsize="' . $tvP[1] . '">SIZE: ' . $tvP[0] . '<!-- (Matted to: ' . $tvP[1] . ') --> </option>';
             } 
 
         }
@@ -303,7 +307,7 @@
         <div class="col-4_sm-12 select-wrapper">
             <label for="frame"></label>
             <select id="frame" name="frame" style="padding-left: 10px; margin-bottom: 0;">
-                <option value="PRINT-ONLY-WITH-MATTE">MATTED PRINT ONLY - NO FRAME</option>
+                <option value="PRINT-ONLY">PRINT ONLY - NO FRAME</option>
                 <option value="Studio-Ash-Gray">+ ADD STUDIO FRAME (Ash Gray)</option>
                 <option value="Studio-Snow-White">+ ADD STUDIO FRAME (Snow White)</option>
             </select>

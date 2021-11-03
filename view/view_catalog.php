@@ -7,12 +7,13 @@
             <?php 
                 if($catalog_tabs_hidden != true) {
             ?>
-            <ul class="filter-editions-list">
-                <li class="filter-all selected">All</li>
-                <li class="filter-gallery">Limited Edition</li>
+            <!-- <ul class="filter-editions-list"> -->
+                <!-- <li class="filter-all selected">All</li> -->
+                <!-- <li class="filter-gallery">Limited Edition</li> -->
                 <!-- <li class="filter-studio">Studio Edition</li> -->
-                <li class="filter-open"><!--tinyVIEWS<span style="font-size:.9rem; font-weight: 300;"><sup>&trade;</sup></span>--> Open Edition</li>
-            </ul>
+                <!-- <li class="filter-open">Open Edition</li> -->
+                <!-- tinyVIEWS<span style="font-size:.9rem; font-weight: 300;"><sup>&trade;</sup></span>--> 
+            <!-- </ul> -->
             <?php } ?>
         </div>
 

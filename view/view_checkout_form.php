@@ -32,7 +32,7 @@
             
             <div style="border:0; border-left: 1px solid #e4e4e4; margin-left: 2rem; padding-left: 1rem; font-size: 1rem; min-height: 12rem; margin-top: 8px;">
             <?= nl2br($order_subject) ?>   
-            <p class="tiny pt-32 pb-32">Note: Shipping Costs May Have Been Added To Above Total</p>
+            <!-- <p class="tiny pt-32 pb-32">Note: Shipping Costs MAY NOT Have Been Added To Above Total</p> -->
             </div>
 
             <textarea style="display:none;"  id="contactsubject" name="contactsubject" disabled /><?= $order_subject ?></textarea>

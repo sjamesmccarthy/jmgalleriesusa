@@ -51,9 +51,10 @@
 
 
 .moulding-thumb {
-    display: inline;
+    display: block;
 
     &-img {
-        width: 45%;
+        width: 38%;
+        border: 15px solid #000;
     }
 }

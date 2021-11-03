@@ -417,6 +417,7 @@ class Core_Api extends Fieldnotes_Api
        WHERE
            V.count >= 800
            AND PH.status = 'ACTIVE'
+           AND PH.as_gallery = 1
        ORDER BY
            RAND()
            DESC
