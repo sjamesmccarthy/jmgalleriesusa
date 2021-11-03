@@ -2035,6 +2035,12 @@ body {
       color: #FFF; }
     body.dark-theme #styles table th {
       color: #000; }
+    body.dark-theme .bx-wrapper .bx-pager.bx-default-pager a {
+      color: #2574A9 !important; }
+    body.dark-theme .bx-wrapper .bx-pager.bx-default-pager a:hover,
+    body.dark-theme .bx-wrapper .bx-pager.bx-default-pager a.active,
+    body.dark-theme .bx-wrapper .bx-pager.bx-default-pager a:focus {
+      color: #FFFFFF !important; }
   body.light-theme {
     background-color: #FFFFFF;
     color: #4a4a4a; }
@@ -4348,15 +4354,12 @@ form #buysize, form #frame {
 #styles h2 {
   padding-bottom: 1rem; }
 
-#styles ul {
-  margin-top: 2rem; }
-  #styles ul li {
-    margin-top: 1rem; }
+#styles ul li {
+  margin-top: 1rem; }
 
 #styles table {
   width: 100%;
-  margin-top: 2rem;
-  margin-bottom: 2rem; }
+  margin-top: 2rem; }
   #styles table tr, #styles table th {
     vertical-align: top;
     padding: .5rem;
@@ -4955,12 +4958,10 @@ div[id*='imgT']:hover {
   color: #808080; }
 
 #product_detail .--price {
-  color: #2574A9;
   font-size: 2rem;
-  font-weight: 400; }
+  font-weight: 800; }
 
 #product_detail .--savings {
-  color: #498d53;
   font-size: .9rem;
   line-height: 1;
   padding-bottom: 1rem; }
@@ -5004,17 +5005,17 @@ div[id*='imgT']:hover {
   box-shadow: none !important;
   border-radius: 6px !important; }
 
-.bx-wrapper img {
-  border-radius: 6px; }
-
 .bx-wrapper .bx-pager-item {
   font-size: 1rem !important;
   line-height: 1.2 !important;
   font-weight: 200 !important; }
 
+.bx-wrapper .bx-pager, .bx-wrapper .bx-controls-auto {
+  bottom: -42px !important; }
+
 .bx-wrapper .bx-pager.bx-default-pager a {
   text-indent: 0px !important;
-  color: #4a4a4a !important;
+  color: #2574A9 !important;
   width: 20px !important;
   height: 20px !important;
   border-radius: 6px !important;
@@ -5024,7 +5025,7 @@ div[id*='imgT']:hover {
 .bx-wrapper .bx-pager.bx-default-pager a.active,
 .bx-wrapper .bx-pager.bx-default-pager a:focus {
   background: transparent !important;
-  color: #2574A9 !important;
+  color: #4a4a4a !important;
   text-decoration: underline; }
 
 .hero {

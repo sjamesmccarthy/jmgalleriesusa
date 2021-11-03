@@ -87,7 +87,7 @@ if($res_quantity == 1) {
 $res_image = json_decode($res_image);
 
 $image_html = '<div class="col-6_sm-12"><div style="max-width:85%; margin: auto;">
-<p class="small normal mb-8"><a style="font-weight: 400" href="/shop"><!-- <img class="valign-mid mr-8" style="width: 16px;" src="/view/image/icon_left_arrow.svg" /> -->&#8592; Back To jM Gallery Store</a></p>
+<p class="small normal mb-32"><a style="font-weight: 400" href="/shop"><!-- <img class="valign-mid mr-8" style="width: 16px;" src="/view/image/icon_left_arrow.svg" /> -->&#8592; Back To jM Gallery Store</a></p>
 <div class="slider">';
 
     foreach($res_image as $iK => $iV) {  

@@ -25,7 +25,7 @@
                         <!-- <td class="tright">$0</td> -->
                     </tr>
                     <tr>
-                        <td class="left">Starting at $350, Framed with 2 3/4" moulding with optional mat and liner (+$100).</td>
+                        <td class="left">Optionally framed with 2 3/4" moulding starting at $350.</td>
                         <td class="tright">20x29</td>
                         <!-- <td class="tright">$200</td> -->
                     </tr>
@@ -43,7 +43,7 @@
                         <!-- <td class="tright">$0</td> -->
                     </tr>
                     <tr>
-                        <td class="left">Starting at $450, Framed with 2 3/4" moulding with optional mat and liner (+$100).</td>
+                        <td class="left">Optionally framed with 2 3/4" moulding starting at $450.</td>
                         <td class="tright">25x35</td>
                         <!-- <td class="tright">$300</td> -->
                     </tr>
@@ -61,7 +61,7 @@
                         <!-- <td class="tright">$0</td> -->
                     </tr>
                     <tr>
-                        <td class="left">Starting at $550, Framed 4" moulding with optional mat and liner (+$100).</td>
+                        <td class="left">Optionally framed 4" moulding starting at $550</td>
                         <td class="tright">32x44</td>
                         <!-- <td class="tright">$450</td> -->
                     </tr>
@@ -79,9 +79,15 @@
                         <!-- <td class="tright">$0</td> -->
                     </tr>
                     <tr>
-                        <td class="left">Starting at $650, Framed with 4" moulding with optional mat and liner (+$100)</td>
+                        <td class="left">Optionally framed with 4" moulding starting at $650.</td>
                         <td class="tright">38x48</td>
                         <!-- <td class="tright">$650</td> -->
+                    </tr>
+                </table>
+                
+                <table>
+                    <tr>
+                        <td colspan="2" class="small">Add a mat or liner for an additional $150 to any frame option. This will increase the total size of the art by the width of the mat and liner plus moulding.  Example: a 16x24 inch Acrylic matted with liner (2in each) and framed (2in moulding) will have an approximate total size of 24x36 inches.</td>
                     </tr>
                 </table>
             </div>
@@ -142,7 +148,7 @@
                 
                 <table>
                     <tr>
-                        <td colspan="2" class="tiny">When available, Open Editions may optionally be framed in a Studio Frame. Studio Frames are 3/4" moulding painted Ash Gray or Snow White. Prices start at $49.95. After framing total size will increase the height and width approximately 1 1/2" inches.</td>
+                        <td colspan="2" class="small">When available, Open Editions may optionally be framed in a Studio Frame. Studio Frames are 3/4" moulding painted Ash Gray or Snow White. Prices start at $49.95. After framing total size will increase the height and width approximately 1 1/2" inches.</td>
                     </tr>
                 </table>
 

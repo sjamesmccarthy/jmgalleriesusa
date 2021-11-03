@@ -19,14 +19,14 @@
         color:  $color-gray;
     }
     .--price {
-        color: #2574A9;
+        // color: #2574A9;
         font-size: 2rem;
-        font-weight: 400;
+        font-weight: 800;
         // line-height: 1;
     }
 
     .--savings {
-        color: #498d53;
+        // color: #498d53;
         font-size: .9rem;
         line-height: 1;
         padding-bottom: 1rem;
@@ -87,7 +87,7 @@
 }
 
 .bx-wrapper img {
-    border-radius: $border-radius;
+    // border-radius: $border-radius;
 }
 
 .bx-wrapper .bx-pager-item {
@@ -97,12 +97,12 @@
 }
 
 .bx-wrapper .bx-pager, .bx-wrapper .bx-controls-auto {
-    // bottom: -30px !important;
+    bottom: -42px !important;
 }
 
 .bx-wrapper .bx-pager.bx-default-pager a {
   text-indent: 0px !important;
-  color: $color-black !important;
+  color: $color-blue !important;
   width: 20px !important;
   height: 20px !important;
   -moz-border-radius: 0px !important;
@@ -115,6 +115,6 @@
 .bx-wrapper .bx-pager.bx-default-pager a:focus {
 //   background: $color-blue !important;
     background: transparent !important;
-    color: $color-blue !important;
+    color: $color-black !important;
     text-decoration: underline;
 }
