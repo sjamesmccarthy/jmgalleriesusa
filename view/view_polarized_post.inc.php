@@ -80,8 +80,17 @@ if($res_type == "article") {
         </div>';
     }
 } else if($res_type == "video") {
+        
         $img_html = null;
         $res_teaser = "";
+        if (preg_match('/\biframe width\b/', $res_content)) {
+           $res_content = $res_content;
+           // $res_content = 'true';
+        } else {
+            // $res_content = 'false';
+            $res_content = '<iframe width="100%" height="515" src="' . $res_content . '" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
+        }
+    
 } else { 
 
     /* FILMSTRIP LAYOUT THUMBNAILS */

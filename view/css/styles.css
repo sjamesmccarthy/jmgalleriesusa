@@ -2030,9 +2030,9 @@ body {
     body.dark-theme .portrait {
       background-color: rgba(255, 255, 255, 0.01); }
     body.dark-theme .checkout-sub, body.dark-theme label, body.dark-theme #polarized .__container h1, body.dark-theme #polarized .__container p {
-      color: #FFF !important; }
+      color: #FFFFFF; }
     body.dark-theme #polarized_idx .tagline {
-      color: #FFF; }
+      color: #FFFFFF; }
     body.dark-theme #styles table th {
       color: #000; }
     body.dark-theme .landscape > p > img, body.dark-theme .portrait > p > img {
@@ -2044,6 +2044,9 @@ body {
     body.dark-theme .bx-wrapper .bx-pager.bx-default-pager a.active,
     body.dark-theme .bx-wrapper .bx-pager.bx-default-pager a:focus {
       color: #FFFFFF !important; }
+    body.dark-theme .__container--tags {
+      color: #808080 !important;
+      font-family: "Lato", sans-serif !important; }
   body.light-theme {
     background-color: #FFFFFF;
     color: #4a4a4a; }
@@ -4584,7 +4587,8 @@ form #buysize, form #frame {
   padding: 3px 6px;
   background-color: #f2f2f2;
   color: #4a4a4a;
-  font-family: "Source Sans Pro", sans-serif;
+  font-family: "Lato", sans-serif !important;
+  letter-spacing: normal;
   font-weight: 400;
   font-size: .6rem !important;
   border-radius: 6px; }
