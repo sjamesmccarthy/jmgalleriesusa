@@ -114,8 +114,16 @@
                         <th class="right">Total Size(in)</th>
                     </tr>
                     <tr>
-                        <td class="left">4-Ply Black Mat, starting at $28</td>
+                        <td class="left">Print Only</td>
+                        <td class="tright">8x8</td>
+                    </tr>
+                    <tr>
+                        <td class="left">Optionally add a 4-Ply Black Mat, starting at $28</td>
                         <td class="tright">10x10</td>
+                    </tr>
+                    <tr>
+                        <td class="left">Optionally framed in hand-made Studio frame without Mat. Reduces image area to 7&half; x 7&half; inches.</td>
+                        <td class="tright">8 x 8</td>
                     </tr>
                 </table>
                 
@@ -125,7 +133,11 @@
                         <th class="right">Total Size(in)</th>
                     </tr>
                     <tr>
-                        <td class="left">4-Ply Black Mat, starting at $28</td>
+                        <td class="left">Print Only (incudes &half; inch white border)</td>
+                        <td class="tright">8x10</td>
+                    </tr>
+                    <tr>
+                        <td class="left">Optionally add a 4-Ply Black Mat, starting at $28<br />*Studio frame not available in this size.</td>
                         <td class="tright">11x14</td>
                     </tr>
                 </table>
@@ -136,8 +148,16 @@
                         <th class="right">Total Size(in)</th>
                     </tr>
                     <tr>
-                        <td class="left">4-Ply Black Mat, starting at $28</td>
+                        <td class="left">Print Only (incudes &half; inch white border)</td>
+                        <td class="tright">12x18</td>
+                    </tr>
+                    <tr>
+                        <td class="left">Optionally add a 4-Ply Black Mat, starting at $28</td>
                         <td class="tright">16x24</td>
+                    </tr>
+                    <tr>
+                        <td class="left">Optionally framed in hand-made Studio frame. Mat required.</td>
+                        <td class="tright">17&half; x 25&half;</td>
                     </tr>
 
                 </table>
