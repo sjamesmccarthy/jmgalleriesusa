@@ -401,6 +401,12 @@
         "component": "false",
         "title": "What Am I Doing Now?"
     },
+    "/now/2021/october": {
+        "template": "page",
+        "page": "now-2021-10",
+        "component": "false",
+        "title": "What Am I Doing Now?"
+    },
     "/release-notes": {
         "template": "page",
         "page": "release-notes",

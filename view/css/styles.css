@@ -1981,7 +1981,7 @@ body {
   line-height: 1.8;
   letter-spacing: -0.3px; }
   body.dark-theme {
-    background-color: #222222;
+    background-color: #15202b;
     color: #FFFFFF; }
     body.dark-theme a {
       color: #2574A9; }
@@ -2005,7 +2005,7 @@ body {
     body.dark-theme .detail-story, body.dark-theme .edition-title {
       color: #FFFFFF; }
     body.dark-theme input[type="text"], body.dark-theme input[type="password"], body.dark-theme textarea, body.dark-theme select {
-      background-color: #222222;
+      background-color: #15202b;
       color: #FFFFFF; }
     body.dark-theme form .select-wrapper:after {
       -webkit-filter: invert(1);
@@ -2028,13 +2028,16 @@ body {
     body.dark-theme .thumb img {
       border-color: rgba(233, 233, 233, 0.2); }
     body.dark-theme .portrait {
-      background-color: rgba(255, 255, 255, 0.1); }
+      background-color: rgba(255, 255, 255, 0.01); }
     body.dark-theme .checkout-sub, body.dark-theme label, body.dark-theme #polarized .__container h1, body.dark-theme #polarized .__container p {
       color: #FFF !important; }
     body.dark-theme #polarized_idx .tagline {
       color: #FFF; }
     body.dark-theme #styles table th {
       color: #000; }
+    body.dark-theme .landscape > p > img, body.dark-theme .portrait > p > img {
+      border: 1px solid rgba(233, 233, 233, 0.2);
+      background-color: transparent; }
     body.dark-theme .bx-wrapper .bx-pager.bx-default-pager a {
       color: #2574A9 !important; }
     body.dark-theme .bx-wrapper .bx-pager.bx-default-pager a:hover,
@@ -3605,7 +3608,7 @@ button a {
 /* partial_footer */
 #footer {
   margin-top: 64px;
-  background-color: #000;
+  background-color: #192734;
   color: #FFF; }
   #footer .middot:after {
     padding-right: .3em;
@@ -4192,14 +4195,16 @@ form #buysize, form #frame {
   padding: 0 !important; }
 
 .portrait {
-  background-color: rgba(0, 0, 0, 0.04);
+  background-color: rgba(0, 0, 0, 0.01);
   display: block; }
   .portrait > p > img {
     width: 45%;
     vertical-align: middle;
     box-shadow: 0px 20px 25px 0px rgba(0, 0, 0, 0.3);
-    border: 20px solid #FFF;
+    border: 1px solid #e9e9e9;
+    padding: 1rem;
     box-sizing: border-box;
+    background-color: #FFF;
     /* iPad, desktop */
     /* Surface Duo */
     /* iPhone 6/7/8 Plus, Pixel 2 XL, Pixel 2 */
@@ -4244,7 +4249,8 @@ form #buysize, form #frame {
     max-width: 100%;
     vertical-align: middle;
     box-shadow: 0px 20px 25px 0px rgba(0, 0, 0, 0.3);
-    border: 20px solid #FFF;
+    border: 1px solid #e9e9e9;
+    padding: 1rem;
     box-sizing: border-box; }
     @media (max-width: 64em), (max-width: 80em), (max-width: 64em) and (orientation: portrait) {
       .landscape > p > img {

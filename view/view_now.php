@@ -9,37 +9,24 @@
                     </p>
                     <p class="nosiderule text-center"><a target="_new" href="/fieldnotes">my Fieldnotes</a> | <a target="_new" href="//vlog.jmgalleries.com">my YouTube</a></p>
                     
-                <h3>BOO! It's October.</strike></h3>
+                <h3>What happened to  ?</strike></h3>
                     <p>
-                   October has come fast this year, and so have the cooler temps. Mornings have already been dropping into the 30s and highs hovering around mid 70s lately with an occasional mid-80s now and then. The upside of the earlier and cooler weather is that the fires are all pretty much subsiding and the air quality is finally back to normal for the first time since July making much more enjoyable to do outdoor activities again. 
+                   Let's start with baseball.<br />
+                   We at least we beat the Yankees. Had a chance to beat the Astros until E-Rod f* it up with his little Correa watch tap. Well I guess when you poke the bear, the bear is going to sure as hell, poke back. And that they did, sweeping us the next 2 games to win the ALCS. 
                    <br /><br />
-                   <b>Let It Snow!</b><br />
-                   <span class="update--label update--label-color-purple">Mon, 11 Oct 2021</span> <span class="update--color-purple">
-                   October 11 marks the first day, albeit light flurries, that it snowed in Carson City for 2020.1</span>
+                   <b>Fast Forward to November.</b><br />
+                   What happened to October again? Oh yeah. We lost. Rest of the month forgotten.
                    </p>
                     
                 <h3>Photography, YouTube and Fine-Art ...</h3>
                     <p>
-                    Recently I updated <a href="/">jmgalleries.com</a> with a dark mode. It's nice to look at a dark contrast against some of the photos when you want. It was a feature I worked on maybe last year, but for some reason didn't push it live. Now it's live for everyone to enjoy and play with. 
+                    Honestly I really thought all this pandemic fear-living would be over by now. I am starting to seriously wonder how the human race survived this long alongside germs or whether this fear-demic is now politically driven. We still have the left campaigning on vaccines and face-masks when the right is polar opposite. Which is more accurately representing the truth of the situation I honestly don't know but can't believe that we have somehow as a race survived this long by having to wear a mask everywhere because as history shows we have not. Frankly the politics over this scare me more than germs themselves. 
+                    <br /><br />
+                    So, with that said, I have decided to once again slow down my re-entry into events. It's not the fear of getting sick, it's the fear of misguiding authority and the rampant abuse of the power of politics. I don't want to be part of this socialist experiment and refuse to partake. I will find another way with less manipulation, bias and emotional conditioning to connect with my audience until these crazy times pass. Every storm eventually comes to an end. 
                     </p>
                     
-                <h3>Reading ...</h3>
-                    <p>
-                    Since finishing Ready Player Two I decided I wasn't going to commit to another book for 2020.1 and instead just keep on flipping the pages of Daily Routines. Maybe I will pick up something small, but the rest of 2020.1 is going to be busy and I'm just not sure how much time I will be able to dedicate to reading. 
-                    </p>
-                    
-                <h3>Backyard ...</h3>
-                    <p>
-                    Almost done with the first phase! and just in time for winter; LOL. The fire-pit area will still get some use through the cold days, but looking forward to using it all next spring. It certainly was a lot of work (and weekends) getting it to where it is but it looks fabulous and will be amazing to use. 
-                    </p>
-                    
-                <h3>Baseball ...</h3>
-                    <p>
-                       I can't believe that we actually beat the Yankees in the wild-card one and done tie-breaker game and just clobbered the Rays in Game 2 of the ALDS, 14-6 with 5 Homers in a playoff game. Now the series is heading back to Fenway and tied up at 1-1.  <span class="update--label update--label-color-purple">Mon, 11 Oct 2021</span> <span class="update--color-purple">Red Sox do it again in Game 3 and beat the Rays 6-4. One more WIN and we take the ALDS!</span> Hopefully we will be able to edge them out this year. <span class="update--label update--label-color-orange">Mon, 11 Oct 2021</span><span class="update--color-orange">KABOOM! We beat the Tampa Bay Rays 6-5. It was a close, back to back bash but my Red Sox landed the last punch and are heading to Houston to face the Astros in the 2021 ALCS on October 15!</span> 
-                    </p>
-                
                 <p class="mt-32 nosiderule text-center">Created on Sat, 9 Oct 2020.1
-                <br />Previously on /now: <a href="/now/2021/july">July</a> | <a href="/now/2021/august">August</a> | <a href="/now/2021/august">September</a>
+                <br />Previously on /now: <a href="/now/2021/july">July</a> | <a href="/now/2021/august">August</a> | <a href="/now/2021/september">September</a> | <a href="/now/2021/october">October</a>
                     <br />
                     <a target="_new" class="mr-16 blue" style="font-size: 1.5rem" href="http://twitter.com/jmgalleriesusa"><i class="fab fa-twitter"></i></a>
                 </p>

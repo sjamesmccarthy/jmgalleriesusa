@@ -249,7 +249,7 @@ form {
 
 .portrait {
 
-    background-color:rgba(0,0,0,.04);
+    background-color:rgba(0,0,0,.01);
     display: block;
     // border-radius: $border-radius;
     
@@ -257,8 +257,11 @@ form {
         width: 45%;
         vertical-align: middle;
         box-shadow: 0px 20px 25px 0px rgba(0,0,0,.3);
-        border: 20px solid #FFF;
+        // border: 20px solid #FFF;
+        border: 1px solid #e9e9e9;
+        padding: 1rem;
         box-sizing: border-box;
+        background-color: #FFF;
         
         /* iPad, desktop */
         @media (max-width: 1200px) and (min-width: 768px) {
@@ -330,7 +333,9 @@ form {
         // border-radius: $border-radius;
         vertical-align: middle;
         box-shadow: 0px 20px 25px 0px rgba(0,0,0,.3);
-        border: 20px solid #FFF;
+        // border: 20px solid #FFF;
+        border: 1px solid #e9e9e9;;
+        padding: 1rem;
         box-sizing: border-box;
 
         @media (max-width: 64em), (max-width: 80em), 
