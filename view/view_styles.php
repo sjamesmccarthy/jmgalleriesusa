@@ -67,23 +67,20 @@
                     </tr>
                 </table>
                 
-                <table>
+                <!-- <table>
                     <tr class="gray">
                         <th>30x40 HD Acrylic</th>
                         <th class="right">Total Size(in)</th>
-                        <!-- <th class="right">Price</th> -->
                     </tr>
                     <tr>
                         <td class="left">Included Float Mount (Acrylic)</td>
                         <td class="tright">30x40</td>
-                        <!-- <td class="tright">$0</td> -->
                     </tr>
                     <tr>
                         <td class="left">Optionally framed with 4" moulding starting at $650.</td>
                         <td class="tright">38x48</td>
-                        <!-- <td class="tright">$650</td> -->
                     </tr>
-                </table>
+                </table> -->
                 
                 <table>
                     <tr>
