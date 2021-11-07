@@ -2714,19 +2714,20 @@ button a {
   margin-bottom: 2rem; }
   @media (min-width: 320px) {
     #hero {
-      height: 65vh; } }
+      height: 38vh; } }
   @media (min-width: 576px) {
     #hero {
-      height: 450px; } }
+      height: 38vh; } }
   @media (min-width: 768px) {
     #hero {
-      height: 100vh; } }
+      height: 50vh; } }
   @media (min-width: 1112px) {
     #hero {
       height: 100vh; } }
   @media (min-width: 1200px) {
     #hero {
-      height: 100vh; } }
+      height: 100vh;
+      background-position: left bottom !important; } }
 #hero-catalog {
   height: 200px;
   background: transparent;
