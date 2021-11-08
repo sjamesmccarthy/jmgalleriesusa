@@ -34,7 +34,7 @@
             $catalog_title = 'LIMITED EDITIONS';
             $catalog_desc = 'a collection of LIMITED EDITION photography by jMcCarthy';
             $catalog_tabs_hidden = true;
-            $tv_le_link = '<p class="shop-tv-link"><a href="/galleries">Browse The Limited Edition Collections</a></p>';
+            $tv_le_link = '<p class="shop-tv-link"><a href="/galleries">Browse By Collections</a></p>';
         } 
         
         $catalog_photos = $this->api_Catalog_Category_Thumbs_All();

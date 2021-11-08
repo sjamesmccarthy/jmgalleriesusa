@@ -25,7 +25,7 @@
                 </div>
 
                 <div class="col-5_sm-12 breadcrumb copyright">
-                    <p><a href="/about">About j.McCarthy</a> <!-- / <a href="/all?filter=tinyviews">Open Editions</a> -->/ <a href="/shop">Shop</a> / <a href="/fieldnotes">Field Notes</a> / <a href="/thework">The Work</a> / <a target="_youtube" href="//vlog.jmgalleries.com">YouTube</a>  </p>
+                    <p><a href="/about">About j.McCarthy</a> <!-- / <a href="/all?filter=tinyviews">Open Editions</a> -->/ <a href="/shop">Shop</a> / <a href="/fieldnotes">Field Notes</a> / <a href="/limited-editions">The Work</a> / <a target="_youtube" href="//vlog.jmgalleries.com">YouTube</a>  </p>
                     <div><!-- <a target="_new" href="//www.dmca.com/Protection/Status.aspx?ID=4f4fc268-5857-46c9-97ec-b0ee644e9892" title="DMCA.com Protection Status" class="dmca-badge">--> <img src ="https://images.dmca.com/Badges/dmca-badge-w100-5x1-08.png?ID=4f4fc268-5857-46c9-97ec-b0ee644e9892"  alt="DMCA.com Protection Status" style="vertical-align: middle" /><!--</a>-->  <script src="https://images.dmca.com/Badges/DMCABadgeHelper.min.js"> </script> <a class="tiny" href="/privacy"><?= $this->config->copyright ?></a> <a style="font-size:.6rem; margin-left: .25rem;" class="theme-toggle"><i class="fas fa-adjust"></i></a></div>
                    <?php  
                      // $this->getPartial('newsletter'); 
