@@ -2724,7 +2724,7 @@ button a {
   @media (min-width: 1112px) {
     #hero {
       height: 100vh; } }
-  @media (min-width: 1200px) {
+  @media (min-width: 1920px) {
     #hero {
       height: 100vh;
       background-position: left bottom !important; } }

@@ -82,6 +82,12 @@
     document.body.classList.add("dark-theme");
   }
   
+  // If the current theme in localStorage is "dark"...
+  if (currentTheme == "light") {
+    // ...then use the .dark-theme class
+    document.body.classList.remove("dark-theme");
+  }
+  
   // Listen for a click on the button 
   theme.addEventListener("click", function() {
     // Toggle the .dark-theme class on each click
