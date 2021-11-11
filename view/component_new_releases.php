@@ -69,6 +69,7 @@ if( !$new_releases['error']) {
     }
     
     $thumb_new_releases_html .= "</div>";
+    $thumb_new_releases_html .= "<div class='col'><p class='text-center'><a href='/new-releases'><i class='fas fa-angle-down'></i></a></p></div>";
     // $thumb_new_releases_html .= "</article>";
 
     return($thumb_new_releases_html);

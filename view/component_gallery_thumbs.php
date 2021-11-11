@@ -76,6 +76,7 @@
         }
 
         $thumb_html .= "</div>";
+        $thumb_html .= "<div class='col'><p class='text-center'><a href='/" . $value['path'] . "'><i class='fas fa-angle-down'></i></a></p></div>";
         $thumb_html .= "</section>";
         // $thumb_html .= "</article>";
     }

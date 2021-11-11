@@ -14,7 +14,8 @@
 
     /* Build the layout of the page and render */
     $core->render();
-
+    echo "<!-- --new-server-publish Wed, 10 Nov 2021 -->";
+    
     /* Debug Info */
     $core->debugInfo();
 
