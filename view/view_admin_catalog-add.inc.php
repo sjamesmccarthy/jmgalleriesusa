@@ -111,6 +111,7 @@
         $as_gallery = 0;
         $print_media = "paper";
         $available_sizes = "in_code";
+        $lens_model = "Nikkor Z 24-200";
         // $this->nav_label_catalog = "Adding Photo";
     }
 

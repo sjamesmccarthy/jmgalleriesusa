@@ -23,10 +23,11 @@
                 <input type="hidden" id="words" name="words" value="<?= $res_words ?>" />
 
                 <div>
-                    <label for="title">TITLE</label>
+                    <label>title</label>
                     <input class="two-thirds" maxlength="100" type="text" id="title" name="title" placeholder="TITLE (eg, When Does A Photograph Become 'Fine-Art'?)" value="<?= $res_title ?>" required>
                    
                     <div class="one-thirds select-wrapper">
+                    <label>type</label>   
                     <select id="type" name="type" style="margin-bottom: 0">
                           <option value="article" <?= ($res_type == "article" ? "SELECTED" : ""); ?>>ARTICLE</option>
                           <option value="filmstrip" <?= ($res_type == "filmstrip" ? "SELECTED" : ""); ?>>FILMSTRIP</option>
@@ -38,7 +39,7 @@
 
                 <div>
                     <p class="one-thirds right small">https://jmgalleries.com/fieldnotes/</p>
-                    <label for="title">SHORT-URL-PATH</label>
+                    <label>SHORT-URL-PATH</label>
                     <input class="two-thirds" maxlength="40" class="half-size ml-16" type="text" id="short_path" name="short_path" placeholder="SHORT-URL-PATH (eg, when-does-a-photograph-become-fineart)" value="<?= $res_short_path ?>" required>
                 </div>
 
@@ -137,14 +138,15 @@
                 </div>
 
                 <div class="teaser_container">
-                    <p>TEASER</p>
-                    <label for="teaser">teaser</label>
+                    <!-- <p>TEASER</p> -->
+                    <label>teaser</label>
                     <input class="mt-8" maxlength="250" type="text" id="teaser" name="teaser" placeholder="TEASER (eg, MAXLENGTH 133 CHARACTERS.)" value="<?= $res_teaser ?>" >
                 </div>
 
                 <div id="content_area" class="mt-16">
             
-                    <p style="display: inline-block;">CONTENT</p>
+                    <!-- <p style="display: inline-block;">CONTENT</p> -->
+                    <label>content</label>
                     <p style="display: inline-block; float: right;"><i class="far fa-window-restore btn-content_preview"></i></p>
                     <textarea name="content" id="content" class="content_html"><?= $res_content ?></textarea>
                     
@@ -159,12 +161,15 @@
                 </p>
             
                 <div class="mt-16">
+                    <label>tags</label>
                     <input class="half-size" type="text" id="tags" name="tags" placeholder="TAGS (eg. adventure, tutorial, opinion, historical-profile)" value="<?= $res_tags ?>">
+                    <label>created on</label>
                     <input class="half-size <?= $date_field_hidden ?>" type="text" id="date" name="date" placeholder="CREATED ON (eg. 2020-07-01 08:32:08)" value="<?= $res_created ?>">
                 </div>
 
                 <div>
                     <div class="select-wrapper half-size">
+                    <label>status</label>
                     <select id="status" name="status" style="margin-bottom: 0">
                           <option value="draft" <?= ($res_status == "draft" ? "SELECTED" : ""); ?>>DRAFT</option>
                           <option value="published" <?= ($res_status == "published" ? "SELECTED" : ""); ?>>PUBLISHED</option>

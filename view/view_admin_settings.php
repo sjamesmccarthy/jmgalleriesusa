@@ -1,5 +1,5 @@
 <a name="top"></a>
-<section class="settingsidx--container">
+<section class="settingsidx--container admin--settingsidx">
     <div class="grid">
        
         <!-- insert navigation component -->
@@ -16,11 +16,11 @@
 
                         <div class="tabs"> 
                             <div data-name="ABOUT" class="tab-menu tab-ABOUT active"><a href="#about">ABOUT</a></div>
-                            <div data-name="SYSTEM" class="tab-menu tab-SYSTEM"><a href="#system">SYSTEM</a></div>
-                            <div data-name="COMPONENTS" class="tab-menu tab-COMPONENTS"><a href="#components">COMPONENTS</a></div>
-                            <div data-name="NOTICES" class="tab-menu tab-NOTICES"><a href="#notices">NOTICES</a></div>
                             <div data-name="PROMOCODES" class="tab-menu tab-PROMOCODES"><a href="#promos">Pricing & PROMOS</a></div>
-                            <div data-name="SESSION" class="tab-menu tab-SESSION"><a href="#session">SESSION</a></div>
+                            <div data-name="NOTICES" class="tab-menu tab-NOTICES"><a href="#notices">NOTICES</a></div>
+                            <div data-name="SYSTEM" class="tab-menu tab-SYSTEM"><a href="#system">SYSTEM</a></div>
+                            <!-- <div data-name="COMPONENTS" class="tab-menu tab-COMPONENTS"><a href="#components">COMPONENTS</a></div> -->
+                           <!--  <div data-name="SESSION" class="tab-menu tab-SESSION"><a href="#session">SESSION</a></div> -->
                             <div data-name="CODE" class="tab-menu tab-CODE"><a id="show-code" href="#">&lt;/&gt;</a></div>
                             <!-- <div><p id="sendform" class="btn_small">UPDATE SETTINGS</p></div> -->
                         </div>
@@ -48,60 +48,70 @@
                         <div class="divTableRow">
                             <div class="divTableCell">site_name</div>
                             <div class="divTableCell">
+                                <label>site name</label>
                                 <input class="w-100" type="text" name="site_name" value="<?= $site_name ?>" />
                             </div>
                         </div>
                         <div class="divTableRow">
                             <div class="divTableCell">email</div>
                             <div class="divTableCell">
+                                <label>email</label>
                                  <input class="w-100" type="text" name="email" value="<?= $email ?>" />
                             </div>
                         </div>
                         <div class="divTableRow">
                             <div class="divTableCell">phone</div>
                             <div class="divTableCell">
+                                <label>phone</label>
                                  <input class="w-100" type="text" name="phone" value="<?= $phone ?>" />
                             </div>
                         </div>
                         <div class="divTableRow">
                             <div class="divTableCell">copyright</div>
                             <div class="divTableCell">
+                                <label>copyright statement</label>
                                  <input class="w-100" type="text" name="copyright" value="<?= $copyright ?>" />
                             </div>
                         </div>
                         <div class="divTableRow">
                             <div class="divTableCell">coa_contract</div>
                             <div class="divTableCell">
+                                <label>coa contract</label>
                                  <input class="w-100" type="text" name="coa_contract" value="<?= $coa_contract ?>" />
                             </div>
                         </div>
                         <div class="divTableRow">
                             <div class="divTableCell">limited_edition_max</div>
                             <div class="divTableCell">
+                                <label>limited edition max</label>
                                  <input class="w-100" type="text" name="limited_edition_max" value="<?= $limited_edition_max ?>" />
                             </div>
                         </div>
                         <div class="divTableRow">
                             <div class="divTableCell">available_sizes_limited (label for Filmstrip only)</div>
                             <div class="divTableCell">
+                                <label>limited edition sizes (used in details)</label>
                                  <input class="w-100" type="text" name="available_sizes_limited" value="<?= $available_sizes_limited ?>" />
                             </div>
                         </div>
                         <div class="divTableRow">
                             <div class="divTableCell">edition_description_limited (label for Filmstrip &Details)<br />{limited_edition_max}</div>
                             <div class="divTableCell">
+                                <label>limited edition label</label>
                                  <input class="w-100" type="text" name="edition_description_limited" value="<?= $edition_description_limited ?>" />
                             </div>
                         </div>
                         <div class="divTableRow">
                             <div class="divTableCell">available_sizes_open (label for Filmstrip only)</div>
                             <div class="divTableCell">
+                                <label>open edition sizes</label>
                                  <input class="w-100" type="text" name="available_sizes_open" value="<?= $available_sizes_open ?>" />
                             </div>
                         </div>
                         <div class="divTableRow">
                             <div class="divTableCell">edition_description_open (label for Filmstrip &Details)</div>
                             <div class="divTableCell">
+                                <label>open edition label</label>
                                  <input class="w-100" type="text" name="edition_description_open" value="<?= $edition_description_open ?>" />
                             </div>
                         </div>
@@ -109,16 +119,147 @@
                     </div>
                 </div>
 
-                <div class="grid" id="tab-system">
+<div class="grid" id="tab-pricing">
+    
+                        <div class="col">
+                            <h4>Pricing & Promos</h4>
+                        </div>
+    
+                        <div class="col right">
+                            <a name="promos" href="#top"><i class="fas fa-arrow-circle-up"></i></a> 
+                        </div>
+    
+                        <div class="divTable w-100 mt-32 pb-32">
+    
+                            <div class="divTableBody">
+                                 <div class="divTableCell thead w-50"></div>
+                                 <div class="divTableCell thead pl-8"></div>
+                            </div>
+    
+                           <div class="divTableRow">
+                                <div class="divTableCell">seasonal</div>
+                                <div class="divTableCell">
+                                    <label>promo - seasonal</label>
+                                     <input class="w-100" type="text" name="promo_seasonal" value="<?= $promo_seasonal ?>"  />
+                                </div>
+                            </div>
+                           <div class="divTableRow">
+                                <div class="divTableCell">holiday</div>
+                                <div class="divTableCell">
+                                    <label>promo - holiday</label>
+                                     <input class="w-100" type="text" name="promo_holiday" value="<?= $promo_holiday ?>"  />
+                                </div>
+                            </div>
+                           <div class="divTableRow">
+                                <div class="divTableCell">generic</div>
+                                <div class="divTableCell">
+                                    <label>promo - generic</label>
+                                     <input class="w-100" type="text" name="promo_generic" value="<?= $promo_generic ?>"  />
+                                </div>
+                            </div>
+                           <div class="divTableRow">
+                                <div class="divTableCell">collector</div>
+                                <div class="divTableCell">
+                                    <label>promo - collector</label>
+                                     <input class="w-100" type="text" name="promo_collector" value="<?= $promo_collector ?>"  />
+                                </div>
+                            </div>
+                           <div class="divTableRow">
+                                <div class="divTableCell">special</div>
+                                <div class="divTableCell">
+                                    <label>promo - special</label>
+                                     <input class="w-100" type="text" name="promo_special" value='<?= $promo_special ?>'  />
+                                </div>
+                            </div>
+    
+                           <div class="divTableRow">
+                                <div class="divTableCell">le_pricing</div>
+                                <div class="divTableCell">
+                                    <label>pricing - limited edition</label>
+                                     <input class="w-100" type="text" name="le_pricing" value='<?= $le_pricing ?>' />
+                                </div>
+                            </div>
+                           <div class="divTableRow">
+                                <div class="divTableCell">le_frames_pricing</div>
+                                <div class="divTableCell">
+                                    <label>pricing - limited edition framing</label>
+                                     <input class="w-100" type="text" name="le_frames_pricing" value='<?= $le_frames_pricing ?>'  />
+                                </div>
+                            </div>
+    
+                           <div class="divTableRow">
+                                <div class="divTableCell">tv_pricing</div>
+                                <div class="divTableCell">
+                                    <label>pricing - open edition</label>
+                                     <input class="w-100" type="text" name="tv_pricing" value='<?= $tv_pricing ?>' />
+                                </div>
+                            </div>
+                           <div class="divTableRow">
+                                <div class="divTableCell">studio_frames_pricing</div>
+                                <div class="divTableCell">
+                                    <label>pricing - open edition framing</label>
+                                     <input class="w-100" type="text" name="studio_frames_pricing" value='<?= $studio_frames_pricing ?>'  />
+                                </div>
+                            </div>
+                                    
+                        </div>
+    
+                    </div>
+                
+                
+                <div class="grid">
+                            <div class="col">
+                                <h4 class="toggle-notices">Notices -toggle</h4>
+                            </div>
+                            
+                            <div class="col right">
+                                <a name="notices" href="#top"><i class="fas fa-arrow-circle-up"></i></a> 
+                            </div>
+                </div>
+                    
+                <div class="grid" id="tab-notices">
+                    
+                    <!-- <div class="col">
+                        <h4>Notices</h4>
+                    </div> -->
 
-                    <div class="col">
-                        <h4>System</h4>
+                   <!--  <div class="col right">
+                        <a name="notices" href="#top"><i class="fas fa-arrow-circle-up"></i></a> 
+                    </div> -->
+
+                    <div class="col-12">
+                        <p class="small">file://view/data_notices.json</p>
                     </div>
 
+                    <div class="divTable w-100 mt-32">
+
+                        <div class="divTableBody">
+                             <div class="divTableCell thead w-100"></div>
+                        </div>
+
+                        <?= $notices_html ?>
+                        
+                    </div>
+                </div>
+        
+            <div class="grid">
+                    <div class="col">
+                        <h4 class="toggle-system">System -toggle</h4>
+                    </div>
+                    
                     <div class="col right">
                         <a name="system" href="#top"><i class="fas fa-arrow-circle-up"></i></a> 
                     </div>
+            </div>
+            
+        <div class="section-system">
+                <div class="grid" id="tab-system">
 
+                   <!--  <div class="col">
+                        <h4>System</h4>
+                    </div> -->
+
+           
                             <div class="divTable w-100 mt-32 pb-32">
                                 <div class="divTableBody">
                                      <div class="divTableCell thead w-50"></div>
@@ -128,42 +269,49 @@
                                 <div class="divTableRow">
                                     <div class="divTableCell">package_name</div>
                                     <div class="divTableCell">
+                                        <label>package name</label>
                                         <input class="w-100" type="text" name="package_name" value="<?= $package_name ?>" />
                                     </div>
                                 </div>
                                 <div class="divTableRow">
                                     <div class="divTableCell"><a id="getTS" href="#">package_version</a> -- <span class="small"> Build : </span> <span id="ts" class="small"></span></div>
                                     <div class="divTableCell">
+                                        <label>package version</label>
                                          <input class="w-100" type="text" name="package_version" value="<?= $package_version ?>" />
                                     </div>
                                 </div>
                                 <div class="divTableRow">
                                     <div class="divTableCell">package_release_notes</div>
                                     <div class="divTableCell">
+                                        <label>package release notes</label>
                                          <input class="w-100" type="text" name="package_release_notes" value="<?= $package_release_notes ?>" />
                                     </div>
                                 </div>
                                 <div class="divTableRow">
                                     <div class="divTableCell">package_git</div>
                                     <div class="divTableCell">
+                                        <label>package git</label>
                                          <input class="w-100" type="text" name="package_git" value="<?= $package_git ?>" />
                                     </div>
                                 </div>
                                 <div class="divTableRow">
                                     <div class="divTableCell">package_license</div>
                                     <div class="divTableCell">
+                                        <label>package license</label>
                                          <input class="w-100" type="text" name="package_license" value="<?= $package_license ?>" />
                                     </div>
                                 </div>
                                 <div class="divTableRow">
                                     <div class="divTableCell">package_blacklist</div>
                                     <div class="divTableCell">
+                                        <label>package blacklist</label>
                                          <input class="w-100" type="text" name="package_blacklist" value="<?= $package_blacklist ?>" />
                                     </div>
                                 </div>
                                 <div class="divTableRow">
                                     <div class="divTableCell">prefix_template</div>
                                     <div class="divTableCell">
+                                        <label>prefix templates</label>
                                          <input class="w-100" type="hidden" name="prefix_template" value="tpl_" />
                                          <input class="w-100" type="text" name="prefix_template" value="tpl_" disabled />
                                     </div>
@@ -171,6 +319,7 @@
                                 <div class="divTableRow">
                                     <div class="divTableCell">prefix_page</div>
                                     <div class="divTableCell">
+                                        <label>prefix pages</label>
                                          <input class="w-100" type="hidden" name="prefix_page" value="view_" />
                                          <input class="w-100" type="text" name="prefix_page" value="view_" disabled />
                                     </div>
@@ -178,13 +327,15 @@
                                 <div class="divTableRow">
                                     <div class="divTableCell">prefix_negatives</div>
                                     <div class="divTableCell">
-                                         <input class="w-100" type="hidden" name="prefix_negatives" value="_catidx" />
+                                        <label>prefix negatives (no longer used)</label>
+                                         <input class="w-100" type="hidden" name="prefix_negatives" value="_catidx" disabled />
                                          <input class="w-100" type="text" name="prefix_negatives" value="_catidx" disabled />
                                     </div>
                                 </div>
                                 <div class="divTableRow">
                                     <div class="divTableCell">prefix_partial</div>
                                     <div class="divTableCell">
+                                        <label>prefix partial</label>
                                          <input class="w-100" type="hidden" name="prefix_partial" value="partial_"  />
                                          <input class="w-100" type="text" name="prefix_partial" value="partial_" disabled />
                                     </div>
@@ -192,6 +343,7 @@
                                 <div class="divTableRow">
                                     <div class="divTableCell">prefix_component</div>
                                     <div class="divTableCell">
+                                        <label>prefix component</label>
                                          <input class="w-100" type="hidden" name="prefix_component" value="component_" />
                                          <input class="w-100" type="text" name="prefix_component" value="component_" disabled />
                                     </div>
@@ -199,85 +351,9 @@
                             </div>
                 </div>
 
-                <div class="grid" id="tab-components">
+ 
 
-                    <div class="col">
-                        <h4>Pricing & Promos</h4>
-                    </div>
-
-                    <div class="col right">
-                        <a name="promos" href="#top"><i class="fas fa-arrow-circle-up"></i></a> 
-                    </div>
-
-                    <div class="divTable w-100 mt-32 pb-32">
-
-                        <div class="divTableBody">
-                             <div class="divTableCell thead w-50"></div>
-                             <div class="divTableCell thead pl-8"></div>
-                        </div>
-
-                       <div class="divTableRow">
-                            <div class="divTableCell">seasonal</div>
-                            <div class="divTableCell">
-                                 <input class="w-100" type="text" name="promo_seasonal" value="<?= $promo_seasonal ?>"  />
-                            </div>
-                        </div>
-                       <div class="divTableRow">
-                            <div class="divTableCell">holiday</div>
-                            <div class="divTableCell">
-                                 <input class="w-100" type="text" name="promo_holiday" value="<?= $promo_holiday ?>"  />
-                            </div>
-                        </div>
-                       <div class="divTableRow">
-                            <div class="divTableCell">generic</div>
-                            <div class="divTableCell">
-                                 <input class="w-100" type="text" name="promo_generic" value="<?= $promo_generic ?>"  />
-                            </div>
-                        </div>
-                       <div class="divTableRow">
-                            <div class="divTableCell">collector</div>
-                            <div class="divTableCell">
-                                 <input class="w-100" type="text" name="promo_collector" value="<?= $promo_collector ?>"  />
-                            </div>
-                        </div>
-                       <div class="divTableRow">
-                            <div class="divTableCell">special</div>
-                            <div class="divTableCell">
-                                 <input class="w-100" type="text" name="promo_special" value='<?= $promo_special ?>'  />
-                            </div>
-                        </div>
-
-                       <div class="divTableRow">
-                            <div class="divTableCell">le_pricing</div>
-                            <div class="divTableCell">
-                                 <input class="w-100" type="text" name="le_pricing" value='<?= $le_pricing ?>' />
-                            </div>
-                        </div>
-                       <div class="divTableRow">
-                            <div class="divTableCell">le_frames_pricing</div>
-                            <div class="divTableCell">
-                                 <input class="w-100" type="text" name="le_frames_pricing" value='<?= $le_frames_pricing ?>'  />
-                            </div>
-                        </div>
-
-                       <div class="divTableRow">
-                            <div class="divTableCell">tv_pricing</div>
-                            <div class="divTableCell">
-                                 <input class="w-100" type="text" name="tv_pricing" value='<?= $tv_pricing ?>' />
-                            </div>
-                        </div>
-                       <div class="divTableRow">
-                            <div class="divTableCell">studio_frames_pricing</div>
-                            <div class="divTableCell">
-                                 <input class="w-100" type="text" name="studio_frames_pricing" value='<?= $studio_frames_pricing ?>'  />
-                            </div>
-                        </div>
-                                
-                    </div>
-
-                </div>
-
-                 <div class="grid" id="tab-promos">
+                 <div class="grid" id="tab-components">
 
                     <div class="col">
                         <h4>Components</h4>
@@ -317,31 +393,6 @@
 
                 </div>
 
-
-                <div class="grid" id="tab-notices">
-
-                    <div class="col">
-                        <h4>Notices</h4>
-                    </div>
-
-                    <div class="col right">
-                        <a name="notices" href="#top"><i class="fas fa-arrow-circle-up"></i></a> 
-                    </div>
-
-                    <div class="col-12">
-                        <p class="small">file://view/data_notices.json</p>
-                    </div>
-
-                    <div class="divTable w-100 mt-32">
-
-                        <div class="divTableBody">
-                             <div class="divTableCell thead w-100"></div>
-                        </div>
-
-                        <?= $notices_html ?>
-                        
-                    </div>
-                </div>
 
                 <div class="grid" id="tab-session">
 
@@ -400,6 +451,8 @@
 
                 </div>
 
+            </div><!-- section-system-->
+                
                 <div class="grid pt-32 nopad-left" id="tab-session">
                   <button id="sendform">UPDATE SETTINGS</button>
                 </div>
@@ -407,7 +460,6 @@
 
         </div>
     </div>
-
    
 </section>
 
@@ -428,6 +480,18 @@ jQuery(document).ready(function($){
         console.log('show-code(toggle)');
         e.preventDefault();
         $('.code-block').toggle();
+    });
+    
+    $('.toggle-system').on("click", function(e) {
+        console.log('show-system(toggle)');
+        e.preventDefault();
+        $('.section-system').toggle();
+    });
+    
+    $('.toggle-notices').on("click", function(e) {
+        console.log('show-notices(toggle)');
+        e.preventDefault();
+        $('#tab-notices').toggle();
     });
 
     $('#getTS').on("click", function(e) {

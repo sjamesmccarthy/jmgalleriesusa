@@ -3,11 +3,14 @@
 /* partial_footer */
 
 #footer {
-    margin-top: 64px;
+    margin-top: 2rem;
     // background-color: #000;
     background-color: rgb(25,39,52);
     color: #FFF;
-
+    // max-width: 1920px;
+    // margin: auto;
+    padding-top: 2rem;
+    
     .middot:after {
         padding-right: .3em;
         padding-left: .3em;

@@ -28,15 +28,15 @@
                 <input type="hidden" id="artist_id" name="artist_id" value="1" />
 
                 <div>
-                    <label for="title">NAME</label>
+                    <label>name</label>
                     <input class="half-size" maxlength="255" type="text" id="name" name="name" placeholder="NAME (eg, ALL DONATED ARTWORK)" value="<?= $res_name ?>" required>
-                    <label for="edition-style">DESCRIPTION</label>
+                    <label>description</label>
                     <input class="half-size" maxlength="255" type="text" id="desc" name="desc" placeholder="DESCRIPTION (eg, Report showing all donated artwork to date)" value="<?= $res_desc ?>">
                 </div>
 
                 <div>
                     <p style="width:75%; float: left;">
-                    <label for="title">COLUMNS</label>
+                    <label>columns</label>
                     <input class="" type="text" id="columns" name="columns" placeholder="COLUMNS (eg, id,firstname,lastname,email,phone)" value="<?= $res_columns ?>" />
                     </p>
 
@@ -47,8 +47,8 @@
 
                 </div>
 
-                <div>
-                    <label for="sql_code">SQL</label>
+                <div style="clear: both">
+                    <label>sql</label>
                     <textarea id="sql_c" name="sql_c"><?= $res_sql ?></textarea>
                 </div>
                 

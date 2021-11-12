@@ -1,4 +1,4 @@
-<section class="admin-materialss-add">
+<section class="admin--materials-add">
     <div class="grid">
        
         <!-- insert navigation component -->
@@ -21,7 +21,7 @@
 
             <div>
                 <div class="select-wrapper half-size">
-                <label for="supplier">SUPPLIER</label>
+                <label for="supplier">supplier</label>
                 <select id="supplier_id" name="supplier_id">
                     <option value="---">---</option>
                     <?= $suppliers_html ?>
@@ -34,18 +34,18 @@
             </div>
 
             <div>
-                <label for="edition_num">MATERIAL</label>
+                <label for="edition_num">material</label>
                 <input class="half-size" type="text" id="material" name="material" placeholder="MATERIAL (eg, Epson Premium Photo Paper Luster)" value="<?= $res_material ?>">
                 <label for="artist_proof">MATERIAL TYPE</label>
                 <input class="half-size"  type="text" id="material_type" name="material_type" placeholder="MATERIAL TYPE (eg, Paper, Printing, Wood)" value="<?= $res_material_type ?>">
             </div>
             
             <div>
-                <label for="edition_nures_max">QUANTITY</label>
+                <label for="edition_nures_max">quantity</label>
                 <input class="half-size" type="text" id="quantity" name="quantity" placeholder="QUANTITY (eg, 36)" value="<?= $res_quantity ?>">
                 
                 <div class="select-wrapper half-size">
-                    <label for="unit_type">UNIT TYPE</label>
+                    <label for="unit_type">unit type</label>
                     <select id="unit_type" name="unit_type">
                         <option value="---">---</option>
                         <option value="each" <?= ($res_unit_type == "each" ? "SELECTED" : ""); ?>>EACH</option>
@@ -57,14 +57,14 @@
             </div>
 
             <div>
-                <label for="edition_num">MATERIAL COST</label>
+                <label for="edition_num">material cost</label>
                 <input class="half-size" type="text" id="cost" name="cost" placeholder="MATERIAL COST (eg, $29.95)" value="<?= $res_cost ?>">
-                <label for="artist_proof">MATERIAL SHIPPING COST</label>
+                <label for="artist_proof">material shipping cost</label>
                 <input class="half-size"  type="text" id="shipping_cost" name="shipping_cost" placeholder="MATERIAL COST SHIPPING (eg, $7.99)" value="<?= $res_shipping_cost ?>">
             </div>
 
             <div class="half-size">
-                <label for="edition_num">PURCHASED ON</label>
+                <label for="edition_num">purchased on</label>
                 <input class="" type="text" id="purchased_on" name="purchased_on" placeholder="PURCHASED ON (eg, 2020-04-01 10:52:49)" value="<?= $res_purchased_on ?>">
             </div>
 

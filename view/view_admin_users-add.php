@@ -17,24 +17,24 @@
             <?= $type_id ?>
 
             <div class="half-size">
-                <label for="title">USERNAME (email)</label>
+                <label>username (email)</label>
                 <input class="" maxlength="255" type="text" id="username" name="username" placeholder="USERNAME (eg, john@wick.com)" value="<?= $res_username ?>" required>
                 
             </div>
 
             <div>
-                <label for="edition-style">TYPE</label>
+                <label>type</label>
                 <input class="half-size" maxlength="255" type="text" id="type" name="type" placeholder="TYPE (eg, ARTIST, COLLECTOR)" value="<?= $res_type ?>">
-                <label for="edition-style">ID</label>
+                <label>id</label>
                 <input class="half-size" maxlength="255" type="text" id="ac_id" name="ac_id" placeholder="ARTIST OR COLLECTOR ID (eg, 15)" value="<?= $ac_id ?>" <?= $disabled ?>/>
             </div>
 
             <div>            
-                <label for="title">REGENERATE PIN (6-DIGIT)</label>
+                <label>regenerate pin (6-digit)</label>
                 <input class="half-size" maxlength="6" type="text" id="pin" name="pin" placeholder="REGENERATE PIN (eg, JM1234 or 678967 or GKLYNM)" />
                 
 
-                <label for="edition-style">MD5</label>
+                <label>md5</label>
                 <input class="half-size" maxlength="255" type="text" id="pinMD5" name="pinMD5" value="<?= $res_pin ?>" disabled />
             </div>
 

@@ -99,8 +99,8 @@
         } 
         
         if ($photo_meta['desc'] == 'acrylic') {
-            $edition_desc_material = 'HD Acrylic';
-            $edition_frame = 'and is float mounted without a frame. One of our <a href="/styles">Premium Designer Frames</a> can be optionally added for an additional cost. This image may also be available in HD Chromaluxe&reg; Metal. Please <a href="/contact">contact an art consultant</a> for availability and pricing.';
+            $edition_desc_material = 'HD Acrylic (⅛" thick with acrylic back and silver aluminum wall mount)';
+            $edition_frame = ' and one of our <a href="/styles">Premium Designer Frames</a> can be optionally added for an additional cost. This image may also be available in HD Chromaluxe&reg; Metal. Please <a href="/contact">contact an art consultant</a> for availability and pricing.';
             $frame_disabled = 'disabled';
             $frame_disabled_option = '<option value="FRAMELESS">No Frame Included With Acrylic</option><option value="ADDWITHACRYLIC">+ Add Additional Frame (Please Specify Color In Order Form)</option>';
             $frame_info_link = 'Premium Designer Frames pricing';
@@ -131,7 +131,7 @@
         $matted_size_default ="0";
         
         $edition_desc = $this->config->edition_description_limited;
-        $edition_max  = ' OF ' . $this->config->limited_edition_max;
+        $edition_max  = ' / ' . $this->config->limited_edition_max;
         $hidden_edition_type = '<input type="hidden" name="edition_type" value="limited" />';
 
         /* Picking a default value to show */

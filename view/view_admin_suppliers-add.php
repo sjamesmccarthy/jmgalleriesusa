@@ -19,27 +19,27 @@
             <input type="hidden" id="artist_id" name="artist_id" value="1" />
 
             <div>
-                <label for="title">COMPANY</label>
+                <label>company</label>
                 <input class="half-size" maxlength="255" type="text" id="company" name="company" placeholder="COMPANY" value="<?= $res_company ?>" required>
-                <label for="edition-style">WEBSITE</label>
+                <label>website</label>
                 <input class="half-size" maxlength="255" type="text" id="website" name="website" placeholder="WEBSITE (eg, https://adorama.com)" value="<?= $res_website ?>">
             </div>
 
             <div>
-                <label for="artist_proof">FIRST NAME (CONTACT)</label>
+                <label>first name (contact)</label>
                 <input class="half-size"  type="text" id="first_name" name="first_name" placeholder="FIRST NAME (eg, John)" value="<?= $res_first_name ?>">
-                <label for="serienum">LAST NAME (CONTACT)</label>
+                <label>last name (contact)</label>
                 <input class="half-size" type="text" id="last_name" name="last_name" placeholder="LAST NAME (eg, White)" value="<?= $res_last_name ?>">
             </div>
             <div>
-                <label for="edition_num">EMAIL</label>
+                <label>email</label>
                 <input class="half-size" type="text" id="email" name="email" placeholder="EMAIL (eg, alfred@jmgalleries.com)" value="<?= $res_email ?>">
-                <label for="edition_num_max">PHONE NUMBER</label>
+                <label>phone number</label>
                 <input class="half-size" type="text" id="phone" name="phone" placeholder="PHONE (rg, 951-708-1831)" value="<?= $res_phone ?>">
             </div>
 
                 <div class="half-size">
-                    <label for="print_size">ACCOUNT NUMBER (if applicable)</label>
+                    <label>account number (if applicable)</label>
                     <input  type="text" id="account" name="account" placeholder="ACCOUNT NUMBER (eg, 123456)" value="<?= $res_account_no ?>">
                 </div>
 

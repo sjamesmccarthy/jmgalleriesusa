@@ -1979,7 +1979,9 @@ body {
   font-size: 16px;
   font-weight: 400;
   line-height: 1.8;
-  letter-spacing: -0.3px; }
+  letter-spacing: -0.3px;
+  max-width: 1920px;
+  margin: auto; }
   body.dark-theme {
     background-color: #15202b;
     color: #FFFFFF; }
@@ -2092,8 +2094,8 @@ main {
       margin: auto;
       padding: 0; } }
 section, article {
-  padding: 2rem 0 0 0;
-  /* 0 .5rem */ }
+  padding: 0;
+  /* 2rem 0 0 0; /* 0 .5rem */ }
 
 ol li {
   list-style-type: decimal;
@@ -2276,6 +2278,15 @@ h1.supersize {
   font-size: 1rem; }
 
 /* Forms */
+section[class*="admin--"] form label {
+  display: inline-block;
+  margin-left: 10px;
+  border-radius: 0;
+  background-color: rgba(0, 0, 0, 0.01);
+  margin-top: -10px;
+  padding: 0 6px;
+  border-radius: 6px; }
+
 form label {
   position: absolute;
   font-size: .8rem;
@@ -2286,9 +2297,6 @@ form label {
   border-radius: 0 6px 6px 0;
   z-index: 10;
   display: none; }
-
-form label:nth-of-type(2) {
-  margin-left: 1rem !important; }
 
 form .select-wrapper {
   position: relative;
@@ -2314,7 +2322,7 @@ form .cancel-button {
   display: inline-block; }
 
 .half-size:nth-of-type(1) {
-  margin-left: 0; }
+  margin-right: 10px; }
 
 .one-thirds {
   width: 33% !important;
@@ -2708,28 +2716,34 @@ button a {
 #hero {
   background: white;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: contain;
   position: relative;
-  margin-top: 0px;
   width: 100%;
   max-height: 1142px;
-  margin-bottom: 2rem; }
+  margin: 0 auto 2rem auto; }
   @media (min-width: 320px) {
     #hero {
       height: 38vh; } }
   @media (min-width: 576px) {
     #hero {
       height: 38vh; } }
+  @media (min-width: 567px) and (orientation: landscape) {
+    #hero {
+      height: 100vh; } }
   @media (min-width: 768px) {
     #hero {
       height: 50vh; } }
-  @media (min-width: 1112px) {
+  @media (min-width: 768px) and (orientation: landscape) {
     #hero {
       height: 100vh; } }
+  @media (min-width: 1440px) {
+    #hero {
+      height: 85vh; } }
   @media (min-width: 1920px) {
     #hero {
       height: 100vh;
-      background-position: left bottom !important; } }
+      background-position: left bottom !important;
+      background-size: cover; } }
 #hero-catalog {
   height: 200px;
   background: transparent;
@@ -3613,9 +3627,10 @@ button a {
 /* ********************** */
 /* partial_footer */
 #footer {
-  margin-top: 64px;
+  margin-top: 2rem;
   background-color: #192734;
-  color: #FFF; }
+  color: #FFF;
+  padding-top: 2rem; }
   #footer .middot:after {
     padding-right: .3em;
     padding-left: .3em;
@@ -5180,26 +5195,31 @@ div[id*='imgT']:hover {
     border-left: 1px solid #CCC; }
 
 #login {
-  margin-top: 30vh; }
+  margin-top: 20vh; }
 
 @media (min-width: 320px) {
   #login .signin--container .signin--area {
-    max-width: 60%; } }
+    max-width: 60%; }
+    #login .signin--container .signin--area .form_pincode input {
+      width: 36px; } }
 
 @media (min-width: 375px) {
   #login .signin--container .signin--area {
-    max-width: 100%; } }
+    max-width: 100%; }
+    #login .signin--container .signin--area .form_pincode input {
+      width: 36px; } }
 
 @media (min-width: 767px) {
   #login .signin--container .signin--area {
     max-width: 50%; } }
 
-@media (min-width: 1112px) {
+@media (min-width: 1440px) {
   #login .signin--container .signin--area {
     max-width: 40%; }
     #login .signin--container .signin--area .form_pincode input {
       border-radius: 0;
-      padding: 0; } }
+      padding: 0;
+      width: 50px; } }
 
 @media (min-width: 1200px) {
   #login .signin--container .signin--area {
@@ -6213,6 +6233,10 @@ table.dataTable tbody td.valign {
     text-decoration: underline; }
   .settings--container form {
     padding: 1rem; }
+  .settings--container .section-system {
+    display: none; }
+  .settings--container #tab-notices {
+    display: none; }
 
 .code-block {
   display: none;

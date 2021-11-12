@@ -439,7 +439,7 @@ class Core_Site extends Core_Api
     public function console($val, $exit=0, $file=__FILE__, $method=__FUNCTION__, $line=__LINE__) {
 
         if ($this->config_env->env[$this->env]['show_console'] == "true") {
-            echo "<div style='position: relative; padding: 10px; background-color: #ffff99; font-size: 1rem; color: #8900ff;'>";
+            echo "<div style='position: relative; padding: 10px; background-color: #000; font-size: 1rem; color: #fff;'>";
                 if (gettype($val) == "string") {
                     echo "<p>>>>>>Line: " . $line . " | ". $val . "<br ><span class=''>File: " . $file . "</span></p>";
                 }
@@ -491,7 +491,7 @@ class Core_Site extends Core_Api
                 }); 
             });
             </script>";
-            echo "<div class='debug_trigger' style='background-color: yellow; font-size: 1rem; padding: 2rem;'>";
+            echo "<div class='debug_trigger' style='background-color: #000; font-size: 1rem; padding: 2rem;'>";
             echo "<p style='font-size: 1rem;'>>>>>> " . $this->env . " CONSOLE --start | " . date('l jS \of F Y h:i:s A') . "</p> </div>";
             echo "<div id='debug_container' style='display:none;'>";
             $this->console($result);
@@ -499,7 +499,7 @@ class Core_Site extends Core_Api
             echo "<hr />";
             if(isSet($_POST)) { $this->console($_POST); }
             if(isSet($_FILES)) { $this->console($_FILES); }
-            echo "<div style='background-color: yellow; font-size: 1rem;'><p class='debug_trigger' style='font-size: 1rem;'>>>>>> CONSOLE --end</p></div>";
+            echo "<div style='background-color: #000; font-size: 1rem;'><p class='debug_trigger' style='font-size: 1rem;'>>>>>> CONSOLE --end</p></div>";
             echo "</div>";
         }
     }

@@ -6,13 +6,15 @@
     // height: 750px;
     background: rgb(255,255,255);
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: contain;
     // background-position: top;
     position: relative;
-    margin-top: 0px;
+    // margin-top: 0px;
     width: 100%;
+    // max-width: 1920px;
     max-height: 1142px;
-    margin-bottom: 2rem;
+    // margin-bottom: 2rem;
+    margin: 0 auto 2rem auto;
 
    // xSmall devices (landscape phones, 320px and up)
      @media (min-width: 320px) { 
@@ -24,6 +26,11 @@
      @media (min-width: 576px) { 
         height: 38vh;
      }
+     
+       @media (min-width: 567px) and (orientation: landscape) {
+           // height: 750px;  
+           height: 100vh;   
+        }
    
      // Medium devices (tablets, 768px and up)
      @media (min-width: 768px) {
@@ -31,10 +38,16 @@
         height: 50vh;
      }
    
+         @media (min-width: 768px) and (orientation: landscape) {
+            // height: 750px;  
+            height: 100vh;   
+         }
+           
+           
      // Large devices (tablets (iPad Pro, 1112px and up)
-     @media (min-width: 1112px) {
+     @media (min-width: 1440px) {
       // height: 750px;  
-      height: 100vh;   
+      height: 85vh;   
      }
    
      // Extra large devices (large desktops, 1200px and up)
@@ -42,6 +55,7 @@
          // height: 750px;
          height: 100vh;
          background-position: left bottom !important;
+         background-size: cover;
      }
   
 }

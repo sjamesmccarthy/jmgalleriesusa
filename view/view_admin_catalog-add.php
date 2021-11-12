@@ -22,6 +22,7 @@
 
             <div>
                 <div class="select-wrapper half-size">
+                <label>collections</label>
                 <select id="parent_collections_id" name="parent_collections_id" style="margin-bottom: 0">
                     <option value="PARENT COLLECTION">PARENT COLLECTION</option>
                     <option value="---">---</option>
@@ -40,6 +41,7 @@
                 </div>
 
                 <div class="select-wrapper half-size" style="vertical-align: top">
+                <label>status</label>
                 <select id="status" name="status">
                 <!-- $var > 2 ? true : false -->
                     <option value="ACTIVE" <?= ($status == "ACTIVE" ? "SELECTED" : ""); ?>>STATUS (ACTIVE)</option>
@@ -55,12 +57,15 @@
             </div>
 
             <div>
+                <label>title</label>
                 <input class="half-size" maxlength="255" type="text" id="title" name="title" placeholder="TITLE" value="<?= $title ?>" required>
+                <label>filename</label>
                 <input class="half-size" maxlength="255" type="text" id="file_name" name="file_name" placeholder="file_name (also sets URL)" value="<?= $file_name ?>" required>
             </div>
 
             <div style="margin-bottom: 10px;">
                 <div class="file half-size">
+                <!-- <label>full-size image</label> -->
                 <input class="input-upload" type="file" id="file_1" name="file_1" onchange="document.getElementById('file_1_prev').src = window.URL.createObjectURL(this.files[0])" aria-label="Choose Main Photo">
                 <input type="hidden" id="file_1_path" name="file_1_path" value="/catalog/__image/">
                 <p>Image: __image/<?= $file_name ?></p>
@@ -70,6 +75,7 @@
                 </div>
 
                 <div class="half-size file file-thumb">
+                <!-- <label>thumbnail image</label> -->
                 <input class="input-upload"  type="file" id="file_2" name="file_2" onchange="document.getElementById('file_2_prev').src = window.URL.createObjectURL(this.files[0])" aria-label="Choose Main Photo">
                 <input type="hidden" id="file_2_path" name="file_2_path" value="/catalog/__thumbnail/">
                 <p>Thumbnail: __thumbnail/<?= $file_name ?></p>
@@ -80,16 +86,22 @@
             </div>
 
             <div class="mt-24">
+                <label>location</label>
                 <input class="half-size"  type="text" id="loc_place" name="loc_place" placeholder="LOCATION PLACE" value="<?= $loc_place ?>" required>
+                <label>waypoint</label>
                 <input class="half-size" type="text" id="loc_waypoint" name="loc_waypoint" placeholder="LOCATION WAYPOINT" value="<?= $loc_waypoint ?>">
             </div>
             <div>
+                <label>city</label>
                 <input class="half-size" type="text" id="loc_city" name="loc_city" placeholder="LOCATION CITY" value="<?= $loc_city ?>" required>
+                <label>state</label>
                 <input class="half-size" type="text" id="loc_state" name="loc_state" placeholder="LOCATION STATE" value="<?= $loc_state ?>" required>
             </div>
             <div>
-                <h6>And, so the story goes ...</h6>
+                <!-- <h6>And, so the story goes ...</h6> -->
+                <label>story</label>
                 <textarea id="story" name="story" required><?= $story ?></textarea>
+                <label>tags</label>
                 <input type="text" id="tags" name="tags" placeholder="#TAGS" value="<?= $tags ?>" required>
             </div>
 
@@ -97,6 +109,7 @@
                 <h6>Available Editions</h6>
 
                 <div class="select-wrapper half-size">
+                <label>edition</label>
                 <select id="as_edition" name="as_edition">
                     <option value="as_gallery" <?= ($as_gallery == "1" ? "SELECTED" : ""); ?>>as LIMITED EDITION</option>
                     <!-- <option value="0" <?= ($as_gallery == "0" ? "SELECTED" : ""); ?>>no (LIMITED EDITION)</option> -->
@@ -107,6 +120,7 @@
                 <input type="hidden" name="previous_edition" value="<?= $previous_edition ?>" />
 
                 <div class="select-wrapper half-size">
+                <label>on display</label>
                 <select id="on_display" name="on_display">
                     <option value="0">on Display (Select Location)</option>
                     <?= $location_html ?>
@@ -124,6 +138,7 @@
 
             <div>
                 <div class="select-wrapper half-size">
+                    <label>material</label>
                     <select id="desc" name="desc">
                         <option value="acrylic" <?= ($desc == "acrylic" ? "SELECTED" : ""); ?>>Acrylic</option>
                         <option value="canvas" <?= ($desc == "canvas" ? "SELECTED" : ""); ?>>Canvas</option>
@@ -133,6 +148,7 @@
                     
                 <div class="half-size" >
                     <!-- <input class="half-size" type="text" id="desc" name="desc" placeholder="DESCRIPTION OF MATERIAL (eg, paper or acrylic)" value="<?= $desc ?>" required> -->
+                    <label>available sizes</label>
                     <input type="text" id="available_sizes" name="available_sizes" placeholder="AVAILABLE SIZES (in_code = default, otherwise use JSON)" value="<?= $available_sizes ?>" required>
                 </div>
             </div>
@@ -167,6 +183,7 @@
             <div>
                 <h6>Photo Meta Data</h6>
                 <div class="select-wrapper half-size">
+                <label>orientation</label>
                 <select id="orientation" name="orientation">
                     <option value="landscape" <?= ($orientation == "landscape" ? "SELECTED" : ""); ?>>Landscape</option>
                     <option value="portrait" <?= ($orientation == "portrait" ? "SELECTED" : ""); ?>>Portrait</option>
@@ -174,12 +191,14 @@
                 </select> 
                 </div>
                 <div class="half-size">
+                <label>date taken</label>
                 <input type="text" id="date_taken" name="date_taken" placeholder="DATE TAKEN (e.g. <?= $created ?>)" value="<?= $date_taken ?>">
                 </div>
             <div>
 
             <div>
                 <div class="select-wrapper half-size">
+                <label>camera</label>
                 <select id="camera" name="camera">
                     <option value="Nikon Z6 II" <?= ($camera == "Nikon Z6 II" ? "SELECTED" : ""); ?>>Nikon Z6 II</option>
                     <option value="Nikon Z5" <?= ($camera == "Nikon Z5" ? "SELECTED" : ""); ?>>Nikon Z5</option>
@@ -194,8 +213,9 @@
                 </select> 
                 </div>
                 <div class="select-wrapper half-size">
+                <label>lens</label>
                 <select id="lens_model" name="lens_model">
-                    <option value="">LENS</option>
+                    <!-- <option value="">LENS</option> -->
                     <option value="Nikkor Z 24-200" <?= ($lens_model == "Nikkor Z 24-200" ? "SELECTED" : ""); ?>>Nikkor Z 24-200</option>
                     <option value="Nikkor Z 24-50" <?= ($lens_model == "Nikkor Z 24-50" ? "SELECTED" : ""); ?>>Nikkor Z 24-50</option>
                     <option value="Tamron SP 85mm F/1.8 Di VC USD" <?= ($lens_model == "Tamron SP 85mm F/1.8 Di VC USD" ? "SELECTED" : ""); ?>>Tamron SP 85mm F/1.8 Di VC USD</option>
@@ -216,11 +236,15 @@
             <div>
 
             <div>
+                <label>aperture (6)</label>
                 <input class="half-size" type="text" id="aperture" name="aperture" placeholder="APERTURE (eg, 6)" value="<?= $aperture ?>">
+                <label>shutter (1/125)</label>
                 <input class="half-size" type="text" id="shutter" name="shutter" placeholder="SHUTTER (eg, 1/125)" value="<?= $shutter ?>">
             </div>
             <div>
+                <label>focal lendth (70)</label>
                 <input class="half-size" type="text" id="focal_length" name="focal_length" placeholder="FOCAL LENGTH (eg, 70)" value="<?= $focal_length ?>">
+                <label>iso (125)</label>
                 <input class="half-size" type="text" id="iso" name="iso" placeholder="ISO" value="<?= $iso ?>">
             </div>
 

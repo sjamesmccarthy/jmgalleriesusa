@@ -1,5 +1,5 @@
 #login {
-    margin-top: 30vh;
+    margin-top: 20vh;
 }
 
 #login .signin--container {
@@ -11,12 +11,20 @@
     @media (min-width: 320px) { 
         max-width: 60%;
         // background-color: yellow;
+        
+        .form_pincode input {
+            width: 36px;
+        }
     }
     
     // Small devices (landscape phones, 576px and up)
     @media (min-width: 375px) { 
-        max-width: 100%;
+        max-width: 100%; 
         // background-color: blue;
+        
+        .form_pincode input {
+            width: 36px;
+        }
     }
     
     // Medium devices (tablets, 768px and up)
@@ -26,12 +34,13 @@
     }
     
     // Large devices (tablets (iPad Pro, 1112px and up)
-    @media (min-width: 1112px) {
+    @media (min-width: 1440px) {
         max-width: 40%;
         
         .form_pincode input {
             border-radius: 0;
             padding: 0;
+            width: 50px;
         }
         // background-color: red;
     }
@@ -40,6 +49,7 @@
     @media (min-width: 1200px) {
         max-width: 40%;
         // background-color: purple;
+        
     }
 
 //          @media (max-width: 64em) and (orientation: portrait),
