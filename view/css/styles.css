@@ -6246,6 +6246,9 @@ table.dataTable tbody td.valign {
     padding: 10px;
     font-size: .7rem; }
 
+.w-100 {
+  width: 100%; }
+
 .collector--main_container .note-from-artist {
   display: none; }
 
