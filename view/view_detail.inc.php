@@ -85,7 +85,7 @@
             // $frame_price_default = "FRAMEINCLUDED";
             $frame_price_default = "0";
             $frame_disabled = 'disabled';
-            $frame_disabled_option = '<option value="FRAMELESS">FRAMING OPTIONS</option><option value="ADDWITHACRYLIC">+ Add Additional Frame (Please Specify Color In Order Form)</option>';
+            $frame_disabled_option = '<option value="FRAMELESS">FRAMING OPTIONS</option><option value="ADDWITHACRYLIC">+ Add Additional Premium Frame (+$$)</option>';
             $frame_info_link = 'Premium Designer Frames pricing';
         } 
 
@@ -93,16 +93,16 @@
             $edition_desc_material = 'Silverada Metallic Canvas';
             $edition_frame = 'and is float mounted without a frame. One of our Premium Designer Frames can be optionally added for an additional cost.';
             $frame_disabled = 'disabled';
-            $frame_disabled_option = '<option value="FRAMELESS">No Frame Included With Canvas</option><option value="ADDWITHACRYLIC">+ Add Additional Frame (Please Specify Color In Order Form)</option>';
+            $frame_disabled_option = '<option value="FRAMELESS">No Frame Included With Canvas</option><option value="ADDWITHACRYLIC">+ Add Additional Premium Frame (+$$)</option>';
             $frame_info_link = 'Premium Designer Frames pricing';
             $frame_price_default = "0";
         } 
         
         if ($photo_meta['desc'] == 'acrylic') {
-            $edition_desc_material = 'HD Acrylic (⅛" thick with acrylic back and silver aluminum wall mount)';
+            $edition_desc_material = 'HD Acrylic (⅛ inch acrylic and silver aluminum wall mount)';
             $edition_frame = ' and one of our <a href="/styles">Premium Designer Frames</a> can be optionally added for an additional cost. This image may also be available in HD Chromaluxe&reg; Metal. Please <a href="/contact">contact an art consultant</a> for availability and pricing.';
             $frame_disabled = 'disabled';
-            $frame_disabled_option = '<option value="FRAMELESS">No Frame Included With Acrylic</option><option value="ADDWITHACRYLIC">+ Add Additional Frame (Please Specify Color In Order Form)</option>';
+            $frame_disabled_option = '<option value="FRAMELESS">No Frame Included With Acrylic</option><option value="ADDWITHACRYLIC">+ Add Additional Premium Frame (+$$)</option>';
             $frame_info_link = 'Premium Designer Frames pricing';
             $frame_price_default = "0";
         } 

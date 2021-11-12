@@ -15,6 +15,7 @@
     <input type="hidden" name="img_type" value="<?= $edition_desc_material ?>" />
 
     <input type="hidden" name="price" id="price" value="<?= $default_price ?>" />
+    <input type="hidden" name="print_price" id="print_price" value="<?= $default_price ?>" />
     <input type="hidden" name="frame_price" id="frame_price" value="<?= $frame_price_default ?>" />
     <input type="hidden" name="matted_size" id="matted_size" value="<?= $matted_size_default ?>" />
 
@@ -33,16 +34,16 @@
         </div>
 
       <div class="col pt-0">
-      <?= $btn_link ?><button><?= $btn ?></button></a>
         <!-- <p class="small blue" style="margin-bottom: -10px; margin-left: 5px;">USD</p> -->
-        <p class="blue price pt-32">$<span id="price_view" class="price"><?= number_format($default_price, 0) ?></span></p>
+        <p class="blue price">$<span id="price_view" class="price"><?= number_format($default_price, 0) ?></span></p>
         <p class="frame_data blue text-center pb-16"></p>
+      <?= $btn_link ?><button><?= $btn ?></button></a>
       
       <?= $sizes_pricing ?>
       <?= $sizes_frames ?>
       
       <p class="mt-32 ml-8 small text-center">Questions?<br /><a class="small underline normal-weight"target="_infoTab" href="/contact">Contact an Art consultant</a></p>
-      <p class="ml-8 text-center"><a target="_infoTab" class="small underline normal-weight" href="/styles">Click here for sizing information</a></p>
+      <p class="ml-8 text-center"><a target="_infoTab" class="small underline normal-weight" href="/styles">Click here for framing information</a></p>
       </div>
 
     </div>
@@ -92,6 +93,7 @@
         $("#frame").prop('selectedIndex', 0); 
         $('.frame_data').html(''); 
         $('#price').val(p);
+        $('#print_price').val(p);
         // $('#price_view').html(nf.format(p));
         $('#price_view').html(new Intl.NumberFormat('en-US').format(p));
         // console.log('updating price.View(.price)=' + nf.format(p));

@@ -16,7 +16,7 @@
 
                         <div class="tabs"> 
                             <div data-name="ABOUT" class="tab-menu tab-ABOUT active"><a href="#about">ABOUT</a></div>
-                            <div data-name="PROMOCODES" class="tab-menu tab-PROMOCODES"><a href="#promos">Pricing & PROMOS</a></div>
+                            <div data-name="PROMOCODES" class="tab-menu tab-PROMOCODES"><a href="#pricing">Pricing & PROMOS</a></div>
                             <div data-name="NOTICES" class="tab-menu tab-NOTICES"><a href="#notices">NOTICES</a></div>
                             <div data-name="SYSTEM" class="tab-menu tab-SYSTEM"><a href="#system">SYSTEM</a></div>
                             <!-- <div data-name="COMPONENTS" class="tab-menu tab-COMPONENTS"><a href="#components">COMPONENTS</a></div> -->
@@ -38,175 +38,97 @@
                 <form id="settings-upd" action="/studio/api/update/settings" method="POST" enctype="multipart/form-data">
 
                 <div class="grid" id="tab-about">
-                     <div class="divTable w-100 mt-32 pb-32">
-
-<!--                         <div class="divTableBody">
-                             <div class="divTableCell thead w-50"></div>
-                             <div class="divTableCell thead pl-8"></div>
-                        </div> -->
-
-                        <div class="divTableRow">
-                            <!-- <div class="divTableCell">site_name</div> -->
-                            <div class="divTableCell">
-                                <label>site name</label>
-                                <input class="w-100" type="text" name="site_name" value="<?= $site_name ?>" />
-                            </div>
-                        </div>
-                        <div class="divTableRow">
-                            <!-- <div class="divTableCell">email</div> -->
-                            <div class="divTableCell">
-                                <label>email</label>
-                                 <input class="w-100" type="text" name="email" value="<?= $email ?>" />
-                            </div>
-                        </div>
-                        <div class="divTableRow">
-                            <!-- <div class="divTableCell">phone</div> -->
-                            <div class="divTableCell">
-                                <label>phone</label>
-                                 <input class="w-100" type="text" name="phone" value="<?= $phone ?>" />
-                            </div>
-                        </div>
-                        <div class="divTableRow">
-                            <!-- <div class="divTableCell">copyright</div> -->
-                            <div class="divTableCell">
-                                <label>copyright statement</label>
-                                 <input class="w-100" type="text" name="copyright" value="<?= $copyright ?>" />
-                            </div>
-                        </div>
-                        <div class="divTableRow">
-                            <!-- <div class="divTableCell">coa_contract</div> -->
-                            <div class="divTableCell">
-                                <label>coa contract</label>
-                                 <input class="w-100" type="text" name="coa_contract" value="<?= $coa_contract ?>" />
-                            </div>
-                        </div>
-                        <div class="divTableRow">
-                            <!-- <div class="divTableCell">limited_edition_max</div> -->
-                            <div class="divTableCell">
-                                <label>limited edition max</label>
-                                 <input class="w-100" type="text" name="limited_edition_max" value="<?= $limited_edition_max ?>" />
-                            </div>
-                        </div>
-                        <div class="divTableRow">
-                            <!-- <div class="divTableCell">available_sizes_limited (label for Filmstrip only)</div> -->
-                            <div class="divTableCell">
-                                <label>limited edition sizes (used in details)</label>
-                                 <input class="w-100" type="text" name="available_sizes_limited" value="<?= $available_sizes_limited ?>" />
-                            </div>
-                        </div>
-                        <div class="divTableRow">
-                            <!-- <div class="divTableCell">edition_description_limited (label for Filmstrip &Details)<br />{limited_edition_max}</div> -->
-                            <div class="divTableCell">
-                                <label>limited edition label</label>
-                                 <input class="w-100" type="text" name="edition_description_limited" value="<?= $edition_description_limited ?>" />
-                            </div>
-                        </div>
-                        <div class="divTableRow">
-                            <!-- <div class="divTableCell">available_sizes_open (label for Filmstrip only)</div> -->
-                            <div class="divTableCell">
-                                <label>open edition sizes</label>
-                                 <input class="w-100" type="text" name="available_sizes_open" value="<?= $available_sizes_open ?>" />
-                            </div>
-                        </div>
-                        <div class="divTableRow">
-                            <!-- <div class="divTableCell">edition_description_open (label for Filmstrip &Details)</div> -->
-                            <div class="divTableCell">
-                                <label>open edition label</label>
-                                 <input class="w-100" type="text" name="edition_description_open" value="<?= $edition_description_open ?>" />
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-
-<div class="grid" id="tab-pricing">
-    
-                        <div class="col">
-                            <h4>Pricing & Promos</h4>
-                        </div>
-    
-                        <div class="col right">
-                            <a name="promos" href="#top"><i class="fas fa-arrow-circle-up"></i></a> 
-                        </div>
-    
-                        <div class="divTable w-100 mt-32 pb-32">
-    
-                            <div class="divTableRow">
-                                        <!-- <div class="divTableCell">Pricing - Limited Editions</div> -->
-                                    <div class="divTableCell">
-                                            <label>pricing - limited edition</label>
-                                             <input class="w-100" type="text" name="le_pricing" value='<?= $le_pricing ?>' />
-                                        </div>
-                                    </div>
-                                   <div class="divTableRow">
-                                        <!-- <div class="divTableCell">Pricing - Limited Editions Framing</div> -->
-                                        <div class="divTableCell">
-                                            <label>pricing - limited edition framing</label>
-                                             <input class="w-100" type="text" name="le_frames_pricing" value='<?= $le_frames_pricing ?>'  />
-                                        </div>
-                                    </div>
-                                
-                                   <div class="divTableRow">
-                                        <!-- <div class="divTableCell">Pricing - Open Editions</div> -->
-                                        <div class="divTableCell">
-                                            <label>pricing - open edition</label>
-                                             <input class="w-100" type="text" name="tv_pricing" value='<?= $tv_pricing ?>' />
-                                        </div>
-                                    </div>
-                                   <div class="divTableRow">
-                                        <!-- <div class="divTableCell">Pricing Open Editions Framing</div> -->
-                                        <div class="divTableCell">
-                                            <label>pricing - open edition framing</label>
-                                             <input class="w-100" type="text" name="studio_frames_pricing" value='<?= $studio_frames_pricing ?>'  />
-                                        </div>
-                                    </div>
-                                    
-                            <!-- <div class="divTableBody">
-                                 <div class="divTableCell thead w-50"></div>
-                                 <div class="divTableCell thead pl-8"></div>
-                            </div> -->
-    
-                           <div class="divTableRow">
-                                <!-- div class="divTableCell">seasonal</div> -->
-                                <div class="divTableCell">
-                                    <label>promo - seasonal</label>
-                                     <input class="w-100" type="text" name="promo_seasonal" value="<?= $promo_seasonal ?>"  />
-                                </div>
-                            </div>
-                           <div class="divTableRow">
-                                <!-- <div class="divTableCell">holiday</div> -->
-                                <div class="divTableCell">
-                                    <label>promo - holiday</label>
-                                     <input class="w-100" type="text" name="promo_holiday" value="<?= $promo_holiday ?>"  />
-                                </div>
-                            </div>
-                           <div class="divTableRow">
-                               <!--  <div class="divTableCell">generic</div> -->
-                                <div class="divTableCell">
-                                    <label>promo - generic</label>
-                                     <input class="w-100" type="text" name="promo_generic" value="<?= $promo_generic ?>"  />
-                                </div>
-                            </div>
-                           <div class="divTableRow">
-                                <!-- <div class="divTableCell">collector</div> -->
-                                <div class="divTableCell">
-                                    <label>promo - collector</label>
-                                     <input class="w-100" type="text" name="promo_collector" value="<?= $promo_collector ?>"  />
-                                </div>
-                            </div>
-                           <div class="divTableRow">
-                                <!-- <div class="divTableCell">special</div> -->
-                                <div class="divTableCell">
-                                    <label>promo - special</label>
-                                     <input class="w-100" type="text" name="promo_special" value='<?= $promo_special ?>'  />
-                                </div>
-                            </div>
-
-                                    
-                        </div>
-    
+                    
+                    <div class="col-12">
+                        <label>site name</label>
+                        <input class="half-size" type="text" name="site_name" value="<?= $site_name ?>" />
+                        <label>email</label>
+                        <input class="half-size" type="text" name="email" value="<?= $email ?>" />
                     </div>
                 
+                    <div class="col-12">
+                        <label>phone</label>
+                         <input class="half-size" type="text" name="phone" value="<?= $phone ?>" />
+                         <label>copyright statement</label>
+                         <input class="half-size" type="text" name="copyright" value="<?= $copyright ?>" />
+                    </div>
+                    
+                    <div class="col-12">
+                        <label>coa contract</label>
+                        <input class="half-size" type="text" name="coa_contract" value="<?= $coa_contract ?>" />
+                        <label>limited edition max</label>
+                         <input class="half-size" type="text" name="limited_edition_max" value="<?= $limited_edition_max ?>" />
+                    </div>
+                </div>
+                
+                <div class="grid" id="tab-pricing">
+                    
+                    <div class="col-12 pb-16">
+                        <a name="pricing" href="#top"><h4>Pricing - Limited Editions</h4></a>
+                    </div>
+                    
+                    <div class="col-12">
+                        <label>limited edition label</label>
+                        <input class="half-size" type="text" name="edition_description_limited" value="<?= $edition_description_limited ?>" />
+                        <label>limited edition sizes label (used in details)</label>
+                        <input class="half-size" type="text" name="available_sizes_limited" value="<?= $available_sizes_limited ?>" />
+                    </div>
+                    
+                    <div class="col-12">
+                        <label>pricing - limited edition</label>
+                        <input class="w-100" type="text" name="le_pricing" value='<?= $le_pricing ?>' />
+                        
+                    </div>
+                    
+                    <div class="col-12">
+                        <label>pricing - limited edition framing</label>
+                        <input class="w-100" type="text" name="le_frames_pricing" value='<?= $le_frames_pricing ?>'  />
+                    </div>
+                    
+                    <div class="col-12 pb-16">
+                            <h4>Pricing - Open Editions</h4>
+                        </div>
+                        
+                    <div class="col-12">
+                        <label>open edition label</label>
+                        <input class="half-size" type="text" name="edition_description_open" value="<?= $edition_description_open ?>" />
+                        <label>open edition sizes label (used in details)</label>
+                        <input class="half-size" type="text" name="available_sizes_open" value="<?= $available_sizes_open ?>" />
+                    </div>
+                    
+                    <div class="col-12">
+                        <label>pricing - open edition</label>
+                        <input class="w-100" type="text" name="tv_pricing" value='<?= $tv_pricing ?>' />
+                    </div>
+                    
+                    <div class="col-12">
+                        <label>pricing - open edition framing</label>
+                        <input class="w-100" type="text" name="studio_frames_pricing" value='<?= $studio_frames_pricing ?>'  />
+                    </div>
+                    
+                    <div class="col-12 pb-16">
+                        <h4>Promotions</h4>
+                    </div>
+                    
+                    <div class="col-12">
+                        <label>promo - seasonal</label>
+                        <input class="half-size" type="text" name="promo_seasonal" value="<?= $promo_seasonal ?>"  />
+                        <label>promo - holiday</label>
+                        <input class="half-size" type="text" name="promo_holiday" value="<?= $promo_holiday ?>"  />
+                    </div>
+                    
+                    <div class="col-12">
+                        <label>promo - generic</label>
+                        <input class="half-size" type="text" name="promo_generic" value="<?= $promo_generic ?>"  />
+                        <label>promo - collector</label>
+                        <input class="half-size" type="text" name="promo_collector" value="<?= $promo_collector ?>"  />
+                    </div>
+                    
+                    <div class="col-12">
+                        <label>promo - special</label>
+                         <input class="half-size" type="text" name="promo_special" value='<?= $promo_special ?>'  />
+                    </div>
+                </div>
                 
                 <div class="grid">
                             <div class="col">

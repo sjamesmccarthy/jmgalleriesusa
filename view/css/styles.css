@@ -2033,6 +2033,8 @@ body {
       background-color: rgba(255, 255, 255, 0.01); }
     body.dark-theme .checkout-sub, body.dark-theme label, body.dark-theme #polarized .__container h1, body.dark-theme #polarized .__container p {
       color: #FFFFFF; }
+    body.dark-theme .shipping label {
+      color: #FFFFFF !important; }
     body.dark-theme #polarized_idx .tagline {
       color: #FFFFFF; }
     body.dark-theme #styles table th {
@@ -5127,6 +5129,12 @@ div[id*='imgT']:hover {
   margin-bottom: 32px;
   font-weight: 200;
   font-size: 1.3rem; }
+
+.shipping {
+  padding-top: 2rem; }
+
+.shipping label {
+  color: #000 !important; }
 
 #now h3, #now p {
   font-family: 'Source Serif Pro', serif; }

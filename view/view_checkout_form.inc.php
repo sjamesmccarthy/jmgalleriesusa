@@ -70,7 +70,7 @@ switch($res_formType) {
             }
 
             if($res_frame != "PRINT-ONLY") {
-                $item_framing = "\nFramed in a " . $res_frame . $frame_style . ' frame' . $frame_forgot_not;
+                $item_framing = "\nFramed in a " . $res_frame . $frame_style . ' frame ($' . $res_frame_price . ') ' . $frame_forgot_not;
             }
         }
 
@@ -98,7 +98,8 @@ switch($res_formType) {
             $estimated_cost_raw = $res_price * 100;
         }
 
-        $order_subject = '(' . $res_quantity . ') ' . $order_title . "\n" . $res_buysize     . $matted_size . " " . $res_img_type . $item_framing . "\n" . $edition_type_long  . "\n" . $add_frame_note;
+        //'(' . $res_quantity . ') ' . 
+        $order_subject = $order_title . " - " . $edition_type_long . " ($" . $res_print_price . ")\n" . $res_buysize  . $matted_size . " " . $res_img_type . $item_framing  . "\n" . $add_frame_note;
 
         $hidden_fields .= '<input type="hidden" name="quantity" value="' .  $res_quantity . '" />';
         $hidden_fields .= '<input type="hidden" name="size" value ="' . $res_buysize . '" />';
@@ -148,7 +149,7 @@ if($ship_methods == 1) {
             $ship_rates_html .= '<li>
             <!-- <input type="hidden" id="ship_' . $sV['abrv'] . '_value" name="ship_' . $sV['abrv']. '" value="0" /> -->
             <input type="checkbox" data-shipper="' . $sV['name'] . '"' . $checked . ' class="ship" id="ship_' . $sV['abrv']. '" name="ship" value="' . $sV['amount'] . '" ' . $disabled . '/> 
-            <label for="ship_' . $sV['abrv'] . '" style="color: #000"> ' . $sV['name'] . $ship_amount . '</label>
+            <label for="ship_' . $sV['abrv'] . '"> ' . $sV['name'] . $ship_amount . '</label>
             </li>';
 
     }
