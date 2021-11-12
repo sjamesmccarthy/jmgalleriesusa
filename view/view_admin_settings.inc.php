@@ -35,18 +35,32 @@
         $notices_html .= '
             <div class="divTableRow">
             <input type="hidden" name="notice_data[]" value="' . $k . '" />
-                <div class="divTableCell pb-32"><p class="pb-8">-- ' . $k . '</p>
-                <!-- <div class="divTableCell"> -->
-                    title<br />
-                    <input class="w-100" type="text" name="notice_key_title[]" value="' . $v['title'] . '" /><br />
-                    content<br />
-                    <input class="w-100" type="text" name="notice_key_content[]" value="' . $v['content'] . '" /><br />
-                    type<br />
-                    <input class="w-100" type="text" name="notice_key_type[]" value="' . $v['type'] . '" /><br />
-                    timeout<br />
-                    <input class="w-100" type="text" name="notice_key_timeout[]" value="' . $v['timeout'] . '" /><br />
-                    state<br />
-                    <input class="w-100" type="text" name="notice_key_state[]" value="' . $v['state'] . '" />
+                <div class="divTableCell pb-32">
+                    
+                    <div class="col-12">' . $k . ' NOTICE</div>
+                    
+                    <div class="col-12">
+                    <label>title</label>
+                    <input class="w-100" type="text" name="notice_key_title[]" value="' . $v['title'] . '" />
+                    </div>
+                    
+                    <div class="col-12">
+                    <label>message</label>
+                    <input class="w-100" type="text" name="notice_key_content[]" value="' . $v['content'] . '" />
+                    </div>
+                                       
+                   <div class="col-12">
+                    <label>type</label>
+                    <input class="half-size" type="text" name="notice_key_type[]" value="' . $v['type'] . '" />
+                    <label>timeout</label>
+                    <input class="half-size" type="text" name="notice_key_timeout[]" value="' . $v['timeout'] . '" />
+                   </div>
+                    
+                   <div class="col-12">
+                    <label>state</label>
+                    <input class="half-size" type="text" name="notice_key_state[]" value="' . $v['state'] . '" />
+                   </div>
+                    
                 </div>
             </div>';    
     }

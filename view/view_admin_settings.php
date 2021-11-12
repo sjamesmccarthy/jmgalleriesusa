@@ -152,9 +152,10 @@
 
                     <div class="col-12">
                         <p class="small">file://view/data_notices.json</p>
+                        <p class="small">NOTE: To ENABLE notices, you will need to set component_notices to TRUE in System</p>
                     </div>
 
-                    <div class="divTable w-100 mt-32">
+                    <div class="divTable w-100">
 
                         <div class="divTableBody">
                              <div class="divTableCell thead w-100"></div>
@@ -184,55 +185,51 @@
 
            
                             <div class="divTable w-100 mt-32 pb-32">
-                                <div class="divTableBody">
-                                     <div class="divTableCell thead w-50"></div>
-                                     <div class="divTableCell thead pl-8"></div>
-                                </div>
                                
                                 <div class="divTableRow">
-                                    <div class="divTableCell">package_name</div>
+                                    <!-- <div class="divTableCell">package_name</div> -->
                                     <div class="divTableCell">
                                         <label>package name</label>
                                         <input class="w-100" type="text" name="package_name" value="<?= $package_name ?>" />
                                     </div>
                                 </div>
                                 <div class="divTableRow">
-                                    <div class="divTableCell"><a id="getTS" href="#">package_version</a> -- <span class="small"> Build : </span> <span id="ts" class="small"></span></div>
+                                    <!-- <div class="divTableCell"><a id="getTS" href="#">package_version</a> -- <span class="small"> Build : </span> <span id="ts" class="small"></span></div> -->
                                     <div class="divTableCell">
                                         <label>package version</label>
                                          <input class="w-100" type="text" name="package_version" value="<?= $package_version ?>" />
                                     </div>
                                 </div>
                                 <div class="divTableRow">
-                                    <div class="divTableCell">package_release_notes</div>
+                                    <!-- <div class="divTableCell">package_release_notes</div> -->
                                     <div class="divTableCell">
                                         <label>package release notes</label>
                                          <input class="w-100" type="text" name="package_release_notes" value="<?= $package_release_notes ?>" />
                                     </div>
                                 </div>
                                 <div class="divTableRow">
-                                    <div class="divTableCell">package_git</div>
+                                    <!-- <div class="divTableCell">package_git</div> -->
                                     <div class="divTableCell">
                                         <label>package git</label>
                                          <input class="w-100" type="text" name="package_git" value="<?= $package_git ?>" />
                                     </div>
                                 </div>
                                 <div class="divTableRow">
-                                    <div class="divTableCell">package_license</div>
+                                   <!--  <div class="divTableCell">package_license</div> -->
                                     <div class="divTableCell">
                                         <label>package license</label>
                                          <input class="w-100" type="text" name="package_license" value="<?= $package_license ?>" />
                                     </div>
                                 </div>
                                 <div class="divTableRow">
-                                    <div class="divTableCell">package_blacklist</div>
+                                    <!-- <div class="divTableCell">package_blacklist</div> -->
                                     <div class="divTableCell">
                                         <label>package blacklist</label>
                                          <input class="w-100" type="text" name="package_blacklist" value="<?= $package_blacklist ?>" />
                                     </div>
                                 </div>
                                 <div class="divTableRow">
-                                    <div class="divTableCell">prefix_template</div>
+                                    <!-- <div class="divTableCell">prefix_template</div> -->
                                     <div class="divTableCell">
                                         <label>prefix templates</label>
                                          <input class="w-100" type="hidden" name="prefix_template" value="tpl_" />
@@ -240,7 +237,7 @@
                                     </div>
                                 </div>
                                 <div class="divTableRow">
-                                    <div class="divTableCell">prefix_page</div>
+                                    <!-- <div class="divTableCell">prefix_page</div> -->
                                     <div class="divTableCell">
                                         <label>prefix pages</label>
                                          <input class="w-100" type="hidden" name="prefix_page" value="view_" />
@@ -248,7 +245,7 @@
                                     </div>
                                 </div>
                                 <div class="divTableRow">
-                                    <div class="divTableCell">prefix_negatives</div>
+                                    <!-- <div class="divTableCell">prefix_negatives</div> -->
                                     <div class="divTableCell">
                                         <label>prefix negatives (no longer used)</label>
                                          <input class="w-100" type="hidden" name="prefix_negatives" value="_catidx" disabled />
@@ -256,7 +253,7 @@
                                     </div>
                                 </div>
                                 <div class="divTableRow">
-                                    <div class="divTableCell">prefix_partial</div>
+                                    <!-- <div class="divTableCell">prefix_partial</div> -->
                                     <div class="divTableCell">
                                         <label>prefix partial</label>
                                          <input class="w-100" type="hidden" name="prefix_partial" value="partial_"  />
@@ -264,7 +261,7 @@
                                     </div>
                                 </div>
                                 <div class="divTableRow">
-                                    <div class="divTableCell">prefix_component</div>
+                                   <!--  <div class="divTableCell">prefix_component</div> -->
                                     <div class="divTableCell">
                                         <label>prefix component</label>
                                          <input class="w-100" type="hidden" name="prefix_component" value="component_" />
@@ -273,8 +270,6 @@
                                 </div>
                             </div>
                 </div>
-
- 
 
                  <div class="grid" id="tab-components">
 
@@ -288,27 +283,25 @@
 
                     <div class="divTable w-100 mt-32 pb-32">
 
-                        <div class="divTableBody">
-                             <div class="divTableCell thead w-50"></div>
-                             <div class="divTableCell thead pl-8"></div>
-                        </div>
-
                        <div class="divTableRow">
-                            <div class="divTableCell">component_polarized</div>
+                            <!-- <div class="divTableCell">component_polarized</div> -->
                             <div class="divTableCell">
-                                 <input class="w-100" type="text" name="component_polarized" value="<?= $component_polarized ?>"  />
+                                <label>component_polarized</label>
+                                 <input class="w-100" type="text" name="component_polarized" value="<?= $component_polarized ?>"  disabled />
                             </div>
                         </div>
                        <div class="divTableRow">
-                            <div class="divTableCell">component_notice</div>
+                            <!-- <div class="divTableCell">component_notice</div> -->
                             <div class="divTableCell">
+                                <label>component_notice</label>
                                  <input class="w-100" type="text" name="component_notice" value="<?= $component_notice ?>"  />
                             </div>
                         </div>
                        <div class="divTableRow">
-                            <div class="divTableCell">component_newsletter</div>
+                            <!-- <div class="divTableCell">component_newsletter</div> -->
                             <div class="divTableCell">
-                                 <input class="w-100" type="text" name="component_newsletter" value="<?= $component_newsletter ?>"  />
+                                <label>component_newsletter</label>
+                                 <input class="w-100" type="text" name="component_newsletter" value="<?= $component_newsletter ?>"  disabled />
                             </div>
                         </div>
                                 
@@ -329,11 +322,6 @@
 
                     <div class="divTable w-100 pb-32">
 
-                        <div class="divTableBody">
-                             <div class="divTableCell thead w-50"></div>
-                             <div class="divTableCell thead pl-8"></div>
-                        </div>
-
                         <!-- <div class="divTableRow">
                             <div class="divTableCell">session.auto_start</div>
                             <div class="divTableCell">
@@ -342,29 +330,33 @@
                             </div>
                         </div> -->
                         <div class="divTableRow">
-                            <div class="divTableCell">session.save_path</div>
+                            <!-- <div class="divTableCell">session.save_path</div> -->
                             <div class="divTableCell">
+                                <label>session.save_path</label>
                                 <input class="w-100" type="hidden" name="session_save_path" value="<?= $session_save_path ?>" />
                                 <input class="w-100" type="text" name="session_save_path" value="<?= $session_save_path ?>" disabled />
                             </div>
                         </div>
                         <div class="divTableRow">
-                            <div class="divTableCell">session.cookie_lifetime</div>
+                            <!-- <div class="divTableCell">session.cookie_lifetime</div> -->
                             <div class="divTableCell">
+                                <label>session.cookie_lifetime</label>
                                 <input class="w-100" type="hidden" name="session_cookie_lifetime" value="<?= $session_cookie_lifetime ?>" />
                                 <input class="w-100" type="text" name="session_cookie_lifetime" value="<?= $session_cookie_lifetime ?>" disabled />
                             </div>
                         </div>
                         <div class="divTableRow">
-                            <div class="divTableCell">session.gc_maxlifetime</div>
+                            <!-- <div class="divTableCell">session.gc_maxlifetime</div> -->
                             <div class="divTableCell">
+                                <label>session.gc_maxlifetime</label>
                                  <input class="w-100" type="hidden" name="session_gc_maxlifetime" value="<?= $session_gc_maxlifetime ?>" />
                                  <input class="w-100" type="text" name="session_gc_maxlifetime" value="<?= $session_gc_maxlifetime ?>" disabled/>
                             </div>
                         </div>
                         <div class="divTableRow">
-                            <div class="divTableCell">session.cache_expire</div>
+                            <!-- <div class="divTableCell">session.cache_expire</div> -->
                             <div class="divTableCell">
+                                <label>session.cache_expire</label>
                                  <input class="w-100" type="hidden" name="session_cache_expire" value="<?= $session_cache_expire ?>" />
                                  <input class="w-100" type="text" name="session_cache_expire" value="<?= $session_cache_expire ?>" disabled/>
                             </div>
