@@ -129,7 +129,7 @@
 
     $("#promocode").focus(function () {
         $('#promocode').val('');
-        $('#promocode').css('color','black');
+        // $('#promocode').css('color','#FFF');
     })
 
     $("#promocode").keyup(function () {
@@ -185,7 +185,8 @@
 
                             });
 
-                            var newprice = rValue.toFixed(2);
+                            var newprice = (oldprice - rValue).toFixed(2);
+                            // newprice = rValue.toFixed(2);
                             console.log("newBasePrice: " + newprice);
 
                             var priceCents = newprice * 100;

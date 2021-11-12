@@ -55,7 +55,7 @@
                     
                     <div class="col-12">
                         <label>coa contract</label>
-                        <input class="half-size" type="text" name="coa_contract" value="<?= $coa_contract ?>" />
+                        <input class="half-size" type="text" name="coa_contract" value="<?= $coa_contract ?>" disabled />
                         <label>limited edition max</label>
                          <input class="half-size" type="text" name="limited_edition_max" value="<?= $limited_edition_max ?>" />
                     </div>

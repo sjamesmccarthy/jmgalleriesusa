@@ -2039,6 +2039,8 @@ body {
       color: #FFFFFF; }
     body.dark-theme #styles table th {
       color: #000; }
+    body.dark-theme #promocode {
+      color: #FFF; }
     body.dark-theme .landscape, body.dark-theme .portrait, body.dark-theme .square {
       background-color: rgba(0, 0, 0, 0.1); }
       body.dark-theme .landscape > p > img, body.dark-theme .portrait > p > img, body.dark-theme .square > p > img {
@@ -5135,6 +5137,9 @@ div[id*='imgT']:hover {
 
 .shipping label {
   color: #000 !important; }
+
+#promocode {
+  color: #000; }
 
 #now h3, #now p {
   font-family: 'Source Serif Pro', serif; }
