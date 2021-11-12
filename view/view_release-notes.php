@@ -17,6 +17,7 @@
             <li>update: minor layout changes to detail page</li>
             <li>update: disabled Square API payment gateway</li>
             <li>update: minor updates to checkout page</li>
+            <li>bugfix: promocode bugfixes</li>
             </ul> 
         </p>
         
