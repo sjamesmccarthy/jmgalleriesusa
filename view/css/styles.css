@@ -6240,7 +6240,7 @@ table.dataTable tbody td.valign {
   .settings--container h4 {
     text-decoration: underline; }
   .settings--container form {
-    padding: 1rem; }
+    padding: 0 1rem 1rem 1rem; }
   .settings--container .section-system {
     display: none; }
   .settings--container #tab-notices {
@@ -6253,6 +6253,11 @@ table.dataTable tbody td.valign {
     margin: 0 10px auto auto;
     padding: 10px;
     font-size: .7rem; }
+
+#tab-about {
+  background-color: rgba(0, 0, 0, 0.02);
+  padding: 1rem 1rem 0 1rem;
+  margin-bottom: 2rem; }
 
 .w-100 {
   width: 100%; }

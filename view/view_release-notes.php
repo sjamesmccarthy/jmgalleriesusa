@@ -8,6 +8,18 @@
 
         <div class="col-11" style="position: relative">
 
+        <p class="pt-16">v1.7.7<br />Nov 12, 2021</p>
+            <ul>
+            <li>new: migrated servers</li>
+            <li>update: lots of changes to admin settings and admin forms</li>
+            <li>update: fixed up dark-theme and made the default theme</li>
+            <li>update: lots of mobile UI fixes</li>
+            <li>update: minor layout changes to detail page</li>
+            <li>update: disabled Square API payment gateway</li>
+            <li>update: minor updates to checkout page</li>
+            </ul> 
+        </p>
+        
         <p class="pt-16">v1.7.6<br />April 27, 2021</p>
             <ul>
             <li>update: user/admin sessions now handled by life of browser</li>

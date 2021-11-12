@@ -37,8 +37,8 @@
         $filter = $this->routes->URI->queryvals[1];
         $active_filter = null;
     } else {
-        $filter = 'ACTIVE';
-        $active_filter = 'active';
+        $filter = 'ACTIVE ';
+        $active_filter = 'active ';
     }
     
 ?>
