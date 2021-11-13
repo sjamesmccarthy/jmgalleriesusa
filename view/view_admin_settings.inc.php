@@ -50,15 +50,17 @@
                     </div>
                                        
                    <div class="col-12">
-                    <label>type</label>
-                    <input class="half-size" type="text" name="notice_key_type[]" value="' . $v['type'] . '" />
+                    <label>state</label>
+                    <input class="half-size" type="text" name="notice_key_state[]" value="' . $v['state'] . '" />
                     <label>timeout</label>
                     <input class="half-size" type="text" name="notice_key_timeout[]" value="' . $v['timeout'] . '" />
                    </div>
                     
                    <div class="col-12">
-                    <label>state</label>
-                    <input class="half-size" type="text" name="notice_key_state[]" value="' . $v['state'] . '" />
+                    <label>background-color</label>
+                    <input class="half-size" type="text" name="notice_key_type[]" value="' . $v['type'] . '" />
+                    <label>font-color</label>
+                    <input class="half-size" type="text" name="notice_key_color[]" value="' . $v['color'] . '" />
                    </div>
                     
                 </div>

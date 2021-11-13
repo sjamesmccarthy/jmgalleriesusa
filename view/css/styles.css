@@ -3040,20 +3040,14 @@ button a {
   padding: 20px;
   text-align: center; }
 
-.notice-ALERT {
+.notice-ALERT-old {
   background-color: #721c24; }
-  .notice-ALERT > p {
-    color: #FFFFFF; }
 
-.notice-WARNING {
+.notice-WARNIN-old {
   background-color: #856404; }
-  .notice-WARNING > p {
-    color: #FFFFFF; }
 
-.notice-NORMAL {
+.notice-NORMAL-old {
   background-color: #2574A9; }
-  .notice-NORMAL > p {
-    color: #FFFFFF; }
 
 .quickstats--container {
   padding: 0;

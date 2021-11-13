@@ -2,7 +2,7 @@
 <html lang="en">
     
     <?php $this->getPartial('header'); ?>
-        <?php print $this->component('notice'); ?>
+    <?php print $this->component('notice'); ?>
     <?php print $this->component('hero'); ?>
     
     <body class="dark-theme">

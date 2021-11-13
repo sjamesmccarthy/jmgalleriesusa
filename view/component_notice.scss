@@ -14,26 +14,26 @@
     text-align: center;
 }
 
-.notice-ALERT {
+.notice-ALERT-old {
     background-color: $color-error;
 
-    >p {
-        color: #FFFFFF;
-    }
+    // >p {
+    //     color: #FFFFFF;
+    // }
 }
 
-.notice-WARNING {
+.notice-WARNIN-old {
     background-color: $color-warning;
 
-    >p {
-        color: #FFFFFF;
-    }
+    // >p {
+    //     color: #FFFFFF;
+    // }
 }
 
-.notice-NORMAL {
+.notice-NORMAL-old {
     background-color: $color-blue;
 
-    >p {
-        color: #FFFFFF;
-    }
+    // >p {
+    //     color: #FFFFFF;
+    // }
 }

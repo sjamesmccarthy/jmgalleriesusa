@@ -3289,7 +3289,7 @@ public function api_Admin_Update_Settings() {
 
         foreach($_POST['notice_data'] as $k => $v) {
 
-           $notice_array[$v] = array("title"=>"{$_POST['notice_key_title'][$k]}", "content"=>"{$_POST['notice_key_content'][$k]}", "type"=>"{$_POST['notice_key_type'][$k]}", "timeout"=>"{$_POST['notice_key_timeout'][$k]}", "state"=>"{$_POST['notice_key_state'][$k]}");
+           $notice_array[$v] = array("title"=>"{$_POST['notice_key_title'][$k]}", "content"=>"{$_POST['notice_key_content'][$k]}", "state"=>"{$_POST['notice_key_state'][$k]}", "timeout"=>"{$_POST['notice_key_timeout'][$k]}", "type"=>"{$_POST['notice_key_type'][$k]}", "color"=>"{$_POST['notice_key_color'][$k]}");
         }
         
         if ($fp_notices = fopen($_SERVER["DOCUMENT_ROOT"] . '/view/data_notices.json', 'w')) {
@@ -3303,9 +3303,10 @@ public function api_Admin_Update_Settings() {
         unset($_POST['notice_data']);
         unset($_POST['notice_key_title']);
         unset($_POST['notice_key_content']);
-        unset($_POST['notice_key_type']);
-        unset($_POST['notice_key_timeout']);
         unset($_POST['notice_key_state']);
+        unset($_POST['notice_key_timeout']);
+        unset($_POST['notice_key_type']);
+        unset($_POST['notice_key_color']);
 
         $form_data = json_encode($_POST);
 

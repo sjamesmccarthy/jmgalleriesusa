@@ -35,7 +35,7 @@ foreach($data_html as $key => $value) {
 if ($this->config->component_notice == 'true') {  
 $html = <<< END
     <div class="notice-container notice-{$type}">
-        <p class="notice-banner white">{$content}</p>
+        <p class="notice-banner" style="background-color: {$type}; color:{$color}">{$content}</p>
     </div>
 
     {$jquery}

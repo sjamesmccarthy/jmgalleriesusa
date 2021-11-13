@@ -163,6 +163,11 @@
 
                         <?= $notices_html ?>
                         
+                        <div class="col-12">
+                            <label>component_notice</label>
+                            <input class="half-size" type="text" name="component_notice" value="<?= $component_notice ?>"  />
+                        </div>
+
                     </div>
                 </div>
         
@@ -290,13 +295,7 @@
                                  <input class="w-100" type="text" name="component_polarized" value="<?= $component_polarized ?>"  disabled />
                             </div>
                         </div>
-                       <div class="divTableRow">
-                            <!-- <div class="divTableCell">component_notice</div> -->
-                            <div class="divTableCell">
-                                <label>component_notice</label>
-                                 <input class="w-100" type="text" name="component_notice" value="<?= $component_notice ?>"  />
-                            </div>
-                        </div>
+
                        <div class="divTableRow">
                             <!-- <div class="divTableCell">component_newsletter</div> -->
                             <div class="divTableCell">
