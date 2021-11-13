@@ -21,3 +21,14 @@
 #promocode {
     color: #000;
 }
+
+.checkout-notice {
+    color: $color-black;
+    background-color: $color-warning-background;
+    line-height: 1.3;
+    @extend .pl-16;
+    @extend .pb-16;
+    @extend .pt-16;
+    @extend .pr-16;
+    @extend .mt-8;
+}

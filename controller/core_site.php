@@ -340,11 +340,13 @@ class Core_Site extends Core_Api
     }
 
     public function component($component, $props=null) {
-
+        
+        if ( !is_null($props)) { $props = "?" . $props; }
+        
         $file = $_SERVER['DOCUMENT_ROOT'] . '/view/component_' . $component;
 
         if( file_exists($file . ".php") ) {
-            $result = include_once($file . ".php");
+            $result = include_once($file . ".php" . $props);
         }
 
         return($result);

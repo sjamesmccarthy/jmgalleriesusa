@@ -34,7 +34,6 @@ yarn-debug.log*
 yarn-error.log*
 
 __todo.md
-config.json
 config-*.json
 config_env.json
 config_env-*.json

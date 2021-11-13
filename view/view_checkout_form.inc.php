@@ -171,7 +171,7 @@ $estimated_cost_raw_formatted = number_format( ($estimated_cost_raw/100), 2);
 $estimated_cost_calc = number_format($cost, 2);
 
 if ($this->config->component_notice == 'true') {
-    $subNotice = '<p class="notice mb-16">' . $this->data_notices->WARNING['content'] . '</p>';
+    // $subNotice = '<p class="notice mb-16">' . $this->data_notices->WARNING['content'] . '</p>';
 }
 
 /* Initialize Sqaure payment fields */

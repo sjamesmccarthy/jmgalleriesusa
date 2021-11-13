@@ -32,6 +32,14 @@
     #tab-notices {
         display: none;
     }
+    
+    .darker {
+        background-color: $color-light-gray;
+    }
+    
+    .force-blue {
+        color: $color-blue !important;
+    }
 }
 
 .code-block {

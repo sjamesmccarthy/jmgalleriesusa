@@ -55,6 +55,7 @@
                     
                     <div class="col-12">
                         <label>coa contract</label>
+                        <input class="half-size" type="hidden" name="coa_contract" value="<?= $coa_contract ?>"  />
                         <input class="half-size" type="text" name="coa_contract" value="<?= $coa_contract ?>" disabled />
                         <label>limited edition max</label>
                          <input class="half-size" type="text" name="limited_edition_max" value="<?= $limited_edition_max ?>" />
@@ -152,7 +153,7 @@
 
                     <div class="col-12">
                         <p class="small">file://view/data_notices.json</p>
-                        <p class="small">NOTE: To ENABLE notices, you will need to set component_notices to TRUE in System</p>
+                        <p class="small">NOTE: To ENABLE notices, you will need to <u>set component_notice_type_ACTIVE</u> to the name of the notice TYPE.</p>
                     </div>
 
                     <div class="divTable w-100">
@@ -164,7 +165,7 @@
                         <?= $notices_html ?>
                         
                         <div class="col-12">
-                            <label>component_notice</label>
+                            <label>component_notice: set false or name of NOTICE_TYPE</label>
                             <input class="half-size" type="text" name="component_notice" value="<?= $component_notice ?>"  />
                         </div>
 
@@ -293,6 +294,7 @@
                             <div class="divTableCell">
                                 <label>component_polarized</label>
                                  <input class="w-100" type="text" name="component_polarized" value="<?= $component_polarized ?>"  disabled />
+                                 <input class="w-100" type="hidden" name="component_polarized" value="<?= $component_polarized ?>" />
                             </div>
                         </div>
 
@@ -301,6 +303,7 @@
                             <div class="divTableCell">
                                 <label>component_newsletter</label>
                                  <input class="w-100" type="text" name="component_newsletter" value="<?= $component_newsletter ?>"  disabled />
+                                 <input class="w-100" type="hidden" name="component_newsletter" value="<?= $component_newsletter ?>" />
                             </div>
                         </div>
                                 

@@ -1447,7 +1447,7 @@ SASS, https://sass-lang.com/
 /* https://htmlcolorcodes.com/ */
 /* alert colors (type, background, border, font) */
 /* mixin: margin and padding adjustments */
-.mt-8 {
+.mt-8, .checkout-notice {
   margin-top: 8px !important; }
 
 .mt-16, .foot-news {
@@ -1594,7 +1594,7 @@ SASS, https://sass-lang.com/
 .pt-8 {
   padding-top: 8px !important; }
 
-.pt-16 {
+.pt-16, .checkout-notice {
   padding-top: 16px !important; }
 
 .pt-24 {
@@ -1630,7 +1630,7 @@ SASS, https://sass-lang.com/
 .pb-8 {
   padding-bottom: 8px !important; }
 
-.pb-16 {
+.pb-16, .checkout-notice {
   padding-bottom: 16px !important; }
 
 .pb-24 {
@@ -1666,7 +1666,7 @@ SASS, https://sass-lang.com/
 .pl-8 {
   padding-left: 8px !important; }
 
-.pl-16 {
+.pl-16, .checkout-notice {
   padding-left: 16px !important; }
 
 .pl-24 {
@@ -1702,7 +1702,7 @@ SASS, https://sass-lang.com/
 .pr-8 {
   padding-right: 8px !important; }
 
-.pr-16 {
+.pr-16, .checkout-notice {
   padding-right: 16px !important; }
 
 .pr-24 {
@@ -2040,6 +2040,8 @@ body {
     body.dark-theme #styles table th {
       color: #000; }
     body.dark-theme #promocode {
+      color: #FFF; }
+    body.dark-theme .notice {
       color: #FFF; }
     body.dark-theme .landscape, body.dark-theme .portrait, body.dark-theme .square {
       background-color: rgba(0, 0, 0, 0.1); }
@@ -3038,12 +3040,74 @@ button a {
 .notice-banner {
   font-family: lato, sans-serif;
   padding: 20px;
-  text-align: center; }
-
+  text-align: center;
+  /* MEDIA QUERIES from Chrome, Safari, Firefox as of 10/2021 */
+  /* Mobile S: iPhone5/SE(320), Moto G4(360), Galaxy S5(360), Galaxy S10(360) */
+  /* Mobile M: iPhone 11(375), iPhone 12/13 Mini(375), iPhone 12/13 Pro(390), iPhone SE Gen2(375), iPhone 6/7/8(375), iPhone 6/7/8+(414), iPhoneX(375), Pixel 2(411), Galaxy Note(412)*/
+  /* Mobile L: iPhone 12/13 Pro Max(428) */
+  /* Tablet: iPad Mini(768), iPad 9.7(768), iPad Pro 10.5(834) */
+  /* Laptop: iPad Pro 12.9(1024) */
+  /* Laptop L: */
+  /* 4k: LCD L */ }
+  @media screen and (min-width: 320px) {
+    .notice-banner {
+      display: none; } }
+  @media screen and (min-width: 375px) {
+    .notice-banner {
+      display: none; } }
+  @media screen and (min-width: 425px) {
+    .notice-banner {
+      display: none; } }
+  @media screen and (min-width: 768px) {
+    .notice-banner {
+      display: block; } }
+  @media screen and (min-width: 1024px) {
+    .notice-banner {
+      display: block; } }
+  @media screen and (min-width: 1440px) {
+    .notice-banner {
+      display: block; } }
+  @media screen and (min-width: 1920px) {
+    .notice-banner {
+      display: block; } }
+.notice-banner-mobile {
+  display: none;
+  font-family: lato, sans-serif;
+  padding: 20px;
+  text-align: center;
+  /* MEDIA QUERIES from Chrome, Safari, Firefox as of 10/2021 */
+  /* Mobile S: iPhone5/SE(320), Moto G4(360), Galaxy S5(360), Galaxy S10(360) */
+  /* Mobile M: iPhone 11(375), iPhone 12/13 Mini(375), iPhone 12/13 Pro(390), iPhone SE Gen2(375), iPhone 6/7/8(375), iPhone 6/7/8+(414), iPhoneX(375), Pixel 2(411), Galaxy Note(412)*/
+  /* Mobile L: iPhone 12/13 Pro Max(428) */
+  /* Tablet: iPad Mini(768), iPad 9.7(768), iPad Pro 10.5(834) */
+  /* Laptop: iPad Pro 12.9(1024) */
+  /* Laptop L: */
+  /* 4k: LCD L */ }
+  @media screen and (max-width: 320px) {
+    .notice-banner-mobile {
+      display: block; } }
+  @media screen and (min-width: 375px) and (max-width: 768px) {
+    .notice-banner-mobile {
+      display: block; } }
+  @media screen and (min-width: 425px) {
+    .notice-banner-mobile {
+      display: block; } }
+  @media screen and (min-width: 768px) and (max-width: 1024px) {
+    .notice-banner-mobile {
+      display: none; } }
+  @media screen and (min-width: 1024px) and (max-width: 1440px) {
+    .notice-banner-mobile {
+      display: none; } }
+  @media screen and (min-width: 1440px) and (max-width: 1920px) {
+    .notice-banner-mobile {
+      display: none; } }
+  @media screen and (min-width: 1920px) {
+    .notice-banner-mobile {
+      display: none; } }
 .notice-ALERT-old {
   background-color: #721c24; }
 
-.notice-WARNIN-old {
+.notice-WARNING-old {
   background-color: #856404; }
 
 .notice-NORMAL-old {
@@ -5135,6 +5199,11 @@ div[id*='imgT']:hover {
 #promocode {
   color: #000; }
 
+.checkout-notice {
+  color: #4a4a4a;
+  background-color: #fff3cd;
+  line-height: 1.3; }
+
 #now h3, #now p {
   font-family: 'Source Serif Pro', serif; }
 
@@ -6244,6 +6313,10 @@ table.dataTable tbody td.valign {
     display: none; }
   .settings--container #tab-notices {
     display: none; }
+  .settings--container .darker {
+    background-color: #D3D3D3; }
+  .settings--container .force-blue {
+    color: #2574A9 !important; }
 
 .code-block {
   display: none;

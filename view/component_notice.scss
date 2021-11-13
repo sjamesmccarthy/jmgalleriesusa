@@ -12,6 +12,87 @@
     font-family: lato, sans-serif; 
     padding: 20px; 
     text-align: center;
+    
+    /* MEDIA QUERIES from Chrome, Safari, Firefox as of 10/2021 */
+    
+    /* Mobile S: iPhone5/SE(320), Moto G4(360), Galaxy S5(360), Galaxy S10(360) */
+    @media screen and (min-width: 320px) {
+        display: none;
+    }
+    
+    /* Mobile M: iPhone 11(375), iPhone 12/13 Mini(375), iPhone 12/13 Pro(390), iPhone SE Gen2(375), iPhone 6/7/8(375), iPhone 6/7/8+(414), iPhoneX(375), Pixel 2(411), Galaxy Note(412)*/
+    @media screen and (min-width: 375px){
+        display: none;
+    }
+    
+    /* Mobile L: iPhone 12/13 Pro Max(428) */
+    @media screen and (min-width: 425px) {
+        display: none;
+    }
+    
+    /* Tablet: iPad Mini(768), iPad 9.7(768), iPad Pro 10.5(834) */
+    @media screen and (min-width: 768px) {
+        display: block;
+    }
+    
+    /* Laptop: iPad Pro 12.9(1024) */
+    @media screen and (min-width: 1024px)  {
+        display: block;
+    }
+    
+    /* Laptop L: */
+    @media screen and (min-width: 1440px) {
+        display: block;
+    }
+    
+    /* 4k: LCD L */
+    @media screen and (min-width: 1920px) {
+        display: block;
+    }
+}
+
+.notice-banner-mobile {
+    display: none;
+    font-family: lato, sans-serif; 
+    padding: 20px; 
+    text-align: center;
+    
+    /* MEDIA QUERIES from Chrome, Safari, Firefox as of 10/2021 */
+    
+    /* Mobile S: iPhone5/SE(320), Moto G4(360), Galaxy S5(360), Galaxy S10(360) */
+    @media screen and (max-width: 320px) {
+        display: block;
+    }
+    
+    /* Mobile M: iPhone 11(375), iPhone 12/13 Mini(375), iPhone 12/13 Pro(390), iPhone SE Gen2(375), iPhone 6/7/8(375), iPhone 6/7/8+(414), iPhoneX(375), Pixel 2(411), Galaxy Note(412)*/
+    @media screen and (min-width: 375px) and (max-width: 768px) {
+        display: block;
+    }
+    
+    /* Mobile L: iPhone 12/13 Pro Max(428) */
+    @media screen and (min-width: 425px) {
+        display: block;
+    }
+    
+    /* Tablet: iPad Mini(768), iPad 9.7(768), iPad Pro 10.5(834) */
+    @media screen and (min-width: 768px) and (max-width: 1024px) {
+        display: none;
+    }
+    
+    /* Laptop: iPad Pro 12.9(1024) */
+    @media screen and (min-width: 1024px) and (max-width: 1440px) {
+        display: none;
+    }
+    
+    /* Laptop L: */
+    @media screen and (min-width: 1440px) and (max-width: 1920px) {
+        display: none;
+    }
+    
+    /* 4k: LCD L */
+    @media screen and (min-width: 1920px) {
+        display: none;
+    }
 }
 
 .notice-ALERT-old {
@@ -22,7 +103,7 @@
     // }
 }
 
-.notice-WARNIN-old {
+.notice-WARNING-old {
     background-color: $color-warning;
 
     // >p {

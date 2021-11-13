@@ -15,7 +15,7 @@ $data_html = $this->getJSON('view/data_notices.json', 'data_notices');
 $count=0;
 foreach($data_html as $key => $value) {
        
-    if($value['state'] == "true") {
+    if($value['state'] == "true" && $this->config->component_notice == $key) {
         extract($data_html[$key], EXTR_OVERWRITE, "dup");
 
         if($value['timeout'] != "0") {
@@ -31,16 +31,33 @@ foreach($data_html as $key => $value) {
     }
 }
 
+
 /* GENERATE HTML BLOCK */
-if ($this->config->component_notice == 'true') {  
-$html = <<< END
-    <div class="notice-container notice-{$type}">
-        <p class="notice-banner" style="background-color: {$type}; color:{$color}">{$content}</p>
-    </div>
+if ($this->config->component_notice != 'false') {
 
-    {$jquery}
+$exclude_matches = explode(",", $excludes);
+foreach ($exclude_matches as $exclude => $excludeValue) {
+    if (preg_match("/" . $excludeValue . "/i", $this->page->catalog_path)) {
+        // print "preg_match: FOUND -- ";
+        $match = "FOUND";
+        // print_r($exclude_matches);
+    } 
+}
 
-END;
+if($match == "FOUND") {
+    $html = null;
+} else { 
+    $html = <<< END
+        <div class="notice-container notice-{$key}">
+            <p class="notice-banner" style="background-color: {$background_color}; color:{$color}">{$content}</p>
+            <p class="notice-banner-mobile" style="background-color: {$type}; color:{$color}">{$mobile_content}</p>
+        </div>
+    
+        {$jquery}
+    
+    END;
+}
+
 }
 
 return($html);

@@ -16,16 +16,16 @@ $tCosts = number_format($this->api_Admin_Component_QuickView_tCosts());
 $tRevenue = number_format($this->api_Admin_Component_QuickView_tRevenue());
 
 foreach ($this->data_notices as $key => $val) {
-    if ($val['state'] == "true") {
+    if ($val['state'] == "true" && $key == $this->config->component_notice) {
 
-        if($this->config->component_notice == "false") {
-                $config_notice_set = '<br />Also, the config->component_notice =' . $this->config->component_notice . ', this needs updating. ';
-        } 
+        // if($this->config->component_notice != "false") {
+        //         $config_notice_set = '<br />Also, the config->component_notice =' . $this->config->component_notice . ', this needs updating. ';
+        // } 
 
         $notice_alert = '    
         <div class="grid table">
             <div class="col table--box sunset-bkg mt-16">
-                <p class="table--msg">The <b>' . $val['title'] . ' Notification</b> is currently in active, or flag set to true. ' . $config_notice_set . '</p>
+                <p class="table--msg">The <b>' . $key . ' Notification</b> is currently ACTIVE, or flag set to true. ' . $config_notice_set . '</p>
                 <p class="table--msg pull-right link"><a href="/studio/settings#components">change</a></p>
             </div>
         </div>';
