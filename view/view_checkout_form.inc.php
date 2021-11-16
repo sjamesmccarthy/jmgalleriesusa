@@ -78,11 +78,12 @@ switch($res_formType) {
             $deposit = "true";
             $hidden_fields .= "<input type='hidden' id='deposit' name='deposit' value='true' />";
             $hidden_fields .= "<input type='hidden' id='edition_type' name='edition_type' value='limited' />";
-            $limited_deposit = "<p class='mt-8'><b>$100 REQUIRED DEPOSIT TODAY</b>, and remaining balance will be separately invoiced.</p>";
             $order_type = "DEPOSIT";
-            $estimated_cost_raw = 100.0 * 100; 
-            $cost = "100";
+            $order_amount = $res_print_price / 2;
+            $estimated_cost_raw = $order_amount * 100; 
+            $cost = $estimated_cost_raw;
             $edition_type_long = "Limited Edition";
+            $limited_deposit = "<p class='mt-8'><b> $" . number_format($order_amount,2) . " (50%) REQUIRED DEPOSIT TODAY</b>, and remaining balance due at shipment.</p>";
         } else if ($res_edition_type == "open") {
             $deposit = "false";
             $hidden_fields .= "<input type='hidden' id='deposit' name='deposit' value='false' />";
@@ -162,7 +163,7 @@ if(!isSet($res_price_sale) || $res_price_sale =='0') {
 }
 
 if($deposit == "true") {
-    $estimated_cost_raw = 100 * 100;
+    $estimated_cost_raw = $cost * 100 / 2;
 } else {
     $estimated_cost_raw = $cost * 100;
 }

@@ -4,8 +4,8 @@
     $studio_frames_pricing = json_decode($this->config->studio_frames_pricing, true);
 
     $le_price_array = json_decode($this->config->le_pricing, true);
-    $le_frames_pricing = json_decode($this->config->le_frames_pricing);
-
+    $le_frames_pricing = json_decode($this->config->le_frames_pricing,true);
+    
     /* Build HTML for Limited Editions */
     foreach ($le_price_array as $leK => $leV) {
         $le_pricing_html .= '<div class="divTableRow">

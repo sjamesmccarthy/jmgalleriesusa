@@ -8,7 +8,7 @@
     "/": {
         "template" : "catalog",
         "page" : "home",
-        "title" : "Welcome",
+        "title" : "jMcCarthy Fine Art",
         "component": "true"
     },
     "[$1]/[$2]": {

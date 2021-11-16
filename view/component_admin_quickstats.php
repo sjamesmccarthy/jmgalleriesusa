@@ -25,8 +25,8 @@ foreach ($this->data_notices as $key => $val) {
         $notice_alert = '    
         <div class="grid table">
             <div class="col table--box sunset-bkg mt-16">
-                <p class="table--msg">The <b>' . $key . ' Notification</b> is currently ACTIVE, or flag set to true. ' . $config_notice_set . '</p>
-                <p class="table--msg pull-right link"><a href="/studio/settings#components">change</a></p>
+                <p class="table--msg">The <b>' . $key . ' Notification</b> is currently ACTIVE. ' . $config_notice_set . '</p>
+                <p class="table--msg pull-right link"><a href="/studio/settings#notices">change</a></p>
             </div>
         </div>';
     } else {

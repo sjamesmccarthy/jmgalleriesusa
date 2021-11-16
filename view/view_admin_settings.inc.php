@@ -32,6 +32,9 @@
     // Loop through notices
    foreach($notices_json as $k => $v) {
 
+      $v['content'] = stripslashes($v['content']);
+      $v['mobile_content'] = stripslashes($v['mobile_content']);
+      
         $notices_html .= '
             <div class="divTableRow">
             <input type="hidden" name="notice_data[]" value="' . $k . '" />
@@ -55,12 +58,12 @@
                     
                     <div class="col-12">
                     <label>message</label>
-                    <input class="w-100" type="text" name="notice_key_content[]" value="' . $v['content'] . '" />
+                    <input class="w-100" type="text" name="notice_key_content[]" value=\'' . $v['content'] . '\' />
                     </div>
                     
                     <div class="col-12">
                     <label>mobile message</label>
-                    <input class="half-size" type="text" name="notice_key_mobile_content[]" value="' . $v['mobile_content'] . '" />
+                    <input class="half-size" type="text" name="notice_key_mobile_content[]" value=\'' . $v['mobile_content'] . '\' />
                     <label>timeout (milliseconds 10000 = 1 second)</label>
                     <input class="half-size" type="text" name="notice_key_timeout[]" value="' . $v['timeout'] . '" />
                     </div>

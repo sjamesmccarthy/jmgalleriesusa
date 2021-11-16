@@ -36,21 +36,29 @@ foreach($data_html as $key => $value) {
 if ($this->config->component_notice != 'false') {
 
 $exclude_matches = explode(",", $excludes);
+// if(isSet($this->data->routePathQuery[0])) { $this->page->catalog_path_tmp = $this->data->routePathQuery[0]; } else { $this->page->catalog_path_tmp = $this->page->catalog_path; }
+
 foreach ($exclude_matches as $exclude => $excludeValue) {
     if (preg_match("/" . $excludeValue . "/i", $this->page->catalog_path)) {
         // print "preg_match: FOUND -- ";
         $match = "FOUND";
+    } else {
+        // print "preg_match: NO MATCH --";
+        // print $this->page->1catalog_path . "<br />";
         // print_r($exclude_matches);
-    } 
+    }
 }
 
 if($match == "FOUND") {
     $html = null;
 } else { 
+    $content = stripslashes($content);
+    $mobile_content = stripslashes($mobile_content);
+    
     $html = <<< END
         <div class="notice-container notice-{$key}">
             <p class="notice-banner" style="background-color: {$background_color}; color:{$color}">{$content}</p>
-            <p class="notice-banner-mobile" style="background-color: {$type}; color:{$color}">{$mobile_content}</p>
+            <p class="notice-banner-mobile" style="background-color: {$background_color}; color:{$color}">{$mobile_content}</p>
         </div>
     
         {$jquery}

@@ -3287,8 +3287,12 @@ public function api_Admin_Get_Materials_By_Supplier($id) {
 
 public function api_Admin_Update_Settings() {
 
+        
         foreach($_POST['notice_data'] as $k => $v) {
-
+        
+            $_POST['notice_key_mobile_content'][$k] = addslashes($_POST['notice_key_mobile_content'][$k]);
+            $_POST['notice_key_content'][$k] = addslashes($_POST['notice_key_content'][$k]);
+            
            $notice_array[$v] = array("excludes"=>"{$_POST['notice_key_excludes'][$k]}", "title"=>"{$_POST['notice_key_title'][$k]}", "content"=>"{$_POST['notice_key_content'][$k]}", "mobile_content"=>"{$_POST['notice_key_mobile_content'][$k]}","state"=>"{$_POST['notice_key_state'][$k]}", "timeout"=>"{$_POST['notice_key_timeout'][$k]}", "background_color"=>"{$_POST['notice_key_background_color'][$k]}", "color"=>"{$_POST['notice_key_color'][$k]}");
         }
         
