@@ -25,6 +25,16 @@
                     <!-- photosviewed -->
                     <?= $photosviewed_html ?>
                 </div>
+            </div>
+            
+            <div class="grid">
+                <div class="col ">
+                    <!-- photosviewed -->
+                    <?= $reports_html ?>
+                </div>
+            </div>
+            
+            <div class="grid">
                 <div class="col">
                     <!-- recentactivity -->
                      <?= $activity_html ?>

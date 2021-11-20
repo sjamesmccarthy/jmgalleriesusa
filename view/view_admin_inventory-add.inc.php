@@ -233,7 +233,7 @@ if(count($this->data->routePathQuery) > 2) {
     
     $i=1;
     foreach($location_data as $key_loc => $val_loc) {
-
+  
         /* If Editing an existing record */
         if($val_loc['art_location_id'] === $edit_data['art_location_id']) { 
             $selected = "SELECTED"; 

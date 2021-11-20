@@ -1983,7 +1983,7 @@ body {
   max-width: 1920px;
   margin: auto; }
   body.dark-theme {
-    background-color: #15202b;
+    background-color: #0f0f0f;
     color: #FFFFFF; }
     body.dark-theme a {
       color: #2574A9; }
@@ -2007,7 +2007,7 @@ body {
     body.dark-theme .detail-story, body.dark-theme .edition-title {
       color: #FFFFFF; }
     body.dark-theme input[type="text"], body.dark-theme input[type="password"], body.dark-theme textarea, body.dark-theme select {
-      background-color: #15202b;
+      background-color: #0f0f0f;
       color: #FFFFFF; }
     body.dark-theme form .select-wrapper:after {
       -webkit-filter: invert(1);
@@ -3192,42 +3192,64 @@ button a {
   border-radius: 6px 6px 0 0;
   padding: 0;
   margin-top: 0;
-  max-height: 85vh;
+  max-height: 45vh;
   overflow: scroll; }
   .photosviewed--container .table--box {
     padding: 20px;
-    line-height: 1.2; }
+    line-height: 1.2;
+    position: sticky;
+    top: 0;
+    z-index: 1; }
     .photosviewed--container .table--box.gray {
       background-color: #e4e5e7; }
+    .photosviewed--container .table--box .add-icon {
+      text-align: right;
+      margin-top: -2.4rem; }
   .photosviewed--container .item {
-    margin-bottom: 8px;
     padding: 10px 20px;
-    border-bottom: 1px solid #e4e4e4; }
+    border-bottom: 1px solid #e4e4e4;
+    display: inline-block;
+    width: 50%;
+    height: 100%; }
     .photosviewed--container .item .photo {
+      position: relative;
       display: inline-block; }
       .photosviewed--container .item .photo img {
-        width: 100px;
+        width: 54px;
         padding-right: 10px; }
+      .photosviewed--container .item .photo .featured {
+        position: absolute;
+        color: #FFF;
+        font-size: 2rem;
+        top: 2px;
+        left: 13px;
+        line-height: 1;
+        opacity: .5; }
     .photosviewed--container .item .detail {
       display: inline-block;
       vertical-align: top;
-      margin-top: -5px; }
+      margin-top: 0;
+      line-height: 1.3; }
 
 .activity--container {
   background-color: rgba(0, 0, 0, 0.05);
   border-radius: 6px 6px 0 0;
-  max-height: 85vh;
   overflow: scroll;
   padding: 0;
-  margin-top: 0; }
+  margin-top: 0;
+  max-height: 25vh; }
   .activity--container .table--box {
     padding: 20px;
-    line-height: 1.2; }
+    line-height: 1.2;
+    position: sticky;
+    top: 0;
+    z-index: 1; }
     .activity--container .table--box.gray {
       background-color: #e4e5e7; }
   .activity--container .item {
-    padding: 10px 20px;
+    padding: 5px 20px;
     border-bottom: 1px solid #e4e4e4;
+    font-family: 'Courier New', monospace;
     font-size: 0.8em; }
     .activity--container .item.system-log {
       color: #4a4a4a; }
@@ -3237,6 +3259,27 @@ button a {
       color: #155724; }
     .activity--container .item.failure-log {
       color: #721c24; }
+
+.reports-component--container {
+  background-color: rgba(0, 0, 0, 0.05);
+  border-radius: 6px 6px 0 0;
+  overflow: scroll;
+  padding: 0;
+  margin-top: 0;
+  max-height: 25vh; }
+  .reports-component--container .table--box {
+    padding: 20px;
+    line-height: 1.2;
+    position: sticky;
+    top: 0;
+    z-index: 1; }
+    .reports-component--container .table--box.gray {
+      background-color: #e4e5e7; }
+  .reports-component--container .item {
+    padding: 5px 20px;
+    border-bottom: 1px solid #e4e4e4;
+    font-family: 'Courier New', monospace;
+    font-size: 0.8em; }
 
 @-webkit-keyframes flip_animation {
   0% {
@@ -3279,7 +3322,7 @@ button a {
   padding-right: 32px; }
   .navigation--container .add-icon-nav {
     position: absolute;
-    top: 17px;
+    top: 23px;
     right: 14px; }
   .navigation--container .disabled {
     color: rgba(0, 0, 0, 0.2); }
@@ -3335,7 +3378,7 @@ button a {
     margin-bottom: 10px;
     text-align: center; }
     .navigation--container .toolbox .profile--image > img {
-      width: 200px;
+      width: 150px;
       border-radius: 50% !important;
       border: 1px solid #CCC;
       padding: 10px; }
@@ -3690,7 +3733,7 @@ button a {
 /* partial_footer */
 #footer {
   margin-top: 2rem;
-  background-color: #192734;
+  background-color: #212121;
   color: #FFF;
   padding-top: 2rem; }
   #footer .middot:after {
@@ -4467,7 +4510,7 @@ form #buysize, form #frame {
 .moulding-thumb {
   display: block; }
   .moulding-thumb-img {
-    width: 38%;
+    width: 75%;
     border: 15px solid #000; }
 
 /*subsection UL override*/

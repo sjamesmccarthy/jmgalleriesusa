@@ -20,22 +20,27 @@ foreach($activity_data as $key=>$val) {
 
         case "system":
             $typeClass = "system-log";
+            $icon = '<i class="fas fa-server"></i>';
         break;
 
         case "success":
             $typeClass = "success-log";
+            $icon = '<i class="fas fa-check-circle"></i>';
         break;
 
         case "warning":
             $typeClass = "warning-log";
+            $icon = '<i class="fas fa-exclamation-circle"></i>';
         break;
 
         case "failure":
             $typeClass = "failure-log";
+            $icon = '<i class="fas fa-bomb"></i>';
         break;
 
         default:
             $typeClass = "system-log";
+            $icon = '<i class="fas fa-check-circle"></i>';
         break;
 
     }
@@ -43,8 +48,8 @@ foreach($activity_data as $key=>$val) {
     $date = date("F j, Y h:i:s A", strtotime($val['created']));
 
     $result_html .= '<li class="item ' . $typeClass . '"><div>';
-    $result_html .= '<p class="small"><b>' . $date . '</b></p>';
-    $result_html .= '<p class="small">[' . $val['type'] . '] ' . $val['value'] . '</p>';
+    $result_html .= '<p class="small">' . $icon . ' <b style="margin-left: 1rem;">' . $date . '</b> >> ';
+    $result_html .= '[' . $val['type'] . '] ' . $val['value'] . '</p>';
     $result_html .= '</div></li>';
 
 }

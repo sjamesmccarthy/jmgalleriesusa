@@ -95,6 +95,20 @@
         "component": "true",
         "title": "Add Photo To Online Catalog"
     },
+    "/studio/products": {
+        "template": "admin",
+        "page": "admin_products",
+        "auth": "true",
+        "component": "true",
+        "title": "Catalog of Shop Products"
+    },
+    "/studio/products-add": {
+        "template": "admin",
+        "page": "admin_products-add",
+        "auth": "true",
+        "component": "true",
+        "title": "Add Product To Shop"
+    },
     "/studio/auth": {
         "template": "admin",
         "page": "admin_auth",

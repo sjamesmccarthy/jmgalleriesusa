@@ -879,12 +879,13 @@ class Core_Api extends Fieldnotes_Api
                 CP.as_gallery,
                 CP.as_studio,
                 CP.as_open,
-                CV.updated
+                CV.updated, 
+                CP.featured
                 FROM
                 catalog_photo_views as CV
                 INNER JOIN catalog_photo as CP on CV.catalog_photo_id = CP.catalog_photo_id
                 WHERE CP.status = 'ACTIVE'
-                ORDER BY CV.count DESC
+                ORDER BY CV.updated DESC
                 LIMIT 100";
         
             $result = $this->mysqli->query($sql);
@@ -2057,7 +2058,7 @@ class Core_Api extends Fieldnotes_Api
         extract($_POST, EXTR_PREFIX_SAME, "dup");
 
         /* Insert into database */
-        $sql = "INSERT INTO `jmgaller_iesusa`.`supplier` (`company`, `first_name`, `last_name`, `email`, `phone`, `website`, `account_no`) 
+        $sql = "INSERT INTO `" . $this->config_env->env[$this->env]['dbname']  . ".`supplier` (`company`, `first_name`, `last_name`, `email`, `phone`, `website`, `account_no`) 
             VALUES ('{$company}', '{$first_name}', '{$last_name}', '{$email}', '{$phone}', '{$website}', '{$account}');";
 
         $result = $this->mysqli->query($sql);
@@ -2083,7 +2084,7 @@ class Core_Api extends Fieldnotes_Api
         
         /* Insert into database */
              
-        $sql = "UPDATE `jmgaller_iesusa`.`supplier` 
+        $sql = "UPDATE `" . $this->config_env->env[$this->env]['dbname']  . ".`supplier` 
             SET 
             `company` = '{$company}', 
             `first_name` = '{$first_name}', 
@@ -2548,7 +2549,7 @@ public function api_Admin_Get_Materials_By_Supplier($id) {
         if($purchased_on == '') { $purchased_on = date("Y-m-d H:i:s"); }
 
         /* Insert into database */
-        $sql = "INSERT INTO `jmgaller_iesusa`.`supplier_materials` (`supplier_id`, `manual_entry`, `material_type`, `material`, `sku`, `quantity`, `unit_type`, `cost`, `purchased_on`, `shipping_cost`) 
+        $sql = "INSERT INTO `" . $this->config_env->env[$this->env]['dbname']  . ".`supplier_materials` (`supplier_id`, `manual_entry`, `material_type`, `material`, `sku`, `quantity`, `unit_type`, `cost`, `purchased_on`, `shipping_cost`) 
             VALUES ('{$supplier_id}', 'FALSE', '{$material_type}', '{$material}', '{$sku}', '{$quantity}', '{$unit_type}', '{$cost}', '{$purchased_on}', '{$shipping_cost}');";
 
         $result = $this->mysqli->query($sql);
@@ -2574,7 +2575,7 @@ public function api_Admin_Get_Materials_By_Supplier($id) {
         if($shipping_cost == '') { $shipping_cost='0.00';}
 
         /* Insert into database */
-        $sql = "UPDATE `jmgaller_iesusa`.`supplier_materials` 
+        $sql = "UPDATE `" . $this->config_env->env[$this->env]['dbname']  . ".`supplier_materials` 
         SET `supplier_id` = '{$supplier_id}', 
         `manual_entry` = 'FALSE', 
         `material_type` = '{$material_type}', 
@@ -2666,6 +2667,38 @@ public function api_Admin_Get_Materials_By_Supplier($id) {
         return($data);
 
     }
+    
+    public function api_Admin_Component_Reports() {
+
+        /* Executes SQL and then assigns object to passed var */
+        if( $this->checkDBConnection(__FUNCTION__) == true) {
+
+            $sql = "SELECT
+            R.report_id,
+            R.name,
+            R.desc,
+            R.sql,
+            R.fav
+        FROM
+            report as R
+            WHERE status='ACTIVE' and fav=1";
+        
+            $result = $this->mysqli->query($sql);
+
+            if ($result->num_rows > 0) {
+            
+                while($row = $result->fetch_assoc())
+		        {
+		            $data[] = $row;
+		        }
+                
+            } 
+            
+        }
+
+        return($data);
+
+    }
 
     public function api_Admin_Get_Collections_Item($id) {
 
@@ -2740,7 +2773,7 @@ public function api_Admin_Get_Materials_By_Supplier($id) {
         extract($_POST, EXTR_PREFIX_SAME, "dup");
 
         /* Insert into database */
-        $sql = "INSERT INTO `jmgaller_iesusa`.`catalog_collections` (`artist_id`, `title`, `path`, `desc`, `status`, `type`, `catalog_code`) 
+        $sql = "INSERT INTO `" . $this->config_env->env[$this->env]['dbname']  . ".`catalog_collections` (`artist_id`, `title`, `path`, `desc`, `status`, `type`, `catalog_code`) 
         VALUES ('{$artist_id}', '{$title}', '{$path}', '{$desc}', '{$status}', '{$type}', '{$catalog_code}');";
 
         $result = $this->mysqli->query($sql);
@@ -2768,7 +2801,7 @@ public function api_Admin_Get_Materials_By_Supplier($id) {
         $desc = $this->mysqli->real_escape_string($_POST['desc']);
 
         /* Insert into database */
-        $sql = "UPDATE `jmgaller_iesusa`.`catalog_collections` 
+        $sql = "UPDATE `" . $this->config_env->env[$this->env]['dbname']  . ".`catalog_collections` 
         SET `title` = '{$title}', 
         `path` = '{$path}', 
         `desc` = '{$desc}', 
@@ -2799,7 +2832,7 @@ public function api_Admin_Get_Materials_By_Supplier($id) {
         $sql_c =  $this->mysqli->real_escape_string($sql_c);
 
         /* Insert into database */
-        $sql = "INSERT INTO `jmgaller_iesusa`.`report` (`name`, `desc`, `sql`, `columns`, `last_run_by`, `fav`) 
+        $sql = "INSERT INTO `" . $this->config_env->env[$this->env]['dbname']  . ".`report` (`name`, `desc`, `sql`, `columns`, `last_run_by`, `fav`) 
         VALUES ('{$name}', '{$desc}', '{$sql_c}', '{$columns}', '{$artist_id}', '{$fav}');";
 
         $result = $this->mysqli->query($sql);
@@ -2819,14 +2852,14 @@ public function api_Admin_Get_Materials_By_Supplier($id) {
     }
 
     public function api_Admin_Update_Reports($sqlOnly=null) {
-
+    
         /* extract Data Array */
         extract($_POST, EXTR_PREFIX_SAME, "dup");
         if(!isSet($fav)) { $fav = '0'; }
         $sql_c =  $this->mysqli->real_escape_string($sql_c);
 
         /* Insert into database */
-        $sql = "UPDATE `jmgaller_iesusa`.`report` 
+        $sql = "UPDATE report
         SET `name` = '{$name}', 
         `desc` = '{$desc}', 
         `sql` = '{$sql_c}', 
@@ -2842,13 +2875,14 @@ public function api_Admin_Get_Materials_By_Supplier($id) {
                 $_SESSION['error'] = '200';
                 $_SESSION['notify_msg'] = $name;
                 $_SESSION['notification_msg'] = "<p class='heading'>success</p><p>" .  $name . " Has Been Updated</p>";
-                $this->log(array("key" => "api", "value" => "Updated Report / SQL Mark (" . $name . ") ", "type" => "success"));
+                $this->log(array("key" => "api", "value" => "Updated Report (" . $name . ") ", "type" => "success"));
             } else {
                 $this->log(array("key" => "api", "value" => "Updated SQL Statement via Ajax.API  (" . $name . ") ", "type" => "success"));
             }
         } else {
             $_SESSION['error'] = '400';
-            $this->log(array("key" => "api", "value" => "Failed Update Report / SQL Mark (" . $_POST['name'] . ")", "type" => "failure"));
+            $extra_debug = '<br /><span class=\"tiny\">' . $this->mysqli->real_escape_string($sql) . '</span>';
+            $this->log(array("key" => "api", "value" => "Failed Update Report (" . $_POST['name'] . ") " . $extra_debug, "type" => "failure"));
         }
         
     }
@@ -2897,7 +2931,7 @@ public function api_Admin_Get_Materials_By_Supplier($id) {
         extract($_POST, EXTR_PREFIX_SAME, "dup");
 
         /* Insert into database */
-        $sql = "INSERT INTO `jmgaller_iesusa`.`collector` (`first_name`, `last_name`, `company`, `email`, `phone`, `address`, `address_extra`, `city`, `state`, `country`, `postalcode`) 
+        $sql = "INSERT INTO `" . $this->config_env->env[$this->env]['dbname']  . ".`collector` (`first_name`, `last_name`, `company`, `email`, `phone`, `address`, `address_extra`, `city`, `state`, `country`, `postalcode`) 
         VALUES ('{$first_name}', '{$last_name}', '{$company}', '{$email}', '{$phone}', '{$address}', '{$address_extra}', '{$city}', '{$state}', '{$country}', '{$postalcode}');
         ";
 
@@ -2924,7 +2958,7 @@ public function api_Admin_Get_Materials_By_Supplier($id) {
         
         /* Insert into database */
              
-        $sql = "UPDATE `jmgaller_iesusa`.`collector` 
+        $sql = "UPDATE `" . $this->config_env->env[$this->env]['dbname']  . ".`collector` 
             SET `first_name` = '{$first_name}', 
             `last_name` = '{$last_name}', 
             `company` = '{$company}', 
@@ -3077,7 +3111,8 @@ public function api_Admin_Get_Materials_By_Supplier($id) {
             	ua.title,
             	ua.path,
                 ua.add_new,
-                ua.short_code
+                ua.short_code, 
+                ua.icon
             FROM
             	user_apps AS ua
             	INNER JOIN user_apps_link AS uap ON ua.user_apps_id = uap.user_apps_id
@@ -3129,7 +3164,7 @@ public function api_Admin_Get_Materials_By_Supplier($id) {
         }
 
         /* Insert into database */
-        $sql = "INSERT INTO `jmgaller_iesusa`.`user` 
+        $sql = "INSERT INTO `" . $this->config_env->env[$this->env]['dbname']  . ".`user` 
         ({$add_artist_id} {$add_collector_id}  `type`, `status`, `username`, `pin`, `last_login_ip`) 
         VALUES (
             '{$ac_id}',
@@ -3174,13 +3209,10 @@ public function api_Admin_Get_Materials_By_Supplier($id) {
         foreach ($_POST['role'] as $k_role => $v_role) {
 
              $sql_r = "
-                   INSERT INTO `jmgaller_iesusa`.`user_role_link` 
-                   (`user_id`, `user_role_id`) 
-                   VALUES 
-                   ('{$id}', '{$v_role}');";
+                   INSERT INTO user_role_link (`user_id`, `user_role_id`) 
+                   VALUES  ('{$id}', '{$v_role}');";
             
             $result_roles = $this->mysqli->query($sql_r);
-
         }
 
     }
@@ -3199,10 +3231,8 @@ public function api_Admin_Get_Materials_By_Supplier($id) {
         foreach ($_POST['apps'] as $k_apps => $v_apps) {
 
              $sql_a = "
-                   INSERT INTO `jmgaller_iesusa`.`user_apps_link` 
-                   (`user_id`, `user_apps_id`) 
-                   VALUES 
-                   ('{$id}', '{$v_apps}');";
+                   INSERT INTO user_apps_link (`user_id`, `user_apps_id`) 
+                   VALUES ('{$id}', '{$v_apps}');";
             
             $result_apps = $this->mysqli->query($sql_a);
 
@@ -3241,7 +3271,7 @@ public function api_Admin_Get_Materials_By_Supplier($id) {
         $this->processUserApps($user_id);
 
         /* Insert into database */
-        $sql = "UPDATE `jmgaller_iesusa`.`user` SET 
+        $sql = "UPDATE `" . $this->config_env->env[$this->env]['dbname'] . "`.`user` SET 
         {$add_artist_id}
         {$add_collector_id}
         `type` = '{$type}', 
@@ -3279,7 +3309,7 @@ public function api_Admin_Get_Materials_By_Supplier($id) {
         }
 
         /* Insert into database */
-        $sql = "UPDATE `jmgaller_iesusa`.`user` SET last_login='" . date ("Y-m-d H:i:s", time()) . "', last_login_ip='" . $IP . "' WHERE user_id ='" . $uid . "'";
+        $sql = "UPDATE `" . $this->config_env->env[$this->env]['dbname']  . "`.`user` SET last_login='" . date ("Y-m-d H:i:s", time()) . "', last_login_ip='" . $IP . "' WHERE user_id ='" . $uid . "'";
 
         $result = $this->mysqli->query($sql);
         
@@ -3372,7 +3402,7 @@ public function api_Insert_Order($params) {
 
            /* Insert into product_customer table */
             $sql = "
-               INSERT INTO `jmgaller_iesusa`.`product_customer` 
+               INSERT INTO product_customer
                (`name`, `email`, `phone`, `address`, `address_other`, `city`, `state`, `postal_code`) 
                VALUES 
                ('{$contactname}', '{$contactemail}', '{$phone}', '{$address}', '{$address_other}', '{$city}', '{$state}', '{$postalcode}');";
@@ -3393,12 +3423,12 @@ public function api_Insert_Order($params) {
             // }
 
             //  $sql_po = "
-            //    INSERT INTO `jmgaller_iesusa`.`product_order` 
+            //    INSERT INTO `" . $this->config_env->env[$this->env]['dbname']  . ".`product_order` 
             //    (`product_customer_id`, `item`, `notes`, `quantity`, `price`, `tax`, `shipping`, `discount`, `invoice_number`) 
             //    VALUES 
             //    ('{$customer_id}', '{$item_pack}', '{$comments}', '1', '{$price}', '0', '0', '{$promocode}', '{$invoice_no}');";
             $sql_po = "
-            INSERT INTO `jmgaller_iesusa`.`product_order` 
+            INSERT INTO product_order
                 (
                     `product_customer_id`, 
                     `product_id`, 
@@ -3675,7 +3705,7 @@ public function api_Admin_Get_Order($id) {
 
         /* Update product_customer */
         $sql = "
-        UPDATE `jmgaller_iesusa`.`product_customer` SET 
+        UPDATE `" . $this->config_env->env[$this->env]['dbname']  . ".`product_customer` SET 
             name = '{$name}',
             email = '{$email}',
             phone = '{$phone}',
@@ -3693,7 +3723,7 @@ public function api_Admin_Get_Order($id) {
         /* Update product_order */
         $discount = strtoupper($discount);
         $sql_o = "
-        UPDATE `jmgaller_iesusa`.`product_order` SET 
+        UPDATE `" . $this->config_env->env[$this->env]['dbname']  . ".`product_order` SET 
             item = '{$item_pack}', 
             quantity = '{$quantity}',
             price = '{$price}', 
@@ -3860,6 +3890,38 @@ public function api_Admin_Get_Order($id) {
 
     }
 
+public function api_Admin_Get_Products() {
+    
+            /* Executes SQL and then assigns object to passed var */
+            if( $this->checkDBConnection(__FUNCTION__) == true) {
+    
+                $sql = "SELECT
+                    product_id, 
+                    title,
+                    price,
+                    quantity,
+                    in_stock,
+                    on_sale,
+                    status
+                FROM
+                    product";
+            
+                $result = $this->mysqli->query($sql);
+                      
+                if ($result->num_rows > 0) {
+                
+                    while($row = $result->fetch_assoc())
+                    {
+                        $data[] = $row;
+                    }
+                    
+                } 
+                
+            }
+            
+            return($data);
+    
+        }
 
 }
 ?>

@@ -8,6 +8,13 @@
 
         <div class="col-11" style="position: relative">
 
+        <p class="pt-16">v1.7.8<br />Nov 20, 2021</p>
+            <ul>
+            <li>New and updated admin dashboard components</li>
+            <li>bugfix: ordering form now submits through to confirmation page</li>
+            </ul> 
+        </p>
+        
         <p class="pt-16">v1.7.7<br />Nov 12, 2021</p>
             <ul>
             <li>new: migrated servers</li>

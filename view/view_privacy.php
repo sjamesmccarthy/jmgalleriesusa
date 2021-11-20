@@ -3,7 +3,7 @@
 
         <div class="col-12_sm-12" >
 
-         <h1 class="pb-32">Privacy Policy, Terms of Sale and Copyright</h1>
+         <h1 class="pb-32 text-center">Privacy Policy, Terms of Sale and Copyright</h1>
          
          <p>THIS PRIVACY POLICY APPLIES TO YOUR ACCESS AND USE OF JMGALLERIES.COM AND ANY ASSOCIATED MOBILE APPS OR ONLINE SERVICES ("JM GALLERIES USA"). It describes our practices on gathering, use and sharing of personal information collected when you visit one of our ONLINE SERVICES. BY ACCESSING OR USING ANY OF JM GALLERIES USA, YOU AGREE THAT YOU HAVE READ AND AGREE TO THIS PRIVACY POLICY. IF YOU DON’T AGREE, PLEASE <a href="//duckduckgo.com">CLICK HERE</a>.
         </p>

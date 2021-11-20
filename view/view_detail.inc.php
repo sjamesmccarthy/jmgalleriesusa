@@ -99,8 +99,8 @@
         } 
         
         if ($photo_meta['desc'] == 'acrylic') {
-            $edition_desc_material = 'HD Acrylic (⅛ inch acrylic and silver aluminum wall mount)';
-            $edition_frame = ' and one of our <a href="/styles">Premium Designer Frames</a> can be optionally added for an additional cost. This image may also be available in HD Chromaluxe&reg; Metal. Please <a href="/contact">contact an art consultant</a> for availability and pricing.';
+            $edition_desc_material = 'HD Acrylic (⅛ inch acrylic including wall mount)';
+            $edition_frame = 'One of our <a href="/styles">Premium Designer Frames</a> can be optionally added for an additional cost. This fine-art may also be available in HD Chromaluxe&reg; Metal. Please <a href="/contact">contact an art consultant</a> for availability and pricing.';
             $frame_disabled = 'disabled';
             $frame_disabled_option = '<option value="FRAMELESS">No Frame Included With Acrylic</option><option value="ADDWITHACRYLIC">+ Add Additional Premium Frame (+$$)</option>';
             $frame_info_link = 'Premium Designer Frames pricing';
@@ -157,7 +157,7 @@
         
         $btn = "BUY ARTWORK";
         $btn_link = '<a style="display:block;" href="/contact?photo=' . $photo_meta['file_name'] . '">'; //class="btn-nudge"
-        $gallery_details = '<p class="pb-16 pt-16">This Limited Edition is printed on ' . $edition_desc_material . ' and available sizes include: ' . $pricing_long . ' inches, <!-- (larger sizes available on special order, <a href="/contact">contact an art consultant</a>) -->' . $edition_frame . '<!-- If you have any questions about our ' . $edition_desc_material . ', or need more information about out <a href="/styles">styles, frames and editions</a>, please <a href="/contact">contact an art consultant</a>.--></p>';
+        $gallery_details = '<p class="pb-16 pt-16">This Limited Edition is printed on ' . $edition_desc_material . ' and available sizes include: ' . $this->config->available_sizes_limited . ' inches. <!-- (larger sizes available on special order, <a href="/contact">contact an art consultant</a>) -->' . $edition_frame . '<!-- If you have any questions about our ' . $edition_desc_material . ', or need more information about out <a href="/styles">styles, frames and editions</a>, please <a href="/contact">contact an art consultant</a>.--></p>';
 
         /* PRICING SELECT */
         $sizes_pricing = '<div class="col-4_sm-12 select-wrapper">

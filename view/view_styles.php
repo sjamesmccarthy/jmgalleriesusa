@@ -3,16 +3,18 @@
         <div class="col-12">
     
             <div class="grid">
-            <h1>Limited Edition Frame Sizing & Pricing</h1>
+                <div class="col-12">
+                    <h1 class="text-center">Limited Edition Frame Sizing & Pricing</h1>
                 <p class="pt-16">
                 Limited Edition fine-art is considered highly collectible and are part of a limited numbered series.<br />Each Limited Edition is signed by j.McCarthy and includes a Certificate of Authenticity that is recorded in the jM Galleries Digital Artwork Archives.</p> 
                 
                 <p>
                 Once the last edition number is sold, no more editions in that series will be available and the only way to purchase a sold-out edition would be through another collector.<p>
+                </div>
             </div>
         </div>    
             <div class="grid">
-            <div class="col-6_md-12">
+            <div class="col-8_md-12">
                 <table>
                     <tr class="gray">
                         <th>16x24 HD Acrylic</th>
@@ -89,7 +91,7 @@
                 </table>
             </div>
             
-            <div class="col-6_md-12 text-center pl-32 pt-32">
+            <div class="col-4_md-12 text-center pl-32 pt-32">
 
                 <p class="moulding-thumb"><img class="moulding-thumb-img" src="/view/image/moulding-60645.jpg" alt="moulding" /> </p>
                 <p class="moulding-thumb"><img class="moulding-thumb-img" src="/view/image/moulding-60610.jpg" alt="moulding" /> </p>
@@ -100,7 +102,7 @@
             </div>
             
     <div class="grid">
-    <div class="col-6_sm-12">
+    <div class="col-8_sm-12">
         <ul>
         <li style="border-top: 2px solid #CCC; padding-top: 2rem;">
             <li>

@@ -16,7 +16,8 @@ if($_POST['product_id'] == '1' || $_POST['product_id'] == '2' ) {
 
 $order_title = urldecode($res_title);
 // $action_uri = "/view/ajax_square_payment_process.php";
-$action_uri = "/view/ajax_square_payment_local.php";
+// $action_uri = "/view/ajax_square_payment_local.php";
+$action_uri = "/view/ajax_checkout.php";
 $formTitle = "Checkout";
 
 /* Extra form fields for different order type */

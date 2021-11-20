@@ -21,5 +21,8 @@
 
     /* PHOTOSVIEWED */
     $photosviewed_html = $this->component('admin_photosviewed');
+    
+    /* PHOTOSVIEWED */
+    $reports_html = $this->component('admin_reports');
 
 ?>

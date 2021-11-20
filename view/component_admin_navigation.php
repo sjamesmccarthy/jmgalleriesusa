@@ -31,7 +31,7 @@ foreach ($apps_list as $k_aps => $v_apps) {
     $nav_html .= '
         <div class="toolbox">
             <ul class="' . $v_apps['short_code'] . ' ' . $v_apps['short_code'] . '-add">
-            <li class="' . $v_apps['short_code'] . ' ' . $v_apps['short_code'] . '-add"><a href="/studio/' . $v_apps['short_code'] . '">'. $v_apps['title'] . '</a>';
+            <li class="' . $v_apps['short_code'] . ' ' . $v_apps['short_code'] . '-add"><span style="font-size: 24px;vertical-align: middle;">' . $v_apps['icon'] . '</span> <a style="margin-left: 1rem;" href="/studio/' . $v_apps['short_code'] . '">'. $v_apps['title'] . '</a>';
             
     if($v_apps['add_new'] == 1) {
         $nav_html .= '
@@ -57,7 +57,7 @@ $html = <<< END
 
 <div class="col-3 navigation--container">
             
-            <div class="toolbox mb-32">
+            <div class="toolbox">
             
             <div class="profile--image">
                 <img src="/view/image/avatar/$avatar" alt="avatar" />
@@ -76,7 +76,7 @@ $html = <<< END
 
             <div class="toolbox">
                 <ul>
-                <li><a href="/studio/signout">Sign Out</a></li>
+                <li style="border-top: 1px solid #a9a9a9"><span style="font-size: 24px;vertical-align: middle;"><i class="fas fa-sign-out-alt"></i></span> <a style="margin-left: 1rem;" href="/studio/signout">Sign Out</a></li>
                 </ul>
             </div>
 

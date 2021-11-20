@@ -274,7 +274,7 @@ public function api_Admin_Update_Fieldnotes() {
 
                 /* UPDATE captions for all images, $_POST array is extracted at top of function */
                 if(${"file_" . $i . "_path"} != "" ) {
-                    $sql_cap_u = "UPDATE `jmgaller_iesusa`.`fieldnotes_images` SET `caption` = '" . $this->mysqli->real_escape_string(${"file_" . $i . "_caption"}) . "' WHERE `fieldnotes_id` = '" . $fieldnotes_id . "' AND `path`='" . ${"file_" . $i . "_path"} . "'";
+                    $sql_cap_u = "UPDATE `" . $this->config_env->env[$this->env]['dbname'] . "`.`fieldnotes_images` SET `caption` = '" . $this->mysqli->real_escape_string(${"file_" . $i . "_caption"}) . "' WHERE `fieldnotes_id` = '" . $fieldnotes_id . "' AND `path`='" . ${"file_" . $i . "_path"} . "'";
                     $result_cap_u = $this->mysqli->query($sql_cap_u);
                    
                     if ($result_cap_u === false) {
@@ -324,10 +324,10 @@ public function api_Admin_Insert_Fieldnotes() {
             // $_FILES['file_1']['name'] = $short_path . '.jpg';
             $img_path = $short_path . '_file_1.jpg';
         }
-
+        
         //REPLACE(\"$content\", \"\\r\\n\", \"\"), 
          $sql = "
-            INSERT INTO `jmgaller_iesusa`.`fieldnotes` (
+            INSERT INTO `" . $this->config_env->env[$this->env]['dbname'] . "`.`fieldnotes` (
                 `user_id`, 
                 `title`, 
                 `image`, 
@@ -357,7 +357,7 @@ public function api_Admin_Insert_Fieldnotes() {
 
         $result = $this->mysqli->query($sql);
         $fieldnotes_id = $this->mysqli->insert_id;
-
+        
         /* Add parent collection to the array */
         if (isSet($tags)) {
             $fieldnotes_tags = explode(',', $tags);
@@ -572,7 +572,7 @@ public function x__uploadFile($fileTypes=array("jpeg"), $ext="jpg") {
 
             $response_content = $this->mysqli->real_escape_string($_POST['response_content']);
 
-            $sql = "INSERT INTO `jmgaller_iesusa`.`fieldnotes_responses` (`fieldnotes_id`, `email`, `response_ip`, `response`) 
+            $sql = "INSERT INTO `" . $this->config_env->env[$this->env]['dbname'] . "`.`fieldnotes_responses` (`fieldnotes_id`, `email`, `response_ip`, `response`) 
             VALUES (
             '" . $_POST['fieldnotes_id'] . "', 
             '" . $_POST['response_email'] . "', 
