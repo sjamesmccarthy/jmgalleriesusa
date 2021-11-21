@@ -2699,7 +2699,37 @@ public function api_Admin_Get_Materials_By_Supplier($id) {
         return($data);
 
     }
-
+  
+  public function api_Admin_Component_Orders() {
+      
+              /* Executes SQL and then assigns object to passed var */
+              if( $this->checkDBConnection(__FUNCTION__) == true) {
+      
+                  $sql = "
+                  SELECT
+                      po.*,
+                      pc.*
+                  FROM
+                      product_order AS po
+                      INNER JOIN product_customer AS pc ON pc.product_customer_id = po.product_customer_id
+                      ORDER BY po.received DESC";
+              
+                  $result = $this->mysqli->query($sql);
+      
+                  if ($result->num_rows > 0) {
+                  
+                      while($row = $result->fetch_assoc())
+                      {
+                          $data[] = $row;
+                      }
+                      
+                  } 
+                  
+              }
+      
+              return($data);
+    }
+     
     public function api_Admin_Get_Collections_Item($id) {
 
         /* Executes SQL and then assigns object to passed var */
@@ -3384,6 +3414,7 @@ public function api_Insert_Order($params) {
 
         $item_pack = json_encode(array(
             "edition"=>$edition_type,
+            "material"=>$material_type,
             "title"=>$title,
             "size"=>$size,
             "framing"=>$frame,

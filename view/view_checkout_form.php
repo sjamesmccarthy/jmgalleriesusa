@@ -118,7 +118,8 @@
             $('#sq-creditcard span#estimated_cost_format_btn').html( newpriceTrim );
         <?php } else { ?>
             // $('#amount_total').val('10000');
-            $('#amount_total').val('10000');
+            // $('#amount_total').val('10000');
+            $('#amount_total').val(newpriceCents.toFixed(0)/2);
             var b = parseFloat( $('#amount_total').val() / 100 );
             var bdec = b.toFixed(2);
             console.log('dep:true ' + bdec);

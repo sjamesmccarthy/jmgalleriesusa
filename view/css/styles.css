@@ -3199,7 +3199,8 @@ button a {
     line-height: 1.2;
     position: sticky;
     top: 0;
-    z-index: 1; }
+    z-index: 1;
+    border-radius: 6px 6px 0 0; }
     .photosviewed--container .table--box.gray {
       background-color: #e4e5e7; }
     .photosviewed--container .table--box .add-icon {
@@ -3243,7 +3244,8 @@ button a {
     line-height: 1.2;
     position: sticky;
     top: 0;
-    z-index: 1; }
+    z-index: 1;
+    border-radius: 6px 6px 0 0; }
     .activity--container .table--box.gray {
       background-color: #e4e5e7; }
   .activity--container .item {
@@ -3272,10 +3274,33 @@ button a {
     line-height: 1.2;
     position: sticky;
     top: 0;
-    z-index: 1; }
+    z-index: 1;
+    border-radius: 6px 6px 0 0; }
     .reports-component--container .table--box.gray {
       background-color: #e4e5e7; }
   .reports-component--container .item {
+    padding: 5px 20px;
+    border-bottom: 1px solid #e4e4e4;
+    font-family: 'Courier New', monospace;
+    font-size: 0.8em; }
+
+.orders-component--container {
+  background-color: rgba(0, 0, 0, 0.05);
+  border-radius: 6px 6px 0 0;
+  overflow: scroll;
+  padding: 0;
+  margin-top: 0;
+  max-height: 25vh; }
+  .orders-component--container .table--box {
+    padding: 20px;
+    line-height: 1.2;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    border-radius: 6px 6px 0 0; }
+    .orders-component--container .table--box.gray {
+      background-color: #e4e5e7; }
+  .orders-component--container .item {
     padding: 5px 20px;
     border-bottom: 1px solid #e4e4e4;
     font-family: 'Courier New', monospace;

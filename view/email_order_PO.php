@@ -76,7 +76,7 @@ ul li {
 <b>Shipment Notifcation:</b><br>"
 . $_POST['contactname'] . "<br>"
 . $_POST['contactemail'] . "<br>"
-. $_POST['shipping_provider'] .
+. $_POST['shipping_provider'] . " +$" . $_POST['ship'] . " " .
 "</li></ul></li>
 </ul>
 
@@ -85,10 +85,10 @@ ul li {
 <li>
 <ul class='ml-32'><li>
 <p>$"
-. $amount_total. " " . $deposit_label . " pending via Square on card *******" . $_POST['last_4']
+. $amount_total. " " . $deposit_label . " pending via Square on credit card *******" . $_POST['last_4'] . "<!-- <br />--NOTE: We will contact you later for this information -->"
 . $payment_html . "
 </p>
-<div class='pl-16 pb-16 pt-16 pr-16 mt-8 notice-WARNING'><p style='line-height: 1.3'>NOTICE: Our payment processing is currently under going maintenance so an art consultant will be in contact with you regarding payment and shipping options. We apologize for the inconvenience.</p></div>"
+<div class='pb-16 pt-16 pr-16 mt-8 notice-WARNING'><p style='line-height: 1.3'>NOTICE: Our payment processing is currently under going maintenance so an art consultant will be in contact with you regarding payment. We apologize for the inconvenience.</p></div>"
 . $insert_promo . "
 <br><br>
 </li></ul></li>

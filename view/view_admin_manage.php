@@ -16,7 +16,17 @@
 
                 <div class="col">
                     <!-- quickstats -->
-                    <?= $quickstats_html ?>
+                    <div style="display:none;">
+                        <?= $quickstats_html ?>
+                    </div>
+               </div>
+            </div>
+            
+            <div class="grid">
+
+                <div class="col">
+                    <!-- quickstats -->
+                    <?= $orders_html ?>
                </div>
             </div>
 

@@ -1,4 +1,4 @@
-.reports-component--container {
+.orders-component--container {
 
     background-color: rgba(0,0,0,.05);
     border-radius: 6px 6px 0 0;
@@ -13,8 +13,8 @@
         position: sticky;
           top: 0;
           z-index: 1;
-        border-radius: 6px 6px 0 0;
-    
+          border-radius: 6px 6px 0 0;
+
         &.gray {
             background-color: lighten($color-secondary-background, 5%);
         }

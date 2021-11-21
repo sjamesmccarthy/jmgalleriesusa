@@ -13,7 +13,7 @@
     <input type="hidden" name="quantity" value="1" />
     <input type="hidden" name="title" value="<?= $photo_meta['title'] ?>" />
     <input type="hidden" name="img_type" value="<?= $edition_desc_material ?>" />
-    <input type="hidden" id="material_type" name="material_type" value="INVALID" />
+    <input type="hidden" id="material_type" name="material_type" value="acrylic" />
     <input type="hidden" name="price" id="price" value="<?= $default_price ?>" />
     <input type="hidden" name="print_price" id="print_price" value="<?= $default_price ?>" />
     <input type="hidden" name="frame_price" id="frame_price" value="<?= $frame_price_default ?>" />

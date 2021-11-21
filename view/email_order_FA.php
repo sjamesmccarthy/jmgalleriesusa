@@ -4,8 +4,9 @@
     
 $date = date("F j, Y", time());
 // $amount_total = number_format( ($_POST['amount_total'] / 100), 2);
-$amount_total = 0;
-$balance_due = ($_POST['price'] + $_POST['shipping_cost']) - $amount_total;
+// $amount_total = 0;
+$deposit_due = ($_POST['price'] + $_POST['shipping_cost']) / 2;
+$balance_due = ($_POST['price'] + $_POST['shipping_cost']);
 
 switch($_POST['edition_type']) {
 
@@ -39,8 +40,8 @@ $size = $_POST['size'];
 // } 
 
 if($_POST['deposit'] == 'true') {
-    $payment_html = "<br>= = = = =<br >$" .  number_format($balance_due,2) . " Balance Due (Will be invoiced later)<br>";
     $deposit_label = "Deposit";
+    $payment_html = "<br>= = = = =<br >$" .  number_format($balance_due - $deposit_due,2) . " Balance Due (Will be invoiced prior to shipping)<br>";
 
     if($_POST['frame'] == "ADDWITHACRYLIC") {
         $frame_extra_line = "+ Optional* Premium Designer Frame<br><br><i>*An art consultant will be contacting you in regards to your request for an optional Premium Designer frame. Once your framing needs are determined an additional bill for the extra framing will be created and emailed to you.</i>";
@@ -103,7 +104,7 @@ ul li {
 <li>
 <ul class='ml-32'><li>"
 . $title . "<br>"
-. $size .  $matted_size . ' ' . $_POST['image_type'] . "<br>"
+. $size .  $matted_size . ' ' . ucfirst($_POST['material_type']) . "<br>"
 . $edition . "<br>"
 . $frame_extra_line 
 . $_POST['frame_forgot'] .
@@ -119,7 +120,7 @@ ul li {
 <b>Shipment Notifcation:</b><br>"
 . $_POST['contactname'] . "<br>"
 . $_POST['contactemail'] . "<br>"
-. $_POST['shipping_provider'] .
+. $_POST['shipping_provider'] . " +$" . $_POST['ship'] . " " .
 "</li></ul></li>
 </ul>
 
@@ -128,9 +129,9 @@ ul li {
 <li>
 <ul class='ml-32'><li>
 <p>$"
-. $amount_total. " " . $deposit_label . " pending via Square on card *******" . $_POST['last_4']
+. number_format($deposit_due,2) . " " . $deposit_label . " pending via Square on credit card *******" . $_POST['last_4'] . "<!-- <br />--NOTE: We will contact you later for this information-->"
 . $payment_html . "
-<div class='pl-16 pb-16 pt-16 pr-16 mt-8 notice-WARNING'><p style='line-height: 1.3'>NOTICE: Our payment processing is currently under going maintenance so an art consultant will be in contact with you regarding payment and shipping options. We apologize for the inconvenience.</p></div>
+<div class='pb-16 pt-16 pr-16 mt-8 notice-WARNING'><p style='line-height: 1.3'>NOTICE: Our payment processing is currently under going maintenance so an art consultant will be in contact with you regarding payment. We apologize for the inconvenience.</p></div>
 </p>" . $insert_promo . "
 </p>
 <br><br>
@@ -150,6 +151,6 @@ Carson City, NV 89701<br>
 orders@jmgalleries.com</p>
 ";
 
-$tmpl_jmg = "Online order received for " . $_POST[contactname] . " from " . $_POST['city'] . ", " . $_POST[state] . " for $" . $amount_total . " (". $deposit_label . ") " . "purchasing " . $title . ".";
+$tmpl_jmg = "Online order received for " . $_POST[contactname] . " from " . $_POST['city'] . ", " . $_POST[state] . " for $" . number_format($balance_due,2) . " (". ucfirst($_POST['material_type']) . ") " . "purchasing " . $title . ".";
 
 ?>

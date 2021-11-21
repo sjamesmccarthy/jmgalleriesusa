@@ -15,6 +15,9 @@
 
     /* QUICKSTATS */
     $quickstats_html = $this->component('admin_quickstats');
+    
+    /* ORDERS */
+    $orders_html = $this->component('admin_orders');
 
     /* ACTIVITY */
     $activity_html = $this->component('admin_activity');
