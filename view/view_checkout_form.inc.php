@@ -85,6 +85,9 @@ switch($res_formType) {
             $cost = $estimated_cost_raw;
             $edition_type_long = "Limited Edition";
             $limited_deposit = "<p class='mt-8'><b> $" . number_format($order_amount,2) . " (50%) REQUIRED DEPOSIT TODAY</b>, and remaining balance due at shipment.</p>";
+            if($res_material_type == 'acrylic') { $material_name = 'HD Acrylic'; } 
+            if($res_material_type == 'metal') { $material_name = 'HD Chromaluxe&reg; Metal'; } 
+            $material_type_long =  $material_name . " (⅛ inch thick including wall mount)";
         } else if ($res_edition_type == "open") {
             $deposit = "false";
             $hidden_fields .= "<input type='hidden' id='deposit' name='deposit' value='false' />";
@@ -92,21 +95,27 @@ switch($res_formType) {
             $order_type = "ORDER";
             $estimated_cost_raw = $res_price * 100;
             $edition_type_long = "Open Edition";
+            $material_type_long = $res_img_type;
         } else {
             $deposit = "false";
             $hidden_fields .= "<input type='hidden' id='deposit' name='deposit' value='false' />";
             $hidden_fields .= "<input type='hidden' id='edition_type' name='edition_type' value='product' />";
             $order_type = "ORDER";
             $estimated_cost_raw = $res_price * 100;
+            $material_type_long = $res_img_type;
         }
 
         //'(' . $res_quantity . ') ' . 
-        $order_subject = $order_title . " - " . $edition_type_long . " ($" . $res_print_price . ")\n" . $res_buysize  . $matted_size . " " . $res_img_type . $item_framing  . "\n" . $add_frame_note;
+        // $order_subject = $order_title . " - " . $edition_type_long . " ($" . $res_print_price . ")\n" . $res_buysize  . $matted_size . " " . $res_img_type . $item_framing  . "\n" . $add_frame_note;
+        $order_subject = $order_title . " - " . $edition_type_long . " ($" . $res_print_price . ")\n" . $res_buysize  . $matted_size . " " . $material_type_long . $item_framing  . "\n" . $add_frame_note;
 
         $hidden_fields .= '<input type="hidden" name="quantity" value="' .  $res_quantity . '" />';
         $hidden_fields .= '<input type="hidden" name="size" value ="' . $res_buysize . '" />';
         $hidden_fields .= '<input type="hidden" name="catalog_id" value ="' . $res_catalog_no . '" />';
+        
         $hidden_fields .= '<input type="hidden" name="image_type" value ="' . $res_img_type . '" />';
+        $hidden_fields .= '<input type="hidden" name="material_type" value ="' . $res_material_type . '" />';
+        
         $hidden_fields .= '<input type="hidden" name="frame" value ="' . $res_frame . '" />';
         $hidden_fields .= $hidden_matted;
 
@@ -201,6 +210,6 @@ $pay_SqPaymentFormFields = '
     </div>
     <div>' . $sq_extraBilling . '</div>';
 
-$button_label = "PLACE YOUR $<span id='estimated_cost_format_btn'>" . $estimated_cost_raw_formatted . "</span> " . $order_type;
+$button_label = "PLACE YOUR $<span id='estimated_cost_format_btn'>" . $estimated_cost_raw_formatted . "</span> " . $order_type . " (TO BE INVOICED)";
 
 ?>

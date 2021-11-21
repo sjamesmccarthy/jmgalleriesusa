@@ -3120,7 +3120,7 @@ public function api_Admin_Get_Materials_By_Supplier($id) {
             	uap.user_id = '1'
             	AND ua.user_role_id != '" . $id . "'
                 AND ua.status = '1'
-                ORDER BY ua.title ASC";
+                ORDER BY ua.order ASC";
         
             $result = $this->mysqli->query($sql);
 

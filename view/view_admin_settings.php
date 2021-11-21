@@ -65,7 +65,7 @@
                 <div class="grid" id="tab-pricing">
                     
                     <div class="col-12 pb-16">
-                        <a name="pricing" href="#top"><h4>Pricing - Limited Editions</h4></a>
+                        <a name="pricing" href="#top"><h4>Pricing - Limited Editions (Acrylic/Metal)</h4></a>
                     </div>
                     
                     <div class="col-12">
@@ -76,9 +76,13 @@
                     </div>
                     
                     <div class="col-12">
-                        <label>pricing - limited edition</label>
+                        <label>pricing - limited edition (acrylic)</label>
                         <input class="w-100" type="text" name="le_pricing" value='<?= $le_pricing ?>' />
-                        
+                    </div>
+                    
+                    <div class="col-12">
+                        <label>pricing - limited edition (metal)</label>
+                        <input class="w-100" type="text" name="le_pricing_metal" value='<?= $le_pricing_metal ?>' />
                     </div>
                     
                     <div class="col-12">
@@ -87,11 +91,11 @@
                     </div>
                     
                     <div class="col-12 pb-16">
-                            <h4>Pricing - Open Editions</h4>
+                            <h4>Pricing - Open Editions (Paper)</h4>
                         </div>
                         
                     <div class="col-12">
-                        <label>open edition label</label>
+                        <label>open edition label (paper)</label>
                         <input class="half-size" type="text" name="edition_description_open" value="<?= $edition_description_open ?>" />
                         <label>open edition sizes label (used in details)</label>
                         <input class="half-size" type="text" name="available_sizes_open" value="<?= $available_sizes_open ?>" />

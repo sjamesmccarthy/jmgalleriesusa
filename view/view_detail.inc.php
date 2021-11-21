@@ -48,6 +48,7 @@
     $studio_frames_pricing = json_decode($this->config->studio_frames_pricing, true);
 
     $le_price_array = json_decode($this->config->le_pricing, true);
+    $le_price_array_metal = json_decode($this->config->le_pricing_metal, true);
     $le_frames_pricing = json_decode($this->config->le_frames_pricing, true);
 
     /* Determine if the "VirtualRoom" photo exists */
@@ -99,8 +100,8 @@
         } 
         
         if ($photo_meta['desc'] == 'acrylic') {
-            $edition_desc_material = 'HD Acrylic (⅛ inch acrylic including wall mount)';
-            $edition_frame = 'One of our <a href="/styles">Premium Designer Frames</a> can be optionally added for an additional cost. This fine-art may also be available in HD Chromaluxe&reg; Metal. Please <a href="/contact">contact an art consultant</a> for availability and pricing.';
+            $edition_desc_material = 'HD Acrylic or HD Chromaluxe&reg; Metal (⅛ inch thick including wall mount)';
+            $edition_frame = 'One of our <a href="/styles">Premium Designer Frames</a> can be optionally added for an additional cost.<!-- This fine-art may also be available in HD Chromaluxe&reg; Metal. Please <a href="/contact">contact an art consultant</a> for availability and pricing.-->';
             $frame_disabled = 'disabled';
             $frame_disabled_option = '<option value="FRAMELESS">No Frame Included With Acrylic</option><option value="ADDWITHACRYLIC">+ Add Additional Premium Frame (+$$)</option>';
             $frame_info_link = 'Premium Designer Frames pricing';
@@ -157,7 +158,7 @@
         
         $btn = "BUY ARTWORK";
         $btn_link = '<a style="display:block;" href="/contact?photo=' . $photo_meta['file_name'] . '">'; //class="btn-nudge"
-        $gallery_details = '<p class="pb-16 pt-16">This Limited Edition is printed on ' . $edition_desc_material . ' and available sizes include: ' . $this->config->available_sizes_limited . ' inches. <!-- (larger sizes available on special order, <a href="/contact">contact an art consultant</a>) -->' . $edition_frame . '<!-- If you have any questions about our ' . $edition_desc_material . ', or need more information about out <a href="/styles">styles, frames and editions</a>, please <a href="/contact">contact an art consultant</a>.--></p>';
+        $gallery_details = '<p class="pt-32 bold">About The Art</p><p class="pb-16">This Limited Edition is printed on ' . $edition_desc_material . ' and the available sizes include: ' . $this->config->available_sizes_limited . ' inches. <!-- (larger sizes available on special order, <a href="/contact">contact an art consultant</a>) -->' . $edition_frame . '<!-- If you have any questions about our ' . $edition_desc_material . ', or need more information about out <a href="/styles">styles, frames and editions</a>, please <a href="/contact">contact an art consultant</a>.--></p>';
 
         /* PRICING SELECT */
         $sizes_pricing = '<div class="col-4_sm-12 select-wrapper">
@@ -168,10 +169,18 @@
                 
                 if($leK == $default_size) { $default = 'SELECTED'; } else { $default = null; }
     
-                $sizes_pricing .= '<option ' . $default . ' data-price="' . $leV . '" data-mattedsize="0" value="' . $leK . '">SIZE: ' . $leK . '</option>';
+                $sizes_pricing .= '<option ' . $default . ' data-price="' . $leV . '" data-mattedsize="0" data-material="acrylic" value="' . $leK . '">SIZE: ' . $leK . ' Acrylic</option>';
     
             }
-
+            
+            $sizes_pricing .= '<option value="---">---</option>';
+            
+            foreach ($le_price_array_metal as $leKm => $leVm) {
+                                
+                $sizes_pricing .= '<option ' . $default . ' data-price="' . $leVm . '" data-mattedsize="0" data-material="metal" value="' . $leKm . '">SIZE: ' . $leKm . ' Metal</option>';
+    
+            }
+            
         $sizes_pricing .= '
         </select>
         </div>';
