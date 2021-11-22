@@ -26,6 +26,7 @@ switch($res_formType) {
     case "SquarePaymentForm_productOrder":
         $formType="SquarePaymentForm_productOrder";
         $subtitle = 'Thank you for your interest in a j.McCarthy fine-art product.';
+        $payment_instructions = "<p class='pb-16'>Our automated credit card processing service is currently unavailable. A sales-associate will be in touch with you about payment within 24 hours. Thank you for your patience.<br /><br /><img style='margin-bottom: 10px; width: 150px; vertical-align: middle' src='/view/image/square-payment-icons.png' alt='square payment icon' /></p>";
         $add_frame_note = null;
         $sq_extraBilling = null;
         $limited_deposit = null;
@@ -40,6 +41,7 @@ switch($res_formType) {
     case "SquarePaymentForm_fineArt":
         $formType="SquarePaymentForm_fineArt";
         $subtitle = 'Thank you for your interest in a j.McCarthy Fine Art Photograph';
+        $payment_instructions = "<p class='pb-16'>Upon confirmation of your order you will be invoiced a 50% deposit. The remaining balance will be due in full prior to shipment. By clicking the button below, you are agreeing to these <a href='/privacy#tos'>Terms of Sale</a>.<br /><br /><img style='margin-bottom: 10px; width: 150px; vertical-align: middle' src='/view/image/square-payment-icons.png' alt='square payment icon' /></p>";
 
         if($res_frame == "ADDWITHACRYLIC") {
             $item_framing = "\n+ADD FRAME optional* Premium Designer frame.";

@@ -109,7 +109,7 @@
 
         </li>
 
-       <div class="divider-top"></div>
+       <a name="tos"><div class="divider-top"></div></a>
         <li><h3>Terms of Sale</h3>
 
                 <ol>
