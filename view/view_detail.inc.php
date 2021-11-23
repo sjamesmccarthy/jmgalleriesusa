@@ -138,6 +138,7 @@
         /* Picking a default value to show */
         if($available_sizes != "in_code") { 
             $le_price_array = json_decode($available_sizes, true);
+            $le_price_array_metal = json_decode($this->config->le_pricing_metal, true);
         } 
        
         foreach ($le_price_array as $paK => $paV) {
@@ -173,13 +174,15 @@
     
             }
             
-            $sizes_pricing .= '<option value="---">---</option>';
             
+        if($available_sizes == "in_code") {
+            $sizes_pricing .= '<option value="---">---</option>';
             foreach ($le_price_array_metal as $leKm => $leVm) {
                                 
                 $sizes_pricing .= '<option ' . $default . ' data-price="' . $leVm . '" data-mattedsize="0" data-material="metal" value="' . $leKm . '">SIZE: ' . $leKm . ' Metal</option>';
     
             }
+        }
             
         $sizes_pricing .= '
         </select>
