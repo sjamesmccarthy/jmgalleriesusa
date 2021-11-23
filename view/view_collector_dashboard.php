@@ -6,8 +6,8 @@
 
         <div class="col collector--main_container">
             <?= $mycollection_html ?>
-            
-            <!-- <?= $note_html ?>
+            <?= $note_html ?>
+            <!-- 
             <?= $myrewards_html ?>
             <?= $amazingoffer_html ?>
             <?= $polarized_html ?> -->
@@ -18,7 +18,8 @@
     
     <div class="grid">
         <div class="col signout">
-             <p class=""><a id="myaccount" href="">account</a> | <a href="/d/collector/signout?ref=collector">sign out</a></p>
+             <p class="">SAVE 25% ON YOUR NEXT FINE-ART PURCHASE WTH PROMO-CODE: <b>COLLECT1MORE</b> AT CHECKOUT / <a id="myaccount" href="">change PIN</a> / <a href="/d/collector/signout?ref=collector">sign out</a></p>
+             <p class="tiny">*Only valid for existing collectors, limit 1 per collector.</p>
         </div>
     </div>
         <?= $myaccount_html ?>

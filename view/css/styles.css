@@ -6408,14 +6408,10 @@ table.dataTable tbody td.valign {
 .collector--section div > p {
   text-align: center; }
 
-.collector--main_container .note-from-artist {
-  display: none; }
-
 .collector--main_container .note-from-artist p {
   margin-top: 10px;
-  font-size: 1.8rem;
-  padding: 0 64px;
-  font-family: 'Homemade Apple', cursive;
+  font-size: 1.5rem;
+  padding: 0 32px;
   line-height: 2; }
 
 .collector--main_container #note-close {
