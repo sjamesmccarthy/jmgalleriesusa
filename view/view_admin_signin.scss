@@ -1,5 +1,5 @@
 #login {
-    margin-top: 20vh;
+    margin-top: 10vh;
 }
 
 #login .signin--container {
@@ -9,7 +9,7 @@
 
     // xSmall devices (landscape phones, 320px and up)
     @media (min-width: 320px) { 
-        max-width: 60%;
+        max-width: 100%;
         // background-color: yellow;
         
         .form_pincode input {
@@ -23,13 +23,13 @@
         // background-color: blue;
         
         .form_pincode input {
-            width: 36px;
+            width: 40px;
         }
     }
     
     // Medium devices (tablets, 768px and up)
     @media (min-width: 767px) {
-        max-width: 50%;
+        max-width: 40%;
         // background-color: green;
     }
     

@@ -6,21 +6,10 @@
     
         <div class="col admin--main_container">
 
-             <div class="pt-40 pb-40">
+             <div class="pt-40 pb-16 text-center">
                  <!-- <p><?= $today ?></p> -->
-                 <h1 style="font-weight: 400">Hello <?= $first_name ?>,  here is your studio.</h1>
+                 <h1 style="font-weight: 400">Hello <?= $first_name ?> <i class="fab fa-angellist"></i> here is your studio.</h1>
              </div>
-             
-
-            <div class="grid">
-
-                <div class="col">
-                    <!-- quickstats -->
-                    <div style="display:none;">
-                        <?= $quickstats_html ?>
-                    </div>
-               </div>
-            </div>
             
             <div class="grid">
 

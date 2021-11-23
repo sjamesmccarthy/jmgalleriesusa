@@ -1,5 +1,14 @@
 <?php
 
+if($this->page->catalog_path == '/d/collector/signin') {
+    $title = 'jM Galleries';
+    $action_URI = '/d/collector/auth';
+    $redirect_BADLOGIN = '/d/collector/signin';
+} else {
+    $title = "the studio";
+    $action_URI = '/studio/auth';
+    $redirect_BADLOGIN = '/studio/signin';
+}
 
     if($_SESSION['error'] == 'auth_0') {
         $showError = 'showError';

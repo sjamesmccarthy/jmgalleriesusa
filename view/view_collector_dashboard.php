@@ -2,29 +2,26 @@
 <link href="https://fonts.googleapis.com/css2?family=Homemade+Apple&display=swap" rel="stylesheet">
 
 <section class="collector--section">
-    <div class="grid-12">
+    <div class="grid-center">
 
-        <div class="col-12 collector--main_container">
-
-           <div class="signout">
-               <p><span class="whoami"><?= $res_first_name ?> <?= $res_last_name ?> &mdash; </span><a id="myaccount" href="">account</a> | <a href="/d/collector/signout?ref=collector">sign out</a></p>
-            </div>
-
-            <?= $myaccount_html ?>
-            <?= $note_html ?>
-            
+        <div class="col collector--main_container">
             <?= $mycollection_html ?>
-            <?= $amazingoffer_html ?>
+            
+            <!-- <?= $note_html ?>
             <?= $myrewards_html ?>
-            <?= $polarized_html ?>
-
-            <article id="version">
-                <p class="tiny"><?= $this->config->package_version ?></p>
-           </article>
+            <?= $amazingoffer_html ?>
+            <?= $polarized_html ?> -->
 
         </div>
-
+        
     </div>
+    
+    <div class="grid">
+        <div class="col signout">
+             <p class=""><a id="myaccount" href="">account</a> | <a href="/d/collector/signout?ref=collector">sign out</a></p>
+        </div>
+    </div>
+        <?= $myaccount_html ?>
 </section>
 
 <script>
@@ -39,9 +36,16 @@
 
     }
     
-    $('#myaccount').on("click", function(e) {
+    $('#myaccount, .close-myaccount').on("click", function(e) {
         e.preventDefault();
         $('#my-account').toggle();
+    });
+    
+    $('.provenance, .provenance--close').on("click", function(e) {
+        e.preventDefault();
+        let id = $(this).attr('data-id');
+        $('#' + id).toggle();
+        $('.provenance--close').toggle();
     });
 
     $('#note-close').on("click", function() {

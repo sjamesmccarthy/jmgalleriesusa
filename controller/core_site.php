@@ -62,6 +62,10 @@ class Core_Site extends Core_Api
                 $sess_type = 'ADMIN';
                 $lifetime = $this->config->session_cookie_lifetime; /* 1 Day = 86400 */
                 session_set_cookie_params($lifetime,'/studio');
+            } else if ($route_check[1] == 'd'){
+                $sess_type = 'COLLECTOR';
+                $lifetime = $this->config->session_cookie_lifetime; /* until browser is closed */
+                session_set_cookie_params($lifetime,'/d');
             } else {
                 $sess_type = 'USER';
                 $lifetime = $this->config->session_cookie_lifetime; /* until browser is closed */
@@ -83,9 +87,21 @@ class Core_Site extends Core_Api
     
     public function checkSession() {
 
-        if( !isset($_SESSION['uid']) ) {
+        if( !isset($_SESSION['uid']) || $_SESSION['dashboard'] != "ARTIST") {
             $_SESSION['error'] = 'timeout';
             // $this->console($_SESSION,1);
+            return false;
+        } else {
+            return true;
+        }
+
+    }
+    
+    public function checkSessionCollector() {
+
+        if( !isset($_SESSION['uid']) || $_SESSION['dashboard'] != "COLLECTOR") {
+            $this->console($_SESSION);
+            $_SESSION['error'] = 'timeout';
             return false;
         } else {
             return true;
@@ -341,12 +357,12 @@ class Core_Site extends Core_Api
 
     public function component($component, $props=null) {
         
-        if ( !is_null($props)) { $props = "?" . $props; }
+        // if ( !is_null($props)) { $props = "?" . $props; }
         
         $file = $_SERVER['DOCUMENT_ROOT'] . '/view/component_' . $component;
 
         if( file_exists($file . ".php") ) {
-            $result = include_once($file . ".php" . $props);
+            $result = include_once($file . ".php");
         }
 
         return($result);

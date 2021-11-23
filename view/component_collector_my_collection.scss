@@ -1,8 +1,38 @@
 #my-collection {
 
-    border-bottom: 5px solid $color-gray;
+    // border-bottom: 5px solid $color-gray;
     padding-bottom: 2rem;
-
+    @extend .mt-16;
+    
+    h4 {
+        font-weight: 800;
+    }
+    
+    .image {
+        width: 100%;    
+    }
+    
+    .provenance {
+        
+        &--block {
+            display: none;
+            padding-left: 1rem;
+            border-left: 1px solid #CCC;
+            margin-left: 1rem;
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+        }
+        
+        &--record {
+            text-align: left;
+            border-bottom: 1px solid #CCC;
+        }
+        
+        &--close {
+            display: none;
+        }
+    }
+    
     .col-card {
         padding-top: 10px;
 
@@ -32,7 +62,8 @@
 
     .filmstrip-thumb {
         // max-width: 360px;
-        max-width: 310px;
+        // max-width: 310px;
+        @extend .pb-16;
     }
 
     .art-title {

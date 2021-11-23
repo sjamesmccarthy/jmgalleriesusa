@@ -7,8 +7,6 @@
     
     <body class="dark-theme">
     <!--  class="dark-theme" -->
-        
-        
             <main>
         
                 <?php $this->getPartial('nav'); ?>

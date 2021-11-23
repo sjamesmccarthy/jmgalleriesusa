@@ -16,7 +16,6 @@ $myrewards_points = round($myrewards_points['points']*1);
 $p_code = "ART15";
 
 /* GENERATE HTML BLOCK */
-if ($this->config->component_polarized == 'true') {  
 $html = <<< END
     <article id="rewards" class="mt-64">
         <div class="grid-4_sm-2 grid-4_md-3">
@@ -26,7 +25,7 @@ $html = <<< END
             <p class="mt-8">For every dollar you spend you will receive points, and once you reach 2,500 points you will be eligible for a free 11x14 Collector Proof of your choice. Also, please share our website with your family and friends, and if they purchase a Limited Edition Fine Art Collectible we will send you a tinyViews&trade; of your choice. Bazinga!</p>
             </div>
             
-            <div class="col-12">
+            <div class="col-12 hidden">
 
                 <div id="form_referrCollectorForm_container" class="mt-16">
                       
@@ -56,7 +55,6 @@ $html = <<< END
         </div>
     </article>
 END;
-}
 
 return($html);
 

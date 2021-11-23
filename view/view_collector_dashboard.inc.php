@@ -1,8 +1,9 @@
 <?php
 
+// $this->console($_SESSION,1);
 
 /* Check for Session, Parse Session into vars */
-if($this->checkSession()) {
+if($this->checkSessionCollector()) {
     $loginInfo = json_decode( $_SESSION['data'], true );
     extract($loginInfo, EXTR_PREFIX_SAME, "dup");
 } else {
@@ -14,27 +15,25 @@ $collector_data = $this->api_Admin_Get_Collector($_SESSION['collector_id']);
 extract($collector_data, EXTR_PREFIX_ALL, "res");
 $this->collector_data_obj = (object)$collector_data;
 
-// $this->printp_r($this->collector_data_obj);
-// $this->printp_r($_SESSION);
-
+// $this->console($this->collector_data_obj);
 
 /* ACCOUNT INFO */
 $myaccount_html = $this->component('collector_account');
 
 /* NOTE */
-$note_html = $this->component('collector_note');
+// $note_html = $this->component('collector_note');
 
 /* YOUR COLLECTION */
 $mycollection_html = $this->component('collector_my_collection',$res_collector_id);
 
 /* POLARIZED */
-$this->config->component_polarized = true;
-$polarized_html = $this->component('polarized');
+// $this->config->component_polarized = true;
+// $polarized_html = $this->component('polarized');
 
 /* MY REWARDS */
 $myrewards_html = $this->component('rewards');
 
 /* MY REWARDS */
-$amazingoffer_html = $this->component('amazingoffer');
+// $amazingoffer_html = $this->component('amazingoffer');
 
 ?>

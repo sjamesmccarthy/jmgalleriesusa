@@ -346,12 +346,13 @@ class Core_Api extends Fieldnotes_Api
     }
 
     public function api_CollectorDash_Get_Portfolio($id) {
-        
+         
         /* Executes SQL and then assigns object to passed var */
         if( $this->checkDBConnection(__FUNCTION__) == true) {
 
             $sql = "
             SELECT
+            A.art_id,
             A.title,
             A.reg_num, 
             A.print_size,
@@ -374,8 +375,8 @@ class Core_Api extends Fieldnotes_Api
             INNER JOIN collector AS C ON CERT.collector_id = C.collector_id
             INNER JOIN art AS A ON A.art_id = CERT.art_id
             LEFT JOIN catalog_photo AS CAT on CAT.catalog_photo_id = CERT.catalog_photo_id
-            WHERE C.collector_id = '" . $id . "'";
-
+            WHERE C.collector_id = '" . $id . "'  AND A.edition_style IN ('STUDIO','LIMITED')";
+          
             $result = $this->mysqli->query($sql);
 
             if ($result->num_rows > 0) {
@@ -1519,7 +1520,8 @@ class Core_Api extends Fieldnotes_Api
                 ALH.*,
                 AL.location,
                 A.art_id,
-                A.title
+                A.title,
+                A.value
             FROM
                 art_locations_history AS ALH
                 INNER JOIN art AS A ON A.art_id = ALH.art_id

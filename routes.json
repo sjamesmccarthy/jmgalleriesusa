@@ -116,6 +116,13 @@
         "component": "true",
         "title": "Authorizing"
     },
+    "/d/collector/auth": {
+        "template": "admin",
+        "page": "admin_auth",
+        "auth": "true",
+        "component": "true",
+        "title": "Authorizing"
+    },
     "/studio/signout": {
         "template": "admin",
         "page": "admin_signedout",

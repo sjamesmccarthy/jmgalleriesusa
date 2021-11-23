@@ -1450,7 +1450,7 @@ SASS, https://sass-lang.com/
 .mt-8, .checkout-notice {
   margin-top: 8px !important; }
 
-.mt-16, .foot-news {
+.mt-16, #my-collection, .foot-news {
   margin-top: 16px !important; }
 
 .mt-24 {
@@ -1630,7 +1630,7 @@ SASS, https://sass-lang.com/
 .pb-8 {
   padding-bottom: 8px !important; }
 
-.pb-16, .checkout-notice {
+.pb-16, #my-collection .filmstrip-thumb, .checkout-notice {
   padding-bottom: 16px !important; }
 
 .pb-24 {
@@ -2070,7 +2070,7 @@ body {
 main {
   max-width: 1280px;
   /* Half of 2560x2440 QHD displays */
-  margin: 1rem auto 0 auto;
+  margin: 3rem auto 0 auto;
   min-height: 90vh; }
 
 .content_wrapper {
@@ -2078,7 +2078,7 @@ main {
   margin: auto; }
   @media (min-width: 320px) {
     .content_wrapper {
-      width: 100%;
+      width: 90%;
       padding: 0; } }
   @media (min-width: 376px) {
     .content_wrapper {
@@ -2219,7 +2219,10 @@ blockquote {
   float: right; }
 
 .text-right {
-  text-align: right; }
+  text-align: right !important; }
+
+.text-left {
+  text-align: left !important; }
 
 .text-center, .center {
   text-align: center; }
@@ -5339,11 +5342,11 @@ div[id*='imgT']:hover {
     border-left: 1px solid #CCC; }
 
 #login {
-  margin-top: 20vh; }
+  margin-top: 10vh; }
 
 @media (min-width: 320px) {
   #login .signin--container .signin--area {
-    max-width: 60%; }
+    max-width: 100%; }
     #login .signin--container .signin--area .form_pincode input {
       width: 36px; } }
 
@@ -5351,11 +5354,11 @@ div[id*='imgT']:hover {
   #login .signin--container .signin--area {
     max-width: 100%; }
     #login .signin--container .signin--area .form_pincode input {
-      width: 36px; } }
+      width: 40px; } }
 
 @media (min-width: 767px) {
   #login .signin--container .signin--area {
-    max-width: 50%; } }
+    max-width: 40%; } }
 
 @media (min-width: 1440px) {
   #login .signin--container .signin--area {
@@ -6402,6 +6405,9 @@ table.dataTable tbody td.valign {
 .w-100 {
   width: 100%; }
 
+.collector--section div > p {
+  text-align: center; }
+
 .collector--main_container .note-from-artist {
   display: none; }
 
@@ -6477,8 +6483,23 @@ table.dataTable tbody td.valign {
   border: none; }
 
 #my-collection {
-  border-bottom: 5px solid #808080;
   padding-bottom: 2rem; }
+  #my-collection h4 {
+    font-weight: 800; }
+  #my-collection .image {
+    width: 100%; }
+  #my-collection .provenance--block {
+    display: none;
+    padding-left: 1rem;
+    border-left: 1px solid #CCC;
+    margin-left: 1rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem; }
+  #my-collection .provenance--record {
+    text-align: left;
+    border-bottom: 1px solid #CCC; }
+  #my-collection .provenance--close {
+    display: none; }
   #my-collection .col-card {
     padding-top: 10px; }
     #my-collection .col-card > p {
@@ -6491,8 +6512,6 @@ table.dataTable tbody td.valign {
     border-top: 0.5px solid rgba(0, 0, 0, 0.1);
     padding-top: 10px;
     margin-top: 10px; }
-  #my-collection .filmstrip-thumb {
-    max-width: 310px; }
   #my-collection .art-title {
     font-size: 2rem;
     font-weight: 400; }

@@ -16,30 +16,40 @@ $html = <<<END
 <input type="hidden" name="type" value="COLLECTOR" />
 
     <div class="grid">
-
-        <div class="col-12">
+        <div class="col">
         <h4>Change PIN Number</h4>
         </div>
-
-        <div id="change-pin" class="col-10">
-            <input class="half-size" maxlength="6" type="text" id="pin" name="pin" placeholder="New Pin (eg, 123456)" />
-            <input class="half-size" maxlength="6" type="text" id="pin_check" name="pin_check" placeholder="Confirm New Pin" /">
+    </div>
+    
+    <div class="grid">
+        <div id="change-pin" class="col-12">
+            <input class="" maxlength="6" type="text" id="pin" name="pin" placeholder="New Pin (eg, 123456)" />
+            <input class="" maxlength="6" type="text" id="pin_check" name="pin_check" placeholder="Confirm New Pin" /">
         </div>
-        <div class="col-2">
+    </div>
+    
+    <div class="grid">
+        <div class="col">
             <button id="pin_btn" value="SEND">UPDATE PIN</button>
        </div>
-        <div class="col-12 tryagain">
+     </div>
+     
+     <div class="grid">
+        <div class="col tryagain">
             <p class="tiny">To change PIN again, please refresh page</p>
        </div>
-
-        <div class="col-12">
-        <h4>Other Account Changes</h4>
-        </div>
-
-        <div id="change-pin" class="col-10">
+    </div>
+    
+    <div class="grid">
+        <div id="change-pin" class="col">
             <p>If need assistance updating any other account information, such as email, please submit a request through our <a href="/contact">contact form</a>.</p>
         </div>
-
+    </div>
+    
+    <div class="grid">
+        <div class="col text-right">
+            <a href="" class="close-myaccount"><i class="fas fa-times"></i></a>
+        </div>
     </div>
 </form>
 </article>

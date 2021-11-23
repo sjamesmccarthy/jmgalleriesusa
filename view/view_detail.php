@@ -37,7 +37,7 @@
         <!-- <p class="small blue" style="margin-bottom: -10px; margin-left: 5px;">USD</p> -->
         <p class="blue price">$<span id="price_view" class="price"><?= number_format($default_price, 0) ?></span></p>
         <p class="frame_data blue text-center pb-16"></p>
-      <?= $btn_link ?><button><?= $btn ?></button></a>
+      <button><?= $btn ?></button>
       
       <?= $sizes_pricing ?>
       <?= $sizes_frames ?>

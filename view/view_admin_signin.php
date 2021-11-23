@@ -1,10 +1,11 @@
 <section id="login" class="form">
-  <div class="grid-2-center signin--container">
+  <div class="grid-center signin--container">
   
     <div class="col signin--area">
-      <h1 class="pb-16 text-center light">the studio</h1>
-      <form action="/studio/auth" class="" autocomplete="off" method="post">
+      <h1 class="pb-16 text-center light"><?= $title ?></h1>
+      <form action="<?= $action_URI ?>" class="" autocomplete="off" method="post">
         <input type="hidden" name="state" value="auth" />
+        <input type="hidden" name="redirect_BADLOGIN" value="<?= $redirect_BADLOGIN ?>" />
 
         <div>
         <label for="username">username</label>

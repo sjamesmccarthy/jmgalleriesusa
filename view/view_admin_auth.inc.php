@@ -19,7 +19,7 @@
             $_SESSION['data'] = $session_data = json_encode($auth);
             // $_SESSION['useragent'] = $_SERVER['HTTP_USER_AGENT'];
             header('location:/d/collector');
-            exit;
+            break;
 
             default:
             header('location:/404');
@@ -28,7 +28,7 @@
     } else {
         $_SESSION['error'] = 'auth_0';
         $_SESSION['login_attempt'] = $_SESSION['login_attempt'] + 1;
-        header('location:/studio/signin');
+        header('location:' . $_POST['redirect_BADLOGIN']);
     }
 
 ?>
