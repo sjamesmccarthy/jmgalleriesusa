@@ -64,9 +64,10 @@ if(isSet($this->routes->URI->queryvals)) {
             </section>';
 
     if($user_count >= 1) {
-        $user_account_html = "<a href='/studio/users-add?id=" . $user_data['user_id'] . "'>User Account Active.</a> Last activity on " . date("F jS, Y", strtotime($user_data['created']));
+        $clean_date = date("F j, Y \\a\\t h:m a T", strtotime($user_data['last_login']));
+        $user_account_html = "<ul><li><a href='/studio/users-add?id=" . $user_data['user_id'] . "'>ACTIVE (" . $user_data['username'] . ")</a> &mdash; Last seen on " . $clean_date . " from " . $user_data['last_login_ip'] . "</li></ul>";
     } else {
-        $user_account_html = '<a href="/studio/users-add?e=' . $res_email . '&id=' . $res_collector_id . '">Activate User Account for this collector</a>';
+        $user_account_html = '<ul><li><b class="text-red">INACTIVE</b> &mdash; <a href="/studio/users-add?e=' . $res_email . '&id=' . $res_collector_id . '&type=COLLECTOR">ACTIVATE USER ACCOUNT for this collector</a><li>';
     }
 
     $this->page->title = "Editing Collector Profile: <b>" . $res_first_name ." " . $res_last_name .  "</b>";

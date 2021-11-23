@@ -125,6 +125,7 @@
 
     /* If as_GALLERY is set */
     if( $photo_meta['as_gallery'] == 1) {
+        
         $ed_G = true;
         $edition = "limited";
         $product_id = 1;
@@ -137,8 +138,13 @@
 
         /* Picking a default value to show */
         if($available_sizes != "in_code") { 
-            $le_price_array = json_decode($available_sizes, true);
-            $le_price_array_metal = json_decode($this->config->le_pricing_metal, true);
+            
+            $custom_price_array = explode('|',$available_sizes);
+            $le_price_array = json_decode($custom_price_array[0], true);
+            $le_price_array_metal = json_decode($custom_price_array[1], true);
+            
+            // $le_price_array = json_decode($available_sizes, true);
+            // $le_price_array_metal = json_decode($this->config->le_pricing_metal, true);
         } 
        
         foreach ($le_price_array as $paK => $paV) {
@@ -168,21 +174,21 @@
         
             foreach ($le_price_array as $leK => $leV) {
                 
-                if($leK == $default_size) { $default = 'SELECTED'; } else { $default = null; }
+                // if($leK == $default_size) { $default = 'SELECTED'; } else { $default = null; }
     
                 $sizes_pricing .= '<option ' . $default . ' data-price="' . $leV . '" data-mattedsize="0" data-material="acrylic" value="' . $leK . '">SIZE: ' . $leK . ' Acrylic</option>';
     
             }
             
             
-        if($available_sizes == "in_code") {
+        // if($available_sizes == "in_code") {
             $sizes_pricing .= '<option value="---">---</option>';
             foreach ($le_price_array_metal as $leKm => $leVm) {
                                 
                 $sizes_pricing .= '<option ' . $default . ' data-price="' . $leVm . '" data-mattedsize="0" data-material="metal" value="' . $leKm . '">SIZE: ' . $leKm . ' Metal</option>';
     
             }
-        }
+        // }
             
         $sizes_pricing .= '
         </select>
@@ -231,7 +237,7 @@
         /* Picking a default value to show */
         if($available_sizes != "in_code") { 
             $tv_price_array = json_decode($available_sizes, true);
-        } 
+        }
 
         $price_count = sizeof($tv_price_array);
         

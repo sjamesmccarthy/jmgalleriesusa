@@ -13,6 +13,9 @@
             <li>Checkout bugfixes</li>
             <li>New Collector portal RC1 moved to production including Provenance tracking</li>
             <li>Added Product Index for Shop in Admin</li>
+            <li>bugfix Collector to User account and last login data</li>
+            <li>bugfix custom sizes and prices now display properly on detail page</li>
+            <li>update custom sizes and prices now accept two JSON objects for acrylic|metal</li>
             </ul> 
         </p>
         

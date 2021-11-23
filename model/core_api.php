@@ -1490,7 +1490,7 @@ class Core_Api extends Fieldnotes_Api
         if( $this->checkDBConnection(__FUNCTION__) == true) {
 
             $sql = "
-            select user_id, created, last_update from user where collector_id='" . $id . "'";
+            select user_id, username, created, last_update, last_login, last_login_ip from user where collector_id='" . $id . "'";
         
             $result = $this->mysqli->query($sql);
 
@@ -3190,14 +3190,14 @@ public function api_Admin_Get_Materials_By_Supplier($id) {
 
         /* Determine Artist or Collector */
         if($type == 'ARTIST') {
-            $add_artist_id =  "`artist_id`,";
+            $add_artist_id =  "artist_id,";
         } else {
-            $add_collector_id =  "`collector_id`,";
+            $add_collector_id =  "collector_id,";
         }
 
         /* Insert into database */
-        $sql = "INSERT INTO `" . $this->config_env->env[$this->env]['dbname']  . ".`user` 
-        ({$add_artist_id} {$add_collector_id}  `type`, `status`, `username`, `pin`, `last_login_ip`) 
+        $sql = "INSERT INTO user
+        ({$add_artist_id} {$add_collector_id}  type, status, username, pin, last_login_ip) 
         VALUES (
             '{$ac_id}',
             '{$type}', 
@@ -3341,7 +3341,7 @@ public function api_Admin_Get_Materials_By_Supplier($id) {
         }
 
         /* Insert into database */
-        $sql = "UPDATE `" . $this->config_env->env[$this->env]['dbname']  . "`.`user` SET last_login='" . date ("Y-m-d H:i:s", time()) . "', last_login_ip='" . $IP . "' WHERE user_id ='" . $uid . "'";
+        $sql = "UPDATE user SET last_login='" . date ("Y-m-d H:i:s", time()) . "', last_login_ip='" . $IP . "' WHERE user_id ='" . $uid . "'";
 
         $result = $this->mysqli->query($sql);
         

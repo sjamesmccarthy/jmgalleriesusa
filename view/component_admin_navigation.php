@@ -31,7 +31,7 @@ foreach ($apps_list as $k_aps => $v_apps) {
     $nav_html .= '
         <div class="toolbox">
             <ul class="' . $v_apps['short_code'] . ' ' . $v_apps['short_code'] . '-add">
-            <li class="' . $v_apps['short_code'] . ' ' . $v_apps['short_code'] . '-add"><span style="font-size: 24px;vertical-align: middle;">' . $v_apps['icon'] . '</span> <a style="margin-left: 1rem;" href="/studio/' . $v_apps['short_code'] . '">'. $v_apps['title'] . '</a>';
+            <li class="' . $v_apps['short_code'] . ' ' . $v_apps['short_code'] . '-add"><span style="font-size: 1rem;vertical-align: middle;">' . $v_apps['icon'] . '</span> <a style="margin-left: 1rem;" href="/studio/' . $v_apps['short_code'] . '">'. $v_apps['title'] . '</a>';
             
     if($v_apps['add_new'] == 1) {
         $nav_html .= '

@@ -1456,7 +1456,7 @@ SASS, https://sass-lang.com/
 .mt-24 {
   margin-top: 24px !important; }
 
-.mt-32, .footer-links, .collection-list {
+.mt-32, .collectors-add--container #purchases, .collectors-add--container .user--account, .footer-links, .collection-list {
   margin-top: 32px !important; }
 
 .mt-40 {
@@ -2226,6 +2226,9 @@ blockquote {
 
 .text-center, .center {
   text-align: center; }
+
+.text-red {
+  color: #721c24; }
 
 .noshow {
   display: none !important; }

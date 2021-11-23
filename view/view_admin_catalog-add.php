@@ -148,7 +148,7 @@
                     
                 <div class="half-size" >
                     <!-- <input class="half-size" type="text" id="desc" name="desc" placeholder="DESCRIPTION OF MATERIAL (eg, paper or acrylic)" value="<?= $desc ?>" required> -->
-                    <label>available sizes</label>
+                    <label>custom sizes & pricing (acrylic|metal)</label>
                     <input type="text" id="available_sizes" name="available_sizes" placeholder="AVAILABLE SIZES (in_code = default, otherwise use JSON)" value="<?= $available_sizes ?>" required>
                 </div>
             </div>

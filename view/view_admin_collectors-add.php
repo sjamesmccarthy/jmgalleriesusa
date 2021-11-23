@@ -60,7 +60,8 @@
                 <input class="half-size" type="text" id="country" name="country" placeholder="COUNTRY (eg, US)" value="<?= $res_country ?>">
             </div>
 
-            <div>
+            <div class="user--account">
+                <h4>User Account Status</h4>
                 <p class="c_act_status"><?= $user_account_html ?></p> 
             </div>
 

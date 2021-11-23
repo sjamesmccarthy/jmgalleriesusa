@@ -24,6 +24,7 @@
 
 switch($_POST['formTypeAction']) {
 
+
 	case "insert":
 		$this->api_Admin_Insert_Users();
 		$redirect_to = '/users';

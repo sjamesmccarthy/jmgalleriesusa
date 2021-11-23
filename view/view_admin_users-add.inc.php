@@ -8,13 +8,16 @@ if($this->checkSession()) {
     header('location:/studio/signin');
 }
 
-if(count($this->data->routePathQuery) == 2) {
+if(count($this->data->routePathQuery) > 2) {
     
     $username_query = explode('=', $this->data->routePathQuery[0]);
     $res_username = $username_query[1];
     
     $collector_id_query = explode('=', $this->data->routePathQuery[1]);
     $ac_id = $collector_id_query[1];
+    
+    $type_query = explode('=', $this->data->routePathQuery[2]);
+    $res_type = $type_query[1];
     
     unset($this->routes->URI->queryvals);
 } 
@@ -58,7 +61,6 @@ if(isSet($this->routes->URI->queryvals)) {
 
 /* Get List of Apps */
 $apps_list = $this->api_Admin_Get_Apps();
-
 foreach ($apps_list AS $k_apps => $v_apps) {
     
     $apps_html .= '<li><input type="checkbox" id="apps-' . $v_apps['short_code'] . '" name="apps[]" value="' . $v_apps['user_apps_id'] . '"';
@@ -69,6 +71,10 @@ foreach ($apps_list AS $k_apps => $v_apps) {
                 $apps_html .= "CHECKED";
             }
         }
+    } else {
+       if($res_type == "COLLECTOR" && $v_apps['short_code'] == "collectordash") {
+             $apps_html .= "CHECKED";
+          } 
     }
 
     $apps_html .= '/> 
@@ -88,7 +94,12 @@ foreach ($roles_list AS $k_roles => $v_roles) {
                 $roles_html .= "CHECKED";
             }
         }
+    } else {
+       if($res_type == "COLLECTOR" && $v_roles['role'] == "COLLECTOR") {
+          $roles_html .= "CHECKED";
+       } 
     }
+    
         $roles_html .= '/> 
         <label for="role-' . $v_roles['role'] . '" style="font-size: 1.2rem; background-color: transparent;">' . $v_roles['role'] . '</label></li>';
 
