@@ -8,6 +8,14 @@
 
         <div class="col-11" style="position: relative">
 
+        <p class="pt-16">v1.7.9<br />Nov 23, 2021</p>
+            <ul>
+            <li>Checkout bugfixes</li>
+            <li>New Collector portal RC1 moved to production including Provenance tracking</li>
+            <li>Added Product Index for Shop in Admin</li>
+            </ul> 
+        </p>
+        
         <p class="pt-16">v1.7.8<br />Nov 20, 2021</p>
             <ul>
             <li>New and updated admin dashboard components</li>
@@ -343,10 +351,11 @@
 
         <hr class="mt-32" />
         <p class="mt-32">jM Galleries is powered by STUDIO610, software written for artists made by artists.</p>
-        <p>It includes a custom template engine, customer relation and inventory component as well as suite of tools for art collectors.</p>
-        <p class="mt-32">Built using PHP7, MySQL and jQuery on a Macbook Pro.</p>
-        <p>Applications used include: Sketch, VS Code, TablePlus, CodeKit, CaptureOne 20, Transmit and <a href="https://github.com/sjamesmccarthy/jmgalleriesusa">GitHub.</a></p>
-        <p class="mt-32">If you're an artist or photographer and are interested in using STUDIO610 <a href="/contact">please contact me for a demo.</a></p>
+        <p>It includes a custom template engine, customer relation manager (CRM) and inventory component module, a shop (with Stripe payments), a provenance manager and collector portal, as well as a suite of other tools for art collectors.</p>
+        <p class="mt-32">Built using PHP7, MySQL and jQuery using MacOS&reg;</p>
+        <p>Applications used include: Nova, Sketch, VS Code, TablePlus, CodeKit, CaptureOne Pro, Affinity Photo & Designer, Transmit, MAMP Pro and GitHub.</p>
+        <p class="mt-32">If you're an artist or photographer and are interested in using STUDIO610 please <a href="/contact">contact me</a> for a demo.</p>
+        <p>Custom packages start at $5,000 and $350/year for hosting. If you'd like to <a href="https://github.com/sjamesmccarthy/jmgalleriesusa">contribute code to the project</a> please DM me on Twitter @jmgalleriesusa.</p>
         </div>
  
     </div>
