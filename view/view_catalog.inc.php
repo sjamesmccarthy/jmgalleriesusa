@@ -51,7 +51,7 @@
         if( !$catalog_photos['error']) {
             foreach($catalog_photos as $k => $v) {
                 
-                if($v['as_gallery'] == 1) {
+                if($v['as_limited'] == 1) {
                 $data_filter_G = 'f-gallery'; 
                 $edition_desc = str_replace("{limited_edition_max}", $this->config->limited_edition_max, $this->config->edition_description_limited);
                 $desc_editions = "<p>" . $edition_desc  . "</p>"; 
@@ -109,7 +109,7 @@
                 } 
                 else { $data_filter_O = null; }
 
-                // if($v['as_gallery'] == 1) { 
+                // if($v['as_limited'] == 1) { 
                 //     $data_filter_G = 'f-gallery'; 
                 //     $desc_editions = "<p>Limited Edition of " . $this->config->limited_edition_max  . " plus 2 Artist Proofs</p>"; 
                 //     $available_sizes = "16x24, 20x30 24x36"; } 

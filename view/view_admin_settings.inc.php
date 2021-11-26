@@ -23,6 +23,7 @@
     /* CORE - LIST OF SETTINGS IN config.json */
 
     extract( (array)$this->config, EXTR_PREFIX_SAME, "dup");
+   
     $code_block = (array) $this->config;
 
     /* CORE - LIST OF NOTICES IN data_notices.json */

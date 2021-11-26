@@ -14,6 +14,9 @@
     $category_data = $this->api_Admin_Get_Catalog_Categories();
     // print_r($category_data);
     
+    // Fetch Edition Styles & Max Editions
+    $edition_styles_array = json_decode($this->config->edition_types, TRUE);
+    
     /* CHECK TO SEE IF THIS IS AN EDIT OR ADD NEW */
     if(isSet($this->routes->URI->queryvals)) {
         $edit_id = $this->routes->URI->queryvals[1];
@@ -24,19 +27,36 @@
 
         $available_sizes = htmlspecialchars($available_sizes);
 
-        if($as_gallery == "1") {
-            $previous_edition = "as_gallery";
+        if($as_limited == "1") {
+            $previous_edition = "as_limited";
             $edition_label = "LE";
+            
+            if(array_key_exists('limited', $edition_styles_array)) { 
+                $edition_desc = 'Limited Edition'; 
+                $edition_max = " / " . $edition_styles_array['limited'];
+            }
         } 
 
         if($as_studio == "1") {
             $previous_edition = "as_studio";
             $edition_label = "LE";
+            
+            if(array_key_exists('studio', $edition_styles_array)) { 
+                $edition_desc = 'Studio Edition'; 
+                $edition_max = " / " . $edition_styles_array['limited'];
+            }
+    
         } 
 
         if($as_open == "1") {
             $previous_edition = "as_open";
             $edition_label = "OT";
+            
+            if(array_key_exists('open', $edition_styles_array)) { 
+                $edition_desc = 'Open Edition'; 
+                $edition_max = " / " . $edition_styles_array['limited'];
+            }
+                
         } 
 
         $collections_data = $this->api_Admin_Get_CollectionsByPhoto($catalog_photo_id, $parent_collections_id);
@@ -108,7 +128,7 @@
         $as_open = 0;
         $as_studio = 1;
         $as_tinyview = 0;
-        $as_gallery = 0;
+        $as_limited = 0;
         $print_media = "paper";
         $available_sizes = "in_code";
         $lens_model = "Nikkor Z 24-200";

@@ -8,44 +8,43 @@
         header('location:/studio/signin');
     }
 
-
-if(count($this->data->routePathQuery) > 2) {
-    
-    foreach($this->data->routePathQuery as $key => $val) {
-        $params[] = explode('=', $val); // fastest but not best way to handle this
-    }
-
-    $title = $params[2][1];
-    if($params[4][1] == 'tinyviews') {
-        $edition_style = "OPEN";
-    } else {
-        $edition_style = "GALLERY";
-    }
-
-    $edition_num_max = $this->config->limited_edition_max;
-    $print_size = $params[5][1];
-    $print_media = "PAPER";
-    $frame_desc = urldecode($params[6][1]);
-    $listed = $params[7][1];
-    $value = $params[8][1];
-    $negative_file = $params[9][1];
-    $acquired_from = "WEB ORDER";
-    $purchase_date = urldecode($params[10][1]);
-
-    // collector ID set below $params[3][1]
-    $redirect_url = "<input type='hidden' name='orders_redirect' value='" . $params[0][1] . "' />";
-    $redirect_url .= "<input type='hidden' name='product_order_id' value='" . $params[0][1] . "' />";
-
-
-    unset($this->routes->URI->queryvals);
-} else {
-    $redirect_url = null;
-}
+        /* What is this code block for again? Thu, 25 Nov 2021 */
+        if(count($this->data->routePathQuery) > 2) {
+            
+            foreach($this->data->routePathQuery as $key => $val) {
+                $params[] = explode('=', $val); // fastest but not best way to handle this
+            }
+        
+            $title = $params[2][1];
+            if($params[4][1] == 'tinyviews') {
+                $edition_style = "OPEN";
+            } else {
+                $edition_style = "GALLERY";
+            }
+        
+            $edition_num_max = $this->config->limited_edition_max;
+            $print_size = $params[5][1];
+            $print_media = "PAPER";
+            $frame_desc = urldecode($params[6][1]);
+            $listed = $params[7][1];
+            $value = $params[8][1];
+            $negative_file = $params[9][1];
+            $acquired_from = "WEB ORDER";
+            $purchase_date = urldecode($params[10][1]);
+        
+            // collector ID set below $params[3][1]
+            $redirect_url = "<input type='hidden' name='orders_redirect' value='" . $params[0][1] . "' />";
+            $redirect_url .= "<input type='hidden' name='product_order_id' value='" . $params[0][1] . "' />";
+        
+        
+            unset($this->routes->URI->queryvals);
+        } else {
+            $redirect_url = null;
+        }
+        /* ****** */
 
     /* Get Supplier_Materials for drop select list */
     $supplier_materials_data = $this->api_Admin_Get_Inventory_Supplier_Materials();
-    // print "fetch.api_Admin_Get_Inventory_Supplier_Materials()";
-    // $this->printp_r($supplier_materials_data);
 
         if( count($supplier_materials_data) > 0) {
             $materials_html .= "<option>--manual entry</option>";
@@ -62,6 +61,8 @@ if(count($this->data->routePathQuery) > 2) {
             }
     }
 
+    $coa_html = "<p class='coa_list'>No COAs were found for this artwork, perhaps it hasn't been sold yet.</p>";
+    
     /* CHECK TO SEE IF THIS IS AN EDIT OR ADD NEW */
     if(isSet($this->routes->URI->queryvals)) {
         
@@ -73,11 +74,6 @@ if(count($this->data->routePathQuery) > 2) {
         /* Fetch locations history data */
         $locationsHistory_data = $this->api_Admin_Get_Locations_History($edit_id);
         
-        // print "Hello / ";
-        // print_r($locationsHistory_data);
-        // exit;
-        
-
         if($art_location_id == "3" || $art_location_id == "11" || $art_location_id == "9" || $art_location_id == "8") {
             // 3 = Sold (Collector) : 11 = Sold (non-collector)
             $btn_readonly = 'disabled';
@@ -111,7 +107,13 @@ if(count($this->data->routePathQuery) > 2) {
         } 
 
         $edit_data['coa'] = $this->api_Admin_Get_Inventory_COA($edit_id);
-
+        
+        if($edition_style == "STUDIO" || $edition_style == "LIMITED") {
+            $coa_css = '_show-container';    
+        } else {
+            $coa_css = null;
+        }
+        
         if( count($edit_data['coa']) > 0) {
         extract($edit_data['coa'][0], EXTR_PREFIX_SAME, "dup");
 
@@ -120,7 +122,7 @@ if(count($this->data->routePathQuery) > 2) {
             }
 
         } else {
-            $coa_html = "<p class='coa_list'>No COAs were found for this artwork, perhaps it hasn't been sold yet.</p>";
+            // $coa_html = "<p class='coa_list'>No COAs were found for this artwork, perhaps it hasn't been sold yet.</p>";
         }
 
         /* Costs for Art */
@@ -289,4 +291,54 @@ if(count($this->data->routePathQuery) > 2) {
         $collector_html .= '<option ' . $selected . ' value="' . $val_col['collector_id'] . '">' . $val_col['first_name'] . ' ' . $val_col['last_name'] .  $company . '</option>';
     }
 
+    /* GET EDITIONS AND MAX EDITIONS */    
+    $edition_styles_array = json_decode($this->config->edition_types, TRUE);
+    
+        $series_num = 0;
+        $artist_proof = 0;
+        
+        $edition_menu = '<div class="select-wrapper half-size vtop">
+                            <label for="edition-style">EDITION-STYLE: ' . $edition_style . '</label>
+                            <select id="edition_style" name="edition_style"' . $btn_readonly . ' >
+                            <option value="- - -" />- - - </option>';
+        
+        if(array_key_exists('open', $edition_styles_array)) { 
+            $edition_desc = 'OPEN'; 
+            if($edition_desc == $edition_style) { $selected = 'SELECTED'; } else { $selected = null; }
+            $edition_menu .= '<option ' . $selected . ' data-max-ed="' . $edition_styles_array['open'] . '" value="OPEN">' . $edition_desc . ' Ed.</option>';
+            $edition_max = $edition_styles_array['open'];
+        }
+        
+        if(array_key_exists('studio', $edition_styles_array)) { 
+            $edition_desc = 'STUDIO'; 
+            if($edition_desc == $edition_style) { $selected = 'SELECTED'; } else { $selected = null; }
+            $edition_menu .= '<option ' . $selected . ' data-max-ed="' . $edition_styles_array['studio'] . '" value="STUDIO">' . $edition_desc . ' Ed.</option>';
+            $edition_max = $edition_styles_array['studio'];
+        }
+        
+        if(array_key_exists('limited', $edition_styles_array)) { 
+            $edition_desc = 'LIMITED'; 
+            if($edition_desc == $edition_style) { $selected = 'SELECTED'; } else { $selected = null; }
+            $edition_menu .= '<option ' . $selected . ' data-max-ed="' . $edition_styles_array['limited'] . '" value="LIMITED">' . $edition_desc . ' Ed.</option>';
+            $edition_max = $edition_styles_array['limited'];
+        }
+        
+        $edition_menu .= '</select>
+                                </div>';
+    
+    /* Get Catalog IDs and names */
+    $catalog_ids = $this->api_Admin_Get_Photo_Catalog('all');
+    
+    $catalog_ids_html = '<div class="select-wrapper half-size vtop">
+    <label for="catalog_photo_id">Catalog Id</label>
+    <select id="catalog_photo_id" name="catalog_photo_id">
+    <option value="- - -" />- - - </option>';
+    
+    foreach ($catalog_ids as $catK => $catV) {
+        if($catV['catalog_photo_id'] == $catalog_photo_id) { print "matchFound: " + $catV['catalog_photo_id']; $selected = 'SELECTED'; } else { $selected = null; }
+        $catalog_ids_html .= '<option ' . $selected . ' value="' . $catV['catalog_photo_id'] . '">' . $catV['title'] . ' (' . $catV['catalog_photo_id'] . ')</option>';
+    }
+    
+    $catalog_ids_html .= '</select>
+    </div>';
 ?>

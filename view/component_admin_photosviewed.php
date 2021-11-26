@@ -15,7 +15,7 @@ $photosviewed_data = $this->api_Admin_Component_Photos_Viewed();
 foreach($photosviewed_data as $key=>$val) {
 
     $date = date("h:i A, F j, Y", strtotime($val['updated']));
-    if($val['as_gallery'] == '1') { $edition = 'Limited'; }
+    if($val['as_limited'] == '1') { $edition = 'Limited'; }
     if($val['as_studio'] == '1') { $edition = 'Studio'; }
     if($val['as_open'] == '1') { $edition = 'Open'; }
     if($val['featured'] == '1') { $featured_icon = '<i class="fas fa-star-of-life"></i>'; $featured = '<p class="featured">' . $featured_icon . '</p>'; } else { $featured = null; $featured_icon = null; }

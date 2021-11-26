@@ -30,7 +30,7 @@
 
             foreach($catalog_photos as $k => $v) {
                 
-                if($v['as_gallery'] == 1) {
+                if($v['as_limited'] == 1) {
                     $edition_desc = str_replace("{limited_edition_max}", $this->config->limited_edition_max, $this->config->edition_description_limited);
                     $desc_editions = "<p>" . $edition_desc  . "</p>"; 
                     $available_sizes = $this->config->available_sizes_limited; } 

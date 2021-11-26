@@ -22,12 +22,11 @@
 
     /* API - LIST OF PHOTOS IN CATALOG */
     $data_html = $this->api_Admin_Get_Inventory();
-    // $this->console($data_html,1);
-    // $active_inventory_count = array_count_values(array_column($data_html, 'status'))['ACTIVE'];
     $active_inventory_count = count($data_html);
     $total_inventory_count = $this->mysqli->affected_rows;
     $data_json = json_encode($data_html);
 
+    /* Set default filters */
     if(isSet($this->routes->URI->queryvals )) {
         $filter = $this->routes->URI->queryvals[1];
         $active_filter = null;

@@ -2234,7 +2234,7 @@ blockquote {
   display: none !important; }
 
 .show {
-  display: block2; }
+  display: block; }
 
 .close-x {
   position: absolute;
@@ -3353,7 +3353,7 @@ button a {
   padding-right: 32px; }
   .navigation--container .add-icon-nav {
     position: absolute;
-    top: 23px;
+    top: 16px;
     right: 14px; }
   .navigation--container .disabled {
     color: rgba(0, 0, 0, 0.2); }
@@ -5568,6 +5568,11 @@ div[id*='imgT']:hover {
     position: relative; }
     .inventory-add--container .admin-header h2 {
       font-weight: 300; }
+  .inventory-add--container .coa--container {
+    display: none;
+    border-bottom: 1px solid #e4e4e4; }
+    .inventory-add--container .coa--container._show-container {
+      display: block; }
   .inventory-add--container #material_expenses_list {
     padding: 1rem 0; }
   .inventory-add--container .hide {

@@ -11,7 +11,7 @@
                     $img_file = 'image_not_found';
                 }
 
-                if($v['as_gallery'] == '1') {
+                if($v['as_limited'] == '1') {
                     $edition_html = $this->config->edition_description_limited;
                 }
 

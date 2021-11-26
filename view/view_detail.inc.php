@@ -12,29 +12,10 @@
     $collection_detail = $this->api_Admin_Get_Collections_Item($photo_meta['parent_collections_id']);
     $catalog_code = $collection_detail['catalog_code'];
 
-    // switch($photo_meta['parent_collections_id']) {
-
-    //     case "1":
-    //     $catalog_code = 'OLW';
-    //     break;
-
-    //     case "2":
-    //     $catalog_code = 'MDT';
-    //     break; 
-
-    //     case "3":
-    //     $catalog_code = 'AAP';
-    //     break; 
-
-    //     case "5":
-    //     $catalog_code = 'FFC';
-    //     break; 
-
-    //     default:
-    //     $catalog_code = 'UNKNOWN_VALUE';
-
-    // }
-
+    /* Get Edition types and max_editions */
+    $edition_styles_array = json_decode($this->config->edition_types, TRUE);
+    // $edition_styles = array_keys($edition_styles_array);
+    
     if(isSet($photo_meta['catalog_photo_id'])) {
         $this->api_Update_Photo_Viewed($photo_meta['catalog_photo_id']);
     }
@@ -52,7 +33,7 @@
     $le_frames_pricing = json_decode($this->config->le_frames_pricing, true);
 
     /* Determine if the "VirtualRoom" photo exists */
-    if( file_exists($_SERVER['DOCUMENT_ROOT'] . "/catalog/__image/" . $photo_meta['file_name'] . '-room.jpg') && $photo_meta['as_gallery'] == "0" ) {
+    if( file_exists($_SERVER['DOCUMENT_ROOT'] . "/catalog/__image/" . $photo_meta['file_name'] . '-room.jpg') && $photo_meta['as_limited'] == "0" ) {
         $in_roomImg = '<div class="col"><img class="in-room-img" src="/catalog/__image/' . $photo_meta['file_name'] . '-room.jpg" alt="' . $photo_meta['file-name'] . '" /></div>';
         $tv=1;
     } else {
@@ -123,8 +104,8 @@
     }
 
 
-    /* If as_GALLERY is set */
-    if( $photo_meta['as_gallery'] == 1) {
+    /* If as_limited is set */
+    if( $photo_meta['as_limited'] == 1) {
         
         $ed_G = true;
         $edition = "limited";
@@ -132,8 +113,14 @@
         $catalog_no = $catalog_code . $photo_meta['catalog_photo_id'] . "LE";
         $matted_size_default ="0";
         
-        $edition_desc = $this->config->edition_description_limited;
-        $edition_max  = ' / ' . $this->config->limited_edition_max;
+        // $edition_desc = $this->config->edition_description_limited;
+        // $edition_max  = ' / ' . $this->config->limited_edition_max;
+        
+        if(array_key_exists('limited', $edition_styles_array)) { 
+            $edition_desc = 'Limited Edition'; 
+            $edition_max = " / " . $edition_styles_array['limited'];
+        }
+        
         $hidden_edition_type = '<input type="hidden" name="edition_type" value="limited" />';
 
         /* Picking a default value to show */
@@ -224,9 +211,14 @@
         // if($ed_G === true || $ed_S === true) { $as_editions_tmp .= ", "; }
         // $as_editions_tmp .= "";
 
-        $edition_desc = $this->config->edition_description_open;
-        $edition_desc_material_slash = null;
-        $edition_max = null;
+        // $edition_desc = $this->config->edition_description_open;
+        // $edition_desc_material_slash = null;
+        // $edition_max = null;
+        
+        if(array_key_exists('open', $edition_styles_array)) { 
+            $edition_desc = 'Open Edition'; 
+            $edition_max = null;
+        }
 
         $hidden_edition_type = '<input type="hidden" name="edition_type" value="open" />';
 
@@ -265,7 +257,7 @@
             if($tvP[0] == $default_size) { $default = 'SELECTED'; } else { $default = null; }
             // $this->console($tvP);
 
-            if($photo_meta['as_gallery'] == "0" && $tvP[0] == "5x7NC") {
+            if($photo_meta['as_limited'] == "0" && $tvP[0] == "5x7NC") {
 
                 if( file_exists($_SERVER['DOCUMENT_ROOT'] . "/catalog/__image/" . $photo_meta['file_name'] . '-tinyviews-notes.jpg') ) {
                     $tinyviewNotesImage = '<div class="col"><img class="in-room-img"  src="/catalog/__image/' . $photo_meta['file_name'] . '-tinyviews-notes.jpg" alt="' . $photo_meta['file_name'] . '" /></div>';
@@ -277,10 +269,10 @@
                      $tv=0;
                 }
 
-            } else if ($photo_meta['as_gallery'] == "0" && $tvP[0] == "8x8") {
+            } else if ($photo_meta['as_limited'] == "0" && $tvP[0] == "8x8") {
 
                 /* Determine if the "TinyViews photo exists */
-                if( file_exists($_SERVER['DOCUMENT_ROOT'] . "/catalog/__image/" . $photo_meta['file_name'] . '-tinyviews.jpg') && $photo_meta['as_gallery'] == "0" ) {
+                if( file_exists($_SERVER['DOCUMENT_ROOT'] . "/catalog/__image/" . $photo_meta['file_name'] . '-tinyviews.jpg') && $photo_meta['as_limited'] == "0" ) {
 
                     $tinyviewImage = '<div class="col"><img class="in-room-img"  src="/catalog/__image/' . $photo_meta['file_name'] . '-tinyviews.jpg" alt="' . $photo_meta['file_name'] . '" /></div>';
                     $sizes_pricing .= '<option ' . $default . ' data-price="' . $tvV . '" ' . 'data-frameprice="' . $studio_frames_pricing['8x8'] . '" value="8x8">SIZE: SQUARE 8x8</option>';
@@ -294,10 +286,10 @@
                     $tv=1;
                 }
 
-            } else if ($photo_meta['as_gallery'] == "0" && $tvP[0] == "12x12") {
+            } else if ($photo_meta['as_limited'] == "0" && $tvP[0] == "12x12") {
 
                 /* Determine if the "TinyViews photo exists */
-                if( file_exists($_SERVER['DOCUMENT_ROOT'] . "/catalog/__image/" . $photo_meta['file_name'] . '-tinyviews.jpg') && $photo_meta['as_gallery'] == "0" ) {
+                if( file_exists($_SERVER['DOCUMENT_ROOT'] . "/catalog/__image/" . $photo_meta['file_name'] . '-tinyviews.jpg') && $photo_meta['as_limited'] == "0" ) {
 
                     $tinyviewImage = '<div class="col"><img class="in-room-img"  src="/catalog/__image/' . $photo_meta['file_name'] . '-tinyviews.jpg" alt="' . $photo_meta['file_name'] . '" /></div>';
                     $sizes_pricing .= '<option ' . $default . ' data-price="' . $tvV . '" ' . 'data-frameprice="' . $studio_frames_pricing['12x12'] . '" value="12x12">SIZE: SQUARE 12x12</option>';

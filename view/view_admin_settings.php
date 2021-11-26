@@ -16,7 +16,7 @@
 
                         <div class="tabs"> 
                             <div data-name="ABOUT" class="tab-menu tab-ABOUT active"><a href="#about">ABOUT</a></div>
-                            <div data-name="PROMOCODES" class="tab-menu tab-PROMOCODES"><a href="#pricing">Pricing & PROMOS</a></div>
+                            <div data-name="PROMOCODES" class="tab-menu tab-PROMOCODES"><a href="#pricing">Editions, Pricing & PROMOS</a></div>
                             <div data-name="NOTICES" class="tab-menu tab-NOTICES"><a href="#notices">NOTICES</a></div>
                             <div data-name="SYSTEM" class="tab-menu tab-SYSTEM"><a href="#system">SYSTEM</a></div>
                             <!-- <div data-name="COMPONENTS" class="tab-menu tab-COMPONENTS"><a href="#components">COMPONENTS</a></div> -->
@@ -53,17 +53,29 @@
                          <input class="half-size" type="text" name="copyright" value="<?= $copyright ?>" />
                     </div>
                     
-                    <div class="col-12">
-                        <label>coa contract</label>
-                        <input class="half-size" type="hidden" name="coa_contract" value="<?= $coa_contract ?>"  />
-                        <input class="half-size" type="text" name="coa_contract" value="<?= $coa_contract ?>" disabled />
-                        <label>limited edition max</label>
-                         <input class="half-size" type="text" name="limited_edition_max" value="<?= $limited_edition_max ?>" />
-                    </div>
                 </div>
                 
                 <div class="grid" id="tab-pricing">
                     
+                    <div class="col-12 pb-16">
+                        <a name="pricing" href="#top"><h4>Edition Data</h4></a>
+                    </div>
+                    
+                    <div class="col-12">
+                            <label>coa contract</label>
+                            <input class="half-size" type="hidden" name="coa_contract" value="<?= $coa_contract ?>"  />
+                            <input class="half-size" type="text" name="coa_contract" value="<?= $coa_contract ?>" disabled />
+                    </div>
+                    
+                    <div class="col-12">
+                            <label>Edition Types</label>
+                            <input class="half-size" type="hidden" name="edition_types" value="<?= $edition_types ?>"  />
+                            <input class="half-size" type="text" name="edition_types" value='<?= $edition_types ?>' />
+                            <label>limited edition max (legacy)</label>
+                            <input class="half-size" type="hidden" name="limited_edition_max" value="<?= $limited_edition_max ?>" />
+                            <input class="half-size" type="text" name="limited_edition_max" value="<?= $limited_edition_max ?>" disabled />
+                    </div>
+                        
                     <div class="col-12 pb-16">
                         <a name="pricing" href="#top"><h4>Pricing - Limited Editions (Acrylic/Metal)</h4></a>
                     </div>

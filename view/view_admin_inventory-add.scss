@@ -18,6 +18,15 @@
         }
     }
 
+    .coa--container {
+        display: none;
+        border-bottom: 1px solid #e4e4e4;
+        
+        &._show-container {
+            display: block;
+        }
+    }
+
     #material_expenses_list {
         padding: 1rem 0;
     }

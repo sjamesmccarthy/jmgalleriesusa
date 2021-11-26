@@ -111,8 +111,8 @@
                 <div class="select-wrapper half-size">
                 <label>edition</label>
                 <select id="as_edition" name="as_edition">
-                    <option value="as_gallery" <?= ($as_gallery == "1" ? "SELECTED" : ""); ?>>as LIMITED EDITION</option>
-                    <!-- <option value="0" <?= ($as_gallery == "0" ? "SELECTED" : ""); ?>>no (LIMITED EDITION)</option> -->
+                    <option value="as_limited" <?= ($as_limited == "1" ? "SELECTED" : ""); ?>>as LIMITED EDITION</option>
+                    <!-- <option value="0" <?= ($as_limited == "0" ? "SELECTED" : ""); ?>>no (LIMITED EDITION)</option> -->
                     <option value="as_open" <?= ($as_open == "1" ? "SELECTED" : ""); ?>>as OPEN/tinyViews&trade; EDITION</option>
                     <!-- <option value="0" <?= ($as_open == "0" ? "SELECTED" : ""); ?>>no (OPEN/tinyViews&trade; EDITION)</option> -->
                 </select>

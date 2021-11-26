@@ -50,7 +50,7 @@ class Core_Api extends Fieldnotes_Api
                     PH.catalog_photo_id,
                     PH.title,
                     PH.file_name,
-                    PH.as_gallery,
+                    PH.as_limited,
                     PH.as_studio,
                     PH.as_open
                 FROM
@@ -93,7 +93,7 @@ class Core_Api extends Fieldnotes_Api
                 cp.loc_place,
                 cp.available_sizes,
                 cp.catalog_photo_id,
-                cp.as_gallery,
+                cp.as_limited,
                 cp.as_studio,
                 cp.as_open,
                 cat.title AS cat_title,
@@ -137,7 +137,7 @@ class Core_Api extends Fieldnotes_Api
         }
 
         if($edition == "LE") {
-            $category .= "AND cp.as_gallery = '1'";
+            $category .= "AND cp.as_limited = '1'";
         } elseif($edition == "OE") {
             $category .= "AND cp.as_open = '1'";
         }
@@ -158,7 +158,7 @@ class Core_Api extends Fieldnotes_Api
             cp.loc_place,
             cp.available_sizes,
             cp.catalog_photo_id,
-            cp.as_gallery,
+            cp.as_limited,
             cp.as_studio,
             cp.as_open,
             cc.title AS cate_title,
@@ -241,7 +241,7 @@ class Core_Api extends Fieldnotes_Api
             PH.title,
             PH.file_name,
             PH.loc_place,
-            PH.as_gallery,
+            PH.as_limited,
             PH.as_open,
             CAT.path AS catalog_path
         FROM
@@ -251,7 +251,7 @@ class Core_Api extends Fieldnotes_Api
         WHERE
             PH.created > DATE_ADD(Now(), INTERVAL - " . $duration . " MONTH)
             AND PH.status = 'ACTIVE'
-            AND PH.as_gallery = '1'
+            AND PH.as_limited = '1'
         ORDER BY
             PH.created DESC
         LIMIT " . $limit;
@@ -408,7 +408,7 @@ class Core_Api extends Fieldnotes_Api
            PH.title,
            PH.file_name,
            PH.loc_place,
-           PH.as_gallery,
+           PH.as_limited,
            PH.as_open,
            CAT.path as cate_path
        FROM
@@ -418,7 +418,7 @@ class Core_Api extends Fieldnotes_Api
        WHERE
            V.count >= 800
            AND PH.status = 'ACTIVE'
-           AND PH.as_gallery = 1
+           AND PH.as_limited = 1
        ORDER BY
            RAND()
            DESC
@@ -877,7 +877,7 @@ class Core_Api extends Fieldnotes_Api
                 CP.catalog_photo_id,
                 CP.title,
                 CP.file_name,
-                CP.as_gallery,
+                CP.as_limited,
                 CP.as_studio,
                 CP.as_open,
                 CV.updated, 
@@ -1050,7 +1050,7 @@ class Core_Api extends Fieldnotes_Api
             PH.parent_collections_id,
             PH.featured,
             PH.as_open,
-            PH.as_gallery,
+            PH.as_limited,
             CAT.title AS category,
             PH.status,
             CAT.path,
@@ -1059,7 +1059,8 @@ class Core_Api extends Fieldnotes_Api
         FROM
             catalog_photo AS PH
             INNER JOIN catalog_collections AS CAT on CAT.catalog_collections_id = PH.parent_collections_id
-            LEFT JOIN catalog_photo_views AS PV ON PH.catalog_photo_id = PV.catalog_photo_id";
+            LEFT JOIN catalog_photo_views AS PV ON PH.catalog_photo_id = PV.catalog_photo_id
+            ORDER BY PH.title ASC";
 
             $result = $this->mysqli->query($sql);
 
@@ -1141,7 +1142,7 @@ class Core_Api extends Fieldnotes_Api
             } 
             
         }
-
+        
         return($data);
 
     }
@@ -1464,8 +1465,7 @@ class Core_Api extends Fieldnotes_Api
                 certificate AS CERT
                 INNER JOIN collector AS C ON CERT.collector_id = C.collector_id
                 INNER JOIN art AS A ON A.art_id = CERT.art_id
-                WHERE C.first_name LIKE '{$first_name}' AND C.last_name LIKE '{$last_name}'
-    ";
+                WHERE C.first_name LIKE '{$first_name}' AND C.last_name LIKE '{$last_name}' AND CERT.status='ACTIVE'";
         
             $result = $this->mysqli->query($sql);
 
@@ -1560,22 +1560,22 @@ class Core_Api extends Fieldnotes_Api
         if( !isSet($_POST['featured']) ) { $featured = '0'; }
 
         /* do a little fixing on edition type */
-        // if($previous_edition == "as_gallery") {
-        //     $as_gallery = "0";
+        // if($previous_edition == "as_limited") {
+        //     $as_limited = "0";
         // }
 
         // if($previous_edition == "as_open") {
         //     $as_open = "0";
         // }
 
-        if($as_edition == "as_gallery") {
-            $as_gallery = "1";
+        if($as_edition == "as_limited") {
+            $as_limited = "1";
             $as_open = "0";
         }
 
         if($as_edition == "as_open") {
             $as_open = "1";
-            $as_gallery = "0";
+            $as_limited = "0";
         }
 
         $sql = "UPDATE catalog_photo 
@@ -1601,7 +1601,7 @@ class Core_Api extends Fieldnotes_Api
         created = '$created',
         status = '$status',
         on_display = '$on_display',
-        as_gallery = '$as_gallery',
+        as_limited = '$as_limited',
         as_open = '$as_open',
         featured = '$featured',
         `desc` = '$desc'
@@ -1665,14 +1665,14 @@ class Core_Api extends Fieldnotes_Api
         if( !isSet($_POST['featured']) ) { $featured = '0'; }
         if( !isSet($_POST['as_studio']) ) { $as_studio = '0'; }
 
-        if($as_edition == "as_gallery") {
-            $as_gallery = "1";
+        if($as_edition == "as_limited") {
+            $as_limited = "1";
             $as_open = "0";
         }
 
         if($as_edition == "as_open") {
             $as_open = "1";
-            $as_gallery = "0";
+            $as_limited = "0";
         }
 
         $sql = "
@@ -1701,7 +1701,7 @@ class Core_Api extends Fieldnotes_Api
         `created`, 
         `status`, 
         `on_display`, 
-        `as_gallery`, 
+        `as_limited`, 
         `as_studio`, 
         `as_open`,
         `featured`
@@ -1730,7 +1730,7 @@ class Core_Api extends Fieldnotes_Api
             '$created', 
             '$status', 
             '$on_display', 
-            '$as_gallery', 
+            '$as_limited', 
             '$as_studio', 
             '$as_open',
             '$featured'
@@ -1937,6 +1937,7 @@ class Core_Api extends Fieldnotes_Api
         `reg_num`='$reg_num',
         `title`='$title',
         `negative_file`='$negative_file',
+        `catalog_photo_id`='$catalog_photo_id',
         `artist_proof`='$artist_proof',
         `series_num`='$series_num',
         `edition_num`='$edition_num',
@@ -2001,6 +2002,7 @@ class Core_Api extends Fieldnotes_Api
         `reg_num`, 
         `title`, 
         `negative_file`, 
+        `catalog_photo_id`, 
         `artist_proof`, 
         `series_num`, 
         `edition_num`,
@@ -2023,6 +2025,7 @@ class Core_Api extends Fieldnotes_Api
             '$reg_num',
             '$title', 
             '$negative_file',
+            '$catalog_photo_id',
             '$artist_proof',
             '$series_num',
             '$edition_num',

@@ -50,23 +50,23 @@
             </div>
             
             <div>
+                <div class="half-size">
                 <label for="title">TITLE</label>
-                <input class="half-size" maxlength="255" type="text" id="title" name="title" placeholder="TITLE" value="<?= $title ?>" <?= $btn_readonly ?> required>
-                <label for="edition-style">EDITION-STYLE</label>
-                <input class="half-size" maxlength="255" type="text" id="edition_style" name="edition_style" placeholder="EDITION STYLE (eg. LIMITED, OPEN, STUDIO)" value="<?= $edition_style ?>" <?= $btn_readonly ?> required>
+                <input class="" maxlength="255" type="text" id="title" name="title" placeholder="TITLE" value="<?= $title ?>" <?= $btn_readonly ?> required>
+                </div>
+                
+                <?= $edition_menu ?>
             </div>
 
-            <div>
-                <label for="artist_proof">ARTIST PROOF</label>
-                <input class="half-size"  type="text" id="artist_proof" name="artist_proof" placeholder="ARTIST PROOF (eg, AP1)" value="<?= $artist_proof ?>" <?= $btn_readonly ?>>
-                <label for="series_num">SERIES NUM</label>
-                <input class="half-size" type="text" id="series_num" name="series_num" placeholder="SERIES NUMBER (eg 1, 2019)" value="<?= $series_num ?>" <?= $btn_readonly ?>>
-            </div>
+                <input class="half-size" type="hidden" id="series_num" name="series_num" placeholder="SERIES NUMBER (eg 1, 2019)" value="<?= $series_num ?>" <?= $btn_readonly ?>>
+                <input class="half-size"  type="hidden" id="artist_proof" name="artist_proof" placeholder="ARTIST PROOF (eg, AP1)" value="<?= $artist_proof ?>" <?= $btn_readonly ?>>
+
             <div>
                 <label for="edition_num">EDITION NUM</label>
                 <input class="half-size" type="text" id="edition_num" name="edition_num" placeholder="EDITION NO." value="<?= $edition_num ?>" <?= $btn_readonly ?>>
                 <label for="edition_num_max">EDITION NUM MAX</label>
-                <input class="half-size" type="text" id="edition_num_max" name="edition_num_max" placeholder="EDITION NO. MAX" value="<?= $edition_num_max ?>" <?= $btn_readonly ?>>
+                <input class="half-size" type="hidden" id="edition_num_max" name="edition_num_max" value="<?= $edition_num_max ?>" />
+                <input class="half-size" type="text" id="edition_num_max_display" name="edition_num_max_display" placeholder="EDITION NO. MAX" value="<?= $edition_num_max ?>"  disabled />
             </div>
 
             <div>
@@ -105,46 +105,45 @@
 
             </div>
 
-            <div>
-                <h6>Certificate of Authenticity Data</h6>
-            </div>
-
-            <div>
-                <label for="serial_num">SERIAL NUM</label>
-                <input class="half-size" type="text" id="serial_num" name="serial_num" placeholder="SERIAL NO. (eg, 251387)" value="<?= $serial_num ?>" <?= $btn_readonly ?>>
-                <label style="display:inline-block; margin-left: 0 !important;" for="reg_num">REG NUM (Validation Hash =  <?= $validation_hash ?>)</label>
-                <input class="half-size" type="text" id="reg_num" name="reg_num" placeholder="Artwork Reg No. (eg, 1569069144 aka Born On Date)" value="<?= $reg_num ?>" <?= $btn_readonly ?>>
-            </div>
-            
-            <div>
-                <label style="display:inline-block;" for="negative_file">NEGATIVE FILE (also used as adler32[secret])</label>
-                 <input class="half-size" type="text" id="negative_file" name="negative_file" placeholder="NEGATIVE FILE (eg, PRETTY_PHOTO.jpg)" value="<?= $negative_file ?>" <?= $btn_readonly ?> required>
-                 <label for="born_date">BORN ON</label>
-                 <input class="half-size" type="text" id="born_date" name="born_date" placeholder="BORN ON DATE (eg, 2019-12-14 02:23:10)" value="<?= $born_date ?>" <?= $btn_readonly ?> required>
-            </div>
-
-            <!-- $show_collector_meta -->
-            <div id="collector_meta">
-                <label for="title">Acquired From & Condition Notes</label>
-                <input class="half-size" maxlength="255" type="text" id="acquired_from" name="acquired_from" placeholder="Acquired From and Condition Notes" value="<?= $acquired_from ?>" <?= $btn_readonly ?>>
-                <label for="title">Acquired on Date</label>
-                <input class="half-size" maxlength="255" type="text" id="acquired_date" name="acquired_date" placeholder="Acquired on Date" value="<?= $purchase_date ?>" <?= $btn_readonly ?>>
-            </div>
-
-            <div id="collector_meta">
-                <label for="title">Catalog Id</label>
-                <input class="half-size" maxlength="255" type="text" id="catalog_photo_id" name="catalog_photo_id" placeholder="Catalog Photo Id (eg, 45)" value="<?= $catalog_photo_id ?>">
-            </div>
-
-            <div>
-                <h6>Certificates Issued</h6>
-                <?= $coa_html ?>
+            <div class="coa--container <?= $coa_css ?>">
+                <div>
+                    <h6>Certificate of Authenticity Data</h6>
+                </div>
+    
+                <div>
+                    <label for="serial_num">SERIAL NUM</label>
+                    <input class="half-size" type="text" id="serial_num" name="serial_num" placeholder="SERIAL NO. (eg, 251387)" value="<?= $serial_num ?>" <?= $btn_readonly ?>>
+                    <label style="display:inline-block; margin-left: 0 !important;" for="reg_num">REG NUM (Validation Hash =  <?= $validation_hash ?>) algorithm in settings</label>
+                    <input class="half-size" type="text" id="reg_num" name="reg_num" placeholder="Artwork Reg No. (eg, 1569069144 aka Born On Date)" value="<?= $reg_num ?>" <?= $btn_readonly ?>>
+                </div>
+                
+                <div>
+                    <label style="display:inline-block;" for="negative_file">NEGATIVE FILE (also used in validation hash algorithm)</label>
+                     <input class="half-size" type="text" id="negative_file" name="negative_file" placeholder="NEGATIVE FILE (eg, PRETTY_PHOTO.jpg)" value="<?= $negative_file ?>" <?= $btn_readonly ?> required>
+                     <label for="born_date">BORN ON</label>
+                     <input class="half-size" type="text" id="born_date" name="born_date" placeholder="BORN ON DATE (eg, 2019-12-14 02:23:10)" value="<?= $born_date ?>" <?= $btn_readonly ?> required>
+                </div>
+    
+                <!-- $show_collector_meta -->
+                <div id="collector_meta">
+                    <label for="title">Acquired From & Condition Notes</label>
+                    <input class="half-size" maxlength="255" type="text" id="acquired_from" name="acquired_from" placeholder="Acquired From and Condition Notes" value="<?= $acquired_from ?>" <?= $btn_readonly ?>>
+                    <label for="title">Acquired on Date</label>
+                    <input class="half-size" maxlength="255" type="text" id="acquired_date" name="acquired_date" placeholder="Acquired on Date" value="<?= $purchase_date ?>" <?= $btn_readonly ?>>
+                </div>
+                
+                <?= $catalog_ids_html ?>
+                
+                <div>
+                    <h6>Certificates Issued</h6>
+                    <?= $coa_html ?>
+                </div>
             </div>
             
             <?php ?>
-            <div id="pl-summary" style="border-top: 1px solid #e4e4e4;">
+            <div id="pl-summary">
                 <h6 class="mt-16">P/L Summary</h6>
-                <p>Total Costs = <?= $calcd_cost_html ?> / Total Value = <?= $value ?> / <u>PL =<?= number_format( ($value - $calcd_cost_html), 2,'.',''); ?></u></p>
+                <p>Total Costs = <?= $calcd_cost_html ?> / Sold Value = $<?= $value ?> / <u>PL = $<?= number_format( ($value - $calcd_cost_html), 2,'.',''); ?></u></p>
             </div>
 
             <div id="supplier_materials_wrapper" class="mt-32">
@@ -167,7 +166,11 @@
 
 <script>
 jQuery(document).ready(function($){
-
+        
+    // if( $('#edition_style').val() == "STUDIO" || $('#edition_style').val() == "LIMITED" ) {
+    //     $('.coa--container').show();
+    // }
+    
     $('.close-x').on("click", function() {
         window.location.href = '/studio/inventory';
     });
@@ -175,6 +178,20 @@ jQuery(document).ready(function($){
     $('.view-lh').on("click", function(e) {
         e.preventDefault();
         $('.lh_container').toggle();
+    })
+    
+    $('#edition_style').on("change", function(e) {
+        e.preventDefault();
+        // $('').val();
+        console.log( $(this).find(':selected').val() );
+        $('#edition_num_max').val($(this).find(':selected').attr('data-max-ed'));
+        $('#edition_num_max_display').val($(this).find(':selected').attr('data-max-ed'));
+        
+        if( $(this).find(':selected').val() == 'STUDIO' || $(this).find(':selected').val() == 'LIMITED' ) {
+            $('.coa--container').show();
+        } else {
+            $('.coa--container').hide();
+        }
     })
 
     $('#collector').on('change', function() {
@@ -198,6 +215,7 @@ jQuery(document).ready(function($){
 
     });
 
+    
     $(document).on('change', '#supplier_materials_wrapper select', function() {
         
         var data_exp = $(this).attr('data-exp');

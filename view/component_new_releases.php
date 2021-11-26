@@ -29,7 +29,7 @@ if( !$new_releases['error']) {
             $img_file = 'image_not_found';
         }
 
-        if($v['as_gallery'] == 1) {
+        if($v['as_limited'] == 1) {
             $edition_desc = str_replace("{limited_edition_max}", $this->config->limited_edition_max, $this->config->edition_description_limited);
             $desc_editions = "<p>" . $edition_desc  . "</p>"; 
             $available_sizes = $this->config->available_sizes_limited; } 
@@ -45,7 +45,7 @@ if( !$new_releases['error']) {
             $available_sizes = $this->config->available_sizes_open; } 
             else { $data_filter_O = null; }
 
-        // if($v['as_gallery'] == 1) {$desc_editions = "<p>Limited Edition of " . $this->config->limited_edition_max  . " plus 2 Artist Proofs</p>"; $available_sizes = "16x24, 20x30 24x36"; } else { $data_filter_G = null;  }
+        // if($v['as_limited'] == 1) {$desc_editions = "<p>Limited Edition of " . $this->config->limited_edition_max  . " plus 2 Artist Proofs</p>"; $available_sizes = "16x24, 20x30 24x36"; } else { $data_filter_G = null;  }
         // if($v['as_studio'] == 1) {$desc_editions = "<p>tinyViews&trade; Edition only</p>"; $available_sizes = "16x24, 20x30 24x36"; } else { $data_filter_S = null; }
         // if($v['as_open'] == 1) { $desc_editions = "<p>tinyViews&trade; Edition only</p>"; $available_sizes = "4x6, 8x8, 8x10"; } else { $data_filter_O = null; }
         // if($v['as_studio'] == 1) {$desc_editions = "<p>Giclée, tinyViews&trade; Edition</p>"; $available_sizes = "16x24, 20x30 24x36"; } else { $data_filter_S = null; }

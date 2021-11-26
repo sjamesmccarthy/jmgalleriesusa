@@ -25,7 +25,7 @@
 
         <div class="col-9_md-9_sm-12" style="position:relative;">
             <h1 class="detail-h1"><?= $photo_meta['title'] ?></h1>
-            <p class="edition-title"><?= $edition_desc ?> <?= $edition_max ?>  <?= $edition_desc_material_slash ?></span></p>
+            <p class="edition-title"><?= $edition_desc ?><?= $edition_max ?>  <?= $edition_desc_material_slash ?></span></p>
 
             <p class="mt-32 detail-story"><?= $photo_meta['loc_place'] ?> in  <?= $photo_meta['loc_city'] ?>, <?= $photo_meta['loc_state'] ?> &mdash;
             <?= $photo_meta['story'] ?></p>
