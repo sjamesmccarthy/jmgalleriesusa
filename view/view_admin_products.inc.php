@@ -12,14 +12,20 @@
     $this->nav_label_inventory = "New Artwork";
     $navigation_html = $this->component('admin_navigation');
 
-
     /* Get any notifications of errors */
     if($_SESSION['error'] == "200" && $_SESSION['notify_msg'] != '') {
-        $notification_state = "show";
+        $notification_state = "show success";
         $notification_msg = "<p class='heading'>success</p><p>" .  $_SESSION['notify_msg'] . " Has Been Updated</p>";
         $_SESSION['error'] = null;
         $_SESSION['notify_msg'] = null;
-    }
+    } 
+    
+    if($_SESSION['error'] == "400" && $_SESSION['notify_msg'] != '') {
+        $notification_state = "show error";
+        $notification_msg = "<p class='heading'>FAILURE</p><p>" .  $_SESSION['notify_msg'] . "</p>";
+        $_SESSION['error'] = null;
+        $_SESSION['notify_msg'] = null;
+    } 
 
     /* API - LIST OF PHOTOS IN CATALOG */
     $data_html = $this->api_Admin_Get_Products();
