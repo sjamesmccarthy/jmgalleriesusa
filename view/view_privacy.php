@@ -8,7 +8,7 @@
          <p>THIS PRIVACY POLICY APPLIES TO YOUR ACCESS AND USE OF JMGALLERIES.COM AND ANY ASSOCIATED MOBILE APPS OR ONLINE SERVICES ("JM GALLERIES USA"). It describes our practices on gathering, use and sharing of personal information collected when you visit one of our ONLINE SERVICES. BY ACCESSING OR USING ANY OF JM GALLERIES USA, YOU AGREE THAT YOU HAVE READ AND AGREE TO THIS PRIVACY POLICY. IF YOU DON’T AGREE, PLEASE <a href="//duckduckgo.com">CLICK HERE</a>.
         </p>
 
-         <p class="mt-16 black">All Photographs and Content and/or Associated information with any photo on this site is Copyright James McCarthy/ jMcCarthy Galleries ("Copyright Owner"). The trade names, trademarks and service marks owned by Copyright Owner, whether registered or unregistered, may not be used in connection with any other product or service that is not ours, in any manner that is likely to cause confusion. These marks include, but are not limited to "jm", "jmgalleries", "jMcCarthy Galleries", "STUDIO610", "tinyViews", "Large Landscapes for Tiny Places". All Rights Reserved. Trademarts not owned by us are the property of their respective owners. NO PART OF OUR ONLINE SERVICES may be reproduced, stored, or transmitted in any form or by any means -- electronic, mechanical, photocopying, recording or otherwise -- without the permission of the JM GALLERIES USA.
+         <p class="mt-16 black">All Photographs and Content and/or Associated information with any photo on this site is Copyright James McCarthy/ jMcCarthy Galleries ("Copyright Owner"). The trade names, trademarks and service marks owned by Copyright Owner, whether registered or unregistered, may not be used in connection with any other product or service that is not ours, in any manner that is likely to cause confusion. These marks include, but are not limited to "jm", "jmgalleries", "jMcCarthy Galleries", "STUDIO610", "tinyViews", "Large Landscapes for Tiny Places". All Rights Reserved. Trademarks not owned by us are the property of their respective owners. NO PART OF OUR ONLINE SERVICES may be reproduced, stored, or transmitted in any form or by any means -- electronic, mechanical, photocopying, recording or otherwise -- without the permission of the JM GALLERIES USA.
         </p>
 
 	<ul class="subsection-ul">
@@ -22,7 +22,9 @@
                 <li><a href="#p4">Third Party Links</a></li>
                 <li><a href="#p5">Do We Sell Any Information To Outside Parties</a></li>
                 <li><a href="#p6">Children's Online Privacy Protection Act Compliance</a></li>
-                <li><a href="#p7">Data Retreival and Removal</a></li>
+                <li><a href="#p7">Data Retrieval and Removal</a></li>
+                <li><a href="#tos">Terms of Sale</a></li>
+                <li><a href="#tou">Terms of Use</a></li>
                 <li><a href="/release-notes">Software Release Notes</a></li>
                 <li><a href="#p8">Contacting Us</a></li>
             </ol>
@@ -43,16 +45,16 @@
 
         <li><a name="p3"></a><h3>Cookie Settings</h3>
 
-            <p>When you visit a website, it may store and retrieve information about your browser, in the form of cookies. This information might be about you, your device, bworser type, and your personal site preferences mostly. This information is used to make the site work as you expect it to. The information does not usually directly identify you, but it can give you a more personalized experience. This meand that blocking some types of cookies may impact your experience of the site and the services we are able to offer. However, because we respect your right to privacy, we are currently only utilizing "Stictly Necessary Cookies", "Functional Cookies" and "Performance Cookies". These cookies, with excpetion to "Performance Cookies" are destroyed after your browser session ends. ARE NOT using: Targeting Cookies.
+            <p>When you visit a website, it may store and retrieve information about your browser, in the form of cookies. This information might be about you, your device, browser type, and your personal site preferences mostly. This information is used to make the site work as you expect it to. The information does not usually directly identify you, but it can give you a more personalized experience. This means that blocking some types of cookies may impact your experience of the site and the services we are able to offer. However, because we respect your right to privacy, we are currently only utilizing "Strictly Necessary Cookies", "Functional Cookies" and "Performance Cookies". These cookies, with exception to "Performance Cookies" are destroyed after your browser session ends. ARE NOT using: Targeting Cookies.
             </p>
 
             <ol>
                <li><b>Strictly Necessary Cookies: Always Active</b><br />
-               These cookies are necessary for the website to function and cannot be switched off in our systems. They are usually only set in response to actions made by you which actions such as setting your privacy preferences, logging in or filling in forms. Most of the time you can set your browser to block or alert you about these cookies, but be aware disabling cookies may cause some parts of the site not to fuctional. These cookies do not store any personally identifiable information, such as your name or email but may include a user or session id.
+               These cookies are necessary for the website to function and cannot be switched off in our systems. They are usually only set in response to actions made by you which actions such as setting your privacy preferences, logging in or filling in forms. Most of the time you can set your browser to block or alert you about these cookies, but be aware disabling cookies may cause some parts of the site not to functional. These cookies do not store any personally identifiable information, such as your name or email but may include a user or session id.
                </li>
 
                <li><b>Functional Cookies: Always Active</b><br />
-               These cookies enable the website to provide enhanced functionality and personalization. The only Functional Cookie we are using is a "Remember Me" cookie which is set to remember your username which is typically your e-mail address. Other Functional Cookies may be set by us or by third party providers whose services we have added to our pages. With expection to the following: Google Analytics, we are currently are not utilizing third-party services. If you do not allow these cookies then some or all of these services may not function properly.
+               These cookies enable the website to provide enhanced functionality and personalization. The only Functional Cookie we are using is a "Remember Me" cookie which is set to remember your username which is typically your e-mail address. Other Functional Cookies may be set by us or by third party providers whose services we have added to our pages. With exception to the following: Google Analytics, we are currently are not utilizing third-party services. If you do not allow these cookies then some or all of these services may not function properly.
                </li>
 
                <li><b>Performance Cookies: Always Active</b><br />
@@ -147,17 +149,17 @@
                     </li>
 
                     <li>
-                        <p><b>Returns & Damage</b>:<br /> All sales are final unless: a) Notification of Shipping Problems/Damage must be made within 30 days of delivery and accompanied by the shipping receipt and photographic proof of the damage for us to review and make a determination whether damage in fact occurred during shipping; otherwise b) if it has been identified that your use of our site or services has been terminated for violation of these Terms of Sale or our Terms of Use. We may also refuse to accept any returns from you at our desrection. If we approve your request for a replacement, we will not charge you for the new print, but you will be responsible for the costs of returning the damaged print to us, plus the cost of shipping the new print to you.</p>
+                        <p><b>Returns & Damage</b>:<br /> All sales are final unless: a) Notification of Shipping Problems/Damage must be made within 30 days of delivery and accompanied by the shipping receipt and photographic proof of the damage for us to review and make a determination whether damage in fact occurred during shipping; otherwise b) if it has been identified that your use of our site or services has been terminated for violation of these Terms of Sale or our Terms of Use. We may also refuse to accept any returns from you at our desertion. If we approve your request for a replacement, we will not charge you for the new print, but you will be responsible for the costs of returning the damaged print to us, plus the cost of shipping the new print to you.</p>
                     </li>
 
                     <li>
-                        <p><b>Care of Product</b>:<br /> You are responsible for the proper and safe handling of any prints or other products you order from us. You agree to idemnify and hold harmless James McCarthy/ jMcCarthy Galleries from all damages to product beyond its control, including, but not limited to, shipping, improper cleaning, moving, theft, fire, water, acts of god, accidents, explosion, flood, severe weather, or any other similar or dissimilar cause.</p>
+                        <p><b>Care of Product</b>:<br /> You are responsible for the proper and safe handling of any prints or other products you order from us. You agree to indemnify and hold harmless James McCarthy/ jMcCarthy Galleries from all damages to product beyond its control, including, but not limited to, shipping, improper cleaning, moving, theft, fire, water, acts of god, accidents, explosion, flood, severe weather, or any other similar or dissimilar cause.</p>
                     </li>
                 </ol>
 
         </li>
 
-
+ <a name="tou"><div class="divider-top"></div></a>
         <li><h3>Terms of Use</h3>
             <p>By visiting any of our Sites, you agree to these Terms and our Privacy Policy. Any products ordered or services used through any of our Sites are also governed by these Terms, as well as our Terms of Sale. We may also occasionally offer the opportunity to participate in sweepstakes, contests, or other similar promotions, each of which will have additional terms you must accept in order to participate. We reserve the right to change or discontinue our Sites, in whole or in part, at any time in our sole discretion.
             </p>

@@ -23,7 +23,7 @@ $hidden_felds .= "<input type='hidden' name='edition_type' value='product' />";
 
 /* PRICING */
     
-    if($res_on_sale != '') {
+    if($res_on_sale != '0') {
         $on_sale_amt = $res_price * $res_on_sale;
         $on_sale_price = $res_price - round($on_sale_amt);
         $on_sale_percentage = ($res_on_sale * 100) . "%";
@@ -84,14 +84,21 @@ if($res_quantity == 1) {
 }
 
 /* IMAGES */
-$res_image = json_decode($res_image);
+$res_image = json_decode($res_image, true);
+// $this->console($res_image);
 
 $image_html = '<div class="col-6_sm-12"><div style="max-width:85%; margin: auto;">
 <p class="small normal mb-32"><a style="font-weight: 400" href="/shop"><!-- <img class="valign-mid mr-8" style="width: 16px;" src="/view/image/icon_left_arrow.svg" /> -->&#8592; Back To jM Gallery Store</a></p>
 <div class="slider">';
 
     foreach($res_image as $iK => $iV) {  
-        $image_html .= '<div><img src="/view/image/product/' . $iV . '" alt="' . $iV . '" /></div>';
+        
+        $target_file = $_SERVER["DOCUMENT_ROOT"] . '/view/image/product/' . $iV['name'];
+        
+        if(file_exists( $target_file ) && $iK != "file_6" & $iV['size'] != "0") {
+            $image_html .= '<div><img src="/view/image/product/' . $iV['name'] . '" alt="product image" /></div>';
+        }
+        
     }
 
 $image_html .= "</div></div></div>";

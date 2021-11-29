@@ -8,6 +8,22 @@
 
         <div class="col-11" style="position: relative">
 
+        <p class="pt-16">v1.8.1<br />Nov 28, 2021</p>
+            <ul>
+            <li>added: products:admin module insert/update</li>
+            <li>updated: privacy policy with terms of sale link</li>
+            </ul> 
+        </p>
+        
+        <p class="pt-16">v1.8<br />Nov 26, 2021</p>
+            <ul>
+            <li>Standardized Edition maxes, styles in settings</li>
+            <li>update: admin edition styles and edition max</li>
+            <li>bugfix: admin inventory now checks edition style before creating a COA record</li>
+            <li>bugfix: admin inventory smart COA record show/hide UI update</li>
+            </ul> 
+        </p>
+        
         <p class="pt-16">v1.7.9<br />Nov 23, 2021</p>
             <ul>
             <li>Checkout bugfixes</li>

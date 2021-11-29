@@ -29,7 +29,7 @@ foreach($product_data as $k => $v) {
         $desc_short = null;
     }
 
-    if($v['on_sale'] != '') {
+    if($v['on_sale'] != '0') {
         $on_sale_amt = $v['price'] * $v['on_sale'];
         $on_sale_price = $v['price'] - round($on_sale_amt);
         $on_sale_percentage = ($v['on_sale'] * 100) . "%";

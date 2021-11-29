@@ -19,7 +19,7 @@
                             </div>
 
                         </div>
-                        <div class="col-1 add-icon"><a href="/studio/inventory-add"><i class="fas fa-plus-circle"></i></a></div>
+                        <div class="col-1 add-icon"><a href="/studio/products-add"><i class="fas fa-plus-circle"></i></a></div>
                     </div>
 
                     <table id="dataTable" class="display">
@@ -65,7 +65,7 @@
                 { data: 'title',
                     "render": function(data, type, row, meta){
                         if(type === 'display'){
-                            data = '<!--<a href="/studio/product-add?id=' + row.product_id + '">-->' + data + '<!--</a>--> <!-- [' + row.product_id + '] -->';
+                            data = '<a href="/studio/products-add?id=' + row.product_id + '">' + data + '</a> <!-- [' + row.product_id + '] -->';
                         }  
                         return data;
                     } 

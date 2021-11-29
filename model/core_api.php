@@ -1117,6 +1117,48 @@ class Core_Api extends Fieldnotes_Api
         return($data);
 
     }
+    
+    public function api_Admin_Get_InventoryForShop() {
+
+        /* Executes SQL and then assigns object to passed var */
+        if( $this->checkDBConnection(__FUNCTION__) == true) {
+
+            $sql = "SELECT
+                A.art_id,
+                A.title,
+                A.art_location_id,
+                A.series_num,
+                A.edition_num,
+                A.edition_num_max,
+                A.serial_num,
+                A.print_size,
+                A.print_media,
+                L.location,
+                C.acquired_from,
+                A.value AS TOTAL_VALUE
+            FROM
+                art as A
+                INNER JOIN art_locations as L on A.art_location_id = L.art_location_id 
+                LEFT JOIN certificate as C on A.art_id = C.art_id
+                WHERE A.art_location_id = 12
+                ORDER BY A.title ASC";
+        
+            $result = $this->mysqli->query($sql);
+                  
+            if ($result->num_rows > 0) {
+            
+                while($row = $result->fetch_assoc())
+		        {
+		            $data[] = $row;
+		        }
+                
+            } 
+            
+        }
+        
+        return($data);
+
+    }
 
     public function api_Admin_Get_Inventory_Item($art_id) {
 
@@ -3957,7 +3999,172 @@ public function api_Admin_Get_Products() {
             
             return($data);
     
+}
+
+
+public function api_Admin_Insert_Products() {
+
+        if(isSet($_POST['date'])) { $mysql_ts = $_POST['date']; } else { $mysql_ts = date('Y-m-d H:i:s'); }
+
+        /* extract Data Array */
+        extract($_POST, EXTR_PREFIX_SAME, "dup");
+        
+        /* Insert into database */
+        $title = $this->mysqli->real_escape_string($_POST['title']);
+        $desc_short = $this->mysqli->real_escape_string($_POST['desc_short']);
+        $details = $this->mysqli->real_escape_string($_POST['details']);
+        
+        /* Check to see if files have been uploaded */
+        $image_files_mutated = $this->api_Admin_Products_Upload_Images(array("jpg","jpeg"), "jpg");
+        $image_files_mutated = json_encode($image_files_mutated);
+        
+        if($on_sale == '') {
+          $on_sale = 0;
+        }
+        
+         $sql = "
+            INSERT INTO product (
+                `artist_id`, 
+                `art_id`, 
+                `title`, 
+                `desc`,
+                `desc_short`,
+                `details`,
+                `tags`,
+                `image`, 
+                `price`,
+                `taxable`,
+                `created`,
+                `on_sale`,
+                `in_stock`,
+                `quantity`,
+                `ship_tier`,
+                `type`,
+                `uri_path`,
+                `status`
+            ) 
+            VALUES (
+                '$artist_id', 
+                '$art_id', 
+                '$title',
+                '$desc', 
+                '$desc_short',
+                '$details',
+                '$tags',
+                '$image_files_mutated', 
+                '$price',
+                '$taxable',
+                '$created',
+                '$on_sale',
+                '$in_stock',
+                '$quantity',
+                '$ship_tier',
+                'single',
+                '$uri_path',
+                '$status'
+                );";
+
+        $result = $this->mysqli->query($sql);
+        $products_id = $this->mysqli->insert_id;
+
+        if($result == 1) {
+            $_SESSION['error'] = '200';
+            $_SESSION['notify_msg'] = $_POST['title'];
+            $this->log(array("key" => "api_Admin_Insert_Products", "value" => "INSERT Product " . $_POST['title'] . " (" . $_POST['products_id'] . ") ", "type" => "success"));
+        } else {
+            $_SESSION['error'] = '501';
+            $_SESSION['notify_msg'] = "SOMETHING WENT WRONG, e_501 " . __LINE__;
+            $this->log(array("key" => "api_Admin_Insert_Products", "value" => "Failed INSERT Product " . $_POST['title'] . " (" . $_POST['products_id'] . ") " . $sql, "type" => "failure"));
         }
 
 }
+
+public function api_Admin_Products_Upload_Images($fileTypes=array("jpeg"), $ext="jpg") {
+
+    $uploadReady=0;
+        foreach($_FILES as $key => $value) {
+
+            $_FILES[$key]['path'] = '/view/image/product/';
+            
+            if($key == "file_6") { $key_fn = "thumb"; } else { $key_fn = $key; }
+            
+            if($value['size'] != 0) {
+                // $_FILES[$key]['path'] = $_POST[$key . '_path'];
+                $uploadReady=1;
+                // $this->console($value);
+            } else { $uploadReady=0; }
+
+            // if($_FILES[$key]['path'] == "/catalog/__thumbnail/") { $log_loc = 'Thumbnail'; } else { $log_loc = 'Main'; }
+            $target_file = $_SERVER["DOCUMENT_ROOT"] . $_FILES[$key]['path'] . $_POST['uri_path'] . '_' . $key_fn . '.' . $ext;
+            
+            
+            if(file_exists( $target_file )) {
+                $_FILES[$key]['name'] = $_POST['uri_path'] . '_' . $key_fn . '.' . $ext;
+                $uploadReady = 1;
+
+                // need to throw an overwrite flag only if $_FILES[$key]['name']
+                if( isSet($_FILES[$key]['name'])) {
+                    $uploadOverwrite = 1;
+                } 
+
+            } else { $uploadReady=1; $uploadOverwrite = 0; unset($_FILES[$key]['path']); }
+
+            // Check if $uploadReady is set to 0 by an error
+            if($value['size'] != '0') {
+
+                if ($uploadReady == 0) {
+                    $this->log(array("key" => "api_Admin_Products_Upload_Images", "value" => "Failed to Upload / uploadReady=0", "type" => "failure"));
+                } else {
+                    
+                    // $this->console($target_file);
+
+                    if (move_uploaded_file($_FILES[$key]["tmp_name"], $target_file)) {
+                        if ($uploadOverwrite == 0) {
+                            $this->log(array("key" => "api_Admin_Products_Upload_Images", "value" => "Upload of " . $log_loc . " Image File (" . $_POST['uri_path'] . '_' . $key . '.' . $ext . ")", "type" => "success"));
+                        } else {
+                            $this->log(array("key" => "api_Admin_Products_Upload_Images", "value" => "Overwriting " . $log_loc . " Photo (" . $_POST['uri_path'] . '_' . $key . '.' . $ext . ")", "type" => "warning"));
+                        }
+                    } else {
+                        // $this->log(array("key" => "system", "value" => "move_uploaded_file() FAILURE on line " . __LINE__, "type" => "failure"));
+                    }
+                }
+            }
+          
+        unset($_FILES[$key]['tmp_name']);
+        unset($_FILES[$key]['error']);
+        }
+        
+        return($_FILES);
+}
+
+ public function api_Admin_Get_Products_Item($id) {
+
+          $sql = "SELECT
+                     *
+                  FROM
+                      product
+                  WHERE product_id = '" . $id . "'";
+
+        /* Executes SQL and then assigns object to passed var */
+        if( $this->checkDBConnection(__FUNCTION__) == true) {
+
+            $result = $this->mysqli->query($sql);
+
+            if ($result->num_rows > 0) {
+            
+            while($row = $result->fetch_assoc())
+		        {
+		            $data = $row;
+		        }
+                
+            } 
+            
+        }
+
+        return($data);
+
+    }
+
+
+} /* End Class Core_Api */
 ?>

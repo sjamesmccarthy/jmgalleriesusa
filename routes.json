@@ -256,6 +256,13 @@
         "component": "false",
         "title": "Processing Order Script"
     },
+    "/studio/api/update/products": {
+        "template": "script",
+        "page": "ajax_admin_products_process.php",
+        "auth": "true",
+        "component": "false",
+        "title": "Processing Product Script"
+    },
     "/studio/inventory": {
         "template": "admin",
         "page": "admin_inventory",
@@ -342,6 +349,13 @@
         "header": {
             "js": "/lib/editor/src/editor.js"
         }
+    },
+    "/studio/products-add": {
+        "template": "admin",
+        "page": "admin_products-add",
+        "auth": "true",
+        "component": "true",
+        "title": "Adding New Product"
     },
     "/studio/collections": {
         "template": "admin",

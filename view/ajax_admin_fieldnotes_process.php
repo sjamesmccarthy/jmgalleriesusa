@@ -1,13 +1,13 @@
 <?php
 /**
  * @Author: James McCarthy <sjamesmccarthy>
- * @Date:   12-07-2019 11:46:38 AM
+ * @Date:   11-27-2021 08:44:13 AM
  * @Email:  james@jmgalleries.com
- * @Filename: ajax_admin_catalog_process.php
+ * @Filename: ajax_admin_products_process.php
  * @Last modified by:   sjamesmccarthy
- * @Created  date: 12-07-2019 11:46:38 AM
- * @Last modified time: 12-07-2019 11:46:38 AM
- * @Copyright: 2019
+ * @Created  date: 11-27-2021 08:43:54 AM
+ * @Last modified time: 
+ * @Copyright: 2021
  */
 
   /* Check for Session, Parse Session into vars */
@@ -17,23 +17,15 @@
     } else {
         header('location:/studio/signin');
 	}
-	
- /* CHECK THE $formType INSERT or UPDATE */
- /* PROCESS THE DATABASE BEFORE THE FILE ATTACHMENTS */
-
-// $this->console('ajax_fieldnotes().run',0);
 
 switch($_POST['formTypeAction']) {
 
 	case "insert":
-        // $this->console('insert().run',0);
-        // $this->console($_FILES,1);
         $this->api_Admin_Insert_Fieldnotes();
 		$redirect_to = '/fieldnotes';
 	break;
 
 	case "update":
-        // $this->console('update().run',0);
 		$this->api_Admin_Update_Fieldnotes();
 		$redirect_to = '/fieldnotes';
 	break;

@@ -49,7 +49,7 @@
         $thumb_html .= '<div class="col-4_md-6_sm-12  text-center">';
         $thumb_html .= '<img class="image" src="/catalog/__thumbnail/' .$img_file . '.jpg" alt="' . $img_file . '" /><h4 class="text-center">' . $v['title'] . '<!-- (' . $v['art_id'] . ')--> </h4>';
         $thumb_html .= '<p>Purchased ' . date("F jS, Y", strtotime($v['purchase_date'])) . ' | <a data-id="' . $v['art_id'] . '" href="" class="provenance">Provenance</a></p>';
-        $thumb_html .= '<div id="' . $v['art_id'] . '" class="grid provenance--block"><div class="col">' . $location_history_html . '</div><!--<div class="col text-right"><a data-id="' . $v['art_id'] . '" href="" class="provenance--close"><i class="fas fa-times"></i></a></div>--><p class="text-left tiny ml-8"><a target="_new" href="/contact">Transfer Ownership</a> | <a target="new" href="/contact">Request New COA</a></p></div>';
+        $thumb_html .= '<div id="' . $v['art_id'] . '" class="grid provenance--block"><div class="col">' . $location_history_html . '</div><!--<div class="col text-right"><a data-id="' . $v['art_id'] . '" href="" class="provenance--close"><i class="fas fa-times"></i></a></div>--><!--<p class="text-left tiny ml-8"><a target="_new" href="/contact">Transfer Ownership</a>--></p></div>';
         $thumb_html .= '<p>Serial No. ' . $v['serial_num'] . '</p>';
         $thumb_html .= $reg_num;
         $thumb_html .= '<p>' . $v['print_size'] . ' print ' . $add_frame_meta . '</p>';
