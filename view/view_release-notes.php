@@ -8,7 +8,7 @@
 
         <div class="col-11" style="position: relative">
 
-        <p class="pt-16">v1.8.1<br />Nov 28, 2021</p>
+        <p class="pt-16">v1.8.1<br />Nov 29, 2021</p>
             <ul>
             <li>added: products:admin module insert/update</li>
             <li>updated: privacy policy with terms of sale link</li>

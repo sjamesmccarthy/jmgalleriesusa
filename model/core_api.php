@@ -4011,6 +4011,7 @@ public function api_Admin_Insert_Products() {
         
         /* Insert into database */
         $title = $this->mysqli->real_escape_string($_POST['title']);
+        $desc = $this->mysqli->real_escape_string($_POST['desc']);
         $desc_short = $this->mysqli->real_escape_string($_POST['desc_short']);
         $details = $this->mysqli->real_escape_string($_POST['details']);
         
@@ -4066,6 +4067,70 @@ public function api_Admin_Insert_Products() {
 
         $result = $this->mysqli->query($sql);
         $products_id = $this->mysqli->insert_id;
+
+        if($result == 1) {
+            $_SESSION['error'] = '200';
+            $_SESSION['notify_msg'] = $_POST['title'];
+            $this->log(array("key" => "api_Admin_Insert_Products", "value" => "INSERT Product " . $_POST['title'] . " (" . $_POST['products_id'] . ") ", "type" => "success"));
+        } else {
+            $_SESSION['error'] = '501';
+            $_SESSION['notify_msg'] = "SOMETHING WENT WRONG, e_501 " . __LINE__;
+            $this->log(array("key" => "api_Admin_Insert_Products", "value" => "Failed INSERT Product " . $_POST['title'] . " (" . $_POST['products_id'] . ") " . $sql, "type" => "failure"));
+        }
+
+}
+
+public function api_Admin_Update_Products() {
+
+        // $this->console($_POST,1);
+
+        if(isSet($_POST['date'])) { $mysql_ts = $_POST['date']; } else { $mysql_ts = date('Y-m-d H:i:s'); }
+
+        /* extract Data Array */
+        extract($_POST, EXTR_PREFIX_SAME, "dup");
+        
+        /* Insert into database */
+        $title = $this->mysqli->real_escape_string($_POST['title']);
+        $desc = $this->mysqli->real_escape_string($_POST['desc']);
+        $desc_short = $this->mysqli->real_escape_string($_POST['desc_short']);
+        $details = $this->mysqli->real_escape_string($_POST['details']);
+        if($on_sale == '') { $on_sale = 0; }
+        
+        /* Check to see if files have been uploaded */
+        $needs_fileUpload =0;
+        foreach ($_FILES as $kF => $kV) {
+          if($kV['error'] == 4) { $needs_fileUpload = "false"; } else { $needs_fileUpload = "true";}
+        }
+        
+        if($needs_fileUpload == "true") {
+          $image_files_mutated = $this->api_Admin_Products_Upload_Images(array("jpg","jpeg"), "jpg");
+          $image_files_mutated = json_encode($image_files_mutated);
+        } else {
+          $image_files_mutated = $_files;
+        }
+        
+         $sql = "
+            UPDATE product
+            SET
+               art_id = '$art_id', 
+               title =  '$title',
+               `desc` =  '$desc', 
+               desc_short = '$desc_short',
+               details = '$details',
+               tags = '$tags',
+               image = '$image_files_mutated', 
+               price = '$price',
+               taxable = '$taxable',
+               on_sale = '$on_sale',
+               in_stock = '$in_stock',
+               quantity = '$quantity',
+               ship_tier = '$ship_tier',
+               type = 'single',
+               uri_path = '$uri_path',
+               status ='$status'
+            WHERE product_id = '$products_id'";
+
+        $result = $this->mysqli->query($sql);
 
         if($result == 1) {
             $_SESSION['error'] = '200';

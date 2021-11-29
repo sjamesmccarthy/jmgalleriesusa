@@ -18,9 +18,8 @@
                 <form id="productsadd" action="/studio/api/update/products" method="POST" enctype="multipart/form-data">
                 <input type="hidden" id="formTypeAction" name="formTypeAction" value="<?= $formTypeAction ?>" />
                 <?= $id_field ?>
-                <?= $file_1_hidden ?>
+                <?= $files_array ?>
                 <input type="hidden" id="artist_id" name="artist_id" value="1" />
-                <input type="hidden" id="art_id" name="art_id" value="0" />
 
                 <div>
                     <label>title</label>

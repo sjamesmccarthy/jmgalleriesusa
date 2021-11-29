@@ -32,7 +32,7 @@ if(isSet($this->routes->URI->queryvals)) {
     extract($edit_data, EXTR_PREFIX_ALL, "res");
     
     $image_data = json_decode($res_image, TRUE);
-    
+        
     $res_ship_tier = htmlspecialchars($res_ship_tier);
     $res_title = htmlspecialchars($res_title);
     $res_teaser = htmlspecialchars($res_teaser);
@@ -41,22 +41,22 @@ if(isSet($this->routes->URI->queryvals)) {
     $i=1;
     foreach ($image_data as $iK => $iV) {
 
-        ${"res_image_" . $i} = $iV['name'];
-        if ( !file_exists($_SERVER["DOCUMENT_ROOT"] . "/view/image/product/" . ${"res_image_" . $i}) ) {
-            ${"res_image_" . $i} = "ERROR: IMAGE_FILE_NOT_FOUND";
-        } 
+        if ( $iV['size'] != "0" || is_file($_SERVER["DOCUMENT_ROOT"] . "/view/image/product/" . $iV['name'])) {
+            ${"res_image_" . $i} = $iV['name'];
+        } else {
+            // ${"res_image_" . $i} = "ERROR: IMAGE_FILE_NOT_FOUND";
+        }
         
         $i++;
     }
 
     /* IMAGES: check for thumbnail image file on server */
-    // watkins-window-framed-limited-edition_thumb.jpg
     
-    if ( file_exists($_SERVER["DOCUMENT_ROOT"] . "/view/image/product/" . $res_uri_path . '_thumb.jpg') ) {
+    if ( is_file($_SERVER["DOCUMENT_ROOT"] . "/view/image/product/" . $res_uri_path . '_thumb.jpg') ) {
         $res_image_6 = $res_uri_path . '_thumb.jpg';
     }
         
-    if($res_image != '') {
+    if(isSet($res_image_1)) {
         $show_image1_html = '<div class="show-image-container"><img src="/view/image/product/' . $res_image_1 . '" class="show-image" alt="' . $res_image_1 . '" /></div>';
         $image_info_1 = "<span class='file--image_info'>CURRENT IMAGE FILE /view/image/product/" . $res_image_1 . "</span>";   
     } else {
@@ -104,7 +104,8 @@ if(isSet($this->routes->URI->queryvals)) {
     // $button_archive_cancel = '<button class="btn-delete mt-32" id="archive" value="ARCHIVE">archive supplier</button>';
     $button_archive_cancel = '<a class="cancel-button" href="/studio/products">cancel</a>';
     $id_field = '<input type="hidden" name="products_id" value="' . $res_product_id . '" />';
-    $file_1_hidden = '<input type="hidden" name="file_1_hidden" value="' . $res_image_1 . '.jpg" />';
+    // $file_1_hidden = '<input type="hidden" name="file_1_hidden" value="' . $res_image_1 . '" />';
+    $files_array = "<input type='hidden' name='_files' value='" . json_encode($image_data) . "' />";
     $short_path_disabled = 'disabled';
     $image_info = "<span class='file--image_info'>CURRENT IMAGE FILE /view/image/product/" . $res_image_1 . "</span>";
 
@@ -112,7 +113,7 @@ if(isSet($this->routes->URI->queryvals)) {
 
     $formTypeAction = "insert";
     $button_label = "add New Product";
-    $file_1_hidden = null; 
+    // $file_1_hidden = null; 
     $button_state = "show";
     $legacy_exp_field = null;
     $this->page->title = "Adding <b>New Product To Shop</b>";
