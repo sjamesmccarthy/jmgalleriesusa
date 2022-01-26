@@ -1,73 +1,35 @@
-/* ********************** */
 /* component_new-releases */
-
-.h2-newrelease {
-    text-align: left;
-    
-     // xSmall devices (landscape phones, 320px and up)
-    @media (min-width: 320px) { 
-    //  background-color: pink;
-    text-align: center;
-    }
-
-    // Small devices (landscape phones, 576px and up)
-    @media (min-width: 375px) { 
-    //  background-color: red;
-    text-align: center;
-    }
-
-    // Medium devices (tablets, 768px and up)
-    @media (min-width: 767px) {
-    //  background-color: blue;
-    text-align: center; //left
-    }
-
-    // Large devices (tablets (iPad Pro, 1112px and up)
-    @media (min-width: 1112px) {
-    //  background-color: gray;
-    text-align: center; //left
-    }
-
-    // Extra large devices (large desktops, 1200px and up)
-    @media (min-width: 1200px) {
-    //  background-color: lightgreen;
-    text-align: center; //left
-    }
-
-
- }
- 
 #new-releases {
- 
+
     h4 {
         // text-transform: uppercase;
         font-size: 1rem;
         font-weight: 400;
 
           // xSmall devices (landscape phones, 320px and up)
-          @media (min-width: 320px) { 
+          @media (min-width: 320px) {
             //  background-color: pink;
             font-size: 1rem;
          }
-     
+
          // Small devices (landscape phones, 576px and up)
-         @media (min-width: 376px) { 
+         @media (min-width: 376px) {
             //  background-color: red;
              font-size: 1.2rem;
          }
-     
+
          // Medium devices (tablets, 768px and up)
          @media (min-width: 767px) {
             //  background-color: blue;
             font-size: 1.5rem;
         }
-     
+
          // Large devices (tablets (iPad Pro, 1112px and up)
          @media (min-width: 1112px) {
             //  background-color: gray;
              font-size: 1.5rem;
          }
-     
+
          // Extra large devices (large desktops, 1200px and up)
          @media (min-width: 1200px) {
             //  background-color: lightgreen;
@@ -77,22 +39,8 @@
     }
 }
 
-// .thumb img {
-//     width: 100%;
-// }
-
-// .thumb >p {
-//     font-size: .9rem;
-// }
-
-// .view-all {
-//     margin-bottom: 16px;
-//     text-align: right; 
-//     padding-right: 8px;
-// }
-
 .new-release-error {
-    margin-top: 20px; 
-    padding-top: 20px; 
+    margin-top: 20px;
+    padding-top: 20px;
     border-top: 1px solid #CCC;
 }

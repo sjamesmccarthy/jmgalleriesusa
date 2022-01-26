@@ -3,105 +3,111 @@
 
 #catalog {
 
-    h1 {
-        // text-transform: uppercase;
-        font-size: 3rem;
-        font-weight: 800;
+ h2 {
+    text-align: left;
+    display: none;
 
-            // xSmall devices (landscape phones, 320px and up)
-            @media (min-width: 320px) { 
-            //  background-color: pink;
-            font-size: 1.85rem;
-            }
-        
-            // Small devices (landscape phones, 576px and up)
-            @media (min-width: 376px) { 
-            //  background-color: red;
-                font-size: 2rem;
-            }
-        
-            // Medium devices (tablets, 768px and up)
-            @media (min-width: 767px) {
-            //  background-color: blue;
-            font-size: 2.5rem;
-        }
-        
-            // Large devices (tablets (iPad Pro, 1112px and up)
-            @media (min-width: 1112px) {
-            //  background-color: gray;
-                font-size: 3rem;
-            }
-        
-            // Extra large devices (large desktops, 1200px and up)
-            @media (min-width: 1200px) {
-            //  background-color: lightgreen;
-            font-size: 3rem;
-            }
-            
+     // xSmall devices (landscape phones, 320px and up)
+    @media (min-width: 320px) {
+    //  background-color: pink;
+    text-align: center;
+    display: block;
     }
-    
+
+    // Small devices (landscape phones, 576px and up)
+    @media (min-width: 376px) {
+    //  background-color: red;
+    text-align: center;
+    display: block;
+    }
+
+    // Medium devices (tablets, 768px and up)
+    @media (min-width: 767px) {
+     // background-color: blue;
+    text-align: center; //left
+    display: none;
+    }
+
+    // Large devices (tablets (iPad Pro, 1112px and up)
+    @media (min-width: 1112px) {
+    //  background-color: gray;
+    text-align: center; //left
+    display: none;
+    }
+
+    // Extra large devices (large desktops, 1200px and up)
+    @media (min-width: 1200px) {
+     // background-color: lightgreen;
+    text-align: center; //left
+    display: none;
+    }
+}
+
     h4 {
         // text-transform: uppercase;
         font-size: 1rem;
         font-weight: 400;
 
             // xSmall devices (landscape phones, 320px and up)
-            @media (min-width: 320px) { 
+            @media (min-width: 320px) {
             //  background-color: pink;
             font-size: 1rem;
             }
-        
+
             // Small devices (landscape phones, 576px and up)
-            @media (min-width: 376px) { 
+            @media (min-width: 376px) {
             //  background-color: red;
                 font-size: 1.2rem;
             }
-        
+
             // Medium devices (tablets, 768px and up)
             @media (min-width: 767px) {
             //  background-color: blue;
             font-size: 1.5rem;
         }
-        
+
             // Large devices (tablets (iPad Pro, 1112px and up)
             @media (min-width: 1112px) {
             //  background-color: gray;
                 font-size: 1.5rem;
             }
-        
+
             // Extra large devices (large desktops, 1200px and up)
             @media (min-width: 1200px) {
             //  background-color: lightgreen;
             font-size: 1.5rem;
             }
-            
+
     }
 
     .shop-tv-link {
         text-align: center;
         text-transform: uppercase;
-        
+
     }
 }
 
-.sub-title {
+.--subhead{
     text-align: center;
 
     // xSmall devices (landscape phones, 320px and up)
-    @media (min-width: 320px) { 
+    @media (min-width: 320px) {
         font-size: .7rem;
+        display: none;
      // background-color: pink;
     }
 
     // Small devices (landscape phones, 576px and up)
-    @media (min-width: 375px) { 
+    @media (min-width: 375px) {
         font-size: .9rem;
+        display: none;
      // background-color: red;
     }
 
     // Medium devices (tablets, 768px and up)
     @media (min-width: 767px) {
-        font-size: 1.5rem;
+        font-size: 1.2rem;
+        display: block;
      // background-color: blue;
     }
 
@@ -109,12 +115,14 @@
     @media (min-width: 1112px) {
     //  background-color: gray;
     font-size: 1.5rem;
+    display: block;
     }
 
     // Extra large devices (large desktops, 1200px and up)
     @media (min-width: 1200px) {
     //  background-color: lightgreen;
     font-size: 1.5rem;
+    display: block;
     }
 
 }
@@ -123,13 +131,13 @@
     text-align: left;
 
     // xSmall devices (landscape phones, 320px and up)
-    @media (min-width: 320px) { 
+    @media (min-width: 320px) {
     //  background-color: pink;
     text-align: center;
     }
 
     // Small devices (landscape phones, 576px and up)
-    @media (min-width: 376px) { 
+    @media (min-width: 376px) {
     //  background-color: red;
     text-align: center;
     }
@@ -153,7 +161,7 @@
     }
 
 }
- 
+
 // .filter-thumb-gallery {
 
 //     >p {
@@ -170,8 +178,8 @@
 //     }
 // }
 
-// .filter-editions-list { 
- 
+// .filter-editions-list {
+
 //     margin: 2rem 0;
 
 //     li {
@@ -192,7 +200,7 @@
 //             cursor: pointer;
 //             color: $color-black-dark;
 //         }
-        
+
 //         &.selected {
 //             font-weight: 700;
 //             border-bottom: 3px solid $color-blue;

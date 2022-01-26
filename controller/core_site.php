@@ -3,7 +3,7 @@
 class Core_Site extends Core_Api
 {
 
-    public $config; 
+    public $config;
     public $routes;
     public $session_started;
     public $data;
@@ -39,25 +39,25 @@ class Core_Site extends Core_Api
         $this->getRoute();
 
     }
-    
+
     public function getEnv() {
 
         /* Check for environment in URI based on domain extension */
         $uri = explode('.', $_SERVER['SERVER_NAME']);
 
         if(!isSet($uri[1]) || $uri[1] == 'local') { $this->env = 'local'; } else { $this->env = "prod"; }
-        
+
         /* Error reporting levels being outputted to screen and logged */
         error_reporting($this->config_env->env[$this->env]['error_reporting']);
 
     }
 
     public function initSession() {
-    
+
         if (!isset($_SESSION['uid'])) {
-            
+
             $route_check = explode("/", $_SERVER['REQUEST_URI']);
-            
+
             if($route_check[1] == 'studio') {
                 $sess_type = 'ADMIN';
                 $lifetime = $this->config->session_cookie_lifetime; /* 1 Day = 86400 */
@@ -71,7 +71,7 @@ class Core_Site extends Core_Api
                 $lifetime = $this->config->session_cookie_lifetime; /* until browser is closed */
                 session_set_cookie_params($lifetime,'/');
             }
-        
+
             session_save_path($this->config_env->env[$this->env]['session_save_path']);
             session_start();
             session_gc();
@@ -82,9 +82,9 @@ class Core_Site extends Core_Api
         } else {
             $this->console($_SESSION,1);
         }
-    
+
     }
-    
+
     public function checkSession() {
 
         if( !isset($_SESSION['uid']) || $_SESSION['dashboard'] != "ARTIST") {
@@ -96,7 +96,7 @@ class Core_Site extends Core_Api
         }
 
     }
-    
+
     public function checkSessionCollector() {
 
         if( !isset($_SESSION['uid']) || $_SESSION['dashboard'] != "COLLECTOR") {
@@ -110,31 +110,31 @@ class Core_Site extends Core_Api
     }
 
     public function getRoute() {
-        
+
         $pass_error_page = false;
 
         /* Parse the URI */
         $this->routes->URI = (object) parse_url($_SERVER['REQUEST_URI']);
         $this->routes->URI->url = "//{$_SERVER['HTTP_HOST']}{$_SERVER['REQUEST_URI']}";
         $this->routes->URI->useragent = $_SERVER['HTTP_USER_AGENT'];
-        
+
             /* Check for root level or trim slashes */
             if($this->routes->URI->path != '/') {
                 $this->routes->URI->path = rtrim($this->routes->URI->path, '/');
-                
+
                 // print $this->routes->URI->path;
                 // exit;
-                
+
             } else {
                 // print $this->routes->URI->path;
             }
 
             /* Match the [path] of URI to the routes.json */
             if (property_exists($this->routes, $this->routes->URI->path) == true) {
-                
+
                 // print "preg_match_TRUE<br />" . $this->routes->URI->path;
                 // exit;
-                
+
                 /* Direct route match URI === route path */
                 $this->routes->URI->match = 'true';
                 $this->page->title = $this->routes->{$this->routes->URI->path}['title'];
@@ -150,21 +150,21 @@ class Core_Site extends Core_Api
                 /* Check if Template type is script */
                 if ($this->routes->{$this->routes->URI->path}['template'] == "script") {
                     // header('location:' . $this->routes->{$this->routes->URI->path}['page']);
-                    
+
                     if (file_exists($_SERVER["DOCUMENT_ROOT"] . "/view/" . $this->routes->{$this->routes->URI->path}['page'])) {
                         include_once($_SERVER["DOCUMENT_ROOT"] . "/view/" . $this->routes->{$this->routes->URI->path}['page']);
                     } else {
                         $this->errors['script'] = 'Script Not Found : ' . __FILE__ . ' : ' . __FUNCTION__ . ' : ' . __LINE__ . ' : ' . $this->routes->{$this->routes->URI->path}['page'];
                     }
                 }
-            
+
             /* Add else if which checks for 1 wildcard string and then checks database for that collection */
             /* Problem: this could catch single path URIs and send 404 */
             } else if (preg_match_all("/^\/[^\/]+\/$/m", $this->routes->URI->path . '/') == true) {
-                                
+
                 /* splitting the URI path by forward slash */
                 $URIx = explode('/', $this->routes->URI->path);
-                
+
                 /* API look up of collection, if found load, else $pass_error_page = true */
                 $check_collection = $this->api_Admin_Get_LookUpCollectionByName($URIx[1]);
 
@@ -173,18 +173,18 @@ class Core_Site extends Core_Api
                     $this->routes->URI->path = "[$1]";
                     $this->routes->URI->template = $this->routes->{'[$1]'}['template'];
                     $this->routes->URI->page = $this->routes->{'[$1]'}['page'];
-                
+
                     /* Adding data to the page index of the data object that is accessible in the templates and pages */
                     $this->page->title = ucwords(str_ireplace("-", " ", $URIx[1]));
                     $this->page->catalog_path = '/' . $URIx[1];
                     // $this->page->photo = $URIx[2];
                     $this->page->photo_path = $URIx[2];
-                } 
+                }
                 else { $pass_error_page = true; }
 
             /* Two wild card paths in URI */
             } else if (preg_match_all("/^\/[^\/]+\/[^\/]+\/$/m", $this->routes->URI->path . '/') == true) {
-                
+
                 /* splitting the URI path by forward slash */
                 $URIx = explode('/', $this->routes->URI->path);
                 unset($URIx[0]);
@@ -217,7 +217,7 @@ class Core_Site extends Core_Api
                         $this->routes->URI->path = "[$1]/[$2]";
                         $this->routes->URI->template = $this->routes->{'[$1]/[$2]'}['template'];
                         $this->routes->URI->page = $this->routes->{'[$1]/[$2]'}['page'];
-                
+
                         /* Adding data to the page index of the data object that is accessible in the templates and pages */
                         $this->page->title = ucwords(str_ireplace("-", " ", $URIx[2]));
                         $this->page->catalog_path = '/' . $URIx[1];
@@ -230,20 +230,20 @@ class Core_Site extends Core_Api
                         $this->routes->URI->path = "/" . $URIx[1] . "/[$1]";
                         $this->routes->URI->template = $this->routes->{"/" . $URIx[1] . '/[$1]'}['template'];
                         $this->routes->URI->page = $this->routes->{"/" . $URIx[1] . '/[$1]'}['page'];
-                
+
                         /* Adding data to the page index of the data object that is accessible in the templates and pages */
                         $this->page->title = ucwords(str_ireplace("-", " ", $URIx[2]));
                         $this->page->catalog_path = $URIx[1];
                         $this->page->uri = $URIx[2];
                     break;
-                    
+
                     default:
                      /* default for /photo/[$1]; */
                         /* Mutating the routes URI so the regEx can be found in the routes JSON object */
                         $this->routes->URI->path = "[$1]/[$2]";
                         $this->routes->URI->template = $this->routes->{'[$1]/[$2]'}['template'];
                         $this->routes->URI->page = $this->routes->{'[$1]/[$2]'}['page'];
-                
+
                         /* Adding data to the page index of the data object that is accessible in the templates and pages */
                         $this->page->title = ucwords(str_ireplace("-", " ", $URIx[2]));
                         $this->page->catalog_path = '/' . $URIx[1];
@@ -251,13 +251,13 @@ class Core_Site extends Core_Api
                         $this->page->photo_path = $URIx[2];
                     break;
                 }
-                
+
             } else {
                 $pass_error_page = true;
             }
 
             if($pass_error_page == true) {
-                
+
                 $this->record_404($_SERVER['REQUEST_URI']);
                 /* splitting the URI path by forward slash  *
                 /
@@ -268,7 +268,7 @@ class Core_Site extends Core_Api
                 $this->page->title = $this->routes->{$this->routes->URI->path}['title'];
                 $this->routes->URI->requested_path = $URIx;
                 $this->page->catalog_path = '404';
-            } 
+            }
 
             /* Parse query string */
             if(isSet($this->routes->URI->query))
@@ -296,9 +296,9 @@ class Core_Site extends Core_Api
         /* include the template page specifed in the routes config if the template file is not valid then push to Route 404 */
         if(file_exists($this->routes->URI->template)) {
             include($this->routes->URI->template);
-        } 
-        else { 
-            $this->errors['component'] = 'Template Not Found : ' . __FILE__ . ' : ' . __FUNCTION__ . ' : ' . __LINE__ . ' : ' . $this->routes->URI->template; 
+        }
+        else {
+            $this->errors['component'] = 'Template Not Found : ' . __FILE__ . ' : ' . __FUNCTION__ . ' : ' . __LINE__ . ' : ' . $this->routes->URI->template;
         }
 
         /* Flush the output buffer */
@@ -318,18 +318,18 @@ class Core_Site extends Core_Api
 
         /* include the template page specifed in the routes config */
         if(file_exists($this->routes->URI->view)) {
-            
+
             /* Check to see if a component file for this view is enabled and then if exists */
             if($this->routes->{$this->routes->URI->path}['component'] == "true") {
 
-                if(file_exists($this->routes->URI->component)) { 
+                if(file_exists($this->routes->URI->component)) {
                     include($this->routes->URI->component);
-                } else { 
-                    $this->errors['component'] = 'Component Not Found : ' . __FILE__ . ' : ' . __FUNCTION__ . ' : ' . __LINE__ . ' : ' . $this->routes->URI->component; 
+                } else {
+                    $this->errors['component'] = 'Component Not Found : ' . __FILE__ . ' : ' . __FUNCTION__ . ' : ' . __LINE__ . ' : ' . $this->routes->URI->component;
                 }
 
-            } 
-            
+            }
+
             /* Assign variables to be used in page content */
             // foreach($this->page as $k => $v) {
             //     $this->$k = $v;
@@ -337,9 +337,9 @@ class Core_Site extends Core_Api
 
             /* This file needs to load after the .inc file so inherits any data attributes */
             include($this->routes->URI->view);
-        } else { 
+        } else {
             echo "<p>Roses are red, violets are blue, we are oh-so sorry we can not find your view.</p><p>This has been reported to the poet.</p>";
-            $this->errors['component'] = 'View Not Found : ' . __FILE__ . ' : ' . __FUNCTION__ . ' : ' . __LINE__ . ' : ' . $this->routes->URI->view; 
+            $this->errors['component'] = 'View Not Found : ' . __FILE__ . ' : ' . __FUNCTION__ . ' : ' . __LINE__ . ' : ' . $this->routes->URI->view;
 
         }
 
@@ -356,9 +356,9 @@ class Core_Site extends Core_Api
     }
 
     public function component($component, $props=null) {
-        
+
         // if ( !is_null($props)) { $props = "?" . $props; }
-        
+
         $file = $_SERVER['DOCUMENT_ROOT'] . '/view/component_' . $component;
 
         if( file_exists($file . ".php") ) {
@@ -372,23 +372,23 @@ class Core_Site extends Core_Api
 
         /* Check to see if the partial file has an Include Component with it */
         $file = $_SERVER['DOCUMENT_ROOT'] . '/view/partial_' . $partial;
-        
+
         if( file_exists($file . ".inc.php") ) {
             include_once($file . ".inc.php");
-        } 
+        }
 
         /* Include the partial file if exists */
         if( file_exists($file . '.php')) {
             include_once($file . '.php');
-        } 
+        }
     }
 
     public function log($log_data) {
 
         /* extract Data Array */
         extract($log_data, EXTR_PREFIX_SAME, "dup");
-        
-        /* Insert into database table: log 
+
+        /* Insert into database table: log
         /* Executes SQL and then assigns object to passed var */
 
             $sql = "INSERT INTO log (`user_id`, `key`, `value`, `type`) VALUES ('" . $_SESSION['uid'] . "','" . $key . "','" . $value . "','" . $type . "');";
@@ -398,7 +398,7 @@ class Core_Site extends Core_Api
                 $data['result'] = '200';
             } else {
                 $data['result'] = '400';
-            }	
+            }
 
         return($data);
 
@@ -411,7 +411,7 @@ class Core_Site extends Core_Api
         if( !$_POST['file_1_hidden'] || isSet($_FILES['file_1']['name']) ) {
 
             foreach($_FILES as $key => $value) {
-                
+
                 if($value['size'] != 0) {
                     $_FILES[$key]['path'] = $_POST[$key . '_path'];
                     $uploadReady=1;
@@ -427,7 +427,7 @@ class Core_Site extends Core_Api
                     // need to throw an overwrite flag only if $_FILES[$key]['name']
                     if( isSet($_FILES[$key]['name'])) {
                         $uploadOverwrite = 1;
-                    } 
+                    }
 
                 } else { $uploadReady=1; $uploadOverwrite = 0; }
 
@@ -489,24 +489,24 @@ class Core_Site extends Core_Api
         /* Outputs some objects and arrays for debugging */
         if ($this->routes->URI->query == "debug=false") {
             return 0;
-        } 
+        }
         else if($this->config_env->env[$this->env]['debug'] == "true" || $this->routes->URI->query == "debug=true") {
-            
+
             $result = get_object_vars($this);
 
             if($this->config_env->env[$this->env]['exclude_vars'] == "true") {
                 unset($result['routes']);
                 unset($result['config_env']);
                 unset($result['mysqli']);
-            } 
+            }
 
             echo "<script>
-            jQuery(document).ready(function($) { 
-                $('.debug_trigger').on('click', function() { 
+            jQuery(document).ready(function($) {
+                $('.debug_trigger').on('click', function() {
                     console.log('debug-window-toggle');
                     $('#debug_container').toggle();
                     window.scrollBy(0,100);
-                }); 
+                });
             });
             </script>";
             echo "<div class='debug_trigger' style='background-color: #000; font-size: 1rem; padding: 2rem;'>";
@@ -521,12 +521,12 @@ class Core_Site extends Core_Api
             echo "</div>";
         }
     }
-    
+
     public function record_404($error) {
-        
+
         // Commented out on 7/7/2021
-        // Receiving too much email 
-        
+        // Receiving too much email
+
         // $to = 'system-404@jmgalleries.com';
         // $header_from = "FROM: SysAdmin-jM Galleries <'system-core@jmgalleries.com'>";
         // $reply_to = 'system-core@jmgalleries.com';
@@ -534,7 +534,7 @@ class Core_Site extends Core_Api
         // $message = "The following page could not be found.\n\n{\nURI: " . $error ."\nSERVER_IP: " . $_SERVER['REMOTE_ADDR'] . "\nREFERR_URI: " . $_SERVER['HTTP_REFERER'] . "\n}";
         // $headers =  $header_from . "\r\n" . 'Reply-To: ' . $reply_to . "\r\n" . 'X-Mailer: PHP/' . phpversion() . '/SysAdmin-jM Galleries';
         // mail($to, $subject, $message, $headers);
-        
+
     }
 }
 ?>

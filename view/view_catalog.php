@@ -1,10 +1,10 @@
 <section id="catalog">
     <div class="grid-4_sm-2 grid-4_md-3">
-        
+
         <div class="col-12 title pb-32">
-            <h1><?= strtoupper($catalog_title) ?></h1>
-            <p class="light sub-title pt-8"><?= $catalog_desc ?> <?= $catalog_le_desc ?></p>
-            <?php 
+            <h2><?= strtoupper($catalog_title) ?></h2>
+            <p class="light --subhead pt-8"><?= $catalog_desc ?></p> <!-- <?= $catalog_le_desc ?> -->
+            <?php
                 if($catalog_tabs_hidden != true) {
             ?>
             <!-- <ul class="filter-editions-list"> -->
@@ -12,7 +12,7 @@
                 <!-- <li class="filter-gallery">Limited Edition</li> -->
                 <!-- <li class="filter-studio">Studio Edition</li> -->
                 <!-- <li class="filter-open">Open Edition</li> -->
-                <!-- tinyVIEWS<span style="font-size:.9rem; font-weight: 300;"><sup>&trade;</sup></span>--> 
+                <!-- tinyVIEWS<span style="font-size:.9rem; font-weight: 300;"><sup>&trade;</sup></span>-->
             <!-- </ul> -->
             <?php } ?>
         </div>

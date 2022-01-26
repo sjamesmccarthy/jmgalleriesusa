@@ -1,9 +1,9 @@
 <section class="admin--catalog-add">
     <div class="grid">
-       
+
         <!-- insert navigation component -->
         <?= $navigation_html ?>
-    
+
         <div class="col catalog-add--container">
 
             <div class="admin-header">
@@ -27,13 +27,13 @@
                     <option value="PARENT COLLECTION">PARENT COLLECTION</option>
                     <option value="---">---</option>
                     <?= $category_html ?>
-                </select> 
+                </select>
 
                 <p id="add-collection" class="small mb-16 ml-16 mt-16">
                     <?= $collections_html ?>
                 </p>
                 <!-- <p  class="small pb-8">edit collections</i></p> -->
-                   
+
                 <select id="collections-tag" name="collections_tags[]" multiple>
                     <?= $collections_tag_options ?>
                 </select>
@@ -47,10 +47,12 @@
                     <option value="ACTIVE" <?= ($status == "ACTIVE" ? "SELECTED" : ""); ?>>STATUS (ACTIVE)</option>
                     <option value="DISABLED" <?= ($status == "DISABLED" ? "SELECTED" : ""); ?>>STATUS (DISABLED)</option>
                     <option value="RETIRED" <?= ($status == "RETIRED" ? "SELECTED" : ""); ?>>STATUS (RETIRED)</option>
-                </select> 
+                </select>
                  <p id="make-featured" class="small mb-16 mt-16">
-                     <input <?= ($featured == "1" ? "CHECKED" : ""); ?> type="checkbox" id="featured" name="featured" value="1" /> 
+                     <input <?= ($featured == "1" ? "CHECKED" : ""); ?> type="checkbox" id="featured" name="featured" value="1" />
                      <label for="featured" style="color: #000"> Featured Homepage Cover (note: must be landscape)</label>
+                     <input <?= ($featured_contrast == "1" ? "CHECKED" : ""); ?> type="checkbox" id="featured_contrast" name="featured_contrast" value="1" />
+                     <label for="featured_contrast" style="color: #000"> Featured Homepage Cover Contrast (use dark)</label>
                 </p>
                 </div>
 
@@ -124,14 +126,14 @@
                 <select id="on_display" name="on_display">
                     <option value="0">on Display (Select Location)</option>
                     <?= $location_html ?>
-                </select> 
+                </select>
                 </div>
 
                 <!-- <div class="select-wrapper half-size">
                 <select id="as_studio" name="as_studio">
                     <option value="1" <?= ($as_studio == "1" ? "SELECTED" : ""); ?>>as STUDIO EDITION</option>
                     <option value="0" <?= ($as_studio == "0" ? "SELECTED" : ""); ?>>no (STUDIO EDITION)</option>
-                </select> 
+                </select>
                 </div> -->
 
             </div>
@@ -143,9 +145,9 @@
                         <option value="acrylic" <?= ($desc == "acrylic" ? "SELECTED" : ""); ?>>Acrylic</option>
                         <option value="canvas" <?= ($desc == "canvas" ? "SELECTED" : ""); ?>>Canvas</option>
                         <option value="paper" <?= ($desc == "paper" ? "SELECTED" : ""); ?>>Paper</option>
-                    </select> 
+                    </select>
                 </div>
-                    
+
                 <div class="half-size" >
                     <!-- <input class="half-size" type="text" id="desc" name="desc" placeholder="DESCRIPTION OF MATERIAL (eg, paper or acrylic)" value="<?= $desc ?>" required> -->
                     <label>custom sizes & pricing (acrylic|metal)</label>
@@ -158,14 +160,14 @@
                 <select id="as_tinyviews" name="as_tinyview">
                     <option value="1" <?= ($as_tinyview == "1" ? "SELECTED" : ""); ?>>as TINYVIEWS EDITION</option>
                     <option value="0" <?= ($as_tinyview == "0" ? "SELECTED" : ""); ?>>no (TINYVIEWS EDITION)</option>
-                </select> 
+                </select>
                 </div> -->
 
                 <!-- <div class="select-wrapper half-size">
                 <select id="as_open" name="as_open">
                     <option value="1" <?= ($as_open == "1" ? "SELECTED" : ""); ?>>as OPEN/tinyViews&trade; EDITION</option>
                     <option value="0" <?= ($as_open == "0" ? "SELECTED" : ""); ?>>no (OPEN/tinyViews&trade; EDITION)</option>
-                </select> 
+                </select>
                 </div> -->
 
             <div>
@@ -176,10 +178,10 @@
                 <select id="on_display" name="on_display">
                     <option value="0">on Display (Select Location)</option>
                     <?= $location_html ?>
-                </select> 
+                </select>
                 </div> -->
             </div>
-            
+
             <div>
                 <h6>Photo Meta Data</h6>
                 <div class="select-wrapper half-size">
@@ -188,7 +190,7 @@
                     <option value="landscape" <?= ($orientation == "landscape" ? "SELECTED" : ""); ?>>Landscape</option>
                     <option value="portrait" <?= ($orientation == "portrait" ? "SELECTED" : ""); ?>>Portrait</option>
                     <option value="square" <?= ($orientation == "square" ? "SELECTED" : ""); ?>>Square</option>
-                </select> 
+                </select>
                 </div>
                 <div class="half-size">
                 <label>date taken</label>
@@ -210,7 +212,7 @@
                     <option value="(FILM) Rolleicord" <?= ($camera == "(FILM) Rolleicord" ? "SELECTED" : ""); ?>>(FILM) Rolleicord</option>
                     <option value="(FILM) Nikon FG" <?= ($camera == "(FILM) Nikon FG" ? "SELECTED" : ""); ?>>(FILM) Nikon FG</option>
                     <option value="Other" <?= ($camera == "Other" ? "SELECTED" : ""); ?>>Other</option>
-                </select> 
+                </select>
                 </div>
                 <div class="select-wrapper half-size">
                 <label>lens</label>
@@ -274,12 +276,12 @@ jQuery(document).ready(function($){
 
 
     $('#sendform').on("click", function() {
-        $(":input[required]").each(function () {                     
+        $(":input[required]").each(function () {
         var myForm = $('#catalog-add');
-        if (!$myForm[0].checkValidity()) 
-          {                
-            $('#catalog-add').submit();             
-          } 
+        if (!$myForm[0].checkValidity())
+          {
+            $('#catalog-add').submit();
+          }
         });
     });
 
@@ -296,6 +298,6 @@ jQuery(document).ready(function($){
         e.preventDefault();
         $('#collections-tag').toggle();
     });
-    
+
 });
 </script>

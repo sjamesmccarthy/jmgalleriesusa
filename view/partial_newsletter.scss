@@ -4,37 +4,37 @@
 .newsletter-section-fn {
     padding-top: 2rem;
     text-align: center;
-    
+
     h3 {
-        padding-bottom: .5rem;    
+        padding-bottom: .5rem;
 
         // xSmall devices (landscape phones, 320px and up)
-        @media (min-width: 320px) { 
+        @media (min-width: 320px) {
             font-size: 1rem;
         }
-    
+
         // Small devices (landscape phones, 576px and up)
-        @media (min-width: 376px) { 
+        @media (min-width: 376px) {
            font-size: 1rem;
         }
-    
+
         // Medium devices (tablets, 768px and up)
         @media (min-width: 767px) {
             font-size: 1.5rem;
         }
-    
+
         // Large devices (tablets (iPad Pro, 1112px and up)
         @media (min-width: 1112px) {
             font-size: 1.5rem;
         }
-    
+
         // Extra large devices (large desktops, 1200px and up)
         @media (min-width: 1200px) {
             font-size: 1.5rem;
         }
-        
+
     }
-    
+
 }
 
 .newsletterinput {
@@ -45,9 +45,14 @@
     background-color: #FFF !important;
     padding-left: .5rem !important;
     margin-right: 8px;
-    width: 65% !important;
+    width: 60% !important;
+
 }
- 
+
+#mce-EMAIL {
+    border-radius: $border-radius;
+}
+
 .newsletter-button {
 height: 51px;
     // vertical-align: middle;
@@ -86,6 +91,7 @@ height: 51px;
     padding: 10px;
     height: 42px;
     margin-right: 10px;
+
 }
 
 .subscribe-form-container {
@@ -99,7 +105,7 @@ height: 51px;
 // #mc_embed_signup {
 //     background-color: none;
 //     padding: 0 !important;
-// 
+//
 //     input {
 //         position: relative;
 //         height: 50px;
@@ -119,25 +125,25 @@ height: 51px;
 //         box-sizing: border-box;
 //         padding-left: 15px;
 //         margin-bottom: 1rem;
-// 
+//
 //         @media (max-width: 64em) and (orientation: portrait),
-//         (max-width: 80em) and (orientation: portrait) 
+//         (max-width: 80em) and (orientation: portrait)
 //         {
 //            width: 80%;
 //         }
-// 
-//         @media (min-device-width: 375px) and (max-device-height: 812px) 
+//
+//         @media (min-device-width: 375px) and (max-device-height: 812px)
 //             and (orientation : landscape) and (-webkit-device-pixel-ratio: 3)
 //         {
 //            width: 80%;
 //         }
-// 
+//
 //     }
-//     
+//
 //     .mc-inline {
 //         display: inline-block;
 //     }
-// 
+//
 //     label {
 //             position: absolute;
 //             font-size: .8rem;

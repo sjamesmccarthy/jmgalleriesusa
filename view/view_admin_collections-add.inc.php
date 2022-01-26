@@ -10,11 +10,13 @@ if($this->checkSession()) {
 
 /* CHECK TO SEE IF THIS IS AN EDIT OR ADD NEW */
 if(isSet($this->routes->URI->queryvals)) {
-    
+
     $edit_id = $this->routes->URI->queryvals[1];
 
     $edit_data = $this->api_Admin_Get_Collections_Item($edit_id);
     extract($edit_data, EXTR_PREFIX_ALL, "res");
+
+    $res_desc = htmlentities(stripslashes($res_desc));
 
     $this->page->title = "Editing Collection: <b>" . $res_title . "</b>";
     $formTypeAction = "update";

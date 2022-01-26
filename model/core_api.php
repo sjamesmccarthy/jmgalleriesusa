@@ -3,8 +3,8 @@
 class Core_Api extends Fieldnotes_Api
 {
     public $mysqli;
-    
-    public function startDB() 
+
+    public function startDB()
 	{
 
         /* Database Authentication */
@@ -12,11 +12,11 @@ class Core_Api extends Fieldnotes_Api
         $username = $this->config_env->env[$this->env]['user'];
 		$password = $this->config_env->env[$this->env]['password'];
 		$dbname = $this->config_env->env[$this->env]['dbname'];
-		
+
 		// Create connection
         $this->mysqli  = new mysqli ($hostname, $username, $password, $dbname);
 	}
-    
+
     public function checkDBConnection($function='Null') {
 
 		if ($this->mysqli->connect_errno) {
@@ -29,7 +29,7 @@ class Core_Api extends Fieldnotes_Api
     }
 
 	public function closeDB() {
-        
+
 		/* close connection */
 		$this->mysqli->close();
     }
@@ -41,7 +41,7 @@ class Core_Api extends Fieldnotes_Api
     }
 
     public function api_Catalog_Category_Thumbs__Legacy($catalog_path) {
-        
+
         /* Executes SQL and then assigns object to passed var */
         if( $this->checkDBConnection(__FUNCTION__) == true) {
 
@@ -64,17 +64,17 @@ class Core_Api extends Fieldnotes_Api
             $result = $this->mysqli->query($sql);
 
             if ($result->num_rows > 0) {
-            
+
                 while($row = $result->fetch_assoc())
 		        {
 		            $data[] = $row;
 		        }
-                
+
             } else {
-                
+
                 $data[] = "No Records Found @ $sql";
-            }	
-            
+            }
+
         }
 
         return($data);
@@ -97,7 +97,7 @@ class Core_Api extends Fieldnotes_Api
                 cp.as_studio,
                 cp.as_open,
                 cat.title AS cat_title,
-                cat.path as catalog_path, 
+                cat.path as catalog_path,
                 cp.available_sizes
             FROM
             	catalog_photo AS cp
@@ -109,24 +109,24 @@ class Core_Api extends Fieldnotes_Api
             $result = $this->mysqli->query($sql);
 
             if ($result->num_rows > 0) {
-            
+
                 while($row = $result->fetch_assoc())
 		        {
 		            $data[] = $row;
 		        }
-                
+
             } else {
-                
+
                 $data[] = "No Records Found @ $sql";
-            }	
-            
+            }
+
         }
 
         return($data);
     }
 
     public function api_Catalog_Category_Filmstrip($category_id, $limit, $edition='ALL') {
-        
+
         if($category_id != "ALL")  {
             $category = "cl.catalog_collections_id = " . $category_id
             . " AND cc.status = 'ACTIVE' "
@@ -172,25 +172,25 @@ class Core_Api extends Fieldnotes_Api
         WHERE "
             . $category
             . $limit;
-        
+
             $result = $this->mysqli->query($sql);
 
             if ($result->num_rows > 0) {
-            
+
                 while($row = $result->fetch_assoc())
 		        {
 		            $data[] = $row;
 		        }
-                
-            } 
-            
+
+            }
+
         }
 
         return($data);
     }
 
     public function api_Catalog_Category_Filmstrip__Legacy($category_id, $limit) {
-        
+
         /* Executes SQL and then assigns object to passed var */
         if( $this->checkDBConnection(__FUNCTION__) == true) {
 
@@ -209,24 +209,24 @@ class Core_Api extends Fieldnotes_Api
             $result = $this->mysqli->query($sql);
 
             if ($result->num_rows > 0) {
-            
+
                 while($row = $result->fetch_assoc())
 		        {
 		            $data[] = $row;
 		        }
-                
+
             } else {
-                
+
                 $data[] = "No Records Found @ $sql";
-            }	
-            
+            }
+
         }
 
         return($data);
     }
 
     public function api_Catalog_Get_New_Releases($limit=4, $duration=null, $rand=null) {
-        
+
         if( !is_null($rand) ) {
             $rand = " ORDER BY RAND() ";
         }
@@ -255,29 +255,29 @@ class Core_Api extends Fieldnotes_Api
         ORDER BY
             PH.created DESC
         LIMIT " . $limit;
-    
+
             $result = $this->mysqli->query($sql);
 
             if ($result->num_rows > 0) {
-            
+
                 while($row = $result->fetch_assoc())
 		        {
 		            $data[] = $row;
 		        }
-                
+
             } else {
-                
+
                 $data['error'] = "No Records Found";
                 $data['sql'] = $sql;
-            }	
-            
+            }
+
         }
 
         return($data);
     }
 
     public function api_Product_Get_Item($uri_path, $id=null) {
-        
+
         if(isSet($id)) {
             $where = "product_id = '" . $id . "'";
         } else {
@@ -292,23 +292,23 @@ class Core_Api extends Fieldnotes_Api
             FROM
                 product
             WHERE " . $where;
-    
+
             $result = $this->mysqli->query($sql);
 
             if ($result->num_rows > 0) {
-            
+
                 while($row = $result->fetch_assoc())
 		        {
 		            $data = $row;
 		        }
-                
+
             } else {
-                
+
                 $data['error'] = "No Records Found";
                 $data['error_no'] = "0REC";
                 $data['sql'] = $sql;
-            }	
-            
+            }
+
         }
 
         return($data);
@@ -324,29 +324,29 @@ class Core_Api extends Fieldnotes_Api
             FROM
                 product
             WHERE in_stock = 'true' AND status ='ACTIVE' and type != 'group' ORDER BY price ASC";
-    
+
             $result = $this->mysqli->query($sql);
 
             if ($result->num_rows > 0) {
-            
+
                 while($row = $result->fetch_assoc())
 		        {
 		            $data[] = $row;
 		        }
-                
+
             } else {
-                
+
                 $data['error'] = "No Records Found";
                 $data['sql'] = $sql;
-            }	
-            
+            }
+
         }
 
         return($data);
     }
 
     public function api_CollectorDash_Get_Portfolio($id) {
-         
+
         /* Executes SQL and then assigns object to passed var */
         if( $this->checkDBConnection(__FUNCTION__) == true) {
 
@@ -354,7 +354,7 @@ class Core_Api extends Fieldnotes_Api
             SELECT
             A.art_id,
             A.title,
-            A.reg_num, 
+            A.reg_num,
             A.print_size,
             A.frame_size,
             A.edition_num,
@@ -376,29 +376,29 @@ class Core_Api extends Fieldnotes_Api
             INNER JOIN art AS A ON A.art_id = CERT.art_id
             LEFT JOIN catalog_photo AS CAT on CAT.catalog_photo_id = CERT.catalog_photo_id
             WHERE C.collector_id = '" . $id . "'  AND A.edition_style IN ('STUDIO','LIMITED')";
-          
+
             $result = $this->mysqli->query($sql);
 
             if ($result->num_rows > 0) {
-            
+
                 while($row = $result->fetch_assoc())
 		        {
 		            $data[] = $row;
 		        }
-                
+
             } else {
-                
+
                 $data['error'] = "No Records Found";
                 $data['sql'] = $sql;
-            }	
-            
+            }
+
         }
 
         return($data);
     }
 
     public function api_Catalog_YouMayLike_Filmstrip() {
-        
+
         /* Executes SQL and then assigns object to passed var */
         if( $this->checkDBConnection(__FUNCTION__) == true) {
 
@@ -427,18 +427,18 @@ class Core_Api extends Fieldnotes_Api
             $result = $this->mysqli->query($sql);
 
             if ($result->num_rows > 0) {
-            
+
                 while($row = $result->fetch_assoc())
 		        {
 		            $data[] = $row;
 		        }
-                
+
             } else {
-                
+
                 $data['error'] = "No Records Found";
                 $data['sql'] = $sql;
-            }	
-            
+            }
+
         }
 
         return($data);
@@ -450,7 +450,7 @@ class Core_Api extends Fieldnotes_Api
             $where = "catalog_photo_id = '" . $id . "'";
         } else {
             $where = "file_name = '" . $file_name . "'";
-        }   
+        }
 
         /* Executes SQL and then assigns object to passed var */
         if( $this->checkDBConnection(__FUNCTION__) == true) {
@@ -467,14 +467,14 @@ class Core_Api extends Fieldnotes_Api
             $result = $this->mysqli->query($sql);
 
             if ($result->num_rows > 0) {
-            
+
                 while($row = $result->fetch_assoc())
 		        {
 		            $data = $row;
 		        }
 
             } else {
-            
+
 
                 // $_SESSION['404_msg'] = '<p>No Photo Was Found By This Name (e_code: ' . __FUNCTION__ . '[' . $file_name . '])</p>';
                 // $this->log(array("key" => "api", "value" => "Failed Update Catalog Photo " . $_POST['title'] . " (" . $_POST['catalog_photo_id'] . ") " . $sql, "type" => "failure"));
@@ -482,8 +482,8 @@ class Core_Api extends Fieldnotes_Api
                 /* This should go to a custom photo not found page */
                 $this->record_404($_SERVER['REQUEST_URI']);
                 header('location: /404');
-            }	
-            
+            }
+
         }
 
         return($data);
@@ -510,21 +510,21 @@ class Core_Api extends Fieldnotes_Api
             $result = $this->mysqli->query($sql);
 
             if ($result->num_rows > 0) {
-            
+
                 while($row = $result->fetch_assoc())
 		        {
 		            $data[] = $row;
 		        }
 
             }
-            
+
         }
 
         return($data);
     }
 
     public function api_Catalog_Photo_Meta_Location($on_display) {
-        
+
         /* Executes SQL and then assigns object to passed var */
         if( $this->checkDBConnection(__FUNCTION__) == true) {
 
@@ -536,25 +536,25 @@ class Core_Api extends Fieldnotes_Api
                 art_locations AS AL
                 WHERE
                     art_location_id = '" . $on_display . "'";
-        
+
             $result = $this->mysqli->query($sql);
 
             if ($result->num_rows > 0) {
-            
+
                 while($row = $result->fetch_assoc())
 		        {
 		            $data = $row;
 		        }
-                
-            } 
-            
+
+            }
+
         }
 
         return($data);
     }
 
     public function api_Catalog_Category_List($catalog_path=null) {
-        
+
         /* Executes SQL and then assigns object to passed var */
         if( $this->checkDBConnection(__FUNCTION__) == true) {
 
@@ -568,17 +568,17 @@ class Core_Api extends Fieldnotes_Api
             $result = $this->mysqli->query($sql);
 
             if ($result->num_rows > 0) {
-            
+
                 while($row = $result->fetch_assoc())
 		        {
 		            $data[] = $row;
 		        }
-                
+
             } else {
-                
+
                 $data[] = "No Records Found";
-            }	
-            
+            }
+
         }
 
         return($data);
@@ -587,8 +587,8 @@ class Core_Api extends Fieldnotes_Api
     public function api_Update_Photo_Viewed($photo_id) {
 
         /* Skip for ignoreIP list */
-        // If IP is in array skip logging 
-        
+        // If IP is in array skip logging
+
         if($photo_id == 0) {
             $this->log(array("key" => "public", "value" => "Invalid PhotoId (" . $photo_id . "::" . $this->page->photo_path . "::".  __FUNCTION__ . "::" . $this->routes->URI->url . "::" . $this->routes->URI->useragent . ")", "type" => "warning"));
         }
@@ -607,8 +607,8 @@ class Core_Api extends Fieldnotes_Api
             } else {
                 $data['error'] = "SQL UPDATE FAILED " . $photo_id;
                 $data['sql'] = $sql;
-            }	
-            
+            }
+
         }
 
         return($data);
@@ -621,7 +621,7 @@ class Core_Api extends Fieldnotes_Api
 
             $sql = "SELECT
                 U.user_id,
-                U.artist_id, 
+                U.artist_id,
                 U.created as membersince,
                 A.first_name,
                 A.last_name,
@@ -632,18 +632,18 @@ class Core_Api extends Fieldnotes_Api
                 user as U
                 INNER JOIN artist AS A ON U.artist_id = A.artist_id
             WHERE
-                U.PASSWORD = md5('$password') 
-                AND U.USERNAME = '$username' 
+                U.PASSWORD = md5('$password')
+                AND U.USERNAME = '$username'
             ";
 
              if ($result->num_rows > 0) {
-                
+
 
                 while($row = $result->fetch_assoc())
 		        {
                     $data[] = $row;
 		        }
-             
+
                 $data['result'] = '200';
                 $_SESSION['uid'] =  $data[0]['user_id'];
                 if($_SERVER['REMOTE_ADDR'] != "::1") {
@@ -654,13 +654,13 @@ class Core_Api extends Fieldnotes_Api
                 // $this->log(array("key" => "api", "value" => "session " . session_id() . " created", "type" => "system"));
 
             } else {
-             
+
                $data['result'] = '400';
-            }	
+            }
         }
 
         $this->log(array("key" => "api", "value" => "logged in from " . $_SESSION['ip'], "type" => "system"));
-        
+
         return($data);
     }
 
@@ -674,7 +674,7 @@ class Core_Api extends Fieldnotes_Api
             $sql = "SELECT
                 U.user_id,
                 U.username,
-                U.artist_id, 
+                U.artist_id,
                 U.created as membersince,
                 U.type,
                 A.artist_id,
@@ -692,21 +692,21 @@ class Core_Api extends Fieldnotes_Api
                 LEFT JOIN collector AS C ON C.collector_id = U.collector_id
             WHERE
                 U.pin = '$hash_str'
-                AND U.USERNAME = '$username' 
+                AND U.USERNAME = '$username'
             ";
 
-            $result = $this->mysqli->query($sql);     
+            $result = $this->mysqli->query($sql);
             if ($result->num_rows > 0) {
 
                 while($row = $result->fetch_assoc())
 		        {
                     $data = $row;
 		        }
-             
+
                 $data['result'] = '200';
                 $_SESSION['dashboard'] = $data['type'];
                 $_SESSION['uid'] =  $data['user_id'];
-                   
+
                 switch($data['type']) {
 
                     case "ARTIST":
@@ -729,12 +729,12 @@ class Core_Api extends Fieldnotes_Api
                     $_SESSION['ip'] = '127.0.0.1';
                 }
                 // $this->log(array("key" => "api", "value" => "session " . session_id() . " created", "type" => "system"));
-                
+
                 $_SESSION['data'] = $data;
 
             } else {
                $data['result'] = '400';
-            }	
+            }
         }
 
         $this->log(array("key" => "admin", "value" => "logged in from " . $_SESSION['ip'], "type" => "system"));
@@ -773,14 +773,14 @@ class Core_Api extends Fieldnotes_Api
             $result = $this->mysqli->query($sql);
 
             if ($result->num_rows > 0) {
-            
+
                 while($row = $result->fetch_assoc())
 		        {
 		            $data = $row;
 		        }
-                
-            } 
-            
+
+            }
+
         }
 
         return($data);
@@ -791,10 +791,10 @@ class Core_Api extends Fieldnotes_Api
 
         // Read in Config var JSON with title and description and link.
         // Fetch from database
-        
+
            /* Executes SQL and then assigns object to passed var */
         if( $this->checkDBConnection(__FUNCTION__) == true) {
-          
+
         $sql = "
         SELECT
         	PH.catalog_photo_id,
@@ -802,6 +802,7 @@ class Core_Api extends Fieldnotes_Api
         	PH.file_name,
         	PH.parent_collections_id,
         	PH.featured,
+          PH.featured_contrast,
         	CAT.title AS category,
         	PH.status,
         	CAT.path,
@@ -823,25 +824,25 @@ class Core_Api extends Fieldnotes_Api
             $result = $this->mysqli->query($sql);
 
             if ($result->num_rows > 0) {
-            
+
                 while($row = $result->fetch_assoc())
 		        {
 		            $data[] = $row;
 		        }
-                
-            } 
-            
+
+            }
+
         }
 
             /* Do some randoming here */
             (int)$max= count($data)-1;
             $index = rand(0, $max);
 
-            $this->hero_title = $data[$index]['category'];   
+            $this->hero_title = $data[$index]['category'];
             $this->hero_link  = $data[$index]['path'];
-            $this->hero_image = $data[$index]['file_name'] . '.jpg'; 
-            $this->hero_text = 'light';
-            $this->hero_position = 'top';
+            $this->hero_image = $data[$index]['file_name'] . '.jpg';
+            $this->hero_featured_contrast = $data[$index]['featured_contrast'];
+            // $this->hero_position = 'top';
 
     }
 
@@ -854,14 +855,14 @@ class Core_Api extends Fieldnotes_Api
             $result = $this->mysqli->query($sql);
 
             if ($result->num_rows > 0) {
-            
+
                 while($row = $result->fetch_assoc())
 		        {
 		            $data[] = $row;
 		        }
-                
-            } 
-            
+
+            }
+
         }
 
         return($data);
@@ -880,7 +881,7 @@ class Core_Api extends Fieldnotes_Api
                 CP.as_limited,
                 CP.as_studio,
                 CP.as_open,
-                CV.updated, 
+                CV.updated,
                 CP.featured
                 FROM
                 catalog_photo_views as CV
@@ -888,18 +889,18 @@ class Core_Api extends Fieldnotes_Api
                 WHERE CP.status = 'ACTIVE'
                 ORDER BY CV.updated DESC
                 LIMIT 100";
-        
+
             $result = $this->mysqli->query($sql);
 
             if ($result->num_rows > 0) {
-            
+
                 while($row = $result->fetch_assoc())
 		        {
 		            $data[] = $row;
 		        }
-                
-            } 
-            
+
+            }
+
         }
 
         return($data);
@@ -912,18 +913,18 @@ class Core_Api extends Fieldnotes_Api
         if( $this->checkDBConnection(__FUNCTION__) == true) {
 
             $sql = "select count(catalog_photo_id) AS total from catalog_photo where status = 'ACTIVE'";
-        
+
             $result = $this->mysqli->query($sql);
 
             if ($result->num_rows > 0) {
-            
+
                 while($row = $result->fetch_assoc())
 		        {
 		            $data = $row;
 		        }
-                
-            } 
-            
+
+            }
+
         }
 
         $data = $data['total'];
@@ -937,18 +938,18 @@ class Core_Api extends Fieldnotes_Api
         if( $this->checkDBConnection(__FUNCTION__) == true) {
 
             $sql = "select count(first_name) AS total from collector where first_name != ''";
-        
+
             $result = $this->mysqli->query($sql);
 
             if ($result->num_rows > 0) {
-            
+
                 while($row = $result->fetch_assoc())
 		        {
 		            $data = $row;
 		        }
-                
-            } 
-            
+
+            }
+
         }
 
         $data = $data['total'];
@@ -967,18 +968,18 @@ class Core_Api extends Fieldnotes_Api
                 art_costs_supplier AS ACS
                 INNER JOIN supplier_materials AS SM ON ACS.supplier_materials_id = SM.supplier_materials_id
             ";
-        
+
             $result_SM = $this->mysqli->query($sql_SM);
 
             if ($result_SM->num_rows > 0) {
-            
+
                 while($row_SM = $result_SM->fetch_assoc())
 		        {
 		            $data_SM = $row_SM;
 		        }
-                
-            } 
-            
+
+            }
+
         }
 
         /* Executes SQL and then assigns object to passed var */
@@ -990,18 +991,18 @@ class Core_Api extends Fieldnotes_Api
                 art_costs AS AC
                 INNER JOIN art AS A ON A.art_id = AC.art_id
             WHERE AC.status = 'ACTIVE'";
-        
+
             $result = $this->mysqli->query($sql);
 
             if ($result->num_rows > 0) {
-            
+
                 while($row = $result->fetch_assoc())
 		        {
 		            $data = $row;
 		        }
-                
-            } 
-            
+
+            }
+
         }
 
         $data = $data_SM['total_costs'] + $data['total'];
@@ -1019,18 +1020,18 @@ class Core_Api extends Fieldnotes_Api
                 WHERE
                     A.serial_num IS NOT NULL
                     AND A.art_location_id IN(3,11)";
-        
+
             $result = $this->mysqli->query($sql);
 
             if ($result->num_rows > 0) {
-            
+
                 while($row = $result->fetch_assoc())
 		        {
 		            $data = $row;
 		        }
-                
-            } 
-            
+
+            }
+
         }
 
         $data = $data['total'];
@@ -1065,14 +1066,14 @@ class Core_Api extends Fieldnotes_Api
             $result = $this->mysqli->query($sql);
 
             if ($result->num_rows > 0) {
-            
+
                 while($row = $result->fetch_assoc())
 		        {
 		            $data[] = $row;
 		        }
-                
-            } 
-            
+
+            }
+
         }
 
         return($data);
@@ -1098,26 +1099,26 @@ class Core_Api extends Fieldnotes_Api
                 A.value AS TOTAL_VALUE
             FROM
                 art as A
-                INNER JOIN art_locations as L on A.art_location_id = L.art_location_id 
+                INNER JOIN art_locations as L on A.art_location_id = L.art_location_id
                 LEFT JOIN certificate as C on A.art_id = C.art_id";
-        
+
             $result = $this->mysqli->query($sql);
-                  
+
             if ($result->num_rows > 0) {
-            
+
                 while($row = $result->fetch_assoc())
 		        {
 		            $data[] = $row;
 		        }
-                
-            } 
-            
+
+            }
+
         }
-        
+
         return($data);
 
     }
-    
+
     public function api_Admin_Get_InventoryForShop() {
 
         /* Executes SQL and then assigns object to passed var */
@@ -1138,24 +1139,24 @@ class Core_Api extends Fieldnotes_Api
                 A.value AS TOTAL_VALUE
             FROM
                 art as A
-                INNER JOIN art_locations as L on A.art_location_id = L.art_location_id 
+                INNER JOIN art_locations as L on A.art_location_id = L.art_location_id
                 LEFT JOIN certificate as C on A.art_id = C.art_id
                 WHERE A.art_location_id = 12
                 ORDER BY A.title ASC";
-        
+
             $result = $this->mysqli->query($sql);
-                  
+
             if ($result->num_rows > 0) {
-            
+
                 while($row = $result->fetch_assoc())
 		        {
 		            $data[] = $row;
 		        }
-                
-            } 
-            
+
+            }
+
         }
-        
+
         return($data);
 
     }
@@ -1171,20 +1172,20 @@ class Core_Api extends Fieldnotes_Api
                 art AS A
             WHERE
                 A.art_id ='" . $art_id . "'";
-        
+
             $result = $this->mysqli->query($sql);
 
             if ($result->num_rows > 0) {
-            
+
                 while($row = $result->fetch_assoc())
 		        {
 		            $data = $row;
 		        }
-                
-            } 
-            
+
+            }
+
         }
-        
+
         return($data);
 
     }
@@ -1214,18 +1215,18 @@ class Core_Api extends Fieldnotes_Api
                 WHERE A.art_id = '" . $art_id . "'
                 AND CERT.status = 'ACTIVE'
             LIMIT 1";
-        
+
             $result = $this->mysqli->query($sql);
 
             if ($result->num_rows > 0) {
-            
+
                 while($row = $result->fetch_assoc())
 		        {
 		            $data[] = $row;
 		        }
 
-            } 
-            
+            }
+
         }
 
         return($data);
@@ -1255,18 +1256,18 @@ class Core_Api extends Fieldnotes_Api
             ";
 
             $result = $this->mysqli->query($sql);
-    
+
             if ($result->num_rows > 0) {
-            
+
                 while($row = $result->fetch_assoc())
 		        {
 		            $data[] = $row;
 		        }
-                
+
             } else {
                 $data[0]['material_type'] = 'SQL FAILED no-records-returned: ' . __FUNCTION__;
             }
-            
+
         }
 
         return($data);
@@ -1276,7 +1277,7 @@ class Core_Api extends Fieldnotes_Api
     public function api_Admin_Get_Inventory_Item_Costs($art_id) {
 
         /* first check classic table */
-        /* If results found convert to manual entires */ 
+        /* If results found convert to manual entires */
         if( $this->checkDBConnection(__FUNCTION__) == true) {
 
             $sql = "SELECT
@@ -1293,10 +1294,10 @@ class Core_Api extends Fieldnotes_Api
                 INNER JOIN art_costs AS AC ON AC.art_id = A.art_id
             WHERE A.art_id = '" . $art_id . "' AND STATUS='ACTIVE'
             ";
-        
+
             $result = $this->mysqli->query($sql);
             if ($result->num_rows > 0) {
-            
+
                 while($row = $result->fetch_assoc())
 		        {
 		            $data[] = $row;
@@ -1319,11 +1320,11 @@ class Core_Api extends Fieldnotes_Api
                     ACS.usage as material_used,
                     SM.unit_type,
                     SM.material as material_desc,
-                    (CASE 
+                    (CASE
                         WHEN SM.unit_type = 'hourly' THEN ACS.usage
                         ELSE (SM.quantity - ACS.usage)
                     END) AS calcd_inventory,
-                    (CASE 
+                    (CASE
                         WHEN SM.unit_type = 'each' THEN SM.cost
                         WHEN SM.unit_type = 'hourly' THEN SM.cost * ACS.usage
                         WHEN SM.unit_type = 'feet' THEN (SM.cost/SM.quantity) * ACS.usage
@@ -1340,7 +1341,7 @@ class Core_Api extends Fieldnotes_Api
                     $result = $this->mysqli->query($sql);
 
                     if ($result->num_rows > 0) {
-                    
+
                         while($row = $result->fetch_assoc())
                         {
                             $data[] = $row;
@@ -1352,7 +1353,7 @@ class Core_Api extends Fieldnotes_Api
                     }
 
             }
-            
+
         }
 
         return($data);
@@ -1368,14 +1369,14 @@ class Core_Api extends Fieldnotes_Api
             $result = $this->mysqli->query($sql);
 
             if ($result->num_rows > 0) {
-            
+
                 while($row = $result->fetch_assoc())
 		        {
 		            $data[] = $row;
 		        }
-                
-            } 
-            
+
+            }
+
         }
 
         return($data);
@@ -1392,14 +1393,14 @@ class Core_Api extends Fieldnotes_Api
             $result = $this->mysqli->query($sql);
 
             if ($result->num_rows > 0) {
-            
+
                 while($row = $result->fetch_assoc())
 		        {
 		            $data[] = $row;
 		        }
-                
-            } 
-            
+
+            }
+
         }
 
         return($data);
@@ -1417,14 +1418,14 @@ class Core_Api extends Fieldnotes_Api
             $result = $this->mysqli->query($sql);
 
             if ($result->num_rows > 0) {
-            
+
                 while($row = $result->fetch_assoc())
 		        {
 		            $data[] = $row;
 		        }
-                
-            } 
-            
+
+            }
+
         }
 
         return($data);
@@ -1440,14 +1441,14 @@ class Core_Api extends Fieldnotes_Api
             $result = $this->mysqli->query($sql);
 
             if ($result->num_rows > 0) {
-            
+
                 while($row = $result->fetch_assoc())
 		        {
 		            $data[] = $row;
 		        }
-                
-            } 
-            
+
+            }
+
         }
 
         return($data);
@@ -1470,18 +1471,18 @@ class Core_Api extends Fieldnotes_Api
             FROM
                 collector AS C
             WHERE " . $where_clause;
-                
+
             $result = $this->mysqli->query($sql);
 
             if ($result->num_rows > 0) {
-            
+
                 while($row = $result->fetch_assoc())
 		        {
 		            $data = $row;
 		        }
-                
-            } 
-            
+
+            }
+
         }
 
         return($data);
@@ -1498,7 +1499,7 @@ class Core_Api extends Fieldnotes_Api
                 A.title,
                 A.value,
                 A.reg_num,
-                A.art_id, 
+                A.art_id,
                 A.frame_size,
                 CERT.serial_num,
                 CERT.purchase_date,
@@ -1508,18 +1509,18 @@ class Core_Api extends Fieldnotes_Api
                 INNER JOIN collector AS C ON CERT.collector_id = C.collector_id
                 INNER JOIN art AS A ON A.art_id = CERT.art_id
                 WHERE C.first_name LIKE '{$first_name}' AND C.last_name LIKE '{$last_name}' AND CERT.status='ACTIVE'";
-        
+
             $result = $this->mysqli->query($sql);
 
             if ($result->num_rows > 0) {
-            
+
                 while($row = $result->fetch_assoc())
 		        {
 		            $data[] = $row;
 		        }
-                
-            } 
-            
+
+            }
+
         }
 
         return($data);
@@ -1533,18 +1534,18 @@ class Core_Api extends Fieldnotes_Api
 
             $sql = "
             select user_id, username, created, last_update, last_login, last_login_ip from user where collector_id='" . $id . "'";
-        
+
             $result = $this->mysqli->query($sql);
 
             if ($result->num_rows > 0) {
-            
+
                 while($row = $result->fetch_assoc())
 		        {
 		            $data = $row;
 		        }
-                
-            } 
-            
+
+            }
+
         }
 
         return($data);
@@ -1555,9 +1556,9 @@ class Core_Api extends Fieldnotes_Api
 
         /* Executes SQL and then assigns object to passed var */
         if( $this->checkDBConnection(__FUNCTION__) == true) {
-            
+
             $this->mysqli->free;
-            
+
             $sql = "SELECT
                 ALH.*,
                 AL.location,
@@ -1570,21 +1571,21 @@ class Core_Api extends Fieldnotes_Api
                 INNER JOIN art_locations AS AL ON ALH.art_location_id = AL.art_location_id
             WHERE
                 ALH.art_id='" . $art_id . "' ORDER BY ALH.date_started";
-    
+
             $result = $this->mysqli->query($sql);
-            
+
             if ($result) {
-            
+
                 while($row = $result->fetch_assoc())
 		        {
 		            $data[] = $row;
 		        }
-                
-            } 
-            
+
+            }
+
             $this->mysqli->close;
         }
-        
+
         return($data);
 
     }
@@ -1620,8 +1621,12 @@ class Core_Api extends Fieldnotes_Api
             $as_limited = "0";
         }
 
-        $sql = "UPDATE catalog_photo 
-        SET 
+        if($featured_contrast == '') {
+          $featured_contrast = "0";
+        }
+
+        $sql = "UPDATE catalog_photo
+        SET
         parent_collections_id = '$parent_collections_id',
         title = '$title',
         story = '$story',
@@ -1646,42 +1651,45 @@ class Core_Api extends Fieldnotes_Api
         as_limited = '$as_limited',
         as_open = '$as_open',
         featured = '$featured',
+        featured_contrast = '$featured_contrast',
         `desc` = '$desc'
         WHERE catalog_photo_id = '$catalog_photo_id'";
 
         $result = $this->mysqli->query($sql);
+
         // removed this sql AND file_name = '$file_name'
-        
+
         // if($this->mysqli->affected_rows == 0) {
-        //  $result=0;   
+        //  $result=0;
         // } else { $result=1; }
-        
+
         /* DELETE ALL catalog_collection_link records for this ID */
         $sql_d = "DELETE FROM catalog_collections_link WHERE catalog_photo_id = '" . $catalog_photo_id . "'";
         $result_d = $this->mysqli->query($sql_d);
-        
+
+
         /* Add parent collection to the array */
         if(!isSet($_POST['collections_tags'])) {
             $collections_tags = array();
         }
-        
+
         array_push($collections_tags, $parent_collections_id);
-        
+
         foreach($collections_tags as $key => $value) {
-        
+
             $sql_ci = "INSERT INTO catalog_collections_link (catalog_photo_id,catalog_collections_id,artist_id)
                 VALUES('" . $catalog_photo_id . "','" . $value . "','" . $artist_id . "')";
             $result_ci = $this->mysqli->query($sql_ci);
-        
+
         }
-        
+
         /* Check to see if files have been uploaded */
         $this->uploadFile(array("jpg","jpeg"), "jpg");
-        
+
         /* If file-name changes then image file names need to be updated too */
         // file_1_path, file_2_path {not writing file name in hidden input}
         // rename ("/folder/file.ext", "/folder/newfile.ext");
-        
+
         if($result == 1) {
             $_SESSION['error'] = '200';
             $_SESSION['notify_msg'] = $_POST['title'];
@@ -1698,7 +1706,7 @@ class Core_Api extends Fieldnotes_Api
 
         /* extract Data Array */
         extract($_POST, EXTR_PREFIX_SAME, "dup");
-        
+
         /* Insert into database */
         $story = $this->mysqli->real_escape_string($_POST['story']);
         $title = $this->mysqli->real_escape_string($_POST['title']);
@@ -1719,63 +1727,65 @@ class Core_Api extends Fieldnotes_Api
 
         $sql = "
         INSERT INTO `catalog_photo` (
-        `catalog_photo_id`, 
-        `artist_id`, 
-        `parent_collections_id`, 
-        `title`, 
+        `catalog_photo_id`,
+        `artist_id`,
+        `parent_collections_id`,
+        `title`,
         `desc`,
-        `story`, 
-        `file_name`, 
-        `loc_city`, 
-        `loc_state`, 
-        `loc_place`, 
-        `loc_waypoint`, 
-        `camera`, 
-        `lens_model`, 
-        `aperture`, 
-        `shutter`, 
-        `focal_length`, 
-        `iso`, 
-        `date_taken`, 
+        `story`,
+        `file_name`,
+        `loc_city`,
+        `loc_state`,
+        `loc_place`,
+        `loc_waypoint`,
+        `camera`,
+        `lens_model`,
+        `aperture`,
+        `shutter`,
+        `focal_length`,
+        `iso`,
+        `date_taken`,
         `orientation`,
         `available_sizes`,
-        `tags`, 
-        `created`, 
-        `status`, 
-        `on_display`, 
-        `as_limited`, 
-        `as_studio`, 
+        `tags`,
+        `created`,
+        `status`,
+        `on_display`,
+        `as_limited`,
+        `as_studio`,
         `as_open`,
-        `featured`
-        ) VALUES ( 
-            DEFAULT, 
-            '$artist_id', 
-            '$parent_collections_id', 
-            '$title', 
+        `featured`,
+        `featured_contrast`
+        ) VALUES (
+            DEFAULT,
+            '$artist_id',
+            '$parent_collections_id',
+            '$title',
             '$desc',
-            '$story', 
-            '$file_name', 
-            '$loc_city', 
-            '$loc_state', 
-            '$loc_place', 
-            '$loc_waypoint', 
-            '$camera', 
-            '$lens_model', 
-            '$aperture', 
-            '$shutter', 
-            '$focal_length', 
-            '$iso', 
-            '$date_taken', 
-            '$orientation', 
+            '$story',
+            '$file_name',
+            '$loc_city',
+            '$loc_state',
+            '$loc_place',
+            '$loc_waypoint',
+            '$camera',
+            '$lens_model',
+            '$aperture',
+            '$shutter',
+            '$focal_length',
+            '$iso',
+            '$date_taken',
+            '$orientation',
             '$available_sizes',
-            '$tags', 
-            '$created', 
-            '$status', 
-            '$on_display', 
-            '$as_limited', 
-            '$as_studio', 
+            '$tags',
+            '$created',
+            '$status',
+            '$on_display',
+            '$as_limited',
+            '$as_studio',
             '$as_open',
-            '$featured'
+            '$featured',
+            '$featured_contrast'
             )";
 
         $result = $this->mysqli->query($sql);
@@ -1785,7 +1795,7 @@ class Core_Api extends Fieldnotes_Api
         if(!isSet($_POST['collections_tags'])) {
             $collections_tags = array();
         }
-        
+
         array_push($collections_tags, $parent_collections_id);
 
         foreach($collections_tags as $key => $value) {
@@ -1811,64 +1821,64 @@ class Core_Api extends Fieldnotes_Api
     }
 
     public function api_Admin_Update_Inventory_Location() {
-        
+
         /* extract Data Array */
         extract($_POST, EXTR_PREFIX_SAME, "dup");
         $date = date("Y-m-d H:i:s");
-        
+
         /* There doesn't seem to be a default value set for new art */
         if($art_location == 0) { $art_location = 1; }
-        
+
             $sql_check = "SELECT * FROM art_locations_history WHERE art_id='" . $art_id . "'";
             $result_check = $this->mysqli->query($sql_check);
 
             if ($result_check->num_rows == 0) {
-            
+
                 $sql_new = "
-                    INSERT INTO `art_locations_history` 
+                    INSERT INTO `art_locations_history`
                     (
-                        `art_locations_history_id`, 
-                        `art_id`, 
-                        `art_location_id`, 
+                        `art_locations_history_id`,
+                        `art_id`,
+                        `art_location_id`,
                         `date_started`
-                    ) VALUES ( 
-                        DEFAULT, 
-                        '$art_id', 
+                    ) VALUES (
+                        DEFAULT,
+                        '$art_id',
                         '$art_location',
                         '$date'
                     )";
 
                 $result_new = $this->mysqli->query($sql_new);
                 return;
-                
+
             }
 
         /* If state_ is set than update last record with end date */
         if(isSet($state_location_id) && $state_location_id != $art_location) {
 
             $sql_u = "
-            UPDATE `art_locations_history` 
+            UPDATE `art_locations_history`
             SET
                 `date_ended`='$date'
-            WHERE 
+            WHERE
                 art_id='" . $art_id . "' AND art_location_id='" . $state_location_id . "'";
-                
+
             $result_u = $this->mysqli->query($sql_u);
-        } 
-        
+        }
+
         /* Insert into database */
         if(!isSet($_POST['state_location_id']) || $state_location_id != $art_location) {
-        
+
             $sql = "
-            INSERT INTO `art_locations_history` 
+            INSERT INTO `art_locations_history`
             (
-                `art_locations_history_id`, 
-                `art_id`, 
-                `art_location_id`, 
+                `art_locations_history_id`,
+                `art_id`,
+                `art_location_id`,
                 `date_started`
-            ) VALUES ( 
-                DEFAULT, 
-                '$art_id', 
+            ) VALUES (
+                DEFAULT,
+                '$art_id',
                 '$art_location',
                 '$date'
             )";
@@ -1880,10 +1890,10 @@ class Core_Api extends Fieldnotes_Api
             } else {
                 $this->log(array("key" => "api", "value" => "Failed Location Change for Inventory Art (" . $_POST['art_id'] . "+" . $_POST['title'] . ")", "type" => "failure"));
             }
-        } 
+        }
 
     }
-   
+
     public function api_Admin_Update_Inventory_Collector() {
 
         /* extract Data Array */
@@ -1895,53 +1905,53 @@ class Core_Api extends Fieldnotes_Api
         if(isSet($state_collector_id) && $state_collector_id == $collector) {
 
             $sql_u = "
-            UPDATE `certificate` 
+            UPDATE `certificate`
             SET
                 `serial_num`='$serial_num',
                 `artwork_reg`='$reg_num',
                 `acquired_from`='$acquired_from',
                 `purchase_date`='$acquired_date',
                 `catalog_photo_id`='$catalog_photo_id'
-            WHERE 
+            WHERE
                 art_id='" . $art_id . "' AND collector_id='" . $collector . "'";
 
             $result_u = $this->mysqli->query($sql_u);
         } else {
 
             $sql_disable = "
-            UPDATE `certificate` 
+            UPDATE `certificate`
             SET
                 `status`='DISABLED'
-            WHERE 
+            WHERE
                 art_id='" . $art_id . "' AND collector_id='" . $state_collector_id . "'";
 
             $result_disable = $this->mysqli->query($sql_disable);
-            
+
             if($collector != 0) {
                 $collector_transfer = TRUE;
             } else {
                 return;
             }
-            
+
         }
 
         /* Insert into database */
-        if(!isSet($_POST['state_collector_id']) || $state_collector_id != $collector || $collector_transfer == TRUE) {		
+        if(!isSet($_POST['state_collector_id']) || $state_collector_id != $collector || $collector_transfer == TRUE) {
 
             $sql = "
-            INSERT INTO `certificate` 
+            INSERT INTO `certificate`
             (
-                `certificate_id`, 
-                `art_id`, 
-                `collector_id`, 
+                `certificate_id`,
+                `art_id`,
+                `collector_id`,
                 `serial_num`,
                 `artwork_reg`,
                 `acquired_from`,
                 `purchase_date`,
                 `catalog_photo_id`
-            ) VALUES ( 
-                DEFAULT, 
-                '$art_id', 
+            ) VALUES (
+                DEFAULT,
+                '$art_id',
                 '$collector',
                 '$serial_num',
                 '$reg_num',
@@ -1959,21 +1969,21 @@ class Core_Api extends Fieldnotes_Api
             } else {
                 $this->log(array("key" => "api", "value" => "Failed Location Change for Inventory Art (" . $_POST['art_id'] . "+" . $_POST['title'] . ")", "type" => "failure"));
             }
-        } 
+        }
     }
 
     public function api_Admin_Update_Inventory() {
 
         /* extract Data Array */
         extract($_POST, EXTR_PREFIX_SAME, "dup");
-        
+
         /* Insert into database */
         $notes = $this->mysqli->real_escape_string($_POST['notes']);
         if(empty($_POST['value'])) { $value = '0.00'; }
         if(empty($_POST['listed'])) { $listed = '0.00'; }
-        
-        $sql = "UPDATE art 
-        SET 
+
+        $sql = "UPDATE art
+        SET
         `art_location_id`='$art_location',
         `serial_num`='$serial_num',
         `reg_num`='$reg_num',
@@ -1999,7 +2009,7 @@ class Core_Api extends Fieldnotes_Api
         $result = $this->mysqli->query($sql);
 
         // $this->console("SQL:" . $sql,1);
-        
+
         if($result == 1) {
             $_SESSION['error'] = '200';
             $_SESSION['notify_msg'] = $_POST['title'];
@@ -2010,68 +2020,68 @@ class Core_Api extends Fieldnotes_Api
         }
 
     }
-    
+
     public function api_Admin_Insert_Inventory() {
 
         /* extract Data Array */
         extract($_POST, EXTR_PREFIX_SAME, "dup");
-        
+
         /* There doesn't seem to be a default value set for new art */
         if($art_location == 0) { $art_location = 1; }
-        
+
         /* Insert into database */
         $title = $this->mysqli->real_escape_string($_POST['title']);
         $frame_desc = $this->mysqli->real_escape_string($_POST['frame_desc']);
         $notes = $this->mysqli->real_escape_string($_POST['notes']);
         if(empty($_POST['value'])) { $value = '0.00'; }
         if(empty($_POST['listed'])) { $listed = '0.00'; }
-         
-        if(isSet($_POST['product_order_id'])) { 
-            $sql_product_order_id = ", `product_order_id`"; 
-            $sql_product_order_id_val = ", '" . $_POST['product_order_id'] . "'"; 
 
-        } else { 
-            $sql_product_order_id = null; 
+        if(isSet($_POST['product_order_id'])) {
+            $sql_product_order_id = ", `product_order_id`";
+            $sql_product_order_id_val = ", '" . $_POST['product_order_id'] . "'";
+
+        } else {
+            $sql_product_order_id = null;
         }
 
 
         $sql = "
         INSERT INTO `art` (
-        `art_id`, 
-        `artist_id`, 
-        `art_location_id`, 
+        `art_id`,
+        `artist_id`,
+        `art_location_id`,
         `serial_num`,
-        `reg_num`, 
-        `title`, 
-        `negative_file`, 
-        `catalog_photo_id`, 
-        `artist_proof`, 
-        `series_num`, 
+        `reg_num`,
+        `title`,
+        `negative_file`,
+        `catalog_photo_id`,
+        `artist_proof`,
+        `series_num`,
         `edition_num`,
-        `edition_num_max`, 
-        `edition_style`, 
-        `print_size`, 
-        `print_media`, 
-        `frame_size`, 
-        `frame_material`, 
-        `frame_desc`, 
-        `notes`, 
+        `edition_num_max`,
+        `edition_style`,
+        `print_size`,
+        `print_media`,
+        `frame_size`,
+        `frame_material`,
+        `frame_desc`,
+        `notes`,
         `born_date`,
         `listed`,
         `value`" . $sql_product_order_id .
-        ") VALUES ( 
-            DEFAULT, 
-            '$artist_id', 
+        ") VALUES (
+            DEFAULT,
+            '$artist_id',
             '$art_location',
-            '$serial_num', 
+            '$serial_num',
             '$reg_num',
-            '$title', 
+            '$title',
             '$negative_file',
             '$catalog_photo_id',
             '$artist_proof',
             '$series_num',
             '$edition_num',
-            '$edition_num_max', 
+            '$edition_num_max',
             '$edition_style',
             '$print_size',
             '$print_media',
@@ -2105,7 +2115,7 @@ class Core_Api extends Fieldnotes_Api
         extract($_POST, EXTR_PREFIX_SAME, "dup");
 
         /* Insert into database */
-        $sql = "INSERT INTO `" . $this->config_env->env[$this->env]['dbname']  . ".`supplier` (`company`, `first_name`, `last_name`, `email`, `phone`, `website`, `account_no`) 
+        $sql = "INSERT INTO `" . $this->config_env->env[$this->env]['dbname']  . ".`supplier` (`company`, `first_name`, `last_name`, `email`, `phone`, `website`, `account_no`)
             VALUES ('{$company}', '{$first_name}', '{$last_name}', '{$email}', '{$phone}', '{$website}', '{$account}');";
 
         $result = $this->mysqli->query($sql);
@@ -2128,22 +2138,22 @@ class Core_Api extends Fieldnotes_Api
 
         /* extract Data Array */
         extract($_POST, EXTR_PREFIX_SAME, "dup");
-        
+
         /* Insert into database */
-             
-        $sql = "UPDATE `" . $this->config_env->env[$this->env]['dbname']  . ".`supplier` 
-            SET 
-            `company` = '{$company}', 
-            `first_name` = '{$first_name}', 
-            `last_name` = '{$last_name}', 
-            `email` = '{$email}', 
-            `phone` = '{$phone}', 
-            `website` = '{$website}', 
-            `account_no` = '{$account}' 
+
+        $sql = "UPDATE `" . $this->config_env->env[$this->env]['dbname']  . ".`supplier`
+            SET
+            `company` = '{$company}',
+            `first_name` = '{$first_name}',
+            `last_name` = '{$last_name}',
+            `email` = '{$email}',
+            `phone` = '{$phone}',
+            `website` = '{$website}',
+            `account_no` = '{$account}'
             WHERE `supplier_id` = '" . $supplier_id ."'";
 
         $result = $this->mysqli->query($sql);
-        
+
         if($result == 1) {
             $_SESSION['error'] = '200';
             $_SESSION['notify_msg'] = $company;
@@ -2153,8 +2163,8 @@ class Core_Api extends Fieldnotes_Api
             $_SESSION['error'] = '400';
             $this->log(array("key" => "api", "value" => "Failed Update To Supplier (" . $_POST['company'] . ")", "type" => "failure"));
         }
-        
-        
+
+
     }
 
     public function api_Admin_Update_Inventory_Expenses() {
@@ -2173,13 +2183,13 @@ class Core_Api extends Fieldnotes_Api
         foreach ($_POST['material_expense_supplier_id'] as $key => $value) {
             // SUPPLIER INVENTORY COMBINED ARRAYS
             $inv_exp[$key] = '{"id":"' . $value . '", "quantity":"' . $_POST['material_quantity'][$key] . '", "cost":"' . $_POST['material_cost'][$key] . '", "manual":"FALSE" }';
-        } 
-        
+        }
+
         foreach ($_POST['hidden-material_expense_supplierid_manual-entry'] as $key_manual => $value_manual) {
             // MANUAL ENTRY INVENTORY COMBINED ARRAYS
             $inv_exp_manual[$key_manual] = '{"id":"' . $value_manual . '", "quantity":"' . $_POST['material_quantity_manual-entry'][$key_manual] . '", "cost":"' . $_POST['material_cost_manual-entry'][$key_manual] . '", "name":"' . $_POST['material_expense_supplier_manual-entry'][$key_manual] . '", "manual":"TRUE" }';
-        } 
-        
+        }
+
         // $this->printp_r($inv_exp);
         // $this->printp_r($inv_exp_manual);
 
@@ -2188,7 +2198,7 @@ class Core_Api extends Fieldnotes_Api
         // IF id =0 then this is new; mutate the id with actually ID so it can be entered into the linking table
         foreach ($inv_exp_manual as $exp_key => $exp_val) {
             $exp = json_decode($exp_val);
-            if($exp->id == 0) { 
+            if($exp->id == 0) {
                 // mutate the json strong with auto_increment_id return
                 $exp->id = null;
                 $inv_exp_manual[$exp_key] = json_encode($exp);
@@ -2198,7 +2208,7 @@ class Core_Api extends Fieldnotes_Api
         // DELETE ALL RECORDS for specific art_id
         // echo "<hr />DELETE from " . $tbl . " WHERE art_id='" . $art_id . "' AND artist_id='" . $artist_id . "'";
         /* Executes SQL and then assigns object to passed var */
-        
+
          if( $this->checkDBConnection(__FUNCTION__) == true) {
 
             $sql = "
@@ -2214,8 +2224,8 @@ class Core_Api extends Fieldnotes_Api
                 $data['error'] = "SQL DELETE" . $tbl . " FAILED " . $art_id;
                 $data['sql'] = $sql;
                 $this->log(array("key" => "api", "value" => "Failed DELETE Expenses from art_costs_supplier (" . $sql . ")", "type" => "failure"));
-            }	
-            
+            }
+
         }
 
         /***
@@ -2230,8 +2240,8 @@ class Core_Api extends Fieldnotes_Api
                 // $this->printp_r($exp);
 
                 if( $this->checkDBConnection(__FUNCTION__) == true) {
-                
-                    if( $exp->manual == 'TRUE' && !is_null($exp->id) ) { 
+
+                    if( $exp->manual == 'TRUE' && !is_null($exp->id) ) {
                         $sql = "
                         INSERT INTO `art_costs_supplier` (`art_id`, `artist_id`, `supplier_materials_id`, `usage`)
                         VALUES('" . $art_id . "','" . $artist_id . "','" . $exp->id . "','" . $exp->quantity . "');";
@@ -2246,15 +2256,15 @@ class Core_Api extends Fieldnotes_Api
                                 $data['error'] = "SQL DELETE" . $tbl . " FAILED " . $art_id;
                                 $data['sql'] = $sql;
                                 $this->log(array("key" => "api", "value" => "Failed Insert of Manual Expense With {$exp_id} Into Linking Table (" . $sql . ")", "type" => "failure"));
-                            }	
-                    
+                            }
+
                     } else {
                         // print "something went wrong here, possible null Id: " . $exp->id . "<hr />";
                         // $this->printp_r($inv_exp_manual);
                     }
                 }
         }
-            
+
 
         // $this->printp_r($data['result']);
         // echo "<hr />";
@@ -2268,7 +2278,7 @@ class Core_Api extends Fieldnotes_Api
             // $this->printp_r($exp);
 
             if( $this->checkDBConnection(__FUNCTION__) == true) {
-            
+
                 $sql = "
                 INSERT INTO `art_costs_supplier` (`art_id`, `artist_id`, `supplier_materials_id`, `usage`)
                 VALUES('" . $art_id . "','" . $artist_id . "','" . $exp->id . "','" . $exp->quantity . "');";
@@ -2283,11 +2293,11 @@ class Core_Api extends Fieldnotes_Api
                     $data['error'] = "SQL DELETE" . $tbl . " FAILED " . $art_id;
                     $data['sql'] = $sql;
                     $this->log(array("key" => "api", "value" => "Failed Supplier-Material Expsense Insert Into Linking Table (" . $sql . ")", "type" => "failure"));
-                }	
-    
+                }
+
             }
         }
-        
+
         // $this->printp_r($data['result']);
         // echo "<hr />";
         // echo "INSERT/UPDATE supplier_materials<br />";
@@ -2308,18 +2318,18 @@ class Core_Api extends Fieldnotes_Api
         foreach ($exp_combined as $exp_key => $exp_val) {
             $exp = json_decode($exp_val);
 
-            if( $exp->manual == 'TRUE' && is_null($exp->id) ) { 
-                $exp->id = 0; 
+            if( $exp->manual == 'TRUE' && is_null($exp->id) ) {
+                $exp->id = 0;
             }
 
             // echo 'INSERT INTO supplier_materials (supplier_materials_id, manual_entry, material, quantity, cost) VALUES("' . $exp->id . '","' . $exp->manual . '","' . $exp->name . '","' . $exp->quantity . '","' . $exp->cost . '") ON DUPLICATE KEY UPDATE supplier_materials_id="' . $exp->id . '", manual_entry="' . $exp->manual . '", quantity="' . $exp->quantity . '", cost="'. $exp->cost . '"<br />';
-            
+
             /* Executes SQL and then assigns object to passed var */
             if( $this->checkDBConnection(__FUNCTION__) == true) {
-    
+
                 $sql = 'INSERT INTO supplier_materials (supplier_materials_id, manual_entry, material_type, material, quantity, unit_type,
                 cost, purchased_on) VALUES("' . $exp->id . '","' . $exp->manual . '","manual_entry","' . $exp->name . '","' . $exp->quantity . '","each","' . $exp->cost . '",NOW()) ON DUPLICATE KEY UPDATE supplier_materials_id="' . $exp->id . '", manual_entry="' . $exp->manual . '", quantity="' . $exp->quantity . '", cost="'. $exp->cost . '"';
-        
+
                 $result = $this->mysqli->query($sql);
 
                 if($exp->id == 0) {
@@ -2335,7 +2345,7 @@ class Core_Api extends Fieldnotes_Api
                         // $this->printp_r($exp);
 
                         if( $this->checkDBConnection(__FUNCTION__) == true) {
-                        
+
                             $sql_me = "
                             INSERT INTO `art_costs_supplier` (`art_id`, `artist_id`, `supplier_materials_id`, `usage`)
                             VALUES('" . $art_id . "','" . $artist_id . "','" . $insert_id . "','" . $exp->quantity . "');";
@@ -2352,8 +2362,8 @@ class Core_Api extends Fieldnotes_Api
                                 $data['error'] = "SQL DELETE" . $tbl . " FAILED " . $art_id;
                                 $data['sql'] = $sql_me;
                                 $this->log(array("key" => "api", "value" => "Failed Manual Entry Insert Into Linking Table (" . $sql_me . ")", "type" => "failure"));
-                            }		
-                            
+                            }
+
                         }
                     // }
 
@@ -2369,23 +2379,23 @@ class Core_Api extends Fieldnotes_Api
                     $data['error'] = "SQL DELETE" . $tbl . " FAILED " . $art_id;
                     $data['sql'] = $sql;
                     $this->log(array("key" => "api", "value" => "Failed INSERT/UPDATE Supplier Material (" . $sql . ")", "type" => "failure"));
-                }		
-                
+                }
+
             }
             // return($data);
         }
 
-        // print "<hr />" . $data['result'];	
+        // print "<hr />" . $data['result'];
         // print "<hr /> Removing Supplier Materials from manual entries<hr />";
         // print "Archiving old art_cost data<br />";
         // legacy_exp
-        
+
         foreach ($inv_exp_manual as $exp_key => $exp_val) {
             $exp = json_decode($exp_val);
             // $this->printp_r($exp);
 
             if( $this->checkDBConnection(__FUNCTION__) == true) {
-            
+
                 $sql = "
                 UPDATE art_costs set status='ARCHIVED' where art_id='" . $art_id . "'";
 
@@ -2399,8 +2409,8 @@ class Core_Api extends Fieldnotes_Api
                     $data['error'] = "SQL DELETE" . $tbl . " FAILED " . $art_id;
                     $data['sql'] = $sql;
                     $this->log(array("key" => "api", "value" => "Failed archving Expense Item (" . $exp . ")", "type" => "failure"));
-                }	
-                
+                }
+
             }
         }
 
@@ -2412,7 +2422,7 @@ class Core_Api extends Fieldnotes_Api
             $data['error'] = "SQL DELETE" . $tbl . " FAILED " . $art_id;
             $data['sql'] = $sql;
             $this->log(array("key" => "api", "value" => "Failed Update To Expenses FATAL (" . $data['error'] . ")" . __FUNCTION__, "type" => "failure"));
-        }	
+        }
 
     }
 
@@ -2422,18 +2432,18 @@ class Core_Api extends Fieldnotes_Api
         if( $this->checkDBConnection(__FUNCTION__) == true) {
 
             $sql = "SELECT supplier_id, company, first_name, last_name, email, phone, website FROM supplier";
-        
+
             $result = $this->mysqli->query($sql);
 
             if ($result->num_rows > 0) {
-            
+
                 while($row = $result->fetch_assoc())
 		        {
 		            $data[] = $row;
 		        }
-                
-            } 
-            
+
+            }
+
         }
 
         return($data);
@@ -2456,26 +2466,26 @@ class Core_Api extends Fieldnotes_Api
                 account_no
             FROM
                 supplier
-            WHERE 
+            WHERE
             supplier_id = '" . $id . "'";
-        
+
             $result = $this->mysqli->query($sql);
 
             if ($result->num_rows > 0) {
-            
+
                 while($row = $result->fetch_assoc())
 		        {
 		            $data = $row;
 		        }
-                
-            } 
-            
+
+            }
+
         }
 
         return($data);
 
     }
-    
+
     public function api_Admin_Get_Materials() {
 
         /* Executes SQL and then assigns object to passed var */
@@ -2493,18 +2503,18 @@ class Core_Api extends Fieldnotes_Api
                 supplier_materials AS SM
                 LEFT JOIN supplier AS S ON S.supplier_id = SM.supplier_id
             WHERE SM.manual_entry != 'TRUE'";
-        
+
             $result = $this->mysqli->query($sql);
 
             if ($result->num_rows > 0) {
-            
+
                 while($row = $result->fetch_assoc())
 		        {
 		            $data[] = $row;
 		        }
-                
-            } 
-            
+
+            }
+
         }
 
         return($data);
@@ -2531,30 +2541,30 @@ class Core_Api extends Fieldnotes_Api
                 supplier_materials AS SM
             WHERE
                 SM.supplier_materials_id ='" . $id . "'";
-        
-        
+
+
         $result = $this->mysqli->query($sql);
-        
+
         if ($result->num_rows > 0) {
-            
+
             while($row = $result->fetch_assoc())
             {
                 $data = $row;
             }
-            
-        } 
-        
+
+        }
+
     }
-    
+
     return($data);
-    
+
 }
 
 public function api_Admin_Get_Materials_By_Supplier($id) {
-    
+
     /* Executes SQL and then assigns object to passed var */
     if( $this->checkDBConnection(__FUNCTION__) == true) {
-        
+
         $sql = "SELECT
         SM.supplier_materials_id,
         SM.supplier_id,
@@ -2570,18 +2580,18 @@ public function api_Admin_Get_Materials_By_Supplier($id) {
         LEFT JOIN supplier AS S ON S.supplier_id = SM.supplier_id
         WHERE
         SM.supplier_id ='" . $id . "'";
-        
+
         $result = $this->mysqli->query($sql);
-        
+
         if ($result->num_rows > 0) {
-            
+
             while($row = $result->fetch_assoc())
             {
                 $data[] = $row;
             }
-            
-        } 
-        
+
+        }
+
     }
 
         return($data);
@@ -2596,7 +2606,7 @@ public function api_Admin_Get_Materials_By_Supplier($id) {
         if($purchased_on == '') { $purchased_on = date("Y-m-d H:i:s"); }
 
         /* Insert into database */
-        $sql = "INSERT INTO `" . $this->config_env->env[$this->env]['dbname']  . ".`supplier_materials` (`supplier_id`, `manual_entry`, `material_type`, `material`, `sku`, `quantity`, `unit_type`, `cost`, `purchased_on`, `shipping_cost`) 
+        $sql = "INSERT INTO `" . $this->config_env->env[$this->env]['dbname']  . ".`supplier_materials` (`supplier_id`, `manual_entry`, `material_type`, `material`, `sku`, `quantity`, `unit_type`, `cost`, `purchased_on`, `shipping_cost`)
             VALUES ('{$supplier_id}', 'FALSE', '{$material_type}', '{$material}', '{$sku}', '{$quantity}', '{$unit_type}', '{$cost}', '{$purchased_on}', '{$shipping_cost}');";
 
         $result = $this->mysqli->query($sql);
@@ -2622,17 +2632,17 @@ public function api_Admin_Get_Materials_By_Supplier($id) {
         if($shipping_cost == '') { $shipping_cost='0.00';}
 
         /* Insert into database */
-        $sql = "UPDATE `" . $this->config_env->env[$this->env]['dbname']  . ".`supplier_materials` 
-        SET `supplier_id` = '{$supplier_id}', 
-        `manual_entry` = 'FALSE', 
-        `material_type` = '{$material_type}', 
-        `material` = '{$material}', 
-        `sku` = '{$sku}', 
-        `quantity` = '{$quantity}', 
-        `unit_type` = '{$unit_type}', 
-        `cost` = '{$cost}', 
-        `purchased_on` = '{$purchased_on}', 
-        `shipping_cost` = '{$shipping_cost}' 
+        $sql = "UPDATE `" . $this->config_env->env[$this->env]['dbname']  . ".`supplier_materials`
+        SET `supplier_id` = '{$supplier_id}',
+        `manual_entry` = 'FALSE',
+        `material_type` = '{$material_type}',
+        `material` = '{$material}',
+        `sku` = '{$sku}',
+        `quantity` = '{$quantity}',
+        `unit_type` = '{$unit_type}',
+        `cost` = '{$cost}',
+        `purchased_on` = '{$purchased_on}',
+        `shipping_cost` = '{$shipping_cost}'
         WHERE `supplier_materials_id` = '" . $supplier_materials_id ."'";
 
         $result = $this->mysqli->query($sql);
@@ -2646,8 +2656,8 @@ public function api_Admin_Get_Materials_By_Supplier($id) {
             $_SESSION['error'] = '400';
             $this->log(array("key" => "api", "value" => "Failed Update To Material (" . $_POST['material'] . ")", "type" => "failure"));
         }
-        
-        
+
+
     }
 
     public function api_Admin_Get_Collections() {
@@ -2664,18 +2674,18 @@ public function api_Admin_Get_Materials_By_Supplier($id) {
         FROM
             catalog_collections AS c
             ORDER BY c.title DESC";
-        
+
             $result = $this->mysqli->query($sql);
 
             if ($result->num_rows > 0) {
-            
+
                 while($row = $result->fetch_assoc())
 		        {
 		            $data[] = $row;
 		        }
-                
-            } 
-            
+
+            }
+
         }
 
         return($data);
@@ -2697,24 +2707,24 @@ public function api_Admin_Get_Materials_By_Supplier($id) {
             report as R
             WHERE status='ACTIVE'
             ORDER BY R.fav DESC";
-        
+
             $result = $this->mysqli->query($sql);
 
             if ($result->num_rows > 0) {
-            
+
                 while($row = $result->fetch_assoc())
 		        {
 		            $data[] = $row;
 		        }
-                
-            } 
-            
+
+            }
+
         }
 
         return($data);
 
     }
-    
+
     public function api_Admin_Component_Reports() {
 
         /* Executes SQL and then assigns object to passed var */
@@ -2729,29 +2739,29 @@ public function api_Admin_Get_Materials_By_Supplier($id) {
         FROM
             report as R
             WHERE status='ACTIVE' and fav=1";
-        
+
             $result = $this->mysqli->query($sql);
 
             if ($result->num_rows > 0) {
-            
+
                 while($row = $result->fetch_assoc())
 		        {
 		            $data[] = $row;
 		        }
-                
-            } 
-            
+
+            }
+
         }
 
         return($data);
 
     }
-  
+
   public function api_Admin_Component_Orders() {
-      
+
               /* Executes SQL and then assigns object to passed var */
               if( $this->checkDBConnection(__FUNCTION__) == true) {
-      
+
                   $sql = "
                   SELECT
                       po.*,
@@ -2760,23 +2770,23 @@ public function api_Admin_Get_Materials_By_Supplier($id) {
                       product_order AS po
                       INNER JOIN product_customer AS pc ON pc.product_customer_id = po.product_customer_id
                       ORDER BY po.received DESC";
-              
+
                   $result = $this->mysqli->query($sql);
-      
+
                   if ($result->num_rows > 0) {
-                  
+
                       while($row = $result->fetch_assoc())
                       {
                           $data[] = $row;
                       }
-                      
-                  } 
-                  
+
+                  }
+
               }
-      
+
               return($data);
     }
-     
+
     public function api_Admin_Get_Collections_Item($id) {
 
         /* Executes SQL and then assigns object to passed var */
@@ -2793,18 +2803,18 @@ public function api_Admin_Get_Materials_By_Supplier($id) {
         FROM
             catalog_collections AS c
         WHERE c.catalog_collections_id = '" . $id . "'";
-        
+
             $result = $this->mysqli->query($sql);
 
             if ($result->num_rows > 0) {
-            
+
                 while($row = $result->fetch_assoc())
 		        {
 		            $data = $row;
 		        }
-                
-            } 
-            
+
+            }
+
         }
 
         return($data);
@@ -2820,24 +2830,24 @@ public function api_Admin_Get_Materials_By_Supplier($id) {
             R.report_id,
             R.name,
             R.desc,
-            R.sql, 
+            R.sql,
             R.columns,
             R.fav
         FROM
             report as R
         WHERE R.report_id = '" . $id . "'";
-        
+
             $result = $this->mysqli->query($sql);
 
             if ($result->num_rows > 0) {
-            
+
                 while($row = $result->fetch_assoc())
 		        {
 		            $data = $row;
 		        }
-                
-            } 
-            
+
+            }
+
         }
 
         return($data);
@@ -2849,8 +2859,11 @@ public function api_Admin_Get_Materials_By_Supplier($id) {
         /* extract Data Array */
         extract($_POST, EXTR_PREFIX_SAME, "dup");
 
+        $title = $this->mysqli->real_escape_string($_POST['title']);
+        $desc = $this->mysqli->real_escape_string($_POST['desc']);
+
         /* Insert into database */
-        $sql = "INSERT INTO `" . $this->config_env->env[$this->env]['dbname']  . ".`catalog_collections` (`artist_id`, `title`, `path`, `desc`, `status`, `type`, `catalog_code`) 
+        $sql = "INSERT INTO catalog_collections (`artist_id`, `title`, `path`, `desc`, `status`, `type`, `catalog_code`)
         VALUES ('{$artist_id}', '{$title}', '{$path}', '{$desc}', '{$status}', '{$type}', '{$catalog_code}');";
 
         $result = $this->mysqli->query($sql);
@@ -2878,17 +2891,17 @@ public function api_Admin_Get_Materials_By_Supplier($id) {
         $desc = $this->mysqli->real_escape_string($_POST['desc']);
 
         /* Insert into database */
-        $sql = "UPDATE `" . $this->config_env->env[$this->env]['dbname']  . ".`catalog_collections` 
-        SET `title` = '{$title}', 
-        `path` = '{$path}', 
-        `desc` = '{$desc}', 
-        `status` = '{$status}', 
+        $sql = "UPDATE catalog_collections
+        SET `title` = '{$title}',
+        `path` = '{$path}',
+        `desc` = '{$desc}',
+        `status` = '{$status}',
         `type` = '{$type}',
         `catalog_code` = '{$catalog_code}'
         WHERE `catalog_collections_id` = '" . $catalog_collections_id ."'";
 
         $result = $this->mysqli->query($sql);
-        
+
         if($result == 1) {
             $_SESSION['error'] = '200';
             $_SESSION['notify_msg'] = $name;
@@ -2898,7 +2911,7 @@ public function api_Admin_Get_Materials_By_Supplier($id) {
             $_SESSION['error'] = '400';
             $this->log(array("key" => "api", "value" => "Failed Update to Collection (" . $_POST['title'] . ")", "type" => "failure"));
         }
-        
+
     }
 
     public function api_Admin_Insert_Reports() {
@@ -2909,7 +2922,7 @@ public function api_Admin_Get_Materials_By_Supplier($id) {
         $sql_c =  $this->mysqli->real_escape_string($sql_c);
 
         /* Insert into database */
-        $sql = "INSERT INTO `" . $this->config_env->env[$this->env]['dbname']  . ".`report` (`name`, `desc`, `sql`, `columns`, `last_run_by`, `fav`) 
+        $sql = "INSERT INTO `" . $this->config_env->env[$this->env]['dbname']  . ".`report` (`name`, `desc`, `sql`, `columns`, `last_run_by`, `fav`)
         VALUES ('{$name}', '{$desc}', '{$sql_c}', '{$columns}', '{$artist_id}', '{$fav}');";
 
         $result = $this->mysqli->query($sql);
@@ -2929,7 +2942,7 @@ public function api_Admin_Get_Materials_By_Supplier($id) {
     }
 
     public function api_Admin_Update_Reports($sqlOnly=null) {
-    
+
         /* extract Data Array */
         extract($_POST, EXTR_PREFIX_SAME, "dup");
         if(!isSet($fav)) { $fav = '0'; }
@@ -2937,16 +2950,16 @@ public function api_Admin_Get_Materials_By_Supplier($id) {
 
         /* Insert into database */
         $sql = "UPDATE report
-        SET `name` = '{$name}', 
-        `desc` = '{$desc}', 
-        `sql` = '{$sql_c}', 
-        `columns` = '{$columns}', 
-        `last_run_by` = '{$artist_id}', 
-        `fav` = '{$fav}' 
+        SET `name` = '{$name}',
+        `desc` = '{$desc}',
+        `sql` = '{$sql_c}',
+        `columns` = '{$columns}',
+        `last_run_by` = '{$artist_id}',
+        `fav` = '{$fav}'
         WHERE `report_id` = '" . $report_id ."'";
 
         $result = $this->mysqli->query($sql);
-        
+
         if($result == 1) {
             if($sqlOnly != 1) {
                 $_SESSION['error'] = '200';
@@ -2961,7 +2974,7 @@ public function api_Admin_Get_Materials_By_Supplier($id) {
             $extra_debug = '<br /><span class=\"tiny\">' . $this->mysqli->real_escape_string($sql) . '</span>';
             $this->log(array("key" => "api", "value" => "Failed Update Report (" . $_POST['name'] . ") " . $extra_debug, "type" => "failure"));
         }
-        
+
     }
 
     public function api_Admin_Get_Collectors() {
@@ -2984,18 +2997,18 @@ public function api_Admin_Get_Materials_By_Supplier($id) {
                 C.country
             FROM
                 collector as C";
-        
+
             $result = $this->mysqli->query($sql);
 
             if ($result->num_rows > 0) {
-            
+
                 while($row = $result->fetch_assoc())
 		        {
 		            $data[] = $row;
 		        }
-                
-            } 
-            
+
+            }
+
         }
 
         return($data);
@@ -3008,7 +3021,7 @@ public function api_Admin_Get_Materials_By_Supplier($id) {
         extract($_POST, EXTR_PREFIX_SAME, "dup");
 
         /* Insert into database */
-        $sql = "INSERT INTO `" . $this->config_env->env[$this->env]['dbname']  . ".`collector` (`first_name`, `last_name`, `company`, `email`, `phone`, `address`, `address_extra`, `city`, `state`, `country`, `postalcode`) 
+        $sql = "INSERT INTO `" . $this->config_env->env[$this->env]['dbname']  . ".`collector` (`first_name`, `last_name`, `company`, `email`, `phone`, `address`, `address_extra`, `city`, `state`, `country`, `postalcode`)
         VALUES ('{$first_name}', '{$last_name}', '{$company}', '{$email}', '{$phone}', '{$address}', '{$address_extra}', '{$city}', '{$state}', '{$country}', '{$postalcode}');
         ";
 
@@ -3032,25 +3045,25 @@ public function api_Admin_Get_Materials_By_Supplier($id) {
 
         /* extract Data Array */
         extract($_POST, EXTR_PREFIX_SAME, "dup");
-        
+
         /* Insert into database */
-             
-        $sql = "UPDATE `" . $this->config_env->env[$this->env]['dbname']  . ".`collector` 
-            SET `first_name` = '{$first_name}', 
-            `last_name` = '{$last_name}', 
-            `company` = '{$company}', 
-            `email` = '{$email}', 
-            `phone` = '{$phone}', 
-            `address` = '{$address}', 
-            `address_extra` = '{$address_extra}', 
-            `city` = '{$city}', 
-            `state` = '{$state}', 
-            `country` = '{$country}', 
-            `postalcode` = '{$postalcode}' 
+
+        $sql = "UPDATE `" . $this->config_env->env[$this->env]['dbname']  . ".`collector`
+            SET `first_name` = '{$first_name}',
+            `last_name` = '{$last_name}',
+            `company` = '{$company}',
+            `email` = '{$email}',
+            `phone` = '{$phone}',
+            `address` = '{$address}',
+            `address_extra` = '{$address_extra}',
+            `city` = '{$city}',
+            `state` = '{$state}',
+            `country` = '{$country}',
+            `postalcode` = '{$postalcode}'
                 WHERE `collector_id` = '" . $collector_id . "'";
 
         $result = $this->mysqli->query($sql);
-        
+
         if($result == 1) {
             $_SESSION['error'] = '200';
             $_SESSION['notify_msg'] = $company;
@@ -3060,8 +3073,8 @@ public function api_Admin_Get_Materials_By_Supplier($id) {
             $_SESSION['error'] = '400';
             $this->log(array("key" => "api", "value" => "Failed Update To Collector Profile for (" .  $first_name . " " . $last_name . ")", "type" => "failure"));
         }
-        
-        
+
+
     }
 
     public function api_Admin_Get_Users() {
@@ -3084,22 +3097,22 @@ public function api_Admin_Get_Materials_By_Supplier($id) {
         FROM
             user as U
             LEFT JOIN artist as A on U.artist_id = A.artist_id
-            LEFT JOIN collector as C on U.collector_id = C.collector_id           
+            LEFT JOIN collector as C on U.collector_id = C.collector_id
             ";
-   
+
             $result = $this->mysqli->query($sql);
 
             if ($result->num_rows > 0) {
-            
+
                 while($row = $result->fetch_assoc())
 		        {
 		            $data[] = $row;
 		        }
-                
-            } 
-            
+
+            }
+
         }
-        
+
         return($data);
 
     }
@@ -3125,20 +3138,20 @@ public function api_Admin_Get_Materials_By_Supplier($id) {
         FROM
             user as U
             LEFT JOIN artist as A on U.artist_id = A.artist_id
-            LEFT JOIN collector as C on U.collector_id = C.collector_id 
+            LEFT JOIN collector as C on U.collector_id = C.collector_id
         WHERE U.user_id = '" . $id . "'";
-        
+
             $result = $this->mysqli->query($sql);
 
             if ($result->num_rows > 0) {
-            
+
                 while($row = $result->fetch_assoc())
 		        {
 		            $data = $row;
 		        }
-                
-            } 
-            
+
+            }
+
         }
 
         return($data);
@@ -3158,18 +3171,18 @@ public function api_Admin_Get_Materials_By_Supplier($id) {
             	product_order AS po
                 INNER JOIN product_customer AS pc ON pc.product_customer_id = po.product_customer_id
                 ORDER BY po.received DESC";
-        
+
             $result = $this->mysqli->query($sql);
 
             if ($result->num_rows > 0) {
-            
+
                 while($row = $result->fetch_assoc())
 		        {
 		            $data[] = $row;
 		        }
-                
-            } 
-            
+
+            }
+
         }
 
         return($data);
@@ -3188,7 +3201,7 @@ public function api_Admin_Get_Materials_By_Supplier($id) {
             	ua.title,
             	ua.path,
                 ua.add_new,
-                ua.short_code, 
+                ua.short_code,
                 ua.icon
             FROM
             	user_apps AS ua
@@ -3198,18 +3211,18 @@ public function api_Admin_Get_Materials_By_Supplier($id) {
             	AND ua.user_role_id != '" . $id . "'
                 AND ua.status = '1'
                 ORDER BY ua.order ASC";
-        
+
             $result = $this->mysqli->query($sql);
 
             if ($result->num_rows > 0) {
-            
+
                 while($row = $result->fetch_assoc())
 		        {
 		            $data[] = $row;
 		        }
-                
-            } 
-            
+
+            }
+
         }
 
         return($data);
@@ -3224,7 +3237,7 @@ public function api_Admin_Get_Materials_By_Supplier($id) {
         // $this->printp_r($_POST);
 
         /* Generate PIN hash */
-        $hash_str = md5("[/" 
+        $hash_str = md5("[/"
         . $username
         . "+"
         .  strtoupper($pin)
@@ -3242,13 +3255,13 @@ public function api_Admin_Get_Materials_By_Supplier($id) {
 
         /* Insert into database */
         $sql = "INSERT INTO user
-        ({$add_artist_id} {$add_collector_id}  type, status, username, pin, last_login_ip) 
+        ({$add_artist_id} {$add_collector_id}  type, status, username, pin, last_login_ip)
         VALUES (
             '{$ac_id}',
-            '{$type}', 
-            'ACTIVE', 
-            '{$username}', 
-            '{$hash_str}', 
+            '{$type}',
+            'ACTIVE',
+            '{$username}',
+            '{$hash_str}',
             '{$_SESSION['ip']}'
             );";
 
@@ -3286,9 +3299,9 @@ public function api_Admin_Get_Materials_By_Supplier($id) {
         foreach ($_POST['role'] as $k_role => $v_role) {
 
              $sql_r = "
-                   INSERT INTO user_role_link (`user_id`, `user_role_id`) 
+                   INSERT INTO user_role_link (`user_id`, `user_role_id`)
                    VALUES  ('{$id}', '{$v_role}');";
-            
+
             $result_roles = $this->mysqli->query($sql_r);
         }
 
@@ -3308,9 +3321,9 @@ public function api_Admin_Get_Materials_By_Supplier($id) {
         foreach ($_POST['apps'] as $k_apps => $v_apps) {
 
              $sql_a = "
-                   INSERT INTO user_apps_link (`user_id`, `user_apps_id`) 
+                   INSERT INTO user_apps_link (`user_id`, `user_apps_id`)
                    VALUES ('{$id}', '{$v_apps}');";
-            
+
             $result_apps = $this->mysqli->query($sql_a);
 
         }
@@ -3321,7 +3334,7 @@ public function api_Admin_Get_Materials_By_Supplier($id) {
 
         /* extract Data Array */
         extract($_POST, EXTR_PREFIX_SAME, "dup");
-       
+
        if ($pin != '') {
             /* Generate PIN hash */
             $hash_str = md5("[/"
@@ -3348,18 +3361,18 @@ public function api_Admin_Get_Materials_By_Supplier($id) {
         $this->processUserApps($user_id);
 
         /* Insert into database */
-        $sql = "UPDATE `" . $this->config_env->env[$this->env]['dbname'] . "`.`user` SET 
+        $sql = "UPDATE `" . $this->config_env->env[$this->env]['dbname'] . "`.`user` SET
         {$add_artist_id}
         {$add_collector_id}
-        `type` = '{$type}', 
-        `status` = 'ACTIVE', 
-        `username` = '{$username}' 
+        `type` = '{$type}',
+        `status` = 'ACTIVE',
+        `username` = '{$username}'
         {$pin_sql}
         WHERE `user_id` = '{$user_id}'
         ";
 
         $result = $this->mysqli->query($sql);
- 
+
         if($result == 1) {
             $_SESSION['error'] = '200';
             $_SESSION['notify_msg'] = $name;
@@ -3371,7 +3384,7 @@ public function api_Admin_Get_Materials_By_Supplier($id) {
             $this->log(array("key" => "api", "value" => "Failed To Update User (" . $_POST['username'] . ")", "type" => "failure"));
             return(false);
         }
-        
+
     }
 
     public function api_Admin_Auth_Log_Signin($uid) {
@@ -3389,20 +3402,20 @@ public function api_Admin_Get_Materials_By_Supplier($id) {
         $sql = "UPDATE user SET last_login='" . date ("Y-m-d H:i:s", time()) . "', last_login_ip='" . $IP . "' WHERE user_id ='" . $uid . "'";
 
         $result = $this->mysqli->query($sql);
-        
+
     }
 
 public function api_Admin_Update_Settings() {
 
-        
+
         foreach($_POST['notice_data'] as $k => $v) {
-        
+
             $_POST['notice_key_mobile_content'][$k] = addslashes($_POST['notice_key_mobile_content'][$k]);
             $_POST['notice_key_content'][$k] = addslashes($_POST['notice_key_content'][$k]);
-            
+
            $notice_array[$v] = array("excludes"=>"{$_POST['notice_key_excludes'][$k]}", "title"=>"{$_POST['notice_key_title'][$k]}", "content"=>"{$_POST['notice_key_content'][$k]}", "mobile_content"=>"{$_POST['notice_key_mobile_content'][$k]}","state"=>"{$_POST['notice_key_state'][$k]}", "timeout"=>"{$_POST['notice_key_timeout'][$k]}", "background_color"=>"{$_POST['notice_key_background_color'][$k]}", "color"=>"{$_POST['notice_key_color'][$k]}");
         }
-        
+
         if ($fp_notices = fopen($_SERVER["DOCUMENT_ROOT"] . '/view/data_notices.json', 'w')) {
             fwrite($fp_notices, json_encode($notice_array));
             fclose($fp_notices);
@@ -3410,7 +3423,7 @@ public function api_Admin_Update_Settings() {
         } else {
             $result=0;
         }
-        
+
         unset($_POST['notice_data']);
         unset($_POST['notice_key_excludes']);
         unset($_POST['notice_key_title']);
@@ -3450,14 +3463,14 @@ public function api_Insert_Order($params) {
         // result with non fA product
         // {"edition":null,"title":"First Light","size":"5x7","framing":null,"catalog_id":"MDT8OT"}
 
-        // result with FA product 
+        // result with FA product
         // {"edition":"tinyviews","title":"daisies-for-our-lady","size":"12x18","framing":"SNOW-WHITE( $40)","catalog_id":"FFC45OT"}
 
         if($formType == 'SquarePaymentForm_productOrder') {
             $edition_type = 'product';
             $framing = 'NA';
             $size = 'NA';
-        } 
+        }
 
         $item_pack = json_encode(array(
             "edition"=>$edition_type,
@@ -3474,15 +3487,15 @@ public function api_Insert_Order($params) {
          } else {
              $invoiced = '1970-01-01 00:00:01';
          }
-        
+
         /* Executes SQL and then assigns object to passed var */
         if( $this->checkDBConnection(__FUNCTION__) == true) {
 
            /* Insert into product_customer table */
             $sql = "
                INSERT INTO product_customer
-               (`name`, `email`, `phone`, `address`, `address_other`, `city`, `state`, `postal_code`) 
-               VALUES 
+               (`name`, `email`, `phone`, `address`, `address_other`, `city`, `state`, `postal_code`)
+               VALUES
                ('{$contactname}', '{$contactemail}', '{$phone}', '{$address}', '{$address_other}', '{$city}', '{$state}', '{$postalcode}');";
 
             $data['sql'] = $sql;
@@ -3501,24 +3514,24 @@ public function api_Insert_Order($params) {
             // }
 
             //  $sql_po = "
-            //    INSERT INTO `" . $this->config_env->env[$this->env]['dbname']  . ".`product_order` 
-            //    (`product_customer_id`, `item`, `notes`, `quantity`, `price`, `tax`, `shipping`, `discount`, `invoice_number`) 
-            //    VALUES 
+            //    INSERT INTO `" . $this->config_env->env[$this->env]['dbname']  . ".`product_order`
+            //    (`product_customer_id`, `item`, `notes`, `quantity`, `price`, `tax`, `shipping`, `discount`, `invoice_number`)
+            //    VALUES
             //    ('{$customer_id}', '{$item_pack}', '{$comments}', '1', '{$price}', '0', '0', '{$promocode}', '{$invoice_no}');";
             $sql_po = "
             INSERT INTO product_order
                 (
-                    `product_customer_id`, 
-                    `product_id`, 
-                    `item`, 
-                    `notes`, 
-                    `quantity`, 
-                    `price`, 
-                    `tax`, 
-                    `shipping`, 
-                    `shipping_provider`, 
-                    `promo`, 
-                    `promo_amount`, 
+                    `product_customer_id`,
+                    `product_id`,
+                    `item`,
+                    `notes`,
+                    `quantity`,
+                    `price`,
+                    `tax`,
+                    `shipping`,
+                    `shipping_provider`,
+                    `promo`,
+                    `promo_amount`,
                     `invoice_number`,
                     `deposit`,
                     `invoiced`,
@@ -3529,20 +3542,20 @@ public function api_Insert_Order($params) {
                     `sq_order_id`,
                     `sq_receipt_number`,
                     `sq_receipt_url`
-                ) 
-                VALUES 
+                )
+                VALUES
                 (
                     '{$customer_id}',
                     '1',
-                    '{$item_pack}', 
-                    '{$comments}', 
-                    '{$quantity}', 
-                    '{$price}', 
-                    '', 
-                    '{$shipping_cost}', 
-                    '{$shipping_provider}', 
-                    '{$promocode}', 
-                    '{$promo_amt}', 
+                    '{$item_pack}',
+                    '{$comments}',
+                    '{$quantity}',
+                    '{$price}',
+                    '',
+                    '{$shipping_cost}',
+                    '{$shipping_provider}',
+                    '{$promocode}',
+                    '{$promo_amt}',
                     '{$order_no}',
                     '{$deposit}',
                     '$invoiced',
@@ -3558,10 +3571,10 @@ public function api_Insert_Order($params) {
             ";
 
             // {$params->payment->card_details->card->last_4}
-            
+
             $data['sql_po'] = $sql_po;
             $result_po = $this->mysqli->query($sql_po);
-            
+
             if ($result == TRUE && $result_po == TRUE) {
                 $data['result'] = '200';
                  $this->log(array("key" => "api", "value" => "Order Processed for" . $contactname, "type" => "success"));
@@ -3569,8 +3582,8 @@ public function api_Insert_Order($params) {
                 $data['error'] = "SQL UPDATE FAILED ";
                 $data['sql'] = $sql;
                 $this->log(array("key" => "api", "value" => "Failed To Process Order for " . $contactname, "type" => "failure"));
-            }	
-            
+            }
+
         } else {
             $this->console('NO-DB-CONNECTION');
         }
@@ -3595,13 +3608,13 @@ public function api_Admin_Get_InventoryByOrderId($id) {
              $result = $this->mysqli->query($sql);
 
             if ($result->num_rows > 0) {
-            
+
                 while($row = $result->fetch_assoc())
 		        {
 		            $data = $row;
 		        }
-                
-            } 
+
+            }
 
         }
 
@@ -3625,13 +3638,13 @@ public function api_Admin_Get_CollectorByName($first,$last) {
              $result = $this->mysqli->query($sql);
 
             if ($result->num_rows > 0) {
-            
+
                 while($row = $result->fetch_assoc())
 		        {
 		            $data = $row;
 		        }
-                
-            } 
+
+            }
 
         }
 
@@ -3655,13 +3668,13 @@ public function api_Admin_Get_Order_Customer($id) {
              $result = $this->mysqli->query($sql);
 
             if ($result->num_rows > 0) {
-            
+
                 while($row = $result->fetch_assoc())
 		        {
 		            $data = $row;
 		        }
-                
-            } 
+
+            }
 
         }
 
@@ -3687,13 +3700,13 @@ public function api_Admin_Get_Order($id) {
              $result = $this->mysqli->query($sql);
 
             if ($result->num_rows > 0) {
-            
+
                 while($row = $result->fetch_assoc())
 		        {
 		            $data = $row;
 		        }
-                
-            } 
+
+            }
 
         }
 
@@ -3723,8 +3736,8 @@ public function api_Admin_Get_Order($id) {
         $sql_closed = null;
 
         /* Sort through workflow */
-        if($order_accepted == "1") { 
-            $sql_accepted = ", accepted = '" . $timestamp . "'"; 
+        if($order_accepted == "1") {
+            $sql_accepted = ", accepted = '" . $timestamp . "'";
             $to = $email;
 			$subject = 'Order ' . $invoice_no . ' Received & Processing';
 			$header_from = "FROM: jM Galleries " . $this->config->email . " <'" . $this->config->site_name . "'>";
@@ -3735,8 +3748,8 @@ public function api_Admin_Get_Order($id) {
             $close_count++;
         }
 
-        if($order_invoiced == "1") { 
-            $sql_invoiced = ", invoiced = '" . $timestamp . "'"; 
+        if($order_invoiced == "1") {
+            $sql_invoiced = ", invoiced = '" . $timestamp . "'";
             $to = $email;
 			$subject = 'Order ' . $invoice_no . ' Invoice Sent';
 			$header_from = "FROM: jM Galleries " . $this->config->email . " <'" . $this->config->site_name . "'>";
@@ -3744,11 +3757,11 @@ public function api_Admin_Get_Order($id) {
         	$headers =  $header_from . "\r\n" . 'Reply-To: ' . $reply_to . "\r\n" . 'X-Mailer: PHP/' . phpversion() . '/jmGForm';
             $message = "Hello " . $name . ",\nThis is an automated message to let you know that your fine-art, " . strtoupper($item_title) . ", has been invoiced through our payment processor Square. If you haven't received an email from Square please check your junk/spam box. If you see an error in the invoice please contact me at 951-708-1831 or email at james@jmgalleries.com.\n\nThank you for supporting the Arts!\n\n--j.McCarthy\n\n";
         	mail($to, $subject, $message, $headers);
-            $close_count++; 
+            $close_count++;
         }
 
-        if($order_printed == "1") { 
-            $sql_printed = ", printed = '" . $timestamp . "'"; 
+        if($order_printed == "1") {
+            $sql_printed = ", printed = '" . $timestamp . "'";
             $to = $email;
 			$subject = 'Order ' . $invoice_no . ' Printing Complete';
 			$header_from = "FROM: jM Galleries " . $this->config->email . " <'" . $this->config->site_name . "'>";
@@ -3756,17 +3769,17 @@ public function api_Admin_Get_Order($id) {
         	$headers =  $header_from . "\r\n" . 'Reply-To: ' . $reply_to . "\r\n" . 'X-Mailer: PHP/' . phpversion() . '/jmGForm';
             $message = "Hello " . $name . ",\nThis is an automated message to let you know that your fine-art, " . strtoupper($item_title) . ", has been printed and is getting prepped from any other work necessary before shipping. Once the product has shipped you will be receiving another message with tracking information.\n\nThank you for supporting the Arts!\n\n--j.McCarthy\n\n";
         	mail($to, $subject, $message, $headers);
-            $close_count++; 
+            $close_count++;
         }
 
-        if($order_packaged == "1") { 
-            $sql_packaged = ", packaged = '" . $timestamp . "'"; 
-            $close_count++; 
+        if($order_packaged == "1") {
+            $sql_packaged = ", packaged = '" . $timestamp . "'";
+            $close_count++;
         }
 
-        if($order_shipped == "1") { 
-            $sql_shipped = ", shipped = '" . $timestamp . "'"; 
-            $sql_printed = ", printed = '" . $timestamp . "'"; 
+        if($order_shipped == "1") {
+            $sql_shipped = ", shipped = '" . $timestamp . "'";
+            $sql_printed = ", printed = '" . $timestamp . "'";
             $to = $email;
 			$subject = 'Order ' . $invoice_no . ' Has Shipped';
 			$header_from = "FROM: jM Galleries " . $this->config->email . " <'" . $this->config->site_name . "'>";
@@ -3774,7 +3787,7 @@ public function api_Admin_Get_Order($id) {
         	$headers =  $header_from . "\r\n" . 'Reply-To: ' . $reply_to . "\r\n" . 'X-Mailer: PHP/' . phpversion() . '/jmGForm';
             $message = "Hello " . $name . ",\nThis is an automated message to let you know that your fine-art, " . strtoupper($item_title) . ", has been shipped via UPS. The tracking number is:\n\n" . $tracking . "\nhttps://www.ups.com/track?loc=en_US&tracknum=" . $tracking . "\n\nPlease allow 24 hours for tracking information to intially update with the carrier.\n\nThank you for supporting the Arts!\n\n--j.McCarthy\n\n";
         	mail($to, $subject, $message, $headers);
-            $close_count++; 
+            $close_count++;
         }
 
         if( !isSet($_POST['added_newsletter']) ) { $added_newsletter = 0; }
@@ -3783,7 +3796,7 @@ public function api_Admin_Get_Order($id) {
 
         /* Update product_customer */
         $sql = "
-        UPDATE `" . $this->config_env->env[$this->env]['dbname']  . ".`product_customer` SET 
+        UPDATE `" . $this->config_env->env[$this->env]['dbname']  . ".`product_customer` SET
             name = '{$name}',
             email = '{$email}',
             phone = '{$phone}',
@@ -3801,19 +3814,19 @@ public function api_Admin_Get_Order($id) {
         /* Update product_order */
         $discount = strtoupper($discount);
         $sql_o = "
-        UPDATE `" . $this->config_env->env[$this->env]['dbname']  . ".`product_order` SET 
-            item = '{$item_pack}', 
+        UPDATE `" . $this->config_env->env[$this->env]['dbname']  . ".`product_order` SET
+            item = '{$item_pack}',
             quantity = '{$quantity}',
-            price = '{$price}', 
-            tax = '{$tax}', 
+            price = '{$price}',
+            tax = '{$tax}',
             shipping = '{$shipping}',
-            discount = '{$discount}', 
+            discount = '{$discount}',
             tracking_number = '{$tracking}' " . $sql_accepted . $sql_invoiced . $sql_printed . $sql_packaged . $sql_shipped . $sql_closed .
             "WHERE product_order_id = '{$order_id}'
         ";
-        
+
         $result_o = $this->mysqli->query($sql_o);
-        
+
         if($result == 1) {
             $_SESSION['error'] = '200';
             $_SESSION['notify_msg'] = $name;
@@ -3823,7 +3836,7 @@ public function api_Admin_Get_Order($id) {
             $_SESSION['error'] = '400';
             $this->log(array("key" => "api", "value" => "Failed To Update Order (id:" . $order_id . ") for " . $name, "type" => "failure"));
         }
-        
+
     }
 
     public function api_Admin_Get_Reports_Sql($sql) {
@@ -3834,14 +3847,14 @@ public function api_Admin_Get_Order($id) {
         $result = $this->mysqli->query($sql);
 
         if ($result->num_rows > 0) {
-        
+
             while($row = $result->fetch_assoc())
 	        {
 	            $data[] = $row;
 	        }
-            
-        } 
-        
+
+        }
+
     }
 
     return($data);
@@ -3863,18 +3876,18 @@ public function api_Admin_Get_Order($id) {
             WHERE
                 status='1'
                 ORDER BY title ASC";
-        
+
             $result = $this->mysqli->query($sql);
 
             if ($result->num_rows > 0) {
-            
+
                 while($row = $result->fetch_assoc())
 		        {
 		            $data[] = $row;
 		        }
-                
-            } 
-            
+
+            }
+
         }
 
         return($data);
@@ -3892,18 +3905,18 @@ public function api_Admin_Get_Order($id) {
             FROM
                 user_role
             WHERE status = '1'";
-        
+
             $result = $this->mysqli->query($sql);
 
             if ($result->num_rows > 0) {
-            
+
                 while($row = $result->fetch_assoc())
 		        {
 		            $data[] = $row;
 		        }
-                
-            } 
-            
+
+            }
+
         }
 
         return($data);
@@ -3925,14 +3938,14 @@ public function api_Admin_Get_Order($id) {
             $result = $this->mysqli->query($sql);
 
             if ($result->num_rows > 0) {
-            
+
                 while($row = $result->fetch_assoc())
 		        {
 		            $data[] = $row;
 		        }
-                
-            } 
-            
+
+            }
+
         }
 
         return($data);
@@ -3954,14 +3967,14 @@ public function api_Admin_Get_Order($id) {
             $result = $this->mysqli->query($sql);
 
             if ($result->num_rows > 0) {
-            
+
                 while($row = $result->fetch_assoc())
 		        {
 		            $data[] = $row;
 		        }
-                
-            } 
-            
+
+            }
+
         }
 
         return($data);
@@ -3969,12 +3982,12 @@ public function api_Admin_Get_Order($id) {
     }
 
 public function api_Admin_Get_Products() {
-    
+
             /* Executes SQL and then assigns object to passed var */
             if( $this->checkDBConnection(__FUNCTION__) == true) {
-    
+
                 $sql = "SELECT
-                    product_id, 
+                    product_id,
                     title,
                     price,
                     quantity,
@@ -3983,22 +3996,22 @@ public function api_Admin_Get_Products() {
                     status
                 FROM
                     product";
-            
+
                 $result = $this->mysqli->query($sql);
-                      
+
                 if ($result->num_rows > 0) {
-                
+
                     while($row = $result->fetch_assoc())
                     {
                         $data[] = $row;
                     }
-                    
-                } 
-                
+
+                }
+
             }
-            
+
             return($data);
-    
+
 }
 
 
@@ -4008,31 +4021,31 @@ public function api_Admin_Insert_Products() {
 
         /* extract Data Array */
         extract($_POST, EXTR_PREFIX_SAME, "dup");
-        
+
         /* Insert into database */
         $title = $this->mysqli->real_escape_string($_POST['title']);
         $desc = $this->mysqli->real_escape_string($_POST['desc']);
         $desc_short = $this->mysqli->real_escape_string($_POST['desc_short']);
         $details = $this->mysqli->real_escape_string($_POST['details']);
-        
+
         /* Check to see if files have been uploaded */
         $image_files_mutated = $this->api_Admin_Products_Upload_Images(array("jpg","jpeg"), "jpg");
         $image_files_mutated = json_encode($image_files_mutated);
-        
+
         if($on_sale == '') {
           $on_sale = 0;
         }
-        
+
          $sql = "
             INSERT INTO product (
-                `artist_id`, 
-                `art_id`, 
-                `title`, 
+                `artist_id`,
+                `art_id`,
+                `title`,
                 `desc`,
                 `desc_short`,
                 `details`,
                 `tags`,
-                `image`, 
+                `image`,
                 `price`,
                 `taxable`,
                 `created`,
@@ -4043,16 +4056,16 @@ public function api_Admin_Insert_Products() {
                 `type`,
                 `uri_path`,
                 `status`
-            ) 
+            )
             VALUES (
-                '$artist_id', 
-                '$art_id', 
+                '$artist_id',
+                '$art_id',
                 '$title',
-                '$desc', 
+                '$desc',
                 '$desc_short',
                 '$details',
                 '$tags',
-                '$image_files_mutated', 
+                '$image_files_mutated',
                 '$price',
                 '$taxable',
                 '$created',
@@ -4088,37 +4101,37 @@ public function api_Admin_Update_Products() {
 
         /* extract Data Array */
         extract($_POST, EXTR_PREFIX_SAME, "dup");
-        
+
         /* Insert into database */
         $title = $this->mysqli->real_escape_string($_POST['title']);
         $desc = $this->mysqli->real_escape_string($_POST['desc']);
         $desc_short = $this->mysqli->real_escape_string($_POST['desc_short']);
         $details = $this->mysqli->real_escape_string($_POST['details']);
         if($on_sale == '') { $on_sale = 0; }
-        
+
         /* Check to see if files have been uploaded */
         $needs_fileUpload =0;
         foreach ($_FILES as $kF => $kV) {
           if($kV['error'] == 4) { $needs_fileUpload = "false"; } else { $needs_fileUpload = "true";}
         }
-        
+
         if($needs_fileUpload == "true") {
           $image_files_mutated = $this->api_Admin_Products_Upload_Images(array("jpg","jpeg"), "jpg");
           $image_files_mutated = json_encode($image_files_mutated);
         } else {
           $image_files_mutated = $_files;
         }
-        
+
          $sql = "
             UPDATE product
             SET
-               art_id = '$art_id', 
+               art_id = '$art_id',
                title =  '$title',
-               `desc` =  '$desc', 
+               `desc` =  '$desc',
                desc_short = '$desc_short',
                details = '$details',
                tags = '$tags',
-               image = '$image_files_mutated', 
+               image = '$image_files_mutated',
                price = '$price',
                taxable = '$taxable',
                on_sale = '$on_sale',
@@ -4150,9 +4163,9 @@ public function api_Admin_Products_Upload_Images($fileTypes=array("jpeg"), $ext=
         foreach($_FILES as $key => $value) {
 
             $_FILES[$key]['path'] = '/view/image/product/';
-            
+
             if($key == "file_6") { $key_fn = "thumb"; } else { $key_fn = $key; }
-            
+
             if($value['size'] != 0) {
                 // $_FILES[$key]['path'] = $_POST[$key . '_path'];
                 $uploadReady=1;
@@ -4161,8 +4174,8 @@ public function api_Admin_Products_Upload_Images($fileTypes=array("jpeg"), $ext=
 
             // if($_FILES[$key]['path'] == "/catalog/__thumbnail/") { $log_loc = 'Thumbnail'; } else { $log_loc = 'Main'; }
             $target_file = $_SERVER["DOCUMENT_ROOT"] . $_FILES[$key]['path'] . $_POST['uri_path'] . '_' . $key_fn . '.' . $ext;
-            
-            
+
+
             if(file_exists( $target_file )) {
                 $_FILES[$key]['name'] = $_POST['uri_path'] . '_' . $key_fn . '.' . $ext;
                 $uploadReady = 1;
@@ -4170,7 +4183,7 @@ public function api_Admin_Products_Upload_Images($fileTypes=array("jpeg"), $ext=
                 // need to throw an overwrite flag only if $_FILES[$key]['name']
                 if( isSet($_FILES[$key]['name'])) {
                     $uploadOverwrite = 1;
-                } 
+                }
 
             } else { $uploadReady=1; $uploadOverwrite = 0; unset($_FILES[$key]['path']); }
 
@@ -4180,7 +4193,7 @@ public function api_Admin_Products_Upload_Images($fileTypes=array("jpeg"), $ext=
                 if ($uploadReady == 0) {
                     $this->log(array("key" => "api_Admin_Products_Upload_Images", "value" => "Failed to Upload / uploadReady=0", "type" => "failure"));
                 } else {
-                    
+
                     // $this->console($target_file);
 
                     if (move_uploaded_file($_FILES[$key]["tmp_name"], $target_file)) {
@@ -4194,11 +4207,11 @@ public function api_Admin_Products_Upload_Images($fileTypes=array("jpeg"), $ext=
                     }
                 }
             }
-          
+
         unset($_FILES[$key]['tmp_name']);
         unset($_FILES[$key]['error']);
         }
-        
+
         return($_FILES);
 }
 
@@ -4216,14 +4229,14 @@ public function api_Admin_Products_Upload_Images($fileTypes=array("jpeg"), $ext=
             $result = $this->mysqli->query($sql);
 
             if ($result->num_rows > 0) {
-            
+
             while($row = $result->fetch_assoc())
 		        {
 		            $data = $row;
 		        }
-                
-            } 
-            
+
+            }
+
         }
 
         return($data);

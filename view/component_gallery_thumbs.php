@@ -10,14 +10,15 @@
     foreach($catalog_names as $key=>$value) {
 
             // $thumb_html .= "<article id='filmstrip'>";
-            $thumb_html .= '<section id="filmstrip-' . strtoupper($value['path']) . '">';
+            // id='*- strtoupper($value['path']) . ''
+            $thumb_html .= '<section id="filmstrips">';
             $thumb_html .= '<div class="grid-4_sm-2 grid-4_md-3"><!-- mt-32  mt-64-->';
 
         if(strtolower($value['title']) != 'new releases') {
-            
+
             $thumb_html .= '<div class="col-12_sm-12 text-center mb-16"><!-- col-10_sm-12 -->';
             $thumb_html .= '<h2><a href="/' . $value['path'] . '">' . strtoupper($value['title']) . '</a></h2>';
-            $thumb_html .= '<p class="light sm-hidden">' . $value['desc'] .  '</p>';
+            $thumb_html .= '<p class="light --subhead sm-hidden">' . $value['desc'] .  '</p>';
             $thumb_html .= '</div>';
             $thumb_html .= '<div class="view-all col-2-middle sm-hidden hidden">';
             $thumb_html .= '<a href="/' . $value['path'] . '">view all</a>';
@@ -29,21 +30,21 @@
             if(isSet($catalog_photos)) {
 
             foreach($catalog_photos as $k => $v) {
-                
+
                 if($v['as_limited'] == 1) {
                     $edition_desc = str_replace("{limited_edition_max}", $this->config->limited_edition_max, $this->config->edition_description_limited);
-                    $desc_editions = "<p>" . $edition_desc  . "</p>"; 
-                    $available_sizes = $this->config->available_sizes_limited; } 
+                    $desc_editions = "<p>" . $edition_desc  . "</p>";
+                    $available_sizes = $this->config->available_sizes_limited; }
                     else { $data_filter_G = null;  }
 
                 if($v['as_studio'] == 1) {
-                    $desc_editions = "<p>" . $this->config->edition_description_open . "</p>"; 
-                    $available_sizes = $this->config->available_sizes_open; } 
+                    $desc_editions = "<p>" . $this->config->edition_description_open . "</p>";
+                    $available_sizes = $this->config->available_sizes_open; }
                     else { $data_filter_S = null; }
 
-                if($v['as_open'] == 1) { 
-                    $desc_editions = "<p>" . $this->config->edition_description_open . "</p>"; 
-                    $available_sizes = $this->config->available_sizes_open; } 
+                if($v['as_open'] == 1) {
+                    $desc_editions = "<p>" . $this->config->edition_description_open . "</p>";
+                    $available_sizes = $this->config->available_sizes_open; }
                     else { $data_filter_O = null; }
 
                 if( file_exists($_SERVER['DOCUMENT_ROOT'] . "/catalog/__thumbnail/" . $v['file_name'] . '.jpg')) {
@@ -61,22 +62,22 @@
                 } else {
                     $grid_css = 'col';
                 }
-                
+
                 $thumb_html .= '<div class="thumb overflow-hidden ' . $grid_css . '">';
                 // $thumb_html .= '<a href="' . $value['path'] . "/" . $img_file . '"><img src="/catalog/__thumbnail/' .$img_file . '.jpg" /></a><p class="blue larger">' . $v['title'] . '</p></div>';
-                
+
                 $thumb_html .= '<a href="/' . $v['catalog_path'] . '/' . $img_file . '"><img style="width: 100%;" src="/catalog/__thumbnail/' . $img_file . '.jpg" alt="' . $img_file . '" /></a></p><!--<h4 class="pt-8 blue"><a href="' . $value['path'] . "/" . $img_file . '">' . $v['title'] . '</a></h4>--><!-- <p>' . $v['loc_place'] . '</p> --><!-- <p>Sizes: ' . $available_sizes . '</p>--><!--' . $desc_editions . '--></div>';
 
                 if($count == 3) { $count = 0; } else { $count++; }
             }
 
-        } 
-        else { 
+        }
+        else {
             $thumb_html .= "<p>This collectionis currently being processed and currated for your enjoyment. Please come back in a day or so to enjoy it.</p>"; }
         }
 
         $thumb_html .= "</div>";
-        $thumb_html .= "<div class='col'><p class='text-center'><a href='/" . $value['path'] . "'><i class='fas fa-angle-down'></i></a></p></div>";
+        $thumb_html .= "<div class='col'><p class='text-center'><a href='/" . $value['path'] . "'>view more</p></p><p class='text-center' style='margin-top: -10px;'><i class='fas fa-angle-down'></i></a></p></div>";
         $thumb_html .= "</section>";
         // $thumb_html .= "</article>";
     }
@@ -88,4 +89,3 @@ END;
         return($html);
 
 ?>
-    

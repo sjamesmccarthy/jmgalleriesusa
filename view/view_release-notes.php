@@ -3,27 +3,38 @@
     <div class="grid-center">
 
         <div class="col-12_sm-12">
-            <h1>RELEASE NOTES, <?= $this->config->package_version ?></h1> 
+            <h1>RELEASE NOTES, <?= $this->config->package_version ?></h1>
         </div>
 
         <div class="col-11" style="position: relative">
+
+        <p class="pt-16">v1.8.2<br />Jan 26, 2022</p>
+            <ul>
+            <li>updated: mobile menu icon and style</li>
+            <li>updated: main hero logo to switch between dark/light based on image color</li>
+            <li>added: first Friday email signup on homepage</li>
+            <li>bugfix: admin collections add/edit now supports special characters</li>
+            <li>updated: find me page now links to linktr.ee/jmgalleriesusa</li>
+            <li>removed: link to Field Notes and /now page (both still available with a direct URL)</li>
+            </ul>
+        </p>
 
         <p class="pt-16">v1.8.1<br />Nov 29, 2021</p>
             <ul>
             <li>added: products:admin module insert/update</li>
             <li>updated: privacy policy with terms of sale link</li>
-            </ul> 
+            </ul>
         </p>
-        
+
         <p class="pt-16">v1.8<br />Nov 26, 2021</p>
             <ul>
             <li>Standardized Edition maxes, styles in settings</li>
             <li>update: admin edition styles and edition max</li>
             <li>bugfix: admin inventory now checks edition style before creating a COA record</li>
             <li>bugfix: admin inventory smart COA record show/hide UI update</li>
-            </ul> 
+            </ul>
         </p>
-        
+
         <p class="pt-16">v1.7.9<br />Nov 23, 2021</p>
             <ul>
             <li>Checkout bugfixes</li>
@@ -32,16 +43,16 @@
             <li>bugfix Collector to User account and last login data</li>
             <li>bugfix custom sizes and prices now display properly on detail page</li>
             <li>update custom sizes and prices now accept two JSON objects for acrylic|metal</li>
-            </ul> 
+            </ul>
         </p>
-        
+
         <p class="pt-16">v1.7.8<br />Nov 20, 2021</p>
             <ul>
             <li>New and updated admin dashboard components</li>
             <li>bugfix: ordering form now submits through to confirmation page</li>
-            </ul> 
+            </ul>
         </p>
-        
+
         <p class="pt-16">v1.7.7<br />Nov 12, 2021</p>
             <ul>
             <li>new: migrated servers</li>
@@ -52,9 +63,9 @@
             <li>update: disabled Square API payment gateway</li>
             <li>update: minor updates to checkout page</li>
             <li>bugfix: promocode bugfixes</li>
-            </ul> 
+            </ul>
         </p>
-        
+
         <p class="pt-16">v1.7.6<br />April 27, 2021</p>
             <ul>
             <li>update: user/admin sessions now handled by life of browser</li>
@@ -65,41 +76,41 @@
             <li>added: 404 error capture in oder to improve routes and redirects with analytics</li>
             <li>update: mobile CSS styles and changed logo</li>
             <li>update: Polarized layout updates</li>
-            </ul> 
+            </ul>
         </p>
-        
+
         <p class="pt-16">v1.7.5<br />Mar 24, 2021</p>
             <ul>
             <li>update: misc CSS changes in admin area and throughout the site.</li>
             <li>update: admin control: removed WYSIWYG editor and added new "preview" instead.</li>
-            </ul> 
+            </ul>
         </p>
-        
+
         <p class="pt-16">v1.7.4<br />Mar 04, 2021</p>
             <ul>
             <li>update: tags in field notes now appear</li>
             <li>update: minor CSS fixes for field notes</li>
             <li>update: admin control: live img preview when updating photo and when adding a field note</li>
-            </ul> 
+            </ul>
         </p>
-        
+
         <p class="pt-16">v1.7.3<br />Jan 29, 2021</p>
             <ul>
             <li>update: SEO updates</li>
             <li>update: Field notes Filmstrip layout adjustments</li>
             <li>update: admin control: live img preview when adding new photo</li>
-            </ul> 
+            </ul>
         </p>
-        
+
         <p class="pt-16">v1.7.2<br />Jan 20, 2021</p>
             <ul>
             <li>update: pricing and styles.</li>
             <li>update: style clean up in shop.</li>
             <li>update: style clean up in Polarized.</li>
             <li>update: tablet (iPad) style update.</li>
-            </ul> 
+            </ul>
         </p>
-        
+
         <p class="pt-16">v1.7.1<br />Dec 30, 2020</p>
             <ul>
             <li>update: about content.</li>
@@ -109,20 +120,20 @@
             <li>bugfix: cleaned up CSS code in checkout form.</li>
             <li>bugfix: modified default shipping for Limited Edition "product".</li>
             <li>update: Included Limited/Open Ed. in top nav.</li>
-            </ul> 
+            </ul>
         </p>
 
         <p class="pt-16">v1.7<br />Dec 21, 2020</p>
         	<ul>
             <li>added: new jM Gallery Store.</li>
-        	</ul> 
+        	</ul>
         </p>
 
         <p class="pt-16">v1.6<br />Dec 07, 2020</p>
         	<ul>
             <li>update: font styling throughout site.</li>
             <li>added: new Square payment integration in new checkout form.</li>
-        	</ul> 
+        	</ul>
         </p>
 
         <p class="pt-16">v1.5.2<br />Nov 10, 2020</p>
@@ -132,7 +143,7 @@
             <li>update: removed facebook and twitter from social link block.</li>
             <li>update: modified About page headline, artist statement formatting.</li>
             <li>update: admin contol artwork inventory table now searchable by serial number.</li>
-        	</ul> 
+        	</ul>
         </p>
 
         <p class="pt-16">v1.5.1<br />Oct 20, 2020</p>
@@ -141,13 +152,13 @@
             <li>update: new release component now shows/hides based on results found within last 3 months.</li>
             <li>update: css styling for thumbnails, simplification of top navigation, new homepage content overlay design.</li>
             <li>update: about page social icons.</li>
-        	</ul> 
+        	</ul>
         </p>
 
         <p class="pt-16">v1.5<br />Oct 12, 2020</p>
         	<ul>
             <li>Preview: Dark Mode (link in footer)</li>
-        	</ul> 
+        	</ul>
         </p>
 
         <p class="pt-16">v1.4.9<br />Sep 29, 2020</p>
@@ -158,7 +169,7 @@
             <li>added: Cross linking between Limited/tinyVIEWS Open Edition Catalog listings</li>
             <li>updated: various styling for mobile.</li>
             <li>bugfix: admin control tab STATUS removed, no such state for art.</li>
-        	</ul> 
+        	</ul>
         </p>
 
         <p class="pt-16">v1.4.8<br />Sep 24, 2020</p>
@@ -171,7 +182,7 @@
             <li>update: Cookie Consent banner language updated.</li>
             <li>update: Typography throughout the site.</li>
             <li>update: Slimmed the ordering form on photo details pages.</li>
-        	</ul> 
+        	</ul>
         </p>
 
         <p class="pt-16">v1.4.7<br />Sep 22, 2020</p>
@@ -181,7 +192,7 @@
             <li>admin control fieldnotes editor now removing Safari span bug</li>
             <li>added new "shop" view in catalog with price and promo flags.</li>
             <li>misc. update to About</li>
-        	</ul> 
+        	</ul>
         </p>
 
         <p class="pt-16">v1.4.6<br />Aug 19, 2020</p>
@@ -239,7 +250,7 @@
             <li>updated: collector address now auto-filled when ordering special edition through collector portal.</li>
             <li>bugfix: iPad OS javascript onKeypress fixed for admin sign-in form.</li>
             <li>updated: admin/collector sign-in pass-code now masked on keypress.</li>
-            
+
         	</ul>
         </p>
 
@@ -264,7 +275,7 @@
             <li>bugfix: top navigation positioning bug.</li>
         	</ul>
         </p>
-        
+
         <p class="pt-16">v1.3.6<br />May 29, 2020</p>
         	<ul>
             <li>added: automated pricing for frames and images.</li>
@@ -376,7 +387,7 @@
         <p class="mt-32">If you're an artist or photographer and are interested in using STUDIO610 please <a href="/contact">contact me</a> for a demo.</p>
         <p>Custom packages start at $5,000 and $350/year for hosting. If you'd like to <a href="https://github.com/sjamesmccarthy/jmgalleriesusa">contribute code to the project</a> please DM me on Twitter @jmgalleriesusa.</p>
         </div>
- 
+
     </div>
 </section>
 

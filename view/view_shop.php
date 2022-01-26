@@ -1,6 +1,6 @@
 <section id="catalog">
-    
-    <div class="hero" style="margin: 3rem .5rem 2rem .5rem;"> 
+
+    <div class="hero" style="margin: 3rem .5rem 2rem .5rem;">
         <div class="hero-inner">
             <div class="hero-headline">
                 <h2>tinyViews<sup class="tiny">&trade;</sup> Notecards</h2>
@@ -12,12 +12,12 @@
     </div>
 
     <div class="grid-4_sm-2 grid-4_md-3" style="margin: 0">
-        
+
 
         <div class="col-12 title">
-            <h1>jM GALLERY STORE</h1>
+            <h1>j.McCarthy Fine Art Shop</h1>
             <p class="light sub-title pt-8">Browse fine art products designed and hand-made by j.McCarthy</p>
-            
+
             <ul class="filter-editions-list pt-32">
                 <li class="filter-all selected">All</li>
                 <!-- <li class="filter-gallery">Limited Edition</li> -->

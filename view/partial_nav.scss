@@ -21,30 +21,36 @@
     margin: 0;
     // margin-bottom: 1rem;
 
-    .active-moments, 
-    .active-all, 
-    .active-polarized, 
-    .active-about, 
+    .active-moments,
+    .active-all,
+    .active-polarized,
+    .active-about,
     .active-galleries {
         border-bottom: 3px solid $color-blue;
         padding-bottom: 40px;
     }
 }
 
+.nav-bars {
+    @extend .text-right;
+    margin-right: 1rem;
+    font-size: 1.4em;
+}
+
 .nav-mobile-menu {
     position: absolute;
     top: 1rem;
     right: 1rem;
-    color: $color-white;  
-    
+    color: $color-white;
+
     // xSmall devices (landscape phones, 320px and up)
-     @media (min-width: 320px) { 
+     @media (min-width: 320px) {
         display: block;
         // background-color: lightpink;
     }
 
     // Small devices (landscape phones, 576px and up)
-    @media (min-width: 376px) { 
+    @media (min-width: 376px) {
         display: block;
         // background-color: gray;
     }
@@ -66,20 +72,20 @@
         display: none;
         // background-color: red;
     }
-      
+
 }
 
 .topnav-logo {
-    text-align: center; 
-// 
+    text-align: center;
+//
     // xSmall devices (landscape phones, 320px and up)
-    @media (min-width: 320px) { 
+    @media (min-width: 320px) {
         padding-top: 0;
         // background-color: lightpink;
     }
 
     // Small devices (landscape phones, 576px and up)
-    @media (min-width: 376px) { 
+    @media (min-width: 376px) {
         padding-top: 0;
         // background-color: gray;
     }
@@ -105,19 +111,19 @@
 }
 
 .topnav-logo img {
-    width: 150px;
+    width: 250px;
     filter: invert(0);
     display: inline-block;
     // padding-bottom: 2rem;
 
     // xSmall devices (landscape phones, 320px and up)
-    @media (min-width: 320px) { 
+    @media (min-width: 320px) {
         width: 100px;
         // background-color: lightpink;
     }
 
     // Small devices (landscape phones, 576px and up)
-    @media (min-width: 376px) { 
+    @media (min-width: 376px) {
         width: 100px;
         // display: inline-block;
         // background-color: gray;
@@ -132,14 +138,14 @@
 
     // Large devices (tablets (iPad Pro, 1112px and up)
     @media (min-width: 1112px) {
-        width: 150px;
+        width: 250px;
         display: inline-block;
         // background-color: orange;
     }
 
     // Extra large devices (large desktops, 1200px and up)
     @media (min-width: 1200px) {
-        width: 150px;
+        width: 250px;
         display: inline-block;
         // background-color: red;
     }
@@ -152,14 +158,14 @@
     // padding-bottom: 2rem;
 
     // xSmall devices (landscape phones, 320px and up)
-    @media (min-width: 320px) { 
+    @media (min-width: 320px) {
         width: 150px;
         // display: none;
         // background-color: lightpink;
     }
 
     // Small devices (landscape phones, 576px and up)
-    @media (min-width: 376px) { 
+    @media (min-width: 376px) {
         width: 150px;
         display: inline-block;
         // background-color: gray;
@@ -196,9 +202,9 @@
 }
 
 .topnav-subline {
-    font-size: .8em; 
-    text-align: center; 
-    margin-left: 80px; 
+    font-size: .8em;
+    text-align: center;
+    margin-left: 80px;
     display: none;
 }
 
@@ -227,17 +233,17 @@
     position: relative;
     top: 0;
     width:100%;
-    z-index:1; 
+    z-index:1;
 }
 
 .notice-banner {
-    font-family: lato, sans-serif; 
-    padding: 20px; 
+    font-family: lato, sans-serif;
+    padding: 20px;
     text-align: center;
 }
 
 .nav-mobile-logo {
-    width: 135px; 
+    width: 235px;
     vertical-align: middle;
     margin-top: -2rem;
     // filter: invert(1);
@@ -247,15 +253,15 @@
     position: relative;
     text-align: center;
     // display: none;
-    
+
      // xSmall devices (landscape phones, 320px and up)
-     @media (min-width: 320px) { 
+     @media (min-width: 320px) {
         // display: none;
         // background-color: lightpink;
     }
 
     // Small devices (landscape phones, 576px and up)
-    @media (min-width: 376px) { 
+    @media (min-width: 376px) {
         // display: none;
         // background-color: gray;
     }
@@ -305,20 +311,20 @@
     }
 
     // xSmall devices (landscape phones, 320px and up)
-    @media (min-width: 320px) { 
-        
+    @media (min-width: 320px) {
+
         // background-color: lightpink;
     }
 
     // Small devices (landscape phones, 576px and up)
-    @media (min-width: 376px) { 
-        
+    @media (min-width: 376px) {
+
         // background-color: gray;
     }
 
     // Medium devices (tablets, 768px and up)
     @media (min-width: 767px) {
-        
+
         // background-color: blue;
     }
 
@@ -339,13 +345,13 @@
 .small-hidden {
 
     // xSmall devices (landscape phones, 320px and up)
-    @media (min-width: 320px) { 
+    @media (min-width: 320px) {
         display: none;
         // background-color: lightpink;
     }
 
     // Small devices (landscape phones, 576px and up)
-    @media (min-width: 376px) { 
+    @media (min-width: 376px) {
         display: none;
         // background-color: gray;
     }
@@ -371,12 +377,12 @@
 }
 
 .nav-mobile-ul {
-    display: none; 
-    position: absolute; 
-    background-color: rgba(0,0,0, .8); 
-    color: #FFF; 
-    width: 100%; 
-    padding: 4rem 2rem 2rem 2rem; 
+    display: none;
+    position: absolute;
+    background-color: rgba(0,0,0, .8);
+    color: #FFF;
+    width: 100%;
+    padding: 4rem 2rem 2rem 2rem;
     top: 0;
     left: 0;
     font-size: 1.5rem;
@@ -384,7 +390,7 @@
     margin: auto;
     text-align: center;
     z-index: 1021;
-    min-height: 75vh;
+    min-height: 100vh;
 
     >li {
         padding: .5rem;
@@ -396,8 +402,8 @@
 
         &.close {
             position: absolute;
-            top: 1rem;
-            right: 1rem;
+            top: 3rem;
+            right: 1.5rem;
 
             &:hover {
                 color: #CCC;
@@ -411,7 +417,7 @@
             color: #000;
             cursor: pointer;
             border-radius: 24px;
-            
+
             a {
                 color: #000;
             }
