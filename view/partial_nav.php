@@ -4,7 +4,7 @@
 
             <div class="grid" style="position: relative;">
                 <div class="col-5-middle small-hidden">
-                    <p class="center heading"><a href="/fieldnotes" class="<?= $polarized ?>">FIELD NOTES</a><br /><span class="font-light">ABOUT FINE ART</span></p>
+                    <p class="center heading"><a href="/shop" class="<?= $polarized ?>">BUY PRINTS</a><br /><span class="font-light">SHOP FINE-ART</span></p>
                 </div>
                 <div class="col-2 small-hidden">
                   <!-- logo_fullsize.png -->
@@ -27,14 +27,14 @@
         ?>
           <div class="grid">
           <div class="col nav-mobile-menu">
-              <p class="small text-right"><i class="fas fa-ellipsis-v"></i></p>
+              <p class="nav-bars <?= $this->color_text ?>"><i class="fas fa-bars"></i></p>
           </div>
           </div>
         <?php } else {
         // print "ELSE:" . $addToClass;
         ?>
           <div class="col nav-mobile<?= $addToClass ?>">
-              <p class="nav-bars"><i class="fas fa-bars"></i></p>
+              <p class="nav-bars <?= $this->color_text ?>"><i class="fas fa-bars"></i></p>
               <img class="nav-mobile-logo" src="/view/image/signature-fine-art-upscaled.png" alt="jm Galleries logo" />
           </div>
           </div>
@@ -43,7 +43,7 @@
         <ul class="nav-mobile-ul">
             <li class="close"><i class="fas fa-times-circle"></i>
             </li>
-            <li class="mt-64"><a href="/">HOME</a></li>
+            <li class="mt-32"><a href="/">HOME</a></li>
                 <li><a href="/all?filter=limited">LIMITED EDITIONS</a></li>
 <!--                 <li><a href="/fieldnotes">Field Notes About Fine Art</a></li> -->
                 <li><a href="https://vlog.jmgalleries.com">vlog @YOUTUBE</a></li>
@@ -52,6 +52,8 @@
                 <li><a href="/about">ABOUT</a></li>
                 <li><a href="https://linktr.ee/jmgalleriesusa">FIND ME</a></li>
                 <li><a href="/contact">CONTACT</a></li>
+
+                <li class="mt-32"><p class="topnav-logo"><img class="topnav--logo-img" style="width: 240px;" src="/view/image/signature-fine-art-upscaled.png" alt="jm Galleries logo" /></p></li>
         </ul>
 
 

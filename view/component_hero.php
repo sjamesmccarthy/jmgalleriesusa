@@ -18,11 +18,11 @@ if ($catalog == '') {
     if($this->hero_featured_contrast == "1") {
         $explore_background = 'rgba(0,0,0,.2)';
         $logo_invert = "logo-dark";
-        $color_text = "color-black";
+        $this->color_text = "color-black";
     } else {
         $explore_background = 'rgba(255,255,255,.8)';
         $logo_invert = "logo-white";
-        $color_text = "color-white";
+        $this->color_text = "color-white";
     }
 
     $html = <<< END
@@ -35,7 +35,7 @@ if ($catalog == '') {
         <div id="hero" data-url="$this->hero_image" style="box-shadow: 0px 20px 25px 0px rgba(0, 0, 0, .3);">
 
                 <div class="hero-container">
-                <div style="position: absolute; top: 5%; left: 5%;">
+                <div style="position: absolute; top: 2rem; left: 1.5rem;">
                     <p style="background-color: $explore_background;  border-radius: 6px; padding: 2px 10px; font-size: .9rem;"><a style="color: #000;" href="/shop">Shop j.McCarthy Fine Art</a></p>
                 </div>
                     <div class="hero-text-container">
@@ -47,7 +47,7 @@ if ($catalog == '') {
                             position: absolute;
                             left: 30%;
                             bottom: 25%;"
-                            class="$color_text">LIMITED EDITION  &copy; 2022</span>
+                            class="$this->color_text">LIMITED EDITION  &copy; 2022</span>
                     </p>
 
                     <p class="hero-text hidden"><a href="$this->hero_link">$this->hero_title</a></p>

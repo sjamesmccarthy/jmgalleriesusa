@@ -2005,9 +2005,9 @@ body {
       color: #FFFFFF; }
     body.dark-theme .detail-story, body.dark-theme .edition-title {
       color: #FFFFFF; }
-    body.dark-theme input[type="text"], body.dark-theme input[type="password"], body.dark-theme textarea, body.dark-theme select {
-      background-color: #0f0f0f;
-      color: #FFFFFF; }
+    body.dark-theme input[type="text"], body.dark-theme input[type="password"], body.dark-theme textarea {
+      background-color: rgba(255, 255, 255, 0.9);
+      border-radius: 6px; }
     body.dark-theme form .select-wrapper:after {
       -webkit-filter: invert(1);
               filter: invert(1); }
@@ -2015,6 +2015,13 @@ body {
       border: 1px solid #FFFFFF !important;
       color: #FFFFFF !important;
       opacity: 1; }
+    body.dark-theme select {
+      position: relative;
+      height: 50px;
+      padding: 0 12px;
+      width: 100%;
+      background-color: transparent;
+      color: #FFFFFF; }
     body.dark-theme button {
       background-color: #2574A9;
       color: #FFFFFF; }
@@ -2358,20 +2365,17 @@ form .cancel-button {
   width: 10% !important;
   margin-left: 1rem; }
 
-input[type="text"], input[type="email"], input[type="password"], textarea, select {
+input[type="text"], input[type="email"], input[type="password"], textarea {
   position: relative;
   height: 50px;
   padding: 0 12px;
   width: 100%;
   border: 1px solid #edecec;
-  border-left: 0;
-  border-right: 0 !important;
-  border-top: 0;
   -webkit-appearance: none;
   -moz-appearance: none;
   background-color: rgba(255, 255, 255, 0.5);
   margin-bottom: 1rem;
-  border-radius: 0;
+  border-radius: 6px;
   font-family: inherit;
   font-size: 1.0rem;
   font-weight: 400;
@@ -2379,14 +2383,14 @@ input[type="text"], input[type="email"], input[type="password"], textarea, selec
   outline: none;
   transition: border 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
   box-sizing: border-box; }
-  input[type="text"]:disabled, input[type="email"]:disabled, input[type="password"]:disabled, textarea:disabled, select:disabled {
+  input[type="text"]:disabled, input[type="email"]:disabled, input[type="password"]:disabled, textarea:disabled {
     background-color: #FFF;
     color: lightgray;
     opacity: 1; }
-  input[type="text"].half-size, input[type="email"].half-size, input[type="password"].half-size, textarea.half-size, select.half-size {
+  input[type="text"].half-size, input[type="email"].half-size, input[type="password"].half-size, textarea.half-size {
     width: 49%;
     display: inline-block; }
-  input[type="text"].half-size:nth-of-type(1), input[type="email"].half-size:nth-of-type(1), input[type="password"].half-size:nth-of-type(1), textarea.half-size:nth-of-type(1), select.half-size:nth-of-type(1) {
+  input[type="text"].half-size:nth-of-type(1), input[type="email"].half-size:nth-of-type(1), input[type="password"].half-size:nth-of-type(1), textarea.half-size:nth-of-type(1) {
     margin-left: 0; }
 
 textarea {
@@ -2396,6 +2400,14 @@ textarea {
   line-height: 1.8;
   padding: 20px;
   margin-bottom: 0; }
+
+select {
+  position: relative;
+  height: 50px;
+  padding: 0 12px;
+  width: 100%;
+  background-color: transparent;
+  color: #4a4a4a; }
 
 #form_response {
   background-color: rgba(130, 189, 94, 0.2);
@@ -3435,8 +3447,8 @@ button a {
 
 .nav-mobile-menu {
   position: absolute;
-  top: 1rem;
-  right: 1rem;
+  top: 3rem;
+  right: .7rem;
   color: #FFFFFF; }
   @media (min-width: 320px) {
     .nav-mobile-menu {
@@ -3558,7 +3570,8 @@ button a {
 .nav-mobile-logo {
   width: 235px;
   vertical-align: middle;
-  margin-top: -2rem; }
+  margin-top: -2rem;
+  margin-right: 1rem; }
 
 .nav-mobile {
   position: relative;
@@ -3618,7 +3631,7 @@ button a {
 .nav-mobile-ul {
   display: none;
   position: absolute;
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: black;
   color: #FFF;
   width: 100%;
   padding: 4rem 2rem 2rem 2rem;
@@ -3643,12 +3656,12 @@ button a {
         color: #CCC;
         cursor: pointer;
         background-color: #000; }
-    .nav-mobile-ul > li:hover {
+    .nav-mobile-ul > li:not(:last-child):hover {
       background-color: #CCC;
       color: #000;
       cursor: pointer;
       border-radius: 24px; }
-      .nav-mobile-ul > li:hover a {
+      .nav-mobile-ul > li:not(:last-child):hover a {
         color: #000; }
 
 /* ********************** */

@@ -8,14 +8,22 @@
 
         <div class="col-11" style="position: relative">
 
-        <p class="pt-16">v1.8.2<br />Jan 26, 2022</p>
+        <p class="pt-16">v1.9<br />Jan 29, 2022</p>
+            <ul>
+            <li>updated: dark mode styles for forms</li>
+            <li>sync: catalog photos</li>
+            <li>updated: mobile nav menu icons, logo and positioning</li>
+            </ul>
+        </p>
+
+        <p class="pt-16">v2<br />Jan 26, 2022</p>
             <ul>
             <li>updated: mobile menu icon and style</li>
             <li>updated: main hero logo to switch between dark/light based on image color</li>
             <li>added: first Friday email signup on homepage</li>
             <li>bugfix: admin collections add/edit now supports special characters</li>
             <li>updated: find me page now links to linktr.ee/jmgalleriesusa</li>
-            <li>removed: link to Field Notes and /now page (both still available with a direct URL)</li>
+            <li>removed: link to Field Notes and /now page (both still available with a direct URL</li>
             </ul>
         </p>
 

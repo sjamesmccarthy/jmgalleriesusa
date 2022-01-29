@@ -39,8 +39,8 @@
 
 .nav-mobile-menu {
     position: absolute;
-    top: 1rem;
-    right: 1rem;
+    top: 3rem;
+    right: .7rem;
     color: $color-white;
 
     // xSmall devices (landscape phones, 320px and up)
@@ -246,6 +246,7 @@
     width: 235px;
     vertical-align: middle;
     margin-top: -2rem;
+    margin-right: 1rem;
     // filter: invert(1);
 }
 
@@ -287,7 +288,6 @@
 }
 
 .nav-mobile-home {
-    // display: block;
     position: absolute;
     right: 40%;
     left: 40%;
@@ -379,7 +379,7 @@
 .nav-mobile-ul {
     display: none;
     position: absolute;
-    background-color: rgba(0,0,0, .8);
+    background-color: rgba(0,0,0, 1);
     color: #FFF;
     width: 100%;
     padding: 4rem 2rem 2rem 2rem;
@@ -412,7 +412,7 @@
             }
         }
 
-        &:hover {
+        &:not(:last-child):hover {
             background-color: #CCC;
             color: #000;
             cursor: pointer;
@@ -422,5 +422,6 @@
                 color: #000;
             }
         }
+
     }
 }
