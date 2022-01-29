@@ -2311,7 +2311,7 @@ section[class*="admin--"] form label {
   display: inline-block;
   margin-left: 10px;
   border-radius: 0;
-  background-color: rgba(0, 0, 0, 0.01);
+  background-color: #F5F5F5;
   margin-top: -10px;
   padding: 0 6px;
   border-radius: 6px; }
@@ -2406,8 +2406,10 @@ select {
   height: 50px;
   padding: 0 12px;
   width: 100%;
-  background-color: transparent;
-  color: #4a4a4a; }
+  background-color: #FFF;
+  border: 1px solid #F5F5F5;
+  color: #4a4a4a;
+  margin-bottom: 1rem; }
 
 #form_response {
   background-color: rgba(130, 189, 94, 0.2);
@@ -3326,7 +3328,6 @@ button a {
 
 .menu-icon--container {
   padding-right: 1rem;
-  padding-left: 1rem;
   margin-top: 1.5rem; }
   .menu-icon--container .menu-icon {
     font-size: 2rem;
@@ -3363,14 +3364,16 @@ button a {
     font-size: 1rem;
     position: relative;
     padding: 1rem;
-    border-left: 5px solid transparent; }
+    border-bottom: 5px solid transparent;
+    box-sizing: border-box; }
     .navigation--container .toolbox ul li.disabled {
       color: rgba(0, 0, 0, 0.2); }
     .navigation--container .toolbox ul li span.add-inline {
       position: absolute;
       right: 0; }
     .navigation--container .toolbox ul li:hover:not(.selected-item) {
-      border-left: 5px solid #4a4a4a;
+      border-bottom: 5px solid #4a4a4a;
+      border-left: 0;
       background-color: #f9f9f9;
       cursor: pointer; }
       .navigation--container .toolbox ul li:hover:not(.selected-item) a {
@@ -3378,25 +3381,25 @@ button a {
   .navigation--container .toolbox .selected-item {
     text-transform: uppercase;
     background-color: #DCDCDC;
-    border-left: 5px solid #000;
+    border-bottom: 5px solid #000;
+    border-left: 0;
     color: #000;
     padding: 1rem; }
   .navigation--container .toolbox .selected {
     font-weight: 900;
-    padding: 0 0 0 10px;
-    color: #000;
-    margin-left: -10px; }
+    padding: 0 0 0 0;
+    color: #000; }
     .navigation--container .toolbox .selected:before {
       font-family: FontAwesome !important;
       font-weight: 900;
       top: 12px;
       left: 20px;
       color: #434B67;
-      pointer-events: none;
-      margin-right: 10px; }
+      pointer-events: none; }
     .navigation--container .toolbox .selected a {
       color: #4a4a4a;
-      font-weight: 400; }
+      font-weight: 800;
+      font-size: 1rem; }
       .navigation--container .toolbox .selected a:hover {
         color: #2574A9;
         cursor: pointer; }

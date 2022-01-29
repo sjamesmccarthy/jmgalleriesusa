@@ -1,7 +1,7 @@
 <?php
-/* 
-component: admin/navigation 
-description: returns the neavigation side menu 
+/*
+component: admin/navigation
+description: returns the neavigation side menu
 css: component_admin_navigation.scss
 data: db
 created: jmccarthy
@@ -32,15 +32,15 @@ foreach ($apps_list as $k_aps => $v_apps) {
         <div class="toolbox">
             <ul class="' . $v_apps['short_code'] . ' ' . $v_apps['short_code'] . '-add">
             <li class="' . $v_apps['short_code'] . ' ' . $v_apps['short_code'] . '-add"><span style="font-size: 1rem;vertical-align: middle;">' . $v_apps['icon'] . '</span> <a style="margin-left: 1rem;" href="/studio/' . $v_apps['short_code'] . '">'. $v_apps['title'] . '</a>';
-            
-    if($v_apps['add_new'] == 1) {
-        $nav_html .= '
-                <p class="add-icon-nav"><a href="/studio/' . $v_apps['short_code'] . '-add"><i class="fas fa-plus-circle"></i></a></p>
-        ';
-    }
+
+    // if($v_apps['add_new'] == 1) {
+    //     $nav_html .= '
+    //             <p class="add-icon-nav"><a href="/studio/' . $v_apps['short_code'] . '-add"><i class="fas fa-plus-circle"></i></a></p>
+    //     ';
+    // }
 
     $nav_html .= '
-            </li>            
+            </li>
             </ul>
         </div>';
 
@@ -56,20 +56,20 @@ $html = <<< END
 </div>
 
 <div class="col-3 navigation--container">
-            
+
             <div class="toolbox">
-            
+
             <div class="profile--image">
                 <img src="/view/image/avatar/$avatar" alt="avatar" />
             </div>
-            
+
             <div class="profile--name border--bottom">
             <p>$first_name $last_name</p>
             <p><a href="$website" target="_out">$website</a></p>
             <!-- <p style="font-size: .9rem;">Member since $membersinceyear</p> -->
             <!-- <p class="mt-16"><a href="/studio/manage">DASHBOARD</a></p> -->
             </div>
-            
+
             </div>
 
             $nav_html
@@ -83,7 +83,7 @@ $html = <<< END
             <!-- <div>
                 <p class="tiny text-right">$version</p>
             </div> -->
-            
+
             </div>
 
         <!-- <div class="col-1"></div> -->
@@ -105,7 +105,7 @@ jQuery(document).ready(function($){
         console.log('menu-icon.click');
         $('.navigation--container').toggle();
 
-        if( $('.navigation--container').is(':visible') ) { 
+        if( $('.navigation--container').is(':visible') ) {
             $('.menu-icon').removeClass('menu-icon--active');
             $('.menu-icon').removeClass('flip');
             setCookie('aN',"false",'30');

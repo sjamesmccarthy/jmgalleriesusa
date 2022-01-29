@@ -13,6 +13,9 @@
             <li>updated: dark mode styles for forms</li>
             <li>sync: catalog photos</li>
             <li>updated: mobile nav menu icons, logo and positioning</li>
+            <li>added: icon in admin to show closed status of order</li>
+            <li>updated: navigation highlighting in admin</li>
+            <li>updated: style changes to labels on admin forms</li>
             </ul>
         </p>
 
