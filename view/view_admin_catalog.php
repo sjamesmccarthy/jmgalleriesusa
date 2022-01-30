@@ -1,9 +1,9 @@
 <section class="catalogidx--container">
     <div class="grid">
-       
+
         <!-- insert navigation component -->
         <?= $navigation_html ?>
-    
+
         <div class="col catalog--container">
 
             <div class="notification <?= $notification_state ?>"><?= $notification_msg ?></div>
@@ -11,11 +11,11 @@
                     <div class="grid admin-header">
                         <div class="col pb-0">
                             <h2>Catalog of <b>Online Photos</b> (<span class="current_recs"><?= $active_photos_count ?></span>/<?= $total_photos_count ?>)</h2>
-                            
-                            <div class="tabs"> 
-                                <div class="tab-STUDIO" ><a href="?filter=ACTIVE">ACTIVE</a></div>
-                                <div class="tab-HC" ><a href="?filter=DISABLED">DISABLED</a></div>
-                                <div class="tab-HC" ><a href="?filter=RETIRED">RETIRED</a></div>
+
+                            <div class="tabs">
+                                <div class="tab-ACTIVE" ><a href="?filter=ACTIVE">ACTIVE</a></div>
+                                <div class="tab-DISABLED" ><a href="?filter=DISABLED">DISABLED</a></div>
+                                <div class="tab-RETIRED" ><a href="?filter=RETIRED">RETIRED</a></div>
                                 <div style="min-width: 10px">|</div>
                                 <div class="tab-DONATED" ><a style="text-transform: lowercase;" href="javascript: $('#dataTable').DataTable().order([3, 'asc']).draw();">^LIMITED</a></div>
                                 <div class="tab-COLLECTOR" ><a style="text-transform: lowercase;" href="javascript: $('#dataTable').DataTable().order([3, 'desc']).draw();">^OPEN</a></div>
@@ -48,13 +48,13 @@
 
 <script>
     jQuery(document).ready(function($){
-       
+
        $(document).on('keyup','input[type=search]',function(){
            updateCount();
        });
-           
+
         $('.tab-<?= $filter ?>').addClass('active');
-        
+
         $('.notification').delay(5000).slideUp("slow").fadeOut(3000);
 
         $('#dataTable').DataTable( {
@@ -68,7 +68,7 @@
                     "render": function(data, type, row, meta){
                         if(type === 'display'){
                             if(row.featured     == '1') { var data = '<i class="fas fa-asterisk"></i>'; } else { var data = ''; }
-                        }  
+                        }
                         return data;
                     }
                 },
@@ -82,9 +82,9 @@
                             if(row.as_open == '1') { var ed = 'OT'; } else { var ed = 'LE'; }
                             if(row.featured     == '1') { var feat = '<i class="fas fa-asterisk"></i>'; } else { var feat = ''; }
                             data = ' <a href="/studio/catalog-add?id=' + row.catalog_photo_id + '">' + data + ' ' + '</a><br><span style="font-size: .8rem;">' + cate_code + row.catalog_photo_id + ed + '_' + data.replace(/\s+/g, '-').toUpperCase() + '</span>';
-                        }  
+                        }
                         return data;
-                    } 
+                    }
                 },
                 { data: 'category' },
                 { data: 'as_open',
@@ -92,16 +92,16 @@
                         if(type === 'display'){
                             if(row.as_open == '1') { var edition = 'OPEN'; } else { var edition = 'LIMITED'; }
                             data = edition;
-                        }  
+                        }
                         return data;
-                    } 
+                    }
                 },
                 { data: 'status', "bVisible":false },
                 { data: 'views' },
                 { data: 'lastview',
                     "render": function(data, type, row, meta){
                         return data;
-                    } 
+                    }
                 }
             ],
             "order": [ 1, "asc" ],
@@ -113,13 +113,13 @@
                  }
              ]
         } );
-        
+
         function updateCount() {
             var info = $('#dataTable').DataTable().page.info();
             $('.current_recs').html(info.recordsDisplay);
             console.log( info.recordsDisplay );
         }
-        
+
         updateCount();
     });
 </script>

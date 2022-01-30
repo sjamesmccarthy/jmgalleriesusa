@@ -1,16 +1,16 @@
 <section class="admin--section">
-    <div class="grid-">
-        
+    <div class="grid">
+
         <!-- insert navigation component -->
         <?= $navigation_html ?>
-    
+
         <div class="col admin--main_container">
 
              <div class="pt-40 pb-16 text-center">
                  <!-- <p><?= $today ?></p> -->
                  <h1 style="font-weight: 400">Hello <?= $first_name ?> <i class="fab fa-angellist"></i> here is your studio.</h1>
              </div>
-            
+
             <div class="grid">
 
                 <div class="col">
@@ -25,14 +25,14 @@
                     <?= $photosviewed_html ?>
                 </div>
             </div>
-            
+
             <div class="grid">
                 <div class="col ">
                     <!-- photosviewed -->
                     <?= $reports_html ?>
                 </div>
             </div>
-            
+
             <div class="grid">
                 <div class="col">
                     <!-- recentactivity -->

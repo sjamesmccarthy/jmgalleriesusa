@@ -8,18 +8,13 @@
 
         <div class="col-11" style="position: relative">
 
-        <p class="pt-16">v1.9<br />Jan 29, 2022</p>
+        <p class="pt-16">v1.9.1<br />Jan 30, 2022</p>
             <ul>
-            <li>updated: dark mode styles for forms</li>
-            <li>sync: catalog photos</li>
-            <li>updated: mobile nav menu icons, logo and positioning</li>
-            <li>added: icon in admin to show closed status of order</li>
-            <li>updated: navigation highlighting in admin</li>
-            <li>updated: style changes to labels on admin forms</li>
+            <li>updated: navigation items in admin</li>
             </ul>
         </p>
 
-        <p class="pt-16">v2<br />Jan 26, 2022</p>
+        <p class="pt-16">1.9<br />Jan 26, 2022</p>
             <ul>
             <li>updated: mobile menu icon and style</li>
             <li>updated: main hero logo to switch between dark/light based on image color</li>

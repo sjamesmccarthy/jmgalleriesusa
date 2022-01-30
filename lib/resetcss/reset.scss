@@ -48,7 +48,7 @@ select,
 textarea {
   font-family: inherit;
   line-height: inherit;
-  font-size: 100%; 
+  font-size: 100%;
   margin: 0;
   overflow: auto;
   -webkit-appearance: none;
@@ -84,7 +84,7 @@ pre, code {
 a {
   background-color: transparent;
   text-decoration: none;
-  font-weight: 600;
+  font-weight: $base-fw;
 }
 
 b,
@@ -112,29 +112,29 @@ h2 {
     font-weight: 800;
 
          // xSmall devices (landscape phones, 320px and up)
-         @media (min-width: 320px) { 
+         @media (min-width: 320px) {
             //  background-color: pink;
             font-size: $base-fs *1.25;
          }
-     
+
          // Small devices (landscape phones, 576px and up)
-         @media (min-width: 576px) { 
+         @media (min-width: 576px) {
             //  background-color: red;
             font-size: $base-fs *1.5;
          }
-     
+
          // Medium devices (tablets, 768px and up)
          @media (min-width: 767px) {
             //  background-color: blue;
             font-size: $base-fs *1.75;
         }
-     
+
          // Large devices (tablets (iPad Pro, 1112px and up)
          @media (min-width: 1112px) {
             //  background-color: gray;
             font-size: $base-fs *2;
          }
-     
+
          // Extra large devices (large desktops, 1200px and up)
          @media (min-width: 1200px) {
             //  background-color: lightgreen;
@@ -178,7 +178,7 @@ h6 {
 }
 
 /* Shorthand */
-  
+
 [hidden] {
   display: none;
 }

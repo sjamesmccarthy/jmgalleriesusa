@@ -8,10 +8,11 @@
     padding-right: 1rem;
     // padding-left: 1rem;
     margin-top: 1.5rem;
+        z-index: 90;
 
     .menu-icon {
-        font-size: 2rem;
-        color: $color-blue;
+        // font-size: 2rem;
+        // color: $color-blue;
         line-height: 0;
 
         &:hover {
@@ -65,11 +66,11 @@
 
         ul li {
             // margin-bottom: 10px;
-            font-weight: 300;
+            font-weight: 200;
             font-size: 1rem;
             position: relative;
-            padding: 1rem;
-            border-bottom: 5px solid transparent;
+            padding: 8px;
+            border-left: 3px solid transparent;
             // border-left: 5px solid transparent;
             box-sizing: border-box;
 
@@ -84,8 +85,8 @@
 
             &:hover:not(.selected-item) {
                 // border-bottom: 5px solid $color-light-gray;
-                border-bottom: 5px solid $color-black;
-                border-left: 0;
+                border-left: 3px solid $color-black;
+                // border-left: 0;
                 background-color: lighten($color-light-gray,15%);
                 cursor: pointer;
 
@@ -96,18 +97,18 @@
         }
 
         .selected-item {
-            text-transform: uppercase;
-            background-color: $color-silver;
+            // text-transform: uppercase;
+            background-color: $color-light-silver;
             // border-bottom: 5px solid $color-light-gray;
-            border-bottom: 5px solid #000;
-            border-left: 0;
-            color: #000;
+            border-left: 3px solid $color-blue;
+            // border-left: 0;
+            color: $color-blue;
             // border-top-right-radius: 1rem;
-            padding: 1rem;
+            padding: 8px;
         }
 
         .selected {
-            font-weight: 900;
+            font-weight: 200;
             // background-color: #CCC;
             // border-left: 3px solid rgba(0, 0, 0, 0.08);
             padding: 0 0 0 0;
@@ -118,7 +119,7 @@
             &:before {
                 font-family: FontAwesome !important;
                 // content: "\f0c8"; /* FontAwesome Unicode */
-                font-weight: 900;
+                font-weight: 420;
                 top: 12px;
                 left: 20px;
                 color: #434B67;
@@ -127,8 +128,8 @@
             }
 
             a {
-                color: $color-black;
-                font-weight: 800;
+                color: $color-blue;
+                font-weight: 400;
                 font-size: 1rem;
 
                 &:hover {

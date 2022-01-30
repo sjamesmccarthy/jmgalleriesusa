@@ -1,20 +1,22 @@
 <section class="inventoryidx--container">
     <div class="grid">
-       
+
         <!-- insert navigation component -->
         <?= $navigation_html ?>
-    
+
         <div class="col inventory--container">
 
             <div class="notification <?= $notification_state ?>"><?= $notification_msg ?></div>
 
                     <div class="grid admin-header">
                         <div class="col pb-0">
+
                         <h2>Index of <b>Shop Product</b> (<span class="current_recs"><?= $active_product_count ?></span>/<?= $total_product_count ?>)</h2>
-                        
-                            <div class="tabs"> 
-                                <div class="tab-STUDIO" ><a href="?filter=ACTIVE">ACTIVE</a></div>
-                                <div class="tab-STUDIO" ><a href="?filter=DISABLED">DISABLED</a></div>
+
+                            <p><?= $active_filter ?></p>
+                            <div class="tabs">
+                                <div class="tab-ACTIVE" ><a href="?filter=ACTIVE">ACTIVE</a></div>
+                                <div class="tab-DISABLED" ><a href="?filter=DISABLED">DISABLED</a></div>
                                 <div class="tab-INVENTORY" ><a href="/studio/products"><i class="fas fa-times-circle"></i></a></div>
                             </div>
 
@@ -44,11 +46,11 @@
 
 <script>
     jQuery(document).ready(function($){
-        
+
         $(document).on('keyup','input[type=search]',function(){
             updateCount();
         });
-            
+
         $('.tab-<?= $filter ?>').addClass('active');
 
         $('.notification').delay(5000).slideUp("slow").fadeOut(3000);
@@ -66,9 +68,9 @@
                     "render": function(data, type, row, meta){
                         if(type === 'display'){
                             data = '<a href="/studio/products-add?id=' + row.product_id + '">' + data + '</a> <!-- [' + row.product_id + '] -->';
-                        }  
+                        }
                         return data;
-                    } 
+                    }
                 },
                 { data: 'price' },
                 { data: 'quantity' },
@@ -86,15 +88,15 @@
                 { "width": "10%", "targets": 6 },
               ]
         } );
-        
+
         function updateCount() {
             var info = $('#dataTable').DataTable().page.info();
             $('.current_recs').html(info.recordsDisplay);
             console.log( info.recordsDisplay );
         }
-        
+
         updateCount();
-        
+
     });
 
 </script>

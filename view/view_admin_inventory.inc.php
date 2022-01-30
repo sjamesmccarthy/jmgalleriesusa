@@ -31,8 +31,8 @@
         $filter = $this->routes->URI->queryvals[1];
         $active_filter = null;
     } else {
-        $filter = null;
-        $active_filter = 'active';
+        // $filter = null;
+        $filter = 'STUDIO';
     }
 
 ?>

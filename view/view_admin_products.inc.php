@@ -18,14 +18,14 @@
         $notification_msg = "<p class='heading'>success</p><p>" .  $_SESSION['notify_msg'] . " Has Been Updated</p>";
         $_SESSION['error'] = null;
         $_SESSION['notify_msg'] = null;
-    } 
-    
+    }
+
     if($_SESSION['error'] == "400" && $_SESSION['notify_msg'] != '') {
         $notification_state = "show error";
         $notification_msg = "<p class='heading'>FAILURE</p><p>" .  $_SESSION['notify_msg'] . "</p>";
         $_SESSION['error'] = null;
         $_SESSION['notify_msg'] = null;
-    } 
+    }
 
     /* API - LIST OF PHOTOS IN CATALOG */
     $data_html = $this->api_Admin_Get_Products();
@@ -39,8 +39,8 @@
         $filter = $this->routes->URI->queryvals[1];
         $active_filter = null;
     } else {
-        $filter = null;
-        $active_filter = 'active';
+        // $filter = null;
+        $filter = 'ACTIVE';
     }
 
 ?>

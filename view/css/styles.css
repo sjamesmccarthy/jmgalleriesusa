@@ -1880,7 +1880,7 @@ pre, code {
 a {
   background-color: transparent;
   text-decoration: none;
-  font-weight: 600; }
+  font-weight: 400; }
 
 b,
 strong {
@@ -2659,14 +2659,14 @@ button a {
     text-align: center;
     font-size: .9rem;
     text-transform: uppercase;
-    border-bottom: 5px solid transparent; }
+    border-bottom: 3px solid transparent; }
     .tabs > div:hover:not(:last-child) {
-      border-bottom: 5px solid #4a4a4a;
+      border-bottom: 3px solid #2574A9;
       cursor: pointer; }
       .tabs > div:hover:not(:last-child) a {
         color: #4a4a4a; }
   .tabs .active {
-    border-bottom: 5px solid #4a4a4a; }
+    border-bottom: 3px solid #2574A9; }
     .tabs .active > a {
       color: #000; }
 
@@ -3328,10 +3328,9 @@ button a {
 
 .menu-icon--container {
   padding-right: 1rem;
-  margin-top: 1.5rem; }
+  margin-top: 1.5rem;
+  z-index: 90; }
   .menu-icon--container .menu-icon {
-    font-size: 2rem;
-    color: #2574A9;
     line-height: 0; }
     .menu-icon--container .menu-icon:hover {
       cursor: pointer;
@@ -3360,11 +3359,11 @@ button a {
     text-align: right;
     margin-right: 1rem; }
   .navigation--container .toolbox ul li {
-    font-weight: 300;
+    font-weight: 200;
     font-size: 1rem;
     position: relative;
-    padding: 1rem;
-    border-bottom: 5px solid transparent;
+    padding: 8px;
+    border-left: 3px solid transparent;
     box-sizing: border-box; }
     .navigation--container .toolbox ul li.disabled {
       color: rgba(0, 0, 0, 0.2); }
@@ -3372,33 +3371,30 @@ button a {
       position: absolute;
       right: 0; }
     .navigation--container .toolbox ul li:hover:not(.selected-item) {
-      border-bottom: 5px solid #4a4a4a;
-      border-left: 0;
+      border-left: 3px solid #4a4a4a;
       background-color: #f9f9f9;
       cursor: pointer; }
       .navigation--container .toolbox ul li:hover:not(.selected-item) a {
         color: #4a4a4a; }
   .navigation--container .toolbox .selected-item {
-    text-transform: uppercase;
-    background-color: #DCDCDC;
-    border-bottom: 5px solid #000;
-    border-left: 0;
-    color: #000;
-    padding: 1rem; }
+    background-color: #f9f9f9;
+    border-left: 3px solid #2574A9;
+    color: #2574A9;
+    padding: 8px; }
   .navigation--container .toolbox .selected {
-    font-weight: 900;
+    font-weight: 200;
     padding: 0 0 0 0;
     color: #000; }
     .navigation--container .toolbox .selected:before {
       font-family: FontAwesome !important;
-      font-weight: 900;
+      font-weight: 420;
       top: 12px;
       left: 20px;
       color: #434B67;
       pointer-events: none; }
     .navigation--container .toolbox .selected a {
-      color: #4a4a4a;
-      font-weight: 800;
+      color: #2574A9;
+      font-weight: 400;
       font-size: 1rem; }
       .navigation--container .toolbox .selected a:hover {
         color: #2574A9;
@@ -5500,7 +5496,6 @@ div[id*='imgT']:hover {
 .catalogidx--container .catalog--container {
   background-color: rgba(0, 0, 0, 0.05);
   border-radius: 6px;
-  margin: 1.7rem 0;
   padding: 0; }
   .catalogidx--container .catalog--container .admin-header {
     background-color: rgba(0, 0, 0, 0.08);

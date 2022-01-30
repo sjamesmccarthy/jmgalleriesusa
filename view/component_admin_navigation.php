@@ -50,9 +50,9 @@ if(is_null($this->nav_label)) { $this->nav_label = "Adding Photo"; }
 
 /* GENERATE HTML BLOCK */
 $html = <<< END
+
 <div class="menu-icon--container">
-    <p class="menu-icon"><i class="fas fa-bars"></i></p>
-    <p class="tiny center blue">MENU</p>
+    <i class="menu-icon fas fa-bars"></i>
 </div>
 
 <div class="col-3 navigation--container">
@@ -63,7 +63,7 @@ $html = <<< END
                 <img src="/view/image/avatar/$avatar" alt="avatar" />
             </div>
 
-            <div class="profile--name border--bottom">
+            <div class="profile--name">
             <p>$first_name $last_name</p>
             <p><a href="$website" target="_out">$website</a></p>
             <!-- <p style="font-size: .9rem;">Member since $membersinceyear</p> -->
@@ -74,11 +74,11 @@ $html = <<< END
 
             $nav_html
 
-            <div class="toolbox">
+            <!-- <div class="toolbox">
                 <ul>
-                <li style="border-top: 1px solid #a9a9a9"><span style="font-size: 24px;vertical-align: middle;"><i class="fas fa-sign-out-alt"></i></span> <a style="margin-left: 1rem;" href="/studio/signout">Sign Out</a></li>
+                <li><span><i class="fas fa-sign-out-alt"></i></span> <a style="margin-left: 1rem;" href="/studio/signout">Sign Out</a></li>
                 </ul>
-            </div>
+            </div> -->
 
             <!-- <div>
                 <p class="tiny text-right">$version</p>
