@@ -31,7 +31,7 @@ foreach ($apps_list as $k_aps => $v_apps) {
     $nav_html .= '
         <div class="toolbox">
             <ul class="' . $v_apps['short_code'] . ' ' . $v_apps['short_code'] . '-add">
-            <li class="' . $v_apps['short_code'] . ' ' . $v_apps['short_code'] . '-add"><span style="font-size: 1rem;vertical-align: middle;">' . $v_apps['icon'] . '</span> <a style="margin-left: 1rem;" href="/studio/' . $v_apps['short_code'] . '">'. $v_apps['title'] . '</a>';
+            <li class="' . $v_apps['short_code'] . ' ' . $v_apps['short_code'] . '-add"><p class="nav-icons">' . $v_apps['icon'] . '</p> <a style="margin-left: 1rem;" href="/studio/' . $v_apps['short_code'] . '">'. $v_apps['title'] . '</a>';
 
     // if($v_apps['add_new'] == 1) {
     //     $nav_html .= '
@@ -76,7 +76,7 @@ $html = <<< END
 
             <!-- <div class="toolbox">
                 <ul>
-                <li><span><i class="fas fa-sign-out-alt"></i></span> <a style="margin-left: 1rem;" href="/studio/signout">Sign Out</a></li>
+                <li><p style="width:24px"><i class="fas fa-sign-out-alt"></i></p> <a style="margin-left: 1rem;" href="/studio/signout">Sign Out</a></li>
                 </ul>
             </div> -->
 
