@@ -52,7 +52,7 @@ if(is_null($this->nav_label)) { $this->nav_label = "Adding Photo"; }
 $html = <<< END
 
 <div class="menu-icon--container">
-    <i class="menu-icon fas fa-bars"></i>
+    <i class="menu-icon fas fa-chevron-circle-left"></i>
 </div>
 
 <div class="col-3 navigation--container">

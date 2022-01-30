@@ -17,10 +17,10 @@
                                 <div class="tab-DISABLED" ><a href="?filter=DISABLED">DISABLED</a></div>
                                 <div class="tab-RETIRED" ><a href="?filter=RETIRED">RETIRED</a></div>
                                 <div style="min-width: 10px">|</div>
-                                <div class="tab-DONATED" ><a style="text-transform: lowercase;" href="javascript: $('#dataTable').DataTable().order([3, 'asc']).draw();">^LIMITED</a></div>
-                                <div class="tab-COLLECTOR" ><a style="text-transform: lowercase;" href="javascript: $('#dataTable').DataTable().order([3, 'desc']).draw();">^OPEN</a></div>
-                                <div class="tab-TINYVIEWS" ><a style="text-transform: lowercase;" href="javascript: $('#dataTable').DataTable().order([0, 'desc']).draw();">^HERO</a></div>
-                                <div class="tab-INVENTORY" ><a style="text-transform: lowercase;" href="/studio/catalog"><i class="fas fa-times-circle"></i></a></div>
+                                <div class="tab-DONATED" ><a style="" href="javascript: $('#dataTable').DataTable().order([3, 'asc']).draw();"><i class="fas fa-sort-amount-down-alt"></i>&nbsp;LIMITED</a></div>
+                                <div class="tab-COLLECTOR" ><a style="" href="javascript: $('#dataTable').DataTable().order([3, 'desc']).draw();"><i class="fas fa-sort-amount-down-alt"></i>&nbsp;OPEN</a></div>
+                                <div class="tab-TINYVIEWS" ><a style="" href="javascript: $('#dataTable').DataTable().order([0, 'desc']).draw();"> <i class="fas fa-sort-amount-down-alt"></i>&nbsp;HERO</a></div>
+                                <div class="tab-INVENTORY" ><a style="" href="/studio/catalog"><i class="fas fa-times-circle"></i></a></div>
                             </div>
                         </div>
                         <div class="col-1 add-icon"><a href="/studio/catalog-add"><i class="fas fa-plus-circle"></i></a></div>
