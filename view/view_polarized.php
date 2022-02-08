@@ -38,7 +38,8 @@
 
         setTimeout(function() {
             <?php if(!isSet($_REQUEST['filter'])) { ?>
-               $('.filter-all').trigger("click");
+               $('.filter-notes').trigger("click");
+               // alert('fitlering');
            <?php } ?>
          }, 10);
 

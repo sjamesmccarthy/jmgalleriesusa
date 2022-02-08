@@ -1,7 +1,7 @@
 <?php
-/* 
-component: admin/activity 
-description: returns results of all activity in the admin tool 
+/*
+component: admin/activity
+description: returns results of all activity in the admin tool
 css: component_admin_activity.scss
 data: db
 created: jmccarthy
@@ -15,7 +15,7 @@ $phpv = PHP_VERSION;
 $mysqlv = $this->getVersion();
 
 foreach($activity_data as $key=>$val) {
-    
+
     switch($val['type']) {
 
         case "system":
@@ -64,10 +64,10 @@ $html = <<< END
     <span class="small">Health: <b>Good</b> | PHP v{$phpv} & MySQL v{$mysqlv} | <a href="/studio/settings">Settings</a></span>
 </div>
 
-    <ul class="mt-32">  
+    <ul>
 
         $result_html
-    
+
     </ul>
 
 </article>

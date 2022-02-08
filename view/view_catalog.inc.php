@@ -5,7 +5,7 @@
 
     $count=0;
     $catalog = ltrim($this->page->catalog_path, '/');
-    $new_release_data = array(16,12);  /* Also found in component_new_releases.php */
+    $new_release_data = array(24,24);  /* (LIMIT, DURATION[months]) Also found in component_new_releases.php */
 
     /* Load all category meta data */
     // $this->console($catalog);

@@ -1,7 +1,7 @@
 <?php
-/* 
-component: admin/reports 
-description: displays quick links to reports module 
+/*
+component: admin/reports
+description: displays quick links to reports module
 css: component_admin_reports.scss
 data: db
 created: jmccarthy
@@ -32,10 +32,10 @@ $html = <<< END
     <h4>Favorite Reports</h4>
 </div>
 
-    <ul class="mt-32">  
+    <ul>
 
         $result_html
-    
+
     </ul>
 
 </article>

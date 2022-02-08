@@ -45,7 +45,7 @@
             </li>
             <li class="mt-32"><a href="/">HOME</a></li>
                 <li><a href="/all?filter=limited">LIMITED EDITIONS</a></li>
-<!--                 <li><a href="/fieldnotes">Field Notes About Fine Art</a></li> -->
+                <li><a href="/fieldnotes">Field Notes About Fine Art</a></li>
                 <li><a href="https://vlog.jmgalleries.com">vlog @YOUTUBE</a></li>
                 <li><a href="/shop">SHOP</a></li>
 <!--                 <li><a href="/all?filter=tinyviews">OPEN EDITIONS</a></li> -->

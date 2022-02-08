@@ -1,4 +1,4 @@
-{ 
+{
     "/404": {
             "template": "page",
             "page": "404",
@@ -163,7 +163,7 @@
         "page": "checkout_form",
         "auth": "false",
         "component": "true",
-        "title": "Checkout"
+        "title": "Your Artwork Purchase"
     },
     "/square-process": {
         "template": "script",

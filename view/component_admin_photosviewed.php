@@ -1,7 +1,7 @@
 <?php
-/* 
-component: admin/photosviewed 
-description: returns results of photos being viewed (not google analytics) 
+/*
+component: admin/photosviewed
+description: returns results of photos being viewed (not google analytics)
 css: component_admin_photosviewed.scss
 data: db
 created: jmccarthy
@@ -19,7 +19,7 @@ foreach($photosviewed_data as $key=>$val) {
     if($val['as_studio'] == '1') { $edition = 'Studio'; }
     if($val['as_open'] == '1') { $edition = 'Open'; }
     if($val['featured'] == '1') { $featured_icon = '<i class="fas fa-star-of-life"></i>'; $featured = '<p class="featured">' . $featured_icon . '</p>'; } else { $featured = null; $featured_icon = null; }
- 
+
     $result_html .= '<li class="item">';
     $result_html .= '<div class="photo">';
     $result_html .= '<p><img src="/catalog/__thumbnail/' . $val['file_name'] . '.jpg"  alt="' . $val['file_name'] . '" /></p>';
@@ -45,11 +45,11 @@ $html = <<< END
         <a href="/studio/catalog-add"><i class="fas fa-plus-circle"></i></a>
     </div>
 </div>
-    
-    <ul style="margin-top: 32px;">  
+
+    <ul>
 
        $result_html
-       
+
     </ul>
 </article>
 END;

@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-    
+
     <?php $this->getPartial('header'); ?>
     <?php print $this->component('notice'); ?>
     <?php print $this->component('hero'); ?>
-    
-    <body class="dark-theme">
+
+    <body class="<?= $this->config_env->env[$this->env]['default_theme'] ?>">
     <!--  class="dark-theme" -->
 
 
@@ -17,11 +17,11 @@
                     <?php $this->view() ?>
                 </div>
 
-            </main>                  
-        
+            </main>
+
                 <?php $this->getPartial('footer'); ?>
     </body>
-    
+
     <?php $this->getPartial('analytics'); ?>
 
 </html>

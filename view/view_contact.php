@@ -3,12 +3,13 @@
 <section id="contact">
     <div class="grid-center">
 
-        <div class="col-8_sm-11 pb-32 pl-32">
+        <div class="col-10_sm-11 pb-32 pl-32">
 
             <div class="form-main">
             <h1><?= $formTitle ?></h1>
-            <p class="checkout-sub blue"><?= $formTitleSub ?></p>
-            
+<!--             <p class="checkout-sub blue"><?= $formTitleSub ?></p> -->
+              <p class="text-center checkout-sub blue">Complete this short form below and I will be touch with you soon.</p>
+
             <?= $subNotice ?>
 
                 <form id="<?= $action_id ?>" action="<?= $action_uri ?>" method="POST">
@@ -24,7 +25,7 @@
 
                 <!-- <p> -->
                 <!-- <label class="" for="contactinfo">Email Address or Phone Number</label> -->
-                <input class="half-size-old" type="text" id="contactemail" name="contactemail" placeholder="YOUR EMAIL (eg, john.smith@ydomain.com)" value="<?= $email ?>" >
+                <input class="half-size-old" type="text" id="contactemail" name="contactemail" placeholder="YOUR EMAIL (eg, john.smith@mydomain.com)" value="<?= $email ?>" >
                 <!-- </p> -->
 
                 <p>
@@ -51,16 +52,10 @@
 
             <p style="border-radius: 6px;" id="form_response"> </p>
         </div>
-        
-        <div class="col-4 sm-hidden">
-           
-           <?php $this->getPartial('findus'); ?>
-        
-        </div>
-        
+
     </div>
 </section>
-  
+
 <script>
 
   jQuery(document).ready(function($){
@@ -68,7 +63,7 @@
 
     $('#email_signup').on("click", function() {
         // $(location).attr('href', '/signup', '_blank');
-        window.open('/signup', '_blank'); 
+        window.open('/signup', '_blank');
     })
 
     $("input[type=text]").on("focus", function(e) {
@@ -80,7 +75,7 @@
     $('#contactForm').submit(function() {
 
         console.log('start.form.contactForm.submission');
-        
+
         grecaptcha.execute('6LetD7YUAAAAAFX5cXupV3exd1YCSuYFY_az92Wh', {action: 'homepage'}).then(function(token) {
               document.getElementById('g-recaptcha-response').value = token;
               console.log('grecaptcha.ready');
@@ -89,9 +84,9 @@
 
             event.preventDefault();
             console.log('validating...');
-            
+
             var errors=0;
-            var name = $("#contactname").val(); 
+            var name = $("#contactname").val();
             var email = $("#contactemail").val();
             var subject = $("#contactsubject").val();
             var message = $("#message").val();
@@ -110,7 +105,7 @@
                 $('#contactsubject').after('<span class="e_contactsubject error-form-validation">This field is required</span>');
                 ++errors;
             }
-            
+
             if(errors > 1) {
                 return false;
             } else {
@@ -131,7 +126,7 @@
                       async: true,
                       success: function(data)
                       {
-                          
+
                           var data_html = "Thank You For Your Message,<br />an art consultant will be in touch in 48 hours.";
                           $('.form-main').prop('disabled', true).css('opacity','.3');
                           $('.form-main').slideUp('slow');
@@ -143,7 +138,7 @@
                           console.log("Request: "+JSON.stringify(request));
                       }
                     });
-                    
+
                     return false;
                   });
               });

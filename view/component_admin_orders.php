@@ -63,7 +63,7 @@ $html = <<< END
     <p class="small"><a href="/studio/orders">View All Orders</a> | <a href="/studio/products">View Inventory</a></p>
 </div>
 
-    <ul class="mt-32">
+    <ul>
         $result_html
     </ul>
 

@@ -25,7 +25,7 @@
                 </div>
 
                 <div class="col-5_sm-12 breadcrumb copyright">
-                    <p><a href="/shop">Shop</a> / <!--<a href="/fieldnotes">Field Notes</a> /--> <a href="/limited-editions">The Work</a> / <a href="/about">About</a> / <a target="_new" href="https://linktr.ee/jmgalleriesusa">Find Me</a> / <a class="tiny-dis" href="/privacy"><?= $this->config->copyright ?></a> <a style="font-size:.6rem; margin-left: .25rem;" class="theme-toggle"><i class="fas fa-adjust"></i></a></p>
+                    <p><a href="/shop">Shop</a> / <a href="/fieldnotes">Field Notes</a> / <a href="/limited-editions">The Work</a> / <a href="/about">About</a> / <a target="_new" href="https://linktr.ee/jmgalleriesusa">Find Me</a> / <a class="tiny-dis" href="/privacy"><?= $this->config->copyright ?></a> <a style="font-size:.6rem; margin-left: .25rem;" class="theme-toggle"><i class="fas fa-adjust"></i></a></p>
                     <div><!-- <a target="_new" href="//www.dmca.com/Protection/Status.aspx?ID=4f4fc268-5857-46c9-97ec-b0ee644e9892" title="DMCA.com Protection Status" class="dmca-badge">--> <img src ="https://images.dmca.com/Badges/dmca-badge-w100-5x1-08.png?ID=4f4fc268-5857-46c9-97ec-b0ee644e9892"  alt="DMCA.com Protection Status" style="vertical-align: middle" /><!--</a>-->  <script src="https://images.dmca.com/Badges/DMCABadgeHelper.min.js"> </script></div>
                    <?php
                      // $this->getPartial('newsletter');
@@ -75,6 +75,14 @@
   const theme = document.querySelector(".theme-toggle");
   // Select the theme preference from localStorage
   const currentTheme = localStorage.getItem("theme");
+
+  if(!currentTheme) {
+    console.log('theme-local-storage-not-found');
+    localStorage.setItem("theme", "light");
+    console.log('theme-set:' + localStorage.getItem("theme"));
+  } else {
+    console.log('current-theme:' + currentTheme);
+  }
 
   // If the current theme in localStorage is "dark"...
   if (currentTheme == "dark") {

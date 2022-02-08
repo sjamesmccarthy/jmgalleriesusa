@@ -28,6 +28,10 @@ fieldset {
 #contact {
     // margin-bottom: 400px;
 
+    h1 {
+        text-align: center;
+    }
+
     h3 {
         padding-bottom: 2rem;
     }
@@ -35,11 +39,11 @@ fieldset {
     .form-main {
         width: 98%;
     }
-    
+
 }
 
 #contactForm textarea {
-    min-height: 400px; 
+    min-height: 400px;
     padding-top: 30px;
     border-right: 1px solid #e4e4e4;
 }
@@ -58,8 +62,8 @@ fieldset {
 }
 
 .disabled-order {
-    background-color: #e5e5e5; 
-    border: 1px solid rgba(0,0,0,.03); 
+    background-color: #e5e5e5;
+    border: 1px solid rgba(0,0,0,.03);
     color: #000;
 }
 

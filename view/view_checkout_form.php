@@ -1,22 +1,22 @@
 <section id="contact">
     <div class="grid-center">
 
-        <div class="col-8_sm-11">
+        <div class="col-10_sm-11">
 
-            <h1><?= $formTitle ?></h1>
-            <p class="checkout-sub blue"><?= $subtitle ?></p>
-            
+            <h1><?= $this->page->title ?></h1>
+            <p class="text-center checkout-sub blue"><?= $subtitle ?></p>
+
             <?= $subNotice ?>
 
             <form id="nonce-form" action="<?= $action_uri ?>" method="POST">
             <input type="hidden" id="formType" name="formType" value="<?= $formType ?>" />
             <input name="refer_IP" type="hidden" value="<?= $_SERVER['REMOTE_ADDR'] ?>" />
-            
+
             <input type="hidden" name="title" value="<?= $order_title ?>" />
             <input type="hidden" id="shipping_cost" name="shipping_cost" value="<?= $add_ship_cost ?>" />
             <input type="hidden" id="shipping_provider" name="shipping_provider" value="<?= $add_shipping_provider ?>" />
             <input type="hidden" id="amount_total" name="amount_total" value="' . <?= $estimated_cost_raw ?> . '" />
-            
+
             <?= $hidden_fields ?>
 
             <h3>About You</h3>
@@ -29,9 +29,9 @@
             <?= $limited_deposit ?>
             <input type='hidden' id="price" name='price' value="<?= $cost ?>" />
             <input type='hidden' id="quantity" name='quantity' value="<?= $res_quantity ?>" />
-            
+
             <div style="border:0; border-left: 1px solid #e4e4e4; margin-left: 2rem; padding-left: 1rem; font-size: 1rem; min-height: 12rem; margin-top: 8px;">
-            <?= nl2br($order_subject) ?>   
+            <?= nl2br($order_subject) ?>
             <!-- <p class="tiny pt-32 pb-32">Note: Shipping Costs MAY NOT Have Been Added To Above Total</p> -->
             </div>
 
@@ -40,26 +40,26 @@
             <p class="pt-8 pb-32 promo-container"><input class="half-size" style="margin-bottom: 0;" type="text" id="promocode" name="promocode" placeholder="PROMO CODE" value="<?= $promo_code ?>" /><input type="hidden" id="promo_amt" name="promo_amt" value="0" /><span class="ml-16 tiny promo-btn"><a href="#" id="apply_promo">apply code</a></span></p><p class="promo-label"><b>PROMO <span class="promo-name uppercase"></span> APPLIED</b></p>
 
             <div>
-                <h3 class="pt-16">Ship To</h3> 
+                <h3 class="pt-16">Ship To</h3>
                 <p><input class="half-size-old" type="text" id="address" name="address" placeholder="SHIPPING ADDRESS (eg, 123 Main St.)" value="<?= $address ?>" $ />
                 <input class="half-size-old" type="text" id="address_other" name="address_other" placeholder="SHIPPING ADDRESS SECOND LINE (eg, Suite, Apt)" value="<?= $address_exxtra ?>"/></p>
                 <p><input class="half-size-old" type="text" id="city" name="city" placeholder="CITY (eg, Las Vegas, Dallas, Barstow)" value="<?= $city ?>"/>
                 <input class="half-size-old" type="text" id="state" name="state" placeholder="State (eg, NV, CA, NY, TX)" value="<?= $state ?>"/></p>
                 <p><input class="half-size-old" type="text" id="postalcode" name="postalcode" placeholder="Postal Code (eg, 95474)" value="<?= $postalcode ?>"/><p>
                 <p><input class="half-size-old" type="text" id="phone" name="phone" placeholder="PHONE (eg, 951-708-1831)" value="<?= $phone ?>" /><p>
-                
+
                 <ul class="shipping">
                     <?= $ship_rates_html ?>
                 </ul>
 
             </div>
-            
+
             <h3 class='mt-32 pb-0'>Payment & Terms</h3>
             <?= $payment_instructions ?>
 
             <!-- <div class="checkout-notice"><p>NOTICE: Our payment processing is currently under going maintenance so an art consultant will be in contact with you regarding payment. No cards will be charged at this time. We apologize for the inconvenience.</p></div> -->
 
-            <button class="mt-32" id="sq-creditcard" 
+            <button class="mt-32" id="sq-creditcard"
                     value="SEND"><?= $button_label ?></button>
 
             <div id="error"></div>
@@ -69,15 +69,11 @@
             <p id="form_response"> </p>
         </div>
 
-        <div class="pl-32 col-4_sm-hidden">
-           <?php $this->getPartial('findus'); ?>
-        </div>
-
     </div>
 </section>
 
 <?= $pay_sqPaymentFormJS ?>
-  
+
 <script>
 
   jQuery(document).ready(function($){
@@ -85,12 +81,12 @@
 
      $('.ship').click(function() {
         $('.ship').not(this).prop('checked', false);
-        
+
         var shipping = $(this).val();
         var shipping_provider = $(this).attr('id');
         var shipping_provider_name = $(this).attr('data-shipper');
         console.log( shipping_provider + '=' + shipping );
-        
+
         if($(this).prop("checked") == true){
           console.log("Checkbox is checked.");
           /* Update costs and hidden fields */
@@ -108,12 +104,12 @@
           var newpriceCents = newprice * parseFloat(100);
           console.log("oldprice:" + oldprice + "/" + "newprice:" + newprice + "/shipCost: " + $(this).val() );
         }
-        
+
         $('#shipping_provider').val(shipping_provider_name);
         $('#shipping_cost').val(shipping);
         $('#estimated_cost_format, #sq-creditcard span#estimated_cost_format_btn').html(newpriceTrim);
         $('#sq-creditcard #amount_total').val(newpriceCents);
-        
+
         <?php if($deposit != "true") { ?>
             $('#amount_total').val(newpriceCents.toFixed(0));
             $('#sq-creditcard span#estimated_cost_format_btn').html( newpriceTrim );
@@ -165,12 +161,12 @@
 
                             var oldprice = parseFloat($('#price').val());
                             console.log("oldPrice: " + oldprice);
-                          
+
                             var rValue = parseFloat(data);
                             console.log('data:' + data);
-                            
-                            $('input:checkbox[class=ship]').each(function() 
-                            {    
+
+                            $('input:checkbox[class=ship]').each(function()
+                            {
                                 if( $(this).is(':checked') ) {
                                     var shipping = $(this).val();
                                     var shipping_provider = $(this).attr('id');
@@ -198,7 +194,7 @@
                             $('#estimated_cost_format_btn').html( newpriceFormatted);
                             $('#estimated_cost_format_strike').html( oldpriceFormatted );
                             $('#estimated_cost').html(newprice);
-                            
+
                             <?php if($deposit != "true") { ?>
                                 console.log("pc: " + priceCents.toFixed(0) );
                                 $('#amount_total').val(priceCents.toFixed(0));
@@ -239,7 +235,7 @@
         var state = $("input[name='state']").val();
         var postalcode = $("input[name='postalcode']").val();
         var phone = $("input[name='phone']").val();
-        
+
         $(".error-form-validation").remove();
 
         if (contactname.length < 1) {
@@ -271,19 +267,19 @@
             ++errors;
         }
 
-        if ($('.ship:checked').length > 0) {  
+        if ($('.ship:checked').length > 0) {
           console.log('SHIPPING PICKED');
         } else {
           $('.shipping').after('<span class="e_phone error-form-validation">Please select a shipping method</span>');
           ++errors;
         }
-    
+
         if(errors > 1) {
             return false;
         } else {
             onGetCardNonce(event);
         }
-        
+
     });
 
   });

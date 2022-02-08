@@ -814,7 +814,7 @@ class Core_Api extends Fieldnotes_Api
         	LEFT JOIN catalog_photo_views AS PV ON PH.catalog_photo_id = PV.catalog_photo_id
         WHERE
         	PH.featured = '1' AND
-            PH.orientation = 'landscape' AND
+            -- PH.orientation = 'landscape' AND
             PH.status = 'ACTIVE'
         ORDER BY
         	RAND()
