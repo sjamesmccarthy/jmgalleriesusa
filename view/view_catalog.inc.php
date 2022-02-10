@@ -23,7 +23,10 @@
          $catalog_le_desc = '&mdash; limited edition';
     } else if( $catalog_meta[0]['path'] == 'thework') {
 
+        $param_ed = "as_limited";
+
         if($this->routes->URI->queryvals[1] == 'tinyviews') {
+            $param_ed = 'as_open';
             $catalog_title = 'OPEN EDITIONS';
             $catalog_desc = 'Beautiful tinyVIEWS<span style="font-size:.9rem; font-weight: 300;"><sup>&trade;</sup></span> Open Edition Fine Art at Affordable Prices';
             $catalog_tabs_hidden = true;
@@ -31,13 +34,14 @@
         }
 
         if($this->routes->URI->queryvals[1] == 'limited') {
+            $param_ed = 'as_limited';
             $catalog_title = 'LIMITED EDITIONS';
             // $catalog_desc = 'the <b>complete fine-art collection</b> by jMcCarthy';
             $catalog_tabs_hidden = true;
             $tv_le_link = '<p class="shop-tv-link"><a href="/galleries">Browse By Collections</a></p>';
         }
 
-        $catalog_photos = $this->api_Catalog_Category_Thumbs_All();
+        $catalog_photos = $this->api_Catalog_Category_Thumbs_All($param_ed);
 
     } else {
         $catalog_tabs_hidden = true;

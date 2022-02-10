@@ -96,7 +96,7 @@ foreach ($fieldnotes_data as $key => $value) {
     $card_html .= '</div>';
 
     if($img_div == '1') {
-        $card_html .= '<div class="card--image-wrapper" style="background: rgba(0,0,0,0) url(/view/image/fieldnotes/' . $value['image'] . ') no-repeat center; background-size: cover; word-break: break-word;">';
+        $card_html .= '<div class="card--image-wrapper" style="background: rgba(0,0,0,0) url(/view/image/fieldnotes/' . $value['image'] . ') no-repeat center; background-size: cover; word-break: break-word; box-shadow: 0px 20px 25px 0px rgba(0, 0, 0, 0.3);">';
         $card_html .= '<i class="' . $icon_type . ' card--image-icon"></i>';
         $card_html .= '</div>';
     }

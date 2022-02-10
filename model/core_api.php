@@ -80,10 +80,20 @@ class Core_Api extends Fieldnotes_Api
         return($data);
     }
 
-    public function api_Catalog_Category_Thumbs_All() {
+    public function api_Catalog_Category_Thumbs_All($params_ed='all') {
 
         /* Executes SQL and then assigns object to passed var */
         if( $this->checkDBConnection(__FUNCTION__) == true) {
+
+        if($params_ed == 'all') {
+          $sql_extra = null;
+        }
+        if($params_ed == 'as_open') {
+          $sql_extra = 'AND as_open =1';
+        }
+        if($params_ed == 'as_limited') {
+          $sql_extra = 'AND as_open !=1';
+        }
 
             $sql = "
             SELECT
@@ -104,6 +114,7 @@ class Core_Api extends Fieldnotes_Api
             	INNER JOIN catalog_collections AS cat ON cat.catalog_collections_id = cp.parent_collections_id
             WHERE
                 cp.status = 'active'
+               " . $sql_extra . "
                ORDER BY cp.title";
 
             $result = $this->mysqli->query($sql);

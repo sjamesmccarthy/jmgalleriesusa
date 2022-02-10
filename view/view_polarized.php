@@ -6,7 +6,7 @@
             <p class="tagline">a collection of field notes by photographer j.McCarthy</p>
 
             <ul class="filter-editions-list">
-                <li class="filter-all selected">All</li>
+                <li class="filter-all selected">Everything</li>
                 <li class="filter-notes">Articles</li>
                 <li class="filter-youtube"><a target="_youtube" href="https://vlog.jmgalleries.com">@YouTube</a></li>
                 <li class="filter-filmstrips">Filmstrips</li>
