@@ -8,7 +8,7 @@
             <ul class="filter-editions-list">
                 <li class="filter-all selected">All</li>
                 <li class="filter-notes">Articles</li>
-                <li class="filter-youtube">Videos (<a target="_youtube" href="https://vlog.jmgalleries.com">@YouTube</a>)</li>
+                <li class="filter-youtube"><a target="_youtube" href="https://vlog.jmgalleries.com">@YouTube</a></li>
                 <li class="filter-filmstrips">Filmstrips</li>
             </ul>
 
@@ -16,7 +16,10 @@
 
         <div class="col-12_sm-12" style="margin: auto;">
             <!-- col-8_sm-12 when including FINDUS below -->
+
                 <?= $card_html ?>
+                <div class="f-youtube text-center">If you're looking for the videos, I have moved them all over to <a target="_social" href="https://youtube.com/c/jmgalleriesusa/">YouTube</a>. Please <b>SUBSCRIBE +LIKE</b> while browsing.</div>
+
         </div>
 
         <!-- <div class="col-4_sm-hidden pl-32">
@@ -25,10 +28,12 @@
                 ?>
         </div> -->
 
-        <div class="col-12_sm-12 newsletter-section-fn" style="margin: auto;">
+<!--         <div class="col-12_sm-12 newsletter-section-fn" style="margin: auto;">
             <h3>Sign Up For My First Friday Newsletter</h3>
-            <?php $this->getPartial('newsletter'); ?>
-        </div>
+            <?php
+            // $this->getPartial('newsletter');
+            ?>
+        </div> -->
 
     </div>
 </section>

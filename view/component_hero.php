@@ -10,6 +10,8 @@ version: 1
 */
 
 $catalog = ltrim($this->page->catalog_path, '/');
+$hero_cta_label = "VIEW THE WORK";
+$hero_cta_link = "/thework";
 
 if ($catalog == '') {
     /* Create an API call to get the Polarized listings */
@@ -36,7 +38,7 @@ if ($catalog == '') {
 
                 <div class="hero-container">
                 <div style="position: absolute; top: 2rem; left: 1.5rem;">
-                    <p style="background-color: $explore_background;  border-radius: 6px; padding: 2px 10px; font-size: .9rem;"><a style="color: #000;" href="/shop">Shop j.McCarthy Fine Art</a></p>
+                    <p style="background-color: $explore_background;  border-radius: 6px; padding: 2px 10px; font-size: .9rem;"><a style="color: #000;" href="$hero_cta_link">$hero_cta_label</a></p>
                 </div>
                     <div class="hero-text-container">
 

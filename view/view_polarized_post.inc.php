@@ -1,6 +1,6 @@
 <?php
-/* 
-component: POLARIZED 
+/*
+component: POLARIZED
 description: returns the last 4 blog posts from medium
 css: component_polarized.scss
 created: jmccarthy
@@ -67,7 +67,7 @@ if (empty($res_title) == false) {
 
 if(count($tags_data) > 1 ) {
     foreach($tags_data as $tK => $tV) {
-        $tags_html .= '<p class="__container--tags">' . $tV['tag'] . '</p>';    
+        $tags_html .= '<p class="__container--tags">' . $tV['tag'] . '</p>';
     }
 }
 
@@ -80,7 +80,7 @@ if($res_type == "article") {
         </div>';
     }
 } else if($res_type == "video") {
-        
+
         $img_html = null;
         $res_teaser = "";
         if (preg_match('/\biframe width\b/', $res_content)) {
@@ -91,33 +91,43 @@ if($res_type == "article") {
             $res_content = str_replace("https://youtu.be/", "https://youtube.com/embed/", $res_content);
             $res_content = '<iframe width="100%" height="515" src="' . $res_content . '" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
         }
-    
-} else { 
+
+} else {
 
     /* FILMSTRIP LAYOUT THUMBNAILS */
     $j=1;
     foreach ($image_data as $imgK => $imgV) {
 
+        preg_match('#((https?|ftp)://(\S*?\.\S*?))([\s)\[\]{},;"\':<]|\.\s|$)#i',$imgV['caption'],$url, PREG_UNMATCHED_AS_NULL);
+
+        if($url[0][0] != '') {
+            $add_url = '<p class="filmstrip_img_zoom"><a target="_new" href="' . $url[0] . '"><i class="fas fa-expand"></i></a></p>';
+        } else {
+            $add_url = null;
+        }
+
+        $imgV['caption'] = preg_replace('#((https?|ftp)://(\S*?\.\S*?))([\s)\[\]{},;"\':<]|\.\s|$)#i', '', $imgV['caption']);
+
            $res_content .= '
                 <div id="img_' . $j . '_wrapper" class="grid">
-                    
+
                     <div class="col-12_sm-12" style="position: relative;">
-                        <img id="img_' . $j . '_photo" style="width: 100%; border-radius: 6px;" src="/view/image/fieldnotes/' . $imgV['path'] . '" alt="' . $imgV['path'] . '" />
+                        <img id="img_' . $j . '_photo" style="width: 100%; border-radius: 6px;" src="/view/image/fieldnotes/' . $imgV['path'] . '" alt="' . $imgV['path'] . '" />' . $add_url . '
                     </div>
-            
+
                     <div class="col-12_sm-12" id="img_' . $j . '_caption" style="display: block; position: relative;">
                         <p style="padding: 0rem 0 1rem 0; font-size: 1rem; margin-bottom:0; margin-top: 5px;"><span style="font-size: 1.25rem; font-weight: 800;">' . $j . '</span> / ' . $imgV['caption'] . '</p>
                     </div>
-                    
+
                 </div>';
         $j++;
     }
 }
 
 /* Build Comments */
-if($res_cheers == 0) { 
-    // $res_cheers = 'Clink! Be the first to '; 
-    $res_cheers = null; 
+if($res_cheers == 0) {
+    // $res_cheers = 'Clink! Be the first to ';
+    $res_cheers = null;
 }
 
 $resp_count = count($fieldsnotes_respsonses_data);
@@ -129,7 +139,7 @@ if( count($fieldsnotes_respsonses_data) >= 1) {
 
         /* Look for gravatar */
         $gravatar_url = get_gravatar($fV['email']);
-        
+
         /* This HTML is duplicated in fieldnotes_api, api_Admin_Insert_Fieldnotes_Responses() */
         $fieldsnotes_respsonses_html .= '
         <div class="--response-data-card border--bottom">
@@ -139,7 +149,7 @@ if( count($fieldsnotes_respsonses_data) >= 1) {
         </p>
         <p class="--avatar-byline">' . date("l, F j, Y, g:i a", strtotime($fV['created'])) . '<br />@' . $email[0] . ' responded ...</p>
         <div class="--content">'
-        . $fV['response'] . 
+        . $fV['response'] .
         '</div>
         </div>';
     }
@@ -178,7 +188,7 @@ function get_gravatar( $email, $s = 80, $d = 'mp', $r = 'g', $img = true, $atts 
     // } else {
     //     echo "false";
     // }
-    
+
     if ( $img ) {
         $url = '<img src="' . $url . '"';
         foreach ( $atts as $key => $val )

@@ -9,22 +9,22 @@ public function api_Admin_Get_FieldnotesImagesById($id) {
         /* Executes SQL and then assigns object to passed var */
         if( $this->checkDBConnection(__FUNCTION__) == true) {
 
-            $sql = "select * from fieldnotes_images 
+            $sql = "select * from fieldnotes_images
                 where fieldnotes_id = '" . $id . "' and status='active' order by file_order ASC";
-        
+
             $result = $this->mysqli->query($sql);
 
             if ($result->num_rows > 0) {
-            
+
                 while($row = $result->fetch_assoc())
 		        {
 		            $data[] = $row;
 		        }
-                
+
             }  else {
                 $data[] = "NaN";
             }
-            
+
         }
 
         return($data);
@@ -34,7 +34,7 @@ public function api_Admin_Get_FieldnotesImagesById($id) {
 public function api_Admin_Get_Fieldnotes($status=null) {
 
     if(!is_null($status)) {
-        $where = " WHERE f.status='published'";
+        $where = " WHERE f.status='published' AND f.type != 'video'";
         // $limit = " LIMIT 6";
     }
 
@@ -62,18 +62,18 @@ public function api_Admin_Get_Fieldnotes($status=null) {
             INNER JOIN artist as a on a.artist_id = f.user_id
             $where
             ORDER BY f.created DESC";
-        
+
             $result = $this->mysqli->query($sql);
 
             if ($result->num_rows > 0) {
-            
+
                 while($row = $result->fetch_assoc())
 		        {
 		            $data[] = $row;
 		        }
-                
-            } 
-            
+
+            }
+
         }
 
         return($data);
@@ -82,7 +82,7 @@ public function api_Admin_Get_Fieldnotes($status=null) {
 
  public function api_Admin_Get_Fieldnotes_Item($id,$name=null) {
 
-     if(isSet($name)) { 
+     if(isSet($name)) {
          $sql = "SELECT f.fieldnotes_id, f.image FROM fieldnotes as f WHERE f.short_path='" . $name . "'";
      } else {
           $sql = "SELECT
@@ -104,7 +104,7 @@ public function api_Admin_Get_Fieldnotes($status=null) {
             a.first_name,
             a.last_name
         FROM
-            fieldnotes as f 
+            fieldnotes as f
             INNER JOIN artist as a on a.artist_id = f.user_id
             WHERE f.fieldnotes_id = '" . $id . "'";
      }
@@ -115,14 +115,14 @@ public function api_Admin_Get_Fieldnotes($status=null) {
             $result = $this->mysqli->query($sql);
 
             if ($result->num_rows > 0) {
-            
+
                 while($row = $result->fetch_assoc())
 		        {
 		            $data = $row;
 		        }
-                
-            } 
-            
+
+            }
+
         }
 
         return($data);
@@ -132,7 +132,7 @@ public function api_Admin_Get_Fieldnotes($status=null) {
  public function api_Admin_Get_Fieldnotes_Tags($id) {
 
  // $this->console($id);
- 
+
         /* Executes SQL and then assigns object to passed var */
         if( $this->checkDBConnection(__FUNCTION__) == true) {
 
@@ -141,20 +141,20 @@ public function api_Admin_Get_Fieldnotes($status=null) {
         FROM
             fieldnotes_tags as ft
         WHERE ft.fieldnotes_id = '" . $id . "'";
- 
+
  // $this->console($sql);
-        
+
         $result = $this->mysqli->query($sql);
 
         if ($result->num_rows > 0) {
-        
+
             while($row = $result->fetch_assoc())
 	        {
 	            $data[] = $row;
 	        }
-            
-        } 
-            
+
+        }
+
         }
 
         return($data);
@@ -178,8 +178,8 @@ public function api_Admin_Update_Fieldnotes_Cheer($id) {
             } else {
                 $data['error'] = "SQL UPDATE FAILED " . $id;
                 $data['sql'] = $sql;
-            }	
-            
+            }
+
         }
 
         return($data);
@@ -201,19 +201,19 @@ public function api_Admin_Update_Fieldnotes() {
         $teaser = $this->mysqli->real_escape_string($_POST['teaser']);
         $file_1_caption = $this->mysqli->real_escape_string($_POST['file_1_caption']);
         $content = $this->mysqli->real_escape_string($_POST['content']);
-        
+
         if(isSet($_FILES['file_1']['name'])) {
             // $_FILES['file_1']['name'] = $short_path . '.jpg';
             $img_path = $short_path . '_file_1.jpg';
-        } 
+        }
 
         if(!isset($featured)) { $featured ="0"; }
         if($type == "video") { $words = 3; }
-        
+
         // REPLACE(\"$content\", \"\\r\\n\", \"\")
         $sql = "
-        UPDATE fieldnotes 
-        SET 
+        UPDATE fieldnotes
+        SET
             title = '$title',
             short_path = '$short_path',
             teaser = '$teaser',
@@ -226,15 +226,15 @@ public function api_Admin_Update_Fieldnotes() {
             created = '$date',
             modified = '$mysql_ts',
             status = '$status'
-        WHERE fieldnotes_id = '$fieldnotes_id' 
+        WHERE fieldnotes_id = '$fieldnotes_id'
         ";
 
         $result = $this->mysqli->query($sql,1);
-        
+
         /* DELETE ALL catalog_collection_link records for this ID */
         $sql_d = "DELETE FROM fieldnotes_tags WHERE fieldnotes_id = '" . $fieldnotes_id . "'";
         $result_d = $this->mysqli->query($sql_d);
-        
+
         /* Add parent collection to the array */
         if (isSet($tags)) {
             $fieldnotes_tags = explode(',', $tags);
@@ -248,13 +248,13 @@ public function api_Admin_Update_Fieldnotes() {
 
                 $result_t = $this->mysqli->query($sql_t);
             }
-        } 
+        }
 
         /* Fieldnotes_images and captions */
-        
+
         $i=1;
         foreach ($_FILES as $key => $val) {
-            
+
             if($val['size'] > 0) {
                 $img_path = $short_path . '_' . $key . '.jpg';
                 $idx_caption = $key . "_caption";
@@ -263,7 +263,7 @@ public function api_Admin_Update_Fieldnotes() {
                 /* DELETE ALL image meta data from fieldnotes_images table for image being modified */
                 $sql_img_d = "DELETE FROM fieldnotes_images WHERE path = '" . $img_path . "'";
                 $result_img_d = $this->mysqli->query($sql_img_d);
-                
+
                 /* insert into the database */
                 $_POST[$idx_caption] = $this->mysqli->real_escape_string($_POST[$idx_caption]);
                 $sql_img_i = "INSERT INTO fieldnotes_images (fieldnotes_id, path, caption, file_order)
@@ -276,7 +276,7 @@ public function api_Admin_Update_Fieldnotes() {
                 if(${"file_" . $i . "_path"} != "" ) {
                     $sql_cap_u = "UPDATE `" . $this->config_env->env[$this->env]['dbname'] . "`.`fieldnotes_images` SET `caption` = '" . $this->mysqli->real_escape_string(${"file_" . $i . "_caption"}) . "' WHERE `fieldnotes_id` = '" . $fieldnotes_id . "' AND `path`='" . ${"file_" . $i . "_path"} . "'";
                     $result_cap_u = $this->mysqli->query($sql_cap_u);
-                   
+
                     if ($result_cap_u === false) {
                         $this->log(array("key" => "api_FieldNotes", "value" => "Failed FieldNotes " . $_POST['title'] . " (" . $_POST['fieldnotes_id'] . ")[img:" . $i . "] Caption Failed To Update / " .  $this->mysqli->real_escape_string($sql_cap_u), "type" => "failure"));
                     } else {
@@ -287,7 +287,7 @@ public function api_Admin_Update_Fieldnotes() {
             }
             $i++;
         }
-        
+
          /* Check to see if files have been uploaded */
          $this->__uploadFiles(array("jpg","jpeg"), "jpg");
 
@@ -324,31 +324,31 @@ public function api_Admin_Insert_Fieldnotes() {
             // $_FILES['file_1']['name'] = $short_path . '.jpg';
             $img_path = $short_path . '_file_1.jpg';
         }
-        
-        //REPLACE(\"$content\", \"\\r\\n\", \"\"), 
+
+        //REPLACE(\"$content\", \"\\r\\n\", \"\"),
          $sql = "
             INSERT INTO `" . $this->config_env->env[$this->env]['dbname'] . "`.`fieldnotes` (
-                `user_id`, 
-                `title`, 
-                `image`, 
+                `user_id`,
+                `title`,
+                `image`,
                 `caption`,
                 `content`,
                 `count`,
                 `teaser`,
-                `type`, 
+                `type`,
                 `featured`,
                 `short_path`,
                 `created`,
-                `status`) 
+                `status`)
             VALUES (
-                '$user_id', 
-                '$title', 
+                '$user_id',
+                '$title',
                 '$img_path',
-                '$file_1_caption', 
+                '$file_1_caption',
                 '$content',
                 '$words',
                 '$teaser',
-                '$type', 
+                '$type',
                 '$featured',
                 '$short_path',
                 '$mysql_ts',
@@ -357,7 +357,7 @@ public function api_Admin_Insert_Fieldnotes() {
 
         $result = $this->mysqli->query($sql);
         $fieldnotes_id = $this->mysqli->insert_id;
-        
+
         /* Add parent collection to the array */
         if (isSet($tags)) {
             $fieldnotes_tags = explode(',', $tags);
@@ -371,7 +371,7 @@ public function api_Admin_Insert_Fieldnotes() {
 
                 $result_t = $this->mysqli->query($sql_t);
             }
-        } 
+        }
 
         /* Fieldnotes_images and captions */
         $i=1;
@@ -388,7 +388,7 @@ public function api_Admin_Insert_Fieldnotes() {
         VALUES('" . $fieldnotes_id . "','" . $img_path . "','" . $_POST[$idx_caption] . "','" . $i . "')";
         $result_img_i = $this->mysqli->query($sql_img_i);
 
-        } 
+        }
         $i++;
         }
 
@@ -425,7 +425,7 @@ public function __readTime($count) {
     if($count > "999") {
         $read_time = "7 min read";
     }
-    
+
     return($read_time);
 }
 
@@ -435,7 +435,7 @@ public function __uploadFiles($fileTypes=array("jpeg"), $ext="jpg") {
         foreach($_FILES as $key => $value) {
 
             $_FILES[$key]['path'] = '/view/image/fieldnotes/';
-            
+
             if($value['size'] != 0) {
                 // $_FILES[$key]['path'] = $_POST[$key . '_path'];
                 $uploadReady=1;
@@ -452,7 +452,7 @@ public function __uploadFiles($fileTypes=array("jpeg"), $ext="jpg") {
                 // need to throw an overwrite flag only if $_FILES[$key]['name']
                 if( isSet($_FILES[$key]['name'])) {
                     $uploadOverwrite = 1;
-                } 
+                }
 
             } else { $uploadReady=1; $uploadOverwrite = 0; }
 
@@ -462,7 +462,7 @@ public function __uploadFiles($fileTypes=array("jpeg"), $ext="jpg") {
                 if ($uploadReady == 0) {
                     $this->log(array("key" => "api_FieldNotes", "value" => "Failed to Upload / uploadReady=0", "type" => "failure"));
                 } else {
-                    
+
                     // $this->console($target_file);
 
                     if (move_uploaded_file($_FILES[$key]["tmp_name"], $target_file)) {
@@ -488,9 +488,9 @@ public function x__uploadFile($fileTypes=array("jpeg"), $ext="jpg") {
 
 
             foreach($_FILES as $key => $value) {
-                
+
                 $_FILES[$key]['path'] = '/view/image/fieldnotes/';
-                
+
                 if($value['size'] != 0) {
                     // $_FILES[$key]['path'] = $_POST[$key . '_path'];
                     $uploadReady=1;
@@ -506,7 +506,7 @@ public function x__uploadFile($fileTypes=array("jpeg"), $ext="jpg") {
                     // need to throw an overwrite flag only if $_FILES[$key]['name']
                     if( isSet($_FILES[$key]['name'])) {
                         $uploadOverwrite = 1;
-                    } 
+                    }
 
                 } else { $uploadReady=1; $uploadOverwrite = 0; }
 
@@ -541,20 +541,20 @@ public function x__uploadFile($fileTypes=array("jpeg"), $ext="jpg") {
             $sql = "SELECT
             *
         FROM
-            fieldnotes_responses 
+            fieldnotes_responses
         WHERE fieldnotes_id = '" . $id . "' ORDER BY created DESC";
-        
+
         $result = $this->mysqli->query($sql);
 
         if ($result->num_rows > 0) {
-        
+
             while($row = $result->fetch_assoc())
             {
                 $data[] = $row;
             }
-            
-        } 
-            
+
+        }
+
         }
 
         return($data);
@@ -566,22 +566,22 @@ public function x__uploadFile($fileTypes=array("jpeg"), $ext="jpg") {
         if(!$_POST) {
             die('failed-unauthorized-access');
         }
-        
+
          /* Executes SQL and then assigns object to passed var */
          if( $this->checkDBConnection(__FUNCTION__) == true) {
 
             $response_content = $this->mysqli->real_escape_string($_POST['response_content']);
 
-            $sql = "INSERT INTO `" . $this->config_env->env[$this->env]['dbname'] . "`.`fieldnotes_responses` (`fieldnotes_id`, `email`, `response_ip`, `response`) 
+            $sql = "INSERT INTO `" . $this->config_env->env[$this->env]['dbname'] . "`.`fieldnotes_responses` (`fieldnotes_id`, `email`, `response_ip`, `response`)
             VALUES (
-            '" . $_POST['fieldnotes_id'] . "', 
-            '" . $_POST['response_email'] . "', 
-            '" . $_SERVER['REMOTE_ADDR'] . "', 
+            '" . $_POST['fieldnotes_id'] . "',
+            '" . $_POST['response_email'] . "',
+            '" . $_SERVER['REMOTE_ADDR'] . "',
             '" . strip_tags($response_content) . "')";
             $result = $this->mysqli->query($sql);
-            
+
             $email = explode('@', $_POST['response_email']);
-            
+
             /* Look for gravatar */
             $gravatar_url = $this->get_gravatar($_POST['response_email']);
 
@@ -594,10 +594,10 @@ public function x__uploadFile($fileTypes=array("jpeg"), $ext="jpg") {
                 </p>
                 <p class="--avatar-byline">' . date("F d, Y", time()) . '<br />@' . $email[0] . ' responded ...</p>
                 <div class="--content">'
-                . strip_tags($_POST['response_content']) . 
+                . strip_tags($_POST['response_content']) .
                 '</div>
                 </div>';
-            
+
             return($data_html);
 
          }
@@ -608,24 +608,24 @@ public function x__uploadFile($fileTypes=array("jpeg"), $ext="jpg") {
         $url = 'https://www.gravatar.com/avatar/';
         $url .= md5( strtolower( trim( $email ) ) );
         $url .= "?s=$s&d=$d&r=$r";
-    
+
         // Now check the headers...
         // $headers = @get_headers( $url );
-    
+
         // If 200 is found, the user has a Gravatar; otherwise, they don't.
         // if ( preg_match( '|200|', $headers[0]) ) {
         //     echo "true";
         // } else {
         //     echo "false";
         // }
-        
+
         if ( $img ) {
             $url = '<img src="' . $url . '"';
             foreach ( $atts as $key => $val )
                 $url .= ' ' . $key . '="' . $val . '"';
             $url .= ' alt="avatar" />';
         }
-    
+
         return $url;
     }
 }

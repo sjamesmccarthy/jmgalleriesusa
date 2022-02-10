@@ -19,10 +19,10 @@
                     <button>Respond</button>
                     <p style="display: inline-block; float: right; margin-top: .4rem; font-size: .9rem;"><a class="--response-content-card-cancel" href="#">cancel</a></p>
                 </div>
-        </form> 
+        </form>
         </div>
-    </div> 
-  
+    </div>
+
     <!-- responses pulled from database -->
     <div class="responses">
         <?= $fieldsnotes_respsonses_html ?>
@@ -32,56 +32,59 @@
 </div>
 
 <section id="polarized" class="pt-24">
-   
+
     <div class="grid-noGutter">
         <div class="col-12 __container">
-            
+
+            <p class="mb-16 smaller text-center"><a href="/fieldnotes">a Field Note</a><br />
+            published on <?= $res_date_written ?> </p>
+
             <div class="col title-container pb-16">
                 <h1><?= $res_title?></h1>
                 <p class="teaser-title"><?= $res_teaser?></p>
             </div>
-                
+
             <div class="col content__area">
-                
+
                 <?= $img_html ?>
 
                 <div class="content__area--wrapper">
                     <div class="col teaser">
                         <?= $res_content_leadin ?>
                     </div>
-    
+
                     <div class="col">
                         <?= $res_content ?>
                     </div>
-                
+
                     <!-- start cheers, comments -->
                     <div class="col-12 __container--bottom_toc">
-                        
+
                         <div>
                             <a class="response--icon-cheers" href="#"><i class="fas fa-glass-cheers"></i>
                             <p class="response--icon-label""><span class="repsonse--cheers-count repsonse--count"><?= $res_cheers ?></span></a></p>
-    
+
                             <a class="response--icon response--icon-bubble" href="#"><i class="fas fa-comment-alt"></i>
                             <p class="response--icon--count response--icon-label"><span class="repsonse--icon-count repsonse--count"><?= $res_responses ?></span></a></p>
                         </div>
-                            
+
                         <div>
                             <?= $tags_html ?>
                         </div>
-                        
+
                         <div>
                             <p class="__container--linkback">Published <?= $res_date_written; ?> in <a class="blue" href="/fieldnotes">Field Notes</a></p>
                         </div>
-                        
+
                         <div class="newsletter-section-fn">
                             <h3>Sign Up For My First Friday Email</h3>
                             <?php $this->getPartial('newsletter'); ?>
                         </div>
-                        
+
                     </div>
                     <!-- /cheers, comments -->
                 </div>
-                <!-- /content__area--wrapper -->  
+                <!-- /content__area--wrapper -->
             </div>
             <!-- /__content_area -->
         </div>
@@ -97,7 +100,7 @@ $("div[id*='imgT']").on('click', function(e){
     console.log("clicked: " + ele );
     $("div[id*='imgT_'] >img").css("opacity",".2");
 
-    if( $('.filmstrip--large-preview').is(':visible') ) { 
+    if( $('.filmstrip--large-preview').is(':visible') ) {
         console.log(".filmstrip--preview visible");
         $("div[id*='imgT']").css("border","none");
         $('#content--teaser').hide();
@@ -125,12 +128,12 @@ $("div[id*='imgT']").on('click', function(e){
     //     thumbEvent: 'click'
     // });
 
-    $('.--response-content-card-cancel').on("click", function(e) { 
+    $('.--response-content-card-cancel').on("click", function(e) {
         $('.--response-content-card-cta').hide();
         e.preventDefault();
     });
 
-    $('#response_content, #response_email').on("click", function(e) { 
+    $('#response_content, #response_email').on("click", function(e) {
         $('.--response-content-card-cta').show();
     });
 
@@ -166,7 +169,7 @@ $("div[id*='imgT']").on('click', function(e){
         /* AJAX update to fieldnote record */
         var fn_ID = <?php echo $this->page->fieldnotes_id ?>;
         var url = "/view/ajax_cheers_process.php";
-    
+
         $.ajax({
             type: "POST",
             url: url,
@@ -207,7 +210,7 @@ grecaptcha.execute('6LetD7YUAAAAAFX5cXupV3exd1YCSuYFY_az92Wh', {action: 'homepag
               async: true,
               success: function(data)
               {
-                  
+
                 // console.log(data);
                 var resp_count = $('.resp_count').html();
                 if ( resp_count >= 1 ) {
@@ -226,7 +229,7 @@ grecaptcha.execute('6LetD7YUAAAAAFX5cXupV3exd1YCSuYFY_az92Wh', {action: 'homepag
                   console.log("Error: "+JSON.stringify(request));
               }
             });
-            
+
             return false;
           });
       });

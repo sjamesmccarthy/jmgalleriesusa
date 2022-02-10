@@ -73,7 +73,12 @@ foreach ($fieldnotes_data as $key => $value) {
     /* Check for image */
     if ( is_file($_SERVER['DOCUMENT_ROOT'] . "/view/image/fieldnotes/" . $value['image'] ) ) {
         $img_html = '<img src="/view/image/fieldnotes/' . $value['image'] . '" alt="' . $value['image'] . '" /></a>';
-        $value['title'] = mb_strimwidth($value['title'], 0, 80, "...");
+
+        if(strlen($value['title']) > 35) {
+            $content_leadin_short = substr( $content_leadin, 0, strrpos( substr( $content_leadin, 0, 180), ' ' ) ) . ' ...';
+            $value['title'] = mb_strimwidth($value['title'], 0, 65, "...");
+        }
+        // $value['title'] = mb_strimwidth($value['title'], 0, 35, "...");
         $img_div = '1';
     } else {
         $img_html = null;

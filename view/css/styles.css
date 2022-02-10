@@ -1980,7 +1980,9 @@ body {
   font-weight: 400;
   line-height: 1.8;
   letter-spacing: -0.3px;
-  margin: auto; }
+  margin: auto;
+  /* DARK-THEME */
+  /* END DARK-THEME */ }
   body.dark-theme {
     background-color: #0f0f0f;
     color: #FFFFFF; }
@@ -2065,6 +2067,8 @@ body {
       font-family: "Lato", sans-serif !important; }
     body.dark-theme .link-collection-sub-color {
       color: #FFFFFF !important; }
+    body.dark-theme .card--wrapper {
+      border-bottom: 1px solid rgba(255, 255, 255, 0.2); }
   body.light-theme {
     background-color: #FFFFFF;
     color: #4a4a4a; }
@@ -4229,7 +4233,10 @@ fieldset {
   margin-top: 0; }
 
 .frame_data {
-  font-size: .9rem !important; }
+  font-size: .9rem !important;
+  display: none;
+  text-align: left;
+  margin-left: 1rem; }
 
 form #buysize, form #frame {
   border: none;
@@ -4294,7 +4301,9 @@ form #buysize, form #frame {
 .price {
   color: #2574A9;
   font-size: 2rem;
-  text-align: center; }
+  font-weight: 800;
+  text-align: left;
+  line-height: 1; }
 
 .edition-extra {
   display: inline-block; }
@@ -4621,8 +4630,8 @@ form #buysize, form #frame {
 .card--wrapper {
   display: flex;
   margin: 0;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-  padding-bottom: 1rem;
+  border-bottom: 1px solid #e9e9e9;
+  padding: 4rem;
   margin: auto auto 1rem auto;
   line-height: 1.2; }
 
@@ -4736,7 +4745,7 @@ form #buysize, form #frame {
   font-weight: 600;
   line-height: 1.3;
   color: #4a4a4a;
-  text-align: left; }
+  text-align: center; }
   @media (min-width: 320px) and (max-width: 414px) {
     #polarized .__container h1 {
       font-size: 2rem; } }
@@ -4796,8 +4805,8 @@ form #buysize, form #frame {
 
 .teaser-title {
   font-family: 'Source Serif Pro', serif;
-  font-size: 1.4rem !important;
-  text-align: left;
+  font-size: 1.3rem !important;
+  text-align: center;
   color: #808080;
   padding-top: .5rem;
   line-height: 1; }
@@ -4913,6 +4922,21 @@ blockquote {
         box-shadow: none; } }
   .image .caption {
     font-size: .7rem; }
+
+.filmstrip_img_zoom {
+  position: absolute;
+  bottom: 2.5rem;
+  right: 0;
+  /* width: 10rem; */
+  text-align: center;
+  /* left: 50%; */
+  /* right: 50%; */
+  color: #FFF;
+  right: 2.5rem; }
+  .filmstrip_img_zoom a {
+    color: #FFFFFF; }
+  .filmstrip_img_zoom a:hover {
+    color: #2574A9; }
 
 .responses__container {
   background-color: #FFF;
@@ -5135,6 +5159,9 @@ div[id*='imgT']:hover {
 
 .newsletter-button a:hover {
   color: #FFFFFF; }
+
+.smaller {
+  font-size: .9rem !important; }
 
 #product_detail h1 {
   line-height: 1;

@@ -29,25 +29,25 @@
 
             <p class="mt-32 detail-story"><?= $photo_meta['loc_place'] ?> in  <?= $photo_meta['loc_city'] ?>, <?= $photo_meta['loc_state'] ?> &mdash;
             <?= $photo_meta['story'] ?></p>
-            
+
             <?= $gallery_details ?>
         </div>
 
       <div class="col pt-0">
         <!-- <p class="small blue" style="margin-bottom: -10px; margin-left: 5px;">USD</p> -->
-        <p class="blue price">$<span id="price_view" class="price"><?= number_format($default_price, 0) ?></span></p>
+        <p class="blue price ml-16 mt-8">$<span id="price_view" class="price"><?= number_format($default_price, 0) ?></span></p>
         <p class="frame_data blue text-center pb-16"></p>
-      <button><?= $btn ?></button>
-      
+
       <?= $sizes_pricing ?>
       <?= $sizes_frames ?>
-      
+      <button class="mt-32"><?= $btn ?></button>
+
       <p class="mt-32 ml-8 small text-center">Questions?<br /><a class="small underline normal-weight"target="_infoTab" href="/contact">Contact an Art consultant</a></p>
       <p class="ml-8 text-center"><a target="_infoTab" class="small underline normal-weight" href="/styles">Click here for framing information</a></p>
       </div>
 
     </div>
-    
+
     </form>
     <!-- </article> -->
 </section>
@@ -56,7 +56,7 @@
 <!-- removed 9/25/2020 -->
 <section id="you-may-like" class="filmstrip mt-64">
     <?= $you_may_also_like_html ?>
-</section> 
+</section>
 <!-- /generated html from component file -->
 
 <script>
@@ -76,23 +76,24 @@
         var ms = $("#buysize option:selected").attr("data-mattedsize");
 
         // Remove frame options from NOTECARDS (previously also 5x7 ps == '5x7' ||)
-        if(ps == 'NOTECARDS') { 
-            // $('#frame').find('option').not(':first').css("display", "none"); 
-            $('#frame').find('option').not(':first').attr("disabled", "disabled"); 
+        if(ps == 'NOTECARDS') {
+            // $('#frame').find('option').not(':first').css("display", "none");
+            $('#frame').find('option').not(':first').attr("disabled", "disabled");
             console.log('5x7');
        } else {
            // console.log('ImageSize: ' + ps + '/MattedSize: ' + ms);
            $('#matted_size').val(ms);
             // $('#frame').find('option').not(':first').css("display", "block");
-            if($("#frame option:selected").val() == "FRAMELESS" || $("#frame option:selected").val() == "ADDWITHACRYLIC" ) { 
+            if($("#frame option:selected").val() == "FRAMELESS" || $("#frame option:selected").val() == "ADDWITHACRYLIC" ) {
                     $('#frame').find('option').not(':first').attr("disabled");
                 } else {
                     $('#frame').find('option').not(':first').removeAttr("disabled");
                 }
         }
 
-        $("#frame").prop('selectedIndex', 0); 
-        $('.frame_data').html(''); 
+        $("#frame").prop('selectedIndex', 0);
+        $('.frame_data').hide();
+        $('.frame_data').html('');
         $('#price').val(p);
         $('#print_price').val(p);
         // $('#price_view').html(nf.format(p));
@@ -100,32 +101,35 @@
         // console.log('updating price.View(.price)=' + nf.format(p));
         $('#material_type').val(mt);
         console.log(new Intl.NumberFormat('en-US').format(p));
-        
+
     });
 
     $('#frame').on("change", function(e) {
         var fr = $("#frame option:selected").val();
 
-        // IF LIMITED EDITION 
+        // IF LIMITED EDITION
         if($("#frame option:selected").val() == "Black Vodka" || $("#frame option:selected").val() == "Whiskey" || $("#frame option:selected").val() == "Bourbon" ){
 
                 console.log('Premium Designer Frame INCLUDED');
+                $('.frame_data').show();
                 $('.frame_data').html( '(+' + $("#frame option:selected").val() + ' Frame, Included)');
                 return false;
         }
 
         else  if($("#frame option:selected").val() == "ADDWITHACRYLIC") {
                 console.log('ADD TO ACRYLIC Premium Designer Frame');
-                $('.frame_data').html( '(+ Optional Premium Frame Cost)');
+                $('.frame_data').show();
+                $('.frame_data').html( '(+ <a target="_new" href="/styles">Optional Premium Frame Cost</a>)');
                 $('#frame_price').val('$');
                 return false;
         }
 
         // ELSE IF OPEN EDITION
         else if($("#frame option:selected").val() == "Studio-Ash-Gray" || $("#frame option:selected").val() == "Studio-Snow-White") {
-            
+            $('.frame_data').show();
+
             var print = parseFloat($("#buysize option:selected").attr("data-price"));
-            var fp = parseFloat($("#buysize option:selected").attr("data-frameprice")); 
+            var fp = parseFloat($("#buysize option:selected").attr("data-frameprice"));
             console.log('FramePrice: ' + fp);
 
             var newprice = print + fp;
@@ -152,13 +156,14 @@
 
             var newprice = parseFloat($("#buysize option:selected").attr("data-price"));
             newprice_f = parseFloat(newprice).toFixed(2);
+             $('.frame_data').hide();
              $('.frame_data').html('');
              $('#frame_price').val('PRINT-ONLY-WITH-MATTE');
         }
 
         // var nf = new Intl.NumberFormat();
         // var p = newprice_f;
-        
+
         console.log('updating price.View(.price)=' + newprice_f);
         $('#price_view').html(newprice_f);
         $('#price').val(newprice_f);
@@ -176,7 +181,7 @@
         });
 
             event.preventDefault();
-            
+
             // Validating
             // var name = $("#contactname").val();
             // var email = $("#contactemail").val();
@@ -198,7 +203,7 @@
               grecaptcha.ready(function() {
 
                   grecaptcha.execute('6LetD7YUAAAAAFX5cXupV3exd1YCSuYFY_az92Wh', {action: 'homepage'}).then(function(token) {
-                    
+
                     window.location.href = url;
 
                     // $.ajax({
@@ -208,7 +213,7 @@
                     //   async: true,
                     //   success: function(data)
                     //   {
-                          
+
                     //       var data_html = "Thank You For Your Message, an art consultant will be in touch in 48 hours<!-- (code: " + data + ")-->";
                     //       $('.form-main').prop('disabled', true).css('opacity','.3');
                     //       $('#sendform').hide();
@@ -219,7 +224,7 @@
                     //       console.log("Request: "+JSON.stringify(request));
                     //   }
                     // });
-                    
+
                     return false;
                   });;
               });

@@ -111,20 +111,23 @@
                         <div class="about--exhibits">
                         <!-- <b>Exhibits (2016)</b> -->
                         <ul>
-                            <li> 2016, Beer NV, Reno, Nevada<br />
-                            First public showing of artwork and commericial sale.</li>
-                            <li>2016, Brewery Arts Center, Carson City, Nevada<br />
-                            First public gallery showing.</li>
-                            <li> 2018, Joe Maxx Coffee, Henderson & Las Vegas, Nevada<br />
-                            Over 40 pieces of fine-art on display between two locations.</li>
-                            <li> 2018, Boulder City Beer Festival<br />
-                            Exhibited "Happiest Time of Day", "Never Ending Story" and "Once Afloat".</li>
-                            <li> 2018, 2019, Art of The Walls, Temecula, California<br />
-                            Exhibited in outdoor show for local artists 6 times throughout 2018 and 2019.</li>
-                            <li> 2019, Temcula Public Library, Temecula, California<br />
-<!--                             <a style="font-weight: 200" href="https://www.facebook.com/jmgalleriesusa/videos/631838797284255/UzpfSTQwNjIxMDk2MjkwNjU4NDoxMDI2MjMyOTA0MjM3NzE3/" target="_social">Video (@facebook): Exhibited 8 photographs from January 2019 through April 2019.</a></li> -->
                             <li> 2019, City of Murrieta City Hall Art Project, Murrieta, California<br />
                             Exhibited three pieces, "Flying Fortress", "Good Morning Murrieta" and "Temecula Grapes", at Wine Ranch Grill & Cellars.</li>
+                            <li> 2019, Temcula Public Library, Temecula, California<br />
+                            <a href="https://www.facebook.com/jmgalleriesusa/videos/631838797284255/UzpfSTQwNjIxMDk2MjkwNjU4NDoxMDI2MjMyOTA0MjM3NzE3/" target="_social">Video (@facebook): Exhibited 8 photographs from January 2019 through April 2019.</a>
+                            </li>
+                            <li> 2018, 2019, Art of The Walls, Temecula, California<br />
+                             <a target="_social" href="https://www.instagram.com/p/Bzl6DZAlgjp/">Instagram: Exhibited in outdoor show for local artists 6 times throughout 2018 and 2019.</a></li>
+                            <li> 2018, Boulder City Beer Festival<br />
+                            Exhibited "Happiest Time of Day", "Never Ending Story" and "Once Afloat".</li>
+                            <li> 2018, Joe Maxx Coffee, Henderson & Las Vegas, Nevada<br />
+                            <a target="_social" href="https://www.instagram.com/p/BwkEGi2Fk0_/">Instagram: Over 40 pieces of fine-art on display between two locations.</a></li>
+                            <li>2017, Backseat Gallery showing<br />
+                            <a target="_social" href="https://www.instagram.com/p/BRHqCr-laD0/">Instagram: Exhibited various pieces at Comma Coffee, Carson City, Nevada</a></li>
+                            <li>2016, Brewery Arts Center, Carson City, Nevada<br />
+                            First public gallery showing.</li>
+                            <li> 2016, Beer NV, Reno, Nevada<br />
+                            First public showing of artwork and commericial sale.</li>
                         </ul>
                         </div>
                     </li>
