@@ -368,7 +368,13 @@ class Core_Site extends Core_Api
         return($result);
     }
 
-    public function getPartial($partial) {
+    public function getPartial($partial, $param=null) {
+
+        if(isSet($param)) {
+            $this->system->$partial->param = $param;
+        } else {
+            $this->system->$partial->param = "NULL";
+        }
 
         /* Check to see if the partial file has an Include Component with it */
         $file = $_SERVER['DOCUMENT_ROOT'] . '/view/partial_' . $partial;

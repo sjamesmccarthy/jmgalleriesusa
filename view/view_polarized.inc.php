@@ -25,7 +25,7 @@ foreach ($fieldnotes_data as $key => $value) {
 
     if($sections == 2) {
         $content_leadin = strip_tags($content[0]);
-        $content_leadin_short = substr( $content_leadin, 0, strrpos( substr( $content_leadin, 0, 240), ' ' ) ) . ' ...';
+        $content_leadin_short = substr( $content_leadin, 0, strrpos( substr( $content_leadin, 0, 220), ' ' ) ) . ' ...';
         $content = nl2br($content[1]);
     } else {
         $content_leadin_short = $value['teaser']; /* null */
@@ -57,7 +57,7 @@ foreach ($fieldnotes_data as $key => $value) {
             $read_time_label = 'Scroll At Your Own Pace';
             // $read_time_label = $value['teaser'];
             $icon_type = 'fas fa-film';
-            // $content_leadin_short = $value['teaser'];
+            $content_leadin_short = $value['teaser'];
             // $content_leadin_short = substr( $value['teaser'], 0, strrpos( substr( $value['teaser'], 0, 150), ' ' ) ) . '...';
             $data_filter_F = 'f-filmstrips';
         break;
@@ -73,27 +73,20 @@ foreach ($fieldnotes_data as $key => $value) {
     /* Check for image */
     if ( is_file($_SERVER['DOCUMENT_ROOT'] . "/view/image/fieldnotes/" . $value['image'] ) ) {
         $img_html = '<img src="/view/image/fieldnotes/' . $value['image'] . '" alt="' . $value['image'] . '" /></a>';
-
-        if(strlen($value['title']) > 35) {
-            $content_leadin_short = substr( $content_leadin, 0, strrpos( substr( $content_leadin, 0, 180), ' ' ) ) . ' ...';
-            $value['title'] = mb_strimwidth($value['title'], 0, 65, "...");
+        $title_length = strlen($value['title']);
+        // $value['title'] = $value['title'] . "(" . $title_length . ")";
+        if($title_length >= 43) {
+            $content_leadin_short = mb_strimwidth($content_leadin_short, 0, 130, " ...");
         }
-        // $value['title'] = mb_strimwidth($value['title'], 0, 35, "...");
+
         $img_div = '1';
     } else {
         $img_html = null;
-        $value['title'] = mb_strimwidth($value['title'], 0, 125, "...");
+        // $value['title'] = mb_strimwidth($value['title'], 0, 125, "...");
         $img_div = '0';
     }
 
     $card_html .= '<div class="card--wrapper ' . $data_filters . '">';
-    $card_html .= '<div class="card--content">';
-    $card_html .= '<div class="card--type">' . strtoupper($value['type']) . '</div>';
-    $card_html .= '<div class="card--readtime">' . $published_date . ' · ' .strtoupper( $read_time_label ) . '</div>';
-    $card_html .= '<div class="card--byline">user_id: ' . $value['user_id'] . '</div>';
-    $card_html .= '<div class="card--title"><a href="/fieldnotes/' . $value['short_path'] . '">' . $value['title'] . '</a></div>';
-    $card_html .= '<div class="card--teaser">' . $content_leadin_short . '</div>';
-    $card_html .= '</div>';
 
     if($img_div == '1') {
         $card_html .= '<div class="card--image-wrapper" style="background: rgba(0,0,0,0) url(/view/image/fieldnotes/' . $value['image'] . ') no-repeat center; background-size: cover; word-break: break-word; box-shadow: 0px 20px 25px 0px rgba(0, 0, 0, 0.3);">';
@@ -101,6 +94,13 @@ foreach ($fieldnotes_data as $key => $value) {
         $card_html .= '</div>';
     }
 
+    $card_html .= '<div class="card--content">';
+    $card_html .= '<div class="card--type">' . strtoupper($value['type']) . '</div>';
+    $card_html .= '<div class="card--readtime">' . $published_date . ' · ' .strtoupper( $read_time_label ) . '</div>';
+    $card_html .= '<div class="card--byline">user_id: ' . $value['user_id'] . '</div>';
+    $card_html .= '<div class="card--title"><a href="/fieldnotes/' . $value['short_path'] . '">' . $value['title'] . '</a></div>';
+    $card_html .= '<div class="card--teaser">' . $content_leadin_short . '</div>';
+    $card_html .= '</div>';
     $card_html .= '</div>';
 
 }

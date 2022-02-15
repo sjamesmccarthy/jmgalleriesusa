@@ -1,6 +1,9 @@
 <?php
 	$ips = explode('||', $this->config->package_blacklist);
 	if (!in_array($this->system->ip, $ips)) {
+`
+	# Public Facing: UA-73077319-2
+	# Studio Admin: G-ZT74Z3MSP1`
 ?>
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -13,7 +16,6 @@
   gtag('config', 'G-ZT74Z3MSP1');
 </script>
 
-<?php 
-	} 
+<?php
+	}
 ?>
-	

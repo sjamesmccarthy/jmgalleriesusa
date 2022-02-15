@@ -1,9 +1,9 @@
 <section class="admin--reports-add">
     <div class="grid">
-       
+
         <!-- insert navigation component -->
         <?= $navigation_html ?>
-    
+
         <div class="col reports-add--container">
 
             <div class="notification success <?= $notification_state ?>"><?= $_SESSION['notification_msg'] ?></div>
@@ -12,8 +12,8 @@
                 <div class="col pb-0">
                     <h2><?= $this->page->title ?></h2>
                     <p class="close-x"><i class="fas fa-times-circle"></i></p>
-                    
-                    <div class="tabs"> 
+
+                    <div class="tabs">
                         <div class="tab-SQL <?= $active_filter ?>">SQL</div>
                         <div class="tab-RESULT" ><a href="?id=<?= $res_report_id ?>&report=true">RESULT</a></div>
                     </div>
@@ -41,7 +41,7 @@
                     </p>
 
                     <p class="pt-16" style="width: 24%; float:right; margin-left: 8px;">
-                      <input type="checkbox" id="fav" name="fav" value="1" <?= ($res_fav == "1" ? "CHECKED" : ""); ?> /> 
+                      <input type="checkbox" id="fav" name="fav" value="1" <?= ($res_fav == "1" ? "CHECKED" : ""); ?> />
                       <label for="fav" style="font-size: 1.2rem; background-color: transparent;">Mark As Favorite</label>
                     </p>
 
@@ -51,7 +51,7 @@
                     <label>sql</label>
                     <textarea id="sql_c" name="sql_c"><?= $res_sql ?></textarea>
                 </div>
-                
+
                 <div>
                     <div class="half-size valign-top green"><span class="sql_e_banner tiny ml-16">SQL Saved (</span><span class="sql_e_banner_count tiny">0</span><span class="sql_e_banner tiny">)</span></div>
                     <div class="half-size"><p id="sql_e" class="btn_small_gray pull-right ml-8 active">Edit SQL</p>
@@ -69,7 +69,7 @@
         </div>
 
         <div id="form_result" class="<?= $form_result_state ?>">
-             
+
              <table id="dataTable" class="display">
                 <thead>
                     <tr>
@@ -83,10 +83,10 @@
                 <p class="pt-32">SQL.statement</p>
                 <p><?= $res_sql ?></p>
 
-                <p class="pt-32">SQL.headers</p>
+                <p class="pt-32">DataTables.headers</p>
                 <p><?= $dataTableColumns ?></p>
 
-                <p class="pt-32">SQl.data</p>
+                <p class="pt-32">DataTables.json</p>
                 <p><?= $result_json ?></p>
 
             </div>
@@ -151,7 +151,7 @@ jQuery(document).ready(function($){
                   console.log("FAIL-Request: "+JSON.stringify(request));
               }
             });
-            
+
         }
 
     });
@@ -181,7 +181,7 @@ jQuery(document).ready(function($){
     //     });
 
     // });
-    
+
     $('.tab-SQL').on("click", function() {
         console.log('tab-SQL-click');
         $('#form_result').hide();
@@ -190,7 +190,7 @@ jQuery(document).ready(function($){
         $('.tab-RESULT').removeClass('active');
         $('.tab-SQL').addClass('active');
     });
-    
+
     $('.tab-menu').on("click", function() {
        $('.tab-menu').removeClass("active");
        $('.tab-' + $(this).attr("data-name") ).addClass('active');
@@ -198,12 +198,12 @@ jQuery(document).ready(function($){
     });
 
     $('#sendform').on("click", function() {
-        $(":input[required]").each(function () {                     
+        $(":input[required]").each(function () {
         var myForm = $('#sendform');
-        if (!$myForm[0].checkValidity()) 
-          {                
-            $('#suppliers-add').submit();               
-          } 
+        if (!$myForm[0].checkValidity())
+          {
+            $('#suppliers-add').submit();
+          }
         });
     });
 

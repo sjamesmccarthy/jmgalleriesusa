@@ -1,0 +1,21 @@
+{
+  "product_id": 1,
+  "artist_id": 1,
+  "title": "Watkins Windwos",
+  "desc": " Before there were paved roads, motorized vehicles, well marked trails and Ansel Adams, there were early pioneers, cabins in the woods and landscapes of the beautiful Yosemite Valley never seen before. Carleton Watkins, an American photographer, was one of the early pioneers of Yosemite in 1861 and it is said that Senator John Conness passed Watkins' photographs around Congress which influenced President Abraham Lincoln to sign the Yosemite Grant in 1864 that declared Yosemite Valley inviolable. This view, now known as Tunnel View, is what Watkins looked at when looking out the front window of his cabin every day; talk about an amazing views.",
+  "desc_short": "Take a peek back in time.",
+  "tags": "mountains, yosemite, landscape, framed-art",
+  "image": "{\"image1\":\"test_1.jpg\",\"image2\":\"test_2.jpg\",\"image3\":\"test_3.jpg\",\"image4\":\"test_4.jpg\"}",
+  "price": "'4995.95'",
+  "taxable": "false",
+  "on_sale": null,
+  "upc": null,
+  "in_stock": "true",
+  "quantity": 1,
+  "ship_tier": "{\"USPS\": {  \"name\":\"USPS Shipping (no tracking)\",  \"abrv\":\"usps\",  \"tracking\":\"false\",  \"amount\":\"0\"},\"UPS\": {  \"name\":\"UPS Shipping (with tracking)\",  \"abrv\":\"ups\",  \"tracking\":\"true\",  \"amount\":\"30\"},\"FEDEX\": {    \"name\":\"FedEx Shipping (with tracking)\",    \"abrv\":\"fedex\",    \"tracking\":\"true\",    \"amount\":\"60\"}}",
+  "type": "single",
+  "uri_path": "watkins-window-framed-art",
+  "created": "2020-11-17 05:27:47",
+  "status": "ACTIVE",
+  "last_update": "2020-12-02 09:36:59"
+}

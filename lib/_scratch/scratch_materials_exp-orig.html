@@ -1,0 +1,18 @@
+/* Old code */
+if(x < max_fields){ //max input box allowed x++; //text box increment $(wrapper).append('<div
+    class="supplier_materials"><label for="material-expense">MATERIAL EXPENSE</label>
+    <div class="manual-entry material_expense_supplier-' + x + '-manual-entry half-size"><input type="text"
+            id="material_expense_supplier-' + x + '-manual-entry"
+            name="material_expense_supplier-' + x + '-manual-entry[]" placeholder="MANUAL ENTRY" value="" disabled><span
+            class="cancel-link" data-field="material_expense_supplier-' + x + '">X</span></div>
+    <div
+        class="material_expense_supplier-' + x + '-container material_expense_supplier_container select-wrapper half-size">
+        <select id="material_expense_supplier-' + x + '" name="material_expense_supplier[]" data-exp="' + x + '">
+            <option value="-">SELECT A MATERIAL EXPENSE</option><?= $materials_html ?>
+        </select></div> <label for="material-quantity">QUANTITY</label><input data-exp="' + x + '"
+        class="width-auto material_quan" type="text" id="material_quantity-' + x + '" name="material_quantity[]"
+        placeholder="QUANTITY" value="0"> <label for="material-cost" class="ml-1">COST</label><input
+        data-exp="' + x + '" class="width-auto material_quan" type="text" id="material_cost-' + x + '"
+        name="material_cost[]" placeholder="$" value="0.00"><span class="remove-add"><i data-exp="' + x + '"
+            class="fas fa-times"></i></span></div>');
+    }

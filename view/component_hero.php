@@ -10,12 +10,11 @@ version: 1
 */
 
 $catalog = ltrim($this->page->catalog_path, '/');
-$hero_cta_label = "VIEW THE WORK";
-$hero_cta_link = "/thework";
 
 if ($catalog == '') {
     /* Create an API call to get the Polarized listings */
     $hero_result = $this->api_Hero_Get_Image();
+    $hero_cta = '<a href="' . $this->hero_link . '">Explore More ' . $this->hero_title . '</a></p>';
 
     if($this->hero_featured_contrast == "1") {
         $explore_background = 'rgba(0,0,0,.2)';
@@ -38,7 +37,7 @@ if ($catalog == '') {
 
                 <div class="hero-container">
                 <div style="position: absolute; top: 2rem; left: 1.5rem;">
-                    <p style="background-color: $explore_background;  border-radius: 6px; padding: 2px 10px; font-size: .9rem;"><a style="color: #000;" href="$hero_cta_link">$hero_cta_label</a></p>
+                    <p class="hero_cta" style="background-color: $explore_background">$hero_cta</p>
                 </div>
                     <div class="hero-text-container">
 

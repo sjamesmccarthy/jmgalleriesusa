@@ -12,7 +12,7 @@
         $thumb_new_releases_html .= '<div id="new-releases" class="grid-4_sm-2 grid-4_md-3">';
         $thumb_new_releases_html .= '<div class="col-12_sm-12 text-center mb-16"><!-- col-10_sm-12-->';
         $thumb_new_releases_html .= '<h2 class="h2"><a href="/new-releases/">NEW RELEASES</a></h2>';
-        $thumb_new_releases_html .= '<p class="light --subhead sm-hidden">a collection of <a class="link-collection-sub-color" href="/new-releases"><b>new release fine-art</b></a> photography</p>';
+        $thumb_new_releases_html .= '<p class="light --subhead sm-hidden">a collection of <a class="link-collection-sub-color" href="/new-releases"><b>new release fine-art</b></a>   photography / <a class="color-black" href="/thework">the work</a></p>';
         $thumb_new_releases_html .= '</div>';
         $thumb_new_releases_html .= '<div class="view-all col-2-middle sm-hidden hidden">';
         $thumb_new_releases_html .= '<a href="/new-releases">view all</a>';

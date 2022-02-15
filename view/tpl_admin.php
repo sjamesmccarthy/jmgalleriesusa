@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <?php $this->getPartial('header'); ?>
+    <?php $this->getPartial('header','admin'); ?>
 
     <body>
     <!--  class="dark-theme" -->
@@ -18,11 +18,5 @@
 
                 <?php $this->getPartial('footer'); ?>
     </body>
-
-    <?php
-
-        $this->getPartial('analytics_studio-admin');
-
-    ?>
 
 </html>

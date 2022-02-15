@@ -20,6 +20,4 @@
                 <?php $this->getPartial('footer'); ?>
     </body>
 
-    <?php $this->getPartial('analytics'); ?>
-
 </html>

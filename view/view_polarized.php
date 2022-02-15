@@ -8,8 +8,8 @@
             <ul class="filter-editions-list">
                 <li class="filter-all selected">Everything</li>
                 <li class="filter-notes">Articles</li>
-                <li class="filter-youtube"><a target="_youtube" href="https://vlog.jmgalleries.com">@YouTube</a></li>
                 <li class="filter-filmstrips">Filmstrips</li>
+                <li class="filter-youtube"><a target="_youtube" href="https://vlog.jmgalleries.com">@YouTube</a></li>
             </ul>
 
         </div>
@@ -43,7 +43,7 @@
 
         setTimeout(function() {
             <?php if(!isSet($_REQUEST['filter'])) { ?>
-               $('.filter-notes').trigger("click");
+               // $('.filter-all').trigger("click");
                // alert('fitlering');
            <?php } ?>
          }, 10);
