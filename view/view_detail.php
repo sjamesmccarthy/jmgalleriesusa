@@ -21,30 +21,38 @@
 
     <?= $catalog_no_hidden ?>
 
-    <div class="grid mt-32">
+    <div class="grid-center mt-32">
 
         <div class="col-9_md-9_sm-12" style="position:relative;">
             <h1 class="detail-h1"><?= $photo_meta['title'] ?></h1>
-            <p class="edition-title"><?= $edition_desc ?><?= $edition_max ?>  <?= $edition_desc_material_slash ?></span></p>
+            <p class="edition-title"><?= $photo_meta['loc_place'] ?> &mdash; <?= $photo_meta['loc_city'] ?>, <?= $photo_meta['loc_state'] ?></span></p>
 
-            <p class="mt-32 detail-story"><?= $photo_meta['loc_place'] ?> in  <?= $photo_meta['loc_city'] ?>, <?= $photo_meta['loc_state'] ?> &mdash;
-            <?= $photo_meta['story'] ?></p>
+<!--             <p class="mt-32 detail-story"><?= $photo_meta['loc_place'] ?> in  <?= $photo_meta['loc_city'] ?>, <?= $photo_meta['loc_state'] ?> &mdash;
+            </p>
+
+            <p>
+              <?= $photo_meta['story'] ?>
+            </p> -->
+
+            <div class="grid-center">
+             <div class="col">
+              <p class="blue price ml-16 mt-8">$<span id="price_view" class="price"><?= number_format($default_price, 0) ?></span></p>
+<!--             <p class="small ml-16"><?= $edition_desc ?><?= $edition_max ?>  <?= $edition_desc_material_slash ?></span></p> -->
+              <p class="frame_data blue text-center pb-16"></p>
+
+            <?= $sizes_pricing ?>
+            <?= $sizes_frames ?>
+            <button class="mt-32"><?= $btn ?></button>
+
+            <p class="mt-32 ml-8 small text-center">Questions?<br /><a class="small underline normal-weight"target="_infoTab" href="/contact">Contact an Art consultant</a></p>
+            <p class="ml-8 text-center"><a target="_infoTab" class="small underline normal-weight" href="/styles">Click here for framing information</a></p>
+            </div>
+            </div>
 
             <?= $gallery_details ?>
         </div>
 
-      <div class="col pt-0">
-        <!-- <p class="small blue" style="margin-bottom: -10px; margin-left: 5px;">USD</p> -->
-        <p class="blue price ml-16 mt-8">$<span id="price_view" class="price"><?= number_format($default_price, 0) ?></span></p>
-        <p class="frame_data blue text-center pb-16"></p>
-
-      <?= $sizes_pricing ?>
-      <?= $sizes_frames ?>
-      <button class="mt-32"><?= $btn ?></button>
-
-      <p class="mt-32 ml-8 small text-center">Questions?<br /><a class="small underline normal-weight"target="_infoTab" href="/contact">Contact an Art consultant</a></p>
-      <p class="ml-8 text-center"><a target="_infoTab" class="small underline normal-weight" href="/styles">Click here for framing information</a></p>
-      </div>
+    <!-- previous location of buy form -->
 
     </div>
 
@@ -54,7 +62,7 @@
 
 <!-- generated html from component file: component_most_popular -->
 <!-- removed 9/25/2020 -->
-<section id="you-may-like" class="filmstrip mt-64">
+<section id="you-may-like" class="filmstrip mt-16">
     <?= $you_may_also_like_html ?>
 </section>
 <!-- /generated html from component file -->

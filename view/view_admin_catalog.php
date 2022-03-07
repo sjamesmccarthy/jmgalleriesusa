@@ -34,7 +34,7 @@
                                 <th>Catalog Category</th>
                                 <th>Edition</th>
                                 <th style="display: none">Status</th>
-                                <th>Views</th>
+<!--                                 <th>Views</th> -->
                                 <th>Last View</th>
                             </tr>
                         </thead>
@@ -80,8 +80,8 @@
                             if(row.category == "Abstract, Architecture & People") { var cate_code = 'AAP'; }
                             if(row.category == "Mountains, Deserts & Trees") { var cate_code = 'MDT'; }
                             if(row.as_open == '1') { var ed = 'OT'; } else { var ed = 'LE'; }
-                            if(row.featured     == '1') { var feat = '<i class="fas fa-asterisk"></i>'; } else { var feat = ''; }
-                            data = ' <a href="/studio/catalog-add?id=' + row.catalog_photo_id + '">' + data + ' ' + '</a><br><span style="font-size: .8rem;">' + cate_code + row.catalog_photo_id + ed + '_' + data.replace(/\s+/g, '-').toUpperCase() + '</span>';
+                            /* if(row.featured     == '1') { var feat = '<i class="fas fa-asterisk"></i>'; } else { var feat = ''; } */
+                            data = '<p style="display:inline-block; margin-right: 1rem;"><img style="width: 80px;" src="/catalog/__thumbnail/' + row.file_name + '.jpg" /></p><p style="display:inline-block; vertical-align: top;"><a href="/studio/catalog-add?id=' + row.catalog_photo_id + '">' + data + ' ' + '</a><br><span style="font-size: .8rem;">' + cate_code + row.catalog_photo_id + ed + '_' + data.replace(/\s+/g, '-').toUpperCase() + '</span></p>';
                         }
                         return data;
                     }
@@ -97,7 +97,7 @@
                     }
                 },
                 { data: 'status', "bVisible":false },
-                { data: 'views' },
+                /* { data: 'views' }, */
                 { data: 'lastview',
                     "render": function(data, type, row, meta){
                         return data;

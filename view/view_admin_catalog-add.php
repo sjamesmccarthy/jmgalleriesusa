@@ -202,6 +202,7 @@
                 <div class="select-wrapper half-size">
                 <label>camera</label>
                 <select id="camera" name="camera">
+                    <option value="">CAMERA</option>
                     <option value="Nikon Z6 II" <?= ($camera == "Nikon Z6 II" ? "SELECTED" : ""); ?>>Nikon Z6 II</option>
                     <option value="Nikon Z5" <?= ($camera == "Nikon Z5" ? "SELECTED" : ""); ?>>Nikon Z5</option>
                     <option value="Nikon D810" <?= ($camera == "Nikon D810" ? "SELECTED" : ""); ?>>Nikon D810</option>
@@ -217,7 +218,7 @@
                 <div class="select-wrapper half-size">
                 <label>lens</label>
                 <select id="lens_model" name="lens_model">
-                    <!-- <option value="">LENS</option> -->
+                    <option value="">LENS</option>
                     <option value="Nikkor Z 24-200" <?= ($lens_model == "Nikkor Z 24-200" ? "SELECTED" : ""); ?>>Nikkor Z 24-200</option>
                     <option value="Nikkor Z 24-50" <?= ($lens_model == "Nikkor Z 24-50" ? "SELECTED" : ""); ?>>Nikkor Z 24-50</option>
                     <option value="Tamron SP 85mm F/1.8 Di VC USD" <?= ($lens_model == "Tamron SP 85mm F/1.8 Di VC USD" ? "SELECTED" : ""); ?>>Tamron SP 85mm F/1.8 Di VC USD</option>
@@ -238,16 +239,18 @@
             <div>
 
             <div>
-                <label>aperture (6)</label>
-                <input class="half-size" type="text" id="aperture" name="aperture" placeholder="APERTURE (eg, 6)" value="<?= $aperture ?>">
-                <label>shutter (1/125)</label>
+                <label>iso (125)</label>
+                <input class="half-size" type="text" id="iso" name="iso" placeholder="ISO" value="<?= $iso ?>">
+
+                <label>shutter (1/125, 2m, 30s)</label>
                 <input class="half-size" type="text" id="shutter" name="shutter" placeholder="SHUTTER (eg, 1/125)" value="<?= $shutter ?>">
             </div>
             <div>
-                <label>focal lendth (70)</label>
+                <label>aperture (6)</label>
+                <input class="half-size" type="text" id="aperture" name="aperture" placeholder="APERTURE (eg, 6)" value="<?= $aperture ?>">
+
+                <label>focal length (70)</label>
                 <input class="half-size" type="text" id="focal_length" name="focal_length" placeholder="FOCAL LENGTH (eg, 70)" value="<?= $focal_length ?>">
-                <label>iso (125)</label>
-                <input class="half-size" type="text" id="iso" name="iso" placeholder="ISO" value="<?= $iso ?>">
             </div>
 
             <button class="mt-32 w-50" id="sendform" value="SEND"><?= $button_label ?></button>

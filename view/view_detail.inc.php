@@ -82,7 +82,7 @@
 
         if ($photo_meta['desc'] == 'acrylic') {
             $edition_desc_material = 'HD Acrylic or HD Chromaluxe&reg; Metal (⅛ inch thick including wall mount)';
-            $edition_frame = 'One of our <a href="/styles">Premium Designer Frames</a> can be optionally added for an additional cost.<!-- This fine-art may also be available in HD Chromaluxe&reg; Metal. Please <a href="/contact">contact an art consultant</a> for availability and pricing.-->';
+            $edition_frame = '<!--One of our <a href="/styles">Premium Designer Frames</a> can be optionally added for an additional cost.--><!-- This fine-art may also be available in HD Chromaluxe&reg; Metal. Please <a href="/contact">contact an art consultant</a> for availability and pricing.-->';
             $frame_disabled = 'disabled';
             $frame_disabled_option = '<option value="FRAMELESS">No Frame Included With Acrylic</option><option value="ADDWITHACRYLIC">+ Add Additional Premium Frame (+$$)</option>';
             $frame_info_link = 'Premium Designer Frames pricing';
@@ -119,7 +119,7 @@
 
         if(array_key_exists('limited', $edition_styles_array)) {
             $edition_desc = 'Limited Edition';
-            $edition_max = " / " . $edition_styles_array['limited'];
+            $edition_max = $edition_styles_array['limited'];
         }
 
         $hidden_edition_type = '<input type="hidden" name="edition_type" value="limited" />';
@@ -153,7 +153,7 @@
 
         $btn = "BUY ARTWORK";
         $btn_link = '<a style="display:block;" href="/contact?photo=' . $photo_meta['file_name'] . '">'; //class="btn-nudge"
-        $gallery_details = '<p class="pt-32 bold">About The Art</p><p class="pb-16">This Limited Edition is printed on ' . $edition_desc_material . ' and the available sizes include: ' . $this->config->available_sizes_limited . ' inches. <!-- (larger sizes available on special order, <a href="/contact">contact an art consultant</a>) -->' . $edition_frame . '<!-- If you have any questions about our ' . $edition_desc_material . ', or need more information about out <a href="/styles">styles, frames and editions</a>, please <a href="/contact">contact an art consultant</a>.--></p>';
+        $gallery_details = '<!--<p class="pt-32 bold">About The Art</p>--><p class="pt-32 pb-16 text-center">Limited Edition of ' . $edition_max . ', signed with Certificate of Authenticity and Digital Provenance Archived. Printed on ' . $edition_desc_material . ' and the available sizes include: ' . $this->config->available_sizes_limited . ' inches. <!-- (larger sizes available on special order, <a href="/contact">contact an art consultant</a>) -->' . $edition_frame . '<!-- If you have any questions about our ' . $edition_desc_material . ', or need more information about out <a href="/styles">styles, frames and editions</a>, please <a href="/contact">contact an art consultant</a>.--></p>';
 
         /* PRICING SELECT */
         $sizes_pricing = '<div class="col-4_sm-12 select-wrapper">
@@ -226,7 +226,7 @@
 
         $btn = "BUY ARTWORK";
         $btn_link = '<a style="display:block;" class="mt-16" href="/contact?photo=' . $photo_meta['file_name'] . '&open=true">'; //class="btn-nudge"
-        $gallery_details = '<p class="mt-32">This Open Edition is printed on ' . $edition_desc_material . ' and available in sizes of: ' . $this->config->available_sizes_open . ' inches (print only, may include 1/2 inch white border). It can also be framed in an optional Studio Frame for additional cost.';
+        $gallery_details = '<p class="mt-32">Open Edition, un-numbered and not signed. Printed on ' . $edition_desc_material . ' and available in sizes of: ' . $this->config->available_sizes_open . ' inches (print only, may include 1/2 inch white border). It can also be framed in an optional Studio Frame for additional cost.';
 
         /* Picking a default value to show */
         if($available_sizes != "in_code") {

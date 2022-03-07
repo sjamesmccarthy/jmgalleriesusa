@@ -2003,6 +2003,9 @@ body {
     body.dark-theme #top-nav-home .topnav-logo .topnav--logo-img {
       -webkit-filter: invert(0) !important;
               filter: invert(0) !important; }
+    body.dark-theme .topnav--logo-img {
+      -webkit-filter: invert(1) !important;
+              filter: invert(1) !important; }
     body.dark-theme .nav-mobile-home > p {
       color: #FFFFFF; }
     body.dark-theme .detail-story, body.dark-theme .edition-title {
@@ -2056,7 +2059,6 @@ body {
     body.dark-theme .landscape, body.dark-theme .portrait, body.dark-theme .square {
       background-color: rgba(255, 255, 255, 0.05); }
       body.dark-theme .landscape > p > img, body.dark-theme .portrait > p > img, body.dark-theme .square > p > img {
-        border: 1px solid rgba(233, 233, 233, 0.2);
         background-color: transparent; }
     body.dark-theme .bx-wrapper .bx-pager.bx-default-pager a {
       color: #2574A9 !important; }
@@ -2253,6 +2255,9 @@ blockquote {
 .color-black {
   color: #4a4a4a !important; }
 
+.color-blue {
+  color: #2574A9; }
+
 .noshow {
   display: none !important; }
 
@@ -2351,6 +2356,9 @@ form .select-wrapper:after {
 
 form .cancel-button {
   margin-left: 40px; }
+
+select:focus {
+  outline-style: none; }
 
 .half-size {
   width: 49%;
@@ -4276,13 +4284,13 @@ form #buysize, form #frame {
       text-align: center; } }
   @media (min-width: 767px) {
     .detail-h1 {
-      text-align: left; } }
+      text-align: center; } }
   @media (min-width: 1112px) {
     .detail-h1 {
-      text-align: left; } }
+      text-align: center; } }
   @media (min-width: 1200px) {
     .detail-h1 {
-      text-align: left; } }
+      text-align: center; } }
 .edition-title {
   text-transform: uppercase;
   font-weight: 300;
@@ -4299,7 +4307,7 @@ form #buysize, form #frame {
       font-size: 1rem; } }
   @media (min-width: 767px) {
     .edition-title {
-      text-align: left;
+      text-align: center;
       font-size: 1rem; } }
   @media (min-width: 1112px) {
     .edition-title {
@@ -4307,7 +4315,7 @@ form #buysize, form #frame {
       font-size: 1rem; } }
   @media (min-width: 1200px) {
     .edition-title {
-      text-align: left;
+      text-align: center;
       font-size: 1rem; } }
 .price {
   color: #2574A9;
@@ -4341,6 +4349,7 @@ form #buysize, form #frame {
   color: #4D4D4D; }
 
 .detail-story {
+  display: block;
   color: #4D4D4D;
   font-size: 1.2rem;
   padding-right: .5rem; }
@@ -4407,7 +4416,6 @@ form #buysize, form #frame {
     box-shadow: 0px 20px 25px 0px rgba(0, 0, 0, 0.3);
     box-sizing: border-box;
     background-color: #FFF;
-    border-radius: 6px;
     /* iPad, desktop */
     /* Surface Duo */
     /* iPhone 6/7/8 Plus, Pixel 2 XL, Pixel 2 */
@@ -4451,7 +4459,6 @@ form #buysize, form #frame {
   display: block; }
   .landscape > p > img {
     max-width: 100%;
-    border-radius: 6px;
     vertical-align: middle;
     box-shadow: 0px 20px 25px 0px rgba(0, 0, 0, 0.3);
     box-sizing: border-box; }
