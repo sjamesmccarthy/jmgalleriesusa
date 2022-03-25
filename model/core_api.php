@@ -15,6 +15,7 @@ class Core_Api extends Fieldnotes_Api
 
 		// Create connection
         $this->mysqli  = new mysqli ($hostname, $username, $password, $dbname);
+
 	}
 
     public function checkDBConnection($function='Null') {
@@ -849,8 +850,10 @@ class Core_Api extends Fieldnotes_Api
             (int)$max= count($data)-1;
             $index = rand(0, $max);
 
-            $this->hero_title = $data[$index]['category'];
+            $this->hero_title = $data[$index]['title'];
+            $this->hero_collection = $data[$index]['category'];
             $this->hero_link  = $data[$index]['path'];
+            $this->hero_link_image = $data[$index]['file_name'];
             $this->hero_image = $data[$index]['file_name'] . '.jpg';
             $this->hero_featured_contrast = $data[$index]['featured_contrast'];
             // $this->hero_position = 'top';

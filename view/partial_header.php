@@ -9,16 +9,16 @@
     <title><?= $title_formatted ?></title>
 
     <meta name='title' content='<?= $this->page->title ?> by j.McCarthy'/>
-    <meta name='description' content='jM Galleries, Everyday Fine Art Photography of People, Landscapes, Waterfalls, Oceans, Mountains and Deserts. <?= $this->page->title ?>' />
+    <meta name='description' content='Everyday Home and Office Wall Art by j.McCarthy Photography. Landscapes, Waterfalls, Oceans, Mountains and Deserts | <?= $this->page->title ?>' />
     <meta version="<?= $this->config->package_version ?>" />
     <meta site_name="<?= $this->config->site_name ?>" />
     <meta copyright="<?= $this->config->copyright ?>" />
-    <link rel="author" href="humans.txt">
+    <link rel="author" href="https://jmgalleries.com/humans.txt">
     <meta name='dmca-site-verification' content='MjZuTEwyNWlGMlZoazhOWUxEOHJqUT090' />
 
     <meta property="og:title" content="<?= $this->page->title ?> by j.McCarthy" />
     <meta property="og:url" content="https:<?= $this->routes->URI->url ?>" />
-    <meta property="og:description" content="Journey to where everyday fine-art seduces you to day dream, share a story and connect with the human experience." />
+    <meta property="og:description" content="Everyday Home and Office Wall Art by j.McCarthy Photography. Landscapes, Waterfalls, Oceans, Mountains and Deserts." />
     <meta property="og:type" content="website" />
     <meta property="og:image" content="https://jmgalleries.com<?= $og_image ?>" />
     <meta property="og:image:alt" content="<?= $this->page->title ?> by j.McCarthy" />

@@ -45,14 +45,20 @@
                 <!-- <li class="timeline-history mb-32">
                 <h2>TIMELINE</h2>
                 </li> -->
-                <li
-                    class="timeline-history pb-32">
 
-                <h3>Artist Statement</h3>
+                <li>
+                    <h3 class="pb-16" style="text-align: center">Artist Statement</h3>
 
                 <p class="name-statement pb-16">
-                    Creativity and art have always had a hidden crush on me, a self-taught explorer in the field of landscape photography. I ask that you take just a moment to explore why I create and journey to where everyday fine-art seduces you to day dream, share a story and connect with the human experience.
+                    <!-- Creativity and art have always had a hidden crush on me, a self-taught explorer in the field of landscape photography. I ask that you take just a moment to explore why I create and journey to where everyday fine-art seduces you to day dream, share a story and connect with the human experience. -->
+                    Take a moment and explore why I create. Explore my hidden crush of everyday, fine-art landscape photography that seduced my heart for the outdoors into a passion to tell the story around us, connect the human experience and for a moment dream with our eyes open.
                 </p>
+
+                <div class="divider"></div>
+                </li>
+
+                <li
+                    class="timeline-history pb-32">
 
 <!--                 <h3>What Am I Doing Now?</h3>
                 <p class="pb-16" style="margin-top: 0; border-bottom: 1px solid #a9a9a9">Check out my <a target="_new" href="https://youtube.com/c/jmgalleriesusa">YouTube Channel</a>, <a target="_new" href="https://instagram.com/jmgalleriesusa">Instagram</a> and <a target="_new" href="https://twitter.com/jmgalleriesusa">Twitter</a> and be in the know.</p> -->

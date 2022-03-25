@@ -91,6 +91,10 @@
                 right: 0;
             }
 
+            a {
+              color: #4a4a4a;
+            }
+
             &:hover:not(.selected-item) {
                 // border-bottom: 5px solid $color-light-gray;
                 border-left: 3px solid $color-black;
@@ -99,7 +103,7 @@
                 cursor: pointer;
 
                 a {
-                    color: $color-black;
+                    color: $color-blue;
                 }
             }
         }

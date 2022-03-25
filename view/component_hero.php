@@ -14,17 +14,21 @@ $catalog = ltrim($this->page->catalog_path, '/');
 if ($catalog == '') {
     /* Create an API call to get the Polarized listings */
     $hero_result = $this->api_Hero_Get_Image();
-    $hero_cta = '<a href="' . $this->hero_link . '">Explore More ' . $this->hero_title . '</a></p>';
+    // $hero_cta = '<a href="' . $this->hero_link . '">Explore More ' . $this->hero_collection . '</a></p>';
 
     if($this->hero_featured_contrast == "1") {
         $explore_background = 'rgba(0,0,0,.2)';
+        $explore_background = '#2574A9';
         $logo_invert = "logo-dark";
         $this->color_text = "color-black";
     } else {
         $explore_background = 'rgba(255,255,255,.8)';
+        $explore_background = '#2574A9';
         $logo_invert = "logo-white";
         $this->color_text = "color-white";
     }
+
+    $hero_cta = '<a class="" href="' . $this->hero_link . '/' . $this->hero_link_image . '">' . strtoupper($this->hero_title) . ' &mdash; </a> <a class="" href="' . $this->hero_link . '">' . $this->hero_collection . '</a> <i class="fa-solid fa-heart icon"></i></p>';
 
     $html = <<< END
         <div class="noshow" style="text-align: center;">
@@ -36,7 +40,7 @@ if ($catalog == '') {
         <div id="hero" data-url="$this->hero_image" style="box-shadow: 0px 20px 25px 0px rgba(0, 0, 0, .3);">
 
                 <div class="hero-container">
-                <div style="position: absolute; top: 2rem; left: 1.5rem;">
+                <div style="position: absolute; top: 0; left: 0;">
                     <p class="hero_cta" style="background-color: $explore_background">$hero_cta</p>
                 </div>
                     <div class="hero-text-container">

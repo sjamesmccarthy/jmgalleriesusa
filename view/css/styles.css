@@ -2092,6 +2092,13 @@ main {
 .link-collection-sub-color {
   color: #4a4a4a; }
 
+.divider {
+  border-bottom: 1px solid #e9e9e9;
+  width: 50%;
+  margin-left: 25%;
+  margin-bottom: 3rem;
+  margin-top: 1rem; }
+
 .content_wrapper {
   min-height: 65vh;
   margin: auto; }
@@ -2935,18 +2942,97 @@ button a {
       .sub-nav-items > a {
         font-size: 1.25rem; } }
 .hero_cta {
-  border-radius: 6px;
-  padding: 2px 10px;
-  font-size: .9rem;
+  border-bottom-right-radius: 24px;
+  padding: 1rem 3.5rem 1rem 2.5rem;
+  font-size: 1rem;
   color: #000; }
+  .hero_cta a {
+    font-weight: 800;
+    color: #e9e9e9; }
+  @media (min-width: 320px) {
+    .hero_cta {
+      padding: 1rem 3.5rem 1rem 2.5rem;
+      font-size: 1rem; } }
+  @media (min-width: 376px) {
+    .hero_cta {
+      padding: 1rem 1.5rem 1rem 1.5rem;
+      font-size: .85rem; } }
+  @media (min-width: 767px) {
+    .hero_cta {
+      padding: 1rem 3.5rem 1rem 2.5rem;
+      font-size: 1rem; } }
+  @media (min-width: 1112px) {
+    .hero_cta {
+      padding: 1rem 3.5rem 1rem 2.5rem;
+      font-size: 1rem; } }
+  @media (min-width: 1200px) {
+    .hero_cta {
+      padding: 1rem 3.5rem 1rem 2.5rem;
+      font-size: 1rem; } }
   .hero_cta:hover {
     background-color: #2574A9 !important; }
   .hero_cta:hover > a {
     color: #FFFFFF; }
+  .hero_cta .icon {
+    font-size: .6rem;
+    color: #FFFFFF;
+    vertical-align: top; }
 
 .logo-dark {
   -webkit-filter: invert(0) !important;
   filter: invert(0) !important; }
+
+@-webkit-keyframes shake-animation {
+  0% {
+    -webkit-transform: translate(0, 0);
+            transform: translate(0, 0); }
+  1.78571% {
+    -webkit-transform: translate(5px, 0);
+            transform: translate(5px, 0); }
+  3.57143% {
+    -webkit-transform: translate(0, 0);
+            transform: translate(0, 0); }
+  5.35714% {
+    -webkit-transform: translate(5px, 0);
+            transform: translate(5px, 0); }
+  7.14286% {
+    -webkit-transform: translate(0, 0);
+            transform: translate(0, 0); }
+  8.92857% {
+    -webkit-transform: translate(5px, 0);
+            transform: translate(5px, 0); }
+  10.71429% {
+    -webkit-transform: translate(0, 0);
+            transform: translate(0, 0); }
+  100% {
+    -webkit-transform: translate(0, 0);
+            transform: translate(0, 0); } }
+
+@keyframes shake-animation {
+  0% {
+    -webkit-transform: translate(0, 0);
+            transform: translate(0, 0); }
+  1.78571% {
+    -webkit-transform: translate(5px, 0);
+            transform: translate(5px, 0); }
+  3.57143% {
+    -webkit-transform: translate(0, 0);
+            transform: translate(0, 0); }
+  5.35714% {
+    -webkit-transform: translate(5px, 0);
+            transform: translate(5px, 0); }
+  7.14286% {
+    -webkit-transform: translate(0, 0);
+            transform: translate(0, 0); }
+  8.92857% {
+    -webkit-transform: translate(5px, 0);
+            transform: translate(5px, 0); }
+  10.71429% {
+    -webkit-transform: translate(0, 0);
+            transform: translate(0, 0); }
+  100% {
+    -webkit-transform: translate(0, 0);
+            transform: translate(0, 0); } }
 
 /* component_new-releases */
 #new-releases h4 {
@@ -3399,12 +3485,14 @@ button a {
     .navigation--container .toolbox ul li span.add-inline {
       position: absolute;
       right: 0; }
+    .navigation--container .toolbox ul li a {
+      color: #4a4a4a; }
     .navigation--container .toolbox ul li:hover:not(.selected-item) {
       border-left: 3px solid #4a4a4a;
       background-color: #f9f9f9;
       cursor: pointer; }
       .navigation--container .toolbox ul li:hover:not(.selected-item) a {
-        color: #4a4a4a; }
+        color: #2574A9; }
   .navigation--container .toolbox .selected-item {
     background-color: #f9f9f9;
     border-left: 3px solid #2574A9;
@@ -3475,8 +3563,8 @@ button a {
 
 .nav-mobile-menu {
   position: absolute;
-  top: 3rem;
-  right: .7rem;
+  top: .5rem;
+  right: 0;
   color: #FFFFFF; }
   @media (min-width: 320px) {
     .nav-mobile-menu {
@@ -3678,15 +3766,13 @@ button a {
       color: #FFF; }
     .nav-mobile-ul > li.close {
       position: absolute;
-      top: 3rem;
-      right: 1.5rem; }
+      top: .8rem;
+      right: 1rem; }
       .nav-mobile-ul > li.close:hover {
         color: #CCC;
-        cursor: pointer;
-        background-color: #000; }
+        cursor: pointer; }
     .nav-mobile-ul > li:not(:last-child):hover {
-      background-color: #CCC;
-      color: #000;
+      color: #FFF;
       cursor: pointer;
       border-radius: 24px; }
       .nav-mobile-ul > li:not(:last-child):hover a {
@@ -4101,7 +4187,9 @@ fieldset {
   font-size: 1rem; }
 
 .name-statement {
-  font-size: 1.3rem !important; }
+  font-size: 1.8rem !important;
+  text-align: justify;
+  padding: 0 10rem; }
 
 .artist-statement {
   box-sizing: border-box; }
@@ -4176,9 +4264,6 @@ fieldset {
 
 .timeline {
   width: 100%; }
-
-.timeline-history > h3 {
-  display: inline-block; }
 
 .timeline-history > h4 {
   font-size: 1.5rem;

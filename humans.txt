@@ -2,14 +2,33 @@
 
 Site name:  jM Galleries
 Site URL:   https://jmgalleries.com/
-Web design: James McCarthy
+Site Desc:  Everyday Home and Office Wall Art by j.McCarthy Photography. Landscapes, Waterfalls, Oceans, Mountains and Deserts.
 About:      https://jmccarthyusa.com
 Twitter:    https://twitter.com/jmgalleriesusa
 LinkedIn:   https://linkedin.com/company/jmgalleriesusa
+Instagram:  https://instagram.com/jmgalleriesusa
+LinkTree:   https://linktr.ee/jmgalleriesusa
 Contact:    https://jmgalleries.com/contact/
-Location:   USA
-Built with: PHP, HTML, CSS, JavaScript, JSON, SQL
+Location:   USA, Nevada
+Web design: Studio 610 Development
+Built with: PHP, HTML, CSS, JavaScript, JSON, MySQL/MariaDB
 Libraries:  jQuery, fontawesome, datatables, google fonts
 Software:   Adobe Lightroom & Photoshop, Affinity Designer & Photo, Sketch
 IDE:        Nova, previously VS Code
 Launched:   2013
+
+The negative is the equivalent of the composer's score, and the print the performance.
+-- Ansel Adams
+
+"The arts equally have distinct departments, and unless photography
+has its own possibilities of expression, separate from those of the other
+arts, it is merely a process, not an art."
+- Alfred Stieglitz
+
+"No man has the right to dictate what other men should perceive, create
+or produce, but all should be encouraged to reveal themselves, their
+perceptions and emotions, and to build confidence in the creative spirit."
+- Ansel Adams
+
+My Artist Statement
+Take a moment and explore why I create. Explore my hidden crush of everyday, fine-art landscape photography that seduced my heart for the outdoors into a passion to tell the story around us, connect the human experience and for a moment dream with our eyes open.
