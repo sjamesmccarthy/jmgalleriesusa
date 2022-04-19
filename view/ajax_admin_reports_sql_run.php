@@ -35,8 +35,6 @@ foreach ($columns as $key => $val) {
     </table>
     END;
 
-// print $html;
-
 print $result_json;
 print "<hr />";
 print_r($columns);
