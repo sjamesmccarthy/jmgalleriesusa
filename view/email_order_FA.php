@@ -1,7 +1,7 @@
 <?php
 
 // $this->console($_POST);
-    
+
 $date = date("F j, Y", time());
 // $amount_total = number_format( ($_POST['amount_total'] / 100), 2);
 // $amount_total = 0;
@@ -37,7 +37,7 @@ $size = $_POST['size'];
 //     $ship_type = 'Shipping Provider: UPS Ground (Your tracking number will be sent once your art has ben shipped)';
 // } else {
 //     $ship_type = 'Shipping Provider: USPS First Class (no tracking)';
-// } 
+// }
 
 if($_POST['deposit'] == 'true') {
     $deposit_label = "Deposit";
@@ -85,18 +85,18 @@ ul li {
 
 </style>
 
-<span class='noshow'>
+<!--<span class='noshow'>
 <br>
 <p style='text-align: left;'>
 <img src='https://jmgalleries.com/view/image/logo_fullsize.png' style='width: 8%' alt='jm galleries logo' />
 </p>
-</span>
+</span>-->
 
 <h1>Thank you for your order.</h1>
 
 <br>
 <b>Order Number: </b> " . $_POST['order_no'] . "<br />
-<b>Ordered On: </b> " . $date . 
+<b>Ordered On: </b> " . $date .
 "<br><br><hr><br><br>
 
 <h2 class='pb-16'>Order to be Shipped</h2>
@@ -106,7 +106,7 @@ ul li {
 . $title . "<br>"
 . $size .  $matted_size . ' ' . ucfirst($_POST['material_type']) . "<br>"
 . $edition . "<br>"
-. $frame_extra_line 
+. $frame_extra_line
 . $_POST['frame_forgot'] .
 "</li></ul></li>
 
@@ -114,7 +114,7 @@ ul li {
 <h3 class='pb-16 pt-32'>Shipping Address:</h3><ul class='ml-32'><li>"
 . $_POST['contactname'] . "<br>"
 . $_POST['address'] . "<br>"
-. $address_other 
+. $address_other
 . $_POST['city'] . "," . $_POST['state'] . " " . $_POST['postalcode'] .
 "<br><br>
 <b>Shipment Notifcation:</b><br>"

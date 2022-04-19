@@ -1981,6 +1981,7 @@ body {
   line-height: 1.8;
   letter-spacing: -0.3px;
   margin: auto;
+  color: #000;
   /* DARK-THEME */
   /* END DARK-THEME */ }
   body.dark-theme {

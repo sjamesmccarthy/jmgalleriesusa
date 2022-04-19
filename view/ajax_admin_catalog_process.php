@@ -17,7 +17,7 @@
     } else {
         header('location:/studio/signin');
 	}
-	
+
  /* CHECK THE $formType INSERT or UPDATE */
  /* PROCESS THE DATABASE BEFORE THE FILE ATTACHMENTS */
 

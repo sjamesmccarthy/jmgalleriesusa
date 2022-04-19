@@ -4,7 +4,7 @@
 
             <div class="grid" style="position: relative;">
                 <div class="col-5-middle small-hidden">
-                    <p class="center heading"><a href="/shop" class="<?= $polarized ?>">THE SHOP</a><br /><span class="font-light">PRINTS & BOOKS</span></p>
+                    <p class="center heading"><a href="/shop" class="<?= $polarized ?>">THE SHOP</a><br /><span class="font-light">PRINTS & <a class="font-light" href="/open-editions">OPEN Ed.</a></span></p>
                 </div>
                 <div class="col-2 small-hidden">
                   <!-- logo_fullsize.png -->
@@ -22,17 +22,18 @@
 
         <div class="grid">
 
-        <?php if( $addToClass == '-home' ) {
+        <?php if ($addToClass == "-home") {
           // print "IF:" . $addToClass;
-        ?>
+          ?>
+
           <div class="grid">
           <div class="col nav-mobile-menu">
               <p class="nav-bars <?= $this->color_text ?>"><i class="fas fa-bars"></i></p>
           </div>
           </div>
         <?php } else {
-        // print "ELSE:" . $addToClass;
-        ?>
+          // print "ELSE:" . $addToClass;
+          ?>
           <div class="col nav-mobile<?= $addToClass ?>">
               <p class="nav-bars <?= $this->color_text ?>"><i class="fas fa-bars"></i></p>
               <img class="nav-mobile-logo" src="/view/image/signature-fine-art-upscaled.png" alt="jm Galleries logo" />

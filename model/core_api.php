@@ -3,6 +3,7 @@
 class Core_Api extends Fieldnotes_Api
 {
     public $mysqli;
+    public $config_env;
 
     public function startDB()
 	{
@@ -10,8 +11,8 @@ class Core_Api extends Fieldnotes_Api
         /* Database Authentication */
         $hostname = $this->config_env->env[$this->env]['host'];
         $username = $this->config_env->env[$this->env]['user'];
-		$password = $this->config_env->env[$this->env]['password'];
-		$dbname = $this->config_env->env[$this->env]['dbname'];
+		    $password = $this->config_env->env[$this->env]['password'];
+		    $dbname = $this->config_env->env[$this->env]['dbname'];
 
 		// Create connection
         $this->mysqli  = new mysqli ($hostname, $username, $password, $dbname);
@@ -213,7 +214,7 @@ class Core_Api extends Fieldnotes_Api
                 PH.status,
                 CATE.title AS cate_title
             FROM
-                catalog_photo AS PH
+                jmgalusa_website.catalog_photo AS PH
                 RIGHT JOIN catalog_collections AS CATE ON PH.catalog_collections_id = CATE.catalog_collections_id
             WHERE
                 PH.catalog_collections_id = " . $category_id . " AND PH.status = 'ACTIVE' ORDER BY RAND() LIMIT " . $limit;

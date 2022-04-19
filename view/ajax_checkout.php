@@ -1,16 +1,16 @@
-<?php 
+<?php
 require_once( $_SERVER["DOCUMENT_ROOT"] . '/model/fieldnotes_api.php');
 require_once( $_SERVER["DOCUMENT_ROOT"] . '/model/core_api.php');
 require_once( $_SERVER["DOCUMENT_ROOT"] . '/controller/core_site.php');
 $core = new Core_Site();
 
 /* ********* */
-/* Now lets save some data to the local database for our internal use 
+/* Now lets save some data to the local database for our internal use
 4111 1111 1111 1111
 */
 
 	switch($_POST['formType']) {
-		
+
 		case "SquarePaymentForm_productOrder":
 			$to = null;
 			$from = null;
@@ -58,7 +58,7 @@ if($result['result'] == "200") {
 		$subject = "Hello, we're processing your order " . $_POST['order_no'];
 
 		// message
-		echo $_SERVER["DOCUMENT_ROOT"] . '/view/' . $layout . '<br />';
+		// echo $_SERVER["DOCUMENT_ROOT"] . '/view/' . $layout . '<br />';
 		require_once($_SERVER["DOCUMENT_ROOT"] . '/view/' . $layout);
 		$message = $tmpl;
 
@@ -74,7 +74,7 @@ if($result['result'] == "200") {
 		mail($to, $subject, $message, $headers);
 
 	/* MESSAGE TO JM-GALLERIES */
-		$to  = 'jmG Orders <james@jmgalleries.com>' . "\r\n";
+		$to  = 'jMcCarthy Fine Art <collectart@jmgalleries.com>';
 		$subject = "online order " . $_POST['order_no'] . ' for ' . $_POST['title'];
 
 		// message
@@ -85,8 +85,8 @@ if($result['result'] == "200") {
 		$headers .= 'Content-type: text/html; charset=UTF-8' . "\r\n";
 
 		// Additional headers
-		$headers .= 'FROM: jM Galleries Order Bot <james@jmalleries.com>' . "\r\n";
-		$headers .= 'Reply-To: jmG Galleries <orders@jmgalleries.com>' . "\r\n";
+		$headers .= 'FROM: jM Galleries Order Bot <collectart@jmalleries.com>' . "\r\n";
+		// $headers .= 'Reply-To: jmG Galleries <james@jmgalleries.com>' . "\r\n";
 		$headers .= 'X-Mailer: PHP/' . phpversion() . "\r\n";
 
 		mail($to, $subject, $message, $headers);
@@ -94,7 +94,6 @@ if($result['result'] == "200") {
 	// redirect to success page
 	$_SESSION['order_data'] = $_POST;
 	$_SESSION['layout'] = $layout;
-	print "End";
 	header('location:/order-confirmation');
 
 } else {

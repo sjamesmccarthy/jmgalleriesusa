@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <?php $this->getPartial('header'); ?>
+    <?php $this->getPartial('header','styles'); ?>
     <?php print $this->component('notice'); ?>
     <?php print $this->component('hero'); ?>
 

@@ -3,6 +3,7 @@
 /.vscode/*
 /.nova/*
 /.nova/Publishing/*
+/.idea/*
 /_archive/*
 /.sessions/*
 

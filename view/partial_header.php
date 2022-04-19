@@ -1,5 +1,4 @@
 <head>
-
     <?php $this->getPartial('analytics'); ?>
 
     <meta charset="utf-8">
