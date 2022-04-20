@@ -1,0 +1,270 @@
+RewriteEngine On
+RewriteCond %{HTTP_USER_AGENT} SiteLockSpider|TkBot|Mb2345Browser|LieBaoFast|zh-CN|MicroMessenger|zh_CN|Kinza|Datanyze|serpstatbot|spaziodati|OPPO\sA33|AspiegelBot|aspiegel|PetalBot [NC]
+RewriteRule ^ - [F,L]
+
+RewriteCond %{HTTPS} off
+RewriteCond %{REQUEST_URI} !^/\.well-known/acme-challenge/[0-9a-zA-Z_-]+$
+RewriteCond %{REQUEST_URI} !^/\.well-known/cpanel-dcv/[0-9a-zA-Z_-]+$
+RewriteCond %{REQUEST_URI} !^/\.well-known/pki-validation/(?:\ Ballot169)?
+RewriteCond %{REQUEST_URI} !^/\.well-known/pki-validation/[A-F0-9]{32}\.txt(?:\ Comodo\ DCV)?$
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_URI} !^/\.well-known/acme-challenge/[0-9a-zA-Z_-]+$
+RewriteCond %{REQUEST_URI} !^/\.well-known/cpanel-dcv/[0-9a-zA-Z_-]+$
+RewriteCond %{REQUEST_URI} !^/\.well-known/pki-validation/(?:\ Ballot169)?
+RewriteCond %{REQUEST_URI} !^/\.well-known/pki-validation/[A-F0-9]{32}\.txt(?:\ Comodo\ DCV)?$
+RewriteRule ^(.*)$ index.php [QSA,L]
+RewriteCond %{HTTP_HOST} ^qr\.jmgalleries\.com$ [OR]
+RewriteCond %{HTTP_HOST} ^www\.qr\.jmgalleries\.com$
+
+# ####################################################################
+# VALID REDIRECTS 
+# ####################################################################
+
+Redirect 301 /rotonda-del-palazzo /thework
+Redirect 301 /laketahoe-landscapes /thework
+Redirect 301 /Jmgalleries /thework
+Redirect 301 /jmgalleriesusa /thework
+Redirect 301 /Jmgalleriesusa /thework
+Redirect 301 /galleries-vegas /thework
+Redirect 301 /browse /thework
+Redirect 301 /new-releases/photo/mountains-deserts-trees /mountains-deserts-trees 
+Redirect 301 /portraits-events-headshots https://jmportraits.com
+Redirect 301 /info.php /thework
+Redirect 301 /all /thework
+Redirect 301 /landscapes /thework
+Redirect 301 /cities-and-structures /thework
+Redirect 301 /thework/photo/bixby-star /thework
+Redirect 301 /blog /fieldnotes
+Redirect 301 /polarized /fieldnotes
+Redirect 301 /polarized/(.*) /fieldnotes/$1
+Redirect 301 /fieldnotes/%20https:/jmgalleries.com/signup /fieldnotes
+Redirect 301 /fieldnotes/fine-art-or-fine-selling /fieldnotes/being-a-fineart-photographer
+Redirect 301 /amazing-offer /signup
+Redirect 301 /PORTFOLIO /thework
+Redirect 301 /ocean-lakes-waterfalls /oceans-lakes-waterfalls
+Redirect 301 /galleries/oceans-lakes-waterfalls/never-ending-story /oceans-lakes-waterfalls/never-ending-story
+Redirect 301 /never-ending-story /oceans-lakes-waterfalls/never-ending-story
+Redirect 301 /landscapes/photo/stone-garden /oceans-lakes-waterfalls/stone-garden
+Redirect 301 /thework/photo/stone-garden /oceans-lakes-waterfalls/stone-garden
+Redirect 301 /landscapes/photo/keeping-tahoe-cold /mountains-deserts-trees/keep-tahoe-cold
+Redirect 301 /keep-tahoe-cold /mountains-deserts-trees/keep-tahoe-cold
+Redirect 301 /black-and-white/photo/friends-forever /thework
+Redirect 301 /thework/photo/friends-forever /oceans-lakes-waterfalls/friends-forever
+Redirect 301 /cities-and-structures/photo/bixby-star /thework
+Redirect 301 /daisies-for-our-lady /flowers-fields-clouds/daisies-for-our-lady
+Redirect 301 /happy-hour-club /abstract-architecture-people/happy-hour-club
+Redirect 301 /thework/photo/happy-hour /abstract-architecture-people/happy-hour-club
+Redirect 301 /coit-on-high-hill /abstract-architecture-people/coit-on-high-hill
+Redirect 301 /all/photo/stone-garden /oceans-lakes-waterfalls/stone-garden
+Redirect 301 /gallery/landscapes/stone-garden.jpg /oceans-lakes-waterfalls/stone-garden
+Redirect 301 /thework/photo/lost-trail /mountains-deserts-trees/lost-trail
+Redirect 301 /lost-trail /mountains-deserts-trees/lost-trail
+Redirect 301 /the-good-life /abstract-architecture-people/the-good-life
+Redirect 301 /oceans-lakes-waterfalls/sf-pier-14 /abstract-architecture-people/coit-on-high-hill
+Redirect 301 /street-and-people /abstract-architecture-people
+Redirect 301 /thework/photo/between-the-hills/ /mountains-deserts-trees/watkins-window
+Redirect 301 /thework/photo/white-slumber/ /mountains-deserts-trees/white-slumber
+Redirect 301 /galleries/mountains-deserts-trees/white-slumber /mountains-deserts-trees/white-slumber
+Redirect 301 /legal /privacy
+Redirect 301 /mountains-deserts-trees/sf-pier-14 /abstract-architecture-people/coit-on-high-hill
+Redirect 301 /abstract-architecture-people/sf-pier-14 /abstract-architecture-people/coit-on-high-hill
+Redirect 301 /thework/photo/best-time-of-day/ /abstract-architecture-people/happy-hour-club
+Redirect 301 /thework/photo/timeless/ /oceans-lakes-waterfalls/amnesia
+Redirect 301 /galleries-temecula /galleries
+Redirect 301 /sweet-and-saltier-dreams /flowers-fields-clouds/sweet-and-saltier-dreams
+Redirect 301 /from-another-time /abstract-architecture-people/from-another-time
+Redirect 301 /all/photo/stone-garden /oceans-lakes-waterfalls/stone-garden
+Redirect 301 /polaried /fieldnotes
+Redirect 301 /a15559cda0ed/042021-7068398 /fieldnotes
+Redirect 301 /sunflower-smiles /flowers-fields-clouds/sunflower-smiles
+Redirect 301 /wandering /mountains-deserts-trees/wandering
+Redirect 301 /remember-when /flowers-fields-clouds/remember-when
+Redirect 301 /white-slumber /mountains-deserts-trees/white-slumber
+Redirect 301 /pedi-cab /abstract-architecture-people/pedi-cab
+Redirect 301 /serendipity /mountains-deserts-trees/serendipity
+Redirect 301 /galleries/mountains-deserts-trees/serendipity /mountains-deserts-trees/serendipity
+Redirect 301 /peace /abstract-architecture-people/peace
+Redirect 301 /remember-when /flowers-fields-clouds/remember-when
+redirect 301 /ginormous-marble /mountains-deserts-trees/ginormous-marble
+Redirect 301 /rays-of-light /mountains-deserts-trees/rays-of-light
+Redirect 301 /galleries/abstract-architecture-people/happy-hour-club /abstract-architecture-people/happy-hour-club
+Redirect 301 /oceans-lakes-waterfalls/photo/reflections /oceans-lakes-waterfalls/reflections
+Redirect 301 /galleries/oceans-lakes-waterfalls/reflections /oceans-lakes-waterfalls/reflections
+Redirect 301 /README.md /humans.txt
+Redirect 301 /readme.php /humans.txt
+Redirect 301 /RELEASE_NOTES.txt /release-notes
+Redirect 301 /license.php /release-notes
+Redirect 301 /CHANGELOG.txt /release-notes
+Redirect 301 /feed /thework
+Redirect 301 /error.php /thework
+Redirect 301 /403.php /thework
+Redirect 301 /404.php /thework
+Redirect 301 /lndex.php /thework
+Redirect 301 /on-the-way-to-cabernet /flowers-fields-clouds/winemaker-walkabout
+Redirect 301 /winemaker-walkabout /flowers-fields-clouds/winemaker-walkabout
+Redirect 301 /gourd-gathering /flowers-fields-clouds/gourd-gathering
+Redirect 301 /galleries/flowers-fields-clouds/gourd-gathering /flowers-fields-clouds/gourd-gathering
+Redirect 301 /emigrants-fog /mountains-deserts-trees/emigrants-fog
+Redirect 301 /once-afloat /abstract-architecture-people/once-afloat
+Redirect 301 /hollywoods-entsle /abstract-architecture-people/hollywoods-entsle
+Redirect 301 /facade-to-the-sky /abstract-architecture-people/facade-to-the-sky
+Redirect 301 /galleries/abstract-architecture-people/window-to-war /abstract-architecture-people/window-to-war
+Redirect 301 /elysium /oceans-lakes-waterfalls/elysium
+Redirect 301 /run-aground /oceans-lakes-waterfalls/run-aground
+Redirect 301 /thework/photo/friends-forever /oceans-lakes-waterfalls/friends-forever
+Redirect 301 /stoned-lovers /abstract-architecture-people/stoned-lovers
+Redirect 301 /dream-catchers /flowers-fields-clouds/dream-catchers
+Redirect 301 /galleries/mountains-deserts-trees/alongside-you /oceans-lakes-waterfalls/alongside-you
+Redirect 301 /thework/photo/friends-forever /oceans-lakes-waterfalls/friends-forever
+Redirect 301 /golden-allure /abstract-architecture-people/golden-allure
+Redirect 301 /galleries/mountains-deserts-trees/rays-of-light /mountains-deserts-trees/rays-of-light
+Redirect 301 /first-light /mountains-deserts-trees/first-light
+Redirect 301 /watkins-window /product/watkins-window-framed-limited-edition
+Redirect 301 /horizontal-limits /oceans-lakes-waterfalls/horizontal-limits
+Redirect 301 /amnesia /oceans-lakes-waterfalls/amnesia
+Redirect 301 /galleries/mountains-deserts-trees/watkins-window /product/watkins-window-framed-limited-edition
+Redirect 301 /galleries/oceans-lakes-waterfalls/shadows-of-tahoe /oceans-lakes-waterfalls/shadows-of-tahoe
+Redirect 301 /galleries/oceans-lakes-waterfalls/spire /oceans-lakes-waterfalls/spire
+Redirect 301 /galleries/abstract-architecture-people/flying-fortress /abstract-architecture-people/flying-fortress
+Redirect 301 /layers-of-tahoe /mountains-deserts-trees/layers-of-tahoe
+Redirect 301 /galleries/mountains-deserts-trees/the-maple /mountains-deserts-trees/the-maple
+Redirect 301 /emerald-thoughts /oceans-lakes-waterfalls/emerald-thoughts
+Redirect 301 /galleries/abstract-architecture-people/the-good-life /abstract-architecture-people/the-good-life
+Redirect 301 /thework/photo/kirbys-cove /thework
+
+# ####################################################################
+# BAD ACTOR REDIRECTS 
+# ####################################################################
+
+Redirect 301 "/test" /thework
+Redirect 301 "/ads.txt" /thework
+Redirect 301 "/readme.html" /thework
+Redirect 301 "/shop/wp-includes" /thework
+Redirect 301 "/.vscode" /thework
+Redirect 301 "/data" /thework
+Redirect 301 "/admin" /thework
+Redirect 301 "/website" /thework
+Redirect 301 "/telescope" /thework
+Redirect 301 "/v1" /thework
+Redirect 301 "/v2" /thework
+Redirect 301 "/v2/_catalog" /thework
+Redirect 301 "/new-site" /thework
+Redirect 301 "/old-site" /thework
+Redirect 301 "/web" /thework
+Redirect 301 "/dev" /thework
+Redirect 301 "/cms" /thework
+Redirect 301 "/site" /thework
+Redirect 301 "/sql.php" /thework
+Redirect 301 "/mariadb" /thework
+Redirect 301 "/db" /thework
+Redirect 301 "/mysql_backups" /thework
+Redirect 301 "/mysql_dumps" /thework
+Redirect 301 "/mysqladmin" /thework
+Redirect 301 "/phpMyAdmin" /thework
+Redirect 301 "/myadmin" /thework
+Redirect 301 "/db_dumps" /thework
+Redirect 301 "/backup" /thework
+Redirect 301 "/Backup" /thework
+Redirect 301 "/BACKUP" /thework
+Redirect 301 "/dump" /thework
+Redirect 301 "/dumper" /thework
+Redirect 301 "/saved" /thework
+Redirect 301 "/database" /thework
+Redirect 301 "/wallet" /thework
+Redirect 301 "/.bitcoin" /thework
+Redirect 301 "/bitcoin" /thework
+Redirect 301 "/wp" /thework
+Redirect 301 "/WP" /thework
+Redirect 301 "/wp1" /thework
+Redirect 301 "/wp2" /thework
+Redirect 301 "/wordpress" /thework
+Redirect 301 "/WordPress" /thework
+Redirect 301 "/WORDPRESS" /thework
+Redirect 301 "/old-wp" /thework
+Redirect 301 "/old-wp" /thework
+Redirect 301 "/2018" /thework
+Redirect 301 "/2019" /thework
+Redirect 301 "/2020" /thework
+Redirect 301 "/2021" /thework
+Redirect 301 "/vendor/phpunit" /thework
+Redirect 301 "/lib/phpunit" /thework
+Redirect 301 "/catalog/Adminhtml_category" /thework
+Redirect 301 "/plugins/content/apismtp/apismtp.php.suspected?test=hello" /thework
+Redirect 301 "/plugins" /thework
+Redirect 301 "/install" /thework
+Redirect 301 "/magento_version" /thework
+Redirect 301 "/bak" /thework
+Redirect 301 "/bk" /thework
+Redirect 301 "/temp" /thework
+Redirect 301 "/tmp" /thework
+Redirect 301 "/old" /thework
+Redirect 301 "/old" /thework
+Redirect 301 "/Old" /thework
+Redirect 301 "/new" /thework
+Redirect 301 "/new" /thework
+Redirect 301 "/home" /thework
+Redirect 301 "/home" /thework
+Redirect 301 "/.well-known/security.txt" /thework
+Redirect 301 "/asset-manifest.json" /thework
+Redirect 301 "/feed" /thework
+Redirect 301 "/feeds" /thework
+Redirect 301 "/rss.xml" /thework
+Redirect 301 "/index.rdf" /thework
+Redirect 301 "/index.xml" /thework
+Redirect 301 "/index.rss" /thework
+Redirect 301 "/xmlrpc.php?rsd" /thework
+Redirect 301 "/sito" /thework
+Redirect 301 "/cms/wp-includes/wlwmanifest.xml" /thework
+Redirect 301 "/ftpsync.settings" /thework
+Redirect 301 "/deployment-config.json" /thework
+Redirect 301 "/.remote-sync.json" /thework
+Redirect 301 "/sftp-config.json" /thework
+Redirect 301 "/.git" /thework
+Redirect 301 "/.ftpconfig" /thework
+Redirect 301 "/conf.php" /thework
+Redirect 301 "/shop/wp-includes" /thework
+Redirect 301 "/SypexDumper" /thework
+Redirect 301 "/payments." /thework
+Redirect 301 "/install/js/install.js" /thework
+Redirect 301 "/css/album.css" /thework
+Redirect 301 "/view/js/jquery.desoslide.min.js" /thework
+Redirect 301 "/js/css.js" /thework
+Redirect 301 "/js/locale.js" /thework
+Redirect 301 "/js/navi.js" /thework
+Redirect 301 "/js/eccube.js" /thework
+Redirect 301 "/js/js.js" /thework
+Redirect 301 "/CHANGELOG.txt" /thework
+Redirect 301 "/INSTALL.txt" /thework
+Redirect 301 "/xxxss" /thework
+Redirect 301 "/1.10.21/js/jquery.dataTables.min.js" /thework
+Redirect 301 "/1.10.21/css/jquery.dataTables.min.css" /thework
+Redirect 301 "/install.php" /thework
+Redirect 301 "/sxd" /thework
+Redirect 301 "/setup.php" /thework
+Redirect 301 "/archive.zip" /thework
+
+# ####################################################################
+# BAD ACTOR IPs 
+# ####################################################################
+
+Deny from 185.153.196.198
+Deny from 107.150
+Deny from 88.150
+Deny from 121.89.234.40
+Deny from 103.37.3.58
+Deny from 212.237.121.219
+Deny from 212.237.120.155
+Deny from 178.236.248.7
+Deny from 159.89.190.105
+Deny from 45.129.137.249
+Deny from 185.25.48.248
+Deny from 109.169.87.34
+
+# php -- BEGIN cPanel-generated handler, do not edit
+# Set the “ea-php74” package as the default “PHP” programming language.
+<IfModule mime_module>
+  AddHandler application/x-httpd-ea-php74 .php .php7 .phtml
+</IfModule>
+# php -- END cPanel-generated handler, do not edit

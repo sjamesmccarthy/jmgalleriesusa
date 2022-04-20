@@ -1,0 +1,190 @@
+RewriteEngine On
+RewriteCond %{HTTP_USER_AGENT} SiteLockSpider|TkBot|Mb2345Browser|LieBaoFast|zh-CN|MicroMessenger|zh_CN|Kinza|Datanyze|serpstatbot|spaziodati|OPPO\sA33|AspiegelBot|aspiegel|PetalBot [NC]
+RewriteRule ^ - [F,L]
+
+RewriteCond %{HTTPS} off
+RewriteCond %{REQUEST_URI} !^/\.well-known/acme-challenge/[0-9a-zA-Z_-]+$
+RewriteCond %{REQUEST_URI} !^/\.well-known/cpanel-dcv/[0-9a-zA-Z_-]+$
+RewriteCond %{REQUEST_URI} !^/\.well-known/pki-validation/(?:\ Ballot169)?
+RewriteCond %{REQUEST_URI} !^/\.well-known/pki-validation/[A-F0-9]{32}\.txt(?:\ Comodo\ DCV)?$
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_URI} !^/\.well-known/acme-challenge/[0-9a-zA-Z_-]+$
+RewriteCond %{REQUEST_URI} !^/\.well-known/cpanel-dcv/[0-9a-zA-Z_-]+$
+RewriteCond %{REQUEST_URI} !^/\.well-known/pki-validation/(?:\ Ballot169)?
+RewriteCond %{REQUEST_URI} !^/\.well-known/pki-validation/[A-F0-9]{32}\.txt(?:\ Comodo\ DCV)?$
+RewriteRule ^(.*)$ index.php [QSA,L]
+RewriteCond %{HTTP_HOST} ^qr\.jmgalleries\.com$ [OR]
+RewriteCond %{HTTP_HOST} ^www\.qr\.jmgalleries\.com$
+
+Redirect 301 /info.php /thework
+Redirect 301 /all /thework
+Redirect 301 /landscapes /thework
+Redirect 301 /black-and-white /thework
+Redirect 301 /cities-and-structures /thework
+Redirect 301 /blog /fieldnotes
+Redirect 301 /polarized /fieldnotes
+Redirect 301 /polarized/(.*) /fieldnotes/$1
+Redirect 301 /amazing-offer /signup
+Redirect 301 /PORTFOLIO /thework
+Redirect 301 /landscapes/photo/stone-garden /oceans-lakes-waterfalls/stone-garden
+Redirect 301 /thework/photo/stone-garden /oceans-lakes-waterfalls/stone-garden
+Redirect 301 /landscapes/photo/keeping-tahoe-cold /mountains-deserts-trees/keep-tahoe-cold
+Redirect 301 /keep-tahoe-cold /mountains-deserts-trees/keep-tahoe-cold
+Redirect 301 /black-and-white/photo/friends-forever /thework
+Redirect 301 /cities-and-structures/photo/bixby-star /thework
+Redirect 301 /daisies-for-our-lady /flowers-fields-clouds/daisies-for-our-lady
+Redirect 301 /happy-hour-club /abstract-architecture-people/happy-hour-club
+Redirect 301 /thework/photo/happy-hour /abstract-architecture-people/happy-hour-club
+Redirect 301 /coit-on-high-hill /abstract-architecture-people/coit-on-high-hill
+Redirect 301 /all/photo/stone-garden /oceans-lakes-waterfalls/stone-garden
+Redirect 301 /gallery/landscapes/stone-garden.jpg /oceans-lakes-waterfalls/stone-garden
+Redirect 301 /thework/photo/lost-trail /mountains-deserts-trees/lost-trail
+Redirect 301 /the-good-life /abstract-architecture-people/the-good-life
+Redirect 301 /oceans-lakes-waterfalls/sf-pier-14 /abstract-architecture-people/coit-on-high-hill
+Redirect 301 /street-and-people /abstract-architecture-people
+Redirect 301 /thework/photo/between-the-hills/ /mountains-deserts-trees/watkins-window
+Redirect 301 /thework/photo/white-slumber/ /mountains-deserts-trees/white-slumber
+Redirect 301 /legal /privacy
+Redirect 301 /mountains-deserts-trees/sf-pier-14 /abstract-architecture-people/coit-on-high-hill
+Redirect 301 /abstract-architecture-people/sf-pier-14 /abstract-architecture-people/coit-on-high-hill
+Redirect 301 /thework/photo/best-time-of-day/ /abstract-architecture-people/happy-hour-club
+Redirect 301 /thework/photo/timeless/ /oceans-lakes-waterfalls/amnesia
+Redirect 301 /galleries-temecula /galleries
+Redirect 301 /sweet-and-saltier-dreams /flowers-fields-clouds/sweet-and-saltier-dreams
+Redirect 301 /from-another-time /abstract-architecture-people/from-another-time
+Redirect 301 /all/photo/stone-garden /oceans-lakes-waterfalls/stone-garden
+Redirect 301 /polaried /fieldnotes
+Redirect 301 /a15559cda0ed/042021-7068398 /fieldnotes
+Redirect 301 /sunflower-smiles /flowers-fields-clouds/sunflower-smiles
+Redirect 301 /wandering /mountains-deserts-trees/wandering
+Redirect 301 /remember-when /flowers-fields-clouds/remember-when
+Redirect 301 /white-slumber /mountains-deserts-trees/white-slumber
+Redirect 301 /pedi-cab /abstract-architecture-people/pedi-cab
+Redirect 301 /serendipity /mountains-deserts-trees/serendipity
+Redirect 301 /peace /abstract-architecture-people/peace
+Redirect 301 /remember-when /flowers-fields-clouds/remember-when
+redirect 301 /ginormous-marble /mountains-deserts-trees/ginormous-marble
+Redirect 301 /rays-of-light /mountains-deserts-trees/rays-of-light
+Redirect 301 /galleries/abstract-architecture-people/happy-hour-club /abstract-architecture-people/happy-hour-club
+Redirect 301 /oceans-lakes-waterfalls/photo/reflections /oceans-lakes-waterfalls/reflections
+Redirect 301 /README.md /humans.txt
+Redirect 301 /RELEASE_NOTES.txt /release-notes
+Redirect 301 /on-the-way-to-cabernet /flowers-fields-clouds/winemaker-walkabout
+Redirect 301 /gourd-gathering /flowers-fields-clouds/gourd-gathering
+
+RedirectMatch 403 /favicon.ico$
+RedirectMatch 403 /ads.txt$
+RedirectMatch 403 /readme.html$
+RedirectMatch 403 /shop/wp-includes$
+RedirectMatch 403 /.vscode/*
+RedirectMatch 403 /data/*
+RedirectMatch 403 /admin/*
+RedirectMatch 403 /wordpress/*
+RedirectMatch 403 /website/*
+RedirectMatch 403 /v1$
+RedirectMatch 403 /v2$
+RedirectMatch 403 /new-site$
+RedirectMatch 403 /old-site$
+RedirectMatch 403 /web/*
+RedirectMatch 403 /dev$
+RedirectMatch 403 /cms/*
+RedirectMatch 403 /site/*
+RedirectMatch 403 /test/*
+RedirectMatch 403 /main/*
+RedirectMatch 403 /news/*
+RedirectMatch 403 /demo$
+RedirectMatch 403 /includes$
+RedirectMatch 403 /sql$
+RedirectMatch 403 /mariadb$
+RedirectMatch 403 /db$
+RedirectMatch 403 /mysql_backups$
+RedirectMatch 403 /mysql_dumps$
+RedirectMatch 403 /db_dumps$
+RedirectMatch 403 /backup/*
+RedirectMatch 403 /dump/*
+RedirectMatch 403 /dumper/*
+RedirectMatch 403 /saved$
+RedirectMatch 403 /database$
+RedirectMatch 403 /wallet$
+RedirectMatch 403 /.bitcoin$
+RedirectMatch 403 /bitcoin$
+RedirectMatch 403 /wp/*
+RedirectMatch 403 /wp1/*
+RedirectMatch 403 /wp2/*
+RedirectMatch 403 /old-wp$
+RedirectMatch 403 /2018/*
+RedirectMatch 403 /2019/*
+RedirectMatch 403 /2020/*
+RedirectMatch 403 /2021/*
+RedirectMatch 403 /vendor/phpunit/*
+RedirectMatch 403 /catalog/Adminhtml_category$
+RedirectMatch 403 /plugins/content/apismtp/apismtp.php.suspected?test=hello
+RedirectMatch 403 /plugins$
+RedirectMatch 403 /install$
+RedirectMatch 403 /bak$
+RedirectMatch 403 /temp$
+RedirectMatch 403 /tmp$
+RedirectMatch 403 /old$
+RedirectMatch 403 /new$
+RedirectMatch 403 /home$
+RedirectMatch 403 /.well-known/security.txt
+RedirectMatch 403 /asset-manifest.json$
+RedirectMatch 403 /feed$
+RedirectMatch 403 /feeds$
+RedirectMatch 403 /rss.xml$
+RedirectMatch 403 /index.rdf$
+RedirectMatch 403 /index.xml$
+RedirectMatch 403 /index.rss$
+RedirectMatch 403 /sito/*
+RedirectMatch 403 /cms/wp-includes/wlwmanifest.xml$
+RedirectMatch 403 /ftpsync.settings$
+RedirectMatch 403 /deployment-config.json$
+RedirectMatch 403 /.remote-sync.json$
+RedirectMatch 403 /sftp-config.json$
+RedirectMatch 403 /.git/*
+RedirectMatch 403 /.ftpconfig$
+RedirectMatch 403 /shop/wp-includes/$
+RedirectMatch 403 /SypexDumper/*
+RedirectMatch 403 /payments.*
+RedirectMatch 403 /install/js/install.js$
+RedirectMatch 403 /css/album.css$
+RedirectMatch 403 /view/js/jquery.desoslide.min.js$
+RedirectMatch 403 /js/css.js$
+RedirectMatch 403 /CHANGELOG.txt$
+RedirectMatch 403 /INSTALL.txt$
+
+#Facebook IPs
+Deny from 31.13
+Deny from 45.64
+Deny from 66.220
+Deny from 69.63
+Deny from 69.171
+Deny from 74.11
+Deny from 102.132
+Deny from 103.4
+Deny from 129.13
+Deny from 147.75
+Deny from 157.240
+Deny from 173.252
+Deny from 179.60
+Deny from 185.60
+Deny from 185.89
+Deny from 199.201
+Deny from 204.15
+Deny from 66.220
+Deny from 69.171
+
+#Misc IPs Blocked for suspicious activity
+Deny from 185.153.196.198
+Deny from 107.150
+Deny from 88.150
+
+
+# php -- BEGIN cPanel-generated handler, do not edit
+# Set the “ea-php74” package as the default “PHP” programming language.
+<IfModule mime_module>
+  AddHandler application/x-httpd-ea-php74 .php .php7 .phtml
+</IfModule>
+# php -- END cPanel-generated handler, do not edit
