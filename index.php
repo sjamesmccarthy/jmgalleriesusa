@@ -18,7 +18,7 @@
     /* Debug Info */
     $core->debugInfo();
 
-    echo "git-ftp.enabled";
+    echo "git-ftp.enabled(true)";
     
     /* Exit, End App */
     exit();	
