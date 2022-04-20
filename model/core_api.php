@@ -1,5 +1,9 @@
 <?php
 
+/**
+ * Core_Api
+ * Basic implementation of website API interface.
+ */
 class Core_Api extends Fieldnotes_Api
 {
     public $mysqli;
@@ -11,8 +15,8 @@ class Core_Api extends Fieldnotes_Api
         /* Database Authentication */
         $hostname = $this->config_env->env[$this->env]['host'];
         $username = $this->config_env->env[$this->env]['user'];
-		    $password = $this->config_env->env[$this->env]['password'];
-		    $dbname = $this->config_env->env[$this->env]['dbname'];
+        $password = $this->config_env->env[$this->env]['password'];
+        $dbname   = $this->config_env->env[$this->env]['dbname'];
 
 		// Create connection
         $this->mysqli  = new mysqli ($hostname, $username, $password, $dbname);

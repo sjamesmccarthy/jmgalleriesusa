@@ -2,7 +2,7 @@
     /* Copyright 2020, j.McCarthy */
 
     /* Error reporting levels being outputted to screen and logged */
-    error_reporting(E_ERROR | E_WARNING | E_PARSE | E_NOTICE);
+    // error_reporting(E_ERROR | E_WARNING | E_PARSE | E_NOTICE);
 
     /* Require the Core */
     require_once( $_SERVER["DOCUMENT_ROOT"] . '/model/fieldnotes_api.php');
@@ -14,11 +14,12 @@
 
     /* Build the layout of the page and render */
     $core->render();
-    echo "<!-- --new-server-publish Wed, 10 Nov 2021 -->";
     
     /* Debug Info */
     $core->debugInfo();
 
+    echo "git-ftp.enabled";
+    
     /* Exit, End App */
     exit();	
 

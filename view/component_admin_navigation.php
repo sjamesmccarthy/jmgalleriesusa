@@ -60,7 +60,7 @@ $html = <<< END
             <div class="toolbox">
 
             <div class="profile--image">
-                <img src="/view/image/avatar/$avatar" alt="avatar" />
+                <img src="/view/image/$avatar" alt="avatar" />
             </div>
 
             <div class="profile--name">

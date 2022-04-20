@@ -1,5 +1,9 @@
 <?php
 
+/**
+ * Core_Site
+ * Site functions for gloab environment
+ */
 class Core_Site extends Core_Api
 {
   public $config;
@@ -13,8 +17,8 @@ class Core_Site extends Core_Api
   {
     date_default_timezone_set("America/Los_Angeles");
     $this->system = (object) [];
-    $this->page = (object) [];
-    $this->data = (object) [];
+    $this->page   = (object) [];
+    $this->data   = (object) [];
 
     /* Import the config file */
     $this->getJSON("config.json", "config");
@@ -50,12 +54,17 @@ class Core_Site extends Core_Api
     }
 
     /* Error reporting levels being outputted to screen and logged */
+    // Level 0 = None
+    // level 1 = E_ALL | E_NOTICE | E_WARNING
+    // level 2 = E_ALL & ~E_NOTICE & ~E_WARNING
+      
     if($this->config_env->env[$this->env]['error_reporting'] == 1) {
+      error_reporting(E_ALL | E_NOTICE | E_WARNING);
+    } else if ($this->config_env->env[$this->env]['error_reporting'] == 2) {
       error_reporting(E_ALL & ~E_NOTICE & ~E_WARNING);
     } else {
       error_reporting(0);
     }
-
   }
 
   public function initSession()
@@ -140,13 +149,11 @@ class Core_Site extends Core_Api
       // exit;
 
       /* Direct route match URI === route path */
-      $this->routes->URI->match = "true";
-      $this->page->title = $this->routes->{$this->routes->URI->path}["title"];
-      $this->page->catalog_path = $this->routes->URI->path;
-      $this->routes->URI->template =
-        $this->routes->{$this->routes->URI->path}["template"];
-      $this->routes->URI->page =
-        $this->routes->{$this->routes->URI->path}["page"];
+      $this->routes->URI->match    = "true";
+      $this->page->title           = $this->routes->{$this->routes->URI->path}["title"];
+      $this->page->catalog_path    = $this->routes->URI->path;
+      $this->routes->URI->template = $this->routes->{$this->routes->URI->path}["template"];
+      $this->routes->URI->page     = $this->routes->{$this->routes->URI->path}["page"];
 
       /* Check if Template type is redirect */
       if ($this->routes->{$this->routes->URI->path}["template"] == "redirect") {
