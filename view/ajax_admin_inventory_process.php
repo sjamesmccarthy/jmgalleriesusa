@@ -56,7 +56,7 @@ switch($_POST['formTypeAction']) {
 	break;
 
 	case "delete":
-		delete();
+		// delete();
 	break;
 
 	default:
