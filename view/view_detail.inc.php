@@ -475,8 +475,8 @@ if ($photo_meta["as_open"] == 1) {
             <label for="frame"></label>
             <select id="frame" name="frame" style="padding-left: 10px; margin-bottom: 0;">
                 <option value="PRINT-ONLY">PRINT ONLY - NO FRAME</option>
-                <option value="Studio-Ash-Gray">+ ADD STUDIO FRAME (Ash Gray)</option>
-                <option value="Studio-Snow-White">+ ADD STUDIO FRAME (Snow White)</option>
+                <!-- <option value="Studio-Ash-Gray">+ ADD STUDIO FRAME (Ash Gray)</option> -->
+                <!-- <option value="Studio-Snow-White">+ ADD STUDIO FRAME (Snow White)</option> -->
             </select>
            <!-- <span class="tiny"><a href="/styles">More information about frame styles and pricing</span> -->
         </div>
