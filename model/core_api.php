@@ -2040,7 +2040,7 @@ class Core_Api extends Fieldnotes_Api
 
     }
 
-    public function api_Admin_Insert_Inventory() : string {
+    public function api_Admin_Insert_Inventory() {
 
         /* extract Data Array */
         extract($_POST, EXTR_PREFIX_SAME, "dup");
