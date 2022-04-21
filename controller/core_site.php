@@ -407,6 +407,7 @@ class Core_Site extends Core_Api
 
       /* This file needs to load after the .inc file so inherits any data attributes */
       include $this->routes->URI->view;
+      
     } else {
       echo "<p>Roses are red, violets are blue, we are oh-so sorry we can not find your view.</p><p>This has been reported to the poet.</p>";
       $this->errors["component"] =
@@ -441,7 +442,6 @@ class Core_Site extends Core_Api
   public function component($component, $props = null)
   {
     // if ( !is_null($props)) { $props = "?" . $props; }
-
     $file = $_SERVER["DOCUMENT_ROOT"] . "/view/component_" . $component;
 
     if (file_exists($file . ".php")) {
@@ -602,7 +602,7 @@ class Core_Site extends Core_Api
     $line = __LINE__
   ) {
     if ($this->config_env->env[$this->env]["show_console"] == "true") {
-      echo "<div style='position: relative; padding: 10px; background-color: #000; font-size: 1rem; color: #fff;'>";
+      echo "<div style='position: relative; padding: 10px; background-color: #000; color: Yellow; font-size: 1rem;'>";
       if (gettype($val) == "string") {
         echo "<p>>>>>>Line: " .
           $line .
@@ -667,7 +667,7 @@ class Core_Site extends Core_Api
                 });
             });
             </script>";
-      echo "<div class='debug_trigger' style='background-color: #000; font-size: 1rem; padding: 2rem;'>";
+      echo "<div class='debug_trigger' style='background-color: #000; color: Yellow; font-size: 1rem; padding: 2rem;'>";
       echo "<p style='font-size: 1rem;'>>>>>> " .
         $this->env .
         " CONSOLE --start | " .
@@ -685,7 +685,7 @@ class Core_Site extends Core_Api
       if (isset($_FILES)) {
         $this->console($_FILES);
       }
-      echo "<div style='background-color: #000; font-size: 1rem;'><p class='debug_trigger' style='font-size: 1rem;'>>>>>> CONSOLE --end</p></div>";
+      echo "<div style='background-color: #000; color: Yellow; font-size: 1rem;'><p class='debug_trigger' style='font-size: 1rem;'>>>>>> CONSOLE --end</p></div>";
       echo "</div>";
     }
   }

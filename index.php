@@ -10,6 +10,7 @@
     require_once( 'controller/core_site.php');
      
     /* Start */
+    /* This creates a super global object which causes most IDEs not to recognize definition scope */
     $core = new Core_Site();
 
     /* Build the layout of the page and render */
