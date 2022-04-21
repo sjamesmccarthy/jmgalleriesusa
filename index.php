@@ -5,9 +5,9 @@
     // error_reporting(E_ERROR | E_WARNING | E_PARSE | E_NOTICE);
 
     /* Require the Core */
-    require_once( $_SERVER["DOCUMENT_ROOT"] . '/model/fieldnotes_api.php');
-    require_once( $_SERVER["DOCUMENT_ROOT"] . '/model/core_api.php');
-    require_once( $_SERVER["DOCUMENT_ROOT"] . '/controller/core_site.php');
+    require_once( 'model/fieldnotes_api.php');
+    require_once( 'model/core_api.php');
+    require_once( 'controller/core_site.php');
      
     /* Start */
     $core = new Core_Site();

@@ -2040,7 +2040,7 @@ class Core_Api extends Fieldnotes_Api
 
     }
 
-    public function api_Admin_Insert_Inventory() {
+    public function api_Admin_Insert_Inventory() : string {
 
         /* extract Data Array */
         extract($_POST, EXTR_PREFIX_SAME, "dup");
@@ -2126,6 +2126,7 @@ class Core_Api extends Fieldnotes_Api
             $this->log(array("key" => "api", "value" => "Failed Insert of Inventory Art (" . $_POST['title'] . ")", "type" => "failure"));
         }
 
+        return true;
     }
 
     public function api_Admin_Insert_Suppliers() {

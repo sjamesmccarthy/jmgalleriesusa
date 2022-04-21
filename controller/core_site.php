@@ -55,11 +55,11 @@ class Core_Site extends Core_Api
 
     /* Error reporting levels being outputted to screen and logged */
     // Level 0 = None
-    // level 1 = E_ALL | E_NOTICE | E_WARNING
+    // level 1 = E_ALL 
     // level 2 = E_ALL & ~E_NOTICE & ~E_WARNING
-      
+
     if($this->config_env->env[$this->env]['error_reporting'] == 1) {
-      error_reporting(E_ALL | E_NOTICE | E_WARNING);
+      error_reporting(E_ALL);
     } else if ($this->config_env->env[$this->env]['error_reporting'] == 2) {
       error_reporting(E_ALL & ~E_NOTICE & ~E_WARNING);
     } else {
