@@ -89,9 +89,10 @@
             $title_state = 'Editing';
         }
         
+        // if(!is_countable($locationsHistory_data)) { $locationsHistory_data = array(); }
         if( count($locationsHistory_data) > 0) {
 
-            foreach( $locationsHistory_data as $key_lh => $val_lh) {
+            foreach($locationsHistory_data as $key_lh => $val_lh) {
 
                 if(isSet($val_lh['date_ended'])) {
                     $location_history_html .= "<p>" .  date("m/d/Y", strtotime($val_lh['date_started'])) . " thru " . date("m/d/Y", strtotime($val_lh['date_ended'])) . " @" . strtoupper($val_lh['location']) . "</p>";
@@ -114,6 +115,8 @@
             $coa_css = null;
         }
         
+        if(is_null($edit_data['coa'])) { $edit_data['coa'] = array(); }
+
         if( count($edit_data['coa']) > 0) {
         extract($edit_data['coa'][0], EXTR_PREFIX_SAME, "dup");
 
@@ -127,13 +130,12 @@
 
         /* Costs for Art */
         $costs_data = $this->api_Admin_Get_Inventory_Item_Costs($edit_id);
-        
         if($this->api['table'] == 'art_costs') {
             
             $art_costs_supplier_id = null;
             $legacy_exp_field = '<input type="hidden" name="legacy_exp" value="' . $art_id . '" />';
             // $art_costs_supplier_id = 18;
-            if( count($costs_data > 0) ) {
+            if( count($costs_data) > 0 ) {
 
                 $x=1;
                 foreach( $costs_data as $row => $vals ) {  
@@ -202,6 +204,7 @@
             $manual_entries = null;
         }
     }
+
         $this->page->title = $title_state . " Art: <b>" . $title . "</b> (" . $art_id . ")";
         $formTypeAction = "update";
         $button_label= $button_disabled_label;

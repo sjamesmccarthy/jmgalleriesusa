@@ -161,27 +161,4 @@ if(isSet($this->routes->URI->queryvals)) {
 /* NAVIGATION LOAD */
 $navigation_html = $this->component('admin_navigation');
 
- if(isSet($this->routes->URI->queryvals )) {
-    $filter ='RESULT';
-    $form_result_state = "show";
-    $form_sql_state = "noshow";
-    $active_filter = null;
-    $result = $this->api_Admin_Get_Reports_Sql($res_sql);
-    $result_json = json_encode($result);
-    $columns = array_keys($result[0]);
-
-    foreach ($columns as $key => $val) {
-        $table_keys .= "<th>" . $val . "</th>";
-        $dataTableColumns .= "{ data:'" . $val . "'},"; 
-    }
-
-    $dataTableColumns = rtrim($dataTableColumns, ",");
-    
-} else {
-    $filter = null;
-    $form_result_state = "noshow";
-    $form_sql_state = "show";
-    $active_filter = 'active';
-}
-
 ?>

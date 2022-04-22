@@ -42,7 +42,8 @@ if(isSet($this->routes->URI->queryvals)) {
     $data_json = json_encode($artwork_data);
 
     $user_data = $this->api_Admin_Get_Collector_UserAct($res_collector_id);
-    $user_count = count($user_data);
+    // $user_count = count($user_data);
+    if(!is_null($user_data)) { $user_count = count($user_data); }
 
     $purchases = '<section id="purchases">
        

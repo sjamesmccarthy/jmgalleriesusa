@@ -1981,7 +1981,6 @@ body {
   line-height: 1.8;
   letter-spacing: -0.3px;
   margin: auto;
-  color: #000;
   /* DARK-THEME */
   /* END DARK-THEME */ }
   body.dark-theme {
@@ -5997,7 +5996,7 @@ div[id*='imgT']:hover {
 .reportsidx--container {
   background-color: rgba(0, 0, 0, 0.05);
   border-radius: 6px;
-  margin: 1.7rem 0;
+  margin: 0;
   padding: 0; }
   .reportsidx--container .admin-header {
     background-color: rgba(0, 0, 0, 0.08);
@@ -6034,7 +6033,7 @@ table.dataTable tbody td.valign {
       font-size: .8rem; }
   .reports-add--container .admin-header {
     background-color: rgba(0, 0, 0, 0.08);
-    margin: 1.7rem 0;
+    margin: 0;
     border-radius: 6px 6px 0 0;
     padding: .5rem 0 0 .5rem;
     margin-bottom: 1rem;

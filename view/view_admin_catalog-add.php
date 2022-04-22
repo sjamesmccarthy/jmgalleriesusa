@@ -7,7 +7,7 @@
         <div class="col catalog-add--container">
 
             <div class="admin-header">
-                <h2> <?= $page_title ?></h2>
+                <h2> <?= $page_title ?> - testing</h2>
                 <p class="close-x"><i class="fas fa-times-circle"></i></p>
             </div>
 
@@ -72,9 +72,9 @@
                 <input type="hidden" id="file_1_path" name="file_1_path" value="/catalog/__image/">
                 <p>Image: __image/<?= $file_name ?></p>
                 <img id="file_1_prev" style="width: 100%;" />
-                <img class="photopreview <?= $display_show ?>" src="/catalog/__image/<?= $file_name ?>.jpg?<?= date(); ?>" alt="<?= $file_name ?>" />
+                <img class="photopreview <?= $display_show ?>" src="/catalog/__image/<?= $file_name ?>.jpg?<?php print time(); ?>" alt="<?= $file_name ?>" />
                 <!-- <span class="file-custom file-custom-main"></span> -->
-                </div>
+</div>
 
                 <div class="half-size file file-thumb">
                 <!-- <label>thumbnail image</label> -->
@@ -82,7 +82,7 @@
                 <input type="hidden" id="file_2_path" name="file_2_path" value="/catalog/__thumbnail/">
                 <p>Thumbnail: __thumbnail/<?= $file_name ?></p>
                 <img id="file_2_prev" style="width: 100%;" />
-                <img class="photopreview photopreviewthumb <?= $display_show ?>" src="/catalog/__thumbnail/<?= $file_name ?>.jpg?<?= date(); ?>" alt="<?= file_name ?>" />
+                <img class="photopreview photopreviewthumb <?= $display_show ?>" src="/catalog/__thumbnail/<?= $file_name ?>.jpg?<?php time(); ?>" alt="<?= $file_name ?>" />
                 <!-- <span class="file-custom file-custom-thumbnail"></span> -->
                 </div>
             </div>

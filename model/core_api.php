@@ -1295,6 +1295,8 @@ class Core_Api extends Fieldnotes_Api
 
     public function api_Admin_Get_Inventory_Item_Costs($art_id) {
 
+        $data = array();
+        
         /* first check classic table */
         /* If results found convert to manual entires */
         if( $this->checkDBConnection(__FUNCTION__) == true) {
@@ -1566,12 +1568,14 @@ class Core_Api extends Fieldnotes_Api
             }
 
         }
-
+        
         return($data);
 
     }
 
     public function api_Admin_Get_Locations_History($art_id) {
+
+        $data = array();
 
         /* Executes SQL and then assigns object to passed var */
         if( $this->checkDBConnection(__FUNCTION__) == true) {
