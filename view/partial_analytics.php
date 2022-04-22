@@ -8,7 +8,8 @@
   if($this->system->header->param == "admin") {
     $ga_code = 'G-ZT74Z3MSP1';
   } else {
-    $ga_code = 'UA-73077319-2';
+    // $ga_code = 'UA-73077319-2';
+    $ga_code = 'G-ML639F09TZ';
   }
 
 ?>
