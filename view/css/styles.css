@@ -1739,9 +1739,7 @@ SASS, https://sass-lang.com/
   display: none;
   background-color: #e2e3e5;
   border-radius: 6px;
-  margin-bottom: 2rem;
-  padding: 2rem;
-  margin: 1rem; }
+  padding: 2rem; }
   .notification.success {
     background-color: #d4edda;
     border: 1px solid #c3e6cb; }
@@ -2442,7 +2440,6 @@ select {
   color: green; }
 
 .success {
-  margin-bottom: 1rem;
   padding: 20px;
   background-color: #d4edda;
   color: #155724;
