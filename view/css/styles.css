@@ -5645,7 +5645,7 @@ div[id*='imgT']:hover {
 .catalog-add--container {
   background-color: rgba(0, 0, 0, 0.02);
   border-radius: 6px;
-  margin: 1.7rem 0;
+  margin: 0;
   padding: 0; }
   .catalog-add--container .admin-header {
     background-color: rgba(0, 0, 0, 0.08);
@@ -5715,7 +5715,7 @@ div[id*='imgT']:hover {
 .inventory--container {
   background-color: rgba(0, 0, 0, 0.05);
   border-radius: 6px;
-  margin: 1.7rem 0;
+  margin: 0;
   padding: 0; }
   .inventory--container .admin-header {
     background-color: rgba(0, 0, 0, 0.08);
@@ -5729,7 +5729,7 @@ div[id*='imgT']:hover {
 .inventory-add--container {
   background-color: rgba(0, 0, 0, 0.02);
   border-radius: 6px;
-  margin: 1.7rem 0;
+  margin: 0;
   padding: 0; }
   .inventory-add--container .admin-header {
     background-color: rgba(0, 0, 0, 0.08);
@@ -5843,7 +5843,7 @@ div[id*='imgT']:hover {
 .suppliers-add--container {
   background-color: rgba(0, 0, 0, 0.02);
   border-radius: 6px;
-  margin: 1.7rem 0;
+  margin: 0;
   padding: 0; }
   .suppliers-add--container .admin-header {
     background-color: rgba(0, 0, 0, 0.08);
@@ -5910,7 +5910,7 @@ div[id*='imgT']:hover {
 .materials--container {
   background-color: rgba(0, 0, 0, 0.05);
   border-radius: 6px;
-  margin: 1.7rem 0;
+  margin: 0;
   padding: 0; }
   .materials--container .admin-header {
     background-color: rgba(0, 0, 0, 0.08);
@@ -5931,7 +5931,7 @@ div[id*='imgT']:hover {
 .materials-add--container {
   background-color: rgba(0, 0, 0, 0.02);
   border-radius: 6px;
-  margin: 1.7rem 0;
+  margin: 0;
   padding: 0; }
   .materials-add--container .admin-header {
     background-color: rgba(0, 0, 0, 0.08);
@@ -6092,7 +6092,7 @@ table.dataTable tbody td.valign {
 .fieldnotesidx--container {
   background-color: rgba(0, 0, 0, 0.05);
   border-radius: 6px;
-  margin: 1.7rem 0;
+  margin: 0;
   padding: 0; }
   .fieldnotesidx--container .admin-header {
     background-color: rgba(0, 0, 0, 0.08);
@@ -6116,7 +6116,7 @@ table.dataTable tbody td.valign {
 .fieldnotes-add--container {
   background-color: rgba(0, 0, 0, 0.02);
   border-radius: 6px;
-  margin: 1.7rem 0;
+  margin: 0;
   padding: 0; }
   .fieldnotes-add--container .add-imgs {
     display: none; }
@@ -6230,7 +6230,7 @@ table.dataTable tbody td.valign {
 .collectors--container {
   background-color: rgba(0, 0, 0, 0.05);
   border-radius: 6px;
-  margin: 1.7rem 0;
+  margin: 0;
   padding: 0; }
   .collectors--container .admin-header {
     background-color: rgba(0, 0, 0, 0.08);
@@ -6244,7 +6244,7 @@ table.dataTable tbody td.valign {
 .collectors-add--container {
   background-color: rgba(0, 0, 0, 0.02);
   border-radius: 6px;
-  margin: 1.7rem 0;
+  margin: 0;
   padding: 0; }
   .collectors-add--container .admin-header {
     background-color: rgba(0, 0, 0, 0.08);
@@ -6321,7 +6321,7 @@ table.dataTable tbody td.valign {
 .users--container {
   background-color: rgba(0, 0, 0, 0.05);
   border-radius: 6px;
-  margin: 1.7rem 0;
+  margin: 0;
   padding: 0; }
   .users--container .admin-header {
     background-color: rgba(0, 0, 0, 0.08);
@@ -6341,7 +6341,7 @@ table.dataTable tbody td.valign {
 .users-add--container {
   background-color: rgba(0, 0, 0, 0.02);
   border-radius: 6px;
-  margin: 1.7rem 0;
+  margin: 0;
   padding: 0; }
   .users-add--container .admin-header {
     background-color: rgba(0, 0, 0, 0.08);
@@ -6420,7 +6420,7 @@ table.dataTable tbody td.valign {
 .collections--container {
   background-color: rgba(0, 0, 0, 0.05);
   border-radius: 6px;
-  margin: 1.7rem 0;
+  margin: 0;
   padding: 0; }
   .collections--container .admin-header {
     background-color: rgba(0, 0, 0, 0.08);
@@ -6444,7 +6444,7 @@ table.dataTable tbody td.valign {
 .collections-add--container {
   background-color: rgba(0, 0, 0, 0.02);
   border-radius: 6px;
-  margin: 1.7rem 0;
+  margin: 0;
   padding: 0; }
   .collections-add--container .admin-header {
     background-color: rgba(0, 0, 0, 0.08);
@@ -6509,7 +6509,7 @@ table.dataTable tbody td.valign {
 .inventory--container {
   background-color: rgba(0, 0, 0, 0.05);
   border-radius: 6px;
-  margin: 1.7rem 0;
+  margin: 0;
   padding: 0; }
   .inventory--container .admin-header {
     background-color: rgba(0, 0, 0, 0.08);
@@ -6523,7 +6523,7 @@ table.dataTable tbody td.valign {
 .admin--products-add {
   background-color: rgba(0, 0, 0, 0.02);
   border-radius: 6px;
-  margin: 1.7rem 0;
+  margin: 0;
   padding: 0; }
   .admin--products-add .add-imgs {
     display: none;
@@ -6646,7 +6646,7 @@ table.dataTable tbody td.valign {
 .orders--container {
   background-color: rgba(0, 0, 0, 0.05);
   border-radius: 6px;
-  margin: 1.7rem 0;
+  margin: 0;
   padding: 0; }
   .orders--container .admin-header {
     background-color: rgba(0, 0, 0, 0.08);
@@ -6663,7 +6663,7 @@ table.dataTable tbody td.valign {
 .orders-add--container {
   background-color: rgba(0, 0, 0, 0.02);
   border-radius: 6px;
-  margin: 1.7rem 0;
+  margin: 0;
   padding: 0; }
   .orders-add--container .admin-header {
     background-color: rgba(0, 0, 0, 0.08);
@@ -6683,7 +6683,7 @@ table.dataTable tbody td.valign {
 .settings--container {
   background-color: rgba(0, 0, 0, 0.02);
   border-radius: 6px;
-  margin: 1.7rem 0;
+  margin: 0;
   padding: 0; }
   .settings--container .admin-header {
     background-color: rgba(0, 0, 0, 0.08);

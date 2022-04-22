@@ -9,38 +9,38 @@
     }
 
         /* What is this code block for again? Thu, 25 Nov 2021 */
-        if(count($this->data->routePathQuery) > 2) {
+        // if(count($this->data->routePathQuery) > 2) {
             
-            foreach($this->data->routePathQuery as $key => $val) {
-                $params[] = explode('=', $val); // fastest but not best way to handle this
-            }
+        //     foreach($this->data->routePathQuery as $key => $val) {
+        //         $params[] = explode('=', $val); // fastest but not best way to handle this
+        //     }
         
-            $title = $params[2][1];
-            if($params[4][1] == 'tinyviews') {
-                $edition_style = "OPEN";
-            } else {
-                $edition_style = "GALLERY";
-            }
+        //     $title = $params[2][1];
+        //     if($params[4][1] == 'tinyviews') {
+        //         $edition_style = "OPEN";
+        //     } else {
+        //         $edition_style = "GALLERY";
+        //     }
         
-            $edition_num_max = $this->config->limited_edition_max;
-            $print_size = $params[5][1];
-            $print_media = "PAPER";
-            $frame_desc = urldecode($params[6][1]);
-            $listed = $params[7][1];
-            $value = $params[8][1];
-            $negative_file = $params[9][1];
-            $acquired_from = "WEB ORDER";
-            $purchase_date = urldecode($params[10][1]);
+        //     $edition_num_max = $this->config->limited_edition_max;
+        //     $print_size = $params[5][1];
+        //     $print_media = "PAPER";
+        //     $frame_desc = urldecode($params[6][1]);
+        //     $listed = $params[7][1];
+        //     $value = $params[8][1];
+        //     $negative_file = $params[9][1];
+        //     $acquired_from = "WEB ORDER";
+        //     $purchase_date = urldecode($params[10][1]);
         
-            // collector ID set below $params[3][1]
-            $redirect_url = "<input type='hidden' name='orders_redirect' value='" . $params[0][1] . "' />";
-            $redirect_url .= "<input type='hidden' name='product_order_id' value='" . $params[0][1] . "' />";
+        //     // collector ID set below $params[3][1]
+        //     $redirect_url = "<input type='hidden' name='orders_redirect' value='" . $params[0][1] . "' />";
+        //     $redirect_url .= "<input type='hidden' name='product_order_id' value='" . $params[0][1] . "' />";
         
         
-            unset($this->routes->URI->queryvals);
-        } else {
-            $redirect_url = null;
-        }
+        //     unset($this->routes->URI->queryvals);
+        // } else {
+        //     $redirect_url = null;
+        // }
         /* ****** */
 
     /* Get Supplier_Materials for drop select list */

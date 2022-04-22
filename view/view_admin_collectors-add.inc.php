@@ -8,7 +8,8 @@ if($this->checkSession()) {
     header('location:/studio/signin');
 }
 
-if(count($this->data->routePathQuery) == 2) {
+
+if(count($this->data->routePathQuery) === 2) {
     
     $ref = explode('=', $this->data->routePathQuery[0]);
     $cust_id = $ref[1];

@@ -8,7 +8,7 @@ if($this->checkSession()) {
     header('location:/studio/signin');
 }
 
-if(count($this->data->routePathQuery) > 2) {
+if(is_countable($this->data->routePathQuery) > 2) {
     
     $username_query = explode('=', $this->data->routePathQuery[0]);
     $res_username = $username_query[1];
