@@ -5,11 +5,11 @@
             "component": "true",
             "title": "We are programmers not poets : e_404"
         },
-    "/": {
+    "/home": {
         "template" : "catalog",
         "page" : "home",
-        "title" : "jMcCarthy Fine Art",
-        "component": "true"
+        "component": "true",
+        "title" : "jMcCarthy Fine Art"
     },
     "[$1]/[$2]": {
         "template": "page",
@@ -18,26 +18,23 @@
         "title": "[$2]"
     },
     "[$1]": {
+        "alias":"true",
         "template": "catalog",
         "page": "catalog",
         "component": "true",
         "title": "[$1]"
     },
     "/thework": {
+        "alias":"true",
         "template": "catalog",
         "page": "catalog",
         "component": "true",
         "title": "The Work"
     },
-    "/galleries": {
-        "template": "catalog",
-        "page": "galleries",
-        "component": "true",
-        "title": "Collections"
-    },
     "/collections": {
+        "alias":"true",
         "template": "catalog",
-        "page": "galleries",
+        "page": "collections",
         "component": "true",
         "title": "Collections"
     },
@@ -54,13 +51,6 @@
         "component": "true",
         "title": "Sign In To Your Studio"
     },
-    "/d/collector/signin": {
-        "template": "page",
-        "page": "admin_signin",
-        "auth": "true",
-        "component": "true",
-        "title": "Sign In To Your Collector Dashboard"
-    },
     "/studio/manage": {
         "template": "admin",
         "page": "admin_manage",
@@ -68,12 +58,45 @@
         "component": "true",
         "title": "Managing Your Studio"
     },
+    "/provenance": {
+        "template": "page",
+        "page": "provenance",
+        "component": "true",
+        "title": "Digital Provenance & Authenticity Tracker",
+        "header": {
+            "js": {
+                "1":"/view/provenance/provenance.js",
+                "2":"https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"
+            }
+        }
+    }, 
     "/d/collector": {
         "template": "page",
         "page": "collector_dashboard",
         "auth": "true",
         "component": "true",
         "title": "Managing Your Collection"
+    },
+    "/d/collector/signin": {
+        "template": "page",
+        "page": "admin_signin",
+        "auth": "true",
+        "component": "true",
+        "title": "Sign In To Your Collector Dashboard"
+    },
+    "/d/collector/auth": {
+        "template": "admin",
+        "page": "admin_auth",
+        "auth": "true",
+        "component": "true",
+        "title": "Authorizing"
+    },
+    "/d/collector/signout": {
+        "template": "page",
+        "page": "admin_signedout",
+        "auth": "true",
+        "component": "true",
+        "title": "Signed Out of Your Studio"
     },
     "/studio/collectordash": {
            "template": "redirect",
@@ -102,21 +125,7 @@
         "component": "true",
         "title": "Catalog of Shop Products"
     },
-    "/studio/products-add": {
-        "template": "admin",
-        "page": "admin_products-add",
-        "auth": "true",
-        "component": "true",
-        "title": "Add Product To Shop"
-    },
     "/studio/auth": {
-        "template": "admin",
-        "page": "admin_auth",
-        "auth": "true",
-        "component": "true",
-        "title": "Authorizing"
-    },
-    "/d/collector/auth": {
         "template": "admin",
         "page": "admin_auth",
         "auth": "true",
@@ -130,13 +139,6 @@
         "component": "true",
         "title": "Signed Out of Your Studio"
     },
-    "/d/collector/signout": {
-        "template": "page",
-        "page": "admin_signedout",
-        "auth": "true",
-        "component": "true",
-        "title": "Signed Out of Your Studio"
-    },
     "/product/[$1]": {
         "template": "page",
         "page": "product",
@@ -144,14 +146,14 @@
         "component": "true",
         "title": "[$1]"
     },
-    "/order-confirmation": {
+    "/checkout-thankyou": {
         "template": "page",
         "page": "checkout_thankyou",
         "auth": "false",
         "component": "false",
         "title": "Thank You for Your Order"
     },
-    "/order-problem": {
+    "/checkout-problem": {
         "template": "page",
         "page": "checkout_problem",
         "auth": "false",
@@ -404,43 +406,31 @@
         "page": "admin_settings",
         "auth": "true",
         "component": "true",
-        "title": "Settings"
+        "title": "Settings",
+        "header": {
+            "js": {
+                "1":"https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"
+            }
+        }
     },
     "/about": {
         "template": "page",
         "page": "about",
-        "component": "false",
-        "title": "About"
+        "component": "true",
+        "title": "About James"
+    }, 
+    "/loveoutside": {
+        "template": "page",
+        "page": "loveoutside",
+        "component": "true",
+        "title": "LoveOutside.Org"
     },
     "/now": {
+        "alias": "true",
         "template": "page",
-        "page": "now",
-        "component": "false",
-        "title": "What Am I Doing Now?"
-    },
-    "/now/2021/july": {
-        "template": "page",
-        "page": "now-2021-07",
-        "component": "false",
-        "title": "What Am I Doing Now?"
-    },
-    "/now/2021/august": {
-        "template": "page",
-        "page": "now-2021-08",
-        "component": "false",
-        "title": "What Am I Doing Now?"
-    },
-    "/now/2021/september": {
-        "template": "page",
-        "page": "now-2021-09",
-        "component": "false",
-        "title": "What Am I Doing Now?"
-    },
-    "/now/2021/october": {
-        "template": "page",
-        "page": "now-2021-10",
-        "component": "false",
-        "title": "What Am I Doing Now?"
+        "page": "about",
+        "component": "true",
+        "title": "About James (What Am I Doing Now?)"
     },
     "/release-notes": {
         "template": "page",
@@ -448,17 +438,12 @@
         "component": "false",
         "title": "Release Notes"
     },
-    "/news": {
-        "template": "page",
-        "page": "news",
-        "component": "true",
-        "title": "News"
-    },
     "/moments": {
+        "alias" :"true",
         "template": "page",
-        "page": "moments",
+        "page": "about",
         "component": "false",
-        "title": "News & Other Moments"
+        "title": "About James (Moments)"
     },
     "/exhibits": {
         "template": "page",
@@ -468,13 +453,13 @@
     },
     "/fieldnotes": {
         "template": "page",
-        "page": "polarized",
+        "page": "fieldnotes",
         "component": "true",
         "title": "Field Notes by Photographer j.McCarthy"
     },
     "/fieldnotes/[$1]": {
         "template": "page",
-        "page": "polarized_post",
+        "page": "fieldnotes_post",
         "component": "true",
         "title": "[$1]",
         "header": {
@@ -537,37 +522,12 @@
     "/signup": {
         "template": "redirect",
         "page": "https://mailchi.mp/677ca5e417ef/new-release-newsletter",
-        "page_old": "",
         "component": "false",
         "title": "Signup for our monthly New Release and Amazing Offer email"
     },
     "/thestudio": {
         "template": "redirect",
         "page": "https://jmgalleries.pixieset.com",
-        "component": "false",
-        "title": "Shop tinyViews, Wall Mounted Prints and Books"
-    },
-    "/newsletter": {
-        "template": "redirect",
-        "page": "/fieldnotes",
-        "component": "false",
-        "title": "First Friday Email"
-    },
-    "/d/collector/amazing-offer": {
-        "template": "page",
-        "page": "newsletter_email",
-        "component": "true",
-        "title": "Once A Month Email"
-    },
-    "/abstract-architecture-people/killer-b": {
-        "template": "redirect",
-        "page": "https://jmgalleries.com/abstract-architecture-people/blades-of-balboa",
-        "component": "false",
-        "title": "Shop tinyViews, Wall Mounted Prints and Books"
-    },
-    "/abstract-architecture-people/high-hill": {
-        "template": "redirect",
-        "page": "https://jmgalleries.com/abstract-architecture-people/facade-to-the-sky",
         "component": "false",
         "title": "Shop tinyViews, Wall Mounted Prints and Books"
     }

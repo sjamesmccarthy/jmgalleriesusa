@@ -1,0 +1,77 @@
+/*
+jM Galleries UI v2
+MIT License
+https://jmgalleriesusa.com
+
+SASS, https://sass-lang.com/
+*/
+
+// Core
+@import '../../lib/resetcss/reset.scss';
+@import '_app';
+@import 'utility';
+@import '../../lib/editor/src/editor.scss';
+
+// Components
+@import '../__components/component_most_popular';
+@import '../__components/component_hero';
+@import '../__components/component_new_releases';
+@import '../__components/component_gallery_thumbs';
+@import '../__components/component_notice';
+@import '../__components/component_admin_quickstats';
+@import '../__components/component_admin_photosviewed';
+@import '../__components/component_admin_activity';
+@import '../__components/component_admin_reports';
+@import '../__components/component_admin_orders';
+@import '../__components/component_admin_navigation';
+
+// Partials
+@import '../__partials/partial_nav';
+@import '../__partials/partial_newsletter';
+@import '../__partials/partial_footer';
+
+// Views (or pages)
+@import '../404/view_404';
+@import '../catalog/view_catalog';
+@import '../contact/view_contact';
+@import '../about/view_about';
+@import '../detail/view_detail';
+@import '../exhibits/view_exhibits';
+@import '../privacy/view_privacy'; /*subsection UL*/
+@import '../styles/view_styles'; /*subsection UL override*/
+@import '../release-notes/view_release-notes';
+@import '../fieldnotes/view_fieldnotes';
+@import '../fieldnotes/view_fieldnotes_post';
+@import '../product/view_product';
+@import '../shop/view_shop';
+@import '../checkout/view_checkout_form';
+@import '../provenance/view_provenance'; 
+@import '../loveoutside/view_loveoutside'; 
+
+// Admin Studio
+@import '../admin/signin/view_admin_signin'; 
+@import '../admin/signedout/view_admin_signedout'; 
+@import '../admin/manage/view_admin_manage'; 
+@import '../admin/catalog/view_admin_catalog'; 
+@import '../admin/catalog/view_admin_catalog-add'; 
+@import '../admin/inventory/view_admin_inventory'; 
+@import '../admin/inventory/view_admin_inventory-add'; 
+@import '../admin/suppliers/view_admin_suppliers'; 
+@import '../admin/suppliers/view_admin_suppliers-add'; 
+@import '../admin/materials/view_admin_materials'; 
+@import '../admin/materials/view_admin_materials-add'; 
+@import '../admin/reports/view_admin_reports'; 
+@import '../admin/reports/view_admin_reports-add'; 
+@import '..//admin/fieldnotes/view_admin_fieldnotes'; 
+@import '..//admin/fieldnotes/view_admin_fieldnotes-add'; 
+@import '../admin/collectors/view_admin_collectors'; 
+@import '../admin/collectors/view_admin_collectors-add'; 
+@import '../admin/users/view_admin_users'; 
+@import '../admin/users/view_admin_users-add'; 
+@import '../admin/collections/view_admin_collections'; 
+@import '../admin/collections/view_admin_collections-add'; 
+@import '../admin/products/view_admin_products'; 
+@import '../admin/products/view_admin_products-add'; 
+@import '../admin/orders/view_admin_orders'; 
+@import '../admin/orders/view_admin_orders-add'; 
+@import '../admin/settings/view_admin_settings'; 

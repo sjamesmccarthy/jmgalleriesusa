@@ -5,6 +5,8 @@
 /.nova/Publishing/*
 /.idea/*
 /.sessions/*
+/.archive/*
+/.scratch/*
 
 # dependencies
 /node_modules
@@ -28,7 +30,7 @@ composer*
 .env.development.local
 .env.test.local
 .env.production.local
-
+php.ini
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
@@ -38,9 +40,9 @@ config-*.json
 config_env.json
 config_env-*.json
 /view/css/scss/*
-# /catalog/__image/*
-/catalog/__image/__archived/*
-# /catalog/__thumbnail/*
-/catalog/__thumbnail/__archived/*
+# /view/__catalog/__image/*
+/view/__catalog/__image/__archived/*
+# /view/__catalog/__thumbnail/*
+/view/__catalog/__thumbnail/__archived/*
 /lib/gridlex-master/*
 /view/__todo.md

@@ -11,10 +11,14 @@ class Core_Site extends Core_Api
   public $session_started;
   public $data;
   public $page;
+  public $alias;
+  public $template;
+  public $catalog_path;
+  public $title;
   public $errors;
 
-  public function __construct()
-  {
+  public function __construct() {
+
     date_default_timezone_set("America/Los_Angeles");
     $this->system = (object) [];
     $this->page   = (object) [];
@@ -102,11 +106,10 @@ class Core_Site extends Core_Api
     }
   }
 
-  public function checkSession()
-  {
+  public function checkSession() {
+
     if (!isset($_SESSION["uid"]) || $_SESSION["dashboard"] != "ARTIST") {
       $_SESSION["error"] = "timeout";
-      // $this->console($_SESSION,1);
       return false;
     } else {
       return true;
@@ -124,76 +127,63 @@ class Core_Site extends Core_Api
     }
   }
 
-  public function getRoute()
-  {
+public function getRoute()
+{
     $pass_error_page = false;
+    $wildcard = 0;
+    $wild_needles = array("/[$1]","[$1]","[$1]/[$2]");
 
-    /* Parse the URI */
-    $this->routes->URI = (object) parse_url($_SERVER["REQUEST_URI"]);
+    /* If URI in request contains two slashes in a row, make 1 slash */
+    $URI_path_tmp = $_SERVER['REQUEST_URI'];
+    $URI_path = str_replace("//", "/", $URI_path_tmp);
+    
+    $this->routes->URI = (object) parse_url($URI_path);
     $this->routes->URI->url = "//{$_SERVER["HTTP_HOST"]}{$_SERVER["REQUEST_URI"]}";
     $this->routes->URI->useragent = $_SERVER["HTTP_USER_AGENT"];
-
+    
     /* Check for root level or trim slashes */
     if ($this->routes->URI->path != "/") {
       $this->routes->URI->path = rtrim($this->routes->URI->path, "/");
-
-      // print $this->routes->URI->path;
-      // exit;
     } else {
-      // print $this->routes->URI->path;
+      $this->routes->URI->path = '/home';
     }
 
-    /* Match the [path] of URI to the routes.json */
-    if (property_exists($this->routes, $this->routes->URI->path) == true) {
-      // print "preg_match_TRUE<br />" . $this->routes->URI->path;
-      // exit;
+  /* Match the [path] of URI to the routes.json */
+if (property_exists($this->routes, $this->routes->URI->path) == true) {
 
-      /* Direct route match URI === route path */
       $this->routes->URI->match    = "true";
       $this->page->title           = $this->routes->{$this->routes->URI->path}["title"];
       $this->page->catalog_path    = $this->routes->URI->path;
       $this->routes->URI->template = $this->routes->{$this->routes->URI->path}["template"];
       $this->routes->URI->page     = $this->routes->{$this->routes->URI->path}["page"];
+      $this->routes->URI->alias    = $this->routes->{$this->routes->URI->path}["alias"];
 
-      /* Check if Template type is redirect */
+       /* Check if Template type is REDIRECT */
       if ($this->routes->{$this->routes->URI->path}["template"] == "redirect") {
         header("location:" . $this->routes->{$this->routes->URI->path}["page"]);
-      }
+        exit;
+      } 
 
-      /* Check if Template type is script */
+      /* Check if Template type is SCRIPT */
+      /* Update: Perhaps this needs to be moved somewhere above checkign if it exists as a route */
       if ($this->routes->{$this->routes->URI->path}["template"] == "script") {
         // header('location:' . $this->routes->{$this->routes->URI->path}['page']);
 
-        if (
-          file_exists(
-            $_SERVER["DOCUMENT_ROOT"] .
-              "/view/" .
-              $this->routes->{$this->routes->URI->path}["page"]
-          )
-        ) {
-          include_once $_SERVER["DOCUMENT_ROOT"] .
-            "/view/" .
-            $this->routes->{$this->routes->URI->path}["page"];
+        if (file_exists($_SERVER["DOCUMENT_ROOT"] ."/view/__ajax/" . $this->routes->{$this->routes->URI->path}["page"])) {
+          include_once $_SERVER["DOCUMENT_ROOT"] . "/view/__ajax/" . $this->routes->{$this->routes->URI->path}["page"];
         } else {
-          $this->errors["script"] =
-            "Script Not Found : " .
-            __FILE__ .
-            " : " .
-            __FUNCTION__ .
-            " : " .
-            __LINE__ .
-            " : " .
-            $this->routes->{$this->routes->URI->path}["page"];
+          $this->errors["script"] = "Script Not Found : " . __FILE__ . " : " . __FUNCTION__ . " : " . __LINE__ . " : " . $this->routes->{$this->routes->URI->path}["page"];
         }
+
       }
 
-      /* Add else if which checks for 1 wildcard string and then checks database for that collection */
-      /* Problem: this could catch single path URIs and send 404 */
-    } elseif (
-      preg_match_all("/^\/[^\/]+\/$/m", $this->routes->URI->path . "/") == true
-    ) {
+/* One wildcard [$1] path and then checks database for that collection */
+} elseif (preg_match_all("/^\/[^\/]+\/$/m", $this->routes->URI->path . "/") == true) {
+
       /* splitting the URI path by forward slash */
       $URIx = explode("/", $this->routes->URI->path);
+
+      // $this->console($URIx,1);
 
       /* API look up of collection, if found load, else $pass_error_page = true */
       $check_collection = $this->api_Admin_Get_LookUpCollectionByName($URIx[1]);
@@ -203,6 +193,7 @@ class Core_Site extends Core_Api
         $this->routes->URI->path = "[$1]";
         $this->routes->URI->template = $this->routes->{'[$1]'}["template"];
         $this->routes->URI->page = $this->routes->{'[$1]'}["page"];
+        $this->routes->URI->alias    = $this->routes->{$this->routes->URI->path}["alias"];
 
         /* Adding data to the page index of the data object that is accessible in the templates and pages */
         $this->page->title = ucwords(str_ireplace("-", " ", $URIx[1]));
@@ -213,13 +204,9 @@ class Core_Site extends Core_Api
         $pass_error_page = true;
       }
 
-      /* Two wild card paths in URI */
-    } elseif (
-      preg_match_all(
-        "/^\/[^\/]+\/[^\/]+\/$/m",
-        $this->routes->URI->path . "/"
-      ) == true
-    ) {
+/* Two wild card [$1]/[$2] paths in URI */
+} elseif (preg_match_all("/^\/[^\/]+\/[^\/]+\/$/m",$this->routes->URI->path . "/") == true) {
+
       /* splitting the URI path by forward slash */
       $URIx = explode("/", $this->routes->URI->path);
       unset($URIx[0]);
@@ -232,16 +219,17 @@ class Core_Site extends Core_Api
           if (count($result) > 0) {
             /* Mutating the routes URI so the regEx can be found in the routes JSON object */
             $this->routes->URI->path = "/fieldnotes/[$1]";
-            $this->routes->URI->template =
-              $this->routes->{'/fieldnotes/[$1]'}["template"];
-            $this->routes->URI->page =
-              $this->routes->{'/fieldnotes/[$1]'}["page"];
+            $this->routes->URI->template = $this->routes->{'/fieldnotes/[$1]'}["template"];
+            $this->routes->URI->page = $this->routes->{'/fieldnotes/[$1]'}["page"];
 
             /* Adding data to the page index of the data object that is accessible in the templates and pages */
             $this->page->title = ucwords(str_ireplace("-", " ", $URIx[2]));
             $this->page->catalog_path = "/" . $URIx[1] . "/" . $URIx[2];
             $this->page->image_path = $result["image"];
             $this->page->fieldnotes_id = $result["fieldnotes_id"];
+
+            $wildcard =1;
+
           } else {
             $pass_error_page = true;
           }
@@ -252,7 +240,7 @@ class Core_Site extends Core_Api
           /* Mutating the routes URI so the regEx can be found in the routes JSON object */
           $this->routes->URI->path = "[$1]/[$2]";
           $this->routes->URI->template =
-            $this->routes->{'[$1]/[$2]'}["template"];
+          $this->routes->{'[$1]/[$2]'}["template"];
           $this->routes->URI->page = $this->routes->{'[$1]/[$2]'}["page"];
 
           /* Adding data to the page index of the data object that is accessible in the templates and pages */
@@ -260,28 +248,28 @@ class Core_Site extends Core_Api
           $this->page->catalog_path = "/" . $URIx[1];
           // $this->page->photo = $URIx[2];
           $this->page->photo_path = $URIx[2];
+
+          $wildcard =2;
           break;
 
         case "product":
           /* Mutating the routes URI so the regEx can be found in the routes JSON object */
           $this->routes->URI->path = "/" . $URIx[1] . "/[$1]";
-          $this->routes->URI->template =
-            $this->routes->{"/" . $URIx[1] . '/[$1]'}["template"];
-          $this->routes->URI->page =
-            $this->routes->{"/" . $URIx[1] . '/[$1]'}["page"];
+          $this->routes->URI->template = $this->routes->{"/" . $URIx[1] . '/[$1]'}["template"];
+          $this->routes->URI->page = $this->routes->{"/" . $URIx[1] . '/[$1]'}["page"];
 
           /* Adding data to the page index of the data object that is accessible in the templates and pages */
           $this->page->title = ucwords(str_ireplace("-", " ", $URIx[2]));
           $this->page->catalog_path = $URIx[1];
           $this->page->uri = $URIx[2];
+          
+          $wildcard =1;
           break;
 
         default:
-          /* default for /photo/[$1]; */
           /* Mutating the routes URI so the regEx can be found in the routes JSON object */
           $this->routes->URI->path = "[$1]/[$2]";
-          $this->routes->URI->template =
-            $this->routes->{'[$1]/[$2]'}["template"];
+          $this->routes->URI->template = $this->routes->{'[$1]/[$2]'}["template"];
           $this->routes->URI->page = $this->routes->{'[$1]/[$2]'}["page"];
 
           /* Adding data to the page index of the data object that is accessible in the templates and pages */
@@ -289,19 +277,19 @@ class Core_Site extends Core_Api
           $this->page->catalog_path = "/" . $URIx[1];
           // $this->page->photo = $URIx[2];
           $this->page->photo_path = $URIx[2];
+
+          $wildcard =2;
           break;
       }
-    } else {
-      $pass_error_page = true;
-    }
 
+} else {
+    /* Nothing was found so nothing to do but ERROR */
+    $pass_error_page = true;
+}
+
+    /* Look for an error page result. */
     if ($pass_error_page == true) {
       $this->record_404($_SERVER["REQUEST_URI"]);
-      /* splitting the URI path by forward slash  *
-                /
-                $URIx = explode('/', $this->routes->URI->path);
-
-                /* Error 404, page URI not found. Simply rewrite the URI as /404 */
       $this->routes->URI->path = "/404";
       $this->page->title = $this->routes->{$this->routes->URI->path}["title"];
       $this->routes->URI->requested_path = $URIx;
@@ -320,30 +308,64 @@ class Core_Site extends Core_Api
     if (isset($this->routes->{$this->routes->URI->path}["header"])) {
       $this->page->header = $this->routes->{$this->routes->URI->path}["header"];
     }
+
     if (isset($this->routes->{$this->routes->URI->path}["controller"])) {
-      $this->routes->URI->controllerFile =
-        $this->routes->{$this->routes->URI->path}["controller"];
+      $this->routes->URI->controllerFile = $this->routes->{$this->routes->URI->path}["controller"];
     }
+
+    /* COMPONENT (.inc.php) FILE */
     if ($this->routes->{$this->routes->URI->path}["component"] == "true") {
-      $this->routes->URI->component =
-        $_SERVER["DOCUMENT_ROOT"] .
-        "/view/" .
-        $this->config->prefix_page .
-        $this->routes->{$this->routes->URI->path}["page"] .
-        ".inc.php";
+
+      $this->routes->URI->component = $_SERVER["DOCUMENT_ROOT"] . "/view/" . $this->config->prefix_page . $this->routes->{$this->routes->URI->path}["page"] . ".inc.php";
+      $this->routes->URI->SFC_component = $_SERVER["DOCUMENT_ROOT"] . "/view" . $this->routes->URI->path . '/' . $this->config->prefix_page . $this->routes->{$this->routes->URI->path}["page"] . ".inc.php";
+      
+      /* SFC Exceptions for COMPONENT (.inc.php) files */
+      if($wildcard == 1) {
+        $this->routes->URI->SFC_component = str_replace($wild_needles, "", $this->routes->URI->SFC_component);
+      }      
+      
+      if($wildcard == 2) {
+        $this->routes->URI->SFC_component = str_replace($wild_needles, "", $this->routes->URI->SFC_component);
+        $this->routes->URI->SFC_component = str_replace("[$2]", $this->routes->URI->page, $this->routes->URI->SFC_component);
+      }
+
+      if ($this->routes->URI->alias == "true") {
+        $this->routes->URI->SFC_component = $_SERVER["DOCUMENT_ROOT"] . "/view/" . $this->routes->URI->page . '/' . $this->config->prefix_page . $this->routes->{$this->routes->URI->path}["page"] . ".inc.php";
+      }
+
     }
-    $this->routes->URI->template =
-      $_SERVER["DOCUMENT_ROOT"] .
-      "/view/" .
-      $this->config->prefix_template .
-      $this->routes->{$this->routes->URI->path}["template"] .
-      ".php";
-    $this->routes->URI->view =
-      $_SERVER["DOCUMENT_ROOT"] .
-      "/view/" .
-      $this->config->prefix_page .
-      $this->routes->{$this->routes->URI->path}["page"] .
-      ".php";
+
+    $this->routes->URI->template = $_SERVER["DOCUMENT_ROOT"] . "/view/__templates/" . $this->config->prefix_template . $this->routes->{$this->routes->URI->path}["template"] . ".php";
+    $this->routes->URI->view = $_SERVER["DOCUMENT_ROOT"] . "/view/" . $this->config->prefix_page . $this->routes->{$this->routes->URI->path}["page"] . ".php";
+    $this->routes->URI->SFC_view = $_SERVER["DOCUMENT_ROOT"] . "/view" . $this->routes->URI->path . '/' . $this->config->prefix_page . $this->routes->{$this->routes->URI->path}["page"] . ".php";
+    
+    /* SFC Exceptions for VIEW */
+    if($wildcard == 1) {
+      $this->routes->URI->SFC_view = str_replace($wild_needles, "", $this->routes->URI->SFC_view);
+    }
+    
+    if($wildcard == 2) {
+      $this->routes->URI->SFC_view = str_replace($wild_needles, "", $this->routes->URI->SFC_view);
+      $this->routes->URI->SFC_view = str_replace("[$2]", $this->routes->URI->page, $this->routes->URI->SFC_view);
+    }
+
+    if ($this->routes->URI->alias == "true") {
+      $this->routes->URI->SFC_view = $_SERVER["DOCUMENT_ROOT"] . "/view/" . $this->routes->URI->page . '/' . $this->config->prefix_page . $this->routes->{$this->routes->URI->path}["page"] . ".php";
+    }
+
+    /* Check for ADMIN routing */
+    if($this->routes->{$this->routes->URI->path}["template"] == "admin") {
+      
+      // Setting both SFC_ and Classic so that warnings and errors are not logged
+      $URI_admin = explode("/", ltrim($this->routes->URI->path, '/'));
+      $URI_admin_cleaned = str_replace("-add", "", $URI_admin[1]);
+      $this->routes->URI->component = $_SERVER["DOCUMENT_ROOT"] . "/view/admin/" . $URI_admin_cleaned . '/' . $this->config->prefix_page . $this->routes->{$this->routes->URI->path}["page"] . ".inc.php";
+      $this->routes->URI->SFC_component = $_SERVER["DOCUMENT_ROOT"] . "/view/admin/" . $URI_admin_cleaned . '/' . $this->config->prefix_page . $this->routes->{$this->routes->URI->path}["page"] . ".inc.php";
+      $this->routes->URI->view = $_SERVER["DOCUMENT_ROOT"] . "/view/admin/" . $URI_admin_cleaned . '/' . $this->config->prefix_page . $this->routes->{$this->routes->URI->path}["page"] . ".php";
+      $this->routes->URI->SFC_view = $_SERVER["DOCUMENT_ROOT"] . "/view/admin/" . $URI_admin_cleaned . '/' . $this->config->prefix_page . $this->routes->{$this->routes->URI->path}["page"] . ".php";
+
+    }
+
   }
 
   public function render()
@@ -351,19 +373,14 @@ class Core_Site extends Core_Api
     /* start buffering the page */
     ob_start();
 
-    /* include the template page specifed in the routes config if the template file is not valid then push to Route 404 */
-    if (file_exists($this->routes->URI->template)) {
+    if (is_file($this->routes->URI->template)) {
+      
+      /* include the template page specifed in the routes config if the template file is not valid then push to Route 404
+      * the template file includes the view */
       include $this->routes->URI->template;
+
     } else {
-      $this->errors["component"] =
-        "Template Not Found : " .
-        __FILE__ .
-        " : " .
-        __FUNCTION__ .
-        " : " .
-        __LINE__ .
-        " : " .
-        $this->routes->URI->template;
+      $this->log_watch(array("key" => "core_site", "value" => "Template Not Found : " . $this->routes->URI->template, "type" => "failure"));
     }
 
     /* Flush the output buffer */
@@ -378,48 +395,53 @@ class Core_Site extends Core_Api
     /* Flush and dump the buffer */
     ob_get_clean();
   }
+  
+public function view($view = null) {
+   
+    $err_View =0;
 
-  public function view($view = null)
-  {
-    /* include the template page specifed in the routes config */
-    if (file_exists($this->routes->URI->view)) {
-      /* Check to see if a component file for this view is enabled and then if exists */
-      if ($this->routes->{$this->routes->URI->path}["component"] == "true") {
-        if (file_exists($this->routes->URI->component)) {
-          include $this->routes->URI->component;
-        } else {
-          $this->errors["component"] =
-            "Component Not Found : " .
-            __FILE__ .
-            " : " .
-            __FUNCTION__ .
-            " : " .
-            __LINE__ .
-            " : " .
-            $this->routes->URI->component;
-        }
+    /* Check to see if a component file for this view is enabled and then if exists */
+    if ($this->routes->{$this->routes->URI->path}["component"] == "true") {
+
+      /* Check to see if this is classic component */
+      if (is_file($this->routes->URI->component)) {
+        include_once $this->routes->URI->component;
+      } else {
+        $this->log_watch(array("key" => "core_site", "value" => "CLASSIC_component Not Found : " . $this->routes->URI->component, "type" => "failure"));
       }
 
-      /* Assign variables to be used in page content */
-      // foreach($this->page as $k => $v) {
-      //     $this->$k = $v;
-      // }
+      /* Check to see if this is new Single Component Catalog file */
+      if (is_file($this->routes->URI->SFC_component)) {
+        // $this->console("SFC_Component.Found " . $this->routes->URI->SFC_component);
+        include_once $this->routes->URI->SFC_component;
+      } else {
+        $this->log_watch(array("key" => "core_site", "value" => "SFC_component Not Found : " . $this->routes->URI->SFC_component, "type" => "warning"));
+      }
 
-      /* This file needs to load after the .inc file so inherits any data attributes */
-      include $this->routes->URI->view;
-      
-    } else {
-      echo "<p>Roses are red, violets are blue, we are oh-so sorry we can not find your view.</p><p>This has been reported to the poet.</p>";
-      $this->errors["component"] =
-        "View Not Found : " .
-        __FILE__ .
-        " : " .
-        __FUNCTION__ .
-        " : " .
-        __LINE__ .
-        " : " .
-        $this->routes->URI->view;
     }
+
+    /* Check to see if this is classic view file */
+    if (is_file($this->routes->URI->view)) {
+      include $this->routes->URI->view;
+    } else {
+      $err_View++;
+      $this->log_watch(array("key" => "core_site", "value" => "View Not Found : " . $this->routes->URI->view, "type" => "failure"));
+    }
+
+    /* Check to see if this is new Single Component Catalog file */
+    // $this->console("SFC_View.Found " . $this->routes->URI->SFC_view,1,__LINE__);
+    if (is_file($this->routes->URI->SFC_view)) {
+      include_once $this->routes->URI->SFC_view;
+    } else {
+      $err_View++;
+      $this->log_watch(array("key" => "core_site", "value" => "SFC_view Not Found : " . $this->routes->URI->SFC_view, "type" => "warning"));
+    }
+
+    /* Produce a combined error message and log failure when View fails to be found in both places (this is why value == 2) */
+    if($err_View == 2) {
+      echo "<div class='pt-64 text-center'><h2>&technicalProblem.Reported(" . $err_View . ")</h2><p class='text-center'>Roses are red, violets are blue, we are oh-so sorry we can not find your view.</p><p class='text-center hidden'>This has been reported to the poet.</p><p class='text-center pt-32'><a href='/'>-- return to homepage --</a></p></div>";
+    }
+
   }
 
   public function getJSON($file, $output_var)
@@ -432,23 +454,47 @@ class Core_Site extends Core_Api
     return $data;
   }
 
-  /**
-   * Load Component 
-   *
-   * @param [type] $component
-   * @param [type] $props
-   * @return $result
-   */
   public function component($component, $props = null)
   {
     // if ( !is_null($props)) { $props = "?" . $props; }
-    $file = $_SERVER["DOCUMENT_ROOT"] . "/view/component_" . $component;
+    $file = $_SERVER["DOCUMENT_ROOT"] . "/view/__components/component_" . $component;
 
-    if (file_exists($file . ".php")) {
+    // $this->console($file,0,__LINE__);
+
+    if (is_file($file . ".php")) {
       $result = include_once $file . ".php";
+    } else {
+      // $this->console("Fail");
     }
 
     return $result;
+  }
+
+  public function getHeaderExtras() {
+
+    $header_html = null;
+
+    /* Look for CSS and JS files to include */
+    if(isSet($this->page->header)) {
+
+      if(isSet($this->page->header['css'])) {
+        $header_html = '<link rel="stylesheet" type="text/css" href="' . $this->page->header['css'] . '"/>';
+      }
+
+      if(isSet($this->page->header['js'])) {
+        foreach($this->page->header['js'] as $jsK => $jsV) {
+          $header_html .= '<script type="text/javascript" src="' . $jsV . '"></script>';
+        }
+      }
+
+      if(isSet($this->page->header['font'])) {
+        $header_html = '<link href="' . $this->page->header['font'] . '" rel="stylesheet">';
+      }
+        
+    }
+      
+    // $this->console(htmlentities($header_html));
+    return $header_html;
   }
 
   public function getPartial($partial, $param=null)
@@ -462,22 +508,21 @@ class Core_Site extends Core_Api
       $this->system->$partial->param = '';
     }
 
-    // $this->console($this->system,1);
-
     /* Check to see if the partial file has an Include Component with it */
-    $file = $_SERVER["DOCUMENT_ROOT"] . "/view/partial_" . $partial;
+    $file = $_SERVER["DOCUMENT_ROOT"] . "/view/__partials/partial_" . $partial;
 
-    if (file_exists($file . ".inc.php")) {
+    if (is_file($file . ".inc.php")) {
       include_once $file . ".inc.php";
-    }
+    } 
 
     /* Include the partial file if exists */
-    if (file_exists($file . ".php")) {
+    if (is_file($file . ".php")) {
       include_once $file . ".php";
     }
+
   }
 
-  public function log($log_data)
+  public function log_watch($log_data)
   {
     /* extract Data Array */
     extract($log_data, EXTR_PREFIX_SAME, "dup");
@@ -485,16 +530,7 @@ class Core_Site extends Core_Api
     /* Insert into database table: log
      /* Executes SQL and then assigns object to passed var */
 
-    $sql =
-      "INSERT INTO log (`user_id`, `key`, `value`, `type`) VALUES ('" .
-      $_SESSION["uid"] .
-      "','" .
-      $key .
-      "','" .
-      $value .
-      "','" .
-      $type .
-      "');";
+    $sql ="INSERT INTO log_watch (`user_id`, `key`, `value`, `type`) VALUES ('" . $_SESSION["uid"] . "','" . $key . "','" . $value . "','" . $type . "');";
     $result = $this->mysqli->query($sql);
 
     if ($result == true) {
@@ -519,7 +555,7 @@ class Core_Site extends Core_Api
           $uploadReady = 0;
         }
 
-        if ($_FILES[$key]["path"] == "/catalog/__thumbnail/") {
+        if ($_FILES[$key]["path"] == "/view/__catalog/__thumbnail/") {
           $log_loc = "Thumbnail";
         } else {
           $log_loc = "Main";
@@ -532,7 +568,7 @@ class Core_Site extends Core_Api
           $ext;
 
         if (file_exists($target_file)) {
-          // $this->log(array("key" => "core", "value" => "Overwriting " . $log_loc . " Photo (" . $_POST['file_name'] . '.' . $ext . ")", "type" => "warning"));
+          // $this->log_watch(array("key" => "core", "value" => "Overwriting " . $log_loc . " Photo (" . $_POST['file_name'] . '.' . $ext . ")", "type" => "warning"));
           $uploadReady = 1;
 
           // need to throw an overwrite flag only if $_FILES[$key]['name']
@@ -546,7 +582,7 @@ class Core_Site extends Core_Api
 
         // Check if $uploadReady is set to 0 by an error
         if ($uploadReady == 0) {
-          $this->log([
+          $this->log_watch([
             "key" => "core",
             "value" => "Failed to Upload / uploadReady=0",
             "type" => "failure",
@@ -554,7 +590,7 @@ class Core_Site extends Core_Api
         } else {
           if (move_uploaded_file($_FILES[$key]["tmp_name"], $target_file)) {
             if ($uploadOverwrite == 0) {
-              $this->log([
+              $this->log_watch([
                 "key" => "core",
                 "value" =>
                   "Upload of " .
@@ -567,7 +603,7 @@ class Core_Site extends Core_Api
                 "type" => "success",
               ]);
             } else {
-              $this->log([
+              $this->log_watch([
                 "key" => "core",
                 "value" =>
                   "Overwriting " .
@@ -581,12 +617,12 @@ class Core_Site extends Core_Api
               ]);
             }
           } else {
-            // $this->log(array("key" => "system", "value" => "move_uploaded_file() FAILURE on line " . __LINE__, "type" => "failure"));
+            // $this->log_watch(array("key" => "system", "value" => "move_uploaded_file() FAILURE on line " . __LINE__, "type" => "failure"));
           }
         }
       }
     } else {
-      $this->log([
+      $this->log_watch([
         "key" => "core",
         "value" => "uploadFile() SCRIPT FAILURE",
         "type" => "failure",
@@ -594,13 +630,7 @@ class Core_Site extends Core_Api
     }
   }
 
-  public function console(
-    $val,
-    $exit = 0,
-    $file = __FILE__,
-    $method = __FUNCTION__,
-    $line = __LINE__
-  ) {
+  public function console($val,$exit = 0,$line = __LINE__,$file = __FILE__,$method = __FUNCTION__) {
     if ($this->config_env->env[$this->env]["show_console"] == "true") {
       echo "<div style='position: relative; padding: 10px; background-color: #000; color: Yellow; font-size: 1rem;'>";
       if (gettype($val) == "string") {

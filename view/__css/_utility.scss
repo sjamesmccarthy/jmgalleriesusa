@@ -1,0 +1,132 @@
+/* mixin: margin and padding adjustments */
+$max: 96;
+$offset: 8;
+$unit: 'px';
+
+@mixin wiggle($className, $styleName) {
+  $i: 8;
+  @while $i <= $max {
+    #{$className + $i} { 
+      #{$styleName}: #{$i + $unit} !important;
+    }
+    $i: $i + $offset;
+  }
+}
+
+// margin
+@include wiggle('.mt-', 'margin-top');
+@include wiggle('.mb-', 'margin-bottom');
+@include wiggle('.ml-', 'margin-left');
+@include wiggle('.mr-', 'margin-right');
+
+// padding
+@include wiggle('.pt-', 'padding-top');
+@include wiggle('.pb-', 'padding-bottom');
+@include wiggle('.pl-', 'padding-left');
+@include wiggle('.pr-', 'padding-right');
+
+/* Styles */
+.notification {
+
+    display: none;
+    background-color: #e2e3e5;
+    border-radius: $border-radius;
+    // margin-bottom: 2rem;
+    padding: 2rem;
+    // margin: 1rem;
+    
+    &.success {
+        background-color: #d4edda;
+        border: 1px solid #c3e6cb;
+
+        >p {
+            text-align: center;
+            color: $color-success;
+
+            &.heading {
+                font-weight: 700;
+                text-transform: uppercase;
+            }
+
+            &.msg {
+                font-weight: 1rem;
+                text-transform: initial;
+            }
+
+        }
+    }
+
+    &.error {
+        background-color: #f8d7da;
+        border: 1px solid #f5c6cb;
+
+        >p {
+        text-align: center;
+        color: $color-error;
+
+            &.heading {
+                font-weight: 700;
+                text-transform: uppercase;
+            }
+
+            &.msg {
+                font-weight: 1rem;
+                text-transform: initial;
+            }
+        }
+    }
+
+    &.info {
+        background-color: #d1ecf1;
+        border: 1px solid #bee5eb;
+
+        >p {
+        text-align: center;
+        color: $color-info;
+
+            &.heading {
+                font-weight: 700;
+                text-transform: uppercase;
+            }
+
+            &.msg {
+                font-weight: 1rem;
+                text-transform: initial;
+            }
+        }
+    }
+
+    &.primary {
+        background-color: #cce5ff;
+        border: 1px solid #b8daff;
+
+        >p {
+        text-align: center;
+        color: #004085;
+
+            &.heading {
+                font-weight: 700;
+                text-transform: uppercase;
+            }
+
+            &.msg {
+                font-weight: 1rem;
+                text-transform: initial;
+            }
+        }
+    }
+
+    &.show {
+        display: block;
+    }
+}
+
+.add-icon {
+    font-size: 2rem;
+    text-align: right;
+}
+
+.clear {
+    display: block;
+    clear: both;
+}

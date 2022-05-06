@@ -1,0 +1,130 @@
+#loveoutside {
+    
+    margin-top: 2rem;
+
+    h3 {
+        font-size: 1.4rem;
+    }
+
+    p {
+        @extend .mb-16;
+        font-size: 1.2rem;
+        line-height: 1.5;
+    }
+
+    .home-title {
+        @extend .pt-32;
+        @extend .pb-16;
+        @extend .text-center;
+        // font-family: 'Beth Ellen', cursive;
+        font-family: 'Averia Serif Libre', cursive;
+        font-size: 8rem;
+        margin-top: -5rem;
+        z-index: 10;
+        position: relative;
+        text-align: center;
+        color: $color-blue;
+        // text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+        text-shadow: 0px 0px 20px $color-black;
+        -webkit-text-stroke: 1px #FFF;
+
+        /* MEDIA QUERIES from Chrome, Safari, Firefox as of 10/2021 */
+        /* Mobile S: iPhone5/SE(320), Moto G4(360), Galaxy S5(360), Galaxy S10(360) */
+        @media (min-width: 320px) {
+            font-size: 8rem;
+        }
+
+        /* Mobile M: iPhone 11(375), iPhone 12/13 Mini(375), iPhone 12/13 Pro(390), iPhone SE Gen2(375), iPhone 6/7/8(375), iPhone 6/7/8+(414), iPhoneX(375), Pixel 2(411), Galaxy Note(412)*/
+        @media (min-width: 375px) {
+            font-size: 3rem;
+            // margin-bottom: 32px;
+        }
+
+        /* Mobile L: iPhone 12/13 Pro Max(428) */
+        @media (min-width: 425px) {
+            font-size: 8rem;
+        }
+
+        /* Tablet: iPad Mini(768), iPad 9.7(768), iPad Pro 10.5(834) */
+        @media (min-width: 768px) {
+            font-size: 6rem;
+        }
+
+        /* Laptop: iPad Pro 12.9(1024) */
+        @media (min-width: 1024px) {
+            font-size: 8rem;
+        }
+
+        /* Laptop L: */
+        @media (min-width: 1440px) {
+            font-size: 8rem;
+        }
+
+        /* 4k: MacBook Pro*/
+        @media (min-width: 2560px) {
+            font-size: 8rem;
+        }
+
+        span {
+            font-family: 'Averia Serif Libre', cursive;
+            font-size: 18px;
+            -webkit-text-stroke: 0;
+            margin-left: -3px;
+            display: none;
+        }
+    }
+
+    .photo-collage {
+        position: relative;
+        // background-color: yellow;
+    }
+
+    .home-stamp {
+        position: absolute;
+        margin-top: -20%;
+        top: 0;
+        left: -7%;
+        z-index: 2;
+        width: 42%
+    }
+
+    .home-banner-layer-1 {
+        position: absolute; 
+        width: 68%; 
+        margin-top: -5rem;
+        top: 0;
+        left: 5%; 
+        transform: rotate(3deg); 
+        box-shadow: rgba(0, 0, 0, 0.3) 20px 20px 25px 0px; 
+        border: 15px solid #FFF;
+        box-sizing: border-box;
+    }
+
+    .home-banner-layer-2 {
+        position: absolute; 
+        width: 65%; 
+        margin-top: 1rem;
+        // top: 0;
+        right: 0; 
+        transform: rotate(7deg); 
+        box-shadow: rgba(0, 0, 0, 0.3) 20px 20px 25px 0px; 
+        border: 15px solid #FFF;
+        box-sizing: border-box;
+    }
+
+    .home-banner-layer-3 {
+        width: 100%;
+        position: relative;
+        margin-top: -4rem;
+        transform: rotate(-3deg);
+        box-shadow: rgba(0, 0, 0, 0.3) 0px 20px 25px 0px; 
+        border: 15px solid #FFF;
+        box-sizing: border-box;
+    }
+
+    .larger {
+        font-family: 'Averia Serif Libre', cursive;
+        font-size: 1.5rem;
+        @extend .text-center;
+    }
+}

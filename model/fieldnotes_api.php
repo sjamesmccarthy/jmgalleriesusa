@@ -278,9 +278,9 @@ public function api_Admin_Update_Fieldnotes() {
                     $result_cap_u = $this->mysqli->query($sql_cap_u);
 
                     if ($result_cap_u === false) {
-                        $this->log(array("key" => "api_FieldNotes", "value" => "Failed FieldNotes " . $_POST['title'] . " (" . $_POST['fieldnotes_id'] . ")[img:" . $i . "] Caption Failed To Update / " .  $this->mysqli->real_escape_string($sql_cap_u), "type" => "failure"));
+                        $this->log_watch(array("key" => "api_FieldNotes", "value" => "Failed FieldNotes " . $_POST['title'] . " (" . $_POST['fieldnotes_id'] . ")[img:" . $i . "] Caption Failed To Update / " .  $this->mysqli->real_escape_string($sql_cap_u), "type" => "failure"));
                     } else {
-                        $this->log(array("key" => "api_FieldNotes", "value" => "FieldNotes " . $_POST['title'] . " (" . $_POST['fieldnotes_id'] . ")[img:" . $i . "] Caption Updated", "type" => "success"));
+                        $this->log_watch(array("key" => "api_FieldNotes", "value" => "FieldNotes " . $_POST['title'] . " (" . $_POST['fieldnotes_id'] . ")[img:" . $i . "] Caption Updated", "type" => "success"));
                     }
                 }
 
@@ -294,11 +294,11 @@ public function api_Admin_Update_Fieldnotes() {
         if($result == 1) {
             $_SESSION['error'] = '200';
             $_SESSION['notify_msg'] = $_POST['title'];
-            $this->log(array("key" => "api_FieldNotes", "value" => "Updated FieldNotes " . $_POST['title'] . " (" . $_POST['fieldnotes_id'] . ") ", "type" => "success"));
+            $this->log_watch(array("key" => "api_FieldNotes", "value" => "Updated FieldNotes " . $_POST['title'] . " (" . $_POST['fieldnotes_id'] . ") ", "type" => "success"));
         } else {
             $_SESSION['error'] = '501';
             $_SESSION['notify_msg'] = "SOMETHING WENT WRONG, e_501 " . __LINE__;
-            $this->log(array("key" => "api_FieldNotes", "value" => "Failed FieldNotes " . $_POST['title'] . " (" . $_POST['fieldnotes_id'] . ") " . $sql, "type" => "failure"));
+            $this->log_watch(array("key" => "api_FieldNotes", "value" => "Failed FieldNotes " . $_POST['title'] . " (" . $_POST['fieldnotes_id'] . ") " . $sql, "type" => "failure"));
         }
 
 }
@@ -398,12 +398,12 @@ public function api_Admin_Insert_Fieldnotes() {
         if($result == 1) {
             $_SESSION['error'] = '200';
             $_SESSION['notify_msg'] = $_POST['title'];
-            $this->log(array("key" => "api_FieldNotes", "value" => "Updated FieldNotes " . $_POST['title'] . " (" . $_POST['fieldnotes_id'] . ") ", "type" => "success"));
+            $this->log_watch(array("key" => "api_FieldNotes", "value" => "Updated FieldNotes " . $_POST['title'] . " (" . $_POST['fieldnotes_id'] . ") ", "type" => "success"));
         } else {
 
             $_SESSION['error'] = '501';
             $_SESSION['notify_msg'] = "SOMETHING WENT WRONG, e_501 " . __LINE__;
-            $this->log(array("key" => "api_FieldNotes", "value" => "Failed FieldNotes " . $_POST['title'] . " (" . $_POST['fieldnotes_id'] . ") " . $sql, "type" => "failure"));
+            $this->log_watch(array("key" => "api_FieldNotes", "value" => "Failed FieldNotes " . $_POST['title'] . " (" . $_POST['fieldnotes_id'] . ") " . $sql, "type" => "failure"));
         }
 
 }
@@ -434,7 +434,7 @@ public function __uploadFiles($fileTypes=array("jpeg"), $ext="jpg") {
     $uploadReady=0;
         foreach($_FILES as $key => $value) {
 
-            $_FILES[$key]['path'] = '/view/image/fieldnotes/';
+            $_FILES[$key]['path'] = '/view/__image/fieldnotes/';
 
             if($value['size'] != 0) {
                 // $_FILES[$key]['path'] = $_POST[$key . '_path'];
@@ -442,11 +442,11 @@ public function __uploadFiles($fileTypes=array("jpeg"), $ext="jpg") {
                 // $this->console($value);
             } else { $uploadReady=0; }
 
-            // if($_FILES[$key]['path'] == "/catalog/__thumbnail/") { $log_loc = 'Thumbnail'; } else { $log_loc = 'Main'; }
+            // if($_FILES[$key]['path'] == "/view/__catalog/__thumbnail/") { $log_loc = 'Thumbnail'; } else { $log_loc = 'Main'; }
             $target_file = $_SERVER["DOCUMENT_ROOT"] . $_FILES[$key]['path'] . $_POST['short_path'] . '_' . $key . '.' . $ext;
 
             if(file_exists( $target_file )) {
-                // $this->log(array("key" => "core", "value" => "Overwriting " . $log_loc . " Photo (" . $_POST['file_name'] . '.' . $ext . ")", "type" => "warning"));
+                // $this->log_watch(array("key" => "core", "value" => "Overwriting " . $log_loc . " Photo (" . $_POST['file_name'] . '.' . $ext . ")", "type" => "warning"));
                 $uploadReady = 1;
 
                 // need to throw an overwrite flag only if $_FILES[$key]['name']
@@ -460,19 +460,19 @@ public function __uploadFiles($fileTypes=array("jpeg"), $ext="jpg") {
             if($value['size'] != '0') {
 
                 if ($uploadReady == 0) {
-                    $this->log(array("key" => "api_FieldNotes", "value" => "Failed to Upload / uploadReady=0", "type" => "failure"));
+                    $this->log_watch(array("key" => "api_FieldNotes", "value" => "Failed to Upload / uploadReady=0", "type" => "failure"));
                 } else {
 
                     // $this->console($target_file);
 
                     if (move_uploaded_file($_FILES[$key]["tmp_name"], $target_file)) {
                         if ($uploadOverwrite == 0) {
-                            $this->log(array("key" => "api_FieldNotes", "value" => "Upload of " . $log_loc . " Image File (" . $_POST['short_path'] . '_' . $key . '.' . $ext . ")", "type" => "success"));
+                            $this->log_watch(array("key" => "api_FieldNotes", "value" => "Upload of " . $log_loc . " Image File (" . $_POST['short_path'] . '_' . $key . '.' . $ext . ")", "type" => "success"));
                         } else {
-                            $this->log(array("key" => "api_FieldNotes", "value" => "Overwriting " . $log_loc . " Photo (" . $_POST['short_path'] . '_' . $key . '.' . $ext . ")", "type" => "warning"));
+                            $this->log_watch(array("key" => "api_FieldNotes", "value" => "Overwriting " . $log_loc . " Photo (" . $_POST['short_path'] . '_' . $key . '.' . $ext . ")", "type" => "warning"));
                         }
                     } else {
-                        // $this->log(array("key" => "system", "value" => "move_uploaded_file() FAILURE on line " . __LINE__, "type" => "failure"));
+                        // $this->log_watch(array("key" => "system", "value" => "move_uploaded_file() FAILURE on line " . __LINE__, "type" => "failure"));
                     }
                 }
             }
@@ -489,18 +489,18 @@ public function x__uploadFile($fileTypes=array("jpeg"), $ext="jpg") {
 
             foreach($_FILES as $key => $value) {
 
-                $_FILES[$key]['path'] = '/view/image/fieldnotes/';
+                $_FILES[$key]['path'] = '/view/__image/fieldnotes/';
 
                 if($value['size'] != 0) {
                     // $_FILES[$key]['path'] = $_POST[$key . '_path'];
                     $uploadReady=1;
                 } else { $uploadReady=0; }
 
-                // if($_FILES[$key]['path'] == "/catalog/__thumbnail/") { $log_loc = 'Thumbnail'; } else { $log_loc = 'Main'; }
+                // if($_FILES[$key]['path'] == "/view/__catalog/__thumbnail/") { $log_loc = 'Thumbnail'; } else { $log_loc = 'Main'; }
                 $target_file = $_SERVER["DOCUMENT_ROOT"] . $_FILES[$key]['path'] . $_POST['short_path'] . '.' . $ext;
 
                 if(file_exists( $target_file )) {
-                    // $this->log(array("key" => "core", "value" => "Overwriting " . $log_loc . " Photo (" . $_POST['file_name'] . '.' . $ext . ")", "type" => "warning"));
+                    // $this->log_watch(array("key" => "core", "value" => "Overwriting " . $log_loc . " Photo (" . $_POST['file_name'] . '.' . $ext . ")", "type" => "warning"));
                     $uploadReady = 1;
 
                     // need to throw an overwrite flag only if $_FILES[$key]['name']
@@ -512,29 +512,31 @@ public function x__uploadFile($fileTypes=array("jpeg"), $ext="jpg") {
 
                 // Check if $uploadReady is set to 0 by an error
                 if ($uploadReady == 0) {
-                    $this->log(array("key" => "api_FieldNotes", "value" => "Failed to Upload / uploadReady=0", "type" => "failure"));
+                    $this->log_watch(array("key" => "api_FieldNotes", "value" => "Failed to Upload / uploadReady=0", "type" => "failure"));
                 } else {
 
                     if (move_uploaded_file($_FILES[$key]["tmp_name"], $target_file)) {
                         if ($uploadOverwrite == 0) {
-                            $this->log(array("key" => "api_FieldNotes", "value" => "Upload of " . $log_loc . " Image File (" . $_POST['file_name'] . '.' . $ext . ")", "type" => "success"));
+                            $this->log_watch(array("key" => "api_FieldNotes", "value" => "Upload of " . $log_loc . " Image File (" . $_POST['file_name'] . '.' . $ext . ")", "type" => "success"));
                         } else {
-                            $this->log(array("key" => "api_FieldNotes", "value" => "Overwriting " . $log_loc . " Photo (" . $_POST['file_name'] . '.' . $ext . ")", "type" => "warning"));
+                            $this->log_watch(array("key" => "api_FieldNotes", "value" => "Overwriting " . $log_loc . " Photo (" . $_POST['file_name'] . '.' . $ext . ")", "type" => "warning"));
                         }
                     } else {
-                        // $this->log(array("key" => "system", "value" => "move_uploaded_file() FAILURE on line " . __LINE__, "type" => "failure"));
+                        // $this->log_watch(array("key" => "system", "value" => "move_uploaded_file() FAILURE on line " . __LINE__, "type" => "failure"));
                     }
                 }
 
             }
         } else {
-            $this->log(array("key" => "api_FieldNotes", "value" => "__uploadFile() FAILURE", "type" => "failure"));
+            $this->log_watch(array("key" => "api_FieldNotes", "value" => "__uploadFile() FAILURE", "type" => "failure"));
         }
 
     }
 
     public function api_Admin_Get_Fieldnotes_Responses($id) {
 
+        $data = array();
+        
         /* Executes SQL and then assigns object to passed var */
         if( $this->checkDBConnection(__FUNCTION__) == true) {
 

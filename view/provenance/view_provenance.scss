@@ -1,0 +1,108 @@
+.provenance-section {
+    
+    padding-top: 2rem;
+    
+    div >p {
+        text-align: center;
+    }
+    
+    &--lookup {
+        color: $color-black;
+    }
+
+    &--results {
+        padding-top: 3rem;
+        display: none;
+    }
+
+    .errorMsg {
+        display: none;
+        @extend .mt-16;
+        @extend .text-center;
+        @extend .mb-16;
+        padding: 10px 10px;
+        color: $color-error;
+        border: 1px solid $color-error;
+        background-color: $color-error-background;
+
+    }
+}
+
+#my-collection {
+
+    // border-bottom: 5px solid $color-gray;
+    padding-bottom: 2rem;
+    @extend .mt-16;
+    
+    h4 {
+        font-weight: 800;
+        text-transform: uppercase;
+        @extend .mb-16;
+        @extend .mt-32;
+    }
+    
+    .image {
+        width: 100%;    
+    }
+    
+    .provenance {
+        
+        &--block {
+            // display: none;
+            padding-left: 1rem;
+            border-left: 1px solid #CCC;
+            margin-left: 1rem;
+            // margin-top: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        &--record {
+            text-align: left;
+            border-bottom: 1px solid #CCC;
+        }
+        
+        &--close {
+            display: none;
+        }
+    }
+    
+    .col-card {
+        padding-top: 10px;
+
+        >p {
+            font-size: 1rem;
+        }
+
+        .more-detail {
+            font-size: .8rem;
+        }
+        
+    }
+        .type-promo {
+            // background-color: rgba(0,0,0,.03); 
+            // padding: 10px;
+
+            >img {
+                opacity: 1;
+            }
+        }
+
+    .border-top {
+        border-top: .5px solid rgba(0,0,0, .1);
+        padding-top: 10px;
+        margin-top: 10px;    
+    }
+
+    .filmstrip-thumb {
+        // max-width: 360px;
+        // max-width: 310px;
+        @extend .pb-16;
+    }
+
+    .art-title {
+        font-size: 2rem;
+        font-weight: 400;
+    }
+
+
+}
