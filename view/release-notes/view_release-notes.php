@@ -8,10 +8,10 @@
 
         <div class="col-11" style="position: relative">
 
-        <p class="pt-16">v2.0 [eeb4f8a0bb994bf6644eedcec41947d5a4b93a21]<br />April 30, 2022</p>
+        <p class="pt-16">v2.0 [eeb4f8a0bb994bf6644eedcec41947d5a4b93a21]<br />May 06, 2022</p>
             <ul>
             <li>Revised file structure, database schema and routing.</li>
-            <li>Launch of DIGITAL PROVENANCE & AUTHENTICITY TRACKER.</li>
+            <li>Launch of DIGITAL PROVENANCE & AUTHENTICITY TRACKER. (Dedicated to M.D. York, the inspiration behind the idea. RIP dear friend and I wish you could have seen it in the flesh.)</li>
             <li>Launch of loveOutside.org</li>
             </ul>
         </p>        
