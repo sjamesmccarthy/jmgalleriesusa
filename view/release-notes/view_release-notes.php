@@ -8,7 +8,7 @@
 
         <div class="col-11" style="position: relative">
 
-        <p class="pt-16">v2.0<br />April 30, 2022</p>
+        <p class="pt-16">v2.0 [eeb4f8a0bb994bf6644eedcec41947d5a4b93a21]<br />April 30, 2022</p>
             <ul>
             <li>Revised file structure, database schema and routing.</li>
             <li>Launch of DIGITAL PROVENANCE & AUTHENTICITY TRACKER.</li>
