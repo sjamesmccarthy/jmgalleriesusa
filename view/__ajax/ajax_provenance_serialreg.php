@@ -7,10 +7,10 @@ $ajax = new Core_Site();
 
     // $data = json_decode(file_get_contents("php://input"),true);
 
-    if($_POST['include_all'] == "true") {
-       $include_all = 0;
-    } else {
+    if(!isSet($_POST['include_all'])) {
         $include_all = $_POST['serialreg'];
+    } else {
+        $include_all = 0;
     }
 
     /* Load filmstrip for popular */

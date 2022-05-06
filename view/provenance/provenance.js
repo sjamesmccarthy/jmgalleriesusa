@@ -41,7 +41,12 @@ jQuery(document).ready(function($){
 
         bodyFormData.append('email', $("#email").val());
         bodyFormData.append('serialreg', $("#serial").val());
-        bodyFormData.append('include_all', $('#include_all').is(':checked'));
+        if( $('#include_all').is(':checked')) {
+            bodyFormData.append('include_all', $('#include_all').is(':checked'));
+            console.log('checkbox.true');
+        } else {
+            console.log('checkbox.false');
+        }
 
         axios({
             method: 'post',

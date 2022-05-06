@@ -365,10 +365,8 @@ class Core_Api extends Fieldnotes_Api
     public function api_CollectorDash_Get_Portfolio($id,$serialreg=null) {
 
         if($serialreg != 0) {
-            $search_serial_only = "A.serial_num = '" . $serialreg . "' OR A.reg_num='" . $serialreg . "'";
-        } else {
-            $search_serial_only = 'C.email = "' . $id . '"';
-        }
+            $search_serial_only = "AND A.serial_num = '" . $serialreg . "' OR A.reg_num='" . $serialreg . "'";
+        } 
 
         /* Executes SQL and then assigns object to passed var */
         if( $this->checkDBConnection(__FUNCTION__) == true) {
@@ -400,9 +398,9 @@ class Core_Api extends Fieldnotes_Api
             INNER JOIN art AS A ON A.art_id = CERT.art_id
             LEFT JOIN catalog_photo AS CAT on CAT.catalog_photo_id = CERT.catalog_photo_id
             WHERE 
+            C.email = '" . $id . "'
             " . $search_serial_only;
 
-            // $this->console($sql);
             $result = $this->mysqli->query($sql);
             
             if ($result->num_rows > 0) {
