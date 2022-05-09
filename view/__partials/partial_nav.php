@@ -26,7 +26,7 @@
           // print "IF:" . $addToClass;
           ?>
 
-          <div class="grid">
+          <div class="">
           <div class="col nav-mobile-menu">
               <p class="nav-bars <?= $this->color_text ?>"><i class="fas fa-bars"></i></p>
           </div>

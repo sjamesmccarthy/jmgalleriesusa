@@ -70,7 +70,8 @@ body {
         color: $color-white;
 
         a {
-            color: $color-blue;
+            // color: $color-blue;
+            color: $color-white;
 
             &:hover {
                 color: $color-gray;
@@ -280,7 +281,7 @@ main {
 
     // Small devices (landscape phones, 576px and up)
     @media (min-width: 376px) {
-        width: 100%;
+        width: 90%;
         padding:0;
         // margin: auto;
     }
