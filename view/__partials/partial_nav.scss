@@ -33,7 +33,7 @@
 
 .nav-bars {
     @extend .text-right;
-    margin-right: 1rem;
+    margin-right: 2rem;
     font-size: 1.4em;
 }
 
@@ -402,7 +402,7 @@
 
         &.close {
             position: absolute;
-            top: .8rem;
+            bottom: 1rem;
             right: 1rem;
 
             &:hover {
