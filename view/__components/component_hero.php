@@ -28,7 +28,7 @@ if ($catalog == 'home') {
         $this->color_text = "color-white";
     }
 
-    $hero_cta = '<a class="" href="' . $this->hero_link . '/' . $this->hero_link_image . '">' . strtoupper($this->hero_title) . ' &mdash; </a> <a class="" href="' . $this->hero_link . '">' . $this->hero_collection . '</a> <i class="fa-solid fa-heart icon"></i></p>';
+    $hero_cta = '<a class="" href="' . $this->hero_link . '/' . $this->hero_link_image . '">' . strtoupper($this->hero_title) . '&mdash; </a> <a class="" href="' . $this->hero_link . '">' . $this->hero_collection . '</a></p>';
 
     $html = <<< END
         <div class="noshow" style="text-align: center;">
@@ -40,7 +40,7 @@ if ($catalog == 'home') {
         <div id="hero" data-url="$this->hero_image" style="box-shadow: 0px 20px 25px 0px rgba(0, 0, 0, .3);">
 
                 <div class="hero-container">
-                <div style="position: absolute; top: 0; left: 0;">
+                <div class="hero-labelbox">
                     <p class="hero_cta" style="background-color: $explore_background">$hero_cta</p>
                 </div>
                     <div class="hero-text-container">

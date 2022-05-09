@@ -113,6 +113,41 @@ position: relative;
         //  height: 40%
      }
 
+     .hero-labelbox {
+        position: absolute; top: 0; left: 0;
+        width: 100%;
+
+        // xSmall devices (landscape phones, 320px and up)
+        @media (min-width: 320px) {
+            //  background-color: lightpink;
+            width: 100%;
+        }
+
+        // Small devices (landscape phones, 576px and up)
+        @media (min-width: 576px) {
+            // height: 65%;
+            width: 100%;
+        }
+
+        // Medium devices (tablets, 768px and up)
+        @media (min-width: 768px) {
+            //  height: 45%;
+            width: initial;
+        }
+
+        // Large devices (tablets (iPad Pro, 1112px and up)
+        @media (min-width: 1112px) {
+            //  height: 45%;
+            width: initial;
+        }
+
+        // Extra large devices (large desktops, 1200px and up)
+        @media (min-width: 1200px) {
+            //  height: 40%
+            width: initial;
+        }
+
+     }
 }
 
 .hero-text-container {
@@ -369,8 +404,8 @@ position: relative;
 
 .hero_cta {
    // border-radius: 6px;
-   border-bottom-right-radius: 24px;
-   padding: 1rem 3.5rem 1rem 2.5rem;
+//    border-bottom-right-radius: 24px;
+   padding: 1.25rem 3.5rem 1rem 2.5rem;
    font-size: 1rem;
    color: #000;
 
@@ -381,32 +416,37 @@ position: relative;
 
       // xSmall devices (landscape phones, 320px and up)
         @media (min-width: 320px) {
-            padding: 1rem 3.5rem 1rem 2.5rem;
-            font-size: 1rem;
+            padding: 1.25rem 3.5rem 1rem 2.5rem;
+            font-size: .7rem;
+            border-bottom-right-radius: 0;
         }
 
         // Small devices (landscape phones, 576px and up)
-        @media (min-width: 376px) {
-            padding: 1rem 1.5rem 1rem 1.5rem;
+        @media (min-width: 375px) {
+            padding: 1.25rem 1.5rem 1rem 1.5rem;
             font-size: .85rem;
+            border-bottom-right-radius: 0;
         }
 
         // Medium devices (tablets, 768px and up)
         @media (min-width: 767px) {
-            padding: 1rem 3.5rem 1rem 2.5rem;
+            padding: 1.25rem 3.5rem 1rem 2.5rem;
             font-size: 1rem;
+            border-bottom-right-radius: 24px;
         }
 
         // Large devices (tablets (iPad Pro, 1112px and up)
         @media (min-width: 1112px) {
-            padding: 1rem 3.5rem 1rem 2.5rem;
+            padding: 1.25rem 3.5rem 1rem 2.5rem;
             font-size: 1rem;
+            border-bottom-right-radius: 24px;
         }
 
         // Extra large devices (large desktops, 1200px and up)
         @media (min-width: 1200px) {
-            padding: 1rem 3.5rem 1rem 2.5rem;
+            padding: 1.25rem 3.5rem 1rem 2.5rem;
             font-size: 1rem;
+            border-bottom-right-radius: 24px;
         }
 
    &:hover {
