@@ -20,7 +20,7 @@ if ($catalog == 'home') {
         $explore_background = 'rgba(0,0,0,.2)';
         $explore_background = '#2574A9';
         $logo_invert = "logo-dark";
-        $this->color_text = "color-black";
+        $this->color_text = "color-black"; 
     } else {
         $explore_background = 'rgba(255,255,255,.8)';
         $explore_background = '#2574A9';

@@ -27,7 +27,7 @@
           ?>
 
           <div class="">
-          <div class="col nav-mobile-menu">
+          <div class="col nav-mobile-menu">2
               <p class="nav-bars <?= $this->color_text ?>"><i class="fas fa-bars"></i></p>
           </div>
           </div>

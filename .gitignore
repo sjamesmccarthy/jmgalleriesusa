@@ -18,9 +18,6 @@ prepros-6.config
 prepros.config
 composer*
 
-# testing
-/coverage
-
 # production
 /build
 
@@ -39,10 +36,7 @@ __todo.md
 config-*.json
 config_env.json
 config_env-*.json
-/view/css/scss/*
-# /view/__catalog/__image/*
 /view/__catalog/__image/__archived/*
-# /view/__catalog/__thumbnail/*
 /view/__catalog/__thumbnail/__archived/*
 /lib/gridlex-master/*
 /view/__todo.md
