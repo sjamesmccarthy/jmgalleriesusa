@@ -49,8 +49,11 @@
                 <div id="error"></div>
                 </form>
             </div>
-
             <p style="border-radius: 6px;" id="form_response"> </p>
+
+                
+                <?php $this->getPartial('findus'); ?>
+
         </div>
 
     </div>

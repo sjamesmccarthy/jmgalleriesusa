@@ -6,7 +6,7 @@
     $action_id = "contactForm";
     $formTitle = "I'd Love To Hear From You";
     $subject_PH = "IN A FEW WORDS, WHAT IS THIS MESSAGE ABOUT";
-    $message_PH = "START YOUR MESSAGE TO ME HERE ...."; 
+    $message_PH = "Write Your Message Here ...."; 
     $button_label = "SEND MESSAGE";
     $formType = "ContactForm";
     $subNotice = null;
