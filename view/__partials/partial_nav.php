@@ -54,7 +54,7 @@
                 <li><a href="https://linktr.ee/jmgalleriesusa">FIND ME</a></li>
                 <li><a href="/contact">CONTACT</a></li>
 
-                <li class="mt-16"><p class="topnav-logo"><img class="topnav--logo-img logo-white" style="width: 240px;" src="/view/__image/signature-fine-art-upscaled.png" alt="jm Galleries logo" /></p></li>
+                <li class="mt-16"><p class="topnav-logo"><a href="/"><img class="topnav--logo-img logo-white" style="width: 240px;" src="/view/__image/signature-fine-art-upscaled.png" alt="jm Galleries logo" /></a></p></li>
         </ul>
 
 
