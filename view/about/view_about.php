@@ -65,7 +65,7 @@
                         <h3>Portraits, Weddings & Events</h3>
                         <div class="about--exhibits">
                             <ul>
-                                <li class="nobullet">Visit my Portraits, Weddings & Events <a href="https://jmportraits.com" target="_new">portfolio</a>. To book a session, wedding or event drop me a note <a href="/contact">here</a> or call me at 951-708-1831.</li>
+                                <li class="nobullet">Visit my Portraits, Weddings & Events <a href="http://jmportraits.com" target="_new">portfolio</a>. To book a session, wedding or event drop me a note <a href="/contact">here</a> or call me at 951-708-1831.</li>
                             </ul>
                         </div>
                     </div>
