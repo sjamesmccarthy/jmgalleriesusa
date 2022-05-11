@@ -255,7 +255,7 @@ blockquote {
 .content__area {
 
     &--wrapper {
-      width: 90%;
+      width: 100%;
       margin: auto;
     }
 
@@ -550,9 +550,9 @@ div[id*='imgT']:hover {
     padding:4rem;
 }
 
-#polarized .newsletterinput {
-  width: 83% !important;
-}
+// #polarized .newsletterinput {
+//   width: 83% !important;
+// }
 
 .newsletter-button a:hover {
   color: $color-white;

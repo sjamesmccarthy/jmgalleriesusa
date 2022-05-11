@@ -75,7 +75,7 @@ if( !$new_releases['error']) {
                 <input type="text" name="b_7fe25703399796912d1b5d6f8_a869c7c419" tabindex="-1" value="">
             </div>
 
-            <div style="display: inline-block">
+            <div class="newsletter-button">
                 <button type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button newsletter-button">SUBSCRIBE</button>
             </div>
             </form></div>';
