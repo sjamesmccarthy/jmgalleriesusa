@@ -320,6 +320,10 @@ ol li {
 }
 
 /* Structure: gridlex overrides */
+[class*=grid-], [class*=grid_], [class~=grid] {
+    margin: 0;
+}
+
 [class~="col"], [class*="col-"], [class*="col_"] {
     padding: .5rem;
 }
