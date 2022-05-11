@@ -374,7 +374,9 @@ class Core_Api extends Fieldnotes_Api
         } elseif($include_all == 1) { 
             $where = "C.email = '" . $id . "'";
         } else {
-            return $data['error'] = "No Records Found";
+            $data['error'] = "No Records Found";
+            $data['code'] = 1;
+            return $data;
         }
 
         /* Executes SQL and then assigns object to passed var */

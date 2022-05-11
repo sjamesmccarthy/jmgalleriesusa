@@ -21,12 +21,11 @@ $ajax = new Core_Site();
         $serialreg = 0;
     }   
 
-    // print "<hr/>include_all: " . $include_all . "<hr/>";
-
     /* Load filmstrip for popular */
     $catalog_photos = $ajax->api_CollectorDash_Get_Portfolio($_POST['email'],$serialreg,$include_all);
     
-if($catalog_photos['error']) {
+
+if(isSet($catalog_photos['error'])) {
     $thumb_html = "<h2>No records found, please try again.</h2>";
 } else {
 
