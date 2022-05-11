@@ -10,7 +10,7 @@
                 </div>
 
             <div class="grid-center">
-                <div class="col-10_sm-10 pt-64">
+                <div class="col-10_sm-12 pt-64">
                     <h3 class="pb-16">About</h3>
                     <p class="name-statement">
                     Take a moment and look into why I create; explore my passion with everyday, fine-art photography. Let my composition seduce your heart with a story wanting to be told to you, then, for a moment, catch yourself dreaming with your eyes open while you listen to the voice of my art.
@@ -34,7 +34,7 @@
             </div>
 
                 <div class="grid-center"> 
-                    <div class="col-10 about--exhibits">
+                    <div class="col-10_sm-12 about--exhibits">
                         <h3>Exhibits</h3>
                         
                         <ul>
@@ -61,7 +61,7 @@
                 </div>
 
                 <div class="grid-center">
-                    <div class="col-10">
+                    <div class="col-10_sm-12">
                         <h3>Portraits, Weddings & Events</h3>
                         <div class="about--exhibits">
                             <ul>
@@ -72,7 +72,7 @@
                 </div>
 
                 <div class="grid-center">
-                    <div class="col-10">
+                    <div class="col-10_sm-12">
                         <h3 class="nomar-top mb-16 ">Sign Up For My First Friday Email</h3>
                         <?php $this->getPartial('newsletter'); ?>
 

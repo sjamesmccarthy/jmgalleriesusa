@@ -10,7 +10,7 @@
           <ul class="pb-16">
             <li>
             <input type="checkbox" name="include_all" id="include_all" value="1" /> 
-            <label for="include_all">Show All Artwork Discovered With This Collector Email</label>
+            <label for="include_all">Show All Artwork For This Collector Email</label>
             </li>
           </ul>
           <button id="lookup-btn">Look Up Artwork</button>
