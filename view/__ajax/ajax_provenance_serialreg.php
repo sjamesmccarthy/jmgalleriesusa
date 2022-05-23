@@ -29,7 +29,7 @@ if(isSet($catalog_photos['error'])) {
     $thumb_html = "<h2>No records found, please try again.</h2>";
 } else {
 
-    $thumb_html = "<div class='col-12_md-6_sm-12 text-center'>
+    $thumb_html = "<div class='col-12_md-12_sm-12 text-center'>
     <!-- RESULTS START -->
     <p class='mb-32'><a id='clr_results' href=''>CLEAR RESULTS</a></p>
     </div>";
@@ -73,7 +73,7 @@ if(isSet($catalog_photos['error'])) {
         if($v['reg_num'] == '') { $reg_num = null; } else { $reg_num = '<p>Reg No. ' . $v['reg_num'] . '</p>'; }
         if($v['frame_size'] != '') { $add_frame_meta = ', (' . $v['frame_size'] . ' framed)'; } else { $add_frame_meta = null; }
 
-        $thumb_html .= '<div class="col-5_md-6_sm-12 text-center" style="border: 1px solid #e9e9e9;
+        $thumb_html .= '<div class="col-5_md-5_sm-12 text-center" style="border: 1px solid #e9e9e9;
         padding: 20px;
         border-radius: 6px;
         margin: 4px;">';
