@@ -339,12 +339,10 @@
     <select id="catalog_photo_id" name="catalog_photo_id">
     <option value="- - -" />- - - </option>';
     
-    // $this->console($edit_data['coa'][0]['catalog_photo_id']);
-
     foreach ($catalog_ids as $catK => $catV) {
 
         if(isSet($edit_id)) {
-            if($catV['catalog_photo_id'] == $edit_data['coa'][0]['catalog_photo_id']) { 
+            if($catV['catalog_photo_id'] == $edit_data['catalog_photo_id']) { 
                 $selected = 'SELECTED'; 
             } else { 
                 $selected = ''; 

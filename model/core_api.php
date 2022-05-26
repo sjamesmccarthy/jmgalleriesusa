@@ -1129,6 +1129,7 @@ class Core_Api extends Fieldnotes_Api
                 A.edition_num,
                 A.edition_num_max,
                 A.serial_num,
+                A.catalog_photo_id,
                 A.print_size,
                 A.print_media,
                 L.location,
@@ -1200,6 +1201,8 @@ class Core_Api extends Fieldnotes_Api
 
     public function api_Admin_Get_Inventory_Item($art_id) {
 
+        $data = array();
+
         /* Executes SQL and then assigns object to passed var */
         if( $this->checkDBConnection(__FUNCTION__) == true) {
 
@@ -1228,6 +1231,8 @@ class Core_Api extends Fieldnotes_Api
     }
 
     public function api_Admin_Get_Inventory_COA($art_id) {
+
+            $data = array();
 
         /* Executes SQL and then assigns object to passed var */
         if( $this->checkDBConnection(__FUNCTION__) == true) {
