@@ -18,7 +18,7 @@
         <h2 class="home-title">loveOutside.<span>rg</span></h2>
         <p class="larger color-blue">loveOutside.org is an upcoming collaborative group of local outdoor enthusiasts +photographers preserving the world around us through creative, every-day imagery while serving our community through conservation of our bonus backyard. </p>
 
-        <div class="divider"></div>
+        <div class="divider pt-32"></div>
 
         <!-- <h3>The Carson/Tahoe Group</h3> -->
         <!-- <p>As well as Reno, Sparks, Gardnerville, Minden, Dayton, Incline Village and other surrounding communities. </p> -->
@@ -31,14 +31,18 @@
         <!-- <h3 class="pt-32">Start Your Own Group</h3> -->
         <!-- <p>If you have more than 5 people interested in the outdoors +photography whom are also passionate about community in their area <a href="/contact">drop me a note</a> to learn how you can create your loveOutside.Org group and be listed in the upcoming directory.</p> -->
 
-        <!-- <h3 class="nomar-top mb-16 pt-32">Sign Up For The First Friday Email</h3> -->
+        <h3 class="nomar-top mb-16 text-center">Sign Up For The First Friday Email To Be Notified About Upcoming Events</h3>
+        <div class="text-center">
+
         <?php 
-            // $this->getPartial('newsletter'); 
+            $this->getPartial('newsletter'); 
         ?>
 
-        <!-- <p class="mt-32"> -->
-        <!-- <a target="_new" class="mr-16 blue" style="font-size: 1.5rem" href="http://twitter.com/loveoutsideorg"><i class="fab fa-twitter"></i></a> -->
-        <!-- </p> -->
+        </div>
+
+        <p class="mt-32 text-center">
+        <a target="_new" class="mr-16 blue" style="font-size: 1.5rem" href="http://twitter.com/loveoutsideorg"><i class="fab fa-twitter"></i></a>
+        </p>
 
         </div>
     </div>

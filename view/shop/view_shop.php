@@ -15,8 +15,8 @@
 
 
         <div class="col-12 title">
-            <h1>j.McCarthy Fine Art Shop</h1>
-            <p class="light sub-title pt-8">Browse fine art products designed and hand-made by j.McCarthy</p>
+            <h1>The Online Shop</h1>
+            <p class="light sub-title pt-8">Buy previously exhibited framed and matted open edition prints</p>
 
             <ul class="filter-editions-list pt-32">
                 <li class="filter-all selected">All</li>

@@ -100,7 +100,7 @@ if(isSet($this->routes->URI->queryvals)) {
 
     $this->page->title = "<b>Editing Product: " . $res_product_id . "</b>";
     $formTypeAction = "update";
-    $button_label="update fieldnote";
+    $button_label="update Product";
     // $button_archive_cancel = '<button class="btn-delete mt-32" id="archive" value="ARCHIVE">archive supplier</button>';
     $button_archive_cancel = '<a class="cancel-button" href="/studio/products">cancel</a>';
     $id_field = '<input type="hidden" name="products_id" value="' . $res_product_id . '" />';
