@@ -37,6 +37,14 @@ $le_price_array = json_decode($this->config->le_pricing, true);
 $le_price_array_metal = json_decode($this->config->le_pricing_metal, true);
 $le_frames_pricing = json_decode($this->config->le_frames_pricing, true);
 
+/* Check for date taken and add HTML variable */
+$date_taken_Y = date("Y", strtotime($photo_meta['date_taken']));
+if($date_taken_Y != '-0001') {
+  $date_taken = ", <spam style='text-transform: lowercase'>c.</span> " . $date_taken_Y;
+} else {
+  $date_taken = null;
+}
+
 /* Determine if the "VirtualRoom" photo exists */
 if (
   file_exists(
