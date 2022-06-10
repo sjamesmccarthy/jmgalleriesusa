@@ -17,7 +17,7 @@
             <div class="col-8_md-12">
                 <table>
                     <tr class="gray">
-                        <th>16x24 HD Acrylic</th>
+                        <th>16x24 HD Acrylic or Chromaluxe&reg; Metal</th>
                         <th class="right">Total Size(in)</th>
                         <!-- <th class="right">Price</th> -->
                     </tr>
@@ -37,7 +37,7 @@
 
                 <table>
                     <tr class="gray">
-                        <th>20x30 HD Acrylic</th>
+                        <th>20x30 HD Acrylic or Chromaluxe&reg; Metal</th>
                         <th class="right">Total Size(in)</th>
                         <!-- <th class="right">Price</th> -->
                     </tr>
@@ -57,7 +57,7 @@
 
                 <table>
                     <tr class="gray">
-                        <th>24x36 HD Acrylic</th>
+                        <th>24x36 HD Acrylic or Chromaluxe&reg; Metal</th>
                         <th class="right">Total Size(in)</th>
                         <!-- <th class="right">Price</th> -->
                     </tr>
@@ -92,7 +92,10 @@
 
                 <table>
                     <tr>
-                        <td colspan="2" class="small"><p class="small">Add a mat or liner for an additional $150 to any frame option. This will increase the total size of the art by the width of the mat and liner plus moulding. It may also increase the price of the frame depending on overall frame size. Example: a 16x24 inch Acrylic matted with liner (2in each) and framed (2in moulding) will have an approximate total size of 24x36 inches.</p><p class="small pt-16">Some images may also be available in HD Chromaluxe&reg; Metal. Please <a href="/contact">contact an art consultant</a> for availability and  pricing information.</td>
+                        <td colspan="2" class="small">
+                            <p class="small">Add a mat or liner for an additional $150 to any frame option. This will increase the total size of the art by the width of the mat and liner plus moulding. It may also increase the price of the frame depending on overall frame size. Example: a 16x24 inch Acrylic matted with liner (2in each) and framed (2in moulding) will have an approximate total size of 24x36 inches.</p>
+                            <!-- <p class="small pt-16">Some images may also be available in HD Chromaluxe&reg; Metal. Please <a href="/contact">contact an art consultant</a> for availability and pricing information. -->
+                    </td>
                     </tr>
                 </table>
             </div>

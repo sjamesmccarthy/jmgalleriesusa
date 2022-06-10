@@ -3,12 +3,13 @@
 
         <div class="col-12_sm-12" >
 
-         <h1 class="pb-32 text-center">Privacy Policy, Terms of Sale and Copyright</h1>
+         <h1 class="pb-32 text-center">Privacy Policy, Terms of Sale<br />and &copy; Copyright 2022</h1>
          
-         <p>THIS PRIVACY POLICY APPLIES TO YOUR ACCESS AND USE OF JMGALLERIES.COM AND ANY ASSOCIATED MOBILE APPS OR ONLINE SERVICES ("JM GALLERIES USA"). It describes our practices on gathering, use and sharing of personal information collected when you visit one of our ONLINE SERVICES. BY ACCESSING OR USING ANY OF JM GALLERIES USA, YOU AGREE THAT YOU HAVE READ AND AGREE TO THIS PRIVACY POLICY. IF YOU DON’T AGREE, PLEASE <a href="//duckduckgo.com">CLICK HERE</a>.
+         
+         <p><b>All Photographs and Content and/or Associated information with any photo on this site is Copyright James McCarthy/ j.McCarthy / jM Galleries ("Copyright Owner").</b> The trade names, trademarks and service marks owned by Copyright Owner, whether registered or unregistered, may not be used in connection with any other product or service that is not ours, in any manner that is likely to cause confusion. These marks include, but are not limited to "jm", "jmgalleries", "jMcCarthy Galleries", "j.McCarthy", and "STUDIO610", as well as other marks and names including, but not limited to, "tinyViews", "Large Landscapes for Tiny Places" adn "Love Outside". <b>All Rights Reserved. Reproduction in any medium is prohibited without permission and licensing from "Copyright Owner".</b> Trademarks not owned by us are the property of their respective owners. NO PART OF OUR ONLINE SERVICES may be reproduced, stored, or transmitted in any form or by any means -- electronic, mechanical, photocopying, recording or otherwise -- without the permission of the JM GALLERIES USA.
         </p>
-
-         <p class="mt-16 black">All Photographs and Content and/or Associated information with any photo on this site is Copyright James McCarthy/ jMcCarthy Galleries ("Copyright Owner"). The trade names, trademarks and service marks owned by Copyright Owner, whether registered or unregistered, may not be used in connection with any other product or service that is not ours, in any manner that is likely to cause confusion. These marks include, but are not limited to "jm", "jmgalleries", "jMcCarthy Galleries", "STUDIO610", "tinyViews", "Large Landscapes for Tiny Places". All Rights Reserved. Trademarks not owned by us are the property of their respective owners. NO PART OF OUR ONLINE SERVICES may be reproduced, stored, or transmitted in any form or by any means -- electronic, mechanical, photocopying, recording or otherwise -- without the permission of the JM GALLERIES USA.
+             
+        <p class="mt-16 black">THIS PRIVACY POLICY APPLIES TO YOUR ACCESS AND USE OF JMGALLERIES.COM AND ANY ASSOCIATED MOBILE APPS OR ONLINE SERVICES ("JM GALLERIES USA"). It describes our practices on gathering, use and sharing of personal information collected when you visit one of our ONLINE SERVICES. BY ACCESSING OR USING ANY OF JM GALLERIES USA, YOU AGREE THAT YOU HAVE READ AND AGREE TO THIS PRIVACY POLICY. IF YOU DON’T AGREE, PLEASE <a href="//duckduckgo.com">CLICK HERE</a>.
         </p>
 
 	<ul class="subsection-ul">

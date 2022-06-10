@@ -9,7 +9,7 @@
         "template" : "catalog",
         "page" : "home",
         "component": "true",
-        "title" : "jMcCarthy Fine Art"
+        "title" : "Photography"
     },
     "[$1]/[$2]": {
         "template": "page",

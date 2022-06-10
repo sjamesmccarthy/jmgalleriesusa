@@ -13,14 +13,16 @@
                 <div class="col-10_sm-12 pt-64">
                     <h3 class="pb-16">About</h3>
                     <p class="name-statement">
-                    Take a moment and look into why I create; explore my passion with everyday, fine-art photography. Let my composition seduce your heart with a story wanting to be told to you, then, for a moment, catch yourself dreaming with your eyes open while you listen to the voice of my art.
+                    Take a moment and explore why I create. Look at my passion for everyday, fine-art photography and let the composition inspire your curiosity. You just may hear the voice of my art share a story, then, you will see why I create.
+
+                    <!-- Take a moment and look into why I create; explore my passion with everyday, fine-art photography. Let my composition seduce your heart with a story wanting to be told to you, then, for a moment, catch yourself dreaming with your eyes open while you listen to the voice of my art. -->
                     </p>
 
                     <p class="larger">A self-taught explorer in the field of landscape photography, James was born in Concord, Massachusetts, a small suburb outside Boston, but in the late 80's travelled West and has made the beautiful state of Nevada his home base for nearly thirty years. 
                     </p>
 
                     <p class="larger">
-                    His more popular pieces include, "<a href="https://jmgalleriesusa/oceans-lakes-waterfalls/never-ending-story">Never Ending Story</a>", "<a href="https://jmgalleriesusa/abstract-architecture-people/once-afloat">Once Afloat</a>", "<a href="https://jmgalleriesusa/mountains-deserts-trees/emigrants-fog">Emigrants Fog</a>", "<a href="https://jmgalleriesusa/oceans-lakes-waterfalls/bonsai-zen">Bonsai Zen</a>", "<a href="https://jmgalleriesusa/mountains-deserts-trees/keep-tahoe-cold">Keep Tahoe Cold</a>" and "<a href="https://jmgalleriesusa/mountains-deserts-trees/snowy-pines">Snowy Pines</a>". Framed, Metal and Acrylic editions can be viewed at many of his traveling galleries which include locally-owned businesses around the locations he shoots. 
+                    His more popular pieces include, "<a href="/oceans-lakes-waterfalls/never-ending-story">Never Ending Story</a>", "<a href="/abstract-architecture-people/once-afloat">Once Afloat</a>", "<a href="/mountains-deserts-trees/emigrants-fog">Emigrants Fog</a>", "<a href="/oceans-lakes-waterfalls/bonsai-zen">Bonsai Zen</a>", "<a href="/mountains-deserts-trees/keep-tahoe-cold">Keep Tahoe Cold</a>" and "<a href="/mountains-deserts-trees/snowy-pines">Snowy Pines</a>". Framed, Metal and Acrylic editions can be viewed at many of his traveling exhibits which include locally-owned businesses around the locations he shoots. 
                     </p>
 
                     <p class="larger">

@@ -32,6 +32,6 @@
         $og_image = "/view/__image/social_card_default.jpg?" . uniqid();
     }
 
-    $title_formatted = $this->config->site_name . ' | ' . $this->page->title;
+    $title_formatted = $this->config->site_name . ', ' . $this->page->title;
 
 ?>

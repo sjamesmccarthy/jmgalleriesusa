@@ -30,7 +30,7 @@
             $catalog_title = 'OPEN EDITIONS';
             $catalog_desc = 'Beautiful tinyVIEWS<span style="font-size:.9rem; font-weight: 300;"><sup>&trade;</sup></span> Open Edition Fine Art at Affordable Prices';
             $catalog_tabs_hidden = true;
-            $tv_le_link = '<p class="shop-tv-link"><a href="/shop">Shop The jM Gallery Store</a></p>';
+            $tv_le_link = '<!-- <p class="shop-tv-link"><a href="/shop">Shop The jM Gallery Store</a></p> -->';
         }
 
         if($this->routes->URI->queryvals[1] == 'limited') {
@@ -38,7 +38,7 @@
             $catalog_title = 'LIMITED EDITIONS';
             // $catalog_desc = 'the <b>complete fine-art collection</b> by jMcCarthy';
             $catalog_tabs_hidden = true;
-            $tv_le_link = '<p class="shop-tv-link"><a href="/collections">Browse By Collections</a></p>';
+            $tv_le_link = '<!-- <p class="shop-tv-link"><a href="/collections">Browse By Collections</a></p> -->';
         }
 
         $catalog_photos = $this->api_Catalog_Category_Thumbs_All($param_ed);
@@ -49,7 +49,7 @@
         // $catalog_photos = $this->api_Catalog_Category_Filmstrip($catalog_meta[0]['catalog_collections_id'], 'ALL');
         $catalog_photos = $this->api_Catalog_Category_Filmstrip($catalog_meta[0]['catalog_collections_id'], 'ALL','LE');
         // $tv_le_link = '<p class="shop-tv-link"><a href="/thework?filter=limited">Back To THE WORK &mdash; LIMITED EDITIONS</a></p>';
-        $tv_le_link = '<p class="shop-tv-link"><a href="/collections">VIEW ALL COLLECTIONS</a></p>';
+        $tv_le_link = '<!-- <p class="shop-tv-link"><a href="/collections">VIEW ALL COLLECTIONS</a></p> -->';
     }
 
         if( !$catalog_photos['error']) {

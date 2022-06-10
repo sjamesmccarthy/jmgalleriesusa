@@ -25,8 +25,17 @@
                 </div>
 
                 <div class="col-5_sm-12 breadcrumb copyright">
-                    <p><a href="/shop">Shop</a> / <a href="/fieldnotes">Field Notes</a> / <a href="/limited-editions">The Work</a> / <a href="/about">About</a> / <a href="/provenance">Provenance</a> / <a class="tiny-dis" href="/privacy"><?= $this->config->copyright ?></a> <a style="font-size:.6rem; margin-left: .25rem;" class="theme-toggle"><i class="fas fa-adjust"></i></a></p>
-                    <div><img src ="https://images.dmca.com/Badges/dmca-badge-w100-5x1-08.png?ID=4f4fc268-5857-46c9-97ec-b0ee644e9892"  alt="DMCA.com Protection Status" style="vertical-align: middle" /></div>
+                    <p>
+                      <!-- <a href="/shop">Shop</a> /  -->
+                      <!-- <a href="/fieldnotes">Field Notes</a> /  -->
+                      <a href="/limited-editions">the work</a> <img class="breadcrumb-arrow" src="/view/__image/icon_navarrow-right.svg" alt="breadcrumb-icon"> 
+                      <a href="/about">about</a> <img class="breadcrumb-arrow" src="/view/__image/icon_navarrow-right.svg" alt="breadcrumb-icon"> 
+                      <!-- <a href="/provenance">Provenance</a> /  -->
+                      <a class="tiny-dis" href="/privacy"><?= $this->config->copyright ?></a> <img class="breadcrumb-arrow" src="/view/__image/icon_navarrow-right.svg" alt="breadcrumb-icon">
+                      &nbsp; <img src ="https://images.dmca.com/Badges/dmca-badge-w100-5x1-08.png?ID=4f4fc268-5857-46c9-97ec-b0ee644e9892"  alt="DMCA.com Protection Status" style="vertical-align: middle" />
+                      <a style="font-size:.6rem; margin-left: 2rem;" class="theme-toggle"><i class="fas fa-adjust"></i></a> 
+                  </p>
+                    <!-- <div><img src ="https://images.dmca.com/Badges/dmca-badge-w100-5x1-08.png?ID=4f4fc268-5857-46c9-97ec-b0ee644e9892"  alt="DMCA.com Protection Status" style="vertical-align: middle" /></div> -->
                    <?php
                      // $this->getPartial('newsletter');
                    ?>

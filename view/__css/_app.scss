@@ -481,6 +481,10 @@ blockquote {
     text-align: center;
 }
 
+.text-lower {
+    text-transform: lowercase !important;
+}
+
 .text-red {
     color: $color-error;
 }
