@@ -487,13 +487,13 @@
         "template": "page",
         "page": "shop",
         "component": "true",
-        "title": "jM Gallery Store"
+        "title": "jM Gallery Shop"
     },
     "/store": {
         "template": "page",
         "page": "shop",
         "component": "true",
-        "title": "jM Gallery Store"
+        "title": "jM Gallery Shop"
     },
     "/product": {
         "template": "page",
