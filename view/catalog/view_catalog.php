@@ -3,17 +3,17 @@
 
         <div class="col-12 title pb-32">
             <h2><?= strtoupper($catalog_title) ?></h2>
-            <p class="light --subhead pt-8"><?= $catalog_desc ?></p> <!-- <?= $catalog_le_desc ?> -->
+            <!-- <p class="light --subhead pt-8"><?= $catalog_desc ?></p>  -->
+            <!-- <?= $catalog_le_desc ?> -->
             <?php
                 if($catalog_tabs_hidden != true) {
             ?>
-            <!-- <ul class="filter-editions-list"> -->
-                <!-- <li class="filter-all selected">All</li> -->
-                <!-- <li class="filter-gallery">Limited Edition</li> -->
+            <ul class="filter-editions-list">
+                <li class="filter-all selected">All</li>
+                <li class="filter-gallery">Limited Ed.</li>
                 <!-- <li class="filter-studio">Studio Edition</li> -->
-                <!-- <li class="filter-open">Open Edition</li> -->
-                <!-- tinyVIEWS<span style="font-size:.9rem; font-weight: 300;"><sup>&trade;</sup></span>-->
-            <!-- </ul> -->
+                <li class="filter-open">Open Ed.</li>
+            </ul>
             <?php } ?>
         </div>
 

@@ -120,7 +120,6 @@ class Core_Api extends Fieldnotes_Api
             	INNER JOIN catalog_collections AS cat ON cat.catalog_collections_id = cp.parent_collections_id
             WHERE
                 cp.status = 'active'
-               " . $sql_extra . "
                ORDER BY cp.title";
 
             $result = $this->mysqli->query($sql);
