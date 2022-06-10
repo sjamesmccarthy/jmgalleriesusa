@@ -30,7 +30,7 @@
                     </p>
 
                     <p class="larger">
-                    Influences include: Ansel Adams, Carleton Watkins, Rodney Lough Jr., Charlie Waite and Ralph Gibson.
+                    Influences include: Ansel Adams, Carleton Watkins, Charlie Waite, Bobby Wheat, Parvez S and Ralph Gibson.
                     </p>
                 </div>
             </div>
