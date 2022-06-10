@@ -3,12 +3,12 @@
 
         <div class="col-12 title pb-32">
             <h2><?= strtoupper($catalog_title) ?></h2>
-            <!-- <p class="light --subhead pt-8"><?= $catalog_desc ?></p>  -->
+            <p class="light --subhead pt-8"><?= $catalog_desc ?></p> 
             <!-- <?= $catalog_le_desc ?> -->
             <?php
                 if($catalog_tabs_hidden != true) {
             ?>
-            <ul class="filter-editions-list">
+            <ul class="filter-editions-list mt-32">
                 <li class="filter-all selected">All</li>
                 <li class="filter-gallery">Limited Ed.</li>
                 <!-- <li class="filter-studio">Studio Edition</li> -->

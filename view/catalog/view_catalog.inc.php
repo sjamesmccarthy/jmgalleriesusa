@@ -19,7 +19,7 @@
     /* Get Thumbnails of photos for Category */
     if( $catalog_meta[0]['path'] == 'new-releases') {
          $catalog_photos = $catalog_photos = $this->api_Catalog_Get_New_Releases($new_release_data[0], $new_release_data[1]);
-         $catalog_tabs_hidden = false;
+         $catalog_tabs_hidden = true;
          $catalog_le_desc = '&mdash; limited edition';
     } else if( $catalog_meta[0]['path'] == 'thework') {
 
@@ -29,7 +29,7 @@
             $param_ed = 'as_open';
             $catalog_title = 'OPEN EDITIONS';
             $catalog_desc = 'Beautiful tinyVIEWS<span style="font-size:.9rem; font-weight: 300;"><sup>&trade;</sup></span> Open Edition Fine Art at Affordable Prices';
-            $catalog_tabs_hidden = false;
+            $catalog_tabs_hidden = true;
             $tv_le_link = '<!-- <p class="shop-tv-link"><a href="/shop">Shop The jM Gallery Store</a></p> -->';
         }
 
@@ -37,7 +37,7 @@
             $param_ed = 'as_limited';
             $catalog_title = 'LIMITED EDITIONS';
             // $catalog_desc = 'the <b>complete fine-art collection</b> by jMcCarthy';
-            $catalog_tabs_hidden = false;
+            $catalog_tabs_hidden = true;
             $tv_le_link = '<!-- <p class="shop-tv-link"><a href="/collections">Browse By Collections</a></p> -->';
         }
 

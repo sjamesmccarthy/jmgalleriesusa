@@ -11,7 +11,7 @@
                     <p class="topnav-logo"><a href="/"><img class="topnav--logo-img" src="/view/__image/signature-fine-art-upscaled.png" alt="jm Galleries logo" /></a></p>
                 </div>
                 <div class="col-5-middle small-hidden text-lower">
-                    <p class="center heading"><a href="/limited-editions" class="<?= $galleries ?>">THE WORK</a><br /><span class="font-light"><!--<a class="font-light" href="/limited-editions"> -->LIMITED & OPEN Ed.</span><!-- </a> -->
+                    <p class="center heading"><a href="/thework" class="<?= $galleries ?>">THE WORK</a><br /><span class="font-light"><!--<a class="font-light" href="/limited-editions"> -->LIMITED & OPEN Ed.</span><!-- </a> -->
                     <!-- / <a class="font-light" href="/open-editions">OPEN</a> Ed.</span> -->
                   </p>
                 </div>
