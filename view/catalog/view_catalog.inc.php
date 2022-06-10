@@ -28,7 +28,7 @@
         if($this->routes->URI->queryvals[1] == 'tinyviews') {
             $param_ed = 'as_open';
             $catalog_title = 'OPEN EDITIONS';
-            $catalog_desc = 'Beautiful tinyVIEWS<span style="font-size:.9rem; font-weight: 300;"><sup>&trade;</sup></span> Open Edition Fine Art at Affordable Prices';
+            $catalog_desc = 'Beautiful <b>Open Edition</b> Matted Prints';
             $catalog_tabs_hidden = true;
             $tv_le_link = '<!-- <p class="shop-tv-link"><a href="/shop">Shop The jM Gallery Store</a></p> -->';
         }

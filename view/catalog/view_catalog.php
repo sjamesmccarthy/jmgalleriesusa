@@ -12,7 +12,7 @@
                 <li class="filter-all selected">All</li>
                 <li class="filter-gallery">Limited Ed.</li>
                 <!-- <li class="filter-studio">Studio Edition</li> -->
-                <li class="filter-open">Open Ed.</li>
+                <li class="filter-open"><a href="/open-editions">Open Ed.</a></li>
             </ul>
             <?php } ?>
         </div>
