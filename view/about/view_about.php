@@ -13,7 +13,7 @@
                 <div class="col-10_sm-12 pt-64">
                     <h3 class="pb-16">About</h3>
                     <p class="name-statement">
-                    Take a moment and explore why I create. Look at my passion for everyday, fine-art photography and let the composition inspire your curiosity. You just may hear the voice of my art share a story, then, you will see why I create.
+                    Take a moment and explore why I create. Look for my passion in everyday, fine-art photography and let the composition inspire your curiosity. You just may hear the voice of my art share a story, then, you will see why I create.
 
                     <!-- Take a moment and look into why I create; explore my passion with everyday, fine-art photography. Let my composition seduce your heart with a story wanting to be told to you, then, for a moment, catch yourself dreaming with your eyes open while you listen to the voice of my art. -->
                     </p>
