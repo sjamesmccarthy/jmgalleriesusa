@@ -11,14 +11,17 @@
 
             <div class="grid-center">
                 <div class="col-10_sm-12 pt-64">
-                    <h3 class="pb-16">About</h3>
+                    <h3 class="pb-16">Artist Statement</h3>
 
                     <p class="name-statement">
-                    Photography has always had a hidden crush on James, a self-taught explorer in the field of landscape photography. Through his purposeful paper choice, framing and composition, James will inspire you to take a moment and explore why he chases mother nature from a distance, adoring the beauty which she scatters throughout our world: majestic waterfalls and serene ocean coasts, mountains, deserts and trees to flowers, fields and meadows. Let James photography inspire your curiosity and you may hear the voice of his art share a story that your memory has always seen, or journey you to a place you have never been.
+                    "Take a moment and explore why I create," James says about his color and black and white photography, adding, "it portrays my journey as an artist in photography over the past 10 years and how I have adjusted my style and perspective of fine-art photography as at art form."
+                    <br /><br />
+                    Photography has always had a hidden crush on James, a self-taught explorer in the field of landscape photography. Through his purposeful paper choice, framing, composition and visual intention through post-processing, James will inspire you to take a moment and explore why he chases mother nature, adoring the beauty which she scatters throughout our world: majestic waterfalls and serene ocean coasts, mountains, deserts and trees to flowers, fields and meadows. Let James photography inspire your curiosity and you may hear the voice of his art share a story that your memory awakens, or journey you to a place you have never been.
                     </p>
 
+                    <h3 class="pb-16 mt-32">Artist Bio</h3>
                     <p class="larger">
-                    Born in Concord, Massachusetts, a small suburb outside Boston, James had the opportunity to explore the rich history of the Revolutionary War during his youth and appreciate the stories that the surroundings still have to share. Then, in the late 80's his family travelled 2,977 miles West and settled in Auburn, California. 
+                    Born in Concord, Massachusetts, a small suburb outside Boston, Massachusetts, James grew up exploring the colorful landscape of the East Coast as well as its rich history teaching him to appreciate the stories which the surroundings still have to share. Then, in the late 80's his family travelled 2,977 miles West and settled in Auburn, California. 
                     </p>
 
                     <p class="larger">
@@ -42,7 +45,7 @@
                     </p>
 
                     <p class="larger">
-                    Take a moment and explore why I create.
+                    "Take a moment and explore why I create."
                     </p>
 
                     <!-- <p class="name-statement">
