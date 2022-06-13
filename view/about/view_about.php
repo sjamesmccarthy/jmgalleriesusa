@@ -11,7 +11,7 @@
 
             <div class="grid-center">
                 <div class="col-10_sm-12 pt-64">
-                    <h3 class="pb-16">Artist Statement</h3>
+                    <h3 class="pb-16">Artist Statement</h3> 
 
                     <p class="name-statement">
                     "Take a moment and explore why I create," James says about his color and black and white photography, adding, "it portrays my journey as an artist in photography over the past 10 years and how I have adjusted my style and perspective of fine-art photography as an art form."
