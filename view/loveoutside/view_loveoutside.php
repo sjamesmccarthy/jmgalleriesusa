@@ -16,7 +16,7 @@
         </div>  
             
         <h2 class="home-title">loveOutside.<span>rg</span></h2>
-        <p class="larger color-blue">loveOutside.org is an upcoming collaborative group of local outdoor enthusiasts +photographers preserving the world around us through creative, every-day imagery while serving our community through conservation of our bonus backyard. </p>
+        <p class="larger color-blue">loveOutside.org is an upcoming collaborative group of local outdoor enthusiasts +photographers preserving the world around us through creative, every-day imagery while encouraging and leading "<a target="_new" href="https://www.nps.gov/articles/leave-no-trace-seven-principles.htm">leave no trace</a>" principals to protect our bonus backyard; the outdoors.</p>
 
         <div class="divider pt-32"></div>
 
