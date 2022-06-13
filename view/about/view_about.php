@@ -21,7 +21,7 @@
 
                     <h3 class="pb-16 mt-32">Artist Bio</h3>
                     <p class="larger">
-                    Born in Concord, Massachusetts, a small suburb outside Boston, Massachusetts, James grew up exploring the colorful landscape of the East Coast as well as its rich history teaching him to appreciate the stories which the surroundings still have to share. Then, in the late 80's his family travelled 2,977 miles West and settled in Auburn, California where he started to discover his creative passions for writing and photography.
+                    Born in Concord, Massachusetts, a small suburb outside Boston, James grew up exploring the colorful landscape of the east coast as well as its rich history teaching him to appreciate the stories which the surroundings still have to share. Then, in the late 80's his family travelled 2,977 miles West and settled in Auburn, California where he began to discover his creative passions for writing and photography.
                     </p>
 
                     <p class="larger">
@@ -29,11 +29,11 @@
                     </p>
 
                     <p class="larger">
-                    After attending the University of Nevada Reno, James made the beautiful state of Nevada his home base for nearly thirty years. He currently resides in a small town nestled against the Sierra Nevada Mountains, in the shadows of Lake Tahoe, Carson City.
+                    After attending the University of Nevada Reno, James made the beautiful state of Nevada his home base for nearly thirty years. He currently resides in a small town nestled against the Sierra Nevada Mountains and in the shadows of Lake Tahoe, Carson City.
                     </p>
 
                     <p class="larger">
-                    James more popular pieces include, "<a href="/oceans-lakes-waterfalls/never-ending-story">Never Ending Story</a>", "<a href="/abstract-architecture-people/made-in-america">Made In America</a>", "<a href="/mountains-deserts-trees/twisted-oak">Twitsted Oak</a>", "<a href="/mountains-deserts-trees/emigrants-fog">Emigrants Fog</a>", "<a href="/oceans-lakes-waterfalls/bonsai-zen">Bonsai Zen</a>", "<a href="/mountains-deserts-trees/keep-tahoe-cold">Keep Tahoe Cold</a>", "<a href="/mountains-deserts-trees/snowy-pines">Snowy Pines</a>" and "<a href="/oceans-lakes-waterfalls/https://jmgalleriesusa/mountains-deserts-trees/alongside-you">Alongside You</a>". Framed, Metal and Acrylic editions can be viewed at many of his traveling exhibits which include locally-owned businesses around the locations he shoots.
+                    James more popular pieces include, "<a href="/oceans-lakes-waterfalls/never-ending-story">Never Ending Story</a>", "<a href="/abstract-architecture-people/made-in-america">Made In America</a>", "<a href="/mountains-deserts-trees/twisted-oak">Twitsted Oak</a>", "<a href="/mountains-deserts-trees/emigrants-fog">Emigrants Fog</a>", "<a href="/oceans-lakes-waterfalls/bonsai-zen">Bonsai Zen</a>", "<a href="/mountains-deserts-trees/keep-tahoe-cold">Keep Tahoe Cold</a>", "<a href="/mountains-deserts-trees/snowy-pines">Snowy Pines</a>" and "<a href="/oceans-lakes-waterfalls/https://jmgalleriesusa/mountains-deserts-trees/alongside-you">Alongside You</a>". Framed editions, as well as editions in Metal, Acrylic and paper can be viewed at his traveling exhibits which include locally-owned businesses around the locations he shoots.
                     </p>
 
                     <p class="larger">
