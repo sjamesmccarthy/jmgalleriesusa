@@ -12,26 +12,54 @@
             <div class="grid-center">
                 <div class="col-10_sm-12 pt-64">
                     <h3 class="pb-16">About</h3>
+
                     <p class="name-statement">
-                    Take a moment and explore why I create. Look for my passion in everyday, fine-art photography and let the composition inspire your curiosity. You just may hear the voice of my art share a story, then, you will see why I create.
-
-                    <!-- Take a moment and look into why I create; explore my passion with everyday, fine-art photography. Let my composition seduce your heart with a story wanting to be told to you, then, for a moment, catch yourself dreaming with your eyes open while you listen to the voice of my art. -->
-                    </p>
-
-                    <p class="larger">A self-taught explorer in the field of landscape photography, James was born in Concord, Massachusetts, a small suburb outside Boston, but in the late 80's travelled West and has made the beautiful state of Nevada his home base for nearly thirty years. 
+                    Photography has always had a hidden crush on James, a self-taught explorer in the field of landscape photography. Through his purposeful paper choice, framing and composition, James will inspire you to take a moment and explore why he chases mother nature from a distance, adoring the beauty which she scatters throughout our world: majestic waterfalls and serene ocean coasts, mountains, deserts and trees to flowers, fields and meadows. Let James photography inspire your curiosity and you may hear the voice of his art share a story that your memory has always seen, or journey you to a place you have never been.
                     </p>
 
                     <p class="larger">
-                    His more popular pieces include, "<a href="/oceans-lakes-waterfalls/never-ending-story">Never Ending Story</a>", "<a href="/abstract-architecture-people/once-afloat">Once Afloat</a>", "<a href="/mountains-deserts-trees/emigrants-fog">Emigrants Fog</a>", "<a href="/oceans-lakes-waterfalls/bonsai-zen">Bonsai Zen</a>", "<a href="/mountains-deserts-trees/keep-tahoe-cold">Keep Tahoe Cold</a>" and "<a href="/mountains-deserts-trees/snowy-pines">Snowy Pines</a>". Framed, Metal and Acrylic editions can be viewed at many of his traveling exhibits which include locally-owned businesses around the locations he shoots. 
+                    Born in Concord, Massachusetts, a small suburb outside Boston, James had the opportunity to explore the rich history of the Revolutionary War during his youth and appreciate the stories that the surroundings still have to share. Then, in the late 80's his family travelled 2,977 miles West and settled in Auburn, California. 
                     </p>
 
                     <p class="larger">
-                    He is a member of the Professional Photographers of America (PPA), the American Photographic Artists (APA) and founding member of <A href="/loveoutside">loveOutside.org</a>, an upcoming collaborative group of local outdoor enthusiasts +photographers preserving the world around us through creative, every-day imagery while serving our community through conservation of our bonus backyard.
+                    While on a northwest college road trip with his mother, Alice, he was photographing a foggy dock somewhere off Hwy 299 outside of Arcata using a hand-me-down Minolta SLR 35mm camera given to him by his 8th grade Journalism teacher, Mrs. Anderson. This was the moment James and his camera "clicked".
+                    </p>
+
+                    <p class="larger">
+                    After attending the University of Nevada Reno, James made the beautiful state of Nevada his home base for nearly thirty years. He currently resides in a small town nestled against the Sierra Nevada Mountains, in the shadows of Lake Tahoe, Carson City.
+                    </p>
+
+                    <p class="larger">
+                    James more popular pieces include, "<a href="/oceans-lakes-waterfalls/never-ending-story">Never Ending Story</a>", "<a href="/abstract-architecture-people/once-afloat">Once Afloat</a>", "<a href="/mountains-deserts-trees/emigrants-fog">Emigrants Fog</a>", "<a href="/oceans-lakes-waterfalls/bonsai-zen">Bonsai Zen</a>", "<a href="/mountains-deserts-trees/keep-tahoe-cold">Keep Tahoe Cold</a>", "<a href="/mountains-deserts-trees/snowy-pines">Snowy Pines</a>" and "<a href="/oceans-lakes-waterfalls/https://jmgalleriesusa/mountains-deserts-trees/alongside-you">Alongside You</a>". Framed, Metal and Acrylic editions can be viewed at many of his traveling exhibits which include locally-owned businesses around the locations he shoots.
+                    </p>
+
+                    <p class="larger">
+                    He is a member of the Professional Photographers of America (PPA), the American Photographic Artists (APA) and founding member of <a href="/loveoutside">loveOutside.org</a>, an upcoming collaborative group of local outdoor enthusiasts +photographers preserving the world around us through creative, every-day imagery while serving our community through conservation of our bonus backyard.
                     </p>
 
                     <p class="larger">
                     Influences include: Ansel Adams, Carleton Watkins, Charlie Waite, Bobby Wheat, Parvez S and Ralph Gibson.
                     </p>
+
+                    <p class="larger">
+                    Take a moment and explore why I create.
+                    </p>
+
+                    <!-- <p class="name-statement">
+                    Take a moment and explore why I create. Look for my passion in everyday, fine-art photography and let the composition inspire your curiosity. You just may hear the voice of my art share a story, then, you will see why I create.
+                    </p>
+                    <p class="larger">A self-taught explorer in the field of landscape photography, James was born in Concord, Massachusetts, a small suburb outside Boston, but in the late 80's travelled West and has made the beautiful state of Nevada his home base for nearly thirty years. 
+                    </p>
+                    <p class="larger">
+                    His more popular pieces include, "<a href="/oceans-lakes-waterfalls/never-ending-story">Never Ending Story</a>", "<a href="/abstract-architecture-people/once-afloat">Once Afloat</a>", "<a href="/mountains-deserts-trees/emigrants-fog">Emigrants Fog</a>", "<a href="/oceans-lakes-waterfalls/bonsai-zen">Bonsai Zen</a>", "<a href="/mountains-deserts-trees/keep-tahoe-cold">Keep Tahoe Cold</a>" and "<a href="/mountains-deserts-trees/snowy-pines">Snowy Pines</a>". Framed, Metal and Acrylic editions can be viewed at many of his traveling exhibits which include locally-owned businesses around the locations he shoots. 
+                    </p>
+                    <p class="larger">
+                    He is a member of the Professional Photographers of America (PPA), the American Photographic Artists (APA) and founding member of <A href="/loveoutside">loveOutside.org</a>, an upcoming collaborative group of local outdoor enthusiasts +photographers preserving the world around us through creative, every-day imagery while serving our community through conservation of our bonus backyard.
+                    </p>
+                    <p class="larger">
+                    Influences include: Ansel Adams, Carleton Watkins, Charlie Waite, Bobby Wheat, Parvez S and Ralph Gibson.
+                    </p> -->
+
                 </div>
             </div>
 
