@@ -21,7 +21,7 @@
 
                     <h3 class="pb-16 mt-32">Artist Bio</h3>
                     <p class="larger">
-                    Born in Concord, Massachusetts, a small suburb outside Boston, Massachusetts, James grew up exploring the colorful landscape of the East Coast as well as its rich history teaching him to appreciate the stories which the surroundings still have to share. Then, in the late 80's his family travelled 2,977 miles West and settled in Auburn, California. 
+                    Born in Concord, Massachusetts, a small suburb outside Boston, Massachusetts, James grew up exploring the colorful landscape of the East Coast as well as its rich history teaching him to appreciate the stories which the surroundings still have to share. Then, in the late 80's his family travelled 2,977 miles West and settled in Auburn, California where he started to discover his creative passions for writing and photography and connecting them with the human experience. 
                     </p>
 
                     <p class="larger">
