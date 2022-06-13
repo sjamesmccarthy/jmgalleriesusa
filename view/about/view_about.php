@@ -33,7 +33,7 @@
                     </p>
 
                     <p class="larger">
-                    James more popular pieces include, "<a href="/oceans-lakes-waterfalls/never-ending-story">Never Ending Story</a>", "<a href="/abstract-architecture-people/once-afloat">Once Afloat</a>", "<a href="/mountains-deserts-trees/emigrants-fog">Emigrants Fog</a>", "<a href="/oceans-lakes-waterfalls/bonsai-zen">Bonsai Zen</a>", "<a href="/mountains-deserts-trees/keep-tahoe-cold">Keep Tahoe Cold</a>", "<a href="/mountains-deserts-trees/snowy-pines">Snowy Pines</a>" and "<a href="/oceans-lakes-waterfalls/https://jmgalleriesusa/mountains-deserts-trees/alongside-you">Alongside You</a>". Framed, Metal and Acrylic editions can be viewed at many of his traveling exhibits which include locally-owned businesses around the locations he shoots.
+                    James more popular pieces include, "<a href="/oceans-lakes-waterfalls/never-ending-story">Never Ending Story</a>", "<a href="/mountains-deserts-trees/twisted-oak">Twitsted Oak</a>", "<a href="/mountains-deserts-trees/emigrants-fog">Emigrants Fog</a>", "<a href="/oceans-lakes-waterfalls/bonsai-zen">Bonsai Zen</a>", "<a href="/mountains-deserts-trees/keep-tahoe-cold">Keep Tahoe Cold</a>", "<a href="/mountains-deserts-trees/snowy-pines">Snowy Pines</a>" and "<a href="/oceans-lakes-waterfalls/https://jmgalleriesusa/mountains-deserts-trees/alongside-you">Alongside You</a>". Framed, Metal and Acrylic editions can be viewed at many of his traveling exhibits which include locally-owned businesses around the locations he shoots.
                     </p>
 
                     <p class="larger">
