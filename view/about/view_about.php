@@ -37,7 +37,7 @@
                     </p>
 
                     <p class="larger">
-                    He is a member of the Professional Photographers of America (PPA), the American Photographic Artists (APA) and founding member of <a href="/loveoutside">loveOutside.org</a>, an upcoming collaborative group of local outdoor enthusiasts +photographers preserving the world around us through creative, every-day imagery while serving our community through conservation of our bonus backyard.
+                    He is a member of the Professional Photographers of America (PPA), the American Photographic Artists (APA) and founding member of <a href="/loveoutside">loveOutside.org</a>, an upcoming collaborative group of local outdoor enthusiasts +photographers preserving the world around us through creative, every-day imagery while encouraging and leading "<a target="_new" href="https://www.nps.gov/articles/leave-no-trace-seven-principles.htm">leave no trace</a>" principals to protect our bonus backyard; the outdoors.
                     </p>
 
                     <p class="larger">
