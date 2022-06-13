@@ -698,7 +698,10 @@ class Core_Api extends Fieldnotes_Api
 
     public function api_Auth_User($username, $password) {
 
-        $pin = strtoupper($_POST['p_1'] . $_POST['p_2'] . $_POST['p_3'] . $_POST['p_4'] . $_POST['p_5'] . $_POST['p_6']);
+        // $pin = strtoupper($_POST['p_1'] . $_POST['p_2'] . $_POST['p_3'] . $_POST['p_4'] . $_POST['p_5'] . $_POST['p_6']);
+
+        $pin = $_POST['p_1'];
+
         $hash_str = md5("[/" . strtolower($_POST['username']) . "+" . $pin . "/p]");
 
         if( $this->checkDBConnection(__FUNCTION__) == true) {

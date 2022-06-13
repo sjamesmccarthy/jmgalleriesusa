@@ -9,22 +9,22 @@
 
         <div>
         <label for="username">username</label>
-        <input style="margin-bottom: 0; text-align: center" placeholder="PLEASE SIGN-IN WITH YOUR USERNAME" type="text" id="username" name="username" value="<?= $username ?>" tabindex="1"></input>
+        <input class="mb-0 text-center" placeholder="PLEASE SIGN-IN WITH YOUR USERNAME" type="text" id="username" name="username" value="<?= $username ?>" tabindex="1"></input>
         </div>
 
-        <!-- <div>
+        <div class="mt-16">
         <label>password</label>
-        <input placeholder="Password" type="password" id="password" name="password"></input>
-        </div> -->
+        <input class="text-center" placeholder="Password" type="password" id="p_1" name="p_1"></input>
+        </div>
 
-        <div class="form_pincode">
+        <!-- <div class="form_pincode">
           <input class="" type="tel" name="p_1" maxlength="1"  tabindex="2" placeholder="-" autocomplete="off">
           <input class="" type="tel" name="p_2" maxlength="1"  tabindex="3" placeholder="-" autocomplete="off">
           <input class="" type="tel" name="p_3" maxlength="1"  tabindex="4" placeholder="-" autocomplete="off"> 
           <input class="" type="tel" name="p_4" maxlength="1"  tabindex="5" placeholder="-" autocomplete="off">
           <input class="" type="tel" name="p_5" maxlength="1"  tabindex="6" placeholder="-" autocomplete="off">
           <input class="" type="tel" name="p_6" maxlength="1"  tabindex="7" placeholder="-" autocomplete="off">
-        </div>
+        </div> -->
 
         <div class="mt-16">
           <a href="/admin/console/"><button id="submit" class="make-wide">Login</button></a>
