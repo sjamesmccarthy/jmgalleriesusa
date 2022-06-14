@@ -484,6 +484,10 @@ blockquote {
     text-transform: lowercase !important;
 }
 
+.text-upper {
+    text-transform: uppercase !important;
+}
+
 .text-red {
     color: $color-error;
 }

@@ -4,7 +4,7 @@
 
             <div class="grid" style="position: relative;">
                 <div class="col-5-middle small-hidden text-lower">
-                    <p class="center heading"><a href="/shop" class="<?= $polarized ?>">THE SHOP</a><br /><span class="font-light">tinyVIEWS<sup>&trade;</sup> & BOOKS</span></p>
+                    <p class="center heading"><a href="/shop" class="<?= $polarized ?>">THE SHOP</a><br /><span class="font-light">tiny<span class="text-upper">VIEWS</span> & BOOKS</span></p>
                 </div>
                 <div class="col-2 small-hidden">
                   <!-- logo_fullsize.png -->
