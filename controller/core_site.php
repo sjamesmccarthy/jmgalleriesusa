@@ -440,6 +440,7 @@ public function view($view = null) {
     /* Produce a combined error message and log failure when View fails to be found in both places (this is why value == 2) */
     if($err_View == 2) {
       echo "<div class='pt-64 text-center'><h2>&technicalProblem.Reported(" . $err_View . ")</h2><p class='text-center'>Roses are red, violets are blue, we are oh-so sorry we can not find your view.</p><p class='text-center hidden'>This has been reported to the poet.</p><p class='text-center pt-32'><a href='/'>-- return to homepage --</a></p></div>";
+      // $this->console($this->routes->URI);
     }
 
   }

@@ -14,17 +14,17 @@
     <div class="grid-4_sm-2 grid-4_md-3" style="margin: 0">
 
 
-        <div class="col-12 title">
-            <h1>The Online Shop</h1>
-            <p class="light sub-title pt-8">Buy previously exhibited framed and matted open edition prints</p>
+        <div class="col-12 title pb-32">
+            <h1>tinyVIEWS<sup style="font-size: 1.4rem; font-weight: 100;">&trade;</sup>, books and other fine-art product</h1>
+            <!-- <p class="light sub-title pt-8">Buy previously exhibited framed and matted open edition prints</p> -->
 
-            <ul class="filter-editions-list pt-32">
-                <li class="filter-all selected">All</li>
+            <!-- <ul class="filter-editions-list pt-32"> -->
+                <!-- <li class="filter-all selected">All</li> -->
                 <!-- <li class="filter-gallery">Limited Edition</li> -->
                 <!-- <li class="filter-studio">Studio Edition</li> -->
-                <li class="filter-open"><a href="/open-editions">Open Editions</a></li>
+                <!-- <li class="filter-open"><a href="/open-editions">Open Editions</a></li> -->
                 <!-- tinyVIEWS<span style="font-size:.9rem; font-weight: 300;"><sup>&trade;</sup></span>  -->
-            </ul>
+            <!-- </ul> -->
         </div>
 
 
