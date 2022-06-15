@@ -203,6 +203,7 @@
                 <label>camera</label>
                 <select id="camera" name="camera">
                     <option value="">CAMERA</option>
+                    <option value="Nikon Z7 II" <?= ($camera == "Nikon Z7 II" ? "SELECTED" : ""); ?>>Nikon Z7 II</option>
                     <option value="Nikon Z6 II" <?= ($camera == "Nikon Z6 II" ? "SELECTED" : ""); ?>>Nikon Z6 II</option>
                     <option value="Nikon Z5" <?= ($camera == "Nikon Z5" ? "SELECTED" : ""); ?>>Nikon Z5</option>
                     <option value="Nikon D810" <?= ($camera == "Nikon D810" ? "SELECTED" : ""); ?>>Nikon D810</option>
@@ -219,6 +220,10 @@
                 <label>lens</label>
                 <select id="lens_model" name="lens_model">
                     <option value="">LENS</option>
+                    <option value="Nikkor Z 24-70" <?= ($lens_model == "Nikkor Z 24-70" ? "SELECTED" : ""); ?>>Nikkor Z 24-70</option>
+                    <option value="Nikkor Z 40" <?= ($lens_model == "Nikkor Z 40" ? "SELECTED" : ""); ?>>Nikkor Z 40</option>
+                    <option value="Nikkor Z 28" <?= ($lens_model == "Nikkor Z 28" ? "SELECTED" : ""); ?>>Nikkor Z 28</option>
+                    <option value="Nikkor Z 15-30" <?= ($lens_model == "Nikkor Z 15-30" ? "SELECTED" : ""); ?>>Nikkor Z 15-30</option>
                     <option value="Nikkor Z 24-200" <?= ($lens_model == "Nikkor Z 24-200" ? "SELECTED" : ""); ?>>Nikkor Z 24-200</option>
                     <option value="Nikkor Z 24-50" <?= ($lens_model == "Nikkor Z 24-50" ? "SELECTED" : ""); ?>>Nikkor Z 24-50</option>
                     <option value="Tamron SP 85mm F/1.8 Di VC USD" <?= ($lens_model == "Tamron SP 85mm F/1.8 Di VC USD" ? "SELECTED" : ""); ?>>Tamron SP 85mm F/1.8 Di VC USD</option>
