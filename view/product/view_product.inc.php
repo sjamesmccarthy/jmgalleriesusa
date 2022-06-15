@@ -32,7 +32,7 @@ $hidden_felds .= "<input type='hidden' name='edition_type' value='product' />";
     } else {
         $on_sale_price = null;
         $on_sale_label = null;
-        $price_html = '<p class="--price"><b>$' . number_format($res_price,2) . '</b>';
+        $price_html = '<p class="--price">$' . number_format($res_price,2);
     }
 
 $hidden_felds .= '<input type="hidden" name="price" value="' . $res_price . '" />';
@@ -40,18 +40,28 @@ $hidden_felds .= '<input type="hidden" name="price_sale" value="' . round($on_sa
 
 /* DETAILS */
 if($res_details != '') {
-    $res_details_html = "<p class='mt-16 normal'><span class='bold'>Details</span><br />" . $res_details . "</p>";
+
+    $list = explode("\n", $res_details);
+    $res_details_html = "<ul>";
+    // $res_details_html = "<p class='mt-16 normal'><span class='bold'>Details</span><br />" . $res_details . "</p>";
+    foreach ($list as $item) {
+        $res_details_html .= "<li>" . $item . "</li>";
+    }
+
+    $res_details_html .= "</ul>";
+
 }
+
 /* SHIPPING & INVENTORY */
 $ship_rates = json_decode($res_ship_tier,TRUE);
 // $this->console($ship_rates);
 
 $options_html = "<ul class='--shipping'>";
-$options_quantity_html = '<div class="select-wrapper half-size mt-32"><select id="quantity" name="quantity" style="margin-bottom: 0">';
+$options_quantity_html = '<div class="select-wrapper half-size"><select id="quantity" name="quantity" style="margin-bottom: 0">';
 
 /* Inject InStock & Shipping Options */
-if($res_in_stock == "true") {
-    // $options_html .= "<li>In Stock</li>";
+if($res_quantity >= 1 && $res_in_stock == "true") {
+    $options_html .= "<li>In Stock</li>";
     $in_stock_html = "<p class='--instock mt-32'>In Stock</p>";
 
     $options_html .= "<p class='mt-16 mb-16'>Shipping:</p>";
@@ -72,9 +82,12 @@ if($res_in_stock == "true") {
     }
 
     $options_quantity_html .= "</select></div>";
+    $buy_button = '<button class="buy_btn">Buy Now</button>';
+
 } else {
-    $options_html .= "<li class='red'>Out of Stock</li>";
-    $options_quantity_html = null;
+    $options_quantity_html = '<div class="--soldout">SOLD OUT</div>';
+    $buy_button = null;
+    // $options_quantity_html = null;
 }
 
 $options_html .= "</ul>";
@@ -87,19 +100,28 @@ if($res_quantity == 1) {
 $res_image = json_decode($res_image, true);
 // $this->console($res_image);
 
-$image_html = '<div class="col-6_sm-12"><div style="max-width:85%; margin: auto;">
-<p class="small normal mb-32"><a style="font-weight: 400" href="/shop"><!-- <img class="valign-mid mr-8" style="width: 16px;" src="/view/__image/icon_left_arrow.svg" /> -->&#8592; Back To jM Gallery Store</a></p>
-<div class="slider">';
+/* 
+<div class="fotorama">
+  <img src="https://s.fotorama.io/1.jpg">
+  <img src="https://s.fotorama.io/2.jpg">
+</div>
+*/
+
+$image_html = '<div style="max-width:85%; margin: auto;">';
+// $image_html .= '<div class="slider">';
+$image_html .= '<div class="fotorama" data-nav="thumbs" data-arrows="false"
+data-click="true" data-swipe="true" data-allowfullscreen="true">';
 
     foreach($res_image as $iK => $iV) {  
         
         $target_file = $_SERVER["DOCUMENT_ROOT"] . '/view/__image/product/' . $iV['name'];
         
         if(file_exists( $target_file ) && $iK != "file_6" & $iV['size'] != "0") {
-            $image_html .= '<div><img src="/view/__image/product/' . $iV['name'] . '" alt="product image" /></div>';
+            // $image_html .= '<div><img src="/view/__image/product/' . $iV['name'] . '" alt="product image" /></div>';
+            $image_html .= '<img src="/view/__image/product/' . $iV['name'] . '" alt="product image" />';
         }
         
     }
 
-$image_html .= "</div></div></div>";
+$image_html .= "</div></div>";
 ?>

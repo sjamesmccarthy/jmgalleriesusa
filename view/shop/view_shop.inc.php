@@ -10,15 +10,22 @@ foreach($product_data as $k => $v) {
     $ship_data = json_decode($v['ship_tier'], true);
 
     foreach($ship_data as $ks => $sv) {
-        if( $sv['amount'] == '0') {
+        if( $v['quantity'] >= 1 && $sv['amount'] == '0') {
             $free_ship =  '<p class="shipping-free">FREE SHIPPING USA</p>';
         } else {
             $free_ship = null;
         }
     }
 
+
     if( $v['quantity'] == 1) {
         $only_one = '<br /><span style="color: red">Only 1 More Left!</span>';
+    } else {
+        $only_one = null;   
+    }
+
+    if( $v['quantity'] == 0) {
+        $only_one = '<br /><span class="soldout">SOLD OUT</span>';
     } else {
         $only_one = null;   
     }

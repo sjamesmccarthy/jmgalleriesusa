@@ -2,12 +2,13 @@
 
     <div class="hero" style="margin: 3rem .5rem 2rem .5rem;">
         <div class="hero-inner">
-            <div class="hero-headline">
+            <!-- removed Wed, 15 June 2022 in preference to putting in inside the image -->
+            <!-- <div class="hero-headline">
                 <h2>tinyViews<sup class="tiny">&trade;</sup> Notecards</h2>
                 <p>a simple way to say Hi with a Fine Art vibe.</p>
-                 <!-- <button class="mt-32"><a href="/product/">Shop Notecards</a></button> -->
+                 <button class="mt-32"><a href="/product/">Shop Notecards</a></button>
                 <p class="mt-16">Coming Early 2021</p>
-            </div>
+            </div> -->
         </div>
     </div>
 

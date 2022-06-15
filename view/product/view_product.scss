@@ -8,7 +8,7 @@
         margin-bottom: 1rem;
         line-height: 1.3;
         // text-transform: uppercase;
-        font-weight: 300;
+        font-weight: 600;
     }
 
     .red {
@@ -21,7 +21,7 @@
     .--price {
         // color: #2574A9;
         font-size: 2rem;
-        font-weight: 800;
+        font-weight: 200;
         // line-height: 1;
     }
 
@@ -59,6 +59,16 @@
         color: green;
     }
 
+    .--soldout {
+        background-color: $color-error;
+        color: #FFF; 
+        padding: 3px 6px; 
+        display: inline-block; 
+        font-size: 11px; 
+        font-weight: 700; 
+        border-radius: 20px;
+    }
+
     .--desc {
         padding: 1rem 0 0 0;
         
@@ -69,6 +79,11 @@
         >p:not(:last-child) {
             margin-bottom: 1rem;
             margin-top: .5rem;
+        }
+
+        ul li {
+            list-style: circle !important;
+            margin-left: 1rem;
         }
     }
 

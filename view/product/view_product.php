@@ -1,29 +1,46 @@
 
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
-<script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+<script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script> -->
+
+<link  href="https://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.js"></script>
 
 <section id="product_detail">
     <form id="product" action="/checkout" method="post">
     <?= $hidden_felds ?>
 
     <div class="grid">
-        
-        <?= $image_html ?>
+        <div class="col">
+            <p class="small normal mb-32 mt-32 text-upper text-center"><a style="font-weight: 400" href="/shop">&#8592; Back To Shop</a></p>
+        </div>
+    </div>
+
+    <div class="grid">
+
+        <div class="col-6_sm-12">
+            <?= $image_html ?>
+        </div>
         
         <div class="col-6_sm-12">
             <h1><?= $res_title ?></h1>
-            <?= $price_html ?>
-            <?= $options_quantity_html ?>
             
             <div class="--desc">
-                <p><?= $res_desc ?></p>
+                <!-- <p><?= $res_desc ?></p> -->
                 <?= $res_details_html ?>
             </div>
+            
+            <div class="mt-32">
+            <?= $price_html ?>
+            <?= $options_quantity_html ?>
 
-            <?= $free_ship ?>
+            <div>
+                <?= $free_ship ?>
+            </div>
+
             <?= $options_html ?>
+            </div>
 
-            <button class="buy_btn">Buy Now</button>
+            <?= $buy_button ?>
         </div>
 
     </div>
@@ -31,14 +48,16 @@
     </form>
 </section>
 
-<!-- generated html from component file: component_most_popular -->
-<!-- removed 9/25/2020 -->
 <section id="you-may-like" class="filmstrip mt-64">
-    <?= $you_may_also_like_html ?>
+    <?php
+        // $you_may_also_like_html 
+        // TODO: duplicate this component for the shop items insstead
+    ?>
 </section> 
-<!-- /generated html from component file -->
 
 <script>
+    /* TODO: add thumbnail previews */
+
 $(document).ready(function($){
     $('.slider').bxSlider( {
         controls:false,
