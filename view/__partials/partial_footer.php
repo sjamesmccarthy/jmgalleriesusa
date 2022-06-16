@@ -28,7 +28,7 @@
                     <p>
                       <!-- <a href="/shop">Shop</a> /  -->
                       <!-- <a href="/fieldnotes">Field Notes</a> /  -->
-                      <a href="/limited-editions">the work</a> <img class="breadcrumb-arrow" src="/view/__image/icon_navarrow-right.svg" alt="breadcrumb-icon"> 
+                      <a href="/thework">the work</a> <img class="breadcrumb-arrow" src="/view/__image/icon_navarrow-right.svg" alt="breadcrumb-icon"> 
                       <a href="/about">about</a> <img class="breadcrumb-arrow" src="/view/__image/icon_navarrow-right.svg" alt="breadcrumb-icon"> 
                       <!-- <a href="/provenance">Provenance</a> /  -->
                       <a class="tiny-dis" href="/privacy"><?= $this->config->copyright ?></a> <img class="breadcrumb-arrow" src="/view/__image/icon_navarrow-right.svg" alt="breadcrumb-icon">

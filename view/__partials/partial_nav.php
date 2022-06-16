@@ -51,7 +51,7 @@
                 <li><a href="/shop">THE SHOP</a></li>
                 <!-- <li><a href="/all?filter=tinyviews">OPEN EDITIONS</a></li> -->
                 <li><a href="/about">ABOUT</a></li>
-                <li><a href="https://linktr.ee/jmgalleriesusa">CONTACT ME</a></li>
+                <li><a href="https://linktr.ee/jmgalleriesusa">CONTACT</a></li>
                 <!-- <li><a href="/contact">CONTACT</a></li> -->
 
                 <li class="mt-16"><p class="topnav-logo"><a href="/"><img class="topnav--logo-img logo-white" style="width: 240px;" src="/view/__image/signature-fine-art-upscaled.png" alt="jm Galleries logo" /></a></p></li>
