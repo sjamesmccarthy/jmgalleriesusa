@@ -33,10 +33,12 @@
 <script>
 jQuery(document).ready(function($){
 
+    <?php if($catalog != 'new-releases') : ?>
         $('[class*="filter-"]').removeClass("selected");
         $('[class*="filter-gallery"]').addClass("selected");
         $('[class*="f-"]').hide();
         $('.f-gallery').show();
+    <?php endif ?>
 
         <?php if($_REQUEST['filter'] == "tinyviews") { ?>
         $('[class*="filter-"]').removeClass("selected");

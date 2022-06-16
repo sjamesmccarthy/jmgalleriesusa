@@ -243,6 +243,8 @@ class Core_Api extends Fieldnotes_Api
 
     public function api_Catalog_Get_New_Releases($limit=4, $duration=null, $rand=null) {
 
+        $data = array();
+        
         if( !is_null($rand) ) {
             $rand = " ORDER BY RAND() ";
         }
@@ -259,6 +261,7 @@ class Core_Api extends Fieldnotes_Api
             PH.loc_place,
             PH.as_limited,
             PH.as_open,
+            PH.available_sizes,
             CAT.path AS catalog_path
         FROM
             catalog_photo AS PH
@@ -267,27 +270,28 @@ class Core_Api extends Fieldnotes_Api
         WHERE
             PH.created > DATE_ADD(Now(), INTERVAL - " . $duration . " MONTH)
             AND PH.status = 'ACTIVE'
-           
+            AND PH.as_limited = '1'
+            OR PH.as_open = '1'
         ORDER BY
             PH.created DESC
         LIMIT " . $limit;
 
-            //  -- AND PH.as_limited = '1'
-            $result = $this->mysqli->query($sql);
-
-            if ($result->num_rows > 0) {
-
-                while($row = $result->fetch_assoc())
-		        {
-		            $data[] = $row;
-		        }
-
-            } else {
-
-                $data['error'] = "No Records Found";
-                $data['sql'] = $sql;
+        
+        $result = $this->mysqli->query($sql);
+        
+        if ($result->num_rows > 0) {
+            
+            while($row = $result->fetch_assoc())
+            {
+                $data[] = $row;
             }
-
+            
+        } else {
+            
+            $data['error'] = "No Records Found";
+            $data['sql'] = $sql;
+        }
+        
         }
 
         return($data);

@@ -5,7 +5,8 @@
 
     $count=0;
     $catalog = ltrim($this->page->catalog_path, '/');
-    $new_release_data = array(24,12);  /* $limit=24, $duration=null[months], $rand=null, Also found in component_new_releases.php */
+
+    $new_release_data = array(12,12);  /* $limit=24, $duration=null[months], $rand=null, Also found in component_new_releases.php */
 
     /* Load all category meta data */
     // $this->console($catalog);
@@ -19,6 +20,7 @@
     /* Get Thumbnails of photos for Category */
     if( $catalog_meta[0]['path'] == 'new-releases') {
          $catalog_photos = $catalog_photos = $this->api_Catalog_Get_New_Releases($new_release_data[0], $new_release_data[1]);
+        //  $this->console($catalog_photos);
          $catalog_tabs_hidden = true;
          $catalog_le_desc = '&mdash; limited edition';
     } else if( $catalog_meta[0]['path'] == 'thework') {
@@ -53,6 +55,7 @@
     }
 
         if( !$catalog_photos['error']) {
+
             foreach($catalog_photos as $k => $v) {
 
                 if($v['as_limited'] == 1) {
@@ -60,58 +63,63 @@
                 $edition_desc = str_replace("{limited_edition_max}", $this->config->limited_edition_max, $this->config->edition_description_limited);
                 $desc_editions = "<p>" . $edition_desc  . "</p>";
                 $available_sizes = $this->config->available_sizes_limited;
-
                 }
-                else { $data_filter_G = null;  }
+                else { 
+                    $data_filter_G = null;  
+                }
 
                 if($v['as_studio'] == 1) {
-                 $data_filter_S = 'f-studio';
-                $desc_editions = "<p>" . $this->config->edition_description_open . "</p>";
+                    $data_filter_S = 'f-studio';
+                    $desc_editions = "<p>" . $this->config->edition_description_open . "</p>";
 
-                if($v['available_sizes'] != "in_code") {
-                    $available_sizes = json_decode($v['available_sizes'], true);
-                } else {
-                    $available_sizes = $this->config->available_sizes_open;
+                        if($v['available_sizes'] != "in_code") {
+                            $available_sizes = json_decode($v['available_sizes'], true);
+                        } else {
+                            $available_sizes = $this->config->available_sizes_open;
+                        }
                 }
-
-            }
-            else { $data_filter_S = null; }
+                else { 
+                    $data_filter_S = null; 
+                }
 
                 if($v['as_open'] == 1) {
-                $data_filter_O = 'f-open';
+                    $data_filter_O = 'f-open';
 
-                if($v['available_sizes'] != "in_code") {
-                    $open_pricing_array = json_decode($v['available_sizes'], true);
-                    $r_seed = count($open_pricing_array) -1;
-                    // echo "FOUND @" . $v['title'] . "<br />";
-                    // echo $v['available_sizes'] . "<br />";
-                } else {
-                    $open_pricing_array = json_decode($this->config->tv_pricing, true);
-                    $r_seed = count($open_pricing_array) -1;
-                }
-
-                $i=0;
-                $iRand = rand(0,$r_seed);
-                // $this->console($open_pricing_array);
-                foreach ($open_pricing_array as $opK => $opV) {
-
-                    if($i == $iRand) {
-                        $rPrice = $opV;
-                        $tvS = explode('|', $opK);
-                        if($tvS[1] == '0') { $tvS[1] = $tvS[0]; }
-                        $rSize = $tvS[1];
+                    if($v['available_sizes'] != "in_code") {
+                        $open_pricing_array = json_decode($v['available_sizes'], true);
+                        $r_seed = count($open_pricing_array) -1;
+                        // echo "FOUND @" . $v['title'] . "<br />";
+                        // echo $v['available_sizes'] . "<br />";
+                    } else {
+                        $open_pricing_array = json_decode($this->config->tv_pricing, true);
+                        $r_seed = count($open_pricing_array) -1;
                     }
 
-                    $i++;
-                }
+                    $i=0;
+                    $iRand = rand(0,$r_seed);
+                    // $this->console($open_pricing_array);
 
-                // $desc_editions = "<p>" . $this->config->edition_description_open . "</p>";
-                $desc_editions = "<p style='font-weight: 700; padding-right: 1rem;'>$" . $rPrice . " (" . $rSize . ")</p>";
-                $available_sizes = $this->config->available_sizes_open;
-                $rSize = null;
-                $rPrice = null;
+                    foreach ($open_pricing_array as $opK => $opV) {
+
+                        if($i == $iRand) {
+                            $rPrice = $opV;
+                            $tvS = explode('|', $opK);
+                            if($tvS[1] == '0') { $tvS[1] = $tvS[0]; }
+                            $rSize = $tvS[1];
+                        }
+
+                        $i++;
+                    }
+
+                    // $desc_editions = "<p>" . $this->config->edition_description_open . "</p>";
+                    $desc_editions = "<p style='font-weight: 700; padding-right: 1rem;'>$" . $rPrice . " (" . $rSize . ")</p>";
+                    $available_sizes = $this->config->available_sizes_open;
+                    $rSize = null;
+                    $rPrice = null;
                 }
-                else { $data_filter_O = null; }
+                else { 
+                    $data_filter_O = null; 
+                }
 
                 // if($v['as_limited'] == 1) {
                 //     $data_filter_G = 'f-gallery';
