@@ -46,8 +46,8 @@
     } else {
         $catalog_tabs_hidden = false;
         $catalog_le_desc = '&mdash; limited edition';
-        // $catalog_photos = $this->api_Catalog_Category_Filmstrip($catalog_meta[0]['catalog_collections_id'], 'ALL');
-        $catalog_photos = $this->api_Catalog_Category_Filmstrip($catalog_meta[0]['catalog_collections_id'], 'ALL','LE');
+        $catalog_photos = $this->api_Catalog_Category_Filmstrip($catalog_meta[0]['catalog_collections_id'], 'ALL');
+        // $catalog_photos = $this->api_Catalog_Category_Filmstrip($catalog_meta[0]['catalog_collections_id'], 'ALL','LE');
         // $tv_le_link = '<p class="shop-tv-link"><a href="/thework?filter=limited">Back To THE WORK &mdash; LIMITED EDITIONS</a></p>';
         $tv_le_link = '<!-- <p class="shop-tv-link"><a href="/collections">VIEW ALL COLLECTIONS</a></p> -->';
     }

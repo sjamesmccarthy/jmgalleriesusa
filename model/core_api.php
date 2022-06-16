@@ -153,9 +153,9 @@ class Core_Api extends Fieldnotes_Api
         }
 
         if($edition == "LE") {
-            $category .= "AND cp.as_limited = '1'";
+            $category .= "AND cp.as_limited = '1' ";
         } elseif($edition == "OE") {
-            $category .= "AND cp.as_open = '1'";
+            $category .= "AND cp.as_open = '1' ";
         }
 
         if($limit != "ALL") {
