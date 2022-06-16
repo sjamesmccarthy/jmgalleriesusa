@@ -2,8 +2,8 @@
     <div class="grid-center">
         <div class="col-10">
 
-            <div class="grid">
-                <div class="col-10">
+            <div class="grid-center">
+                <div class="col">
                     <h1 class="text-center">Limited Edition Frame Sizing & Pricing</h1>
                 <p class="pt-16">
                 Limited Edition fine-art is considered highly collectible and are part of a limited numbered series.<br />Each Limited Edition is signed by j.McCarthy and includes a Certificate of Authenticity that is recorded in the jM Galleries Digital Artwork Archives.</p>
