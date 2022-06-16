@@ -267,11 +267,12 @@ class Core_Api extends Fieldnotes_Api
         WHERE
             PH.created > DATE_ADD(Now(), INTERVAL - " . $duration . " MONTH)
             AND PH.status = 'ACTIVE'
-            AND PH.as_limited = '1'
+           
         ORDER BY
             PH.created DESC
         LIMIT " . $limit;
 
+            //  -- AND PH.as_limited = '1'
             $result = $this->mysqli->query($sql);
 
             if ($result->num_rows > 0) {
