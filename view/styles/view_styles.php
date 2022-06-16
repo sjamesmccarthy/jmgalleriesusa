@@ -121,24 +121,16 @@
 
                  <table>
                     <tr class="gray">
-                        <th>8x8 printed on Hahnemühle Photo Rag® Metallic Paper</th>
+                        <th>8x8 tinyVIEWS&trade;</th>
                         <th class="right">Total Size(in)</th>
                     </tr>
                     <tr>
-                        <td class="left">Print Only</td>
+                        <td class="left">Print framed in Studio frame without glass.</td>
                         <td class="tright">8x8</td>
-                    </tr>
-                    <tr>
-                        <td class="left">Optionally add a 4-Ply Black Mat, starting at $28</td>
-                        <td class="tright">10x10</td>
-                    </tr>
-                    <tr>
-                        <td class="left">Optionally framed in hand-made Studio frame without Mat. Reduces image area to 7&half; x 7&half; inches.</td>
-                        <td class="tright">8 x 8</td>
                     </tr>
                 </table>
 
-                 <table>
+                 <!-- <table>
                     <tr class="gray">
                         <th>8x10 printed on Hahnemühle Photo Rag® Metallic Paper</th>
                         <th class="right">Total Size(in)</th>
@@ -151,34 +143,24 @@
                         <td class="left">Optionally add a 4-Ply Black Mat, starting at $28<br />*Studio frame not available in this size.</td>
                         <td class="tright">11x14</td>
                     </tr>
-                </table>
+                </table> -->
 
                  <table>
                     <tr class="gray">
-                        <th>12x18 printed on Hahnemühle Photo Rag® Metallic Paper</th>
+                        <th>12x18 tinyVIEWS&trade;</th>
                         <th class="right">Total Size(in)</th>
                     </tr>
                     <tr>
-                        <td class="left">Print Only (incudes &half; inch white border)</td>
+                        <td class="left">Print Only (incudes &half; inch white border) and foam core backed.</td>
                         <td class="tright">12x18</td>
                     </tr>
-                    <tr>
-                        <td class="left">Optionally add a 4-Ply Black Mat, starting at $28</td>
-                        <td class="tright">16x24</td>
-                    </tr>
-                    <tr>
-                        <td class="left">Optionally framed in hand-made Studio frame. Mat required.</td>
-                        <td class="tright">17&half; x 25&half;</td>
-                    </tr>
 
-                </table>
-
-
-                <table>
                     <tr>
-                        <td colspan="2" class="small">When available, Open Editions may optionally be framed in a Studio Frame. Studio Frames are &frac34;" moulding painted Ash Gray or Snow White. Prices start at $49.95. After framing total size will increase the height and width approximately 1 &half; inches.</td>
+                        <td colspan="2" class="small">This Open Edition tinyVIEWS&trade; print may optionally be framed in a Studio Frame. Studio Frames are &frac34;" wood painted Ash Gray or Snow White. Prices start at $69.95 for 12x18 prints and include a white or black mat. Framing does not include glass. Optionally, Tru Vue Museum Glass can be added for an additional $129. After framing total size will increase the height and width approximately 1 &half; inches on all sides.</td>
                     </tr>
                 </table>
+
+
 
                 </li>
             </ul>
