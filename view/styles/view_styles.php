@@ -1,9 +1,9 @@
 <section id="styles">
     <div class="grid-center">
-        <div class="col-12">
+        <div class="col-10">
 
             <div class="grid">
-                <div class="col-12">
+                <div class="col-10">
                     <h1 class="text-center">Limited Edition Frame Sizing & Pricing</h1>
                 <p class="pt-16">
                 Limited Edition fine-art is considered highly collectible and are part of a limited numbered series.<br />Each Limited Edition is signed by j.McCarthy and includes a Certificate of Authenticity that is recorded in the jM Galleries Digital Artwork Archives.</p>
@@ -13,27 +13,24 @@
                 </div>
             </div>
         </div>
-            <div class="grid">
-            <div class="col-8_md-12">
-                <table>
+            <div class="grid-center">
+            <div class="col-10_md-10">
+                <!-- <table>
                     <tr class="gray">
                         <th>16x24 HD Acrylic or Chromaluxe&reg; Metal</th>
                         <th class="right">Total Size(in)</th>
-                        <!-- <th class="right">Price</th> -->
                     </tr>
                     <tr>
                         <td class="left">Included Float Mount (Acrylic)</td>
                         <td class="tright">16x24</td>
-                        <!-- <td class="tright">$0</td> -->
                     </tr>
                     <tr>
                         <td class="left">Optionally framed with 2 3/4" moulding starting at $<?= number_format(
                           $le_frames_pricing["16x24"]
                         ) ?>.</td>
                         <td class="tright">20x29</td>
-                        <!-- <td class="tright">$200</td> -->
                     </tr>
-                </table>
+                </table> -->
 
                 <table>
                     <tr class="gray">
@@ -55,25 +52,22 @@
                     </tr>
                 </table>
 
-                <table>
+                <!-- <table>
                     <tr class="gray">
                         <th>24x36 HD Acrylic or Chromaluxe&reg; Metal</th>
                         <th class="right">Total Size(in)</th>
-                        <!-- <th class="right">Price</th> -->
                     </tr>
                     <tr>
                         <td class="left">Included Float Mount (Acrylic)</td>
                         <td class="tright">24x36</td>
-                        <!-- <td class="tright">$0</td> -->
                     </tr>
                     <tr>
                         <td class="left">Optionally framed 4" moulding starting at $<?= number_format(
                           $le_frames_pricing["24x36"]
                         ) ?>.</td>
                         <td class="tright">32x44</td>
-                        <!-- <td class="tright">$450</td> -->
                     </tr>
-                </table>
+                </table> -->
 
                 <!-- <table>
                     <tr class="gray">
@@ -99,19 +93,18 @@
                     </tr>
                 </table>
             </div>
-
-            <div class="col-4_md-12 text-center pl-32 pt-32">
-
-                <p class="moulding-thumb"><img class="moulding-thumb-img" src="/view/__image/moulding-60645.jpg" alt="moulding" /> </p>
-                <p class="moulding-thumb"><img class="moulding-thumb-img" src="/view/__image/moulding-60610.jpg" alt="moulding" /> </p>
-                <p class="moulding-thumb"><img class="moulding-thumb-img" src="/view/__image/moulding-60683.jpg" alt="moulding" /> </p>
+        </div>
+            <div class="grid-center">
+                <div class="col-10 pt-32 text-center">
+                <img class="moulding-thumb-img" src="/view/__image/moulding-60645.jpg" alt="moulding" /> 
+                <img class="moulding-thumb-img" src="/view/__image/moulding-60610.jpg" alt="moulding" /> 
+                <img class="moulding-thumb-img" src="/view/__image/moulding-60683.jpg" alt="moulding" /> 
             </div>
-            </li>
-        </ul>
-            </div>
-
-    <div class="grid">
-    <div class="col-8_sm-12">
+        </div>
+    </div>
+                        
+    <div class="grid-center">
+    <div class="col-10_sm-12">
         <ul>
         <li style="border-top: 2px solid #CCC; padding-top: 2rem;">
             <li>
