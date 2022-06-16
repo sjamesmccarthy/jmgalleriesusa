@@ -9,7 +9,7 @@
                 if($catalog_tabs_hidden != true) {
             ?>
             <ul class="filter-editions-list mt-32">
-                <li class="filter-all selected">All</li>
+                <li class="filter-all">All</li>
                 <li class="filter-gallery">Limited Ed.</li>
                 <!-- <li class="filter-studio">Studio Edition</li> -->
                 <li class="filter-open">Open Ed.</li>
@@ -32,6 +32,11 @@
 
 <script>
 jQuery(document).ready(function($){
+
+        $('[class*="filter-"]').removeClass("selected");
+        $('[class*="filter-gallery"]').addClass("selected");
+        $('[class*="f-"]').hide();
+        $('.f-gallery').show();
 
         <?php if($_REQUEST['filter'] == "tinyviews") { ?>
         $('[class*="filter-"]').removeClass("selected");
