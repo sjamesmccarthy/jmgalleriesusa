@@ -4,17 +4,16 @@
 
             <div class="grid-center">
                 <div class="col">
-                    <h1 class="text-center">Limited Edition Frame Sizing & Pricing</h1>
+                    <h1 class="text-center">Sizing & Framing</h1>
                 <p class="pt-16">
-                Limited Edition fine-art is considered highly collectible and are part of a limited numbered series.<br />Each Limited Edition is signed by j.McCarthy and includes a Certificate of Authenticity that is recorded in the jM Galleries Digital Artwork Archives.</p>
-
                 <p>
-                Once the last edition number is sold, no more editions in that series will be available and the only way to purchase a sold-out edition would be through another collector.<p>
                 </div>
             </div>
         </div>
             <div class="grid-center">
             <div class="col-10_md-10">
+                <h2>Limited Edition</h2>
+                <p>Limited Edition fine-art is considered highly collectible and are part of a limited numbered series printed on either HD Acrylic or Chromaluxe&reg; Metal.<br />Each Limited Edition is signed by j.McCarthy and includes a Certificate of Authenticity that is recorded in the jM Galleries <a href="/provenance">Digital Artwork Archives</a>.</p>
                 <!-- <table>
                     <tr class="gray">
                         <th>16x24 HD Acrylic or Chromaluxe&reg; Metal</th>
@@ -103,12 +102,9 @@
         </div>
     </div>
                         
-    <div class="grid-center">
+    <div class="grid-center mt-32">
     <div class="col-10_sm-12">
-        <ul>
-        <li style="border-top: 2px solid #CCC; padding-top: 2rem;">
-            <li>
-                <h2> Open Edition Sizing</h2>
+                <h2> Open Edition tinyVIEWS&trade;</h2>
                 <p>Open Editions, or tinyVIEWS&trade;, are not considered collectible and are not numbered, may not be signed, and could also include a watermark. They are printed on Moab® Slick Rock Metallic Paper.</a></p>
 
 
