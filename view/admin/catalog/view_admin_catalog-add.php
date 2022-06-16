@@ -7,7 +7,7 @@
         <div class="col catalog-add--container">
 
             <div class="admin-header">
-                <h2> <?= $page_title ?> - testing</h2>
+                <h2> <?= $page_title ?></h2>
                 <p class="close-x"><i class="fas fa-times-circle"></i></p>
             </div>
 
