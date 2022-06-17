@@ -1123,6 +1123,8 @@ class Core_Api extends Fieldnotes_Api
             PH.as_limited,
             CAT.title AS category,
             PH.status,
+            PH.date_taken,
+            PH.tags,
             CAT.path,
             PV.count AS views,
             PV.updated AS lastview

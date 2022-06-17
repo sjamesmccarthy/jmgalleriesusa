@@ -29,13 +29,13 @@
                     <table id="dataTable" class="display">
                         <thead>
                             <tr>
-                                <th>Featured</th>
+                                <th>*</th>
                                 <th>Title</th>
-                                <th>Catalog Category</th>
-                                <th>Edition</th>
+                                <th>Collection +Tags</th>
+                                <th>Ed.</th>
                                 <th style="display: none">Status</th>
 <!--                                 <th>Views</th> -->
-                                <th>Last View</th>
+                                <th>Date Taken</th>
                             </tr>
                         </thead>
                         <tbody></tbody>
@@ -86,11 +86,18 @@
                         return data;
                     }
                 },
-                { data: 'category' },
+                { data: 'category', 
+                    "render": function(data, type, row, meta){
+                        if(type === 'display'){
+                            data = row.category + '<br />' + row.tags;
+                        }
+                        return data;
+                    }
+                },
                 { data: 'as_open',
                     "render": function(data, type, row, meta){
                         if(type === 'display'){
-                            if(row.as_open == '1') { var edition = 'OPEN'; } else { var edition = 'LIMITED'; }
+                            if(row.as_open == '1') { var edition = 'OE'; } else { var edition = 'LE'; }
                             data = edition;
                         }
                         return data;
@@ -98,7 +105,7 @@
                 },
                 { data: 'status', "bVisible":false },
                 /* { data: 'views' }, */
-                { data: 'lastview',
+                { data: 'date_taken',
                     "render": function(data, type, row, meta){
                         return data;
                     }
@@ -106,11 +113,9 @@
             ],
             "order": [ 1, "asc" ],
             'columnDefs': [
-                  {
-                      "targets": 0, // your case first column
-                      "className": "text-center",
-                      "width": "5%"
-                 }
+                  {  "targets": 0, "className": "text-center", "width": "5%" },
+                  {  "targets": 1, "width": "40%" },
+                  {  "targets": 2, "width": "30%" },
              ]
         } );
 
