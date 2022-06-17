@@ -164,10 +164,6 @@ body {
             border-color: rgba(233, 233, 233, .2);
         }
 
-        .portrait {
-            background-color: rgba(255,255,255,.01);
-        }
-
         .checkout-sub, label, #polarized .__container h1, #polarized .__container p {
             color: $color-white;;
         }
@@ -200,10 +196,10 @@ body {
 
         .landscape, .portrait, .square {
 
-            background-color:rgba(255,255,255,.05);
+            background-color:rgba(255,255,255,.03);
 
             >p >img {
-             // border: 1px solid rgba(233, 233, 233, 0.2);
+             border: 1px solid rgba(233, 233, 233, 0.1);
              background-color: transparent;
             }
         }
