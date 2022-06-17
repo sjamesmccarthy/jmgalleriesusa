@@ -1,7 +1,7 @@
 <?php
 
 /* Load filmstrip for popular */
-    $catalog_photos = $this->api_Catalog_YouMayLike_Filmstrip();
+    $catalog_photos = $this->api_Catalog_YouMayLike_Filmstrip($this->props['tags']);
 
      foreach($catalog_photos as $k => $v) {
 
@@ -36,7 +36,7 @@ $html = <<<END
 <!-- <article id="most-popular" class="mt-64"> -->
     <div class="grid">
         <div class="col-12" style="margin-bottom: 16px;">
-        <h4 class="most-popular-heading">You might also like</h4>
+        <h3 class="most-popular-heading">you might also like</h3>
         <!-- <p class="uppercase text-center">&mdash; YOU MAY ALSO LIKE &mdash;</p>-->
         </div>
         $thumb_html

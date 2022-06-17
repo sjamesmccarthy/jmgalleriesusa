@@ -434,7 +434,24 @@ class Core_Api extends Fieldnotes_Api
         return($data);
     }
 
-    public function api_Catalog_YouMayLike_Filmstrip() {
+    public function api_Catalog_YouMayLike_Filmstrip($tags=null) {
+ 
+        if(preg_match('/\#/', $tags)) {
+            $tags_raw = explode('#', ltrim($tags, '#'));
+        } else {
+            $tags_raw = explode(',', trim($tags));
+        }
+
+        // Loop through new array and trim
+        $i=0;
+        foreach ($tags_raw as $tag) {
+            if($i == 0) {
+                $sql_tag = "AND tags LIKE('%" . $tag . "%') ";
+            } else {
+                $sql_tag .= "OR tags LIKE('%" . $tag . "%') ";
+            }
+            $i++;
+        }
 
         /* Executes SQL and then assigns object to passed var */
         if( $this->checkDBConnection(__FUNCTION__) == true) {
@@ -443,6 +460,7 @@ class Core_Api extends Fieldnotes_Api
            V.count AS VIEWS,
            PH.catalog_photo_id,
            PH.title,
+           PH.tags,
            PH.file_name,
            PH.loc_place,
            PH.as_limited,
@@ -452,14 +470,23 @@ class Core_Api extends Fieldnotes_Api
            catalog_photo_views AS V
            INNER JOIN catalog_photo AS PH ON V.catalog_photo_id = PH.catalog_photo_id
            INNER JOIN catalog_collections AS CAT ON CAT.catalog_collections_id = PH.parent_collections_id
-       WHERE
-           V.count >= 800
-           AND PH.status = 'ACTIVE'
-           AND PH.as_limited = 1
-       ORDER BY
-           RAND()
-           DESC
-       LIMIT 4";
+           WHERE
+               V.count >= 800
+              " .$sql_tag ."
+                AND PH.status = 'ACTIVE'
+                AND PH.as_limited = 1
+           ORDER BY 
+           RAND() DESC
+           LIMIT 4";
+       
+    // --    WHERE
+    // --        V.count >= 800
+    // --        AND PH.status = 'ACTIVE'
+    // --        AND PH.as_limited = 1
+    // --    ORDER BY
+    // --        RAND()
+    // --        DESC
+    // --    LIMIT 4";
 
             $result = $this->mysqli->query($sql);
 

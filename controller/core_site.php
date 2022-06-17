@@ -635,25 +635,25 @@ public function view($view = null) {
     if ($this->config_env->env[$this->env]["show_console"] == "true") {
       echo "<div style='position: relative; padding: 10px; background-color: #000; color: Yellow; font-size: 1rem;'>";
       if (gettype($val) == "string") {
-        echo "<p>>>>>>Line: " .
-          $line .
+        echo "<p>[" . gettype($val) . "] >> " .
           " | " .
           $val .
-          "<br ><span class=''>File: " .
+          "<br ><span class='small lightblue'>File: " .
           $file .
-          "</span></p>";
+          " :: " . $line . "</span></p>";
       }
 
       if (gettype($val) == "array" || gettype($val) == "object") {
-        echo ">>>>>Line: " .
+        echo "[" . gettype($val) . "] >> " .
           $line .
           " | typeof." .
           gettype($val) .
-          "<br /><span class=''>File: " .
+          "<br /><span class='small lightblue'>File: " .
           $file .
-          "</span><pre style='text-align: left; margin-left: 2rem; border-left: 1px solid #8900ff; padding-left: 1rem;'>";
-        print_r($val);
+          " :: " . $line . "</span><pre style='text-align: left; margin-left: 2rem; border-left: 1px solid #8900ff; padding-left: 1rem;'>";
+        var_export($val);
         echo "</pre>";
+        echo "JSON: " . json_encode($val);
       }
       echo "</div>";
 

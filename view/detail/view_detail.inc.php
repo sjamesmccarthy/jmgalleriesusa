@@ -1,12 +1,14 @@
 <?php
 
-/* FILMSTRIP: GALLERY THUMBS */
-$you_may_also_like_html = $this->component("most_popular");
 
 $catalog_path_cleaned = ltrim($this->page->catalog_path, "/");
 
 /* Load all photo meta data */
 $photo_meta = $this->api_Catalog_Photo("0", $this->page->photo_path);
+$this->props = $photo_meta;
+
+/* FILMSTRIP: GALLERY THUMBS */
+$you_may_also_like_html = $this->component("most_popular");
 
 /* API call to fetch parent collections id */
 $collection_detail = $this->api_Admin_Get_Collections_Item(
