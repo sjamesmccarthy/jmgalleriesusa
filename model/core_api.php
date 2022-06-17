@@ -474,6 +474,7 @@ class Core_Api extends Fieldnotes_Api
            WHERE 
             (" .$sql_tag .")
             OR PH.parent_collections_id = " . $this->props['parent_collections_id'] . "
+            AND NOT PH.catalog_photo_id = " . $this->props['catalog_photo_id'] . "
             AND PH.status = 'ACTIVE'
             AND PH.as_limited = 1
            ORDER BY 
