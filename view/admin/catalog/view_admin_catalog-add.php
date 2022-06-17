@@ -236,9 +236,12 @@
                     <option value="Nikon AF-S Nikkor 24-85mm f/3.5-4.5GG ED VR" <?= ($lens_model == "Nikon AF-S Nikkor 24-85mm f/3.5-4.5GG ED VR" ? "SELECTED" : ""); ?>>Nikon AF-S Nikkor 24-85mm f/3.5-4.5GG ED VR</option>
                     <option value="Nikon AF-S Nikkor 55-300 f/4.5-5.6 ED VR" <?= ($lens_model == "Nikon AF-S Nikkor 55-300 f/4.5-5.6 ED VR" ? "SELECTED" : ""); ?>>Nikon AF-S Nikkor 55-300 f/4.5-5.6 ED VR</option>
                     <option value="Nikon AF-S Nikkor 50mm 1.8G" <?= ($lens_model == "Nikon AF-S Nikkor 50mm 1.8G" ? "SELECTED" : ""); ?>>Nikon AF-S Nikkor 50mm 1.8G</option>
+                    <option value="Nikon AF-S Nikkor 35mm 1.8G" <?= ($lens_model == "Nikon AF-S Nikkor 35mm 1.8G" ? "SELECTED" : ""); ?>>Nikon AF-S Nikkor 35mm 1.8G</option>
                     <option value="Rokinon 14mm f/2.8 ED UMC" <?= ($lens_model == "Rokinon 14mm f/2.8 ED UMC" ? "SELECTED" : ""); ?>>Rokinon 14mm f/2.8 ED UMC</option>
                     <option value="Nikkor Series E 50mm" <?= ($lens_model == "Nikkor Series E 50mm" ? "SELECTED" : ""); ?>>Nikkor Series E 50mm</option>
                     <option value="Rolleicord Zeiss Triotar" <?= ($lens_model == "Rolleicord Zeiss Triotar" ? "SELECTED" : ""); ?>>Rolleicord Zeiss Triotar</option>
+                    <option value="RicohGRII" <?= ($lens_model == "RicohGRII" ? "SELECTED" : ""); ?>>RicohGRII</option>
+                    <option value="--not-listed--" <?= ($lens_model == "--not-listed--" ? "SELECTED" : ""); ?>>--not-listed--</option>
                 </select>
                 </div>
             <div>
