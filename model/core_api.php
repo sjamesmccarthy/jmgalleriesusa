@@ -470,11 +470,11 @@ class Core_Api extends Fieldnotes_Api
            catalog_photo_views AS V
            INNER JOIN catalog_photo AS PH ON V.catalog_photo_id = PH.catalog_photo_id
            INNER JOIN catalog_collections AS CAT ON CAT.catalog_collections_id = PH.parent_collections_id
-           WHERE
-               V.count >= 800
-              " .$sql_tag ."
-                AND PH.status = 'ACTIVE'
-                AND PH.as_limited = 1
+           WHERE 
+            (V.count >= 800
+            " .$sql_tag .")
+            AND PH.status = 'ACTIVE'
+            AND PH.as_limited = 1
            ORDER BY 
            RAND() DESC
            LIMIT 4";
