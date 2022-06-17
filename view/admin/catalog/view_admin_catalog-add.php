@@ -237,6 +237,8 @@
                     <option value="Nikon AF-S Nikkor 55-300 f/4.5-5.6 ED VR" <?= ($lens_model == "Nikon AF-S Nikkor 55-300 f/4.5-5.6 ED VR" ? "SELECTED" : ""); ?>>Nikon AF-S Nikkor 55-300 f/4.5-5.6 ED VR</option>
                     <option value="Nikon AF-S Nikkor 50mm 1.8G" <?= ($lens_model == "Nikon AF-S Nikkor 50mm 1.8G" ? "SELECTED" : ""); ?>>Nikon AF-S Nikkor 50mm 1.8G</option>
                     <option value="Nikon AF-S Nikkor 35mm 1.8G" <?= ($lens_model == "Nikon AF-S Nikkor 35mm 1.8G" ? "SELECTED" : ""); ?>>Nikon AF-S Nikkor 35mm 1.8G</option>
+                    <option value="Nikon 1 Nikkor VR 10-30mm f/3.5-5.6" <?= ($lens_model == "Nikon 1 Nikkor VR 10-30mm f/3.5-5.6" ? "SELECTED" : ""); ?>>Nikon 1 Nikkor VR 10-30mm f/3.5-5.6</option>
+                    <option value="Nikon 1 Nikkor VR 10 f/2.8" <?= ($lens_model == "Nikon 1 Nikkor VR 10 f/2.8" ? "SELECTED" : ""); ?>>Nikon 1 Nikkor VR 10 f/2.8</option>
                     <option value="Rokinon 14mm f/2.8 ED UMC" <?= ($lens_model == "Rokinon 14mm f/2.8 ED UMC" ? "SELECTED" : ""); ?>>Rokinon 14mm f/2.8 ED UMC</option>
                     <option value="Nikkor Series E 50mm" <?= ($lens_model == "Nikkor Series E 50mm" ? "SELECTED" : ""); ?>>Nikkor Series E 50mm</option>
                     <option value="Rolleicord Zeiss Triotar" <?= ($lens_model == "Rolleicord Zeiss Triotar" ? "SELECTED" : ""); ?>>Rolleicord Zeiss Triotar</option>
