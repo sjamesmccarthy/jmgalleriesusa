@@ -476,7 +476,7 @@ class Core_Api extends Fieldnotes_Api
             PH.status = 'ACTIVE'
             AND NOT PH.catalog_photo_id = " . $this->props['catalog_photo_id'] . "
             AND PH.as_limited = 1
-            OR (" .$sql_tag .")  
+            AND (" .$sql_tag .")  
            ORDER BY 
             RAND() DESC
            LIMIT 4";
