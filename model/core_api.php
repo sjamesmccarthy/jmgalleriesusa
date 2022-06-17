@@ -477,6 +477,7 @@ class Core_Api extends Fieldnotes_Api
             AND NOT PH.catalog_photo_id = " . $this->props['catalog_photo_id'] . "
             AND PH.as_limited = 1
             AND (" .$sql_tag .")  
+            OR PH.parent_collections_id = " . $this->props['parent_collections_id'] . "
            ORDER BY 
             RAND() DESC
            LIMIT 4";
