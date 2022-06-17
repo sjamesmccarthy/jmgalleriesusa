@@ -435,7 +435,7 @@ class Core_Api extends Fieldnotes_Api
     }
 
     public function api_Catalog_YouMayLike_Filmstrip($tags=null) {
- 
+
         if(preg_match('/\#/', $tags)) {
             $tags_raw = explode('#', ltrim($tags, '#'));
         } else {
@@ -446,9 +446,9 @@ class Core_Api extends Fieldnotes_Api
         $i=0;
         foreach ($tags_raw as $tag) {
             if($i == 0) {
-                $sql_tag = "AND tags LIKE('%" . $tag . "%') ";
+                $sql_tag = "tags LIKE('%" . trim($tag) . "%') ";
             } else {
-                $sql_tag .= "OR tags LIKE('%" . $tag . "%') ";
+                $sql_tag .= "OR tags LIKE('%" . trim($tag) . "%') ";
             }
             $i++;
         }
@@ -462,6 +462,7 @@ class Core_Api extends Fieldnotes_Api
            PH.title,
            PH.tags,
            PH.file_name,
+           PH.parent_collections_id,
            PH.loc_place,
            PH.as_limited,
            PH.as_open,
@@ -471,8 +472,8 @@ class Core_Api extends Fieldnotes_Api
            INNER JOIN catalog_photo AS PH ON V.catalog_photo_id = PH.catalog_photo_id
            INNER JOIN catalog_collections AS CAT ON CAT.catalog_collections_id = PH.parent_collections_id
            WHERE 
-            (V.count >= 800
-            " .$sql_tag .")
+            (" .$sql_tag .")
+            OR PH.parent_collections_id = " . $this->props['parent_collections_id'] . "
             AND PH.status = 'ACTIVE'
             AND PH.as_limited = 1
            ORDER BY 
