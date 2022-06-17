@@ -460,6 +460,7 @@ class Core_Api extends Fieldnotes_Api
            V.count AS VIEWS,
            PH.catalog_photo_id,
            PH.title,
+           PH.status,
            PH.tags,
            PH.file_name,
            PH.parent_collections_id,
@@ -472,13 +473,12 @@ class Core_Api extends Fieldnotes_Api
            INNER JOIN catalog_photo AS PH ON V.catalog_photo_id = PH.catalog_photo_id
            INNER JOIN catalog_collections AS CAT ON CAT.catalog_collections_id = PH.parent_collections_id
            WHERE 
-            (" .$sql_tag .")
-            OR PH.parent_collections_id = " . $this->props['parent_collections_id'] . "
+            PH.status = 'ACTIVE'
             AND NOT PH.catalog_photo_id = " . $this->props['catalog_photo_id'] . "
-            AND PH.status = 'ACTIVE'
             AND PH.as_limited = 1
+            OR (" .$sql_tag .")  
            ORDER BY 
-           RAND() DESC
+            RAND() DESC
            LIMIT 4";
        
     // --    WHERE
@@ -489,6 +489,8 @@ class Core_Api extends Fieldnotes_Api
     // --        RAND()
     // --        DESC
     // --    LIMIT 4";
+
+            // $this->console($sql);
 
             $result = $this->mysqli->query($sql);
 
