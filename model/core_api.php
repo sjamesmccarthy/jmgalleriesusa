@@ -337,6 +337,8 @@ class Core_Api extends Fieldnotes_Api
 
     public function api_Product_Get_All() {
 
+        $data = array();
+
         /* Executes SQL and then assigns object to passed var */
         if( $this->checkDBConnection(__FUNCTION__) == true) {
 
@@ -358,11 +360,12 @@ class Core_Api extends Fieldnotes_Api
             } else {
 
                 $data['error'] = "No Records Found";
-                $data['sql'] = $sql;
+                $data['sql'] = addslashes($sql);
+                $this->log_watch(array("key" => "api", "value" => "No Records Found, " . __FUNCTION__ . ", " . $data['sql'], "type" => "failure"));
             }
-
+            
         }
-
+        
         return($data);
     }
 

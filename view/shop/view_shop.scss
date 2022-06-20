@@ -100,3 +100,10 @@
     font-weight: 700; 
     border-radius: 20px;
 }
+
+.shop-nothing-found {
+    text-align: center !important;
+    font-size: 2rem !important;
+    font-weight: 600;
+    color: $color-warning;
+}

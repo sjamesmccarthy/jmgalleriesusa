@@ -523,17 +523,19 @@ public function view($view = null) {
 
   }
 
-  public function log_watch($log_data)
-  {
+  public function log_watch($log_data) {
+
+    $data = array();
+    
     /* extract Data Array */
     extract($log_data, EXTR_PREFIX_SAME, "dup");
 
     /* Insert into database table: log
-     /* Executes SQL and then assigns object to passed var */
-
+    /* Executes SQL and then assigns object to passed var */
+    
     $sql ="INSERT INTO log_watch (`user_id`, `key`, `value`, `type`) VALUES ('" . $_SESSION["uid"] . "','" . $key . "','" . $value . "','" . $type . "');";
     $result = $this->mysqli->query($sql);
-
+    
     if ($result == true) {
       $data["result"] = "200";
     } else {
