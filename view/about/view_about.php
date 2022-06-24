@@ -106,9 +106,11 @@
                         <?php $this->getPartial('newsletter'); ?>
 
                     <p class="mt-32">
-                    <a target="_new" class="mr-16 blue" style="font-size: 1.5rem" href="http://twitter.com/jmgalleriesusa"><i class="fab fa-twitter"></i></a>
-        <a target="_new" class="mr-16 blue" style="font-size: 1.5rem" href="http://youtube.com/c/jmgalleriesusa"><i class="fab fa-youtube"></i></a> 
-        <a target="_new" class="mr-16 blue" style="font-size: 1.5rem" href="http://linktr.ee/jmgalleriesusa"><i class="fa-solid fa-square-arrow-up-right"></i></a>
+                        <!-- <a target="_new" class="mr-16 blue social-icon"  href="http://youtube.com/c/jmgalleriesusa"><i class="fab fa-youtube"></i></a>  -->
+                        <!-- <a target="_new" class="mr-16 blue social-icon"  href="http://twitter.com/jmgalleriesusa"><i class="fab fa-twitter"></i></a> -->
+                    <!-- <a target="_new" class="mr-16 blue social-icon"  href="http://instagram.com/jmgalleriesusa"><i class="fab fa-instagram"></i></a>  -->
+                    <!-- <a target="_new" class="mr-16 blue social-icon"  href="http://facebook.com/jmgalleriesusa"><i class="fab fa-facebook-square"></i></a>  -->
+                    <a target="_new" class="mr-16 blue social-icon"  href="http://linktr.ee/jmgalleriesusa"><i class="fa-solid fa-timeline"></i></a>
                     </p>
                     </div>
 
