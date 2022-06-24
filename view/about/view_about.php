@@ -67,7 +67,7 @@
                         <h3>Exhibits</h3>
                         
                         <ul>
-                        <li> 2022, Captial City Artists Inititiave, Crowell Board Room, Carson City Community Center<br />
+                        <li> 2022, Captial City Artists Initiative, Crowell Board Room, Carson City Community Center<br />
                         Exhibiting over 30 pieces of fine-art July through October. Pieces include the popular “Never Ending Story”, “Once Afloat”, “Emigrants Fog”, “Bonsai Zen, “Keep Tahoe Cold” and “Snowy Pines”, as well many other new works and the release of Alignment, a book of photography by j.McCarthy.</li>
                         <li> 2019, City of Murrieta City Hall Art Project, Murrieta, California<br />
                         Exhibited three pieces, "Flying Fortress", "Good Morning Murrieta" and "Temecula Grapes", at Wine Ranch Grill & Cellars.</li>
