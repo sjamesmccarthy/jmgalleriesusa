@@ -108,12 +108,12 @@
                         <h3 class="nomar-top mb-16 ">Sign Up For My First Friday Email</h3>
                         <?php $this->getPartial('newsletter'); ?>
 
-                    <p class="mt-32">
+                    <p class="text-right">
                         <!-- <a target="_new" class="mr-16 blue social-icon"  href="http://youtube.com/c/jmgalleriesusa"><i class="fab fa-youtube"></i></a>  -->
                         <!-- <a target="_new" class="mr-16 blue social-icon"  href="http://twitter.com/jmgalleriesusa"><i class="fab fa-twitter"></i></a> -->
                     <!-- <a target="_new" class="mr-16 blue social-icon"  href="http://instagram.com/jmgalleriesusa"><i class="fab fa-instagram"></i></a>  -->
                     <!-- <a target="_new" class="mr-16 blue social-icon"  href="http://facebook.com/jmgalleriesusa"><i class="fab fa-facebook-square"></i></a>  -->
-                    <a target="_new" class="mr-16 blue social-icon"  href="http://linktr.ee/jmgalleriesusa"><i class="fa-solid fa-timeline"></i></a>
+                    <a target="_new" class="mr-16 blue social-icon"  href="https://dot.cards/jmgalleriesusa"><i class="fa-solid fa-circle  color-blue" title="view my dot.card"></i></a>
                     </p>
                     </div>
 
