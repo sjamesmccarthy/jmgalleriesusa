@@ -2213,7 +2213,7 @@ class Core_Api extends Fieldnotes_Api
         extract($_POST, EXTR_PREFIX_SAME, "dup");
 
         /* Insert into database */
-        $sql = "INSERT INTO `" . $this->config_env->env[$this->env]['dbname']  . ".`supplier` (`company`, `first_name`, `last_name`, `email`, `phone`, `website`, `account_no`)
+        $sql = "INSERT INTO " . $this->config_env->env[$this->env]['dbname']  . ".supplier (company, first_name, last_name, email, phone, website, account_no)
             VALUES ('{$company}', '{$first_name}', '{$last_name}', '{$email}', '{$phone}', '{$website}', '{$account}');";
 
         $result = $this->mysqli->query($sql);
@@ -2239,16 +2239,16 @@ class Core_Api extends Fieldnotes_Api
 
         /* Insert into database */
 
-        $sql = "UPDATE `" . $this->config_env->env[$this->env]['dbname']  . ".`supplier`
+        $sql = "UPDATE " . $this->config_env->env[$this->env]['dbname']  . ".supplier
             SET
-            `company` = '{$company}',
-            `first_name` = '{$first_name}',
-            `last_name` = '{$last_name}',
-            `email` = '{$email}',
-            `phone` = '{$phone}',
-            `website` = '{$website}',
-            `account_no` = '{$account}'
-            WHERE `supplier_id` = '" . $supplier_id ."'";
+            company = '{$company}',
+            first_name = '{$first_name}',
+            last_name = '{$last_name}',
+            email = '{$email}',
+            phone = '{$phone}',
+            website = '{$website}',
+            account_no = '{$account}'
+            WHERE supplier_id = '" . $supplier_id ."'";
 
         $result = $this->mysqli->query($sql);
 
