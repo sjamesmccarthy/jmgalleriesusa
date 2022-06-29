@@ -2706,7 +2706,7 @@ public function api_Admin_Get_Materials_By_Supplier($id) {
         if($purchased_on == '') { $purchased_on = date("Y-m-d H:i:s"); }
 
         /* Insert into database */
-        $sql = "INSERT INTO `" . $this->config_env->env[$this->env]['dbname']  . ".`supplier_materials` (`supplier_id`, `manual_entry`, `material_type`, `material`, `sku`, `quantity`, `unit_type`, `cost`, `purchased_on`, `shipping_cost`)
+        $sql = "INSERT INTO " . $this->config_env->env[$this->env]['dbname']  . ".supplier_materials (supplier_id, manual_entry, material_type, material, sku, quantity, unit_type, cost, purchased_on, shipping_cost)
             VALUES ('{$supplier_id}', 'FALSE', '{$material_type}', '{$material}', '{$sku}', '{$quantity}', '{$unit_type}', '{$cost}', '{$purchased_on}', '{$shipping_cost}');";
 
         $result = $this->mysqli->query($sql);
@@ -2732,18 +2732,18 @@ public function api_Admin_Get_Materials_By_Supplier($id) {
         if($shipping_cost == '') { $shipping_cost='0.00';}
 
         /* Insert into database */
-        $sql = "UPDATE `" . $this->config_env->env[$this->env]['dbname']  . ".`supplier_materials`
-        SET `supplier_id` = '{$supplier_id}',
-        `manual_entry` = 'FALSE',
-        `material_type` = '{$material_type}',
-        `material` = '{$material}',
-        `sku` = '{$sku}',
-        `quantity` = '{$quantity}',
-        `unit_type` = '{$unit_type}',
-        `cost` = '{$cost}',
-        `purchased_on` = '{$purchased_on}',
-        `shipping_cost` = '{$shipping_cost}'
-        WHERE `supplier_materials_id` = '" . $supplier_materials_id ."'";
+        $sql = "UPDATE " . $this->config_env->env[$this->env]['dbname']  . ".supplier_materials
+        SET supplier_id = '{$supplier_id}',
+        manual_entry = 'FALSE',
+        material_type = '{$material_type}',
+        material = '{$material}',
+        sku = '{$sku}',
+        quantity = '{$quantity}',
+        unit_type = '{$unit_type}',
+        cost = '{$cost}',
+        purchased_on = '{$purchased_on}',
+        shipping_cost = '{$shipping_cost}'
+        WHERE supplier_materials_id = '" . $supplier_materials_id ."'";
 
         $result = $this->mysqli->query($sql);
 
