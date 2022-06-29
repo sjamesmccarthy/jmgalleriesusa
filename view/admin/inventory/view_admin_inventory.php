@@ -34,8 +34,8 @@
                                 <!-- <th>Ed</th> -->
                                 <!-- <th>Size</th> -->
                                 <!-- <th>Media</th> -->
-                                <th>Serial No.</th>
                                 <th>Location</th>
+                                <th>Serial No.</th>
                                 <!-- <th>Value</th> -->
                                 <!-- <th>Acquired At</th> -->
                             </tr>
@@ -79,8 +79,8 @@
                 // { data: 'edition_num' },
                 // { data: 'print_size' },
                 // { data: 'print_media'},
-                { data: 'serial_num' },
                 { data: 'location' },
+                { data: 'serial_num' },
                 // { data: 'TOTAL_VALUE' },
                 // { data: 'acquired_from' }
             ],
@@ -90,8 +90,8 @@
                 // { "width": "5%", "targets": 2 },
                 // { "width": "10%", "targets": 3 },
                 // { "width": "25%", "targets": 4 },
-                { "width": "5%", "targets": 2 },
-                { "width": "30%", "targets": 3 },
+                { "width": "40%", "targets": 2 },
+                // { "width": "5%", "targets": 2 },
               ]
         } );
         
