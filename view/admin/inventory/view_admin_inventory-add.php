@@ -103,6 +103,13 @@
                     <textarea id="notes" name="notes" <?= $btn_readonly ?>><?= $notes ?></textarea>
                 </div>
 
+                <div class="mt-16">
+                    <label style="display:inline-block;" for="negative_file">NEGATIVE FILE (also used in validation hash algorithm)</label>
+                     <input class="half-size" type="text" id="negative_file" name="negative_file" placeholder="NEGATIVE FILE (eg, PRETTY_PHOTO.jpg)" value="<?= $negative_file ?>" <?= $btn_readonly ?> required>
+                     <?= $catalog_ids_html ?>
+                </div>
+                
+
             </div>
 
             <div class="coa--container <?= $coa_css ?>">
@@ -116,13 +123,6 @@
                     <label style="display:inline-block; margin-left: 0 !important;" for="reg_num">REG NUM (Validation Hash =  <?= $validation_hash ?>) algorithm in settings</label>
                     <input class="half-size" type="text" id="reg_num" name="reg_num" placeholder="Artwork Reg No. (eg, 1569069144 aka Born On Date)" value="<?= $reg_num ?>" <?= $btn_readonly ?>>
                 </div>
-                
-                <div>
-                    <label style="display:inline-block;" for="negative_file">NEGATIVE FILE (also used in validation hash algorithm)</label>
-                     <input class="half-size" type="text" id="negative_file" name="negative_file" placeholder="NEGATIVE FILE (eg, PRETTY_PHOTO.jpg)" value="<?= $negative_file ?>" <?= $btn_readonly ?> required>
-                     <label for="born_date">BORN ON</label>
-                     <input class="half-size" type="text" id="born_date" name="born_date" placeholder="BORN ON DATE (eg, 2019-12-14 02:23:10)" value="<?= $born_date ?>" <?= $btn_readonly ?> required>
-                </div>
     
                 <!-- $show_collector_meta -->
                 <div id="collector_meta">
@@ -132,7 +132,9 @@
                     <input class="half-size" maxlength="255" type="text" id="acquired_date" name="acquired_date" placeholder="Acquired on Date" value="<?= $purchase_date ?>" <?= $btn_readonly ?>>
                 </div>
                 
-                <?= $catalog_ids_html ?>
+                <div><label for="born_date">BORN ON</label>
+                    <input class="half-size" type="text" id="born_date" name="born_date" placeholder="BORN ON DATE (eg, 2019-12-14 02:23:10)" value="<?= $born_date ?>" <?= $btn_readonly ?> required>
+                </div>
                 
                 <div>
                     <h6>Certificates Issued</h6>
@@ -182,7 +184,6 @@ jQuery(document).ready(function($){
     
     $('#edition_style').on("change", function(e) {
         e.preventDefault();
-        // $('').val();
         console.log( $(this).find(':selected').val() );
         $('#edition_num_max').val($(this).find(':selected').attr('data-max-ed'));
         $('#edition_num_max_display').val($(this).find(':selected').attr('data-max-ed'));
