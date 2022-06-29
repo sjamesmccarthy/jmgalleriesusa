@@ -90,7 +90,7 @@
                 // { "width": "5%", "targets": 2 },
                 // { "width": "10%", "targets": 3 },
                 // { "width": "25%", "targets": 4 },
-                { "width": "40%", "targets": 2 },
+                { "width": "40%", "targets": 2 }, 
                 // { "width": "5%", "targets": 2 },
               ]
         } );
