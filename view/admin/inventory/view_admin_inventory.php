@@ -31,9 +31,9 @@
                             <tr>
                                 <th>ID  </th>
                                 <th>Title</th>
-                                <th>Ed</th>
-                                <th>Size</th>
-                                <th>Media</th>
+                                <!-- <th>Ed</th> -->
+                                <!-- <th>Size</th> -->
+                                <!-- <th>Media</th> -->
                                 <th>Serial No.</th>
                                 <th>Location</th>
                                 <!-- <th>Value</th> -->
@@ -71,14 +71,14 @@
                 { data: 'title',
                     "render": function(data, type, row, meta){
                         if(type === 'display'){
-                            data = '<a href="/studio/inventory-add?id=' + row.art_id + '">' + data + '</a> <!-- [' + row.art_id + '] -->';
+                            data = '<a href="/studio/inventory-add?id=' + row.art_id + '">' + data + ' #' + row.edition_num + '</a> <!-- [' + row.art_id + '] --><br />' + row.print_size + ' ' + row.print_media;
                         }  
                         return data;
                     } 
                 },
-                { data: 'edition_num' },
-                { data: 'print_size' },
-                { data: 'print_media'},
+                // { data: 'edition_num' },
+                // { data: 'print_size' },
+                // { data: 'print_media'},
                 { data: 'serial_num' },
                 { data: 'location' },
                 // { data: 'TOTAL_VALUE' },
@@ -86,12 +86,12 @@
             ],
             "columnDefs": [
                 { "width": "5%", "targets": 0 },
-                { "width": "30%", "targets": 1 },
+                { "width": "60%", "targets": 1 },
+                // { "width": "5%", "targets": 2 },
+                // { "width": "10%", "targets": 3 },
+                // { "width": "25%", "targets": 4 },
                 { "width": "5%", "targets": 2 },
-                { "width": "10%", "targets": 3 },
-                { "width": "25%", "targets": 4 },
-                { "width": "5%", "targets": 5 },
-                { "width": "20%", "targets": 6 },
+                { "width": "30%", "targets": 3 },
               ]
         } );
         
