@@ -1163,26 +1163,104 @@ class Core_Api extends Fieldnotes_Api
 
     public function api_Admin_Get_Inventory() {
 
+        $data = array();
+
         /* Executes SQL and then assigns object to passed var */
         if( $this->checkDBConnection(__FUNCTION__) == true) {
 
-            $sql = "SELECT
-                A.art_id,
-                A.title,
-                A.series_num,
-                A.edition_num,
-                A.edition_num_max,
-                A.serial_num,
-                A.catalog_photo_id,
-                A.print_size,
-                A.print_media,
-                L.location,
-                C.acquired_from,
-                A.value AS TOTAL_VALUE
-            FROM
-                art as A
-                INNER JOIN art_locations as L on A.art_location_id = L.art_location_id
-                LEFT JOIN certificate as C on A.art_id = C.art_id";
+            // $sql = "SELECT
+            //     A.art_id,
+            //     A.title,
+            //     A.series_num,
+            //     A.edition_num,
+            //     A.edition_num_max,
+            //     A.serial_num,
+            //     A.catalog_photo_id,
+            //     A.print_size,
+            //     A.print_media,
+            //     L.location,
+            //     C.acquired_from,
+            //     A.value AS TOTAL_VALUE
+            // FROM
+            //     art as A
+            //     INNER JOIN art_locations as L on A.art_location_id = L.art_location_id
+            //     LEFT JOIN certificate as C on A.art_id = C.art_id";
+
+            $sql = "
+            SELECT
+            x.art_id,
+    x.art_title as title,
+    x.series_num,
+    x.edition_num,
+    x.edition_num_max,
+    x.serial_num,
+    x.catalog_photo_id,
+    x.print_size,
+    x.print_media,
+    x.location,
+    x.acquired_from,
+    SUM(x.cost) as cost
+FROM (
+    SELECT
+        A.art_id,
+        A.title AS art_title,
+        A.series_num,
+        A.edition_num,
+        A.edition_num_max,
+        A.serial_num,
+        A.catalog_photo_id,
+        A.print_size,
+        A.print_media,
+        L.location,
+        C.acquired_from,
+        A.value AS TOTAL_VALUE,
+        SM.manual_entry,
+        ACS.supplier_materials_id,
+        ACS.usage,
+        S.company AS supplier,
+        SM.material_type,
+        SM.cost,
+        SM.quantity AS quantity_bought,
+        ACS.usage AS material_used,
+        SM.unit_type,
+        SM.material AS material_desc,
+        (
+            CASE WHEN SM.unit_type = 'hourly' THEN
+                ACS.usage
+            ELSE
+                (SM.quantity - ACS.usage)
+            END) AS calcd_inventory,
+        (
+            CASE WHEN SM.unit_type = 'each' THEN
+                SM.cost
+            WHEN SM.unit_type = 'hourly' THEN
+                SM.cost * ACS.usage
+            WHEN SM.unit_type = 'feet' THEN
+            (SM.cost / SM.quantity) * ACS.usage
+        ELSE
+            (SM.cost / SM.quantity)
+            END) AS calcd_cost
+    FROM
+        art AS A
+        INNER JOIN art_locations AS L ON A.art_location_id = L.art_location_id
+        LEFT JOIN certificate AS C ON A.art_id = C.art_id
+        INNER JOIN art_costs_supplier AS ACS ON A.art_id = ACS.art_id
+        LEFT OUTER JOIN supplier_materials AS SM ON ACS.supplier_materials_id = SM.supplier_materials_id
+        LEFT OUTER JOIN supplier AS S ON SM.supplier_id = S.supplier_id
+    WHERE
+        A.art_id = A.art_id) x
+GROUP BY
+x.art_id,
+    x.art_title,
+    x.series_num,
+    x.edition_num,
+    x.edition_num_max,
+    x.serial_num,
+    x.catalog_photo_id,
+    x.print_size,
+    x.print_media,
+    x.location,
+    x.acquired_from";
 
             $result = $this->mysqli->query($sql);
 
@@ -1197,6 +1275,7 @@ class Core_Api extends Fieldnotes_Api
 
         }
 
+        // $this->console($data);
         return($data);
 
     }

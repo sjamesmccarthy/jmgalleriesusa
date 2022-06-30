@@ -29,6 +29,8 @@
 
     /* API - LIST OF PHOTOS IN CATALOG */
     $data_html = $this->api_Admin_Get_Inventory();
+
+    /* TODO: include cost of inventory, will need a separate function fun */
     $active_inventory_count = count($data_html);
     $total_inventory_count = $this->mysqli->affected_rows;
     $data_json = json_encode($data_html);

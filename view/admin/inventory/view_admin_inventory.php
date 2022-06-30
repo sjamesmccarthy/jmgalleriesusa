@@ -36,7 +36,7 @@
                                 <!-- <th>Media</th> -->
                                 <th>Location</th>
                                 <th>Serial No.</th>
-                                <!-- <th>Value</th> -->
+                                <th>Cost</th>
                                 <!-- <th>Acquired At</th> -->
                             </tr>
                         </thead>
@@ -81,7 +81,7 @@
                 // { data: 'print_media'},
                 { data: 'location' },
                 { data: 'serial_num' },
-                // { data: 'TOTAL_VALUE' },
+                { data: 'cost' },
                 // { data: 'acquired_from' }
             ],
             "columnDefs": [
@@ -92,6 +92,7 @@
                 // { "width": "25%", "targets": 4 },
                 { "width": "35%", "targets": 2 }, 
                 { "width": "20%", "targets": 3 },
+                { "width": "20%", "targets": 4 },
               ]
         } );
         
