@@ -2154,6 +2154,8 @@ x.art_id,
         extract($_POST, EXTR_PREFIX_SAME, "dup");
 
         /* Insert into database */
+        $title = $this->mysqli->real_escape_string($_POST['title']);
+        $frame_desc = $this->mysqli->real_escape_string($_POST['frame_desc']);
         $notes = $this->mysqli->real_escape_string($_POST['notes']);
         if(empty($_POST['value'])) { $value = '0.00'; }
         if(empty($_POST['listed'])) { $listed = '0.00'; }
@@ -2175,7 +2177,7 @@ x.art_id,
         `print_media`='$print_media',
         `frame_size`='$frame_size',
         `frame_material`='$frame_material',
-        `frame_desc`='$frame_desc',
+        `frame_desc`= '$frame_desc',
         `notes`='$notes',
         `born_date`='$born_date',
         `listed`='$listed',
@@ -2184,15 +2186,13 @@ x.art_id,
 
         $result = $this->mysqli->query($sql);
 
-        // $this->console("SQL:" . $sql,1);
-
         if($result == 1) {
             $_SESSION['error'] = '200';
             $_SESSION['notify_msg'] = $_POST['title'];
             $this->log_watch(array("key" => "api", "value" => "Updated Inventory Art " . $_POST['title'] . " (" . $_POST['art_id'] . ") ", "type" => "success"));
         } else {
             $_SESSION['error'] = '400';
-            $this->log_watch(array("key" => "api", "value" => "Failed Update Inventory Art (" . $_POST['title'] . " (" . $_POST['art_id'] . ")", "type" => "failure"));
+            $this->log_watch(array("key" => "api", "value" => "---Failed Update Inventory Art (" . $_POST['title'] . " (" . $_POST['art_id'] . ")", "type" => "failure"));
         }
 
     }
