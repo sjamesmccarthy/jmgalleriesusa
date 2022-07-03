@@ -86,11 +86,11 @@
             ],
             "columnDefs": [
                 { "width": "5%", "targets": 0 },
-                { "width": "40%", "targets": 1 },
+                { "width": "45%", "targets": 1 },
                 // { "width": "5%", "targets": 2 },
                 // { "width": "10%", "targets": 3 },
                 // { "width": "25%", "targets": 4 },
-                { "width": "35%", "targets": 2 }, 
+                { "width": "30%", "targets": 2 }, 
                 { "width": "20%", "targets": 3 },
                 { "width": "20%", "targets": 4 },
               ]
