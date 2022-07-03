@@ -71,7 +71,7 @@
                 { data: 'title',
                     "render": function(data, type, row, meta){
                         if(type === 'display'){
-                            data = '<a href="/studio/inventory-add?id=' + row.art_id + '">' + data + ' #' + row.edition_num + '</a> <!-- [' + row.art_id + '] --><br />' + row.print_size + ' ' + row.print_media;
+                            data = '<a href="/studio/inventory-add?id=' + row.art_id + '">' + data + ' #' + row.edition_num + '</a> <!-- [' + row.art_id + '] --><br />' + row.print_size + ' ' + row.print_media + '<br />' + row.frame_material + '/' + row.frame_desc;
                         }  
                         return data;
                     } 

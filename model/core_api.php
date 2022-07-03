@@ -1197,6 +1197,8 @@ class Core_Api extends Fieldnotes_Api
     x.catalog_photo_id,
     x.print_size,
     x.print_media,
+    x.frame_desc,
+    x.frame_material,
     x.location,
     x.acquired_from,
     SUM(x.cost) as cost
@@ -1211,6 +1213,8 @@ FROM (
         A.catalog_photo_id,
         A.print_size,
         A.print_media,
+        A.frame_desc,
+        A.frame_material,
         L.location,
         C.acquired_from,
         A.value AS TOTAL_VALUE,
@@ -1259,6 +1263,8 @@ x.art_id,
     x.catalog_photo_id,
     x.print_size,
     x.print_media,
+    x.frame_desc,
+    x.frame_material,
     x.location,
     x.acquired_from";
 
