@@ -406,12 +406,7 @@
         "page": "admin_settings",
         "auth": "true",
         "component": "true",
-        "title": "Settings",
-        "header": {
-            "js": {
-                "1":"https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"
-            }
-        }
+        "title": "Settings"
     },
     "/about": {
         "template": "page",
