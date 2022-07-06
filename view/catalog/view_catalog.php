@@ -8,12 +8,12 @@
             <?php
                 if($catalog_tabs_hidden != true) {
             ?>
-            <ul class="filter-editions-list mt-32">
-                <li class="filter-all">All</li>
-                <li class="filter-gallery">Limited Ed.</li>
+            <!-- <ul class="filter-editions-list mt-32"> -->
+                <!-- <li class="filter-all">All</li> -->
+                <!-- <li class="filter-gallery">Limited Ed.</li> -->
                 <!-- <li class="filter-studio">Studio Edition</li> -->
-                <li class="filter-open">Open Ed.</li>
-            </ul>
+                <!-- <li class="filter-open">Open Ed.</li> -->
+            <!-- </ul> -->
             <?php } ?>
         </div>
 
@@ -34,10 +34,10 @@
 jQuery(document).ready(function($){
 
     <?php if($catalog != 'new-releases') : ?>
-        $('[class*="filter-"]').removeClass("selected");
-        $('[class*="filter-gallery"]').addClass("selected");
-        $('[class*="f-"]').hide();
-        $('.f-gallery').show();
+        // $('[class*="filter-"]').removeClass("selected");
+        // $('[class*="filter-gallery"]').addClass("selected");
+        // $('[class*="f-"]').hide();
+        // $('.f-gallery').show();
     <?php endif ?>
 
         <?php if($_REQUEST['filter'] == "tinyviews") { ?>

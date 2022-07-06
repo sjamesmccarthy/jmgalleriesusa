@@ -88,6 +88,9 @@ class Core_Api extends Fieldnotes_Api
 
     public function api_Catalog_Category_Thumbs_All($params_ed='all') {
 
+        $data = array();
+        // $this->console("params:" . $params_ed);
+
         /* Executes SQL and then assigns object to passed var */
         if( $this->checkDBConnection(__FUNCTION__) == true) {
 
@@ -121,6 +124,8 @@ class Core_Api extends Fieldnotes_Api
             WHERE
                 cp.status = 'active'
                ORDER BY cp.title";
+            
+            // $this->console($sql);
 
             $result = $this->mysqli->query($sql);
 
