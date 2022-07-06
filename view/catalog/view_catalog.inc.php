@@ -85,31 +85,33 @@
                 if($v['as_open'] == 1) {
                     $data_filter_O = 'f-open';
 
-                    if($v['available_sizes'] != "in_code") {
-                        $open_pricing_array = json_decode($v['available_sizes'], true);
-                        $r_seed = count($open_pricing_array) -1;
-                        // echo "FOUND @" . $v['title'] . "<br />";
-                        // echo $v['available_sizes'] . "<br />";
-                    } else {
-                        $open_pricing_array = json_decode($this->config->tv_pricing, true);
-                        $r_seed = count($open_pricing_array) -1;
-                    }
+                    // if($v['available_sizes'] != "in_code") {
 
-                    $i=0;
-                    $iRand = rand(0,$r_seed);
+                    //     $open_pricing_array = json_decode($v['available_sizes'], true);
+                    //     $this->console($open_pricing_array);
+
+                    //     $r_seed = count($open_pricing_array) -1;
+
+                    // } else {
+                    //     $open_pricing_array = json_decode($this->config->tv_pricing, true);
+                    //     $r_seed = count($open_pricing_array) -1;
+                    // }
+
+                    // $i=0;
+                    // $iRand = rand(0,$r_seed);
                     // $this->console($open_pricing_array);
 
-                    foreach ($open_pricing_array as $opK => $opV) {
+                    // foreach ($open_pricing_array as $opK => $opV) {
 
-                        if($i == $iRand) {
-                            $rPrice = $opV;
-                            $tvS = explode('|', $opK);
-                            if($tvS[1] == '0') { $tvS[1] = $tvS[0]; }
-                            $rSize = $tvS[1];
-                        }
+                    //     if($i == $iRand) {
+                    //         $rPrice = $opV;
+                    //         $tvS = explode('|', $opK);
+                    //         if($tvS[1] == '0') { $tvS[1] = $tvS[0]; }
+                    //         $rSize = $tvS[1];
+                    //     }
 
-                        $i++;
-                    }
+                    //     $i++;
+                    // }
 
                     // $desc_editions = "<p>" . $this->config->edition_description_open . "</p>";
                     $desc_editions = "<p style='font-weight: 700; padding-right: 1rem;'>$" . $rPrice . " (" . $rSize . ")</p>";
