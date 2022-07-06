@@ -105,7 +105,7 @@
     <div class="grid-center mt-32">
     <div class="col-10_sm-12">
                 <h2> Open Edition tinyVIEWS&trade;</h2>
-                <p>Open Editions, or tinyVIEWS&trade;, are not considered collectible and are not numbered, may not be signed, and could also include a watermark. They are printed on Moab® Slick Rock Metallic Paper.</a></p>
+                <p>Open Editions, or tinyVIEWS&trade;, are not considered collectible and are not numbered, may not be signed, and could also include a watermark. They are printed on <?= $this->config->tv_material_desc ?>.</a></p>
 
 
                  <table>

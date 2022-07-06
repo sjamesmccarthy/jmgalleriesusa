@@ -95,7 +95,8 @@ $as_editions_tmp = null;
 
 if ($photo_meta["desc"] != null) {
   if ($photo_meta["desc"] == "paper") {
-    $edition_desc_material = "Moab® Slick Rock Metallic Paper";
+    $edition_desc_material = $this->config->tv_material_desc;
+    // "Moab® Slick Rock Metallic Paper";
     // $frame_disabled_option = '<option value="FRAMEINCLUDED">Select a Frame (Included In Price)</option>';
     $edition_frame =
       "and framed in one of our three Premium Designer Frames protected with Tru Vue&reg; Museum Glass.";
@@ -283,7 +284,8 @@ if ($photo_meta["as_open"] == 1) {
   $edition = "tinyviews";
   $this->page->edition = $edition;
   $product_id = 2;
-  $edition_desc_material = "Moab® Slick Rock Metallic Paper";
+  $edition_desc_material = $this->config->tv_material_desc;
+  // Moab® Slick Rock Metallic Paper";
   $catalog_no = $catalog_code . $photo_meta["catalog_photo_id"] . "OT";
   $frame_price_default = "0";
   // $matted_size_default = "8x10";

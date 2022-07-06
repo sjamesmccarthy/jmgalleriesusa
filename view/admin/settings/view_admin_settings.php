@@ -122,6 +122,11 @@
                         <label>pricing - open edition framing</label>
                         <input class="w-100" type="text" name="studio_frames_pricing" value='<?= $studio_frames_pricing ?>'  />
                     </div>
+
+                    <div class="col-12">
+                        <label>material - paper desc</label>
+                        <input class="w-100" type="text" name="tv_material_desc" value='<?= $tv_material_desc ?>'  />
+                    </div>
                     
                     <div class="col-12 pb-16">
                         <h4>Promotions</h4>
