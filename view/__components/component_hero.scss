@@ -2,7 +2,7 @@
 /* component_hero */
 
 #hero {
-    height: 100vh;
+    height: 70vh;
     background: rgb(255,255,255);
     background-repeat: no-repeat;
     background-size: contain;
@@ -33,10 +33,10 @@
         // height: 50vh;
      }
 
-         @media (min-width: 768px) and (orientation: landscape) {
-            // height: 750px;
-            // height: 100vh;
-         }
+    @media (min-width: 768px) and (orientation: landscape) {
+    // height: 750px;
+    // height: 100vh;
+    }
 
 
      // Large devices (tablets (iPad Pro, 1112px and up)
@@ -49,8 +49,9 @@
      @media (min-width: 1920px) {
          // height: 750px;
          // height: 100vh;
-         // background-position: left center !important;
+         background-position: center center !important;
          // background-size: cover;
+         width: 75%;
      }
 
 }
@@ -408,6 +409,7 @@ position: relative;
    padding: 1.25rem 3.5rem 1rem 2.5rem;
    font-size: 1rem;
    color: #000;
+   display: none;
 
    a {
       font-weight: 800;
