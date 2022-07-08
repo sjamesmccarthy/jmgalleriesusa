@@ -1,8 +1,8 @@
  <?php
 
     /* Check for Session, Parse Session into vars */
-    if($this->checkSession()) {
-        $loginInfo = json_decode( $_SESSION['data'], true );
+    if ($this->checkSession()) {
+        $loginInfo = json_decode($_SESSION['data'], true);
         extract($loginInfo, EXTR_PREFIX_SAME, "dup");
     } else {
         header('location:/studio/signin');
@@ -13,7 +13,7 @@
     $navigation_html = $this->component('admin_navigation');
 
     /* Get any notifications of errors */
-    if($_SESSION['error'] == "200") {
+    if ($_SESSION['error'] == "200") {
         $notification_state = "show";
         // $notification_msg = "<p class='heading'>success</p><p>" .  $_SESSION['notify_msg'] . " Has Been Updated</p>";
         $notification_msg = $_SESSION['notification_msg'];
@@ -26,7 +26,7 @@
     $active_reports_count = count($data_html);
     $data_json = json_encode($data_html);
 
-    if(isSet($this->routes->URI->queryvals )) {
+    if (isset($this->routes->URI->queryvals)) {
         $filter = $this->routes->URI->queryvals[1];
     } else {
         $filter = null;
@@ -35,4 +35,4 @@
     /* Dynamically create reports based on JSON response */
     // http://perezjw.com/blog/dynamic-report-generation
 
-?>
+    ?>
