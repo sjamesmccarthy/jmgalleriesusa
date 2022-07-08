@@ -1,9 +1,9 @@
 <section class="reports--container">
     <div class="grid">
-       
+
         <!-- insert navigation component -->
         <?= $navigation_html ?>
-    
+
         <div class="col reportsidx--container">
 
             <div class="notification success <?= $notification_state ?>"><?= $notification_msg ?></div>
@@ -48,33 +48,33 @@
             columns: [
                 { data: 'fav', "render": function(data, type, row, meta){
                         if(type === 'display'){
-                            if(row.fav == 1) { 
+                            if(row.fav == 1) {
                                 data = '<i class="fas fa-bookmark"></i>';
-                            } else { 
+                            } else {
                                 data = '';
                             }
-                        }  
+                        }
                         return data;
-                    } 
+                    }
                 },
                 { data: 'name',
                     "render": function(data, type, row, meta){
                         if(type === 'display'){
                             data = '<a href="/studio/reports-add?id=' + row.report_id + '">' + row.name + '</a>';
-                        }  
+                        }
                         return data;
-                    } 
+                    }
                 },
                 { data: 'desc'}
             ],
             "columnDefs": [
                 { "width": "2%", "targets": 0 },
-                { "width": "27%", "targets": 1 },
-                { "width": "70%", "targets": 2 },
+                { "width": "40%", "targets": 1 },
+                { "width": "58%", "targets": 2 },
                 { className: "valign", "targets": [ 0,1 ] }
             ],
             "order": [[ 0, "desc" ]]
         } );
-        
+
     });
 </script>
