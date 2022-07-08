@@ -124,7 +124,7 @@ class Core_Api extends Fieldnotes_Api
             WHERE
                 cp.status = 'active'
                ORDER BY cp.title";
-            
+
             // $this->console($sql);
 
             $result = $this->mysqli->query($sql);
@@ -249,7 +249,7 @@ class Core_Api extends Fieldnotes_Api
     public function api_Catalog_Get_New_Releases($limit=4, $duration=null, $rand=null) {
 
         $data = array();
-        
+
         if( !is_null($rand) ) {
             $rand = " ORDER BY RAND() ";
         }
@@ -281,22 +281,22 @@ class Core_Api extends Fieldnotes_Api
             PH.created DESC
         LIMIT " . $limit;
 
-        
+
         $result = $this->mysqli->query($sql);
-        
+
         if ($result->num_rows > 0) {
-            
+
             while($row = $result->fetch_assoc())
             {
                 $data[] = $row;
             }
-            
+
         } else {
-            
+
             $data['error'] = "No Records Found";
             $data['sql'] = $sql;
         }
-        
+
         }
 
         return($data);
@@ -368,9 +368,9 @@ class Core_Api extends Fieldnotes_Api
                 $data['sql'] = addslashes($sql);
                 $this->log_watch(array("key" => "api", "value" => "No Records Found, " . __FUNCTION__ . ", " . $data['sql'], "type" => "failure"));
             }
-            
+
         }
-        
+
         return($data);
     }
 
@@ -380,10 +380,10 @@ class Core_Api extends Fieldnotes_Api
         // print "<hr />" . $serialreg . "<hr/>";
 
         $data = array();
-        
+
         if($serialreg != 0) {
             $where = "C.email = '" . $id . "' AND A.serial_num = '" . $serialreg . "' OR A.reg_num='" . $serialreg . "'";
-        } elseif($include_all == 1) { 
+        } elseif($include_all == 1) {
             $where = "C.email = '" . $id . "'";
         } else {
             $data['error'] = "No Records Found";
@@ -423,7 +423,7 @@ class Core_Api extends Fieldnotes_Api
             WHERE " . $where;
 
             $result = $this->mysqli->query($sql);
-            
+
             if ($result->num_rows > 0) {
 
                 while($row = $result->fetch_assoc())
@@ -480,16 +480,16 @@ class Core_Api extends Fieldnotes_Api
            catalog_photo_views AS V
            INNER JOIN catalog_photo AS PH ON V.catalog_photo_id = PH.catalog_photo_id
            INNER JOIN catalog_collections AS CAT ON CAT.catalog_collections_id = PH.parent_collections_id
-           WHERE 
+           WHERE
             PH.status = 'ACTIVE'
             AND NOT PH.catalog_photo_id = " . $this->props['catalog_photo_id'] . "
             AND PH.as_limited = 1
-            AND (" .$sql_tag ."  
+            AND (" .$sql_tag ."
             OR PH.parent_collections_id = " . $this->props['parent_collections_id'] . ")
-           ORDER BY 
+           ORDER BY
             RAND() DESC
            LIMIT 4";
-       
+
     // --    WHERE
     // --        V.count >= 800
     // --        AND PH.status = 'ACTIVE'
@@ -1452,7 +1452,7 @@ x.art_id,
     public function api_Admin_Get_Inventory_Item_Costs($art_id) {
 
         $data = array();
-        
+
         /* first check classic table */
         /* If results found convert to manual entires */
         if( $this->checkDBConnection(__FUNCTION__) == true) {
@@ -1561,27 +1561,27 @@ x.art_id,
     }
 
     public function api_Admin_Get_LookUpCollectionByName($path) {
-        
+
         $data = array();
-        
+
         /* Executes SQL and then assigns object to passed var */
         if( $this->checkDBConnection(__FUNCTION__) == true) {
-            
+
             $sql = "SELECT title, path from catalog_collections where path='" . $path . "' AND status='active'";
-            
+
             $result = $this->mysqli->query($sql);
-            
+
             if ($result->num_rows > 0) {
-                
+
                 while($row = $result->fetch_assoc())
 		        {
                     $data[] = $row;
 		        }
-                
+
             }
-            
+
         }
-        
+
         // $this->console("data:" . $data,1);
         return($data);
 
@@ -1727,7 +1727,7 @@ x.art_id,
             }
 
         }
-        
+
         return($data);
 
     }
@@ -2086,9 +2086,9 @@ x.art_id,
         /* If state_ is set than update certificate record */
         if(isSet($state_collector_id) && $state_collector_id == $collector) {
 
-            /*  
+            /*
             `serial_num`='$serial_num',
-            `reg_num`='$reg_num', 
+            `reg_num`='$reg_num',
             */
 
             $sql_u = "
@@ -3074,6 +3074,8 @@ public function api_Admin_Get_Materials_By_Supplier($id) {
 
     public function api_Admin_Update_Collections() {
 
+        $data = array();
+
         /* extract Data Array */
         extract($_POST, EXTR_PREFIX_SAME, "dup");
 
@@ -3082,13 +3084,13 @@ public function api_Admin_Get_Materials_By_Supplier($id) {
 
         /* Insert into database */
         $sql = "UPDATE catalog_collections
-        SET `title` = '{$title}',
-        `path` = '{$path}',
-        `desc` = '{$desc}',
-        `status` = '{$status}',
-        `type` = '{$type}',
-        `catalog_code` = '{$catalog_code}'
-        WHERE `catalog_collections_id` = '" . $catalog_collections_id ."'";
+        SET title = '{$title}',
+        path = '{$path}',
+        desc = '{$desc}',
+        status = '{$status}',
+        type = '{$type}',
+        catalog_code = '{$catalog_code}'
+        WHERE catalog_collections_id = '" . $catalog_collections_id ."'";
 
         $result = $this->mysqli->query($sql);
 
@@ -3112,7 +3114,7 @@ public function api_Admin_Get_Materials_By_Supplier($id) {
         $sql_c =  $this->mysqli->real_escape_string($sql_c);
 
         /* Insert into database */
-        $sql = "INSERT INTO `" . $this->config_env->env[$this->env]['dbname']  . ".`report` (`name`, `desc`, `sql`, `columns`, `last_run_by`, `fav`)
+        $sql = "INSERT INTO report (`name`, `desc`, `sql`, `columns`, `last_run_by`, `fav`)
         VALUES ('{$name}', '{$desc}', '{$sql_c}', '{$columns}', '{$artist_id}', '{$fav}');";
 
         $result = $this->mysqli->query($sql);
@@ -4035,10 +4037,12 @@ public function api_Admin_Get_Order($id) {
 
     public function api_Admin_Get_Reports_Sql($sql) {
 
-    /* Executes SQL and then assigns object to passed var */
-    if( $this->checkDBConnection(__FUNCTION__) == true) {
+        $data = array();
 
-        $result = $this->mysqli->query($sql);
+        /* Executes SQL and then assigns object to passed var */
+        if( $this->checkDBConnection(__FUNCTION__) == true) {
+
+            $result = $this->mysqli->query($sql);
 
         if ($result->num_rows > 0) {
 
@@ -4047,6 +4051,8 @@ public function api_Admin_Get_Order($id) {
 	            $data[] = $row;
 	        }
 
+        } else {
+            $data[]['ERROR'] = "NO ROWS FOUND";
         }
 
     }
