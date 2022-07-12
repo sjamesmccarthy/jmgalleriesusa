@@ -99,7 +99,7 @@ if ($photo_meta["desc"] != null) {
     // "Moab® Slick Rock Metallic Paper";
     // $frame_disabled_option = '<option value="FRAMEINCLUDED">Select a Frame (Included In Price)</option>';
     $edition_frame =
-      "and framed in one of our three Premium Designer Frames protected with Tru Vue&reg; Museum Glass.";
+      "<!-- Framed in one of our three Premium Designer Frames protected with Tru Vue&reg; Museum Glass. -->";
     // $frame_price_default = "FRAMEINCLUDED";
     $frame_price_default = "0";
     $frame_disabled = "disabled";
