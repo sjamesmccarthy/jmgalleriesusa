@@ -11,7 +11,7 @@
 
             <div class="grid-center">
                 <div class="col-10_sm-12 pt-64">
-                    <h3 class="pb-16">Artist Statement</h3> 
+                    <h3 class="pb-16">Artist Statement</h3>
 
                     <p class="name-statement">
                     "Take a moment and explore why I create," James says about his color and black and white photography, adding, "it portrays my journey as an artist in photography over the past 10 years and how I have adjusted my style and perspective of fine-art photography as an art form."
@@ -47,10 +47,10 @@
                     <!-- <p class="name-statement">
                     Take a moment and explore why I create. Look for my passion in everyday, fine-art photography and let the composition inspire your curiosity. You just may hear the voice of my art share a story, then, you will see why I create.
                     </p>
-                    <p class="larger">A self-taught explorer in the field of landscape photography, James was born in Concord, Massachusetts, a small suburb outside Boston, but in the late 80's travelled West and has made the beautiful state of Nevada his home base for nearly thirty years. 
+                    <p class="larger">A self-taught explorer in the field of landscape photography, James was born in Concord, Massachusetts, a small suburb outside Boston, but in the late 80's travelled West and has made the beautiful state of Nevada his home base for nearly thirty years.
                     </p>
                     <p class="larger">
-                    His more popular pieces include, "<a href="/oceans-lakes-waterfalls/never-ending-story">Never Ending Story</a>", "<a href="/abstract-architecture-people/once-afloat">Once Afloat</a>", "<a href="/mountains-deserts-trees/emigrants-fog">Emigrants Fog</a>", "<a href="/oceans-lakes-waterfalls/bonsai-zen">Bonsai Zen</a>", "<a href="/mountains-deserts-trees/keep-tahoe-cold">Keep Tahoe Cold</a>" and "<a href="/mountains-deserts-trees/snowy-pines">Snowy Pines</a>". Framed, Metal and Acrylic editions can be viewed at many of his traveling exhibits which include locally-owned businesses around the locations he shoots. 
+                    His more popular pieces include, "<a href="/oceans-lakes-waterfalls/never-ending-story">Never Ending Story</a>", "<a href="/abstract-architecture-people/once-afloat">Once Afloat</a>", "<a href="/mountains-deserts-trees/emigrants-fog">Emigrants Fog</a>", "<a href="/oceans-lakes-waterfalls/bonsai-zen">Bonsai Zen</a>", "<a href="/mountains-deserts-trees/keep-tahoe-cold">Keep Tahoe Cold</a>" and "<a href="/mountains-deserts-trees/snowy-pines">Snowy Pines</a>". Framed, Metal and Acrylic editions can be viewed at many of his traveling exhibits which include locally-owned businesses around the locations he shoots.
                     </p>
                     <p class="larger">
                     He is a member of the Professional Photographers of America (PPA), the American Photographic Artists (APA) and founding member of <A href="/loveoutside">loveOutside.org</a>, an upcoming collaborative group of local outdoor enthusiasts +photographers preserving the world around us through creative, every-day imagery while serving our community through conservation of our bonus backyard.
@@ -62,10 +62,10 @@
                 </div>
             </div>
 
-                <div class="grid-center"> 
+                <div class="grid-center">
                     <div class="col-10_sm-12 about--exhibits">
                         <h3>Exhibits</h3>
-                        
+
                         <ul>
                         <li> 2022, Captial City Artists Initiative, Crowell Board Room, Carson City Community Center<br />
                         Exhibiting over 30 pieces of fine-art July through October. Pieces include the popular “Never Ending Story”, “Once Afloat”, “Emigrants Fog”, “Bonsai Zen, “Keep Tahoe Cold” and “Snowy Pines”, as well many other new works and the release of Alignment, a book of photography by j.McCarthy.<br />
@@ -97,7 +97,7 @@
                         <h3>Portraits, Weddings & Events</h3>
                         <div class="about--exhibits">
                             <ul>
-                                <li class="nobullet">Visit my Portraits, Weddings & Events <a href="http://jmportraits.com" target="_new">portfolio</a>. To book a session, wedding or event drop me a note <a href="/contact">here</a> or call me at 951-708-1831.</li>
+                                <li class="nobullet">Visit my Portraits, Weddings & Events <a href="http://jmportraits.com" target="_new">portfolio <i class="fa-solid fa-up-right-from-square"></i></a>. To book a session, wedding or event drop me a note <a href="/contact">here</a> or call me at 951-708-1831.</li>
                             </ul>
                         </div>
                     </div>
