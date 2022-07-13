@@ -67,7 +67,7 @@ body {
 /* DARK-THEME */
     &.dark-theme {
         background-color: $color-black-theme;
-        color: $color-white; 
+        color: $color-white;
 
         a {
             // color: $color-blue;
@@ -76,6 +76,18 @@ body {
             &:hover {
                 color: $color-gray;
             }
+        }
+
+        .notice-banner {
+            >a {
+                text-decoration: underline;
+                color: #FFF;
+            }
+
+            >a:hover {
+                text-decoration: none;
+            }
+
         }
 
         .filter-editions-list li:hover {
@@ -618,7 +630,7 @@ form {
         z-index: 10;
         display: none;
     }
-    
+
     .select-wrapper {
         position: relative;
         color: $color-black-placeholder;

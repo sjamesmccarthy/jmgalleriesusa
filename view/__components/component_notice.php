@@ -1,6 +1,6 @@
 <?php
-/* 
-component: POLARIZED 
+/*
+component: POLARIZED
 description: returns the last 4 blog posts from medium
 css: component_polarized.scss
 data: data_polatized.json
@@ -14,15 +14,15 @@ $data_html = $this->getJSON('view/__data/data_notices.json', 'data_notices');
 
 $count=0;
 foreach($data_html as $key => $value) {
-       
+
     if($value['state'] == "true" && $this->config->component_notice == $key) {
         extract($data_html[$key], EXTR_OVERWRITE, "dup");
 
         if($value['timeout'] != "0") {
-           $jquery = '    
+           $jquery = '
                 <script>
                 jQuery(document).ready(function($){
-              
+
                     $(".notice-container").fadeIn("fast").delay(' . $value['timeout'] . ').slideUp("slow");
 
                 });
@@ -44,25 +44,25 @@ foreach ($exclude_matches as $exclude => $excludeValue) {
         $match = "FOUND";
     } else {
         // print "preg_match: NO MATCH --";
-        // print $this->page->1catalog_path . "<br />";
+        // print $this->page->catalog_path . "<br />";
         // print_r($exclude_matches);
     }
 }
 
 if($match == "FOUND") {
     $html = null;
-} else { 
+} else {
     $content = stripslashes($content);
     $mobile_content = stripslashes($mobile_content);
-    
+
     $html = <<< END
         <div class="notice-container notice-{$key}">
             <p class="notice-banner" style="background-color: {$background_color}; color:{$color}">{$content}</p>
             <p class="notice-banner-mobile" style="background-color: {$background_color}; color:{$color}">{$mobile_content}</p>
         </div>
-    
+
         {$jquery}
-    
+
     END;
 }
 
