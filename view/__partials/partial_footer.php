@@ -29,7 +29,7 @@
                     <!-- <a href="/shop">Shop</a> /  -->
                     <!-- <a href="/fieldnotes">Field Notes</a> /  -->
                     <a href="/thework">the work</a> <img class="breadcrumb-arrow" src="/view/__image/icon_navarrow-right.svg" alt="breadcrumb-icon">
-                    <a href="/about">about</a> <img class="breadcrumb-arrow" src="/view/__image/icon_navarrow-right.svg" alt="breadcrumb-icon">
+                    <a href="/about">about, exhibits, portraits</a> <img class="breadcrumb-arrow" src="/view/__image/icon_navarrow-right.svg" alt="breadcrumb-icon">
                     <!-- <a href="/provenance">Provenance</a> /  -->
                     <a class="tiny-dis" href="/privacy"><?= $this->config->copyright ?></a> <img class="breadcrumb-arrow" src="/view/__image/icon_navarrow-right.svg" alt="breadcrumb-icon">
                     &nbsp; <img src="https://images.dmca.com/Badges/dmca-badge-w100-5x1-08.png?ID=4f4fc268-5857-46c9-97ec-b0ee644e9892" alt="DMCA.com Protection Status" style="vertical-align: middle" />
