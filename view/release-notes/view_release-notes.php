@@ -8,14 +8,26 @@
 
         <div class="col-11" style="position: relative">
 
+        <p class="pt-16">v2.1 <br />July 2022 [<a target="_new" href="https://github.com/sjamesmccarthy/jmgalleriesusa/commits/master">git commit history</a>]</p>
+            <ul>
+                <li>bugfix: logo inverts correctly now on home cover image</li>
+                <li>update: made dark-theme default</li>
+                <li>update: the work now shows all editions</li>
+                <li>bugfix: misc. admin bug fixes to inventory, dashboard, etc.</li>
+                <li>added: new links for shop in footer</li>
+                <li>update: framing and styles information</li>
+                <li>bugfix: notification banners font treatment and activations</li>
+            </ul>
+        </p>
+
         <p class="pt-16">v2.0 [eeb4f8a0bb994bf6644eedcec41947d5a4b93a21]<br />May 06, 2022</p>
             <ul>
             <li>Revised file structure, database schema and routing.</li>
             <li>Launch of DIGITAL PROVENANCE & AUTHENTICITY TRACKER. (Dedicated to M.D. York, the inspiration behind the idea. RIP dear friend and I wish you could have seen it in the flesh.)</li>
             <li>Launch of loveOutside.org</li>
             </ul>
-        </p>        
-        
+        </p>
+
         <p class="pt-16">v1.9.1<br />April 26, 2022</p>
             <ul>
             <li>update: structure change to page views</li>
