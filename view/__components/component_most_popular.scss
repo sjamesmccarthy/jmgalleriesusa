@@ -12,29 +12,29 @@
         font-weight: 300;
 
         // xSmall devices (landscape phones, 320px and up)
-        @media (min-width: 320px) { 
+        @media (min-width: 320px) {
             //  background-color: pink;
             font-size: .8rem;
             }
-        
+
             // Small devices (landscape phones, 576px and up)
-            @media (min-width: 376px) { 
+            @media (min-width: 376px) {
             //  background-color: red;
                 font-size: .8rem;
             }
-        
+
             // Medium devices (tablets, 768px and up)
             @media (min-width: 767px) {
             //  background-color: blue;
             font-size: .8rem;
         }
-        
+
             // Large devices (tablets (iPad Pro, 1112px and up)
             @media (min-width: 1112px) {
             //  background-color: gray;
                 font-size: .9rem;
             }
-        
+
             // Extra large devices (large desktops, 1200px and up)
             @media (min-width: 1200px) {
             //  background-color: lightgreen;
@@ -50,37 +50,37 @@
         font-size: .5rem;
 
         // xSmall devices (landscape phones, 320px and up)
-        @media (min-width: 320px) { 
+        @media (min-width: 320px) {
             //  background-color: pink;
             font-size: .5rem;
             }
-        
+
             // Small devices (landscape phones, 576px and up)
-            @media (min-width: 376px) { 
+            @media (min-width: 376px) {
             //  background-color: red;
                 font-size: .5rem;
             }
-        
+
             // Medium devices (tablets, 768px and up)
             @media (min-width: 767px) {
             //  background-color: blue;
             font-size: .8rem;
         }
-        
+
             // Large devices (tablets (iPad Pro, 1112px and up)
             @media (min-width: 1112px) {
             //  background-color: gray;
                 font-size: .9rem;
             }
-        
+
             // Extra large devices (large desktops, 1200px and up)
             @media (min-width: 1200px) {
             //  background-color: lightgreen;
             font-size: .9rem;
             }
-            
+
     }
-    
+
     .thumb img {
         width: 100%;
         border-radius: $border-radius;

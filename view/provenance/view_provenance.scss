@@ -1,11 +1,11 @@
 .provenance-section {
-    
+
     padding-top: 2rem;
-    
+
     div >p {
         text-align: center;
     }
-    
+
     &--lookup {
         color: $color-black;
     }
@@ -33,20 +33,20 @@
     // border-bottom: 5px solid $color-gray;
     padding-bottom: 2rem;
     @extend .mt-16;
-    
+
     h4 {
         font-weight: 800;
         text-transform: uppercase;
         @extend .mb-16;
         @extend .mt-32;
     }
-    
+
     .image {
-        width: 100%;    
+        width: 100%;
     }
-    
+
     .provenance {
-        
+
         &--block {
             // display: none;
             padding-left: 1rem;
@@ -55,17 +55,17 @@
             // margin-top: 2rem;
             margin-bottom: 2rem;
         }
-        
+
         &--record {
             text-align: left;
             border-bottom: 1px solid #CCC;
         }
-        
+
         &--close {
             display: none;
         }
     }
-    
+
     .col-card {
         padding-top: 10px;
 
@@ -76,10 +76,10 @@
         .more-detail {
             font-size: .8rem;
         }
-        
+
     }
         .type-promo {
-            // background-color: rgba(0,0,0,.03); 
+            // background-color: rgba(0,0,0,.03);
             // padding: 10px;
 
             >img {
@@ -90,7 +90,7 @@
     .border-top {
         border-top: .5px solid rgba(0,0,0, .1);
         padding-top: 10px;
-        margin-top: 10px;    
+        margin-top: 10px;
     }
 
     .filmstrip-thumb {

@@ -42,7 +42,7 @@
             $catalog_tabs_hidden = true;
             $tv_le_link = '<!-- <p class="shop-tv-link"><a href="/collections">Browse By Collections</a></p> -->';
         }
-        
+
         $catalog_photos = $this->api_Catalog_Category_Thumbs_All($param_ed);
 
     } else {
@@ -64,8 +64,8 @@
                 $desc_editions = "<p>" . $edition_desc  . "</p>";
                 $available_sizes = $this->config->available_sizes_limited;
                 }
-                else { 
-                    $data_filter_G = null;  
+                else {
+                    $data_filter_G = null;
                 }
 
                 if($v['as_studio'] == 1) {
@@ -78,8 +78,8 @@
                             $available_sizes = $this->config->available_sizes_open;
                         }
                 }
-                else { 
-                    $data_filter_S = null; 
+                else {
+                    $data_filter_S = null;
                 }
 
                 if($v['as_open'] == 1) {
@@ -119,8 +119,8 @@
                     $rSize = null;
                     $rPrice = null;
                 }
-                else { 
-                    $data_filter_O = null; 
+                else {
+                    $data_filter_O = null;
                 }
 
                 // if($v['as_limited'] == 1) {
