@@ -3,12 +3,12 @@
     <div class="grid-center">
 
         <div class="col-12_sm-12">
-            <h1>RELEASE NOTES, <?= $this->config->package_version ?></h1>
+            <h1>RELEASE NOTES, [ <a target="_new" href="https://github.com/sjamesmccarthy/jmgalleriesusa/commits/master">git commit history</a> ]</h1>
         </div>
 
         <div class="col-11" style="position: relative">
 
-        <p class="pt-16">v2.1 <br />July 2022 [<a target="_new" href="https://github.com/sjamesmccarthy/jmgalleriesusa/commits/master">git commit history</a>]</p>
+        <p class="pt-16">v2.1 <br />July 2022</p>
             <ul>
                 <li>bugfix: logo inverts correctly now on home cover image</li>
                 <li>update: made dark-theme default</li>
@@ -20,7 +20,7 @@
             </ul>
         </p>
 
-        <p class="pt-16">v2.0 [eeb4f8a0bb994bf6644eedcec41947d5a4b93a21]<br />May 06, 2022</p>
+        <p class="pt-16">v2.0<br />May 06, 2022</p>
             <ul>
             <li>Revised file structure, database schema and routing.</li>
             <li>Launch of DIGITAL PROVENANCE & AUTHENTICITY TRACKER. (Dedicated to M.D. York, the inspiration behind the idea. RIP dear friend and I wish you could have seen it in the flesh.)</li>
