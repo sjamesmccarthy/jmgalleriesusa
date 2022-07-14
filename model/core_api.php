@@ -148,6 +148,8 @@ class Core_Api extends Fieldnotes_Api
 
     public function api_Catalog_Category_Filmstrip($category_id, $limit, $edition='ALL') {
 
+        $data = array();
+
         if($category_id != "ALL")  {
             $category = "cl.catalog_collections_id = " . $category_id
             . " AND cc.status = 'ACTIVE' "
@@ -203,6 +205,9 @@ class Core_Api extends Fieldnotes_Api
 		            $data[] = $row;
 		        }
 
+            } else {
+                $data['error'] = "No Records Found";
+                $data['sql'] = $sql;
             }
 
         }
@@ -299,6 +304,53 @@ class Core_Api extends Fieldnotes_Api
 
         }
 
+        return($data);
+    }
+
+    /* VIRTUAL COLLECTION */
+    public function api_Catalog_vcAlignment() {
+
+        $data = array();
+
+        /* Executes SQL and then assigns object to passed var */
+        if( $this->checkDBConnection(__FUNCTION__) == true) {
+
+            $sql = "SELECT
+            PH.catalog_photo_id,
+            PH.title,
+            PH.file_name,
+            PH.loc_place,
+            PH.as_limited,
+            PH.as_open,
+            PH.available_sizes,
+            CAT.path AS catalog_path
+        FROM
+            catalog_photo AS PH
+        	INNER JOIN catalog_collections AS CAT ON CAT.catalog_collections_id = PH.parent_collections_id
+        	INNER JOIN catalog_collections_link AS CPL ON CPL.catalog_photo_id = PH.parent_collections_id
+        WHERE
+            tags LIKE '%ccai-cbr%'
+        ORDER BY
+            PH.created DESC";
+
+        $result = $this->mysqli->query($sql);
+
+            if ($result->num_rows > 0) {
+
+                while($row = $result->fetch_assoc())
+                {
+                    $data[] = $row;
+                }
+
+            } else {
+
+                $data['error'] = "No Records Found";
+                $data['sql'] = $sql;
+            }
+
+        }
+
+        // $this->console($data);
         return($data);
     }
 
@@ -1783,6 +1835,7 @@ x.art_id,
         $available_sizes = $this->mysqli->real_escape_string($_POST['available_sizes']);
 
         if( !isSet($_POST['featured']) ) { $featured = '0'; }
+        if( !isSet($_POST['as_studio']) ) { $as_studio = '0'; }
 
         /* do a little fixing on edition type */
         // if($previous_edition == "as_limited") {
@@ -1832,6 +1885,7 @@ x.art_id,
         on_display = '$on_display',
         as_limited = '$as_limited',
         as_open = '$as_open',
+        as_studio = '$as_studio',
         featured = '$featured',
         featured_contrast = '$featured_contrast',
         `desc` = '$desc'
@@ -3084,13 +3138,13 @@ public function api_Admin_Get_Materials_By_Supplier($id) {
 
         /* Insert into database */
         $sql = "UPDATE catalog_collections
-        SET title = '{$title}',
-        path = '{$path}',
-        desc = '{$desc}',
-        status = '{$status}',
-        type = '{$type}',
-        catalog_code = '{$catalog_code}'
-        WHERE catalog_collections_id = '" . $catalog_collections_id ."'";
+        SET `title` = '{$title}',
+        `path` = '{$path}',
+        `desc` = '{$desc}',
+       `status` = '{$status}',
+        `type` = '{$type}',
+        `catalog_code` = '{$catalog_code}'
+        WHERE `catalog_collections_id` = '" . $catalog_collections_id ."'";
 
         $result = $this->mysqli->query($sql);
 

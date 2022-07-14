@@ -1,19 +1,6 @@
 <?php
 extract($_POST, EXTR_PREFIX_ALL, "res");
 
-/* Look up prodcut in database and check price */
-$product_data = $this->api_Product_Get_Item(null,$_POST['product_id']);
-// $this->console($product_data);
-
-if($_POST['product_id'] == '1' || $_POST['product_id'] == '2' ) {
-    $res_ship_rates = $product_data['ship_tier'];
-} else {
-    if ($_POST['price'] != $product_data['price']) {
-    header('location:/order-problem');
-    }
-}
-
-
 $order_title = urldecode($res_title);
 // $action_uri = "/view/__ajax/ajax_square_payment_process.php";
 // $action_uri = "/view/__ajax/ajax_square_payment_local.php";
@@ -22,7 +9,7 @@ $formTitle = "Checkout";
 
 /* Extra form fields for different order type */
 switch($res_formType) {
-    
+
     case "SquarePaymentForm_productOrder":
         $formType="SquarePaymentForm_productOrder";
         $subtitle = 'Thank you for your interest in a j.McCarthy fine-art product.';
@@ -39,6 +26,7 @@ switch($res_formType) {
     break;
 
     case "SquarePaymentForm_fineArt":
+
         $formType="SquarePaymentForm_fineArt";
         $subtitle = 'Thank you for your interest in a j.McCarthy Fine Art Photograph';
         $payment_instructions = "<p class='pb-16'>Upon confirmation of your order you will be invoiced a 50% deposit. The remaining balance will be due in full prior to shipment. By clicking the button below, you are agreeing to these <a href='/privacy#tos'>Terms of Sale</a>.<br /><br /><img style='margin-bottom: 10px; width: 150px; vertical-align: middle' src='/view/__image/square-payment-icons.png' alt='square payment icon' /></p>";
@@ -54,9 +42,9 @@ switch($res_formType) {
         }
 
         if($res_frame == "FRAMELESS") { $res_frame_price = 0; }
-        if($res_frame == "FRAMEINCLUDED") { 
-            $res_frame = ""; 
-            $frame_forgot_not = "\n\n**We noticed you forgot to select a Premium Designer frame. We will have an art consultant contact you."; 
+        if($res_frame == "FRAMEINCLUDED") {
+            $res_frame = "";
+            $frame_forgot_not = "\n\n**We noticed you forgot to select a Premium Designer frame. We will have an art consultant contact you.";
             $hidden_fields .= "<input type='hidden' name='frame_forgot' value='" . $frame_forgot_not . "' />";
         }
 
@@ -66,10 +54,10 @@ switch($res_formType) {
         }
 
         if($res_frame_price != "0") {
-            if($res_edition == "limited") { 
-                $frame_style = " Premium Designer"; 
-            } else { 
-                $frame_style = null; 
+            if($res_edition == "limited") {
+                $frame_style = " Premium Designer";
+            } else {
+                $frame_style = null;
             }
 
             if($res_frame != "PRINT-ONLY") {
@@ -83,13 +71,25 @@ switch($res_formType) {
             $hidden_fields .= "<input type='hidden' id='edition_type' name='edition_type' value='limited' />";
             $order_type = "DEPOSIT";
             $order_amount = $res_print_price / 2;
-            $estimated_cost_raw = $order_amount * 100; 
+            $estimated_cost_raw = $order_amount * 100;
             $cost = $estimated_cost_raw;
             $edition_type_long = "Limited Edition";
             $limited_deposit = "<p class='mt-8'><b> $" . number_format($order_amount,2) . " (50%) REQUIRED DEPOSIT TODAY</b>, and remaining balance due at shipment.</p>";
-            if($res_material_type == 'acrylic') { $material_name = 'HD Acrylic'; } 
-            if($res_material_type == 'metal') { $material_name = 'HD Chromaluxe&reg; Metal'; } 
-            $material_type_long =  $material_name . " (⅛ inch thick including wall mount)";
+            if($res_material_type == 'acrylic') { $material_name = 'HD Acrylic'; }
+            if($res_material_type == 'metal') { $material_name = 'HD Chromaluxe&reg; Metal'; }
+            if($res_material_type == 'paper') {
+                $res_product_id = 2;
+                $edition_type_long = "tinyVIEWS&trade; Studio Edition";
+                $order_type = "ORDER";
+                $deposit = "false";
+                $hidden_fields .= "<input type='hidden' id='deposit' name='deposit' value='false' />";
+                $hidden_fields .= "<input type='hidden' id='edition_type' name='edition_type' value='open' />";
+                $material_name = $this->config->tv_material_desc . ". The overall size is 13x19 inch.";
+                $material_desc = null;
+            } else {
+                $material_desc = "(⅛ inch thick including wall mount)";
+            }
+            $material_type_long =  $material_name . " " . $material_desc;
         } else if ($res_edition_type == "open") {
             $deposit = "false";
             $hidden_fields .= "<input type='hidden' id='deposit' name='deposit' value='false' />";
@@ -107,17 +107,17 @@ switch($res_formType) {
             $material_type_long = $res_img_type;
         }
 
-        //'(' . $res_quantity . ') ' . 
+        //'(' . $res_quantity . ') ' .
         // $order_subject = $order_title . " - " . $edition_type_long . " ($" . $res_print_price . ")\n" . $res_buysize  . $matted_size . " " . $res_img_type . $item_framing  . "\n" . $add_frame_note;
         $order_subject = $order_title . " - " . $edition_type_long . " ($" . $res_print_price . ")\n" . $res_buysize  . $matted_size . " " . $material_type_long . $item_framing  . "\n" . $add_frame_note;
 
         $hidden_fields .= '<input type="hidden" name="quantity" value="' .  $res_quantity . '" />';
         $hidden_fields .= '<input type="hidden" name="size" value ="' . $res_buysize . '" />';
         $hidden_fields .= '<input type="hidden" name="catalog_id" value ="' . $res_catalog_no . '" />';
-        
+
         $hidden_fields .= '<input type="hidden" name="image_type" value ="' . $res_img_type . '" />';
         $hidden_fields .= '<input type="hidden" name="material_type" value ="' . $res_material_type . '" />';
-        
+
         $hidden_fields .= '<input type="hidden" name="frame" value ="' . $res_frame . '" />';
         $hidden_fields .= $hidden_matted;
 
@@ -130,13 +130,30 @@ switch($res_formType) {
 }
 
 /* Orgnize Shipping Rates */
+
+/*
+Look up product in database and check price
+    1 = Limited Edition Fine Art
+    2 = Open Edition Fine Art
+*/
+$product_data = $this->api_Product_Get_Item(null,$res_product_id);
+
+if($_POST['product_id'] == '1' || $_POST['product_id'] == '2' ) {
+    $res_ship_rates = $product_data['ship_tier'];
+    // $this->console($res_ship_rates);
+} else {
+    if ($_POST['price'] != $product_data['price']) {
+    header('location:/order-problem');
+    }
+}
+
 $res_ship_rates = json_decode($res_ship_rates,TRUE);
 $ship_methods = count((array)$res_ship_rates);
 
-if($ship_methods == 1) { 
-    $disabled = 'disabled'; 
-} else { 
-    $disabled = null; 
+if($ship_methods == 1) {
+    $disabled = 'disabled';
+} else {
+    $disabled = null;
 }
 
     foreach($res_ship_rates as $sK => $sV) {
@@ -161,7 +178,7 @@ if($ship_methods == 1) {
 
             $ship_rates_html .= '<li>
             <!-- <input type="hidden" id="ship_' . $sV['abrv'] . '_value" name="ship_' . $sV['abrv']. '" value="0" /> -->
-            <input type="checkbox" data-shipper="' . $sV['name'] . '"' . $checked . ' class="ship" id="ship_' . $sV['abrv']. '" name="ship" value="' . $sV['amount'] . '" ' . $disabled . '/> 
+            <input type="checkbox" data-shipper="' . $sV['name'] . '"' . $checked . ' class="ship" id="ship_' . $sV['abrv']. '" name="ship" value="' . $sV['amount'] . '" ' . $disabled . '/>
             <label for="ship_' . $sV['abrv'] . '"> ' . $sV['name'] . $ship_amount . '</label>
             </li>';
 
@@ -207,7 +224,7 @@ $pay_SqPaymentFormFields = '
         <div id="sq-expiration-date"></div>
         <div id="sq-cvv"></div>
         <div id="sq-postal-code"></div>
-        <!-- <button id="sq-creditcard" 
+        <!-- <button id="sq-creditcard"
             onclick="onGetCardNonce(event)">Pay $1.00</button> -->
     </div>
     <div>' . $sq_extraBilling . '</div>';

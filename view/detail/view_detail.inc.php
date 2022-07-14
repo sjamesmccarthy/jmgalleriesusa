@@ -1,5 +1,6 @@
 <?php
 
+$as_studio_label = " tinyVIEWS&trade; Studio Edition Print Only";
 
 $catalog_path_cleaned = ltrim($this->page->catalog_path, "/");
 
@@ -126,7 +127,7 @@ if ($photo_meta["desc"] != null) {
       '<!--One of our <a href="/styles">Premium Designer Frames</a> can be optionally added for an additional cost.--><!-- This fine-art may also be available in HD Chromaluxe&reg; Metal. Please <a href="/contact">contact an art consultant</a> for availability and pricing.-->';
     $frame_disabled = "disabled";
     $frame_disabled_option =
-      '<option value="FRAMELESS">Includes Aluminum Wall Mount</option><option value="ADDWITHACRYLIC">+ Add Additional Premium Frame (+$$)</option>';
+      '<option value="FRAMELESS">Includes FREE Aluminum Wall Mount</option><option value="ADDWITHACRYLIC">+ Add Additional Premium Frame (+$$)</option>';
     $frame_info_link = "Premium Designer Frames pricing";
     $frame_price_default = "0";
   }
@@ -175,9 +176,10 @@ if ($photo_meta["as_limited"] == 1) {
     // $le_price_array_metal = json_decode($this->config->le_pricing_metal, true);
   }
 
-  foreach ($le_price_array as $paK => $paV) {
-    $pricing_long .= $paK . " ";
-  }
+
+    foreach ($le_price_array as $paK => $paV) {
+        $pricing_long .= $paK . " ";
+    }
 
   $pricing_long = preg_replace("#\s+#", ", ", trim($pricing_long));
   $price_count = sizeof($le_price_array);
@@ -250,6 +252,17 @@ if ($photo_meta["as_limited"] == 1) {
   }
   // }
 
+    /* @TODO: add a loop for including OPEN ED pricing if as_studio = 1 */
+    if($photo_meta["as_studio"] == 1) {
+
+        $sizes_pricing .= '<option value="---">---</option>';
+        foreach ($tv_price_array as $tvK_studio => $tvV_studio) {
+            $sizes_pricing .=
+            "<option " .' data-price="' . $tvV_studio . '" data-mattedsize="0" data-material="paper" value="' . $tvK_studio . '">SIZE: ' . $tvK_studio . $as_studio_label . "</option>";
+        }
+
+    }
+
   $sizes_pricing .= '
         </select>
         </div>';
@@ -258,21 +271,11 @@ if ($photo_meta["as_limited"] == 1) {
   /* Currently does not loop through {le_frames_pricing} in settings */
   $sizes_frames .=
     '
-        <div class="col-4_sm-12 select-wrapper">
+        <div class="col-4_sm-12 select-wrapper frame-block">
             <label for="frame"></label>
             <select id="frame" name="frame" style="padding-left: 10px; margin-bottom:0;">
                 ' .
-    $frame_disabled_option .
-    '
-                <option value="Black Vodka"' .
-    $frame_disabled .
-    '>FRAME: Premium Designer Black Vodka (similar to a Dark Black stain)</option>
-                <option value="Whiskey"' .
-    $frame_disabled .
-    '>FRAME: Premium Designer Whiskey (similar to a Medium Brown stain)</option>
-                <option value="Bourbon"' .
-    $frame_disabled .
-    '>FRAME: Premium Designer Bourbon (similar to a Light Brown stain)</option>
+    $frame_disabled_option . '
             </select>
         </div>
         <input type="hidden" name="edition" value="limited" />';

@@ -2,7 +2,7 @@
 
 $time = time();
 $file = $_SERVER['DOCUMENT_ROOT'] . '/config.json';
-$newfile = $_SERVER['DOCUMENT_ROOT'] . '/config-' . $time  . '.json';
+$newfile = $_SERVER['DOCUMENT_ROOT'] . '/backup/config-' . $time  . '.json';
 
 
 if (!copy($file, $newfile)) {

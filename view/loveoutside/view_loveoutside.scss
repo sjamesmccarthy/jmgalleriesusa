@@ -1,5 +1,5 @@
 #loveoutside {
-    
+
     margin-top: 2rem;
 
     h3 {
@@ -81,33 +81,39 @@
 
     .home-stamp {
         position: absolute;
-        margin-top: -20%;
         top: 0;
-        left: -7%;
+        left: 50px;
         z-index: 2;
-        width: 42%
+        width: 240px;
+
+        // position: absolute;
+        // margin-top: -20%;
+        // top: 0;
+        // left: -7%;
+        // z-index: 2;
+        // width: 42%
     }
 
     .home-banner-layer-1 {
-        position: absolute; 
-        width: 68%; 
+        position: absolute;
+        width: 68%;
         margin-top: -5rem;
         top: 0;
-        left: 5%; 
-        transform: rotate(3deg); 
-        box-shadow: rgba(0, 0, 0, 0.3) 20px 20px 25px 0px; 
+        left: 5%;
+        transform: rotate(3deg);
+        box-shadow: rgba(0, 0, 0, 0.3) 20px 20px 25px 0px;
         border: 15px solid #FFF;
         box-sizing: border-box;
     }
 
     .home-banner-layer-2 {
-        position: absolute; 
-        width: 65%; 
+        position: absolute;
+        width: 65%;
         margin-top: 1rem;
         // top: 0;
-        right: 0; 
-        transform: rotate(7deg); 
-        box-shadow: rgba(0, 0, 0, 0.3) 20px 20px 25px 0px; 
+        right: 0;
+        transform: rotate(7deg);
+        box-shadow: rgba(0, 0, 0, 0.3) 20px 20px 25px 0px;
         border: 15px solid #FFF;
         box-sizing: border-box;
     }
@@ -117,7 +123,7 @@
         position: relative;
         margin-top: -4rem;
         transform: rotate(-3deg);
-        box-shadow: rgba(0, 0, 0, 0.3) 0px 20px 25px 0px; 
+        box-shadow: rgba(0, 0, 0, 0.3) 0px 20px 25px 0px;
         border: 15px solid #FFF;
         box-sizing: border-box;
     }

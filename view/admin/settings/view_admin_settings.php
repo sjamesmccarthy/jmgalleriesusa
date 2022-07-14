@@ -65,15 +65,15 @@
                             <label>coa contract</label>
                             <input class="half-size" type="hidden" name="coa_contract" value="<?= $coa_contract ?>"  />
                             <input class="half-size" type="text" name="coa_contract" value="<?= $coa_contract ?>" disabled />
-                    </div>
-
-                    <div class="col-12">
                             <label>Edition Types</label>
                             <input class="half-size" type="hidden" name="edition_types" value="<?= $edition_types ?>"  />
                             <input class="half-size" type="text" name="edition_types" value='<?= $edition_types ?>' />
-                            <label>limited edition max (legacy)</label>
+                    </div>
+
+                    <div class="col-12">
+                            <!-- <label>limited edition max (legacy)</label> -->
                             <input class="half-size" type="hidden" name="limited_edition_max" value="<?= $limited_edition_max ?>" />
-                            <input class="half-size" type="text" name="limited_edition_max" value="<?= $limited_edition_max ?>" disabled />
+                            <!-- <input class="half-size" type="text" name="limited_edition_max" value="<?= $limited_edition_max ?>" disabled /> -->
                     </div>
 
                     <div class="col-12 pb-16">

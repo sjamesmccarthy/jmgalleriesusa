@@ -84,12 +84,17 @@
         var ms = $("#buysize option:selected").attr("data-mattedsize");
 
         // Remove frame options from NOTECARDS (previously also 5x7 ps == '5x7' ||)
-        if(ps == 'NOTECARDS') {
+        if(ps == '12x18 (½ inch white border on outside)') {
             // $('#frame').find('option').not(':first').css("display", "none");
-            $('#frame').find('option').not(':first').attr("disabled", "disabled");
-            console.log('5x7');
+            $('#frame').find('option').attr("disabled", "disabled");
+            $('.frame-block').hide();
+
+            console.log('tinyVIEWS Studio PRINT ONLY');
        } else {
            // console.log('ImageSize: ' + ps + '/MattedSize: ' + ms);
+           $('.frame-block').show();
+           $('#frame').find('option').not(':first').removeAttr("disabled");
+
            $('#matted_size').val(ms);
             // $('#frame').find('option').not(':first').css("display", "block");
             if($("#frame option:selected").val() == "FRAMELESS" || $("#frame option:selected").val() == "ADDWITHACRYLIC" ) {

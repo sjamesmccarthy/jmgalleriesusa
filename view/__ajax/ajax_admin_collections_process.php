@@ -6,7 +6,7 @@
  * @Filename: ajax_admin_suppliers_process.php
  * @Last modified by:   sjamesmccarthy
  * @Created  date: 04-01-2020 07:10:38 AM
- * @Last modified time: 
+ * @Last modified time:
  * @Copyright: 2020
  */
 
@@ -17,7 +17,7 @@
     } else {
         header('location:/studio/signin');
 	}
-	
+
  /* CHECK THE $formType INSERT or UPDATE */
  /* PROCESS THE DATABASE BEFORE THE FILE ATTACHMENTS */
 
@@ -27,7 +27,7 @@ switch($_POST['formTypeAction']) {
 		$this->api_Admin_Insert_Collections();
 		$redirect_to = '/collections';
 	break;
-	
+
 	case "update":
 		$this->api_Admin_Update_Collections();
 		$redirect_to = '/collections';

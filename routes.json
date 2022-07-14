@@ -24,13 +24,6 @@
         "component": "true",
         "title": "[$1]"
     },
-    "/thework": {
-        "alias": "true",
-        "template": "catalog",
-        "page": "catalog",
-        "component": "true",
-        "title": "The Work"
-    },
     "/collections": {
         "alias": "true",
         "template": "catalog",
@@ -503,12 +496,6 @@
         "title": "Shop tinyViews, Wall Mounted Prints and Books"
     },
     "/open-editions": {
-        "template": "redirect",
-        "page": "/thework?filter=tinyviews",
-        "component": "false",
-        "title": "Shop tinyViews, Wall Mounted Prints and Books"
-    },
-    "/tinyviews": {
         "template": "redirect",
         "page": "/thework?filter=tinyviews",
         "component": "false",

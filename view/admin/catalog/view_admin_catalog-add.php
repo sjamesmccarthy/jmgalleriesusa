@@ -139,7 +139,7 @@
             </div>
 
             <div>
-                <div class="select-wrapper half-size">
+                <div class="select-wrapper half-size"  style="vertical-align: top;">
                     <label>material</label>
                     <select id="desc" name="desc">
                         <option value="acrylic" <?= ($desc == "acrylic" ? "SELECTED" : ""); ?>>Acrylic</option>
@@ -152,6 +152,9 @@
                     <!-- <input class="half-size" type="text" id="desc" name="desc" placeholder="DESCRIPTION OF MATERIAL (eg, paper or acrylic)" value="<?= $desc ?>" required> -->
                     <label>custom sizes & pricing (acrylic|metal)</label>
                     <input type="text" id="available_sizes" name="available_sizes" placeholder="AVAILABLE SIZES (in_code = default, otherwise use JSON)" value="<?= $available_sizes ?>" required>
+                     <span class="as_studio_print">
+                     <input <?= ($as_studio == "1" ? "CHECKED" : ""); ?> type="checkbox" name="as_studio" id="as_studio" name="featured" value="1" />
+                     <label for="as_studio" style="color: #000"> INCLUDE STUDIO Print (OE Pricing)</label></span>
                 </div>
             </div>
 
@@ -282,6 +285,23 @@ function preview() {
 
 
 jQuery(document).ready(function($){
+
+    if( $("#as_edition").prop('selectedIndex') === 0) {
+        $('.as_studio_print').toggle();
+    }
+
+    $("#as_edition").on("change", function() {
+        // console.log($("#as_edition").prop('selectedIndex'));
+
+        if( $("#as_edition").prop('selectedIndex') === 0) {
+            console.log('LE');
+        } else {
+            console.log('OE');
+            $("#as_studio").prop('checked', false);
+        }
+
+        $('.as_studio_print').toggle();
+    });
 
     $('.close-x').on("click", function() {
         window.location.href = '/studio/catalog';
