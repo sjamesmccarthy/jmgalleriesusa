@@ -199,7 +199,7 @@ if ($photo_meta["as_limited"] == 1) {
     $photo_meta["file_name"] .
     '">'; //class="btn-nudge"
   $gallery_details =
-    '<!--<p class="pt-32 bold">About The Art</p>--><p class="pt-32 pb-16 text-center">Limited Edition of ' .
+    '<!--<p class="pt-32 bold">About The Art</p>--><p class="pt-32 pb-16 text-center media-details">Limited Edition of ' .
     $edition_max .
     ", signed with Certificate of Authenticity and Digital Provenance Archived. Printed on " .
     $edition_desc_material .
@@ -315,7 +315,7 @@ if ($photo_meta["as_open"] == 1) {
     $photo_meta["file_name"] .
     '&open=true">'; //class="btn-nudge"
   $gallery_details =
-    '<p class="mt-32">Open Edition, un-numbered and not signed. Printed on ' .
+    '<p class="mt-32 media-details">Open Edition, un-numbered and not signed. Printed on ' .
     $edition_desc_material .
     " and available in size(s) of: " .
     $this->config->available_sizes_open .

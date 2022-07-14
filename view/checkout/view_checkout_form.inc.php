@@ -82,6 +82,7 @@ switch($res_formType) {
                 $edition_type_long = "tinyVIEWS&trade; Studio Edition";
                 $order_type = "ORDER";
                 $deposit = "false";
+                $limited_deposit = null;
                 $hidden_fields .= "<input type='hidden' id='deposit' name='deposit' value='false' />";
                 $hidden_fields .= "<input type='hidden' id='edition_type' name='edition_type' value='open' />";
                 $material_name = $this->config->tv_material_desc . ". The overall size is 13x19 inch.";

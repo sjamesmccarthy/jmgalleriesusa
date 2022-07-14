@@ -87,12 +87,12 @@
         if(ps == '12x18 (½ inch white border on outside)') {
             // $('#frame').find('option').not(':first').css("display", "none");
             $('#frame').find('option').attr("disabled", "disabled");
-            $('.frame-block').hide();
+            $('.frame-block, .media-details').hide();
 
             console.log('tinyVIEWS Studio PRINT ONLY');
        } else {
            // console.log('ImageSize: ' + ps + '/MattedSize: ' + ms);
-           $('.frame-block').show();
+           $('.frame-block, .media-details').show();
            $('#frame').find('option').not(':first').removeAttr("disabled");
 
            $('#matted_size').val(ms);
