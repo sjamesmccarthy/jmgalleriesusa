@@ -29,7 +29,7 @@ switch($res_formType) {
 
         $formType="SquarePaymentForm_fineArt";
         $subtitle = 'Thank you for your interest in a j.McCarthy Fine Art Photograph';
-        $payment_instructions = "<p class='pb-16'>Upon confirmation of your order you will be invoiced a 50% deposit. The remaining balance will be due in full prior to shipment. By clicking the button below, you are agreeing to these <a href='/privacy#tos'>Terms of Sale</a>.<br /><br /><img style='margin-bottom: 10px; width: 150px; vertical-align: middle' src='/view/__image/square-payment-icons.png' alt='square payment icon' /></p>";
+        // $payment_instructions = "<p class='pb-16'>Upon confirmation of your order you will be invoiced a 50% deposit, or $" . number_format($order_amount,2) . ". The remaining balance, $" . number_format($order_amount,2) . " will be due in full prior to shipment. By clicking the button below, you are agreeing to these <a href='/privacy#tos'>Terms of Sale</a>.<br /><br /><img style='margin-bottom: 10px; width: 150px; vertical-align: middle' src='/view/__image/square-payment-icons.png' alt='square payment icon' /></p>";
 
         if($res_frame == "ADDWITHACRYLIC") {
             $item_framing = "\n+ADD FRAME optional* Premium Designer frame.";
@@ -74,7 +74,9 @@ switch($res_formType) {
             $estimated_cost_raw = $order_amount * 100;
             $cost = $estimated_cost_raw;
             $edition_type_long = "Limited Edition";
-            $limited_deposit = "<p class='mt-8'><b> $" . number_format($order_amount,2) . " (50%) REQUIRED DEPOSIT TODAY</b>, and remaining balance due at shipment.</p>";
+            $limited_deposit = "<p class='mt-8'><b>a $" . number_format($order_amount,2) . " (50%) DEPOSIT IS REQUIRED</b></p>";
+            $payment_instructions = "<p class='pb-16'>Upon confirmation of your order you will be invoiced a 50% deposit, or $" . number_format($order_amount,2) . ", and the remaining balance, $" . number_format($order_amount,2) . ", will be due in full prior to shipment and a tracking number will be provided via email. By clicking the button below, you are agreeing to these <a href='/privacy#tos'>Terms of Sale</a>.<br /><br /><img style='margin-bottom: 10px; width: 150px; vertical-align: middle' src='/view/__image/square-payment-icons.png' alt='square payment icon' /></p>";
+
             if($res_material_type == 'acrylic') { $material_name = 'HD Acrylic'; }
             if($res_material_type == 'metal') { $material_name = 'HD Chromaluxe&reg; Metal'; }
             if($res_material_type == 'paper') {
@@ -83,6 +85,7 @@ switch($res_formType) {
                 $order_type = "ORDER";
                 $deposit = "false";
                 $limited_deposit = null;
+                $payment_instructions = "<p class='pb-16'>Upon confirmation of your order you will be invoiced $" . number_format($res_print_price,2) . ". By clicking the button below, you are agreeing to these <a href='/privacy#tos'>Terms of Sale</a>.<br /><br /><img style='margin-bottom: 10px; width: 150px; vertical-align: middle' src='/view/__image/square-payment-icons.png' alt='square payment icon' /></p>";
                 $hidden_fields .= "<input type='hidden' id='deposit' name='deposit' value='false' />";
                 $hidden_fields .= "<input type='hidden' id='edition_type' name='edition_type' value='open' />";
                 $material_name = $this->config->tv_material_desc . ". The overall size is 13x19 inch.";
