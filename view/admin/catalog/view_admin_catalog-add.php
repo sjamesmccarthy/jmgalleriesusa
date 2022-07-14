@@ -103,6 +103,8 @@
                 <!-- <h6>And, so the story goes ...</h6> -->
                 <label>story</label>
                 <textarea id="story" name="story" required><?= $story ?></textarea>
+            </div>
+            <div>
                 <label>tags</label>
                 <input type="text" id="tags" name="tags" placeholder="#TAGS" value="<?= $tags ?>" required>
             </div>
