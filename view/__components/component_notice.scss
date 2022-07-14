@@ -23,11 +23,12 @@
             // font-family: "lato", sans-serif;
             font-size: 1.3rem;
             text-decoration: none;
-            color: #FFF;
+            color: $color-white;
         }
 
         >a:hover {
             text-decoration: none;
+            color: $color-black;
         }
 
     /* MEDIA QUERIES from Chrome, Safari, Firefox as of 10/2021 */

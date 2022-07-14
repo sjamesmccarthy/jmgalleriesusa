@@ -81,12 +81,13 @@ body {
         .notice-banner {
             >a {
                 font-family: lato, sans-serif;
-                text-decoration: underline;
-                color: #FFF;
+                text-decoration: none;
+                color: $color-white;
             }
 
             >a:hover {
                 text-decoration: none;
+                color: $color-black;
             }
 
         }
