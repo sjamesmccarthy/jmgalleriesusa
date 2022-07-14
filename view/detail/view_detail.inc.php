@@ -231,7 +231,7 @@ if ($photo_meta["as_limited"] == 1) {
   }
 
   // if($available_sizes == "in_code") {
-  $sizes_pricing .= '<option value="---">---</option>';
+//   $sizes_pricing .= '<option value="---">---</option>';
   foreach ($le_price_array_metal as $leKm => $leVm) {
 
     if($leKm == "12x18 (Mothers Day Edition)") {
@@ -252,10 +252,10 @@ if ($photo_meta["as_limited"] == 1) {
   }
   // }
 
-    /* @TODO: add a loop for including OPEN ED pricing if as_studio = 1 */
+    /* Add a loop for including OPEN ED pricing if as_studio = 1 */
     if($photo_meta["as_studio"] == 1) {
 
-        $sizes_pricing .= '<option value="---">---</option>';
+        // $sizes_pricing .= '<option value="---">---</option>';
         foreach ($tv_price_array as $tvK_studio => $tvV_studio) {
             $sizes_pricing .=
             "<option " .' data-price="' . $tvV_studio . '" data-mattedsize="0" data-material="paper" value="' . $tvK_studio . '">SIZE: ' . $tvK_studio . $as_studio_label . "</option>";
