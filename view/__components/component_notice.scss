@@ -151,3 +151,34 @@
     //     color: #FFFFFF;
     // }
 }
+
+.notice-bell {
+    display: none;
+    color: #2471A3;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    z-index: 10;
+
+    &:hover, &:focus {
+        cursor: pointer;
+        animation: bellshake .5s cubic-bezier(.36,.07,.19,.97) both;
+        backface-visibility: hidden;
+        transform-origin: top right;
+      }
+
+
+}
+
+@keyframes bellshake {
+    0% { transform: rotate(0); }
+    15% { transform: rotate(5deg); }
+    30% { transform: rotate(-5deg); }
+    45% { transform: rotate(4deg); }
+    60% { transform: rotate(-4deg); }
+    75% { transform: rotate(2deg); }
+    85% { transform: rotate(-2deg); }
+    92% { transform: rotate(1deg); }
+    100% { transform: rotate(0); }
+}
+

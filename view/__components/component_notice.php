@@ -23,8 +23,16 @@ foreach($data_html as $key => $value) {
                 <script>
                 jQuery(document).ready(function($){
 
-                    $(".notice-container").fadeIn("fast").delay(' . $value['timeout'] . ').slideUp("slow");
+                    $(".notice-container").fadeIn("fast").delay(' . $value['timeout'] . ').slideUp("slow", function() {
+                        $(".notice-bell").fadeIn();
+                    });
 
+                    $(".notice-bell").on("click", function() {
+                        $(".notice-bell").fadeOut();
+                        $(".notice-container").fadeIn("fast").delay(' . $value['timeout'] . ').slideUp("slow", function() {
+                            $(".notice-bell").fadeIn();
+                        });
+                    });
                 });
                 </script>';
         }
@@ -56,6 +64,8 @@ if($match == "FOUND") {
     $mobile_content = stripslashes($mobile_content);
 
     $html = <<< END
+        <p class="notice-bell""><i class="fa-solid fa-bell"></i></p>
+
         <div class="notice-container notice-{$key}">
             <p class="notice-banner" style="background-color: {$background_color}; color:{$color}">{$content}</p>
             <p class="notice-banner-mobile" style="background-color: {$background_color}; color:{$color}">{$mobile_content}</p>
