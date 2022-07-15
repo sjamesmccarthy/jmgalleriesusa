@@ -16,8 +16,13 @@
     $catalog_title = $catalog_meta[0]['title'];
     $catalog_desc = $catalog_meta[0]['desc'];
 
-    /* @TODO: rewrite into switch statement to better support VIRTUAL COLLECTIONS */
+    if(isSet($catalog_meta[0]['desc_long'])) {
+        $desc_long = '<div class="grid-center"><div class="col-10 pt-16 desc-long">' . $catalog_meta[0]['desc_long'] . '</div></div>';
+    } else {
+        $desc_long = null;
+    }
 
+    /* Switch between collections and virtual collections */
     switch($catalog_meta[0]['path']) {
 
         case "alignment":

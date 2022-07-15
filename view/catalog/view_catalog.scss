@@ -162,6 +162,45 @@
 
 }
 
+.desc-long {
+
+    // xSmall devices (landscape phones, 320px and up)
+    @media (min-width: 320px) {
+    //  background-color: pink;
+    text-align: center;
+    font-size: .8rem;
+    }
+
+    // Small devices (landscape phones, 576px and up)
+    @media (min-width: 376px) {
+    //  background-color: red;
+    text-align: center;
+    font-size: .8rem;
+    }
+
+    // Medium devices (tablets, 768px and up)
+    @media (min-width: 767px) {
+    //  background-color: blue;
+    text-align: center;
+    font-size: 1rem;
+    }
+
+    // Large devices (tablets (iPad Pro, 1112px and up)
+    @media (min-width: 1112px) {
+    //  background-color: gray;
+    // font-size: 1.5rem;
+    font-size: 1.2rem;
+    }
+
+    // Extra large devices (large desktops, 1200px and up)
+    @media (min-width: 1200px) {
+    //  background-color: lightgreen;
+    // font-size: 1.5rem;
+    font-size: 1.2rem;
+    }
+
+}
+
 // .filter-thumb-gallery {
 
 //     >p {

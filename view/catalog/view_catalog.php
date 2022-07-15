@@ -3,8 +3,10 @@
 
         <div class="col-12 title pb-32">
             <h2><?= strtoupper($catalog_title) ?></h2>
-            <p class="light --subhead pt-8"><?= $catalog_desc ?></p> 
-            <!-- <?= $catalog_le_desc ?> -->
+            <p class="light --subhead pt-8"><?= $catalog_desc ?></p>
+
+            <?= $desc_long ?>
+
             <?php
                 if($catalog_tabs_hidden != true) {
             ?>
