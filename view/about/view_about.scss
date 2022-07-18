@@ -34,22 +34,22 @@
 
     /* Tablet: iPad Mini(768), iPad 9.7(768), iPad Pro 10.5(834) */
     @media (min-width: 768px) {
-        text-align: right;
+        text-align: left;
     }
 
     /* Laptop: iPad Pro 12.9(1024) */
     @media (min-width: 1024px) {
-        text-align: right;
+        text-align: left;
     }
 
     /* Laptop L: */
     @media (min-width: 1440px) {
-        text-align: right;
+        text-align: left;
     }
 
     /* 4k: MacBook Pro*/
     @media (min-width: 2560px) {
-        text-align: right;
+        text-align: left;
     }
 
 }

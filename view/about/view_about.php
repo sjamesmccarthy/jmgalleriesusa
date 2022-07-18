@@ -96,32 +96,23 @@
 
                 <div class="grid-center">
                     <div class="col-10_sm-12">
-                        <h3>Portraits, Weddings & Events</h3>
-                        <div class="about--exhibits">
-                            <ul>
-                                <li class="nobullet">Visit my Portraits, Weddings & Events <a href="http://jmportraits.com" target="_new">portfolio <i class="fa-solid fa-up-right-from-square"></i></a>. To book a session, wedding or event drop me a note <a href="/contact">here</a> or call me at 951-708-1831.</li>
-                            </ul>
+                        <h3>Available for Hire</h3>
+                        <div class="about--exhibits pt-16">
+                        <p>If you're looking for a specific landscape photo, portraits, real-estate, event or wedding photography please check out my <a href="http://jmportraits.com" target="_new">lifestyle portfolio <i class="fa-solid fa-up-right-from-square"></i></a> and call or e-mail me to book a session. You can save my contact info to your phone by scanning (or clicking) the QR code below.</p>
                         </div>
                     </div>
                 </div>
 
                 <div class="grid-center">
                     <div class="col-10_sm-12">
-                        <h3 class="nomar-top mb-16 ">Sign Up For My First Friday Email</h3>
-                        <?php $this->getPartial('newsletter'); ?>
-
-                    <p class="social-icon-container mt-16">
-                        <!-- <a target="_new" class="mr-16 blue social-icon"  href="http://youtube.com/c/jmgalleriesusa"><i class="fab fa-youtube"></i></a>  -->
-                        <!-- <a target="_new" class="mr-16 blue social-icon"  href="http://twitter.com/jmgalleriesusa"><i class="fab fa-twitter"></i></a> -->
-                    <!-- <a target="_new" class="mr-16 blue social-icon"  href="http://instagram.com/jmgalleriesusa"><i class="fab fa-instagram"></i></a>  -->
-                    <!-- <a target="_new" class="mr-16 blue social-icon"  href="http://facebook.com/jmgalleriesusa"><i class="fab fa-facebook-square"></i></a>  -->
-                    <a target="_new" class="mr-16 social-icon" style="line-height: 0" href="https://dot.cards/jmgalleriesusa"><img style="width: 100px; letter-spacing: 0" src="/view/__image/icon-qr-code.svg" alt="Save My Contact Card" /><br /><span class="tiny">CONTACT INFO</span></a><!--<i class="fa-solid fa-circle  color-blue" title="view my dot.card"></i> -->
+                    <div class="social-icon-container">
+                    <!-- <h3 class="mb-16">Contact Card</h3> -->
+                    <p>
+                    <a target="_new" class="mt-16 social-icon" style="line-height: 0" href="https://dot.cards/jmgalleriesusa"><img style="width: 100px; letter-spacing: 0; border-radius: 6px" src="/view/__image/icon-qr-code.svg" alt="Save My Contact Card" />
                     </p>
                     </div>
-
                 </div>
-
-
+                </div>
         </div>
     </div>
 
