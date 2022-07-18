@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="apple-touch-icon" sizes="180x180" href="/view/__image/icon-qr-code.svg">
     <title>QR CODE</title>
 </head>
 
@@ -15,8 +16,14 @@
         margin-bottom: 45%;
     }
 
-    img {
+    .qr-img {
         border-radius: 6px;
+        width: 60%;
+    }
+
+    .logo {
+        filter: invert();
+        width: 50%;
     }
 </style>
 
@@ -25,9 +32,14 @@
 
 <p>
     <a target="_new" class="mt-16 social-icon" style="line-height: 0" href="https://dot.cards/jmgalleriesusa">
-        <img style="width: 100px; letter-spacing: 0; border-radius: 6px" src="/view/__image/icon-qr-code.svg"
+        <img class="qr-img" src="/view/__image/icon-qr-code.svg"
             alt="Save My Contact Card" />
     </a>
+</p>
+
+<p class="topnav-logo">
+    <a href="/">
+        <img class="logo" src="/view/__image/signature-fine-art-upscaled.png" alt="jm Galleries logo" /></a>
 </p>
 
 </body>
