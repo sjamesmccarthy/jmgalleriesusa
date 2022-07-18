@@ -176,7 +176,6 @@ if ($photo_meta["as_limited"] == 1) {
     // $le_price_array_metal = json_decode($this->config->le_pricing_metal, true);
   }
 
-
     foreach ($le_price_array as $paK => $paV) {
         $pricing_long .= $paK . " ";
     }
@@ -186,6 +185,8 @@ if ($photo_meta["as_limited"] == 1) {
 
   $i = 1;
   foreach ($le_price_array as $k => $v) {
+    // print "k:" . $k . " v:" . $v . "<br />";
+
     if ($price_count == 1 || ($price_count > 1 && $i == 1)) {
       $default_price = $v;
       $default_size = $k;
@@ -234,10 +235,12 @@ if ($photo_meta["as_limited"] == 1) {
 //   $sizes_pricing .= '<option value="---">---</option>';
   foreach ($le_price_array_metal as $leKm => $leVm) {
 
-    if($leKm == "12x18 (Mothers Day Edition)") {
-      $default = 'SELECTED';
-      $default_price = $leVm;
-    } else { $default = null; }
+    //     print "k:" . $leKm . " v:" . $leVm . "<br />";
+
+    // if($leKm == "12x18 (½ inch white border on outside)") {
+    //   $default = 'SELECTED';
+    //   $default_price = $leVm;
+    // } else { $default = null; }
 
     $sizes_pricing .=
       "<option " .
@@ -257,8 +260,9 @@ if ($photo_meta["as_limited"] == 1) {
 
         // $sizes_pricing .= '<option value="---">---</option>';
         foreach ($tv_price_array as $tvK_studio => $tvV_studio) {
+            $default_price = $tvV_studio;
             $sizes_pricing .=
-            "<option " .' data-price="' . $tvV_studio . '" data-mattedsize="0" data-material="paper" value="' . $tvK_studio . '">SIZE: ' . $tvK_studio . $as_studio_label . "</option>";
+            "<option SELECTED " .' data-price="' . $tvV_studio . '" data-mattedsize="0" data-material="paper" value="' . $tvK_studio . '">SIZE: ' . $tvK_studio . $as_studio_label . "</option>";
         }
 
     }
