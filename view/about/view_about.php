@@ -15,32 +15,34 @@
 
                     <p class="name-statement">
                     "Take a moment and explore why I create," James says about his color and black and white photography, adding, "it portrays my journey as an artist in photography over the past 10 years and how I have adjusted my style and perspective of fine-art photography as an art form."
-                    <br /><br />
+</p>
+<!--
+<p>
                     Photography has always had a hidden crush on James, a self-taught explorer in the field of landscape photography. Through his purposeful paper choice, framing, composition and visual intention through post-processing, James will inspire you to take a moment and explore why he chases mother nature, adoring the beauty which she scatters throughout our world: majestic waterfalls and serene ocean coasts, mountains, deserts and trees to flowers, fields and meadows. Let James' photography inspire your curiosity so that you might hear the voice of his art share a story that your memory awakens, or take you on a journey to a place you have never been.
-                    </p>
+                    </p> -->
 
                     <h3 class="pb-16 mt-32">Artist Bio</h3>
-                    <p class="larger">
+                    <p class="">
                     Born in Concord, Massachusetts, a small suburb outside Boston, James grew up exploring the colorful landscape of the east coast as well as its rich history teaching him to appreciate the stories which the surroundings still have to share. Then, in the late 80's his family travelled 2,977 miles West and settled in Auburn, California where he began to discover his creative passions for writing and photography.
                     </p>
 
-                    <p class="larger">
+                    <p class="">
                     While on a northwest college road trip with his mother, Alice, he was photographing a foggy dock somewhere off Hwy 299 outside of Arcata using a hand-me-down Minolta SLR 35mm camera given to him by his 8th grade Journalism teacher, Mrs. Anderson. This was the moment James and his camera "clicked".
                     </p>
 
-                    <p class="larger">
+                    <p class="">
                     After attending the University of Nevada Reno, James made the beautiful state of Nevada his home base for nearly thirty years. He currently resides in a small town nestled against the Sierra Nevada Mountains and in the shadows of Lake Tahoe, Carson City.
                     </p>
 
-                    <p class="larger">
+                    <p class="">
                     James more popular pieces include, "<a href="/oceans-lakes-waterfalls/never-ending-story">Never Ending Story</a>", "<a href="/abstract-architecture-people/made-in-america">Made In America</a>", "<a href="/mountains-deserts-trees/twisted-oak">Twitsted Oak</a>", "<a href="/mountains-deserts-trees/emigrants-fog">Emigrants Fog</a>", "<a href="/oceans-lakes-waterfalls/bonsai-zen">Bonsai Zen</a>", "<a href="/mountains-deserts-trees/keep-tahoe-cold">Keep Tahoe Cold</a>", "<a href="/mountains-deserts-trees/snowy-pines">Snowy Pines</a>" and "<a href="/oceans-lakes-waterfalls/https://jmgalleriesusa/mountains-deserts-trees/alongside-you">Alongside You</a>". Framed editions, as well as editions in Metal, Acrylic and paper can be viewed at his traveling exhibits which include locally-owned businesses around the locations he shoots.
                     </p>
 
-                    <p class="larger">
+                    <p class="">
                     He is a member of the Professional Photographers of America (PPA), the American Photographic Artists (APA) and founding member of <a href="/loveoutside">loveOutside.org</a>, an upcoming collaborative group of local outdoor enthusiasts +photographers preserving the world around us through creative, every-day imagery while encouraging and leading "<a target="_new" href="https://www.nps.gov/articles/leave-no-trace-seven-principles.htm">leave no trace</a>" principals to protect our bonus backyard; the outdoors.
                     </p>
 
-                    <p class="larger">
+                    <p class="">
                     Influences include: Ansel Adams, Carleton Watkins, Charlie Waite, Bobby Wheat, Parvez S and Ralph Gibson.
                     </p>
 
@@ -108,7 +110,7 @@
                         <h3 class="nomar-top mb-16 ">Sign Up For My First Friday Email</h3>
                         <?php $this->getPartial('newsletter'); ?>
 
-                    <p class="text-right" style="line-height:0;">
+                    <p class="social-icon-container mt-16">
                         <!-- <a target="_new" class="mr-16 blue social-icon"  href="http://youtube.com/c/jmgalleriesusa"><i class="fab fa-youtube"></i></a>  -->
                         <!-- <a target="_new" class="mr-16 blue social-icon"  href="http://twitter.com/jmgalleriesusa"><i class="fab fa-twitter"></i></a> -->
                     <!-- <a target="_new" class="mr-16 blue social-icon"  href="http://instagram.com/jmgalleriesusa"><i class="fab fa-instagram"></i></a>  -->

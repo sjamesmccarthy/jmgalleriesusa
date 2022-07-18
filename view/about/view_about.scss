@@ -14,6 +14,46 @@
     }
 }
 
+.social-icon-container {
+
+    /* MEDIA QUERIES from Chrome, Safari, Firefox as of 10/2021 */
+    /* Mobile S: iPhone5/SE(320), Moto G4(360), Galaxy S5(360), Galaxy S10(360) */
+    @media (min-width: 320px) {
+        text-align: center
+    }
+
+    /* Mobile M: iPhone 11(375), iPhone 12/13 Mini(375), iPhone 12/13 Pro(390), iPhone SE Gen2(375), iPhone 6/7/8(375), iPhone 6/7/8+(414), iPhoneX(375), Pixel 2(411), Galaxy Note(412)*/
+    @media (min-width: 375px) {
+        text-align: center
+    }
+
+    /* Mobile L: iPhone 12/13 Pro Max(428) */
+    @media (min-width: 425px) {
+        text-align: center
+    }
+
+    /* Tablet: iPad Mini(768), iPad 9.7(768), iPad Pro 10.5(834) */
+    @media (min-width: 768px) {
+        text-align: right;
+    }
+
+    /* Laptop: iPad Pro 12.9(1024) */
+    @media (min-width: 1024px) {
+        text-align: right;
+    }
+
+    /* Laptop L: */
+    @media (min-width: 1440px) {
+        text-align: right;
+    }
+
+    /* 4k: MacBook Pro*/
+    @media (min-width: 2560px) {
+        text-align: right;
+    }
+
+}
+
 .social-icon {
     font-size: 2rem;
 }
