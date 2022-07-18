@@ -72,6 +72,11 @@
   jQuery(document).ready(function($){
     jQuery.noConflict();
 
+    <?php if($studio_print == "true") :?>
+        $('#frame').find('option').attr("disabled", "disabled");
+        $('.frame-block, .media-details').hide();
+    <?php endif ?>
+
     $('#buysize').on("change", function(e) {
 
         var nf = new Intl.NumberFormat();

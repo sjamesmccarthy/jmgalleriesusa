@@ -263,6 +263,7 @@ if ($photo_meta["as_limited"] == 1) {
             $default_price = $tvV_studio;
             $sizes_pricing .=
             "<option SELECTED " .' data-price="' . $tvV_studio . '" data-mattedsize="0" data-material="paper" value="' . $tvK_studio . '">SIZE: ' . $tvK_studio . $as_studio_label . "</option>";
+            $studio_print = "true";
         }
 
     }
