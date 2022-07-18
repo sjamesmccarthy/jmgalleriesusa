@@ -9,38 +9,49 @@
 </head>
 
 <style>
-    body {
+    body {  height: 100vh;
+        display:flex;
         background-color: #000;
-        text-align: center;
-        margin-top: 45%;
-        margin-bottom: 45%;
+    }
+
+    .container{
+        position:relative;
+        width:90vw;
+        height: 90vh;
+        margin: auto;
+    }
+
+    .element{
+        position:absolute;
+        top: 0; bottom: 0; left: 0; right: 0;
+        margin: auto;
+        width: 50vw; height: 50vh;
     }
 
     .qr-img {
         border-radius: 6px;
-        width: 60%;
+        width: 100%;
     }
 
     .logo {
         filter: invert();
-        width: 50%;
+        width: 100%;
     }
 </style>
 
 </style>
 <body>
 
-<p>
-    <a target="_new" class="mt-16 social-icon" style="line-height: 0" href="https://dot.cards/jmgalleriesusa">
-        <img class="qr-img" src="/view/__image/icon-qr-code.png"
-            alt="Save My Contact Card" />
-    </a>
-</p>
+    <div class="container">
+        <div class="element">
+            <a target="_new" class="mt-16 social-icon" style="line-height: 0" href="https://dot.cards/jmgalleriesusa">
+                <img class="qr-img" src="/view/__image/icon-qr-code.png" alt="Save My Contact Card" />
+            </a>
 
-<p class="topnav-logo">
-    <a href="/">
-        <img class="logo" src="/view/__image/signature-fine-art-upscaled.png" alt="jm Galleries logo" /></a>
-</p>
+            <a href="/">
+                <img class="logo" src="/view/__image/signature-fine-art-upscaled.png" alt="jm Galleries logo" /></a>
+        </div>
+    </div>
 
 </body>
 </html>
