@@ -94,7 +94,7 @@ ul li {
 </p>
 </span>-->
 
-<h1>Thank you for your order (update)</h1>
+<h1>Thank you for your order</h1>
 
 <br>
 <b>Order Number: </b> " . $_POST['order_no'] . "<br />
