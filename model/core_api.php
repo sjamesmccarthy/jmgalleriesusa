@@ -3827,7 +3827,7 @@ public function api_Insert_Order($params) {
 
             $data['sql_po'] = $sql_po;
             $result_po = $this->mysqli->query($sql_po);
-            $this->console($sql_po,1);
+            // $this->console($sql_po,1);
 
             if ($result == TRUE && $result_po == TRUE) {
                 $data['result'] = '200';
