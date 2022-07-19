@@ -28,12 +28,15 @@ if ($order_cnt > 0) {
         if(is_null($val['invoiced'])) {
             $icon_state = '<i class="fas fa-file-invoice-dollar"></i>';
         }
+        if(is_null($val['printed'])) {
+            $icon_state = '<i class="fa-solid fa-print"></i>';
+        }
         if(is_null($val['accepted'])) {
             $background_color = 'background-color: #800020; color: #FFF';
             $icon_state = '<i class="fa-solid fa-bell-concierge"></i>';
         }
 
-        if($val['closed'] == 1) {
+        if($val['closed'] == 1 || isset($val['shipped'])) {
             $icon_state = '<i class="fas fa-check-double"></i>';
             $background_color = 'background-color: #818589';
         }
