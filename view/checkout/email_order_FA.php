@@ -64,6 +64,7 @@ if($_POST['edition_type'] == 'open' && $_POST['frame'] != "PRINT-ONLY-WITH-MATTE
 
 if($_POST['promocode'] != '') {
     $insert_promo = "<p>promo-code: " . strtoupper($_POST['promocode']) . ' applied for -$' . $_POST['promo_amt'] . "</p>";
+    $balance_due = $balance_due - $_POST['promo_amt'];
 } else {
     $insert_promo = null;
 }
