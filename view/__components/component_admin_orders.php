@@ -17,27 +17,25 @@ if ($order_cnt > 0) {
     foreach($orders_data as $key=>$val) {
 
         /* @TODO: need to refine how this works, timestamp columns can't be NULL */
+        $background_color = null;
 
-        if(!is_null($val['accepted'])) {
-            $icon_state = '<i class="fa-solid fa-bell-concierge"></i>';
+        if(is_null($val['shipped'])) {
+            $icon_state = '<i class="fas fa-shipping-fast"></i>';
         }
-
-        if(!is_null($val['invoiced'])) {
-            $icon_state = '<i class="fas fa-file-invoice-dollar"></i>';
-        }
-
-        if(!is_null($val['packaged'])) {
+        if(is_null($val['packaged'])) {
             $icon_state = '<i class="fas fa-box-open"></i>';
         }
-
-        if(!is_null($val['shipped'])) {
-            $icon_state = '<i class="fas fa-shipping-fast"></i>';
+        if(is_null($val['invoiced'])) {
+            $icon_state = '<i class="fas fa-file-invoice-dollar"></i>';
+        }
+        if(is_null($val['accepted'])) {
+            $background_color = 'background-color: #800020; color: #FFF';
+            $icon_state = '<i class="fa-solid fa-bell-concierge"></i>';
         }
 
         if($val['closed'] == 1) {
             $icon_state = '<i class="fas fa-check-double"></i>';
-        } else {
-            $icon_state = null;
+            $background_color = 'background-color: #818589';
         }
 
         $product = json_decode($val['item'], TRUE);
@@ -50,10 +48,10 @@ if ($order_cnt > 0) {
             $product_desc .= ' (' .$product['catalog_id'] . ') ' . $product['size'] . ' ' . ucfirst($product['material']) . ' ' . ucfirst($product['edition']) . ' Edition (framing: ' . $product['framing'] . ') <br /> $' . number_format($val['price'],2) . " +" . $val['shipping_provider'];
         }
 
-        $result_html .= '<li class="item">';
+        $result_html .= '<li class="item" style="' . $background_color . '">';
         $result_html .= '<div class="detail">';
-        $result_html .= '<p>' . $icon_state . ' ' . date("m/d/Y",strtotime($val['received']),) . ' - (<a href="/studio/orders-add?id=' . $val['product_order_id'] . '">' . $val['invoice_number'] . '</a>) - ' . $val['name'] . ' / ' . $val['city'] . ', ' . $val['state'] . ' ' . $val['postal_code'] . '</p>';
-        $result_html .= '<p class="small">' . $product_desc . '</p>';
+        $result_html .= '<p>' . $icon_state . '' . date("m/d/Y",strtotime($val['received']),) . ' - (<a href="/studio/orders-add?id=' . $val['product_order_id'] . '">' . $val['invoice_number'] . '</a>) - ' . $val['name'] . ' / ' . $val['city'] . ', ' . $val['state'] . ' ' . $val['postal_code'] . '</p>';
+        // $result_html .= '<p class="small">' . $product_desc . '</p>';
         $result_html .= '</li>';
     }
 

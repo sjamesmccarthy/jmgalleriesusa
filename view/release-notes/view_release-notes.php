@@ -10,6 +10,7 @@
 
         <p class="pt-16">v2.1 <br />July 2022</p>
             <ul>
+                <li>bugfix: checkout form email, studio prints, utf-8 in database</li>
                 <li>update: virtual collections now work properly</li>
                 <li>added: ability to set Studio pricing on Limited Edition images</li>
                 <li>bugfix: Core_Api</li>
