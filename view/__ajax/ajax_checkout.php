@@ -92,7 +92,7 @@ if($result['result'] == "200") {
 		$headers .= 'X-Mailer: PHP/' . phpversion() . "\r\n";
 
 		mail($to, $subject, $message, $headers);
-        echo "MESSAGE-SENT:<hr>" . $to . "<br />" . $subject . "<br />" . $message . "<br />" . $headers;
+        // echo "MESSAGE-SENT:<hr>" . $to . "<br />" . $subject . "<br />" . $message . "<br />" . $headers;
 
 	// redirect to success page
 	$_SESSION['order_data'] = $_POST;
