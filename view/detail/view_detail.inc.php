@@ -258,6 +258,9 @@ if ($photo_meta["as_limited"] == 1) {
     /* Add a loop for including OPEN ED pricing if as_studio = 1 */
     if($photo_meta["as_studio"] == 1) {
 
+        $hidden_edition_type .=
+        '<input type="hidden" name="edition_type_exception" value="as_studio" />';
+
         // $sizes_pricing .= '<option value="---">---</option>';
         foreach ($tv_price_array as $tvK_studio => $tvV_studio) {
             $default_price = $tvV_studio;

@@ -1,5 +1,6 @@
 <?php
 extract($_POST, EXTR_PREFIX_ALL, "res");
+// $this->console($_POST);
 
 $order_title = urldecode($res_title);
 // $action_uri = "/view/__ajax/ajax_square_payment_process.php";
@@ -80,7 +81,6 @@ switch($res_formType) {
             if($res_material_type == 'acrylic') { $material_name = 'HD Acrylic'; }
             if($res_material_type == 'metal') { $material_name = 'HD Chromaluxe&reg; Metal'; }
             if($res_material_type == 'paper') {
-                $res_product_id = 2;
                 $edition_type_long = "tinyVIEWS&trade; Studio Edition";
                 $order_type = "ORDER";
                 $deposit = "false";
@@ -90,10 +90,16 @@ switch($res_formType) {
                 $hidden_fields .= "<input type='hidden' id='edition_type' name='edition_type' value='open' />";
                 $material_name = $this->config->tv_material_desc . ". The overall size is 13x19 inch.";
                 $material_desc = null;
-            } else {
-                $material_desc = "(⅛ inch thick including wall mount)";
             }
+
+            if($res_edition_type_exception == "as_studio") {
+                $res_product_id = 2;
+                $material_name = $this->config->tv_material_desc;
+                $material_desc = null;
+            }
+
             $material_type_long =  $material_name . " " . $material_desc;
+
         } else if ($res_edition_type == "open") {
             $deposit = "false";
             $hidden_fields .= "<input type='hidden' id='deposit' name='deposit' value='false' />";
