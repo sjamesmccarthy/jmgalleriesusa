@@ -16,6 +16,12 @@ $order_cnt = count($orders_data);
 if ($order_cnt > 0) {
     foreach($orders_data as $key=>$val) {
 
+        /* @TODO: need to refine how this works, timestamp columns can't be NULL */
+
+        if(!is_null($val['accepted'])) {
+            $icon_state = '<i class="fa-solid fa-bell-concierge"></i>';
+        }
+
         if(!is_null($val['invoiced'])) {
             $icon_state = '<i class="fas fa-file-invoice-dollar"></i>';
         }
@@ -28,8 +34,10 @@ if ($order_cnt > 0) {
             $icon_state = '<i class="fas fa-shipping-fast"></i>';
         }
 
-        if(!is_null($val['closed'])) {
+        if($val['closed'] == 1) {
             $icon_state = '<i class="fas fa-check-double"></i>';
+        } else {
+            $icon_state = null;
         }
 
         $product = json_decode($val['item'], TRUE);
@@ -39,7 +47,7 @@ if ($order_cnt > 0) {
             $product_desc .= ' (from jM Gallery Shop, id: ' . $val['product_id'] . ')';
         } else {
             if($product['framing'] = "FRAMELESS") { $product['framing'] = 'INSET'; }
-            $product_desc .= ' (' .$product['catalog_id'] . ') ' . $product['size'] . ' ' . ucfirst($product['material']) . ' ' . ucfirst($product['edition']) . ' Edition (framing: ' . $product['framing'] . ') &mdash; $' . number_format($val['price'],2) . " +" . $val['shipping_provider'];
+            $product_desc .= ' (' .$product['catalog_id'] . ') ' . $product['size'] . ' ' . ucfirst($product['material']) . ' ' . ucfirst($product['edition']) . ' Edition (framing: ' . $product['framing'] . ') <br /> $' . number_format($val['price'],2) . " +" . $val['shipping_provider'];
         }
 
         $result_html .= '<li class="item">';

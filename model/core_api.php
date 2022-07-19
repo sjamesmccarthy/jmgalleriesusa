@@ -20,6 +20,7 @@ class Core_Api extends Fieldnotes_Api
 
 		// Create connection
         $this->mysqli  = new mysqli ($hostname, $username, $password, $dbname);
+        $this->mysqli -> set_charset("utf8");
 
 	}
 
@@ -3704,7 +3705,13 @@ public function api_Admin_Update_Settings() {
 public function api_Insert_Order($params) {
 
          /* extract Data Array */
-        extract($_POST, EXTR_PREFIX_SAME, "dup");
+         $post_data = array_map('htmlentities',$_POST);
+         extract($_POST, EXTR_PREFIX_SAME, "dup");
+
+        if($edition_type_exception == "as_studio") {
+            $edition_type = "tinyVIEWS&trade; Studio";
+            $frame = 'NONE';
+        }
 
         // result with non fA product
         // {"edition":null,"title":"First Light","size":"5x7","framing":null,"catalog_id":"MDT8OT"}
@@ -3726,6 +3733,8 @@ public function api_Insert_Order($params) {
             "framing"=>$frame,
             "catalog_id"=>$catalog_id
         ));
+
+        $this->console($item_pack);
 
         // if payment was square, mark invoiced
         if(isSet($params->payment->id)) {
@@ -3820,6 +3829,7 @@ public function api_Insert_Order($params) {
 
             $data['sql_po'] = $sql_po;
             $result_po = $this->mysqli->query($sql_po);
+            // $this->console($sql_po,1);
 
             if ($result == TRUE && $result_po == TRUE) {
                 $data['result'] = '200';
@@ -4046,7 +4056,7 @@ public function api_Admin_Get_Order($id) {
 
         /* Update product_customer */
         $sql = "
-        UPDATE `" . $this->config_env->env[$this->env]['dbname']  . ".`product_customer` SET
+        UPDATE product_customer SET
             name = '{$name}',
             email = '{$email}',
             phone = '{$phone}',
@@ -4064,13 +4074,12 @@ public function api_Admin_Get_Order($id) {
         /* Update product_order */
         $discount = strtoupper($discount);
         $sql_o = "
-        UPDATE `" . $this->config_env->env[$this->env]['dbname']  . ".`product_order` SET
+        UPDATE product_order SET
             item = '{$item_pack}',
             quantity = '{$quantity}',
             price = '{$price}',
             tax = '{$tax}',
             shipping = '{$shipping}',
-            discount = '{$discount}',
             tracking_number = '{$tracking}' " . $sql_accepted . $sql_invoiced . $sql_printed . $sql_packaged . $sql_shipped . $sql_closed .
             "WHERE product_order_id = '{$order_id}'
         ";

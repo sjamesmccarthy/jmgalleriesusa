@@ -93,7 +93,7 @@ switch($res_formType) {
                 $hidden_fields .= "<input type='hidden' id='edition_type' name='edition_type' value='limited' />";
                 $material_name = $this->config->tv_material_desc . ". The overall size is 13x19 inch.";
                 $material_desc = null;
-                $res_material_type = $this->config->tv_material_desc;
+                $res_material_type = 'paper';
                 $res_img_type = $this->config->tv_material_desc;
             }
 
