@@ -163,7 +163,7 @@
                             console.log("oldPrice: " + oldprice);
 
                             var rValue = parseFloat(data);
-                            console.log('data:' + data);
+                            console.log('rValue:' + rValue);
 
                             $('input:checkbox[class=ship]').each(function()
                             {
@@ -183,8 +183,8 @@
 
                             });
 
-                            var newprice = (oldprice - rValue).toFixed(2);
-                            // newprice = rValue.toFixed(2);
+                            // var newprice = (oldprice - rValue).toFixed(2);
+                            newprice = rValue.toFixed(2);
                             console.log("newBasePrice: " + newprice);
 
                             var priceCents = newprice * 100;
