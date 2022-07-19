@@ -76,6 +76,7 @@ if($result['result'] == "200") {
 		mail($to, $subject, $message, $headers);
 
 	/* MESSAGE TO JM-GALLERIES */
+    echo "mailing to jmG<br/>";
 		$to  = 'hikerbikerwriter@gmail.com';
 		$subject = "online order " . $_POST['order_no'] . ' for ' . $_POST['title'];
 
@@ -90,6 +91,8 @@ if($result['result'] == "200") {
 		$headers .= 'FROM: jM Galleries Order Bot <collectart@jmalleries.com>' . "\r\n";
 		// $headers .= 'Reply-To: jmG Galleries <james@jmgalleries.com>' . "\r\n";
 		$headers .= 'X-Mailer: PHP/' . phpversion() . "\r\n";
+
+        echo $to . "<br />" . $subject . "<br />" . $message . "<br />" . $headers;
 
 		mail($to, $subject, $message, $headers);
 
