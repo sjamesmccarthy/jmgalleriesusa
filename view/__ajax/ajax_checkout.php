@@ -89,7 +89,7 @@ if($result['result'] == "200") {
 		$headers .= 'Content-type: text/html; charset=UTF-8' . "\r\n";
 
 		// Additional headers
-		$headers .= 'FROM: jM Galleries Order Bot <collectart@jmalleries.com>' . "\r\n";
+		$headers .= 'FROM: jM Galleries Order Bot <hikerbikerwriter@gmail.com>' . "\r\n";
 		// $headers .= 'Reply-To: jmG Galleries <james@jmgalleries.com>' . "\r\n";
 		$headers .= 'X-Mailer: PHP/' . phpversion() . "\r\n";
 
