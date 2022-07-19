@@ -236,6 +236,6 @@ $pay_SqPaymentFormFields = '
     </div>
     <div>' . $sq_extraBilling . '</div>';
 
-$button_label = "PLACE YOUR $<span id='estimated_cost_format_btn'>" . $estimated_cost_raw_formatted . "</span> " . $order_type . " (TO BE INVOICED)";
+$button_label = "PLACE YOUR $<span id='estimated_cost_format_btn'>" . $estimated_cost_raw_formatted . "</span> " . $order_type;
 
 ?>
