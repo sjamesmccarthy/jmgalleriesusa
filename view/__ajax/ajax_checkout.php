@@ -76,7 +76,7 @@ if($result['result'] == "200") {
 		mail($to, $subject, $message, $headers);
 
 	/* MESSAGE TO JM-GALLERIES */
-		$to  = 'jMcCarthy Fine Art <collectart@jmgalleries.com>';
+		$to  = 'hikerbikerwriter@gmail.com';
 		$subject = "online order " . $_POST['order_no'] . ' for ' . $_POST['title'];
 
 		// message
