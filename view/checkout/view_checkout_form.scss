@@ -19,7 +19,11 @@
 }
 
 #promocode {
-    color: #000;
+    color: $color-black;
+}
+
+.promo-name {
+    text-decoration: underline;
 }
 
 .checkout-notice {
