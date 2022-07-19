@@ -4,6 +4,8 @@ require_once( $_SERVER["DOCUMENT_ROOT"] . '/model/core_api.php');
 require_once( $_SERVER["DOCUMENT_ROOT"] . '/controller/core_site.php');
 $core = new Core_Site();
 
+$core->console($_POST);
+
 /* ********* */
 /* Now lets save some data to the local database for our internal use
 4111 1111 1111 1111
@@ -40,7 +42,7 @@ $core = new Core_Site();
 $sq_result_json = json_encode($result);
 $sq_result_api = json_decode($sq_result_json);
 
-$core->console($sq_result_api);
+// $core->console($sq_result_api);
 
 $result = $core->api_Insert_Order($sq_result_api);
 

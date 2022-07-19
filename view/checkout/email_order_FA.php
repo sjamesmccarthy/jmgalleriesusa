@@ -1,7 +1,5 @@
 <?php
 
-// $this->console($_POST);
-
 $date = date("F j, Y", time());
 // $amount_total = number_format( ($_POST['amount_total'] / 100), 2);
 // $amount_total = 0;
@@ -15,7 +13,11 @@ switch($_POST['edition_type']) {
     break;
 
     case "limited":
-        $edition = ' Limited Edition';
+        if($_POST['edition_type_exception'] != "as_studio") {
+            $edition = ' Limited Edition';
+         } else {
+            $edition = ' tinyVIEWS&trade; Studio Edition';
+         }
     break;
 
     case "open":
@@ -52,7 +54,7 @@ if($_POST['deposit'] == 'true') {
     }
 } else {
     $payment_html = null;
-    $deposit_label = 'no deposit - open edition';
+    $deposit_label = null;
     $frame_extra_line = null;
 }
 
@@ -92,7 +94,7 @@ ul li {
 </p>
 </span>-->
 
-<h1>Thank you for your order.</h1>
+<h1>Thank you for your order (update)</h1>
 
 <br>
 <b>Order Number: </b> " . $_POST['order_no'] . "<br />
@@ -129,7 +131,7 @@ ul li {
 <li>
 <ul class='ml-32'><li>
 <p>$"
-. number_format($deposit_due,2) . " " . $deposit_label . " pending via Square on credit card *******" . $_POST['last_4'] . "<!-- <br />--NOTE: We will contact you later for this information-->"
+. number_format($balance_due,2) . " " . $deposit_label . " pending via Square on credit card *******" . $_POST['last_4'] . "<!-- <br />--NOTE: We will contact you later for this information-->"
 . $payment_html . "
 <div class='pb-16 pt-16 pr-16 mt-8 notice-WARNING'><p style='line-height: 1.3'>NOTICE: Our payment processing is currently under going maintenance so an art consultant will be in contact with you regarding payment. We apologize for the inconvenience.</p></div>
 </p>" . $insert_promo . "
@@ -144,8 +146,6 @@ ul li {
 
 <p class='pt-16'>---<br>
 jM Galleries<br>
-1894 E William St<br>
-Suite 4-178<br>
 Carson City, NV 89701<br>
 951-708-1831<br>
 orders@jmgalleries.com</p>
