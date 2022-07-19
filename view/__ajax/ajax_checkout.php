@@ -76,7 +76,9 @@ if($result['result'] == "200") {
 		mail($to, $subject, $message, $headers);
 
 	/* MESSAGE TO JM-GALLERIES */
-        $to  = $_POST['contactname'] . '<' . $_POST['contactemail'] . '>';
+        sleep(10);
+
+		$to  = 'jMcCarthy Fine Art <collectart@jmgalleries.com>';
 		$subject = "online order " . $_POST['order_no'] . ' for ' . $_POST['title'];
 
 		// message
@@ -88,12 +90,11 @@ if($result['result'] == "200") {
 
 		// Additional headers
 		$headers .= 'FROM: jM Galleries Order Bot <collectart@jmalleries.com>' . "\r\n";
-		$headers .= 'Reply-To: jmG Galleries <james@jmgalleries.com>' . "\r\n";
+		// $headers .= 'Reply-To: jmG Galleries <james@jmgalleries.com>' . "\r\n";
 		$headers .= 'X-Mailer: PHP/' . phpversion() . "\r\n";
 
-        echo "MESSAGE:<hr>" . $to . "<br />" . $subject . "<br />" . $message . "<br />" . $headers;
-
 		mail($to, $subject, $message, $headers);
+        echo "MESSAGE-SENT:<hr>" . $to . "<br />" . $subject . "<br />" . $message . "<br />" . $headers;
 
 	// redirect to success page
 	$_SESSION['order_data'] = $_POST;
