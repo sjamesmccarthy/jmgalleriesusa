@@ -80,21 +80,18 @@ switch($res_formType) {
 
             if($res_material_type == 'acrylic') { $material_name = 'HD Acrylic'; }
             if($res_material_type == 'metal') { $material_name = 'HD Chromaluxe&reg; Metal'; }
-            if($res_material_type == 'paper') {
+            if($res_edition_type_exception == 'as_studio') {
                 $edition_type_long = "tinyVIEWS&trade; Studio Edition";
                 $order_type = "ORDER";
                 $deposit = "false";
                 $limited_deposit = null;
+                $res_product_id = 2;
+                $material_name = $this->config->tv_material_desc;
+                $material_desc = null;
                 $payment_instructions = "<p class='pb-16'>Upon confirmation of your order you will be invoiced $" . number_format($res_print_price,2) . ". By clicking the button below, you are agreeing to these <a href='/privacy#tos'>Terms of Sale</a>.<br /><br /><img style='margin-bottom: 10px; width: 150px; vertical-align: middle' src='/view/__image/square-payment-icons.png' alt='square payment icon' /></p>";
                 $hidden_fields .= "<input type='hidden' id='deposit' name='deposit' value='false' />";
                 $hidden_fields .= "<input type='hidden' id='edition_type' name='edition_type' value='open' />";
                 $material_name = $this->config->tv_material_desc . ". The overall size is 13x19 inch.";
-                $material_desc = null;
-            }
-
-            if($res_edition_type_exception == "as_studio") {
-                $res_product_id = 2;
-                $material_name = $this->config->tv_material_desc;
                 $material_desc = null;
             }
 
