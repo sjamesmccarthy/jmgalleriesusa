@@ -84,6 +84,7 @@ switch($res_formType) {
                 $edition_type_long = "tinyVIEWS&trade; Studio Edition";
                 $order_type = "ORDER";
                 $deposit = "false";
+                $order_amount = $res_print_price;
                 $limited_deposit = null;
                 $res_product_id = 2;
                 $material_name = $this->config->tv_material_desc;
