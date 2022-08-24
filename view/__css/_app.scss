@@ -70,10 +70,15 @@ body {
         color: $color-white;
 
         a {
-            color: $color-blue;
-            // color: $color-gray;
+            // color: $color-blue;
+            color: #CCC;
 
             &:hover {
+                color: $color-white;
+                text-decoration: underline;
+            }
+
+            &:visited {
                 color: $color-white;
             }
         }
@@ -98,10 +103,9 @@ body {
 
         h1, h2, h3, h4, h5, h6 {
             color: $color-white;
-
-            a {
-                color: $color-blue;
-            }
+            // a {
+            //     color: $color-blue;
+            // }
         }
 
         .topnav--logo-img,
@@ -571,9 +575,9 @@ h2, h3, h4, h5, h6 {
 
 h2 {
 
-    > a {
-        font-weight: 800;
-    }
+    // > a {
+    //     font-weight: 800;
+    // }
 
 }
 

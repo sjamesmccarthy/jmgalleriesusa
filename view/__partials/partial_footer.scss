@@ -11,7 +11,7 @@
     // max-width: 1920px;
     // margin: auto;
     padding-top: 2rem;
-    
+
     .middot:after {
         padding-right: .3em;
         padding-left: .3em;
@@ -27,25 +27,25 @@
         background-color:$color-blue;
         // height: 100px;
         padding: 20px;
-        
+
         >p {
             color: #FFF;
             display: inline-block;
             vertical-align: middle;
             padding-right: 20px;
             font-size: .8rem;
-    
+
             >i.fas {
                 font-size: 2rem;
             }
 
             &>a {
                 color: #CCC;
-                
+
                 &:hover {
                     color: #000;
                 }
-    
+
             }
         }
     }
@@ -126,7 +126,7 @@
 }
 
 #footer a:hover, #footer li a:hover {
-    color: $color-blue;
+    // color: $color-blue;
 }
 
 #footer h4 {
@@ -146,8 +146,8 @@
 
 #footer .social img {
     opacity: .6;
-    width: 16px; 
-    margin-right: 5px; 
+    width: 16px;
+    margin-right: 5px;
     vertical-align: middle;
     position: relative;
     margin-top:-3px;
@@ -169,15 +169,15 @@
 }
 
 .breadcrumb-logo {
-    width: 28px; 
+    width: 28px;
     vertical-align: middle;
     filter: invert(1);
 }
 
 .breadcrumb-arrow {
-    vertical-align: middle; 
-    // opacity: .6; 
-    width: 10px; 
+    vertical-align: middle;
+    // opacity: .6;
+    width: 10px;
     height: 10px;
     margin-left: 10px;
     margin-right: 10px;
@@ -190,27 +190,27 @@
     margin-top: 5px;
     width: 75%;
 }
- 
+
 .copyright-old {
     font-size: .9rem;
-    position: absolute; 
-    right: 20px; 
+    position: absolute;
+    right: 20px;
     bottom: 20px;
 }
 
 .copyright {
-    
+
     // xxSmall devices (landscape phones 319px and below)
     text-align: center;
 
     // xSmall devices (landscape phones, 320px and up)
-    @media (min-width: 320px) { 
+    @media (min-width: 320px) {
         text-align: center;
         // background-color: lightpink;
     }
 
     // Small devices (landscape phones, 576px and up)
-    @media (min-width: 376px) { 
+    @media (min-width: 376px) {
         text-align: center;
         // background-color: gray;
     }
