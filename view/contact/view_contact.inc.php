@@ -2,9 +2,20 @@
 
 if(isSet($this->routes->URI->queryvals)) {
 
-    if($this->routes->URI->queryvals[0] == "tel" && $this->routes->URI->queryvals[1] == "call") {
-        $this->console("CALLING");
-        header('location:tel:+19512625142');
+    switch($this->routes->URI->queryvals[0]) {
+
+        case "call":
+            header('location:tel:+19512625142');
+            break;
+
+        case "vcf-jmg":
+            break;
+
+        case "vcf-ts":
+            break;
+
+        default:
+            break;
     }
 
 }
