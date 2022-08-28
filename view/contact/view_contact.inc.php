@@ -10,11 +10,11 @@ if(isSet($this->routes->URI->queryvals)) {
             break;
 
             case "vcf-jmg":
-            $this->console("VCF-jmg");
+            header('location:/view/__data/vcf-jmg.vcf');
             break;
 
             case "vcf-ts":
-            $this->console("VCF-ts");
+                header('location:/view/__data/vcf-ts.vcf');
             break;
 
         default:
