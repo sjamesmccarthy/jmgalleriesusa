@@ -11,7 +11,7 @@ version: 1
 
 $catalog = ltrim($this->page->catalog_path, '/');
 
-if ($catalog == 'home') {
+if ($catalog == 'fineart') {
     /* Create an API call to get the Polarized listings */
     $hero_result = $this->api_Hero_Get_Image();
     // $hero_cta = '<a href="' . $this->hero_link . '">Explore More ' . $this->hero_collection . '</a></p>';
@@ -20,7 +20,7 @@ if ($catalog == 'home') {
         $explore_background = 'rgba(0,0,0,.2)';
         $explore_background = '#2574A9';
         $logo_invert = "logo-dark";
-        $this->color_text = "color-black"; 
+        $this->color_text = "color-black";
     } else {
         $explore_background = 'rgba(255,255,255,.8)';
         $explore_background = '#2574A9';

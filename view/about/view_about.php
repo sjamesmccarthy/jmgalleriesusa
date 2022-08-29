@@ -108,7 +108,7 @@
                     <div class="social-icon-container">
                     <!-- <h3 class="mb-16">Contact Card</h3> -->
                     <p>
-                    <a target="_new" class="mt-16 social-icon" style="line-height: 0" href="https://dot.cards/jmgalleriesusa"><img style="width: 100px; letter-spacing: 0; border-radius: 6px" src="/view/__image/icon-qr-code.svg" alt="Save My Contact Card" />
+                    <a target="_new" class="mt-16 social-icon" style="line-height: 0" href="https://linktr.ee/jmgalleriesusa"><img style="width: 100px; letter-spacing: 0; border-radius: 6px" src="/view/__image/icon-qr-code.svg" alt="Save My Contact Card" />
                     </p>
                     </div>
                 </div>

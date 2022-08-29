@@ -19,7 +19,7 @@ RewriteCond %{HTTP_HOST} ^qr\.jmgalleries\.com$ [OR]
 RewriteCond %{HTTP_HOST} ^www\.qr\.jmgalleries\.com$
 
 # ####################################################################
-# VALID REDIRECTS 
+# VALID REDIRECTS
 # ####################################################################
 
 Redirect 301 /rotonda-del-palazzo /thework
@@ -29,7 +29,7 @@ Redirect 301 /jmgalleriesusa /thework
 Redirect 301 /Jmgalleriesusa /thework
 Redirect 301 /collections-vegas /thework
 Redirect 301 /browse /thework
-Redirect 301 /new-releases/photo/mountains-deserts-trees /mountains-deserts-trees 
+Redirect 301 /new-releases/photo/mountains-deserts-trees /mountains-deserts-trees
 Redirect 301 /portraits-events-headshots https://jmportraits.com
 Redirect 301 /info.php /thework
 Redirect 301 /all /thework
@@ -135,7 +135,7 @@ Redirect 301 /collections/abstract-architecture-people/the-good-life /abstract-a
 Redirect 301 /thework/photo/kirbys-cove /thework
 
 # ####################################################################
-# BAD ACTOR REDIRECTS 
+# BAD ACTOR REDIRECTS
 # ####################################################################
 
 Redirect 301 "/test" /thework
@@ -204,8 +204,6 @@ Redirect 301 "/old" /thework
 Redirect 301 "/Old" /thework
 Redirect 301 "/new" /thework
 Redirect 301 "/new" /thework
-Redirect 301 "/home" /thework
-Redirect 301 "/home" /thework
 Redirect 301 "/.well-known/security.txt" /thework
 Redirect 301 "/asset-manifest.json" /thework
 Redirect 301 "/feed" /thework
@@ -246,7 +244,7 @@ Redirect 301 "/setup.php" /thework
 Redirect 301 "/archive.zip" /thework
 
 # ####################################################################
-# BAD ACTOR IPs 
+# BAD ACTOR IPs
 # ####################################################################
 
 Deny from 185.153.196.198

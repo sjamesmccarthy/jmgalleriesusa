@@ -59,7 +59,7 @@ class Core_Site extends Core_Api
 
     /* Error reporting levels being outputted to screen and logged */
     // Level 0 = None
-    // level 1 = E_ALL 
+    // level 1 = E_ALL
     // level 2 = E_ALL & ~E_NOTICE & ~E_WARNING
 
     if($this->config_env->env[$this->env]['error_reporting'] == 1) {
@@ -136,16 +136,16 @@ public function getRoute()
     /* If URI in request contains two slashes in a row, make 1 slash */
     $URI_path_tmp = $_SERVER['REQUEST_URI'];
     $URI_path = str_replace("//", "/", $URI_path_tmp);
-    
+
     $this->routes->URI = (object) parse_url($URI_path);
     $this->routes->URI->url = "//{$_SERVER["HTTP_HOST"]}{$_SERVER["REQUEST_URI"]}";
     $this->routes->URI->useragent = $_SERVER["HTTP_USER_AGENT"];
-    
+
     /* Check for root level or trim slashes */
     if ($this->routes->URI->path != "/") {
       $this->routes->URI->path = rtrim($this->routes->URI->path, "/");
     } else {
-      $this->routes->URI->path = '/home';
+      $this->routes->URI->path = '/index'; // home
     }
 
   /* Match the [path] of URI to the routes.json */
@@ -162,7 +162,7 @@ if (property_exists($this->routes, $this->routes->URI->path) == true) {
       if ($this->routes->{$this->routes->URI->path}["template"] == "redirect") {
         header("location:" . $this->routes->{$this->routes->URI->path}["page"]);
         exit;
-      } 
+      }
 
       /* Check if Template type is SCRIPT */
       /* Update: Perhaps this needs to be moved somewhere above checkign if it exists as a route */
@@ -262,7 +262,7 @@ if (property_exists($this->routes, $this->routes->URI->path) == true) {
           $this->page->title = ucwords(str_ireplace("-", " ", $URIx[2]));
           $this->page->catalog_path = $URIx[1];
           $this->page->uri = $URIx[2];
-          
+
           $wildcard =1;
           break;
 
@@ -318,12 +318,12 @@ if (property_exists($this->routes, $this->routes->URI->path) == true) {
 
       $this->routes->URI->component = $_SERVER["DOCUMENT_ROOT"] . "/view/" . $this->config->prefix_page . $this->routes->{$this->routes->URI->path}["page"] . ".inc.php";
       $this->routes->URI->SFC_component = $_SERVER["DOCUMENT_ROOT"] . "/view" . $this->routes->URI->path . '/' . $this->config->prefix_page . $this->routes->{$this->routes->URI->path}["page"] . ".inc.php";
-      
+
       /* SFC Exceptions for COMPONENT (.inc.php) files */
       if($wildcard == 1) {
         $this->routes->URI->SFC_component = str_replace($wild_needles, "", $this->routes->URI->SFC_component);
-      }      
-      
+      }
+
       if($wildcard == 2) {
         $this->routes->URI->SFC_component = str_replace($wild_needles, "", $this->routes->URI->SFC_component);
         $this->routes->URI->SFC_component = str_replace("[$2]", $this->routes->URI->page, $this->routes->URI->SFC_component);
@@ -338,12 +338,12 @@ if (property_exists($this->routes, $this->routes->URI->path) == true) {
     $this->routes->URI->template = $_SERVER["DOCUMENT_ROOT"] . "/view/__templates/" . $this->config->prefix_template . $this->routes->{$this->routes->URI->path}["template"] . ".php";
     $this->routes->URI->view = $_SERVER["DOCUMENT_ROOT"] . "/view/" . $this->config->prefix_page . $this->routes->{$this->routes->URI->path}["page"] . ".php";
     $this->routes->URI->SFC_view = $_SERVER["DOCUMENT_ROOT"] . "/view" . $this->routes->URI->path . '/' . $this->config->prefix_page . $this->routes->{$this->routes->URI->path}["page"] . ".php";
-    
+
     /* SFC Exceptions for VIEW */
     if($wildcard == 1) {
       $this->routes->URI->SFC_view = str_replace($wild_needles, "", $this->routes->URI->SFC_view);
     }
-    
+
     if($wildcard == 2) {
       $this->routes->URI->SFC_view = str_replace($wild_needles, "", $this->routes->URI->SFC_view);
       $this->routes->URI->SFC_view = str_replace("[$2]", $this->routes->URI->page, $this->routes->URI->SFC_view);
@@ -355,7 +355,7 @@ if (property_exists($this->routes, $this->routes->URI->path) == true) {
 
     /* Check for ADMIN routing */
     if($this->routes->{$this->routes->URI->path}["template"] == "admin") {
-      
+
       // Setting both SFC_ and Classic so that warnings and errors are not logged
       $URI_admin = explode("/", ltrim($this->routes->URI->path, '/'));
       $URI_admin_cleaned = str_replace("-add", "", $URI_admin[1]);
@@ -374,7 +374,7 @@ if (property_exists($this->routes, $this->routes->URI->path) == true) {
     ob_start();
 
     if (is_file($this->routes->URI->template)) {
-      
+
       /* include the template page specifed in the routes config if the template file is not valid then push to Route 404
       * the template file includes the view */
       include $this->routes->URI->template;
@@ -395,9 +395,9 @@ if (property_exists($this->routes, $this->routes->URI->path) == true) {
     /* Flush and dump the buffer */
     ob_get_clean();
   }
-  
+
 public function view($view = null) {
-   
+
     $err_View =0;
 
     /* Check to see if a component file for this view is enabled and then if exists */
@@ -491,9 +491,9 @@ public function view($view = null) {
       if(isSet($this->page->header['font'])) {
         $header_html = '<link href="' . $this->page->header['font'] . '" rel="stylesheet">';
       }
-        
+
     }
-      
+
     // $this->console(htmlentities($header_html));
     return $header_html;
   }
@@ -514,7 +514,7 @@ public function view($view = null) {
 
     if (is_file($file . ".inc.php")) {
       include_once $file . ".inc.php";
-    } 
+    }
 
     /* Include the partial file if exists */
     if (is_file($file . ".php")) {
@@ -526,16 +526,16 @@ public function view($view = null) {
   public function log_watch($log_data) {
 
     $data = array();
-    
+
     /* extract Data Array */
     extract($log_data, EXTR_PREFIX_SAME, "dup");
 
     /* Insert into database table: log
     /* Executes SQL and then assigns object to passed var */
-    
+
     $sql ="INSERT INTO log_watch (`user_id`, `key`, `value`, `type`) VALUES ('" . $_SESSION["uid"] . "','" . $key . "','" . $value . "','" . $type . "');";
     $result = $this->mysqli->query($sql);
-    
+
     if ($result == true) {
       $data["result"] = "200";
     } else {

@@ -3,6 +3,8 @@
 $catalog_names = $this->api_Catalog_Category_List();
 $version = $this->config->package_version;
 
+/* if this is the index page set noshow class */
+
 if($this->env == "local") {
     $env = "<p style='background-color: yellow; color: black; padding: 10px;'>env:" . $this->env . "</p>";
 }

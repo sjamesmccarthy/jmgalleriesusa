@@ -5,11 +5,23 @@
         "component": "true",
         "title": "We are programmers not poets : e_404"
     },
-    "/home": {
+    "/index": {
         "template": "catalog",
-        "page": "home",
+        "page": "index",
         "component": "true",
-        "title": "Photography"
+        "title": "jM Galleries: Everyday Fine Art, Portraits, Weddings, Real Estate and Lfestyle Photography"
+    },
+    "/fineart": {
+        "template": "catalog",
+        "page": "fineart",
+        "component": "true",
+        "title": "Everyday Photography as Art"
+    },
+    "/home": {
+        "template": "redirect",
+        "page": "fineart",
+        "component": "false",
+        "title": "redirecting to fine art homepage"
     },
     "[$1]/[$2]": {
         "template": "page",

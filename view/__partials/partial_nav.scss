@@ -115,6 +115,10 @@
 .topnav-logo {
     text-align: center;
 //
+    >a:hover {
+        border-bottom: none !important;
+    }
+
     // xSmall devices (landscape phones, 320px and up)
     @media (min-width: 320px) {
         padding-top: 0;

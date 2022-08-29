@@ -76,6 +76,7 @@ body {
             &:hover {
                 color: $color-white;
                 text-decoration: underline;
+                // border-bottom: 1px solid #FFF;
             }
 
             &:visited {
@@ -130,7 +131,7 @@ body {
         }
 
        .thumb img:hover {
-          box-shadow: 0px 5px 10px 0px rgba(99, 98, 98, 0.5);
+          box-shadow: 0px 1px 10px 0px $color-gray;
        }
 
         input[type="text"], input[type="password"], textarea {
