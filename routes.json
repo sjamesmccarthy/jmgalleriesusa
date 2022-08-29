@@ -9,7 +9,7 @@
         "template": "catalog",
         "page": "index",
         "component": "true",
-        "title": "jM Galleries: Everyday Fine Art, Portraits, Weddings, Real Estate and Lfestyle Photography"
+        "title": "jM Galleries: Everyday Fine Art, Portraits, Weddings, Real Estate and Lifestyle Photography"
     },
     "/fineart": {
         "template": "catalog",

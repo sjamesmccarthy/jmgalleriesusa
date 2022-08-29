@@ -55,6 +55,8 @@
                 <!-- <li><a href="/contact">CONTACT</a></li> -->
 
                 <li class="mt-16"><p class="topnav-logo"><a href="/"><img class="topnav--logo-img logo-white" style="width: 240px;" src="/view/__image/signature-fine-art-upscaled.png" alt="jm Galleries logo" /></a></p></li>
+
+                <li><p><a target="_jmportraits" href="https://jmgalleries.pixieset.com/">Portraits, Weddings, Real Estate<br />and Lifestyle Photography  <i class="fa-solid fa-arrow-up-right-from-square tiny"></i></a></p></li>
         </ul>
 
 
