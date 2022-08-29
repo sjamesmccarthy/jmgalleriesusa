@@ -3,7 +3,7 @@
 
         <div class="grid-center">
             <div class="col-12">
-                <h1>Welcome.</h1>
+                <h1>Pick One.</h1>
             </div>
         </div>
 
