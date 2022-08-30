@@ -426,7 +426,7 @@
         </p>
 
         <hr class="mt-32" />
-        <p class="mt-32">jM Galleries is powered by Studio610 by webscapes.io.</p>
+        <p class="mt-32">jM Galleries is powered by Studio610 and webscapes.io.</p>
         <p>It includes a custom template engine, customer relation manager (CRM) and inventory component module, a shop (with Stripe payments), a provenance manager and collector portal, as well as a suite of other tools for art collectors.</p>
         <p class="mt-32">Built using PHP8, MySQL and jQuery using MacOS&reg;</p>
         <p>Applications used include: Nova, Sketch, VS Code, TablePlus, CodeKit, CaptureOne Pro, Affinity Photo & Designer, Transmit, MAMP Pro and GitHub.</p>
