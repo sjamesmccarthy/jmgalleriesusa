@@ -47,6 +47,7 @@ p, div, blockquote, caption, figure, legend {
     font-size: 1rem;
     font-weight: $base-fw;
     box-sizing: border-box;
+    display: block;
 }
 
 button,

@@ -1,3 +1,5 @@
+<section id="index">
+
 <div class="grid-center v-align-m">
     <div class="col">
 
@@ -18,3 +20,5 @@
 
     </div>
 </div>
+
+</section>
