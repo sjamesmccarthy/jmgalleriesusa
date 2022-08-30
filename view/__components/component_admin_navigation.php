@@ -81,7 +81,7 @@ $html = <<< END
             </div> -->
 
            <div class="pt-32">
-                <p class="small text-center">$version &mdash; <a id="sync_config" href="">backup config</a></p>
+                <p class="small text-center">$version<br /><a id="sync_config" href="">backup config +notices</a></p>
             </div>
 
             </div>
@@ -122,7 +122,7 @@ jQuery(document).ready(function($){
     $("#sync_config").on('click',function (e) {
         e.preventDefault();
         console.log('sync_config');
-        
+
         /* Ajax with Axios Backup Config files */
 
         axios({
@@ -139,7 +139,7 @@ jQuery(document).ready(function($){
                 console.log(response);
         });
 
-       
+
     });
 
 });
