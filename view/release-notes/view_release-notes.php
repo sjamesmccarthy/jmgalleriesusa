@@ -8,6 +8,16 @@
 
         <div class="col-11" style="position: relative">
 
+        <p class="pt-16">v2.2 <br />July August</p>
+            <ul>
+                <li>added: new landing page to switch between portfolios.</li>
+                <li>bugfix: styling bugfixes throughout the site for large and small screens.</li>
+                <li>added: added qr.html static page for linktr.ee integration.</li>
+                <li>update: newsletter form, vcf cards, dark theme styling.</li>
+                <li>update: condensed about page.</li>
+            </ul>
+        </p>
+
         <p class="pt-16">v2.1 <br />July 2022</p>
             <ul>
                 <li>bugfix: checkout form email, studio prints, utf-8 in database</li>
@@ -416,9 +426,9 @@
         </p>
 
         <hr class="mt-32" />
-        <p class="mt-32">jM Galleries is powered by STUDIO610, software written for artists made by artists.</p>
+        <p class="mt-32">jM Galleries is powered by Studio610 by webscapes.io.</p>
         <p>It includes a custom template engine, customer relation manager (CRM) and inventory component module, a shop (with Stripe payments), a provenance manager and collector portal, as well as a suite of other tools for art collectors.</p>
-        <p class="mt-32">Built using PHP7, MySQL and jQuery using MacOS&reg;</p>
+        <p class="mt-32">Built using PHP8, MySQL and jQuery using MacOS&reg;</p>
         <p>Applications used include: Nova, Sketch, VS Code, TablePlus, CodeKit, CaptureOne Pro, Affinity Photo & Designer, Transmit, MAMP Pro and GitHub.</p>
         <p class="mt-32">If you're an artist or photographer and are interested in using STUDIO610 please <a href="/contact">contact me</a> for a demo.</p>
         <p>Custom packages start at $5,000 and $350/year for hosting. If you'd like to <a href="https://github.com/sjamesmccarthy/jmgalleriesusa">contribute code to the project</a> please DM me on Twitter @jmgalleriesusa.</p>

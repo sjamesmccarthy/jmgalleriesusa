@@ -30,17 +30,17 @@
                     While on a northwest college road trip with his mother, Alice, he was photographing a foggy dock somewhere off Hwy 299 outside of Arcata using a hand-me-down Minolta SLR 35mm camera given to him by his 8th grade Journalism teacher, Mrs. Anderson. This was the moment James and his camera "clicked".
                     </p>
 
-                    <p class="">
+                    <!-- <p class="">
                     After attending the University of Nevada Reno, James made the beautiful state of Nevada his home base for nearly thirty years. He currently resides in a small town nestled against the Sierra Nevada Mountains and in the shadows of Lake Tahoe, Carson City.
-                    </p>
+                    </p> -->
 
-                    <p class=>
+                    <!-- <p class=>
                     James more popular pieces include, <a href=/oceans-lakes-waterfalls/never-ending-story>Never Ending Story</a>, <a href=/abstract-architecture-people/made-in-america>Made In America</a>, <a href=/mountains-deserts-trees/twisted-oak>Twitsted Oak</a>, <a href=/mountains-deserts-trees/emigrants-fog>Emigrants Fog</a>, <a href=/oceans-lakes-waterfalls/bonsai-zen>Bonsai Zen</a>, <a href=/mountains-deserts-trees/keep-tahoe-cold>Keep Tahoe Cold</a>, <a href=/mountains-deserts-trees/snowy-pines>Snowy Pines</a> and <a href=/oceans-lakes-waterfalls/https://jmgalleriesusa/mountains-deserts-trees/alongside-you>Alongside You</a>. Framed editions, as well as editions in Metal, Acrylic and paper can be viewed at his traveling exhibits which include locally-owned businesses around the locations he shoots.
-                    </p>
+                    </p> -->
 
-                    <p class="">
+                    <!-- <p class="">
                     He is a member of the Professional Photographers of America (PPA), the American Photographic Artists (APA) and founding member of <a href="/loveoutside">loveOutside.org</a>, an upcoming collaborative group of local outdoor enthusiasts +photographers preserving the world around us through creative, every-day imagery while encouraging and leading "<a target="_new" href="https://www.nps.gov/articles/leave-no-trace-seven-principles.htm">leave no trace</a>" principals to protect our bonus backyard; the outdoors.
-                    </p>
+                    </p> -->
 
                     <p class="">
                     Influences include: Ansel Adams, Carleton Watkins, Charlie Waite, Bobby Wheat, Parvez S and Ralph Gibson.
