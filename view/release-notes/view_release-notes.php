@@ -8,7 +8,7 @@
 
         <div class="col-11" style="position: relative">
 
-        <p class="pt-16">v2.2 <br />July August</p>
+        <p class="pt-16">v2.2 <br />August</p>
             <ul>
                 <li>added: new landing page to switch between portfolios.</li>
                 <li>bugfix: styling bugfixes throughout the site for large and small screens.</li>
