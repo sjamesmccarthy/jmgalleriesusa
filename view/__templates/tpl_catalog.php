@@ -5,7 +5,7 @@
     <?php print $this->component('notice'); ?>
     <?php print $this->component('hero'); ?>
 
-    <body class="<?= $this->config_env->env[$this->env]['default_theme'] ?>">
+    <body oncontextmenu="return false;" class="<?= $this->config_env->env[$this->env]['default_theme'] ?>">
     <!--  class="dark-theme" -->
 
 
