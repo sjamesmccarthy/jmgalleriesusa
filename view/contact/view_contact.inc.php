@@ -17,6 +17,10 @@ if(isSet($this->routes->URI->queryvals)) {
                 header('location:/view/__data/vcf-ts.vcf');
             break;
 
+            case "vcf-webscapes":
+                header('location:/view/__data/vcf-webscapes.vcf');
+            break;
+
         default:
             break;
     }
