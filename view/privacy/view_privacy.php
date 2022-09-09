@@ -4,18 +4,20 @@
         <div class="col-12_sm-12" >
 
          <h1 class="pb-32 text-center">Privacy Policy, Terms of Sale<br />and &copy; Copyright 2022</h1>
-         
-         
-         <p><b>All Photographs and Content and/or Associated information with any photo on this site is Copyright James McCarthy/ j.McCarthy / jM Galleries ("Copyright Owner").</b> The trade names, trademarks and service marks owned by Copyright Owner, whether registered or unregistered, may not be used in connection with any other product or service that is not ours, in any manner that is likely to cause confusion. These marks include, but are not limited to "jm", "jmgalleries", "jMcCarthy Galleries", "j.McCarthy", and "STUDIO610", as well as other marks and names including, but not limited to, "tinyViews", "Large Landscapes for Tiny Places" adn "Love Outside". <b>All Rights Reserved. Reproduction in any medium is prohibited without permission and licensing from "Copyright Owner".</b> Trademarks not owned by us are the property of their respective owners. NO PART OF OUR ONLINE SERVICES may be reproduced, stored, or transmitted in any form or by any means -- electronic, mechanical, photocopying, recording or otherwise -- without the permission of the JM GALLERIES USA.
+
+
+         <p class="text-uppercase"><b>All Photographs and Content and/or Associated information with any photo on this site is Copyright James McCarthy / j.McCarthy / jM Galleries / j.McCarthy Fine-Art ("Copyright Owner") and protected by DMCA.com</b></p>
+
+        <p class="mt-16">The trade names, trademarks and service marks owned by Copyright Owner, whether registered or unregistered, may not be used in connection with any other product or service that is not ours, in any manner that is likely to cause confusion. These marks include, but are not limited to "jm", "jmgalleries", "jMcCarthy Galleries", "j.McCarthy", and "STUDIO610", as well as other marks and names including, but not limited to, "tinyViews", "Large Landscapes for Tiny Places" adn "Love Outside". <b>All Rights Reserved. Reproduction in any medium is prohibited without permission and licensing from "Copyright Owner".</b> Trademarks not owned by us are the property of their respective owners. NO PART OF OUR ONLINE SERVICES may be reproduced, stored, or transmitted in any form or by any means -- electronic, mechanical, photocopying, recording or otherwise -- without the permission of the JM GALLERIES USA.
         </p>
-             
+
         <p class="mt-16 black">THIS PRIVACY POLICY APPLIES TO YOUR ACCESS AND USE OF JMGALLERIES.COM AND ANY ASSOCIATED MOBILE APPS OR ONLINE SERVICES ("JM GALLERIES USA"). It describes our practices on gathering, use and sharing of personal information collected when you visit one of our ONLINE SERVICES. BY ACCESSING OR USING ANY OF JM GALLERIES USA, YOU AGREE THAT YOU HAVE READ AND AGREE TO THIS PRIVACY POLICY. IF YOU DON’T AGREE, PLEASE <a href="//duckduckgo.com">CLICK HERE</a>.
         </p>
 
 	<ul class="subsection-ul">
 
     <li><H3>Table of Contents</h3></lil>
-    
+
             <ol class="toc mt-16">
                 <li><a href="#p1">Information We Collect</a></li>
                 <li><a href="#p2">Website Analytics</a></li>
@@ -33,12 +35,12 @@
         </li>
 
         <div class="-top"></div>
-        
+
         <li><a name="p1"></a><h3>Information We Collect</h3>
             <p>We do not collect personally identifiable information about you excluding the information when you voluntarily submit to us a quote request, purchase order, or submitting an online inquiry through our contact form. Such information may include mailing address, telephone number, e-mail address and name and is only transferred and store via our email system. It is not stored or archived in a database or shared with our parties.
             </p>
         </li>
-        
+
         <li><a name="p2"></a><h3>Website Analytics</h3>
             <p>We use Google Analytics to track how many users visit our website and the type of traffic that visits. Google may collection information such as cookies, IP address, search keywords, browser type, page views, number of visits and time spent on the website. None of this information is personally identifiable. Read <a target="_g" href="https://policies.google.com/privacy?hl=en-US">Google's Privacy Policy</a>.
             </p>
@@ -72,21 +74,21 @@
 
             <p>Occasionally we may include or offer third party products or services on our website or our social media channels. These third party sites have separate privacy policies. Therefor, we have no responsibility or liability for the content and activities of these linked sites. If you have any issues with these sites please <a href="/contact">contact us</a>.
             </p>
-        
+
         </li>
-        
+
         <li><a name="p5"></a><h3>Do We Sell Any Information To Third Parties</h3>
 
             <p>Absolutely Not. We do not sell, trade, or otherwise transfer any of your personally identifiable information to outside third parties. However, this DOES NOT INCLUDE trusted third parties who assist us in operating our website, conducting our business, or servicing you, so long as those parties agree to keep this information confidential. We may also release your information in order to comply with the law, enforce our site policies, or protect ours or others rights, property, or safety. Non-personally identifiable visitor information may be provided to other parties for marketing, advertising, or other uses.
             </p>
-        
+
         </li>
 
         <li><a name="p6"></a><h3>Children's Online Privacy Protection Act Compliance</h3>
 
             <p>We are in compliance with the requirements of COPPA (Children’s Online Privacy Protection Act, 15 U.S.C. §§ 6501–6506). To the best of our knowledge we do not collect any information from anyone under 13 years of age. Our website, products and services are all directed to people who are at least 13 years old or older.
             </p>
-        
+
         </li>
 
         <li><a name="p7"></a><h3>Data Retrieval and Removal</h3>
@@ -173,11 +175,12 @@
             Our Sites are operated from the State of Nevada in the United States and are not subject to the laws or jurisdiction of any state, country or territory other than that of the State of Nevada in the United States.
             </p>
 
+            <p> <img src="https://images.dmca.com/Badges/dmca-badge-w100-5x1-08.png?ID=4f4fc268-5857-46c9-97ec-b0ee644e9892" alt="DMCA.com Protection Status" style="vertical-align: middle" /></p>
         </li>
 
 
     </ul>
- 
+
     </div>
 </section>
 
