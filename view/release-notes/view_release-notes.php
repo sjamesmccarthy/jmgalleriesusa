@@ -8,6 +8,12 @@
 
         <div class="col-11" style="position: relative">
 
+        <p class="pt-16">v2.2 <br />September</p>
+            <ul>
+                <li></li>
+            </ul>
+        </p>
+
         <p class="pt-16">v2.2 <br />August</p>
             <ul>
                 <li>added: new landing page to switch between portfolios.</li>
