@@ -22,10 +22,10 @@
         // height: 38vh;
      }
 
-       @media (min-width: 567px) and (orientation: landscape) {
-           // height: 750px;
-           // height: 100vh;
-        }
+    @media (min-width: 567px) and (orientation: landscape) {
+        // height: 750px;
+        // height: 100vh;
+    }
 
      // Medium devices (tablets, 768px and up)
      @media (min-width: 768px) {
@@ -41,14 +41,11 @@
 
      // Large devices (tablets (iPad Pro, 1112px and up)
      @media (min-width: 1440px) {
-        // height: 750px;
         height: 90vh;
      }
 
      // Extra large devices (large desktops, 1200px and up)
      @media (min-width: 1920px) {
-         // height: 750px;
-         // height: 100vh;
          background-position: center center !important;
          // background-size: cover;
          width: 95%;
