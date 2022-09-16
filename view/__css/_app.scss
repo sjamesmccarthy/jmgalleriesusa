@@ -111,7 +111,7 @@ body {
 
         .topnav--logo-img,
         .nav-mobile-logo {
-            filter: invert(1);
+            filter: invert(1) !important;
         }
 
         #top-nav-home .topnav-logo .topnav--logo-img  {
