@@ -153,7 +153,8 @@
 
 .topnav-logo img {
     width: 250px;
-    filter: invert(0);
+    // filter: invert(0);
+    filter: invert(1) !important;
     display: inline-block;
     // padding-bottom: 2rem;
 
