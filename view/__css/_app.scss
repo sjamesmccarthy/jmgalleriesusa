@@ -109,17 +109,16 @@ body {
             // }
         }
 
-        .topnav--logo-img,
+        .topnav-logo >a {
+            filter: invert(1);
+        }
+
+        // #top-nav-home .topnav-logo .topnav--logo-img {
+        //     filter: invert(0);
+        // }
+
         .nav-mobile-logo {
-            filter: invert(1) !important;
-        }
-
-        #top-nav-home .topnav-logo .topnav--logo-img  {
-            filter: invert(0) !important;
-        }
-
-        .topnav--logo-img {
-        //   filter: invert(1) !important;
+            filter: invert(1);
         }
 
         .nav-mobile-home > p {
