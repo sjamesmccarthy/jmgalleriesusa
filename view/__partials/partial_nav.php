@@ -8,7 +8,7 @@
                 </div>
                 <div class="col-2 small-hidden">
                   <!-- logo_fullsize.png -->
-                    <p class="topnav-logo"><a href="/fineart"><img class="topnav--logo-img" src="/view/__image/signature-fine-art-upscaled.png" alt="jm Galleries logo" /></a></p>
+                    <p class="topnav-logo topnav--logo-img"><a href="/fineart"><img class="topnav--logo-img" src="/view/__image/signature-fine-art-upscaled.png" alt="jm Galleries logo" /></a></p>
                 </div>
                 <div class="col-5-middle small-hidden text-lower">
                     <p class="center heading"><a href="/thework" class="<?= $galleries ?>">THE WORK</a><br /><span class="font-light"><!--<a class="font-light" href="/limited-editions"> -->LIMITED & OPEN Ed.</span><!-- </a> -->

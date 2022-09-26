@@ -109,13 +109,13 @@ body {
             // }
         }
 
-        .topnav-logo >a {
+        .topnav--logo-img >a {
             filter: invert(1);
         }
 
-        // #top-nav-home .topnav-logo .topnav--logo-img {
-        //     filter: invert(0);
-        // }
+        #top-nav-home .topnav-logo .topnav--logo-img {
+            filter: invert(0);
+        }
 
         .nav-mobile-logo {
             filter: invert(1);
