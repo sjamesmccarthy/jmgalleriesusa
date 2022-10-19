@@ -77,7 +77,7 @@
                     </div>
 
                     <div class="col-12 pb-16">
-                        <a name="pricing" href="#top"><h4>Pricing - Limited Editions (Acrylic/Metal)</h4></a>
+                        <a name="pricing" href="#top"><h4>Pricing - Sequential Numbered Editions (formerly Limited Acrylic & Metal)</h4></a>
                     </div>
 
                     <div class="col-12">
@@ -103,7 +103,7 @@
                     </div>
 
                     <div class="col-12 pb-16">
-                            <h4>Pricing - Open Editions (Paper)</h4>
+                            <h4>Pricing - Studio Paper Editions (formerly Open)</h4>
                         </div>
 
                     <div class="col-12">

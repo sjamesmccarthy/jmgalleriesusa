@@ -74,15 +74,24 @@ switch($res_formType) {
             $order_amount = $res_print_price / 2;
             $estimated_cost_raw = $order_amount * 100;
             $cost = $estimated_cost_raw;
-            $edition_type_long = "Limited Edition";
+            $edition_type_long = "Sequential Numbered Edition";
             $limited_deposit = "<p class='mt-8'><b>a $" . number_format($order_amount,2) . " (50%) DEPOSIT IS REQUIRED</b></p>";
             $payment_instructions = "<p class='pb-16'>Upon confirmation of your order you will be invoiced a 50% deposit, or $" . number_format($order_amount,2) . ", and the remaining balance, $" . number_format($order_amount,2) . ", will be due in full prior to shipment and a tracking number will be provided via email. By clicking the button below, you are agreeing to these <a href='/privacy#tos'>Terms of Sale</a>. Payment methods accepted are Visa, Mastercard, AMEX through Square and Venmo.<br /><br /><img style='margin-bottom: 10px; width: 150px; vertical-align: middle' src='/view/__image/square-payment-icons.png' alt='square payment icon' /></p>";
 
-            if($res_material_type == 'acrylic') { $material_name = 'HD Acrylic'; }
-            if($res_material_type == 'metal') { $material_name = 'HD Chromaluxe&reg; Metal'; }
-            if($res_edition_type_exception == 'as_studio') {
+            if($res_material_type == 'acrylic') {
+                $material_name = 'HD Acrylic Slim';
+                $res_buysize = $res_buysize . " (Includes FREE wall mount)";
+            }
+
+            if($res_material_type == 'metal') {
+                $material_name = 'HD Chromaluxe&reg; Metal';
+                $res_buysize = $res_buysize . " (Includes FREE wall mount)";
+            }
+
+            // if($res_edition_type_exception == 'as_studio') {
+            if($res_material_type == 'paper') {
                 $edition_type_long = "tinyVIEWS&trade; Studio Edition";
-                $hidden_fields .= "<input type='hidden' id='edition_type_exception' name='edition_type_exception' value='as_studio' />";
+                // $hidden_fields .= "<input type='hidden' id='edition_type_exception' name='edition_type_exception' value='as_studio' />";
                 $order_type = "ORDER";
                 $deposit = "false";
                 $order_amount = $res_print_price;
@@ -91,10 +100,12 @@ switch($res_formType) {
                 $payment_instructions = "<p class='pb-16'>Upon confirmation of your order you will be invoiced for $" . number_format($res_print_price,2) . " and it will be sent to the email address above from Square or Venmo. By clicking the button below, you are agreeing to these <a href='/privacy#tos'>Terms of Sale</a>. Payment methods accepted are Visa, Mastercard, AMEX through Square and Venmo.<br /><br /><img style='margin-bottom: 10px; width: 150px; vertical-align: middle' src='/view/__image/square-payment-icons.png' alt='square payment icon' /></p>";
                 $hidden_fields .= "<input type='hidden' id='deposit' name='deposit' value='false' />";
                 $hidden_fields .= "<input type='hidden' id='edition_type' name='edition_type' value='limited' />";
-                $material_name = $this->config->tv_material_desc . ". The overall size is 13x19 inch.";
+                // $material_name = $this->config->tv_material_desc . ". The overall size is 13x19 inch.";
+                $material_name = $this->config->tv_material_desc;
                 $material_desc = null;
                 $res_material_type = 'paper';
                 $res_img_type = $this->config->tv_material_desc;
+                $res_buysize = $res_buysize . "\n     --note: Total size 13x19 inches, frame not included.";
             }
 
             $material_type_long =  $material_name . " " . $material_desc;
@@ -118,7 +129,8 @@ switch($res_formType) {
 
         //'(' . $res_quantity . ') ' .
         // $order_subject = $order_title . " - " . $edition_type_long . " ($" . $res_print_price . ")\n" . $res_buysize  . $matted_size . " " . $res_img_type . $item_framing  . "\n" . $add_frame_note;
-        $order_subject = $order_title . " - " . $edition_type_long . " ($" . $res_print_price . ")\n" . $res_buysize  . $matted_size . " " . $material_type_long . $item_framing  . "\n" . $add_frame_note;
+        // $order_subject = $order_title . " - " . $edition_type_long . " ($" . $res_print_price . ")\n" . $res_buysize  . $matted_size . " " . $material_type_long . $item_framing  . "\n" . $add_frame_note;
+        $order_subject = "Title: " . $order_title . "\nSize: " . $res_buysize  . $matted_size . " " . "\nMaterial: " . $material_type_long . $item_framing  . "\n" . $add_frame_note;
 
         $hidden_fields .= '<input type="hidden" name="quantity" value="' .  $res_quantity . '" />';
         $hidden_fields .= '<input type="hidden" name="size" value ="' . $res_buysize . '" />';

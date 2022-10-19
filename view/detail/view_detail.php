@@ -13,7 +13,7 @@
     <input type="hidden" name="quantity" value="1" />
     <input type="hidden" name="title" value="<?= $photo_meta['title'] ?>" />
     <input type="hidden" name="img_type" value="<?= $edition_desc_material ?>" />
-    <input type="hidden" id="material_type" name="material_type" value="acrylic" />
+    <input type="hidden" id="material_type" name="material_type" value="<?= $edition_material_type ?>" />
     <input type="hidden" name="price" id="price" value="<?= $default_price ?>" />
     <input type="hidden" name="print_price" id="print_price" value="<?= $default_price ?>" />
     <input type="hidden" name="frame_price" id="frame_price" value="<?= $frame_price_default ?>" />
@@ -45,7 +45,7 @@
             <button class="mt-32"><?= $btn ?></button>
 
             <p class="mt-32 ml-8 small text-center">Questions?<br /><a class="small underline normal-weight"target="_infoTab" href="/contact">Contact an Art consultant</a></p>
-            <p class="ml-8 text-center"><a target="_infoTab" class="small underline normal-weight" href="/styles">Click here for framing information</a></p>
+            <!-- <p class="ml-8 text-center"><a target="_infoTab" class="small underline normal-weight" href="/styles">Click here for framing information</a></p> -->
             </div>
             </div>
 
@@ -89,7 +89,7 @@
         var ms = $("#buysize option:selected").attr("data-mattedsize");
 
         // Remove frame options from NOTECARDS (previously also 5x7 ps == '5x7' ||)
-        if(ps == '12x18 (½ inch white border on outside)') {
+        if(ps == '12x18 (includes ½ inch white border)') {
             // $('#frame').find('option').not(':first').css("display", "none");
             $('#frame').find('option').attr("disabled", "disabled");
             $('.frame-block, .media-details').hide();

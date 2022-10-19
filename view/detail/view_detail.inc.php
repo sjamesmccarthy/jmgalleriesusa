@@ -1,6 +1,13 @@
 <?php
 
-$as_studio_label = " tinyVIEWS&trade; Studio Edition Print Only";
+
+// $as_studio_label = " tinyVIEWS&trade; Studio Edition Print Only";
+// $as_studio_label = $this->config->edition_description_open;
+
+$material_metal_brand = "HD Chromaluxe&reg; Metal";
+$material_acrylic_brand = "HD Acrylic Slim";
+$material_paper_brand = $this->config->tv_material_desc;
+$material_canvas_brand = "Silverada Metallic Canvas";
 
 $catalog_path_cleaned = ltrim($this->page->catalog_path, "/");
 
@@ -95,6 +102,9 @@ $as_editions = null;
 $as_editions_tmp = null;
 
 if ($photo_meta["desc"] != null) {
+
+    $edition_material_type = $photo_meta["desc"];
+
   if ($photo_meta["desc"] == "paper") {
     $edition_desc_material = $this->config->tv_material_desc;
     // "Moab® Slick Rock Metallic Paper";
@@ -105,29 +115,28 @@ if ($photo_meta["desc"] != null) {
     $frame_price_default = "0";
     $frame_disabled = "disabled";
     $frame_disabled_option =
-      '<option value="FRAMELESS">FRAMING OPTIONS</option><option value="ADDWITHACRYLIC">+ Add Additional Premium Frame (+$$)</option>';
+      '<option value="FRAMELESS">FRAMING OPTIONS</option><!-- <option value="ADDWITHACRYLIC">+ Add Additional Premium Frame (+$$)</option> -->';
     $frame_info_link = "Premium Designer Frames pricing";
   }
 
   if ($photo_meta["desc"] == "canvas") {
-    $edition_desc_material = "Silverada Metallic Canvas";
+    $edition_desc_material = $material_canvas_brand;
     $edition_frame =
       "and is float mounted without a frame. One of our Premium Designer Frames can be optionally added for an additional cost.";
     $frame_disabled = "disabled";
     $frame_disabled_option =
-      '<option value="FRAMELESS">No Frame Needed With Canvas</option><option value="ADDWITHACRYLIC">+ Add Additional Premium Frame (+$$)</option>';
+      '<option value="FRAMELESS">No Frame Needed With Canvas</option><!-- <option value="ADDWITHACRYLIC">+ Add Additional Premium Frame (+$$)</option> -->';
     $frame_info_link = "Premium Designer Frames pricing";
     $frame_price_default = "0";
   }
 
   if ($photo_meta["desc"] == "acrylic") {
-    $edition_desc_material =
-      "HD Acrylic or HD Chromaluxe&reg; Metal (⅛ inch thick including wall mount)";
+    $edition_desc_material = $material_acrylic_brand . " or " . $material_metal_brand . ". Includes FREE Aluminum wall mount. ";
     $edition_frame =
       '<!--One of our <a href="/styles">Premium Designer Frames</a> can be optionally added for an additional cost.--><!-- This fine-art may also be available in HD Chromaluxe&reg; Metal. Please <a href="/contact">contact an art consultant</a> for availability and pricing.-->';
     $frame_disabled = "disabled";
     $frame_disabled_option =
-      '<option value="FRAMELESS">Includes FREE Aluminum Wall Mount</option><option value="ADDWITHACRYLIC">+ Add Additional Premium Frame (+$$)</option>';
+      '<option value="FRAMELESS">Includes FREE Aluminum Wall Mount</option><!-- <option value="ADDWITHACRYLIC">+ Add Additional Premium Frame (+$$)</option> -->';
     $frame_info_link = "Premium Designer Frames pricing";
     $frame_price_default = "0";
   }
@@ -136,9 +145,8 @@ if ($photo_meta["desc"] != null) {
   $edition_desc_material_slash = null;
 } else {
   if ($photo_meta["as_open"] != 1) {
-    $edition_desc_material_slash =
-      "/ " . "Collectors Choice of Fine Art Paper or Acrylic";
-    $edition_desc_material = "HD Acrylic";
+    $edition_desc_material_slash = "/ " . "Collectors Choice of Fine Art Paper or Acrylic";
+    $edition_desc_material = $material_acrylic_brand;
     $frame_info_link = "the Premium Designer Frames";
   } else {
     $edition_desc_material_slash = null;
@@ -200,13 +208,13 @@ if ($photo_meta["as_limited"] == 1) {
     $photo_meta["file_name"] .
     '">'; //class="btn-nudge"
   $gallery_details =
-    '<!--<p class="pt-32 bold">About The Art</p>--><p class="pt-32 pb-16 text-center media-details">Limited Edition of ' .
+    '<!--<p class="pt-32 bold">About The Art</p>--><p class="pt-32 pb-16 text-center media-details"><!-- Limited Edition of ' .
     $edition_max .
-    ", signed with Certificate of Authenticity and Digital Provenance Archived. Printed on " .
+    ", --> Sequentially numbered and signed with Certificate of Authenticity and Digital Provenance Archived.<br />Printed on " .
     $edition_desc_material .
-    " and the available sizes include: " .
+    "<!-- Available sizes include: " .
     $this->config->available_sizes_limited .
-    ' inches. <!-- (larger sizes available on special order, <a href="/contact">contact an art consultant</a>) -->' .
+    ' inches. --><!-- (larger sizes available on special order, <a href="/contact">contact an art consultant</a>) -->' .
     $edition_frame .
     "<!-- If you have any questions about our " .
     $edition_desc_material .
@@ -228,7 +236,7 @@ if ($photo_meta["as_limited"] == 1) {
       $leK .
       '">SIZE: ' .
       $leK .
-      " Acrylic</option>";
+      " " . $material_acrylic_brand . "</option>";
   }
 
   // if($available_sizes == "in_code") {
@@ -251,22 +259,22 @@ if ($photo_meta["as_limited"] == 1) {
       $leKm .
       '">SIZE: ' .
       $leKm .
-      " Metal</option>";
+      " " . $material_metal_brand . "</option>";
   }
   // }
 
     /* Add a loop for including OPEN ED pricing if as_studio = 1 */
     if($photo_meta["as_studio"] == 1) {
 
-        $hidden_edition_type .=
-        '<input type="hidden" name="edition_type_exception" value="as_studio" />';
+        // $hidden_edition_type .=
+        // '<input type="hidden" name="edition_type_exception" value="as_studio" />';
 
         // $sizes_pricing .= '<option value="---">---</option>';
         foreach ($tv_price_array as $tvK_studio => $tvV_studio) {
-            $default_price = $tvV_studio;
+            // $default_price = $tvV_studio;
             $sizes_pricing .=
-            "<option SELECTED " .' data-price="' . $tvV_studio . '" data-mattedsize="0" data-material="paper" value="' . $tvK_studio . '">SIZE: ' . $tvK_studio . $as_studio_label . "</option>";
-            $studio_print = "true";
+            "<option " .' data-price="' . $tvV_studio . '" data-mattedsize="0" data-material="paper" value="' . $tvK_studio . '">SIZE: ' . $tvK_studio .  " " . $material_paper_brand . "</option>";
+            $studio_print = "false";
         }
 
     }
@@ -322,12 +330,7 @@ if ($photo_meta["as_open"] == 1) {
     '<a style="display:block;" class="mt-16" href="/contact?photo=' .
     $photo_meta["file_name"] .
     '&open=true">'; //class="btn-nudge"
-  $gallery_details =
-    '<p class="mt-32 media-details">Open Edition, un-numbered and not signed. Printed on ' .
-    $edition_desc_material .
-    " and available in size(s) of: " .
-    $this->config->available_sizes_open .
-    " inches (if print only, it will include 1/2 inch white border). It can also be framed in an optional Studio Frame for additional cost.";
+  $gallery_details = '<p class="mt-32 media-details">Open Edition, un-numbered and not signed. Printed on ' . $edition_desc_material . " and available in size(s) of: " . $this->config->available_sizes_open . " inches (if print only, it will include 1/2 inch white border). It can also be framed in an optional Studio Frame for additional cost.";
 
   /* Picking a default value to show */
   if ($available_sizes != "in_code") {
