@@ -8,9 +8,10 @@
 
         <div class="col-11" style="position: relative">
 
-        <p class="pt-16">v2.2 <br />September</p>
+        <p class="pt-16">v2.3 <br />October</p>
             <ul>
-                <li></li>
+                <li>Updated pricing, etc.</li>
+                <li>Added Studio Edition Print Only to all images.</li>
             </ul>
         </p>
 
