@@ -70,17 +70,18 @@ body {
         color: $color-white;
 
         a {
-            // color: $color-blue;
-            color: #CCC;
+            color: $color-blue;
+            // color: #CCC;
 
             &:hover {
                 color: $color-white;
-                text-decoration: underline;
+                // text-decoration: underline;
                 // border-bottom: 1px solid #FFF;
             }
 
             &:visited {
-                color: $color-white;
+                // color: $color-white;
+                // color: $color-gray;
             }
         }
 
