@@ -1,6 +1,13 @@
 /* ********************** */
 /* partial_nav */
 
+#top-nav {
+
+    a {
+        color: $color-white;
+    }
+}
+
 #top-nav-home {
     z-index: 1001;
     // max-width: 1440px;

@@ -70,12 +70,12 @@ body {
         color: $color-white;
 
         a {
-            color: $color-blue;
+            color: $color-gray;
             // color: #CCC;
 
             &:hover {
                 color: $color-white;
-                // text-decoration: underline;
+                text-decoration: underline;
                 // border-bottom: 1px solid #FFF;
             }
 

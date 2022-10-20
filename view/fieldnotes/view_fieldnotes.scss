@@ -1,4 +1,4 @@
-#polarized_idx {
+#polarized_idx, #polarized {
 
     margin: 0;
     padding: 0;
@@ -13,6 +13,10 @@
     @media (min-width: 1200px) {
         width: 80%;
         margin: auto;
+    }
+
+    a {
+        color: $color-gray;
     }
 
     h1 {
