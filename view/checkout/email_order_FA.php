@@ -107,8 +107,7 @@ ul li {
 <li>
 <ul class='ml-32'><li>"
 . $title . "<br>"
-. $size .  $matted_size . ' ' . ucfirst($_POST['material_type']) . "<br>"
-. $edition . "<br>"
+. $size .  $matted_size
 . $frame_extra_line
 . $_POST['frame_forgot'] .
 "</li></ul></li>
@@ -132,7 +131,7 @@ ul li {
 <li>
 <ul class='ml-32'><li>
 <p>$"
-. number_format($balance_due,2) . " " . $deposit_label . " pending via Square on credit card *******" . $_POST['last_4'] . "<!-- <br />--NOTE: We will contact you later for this information-->"
+. number_format($balance_due,2) . " " . $deposit_label . " pending via Square on credit card *******" . $_POST['last_4'] . "<br />--NOTE: Total balance above includes estimated shipping amount of (+$" . $_POST['ship'] . "). Depending on final shipping, balance due may change."
 . $payment_html . "
 <div class='pb-16 pt-16 pr-16 mt-8 notice-WARNING'><p style='line-height: 1.3'>NOTICE: Our payment processing is currently under going maintenance so an art consultant will be in contact with you regarding payment. We apologize for the inconvenience.</p></div>
 </p>" . $insert_promo . "
@@ -143,7 +142,7 @@ ul li {
 
 <hr>
 <h3 class='pb-16'>Questions:</h3>
-<p>If you have any questions about your order, pelase reply to this message or call 951-708-1831.</p>
+<p>If you have any questions about your order, please reply to this message or call 951-708-1831.</p>
 
 <p class='pt-16'>---<br>
 jM Galleries<br>

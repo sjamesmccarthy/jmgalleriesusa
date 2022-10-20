@@ -36,7 +36,6 @@
             break;
 
         case "thework":
-            $param_ed = "as_limited";
             if($this->routes->URI->queryvals[1] == 'tinyviews') {
                 $param_ed = 'as_open';
                 $catalog_title = 'OPEN EDITIONS';
@@ -51,6 +50,7 @@
                 $catalog_tabs_hidden = true;
                 $tv_le_link = '<!-- <p class="shop-tv-link"><a href="/collections">Browse By Collections</a></p> -->';
             }
+            // $param_ed = "as_limited";
             $catalog_photos = $this->api_Catalog_Category_Thumbs_All($param_ed);
             break;
 
