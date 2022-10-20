@@ -15,7 +15,7 @@
 
                     <p class="name-statement">
                     Take a moment and explore why I create.<br />
-                    James' color and black and white photography portrays his journey as an artist in photography over the past 10 years and how he has adjusted his style and perspective of fine-art photography from being a simple photograph to an art form that will inspire your curiosity and share a story that your memory awakens, or take you on a journey to a place you have never been.
+                    My color and black and white photography portrays my journey as an artist in photography over the past 10 years and how I have adjusted my style and perspective of fine-art photography from being a simple photograph to an art form that will inspire your curiosity and share a story that your memory awakens, or take you on a journey to a place you have never been until now.
 </p>
 <!--
 <p>
