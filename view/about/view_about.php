@@ -97,9 +97,9 @@
 
                 <div class="grid-center">
                     <div class="col-10_sm-12">
-                        <h3>Available for Hire</h3>
+                        <h3>Beyond Fine-Art</h3>
                         <div class="about--exhibits pt-16">
-                        <p>If you're looking for a specific landscape photo, portraits, real-estate, event or wedding photography please check out my <a href="http://jmportraits.com" target="_new">lifestyle portfolio <i class="fa-solid fa-up-right-from-square"></i></a> and call or e-mail me to book a session. You can save my contact info to your phone by scanning (or clicking) the QR code below.</p>
+                        <p>If you're looking for portraits, real-estate, event or wedding photography photography please check out my <a href="http://jmportraits.com" target="_new">lifestyle portfolio <i class="fa-solid fa-up-right-from-square"></i></a> and call or e-mail me to book a session. You can save my contact info to your phone by scanning (or clicking) the QR code below.</p>
                         </div>
                     </div>
                 </div>
