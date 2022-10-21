@@ -129,7 +129,7 @@
                     </div>
 
                     <div class="col-12 pb-16">
-                        <h4>Promotions</h4>
+                        <h4>Promotional Codes</h4>
                     </div>
 
                     <div class="col-12">
@@ -174,7 +174,7 @@
 
                     <div class="col-12">
                         <p class="small">file://view/__data/data_notices.json</p>
-                        <p class="small">NOTE: To ENABLE notices, you will need to <u>set component_notice_type_ACTIVE</u> to the name of the notice TYPE.</p>
+                        <p class="small">NOTE: To ENABLE notices, you will need to <u>set component_notice_type</u> to the name of the notice TYPE.</p>
                     </div>
 
                     <div class="divTable w-100">
