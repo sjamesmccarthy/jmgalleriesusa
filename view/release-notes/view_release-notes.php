@@ -15,6 +15,7 @@
                 <li>update: about Artist Statement and removed bio content.</li>
                 <li>update: header &footer navigation links, added back fieldnotes</li>
                 <li>update: hyperlink colors.</li>
+                <li>update: top nav is now sticky.</li>
                 <li>update: dividers in notices layout in admin settings.</li>
                 <li>bugfix: fieldnotes responses h3 color not appearing properly.</li>
             </ul>
