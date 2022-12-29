@@ -280,9 +280,9 @@ class Core_Api extends Fieldnotes_Api
         	INNER JOIN catalog_collections_link AS CPL ON CPL.catalog_photo_id = PH.parent_collections_id
         WHERE
             PH.created > DATE_ADD(Now(), INTERVAL - " . $duration . " MONTH)
-            AND PH.status = 'ACTIVE'
-            AND PH.as_limited = '1'
-            OR PH.as_open = '1'
+            -- AND PH.status = 'ACTIVE'
+            -- AND PH.as_limited = '1'
+            -- OR PH.as_open = '1'
         ORDER BY
             PH.created DESC
         LIMIT " . $limit;
@@ -304,7 +304,6 @@ class Core_Api extends Fieldnotes_Api
         }
 
         }
-
         return($data);
     }
 

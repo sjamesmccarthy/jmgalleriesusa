@@ -8,7 +8,7 @@
 
         <div class="col-11" style="position: relative">
 
-        <p class="pt-16">v2.4 <br />December</p>
+        <p class="pt-16">v2.4 <br />December 2022x`xml_error_stringxF</p>
             <ul>
                 <li>removed ability to purchase online.</li>
                 <li>removed find us social links.</li>
@@ -16,7 +16,7 @@
             </ul>
         </p>
 
-        <p class="pt-16">v2.3 <br />October</p>
+        <p class="pt-16">v2.3 <br />October 2022</p>
             <ul>
                 <li>updated pricing, etc.</li>
                 <li>added: Studio Edition Print Only to all images.</li>
@@ -29,7 +29,7 @@
             </ul>
         </p>
 
-        <p class="pt-16">v2.2 <br />August</p>
+        <p class="pt-16">v2.2 <br />August 2022</p>
             <ul>
                 <li>added: new landing page to switch between portfolios.</li>
                 <li>bugfix: styling bugfixes throughout the site for large and small screens.</li>

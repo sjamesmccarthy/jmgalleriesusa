@@ -36,7 +36,7 @@ $html = <<<END
 <!-- <article id="most-popular" class="mt-64"> -->
     <div class="grid">
         <div class="col-12" style="margin-bottom: 16px;">
-        <h3 class="most-popular-heading">you may also like</h3>
+        <h4 class="most-popular-heading">you may also like</h4>
         <!-- <p class="uppercase text-center">&mdash; YOU MAY ALSO LIKE &mdash;</p>-->
         </div>
         $thumb_html
