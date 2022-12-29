@@ -76,10 +76,12 @@
                             <p class="__container--linkback">Published <?= $res_date_written; ?> in <a class="blue" href="/fieldnotes">Field Notes</a></p>
                         </div>
 
-                        <div class="newsletter-section-fn">
-                            <h3>Sign Up For My First Friday Email</h3>
-                            <?php $this->getPartial('newsletter'); ?>
-                        </div>
+                        <!-- <div class="newsletter-section-fn"> -->
+                            <!-- <h3>Sign Up For My First Friday Email</h3> -->
+                            <?php
+                                // $this->getPartial('newsletter');
+                            ?>
+                        <!-- </div> -->
 
                     </div>
                     <!-- /cheers, comments -->

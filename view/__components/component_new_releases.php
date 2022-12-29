@@ -68,17 +68,17 @@ if( !$new_releases['error']) {
     $thumb_new_releases_html .= "</div>";
 
     $thumb_new_releases_html .= "<div class='col'>";
-    $thumb_new_releases_html .= '<div class="text-center"><form action="https://jmgalleries.us16.list-manage.com/subscribe/post?u=7fe25703399796912d1b5d6f8&amp;id=a869c7c419" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
-            <input type="email" value="" placeholder="Don\'t miss a new-release, exhibit or pop-up event &mdash; sign-up for the First Friday email" name="EMAIL" class="newsletterinput required email" id="mce-EMAIL" />
+    // $thumb_new_releases_html .= '<div class="text-center"><form action="https://jmgalleries.us16.list-manage.com/subscribe/post?u=7fe25703399796912d1b5d6f8&amp;id=a869c7c419" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+    //         <input type="email" value="" placeholder="Don\'t miss a new-release, exhibit or pop-up event &mdash; sign-up for the First Friday email" name="EMAIL" class="newsletterinput required email" id="mce-EMAIL" />
 
-            <div style="position: absolute; left: -5000px;" aria-hidden="true">
-                <input type="text" name="b_7fe25703399796912d1b5d6f8_a869c7c419" tabindex="-1" value="">
-            </div>
+    //         <div style="position: absolute; left: -5000px;" aria-hidden="true">
+    //             <input type="text" name="b_7fe25703399796912d1b5d6f8_a869c7c419" tabindex="-1" value="">
+    //         </div>
 
-            <div class="newsletter-button">
-                <button type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button newsletter-button">SUBSCRIBE</button>
-            </div>
-            </form></div>';
+    //         <div class="newsletter-button">
+    //             <button type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button newsletter-button">SUBSCRIBE</button>
+    //         </div>
+    //         </form></div>';
     $thumb_new_releases_html .= "<p class='text-center mt-16'><a href='/new-releases'>view more</p></p><p class='text-center' style='margin-top: -10px;'><i class='fas fa-angle-down'></i></a></p></div>";
     // $thumb_new_releases_html .= "</article>";
 

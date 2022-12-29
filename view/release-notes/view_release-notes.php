@@ -12,6 +12,7 @@
             <ul>
                 <li>removed ability to purchase online.</li>
                 <li>removed find us social links.</li>
+                <li>removed references to newsletter sign-up.</li>
             </ul>
         </p>
 
