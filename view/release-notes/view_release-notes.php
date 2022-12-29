@@ -8,9 +8,16 @@
 
         <div class="col-11" style="position: relative">
 
+        <p class="pt-16">v2.4 <br />December</p>
+            <ul>
+                <li>removed ability to purchase online.</li>
+                <li>removed find us social links.</li>
+            </ul>
+        </p>
+
         <p class="pt-16">v2.3 <br />October</p>
             <ul>
-                <li>Updated pricing, etc.</li>
+                <li>updated pricing, etc.</li>
                 <li>added: Studio Edition Print Only to all images.</li>
                 <li>update: about Artist Statement and removed bio content.</li>
                 <li>update: header &footer navigation links, added back fieldnotes</li>

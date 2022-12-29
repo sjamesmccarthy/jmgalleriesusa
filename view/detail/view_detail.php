@@ -34,7 +34,7 @@
               <?= $photo_meta['story'] ?>
             </p> -->
 
-            <div class="grid-center">
+            <div class="grid-center hidden">
              <div class="col">
               <p class="blue price ml-16 mt-8">$<span id="price_view" class="price"><?= number_format($default_price, 0) ?></span></p>
 <!--             <p class="small ml-16"><?= $edition_desc ?><?= $edition_max ?>  <?= $edition_desc_material_slash ?></span></p> -->
@@ -46,10 +46,19 @@
 
             <p class="mt-32 ml-8 small text-center">Questions?<br /><a class="small underline normal-weight"target="_infoTab" href="/contact">Contact an Art consultant</a></p>
             <!-- <p class="ml-8 text-center"><a target="_infoTab" class="small underline normal-weight" href="/styles">Click here for framing information</a></p> -->
+
+            <?= $gallery_details ?>
+
             </div>
             </div>
 
-            <?= $gallery_details ?>
+            <div class="grid-center">
+                <div class="col">
+                    <p class="text-center">As of January 1, 2023 my fine-art photography will no longer be available for purchase online. In order to obtain an original fine-art photograph you will need to visit my Carson City gallery or a current exhibit. If you have any questions or just can't wait, please <a href="/contact">contact me</a>.</p>
+                </div>
+            </div>
+
+
         </div>
 
     <!-- previous location of buy form -->
