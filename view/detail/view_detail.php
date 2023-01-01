@@ -54,7 +54,7 @@
 
             <div class="grid-center">
                 <div class="col">
-                    <p class="text-center">As of January 1, 2023 my fine-art photography will no longer be available for purchase online. In order to obtain an original fine-art photograph you will need to visit my Carson City gallery or <a href="/about">at a current exhibit.</a></p>
+                    <p class="text-center">As of January 1, 2023 my fine-art photography will only be available for purchase through private sales during exhibition. </p>
                 </div>
             </div>
 
