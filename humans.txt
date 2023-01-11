@@ -5,16 +5,15 @@ Site URL:   https://jmgalleries.com/
 Site Desc:  EEveryday Fine Art, Portraits, Weddings, Real Estate and Lifestyle Photography
 About:      https://jmccarthyusa.com
 Twitter:    https://twitter.com/jmgalleriesusa
-LinkedIn:   https://linkedin.com/company/jmgalleriesusa
 Instagram:  https://instagram.com/jmgalleriesusa
 LinkTree:   https://linktr.ee/jmgalleriesusa
 Contact:    https://jmgalleries.com/contact/
-Location:   USA, Nevada
-Web design: Studio 610 Development
+Location:   Carson City, Nevada
+Web design: webscapes.io
 Built with: PHP, HTML, CSS, JavaScript, JSON, MySQL/MariaDB
 Libraries:  jQuery, fontawesome, datatables, google fonts
 Software:   Adobe Lightroom & Photoshop, Affinity Designer & Photo, Sketch
-IDE:        Nova, previously VS Code
+IDE:        PhpStorm, Nova, VS Code
 Launched:   2013
 
 The negative is the equivalent of the composer's score, and the print the performance.
