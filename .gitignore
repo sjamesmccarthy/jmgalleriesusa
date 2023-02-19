@@ -23,6 +23,7 @@ composer*
 
 # misc
 .DS_Store
+.icloud
 .env.local
 .env.development.local
 .env.test.local

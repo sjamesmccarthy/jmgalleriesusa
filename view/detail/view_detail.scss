@@ -310,7 +310,7 @@ form {
                 /* MEDIA QUERIES from Chrome, Safari, Firefox as of 10/2021 */
         /* Mobile S: iPhone5/SE(320), Moto G4(360), Galaxy S5(360), Galaxy S10(360) */
         @media (min-width: 320px) {
-            width: 73%;
+            width:100%;
             border-radius: 0;
         }
 
@@ -322,9 +322,15 @@ form {
 
         /* Mobile L: iPhone 12/13 Pro Max(428) */
         @media (min-width: 425px) {
-            width: 53%;
+            width: 40%;
             // border-radius: 1rem;
         }
+
+          /* Laptop: iPad Pro 12.9(1024) */
+          @media (min-width: 425px) and (orientation: portrait) {
+              width: 65%;
+              // border-radius: 1rem;
+          }
 
         /* Tablet: iPad Mini(768), iPad 9.7(768), iPad Pro 10.5(834) */
         @media (min-width: 768px) {
@@ -332,9 +338,15 @@ form {
             // border-radius: 1rem;
         }
 
+          /* Laptop: iPad Pro 12.9(1024) */
+          @media (min-width: 768px) and (orientation: portrait) {
+              width: 65%;
+              // border-radius: 1rem;
+          }
+
         /* Laptop: iPad Pro 12.9(1024) */
-        @media (min-width: 1024px) {
-            width: 65%;
+        @media (min-width: 1024px) and (orientation: landscape) {
+            width: 40%;
             // border-radius: 1rem;
         }
 

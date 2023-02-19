@@ -426,7 +426,7 @@ class Core_Api extends Fieldnotes_Api
         return($data);
     }
 
-    public function api_CollectorDash_Get_Portfolio($id,$serialreg=0,$include_all) {
+    public function api_CollectorDash_Get_Portfolio($id,$serialreg=0,$include_all=0) {
 
         // echo "api_CollectorDash_Get_Portfolio";
         // print "<hr />" . $serialreg . "<hr/>";
