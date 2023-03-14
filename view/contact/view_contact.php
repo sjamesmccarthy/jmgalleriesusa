@@ -1,5 +1,3 @@
-<script src="https://www.google.com/recaptcha/api.js?render=6LetD7YUAAAAAFX5cXupV3exd1YCSuYFY_az92Wh"></script>
-
 <section id="contact">
     <div class="grid-center">
 
@@ -43,8 +41,12 @@
 
                 </div>
 
+                    <button class="g-recaptcha mt-32"
+                            data-sitekey="reCAPTCHA_site_key"
+                            data-callback='onSubmit'
+                            data-action='submit'><?= $button_label ?></button>
 
-                <button class="mt-32" value="SEND"><?= $button_label ?></button>
+<!--                <button class="mt-32" value="SEND"</button>-->
 
                 <div id="error"></div>
                 </form>
@@ -60,6 +62,8 @@
 
     </div>
 </section>
+
+<script src="https://www.google.com/recaptcha/api.js?render=6LetD7YUAAAAAFX5cXupV3exd1YCSuYFY_az92Wh"></script>
 
 <script>
 
@@ -81,11 +85,11 @@
 
         console.log('start.form.contactForm.submission');
 
-        grecaptcha.execute('6LetD7YUAAAAAFX5cXupV3exd1YCSuYFY_az92Wh', {action: 'homepage'}).then(function(token) {
-              document.getElementById('g-recaptcha-response').value = token;
-              console.log('grecaptcha.ready');
-              // console.log( document.getElementById('g-recaptcha-response') );
-        });
+        // grecaptcha.execute('6LetD7YUAAAAAFX5cXupV3exd1YCSuYFY_az92Wh', {action: 'submit'}).then(function(token) {
+        //       document.getElementById('g-recaptcha-response').value = token;
+        //       console.log('grecaptcha.ready');
+        //       // console.log( document.getElementById('g-recaptcha-response') );
+        // });
 
             event.preventDefault();
             console.log('validating...');
@@ -123,7 +127,7 @@
 
               grecaptcha.ready(function() {
 
-                  grecaptcha.execute('6LetD7YUAAAAAFX5cXupV3exd1YCSuYFY_az92Wh', {action: 'homepage'}).then(function(token) {
+                  grecaptcha.execute('6LetD7YUAAAAAFX5cXupV3exd1YCSuYFY_az92Wh', {action: 'submit'}).then(function(token) {
                     $.ajax({
                       type: "POST",
                       url: url,

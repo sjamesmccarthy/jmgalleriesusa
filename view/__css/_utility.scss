@@ -6,7 +6,7 @@ $unit: 'px';
 @mixin wiggle($className, $styleName) {
   $i: 8;
   @while $i <= $max {
-    #{$className + $i} { 
+    #{$className + $i} {
       #{$styleName}: #{$i + $unit} !important;
     }
     $i: $i + $offset;
@@ -34,7 +34,7 @@ $unit: 'px';
     // margin-bottom: 2rem;
     padding: 2rem;
     // margin: 1rem;
-    
+
     &.success {
         background-color: #d4edda;
         border: 1px solid #c3e6cb;

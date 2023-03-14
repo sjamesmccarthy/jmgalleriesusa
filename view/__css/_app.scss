@@ -64,7 +64,7 @@ body {
     // max-width: $base-max-width;
     margin: auto;
 
-/* DARK-THEME */
+    /* DARK-THEME */
     &.dark-theme {
         background-color: $color-black-theme;
         color: $color-white;
@@ -130,9 +130,9 @@ body {
             color: $color-white;
         }
 
-       .thumb img:hover {
-          box-shadow: 0px 1px 10px 0px $color-gray;
-       }
+        .thumb img:hover {
+            box-shadow: 0px 1px 10px 0px $color-gray;
+        }
 
         input[type="text"], input[type="password"], textarea {
             // background-color: $color-black-theme;
@@ -152,12 +152,12 @@ body {
         }
 
         select {
-          position: relative;
-          height: 50px;
-          padding: 0 12px;
-          width: 100%;
-          background-color: transparent;
-          color: $color-white;
+            position: relative;
+            height: 50px;
+            padding: 0 12px;
+            width: 100%;
+            background-color: transparent;
+            color: $color-white;
         }
 
         button {
@@ -206,7 +206,7 @@ body {
         }
 
         #promocode {
-           color: $color-black;
+            color: $color-black;
         }
 
         .notice {
@@ -219,8 +219,8 @@ body {
             background-color: transparent;
 
             >p >img {
-             border: 1px solid rgba(233, 233, 233, 0.1);
-             background-color: transparent;
+                border: 1px solid rgba(233, 233, 233, 0.1);
+                background-color: transparent;
             }
         }
 
@@ -240,14 +240,14 @@ body {
         }
 
         .link-collection-sub-color {
-          color: $color-white !important;
+            color: $color-white !important;
         }
 
         .card--wrapper {
             border-bottom: 1px solid rgba(255,255,255,.2);
         }
     }
-/* END DARK-THEME */
+    /* END DARK-THEME */
 
     &.light-theme {
         background-color: $color-white;
@@ -271,15 +271,15 @@ main {
 }
 
 .link-collection-sub-color {
-  color: $color-black;
+    color: $color-black;
 }
 
 .divider {
-  border-bottom: 1px solid #e9e9e9;
-  width: 50%;
-  margin-left: 25%;
-  margin-bottom: 3rem;
-  margin-top: 1rem;
+    border-bottom: 1px solid #e9e9e9;
+    width: 50%;
+    margin-left: 25%;
+    margin-bottom: 3rem;
+    margin-top: 1rem;
 }
 
 .content_wrapper {
@@ -372,7 +372,7 @@ ol li {
 
 .dataTables_wrapper .dataTables_length, .dataTables_filter, .dataTables_info, .dataTables_paginate {
     padding: 1rem;
- }
+}
 
 table.dataTable.row-border tbody th, table.dataTable.row-border tbody td, table.dataTable.display tbody th, table.dataTable.display tbody td {
     font-size: .9rem;
@@ -421,7 +421,7 @@ table.dataTable.row-border tbody th, table.dataTable.row-border tbody td, table.
 
 /* ReCaptcha */
 .grecaptcha-badge{
-	visibility: collapse !important;
+    visibility: collapse !important;
 }
 
 /* Typography */
@@ -513,15 +513,15 @@ blockquote {
 }
 
 .color-white {
-  color: $color-white !important;
+    color: $color-white !important;
 }
 
 .color-black {
-  color: $color-black !important;
+    color: $color-black !important;
 }
 
 .color-blue {
-  color: $color-blue;
+    color: $color-blue;
 }
 
 .noshow {
@@ -667,7 +667,7 @@ form {
 }
 
 select:focus {
-  outline-style: none;
+    outline-style: none;
 }
 
 .half-size {
@@ -974,9 +974,9 @@ button a {
     min-width: 150px;
 
     &:hover {
-    background-color: rgba(255,255,255,1);
-    color:$color-black;
-    cursor: pointer;
+        background-color: rgba(255,255,255,1);
+        color:$color-black;
+        cursor: pointer;
     }
 
 }
@@ -998,7 +998,7 @@ button a {
 
 /* Tables */
 .divTable {
-	display: table;
+    display: table;
     margin-top: 16px;
 
     &.w-100 {
@@ -1022,7 +1022,7 @@ button a {
     }
 
     .border-b {
-    	border-bottom: .5px solid #e4e4e4;
+        border-bottom: .5px solid #e4e4e4;
     }
 
     .border-l {
@@ -1036,76 +1036,76 @@ button a {
 }
 
 .divTableRow {
-	display: table-row;
+    display: table-row;
 }
 
 .divTableHeading {
-	background-color: #EEE;
-	display: table-header-group;
+    background-color: #EEE;
+    display: table-header-group;
 }
 
 .divTableCell, .divTableHead {
-	display: table-cell;
-	// padding: 3px 10px;
+    display: table-cell;
+    // padding: 3px 10px;
     padding: 3px 0;
     font-size: 1rem;
 }
 
 .divTableHeading {
-	background-color: #EEE;
-	display: table-header-group;
-	font-weight: bold;
+    background-color: #EEE;
+    display: table-header-group;
+    font-weight: bold;
 }
 .divTableFoot {
-	background-color: #EEE;
-	display: table-footer-group;
-	font-weight: bold;
+    background-color: #EEE;
+    display: table-footer-group;
+    font-weight: bold;
 }
 .divTableBody {
-	display: table-row-group;
+    display: table-row-group;
 }
 .thead {
-	font-weight: 700;
+    font-weight: 700;
 }
 
 /* Tabs */
 .tabs {
-        display: flex;
-        flex-wrap: wrap;
-        margin-top: 1rem;
-        // border-bottom: 5px solid transparent;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 1rem;
+    // border-bottom: 5px solid transparent;
 
-        &>div {
-            background-color: #f1f1f1;
-            min-width: 100px;
-            // border-left: 1px solid #DDD;
-            padding: 10px;
-            text-align: center;
-            font-size: .9rem;
-            text-transform: uppercase;
-            border-bottom: 3px solid transparent;
+    &>div {
+        background-color: #f1f1f1;
+        min-width: 100px;
+        // border-left: 1px solid #DDD;
+        padding: 10px;
+        text-align: center;
+        font-size: .9rem;
+        text-transform: uppercase;
+        border-bottom: 3px solid transparent;
 
-            &:hover:not(:last-child) {
-                border-bottom: 3px solid $color-black;
-                // border-left: 1px solid transparent;
-                cursor: pointer;
+        &:hover:not(:last-child) {
+            border-bottom: 3px solid $color-black;
+            // border-left: 1px solid transparent;
+            cursor: pointer;
 
-                a {
-                    color: $color-black;
-                }
-            }
-        }
-
-        .active {
-            // background-color: $color-silver;
-            border-bottom: 3px solid $color-blue;
-            // border-left: 0;
-
-            >a {
-                color: #000;
+            a {
+                color: $color-black;
             }
         }
     }
+
+    .active {
+        // background-color: $color-silver;
+        border-bottom: 3px solid $color-blue;
+        // border-left: 0;
+
+        >a {
+            color: #000;
+        }
+    }
+}
 
 .filter-editions-list {
 
@@ -1113,12 +1113,12 @@ button a {
     display: block;
 
     li {
-    display: inline-block;
-    font-size: 1.4rem;
-    padding: .5rem;
-    width: 200px;
-    color: $color-blue;
-    text-align: center;
+        display: inline-block;
+        font-size: 1.4rem;
+        padding: .5rem;
+        width: 200px;
+        color: $color-blue;
+        text-align: center;
 
         &:not(:last-child) {
             margin-right: 10px;

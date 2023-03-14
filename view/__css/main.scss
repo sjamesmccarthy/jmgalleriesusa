@@ -8,8 +8,8 @@ SASS, https://sass-lang.com/
 
 // Core
 @import '../../lib/resetcss/reset.scss';
-@import '_app';
-@import 'utility';
+@import '_app.scss';
+@import '_utility.scss';
 @import '../../lib/editor/src/editor.scss';
 
 // Components
@@ -63,8 +63,8 @@ SASS, https://sass-lang.com/
 @import '../admin/materials/view_admin_materials-add';
 @import '../admin/reports/view_admin_reports';
 @import '../admin/reports/view_admin_reports-add';
-@import '..//admin/fieldnotes/view_admin_fieldnotes';
-@import '..//admin/fieldnotes/view_admin_fieldnotes-add';
+@import '../admin/fieldnotes/view_admin_fieldnotes';
+@import '../admin/fieldnotes/view_admin_fieldnotes-add';
 @import '../admin/collectors/view_admin_collectors';
 @import '../admin/collectors/view_admin_collectors-add';
 @import '../admin/users/view_admin_users';
