@@ -85,14 +85,13 @@
 
         console.log('start.form.contactForm.submission');
 
-        // grecaptcha.execute('6LetD7YUAAAAAFX5cXupV3exd1YCSuYFY_az92Wh', {action: 'submit'}).then(function(token) {
-        //       document.getElementById('g-recaptcha-response').value = token;
-        //       console.log('grecaptcha.ready');
-        //       // console.log( document.getElementById('g-recaptcha-response') );
-        // });
+        grecaptcha.execute('6LetD7YUAAAAAFX5cXupV3exd1YCSuYFY_az92Wh', {action: 'submit'}).then(function(token) {
+              document.getElementById('g-recaptcha-response').value = token;
+              console.log('grecaptcha.ready');
+              // console.log( document.getElementById('g-recaptcha-response') );
+        });
 
             event.preventDefault();
-            console.log('validating...');
 
             var errors=0;
             var name = $("#contactname").val();
