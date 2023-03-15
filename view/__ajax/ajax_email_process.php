@@ -68,7 +68,7 @@ if ($recaptcha->score >= 0.5 || $core->env == "local") {
             echo "ajax_email_build(to: " . $to . ")" . __LINE__ . "\n";
 
             if(!$_POST['subject']) {
-                $subject = 'webform/jmG - ' . $_POST['contactsubject'];
+                $subject = 'webform[jmGalleries] - no subject provided';
             } else {
                 $subject = $_POST['subject'];
             }
@@ -180,14 +180,22 @@ if ($recaptcha->score >= 0.5 || $core->env == "local") {
 	/* If SendReply is TRUE then send a reply to the requestor */
 	if($sendReply == '1') {
 
-        $to      = EMAIL_TO;
+        $to = EMAIL_TO_NAME . EMAIL_TO_ADDRESS;
+        echo "ajax_email_build(to: " . $to . ")" . __LINE__ . "\n";
+
         $subject = $send_reply_subject;
         $message = $send_reply_message;
         $headers = array(
-            'From' => EMAIL_TO,
+            'From' => EMAIL_TO_NAME . EMAIL_TO_ADDRESS,
             'Reply-To' => $reply_to,
             'X-Mailer' => 'PHP/' . phpversion()
         );
+
+        echo "ajax_email_build(from: " . $headers['From'] . ")" . __LINE__ . "\n";
+        echo "ajax_email_build(replyTo: " . $headers['Reply-To'] . ")" . __LINE__ . "\n";
+
+        $sendReply = '0';
+        echo "ajax_email_build(sendReply).complete" . __LINE__ . "\n";
 
         if (mail($to, $subject, $message, $headers)) {
             echo "ajax_email_process(send-reply-true)" . __LINE__ . "\n";
