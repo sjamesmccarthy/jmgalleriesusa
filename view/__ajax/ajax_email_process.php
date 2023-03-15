@@ -18,7 +18,8 @@ $core = new Core_Site();
 echo "ajax_email_process(start--" . $core->env . ")" . __LINE__ . "\n";
 
  /* CONSTANTS */
-define('EMAIL_TO', 'James McC <james@jmgalleries.com>');
+define('EMAIL_TO_NAME', 'James McC');
+define('EMAIL_TO_ADDRESS', '<james@jmgalleries.com>');
 define('TIMESTAMP', time());
 
 if($_POST){
@@ -63,7 +64,7 @@ if ($recaptcha->score >= 0.5 || $core->env == "local") {
 
 		case "ContactForm":
 
-            $to      = EMAIL_TO;
+            $to      = EMAIL_TO_NAME . " " . EMAIL_TO_ADDRESS;
             if(!$_POST['subject']) { $subject = 'webform/jmG - ' . $_POST['contactsubject']; } else { $subject = $_POST['subject']; }
             $message = json_encode($_POST);
             $headers = array(
@@ -140,9 +141,9 @@ if ($recaptcha->score >= 0.5 || $core->env == "local") {
 	}
 
 	if (mail($to, $subject, $message, $headers)) {
-        echo "ajax_email_process(send-mail)" . __LINE__;
+        echo "ajax_email_process(send-mail)" . __LINE__ . "\n";
     } else {
-        echo "ajax_email_process(send-failed)" . __LINE__;
+        echo "ajax_email_process(send-failed)" . __LINE__ . "\n";
     }
 
 	/* If SendReply is TRUE then send a reply to the requestor */
@@ -158,9 +159,9 @@ if ($recaptcha->score >= 0.5 || $core->env == "local") {
         );
 
         if (mail($to, $subject, $message, $headers)) {
-            echo "ajax_email_process(send-reply-true)" . __LINE__;
+            echo "ajax_email_process(send-reply-true)" . __LINE__ . "\n";
         } else {
-            echo "ajax_email_process(send-reply-failed)" . __LINE__;
+            echo "ajax_email_process(send-reply-failed)" . __LINE__ . "\n";
         }
 	}
 
