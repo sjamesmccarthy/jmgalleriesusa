@@ -18,7 +18,7 @@ $core = new Core_Site();
 echo "ajax_email_process(start--" . $core->env . ")" . __LINE__ . "\n";
 
  /* CONSTANTS */
-define('EMAIL_TO', 'james@jmgalleries.com');
+define('EMAIL_TO', 'James McC <james@jmgalleries.com>');
 define('TIMESTAMP', time());
 
 if($_POST){
@@ -49,7 +49,7 @@ if ($recaptcha->score >= 0.5 || $core->env == "local") {
 
 	/* Switch based of what form is being used */
 	switch($_POST['formType']) {
-		
+
 		case "AmazingOfferForm":
             /* deprecated */
 			// $to = EMAIL_TO;
@@ -62,14 +62,23 @@ if ($recaptcha->score >= 0.5 || $core->env == "local") {
 			break;
 
 		case "ContactForm":
-			$to = EMAIL_TO;
-			if(!$_POST['subject']) { $subject = 'webform/jmG - ' . $_POST['contactsubject']; } else { $subject = $_POST['subject']; }
-			$header_from = "FROM: " . $_POST['contactname'] . " <'" . $_POST['contactemail'] . "'>";
-			$reply_to = $_POST['contactemail'];
+
+            $to      = EMAIL_TO;
+            if(!$_POST['subject']) { $subject = 'webform/jmG - ' . $_POST['contactsubject']; } else { $subject = $_POST['subject']; }
+            $message = json_encode($_POST);
+            $headers = array(
+                'From' => $_POST['contactname'] . " <'" . $_POST['contactemail'] . "'>",
+                'Reply-To' => $_POST['contactemail'],
+                'X-Mailer' => 'PHP/' . phpversion()
+            );
+
 			$sendReply = '0';
+
+            echo "ajax_email_process(ContactForm)" . __LINE__ . "\n";
 			break;
 
 		case "RequestQuoteForm":
+            /* No longer Used at This time Wed, 15 March 2023 */
             // echo "ajax_email_process(RequestQuoteForm)" . __LINE__ . "\n";
 			// $to = EMAIL_TO;
 			// $subject = 'webform/' . $_POST['contactsubject'];
@@ -94,46 +103,65 @@ if ($recaptcha->score >= 0.5 || $core->env == "local") {
 			// $send_reply_subject = null;
 			// $send_reply_message = null;
             break;
-            
+
 		case "referrCollectorForm":
-            echo "ajax_email_process(referrCollectorForm)" . __LINE__ . "\n";
-			$to = EMAIL_TO;
-			$subject = $_POST['referred_by'];
-			$header_from = "FROM: " . $_POST['referred_by']. " <'" . $_POST['referred_by_email'] . "'>";
-			$reply_to = $_POST['referred_by_email'];
+
+            $to      = EMAIL_TO;
+            $subject = $_POST['referred_by'];
+            $message = "Hello, " . $_POST['ref_name'] . "\n\n" . "Your friend, " . $_POST['referred_by'] . ", thought that you might be interested in looking at some fine-art photography by Fine Art Photographer, j.McCarthy.\n\n" . "You can check out his online catalog at, https://jmgalleries.com, and if you find a photo that you think would look great on your home or office wall then use this promo-code: " . $_POST['promo_code'] . " when ordering, for a 15% OFF friends & family discount. \n\n" . "Cheers,\r\n" . $_POST['referred_by'];
+            $headers = array(
+                'From' =>  $_POST['referred_by']. " <'" . $_POST['referred_by_email'] . "'>",
+                'Reply-To' => $_POST['referred_by_email'],
+                'X-Mailer' => 'PHP/' . phpversion()
+            );
+
 			$sendReply = '0';
 			$send_reply_subject = null;
             $send_reply_message = null;
-            $message = "Hello, " . $_POST['ref_name'] . "\n\n" . "Your friend, " . $_POST['referred_by'] . ", thought that you might be interested in looking at some fine-art photography by Fine Art Photographer, j.McCarthy.\n\n" . "You can check out his online catalog at, https://jmgalleries.com, and if you find a photo that you think would look great on your home or office wall then use this promo-code: " . $_POST['promo_code'] . " when ordering, for a 15% OFF friends & family discount. \n\n" . "Cheers,\r\n" . $_POST['referred_by'];
+
+            echo "ajax_email_process(referrCollectorForm)" . __LINE__ . "\n";
 			break;
 
 		default:
-            echo "ajax_email_process(default)" . __LINE__ . "\n";
-			$to = EMAIL_TO;
-			$subject = 'webform/jmG Default';
-			$header_from = "FROM: " . $_POST['contactname'] . " <'" . $_POST['contactemail'] . "'>";
-			$reply_to = $_POST['contactemail'];
+
+            $to      = EMAIL_TO;
+            $subject = 'jmgalleries.com default form submission';
+            $message = json_encode($_POST);
+            $headers = array(
+                'From' => $_POST['contactname'] . " <'" . $_POST['contactemail'] . "'>",
+                'Reply-To' => $_POST['contactemail'],
+                'X-Mailer' => 'PHP/' . phpversion()
+            );
+
 			$sendReply = '0';
+
+            echo "ajax_email_process(default)" . __LINE__ . "\n";
 			break;
 	}
-  	
-    /* Encode the Form POST into a JSON array */
-	$message = json_encode($_POST);
 
-    echo "ajax_email_process(send-mail)" . __LINE__ . "\n";
-	$headers =  $header_from . "\r\n" . 'Reply-To: ' . $reply_to . "\r\n" . 'X-Mailer: PHP/' . phpversion() . '/jmGForm';
-	mail($to, $subject, $message, $headers);
-	
+	if (mail($to, $subject, $message, $headers)) {
+        echo "ajax_email_process(send-mail)" . __LINE__;
+    } else {
+        echo "ajax_email_process(send-failed)" . __LINE__;
+    }
+
 	/* If SendReply is TRUE then send a reply to the requestor */
 	if($sendReply == '1') {
-        echo "ajax_email_process(send-reply-true)" . __LINE__ . "\n";
-		$to = $_POST['contactemail'];
-		$header_from = "FROM: jM Galleries <'" . EMAIL_TO . "'>";
-		$reply_to = EMAIL_TO;
-		$subject = $send_reply_subject;
-		$message = $send_reply_message;
-		$headers =  $header_from . "\r\n" . 'Reply-To: ' . $reply_to . "\r\n" . 'X-Mailer: PHP/' . phpversion() . '/jmGForm';
-		mail($to, $subject, $message, $headers);
+
+        $to      = EMAIL_TO;
+        $subject = $send_reply_subject;
+        $message = $send_reply_message;
+        $headers = array(
+            'From' => EMAIL_TO,
+            'Reply-To' => $reply_to,
+            'X-Mailer' => 'PHP/' . phpversion()
+        );
+
+        if (mail($to, $subject, $message, $headers)) {
+            echo "ajax_email_process(send-reply-true)" . __LINE__;
+        } else {
+            echo "ajax_email_process(send-reply-failed)" . __LINE__;
+        }
 	}
 
     echo "ajax_email_process(" . $_POST['formType'] . "-success)" . __LINE__ . "\n";
@@ -143,5 +171,3 @@ if ($recaptcha->score >= 0.5 || $core->env == "local") {
 }
 
 exit;
-
-?>
