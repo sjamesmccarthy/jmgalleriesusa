@@ -64,8 +64,8 @@ if ($recaptcha->score >= 0.5 || $core->env == "local") {
 
 		case "ContactForm":
 
-            $to = EMAIL_TO_NAME . ' ' . EMAIL_TO_ADDRESS;
-            echo "ajax_email_process(to: " . $to . ")" . __LINE__ . "\n";
+            $to = EMAIL_TO_NAME . EMAIL_TO_ADDRESS;
+            echo "ajax_email_build(to: " . $to . ")" . __LINE__ . "\n";
 
             if(!$_POST['subject']) {
                 $subject = 'webform/jmG - ' . $_POST['contactsubject'];
@@ -80,12 +80,12 @@ if ($recaptcha->score >= 0.5 || $core->env == "local") {
                 'X-Mailer' => 'PHP/' . phpversion()
             );
 
-            echo "ajax_email_process(from: " . $headers['From'] . ")" . __LINE__ . "\n";
-            echo "ajax_email_process(replyTo: " . $headers['Reply-To'] . ")" . __LINE__ . "\n";
+            echo "ajax_email_build(from: " . $headers['From'] . ")" . __LINE__ . "\n";
+            echo "ajax_email_build(replyTo: " . $headers['Reply-To'] . ")" . __LINE__ . "\n";
 
 			$sendReply = '0';
 
-            echo "ajax_email_build(ContactForm)" . __LINE__ . "\n";
+            echo "ajax_email_build(ContactForm).complete" . __LINE__ . "\n";
 			break;
 
 		case "RequestQuoteForm":
@@ -117,36 +117,57 @@ if ($recaptcha->score >= 0.5 || $core->env == "local") {
 
 		case "referrCollectorForm":
 
-            $to      = EMAIL_TO;
-            $subject = $_POST['referred_by'];
+            $to = EMAIL_TO_NAME . EMAIL_TO_ADDRESS;
+            echo "ajax_email_build(to: " . $to . ")" . __LINE__ . "\n";
+
+            if(!$_POST['subject']) {
+                $subject = 'webform[jmGalleries] - no subject provided';
+            } else {
+                $subject = $_POST['referred_by'];
+            }
+
             $message = "Hello, " . $_POST['ref_name'] . "\n\n" . "Your friend, " . $_POST['referred_by'] . ", thought that you might be interested in looking at some fine-art photography by Fine Art Photographer, j.McCarthy.\n\n" . "You can check out his online catalog at, https://jmgalleries.com, and if you find a photo that you think would look great on your home or office wall then use this promo-code: " . $_POST['promo_code'] . " when ordering, for a 15% OFF friends & family discount. \n\n" . "Cheers,\r\n" . $_POST['referred_by'];
+
             $headers = array(
-                'From' =>  $_POST['referred_by']. " <'" . $_POST['referred_by_email'] . "'>",
+                'From' =>  $_POST['referred_by']. "<" . $_POST['referred_by_email'] . ">",
                 'Reply-To' => $_POST['referred_by_email'],
                 'X-Mailer' => 'PHP/' . phpversion()
             );
 
-			$sendReply = '0';
-			$send_reply_subject = null;
+            echo "ajax_email_build(from: " . $headers['From'] . ")" . __LINE__ . "\n";
+            echo "ajax_email_build(replyTo: " . $headers['Reply-To'] . ")" . __LINE__ . "\n";
+
+            $sendReply = '0';
+            $send_reply_subject = null;
             $send_reply_message = null;
 
-            echo "ajax_email_process(referrCollectorForm)" . __LINE__ . "\n";
+            echo "ajax_email_build(referrCollectorForm).complete" . __LINE__ . "\n";
 			break;
 
 		default:
 
-            $to      = EMAIL_TO;
-            $subject = 'jmgalleries.com default form submission';
+            $to = EMAIL_TO_NAME . EMAIL_TO_ADDRESS;
+            echo "ajax_email_build(to: " . $to . ")" . __LINE__ . "\n";
+
+            if(!$_POST['subject']) {
+                $subject = 'webform[jmGalleries] - no subject provided';
+            } else {
+                $subject = $_POST['subject'];
+            }
+
             $message = json_encode($_POST);
             $headers = array(
-                'From' => $_POST['contactname'] . " <'" . $_POST['contactemail'] . "'>",
+                'From' => $_POST['contactname'] . '<' . $_POST['contactemail'] . '>',
                 'Reply-To' => $_POST['contactemail'],
                 'X-Mailer' => 'PHP/' . phpversion()
             );
 
-			$sendReply = '0';
+            echo "ajax_email_build(from: " . $headers['From'] . ")" . __LINE__ . "\n";
+            echo "ajax_email_build(replyTo: " . $headers['Reply-To'] . ")" . __LINE__ . "\n";
 
-            echo "ajax_email_process(default)" . __LINE__ . "\n";
+            $sendReply = '0';
+
+            echo "ajax_email_build(default).complete" . __LINE__ . "\n";
 			break;
 	}
 
