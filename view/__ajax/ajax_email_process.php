@@ -67,10 +67,10 @@ if ($recaptcha->score >= 0.5 || $core->env == "local") {
             $to = EMAIL_TO_NAME . EMAIL_TO_ADDRESS;
             echo "ajax_email_build(to: " . $to . ")" . __LINE__ . "\n";
 
-            if(!$_POST['subject']) {
+            if(!$_POST['contactsubject']) {
                 $subject = 'webform[jmGalleries] - no subject provided';
             } else {
-                $subject = $_POST['subject'];
+                $subject = $_POST['contactsubject'];
             }
 
             $message = json_encode($_POST);
