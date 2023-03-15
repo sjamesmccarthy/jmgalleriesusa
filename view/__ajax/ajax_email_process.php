@@ -177,10 +177,14 @@ if ($recaptcha->score >= 0.5 || $core->env == "local") {
         echo "ajax_email_process(sendmail-failed)" . __LINE__ . "\n";
     }
 
+    $sendReply = 1;
+    $send_reply_subject = "testing reply back";
+    $send_reply_message = "testing reply back message"
+
 	/* If SendReply is TRUE then send a reply to the requestor */
 	if($sendReply == '1') {
 
-        $to = EMAIL_TO_NAME . EMAIL_TO_ADDRESS;
+        $to = $headers['Reply-To'];
         echo "ajax_email_build(to: " . $to . ")" . __LINE__ . "\n";
 
         $subject = $send_reply_subject;
@@ -202,6 +206,8 @@ if ($recaptcha->score >= 0.5 || $core->env == "local") {
         } else {
             echo "ajax_email_process(send-reply-failed)" . __LINE__ . "\n";
         }
+
+        echo "ajax_email_build(Reply-To).complete" . __LINE__ . "\n";
 	}
 
     echo "ajax_email_process(" . $_POST['formType'] . "-success)" . __LINE__ . "\n";
