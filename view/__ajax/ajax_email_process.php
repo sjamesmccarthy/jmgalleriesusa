@@ -19,7 +19,7 @@ echo "ajax_email_process(start--" . $core->env . ")" . __LINE__ . "\n";
 
  /* CONSTANTS */
 define('EMAIL_TO_NAME', 'James McC');
-define('EMAIL_TO_ADDRESS', '<james@jmgalleries.com>');
+define('EMAIL_TO_ADDRESS', '<hikerbikerwriter@gmail.com>');
 define('TIMESTAMP', time());
 
 if($_POST){
