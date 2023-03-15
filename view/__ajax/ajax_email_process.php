@@ -179,7 +179,7 @@ if ($recaptcha->score >= 0.5 || $core->env == "local") {
 
     $sendReply = 1;
     $send_reply_subject = "testing reply back";
-    $send_reply_message = "testing reply back message"
+    $send_reply_message = "testing reply back message";
 
 	/* If SendReply is TRUE then send a reply to the requestor */
 	if($sendReply == '1') {
