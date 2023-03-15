@@ -64,18 +64,28 @@ if ($recaptcha->score >= 0.5 || $core->env == "local") {
 
 		case "ContactForm":
 
-            $to = EMAIL_TO_NAME . " " . EMAIL_TO_ADDRESS;
-            if(!$_POST['subject']) { $subject = 'webform/jmG - ' . $_POST['contactsubject']; } else { $subject = $_POST['subject']; }
+            $to = EMAIL_TO_NAME . ' ' . EMAIL_TO_ADDRESS;
+            echo "ajax_email_process(to: " . $to . ")" . __LINE__ . "\n";
+
+            if(!$_POST['subject']) {
+                $subject = 'webform/jmG - ' . $_POST['contactsubject'];
+            } else {
+                $subject = $_POST['subject'];
+            }
+
             $message = json_encode($_POST);
             $headers = array(
-                'From' => $_POST['contactname'] . " <'" . $_POST['contactemail'] . "'>",
+                'From' => $_POST['contactname'] . '<' . $_POST['contactemail'] . '>',
                 'Reply-To' => $_POST['contactemail'],
                 'X-Mailer' => 'PHP/' . phpversion()
             );
 
+            echo "ajax_email_process(from: " . $headers['From'] . ")" . __LINE__ . "\n";
+            echo "ajax_email_process(replyTo: " . $headers['Reply-To'] . ")" . __LINE__ . "\n";
+
 			$sendReply = '0';
 
-            echo "ajax_email_process(ContactForm)" . __LINE__ . "\n";
+            echo "ajax_email_build(ContactForm)" . __LINE__ . "\n";
 			break;
 
 		case "RequestQuoteForm":
@@ -139,19 +149,6 @@ if ($recaptcha->score >= 0.5 || $core->env == "local") {
             echo "ajax_email_process(default)" . __LINE__ . "\n";
 			break;
 	}
-
-    $to = EMAIL_TO_NAME . " " . EMAIL_TO_ADDRESS;
-    echo "ajax_email_process(to: " . $to . ")" . __LINE__ . "\n";
-
-    if(!$_POST['subject']) { $subject = 'webform/jmG - ' . $_POST['contactsubject']; } else { $subject = $_POST['subject']; }
-    $message = json_encode($_POST);
-    $headers = array(
-        'From' => $_POST['contactname'] . " <'" . $_POST['contactemail'] . "'>",
-        'Reply-To' => $_POST['contactemail'],
-        'X-Mailer' => 'PHP/' . phpversion()
-    );
-    echo "ajax_email_process(from: " . $headers['From'] . ")" . __LINE__ . "\n";
-    echo "ajax_email_process(reply: " . $headers['Reply-To'] . ")" . __LINE__ . "\n";
 
 	if (mail($to, $subject, $message, $headers)) {
         echo "ajax_email_process(sendmail-success)" . __LINE__ . "\n";
