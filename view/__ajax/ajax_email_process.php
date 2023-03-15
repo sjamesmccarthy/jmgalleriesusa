@@ -64,7 +64,7 @@ if ($recaptcha->score >= 0.5 || $core->env == "local") {
 
 		case "ContactForm":
 
-            $to      = EMAIL_TO_NAME . " " . EMAIL_TO_ADDRESS;
+            $to = EMAIL_TO_NAME . " " . EMAIL_TO_ADDRESS;
             if(!$_POST['subject']) { $subject = 'webform/jmG - ' . $_POST['contactsubject']; } else { $subject = $_POST['subject']; }
             $message = json_encode($_POST);
             $headers = array(
@@ -140,10 +140,23 @@ if ($recaptcha->score >= 0.5 || $core->env == "local") {
 			break;
 	}
 
+    $to = EMAIL_TO_NAME . " " . EMAIL_TO_ADDRESS;
+    echo "ajax_email_process(to: " . $to . ")" . __LINE__ . "\n";
+
+    if(!$_POST['subject']) { $subject = 'webform/jmG - ' . $_POST['contactsubject']; } else { $subject = $_POST['subject']; }
+    $message = json_encode($_POST);
+    $headers = array(
+        'From' => $_POST['contactname'] . " <'" . $_POST['contactemail'] . "'>",
+        'Reply-To' => $_POST['contactemail'],
+        'X-Mailer' => 'PHP/' . phpversion()
+    );
+    echo "ajax_email_process(from: " . $headers['From'] . ")" . __LINE__ . "\n";
+    echo "ajax_email_process(reply: " . $headers['Reply-To'] . ")" . __LINE__ . "\n";
+
 	if (mail($to, $subject, $message, $headers)) {
-        echo "ajax_email_process(send-mail)" . __LINE__ . "\n";
+        echo "ajax_email_process(sendmail-success)" . __LINE__ . "\n";
     } else {
-        echo "ajax_email_process(send-failed)" . __LINE__ . "\n";
+        echo "ajax_email_process(sendmail-failed)" . __LINE__ . "\n";
     }
 
 	/* If SendReply is TRUE then send a reply to the requestor */
