@@ -76,7 +76,7 @@ switch($res_formType) {
             $cost = $estimated_cost_raw;
             $edition_type_long = "Sequential Numbered Edition";
             $limited_deposit = "<p class='mt-8'><b>a $" . number_format($order_amount,2) . " (50%) DEPOSIT IS REQUIRED</b></p>";
-            $payment_instructions = "<p class='pb-16'>Upon confirmation of your order you will be invoiced a 50% deposit, or $" . number_format($order_amount,2) . ", and the remaining balance, $" . number_format($order_amount,2) . ", will be due in full prior to shipment and a tracking number will be provided via email. By clicking the button below, you are agreeing to these <a href='/privacy#tos'>Terms of Sale</a>. Payment methods accepted are Visa, Mastercard, AMEX through Square and Venmo.<br /><br /><img style='margin-bottom: 10px; width: 150px; vertical-align: middle' src='/view/__image/square-payment-icons.png' alt='square payment icon' /></p>";
+            $payment_instructions = "<p class='pb-16'>Upon confirmation of your order you will be invoiced a 50% deposit, or $" . number_format($order_amount,2) . ", and the remaining balance, $" . number_format($order_amount,2) . ", will be due in full prior to shipment and a tracking number will be provided via email. By clicking the button below, you are agreeing to these <a href='/privacy#tos'>Terms of Sale</a>. Payment methods accepted are Visa, Mastercard and AMEX.<br /><br /><img style='margin-bottom: 10px; width: 150px; vertical-align: middle' src='/view/__image/square-payment-icons.png' alt='square payment icon' /></p>";
 
             if($res_material_type == 'acrylic') {
                 $material_name = 'HD Acrylic Slim';
@@ -97,7 +97,7 @@ switch($res_formType) {
                 $order_amount = $res_print_price;
                 $limited_deposit = null;
                 $res_product_id = 2;
-                $payment_instructions = "<p class='pb-16'>Upon confirmation of your order you will be invoiced for $" . number_format($res_print_price,2) . " and it will be sent to the email address above from Square or Venmo. By clicking the button below, you are agreeing to these <a href='/privacy#tos'>Terms of Sale</a>. Payment methods accepted are Visa, Mastercard, AMEX through Square and Venmo.<br /><br /><img style='margin-bottom: 10px; width: 150px; vertical-align: middle' src='/view/__image/square-payment-icons.png' alt='square payment icon' /></p>";
+                $payment_instructions = "<p class='pb-16'>Upon confirmation of your order you will be invoiced for $" . number_format($res_print_price,2) . " and it will be sent to the email address above from Stripe. By clicking the button below, you are agreeing to these <a href='/privacy#tos'>Terms of Sale</a>. Payment methods accepted are Visa, Mastercard and AMEX.<br /><br /><img style='margin-bottom: 10px; width: 150px; vertical-align: middle' src='/view/__image/square-payment-icons.png' alt='square payment icon' /></p>";
                 $hidden_fields .= "<input type='hidden' id='deposit' name='deposit' value='false' />";
                 $hidden_fields .= "<input type='hidden' id='edition_type' name='edition_type' value='limited' />";
                 // $material_name = $this->config->tv_material_desc . ". The overall size is 13x19 inch.";
