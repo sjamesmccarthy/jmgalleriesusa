@@ -210,7 +210,7 @@ if ($photo_meta["as_limited"] == 1) {
   $gallery_details =
     '<!--<p class="pt-32 bold">About The Art</p>--><p class="pt-32 pb-16 text-center media-details"><!-- Limited Edition of ' .
     $edition_max .
-    ", --> Sequentially numbered and signed with Certificate of Authenticity and Digital Provenance Archived.<br />Printed on " .
+    ", --> Sequentially numbered and signed with Certificate of Authenticity and Digital Provenance Archived. Printed on " .
     $edition_desc_material .
     "<!-- Available sizes include: " .
     $this->config->available_sizes_limited .

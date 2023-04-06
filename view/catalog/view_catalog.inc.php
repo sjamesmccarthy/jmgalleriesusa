@@ -158,7 +158,7 @@
             if( file_exists($_SERVER['DOCUMENT_ROOT'] . "/view/__catalog/__thumbnail/" . $v['file_name'] . '.jpg')) {
             $img_file = $v['file_name'];
             } else {
-                $img_file = 'image_not_found';
+                $img_file = "image_not_found:" . $v['file_name'];
             }
 
             /* For Mobile */

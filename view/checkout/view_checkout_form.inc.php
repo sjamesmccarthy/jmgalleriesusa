@@ -105,7 +105,7 @@ switch($res_formType) {
                 $material_desc = null;
                 $res_material_type = 'paper';
                 $res_img_type = $this->config->tv_material_desc;
-                $res_buysize = $res_buysize . "\n     --note: Total size 13x19 inches, Print-Only, Frame not included.";
+                $res_buysize = $res_buysize . "\n     --note: Total size 17x25 inches, Print-Only, Frame not included.";
             }
 
             $material_type_long =  $material_name . " " . $material_desc;
