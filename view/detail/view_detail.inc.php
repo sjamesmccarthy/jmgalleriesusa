@@ -131,7 +131,7 @@ if ($photo_meta["desc"] != null) {
   }
 
   if ($photo_meta["desc"] == "acrylic") {
-    $edition_desc_material = $material_acrylic_brand . " or " . $material_metal_brand . ". Includes FREE Aluminum wall mount. ";
+    $edition_desc_material = $material_acrylic_brand . " or " . $material_metal_brand . " includes an aluminum wall mount. ";
     $edition_frame =
       '<!--One of our <a href="/styles">Premium Designer Frames</a> can be optionally added for an additional cost.--><!-- This fine-art may also be available in HD Chromaluxe&reg; Metal. Please <a href="/contact">contact an art consultant</a> for availability and pricing.-->';
     $frame_disabled = "disabled";
@@ -210,8 +210,8 @@ if ($photo_meta["as_limited"] == 1) {
   $gallery_details =
     '<!--<p class="pt-32 bold">About The Art</p>--><p class="pt-32 pb-16 text-center media-details"><!-- Limited Edition of ' .
     $edition_max .
-    ", --> Sequentially numbered and signed with Certificate of Authenticity and Digital Provenance Archived. Printed on " .
-    $edition_desc_material .
+    ", --> Limited Edition prints are sequentially numbered, signed with Certificate of Authenticity and recorded in our Digital Provenance Archives. " .
+    "<!-- $edition_desc_material -->" .
     "<!-- Available sizes include: " .
     $this->config->available_sizes_limited .
     ' inches. --><!-- (larger sizes available on special order, <a href="/contact">contact an art consultant</a>) -->' .
