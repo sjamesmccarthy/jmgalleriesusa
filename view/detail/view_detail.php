@@ -37,7 +37,7 @@
             <div class="grid-center">
              <div class="col">
               <p class="blue price ml-16 mt-8">$<span id="price_view" class="price"><?= number_format($default_price, 0) ?></span></p>
-            <p class="small ml-16"><?= strtoupper($edition_desc) ?> METAL/ACRYLIC<!-- <?= $edition_max ?> -->  <?= $edition_desc_material_slash ?></span></p>
+            <p class="small ml-16"><?= strtoupper($edition_desc) ?><!-- <?= $edition_max ?> -->  <?= $edition_desc_material_slash ?></span></p>
               <p class="frame_data blue text-center pb-16"></p>
 
             <?= $sizes_pricing ?>

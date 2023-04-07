@@ -245,10 +245,10 @@ if ($photo_meta["as_limited"] == 1) {
 
     //     print "k:" . $leKm . " v:" . $leVm . "<br />";
 
-    // if($leKm == "12x18 (½ inch white border on outside)") {
-    //   $default = 'SELECTED';
-    //   $default_price = $leVm;
-    // } else { $default = null; }
+//     if($leKm == "16x24 (½ inch white border on outside)") {
+//       $default = 'SELECTED';
+//       $default_price = $leVm;
+//     } else { $default = null; }
 
     $sizes_pricing .=
       "<option " .
@@ -271,9 +271,14 @@ if ($photo_meta["as_limited"] == 1) {
 
         // $sizes_pricing .= '<option value="---">---</option>';
         foreach ($tv_price_array as $tvK_studio => $tvV_studio) {
-            // $default_price = $tvV_studio;
+
+            if($tvV_studio == "100") {
+                $default_price = $tvV_studio;
+                $SELECTED = "SELECTED";
+            }
+
             $sizes_pricing .=
-            "<option " .' data-price="' . $tvV_studio . '" data-mattedsize="0" data-material="paper" value="' . $tvK_studio . '">SIZE: ' . $tvK_studio .  " " . $material_paper_brand . "</option>";
+            "<option " . $SELECTED . ' data-price="' . $tvV_studio . '" data-mattedsize="0" data-material="paper" value="' . $tvK_studio . '">SIZE: ' . $tvK_studio .  " " . $material_paper_brand . "</option>";
             $studio_print = "false";
         }
 
