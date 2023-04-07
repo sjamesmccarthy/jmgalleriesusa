@@ -80,12 +80,12 @@ switch($res_formType) {
 
             if($res_material_type == 'acrylic') {
                 $material_name = 'HD Acrylic Slim';
-                $res_buysize = $res_buysize . " (Includes FREE wall mount)";
+                $res_buysize = $res_buysize . " (Includes aluminum wall mount)";
             }
 
             if($res_material_type == 'metal') {
                 $material_name = 'HD Chromaluxe&reg; Metal';
-                $res_buysize = $res_buysize . " (Includes FREE wall mount)";
+                $res_buysize = $res_buysize . " (Includes aluminum wall mount)";
             }
 
             // if($res_edition_type_exception == 'as_studio') {
