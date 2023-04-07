@@ -275,6 +275,9 @@ if ($photo_meta["as_limited"] == 1) {
             if($tvV_studio == "100") {
                 $default_price = $tvV_studio;
                 $SELECTED = "SELECTED";
+                $show_frame_desc = "hidden";
+            } else {
+                $show_frame_desc = '';
             }
 
             $sizes_pricing .=
@@ -292,7 +295,7 @@ if ($photo_meta["as_limited"] == 1) {
   /* Currently does not loop through {le_frames_pricing} in settings */
   $sizes_frames .=
     '
-        <div class="col-4_sm-12 select-wrapper frame-block">
+        <div class="col-4_sm-12 select-wrapper frame-block ' . $show_frame_desc . '">
             <label for="frame"></label>
             <select id="frame" name="frame" style="padding-left: 10px; margin-bottom:0;">
                 ' .
