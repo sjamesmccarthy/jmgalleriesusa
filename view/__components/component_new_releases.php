@@ -9,7 +9,7 @@
 
     $new_releases = $this->api_Catalog_Get_New_Releases($new_release_data[0], $new_release_data[1]);
 
-        $thumb_new_releases_html .= '<div id="new-releases" class="grid-4_sm-2 grid-4_md-3">';
+        $thumb_new_releases_html .= '<div id="new-releases" class="grid-4_sm-2 grid-4_md-3 grid-center">';
         $thumb_new_releases_html .= '<div class="col-12_sm-12 text-center mb-16"><!-- col-10_sm-12-->';
         $thumb_new_releases_html .= '<h2 class="h2"><a href="/new-releases/">NEW RELEASES</a></h2>';
         $thumb_new_releases_html .= '<p class="light --subhead sm-hidden">a collection of <a class="link-collection-sub-color" href="/new-releases"><b>new release fine-art</b></a>   photography / <a class="" href="/thework">the work</a></p>';
