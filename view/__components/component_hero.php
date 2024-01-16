@@ -52,7 +52,7 @@ if ($catalog == 'fineart') {
                             position: absolute;
                             left: 30%;
                             bottom: 25%;"
-                            class="$this->color_text">LIMITED EDITION  &copy; 2022</span>
+                            class="$this->color_text">LIMITED EDITION  &copy; 2024</span>
                     </p>
 
                     <p class="hero-text hidden"><a href="$this->hero_link">$this->hero_title</a></p>
