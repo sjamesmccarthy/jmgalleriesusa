@@ -12,18 +12,18 @@
 
     // Small devices (landscape phones, 576px and up)
     @media (min-width: 376px) { 
-        display: none;
+        display: none;  
     }
 
     // Medium devices (tablets, 768px and up)
     @media (min-width: 767px) {
-        display: block;
+        display: block; 
     }
 
     // Large devices (tablets (iPad Pro, 1112px and up)
     @media (min-width: 1112px) {
         display: block;
-    }
+    } 
 
     // Extra large devices (large desktops, 1200px and up)
     @media (min-width: 1200px) {

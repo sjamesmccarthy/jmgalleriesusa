@@ -1,5 +1,5 @@
 /* ********************** */
-/* partial_nav */
+/* partial_nav */ 
 
 #top-nav-home {
     z-index: 1001;
@@ -164,7 +164,7 @@
     filter: invert(0);
     // filter: invert(1) !important;
     display: inline-block;
-    // padding-bottom: 2rem;
+    // padding-bottom: 2rem; 
 
     // xSmall devices (landscape phones, 320px and up)
     @media (min-width: 320px) {
@@ -174,7 +174,7 @@
 
     // Small devices (landscape phones, 576px and up)
     @media (min-width: 376px) {
-        width: 100px;
+        width: 100px; 
         // display: inline-block;
         // background-color: gray;
     }
@@ -183,7 +183,7 @@
     @media (min-width: 767px) {
         width: 200px;
         display: inline-block;
-        margin-left: -40px;
+        margin-left: -40px; 
         // background-color: blue;
     }
 
