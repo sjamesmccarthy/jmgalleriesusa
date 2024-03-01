@@ -17,7 +17,7 @@
                 <span class="tiny ml-16" style="color: #CCC">Avatars are imported from <a style="color: #AAA" target="_new" href="https://gravatar.com">Gravtar</a> if available.</span>
                 <div class="--response-content-card-cta" style="padding-top: 1rem">
                     <button>Respond</button>
-                    <p style="display: inline-block; float: right; margin-top: .4rem; font-size: .9rem;"><a class="--response-content-card-cancel" href="#">cancel</a></p>
+                    <p style="float: right; margin-top: .4rem; font-size: .9rem;"><a class="--response-content-card-cancel" href="#">cancel</a></p>
                 </div>
         </form>
         </div>
