@@ -8,7 +8,15 @@
 
         <div class="col-11" style="position: relative">
 
-        <p class="pt-16">v2.4 <br />December 2022x`xml_error_stringxF</p>
+        <p class="pt-16">v2.5 <br />March 2024</p>
+            <ul>
+                <li>miscellaneous bugfixes.</li>
+                <li>re-enabled Field Notes and Shop.</li>
+                <li>updated image preview sizes for desktop, tablet, mobile.</li>
+            </ul>
+        </p>
+
+        <p class="pt-16">v2.4 <br />December 2022</p>
             <ul>
                 <li>removed ability to purchase online.</li>
                 <li>removed find us social links.</li>
