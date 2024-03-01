@@ -4,8 +4,8 @@
       <div class="col provenance-section--lookup">
         <h2 class="uppercase pb-16">Digital Provenance & Authenticity Tracker</h2>
         <form>
-          <input class="half-size" type="text" class="" placeholder="collector email" id="email" name="email" required />
-          <input class="half-size" type="text" class="" placeholder="serial or registration number" id="serial" name="serial" required />
+          <input class="half-size-disabled" type="text" class="" placeholder="collector email" id="email" name="email" required />
+          <input class="half-size-disabled" type="text" class="" placeholder="serial or registration number" id="serial" name="serial" required />
           <p class="errorMsg">errMsg</p>
           <ul class="pb-16">
             <li>

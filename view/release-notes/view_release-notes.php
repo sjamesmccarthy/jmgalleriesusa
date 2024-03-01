@@ -10,8 +10,9 @@
 
         <p class="pt-16">v2.5 <br />March 2024</p>
             <ul>
-                <li>miscellaneous bugfixes.</li>
+                <li>bugfix: dark/light mode now works again.</li>
                 <li>re-enabled Field Notes and Shop.</li>
+                <li>re-enabled online purchasing.</li>
                 <li>updated image preview sizes for desktop, tablet, mobile.</li>
             </ul>
         </p>
@@ -68,7 +69,7 @@
         <p class="pt-16">v2.0<br />May 06, 2022</p>
             <ul>
             <li>Revised file structure, database schema and routing.</li>
-            <li>Launch of DIGITAL PROVENANCE & AUTHENTICITY TRACKER. (Dedicated to M.D. York, the inspiration behind the idea. RIP dear friend and I wish you could have seen it in the flesh.)</li>
+            <li>Launch of <a href="/provenance">DIGITAL PROVENANCE & AUTHENTICITY TRACKER</a>. (Dedicated to M.D. York, the inspiration behind the idea. RIP dear friend and I wish you could have seen it in the flesh.)</li>
             <li>Launch of loveOutside.org</li>
             </ul>
         </p>

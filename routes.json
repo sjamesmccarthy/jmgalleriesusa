@@ -90,7 +90,7 @@
         "title": "Sign In To Your Collector Dashboard"
     },
     "/d/collector/auth": {
-        "template": "admin",
+        "template": "page",
         "page": "admin_auth",
         "auth": "true",
         "component": "true",
