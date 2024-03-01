@@ -181,8 +181,9 @@
 
     // Medium devices (tablets, 768px and up)
     @media (min-width: 767px) {
-        width: 250px;
+        width: 200px;
         display: inline-block;
+        margin-left: -40px;
         // background-color: blue;
     }
 

@@ -5,7 +5,7 @@
             <div class="grid" style="position: relative;">
                 <div class="col-5-middle small-hidden text-lower">
                     <!-- <p class="center heading"><a href="/shop" class="<?= $polarized ?>">THE SHOP</a><br /><span class="font-light">tiny<span class="text-upper">VIEWS</span> & BOOKS</span></p> -->
-                    <p class="center heading"><a href="/about" class="<?= $polarized ?>">THE ARTIST</a> | <a href="/fieldnotes">FieldNotes</a></p>
+                    <p class="center heading"><a href="/about" class="<?= $polarized ?>">THE ARTIST</a> / <a href="/fieldnotes">FieldNotes</a></p>
                 </div>
                 <div class="col-2 small-hidden">
                   <!-- logo_fullsize.png -->
@@ -13,7 +13,7 @@
                 </div>
                 <div class="col-5-middle small-hidden text-lower">
                     <!-- <p class="center heading"><a href="/thework" class="<?= $galleries ?>">THE WORK</a><br /><span class="font-light"><a class="font-light" href="/limited-editions">LIMITED & OPEN Ed.</span></a> -->
-                    <p class="center heading"><a href="/thework" class="<?= $galleries ?>">THE WORK</a> | <a href="/shop">Shop</a></span><!-- </a> -->
+                    <p class="center heading"><a href="/thework" class="<?= $galleries ?>">THE WORK</a> / <a href="/shop">Shop</a></span><!-- </a> -->
                     <!-- / <a class="font-light" href="/open-editions">OPEN</a> Ed.</span> -->
                   </p>
                 </div>
