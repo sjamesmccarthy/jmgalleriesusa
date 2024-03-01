@@ -20,18 +20,18 @@
 
         <div class="grid-center-noGutter">
 
-            <div class="col-6_sm-hidden_md-hidden breadcrumb">
+            <div class="col-7_sm-hidden_md-hidden breadcrumb">
                 <p><a href="/"><img class="breadcrumb-logo" src="/view/__image/logo_fullsize.png" alt="breadcrumb-icon" /></a> <?= $bc_catalog ?> <img class="breadcrumb-arrow" src="/view/__image/icon_navarrow-right.svg" alt="breadcrumb-icon" /><?= $this->page->title ?> </p>
             </div>
 
-            <div class="col-6_sm-12 breadcrumb copyright">
+            <div class="col-7_sm-12 breadcrumb copyright">
                 <p>
-                    <!-- <a href="/shop">Shop</a> /  -->
+                    <a href="/shop">shop</a> / 
                     <a href="/thework">the work</a> <img class="breadcrumb-arrow" src="/view/__image/icon_navarrow-right.svg" alt="breadcrumb-icon">
-                    <a href="/about">about & exhibits</a>
+                    <a href="/about">about / exhibits</a>
                     <!-- , <a target="_jmportraits" href="https://jmportraits.com">portraits, real estate & weddings</a>  -->
                     <img class="breadcrumb-arrow" src="/view/__image/icon_navarrow-right.svg" alt="breadcrumb-icon">
-                    <!-- <a href="/fieldnotes">Field Notes</a> <img class="breadcrumb-arrow" src="/view/__image/icon_navarrow-right.svg" alt="breadcrumb-icon"> -->
+                    <a href="/fieldnotes">field notes</a> <img class="breadcrumb-arrow" src="/view/__image/icon_navarrow-right.svg" alt="breadcrumb-icon">
                     <!-- <a href="/shop">Shop</a> <img class="breadcrumb-arrow" src="/view/__image/icon_navarrow-right.svg" alt="breadcrumb-icon"> -->
                     <!-- <a class="tiny-dis" href="/privacy"><?= $this->config->copyright ?></a> <img class="breadcrumb-arrow" src="/view/__image/icon_navarrow-right.svg" alt="breadcrumb-icon"> -->
                     &nbsp; <a class="tiny-dis" href="/privacy"><?= $this->config->copyright ?> </a> <!-- & <img src="https://images.dmca.com/Badges/dmca-badge-w100-5x1-08.png?ID=4f4fc268-5857-46c9-97ec-b0ee644e9892" alt="DMCA.com Protection Status" style="vertical-align: middle" /> -->
