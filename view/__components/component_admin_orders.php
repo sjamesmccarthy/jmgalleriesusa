@@ -48,7 +48,8 @@ if ($order_cnt > 0) {
             $product_desc .= ' (from jM Gallery Shop, id: ' . $val['product_id'] . ')';
         } else {
             if($product['framing'] = "FRAMELESS") { $product['framing'] = 'INSET'; }
-            $product_desc .= ' (' .$product['catalog_id'] . ') ' . $product['size'] . ' ' . ucfirst($product['material']) . ' ' . ucfirst($product['edition']) . ' Edition (framing: ' . $product['framing'] . ') <br /> $' . number_format($val['price'],2) . " +" . $val['shipping_provider'];
+            // $product_desc .= ' (' .$product['catalog_id'] . ') ' . $product['size'] . ' ' . ucfirst($product['material']) . ' ' . ucfirst($product['edition']) . ' Edition (framing: ' . $product['framing'] . ') <br /> $' . number_format($val['price'],2) . " +" . $val['shipping_provider'];
+            $product_desc .= "(ERROR__line51:" . __FILE__ . ")";
         }
 
         $result_html .= '<li class="item" style="' . $background_color . '">';

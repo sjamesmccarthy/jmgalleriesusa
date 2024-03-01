@@ -4,6 +4,7 @@
  * Core_Api
  * Basic implementation of website API interface.
  */
+#[AllowDynamicProperties]
 class Core_Api extends Fieldnotes_Api
 {
     public $mysqli;
@@ -494,7 +495,9 @@ class Core_Api extends Fieldnotes_Api
         return($data);
     }
 
-    public function api_Catalog_YouMayLike_Filmstrip($tags=null) {
+    public function api_Catalog_YouMayLike_Filmstrip($tags) {
+
+        $tags = $tags ?? "";
 
         if(preg_match('/\#/', $tags)) {
             $tags_raw = explode('#', ltrim($tags, '#'));
@@ -532,24 +535,24 @@ class Core_Api extends Fieldnotes_Api
            catalog_photo_views AS V
            INNER JOIN catalog_photo AS PH ON V.catalog_photo_id = PH.catalog_photo_id
            INNER JOIN catalog_collections AS CAT ON CAT.catalog_collections_id = PH.parent_collections_id
-           WHERE
-            PH.status = 'ACTIVE'
-            AND NOT PH.catalog_photo_id = " . $this->props['catalog_photo_id'] . "
+        WHERE
+            V.count >= 800
+            AND PH.status = 'ACTIVE'
             AND PH.as_limited = 1
-            AND (" .$sql_tag ."
-            OR PH.parent_collections_id = " . $this->props['parent_collections_id'] . ")
-           ORDER BY
-            RAND() DESC
-           LIMIT 4";
+        ORDER BY
+            RAND()
+            DESC
+        LIMIT 4";
 
-    // --    WHERE
-    // --        V.count >= 800
-    // --        AND PH.status = 'ACTIVE'
-    // --        AND PH.as_limited = 1
-    // --    ORDER BY
-    // --        RAND()
-    // --        DESC
-    // --    LIMIT 4";
+/* This not working as of Thu, 29 February 2024 */
+// PH.status = 'ACTIVE'
+// AND NOT PH.catalog_photo_id = " . $this->props['catalog_photo_id'] . "
+// AND PH.as_limited = 1
+// AND (" .$sql_tag ."
+// OR PH.parent_collections_id = " . $this->props['parent_collections_id'] . ")
+// ORDER BY
+// RAND() DESC
+// LIMIT 4";
 
             // $this->console($sql);
 

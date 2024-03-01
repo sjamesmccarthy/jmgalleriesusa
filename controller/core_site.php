@@ -4,7 +4,8 @@
  * Core_Site
  * Site functions for gloab environment
  */
-class Core_Site extends Core_Api
+#[AllowDynamicProperties]
+ class Core_Site extends Core_Api
 {
   public $config;
   public $routes;
@@ -101,6 +102,7 @@ class Core_Site extends Core_Api
       $this->system->ip = $_SERVER["REMOTE_ADDR"];
       $_SESSION["__SYSTEM"]["USERAGENT"] = $_SERVER["HTTP_USER_AGENT"];
       $_SESSION["__SYSTEM"]["SESS_TYPE"] = $sess_type;
+      $_SESSION["uid"] = '999';
     } else {
       $this->console($_SESSION, 1);
     }

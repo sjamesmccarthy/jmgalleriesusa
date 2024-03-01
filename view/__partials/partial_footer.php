@@ -80,24 +80,15 @@
     <?php if (strpos($this->page->catalog_path, '/studio') === false) { ?>
 
         jQuery(document).ready(function($) {
-
-            let default_theme = '<?= $this->config_env->env[$this->env]['default_theme'] ?>';
-            localStorage.setItem("theme", default_theme);
-            console.log('re-init-theme: ' + default_theme);
-
-            //TODO: Change this so that there is a user-defined theme and default theme. The user-defined theme is set in a cookie NOT is local storage.
-
-            // Select the button
-            const theme = document.querySelector(".theme-toggle");
-            // Select the theme preference from localStorage
+            
             const currentTheme = localStorage.getItem("theme");
+            const default_theme = '<?= $this->config_env->env[$this->env]['default_theme'] ?>';
 
-            if (!currentTheme) {
-                console.log('theme-local-storage-not-found');
-                localStorage.setItem("theme", "dark");
-                console.log('theme-set:' + localStorage.getItem("theme"));
+            if(localStorage.getItem("theme")) {
+                console.log("Current Theme Found: " + currentTheme);
             } else {
-                console.log('current-theme:' + currentTheme);
+                console.log("No Current Theme Found");
+                localStorage.setItem("theme", default_theme);
             }
 
             // If the current theme in localStorage is "dark"...
@@ -112,20 +103,28 @@
                 document.body.classList.remove("dark-theme");
             }
 
+            // Select the button
+            const theme = document.querySelector(".theme-toggle");
+
             // Listen for a click on the button
             theme.addEventListener("click", function() {
+
+                let new_theme = '';
+                
                 // Toggle the .dark-theme class on each click
                 document.body.classList.toggle("dark-theme");
 
-                // Let's say the theme is equal to light
-                // let theme = "light";
                 // If the body contains the .dark-theme class...
                 if (document.body.classList.contains("dark-theme")) {
                     // ...then let's make the theme dark
-                    theme = "dark";
+                    new_theme = "dark";
+                    console.log("new-theme-toggle:" + new_theme)
+                } else {
+                    new_theme = "light";
+                    console.log("new-theme-toggle:" + new_theme)
                 }
                 // Then save the choice in localStorage
-                localStorage.setItem("theme", theme);
+                localStorage.setItem("theme", new_theme);
             });
 
             //     if(getCookie('cookie_consent') == "AGREED") {

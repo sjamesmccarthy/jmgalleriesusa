@@ -110,6 +110,14 @@ body {
             // }
         }
 
+        #top-nav {
+            background-color: $color-black-theme;
+
+            a {
+                color: $color-white;
+            }
+        }
+
         .topnav--logo-img >a {
             filter: invert(1);
         }
