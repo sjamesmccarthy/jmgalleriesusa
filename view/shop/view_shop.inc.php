@@ -64,7 +64,7 @@ if(!$product_data['error']) {
         $thumb_html .= '<div style="position: relative; overflow: hidden; margin-bottom: 32px" class="thumb ' . $grid_css .  ' pb-16 filter-thumb-gallery '. $data_filters . '"><a href="/product/' . $v['uri_path'] . '"><img style="width: 100%;" src="/view/__image/product/' . $img_file . '" alt="' . $img_file . '" /></a></p><h4 class="pt-8"><a href="/product/' . $v['uri_path'] . '">' . $v['title'] . '</a></h4>' . $desc_short . $price_html . $only_one . '</p>' . $free_ship . '</div>';
     }
 } else {
-    $thumb_html .= '<div class="col-12 pt-32"><p class="shop-nothing-found">Good grief Charlie Brown,<br/>our shelves seem to be a bit bare today.<br />Please check back later.</p></div>';
+    $thumb_html .= '<div class="col-12 pt-32"><p class="shop-nothing-found">Good grief Charlie Brown,<br/>our shelves seem to be a bit bare today.<br />Please check back later.</p> <p style="text-align: center" class="pt-32"><a href="/fineart">BACK TO HOME</a></p></div>';
 }
 
 ?>
