@@ -74,14 +74,9 @@ $html = <<< END
 
             $nav_html
 
-            <!-- <div class="toolbox">
-                <ul>
-                <li><p style="width:24px"><i class="fas fa-sign-out-alt"></i></p> <a style="margin-left: 1rem;" href="/studio/signout">Sign Out</a></li>
-                </ul>
-            </div> -->
-
            <div class="pt-32">
                 <p class="small text-center">$version<br /><a id="sync_config" href="">backup config +notices</a></p>
+                <p class="small text-center"><a href="/studio/signout">Sign Out</a></p>
             </div>
 
             </div>

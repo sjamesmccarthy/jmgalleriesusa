@@ -11,9 +11,11 @@
         <p class="pt-16">v2.5 <br />March 2024</p>
             <ul>
                 <li>bugfix: dark/light mode now works again.</li>
+                <li>bugfix: resolved logging problem during logout in admin.</li>
                 <li>re-enabled Field Notes and Shop.</li>
                 <li>re-enabled online purchasing.</li>
-                <li>updated image preview sizes for desktop, tablet, mobile.</li>
+                <li>update: image preview sizes for desktop, tablet, mobile.</li>
+                <li>update: changed layout of /provenance</li>
             </ul>
         </p>
 
