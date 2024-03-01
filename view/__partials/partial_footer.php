@@ -20,7 +20,7 @@
 
         <div class="grid-center-noGutter">
 
-            <div class="col-7_sm-hidden_md-hidden breadcrumb">
+            <div class="col-5_sm-hidden_md-hidden breadcrumb">
                 <p><a href="/"><img class="breadcrumb-logo" src="/view/__image/logo_fullsize.png" alt="breadcrumb-icon" /></a> <?= $bc_catalog ?> <img class="breadcrumb-arrow" src="/view/__image/icon_navarrow-right.svg" alt="breadcrumb-icon" /><?= $this->page->title ?> </p>
             </div>
 
