@@ -36,6 +36,8 @@
     <div class="grid-noGutter">
         <div class="col-12 __container">
 
+            <p><a href="/fieldnotes"><i class="fa-solid fa-arrow-left"></i><!--<span class="pl-8 small" style="position:absolute; margin-top: 2px;">back to notes</span>--></a></p>
+
             <p class="mb-16 smaller text-center"><a href="/fieldnotes">a Field Note</a><br />
             published on <?= $res_date_written ?> </p>
 
