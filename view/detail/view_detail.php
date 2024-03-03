@@ -44,7 +44,7 @@
             <?= $sizes_frames ?>
             <button class="mt-32"><?= $btn ?></button>
 
-            <p class="mt-32 ml-8 small text-center">Questions?<br /><a class="small underline normal-weight"target="_infoTab" href="/contact">Contact an Art consultant</a></p>
+            <p class="mt-32 ml-8 small text-center">Questions? or need a custom size<br /><a class="small underline normal-weight"target="_infoTab" href="/contact">Contact an Art consultant</a></p>
             <!-- <p class="ml-8 text-center"><a target="_infoTab" class="small underline normal-weight" href="/styles">Click here for framing information</a></p> -->
 
             <?= $gallery_details ?>
