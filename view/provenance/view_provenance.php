@@ -8,7 +8,7 @@
           <ul class="pb-16 half-size--disabled">
             <li>
             <input type="checkbox" name="include_all" id="include_all" value="1" /> 
-            <label for="include_all">Show All Artwork Registered/Licensed With This Collector Email</label>
+            <label for="include_all" class="text-sm">Show all artwork associated with this email</label>
             </li>
           </ul>
 
@@ -17,7 +17,6 @@
           <button id="lookup-btn">Look Up Artwork</button>
         </form>
 
-        <p class="text-small pt-16">Copyright <?= $this->config->copyright ?></p>
       </div>
     </div>
 
