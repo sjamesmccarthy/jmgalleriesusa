@@ -91,8 +91,48 @@
 .footer-max-width {
     max-width: 102.8571em;
     margin: auto;
-    padding-left: 2rem;
-    padding-right: 2rem;
+
+    /* MEDIA QUERIES from Chrome, Safari, Firefox as of 10/2021 */
+    /* Mobile S: iPhone5/SE(320), Moto G4(360), Galaxy S5(360), Galaxy S10(360) */
+    @media (min-width: 320px) {
+        padding: 0 0 0 0;
+    }
+
+    /* Mobile M: iPhone 11(375), iPhone 12/13 Mini(375), iPhone 12/13 Pro(390), iPhone SE Gen2(375), iPhone 6/7/8(375), iPhone 6/7/8+(414), iPhoneX(375), Pixel 2(411), Galaxy Note(412)*/
+    @media (min-width: 375px) {
+        padding: 0 0 0 0;
+    }
+
+    /* Mobile L: iPhone 12/13 Pro Max(428) */
+    @media (min-width: 425px) {
+        padding: 0 0 0 0;
+    }
+
+    /* Tablet: iPad Mini(768), iPad 9.7(768), iPad Pro 10.5(834) */
+    @media (min-width: 768px) {
+        padding: 0 0 0 0;
+    }
+
+    /* Laptop: iPad Pro 12.9(1024) */
+    @media (min-width: 1024px) {
+        padding: 0 2rem 0 2rem;
+    }
+
+    /* Laptop Standard Windows laptops or Macbooks not @fullscreen */
+    @media (min-width: 1366px) {
+        padding: 0 2rem 0 2rem;
+    }
+
+    /* Laptop MacBook Air/Pro @fullscreen */
+    @media (min-width: 1440px) {
+        padding: 0 2rem 0 2rem;
+    }
+
+    /* 4k: MacBook Pro*/
+    @media (min-width: 2560px) {
+        padding: 0 2rem 0 2rem;
+    }
+
 }
 
 .footer-links {

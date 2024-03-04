@@ -4,20 +4,20 @@
       <div class="col provenance-section--lookup">
         <h2 class="uppercase pb-16 text-center">Digital Provenance & Authenticity Tracker</h2>
         <form>
-          <input class="half-size" type="text" class="" placeholder="collector email" id="email" name="email" required />
-          <ul class="pb-16 pl-32 half-size">
+          <input class="half-size--disabled" type="text" class="" placeholder="collector email" id="email" name="email" required />
+          <ul class="pb-16 half-size--disabled">
             <li>
             <input type="checkbox" name="include_all" id="include_all" value="1" /> 
-            <label for="include_all">Show All Artwork For This Collector Email</label>
+            <label for="include_all">Show All Artwork Registered/Licensed With This Collector Email</label>
             </li>
           </ul>
 
-          <input class="half-size-disabled" type="text" class="" placeholder="serial or registration number" id="serial" name="serial" required />
+          <input class="half-size-disabled" type="text" class="" placeholder="serial or registration number (optional)" id="serial" name="serial" required />
           <p class="errorMsg">errMsg</p>
           <button id="lookup-btn">Look Up Artwork</button>
         </form>
 
-        <p class="text-small pt-16">Dedicated to M.D. York, the inspiration behind the idea. RIP (2022) dear friend and I wish you could have seen it become reality.</p>
+        <p class="text-small pt-16">Copyright <?= $this->config->copyright ?></p>
       </div>
     </div>
 

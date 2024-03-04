@@ -17,15 +17,17 @@ jQuery(document).ready(function($){
 
         if ( !$('#email').val() ) { 
             errFlag = 1; 
-        } else if ( !$('#serial').val() ) {
+        } 
+        // else if ( !$('#serial').val() ) {
             
-            if ( $('#email').val() ) {
-                errFlag = 0; 
-            } else {
-                errFlag = 1;
-            }
+        //     if ( $('#email').val() ) {
+        //         errFlag = 0; 
+        //     } else {
+        //         errFlag = 1;
+        //     }
 
-        } else { errFlag = 0; }
+        // } 
+        else { errFlag = 0; }
         
         console.log("errFlags:" + errFlag);
 

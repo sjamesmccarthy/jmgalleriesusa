@@ -24,7 +24,7 @@
                 <p><a href="/"><img class="breadcrumb-logo" src="/view/__image/logo_fullsize.png" alt="breadcrumb-icon" /></a> <?= $bc_catalog ?> <img class="breadcrumb-arrow" src="/view/__image/icon_navarrow-right.svg" alt="breadcrumb-icon" /><?= $this->page->title ?> </p>
             </div>
 
-            <div class="col-7_sm-12 breadcrumb copyright">
+            <div class="col-7_sm-12 text-right breadcrumb copyright">
                 <p>
                     <a href="/shop">shop</a> / 
                     <a href="/thework">the work</a> <img class="breadcrumb-arrow" src="/view/__image/icon_navarrow-right.svg" alt="breadcrumb-icon">
