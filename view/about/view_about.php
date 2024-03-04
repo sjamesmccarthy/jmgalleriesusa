@@ -4,7 +4,7 @@
             <h1 class="noshow">About j.McCarthy, Photographer (new)</h1>
 
                 <div class="grid">
-                    <div class="col bio-profile-pic-bkg"">
+                    <div class="col bio-profile-pic-bkg">
                             <!-- <img class="bio-profile-pic" src="/view/__image/profile_1.jpg" /> -->
                     </div>
                 </div>

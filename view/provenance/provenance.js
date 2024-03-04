@@ -3,6 +3,7 @@ jQuery(document).ready(function($){
 
     $("#email, #serial").on("focus", function(e) {
         $('.errorMsg').hide();
+        $('#email').removeClass("error");
         $('.provenance-section--results').hide();
         $('#include_all').prop('checked', false);
     });
@@ -11,12 +12,14 @@ jQuery(document).ready(function($){
         e.preventDefault();
 
         console.log("lookup-btn.clicked");
+        console.log("lookup-btn.error-checking");
 
         /* Validate Form */
         let errFlag;
 
         if ( !$('#email').val() ) { 
             errFlag = 1; 
+            $('#email').addClass('error');
         } 
         // else if ( !$('#serial').val() ) {
             
@@ -32,7 +35,7 @@ jQuery(document).ready(function($){
         console.log("errFlags:" + errFlag);
 
         if(errFlag === 1) { 
-            $('.errorMsg').html("PLEASE COMPLETE THE (" + errFlag + ") FIELDS ABOVE");
+            $('.errorMsg').html("Please Fix (" + errFlag + ") Fields Above");
             $('.errorMsg').show();
             // console.log(errFlag + " errors found");
             return false; 

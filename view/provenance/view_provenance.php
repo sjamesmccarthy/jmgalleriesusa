@@ -5,6 +5,7 @@
         <h2 class="uppercase pb-16 text-center">Digital Provenance & Authenticity Tracker</h2>
         <form>
           <input class="half-size--disabled" type="text" class="" placeholder="collector email" id="email" name="email" required />
+
           <ul class="pb-16 half-size--disabled">
             <li>
             <input type="checkbox" name="include_all" id="include_all" value="1" /> 
@@ -12,7 +13,7 @@
             </li>
           </ul>
 
-          <input class="half-size-disabled" type="text" class="" placeholder="serial or registration number (optional)" id="serial" name="serial" required />
+          <input class="half-size-disabled" type="text" class="" placeholder="serial or registration number (optional)" id="serial" name="serial" />
           <p class="errorMsg">errMsg</p>
           <button id="lookup-btn">Look Up Artwork</button>
         </form>
