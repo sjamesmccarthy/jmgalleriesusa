@@ -187,7 +187,7 @@
                         <div class="col-12">
                             <label>component_notice:</label>
                             <input class="half-size" style="margin-bottom: 0" type="text" name="component_notice" value="<?= $component_notice?>"  />
-                            <p class="small pl-8">NOTE: To ENABLE notices, you need to specify: <b><?= rtrim($notices_active_html,", ") ?></b> or <b>false</b></p>
+                            <p class="small pl-8">NOTE: To ENABLE notices, you need to specify: <b><?= rtrim($notices_active_html,", ") ?></b> or <b>false</b>.</p>
                         </div>
 
                     </div>

@@ -41,3 +41,4 @@ config_env-*.json
 /view/__catalog/__thumbnail/__archived/*
 /lib/gridlex-master/*
 /view/__todo.md
+/backup
