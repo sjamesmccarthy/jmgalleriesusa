@@ -159,6 +159,12 @@ body {
             opacity: 1;
         }
 
+        [type="checkbox"]:checked + label,
+        [type="checkbox"]:not(:checked) + label
+        {
+            color: $color-white;
+        }
+
         select {
             position: relative;
             height: 50px;
@@ -192,7 +198,7 @@ body {
         }
 
         .checkout-sub, label, #polarized .__container h1, #polarized .__container p {
-            color: $color-white;;
+            color: $color-white;
         }
 
         .shipping label {
@@ -832,7 +838,7 @@ select {
     display: inline-block;
     color: $color-black;
     font-size: 1rem;
-    font-weight: 300;
+    font-weight: 400;
     background-color: transparent;
     text-transform: initial;
 }

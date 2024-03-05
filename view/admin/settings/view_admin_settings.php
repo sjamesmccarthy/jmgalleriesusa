@@ -174,7 +174,6 @@
 
                     <div class="col-12">
                         <p class="small">file://view/__data/data_notices.json</p>
-                        <p class="small">NOTE: To ENABLE notices, you will need to <u>set component_notice_type</u> to the name of the notice TYPE.</p>
                     </div>
 
                     <div class="divTable w-100">
@@ -186,8 +185,9 @@
                         <?= $notices_html ?>
 
                         <div class="col-12">
-                            <label>component_notice: set false or name of NOTICE_TYPE</label>
-                            <input class="half-size" type="text" name="component_notice" value="<?= $component_notice ?>"  />
+                            <label>component_notice:</label>
+                            <input class="half-size" style="margin-bottom: 0" type="text" name="component_notice" value="<?= $component_notice?>"  />
+                            <p class="small pl-8">NOTE: To ENABLE notices, you need to specify: <b><?= rtrim($notices_active_html,", ") ?></b> or <b>false</b></p>
                         </div>
 
                     </div>

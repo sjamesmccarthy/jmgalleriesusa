@@ -2,7 +2,7 @@
     
     <div class="grid-center">
       <div class="col provenance-section--lookup">
-        <h2 class="uppercase pb-16 text-center">Digital Provenance & Authenticity Tracker</h2>
+        <h2 class="uppercase pb-16 text-center">Digital Provenance Archives</h2>
         <form>
           <input class="half-size--disabled" type="text" class="" placeholder="collector email" id="email" name="email" required />
 

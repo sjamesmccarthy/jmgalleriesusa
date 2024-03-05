@@ -22,6 +22,10 @@ foreach($data_html as $key => $value) {
            $jquery = '
                 <script>
                 jQuery(document).ready(function($){
+                    $(".close-notice").on("click", function (){
+                        $(".notice-bell").fadeOut();
+                        $(".notice-container").hide();
+                    });
 
                     $(".notice-container").fadeIn("fast").delay(' . $value['timeout'] . ').slideUp("slow", function() {
                         $(".notice-bell").fadeIn();
@@ -41,19 +45,18 @@ foreach($data_html as $key => $value) {
 
 
 /* GENERATE HTML BLOCK */
-if ($this->config->component_notice != 'false') {
+if($this->config->component_notice == '') { $this->config->component_notice = 'false'; }
+if (strtolower($this->config->component_notice) != 'false') {
 
 $exclude_matches = explode(",", $excludes);
 // if(isSet($this->data->routePathQuery[0])) { $this->page->catalog_path_tmp = $this->data->routePathQuery[0]; } else { $this->page->catalog_path_tmp = $this->page->catalog_path; }
 
 foreach ($exclude_matches as $exclude => $excludeValue) {
-    if (preg_match("/" . $excludeValue . "/i", $this->page->catalog_path)) {
-        // print "preg_match: FOUND -- ";
-        $match = "FOUND";
-    } else {
-        // print "preg_match: NO MATCH --";
-        // print $this->page->catalog_path . "<br />";
-        // print_r($exclude_matches);
+    
+    if($excludeValue != "") {
+        if (preg_match("/" . $excludeValue . "/i", $this->page->catalog_path)) {
+            $match = "FOUND";
+        } 
     }
 }
 
@@ -69,6 +72,8 @@ if($match == "FOUND") {
         <div class="notice-container notice-{$key}">
             <p class="notice-banner" style="background-color: {$background_color}; color:{$color}">{$content}</p>
             <p class="notice-banner-mobile" style="background-color: {$background_color}; color:{$color}">{$mobile_content}</p>
+
+            <p class="close-notice" style="position:absolute; left: 10px; top: 15px; color: #FFF;"><i class="fas fa-times-circle" aria-hidden="true"></i></p>
         </div>
 
         {$jquery}

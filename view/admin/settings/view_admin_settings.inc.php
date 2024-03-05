@@ -23,7 +23,7 @@
     /* CORE - LIST OF SETTINGS IN config.json */
 
     extract( (array)$this->config, EXTR_PREFIX_SAME, "dup");
-
+    
     $code_block = (array) $this->config;
 
     /* CORE - LIST OF NOTICES IN data_notices.json */
@@ -50,7 +50,7 @@
                     <div class="col-12">
                       <label class="darker">NOTICE_TYPE</label>
                       <input class="half-size force-blue" type="text" name="notice_type" value="' . $k . '" disabled />
-                      <label>pages to exclude (/shop,/about)</label>
+                      <label>pages to exclude (shop,about)</label>
                       <input class="half-size" type="text" name="notice_key_excludes[]" value="' . $v['excludes'] . '" />
                     </div>
 
@@ -84,8 +84,9 @@
                    </div>
 
                 </div>
-            </div>
-            <div class="divider"></div>';
+            </div>';
+
+            $notices_active_html .= $k . ", ";
     }
 
 
