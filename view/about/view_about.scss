@@ -167,8 +167,8 @@ text-align: left;
     // Large devices (tablets (iPad Pro, 1112px and up)
     @media (min-width: 1112px) {
         background-image: url(/view/__image/profile_4.jpg);
-        background-position: 0px 550px;
-        // min-height: 450px;
+        background-position: 0px 600px;
+        min-height: 450px;
         display: block;
         // background-color: orange;
     }
