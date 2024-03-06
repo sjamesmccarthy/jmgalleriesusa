@@ -166,7 +166,7 @@ text-align: left;
 
     // Large devices (tablets (iPad Pro, 1112px and up)
     @media (min-width: 1112px) {
-        background-image: url(/view/__image/profile_1.jpg);
+        background-image: url(/view/__image/profile_4.jpg);
         background-position: 0px 550px;
         // min-height: 450px;
         display: block;
@@ -176,8 +176,8 @@ text-align: left;
     // Extra large devices (large desktops, 1200px and up)
     @media (min-width: 1200px) {
         background-image: url(/view/__image/profile_4.jpg);
-        background-position: 0px 700px;
-        min-height: 600px;
+        background-position: 0px 690px;
+        min-height: 500px;
         display: block;
         filter: grayscale(100%);
         // background-color: red;

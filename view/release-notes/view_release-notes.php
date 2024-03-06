@@ -16,6 +16,7 @@
                 <li>re-enabled online purchasing.</li>
                 <li>update: image preview sizes for desktop, tablet, mobile.</li>
                 <li>update: changed layout of /provenance</li>
+                <li>update: alert notices fixed and updated</li>
             </ul>
         </p>
 

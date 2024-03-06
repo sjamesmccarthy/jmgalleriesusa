@@ -23,8 +23,9 @@ foreach($data_html as $key => $value) {
                 <script>
                 jQuery(document).ready(function($){
                     $(".close-notice").on("click", function (){
-                        $(".notice-bell").fadeOut();
+                        console.log("close-button-clicker");
                         $(".notice-container").hide();
+                        $(".notice-bell").fadeIn();
                     });
 
                     $(".notice-container").fadeIn("fast").delay(' . $value['timeout'] . ').slideUp("slow", function() {
