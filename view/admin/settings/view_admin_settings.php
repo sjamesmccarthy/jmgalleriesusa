@@ -410,6 +410,10 @@ jQuery(document).ready(function($){
         window.location.href = '/studio/manage';
     });
 
+    $('#ALERT').on("click", function() {
+        $('#ALERT .notice-more').toggle();
+    });
+
     $('.tab-menu').on("click", function() {
         $('.tab-menu').removeClass("active");
         $('.tab-' + $(this).attr("data-name") ).addClass('active');

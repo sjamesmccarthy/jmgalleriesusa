@@ -44,7 +44,7 @@
             <input class="w-100" type="hidden" name="notice_key_title[]" value="' . $v['title'] . '" />
             <input class="half-size" type="hidden" name="notice_key_state[]" value="' . $v['state'] . '" />
 
-                <div class="divTableCell pb-32">
+                <div id="' .  $k . '" class="divTableCell pb-32">
 
                     <!-- <div class="col-12"><b>' . $k . '</b> - </div> -->
                     <div class="col-12">
@@ -54,6 +54,7 @@
                       <input class="half-size" type="text" name="notice_key_excludes[]" value="' . $v['excludes'] . '" />
                     </div>
 
+                    <div class="notice-more">
                     <!-- <div class="col-12">
                     <label>title</label>
                     <input class="w-100" type="hidden" name="notice_key_title[]" value="' . $v['title'] . '" />
@@ -82,7 +83,7 @@
                     <label>font-color</label>
                     <input class="half-size" type="text" name="notice_key_color[]" value="' . $v['color'] . '" />
                    </div>
-
+                </div>
                 </div>
             </div>';
 
