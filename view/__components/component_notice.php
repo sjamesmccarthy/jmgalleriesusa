@@ -73,7 +73,7 @@ if($match == "FOUND") {
             <p class="notice-banner" style="background-color: {$background_color}; color:{$color}">{$content}</p>
             <p class="notice-banner-mobile" style="background-color: {$background_color}; color:{$color}">{$mobile_content}</p>
 
-            <p class="close-notice" style="position:absolute; left: 10px; top: 15px; color: #FFF;"><i class="fas fa-times-circle" aria-hidden="true"></i></p>
+            <p class="close-notice" style="position:absolute; left: 15px; bottom: 25%; color: #FFF;"><i class="fas fa-times-circle" aria-hidden="true"></i></p>
         </div>
 
         {$jquery}
