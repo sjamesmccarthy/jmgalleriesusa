@@ -428,9 +428,9 @@
     "/now": {
         "alias": "true",
         "template": "page",
-        "page": "about",
+        "page": "aboutnow",
         "component": "true",
-        "title": "About James (What Am I Doing Now?)"
+        "title": "About James"
     },
     "/release-notes": {
         "template": "page",
