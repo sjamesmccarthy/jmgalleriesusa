@@ -14,7 +14,7 @@
                 <a href="/fineart"><img class="landing-image" src="/view/__image/landing-fineart.jpg" /></a>
             </div>
             <div class="col_sm-12">
-                <a target="_jmportraits" href="https://jmgalleries.pixieset.com"><img class="landing-image" src="/view/__image/landing-portraits.jpg" /></a>
+                <a target="_new" href="https://jmgalleries.pixieset.com"><img class="landing-image" src="/view/__image/landing-portraits.jpg" /></a>
             </div>
         </div>
 
