@@ -2,6 +2,9 @@
 
 // $this->console($_SESSION,1);
 
+// print_r($_SESSION);
+// exit;
+
 /* Check for Session, Parse Session into vars */
 if($this->checkSession()) {
     $loginInfo = json_decode( $_SESSION['data'], true );

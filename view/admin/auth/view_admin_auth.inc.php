@@ -7,9 +7,11 @@
         /* Log the visit */
         $this->api_Admin_Auth_Log_Signin($auth['user_id']);
         
+        // print "<pre>";
         // print $auth['result'] . "<br />";
         // print $_SESSION['dashboard'];
-        
+        // exit;
+
         switch($_SESSION['dashboard']) {
             
             case "ARTIST":

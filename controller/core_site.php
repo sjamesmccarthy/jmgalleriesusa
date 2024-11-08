@@ -93,9 +93,9 @@
         session_set_cookie_params($lifetime, "/");
       }
 
-      session_save_path(
-        $this->config_env->env[$this->env]["session_save_path"]
-      );
+      // session_save_path(
+      //   $this->config_env->env[$this->env]["session_save_path"]
+      // );
       session_start();
       session_gc();
 
